@@ -1,0 +1,98 @@
+{
+  "schema_version": "hsd-m46-closedloop-v1",
+  "results": [
+    {
+      "version": "m46",
+      "scenario": "static_15_v4",
+      "settings": {
+        "gap": 15,
+        "v": 4
+      },
+      "scope": "Same scene/route/state setup; entire planner-controller stack differs, not single-variable ablation",
+      "status": "Passed",
+      "failure": null,
+      "ticks": 157,
+      "initial_actual_speed_mps": 3.8369860601871193,
+      "initial_actual_gap_m": 14.808109298677543,
+      "collision_count": 0,
+      "lane_invasions": 0,
+      "final_gap_m": 2.8413100304050607,
+      "min_gap_m": 2.8413100304050607,
+      "final_speed_mps": 0.0,
+      "max_speed_mps": 3.8369860601871193,
+      "route_completion": 0.20253164556962025,
+      "max_decel_raw_mps2": 2.711612216886675,
+      "jerk_abs_p95_raw_mps3": 11.530125333593316,
+      "jerk_abs_max_raw_mps3": 54.24923074414098,
+      "max_decel_250ms_mps2": 1.1795180181293397,
+      "jerk_abs_p95_250ms_mps3": 2.7633358061970092,
+      "lateral_mean_m": 0.011266978386787217,
+      "lateral_max_m": 0.02020451507268244,
+      "safety_forced_braking_events": 0,
+      "safety_forced_braking_ticks": 0,
+      "safety_reasons": {},
+      "kinematic_violation_ticks": 0,
+      "latency_p95_ms": 32.98095762729644,
+      "log": "reports/m46_closedloop_pilot8_artifacts/m46_static_15_v4.jsonl",
+      "log_sha256": "717703d901d9e60b905e98a6cbad8f125c24e5d718c0b36b9f158ec0c212fc12"
+    },
+    {
+      "version": "m46",
+      "scenario": "static_30_v5",
+      "settings": {
+        "gap": 30,
+        "v": 5
+      },
+      "scope": "Same scene/route/state setup; entire planner-controller stack differs, not single-variable ablation",
+      "status": "Failed",
+      "failure": "unsafe_stopping_clearance",
+      "ticks": 320,
+      "initial_actual_speed_mps": 4.756146289484283,
+      "initial_actual_gap_m": 29.76221101726419,
+      "collision_count": 0,
+      "lane_invasions": 0,
+      "final_gap_m": 0.2747239276313449,
+      "min_gap_m": 0.2747239276313449,
+      "final_speed_mps": 0.0,
+      "max_speed_mps": 4.756146289484283,
+      "route_completion": 0.46835443037974683,
+      "max_decel_raw_mps2": 19.15933272203166,
+      "jerk_abs_p95_raw_mps3": 11.374299815389701,
+      "jerk_abs_max_raw_mps3": 411.7762588704616,
+      "max_decel_250ms_mps2": 4.642733944071069,
+      "jerk_abs_p95_250ms_mps3": 3.6400151096087523,
+      "lateral_mean_m": 0.002289898865781887,
+      "lateral_max_m": 0.007513088529756144,
+      "safety_forced_braking_events": 1,
+      "safety_forced_braking_ticks": 1,
+      "safety_reasons": {
+        "obstacle_footprint": 1
+      },
+      "kinematic_violation_ticks": 0,
+      "latency_p95_ms": 29.56547318026424,
+      "log": "reports/m46_closedloop_pilot8_artifacts/m46_static_30_v5.jsonl",
+      "log_sha256": "4ad80657e7c65500a2a3a488a719e34df06ee7a8a3d93ac3791d1fbf84912b58"
+    }
+  ],
+  "policy": {
+    "standstill_gap": 3.0,
+    "footprint_margin": 0.2,
+    "lateral_margin": 0.15,
+    "comfortable_decel": 1.8,
+    "acceleration": 1.5,
+    "jerk": 2.5,
+    "emergency_decel": 5.0,
+    "response_time": 0.25,
+    "dt": 0.1,
+    "horizon": 60,
+    "safety_step": 0.1
+  },
+  "base_source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+  "new_source_sha256": "ea6616205a5983ade63550ffeb56447d38cd1cd2c55bfa85d2930c5069520386",
+  "notes": [
+    "Simulation step 20Hz; sensor/network latency excluded",
+    "Footprints sampled <=0.1m and <=0.05s in M46, not exact continuous collision detection",
+    "250ms moving-average kinematics separately labeled; raw values retained",
+    "Ego initial speed stabilized by identical old controller before actor placement; lead scripted 2.5m/s for 4s then physics braking"
+  ]
+}

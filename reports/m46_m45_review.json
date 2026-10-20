@@ -1,0 +1,27 @@
+{
+  "base_commit": "129a4131567ac02edf88b19b9199cad979ce3d72",
+  "baseline_files_match": true,
+  "findings": [
+    {
+      "file": "datasets/occupancy_labels.py",
+      "issue": "Entire depth ray discarded for any coarse ego AABB intersection; ground coverage lost although observed endpoint external",
+      "action": "New independent visibility-certified labels; preserve legacy implementation for baseline"
+    },
+    {
+      "file": "simulator/oracle_driver.py",
+      "issue": "max(speed,0.5) advances zero-speed trajectory; constant speed labels ignore acceleration and sampled-point route offset",
+      "action": "New MotionPlanner integral trajectory, acceleration/jerk bounds and shared clearance policy"
+    },
+    {
+      "file": "simulator/oracle_driver.py",
+      "issue": "Frozen geometric horizon triggers hard stop far before obstacle; speed plan stop gap not aligned to safety horizon",
+      "action": "Feasible deceleration trajectory checked at its actual time samples; compare same controlled scenarios"
+    },
+    {
+      "file": "geometry/temporal_warp.py",
+      "issue": "Pose/support mask does not resolve current occlusion or dynamic motion",
+      "action": "Add explicit diagnostic history visibility/dynamic rejection mask; do not treat unknown zero as free"
+    }
+  ],
+  "historical_gate": "M4 and M4.5 remain open; no original reports revised"
+}

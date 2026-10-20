@@ -1,0 +1,177 @@
+{
+  "schema_version": "hsd-m46-safety-sampling-v1",
+  "rows": [
+    {
+      "speed_mps": 5,
+      "crossing_time": 0.1,
+      "reference_1ms_collision": true,
+      "baseline_detects": true,
+      "m46_detects": true
+    },
+    {
+      "speed_mps": 5,
+      "crossing_time": 0.225,
+      "reference_1ms_collision": true,
+      "baseline_detects": true,
+      "m46_detects": true
+    },
+    {
+      "speed_mps": 5,
+      "crossing_time": 0.25,
+      "reference_1ms_collision": true,
+      "baseline_detects": false,
+      "m46_detects": true
+    },
+    {
+      "speed_mps": 5,
+      "crossing_time": 0.475,
+      "reference_1ms_collision": true,
+      "baseline_detects": true,
+      "m46_detects": true
+    },
+    {
+      "speed_mps": 10,
+      "crossing_time": 0.1,
+      "reference_1ms_collision": true,
+      "baseline_detects": true,
+      "m46_detects": true
+    },
+    {
+      "speed_mps": 10,
+      "crossing_time": 0.225,
+      "reference_1ms_collision": true,
+      "baseline_detects": false,
+      "m46_detects": true
+    },
+    {
+      "speed_mps": 10,
+      "crossing_time": 0.25,
+      "reference_1ms_collision": true,
+      "baseline_detects": false,
+      "m46_detects": true
+    },
+    {
+      "speed_mps": 10,
+      "crossing_time": 0.475,
+      "reference_1ms_collision": true,
+      "baseline_detects": true,
+      "m46_detects": true
+    },
+    {
+      "speed_mps": 20,
+      "crossing_time": 0.1,
+      "reference_1ms_collision": true,
+      "baseline_detects": false,
+      "m46_detects": true
+    },
+    {
+      "speed_mps": 20,
+      "crossing_time": 0.225,
+      "reference_1ms_collision": true,
+      "baseline_detects": false,
+      "m46_detects": true
+    },
+    {
+      "speed_mps": 20,
+      "crossing_time": 0.25,
+      "reference_1ms_collision": true,
+      "baseline_detects": false,
+      "m46_detects": true
+    },
+    {
+      "speed_mps": 20,
+      "crossing_time": 0.475,
+      "reference_1ms_collision": true,
+      "baseline_detects": true,
+      "m46_detects": true
+    },
+    {
+      "speed_mps": 40,
+      "crossing_time": 0.1,
+      "reference_1ms_collision": true,
+      "baseline_detects": false,
+      "m46_detects": true
+    },
+    {
+      "speed_mps": 40,
+      "crossing_time": 0.225,
+      "reference_1ms_collision": true,
+      "baseline_detects": false,
+      "m46_detects": true
+    },
+    {
+      "speed_mps": 40,
+      "crossing_time": 0.25,
+      "reference_1ms_collision": true,
+      "baseline_detects": false,
+      "m46_detects": true
+    },
+    {
+      "speed_mps": 40,
+      "crossing_time": 0.475,
+      "reference_1ms_collision": true,
+      "baseline_detects": true,
+      "m46_detects": true
+    },
+    {
+      "speed_mps": 80,
+      "crossing_time": 0.1,
+      "reference_1ms_collision": true,
+      "baseline_detects": false,
+      "m46_detects": true
+    },
+    {
+      "speed_mps": 80,
+      "crossing_time": 0.225,
+      "reference_1ms_collision": true,
+      "baseline_detects": false,
+      "m46_detects": false
+    },
+    {
+      "speed_mps": 80,
+      "crossing_time": 0.25,
+      "reference_1ms_collision": true,
+      "baseline_detects": false,
+      "m46_detects": true
+    },
+    {
+      "speed_mps": 80,
+      "crossing_time": 0.475,
+      "reference_1ms_collision": true,
+      "baseline_detects": false,
+      "m46_detects": false
+    },
+    {
+      "speed_mps": 160,
+      "crossing_time": 0.1,
+      "reference_1ms_collision": true,
+      "baseline_detects": false,
+      "m46_detects": true
+    },
+    {
+      "speed_mps": 160,
+      "crossing_time": 0.225,
+      "reference_1ms_collision": true,
+      "baseline_detects": false,
+      "m46_detects": false
+    },
+    {
+      "speed_mps": 160,
+      "crossing_time": 0.25,
+      "reference_1ms_collision": true,
+      "baseline_detects": false,
+      "m46_detects": true
+    },
+    {
+      "speed_mps": 160,
+      "crossing_time": 0.475,
+      "reference_1ms_collision": true,
+      "baseline_detects": false,
+      "m46_detects": false
+    }
+  ],
+  "baseline_misses": 17,
+  "m46_misses": 4,
+  "scope": "Stationary ego, linear tiny crossing footprint; 1ms discrete reference also not exact continuous. High speeds outside operating range deliberately expose sampling limitation.",
+  "recommendation": "Adaptive time step by relative translational/rotational swept distance or conservative swept polygon/continuous separating axis bound. Need rotation, road area and dynamic uncertainty coverage before full safety claim."
+}

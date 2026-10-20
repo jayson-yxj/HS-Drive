@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/run_m46_closedloop.py", line 143, in <module>
+    if __name__=='__main__':main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/run_m46_closedloop.py", line 60, in main
+    lead=session.spawn(bp,tf);lead.apply_control(carla.VehicleControl(brake=1,hand_brake=not setting.get('lead',False)));targets.append(lead)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/session.py", line 53, in spawn
+    actor = self.world.spawn_actor(blueprint, transform, **kwargs)
+RuntimeError: Spawn failed because of collision at spawn position

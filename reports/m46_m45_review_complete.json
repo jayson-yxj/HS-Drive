@@ -1,0 +1,57 @@
+{
+  "base_commit": "129a4131567ac02edf88b19b9199cad979ce3d72",
+  "documents": {
+    "reports/m45_oracle_driving.json": "0e7c91408f457b1d9ac927e145f6ffcff7e56d9eccd3c7dd344c4adf33822d56",
+    "reports/m45_carla_server.json": "cf2eec076c99bbf3bc7874a3246daef499ee413f2d223563bf193a201a79d7b9",
+    "reports/m45_delivery_manifest.json": "f41a78e7f1e2cb5f2b0138a45d9b4d0ca6fe2ed440c236220d6041128c347386",
+    "reports/m45_asset_freeze.json": "c959f3ba91aa72a6f9b605f8bff3a6cc4b7b3ad6c9abc5f7e8d358cab58fc457",
+    "reports/m45_splat_comparison.json": "34b3d3ffa7f633d3f01cce898872e5b1c8d7122f9a2869d68954c3cb3a6c7790",
+    "reports/m45_environment.json": "1e5cf8878218787d95aa0b26f29c87ed89f0d320fa2b49ac164a41b0c14ed37b",
+    "reports/m45_oracle_replay.json": "3a5972c803991b5245a4acf3b1dac9f01c789aa96b04fcee798bd0bd1d20dc89",
+    "reports/m45_acceptance.json": "4feba2361f70402c970b8e1869ee5de1b8178ed9f618cd010f09bca3f83fe7bd",
+    "reports/m45_oracle_live_replay.json": "b8b6df966bfa7b4702016bd9908fd243efb2aedd81218af265ce1facf9a0ab21",
+    "reports/m45_occupancy_validation.json": "6a96a18c80469f0ddc9c09cd6be015eacbf96b3bde810b7d33f9af248fe13998",
+    "reports/m45_temporal_static_surfaces.json": "272f1ca950ad0afeb7c6b236fe26d866c8d161780fba219de45f578cd064576b",
+    "reports/m45_asset_integrity_final.json": "45b17fe2dc5d8a033287e888fe8e7555cd1fa73044156597c3d7b359d9c54d08",
+    "reports/m45_temporal_validation_v2.json": "cd7b60b2fcb0886fdae715a4d6bbdb34648530812df59c9b1dc5d45e79e21f76",
+    "reports/m45_splat_oracle_probe.json": "5fb5f858da65080ecc1e099567f61e004635e970ac40cdde97e40f5821969484",
+    "reports/m45_paired_validation.json": "32a5f2ae21f579b98133b9201d90dabc8e5ec1ca1e8fbe87c086ba19da973260",
+    "reports/m45_analysis_metrics.json": "64edd686b6a7828ba3b9165c7ab72a8f1a30756238236dd6026ce853d8db636d",
+    "reports/m45_temporal_validation.json": "c28f471471fcd645932eff6fb688a717d05b0f47fd8dc2c23a39d2d96c81c3bb",
+    "reports/m45_asset_integrity.json": "cc85fdc0117ea79d9bb81c7fe92113f253ffe990db0c29a46c0f191a3670365f",
+    "docs/M45_OCCUPANCY_CONTRACT.md": "cce445b0f43fa63269b2671d4a0d5abed2f7d54f798ecda038931cca27120e6e",
+    "docs/M45_IMPLEMENTATION.md": "183a44f5700b39eb8e5ba76e386d6aac977c40356cc6ad3b40f5b5f94ff02bf9",
+    "docs/M45_ARCHITECTURE_DECISIONS.md": "13fe21f0688752f050f29e0a2e01a01349e15855f780323e099c519dbd907f16",
+    "reports/m45_oracle_driving_analysis.md": "34f52269a6a81903de74fda13d270e1ec5e5e35e68b0d2a90e14bc86403ac726",
+    "reports/m45_summary.md": "0f2e6c7c6dbbd72943cb27637f9188b95782137cb96abcc76d99d482dca9abc0",
+    "reports/m45_splat_analysis.md": "cc6188aeff612285a655279100dcdf295296d9cddcca1d6f55cf53152e404a59"
+  },
+  "findings": [
+    {
+      "file": "datasets/occupancy_labels.py",
+      "issue": "Entire depth ray discarded for any coarse ego AABB intersection; ground coverage lost although observed endpoint external",
+      "action": "New independent visibility-certified labels; preserve legacy implementation for baseline"
+    },
+    {
+      "file": "simulator/oracle_driver.py",
+      "issue": "max(speed,0.5) advances zero-speed trajectory; constant speed labels ignore acceleration and sampled-point route offset",
+      "action": "New MotionPlanner integral trajectory, acceleration/jerk bounds and shared clearance policy"
+    },
+    {
+      "file": "simulator/oracle_driver.py",
+      "issue": "Frozen geometric horizon triggers hard stop far before obstacle; speed plan stop gap not aligned to safety horizon",
+      "action": "Feasible deceleration trajectory checked at its actual time samples; compare same controlled scenarios"
+    },
+    {
+      "file": "geometry/temporal_warp.py",
+      "issue": "Pose/support mask does not resolve current occlusion or dynamic motion",
+      "action": "Add explicit diagnostic history visibility/dynamic rejection mask; do not treat unknown zero as free"
+    }
+  ],
+  "additional_findings": [
+    "Full horizon road checks/route choice and free-running light phase confounded initial route regressions. Failures retained; saved-route green-light subset reported separately.",
+    "Ego counterfactual corrects coarse box visibility but does not certify full voxel emptiness or arbitrary driving poses.",
+    "Source freezing at run start required; final verified runners include immutable source copies."
+  ],
+  "historical_quality_gates_unchanged": true
+}

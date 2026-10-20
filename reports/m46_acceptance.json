@@ -1,0 +1,91 @@
+{
+  "schema_version": "hsd-m46-acceptance-v1",
+  "overall": "Partial",
+  "base_commit": "129a4131567ac02edf88b19b9199cad979ce3d72",
+  "branch": "feat/m46-occupancy-motion-quality",
+  "m4_gate_closed": false,
+  "m45_gate_closed": false,
+  "m46_gate_closed": false,
+  "m5_training_approved": false,
+  "network_trained": false,
+  "gated_splat_default": false,
+  "checks": {
+    "baseline_assets_preserved": true,
+    "labels_engineering": "Passed",
+    "labels_quality": "Partial",
+    "masked_loader_and_loss": true,
+    "temporal_oracle_support": true,
+    "controlled_driving_passed": true,
+    "all_driving_collision_free": true,
+    "moving_stop_raw_decel_within_planned_bound": false,
+    "moving_stop_raw_jerk_within_planned_bound": false,
+    "exact_continuous_collision_detection": false,
+    "temporal_learned_deployment_validated": false,
+    "source_stable": true
+  },
+  "tests": {
+    "gpu": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "5",
+      "tests": "167",
+      "time": "14.145",
+      "timestamp": "2026-10-20T15:38:28.265661+08:00",
+      "hostname": "gpufree-container",
+      "path": "reports/m46_full_gpu_tests.xml",
+      "sha256": "7b4239af25b847fe8c0b96548f89a78450529bf3effa59745ddb768dadf88c9f"
+    },
+    "sim": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "14",
+      "tests": "135",
+      "time": "4.027",
+      "timestamp": "2026-10-20T15:38:29.370060+08:00",
+      "hostname": "gpufree-container",
+      "path": "reports/m46_full_sim_tests.xml",
+      "sha256": "b973233f1d69e9a951dd19aef506aa621d879c2ba09884c8a4d2fcef83ebe56e"
+    },
+    "m46_modules": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "21",
+      "time": "1.905",
+      "timestamp": "2026-10-20T15:40:11.962486+08:00",
+      "hostname": "gpufree-container",
+      "path": "reports/m46_module_tests_release.xml",
+      "sha256": "635e84eff18195f8f1e997d12f60ae34e0e0e5b90719a3dd786fbb66901b31be"
+    }
+  },
+  "closedloop": {
+    "pairs": 13,
+    "new_stopping_gap_range_m": [
+      3.231963022853016,
+      3.984915554001323
+    ],
+    "old_obstacle_safety_ticks": 513,
+    "new_obstacle_safety_ticks": 0,
+    "scope": "Privileged low-speed Town03 planner/controller. Green-light route subset not traffic-rule validation. Whole-stack comparison, not one-variable ablation."
+  },
+  "limits": [
+    "Observed false-free remains nonzero; heldout pixels are not independent 3D mesh truth.",
+    "Only 36 static and 3 scripted-dynamic frames, one map. Route-group validation not blind.",
+    "Actual deceleration/jerk exceed planned limits; no natural/comfortable-stop acceptance.",
+    "Junction still triggers road-boundary braking and exceeds 50ms p95 planner+safety budget.",
+    "Occupancy has not been connected as the obstacle source for closed-loop; Oracle actors remain privileged."
+  ],
+  "evidence": {
+    "reports/m46_closedloop_verified.json": "a3afdd126054e4833d08571bc05d78ba391f30bd93eb9130147c2ceea1bc2a10",
+    "reports/m46_routes_verified.json": "e0fc803a0c6223306fe7f2775f8db4559a04f6115db095b04fb9b783604c464c",
+    "reports/m46_label_verified.json": "702a7ebf582353db63b61b71f17424fc53ba16b1c0a6d161768254f222a897b4",
+    "reports/m46_temporal_verified.json": "6beb7d2c9fbba1e4ec745aca8c5371b4c193c30d8ad150ff366e0a21248a7ef0",
+    "reports/m46_loader_release.json": "99a19cf0748e9398df336b92b6cc7a7b213eaa0c37c12b703f17ee801dbacdc7",
+    "reports/m46_safety_verified.json": "8b5720079e45bcb461c440b3cb91fdb7ee6a189d53eda030e549b00ad7d7087d",
+    "reports/m46_asset_integrity.json": "15476ea0ccc081515e1b92b2468da6f8f79a6ee7b2a8c23161ed27002291b982",
+    "reports/m46_motion_supplement_verified.json": "1e610b63dd7873aa2d05f70a1ea4c13b11560ca9eb7d7dcc855e8214f4d82b3e"
+  }
+}

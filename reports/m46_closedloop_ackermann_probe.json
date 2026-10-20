@@ -1,0 +1,104 @@
+{
+  "schema_version": "hsd-m46-closedloop-v1",
+  "results": [
+    {
+      "version": "m46",
+      "scenario": "static_15_v4",
+      "settings": {
+        "gap": 15,
+        "v": 4
+      },
+      "ackermann": true,
+      "scope": "Same scene/route/state setup; entire planner-controller stack differs, not single-variable ablation",
+      "status": "Passed",
+      "failure": null,
+      "ticks": 294,
+      "initial_actual_speed_mps": 3.8369860601871193,
+      "initial_actual_gap_m": 14.808109298677543,
+      "collision_count": 0,
+      "lane_invasions": 0,
+      "final_gap_m": 1.6278496734600152,
+      "min_gap_m": 1.6278496734600152,
+      "final_speed_mps": 0.0,
+      "max_speed_mps": 5.821890109392813,
+      "route_completion": 0.21518987341772153,
+      "max_decel_raw_mps2": 27.196026113915675,
+      "jerk_abs_p95_raw_mps3": 78.57696830948957,
+      "jerk_abs_max_raw_mps3": 653.6262286748805,
+      "max_decel_250ms_mps2": 21.01711748195547,
+      "jerk_abs_p95_250ms_mps3": 32.56972540061635,
+      "lateral_mean_m": 0.007431572997813338,
+      "lateral_max_m": 0.019347509866673353,
+      "safety_forced_braking_events": 3,
+      "safety_forced_braking_ticks": 5,
+      "safety_reasons": {
+        "obstacle_footprint": 3,
+        "speed_limit": 2
+      },
+      "kinematic_violation_ticks": 0,
+      "latency_p95_ms": 26.405199989676472,
+      "log": "reports/m46_closedloop_ackermann_probe_artifacts/m46_static_15_v4.jsonl",
+      "log_sha256": "5f0e9330ff3526c151980043eee6449db30f68407bf71661ec1eaf4b5b8fb76a"
+    },
+    {
+      "version": "m46",
+      "scenario": "static_30_v5",
+      "settings": {
+        "gap": 30,
+        "v": 5
+      },
+      "ackermann": true,
+      "scope": "Same scene/route/state setup; entire planner-controller stack differs, not single-variable ablation",
+      "status": "Passed",
+      "failure": null,
+      "ticks": 179,
+      "initial_actual_speed_mps": 4.756146289484283,
+      "initial_actual_gap_m": 29.76221101726419,
+      "collision_count": 0,
+      "lane_invasions": 0,
+      "final_gap_m": 1.4403817561930863,
+      "min_gap_m": 1.4403817561930863,
+      "final_speed_mps": 0.0,
+      "max_speed_mps": 5.94366803868924,
+      "route_completion": 0.45569620253164556,
+      "max_decel_raw_mps2": 27.123292542624977,
+      "jerk_abs_p95_raw_mps3": 52.616078966962576,
+      "jerk_abs_max_raw_mps3": 608.7993584359873,
+      "max_decel_250ms_mps2": 15.196430481956789,
+      "jerk_abs_p95_250ms_mps3": 39.837690513278616,
+      "lateral_mean_m": 0.0019977317834287047,
+      "lateral_max_m": 0.007513088529756144,
+      "safety_forced_braking_events": 3,
+      "safety_forced_braking_ticks": 16,
+      "safety_reasons": {
+        "speed_limit": 5,
+        "obstacle_footprint": 11
+      },
+      "kinematic_violation_ticks": 0,
+      "latency_p95_ms": 48.4556833282113,
+      "log": "reports/m46_closedloop_ackermann_probe_artifacts/m46_static_30_v5.jsonl",
+      "log_sha256": "c0dcae7ae6beb3927685969bfd09f780db5c13ba49d6493697ed64f5d41caf89"
+    }
+  ],
+  "policy": {
+    "standstill_gap": 3.0,
+    "footprint_margin": 0.2,
+    "lateral_margin": 0.15,
+    "comfortable_decel": 1.8,
+    "acceleration": 1.5,
+    "jerk": 2.5,
+    "emergency_decel": 5.0,
+    "response_time": 0.25,
+    "dt": 0.1,
+    "horizon": 60,
+    "safety_step": 0.1
+  },
+  "base_source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+  "new_source_sha256": "94c5632470b8a8a62f9478cdcf353ba514391aa73d7406544202cad019a6a875",
+  "notes": [
+    "Simulation step 20Hz; sensor/network latency excluded",
+    "Footprints sampled <=0.1m and <=0.05s in M46, not exact continuous collision detection",
+    "250ms moving-average kinematics separately labeled; raw values retained",
+    "Ego initial speed stabilized by identical old controller before actor placement; lead scripted 2.5m/s for 4s then physics braking"
+  ]
+}

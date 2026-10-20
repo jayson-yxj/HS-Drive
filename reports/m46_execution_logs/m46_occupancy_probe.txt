@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/capture_m46_occupancy.py", line 103, in <module>
+    if __name__=='__main__':main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/capture_m46_occupancy.py", line 86, in main
+    for _ in range(12):capture('warmup',False)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/capture_m46_occupancy.py", line 65, in capture
+    n,k,img=q.get(timeout=10)
+  File "/usr/lib/python3.10/queue.py", line 179, in get
+    raise Empty
+_queue.Empty
