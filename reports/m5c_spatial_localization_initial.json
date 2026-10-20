@@ -1,0 +1,20 @@
+{
+  "kind": "offline_historical_opened_M5B_predictions_no_model_or_threshold_selection",
+  "records": [],
+  "source_sha256": "d206d49e891f18a52c9f972867c1c1b6a0c6c9b6b54821d05ccc79852bd277bd",
+  "old_metric_issue": "appearance_localization ignored height; unmatched counted all GT only if zero predictions. Replaced by bidirectional same-height nearest-neighbor distances and per-GT tolerance miss counts. Many-to-one coverage, no one-to-one actor matching.",
+  "metric_taxonomy": {
+    "A": "conditional Ground/Obstacle semantics only on reliable known surfaces",
+    "B": "paired signed change on supported witness and unchanged known surfaces",
+    "C": "singleframe visible obstacle surface score on heldout first-hit support; primary M5C target; still not entire unknown BEV or occupied volume"
+  },
+  "baseline_limitations": [
+    "M5A108frames are12posegroups;3testgroups, no pixel independence",
+    "M5B known test opened, historical regression only",
+    "Free-ray evidence is not wholecell safe free",
+    "Surface\u00d7conditional Obstacle is not calibrated physical occupancy probability",
+    "AP improvement does not guarantee thresholded localization or missed-actor recall"
+  ],
+  "new_absolute_results": "reports/m5c_absolute_obstacle_detection.json",
+  "no_history_overwrite": true
+}

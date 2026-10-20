@@ -1,0 +1,21 @@
+Town01_c0 complete
+Town01_c1 complete
+Town01_c2 complete
+Town03_c0 complete
+Town03_c1 complete
+Town03_c2 complete
+WARNING: attempting to destroy an actor that is already dead: Actor 551 (vehicle.carlamotors.carlacola) 
+/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/session.py:98: UserWarning: Actor 551 destruction returned false
+  warnings.warn(f'Actor {actor.id} destruction returned false')
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5c_capture.py", line 295, in <module>
+    main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5c_capture.py", line 78, in main
+    actor = session.spawn(world.get_blueprint_library().find(kind), tf)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/session.py", line 53, in spawn
+    actor = self.world.spawn_actor(blueprint, transform, **kwargs)
+RuntimeError: Spawn failed because of collision at spawn position

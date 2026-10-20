@@ -1,0 +1,25 @@
+{
+  "kind": "auditable_additive_diagnostic_corrections_no_training_changes",
+  "changes": [
+    {
+      "original": "reports/m5c_spatial_localization.json",
+      "corrected": "reports/m5c_spatial_localization_historical_corrected.json",
+      "reason": "Historical baseline review used development index with no test pairs, produced zero records; corrected to historical sealed index and asserts nonempty. No historical model selection.",
+      "initial_attempt": "reports/m5c_spatial_localization_initial.json",
+      "primary_delivery": "reports/m5c_spatial_localization.json now contains corrected historical metrics plus new absolute report reference"
+    },
+    {
+      "original": [
+        "reports/m5c_new_geometry_resolution.json",
+        "reports/m5c_new_feature_sampling.json"
+      ],
+      "corrected": [
+        "reports/m5c_corrected_geometry_resolution.json",
+        "reports/m5c_corrected_feature_sampling.json"
+      ],
+      "reason": "Legacy geometry diagnostic hardcoded actor semantic IDs omitted Dynamic21 trafficcone; use capture manifest Ground/Obstacle contract. Training/main evaluation already used manifest and unchanged."
+    }
+  ],
+  "pretest_sha256": "4452d6def0ed127643d50c01b639cc4e7e6380255286445edbaf25c6a8fff08b",
+  "models_labels_thresholds_unchanged": true
+}

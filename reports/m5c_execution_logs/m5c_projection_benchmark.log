@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5c_projection_benchmark.py", line 37, in <module>
+    if __name__=='__main__':main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5c_projection_benchmark.py", line 32, in main
+    with torch.autocast('cuda',dtype=torch.bfloat16):net(inputs)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv-gpu/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv-gpu/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+TypeError: DepthBEV.forward() takes 1 positional argument but 2 were given

@@ -1,0 +1,153 @@
+{
+  "kind": "actual_GPU_historical_checkpoint_new_validation_regression_no_retraining",
+  "records": [
+    {
+      "seed": 61,
+      "checkpoint": "runs/m5b_learning/m5b_C_pair_61.pt",
+      "sha256": "daf0e90f8e3c94c6256e0ed7bac749398c39916cbf71520b42a6c820f13f37ce",
+      "absolute_fixed_half": {
+        "tp": 15200,
+        "fp": 747,
+        "fn": 31790,
+        "tn": 114649,
+        "positive": 46990,
+        "n": 162386,
+        "precision": 0.9531573336677746,
+        "recall": 0.3234730793785912,
+        "iou": 0.3184112952217358
+      },
+      "actor_surface_fixed_half": {
+        "tp": 71,
+        "fp": 0,
+        "fn": 347,
+        "tn": 0,
+        "positive": 418,
+        "n": 418,
+        "precision": 1.0,
+        "recall": 0.16985645933014354,
+        "iou": 0.16985645933014354
+      },
+      "paired": {
+        "by_scene": {
+          "Town01_c2": {
+            "tp": 50,
+            "fp": 68,
+            "fn": 146,
+            "iou": 0.1893939393939394,
+            "recall": 0.25510204081632654,
+            "precision": 0.423728813559322,
+            "pairs": 30,
+            "changed": 196
+          },
+          "Town03_c2": {
+            "tp": 64,
+            "fp": 44,
+            "fn": 183,
+            "iou": 0.21993127147766323,
+            "recall": 0.2591093117408907,
+            "precision": 0.5925925925925926,
+            "pairs": 30,
+            "changed": 247
+          },
+          "Town04_c2": {
+            "tp": 68,
+            "fp": 30,
+            "fn": 176,
+            "iou": 0.24817518248175183,
+            "recall": 0.2786885245901639,
+            "precision": 0.6938775510204082,
+            "pairs": 30,
+            "changed": 244
+          },
+          "Town05_c2": {
+            "tp": 96,
+            "fp": 116,
+            "fn": 151,
+            "iou": 0.2644628099173554,
+            "recall": 0.38866396761133604,
+            "precision": 0.4528301886792453,
+            "pairs": 30,
+            "changed": 247
+          }
+        },
+        "mean_scene_iou": 0.23049080081767745
+      },
+      "original_change_threshold": 0.2
+    },
+    {
+      "seed": 62,
+      "checkpoint": "runs/m5b_learning/m5b_C_pair_62.pt",
+      "sha256": "87f23762cf083c4a4883dc0944b6ac6c45864c10f777809871800350ffa9458b",
+      "absolute_fixed_half": {
+        "tp": 18621,
+        "fp": 857,
+        "fn": 28369,
+        "tn": 114539,
+        "positive": 46990,
+        "n": 162386,
+        "precision": 0.9560016428791457,
+        "recall": 0.3962758033624175,
+        "iou": 0.38917800489058874
+      },
+      "actor_surface_fixed_half": {
+        "tp": 128,
+        "fp": 0,
+        "fn": 290,
+        "tn": 0,
+        "positive": 418,
+        "n": 418,
+        "precision": 1.0,
+        "recall": 0.3062200956937799,
+        "iou": 0.3062200956937799
+      },
+      "paired": {
+        "by_scene": {
+          "Town01_c2": {
+            "tp": 84,
+            "fp": 224,
+            "fn": 112,
+            "iou": 0.2,
+            "recall": 0.42857142857142855,
+            "precision": 0.2727272727272727,
+            "pairs": 30,
+            "changed": 196
+          },
+          "Town03_c2": {
+            "tp": 88,
+            "fp": 107,
+            "fn": 159,
+            "iou": 0.24858757062146894,
+            "recall": 0.3562753036437247,
+            "precision": 0.4512820512820513,
+            "pairs": 30,
+            "changed": 247
+          },
+          "Town04_c2": {
+            "tp": 105,
+            "fp": 42,
+            "fn": 139,
+            "iou": 0.36713286713286714,
+            "recall": 0.430327868852459,
+            "precision": 0.7142857142857143,
+            "pairs": 30,
+            "changed": 244
+          },
+          "Town05_c2": {
+            "tp": 95,
+            "fp": 95,
+            "fn": 152,
+            "iou": 0.2777777777777778,
+            "recall": 0.38461538461538464,
+            "precision": 0.5,
+            "pairs": 30,
+            "changed": 247
+          }
+        },
+        "mean_scene_iou": 0.27337455388302845
+      },
+      "original_change_threshold": 0.2
+    }
+  ],
+  "source_sha256": "e826b0a665a8e339ab2df3a08c0cdac5d5fd9cc119e9529e9064f5f99f748aa4",
+  "scope": "Old C_pair uses its original M5B validation-selected change threshold; absolute .5 is fixed diagnostic only, not a fair selected-threshold competitor. Main matched study retrains all methods on new data. New test not used."
+}

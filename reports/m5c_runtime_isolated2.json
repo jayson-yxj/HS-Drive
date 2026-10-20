@@ -1,0 +1,577 @@
+{
+  "kind": "actual_CARLA_wall_paced_async_process",
+  "results": [
+    {
+      "fault_to_brake_s": null,
+      "normal_control_expired": 0,
+      "minute_windows": [
+        {
+          "start_s": 0,
+          "interval_ms": {
+            "p50": 50.01108907163143,
+            "p95": 50.537131167948246,
+            "p99": 50.976750925183296,
+            "max": 51.49458162486553,
+            "n": 623
+          },
+          "deadline_miss_rate": 0.0
+        }
+      ],
+      "worker_output_latency_ms": {
+        "p50": 62.918695621192455,
+        "p95": 79.5338130556047,
+        "p99": 93.84396504610775,
+        "max": 174.78216625750065,
+        "n": 156
+      },
+      "load_description": "isolated Oracle only; no dataset processing, training, GPU inference or other experiment",
+      "stage_profile_ms": {
+        "get_control_ms": {
+          "p50": 0.007115304470062256,
+          "p95": 0.009435322135686874,
+          "p99": 0.010998751968145367,
+          "max": 0.014699995517730713,
+          "n": 624
+        },
+        "road_query_ms": {
+          "p50": 0.6970930844545364,
+          "p95": 0.9261111728847027,
+          "p99": 1.1283678561449044,
+          "max": 1.3019442558288574,
+          "n": 624
+        },
+        "snapshot_state_measurement_ms": {
+          "p50": 0.09032059460878372,
+          "p95": 0.11624963954091072,
+          "p99": 0.1896124891936778,
+          "max": 0.3136526793241501,
+          "n": 624
+        },
+        "get_snapshot_ms": {
+          "p50": 0.02155173569917679,
+          "p95": 0.028570555150508884,
+          "p99": 0.036098584532737704,
+          "max": 0.060189515352249146,
+          "n": 624
+        },
+        "submit_ms": {
+          "p50": 0.001216307282447815,
+          "p95": 0.0830160453915596,
+          "p99": 0.09863490238785741,
+          "max": 0.3820043057203293,
+          "n": 624
+        },
+        "controller_ms": {
+          "p50": 0.16723759472370148,
+          "p95": 0.26187440380454063,
+          "p99": 0.3224933333694934,
+          "max": 0.6331223994493484,
+          "n": 624
+        },
+        "actor_guard_ms": {
+          "p50": 0.0015934929251670837,
+          "p95": 0.0028043054044246674,
+          "p99": 0.0035158172249794006,
+          "max": 0.007698312401771545,
+          "n": 624
+        },
+        "snapshot_serialization_ms": {
+          "p50": 0.0,
+          "p95": 0.05131689831614495,
+          "p99": 0.06123039871454239,
+          "max": 0.0757221132516861,
+          "n": 624
+        },
+        "ipc_poll_validate_resample_ms": {
+          "p50": 0.5136914551258087,
+          "p95": 0.7551496848464013,
+          "p99": 1.1702709831297387,
+          "max": 1.992505043745041,
+          "n": 624
+        },
+        "apply_control_ms": {
+          "p50": 0.037122517824172974,
+          "p95": 0.0597195699810982,
+          "p99": 0.09059851989150042,
+          "max": 0.14280341565608978,
+          "n": 624
+        },
+        "log_buffer_ms": {
+          "p50": 0.008746981620788574,
+          "p95": 0.02549570053815842,
+          "p99": 0.037096478044986704,
+          "max": 0.059938058257102966,
+          "n": 624
+        },
+        "world_tick_ms": {
+          "p50": 1.7874622717499733,
+          "p95": 2.152538392692805,
+          "p99": 2.6908386126160617,
+          "max": 8.050233125686646,
+          "n": 624
+        },
+        "log_disk_ms": {
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "n": 624
+        }
+      },
+      "scene": "straight",
+      "route_completion": 0.9790802787607841,
+      "route_passed": true,
+      "collisions": 0,
+      "lane_invasions": 0,
+      "road_boundary_frames": 0,
+      "ticks": 624,
+      "sim_hz": 19.99999970197678,
+      "wall_hz": 19.9997207258113,
+      "planner_ms": {
+        "p50": 61.747802421450615,
+        "p95": 75.78823529183865,
+        "p99": 92.49959150329232,
+        "max": 92.72618405520916,
+        "n": 156
+      },
+      "controller_compute_ms": {
+        "p50": 1.5900908038020134,
+        "p95": 2.1960098296403885,
+        "p99": 2.595954928547144,
+        "max": 3.135690465569496,
+        "n": 624
+      },
+      "control_interval_ms": {
+        "p50": 50.01108907163143,
+        "p95": 50.537131167948246,
+        "p99": 50.976750925183296,
+        "max": 51.49458162486553,
+        "n": 623
+      },
+      "deadline_miss_rate": 0.0,
+      "interval_over_55ms_rate": 0.0,
+      "plan_sim_age_s": {
+        "p50": 0.15000000223517418,
+        "p95": 0.2500000037252903,
+        "p99": 0.2500000037252903,
+        "max": 0.2500000037252903,
+        "n": 620
+      },
+      "plan_wall_age_s": {
+        "p50": 0.15162506606429815,
+        "p95": 0.2515303005464375,
+        "p99": 0.25195208486169574,
+        "max": 0.25262191519141197,
+        "n": 620
+      },
+      "degradation_ticks": {
+        "no_valid_plan": 4
+      },
+      "rejected": [],
+      "worker_history": "reports/m5c_runtime_isolated2/straight_plans.json",
+      "log": "reports/m5c_runtime_isolated2/straight.jsonl",
+      "log_sha256": "a92f697c53674e192ad5b8cfb1e81b2db45713b3688d71278621a632ad31e7ba",
+      "actual_dynamics": {
+        "max_decel_raw": 14.21466215227671,
+        "jerk_peak_raw": 284.0975468536402,
+        "jerk_p95_moving": 32.724695804986496,
+        "jerk_p95_all": 32.67276338695035,
+        "max_decel_250ms": 2.9113952036741555,
+        "jerk_p95_250ms": 8.003010661212643,
+        "min_signed_speed": -5.247592694658162e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 6.050000000000001,
+        "api_accel_vs_velocity_derivative_mae": 0.0006076041496210354
+      }
+    },
+    {
+      "fault_to_brake_s": null,
+      "normal_control_expired": 0,
+      "minute_windows": [
+        {
+          "start_s": 0,
+          "interval_ms": {
+            "p50": 49.99939352273941,
+            "p95": 50.573499128222466,
+            "p99": 50.913094095885754,
+            "max": 54.289475083351135,
+            "n": 643
+          },
+          "deadline_miss_rate": 0.0
+        }
+      ],
+      "worker_output_latency_ms": {
+        "p50": 108.3617266267538,
+        "p95": 124.01755899190903,
+        "p99": 133.27842988073834,
+        "max": 216.19603596627712,
+        "n": 161
+      },
+      "load_description": "isolated Oracle only; no dataset processing, training, GPU inference or other experiment",
+      "stage_profile_ms": {
+        "get_control_ms": {
+          "p50": 0.0068070366978645325,
+          "p95": 0.008824374526739122,
+          "p99": 0.009776614606380468,
+          "max": 0.0163298100233078,
+          "n": 644
+        },
+        "road_query_ms": {
+          "p50": 0.9484272450208664,
+          "p95": 1.2038505636155605,
+          "p99": 1.325868144631386,
+          "max": 1.8759220838546753,
+          "n": 644
+        },
+        "snapshot_state_measurement_ms": {
+          "p50": 0.08415337651968002,
+          "p95": 0.10584276169538498,
+          "p99": 0.11941183358430867,
+          "max": 0.27182139456272125,
+          "n": 644
+        },
+        "get_snapshot_ms": {
+          "p50": 0.019303523004055023,
+          "p95": 0.026400107890367508,
+          "p99": 0.029408019036054618,
+          "max": 0.0574793666601181,
+          "n": 644
+        },
+        "submit_ms": {
+          "p50": 0.001194886863231659,
+          "p95": 0.0809183344244957,
+          "p99": 0.09235147386789336,
+          "max": 0.4575345665216446,
+          "n": 644
+        },
+        "controller_ms": {
+          "p50": 0.16828346997499466,
+          "p95": 0.26403069496154785,
+          "p99": 0.3659465722739701,
+          "max": 0.7279384881258011,
+          "n": 644
+        },
+        "actor_guard_ms": {
+          "p50": 0.0016279518604278564,
+          "p95": 0.003226846456527711,
+          "p99": 0.005629844963550609,
+          "max": 0.012854114174842834,
+          "n": 644
+        },
+        "snapshot_serialization_ms": {
+          "p50": 0.0,
+          "p95": 0.045214127749204636,
+          "p99": 0.05303448066115387,
+          "max": 0.11157244443893433,
+          "n": 644
+        },
+        "ipc_poll_validate_resample_ms": {
+          "p50": 0.49434881657361984,
+          "p95": 0.6966437213122845,
+          "p99": 1.050156652927404,
+          "max": 3.941774368286133,
+          "n": 644
+        },
+        "apply_control_ms": {
+          "p50": 0.03653392195701599,
+          "p95": 0.04713330417871475,
+          "p99": 0.05431739613413814,
+          "max": 0.0924970954656601,
+          "n": 644
+        },
+        "log_buffer_ms": {
+          "p50": 0.010034069418907166,
+          "p95": 0.019353162497282028,
+          "p99": 0.02911655232310301,
+          "max": 0.05240738391876221,
+          "n": 644
+        },
+        "world_tick_ms": {
+          "p50": 1.7823418602347374,
+          "p95": 2.0846829749643803,
+          "p99": 2.6646617054939346,
+          "max": 4.58122231066227,
+          "n": 644
+        },
+        "log_disk_ms": {
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "n": 644
+        }
+      },
+      "scene": "mild_curve",
+      "route_completion": 0.9776971515720058,
+      "route_passed": true,
+      "collisions": 0,
+      "lane_invasions": 0,
+      "road_boundary_frames": 0,
+      "ticks": 644,
+      "sim_hz": 19.99999970197678,
+      "wall_hz": 19.999676943184614,
+      "planner_ms": {
+        "p50": 106.42613843083382,
+        "p95": 121.26910872757435,
+        "p99": 126.7944235354662,
+        "max": 138.84721137583256,
+        "n": 161
+      },
+      "controller_compute_ms": {
+        "p50": 1.8194811418652534,
+        "p95": 2.34005032107234,
+        "p99": 2.582331504672766,
+        "max": 5.883907899260521,
+        "n": 644
+      },
+      "control_interval_ms": {
+        "p50": 49.99939352273941,
+        "p95": 50.573499128222466,
+        "p99": 50.913094095885754,
+        "max": 54.289475083351135,
+        "n": 643
+      },
+      "deadline_miss_rate": 0.0,
+      "interval_over_55ms_rate": 0.0,
+      "plan_sim_age_s": {
+        "p50": 0.20000000298023224,
+        "p95": 0.30000000447034836,
+        "p99": 0.30000000447034836,
+        "max": 0.30000000447034836,
+        "n": 639
+      },
+      "plan_wall_age_s": {
+        "p50": 0.20180564559996128,
+        "p95": 0.30165782049298284,
+        "p99": 0.30207877527922394,
+        "max": 0.3057931400835514,
+        "n": 639
+      },
+      "degradation_ticks": {
+        "no_valid_plan": 5
+      },
+      "rejected": [],
+      "worker_history": "reports/m5c_runtime_isolated2/mild_curve_plans.json",
+      "log": "reports/m5c_runtime_isolated2/mild_curve.jsonl",
+      "log_sha256": "8244f8f59d005e80f49e65b16aa96e426523c0c0c63a33c370bec031f63de889",
+      "actual_dynamics": {
+        "max_decel_raw": 5.892274024210518,
+        "jerk_peak_raw": 346.3422293702449,
+        "jerk_p95_moving": 60.83922547858496,
+        "jerk_p95_all": 60.69019289743577,
+        "max_decel_250ms": 1.3298951732842847,
+        "jerk_p95_250ms": 12.197257033280666,
+        "min_signed_speed": -3.608049503138768e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 7.550000000000001,
+        "api_accel_vs_velocity_derivative_mae": 9.570488088612696e-05
+      }
+    },
+    {
+      "fault_to_brake_s": null,
+      "normal_control_expired": 0,
+      "minute_windows": [
+        {
+          "start_s": 0,
+          "interval_ms": {
+            "p50": 49.99316670000553,
+            "p95": 50.59741344302893,
+            "p99": 51.06866914778948,
+            "max": 131.93777948617935,
+            "n": 655
+          },
+          "deadline_miss_rate": 0.001524390243902439
+        }
+      ],
+      "worker_output_latency_ms": {
+        "p50": 104.76207733154297,
+        "p95": 123.39768083766103,
+        "p99": 141.35486532002687,
+        "max": 202.35773362219334,
+        "n": 164
+      },
+      "load_description": "isolated Oracle only; no dataset processing, training, GPU inference or other experiment",
+      "stage_profile_ms": {
+        "get_control_ms": {
+          "p50": 0.007472001016139984,
+          "p95": 0.009846407920122147,
+          "p99": 0.010802317410707475,
+          "max": 0.01634843647480011,
+          "n": 656
+        },
+        "road_query_ms": {
+          "p50": 1.0714726522564888,
+          "p95": 1.3682101853191853,
+          "p99": 1.6034669242799284,
+          "max": 1.9006412476301193,
+          "n": 656
+        },
+        "snapshot_state_measurement_ms": {
+          "p50": 0.08976925164461136,
+          "p95": 0.1136409118771553,
+          "p99": 0.129153858870268,
+          "max": 0.20272471010684967,
+          "n": 656
+        },
+        "get_snapshot_ms": {
+          "p50": 0.022562220692634583,
+          "p95": 0.028742477297782898,
+          "p99": 0.03193439915776255,
+          "max": 0.03361515700817108,
+          "n": 656
+        },
+        "submit_ms": {
+          "p50": 0.0012237578630447388,
+          "p95": 0.08530495688319206,
+          "p99": 0.10282993316650399,
+          "max": 1.5339422971010208,
+          "n": 656
+        },
+        "controller_ms": {
+          "p50": 0.1788688823580742,
+          "p95": 0.28203707188367844,
+          "p99": 0.30468786135315906,
+          "max": 0.4941225051879883,
+          "n": 656
+        },
+        "actor_guard_ms": {
+          "p50": 0.0018365681171417236,
+          "p95": 0.0037658028304576874,
+          "p99": 0.004681944847106941,
+          "max": 0.009747222065925598,
+          "n": 656
+        },
+        "snapshot_serialization_ms": {
+          "p50": 0.0,
+          "p95": 0.048784539103507996,
+          "p99": 0.057972874492406866,
+          "max": 0.08319690823554993,
+          "n": 656
+        },
+        "ipc_poll_validate_resample_ms": {
+          "p50": 0.5162404850125313,
+          "p95": 0.7209521718323231,
+          "p99": 0.8344012312591076,
+          "max": 2.3826099932193756,
+          "n": 656
+        },
+        "apply_control_ms": {
+          "p50": 0.03837607800960541,
+          "p95": 0.050834380090236664,
+          "p99": 0.05522184073925018,
+          "max": 0.2333279699087143,
+          "n": 656
+        },
+        "log_buffer_ms": {
+          "p50": 0.010435469448566437,
+          "p95": 0.020063016563653946,
+          "p99": 0.03184610977768905,
+          "max": 0.05221180617809296,
+          "n": 656
+        },
+        "world_tick_ms": {
+          "p50": 1.860680989921093,
+          "p95": 2.237099688500166,
+          "p99": 2.450668532401325,
+          "max": 129.79243323206902,
+          "n": 656
+        },
+        "log_disk_ms": {
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "n": 656
+        }
+      },
+      "scene": "junction_turn",
+      "route_completion": 0.9784861782469484,
+      "route_passed": true,
+      "collisions": 0,
+      "lane_invasions": 0,
+      "road_boundary_frames": 0,
+      "ticks": 656,
+      "sim_hz": 19.99999970197678,
+      "wall_hz": 19.94982746510231,
+      "planner_ms": {
+        "p50": 102.73476131260395,
+        "p95": 122.13194957002997,
+        "p99": 137.54153806716204,
+        "max": 141.65466092526913,
+        "n": 164
+      },
+      "controller_compute_ms": {
+        "p50": 1.9703414291143417,
+        "p95": 2.5482699275016785,
+        "p99": 3.011513594537974,
+        "max": 3.9125587791204453,
+        "n": 656
+      },
+      "control_interval_ms": {
+        "p50": 49.99316670000553,
+        "p95": 50.59741344302893,
+        "p99": 51.06866914778948,
+        "max": 131.93777948617935,
+        "n": 655
+      },
+      "deadline_miss_rate": 0.001524390243902439,
+      "interval_over_55ms_rate": 0.0015267175572519084,
+      "plan_sim_age_s": {
+        "p50": 0.20000000298023224,
+        "p95": 0.30000000447034836,
+        "p99": 0.30000000447034836,
+        "max": 0.30000000447034836,
+        "n": 651
+      },
+      "plan_wall_age_s": {
+        "p50": 0.20200891606509686,
+        "p95": 0.3018258288502693,
+        "p99": 0.30218726862221956,
+        "max": 0.38303723372519016,
+        "n": 651
+      },
+      "degradation_ticks": {
+        "plan_expired": 1,
+        "no_valid_plan": 5
+      },
+      "rejected": [],
+      "worker_history": "reports/m5c_runtime_isolated2/junction_turn_plans.json",
+      "log": "reports/m5c_runtime_isolated2/junction_turn.jsonl",
+      "log_sha256": "22e14f1b832301e77614ad6d7bb358143c9ead90aeb79d7c9a5492b6ad028327",
+      "actual_dynamics": {
+        "max_decel_raw": 22.06849446678946,
+        "jerk_peak_raw": 439.19250667620173,
+        "jerk_p95_moving": 59.740866178780955,
+        "jerk_p95_all": 59.88753423203035,
+        "max_decel_250ms": 9.7369491199651,
+        "jerk_p95_250ms": 12.162586846480087,
+        "min_signed_speed": -0.06683672294848236,
+        "reverse_ticks": 4,
+        "low_speed_moving_seconds": 7.0,
+        "api_accel_vs_velocity_derivative_mae": 0.007860365703964813
+      }
+    }
+  ],
+  "sources": {
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5c_async_drive.py": "ed5b020fd1a357c4df78e0295d0e48691f950ae66a8eeb83892f5bbb2ee4973a",
+    "simulator/m5a_async.py": "76f74414b51ef833367a8c6a3bbe21bfe888807badd4742845b160ff00bd0c27",
+    "simulator/m5b_runtime.py": "3cd31e04dd97c2f46672a706572189933cc29ba265577a0e2643f09c1b338890",
+    "simulator/m48_schedule.py": "637f3ab5ea8769f33f2b9194151aacbde4f0fc3e5bd325ef9333886e13dc0e5a",
+    "simulator/m48_motion.py": "c73d8b09e1dd8cd7630abb179f2add8baa3d99dbb74ba0c6feba6d2a30e4dcb4",
+    "simulator/m47_motion.py": "2038afae0b6557cbbacd9ed2c0b0ccf03340b11c047ef41cb762fc4e7a24e379",
+    "simulator/motion_oracle.py": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554"
+  },
+  "worker_world_tick_calls": 0,
+  "full_safety_horizon_s": 6.0,
+  "control_period_s": 0.05,
+  "planner_period_s": 0.2,
+  "max_plan_age_s": 0.35,
+  "vision_inputs": false,
+  "load_description": "isolated Oracle only; no dataset processing, training, GPU inference or other experiment",
+  "limitations": [
+    "Privileged oracle route/state, not vision closed loop.",
+    "Road checks use corners, not exact swept road mesh.",
+    "No unsafe fast road certificates.",
+    "Route trials alone do not validate dynamic collision generalization."
+  ]
+}

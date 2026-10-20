@@ -1,0 +1,91 @@
+{
+  "kind": "frozen_before_new_test_capture_and_evaluation",
+  "protocol_sha256": "032b3847e26e881114d91434cba09ab2d10303f1c29bd3f2fe111b8afc8b3253",
+  "checkpoints": {
+    "runs/m5c_learning/m5c_P_prior_71.pt": "2537ea2d23cfbe00cabe7f10e6742ee17ca22271bcaa8c134853ab38226cb0d9",
+    "runs/m5c_learning/m5c_A_frozen_71.pt": "e0b1783d714374ec8a82366bb481ae66d4eae953f984d2e73e03665ba4bed6cf",
+    "runs/m5c_learning/m5c_B_context_71.pt": "1c02b3f6c83d1ea38f0151aa1c28bff82aab10eacaf0e2e35fabc154eaec908e",
+    "runs/m5c_learning/m5c_C_pair_71.pt": "e9f72263b9f8afc19d8c712c834c1188f295f8624182ab8a56ec00abc314fa60",
+    "runs/m5c_learning/m5c_D_direct_71.pt": "7d62d16327006da22eabe9de5d8723405a28aa5aad061255e61b8bc64195aa53",
+    "runs/m5c_learning/m5c_P_prior_72.pt": "853f2b8ee340377babd1d5bb16b47cc52b555c2f95522f6b66c8e92414045380",
+    "runs/m5c_learning/m5c_A_frozen_72.pt": "e6d4b28b92ebce2655cf60ae00babd462cb47e111641fdd2877bb4c5dd7255a3",
+    "runs/m5c_learning/m5c_B_context_72.pt": "1b40ea3f307ae6e47bcccda742bac03784f56ec454ac71e588a83569766cc133",
+    "runs/m5c_learning/m5c_C_pair_72.pt": "2a493f9197c06beec5a6fab7378a78a7bff4656c1b5418b8824f0ca5e517b46b",
+    "runs/m5c_learning/m5c_D_direct_72.pt": "3744ce4bc59108f2f33e99f5868a0564793c974055a094ad66414de542c95c03"
+  },
+  "evaluation": {
+    "P_prior_71": {
+      "threshold": 0.1,
+      "change_threshold": 0.025,
+      "q_threshold": 0.1
+    },
+    "A_frozen_71": {
+      "threshold": 0.1,
+      "change_threshold": 0.1,
+      "q_threshold": 0.1
+    },
+    "B_context_71": {
+      "threshold": 0.1,
+      "change_threshold": 0.1,
+      "q_threshold": 0.1
+    },
+    "C_pair_71": {
+      "threshold": 0.1,
+      "change_threshold": 0.1,
+      "q_threshold": 0.1
+    },
+    "D_direct_71": {
+      "threshold": 0.2,
+      "change_threshold": 0.1,
+      "q_threshold": 0.1
+    },
+    "P_prior_72": {
+      "threshold": 0.2,
+      "change_threshold": 0.025,
+      "q_threshold": 0.2
+    },
+    "A_frozen_72": {
+      "threshold": 0.1,
+      "change_threshold": 0.05,
+      "q_threshold": 0.1
+    },
+    "B_context_72": {
+      "threshold": 0.1,
+      "change_threshold": 0.1,
+      "q_threshold": 0.1
+    },
+    "C_pair_72": {
+      "threshold": 0.1,
+      "change_threshold": 0.1,
+      "q_threshold": 0.1
+    },
+    "D_direct_72": {
+      "threshold": 0.4,
+      "change_threshold": 0.1,
+      "q_threshold": 0.1
+    }
+  },
+  "research_decisions": "No further architecture, loss, threshold, sampling or recipe changes after this freeze. D direct candidate predeclared. Test evaluated once. All models reported; no posttest selection.",
+  "code_sha256": {
+    "tools/m5c_dataset.py": "220af2ffc6213ff923043cf0b702a35c14ab2bfe5d1315a10c2e10c52d92e6f6",
+    "tools/m5c_protocol.py": "8aaec4de3b8f4d2f656d467204378b4678b0a5c5ae4c9f016beaf6f4380ee369",
+    "tools/m5c_runtime_analysis.py": "b27ea91e69d318ad6201a20c4380edd933226a44e5798877f309856757a430f7",
+    "tools/m5c_bf16_audit.py": "abc3300c29010b6fe55967ee0f8c44bb2cb43fc519f97b412af3cea617a0a362",
+    "tools/m5c_baseline_review.py": "946cb3e788d7cd53c6f58a2835bf991987966190a986f9b345821dcaea47e050",
+    "tools/m5c_evaluate.py": "d811e19379ee54c81fc58ee9263346863a8c5aee1cbd6a1407e7e56415eebfd7",
+    "tools/m5c_interventions.py": "6b5384feed8e44f13c308be2ad5d1a86eb150373c28b69c2d13d5aadb7592bf8",
+    "tools/m5c_learning.py": "c387e8bea3acb6fc9928f4b6164e186c920aefe1b595e602a6f397483a94ed74",
+    "tools/m5c_async_drive.py": "ed5b020fd1a357c4df78e0295d0e48691f950ae66a8eeb83892f5bbb2ee4973a",
+    "tools/m5c_gpu_load.py": "cd03e4deade612b05a7df61f37c26b5f3c88df1eb54a290e035574a161e306ed",
+    "tools/m5c_surface_index.py": "0a604191b0f579196be69dc8d7dd7b5658cc471fab675c648eeb75a1d7daa87c",
+    "tools/m5c_data_analysis.py": "cf0e60c0dc6453a8de77dd63b0db8e60cfaa0cd57d14fe6354379a8b65476433",
+    "tools/m5c_visualize.py": "30d3779a0ee95734204fd616fc12e80443d7320cbe6e568dd0d7c2e5a56b7e0a",
+    "tools/m5c_capture.py": "466c6c9c2fec331d96affa88b3d9a7f1efd709589f6548ab9817017b6ea2728d",
+    "tools/m5c_geometry_resolution.py": "f6f0840ac8d00937f5e3e8081273a1c2835f0209b6fac38b046bbe0629ff23d6",
+    "tools/m5c_projection_benchmark.py": "fccfddd4052af4f3f608fad78e2754b53d42571ecb5c4425746c4c073e173e1c",
+    "models/m5c_obstacle_head.py": "121d37f77f4ec80d55b7bba72817bf08578d87150307a9811b39f8688d5ba912",
+    "training/m5c_obstacle_loss.py": "a72858b44d5291858fde0cafa22a275af2e9dbcac9606f79f97f35096e5d8352",
+    "datasets/m5c_surface.py": "0cdb5234e397d7c7124906176e5e5f9046afb341d0723cbc8c9134ca5cf40a6c",
+    "diagnostics/m5c_localization.py": "3a37838c24ed48dd875b5361fd61ad9b92fd7410e9fb2eaff5b3da62e75dd0a7"
+  }
+}

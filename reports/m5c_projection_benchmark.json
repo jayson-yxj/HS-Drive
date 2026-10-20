@@ -1,0 +1,25 @@
+{
+  "kind": "actual_RTX4090_microbenchmark_under_CARLA_capture_load",
+  "records": [
+    {
+      "stride": 16,
+      "point_count": 276480,
+      "p50_ms": 2.3816553875803947,
+      "p95_ms": 3.366611339151859,
+      "incremental_peak_mib": 47.19482421875,
+      "peak_mib": 121.4853515625
+    },
+    {
+      "stride": 8,
+      "point_count": 1105920,
+      "p50_ms": 2.660307101905346,
+      "p95_ms": 4.195989109575748,
+      "incremental_peak_mib": 73.17236328125,
+      "peak_mib": 157.306640625
+    }
+  ],
+  "original_rgb_encoder_p50_ms": 7.193830795586109,
+  "original_rgb_encoder_p95_ms": 8.26488034799695,
+  "source_sha256": "d836b7c7c6672742cc58d715b6148fe6a9be88f5d225393b7fc17e635f37af78",
+  "limits": "Stride8 is interpolated context/probabilities solely for workload estimation; no higher-resolution visual features or quality claims. Existing splat chunking; no architecture modification. Benchmark concurrent capture, not isolated latency gate."
+}

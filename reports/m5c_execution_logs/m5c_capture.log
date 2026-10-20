@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5c_capture.py", line 295, in <module>
+    main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5c_capture.py", line 51, in main
+    with CarlaSession(cfg, load_map=True) as session:
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/session.py", line 32, in __enter__
+    self.original = self.world.get_settings()
+RuntimeError: time-out of 60000ms while waiting for the simulator, make sure the simulator is ready and connected to 127.0.0.1:2100
