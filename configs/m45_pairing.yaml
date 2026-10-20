@@ -1,0 +1,33 @@
+schema_version: hsd-m45-pairing-v1
+role: diagnostic_validation
+seed: 7
+camera: {width: 640, height: 384, fov_deg: 100, lens_k: 0, lens_kcube: 0}
+render_quality: Epic
+fixed_delta_seconds: 0.05
+weather_pair:
+  map: Town03
+  spawn: 0
+  ego: same_pose_frozen_physics
+  traffic: one_fixed_front_vehicle_no_autopilot
+  sun_altitude: 50
+  sun_azimuth: 180
+  fog_density: [2, 40]
+  fog_distance: 10
+  required_checks: [sensor_frame_join, calibration_hash, ego_pose_equality, depth_difference, semantic_difference]
+  exclude_changed_gt_pixels_for_visual_ablation: true
+motion_pair_planned:
+  same_route_arc_positions_m: [0, 5, 10, 15, 20]
+  speed_mps: [0, 2, 4]
+  match_translation_tolerance_m: 0.05
+  match_yaw_tolerance_deg: 0.1
+  freeze_weather_and_other_actors: true
+  prohibit_motion_causal_claim_if_pose_unmatched: true
+  scene_categories: [wall, slope, junction, occluding_vehicle, near_obstacle, road_width]
+splits:
+  group_unit: map_route_traffic_configuration
+  all_weather_and_motion_variants_stay_together: true
+  training: future_distinct_routes_only
+  validation: m45_semantic_pairs
+  future_blind_test: reserve_unseen_routes_before_collection_and_model_selection
+  historically_seen_not_blind: [Town05, Town10]
+  blind_test_collected: false

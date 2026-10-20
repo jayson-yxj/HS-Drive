@@ -1,0 +1,28 @@
+{
+  "config": {
+    "schema_version": "hsd-m45-splat-v1",
+    "runs": [
+      "m4_expanded_joint",
+      "m4_far_balanced",
+      "m4_road_point"
+    ],
+    "split": "val",
+    "tau_candidates": [
+      0.0001,
+      0.001,
+      0.01,
+      0.1
+    ],
+    "selection": "predeclared log-scale candidates; first measure mass, no validation tuning or winner declaration",
+    "mass_buckets": [
+      1e-06,
+      0.001,
+      0.01,
+      0.1
+    ],
+    "training": false,
+    "road_mask": "legacy_v1_common"
+  },
+  "config_sha256": "4a76ba80d93effba3e4106048f521302801733e6e790f56a6e2495bf678f7fde",
+  "scope": "native all-ray frozen inference; common v1 road mask; geometry metrics copied from audited same-ray M4 experiment because mass and probability are invariant"
+}

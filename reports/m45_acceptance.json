@@ -1,0 +1,145 @@
+{
+  "schema_version": "hsd-m45-acceptance-v1",
+  "overall": "Partial",
+  "m4_quality_gate_closed": false,
+  "m45_quality_gate_closed": false,
+  "branch": "feat/m45-geometry-foundation",
+  "baseline_commit": "0f8eab324302d35d65095d097d63a3962b055481",
+  "training_started": false,
+  "default_model_changed": false,
+  "checks": {
+    "phase0_asset_freeze": {
+      "status": "Passed",
+      "evidence": [
+        "reports/m45_environment.json",
+        "reports/m45_asset_integrity_final.json"
+      ],
+      "scope": "SHA protected sources/configs/checkpoints/reports/index/manifests; raw payload size+mtime audit, not byte-hashed all raw files"
+    },
+    "splat_engineering": {
+      "status": "Passed",
+      "evidence": [
+        "reports/m45_splat_comparison.json",
+        "reports/m45_analysis_metrics.json",
+        "reports/m45_splat_oracle_probe.json"
+      ],
+      "frames_per_model": 222,
+      "runs": 3,
+      "variants": 6,
+      "defaults_unchanged": true,
+      "mass_unchanged": true,
+      "weights_unchanged": true
+    },
+    "splat_architecture_replacement": {
+      "status": "NotApproved",
+      "reason": "Amplitude suppression verified; probability geometry unchanged. Frozen downstream results OOD; no trained improvement demonstrated."
+    },
+    "occupancy_generation": {
+      "status": "Passed",
+      "evidence": [
+        "reports/m45_occupancy_validation.json",
+        "docs/M45_OCCUPANCY_CONTRACT.md"
+      ],
+      "frames": 9,
+      "semantic_frames": 6,
+      "inference_input_isolation": true
+    },
+    "occupancy_training_quality": {
+      "status": "Partial",
+      "reason": "Single semantic pose, sparse ground, conservative ego box rejects many rays; no broad scene or real mesh visibility audit."
+    },
+    "temporal_geometry": {
+      "status": "Passed",
+      "evidence": [
+        "reports/m45_temporal_validation_v2.json",
+        "reports/m45_temporal_static_surfaces.json"
+      ],
+      "scope": "Planar SE2 interface and memory; tested actual translation and turn; not arbitrary SE3"
+    },
+    "temporal_feature_quality": {
+      "status": "Partial",
+      "reason": "Actual-frame discrepancy often increases; no ConvGRU, dynamic/occlusion/large-slope handling."
+    },
+    "oracle_closedloop": {
+      "status": "Passed",
+      "evidence": [
+        "reports/m45_oracle_driving.json",
+        "reports/m45_oracle_replay.json",
+        "reports/m45_oracle_live_replay.json"
+      ],
+      "controlled_scenarios": 9,
+      "all_collision_free": true,
+      "scope": "Privileged low-speed Town03 fixed scenarios; not visual closed-loop performance"
+    },
+    "oracle_full_safety": {
+      "status": "Partial",
+      "reason": "Discrete footprint not exact swept volume; excessive stopping margins; incomplete rules/dynamic actor coverage; full camera/network latency not tested."
+    },
+    "paired_weather_data": {
+      "status": "Passed",
+      "evidence": [
+        "reports/m45_paired_validation.json",
+        "configs/m45_pairing.yaml"
+      ],
+      "frames": 16,
+      "scope": "Same ego pose with measured residual GT differences; diagnostic_val only"
+    },
+    "paired_motion_data": {
+      "status": "NotCompleted",
+      "reason": "Protocol delivered, no pose-matched stationary/low-speed/moving collection yet."
+    }
+  },
+  "tests": {
+    "gpu": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "5",
+      "tests": "138",
+      "time": "12.516",
+      "timestamp": "2026-10-20T13:38:04.067578+08:00",
+      "hostname": "gpufree-container",
+      "path": "reports/m45_gpu_tests.xml",
+      "sha256": "64e33952550e2b5b29d60509b80cdb0287b9e5be88c32ac50141029d431124ad"
+    },
+    "cpu": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "12",
+      "tests": "110",
+      "time": "3.632",
+      "timestamp": "2026-10-20T13:39:22.758162+08:00",
+      "hostname": "gpufree-container",
+      "path": "reports/m45_cpu_tests.xml",
+      "sha256": "4977cbf7b5a764759d4499ebcb2b8ec7304e2edd8078853ce983193552accfc6"
+    },
+    "module": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "29",
+      "time": "2.245",
+      "timestamp": "2026-10-20T13:42:45.863119+08:00",
+      "hostname": "gpufree-container",
+      "path": "reports/m45_module_tests.xml",
+      "sha256": "86e63f26945aba9c545d60e0052f0c7245e6d94272776957702550af7c32010c"
+    }
+  },
+  "deviations": [
+    "tau candidates predeclared before actual mass quantiles; no outcome tuning; statistics reported afterward",
+    "Full benchmark process GPU peak unavailable due host/container PID mismatch; supplemental six-frame process probe retained separately",
+    "Original lateral_error is nearest-waypoint distance, corrected segment cross-track added without overwriting",
+    "No broad motion-paired capture or generic occupancy training-readiness claim"
+  ],
+  "next_priority": [
+    "occupancy labels/self-mask and spatial validation then lightweight occupancy head",
+    "planner stopping consistency and quantitative scenarios",
+    "controlled short splat ablation, separately authorized execution",
+    "temporal encoder after aligned supervised spatial evidence",
+    "sparse queries later"
+  ],
+  "reproduction": "docs/M45_IMPLEMENTATION.md",
+  "summary": "reports/m45_summary.md"
+}

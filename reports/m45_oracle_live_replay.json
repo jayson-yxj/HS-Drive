@@ -1,0 +1,56 @@
+{
+  "schema_version": "hsd-m45-oracle-driving-v1",
+  "scope": "CARLA privileged state/map/actors, not vision driving. Low-speed fixed routes; no autopilot. Discrete densified footprint, not exact continuous swept volume.",
+  "config": {
+    "schema_version": "hsd-m45-oracle-driving-v1",
+    "map": "Town03",
+    "port": 2100,
+    "seed": 7,
+    "fixed_delta_seconds": 0.05,
+    "max_speed_mps": 4.0,
+    "route_length_m": 60,
+    "max_ticks": 650,
+    "safety_max_age_s": 0.2,
+    "footprint_sampling_m": 0.25,
+    "scenarios": [
+      "straight",
+      "mild_curve",
+      "junction_turn",
+      "static_obstacle",
+      "lead_braking",
+      "emergency",
+      "controller_timeout",
+      "invalid_trajectory",
+      "no_trajectory"
+    ]
+  },
+  "scenarios": {
+    "invalid_trajectory": {
+      "status": "Passed",
+      "failure_reason": null,
+      "route_completion": 0.1724137931034483,
+      "collisions": [],
+      "collision_count": 0,
+      "lane_invasions": 0,
+      "lateral_error_mean_m": 0.33153112140480895,
+      "lateral_error_max_m": 0.5014071489966969,
+      "speed_error_mae_mps": 1.7681088893552679,
+      "max_speed_mps": 3.859395769183246,
+      "control_frequency_sim_hz": 19.99999970197678,
+      "control_frequency_wall_hz": 26.115581312164316,
+      "planner_safety_p50_ms": 24.61692877113819,
+      "planner_safety_p95_ms": 25.89750550687313,
+      "emergency_stop_trigger_events": 1,
+      "safety_reason_ticks": {
+        "invalid_trajectory": 24
+      },
+      "ticks": 89,
+      "last_stop_distance_m": null,
+      "log": "reports/m45_oracle_live_replay_artifacts/invalid_trajectory_controls.jsonl",
+      "log_sha256": "5d22df27f46858faddc56886d7339e60539455c48464984f122204fd8a6d40ad"
+    }
+  },
+  "official_route_planner_sha256": "9b164a2de723d91d55cd1203543747580c1c6c509ed0294a6de17b001f7db8d0",
+  "passed_count": 1,
+  "all_passed": true
+}

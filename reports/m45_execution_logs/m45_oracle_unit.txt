@@ -1,0 +1,14 @@
+F..                                                                      [100%]
+=================================== FAILURES ===================================
+_________ test_trajectory_timeout_missing_invalid_speed_and_footprint __________
+
+    def test_trajectory_timeout_missing_invalid_speed_and_footprint():
+        s=state();assert safety_check(None,s,[])=='no_trajectory'
+        t=traj();t.timestamp_s=0.;assert safety_check(t,s,[])=='trajectory_timeout'
+>       t=traj();t.points[0,0]=np.nan;assert safety_check(t,s,[])=='invalid_trajectory'
+E       ValueError: cannot convert float NaN to integer
+
+tests/test_oracle_driver.py:13: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_oracle_driver.py::test_trajectory_timeout_missing_invalid_speed_and_footprint
+1 failed, 2 passed in 0.06s
