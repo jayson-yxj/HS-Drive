@@ -1,0 +1,260 @@
+{
+  "schema": "hsd-m5a-protocol-v1",
+  "groups": [
+    {
+      "group": "Town03_g0",
+      "map": "Town03",
+      "split": "train",
+      "pose": [
+        149.0964813232422,
+        -52.806358337402344,
+        6.136893272399902,
+        -11.12539291381836,
+        90.99647521972656,
+        0.0
+      ]
+    },
+    {
+      "group": "Town03_g1",
+      "map": "Town03",
+      "split": "train",
+      "pose": [
+        -144.8002471923828,
+        123.33938598632812,
+        0.5,
+        0.0,
+        59.870689392089844,
+        0.0
+      ]
+    },
+    {
+      "group": "Town03_g2",
+      "map": "Town03",
+      "split": "val",
+      "pose": [
+        -83.86566162109375,
+        -188.658935546875,
+        0.5,
+        0.0,
+        -244.7310791015625,
+        0.0
+      ]
+    },
+    {
+      "group": "Town03_g3",
+      "map": "Town03",
+      "split": "test",
+      "pose": [
+        107.68599700927734,
+        207.2624053955078,
+        1.9730792045593262,
+        361.2747497558594,
+        359.8570251464844,
+        0.0
+      ]
+    },
+    {
+      "group": "Town02_g0",
+      "map": "Town02",
+      "split": "train",
+      "pose": [
+        34.618629455566406,
+        302.53955078125,
+        0.5,
+        360.0,
+        179.96095275878906,
+        0.0
+      ]
+    },
+    {
+      "group": "Town02_g1",
+      "map": "Town02",
+      "split": "train",
+      "pose": [
+        191.67384338378906,
+        110.73490142822266,
+        0.5,
+        360.0,
+        235.73629760742188,
+        0.0
+      ]
+    },
+    {
+      "group": "Town02_g2",
+      "map": "Town02",
+      "split": "val",
+      "pose": [
+        -1.9851922988891602,
+        107.50269317626953,
+        0.5,
+        360.0,
+        148.06423950195312,
+        0.0
+      ]
+    },
+    {
+      "group": "Town02_g3",
+      "map": "Town02",
+      "split": "test",
+      "pose": [
+        193.6836700439453,
+        274.58135986328125,
+        0.5,
+        0.0,
+        -89.96080780029297,
+        0.0
+      ]
+    },
+    {
+      "group": "Town01_g0",
+      "map": "Town01",
+      "split": "train",
+      "pose": [
+        158.0301055908203,
+        41.02239990234375,
+        0.5,
+        360.0,
+        270.069580078125,
+        0.0
+      ]
+    },
+    {
+      "group": "Town01_g1",
+      "map": "Town01",
+      "split": "train",
+      "pose": [
+        391.2312316894531,
+        328.74188232421875,
+        0.5,
+        360.0,
+        327.85296630859375,
+        0.0
+      ]
+    },
+    {
+      "group": "Town01_g2",
+      "map": "Town01",
+      "split": "val",
+      "pose": [
+        10.008929252624512,
+        330.53997802734375,
+        0.5,
+        360.0,
+        0.03070068359375,
+        0.0
+      ]
+    },
+    {
+      "group": "Town01_g3",
+      "map": "Town01",
+      "split": "test",
+      "pose": [
+        396.2975769042969,
+        78.54239654541016,
+        0.5,
+        0.0,
+        -89.93123626708984,
+        0.0
+      ]
+    }
+  ],
+  "configurations": [
+    [],
+    [
+      [
+        8,
+        0,
+        "vehicle.tesla.model3"
+      ]
+    ],
+    [
+      [
+        12,
+        0,
+        "vehicle.tesla.model3"
+      ]
+    ],
+    [
+      [
+        18,
+        0,
+        "vehicle.tesla.model3"
+      ]
+    ],
+    [
+      [
+        12,
+        -3,
+        "vehicle.audi.a2"
+      ]
+    ],
+    [
+      [
+        12,
+        3,
+        "vehicle.audi.a2"
+      ]
+    ],
+    [
+      [
+        8,
+        0,
+        "vehicle.audi.a2"
+      ],
+      [
+        18,
+        0,
+        "vehicle.tesla.model3"
+      ]
+    ],
+    [
+      [
+        10,
+        -1,
+        "walker.pedestrian.0001"
+      ]
+    ],
+    [
+      [
+        10,
+        1,
+        "walker.pedestrian.0001"
+      ],
+      [
+        16,
+        -2,
+        "vehicle.audi.a2"
+      ]
+    ]
+  ],
+  "weather": "ClearNoon",
+  "keyframes_per_configuration": 1,
+  "seed": 51,
+  "label_recipe_sha256": "3802c0ce6729f8c02912654d297935156de334b7092c7084d24d29333db9d91c",
+  "visibility_sha256": "df90a11ad064d447c0c120728c8fbb63c2bd90a12bfb9d4fb1ce28fd784a1d01",
+  "training": {
+    "seeds": [
+      51,
+      52
+    ],
+    "steps": 600,
+    "batch_size": 2,
+    "validation_every": 100,
+    "selection": "mean per-scene (surface IoU + obstacle IoU)/2 at threshold .5 on val only",
+    "conditional_context": "Run only if B fails +.02 mean scene IoU gain on BOTH surface and obstacle vs prior on val. Same data/head/loss/splat; context_head only, 200 steps seeds51/52.",
+    "thresholds": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ],
+    "test": "Never used for checkpoint or threshold selection",
+    "expand_training_approved": false
+  },
+  "notes": "New scene groups on historically used maps, not project-unseen map blind test. All configurations at one pose share split; no temporal random split."
+}

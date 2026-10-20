@@ -1,0 +1,92 @@
+{
+  "kind": "actual_CARLA_wall_paced_async_process",
+  "results": [
+    {
+      "scene": "static_obstacle",
+      "route_completion": 0.21401532783648422,
+      "route_passed": false,
+      "collisions": 0,
+      "lane_invasions": 0,
+      "road_boundary_frames": 0,
+      "ticks": 600,
+      "sim_hz": 19.99999970197678,
+      "wall_hz": 19.99977500741472,
+      "planner_ms": {
+        "p50": 43.37522201240063,
+        "p95": 54.36546141281723,
+        "p99": 64.79676986113185,
+        "max": 68.50558891892433,
+        "n": 150
+      },
+      "controller_compute_ms": {
+        "p50": 1.4767227694392204,
+        "p95": 2.106297761201858,
+        "p99": 3.6980571597814538,
+        "max": 6.221475079655647,
+        "n": 600
+      },
+      "control_interval_ms": {
+        "p50": 49.994274973869324,
+        "p95": 50.56969039142132,
+        "p99": 52.01359920203685,
+        "max": 55.70138245820999,
+        "n": 599
+      },
+      "deadline_miss_rate": 0.0,
+      "interval_over_55ms_rate": 0.001669449081803005,
+      "plan_sim_age_s": {
+        "p50": 0.15000000223517418,
+        "p95": 0.20000000298023224,
+        "p99": 0.2500000037252903,
+        "max": 0.2500000037252903,
+        "n": 596
+      },
+      "plan_wall_age_s": {
+        "p50": 0.15099955815821886,
+        "p95": 0.20184498373419046,
+        "p99": 0.2512527709826827,
+        "max": 0.25156143866479397,
+        "n": 596
+      },
+      "degradation_ticks": {
+        "no_valid_plan": 4
+      },
+      "rejected": [],
+      "worker_history": "reports/m5a_static_artifacts/static_obstacle_plans.json",
+      "log": "reports/m5a_static_artifacts/static_obstacle.jsonl",
+      "log_sha256": "44d4aab67f7eb9d0ad79eade864439f8a18e15a4380a475fc76f5cfaea91814e",
+      "actual_dynamics": {
+        "max_decel_raw": 5.7046593028942105,
+        "jerk_peak_raw": 158.0567324095546,
+        "jerk_p95_moving": 69.88427398723786,
+        "jerk_p95_all": 60.16714363111648,
+        "max_decel_250ms": 1.3583389131347714,
+        "jerk_p95_250ms": 12.568990649470434,
+        "min_signed_speed": -7.627001585216046e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 6.65,
+        "api_accel_vs_velocity_derivative_mae": 0.0006263932047181153
+      }
+    }
+  ],
+  "sources": {
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5a_async_drive.py": "e732a22208b87d8961f266d6b9c8b36021c20695c7eda1769ffeacd413d24388",
+    "simulator/m5a_async.py": "66a6c255a6409ed017a4a0b67c9648cd812cef9ba9e202cbbd792bc506caad62",
+    "simulator/m48_schedule.py": "637f3ab5ea8769f33f2b9194151aacbde4f0fc3e5bd325ef9333886e13dc0e5a",
+    "simulator/m48_motion.py": "c73d8b09e1dd8cd7630abb179f2add8baa3d99dbb74ba0c6feba6d2a30e4dcb4",
+    "simulator/m47_motion.py": "2038afae0b6557cbbacd9ed2c0b0ccf03340b11c047ef41cb762fc4e7a24e379",
+    "simulator/motion_oracle.py": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554"
+  },
+  "worker_world_tick_calls": 0,
+  "full_safety_horizon_s": 6.0,
+  "control_period_s": 0.05,
+  "planner_period_s": 0.2,
+  "max_plan_age_s": 0.35,
+  "vision_inputs": false,
+  "limitations": [
+    "Privileged oracle route/state, not vision closed loop.",
+    "Road checks use corners, not exact swept road mesh.",
+    "No unsafe fast road certificates.",
+    "Route trials alone do not validate dynamic collision generalization."
+  ]
+}

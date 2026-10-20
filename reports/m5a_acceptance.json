@@ -1,0 +1,136 @@
+{
+  "stage": "M5-A Visual Spatial Evidence Generalization",
+  "status": "Partial",
+  "base": "ffb466df3471ad93a6bb11c51891dec7f63fb4fb",
+  "branch": "feat/m5a-visual-evidence-generalization",
+  "states": {
+    "engineering_interfaces": "Passed_within_tested_contract",
+    "research_training": "Passed",
+    "visual_generalization": "Partial",
+    "async_fault_interface": "Passed_within_tested_scenarios",
+    "strict_realtime": "Partial",
+    "oracle_closedloop_safety": "Partial",
+    "comfortable_stopping": "Partial",
+    "vision_closedloop": "NotValidated",
+    "formal_m5_expansion": "NotApproved"
+  },
+  "actual_experiments": {
+    "carla_groups": 12,
+    "frames": 108,
+    "train_val_test": [
+      54,
+      27,
+      27
+    ],
+    "training_seeds": [
+      51,
+      52
+    ],
+    "models": [
+      "A_prior",
+      "B_frozen"
+    ],
+    "steps_per_model": 600,
+    "conditional_c_executed": false,
+    "conditional_reason": "Predeclared val-only B gains met +.02 on surface and obstacle both seeds. Test results cannot trigger post-hoc training.",
+    "isolated_carla_scenarios": 9,
+    "new_dynamics_probes": 0
+  },
+  "tests": {
+    "full": "reports/m5a_delivery_full_tests.xml",
+    "passed": 202,
+    "skipped": 5,
+    "skip_reason": "GPU venv lacks carla; all 5 rerun in carla venv",
+    "carla_api_passed": 14,
+    "carla_api": "reports/m5a_carla_api_tests.xml",
+    "delivery_contract": "reports/m5a_delivery_contract_tests.xml",
+    "delivery_contract_passed": 19
+  },
+  "evidence_kinds": {
+    "data": "actual_CARLA_0.9.15",
+    "learning": "actual_RTX4090",
+    "label_audit": "offline_same_renderer_held_pixels_not_mesh_GT",
+    "metrics": "offline_GPU_inference",
+    "dynamics": "offline_existing_raw_CARLA",
+    "runtime": "actual_wall_paced_CARLA",
+    "unit_tests": "synthetic_and_contract"
+  },
+  "safety_checks": {
+    "expired_plans_used": 0,
+    "all_degradation_full_brake": true,
+    "collisions": 0,
+    "road_boundary_frames": 0,
+    "full_worker_horizon_s": 6.0,
+    "sole_world_tick_owner": true,
+    "physics_unchanged": true,
+    "vision_used": false
+  },
+  "source_sha256": {
+    "configs/m5a_protocol.json": "df44aeb91c62909cac3b0169a4da595f7ead61614ea747753ec111bedb7f8283",
+    "datasets/m5a_training.py": "59a79d2c26f465fe42ee96bf74f8833c2d8ae998314feec2509afa82166bb434",
+    "diagnostics/m5a_metrics.py": "5d74e25c4eec3058f950ae955f2f2969c232572ee8e0c0a55cff5532573becfc",
+    "simulator/m5a_async.py": "76f74414b51ef833367a8c6a3bbe21bfe888807badd4742845b160ff00bd0c27",
+    "tests/test_m5a_contracts.py": "89131eb97dda4cbc15ab177af74f65021204e17db16a1060287af100d620bcae",
+    "tests/test_m5a_learning.py": "88eb1248b1e66be43304959c7fd95ea0d305a27e7791c787ee383db70340a30f",
+    "tools/m5a_async_drive.py": "83b229330789a11534c06760ac8f69cc8df409e38cccd804c7bfd96bf4ded903",
+    "tools/m5a_capture.py": "034029208755ef046861f87b5e2217a8bd64cf50d1cec3f88935b002e3db2474",
+    "tools/m5a_dataset.py": "dd3e36095923a9e9659169a1376fec92fd389bd5d05a44aaeade6a3ca3775e5e",
+    "tools/m5a_evaluate.py": "ae1935cac6b887433228a129400f43afec6a22f21653c37aea49e36310245382",
+    "tools/m5a_learning.py": "37d1462dc75c639ad8313bc7212d9a375b61e63a66e3ebe631b2c601a5aa2e06",
+    "tools/m5a_provenance.py": "f2cf4ee5f0647ca74e484105978e47e5722bd8a9e59b9bcfba51740eb3b0851d",
+    "tools/m5a_quality_audit.py": "0d4c5206ba5412d2c571ab4e88c00385ca5b83567c81a9ec8bbe45e65eed2fd8",
+    "tools/m5a_reachability.py": "a9dbaec3a2c2c9b349724dda54279a325c747dd2499702f6feb03eca2f934e5b",
+    "tools/m5a_runtime_analysis.py": "11f659c93e49c5c0f8005d3cd784b81e79f63c374d75604fc5d87eda65ca2076",
+    "tools/m5a_visualize.py": "fbdb9ed9774157a158a4aad9dbad857fa3e660d173f81097a15bfe7253725402"
+  },
+  "reports_sha256": {
+    "reports/m5a_closedloop_safety_corrected.json": "3be321e6f772abf09fe5a4d5c4b8b505f6b0def0c4c4541cdcd056f23f136e85",
+    "reports/m5a_asset_freeze.json": "0831a648d821a03dafc576078093c49df35a9d41c2090a1a56f0de7091c0580d",
+    "reports/m5a_local_change_diagnostics.json": "fbb0b65bbca9d6975a4799a8488de6da0fbd793e313f3b82e6766bd410513223",
+    "reports/m5a_initial_visual_generalization.json": "3c8c113aa5c8f6249e9daffb43263365a8bc17f185ba19de37ae8e81cef87801",
+    "reports/m5a_initial_counterfactual_visual_tests.json": "beffae4394ae23b98487aa222e81fec2d27c2bf3650897c5753f35aa222e7283",
+    "reports/m5a_visual_generalization.json": "3124bb50b8ccf9d1b0d61a1cbf3ee98ff0c410e1a3876817ddccc1680b459e58",
+    "reports/m5a_initial_closedloop_safety.json": "0e39493b563470014839afd514c89d154667d4516453a8fdc8c583b79b094a74",
+    "reports/m5a_static_runtime.json": "9104acb71f72755a0a0223aa6b531335614fc98cee22378c8b1e7d229785d3e0",
+    "reports/m5a_training.json": "006f238ab77d25903ed43f3ed514fa2f54cffd06dd486cae5632a465cc000a9d",
+    "reports/m5a_spatial_contract.json": "2b0a98e46f0344e9419cf4e06bc76327e9fa7bc6b0a23e3be231cb01c07f7bab",
+    "reports/m5a_spatial_contract_v2.json": "dd601d3d5c384781c436fcc8d921d86275e35cdb1feabae615ade6b3e7a80984",
+    "reports/m5a_gpu_validation.json": "ce6441c2c67e46be6d06a610e25a6ed2582bbbc7c1fa30d0f35fe11185ae8c82",
+    "reports/m5a_prior_comparison.json": "056056a55c4c59ccb9c8afd0660e9513d57748863fe9d89a53ae5cedcb23be81",
+    "reports/m5a_corrected_local_change_diagnostics.json": "df37a37155c2fe625d406ef0e17c7967afb0178b7a07834677a834e1450601c3",
+    "reports/m5a_result_registry.json": "fee76fa1343e043ff6def702e58af60a7f641586408844036e57bf3bfc843461",
+    "reports/m5a_asset_verification.json": "76c4cffa7dd80e8e6f29c764151185677e7f4fd45c83c847314c034655180dd0",
+    "reports/m5a_counterfactual_visual_tests.json": "256bba38b5c8ed633e4c2257081566caf8b3dd7be9ad650d50bdcc6607449787",
+    "reports/m5a_initial_prior_comparison.json": "263046e49e305839189e09b6b71ad1609a570ca54dc08b624232b85d62d913c7",
+    "reports/m5a_capture_provenance.json": "73bcf372cd90b21b0636f55c7f8499cc1b3ccea391a713f26607fc632da6c4a0",
+    "reports/m5a_async_isolated_runtime.json": "8a979a86c1aaaf06e65b2b205b56a06af4b9de242c833a719c516fe00c68608f",
+    "reports/m5a_corrected_counterfactual_visual_tests.json": "b8bab0fdcc0a1f1dcc269820b20a6de5575c5634e40748e7d7f7df09c6844a9d",
+    "reports/m5a_stopping_reachability.json": "f77d3ae1c32d0d9e555b27f773337e338e094606d1582398801a63ebb1927133",
+    "reports/m5a_corrected_visual_generalization.json": "d0bfd9fb660fd94ec04ed682e4f73e197bb48e1aef81a1e57d4c13be4cac56ed",
+    "reports/m5a_pilot_quality.json": "d7c4a06260d82f2c267a2b657f5763db42115969dfa57a9c4f443b7519a9a96a",
+    "reports/m5a_dataset_manifest.json": "5601568e05d572799079667755e452bb5fef964942576c750c3d2ed6f8a462ca",
+    "reports/m5a_closedloop_safety.json": "9a07ad818bcecc3f3a62810fe4f0f6f102d1f6e4e80ec183a9701b61e7629fe7",
+    "reports/m5a_corrected_prior_comparison.json": "4ab1fd8382c98fb26bb623d952845b1eecb84728ac3fb04c3a5065f9790600dd",
+    "reports/m5a_data_quality.json": "ad186b588d2c66390ea82b4db88b2415720f94495db2497fac1670c461c205c2",
+    "reports/m5a_async_runtime.json": "6b646647dccc31826a67f3067158a556491f9a389d373d813095b21a8081ca29"
+  },
+  "asset_preservation": "reports/m5a_asset_verification.json",
+  "limits": [
+    "Only 3 heldout head-test pose groups, same historical maps; no project blind map claim.",
+    "Only 109 common-mask changed obstacle event cells; local classification weak.",
+    "AP gain does not imply calibrated physical occupancy or robust thresholded obstacle gain.",
+    "No Other positive training examples.",
+    "No independent complete mesh reference.",
+    "Average20Hz with finite deadline misses; not hard realtime.",
+    "No dense dynamic Actor or pure visual safety validation.",
+    "Original low-speed dynamics and comfort remain unresolved."
+  ],
+  "decisions": {
+    "visual": "Measurable RGB-sensitive ranking and local response, not stable deployable spatial generalization.",
+    "runtime": "True independent process and protected aging implemented; realtime quality Partial.",
+    "next": "First targeted obstacle data/physical surface reference + new sealed groups, then predeclared limited Context/Depth study; no large training or Temporal/Sparse Query yet."
+  },
+  "reproduce": "docs/M5A_IMPLEMENTATION.md",
+  "result_registry": "reports/m5a_result_registry.json",
+  "final_source_notes": "Formatting and additional rejection of NaN/Inf trajectory timestamp/dt and noninteger frame fields after isolated CARLA run; covered by synthetic invalid-input tests. Normal finite valid path unchanged."
+}

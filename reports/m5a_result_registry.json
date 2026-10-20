@@ -1,0 +1,18 @@
+{
+  "authoritative_visual": "reports/m5a_corrected_visual_generalization.json",
+  "authoritative_prior": "reports/m5a_corrected_prior_comparison.json",
+  "authoritative_interventions": "reports/m5a_corrected_counterfactual_visual_tests.json",
+  "authoritative_local_changes": "reports/m5a_corrected_local_change_diagnostics.json",
+  "authoritative_runtime": "reports/m5a_async_isolated_runtime.json",
+  "authoritative_safety": "reports/m5a_closedloop_safety_corrected.json",
+  "authoritative_spatial_consistency": "reports/m5a_spatial_contract_v2.json",
+  "corrections": [
+    "Initial evaluation used sigmoid >= threshold whereas selection used logits > 0. Corrected evaluation uses strict > consistently, reruns val-only threshold fitting and same heldout inference without training. Original JSON remains preserved, superseded.",
+    "Initial nonfault stopping detector could count stationary startup as stop. Corrected safety report starts after motion and also checks final 1s stability; fault stop timing remains measured from tick65.",
+    "Initial spatial reference audited static obstacle semantic code2 only. V2 report includes static+dynamic code2+3. Label recipe unchanged.",
+    "Initial static actor spawn failed at low z. Retained failure log; later uses map height and physics settling.",
+    "First complete async run had concurrent offline/GPU verification load. Final isolated run retains full horizon and includes apply-time expiry check. All prior results retained."
+  ],
+  "no_retraining_or_test_selection_in_corrections": true,
+  "canonical_required_reports": "m5a_visual_generalization/prior_comparison/counterfactual_visual_tests/closedloop_safety contain corrected results; initial versions preserved as m5a_initial_*"
+}
