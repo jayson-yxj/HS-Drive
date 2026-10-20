@@ -1,0 +1,26 @@
+..F                                                                      [100%]
+=================================== FAILURES ===================================
+__________ test_cached_path_matches_formal_rgb_and_context_gradients ___________
+
+    def test_cached_path_matches_formal_rgb_and_context_gradients():
+        torch=pytest.importorskip('torch')
+        if not torch.cuda.is_available():pytest.skip('CUDA required')
+        from pathlib import Path
+        if not Path('/root/gpufree-data/hs-drive-data/processed/m5b_pilot_index').exists():pytest.skip('server pilot unavailable')
+        from tools.m5a_learning import encoder_load,stack
+        from datasets.m5a_training import VisualEvidenceDataset
+        from models.m5b_cached_encoder import cache_rgb,cached_forward
+        from training.runtime import prepare_cuda
+        prepare_cuda();torch.set_num_threads(2);net=encoder_load();ds=VisualEvidenceDataset('/root/gpufree-data/hs-drive-data/processed/m5b_pilot_index','train',supervision=False);inputs=stack([ds[0]],'inputs')
+        with torch.no_grad(),torch.autocast('cuda',dtype=torch.bfloat16):expected=net(**inputs)['bev_current']
+        cache=cache_rgb(net,inputs)
+        with torch.no_grad():actual=cached_forward(net,cache)
+>       assert torch.allclose(actual,expected,atol=.002,rtol=.002)
+E       AssertionError: assert False
+E        +  where False = <built-in method allclose of type object at 0x7fb2596ca460>(tensor([[[[0.2890, 0.3775, 0.4028,  ..., 1.0914, 1.0662, 0.8387],\n          [0.0300, 0.1595, 0.0000,  ..., 1.1799, 1.1..., 0.2142, 0.3357, 0.0000],\n          [0.0555, 0.0065, 0.0000,  ..., 0.0496, 0.0000, 0.0000]]]],\n       device='cuda:0'), tensor([[[[0.2890, 0.3775, 0.4028,  ..., 1.0914, 1.0662, 0.8387],\n          [0.0300, 0.1595, 0.0000,  ..., 1.1799, 1.1..., 0.2142, 0.3357, 0.0000],\n          [0.0555, 0.0065, 0.0000,  ..., 0.0496, 0.0000, 0.0000]]]],\n       device='cuda:0'), atol=0.002, rtol=0.002)
+E        +    where <built-in method allclose of type object at 0x7fb2596ca460> = <module 'torch' from '/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv-gpu/lib/python3.10/site-packages/torch/__init__.py'>.allclose
+
+tests/test_m5b_contracts.py:31: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_m5b_contracts.py::test_cached_path_matches_formal_rgb_and_context_gradients
+1 failed, 2 passed in 4.03s

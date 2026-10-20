@@ -1,0 +1,15 @@
+{
+  "authoritative_training": "reports/m5b_context_ablation_corrected.json",
+  "authoritative_test": "reports/m5b_counterfactual_detection.json",
+  "authoritative_target_geometry": "reports/m5b_target_geometry.json",
+  "geometry_interventions": "reports/m5b_geometry_diagnostics.json",
+  "authoritative_runtime": "reports/m5b_async_final_runtime.json",
+  "runtime_attribution": "reports/m5b_runtime_attribution_final.json",
+  "corrections": [
+    "Initial prior all-tied change metric selected step0; same400step replay selects val event tie-break before test.",
+    "Initial geometry feature actor tag statistics included ego; corrected target-only validation audit, no model/test selection.",
+    "Pilot counterpart far-end smoothness incorrectly limited point absence; revised on training pilot before model training.",
+    "BF16 exact allclose test inappropriate at isolated rounding boundaries; FP32 algebra equivalence and BF16 measured output error both supplied."
+  ],
+  "preserved_initial_reports": true
+}

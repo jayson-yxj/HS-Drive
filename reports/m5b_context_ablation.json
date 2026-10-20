@@ -1,0 +1,1121 @@
+{
+  "kind": "actual_RTX4090_matched_training_val_only",
+  "records": [
+    {
+      "name": "A_prior",
+      "seed": 61,
+      "steps": 400,
+      "selected": {
+        "step": 100,
+        "val_change_iou": 0.0,
+        "threshold": 0.025,
+        "secondary_event_iou": 0.32312337309122086
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_change_iou": 0.0,
+          "secondary_event_iou": 0.0
+        },
+        {
+          "step": 100,
+          "val_change_iou": 0.0,
+          "secondary_event_iou": 0.32312337309122086
+        },
+        {
+          "step": 200,
+          "val_change_iou": 0.0,
+          "secondary_event_iou": 0.3204716145992279
+        },
+        {
+          "step": 300,
+          "val_change_iou": 0.0,
+          "secondary_event_iou": 0.3214851568142573
+        },
+        {
+          "step": 400,
+          "val_change_iou": 0.0,
+          "secondary_event_iou": 0.31645933787027997
+        }
+      ],
+      "elapsed_s": 2.018319219350815,
+      "peak_allocated_mib": 317.90380859375,
+      "trainable_parameters": 384000,
+      "finite_gradients": true,
+      "checkpoint": "runs/m5b_prior_tiebreak/m5b_A_prior_61.pt",
+      "sha256": "b892ae3fa37c8447c264f15cd7a91bfac26680b09df27ab245fc2be92b56ce50",
+      "correction": "Same400step replay, same sample order, secondary val event IoU resolves inevitable all-zero change-score tie. Original run retained."
+    },
+    {
+      "name": "A_prior",
+      "seed": 62,
+      "steps": 400,
+      "selected": {
+        "step": 100,
+        "val_change_iou": 0.0,
+        "threshold": 0.025,
+        "secondary_event_iou": 0.32340193912386894
+      },
+      "history": [
+        {
+          "step": 0,
+          "val_change_iou": 0.0,
+          "secondary_event_iou": 0.0
+        },
+        {
+          "step": 100,
+          "val_change_iou": 0.0,
+          "secondary_event_iou": 0.32340193912386894
+        },
+        {
+          "step": 200,
+          "val_change_iou": 0.0,
+          "secondary_event_iou": 0.3190680257976055
+        },
+        {
+          "step": 300,
+          "val_change_iou": 0.0,
+          "secondary_event_iou": 0.31812141214807826
+        },
+        {
+          "step": 400,
+          "val_change_iou": 0.0,
+          "secondary_event_iou": 0.31610313057899475
+        }
+      ],
+      "elapsed_s": 1.67687514051795,
+      "peak_allocated_mib": 319.44677734375,
+      "trainable_parameters": 384000,
+      "finite_gradients": true,
+      "checkpoint": "runs/m5b_prior_tiebreak/m5b_A_prior_62.pt",
+      "sha256": "08f533b1bc956f680ea6b275c8fe8e472a8107d888b7332b6133bf5623a4b400",
+      "correction": "Same400step replay, same sample order, secondary val event IoU resolves inevitable all-zero change-score tie. Original run retained."
+    },
+    {
+      "name": "B_frozen",
+      "seed": 61,
+      "selected": {
+        "step": 400,
+        "val_change_iou": 0.05741651782450203,
+        "threshold": 0.1
+      },
+      "steps": 400,
+      "history": [
+        {
+          "step": 0,
+          "val_change_iou": 0.0,
+          "threshold": 0.025
+        },
+        {
+          "step": 0,
+          "total": 0.7041815519332886,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.6931874752044678,
+            "free": 0.7100882530212402,
+            "semantic": 0.7092688083648682
+          }
+        },
+        {
+          "step": 50,
+          "total": 0.3022686243057251,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.3306885063648224,
+            "free": 0.4857887923717499,
+            "semantic": 0.09032852947711945
+          }
+        },
+        {
+          "step": 100,
+          "val_change_iou": 0.047330292214597454,
+          "threshold": 0.05
+        },
+        {
+          "step": 100,
+          "total": 0.3255569040775299,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.3836122453212738,
+            "free": 0.4980568587779999,
+            "semantic": 0.09500159323215485
+          }
+        },
+        {
+          "step": 150,
+          "total": 0.24698036909103394,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.2775007486343384,
+            "free": 0.4032033085823059,
+            "semantic": 0.06023707240819931
+          }
+        },
+        {
+          "step": 200,
+          "val_change_iou": 0.024663241089513704,
+          "threshold": 0.1
+        },
+        {
+          "step": 200,
+          "total": 0.24735385179519653,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.25127094984054565,
+            "free": 0.4293837547302246,
+            "semantic": 0.06140686571598053
+          }
+        },
+        {
+          "step": 250,
+          "total": 0.29149574041366577,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.3479369878768921,
+            "free": 0.45170220732688904,
+            "semantic": 0.07484796643257141
+          }
+        },
+        {
+          "step": 300,
+          "val_change_iou": 0.030364019944113255,
+          "threshold": 0.1
+        },
+        {
+          "step": 300,
+          "total": 0.1990312933921814,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.2317703515291214,
+            "free": 0.3409460484981537,
+            "semantic": 0.024377474561333656
+          }
+        },
+        {
+          "step": 350,
+          "total": 0.21193987131118774,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.22511157393455505,
+            "free": 0.3650667667388916,
+            "semantic": 0.04564123600721359
+          }
+        },
+        {
+          "step": 400,
+          "val_change_iou": 0.05741651782450203,
+          "threshold": 0.1
+        }
+      ],
+      "elapsed_s": 5.1624775249511,
+      "peak_allocated_mib": 1669.3583984375,
+      "peak_reserved_mib": 1784.0,
+      "trainable_parameters": 112020,
+      "finite_gradients": true,
+      "max_gradient": 0.8359375,
+      "checkpoint": "runs/m5b_learning/m5b_B_frozen_61.pt",
+      "sha256": "4f7ddb5fd337b66b4c5b12a2766686064a5c9d79ca012ded819b4cafbc97c557"
+    },
+    {
+      "name": "C_context",
+      "seed": 61,
+      "selected": {
+        "step": 400,
+        "val_change_iou": 0.2552314197577978,
+        "threshold": 0.2
+      },
+      "steps": 400,
+      "history": [
+        {
+          "step": 0,
+          "val_change_iou": 0.0,
+          "threshold": 0.025
+        },
+        {
+          "step": 0,
+          "total": 0.7041818499565125,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.6931878328323364,
+            "free": 0.7100892066955566,
+            "semantic": 0.70926833152771
+          }
+        },
+        {
+          "step": 50,
+          "total": 0.29129737615585327,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.3149089813232422,
+            "free": 0.48795759677886963,
+            "semantic": 0.071025550365448
+          }
+        },
+        {
+          "step": 100,
+          "val_change_iou": 0.038772700752954234,
+          "threshold": 0.05
+        },
+        {
+          "step": 100,
+          "total": 0.3127913177013397,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.36876237392425537,
+            "free": 0.47709405422210693,
+            "semantic": 0.09251749515533447
+          }
+        },
+        {
+          "step": 150,
+          "total": 0.21421289443969727,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.2482442855834961,
+            "free": 0.35385727882385254,
+            "semantic": 0.040537115186452866
+          }
+        },
+        {
+          "step": 200,
+          "val_change_iou": 0.05690457563539347,
+          "threshold": 0.1
+        },
+        {
+          "step": 200,
+          "total": 0.2120264172554016,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.234843909740448,
+            "free": 0.3612387478351593,
+            "semantic": 0.03999658674001694
+          }
+        },
+        {
+          "step": 250,
+          "total": 0.2506709098815918,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.29924964904785156,
+            "free": 0.3975889980792999,
+            "semantic": 0.055174075067043304
+          }
+        },
+        {
+          "step": 300,
+          "val_change_iou": 0.146343600552292,
+          "threshold": 0.1
+        },
+        {
+          "step": 300,
+          "total": 0.1802593320608139,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.20774893462657928,
+            "free": 0.30713075399398804,
+            "semantic": 0.025898275896906853
+          }
+        },
+        {
+          "step": 350,
+          "total": 0.170028954744339,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.1910250335931778,
+            "free": 0.2943366765975952,
+            "semantic": 0.02472512051463127
+          }
+        },
+        {
+          "step": 400,
+          "val_change_iou": 0.2552314197577978,
+          "threshold": 0.2
+        }
+      ],
+      "elapsed_s": 8.184046071022749,
+      "peak_allocated_mib": 1836.625,
+      "peak_reserved_mib": 1960.0,
+      "trainable_parameters": 116180,
+      "finite_gradients": true,
+      "max_gradient": 0.99609375,
+      "checkpoint": "runs/m5b_learning/m5b_C_context_61.pt",
+      "sha256": "52a5dd2d5458fcd9380655dd3cca0b0792b19078129bcdcd7651f209e7a33671"
+    },
+    {
+      "name": "C_pair",
+      "seed": 61,
+      "selected": {
+        "step": 400,
+        "val_change_iou": 0.4827555262020995,
+        "threshold": 0.2
+      },
+      "steps": 400,
+      "history": [
+        {
+          "step": 0,
+          "val_change_iou": 0.0,
+          "threshold": 0.025
+        },
+        {
+          "step": 0,
+          "total": 0.7241865992546082,
+          "pair": 0.10002367943525314,
+          "tasks": {
+            "surface": 0.6931880116462708,
+            "free": 0.7100889682769775,
+            "semantic": 0.7092684507369995
+          }
+        },
+        {
+          "step": 50,
+          "total": 0.29270902276039124,
+          "pair": 0.021075986325740814,
+          "tasks": {
+            "surface": 0.3146611452102661,
+            "free": 0.4759114980697632,
+            "semantic": 0.07490874826908112
+          }
+        },
+        {
+          "step": 100,
+          "val_change_iou": 0.12431300980791099,
+          "threshold": 0.1
+        },
+        {
+          "step": 100,
+          "total": 0.3166416585445404,
+          "pair": 0.018389713019132614,
+          "tasks": {
+            "surface": 0.36111000180244446,
+            "free": 0.49189865589141846,
+            "semantic": 0.0858825296163559
+          }
+        },
+        {
+          "step": 150,
+          "total": 0.22291451692581177,
+          "pair": 0.04142715781927109,
+          "tasks": {
+            "surface": 0.24837222695350647,
+            "free": 0.34825170040130615,
+            "semantic": 0.04726330190896988
+          }
+        },
+        {
+          "step": 200,
+          "val_change_iou": 0.38003210977194996,
+          "threshold": 0.2
+        },
+        {
+          "step": 200,
+          "total": 0.21917186677455902,
+          "pair": 0.02326827123761177,
+          "tasks": {
+            "surface": 0.23609831929206848,
+            "free": 0.3634868264198303,
+            "semantic": 0.04396943002939224
+          }
+        },
+        {
+          "step": 250,
+          "total": 0.2580121159553528,
+          "pair": 0.0031095927115529776,
+          "tasks": {
+            "surface": 0.3038872480392456,
+            "free": 0.40785062313079834,
+            "semantic": 0.060432687401771545
+          }
+        },
+        {
+          "step": 300,
+          "val_change_iou": 0.4391086154758401,
+          "threshold": 0.2
+        },
+        {
+          "step": 300,
+          "total": 0.18933384120464325,
+          "pair": 0.045577533543109894,
+          "tasks": {
+            "surface": 0.20555517077445984,
+            "free": 0.30118370056152344,
+            "semantic": 0.03391614183783531
+          }
+        },
+        {
+          "step": 350,
+          "total": 0.17319007217884064,
+          "pair": 5.061800402472727e-05,
+          "tasks": {
+            "surface": 0.19374120235443115,
+            "free": 0.29871129989624023,
+            "semantic": 0.02708732709288597
+          }
+        },
+        {
+          "step": 400,
+          "val_change_iou": 0.4827555262020995,
+          "threshold": 0.2
+        }
+      ],
+      "elapsed_s": 8.617781279608607,
+      "peak_allocated_mib": 1835.32177734375,
+      "peak_reserved_mib": 1966.0,
+      "trainable_parameters": 116180,
+      "finite_gradients": true,
+      "max_gradient": 0.85546875,
+      "checkpoint": "runs/m5b_learning/m5b_C_pair_61.pt",
+      "sha256": "daf0e90f8e3c94c6256e0ed7bac749398c39916cbf71520b42a6c820f13f37ce"
+    },
+    {
+      "name": "B_frozen",
+      "seed": 62,
+      "selected": {
+        "step": 400,
+        "val_change_iou": 0.14959092665745632,
+        "threshold": 0.1
+      },
+      "steps": 400,
+      "history": [
+        {
+          "step": 0,
+          "val_change_iou": 0.0,
+          "threshold": 0.025
+        },
+        {
+          "step": 0,
+          "total": 0.7011350393295288,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.6995606422424316,
+            "free": 0.6835277080535889,
+            "semantic": 0.7203166484832764
+          }
+        },
+        {
+          "step": 50,
+          "total": 0.3566550612449646,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.401181161403656,
+            "free": 0.5618993639945984,
+            "semantic": 0.1068846583366394
+          }
+        },
+        {
+          "step": 100,
+          "val_change_iou": 0.033640080642478726,
+          "threshold": 0.05
+        },
+        {
+          "step": 100,
+          "total": 0.2816735506057739,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.3404110074043274,
+            "free": 0.43177950382232666,
+            "semantic": 0.07283014059066772
+          }
+        },
+        {
+          "step": 150,
+          "total": 0.2838515639305115,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.294366717338562,
+            "free": 0.46859729290008545,
+            "semantic": 0.08859070390462875
+          }
+        },
+        {
+          "step": 200,
+          "val_change_iou": 0.02421116899097518,
+          "threshold": 0.05
+        },
+        {
+          "step": 200,
+          "total": 0.26783502101898193,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.31777065992355347,
+            "free": 0.4139001965522766,
+            "semantic": 0.07183418422937393
+          }
+        },
+        {
+          "step": 250,
+          "total": 0.23358456790447235,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.26150304079055786,
+            "free": 0.3931041657924652,
+            "semantic": 0.046146515756845474
+          }
+        },
+        {
+          "step": 300,
+          "val_change_iou": 0.07754505218815776,
+          "threshold": 0.1
+        },
+        {
+          "step": 300,
+          "total": 0.2118028849363327,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.22278568148612976,
+            "free": 0.369658887386322,
+            "semantic": 0.04296412318944931
+          }
+        },
+        {
+          "step": 350,
+          "total": 0.2334420084953308,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.24257081747055054,
+            "free": 0.3906325697898865,
+            "semantic": 0.06712263077497482
+          }
+        },
+        {
+          "step": 400,
+          "val_change_iou": 0.14959092665745632,
+          "threshold": 0.1
+        }
+      ],
+      "elapsed_s": 5.413136316463351,
+      "peak_allocated_mib": 1669.94140625,
+      "peak_reserved_mib": 1966.0,
+      "trainable_parameters": 112020,
+      "finite_gradients": true,
+      "max_gradient": 0.69140625,
+      "checkpoint": "runs/m5b_learning/m5b_B_frozen_62.pt",
+      "sha256": "fabb69a90a03679bec380a36b1f5e13d6318d3a5b37650decb54ef3e4b0c64e2"
+    },
+    {
+      "name": "C_context",
+      "seed": 62,
+      "selected": {
+        "step": 400,
+        "val_change_iou": 0.2796787830400453,
+        "threshold": 0.2
+      },
+      "steps": 400,
+      "history": [
+        {
+          "step": 0,
+          "val_change_iou": 0.0,
+          "threshold": 0.025
+        },
+        {
+          "step": 0,
+          "total": 0.7011348009109497,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.6995601654052734,
+            "free": 0.6835285425186157,
+            "semantic": 0.7203155755996704
+          }
+        },
+        {
+          "step": 50,
+          "total": 0.3556888699531555,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.3989163935184479,
+            "free": 0.5606904029846191,
+            "semantic": 0.10745979100465775
+          }
+        },
+        {
+          "step": 100,
+          "val_change_iou": 0.03606911984199688,
+          "threshold": 0.05
+        },
+        {
+          "step": 100,
+          "total": 0.2759588956832886,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.3352544903755188,
+            "free": 0.43016374111175537,
+            "semantic": 0.06245848536491394
+          }
+        },
+        {
+          "step": 150,
+          "total": 0.2369026243686676,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.251362144947052,
+            "free": 0.4088650047779083,
+            "semantic": 0.050480641424655914
+          }
+        },
+        {
+          "step": 200,
+          "val_change_iou": 0.025723476498453173,
+          "threshold": 0.05
+        },
+        {
+          "step": 200,
+          "total": 0.2599315047264099,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.31161803007125854,
+            "free": 0.4083077311515808,
+            "semantic": 0.059868671000003815
+          }
+        },
+        {
+          "step": 250,
+          "total": 0.2013961374759674,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.22845502197742462,
+            "free": 0.33220234513282776,
+            "semantic": 0.04353099688887596
+          }
+        },
+        {
+          "step": 300,
+          "val_change_iou": 0.062476978301715065,
+          "threshold": 0.1
+        },
+        {
+          "step": 300,
+          "total": 0.17254018783569336,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.18536624312400818,
+            "free": 0.30736061930656433,
+            "semantic": 0.024893710389733315
+          }
+        },
+        {
+          "step": 350,
+          "total": 0.18898116052150726,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.20347623527050018,
+            "free": 0.33462852239608765,
+            "semantic": 0.028838712722063065
+          }
+        },
+        {
+          "step": 400,
+          "val_change_iou": 0.2796787830400453,
+          "threshold": 0.2
+        }
+      ],
+      "elapsed_s": 8.074978020042181,
+      "peak_allocated_mib": 1838.44287109375,
+      "peak_reserved_mib": 1966.0,
+      "trainable_parameters": 116180,
+      "finite_gradients": true,
+      "max_gradient": 0.796875,
+      "checkpoint": "runs/m5b_learning/m5b_C_context_62.pt",
+      "sha256": "58ed30fb870a300d2c65c762067a755ac92c34f8001cf4b4807a3c9327b070c4"
+    },
+    {
+      "name": "C_pair",
+      "seed": 62,
+      "selected": {
+        "step": 400,
+        "val_change_iou": 0.4727912596794898,
+        "threshold": 0.2
+      },
+      "steps": 400,
+      "history": [
+        {
+          "step": 0,
+          "val_change_iou": 0.0,
+          "threshold": 0.025
+        },
+        {
+          "step": 0,
+          "total": 0.7217535376548767,
+          "pair": 0.1030941903591156,
+          "tasks": {
+            "surface": 0.6995603442192078,
+            "free": 0.6835284233093262,
+            "semantic": 0.7203153371810913
+          }
+        },
+        {
+          "step": 50,
+          "total": 0.34708335995674133,
+          "pair": 7.252291993609106e-07,
+          "tasks": {
+            "surface": 0.39883118867874146,
+            "free": 0.5440295338630676,
+            "semantic": 0.09838895499706268
+          }
+        },
+        {
+          "step": 100,
+          "val_change_iou": 0.20088943482355417,
+          "threshold": 0.1
+        },
+        {
+          "step": 100,
+          "total": 0.3005352318286896,
+          "pair": 0.09932640194892883,
+          "tasks": {
+            "surface": 0.3323470950126648,
+            "free": 0.4458349347114563,
+            "semantic": 0.06382780522108078
+          }
+        },
+        {
+          "step": 150,
+          "total": 0.2373451292514801,
+          "pair": 0.00396384485065937,
+          "tasks": {
+            "surface": 0.25012755393981934,
+            "free": 0.40687423944473267,
+            "semantic": 0.052655287086963654
+          }
+        },
+        {
+          "step": 200,
+          "val_change_iou": 0.3532613370078382,
+          "threshold": 0.2
+        },
+        {
+          "step": 200,
+          "total": 0.2650831639766693,
+          "pair": 0.0001806949294405058,
+          "tasks": {
+            "surface": 0.31240183115005493,
+            "free": 0.4210602641105652,
+            "semantic": 0.061678942292928696
+          }
+        },
+        {
+          "step": 250,
+          "total": 0.20544560253620148,
+          "pair": 0.00016051899001467973,
+          "tasks": {
+            "surface": 0.23283463716506958,
+            "free": 0.346116304397583,
+            "semantic": 0.0372895821928978
+          }
+        },
+        {
+          "step": 300,
+          "val_change_iou": 0.44671318628754286,
+          "threshold": 0.2
+        },
+        {
+          "step": 300,
+          "total": 0.18133531510829926,
+          "pair": 0.012859768234193325,
+          "tasks": {
+            "surface": 0.19139045476913452,
+            "free": 0.31959331035614014,
+            "semantic": 0.02530628629028797
+          }
+        },
+        {
+          "step": 350,
+          "total": 0.18153153359889984,
+          "pair": 0.00019755838729906827,
+          "tasks": {
+            "surface": 0.19456523656845093,
+            "free": 0.3183176517486572,
+            "semantic": 0.031593162566423416
+          }
+        },
+        {
+          "step": 400,
+          "val_change_iou": 0.4727912596794898,
+          "threshold": 0.2
+        }
+      ],
+      "elapsed_s": 8.572262927889824,
+      "peak_allocated_mib": 1836.45947265625,
+      "peak_reserved_mib": 1966.0,
+      "trainable_parameters": 116180,
+      "finite_gradients": true,
+      "max_gradient": 0.79296875,
+      "checkpoint": "runs/m5b_learning/m5b_C_pair_62.pt",
+      "sha256": "87f23762cf083c4a4883dc0944b6ac6c45864c10f777809871800350ffa9458b"
+    }
+  ],
+  "precompute": {
+    "elapsed_s": 17.865670703351498,
+    "peak_mib": 1663.40234375
+  },
+  "sources": {
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5b_learning.py": "92d9f5468548534887cd04072dc2c8093c9025d28d7578880c55055b870b2da8",
+    "models/m5b_cached_encoder.py": "520225c443ddd40749e3632eb39905739a42a12682031e07fdafe11e7583c1a3",
+    "training/m5b_change_loss.py": "8440efb8f9d023056d803c0be1872b3f2fb8b3248a6136aba7e57f4c8c4a7a65",
+    "diagnostics/m5b_metrics.py": "a8b07c6614bcf4efeaeba23f7c4c737d955ed3ab16fe3c7c3bc09a10e2e3a4e2",
+    "datasets/m5a_training.py": "59a79d2c26f465fe42ee96bf74f8833c2d8ae998314feec2509afa82166bb434",
+    "training/m48_evidence_loss.py": "ae9e9d31f6f5ed743f068ae469e5425f7036ac4a4fdef388463bc82293aa0948"
+  },
+  "protocol_sha256": "92093f3b62a2d8548512ecb8e1d49342a2aa227cd022a42469177d79cb779971",
+  "encoder_sha256": "8aa09f33c591fd72018eafc193047c26da152b8a52016b04eae6acfad8488d36",
+  "test_opened": false,
+  "geometry_fp32": true,
+  "amp_bf16": true,
+  "notes": "A lr .03 vs B/C head .001. C context .0003. All400 updates same pairs. C_pair only extra loss. No validation labels in train. Cache contains frozen RGB features/depth prediction/calibration only.",
+  "initial_prior_records": [
+    {
+      "name": "A_prior",
+      "seed": 61,
+      "selected": {
+        "step": 0,
+        "val_change_iou": 0.0,
+        "threshold": 0.025
+      },
+      "steps": 400,
+      "history": [
+        {
+          "step": 0,
+          "val_change_iou": 0.0,
+          "threshold": 0.025
+        },
+        {
+          "step": 0,
+          "total": 0.6931471824645996,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.6931471824645996,
+            "free": 0.6931471824645996,
+            "semantic": 0.6931471824645996
+          }
+        },
+        {
+          "step": 50,
+          "total": 0.3545553386211395,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.346063494682312,
+            "free": 0.3951576352119446,
+            "semantic": 0.3224448561668396
+          }
+        },
+        {
+          "step": 100,
+          "val_change_iou": 0.0,
+          "threshold": 0.025
+        },
+        {
+          "step": 100,
+          "total": 0.24119286239147186,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.23634034395217896,
+            "free": 0.28167009353637695,
+            "semantic": 0.2055681347846985
+          }
+        },
+        {
+          "step": 150,
+          "total": 0.16060498356819153,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.15965956449508667,
+            "free": 0.2024208903312683,
+            "semantic": 0.11973445862531662
+          }
+        },
+        {
+          "step": 200,
+          "val_change_iou": 0.0,
+          "threshold": 0.025
+        },
+        {
+          "step": 200,
+          "total": 0.15724164247512817,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.1468827724456787,
+            "free": 0.22529342770576477,
+            "semantic": 0.09954869747161865
+          }
+        },
+        {
+          "step": 250,
+          "total": 0.14569565653800964,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.1504771113395691,
+            "free": 0.19002065062522888,
+            "semantic": 0.09658918529748917
+          }
+        },
+        {
+          "step": 300,
+          "val_change_iou": 0.0,
+          "threshold": 0.025
+        },
+        {
+          "step": 300,
+          "total": 0.11889474093914032,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.12492513656616211,
+            "free": 0.1605129837989807,
+            "semantic": 0.07124610245227814
+          }
+        },
+        {
+          "step": 350,
+          "total": 0.09242644906044006,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.08635067939758301,
+            "free": 0.14538925886154175,
+            "semantic": 0.045539405196905136
+          }
+        },
+        {
+          "step": 400,
+          "val_change_iou": 0.0,
+          "threshold": 0.025
+        }
+      ],
+      "elapsed_s": 4.9175900518894196,
+      "peak_allocated_mib": 1650.65673828125,
+      "peak_reserved_mib": 1760.0,
+      "trainable_parameters": 384000,
+      "finite_gradients": true,
+      "max_gradient": 0.00016997578495647758,
+      "checkpoint": "runs/m5b_learning/m5b_A_prior_61.pt",
+      "sha256": "8b56133c232e6217fdb86f77d708829fae7908a4ee74294a0ff48cc875eba07d"
+    },
+    {
+      "name": "A_prior",
+      "seed": 62,
+      "selected": {
+        "step": 0,
+        "val_change_iou": 0.0,
+        "threshold": 0.025
+      },
+      "steps": 400,
+      "history": [
+        {
+          "step": 0,
+          "val_change_iou": 0.0,
+          "threshold": 0.025
+        },
+        {
+          "step": 0,
+          "total": 0.6931471824645996,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.6931471824645996,
+            "free": 0.6931471824645996,
+            "semantic": 0.6931471824645996
+          }
+        },
+        {
+          "step": 50,
+          "total": 0.3606851100921631,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.35471004247665405,
+            "free": 0.3948882222175598,
+            "semantic": 0.3324570059776306
+          }
+        },
+        {
+          "step": 100,
+          "val_change_iou": 0.0,
+          "threshold": 0.025
+        },
+        {
+          "step": 100,
+          "total": 0.24877282977104187,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.2435765564441681,
+            "free": 0.29024842381477356,
+            "semantic": 0.21249347925186157
+          }
+        },
+        {
+          "step": 150,
+          "total": 0.16289779543876648,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.15140485763549805,
+            "free": 0.22102850675582886,
+            "semantic": 0.11625999957323074
+          }
+        },
+        {
+          "step": 200,
+          "val_change_iou": 0.0,
+          "threshold": 0.025
+        },
+        {
+          "step": 200,
+          "total": 0.14804548025131226,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.1509856879711151,
+            "free": 0.19081509113311768,
+            "semantic": 0.10233566164970398
+          }
+        },
+        {
+          "step": 250,
+          "total": 0.14079757034778595,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.14612321555614471,
+            "free": 0.18377959728240967,
+            "semantic": 0.09248986095190048
+          }
+        },
+        {
+          "step": 300,
+          "val_change_iou": 0.0,
+          "threshold": 0.025
+        },
+        {
+          "step": 300,
+          "total": 0.09362217038869858,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.08712838590145111,
+            "free": 0.14364321529865265,
+            "semantic": 0.05009489506483078
+          }
+        },
+        {
+          "step": 350,
+          "total": 0.09244200587272644,
+          "pair": 0.0,
+          "tasks": {
+            "surface": 0.08470827341079712,
+            "free": 0.14826196432113647,
+            "semantic": 0.044355787336826324
+          }
+        },
+        {
+          "step": 400,
+          "val_change_iou": 0.0,
+          "threshold": 0.025
+        }
+      ],
+      "elapsed_s": 4.457352068275213,
+      "peak_allocated_mib": 1652.56103515625,
+      "peak_reserved_mib": 1966.0,
+      "trainable_parameters": 384000,
+      "finite_gradients": true,
+      "max_gradient": 0.00013362082245294005,
+      "checkpoint": "runs/m5b_learning/m5b_A_prior_62.pt",
+      "sha256": "612a4e855341ca95aad4de7e7d78dd6ff322835217da80cea0072ab02abd36bd"
+    }
+  ],
+  "prior_correction_source_sha256": "f515080fe3e3b2129aa380844a47d08e3838f73519b71577e80d86ec35bd07cb",
+  "correction_provenance": {
+    "original": "reports/m5b_context_ablation_initial.json",
+    "corrected": "reports/m5b_context_ablation_corrected.json",
+    "reason": "val event tie-break for unchanging prior before test"
+  }
+}

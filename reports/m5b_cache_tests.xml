@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="3" time="4.393" timestamp="2026-10-20T20:28:01.465113+08:00" hostname="gpufree-container"><testcase classname="tests.test_m5b_contracts" name="test_direction_and_stable_false_changes" time="0.005" /><testcase classname="tests.test_m5b_contracts" name="test_pair_loss_unknown_no_gradient" time="1.652" /><testcase classname="tests.test_m5b_contracts" name="test_cached_path_matches_formal_rgb_and_context_gradients" time="2.701"><failure message="AssertionError: assert 0.030020713806152344 &lt; 0.03&#10; +  where 0.030020713806152344 = float(tensor(0.0300, device='cuda:0'))&#10; +    where tensor(0.0300, device='cuda:0') = &lt;built-in method max of Tensor object at 0x7efd943afd80&gt;()&#10; +      where &lt;built-in method max of Tensor object at 0x7efd943afd80&gt; = tensor([[[[2.9802e-07, 2.9802e-07, 3.2783e-07,  ..., 4.7684e-07,\n           3.5763e-07, 4.1723e-07],\n          [2.6450...         [7.0781e-08, 1.9558e-08, 0.0000e+00,  ..., 6.3330e-08,\n           0.0000e+00, 0.0000e+00]]]], device='cuda:0').max">def test_cached_path_matches_formal_rgb_and_context_gradients():
+        torch=pytest.importorskip('torch')
+        if not torch.cuda.is_available():pytest.skip('CUDA required')
+        from pathlib import Path
+        if not Path('/root/gpufree-data/hs-drive-data/processed/m5b_pilot_index').exists():pytest.skip('server pilot unavailable')
+        from tools.m5a_learning import encoder_load,stack
+        from datasets.m5a_training import VisualEvidenceDataset
+        from models.m5b_cached_encoder import cache_rgb,cached_forward
+        from training.runtime import prepare_cuda
+        prepare_cuda();torch.set_num_threads(2);net=encoder_load();ds=VisualEvidenceDataset('/root/gpufree-data/hs-drive-data/processed/m5b_pilot_index','train',supervision=False);inputs=stack([ds[0]],'inputs')
+        with torch.no_grad(),torch.autocast('cuda',dtype=torch.bfloat16):expected=net(**inputs)['bev_current']
+        cache=cache_rgb(net,inputs)
+        with torch.no_grad():actual=cached_forward(net,cache)
+        # GPU scatter accumulation + BF16 rounding may differ at isolated cells.
+        error=(actual-expected).abs()
+        assert float(error.mean()/expected.abs().mean())&lt;1e-5
+        assert float(error.flatten().quantile(.999))&lt;.002
+&gt;       assert float(error.max())&lt;.03
+E       AssertionError: assert 0.030020713806152344 &lt; 0.03
+E        +  where 0.030020713806152344 = float(tensor(0.0300, device='cuda:0'))
+E        +    where tensor(0.0300, device='cuda:0') = &lt;built-in method max of Tensor object at 0x7efd943afd80&gt;()
+E        +      where &lt;built-in method max of Tensor object at 0x7efd943afd80&gt; = tensor([[[[2.9802e-07, 2.9802e-07, 3.2783e-07,  ..., 4.7684e-07,\n           3.5763e-07, 4.1723e-07],\n          [2.6450...         [7.0781e-08, 1.9558e-08, 0.0000e+00,  ..., 6.3330e-08,\n           0.0000e+00, 0.0000e+00]]]], device='cuda:0').max
+
+tests/test_m5b_contracts.py:35: AssertionError</failure></testcase></testsuite></testsuites>

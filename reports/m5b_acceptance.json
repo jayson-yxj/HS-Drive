@@ -1,0 +1,432 @@
+{
+  "stage": "M5-B Counterfactual Visual Occupancy & Geometry",
+  "base": "a252a04723a2c11f1189b3580a6d763345e1ae04",
+  "branch": "feat/m5b-counterfactual-occupancy",
+  "overall": "Partial",
+  "states": {
+    "engineering_interfaces": "Passed_within_tested_contract",
+    "RGB_visual_learning_gain": "Observed_reproducible_on_three_test_groups_not_population_certification",
+    "spatial_obstacle_generalization": "Partial",
+    "runtime_realtime": "Partial",
+    "Oracle_driving_safety": "Partial_tested_scenarios_collision_and_fault_protection_passed",
+    "pure_visual_driving_safety": "NotValidated"
+  },
+  "data": {
+    "total_captured_frames": 180,
+    "independent_positions": 12,
+    "train_frames": 72,
+    "val_frames": 36,
+    "formal_sealed_test_frames": 36,
+    "unused_original_reserved_layout_frames": 36,
+    "test_independent_positions": 3,
+    "test_changed_witness_events": 827,
+    "test_never_selected_training": true,
+    "static_actor_layouts": true,
+    "historical_maps": true
+  },
+  "training": {
+    "models": [
+      "A_prior",
+      "B_frozen",
+      "C_context",
+      "C_pair"
+    ],
+    "seeds": [
+      61,
+      62
+    ],
+    "steps": 400,
+    "matched_pair_order": true,
+    "depth_finetuning": false,
+    "original_encoder": "runs/m4_expanded_joint/best.pt",
+    "original_encoder_sha256": "8aa09f33c591fd72018eafc193047c26da152b8a52016b04eae6acfad8488d36",
+    "geometry": "unchanged48LID_and_HeightSplat",
+    "prior_tie_correction": "same400step_replay_val_secondary_selection_not800step_training"
+  },
+  "visual": {
+    "A_prior_61": {
+      "by_scene": {
+        "Town01_b3_sealed": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 279,
+          "iou": 0.0,
+          "recall": 0.0,
+          "precision": 0.0,
+          "pairs": 22,
+          "changed": 279
+        },
+        "Town02_b3_sealed": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 286,
+          "iou": 0.0,
+          "recall": 0.0,
+          "precision": 0.0,
+          "pairs": 22,
+          "changed": 286
+        },
+        "Town03_b3_sealed": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 262,
+          "iou": 0.0,
+          "recall": 0.0,
+          "precision": 0.0,
+          "pairs": 22,
+          "changed": 262
+        }
+      },
+      "mean_scene_iou": 0.0
+    },
+    "A_prior_62": {
+      "by_scene": {
+        "Town01_b3_sealed": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 279,
+          "iou": 0.0,
+          "recall": 0.0,
+          "precision": 0.0,
+          "pairs": 22,
+          "changed": 279
+        },
+        "Town02_b3_sealed": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 286,
+          "iou": 0.0,
+          "recall": 0.0,
+          "precision": 0.0,
+          "pairs": 22,
+          "changed": 286
+        },
+        "Town03_b3_sealed": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 262,
+          "iou": 0.0,
+          "recall": 0.0,
+          "precision": 0.0,
+          "pairs": 22,
+          "changed": 262
+        }
+      },
+      "mean_scene_iou": 0.0
+    },
+    "B_frozen_61": {
+      "by_scene": {
+        "Town01_b3_sealed": {
+          "tp": 26,
+          "fp": 457,
+          "fn": 253,
+          "iou": 0.035326086956521736,
+          "recall": 0.0931899641577061,
+          "precision": 0.053830227743271224,
+          "pairs": 22,
+          "changed": 279
+        },
+        "Town02_b3_sealed": {
+          "tp": 41,
+          "fp": 442,
+          "fn": 245,
+          "iou": 0.05631868131868132,
+          "recall": 0.14335664335664336,
+          "precision": 0.08488612836438923,
+          "pairs": 22,
+          "changed": 286
+        },
+        "Town03_b3_sealed": {
+          "tp": 111,
+          "fp": 575,
+          "fn": 151,
+          "iou": 0.13261648745519714,
+          "recall": 0.42366412213740456,
+          "precision": 0.1618075801749271,
+          "pairs": 22,
+          "changed": 262
+        }
+      },
+      "mean_scene_iou": 0.07475375191013339
+    },
+    "C_context_61": {
+      "by_scene": {
+        "Town01_b3_sealed": {
+          "tp": 102,
+          "fp": 154,
+          "fn": 177,
+          "iou": 0.23556581986143188,
+          "recall": 0.3655913978494624,
+          "precision": 0.3984375,
+          "pairs": 22,
+          "changed": 279
+        },
+        "Town02_b3_sealed": {
+          "tp": 105,
+          "fp": 141,
+          "fn": 181,
+          "iou": 0.2459016393442623,
+          "recall": 0.36713286713286714,
+          "precision": 0.4268292682926829,
+          "pairs": 22,
+          "changed": 286
+        },
+        "Town03_b3_sealed": {
+          "tp": 23,
+          "fp": 251,
+          "fn": 239,
+          "iou": 0.04483430799220273,
+          "recall": 0.08778625954198473,
+          "precision": 0.08394160583941605,
+          "pairs": 22,
+          "changed": 262
+        }
+      },
+      "mean_scene_iou": 0.17543392239929897
+    },
+    "C_pair_61": {
+      "by_scene": {
+        "Town01_b3_sealed": {
+          "tp": 188,
+          "fp": 150,
+          "fn": 91,
+          "iou": 0.4382284382284382,
+          "recall": 0.6738351254480287,
+          "precision": 0.5562130177514792,
+          "pairs": 22,
+          "changed": 279
+        },
+        "Town02_b3_sealed": {
+          "tp": 208,
+          "fp": 104,
+          "fn": 78,
+          "iou": 0.5333333333333333,
+          "recall": 0.7272727272727273,
+          "precision": 0.6666666666666666,
+          "pairs": 22,
+          "changed": 286
+        },
+        "Town03_b3_sealed": {
+          "tp": 169,
+          "fp": 177,
+          "fn": 93,
+          "iou": 0.38496583143507973,
+          "recall": 0.6450381679389313,
+          "precision": 0.4884393063583815,
+          "pairs": 22,
+          "changed": 262
+        }
+      },
+      "mean_scene_iou": 0.45217586766561707
+    },
+    "B_frozen_62": {
+      "by_scene": {
+        "Town01_b3_sealed": {
+          "tp": 87,
+          "fp": 494,
+          "fn": 192,
+          "iou": 0.11254851228978008,
+          "recall": 0.3118279569892473,
+          "precision": 0.14974182444061962,
+          "pairs": 22,
+          "changed": 279
+        },
+        "Town02_b3_sealed": {
+          "tp": 112,
+          "fp": 199,
+          "fn": 174,
+          "iou": 0.2309278350515464,
+          "recall": 0.3916083916083916,
+          "precision": 0.36012861736334406,
+          "pairs": 22,
+          "changed": 286
+        },
+        "Town03_b3_sealed": {
+          "tp": 158,
+          "fp": 641,
+          "fn": 104,
+          "iou": 0.17497231450719822,
+          "recall": 0.6030534351145038,
+          "precision": 0.19774718397997496,
+          "pairs": 22,
+          "changed": 262
+        }
+      },
+      "mean_scene_iou": 0.17281622061617488
+    },
+    "C_context_62": {
+      "by_scene": {
+        "Town01_b3_sealed": {
+          "tp": 120,
+          "fp": 200,
+          "fn": 159,
+          "iou": 0.25052192066805845,
+          "recall": 0.43010752688172044,
+          "precision": 0.375,
+          "pairs": 22,
+          "changed": 279
+        },
+        "Town02_b3_sealed": {
+          "tp": 135,
+          "fp": 134,
+          "fn": 151,
+          "iou": 0.32142857142857145,
+          "recall": 0.47202797202797203,
+          "precision": 0.5018587360594795,
+          "pairs": 22,
+          "changed": 286
+        },
+        "Town03_b3_sealed": {
+          "tp": 113,
+          "fp": 255,
+          "fn": 149,
+          "iou": 0.218568665377176,
+          "recall": 0.4312977099236641,
+          "precision": 0.3070652173913043,
+          "pairs": 22,
+          "changed": 262
+        }
+      },
+      "mean_scene_iou": 0.26350638582460195
+    },
+    "C_pair_62": {
+      "by_scene": {
+        "Town01_b3_sealed": {
+          "tp": 168,
+          "fp": 182,
+          "fn": 111,
+          "iou": 0.3644251626898048,
+          "recall": 0.6021505376344086,
+          "precision": 0.48,
+          "pairs": 22,
+          "changed": 279
+        },
+        "Town02_b3_sealed": {
+          "tp": 190,
+          "fp": 113,
+          "fn": 96,
+          "iou": 0.47619047619047616,
+          "recall": 0.6643356643356644,
+          "precision": 0.6270627062706271,
+          "pairs": 22,
+          "changed": 286
+        },
+        "Town03_b3_sealed": {
+          "tp": 168,
+          "fp": 310,
+          "fn": 94,
+          "iou": 0.2937062937062937,
+          "recall": 0.6412213740458015,
+          "precision": 0.3514644351464435,
+          "pairs": 22,
+          "changed": 262
+        }
+      },
+      "mean_scene_iou": 0.37810731086219157
+    }
+  },
+  "runtime": {
+    "final_report": "reports/m5b_async_final_runtime.json",
+    "max_final_control_interval_ms": 59.72559377551079,
+    "final_deadline_misses": 0,
+    "expired_normal_control": 0,
+    "collisions": 0,
+    "all_degradation_full_brake": true,
+    "horizon_seconds": 6,
+    "single_tick_owner": true,
+    "previous_tails_retained": true
+  },
+  "tests": {
+    "full": "reports/m5b_final_tests.xml",
+    "carla": "reports/m5b_carla_api_tests.xml",
+    "types": "synthetic/contracts/GPU plus actual CARLA separate reports",
+    "passed": 209,
+    "skipped": 5,
+    "skip_reason": "GPU env lacks carla; all skipped APIs covered by carla env 14passed",
+    "carla_passed": 14
+  },
+  "evidence_kinds": {
+    "capture": "actualCARLA",
+    "training": "actualRTX4090",
+    "geometry": "offlineGPU_val_only",
+    "label_reference": "same_renderer_point_witness_with_approx_AABB_gate_not_independentMesh",
+    "runtime": "actualCARLA_wallclock"
+  },
+  "decisions": {
+    "expand_large_occupancy_training": false,
+    "start_temporal_or_sparse": false,
+    "next": "Targeted single-frame geometry/context/witness coverage study with new sealed groups; maintain pair supervision and frozen protocol. No automatic Depth Bin/Splat change."
+  },
+  "limitations": [
+    "Only3 independent test locations; pixels/configurations not independent.",
+    "Witness mask is partial visible surface support, not complete obstacle volume.",
+    "15-27m and small targets sparse, lowest height layer zero changes.",
+    "Context alone has one scene/seed regression; no claim of population statistical significance.",
+    "Paired loss has substantial FP/FN; scores outside valid mask uncertified.",
+    "Oracle nearest bin diagnostic is OOD and quantized; cannot uniquely identify Depth bottleneck.",
+    "First geometry actor semantic mask included ego; target-only corrected audit supplied, no retraining.",
+    "Final runtime run improved but earlier long tick stalls remain; no hard realtime.",
+    "Static Actor oracle scenarios, no pure visual safety or dense dynamic traffic guarantee."
+  ],
+  "source_sha256": {
+    "tools/m5b_bf16_audit.py": "be4b084d073c08ac9d9048e912e2227d309cee6f7d3e045297d824bd8848fb5d",
+    "tools/m5b_evaluate.py": "fe683e072fa5cc7919b262506c1f882f5861c61b4525334f815eca70ed93890c",
+    "tools/m5b_seal.py": "1aba454ce5c0e654ab5989e1cc0202bb21da09d8ed383f2cddeb2f8be5807d70",
+    "tools/m5b_delivery.py": "602d162b1ad29e78626610c0dea8681725750ae814237d64fc986b0456e4f62a",
+    "tools/m5b_capture.py": "459c56af04036c8b792c09ce82ca1312de1cd84da2fd5c92f9e13a3e9648802b",
+    "tools/m5b_data_analysis.py": "aeb17eea8f3c171bf7bb3f49417b63cfce0dc970ff0b1180d1b85fb492525a52",
+    "tools/m5b_visualize.py": "5bc2e850f70e426d109e79d786a0a7f0409659494c0faca773727ac49a6c2882",
+    "tools/m5b_geometry_targets.py": "3526ef1cc26b5999b4be34e428f22de77d5477d6df204409486d2a6cfee00b7d",
+    "tools/m5b_runtime_analysis.py": "e7b67f7cd022395c79aca8c2f264b4c000deb92be6aa83d0b1c6079db022cbc4",
+    "tools/m5b_runtime_microbench.py": "af9372ef51fa03a9dfde31e79b70d34b7bc45222377a7ba6d2f038954c8b909d",
+    "tools/m5b_dataset.py": "d449ec87d382cd3abb5efb570b51478602b18c129df1c6c8b14154853e32a2d3",
+    "tools/m5b_learning.py": "9de491c9032233ffce0cb60001c8db7608c664b6527e1fcd4ded53a88c513beb",
+    "tools/m5b_geometry.py": "67d21d8b0ea019b7a04107ad739fc8328def8639bde72e8172feeadfbbfc7741",
+    "tools/m5b_assets.py": "0f6c6df355be03a9d89bba31a339d8d8b37d4e6c6812e228e9cdb82d6ee8d221",
+    "tools/m5b_extra_geometry.py": "7ed1eba8db5bbf0d10861d8621f3ed8f8febbed750ef5e249137886076ce7951",
+    "tools/m5b_async_drive.py": "b12014f592c593f92a87f32111dba061d3c024d7040f9b3c4a56920dd79cbef6",
+    "tools/m5b_prior_tiebreak.py": "0ff1aa87c3b5a1fb170206951cfd617e07cf661fa5c52f5a5f74b8a7fa4a3c2e",
+    "tools/m5b_protocol.py": "8891e1dd03be98511d4060daaccbbd9792acfc193607c6463e4f0d42067d7b6f",
+    "models/m5b_cached_encoder.py": "b006c4ff589dbf3824df5f8142bbbfe61a0ea503fdc4f265691195ca83b07732",
+    "simulator/m5b_runtime.py": "3cd31e04dd97c2f46672a706572189933cc29ba265577a0e2643f09c1b338890",
+    "training/m5b_change_loss.py": "4b541d993a66bce7446ec41fca4101689d5cc17ede962bae8790b116bf264c2d",
+    "diagnostics/m5b_metrics.py": "b5cf0de51638b1df0653aeb62fefb09998ff5cd7a8c0a5b97988495e55ad455c",
+    "datasets/m5b_pairs.py": "5613dee6ced652f5c9965454d2572fed168b608d9cef296839828b5c19649a3f",
+    "tests/test_m5b_runtime.py": "b9d9ffebd0921b022d165ccef4f25de6bea366ab5d4ac0fe52476b59a964c0e3",
+    "tests/test_m5b_contracts.py": "ffd564896a704c02fafb788eafb21c953b24140e45e18920fe3cea75a9a9b36c",
+    "configs/m5b_sealed_protocol.json": "bf05e6cd96f330c5ca019e249564b62da4cfc73e29d80ed4580b951a9dbbbae7",
+    "configs/m5b_protocol.json": "92093f3b62a2d8548512ecb8e1d49342a2aa227cd022a42469177d79cb779971"
+  },
+  "reports_sha256": {
+    "reports/m5b_pilot_quality.json": "fd3b10950103d5c9a431c51d814c6ef1c93c96971359279df5f7cd5eac0cfaa5",
+    "reports/m5b_test_opening.json": "9b0f0d83937763619e3726b976b8b73df268b8a11c8b239525f277b190aa7b33",
+    "reports/m5b_pretest_decision.json": "14a88e3d791dba2dcfb87292a4f4aed6a1ed0dc48c38b868afa186a1acd93882",
+    "reports/m5b_geometry_diagnostics.json": "f6d943fa62c772d2ae6581939d7d214a1f01383f1ee6ef1bbd1fd9cf4889680e",
+    "reports/m5b_assets.json": "a7e6d92c4da7c186e4a2dfd4a3fb503ab3436e3f551dc969a2798cbc2ad1d953",
+    "reports/m5b_async_runtime.json": "c3a17fbb738a6c45b57b898d799a6a13fb0144b8912c1a8d7c9421812e772ed8",
+    "reports/m5b_sealed_generation.json": "74fa7a10e2b7381ac3ea12935906be2c48c0e7d02b7d4a258328446ac74cbe0b",
+    "reports/m5b_runtime_attribution.json": "b5f1fa39f7147ac35506e813fd89c1e0b621d1eb00d1efb2db919cf9b4b2d211",
+    "reports/m5b_visualizations.json": "7b211d4211fda15b4fb626d66bce58961a9fa5703ccbe56970f58b04ac89c08f",
+    "reports/m5b_pretrain_contract.json": "d069509075e51d6717cdaaf05ffbe77fe4dfe310c263a5309c60257d28f346f5",
+    "reports/m5b_async_isolated_runtime.json": "bb8e85493ba6dbde53fd273f7b711b629b5b7adc30021e2a70219bd1dedc2ac9",
+    "reports/m5b_async_final_runtime.json": "843e44672152c375ed62dedd695dd1bab84f4bac6e9b3cc221e87fdc83d6c71a",
+    "reports/m5b_dataset_quality.json": "fbd143895c2b64008bcc45f30e95a5c47dbddbf042be6abcb934f93fbda88224",
+    "reports/m5b_geometry_factorization.json": "c3a353b741952a67ae90523bd4a5adcd15f6a80b80baec3df3f9a9887885ce1d",
+    "reports/m5b_visual_prior_comparison.json": "5074a86c26ab782e3e7f3774291ca8177a13bb3bb5486ed7a5c56bcc7313e895",
+    "reports/m5b_context_ablation_corrected.json": "5540a114a16420b863ada1b56bd925993bed39f4f45888670c5981eaaeb900ea",
+    "reports/m5b_context_ablation.json": "e0c4d770fa3996ee12b3017f013c2b04c2f1057ad9ae4f0dd566f9fe31468a4e",
+    "reports/m5b_runtime_attribution_final.json": "579ec4d6a77708e36558cee8846d955d2830f477da09ccc5486e9cb59a207cea",
+    "reports/m5b_target_geometry.json": "d6a7bbbc2e328681af2857a2c9fa11bf3e8de984dc68da1556a85cadf8f7d508",
+    "reports/m5b_serialization_profile.json": "87b9ff3da429f0a4269ed1b71e549c3002047df14e5134805dc2aee514e207e1",
+    "reports/m5b_context_ablation_initial.json": "27fa8ebba8829cf5c0de36c7242ef2561d7202fe56cc6e51edc023709e74da09",
+    "reports/m5b_asset_freeze.json": "fcc081805113cf46fa7def6a993edfb8156f9d3e7393365e0bd03ae2bac7cebf",
+    "reports/m5b_assets_final.json": "87c269d0b0c146ad4591d3f3b7f3349c753a896ae4428e5e7d1b2ecec81af169",
+    "reports/m5b_pair_quality.json": "8121d34399d34143c740763680c8818ddb022704689d44d8c06907b1bc06a93e",
+    "reports/m5b_dataset_generation_initial.json": "13e74aa82ed11098f129b626218f84e4d1b0cc7edd530ec562db6ace2b9dcf8a",
+    "reports/m5b_counterfactual_detection.json": "8d253b9c51fec8b1c34179c9b73a0d1854f78595c0da0a51657c25990e5e231a",
+    "reports/m5b_bf16_equivalence.json": "22657d8a423310050bf80b0f8db0df6506b6a7fc3059cd1ed8c853749bf85d03",
+    "reports/m5b_result_registry.json": "9658b4ab44b3667918e72151db0d0468668b6eecc3667015770cf3ee68c18a34",
+    "reports/m5b_pilot_witness_revision.json": "ba512f662c4e7960757cb34edf41516823580e5575da6ead92ad86b2ea091a47"
+  },
+  "reproduce": "docs/M5B_IMPLEMENTATION.md"
+}

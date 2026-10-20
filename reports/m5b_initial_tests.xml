@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="3" time="4.031" timestamp="2026-10-20T20:26:17.063447+08:00" hostname="gpufree-container"><testcase classname="tests.test_m5b_contracts" name="test_direction_and_stable_false_changes" time="0.005" /><testcase classname="tests.test_m5b_contracts" name="test_pair_loss_unknown_no_gradient" time="1.570" /><testcase classname="tests.test_m5b_contracts" name="test_cached_path_matches_formal_rgb_and_context_gradients" time="2.421"><failure message="AssertionError: assert False&#10; +  where False = &lt;built-in method allclose of type object at 0x7fb2596ca460&gt;(tensor([[[[0.2890, 0.3775, 0.4028,  ..., 1.0914, 1.0662, 0.8387],\n          [0.0300, 0.1595, 0.0000,  ..., 1.1799, 1.1..., 0.2142, 0.3357, 0.0000],\n          [0.0555, 0.0065, 0.0000,  ..., 0.0496, 0.0000, 0.0000]]]],\n       device='cuda:0'), tensor([[[[0.2890, 0.3775, 0.4028,  ..., 1.0914, 1.0662, 0.8387],\n          [0.0300, 0.1595, 0.0000,  ..., 1.1799, 1.1..., 0.2142, 0.3357, 0.0000],\n          [0.0555, 0.0065, 0.0000,  ..., 0.0496, 0.0000, 0.0000]]]],\n       device='cuda:0'), atol=0.002, rtol=0.002)&#10; +    where &lt;built-in method allclose of type object at 0x7fb2596ca460&gt; = &lt;module 'torch' from '/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv-gpu/lib/python3.10/site-packages/torch/__init__.py'&gt;.allclose">def test_cached_path_matches_formal_rgb_and_context_gradients():
+        torch=pytest.importorskip('torch')
+        if not torch.cuda.is_available():pytest.skip('CUDA required')
+        from pathlib import Path
+        if not Path('/root/gpufree-data/hs-drive-data/processed/m5b_pilot_index').exists():pytest.skip('server pilot unavailable')
+        from tools.m5a_learning import encoder_load,stack
+        from datasets.m5a_training import VisualEvidenceDataset
+        from models.m5b_cached_encoder import cache_rgb,cached_forward
+        from training.runtime import prepare_cuda
+        prepare_cuda();torch.set_num_threads(2);net=encoder_load();ds=VisualEvidenceDataset('/root/gpufree-data/hs-drive-data/processed/m5b_pilot_index','train',supervision=False);inputs=stack([ds[0]],'inputs')
+        with torch.no_grad(),torch.autocast('cuda',dtype=torch.bfloat16):expected=net(**inputs)['bev_current']
+        cache=cache_rgb(net,inputs)
+        with torch.no_grad():actual=cached_forward(net,cache)
+&gt;       assert torch.allclose(actual,expected,atol=.002,rtol=.002)
+E       AssertionError: assert False
+E        +  where False = &lt;built-in method allclose of type object at 0x7fb2596ca460&gt;(tensor([[[[0.2890, 0.3775, 0.4028,  ..., 1.0914, 1.0662, 0.8387],\n          [0.0300, 0.1595, 0.0000,  ..., 1.1799, 1.1..., 0.2142, 0.3357, 0.0000],\n          [0.0555, 0.0065, 0.0000,  ..., 0.0496, 0.0000, 0.0000]]]],\n       device='cuda:0'), tensor([[[[0.2890, 0.3775, 0.4028,  ..., 1.0914, 1.0662, 0.8387],\n          [0.0300, 0.1595, 0.0000,  ..., 1.1799, 1.1..., 0.2142, 0.3357, 0.0000],\n          [0.0555, 0.0065, 0.0000,  ..., 0.0496, 0.0000, 0.0000]]]],\n       device='cuda:0'), atol=0.002, rtol=0.002)
+E        +    where &lt;built-in method allclose of type object at 0x7fb2596ca460&gt; = &lt;module 'torch' from '/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv-gpu/lib/python3.10/site-packages/torch/__init__.py'&gt;.allclose
+
+tests/test_m5b_contracts.py:31: AssertionError</failure></testcase></testsuite></testsuites>
