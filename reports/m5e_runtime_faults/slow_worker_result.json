@@ -1,0 +1,235 @@
+{
+  "moving_ticks": 0,
+  "measured_travel_m": 0.0,
+  "frame_advancement_errors": 0,
+  "fault_to_brake_s": null,
+  "normal_control_expired": 0,
+  "minute_windows": [
+    {
+      "start_s": 0,
+      "interval_ms": {
+        "p50": 50.000958144664764,
+        "p95": 50.362611189484596,
+        "p99": 50.85670784115791,
+        "max": 51.6421627253294,
+        "n": 159
+      },
+      "deadline_miss_rate": 0.0
+    }
+  ],
+  "worker_output_latency_ms": {
+    "p50": 991.2084322422743,
+    "p95": 1032.8879678621888,
+    "p99": 1035.4546685889363,
+    "max": 1036.0963437706232,
+    "n": 15
+  },
+  "load_description": "isolated M5E fault and moving actor regression",
+  "stage_profile_ms": {
+    "submit_ms": {
+      "p50": 0.04940293729305267,
+      "p95": 0.06671687588095661,
+      "p99": 0.09731132537126536,
+      "max": 0.28975121676921844,
+      "n": 160
+    },
+    "actor_guard_ms": {
+      "p50": 0.0013057142496109009,
+      "p95": 0.0020340085029602033,
+      "p99": 0.0025808624923229205,
+      "max": 0.003026798367500305,
+      "n": 160
+    },
+    "controller_ms": {
+      "p50": 0.008939765393733978,
+      "p95": 0.011937413364648817,
+      "p99": 0.0139818899333477,
+      "max": 0.016245990991592407,
+      "n": 160
+    },
+    "snapshot_state_measurement_ms": {
+      "p50": 0.07901526987552643,
+      "p95": 0.09489543735980985,
+      "p99": 0.11561686173081398,
+      "max": 0.16820989549160004,
+      "n": 160
+    },
+    "ipc_poll_validate_resample_ms": {
+      "p50": 0.06714463233947754,
+      "p95": 0.21487455815076822,
+      "p99": 0.3585416264832019,
+      "max": 0.3966502845287323,
+      "n": 160
+    },
+    "world_tick_ms": {
+      "p50": 1.4653140679001808,
+      "p95": 1.6562153585255144,
+      "p99": 2.3099322989583,
+      "max": 2.748977392911911,
+      "n": 160
+    },
+    "get_snapshot_ms": {
+      "p50": 0.017357058823108673,
+      "p95": 0.02389671280980109,
+      "p99": 0.026687663048505783,
+      "max": 0.02691522240638733,
+      "n": 160
+    },
+    "snapshot_serialization_ms": {
+      "p50": 0.038982369005680084,
+      "p95": 0.04811370745301245,
+      "p99": 0.058293398469686494,
+      "max": 0.06171315908432007,
+      "n": 160
+    },
+    "log_disk_ms": {
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0,
+      "max": 0.0,
+      "n": 160
+    },
+    "apply_control_ms": {
+      "p50": 0.007652677595615387,
+      "p95": 0.010186713188886639,
+      "p99": 0.012844298034906386,
+      "max": 0.030742958188056946,
+      "n": 160
+    },
+    "road_query_ms": {
+      "p50": 0.57257991284132,
+      "p95": 0.7527826353907584,
+      "p99": 0.9644167311489581,
+      "max": 1.3029761612415314,
+      "n": 160
+    },
+    "get_control_ms": {
+      "p50": 0.005840323865413666,
+      "p95": 0.008371286094188688,
+      "p99": 0.009347274899482724,
+      "max": 0.01115165650844574,
+      "n": 160
+    },
+    "log_buffer_ms": {
+      "p50": 0.013632699847221375,
+      "p95": 0.024077482521533952,
+      "p99": 0.049291439354419674,
+      "max": 0.05741417407989502,
+      "n": 160
+    }
+  },
+  "scene": "slow_worker",
+  "route_completion": 0.0,
+  "route_passed": false,
+  "collisions": 0,
+  "lane_invasions": 0,
+  "road_boundary_frames": 0,
+  "ticks": 160,
+  "sim_hz": 19.99999970197678,
+  "wall_hz": 19.999102217400882,
+  "planner_ms": {
+    "p50": 504.7439709305763,
+    "p95": 556.8667963147163,
+    "p99": 556.9937664270401,
+    "max": 557.025508955121,
+    "n": 15
+  },
+  "controller_compute_ms": {
+    "p50": 0.8351653814315796,
+    "p95": 1.091264933347702,
+    "p99": 1.539975330233573,
+    "max": 1.705452799797058,
+    "n": 160
+  },
+  "control_interval_ms": {
+    "p50": 50.000958144664764,
+    "p95": 50.362611189484596,
+    "p99": 50.85670784115791,
+    "max": 51.6421627253294,
+    "n": 159
+  },
+  "deadline_miss_rate": 0.0,
+  "interval_over_55ms_rate": 0.0,
+  "plan_sim_age_s": null,
+  "plan_wall_age_s": null,
+  "degradation_ticks": {
+    "no_valid_plan": 160
+  },
+  "rejected": [
+    {
+      "frame": 448842,
+      "reason": "plan_expired"
+    },
+    {
+      "frame": 448846,
+      "reason": "plan_expired"
+    },
+    {
+      "frame": 448856,
+      "reason": "plan_expired"
+    },
+    {
+      "frame": 448867,
+      "reason": "plan_expired"
+    },
+    {
+      "frame": 448877,
+      "reason": "plan_expired"
+    },
+    {
+      "frame": 448887,
+      "reason": "plan_expired"
+    },
+    {
+      "frame": 448897,
+      "reason": "plan_expired"
+    },
+    {
+      "frame": 448908,
+      "reason": "plan_expired"
+    },
+    {
+      "frame": 448918,
+      "reason": "plan_expired"
+    },
+    {
+      "frame": 448928,
+      "reason": "plan_expired"
+    },
+    {
+      "frame": 448938,
+      "reason": "plan_expired"
+    },
+    {
+      "frame": 448948,
+      "reason": "plan_expired"
+    },
+    {
+      "frame": 448958,
+      "reason": "plan_expired"
+    },
+    {
+      "frame": 448968,
+      "reason": "plan_expired"
+    },
+    {
+      "frame": 448978,
+      "reason": "plan_expired"
+    }
+  ],
+  "worker_history": "reports/m5e_runtime_faults/slow_worker_plans.json",
+  "log": "reports/m5e_runtime_faults/slow_worker.jsonl",
+  "log_sha256": "4e264f02e7ab7df427f020665b62bf0359ba45c9a2e97ea1d3914e75c9800207",
+  "actual_dynamics": {
+    "max_decel_raw": 0.0,
+    "jerk_peak_raw": 0.0,
+    "jerk_p95_moving": 0.0,
+    "jerk_p95_all": 0.0,
+    "max_decel_250ms": 0.0,
+    "jerk_p95_250ms": 0.0,
+    "min_signed_speed": 0.0,
+    "reverse_ticks": 0,
+    "low_speed_moving_seconds": 0.0,
+    "api_accel_vs_velocity_derivative_mae": 0.0
+  }
+}

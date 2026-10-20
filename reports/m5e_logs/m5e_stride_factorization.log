@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5e_stride_factorization.py", line 46, in <module>
+    if __name__=='__main__':main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5e_stride_factorization.py", line 21, in main
+    prepare_cuda();torch.set_num_threads(2);ds=VisualEvidenceDataset(ROOT,'val',supervision=False);lookup={r['sample_id']:i for i,r in enumerate(ds.rows)};sup=sidecars(ROOT,ds.rows,'m5e_supervision.json');ref=sidecars(ROOT,ds.rows,'m5e_surface_index.json');pair=pairs(ROOT,'val');net=encoder_load();inputs=[stack([ds[i]],'inputs') for i in range(len(ds))];cc16=[cache_rgb(net,i) for i in inputs];cc8=[cache_p8(net,i) for i in inputs];records=[]
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5e_common.py", line 21, in pairs
+    rows=json.loads(Path(index,'m5e_pairs.json').read_text())['pairs']
+  File "/usr/lib/python3.10/pathlib.py", line 1134, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "/usr/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '/root/gpufree-data/hs-drive-data/processed/m5e_index/m5e_pairs.json'

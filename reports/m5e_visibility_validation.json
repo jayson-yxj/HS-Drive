@@ -1,0 +1,147 @@
+{
+  "kind": "synthetic_plus_offline_actual_new_CARLA_validation",
+  "synthetic": {
+    "kind": "synthetic_known_geometry",
+    "cases": [
+      {
+        "case": "plane",
+        "expected_candidate": true,
+        "candidate": true,
+        "patch_range_m": 0.0,
+        "max_residual_m": 2.842170943040401e-14
+      },
+      {
+        "case": "ramp",
+        "expected_candidate": true,
+        "candidate": true,
+        "patch_range_m": 4.924128228318757,
+        "max_residual_m": 2.842170943040401e-14
+      },
+      {
+        "case": "slanted_wall",
+        "expected_candidate": true,
+        "candidate": true,
+        "patch_range_m": 4.924128228318757,
+        "max_residual_m": 4.263256414560601e-14
+      },
+      {
+        "case": "edge",
+        "expected_candidate": false,
+        "candidate": false,
+        "max_residual_m": 12.727272727272819
+      },
+      {
+        "case": "occlusion",
+        "expected_candidate": false,
+        "candidate": false,
+        "max_residual_m": 12.727272727272819
+      },
+      {
+        "case": "adjacent",
+        "expected_candidate": false,
+        "candidate": false,
+        "max_residual_m": 2.842170943040401e-14
+      },
+      {
+        "case": "thin_pole",
+        "expected_candidate": false,
+        "candidate": false,
+        "max_residual_m": 12.63157894736845
+      },
+      {
+        "case": "pedestrian",
+        "expected_candidate": false,
+        "candidate": false,
+        "max_residual_m": 12.63157894736845
+      },
+      {
+        "case": "noise",
+        "expected_candidate": false,
+        "candidate": false,
+        "max_residual_m": 0.28809793697572417
+      }
+    ],
+    "passed": true,
+    "candidate_source_sha256": "76256fdee4b79d5fb8fa43b268de7eaf628fee6332e023f1a9cd99ef233164f0",
+    "candidate_promoted_to_gold": false
+  },
+  "old_validation": {
+    "10_15": {
+      "n": 9247,
+      "old_local_rejected": 8915,
+      "continuous_plane_candidate": 5165,
+      "identity_edge": 3619,
+      "nonplanar_or_noise": 131,
+      "qualified_candidate_pixels": 1174,
+      "semantic_voxel_veto": 6989
+    },
+    "15_20": {
+      "n": 5781,
+      "old_local_rejected": 5176,
+      "continuous_plane_candidate": 1296,
+      "identity_edge": 3436,
+      "nonplanar_or_noise": 444,
+      "qualified_candidate_pixels": 1023,
+      "semantic_voxel_veto": 2535
+    },
+    "20_25": {
+      "n": 465,
+      "old_local_rejected": 459,
+      "continuous_plane_candidate": 205,
+      "identity_edge": 238,
+      "nonplanar_or_noise": 16,
+      "qualified_candidate_pixels": 205,
+      "semantic_voxel_veto": 0
+    },
+    "25_35": {
+      "n": 198,
+      "old_local_rejected": 198,
+      "continuous_plane_candidate": 16,
+      "identity_edge": 150,
+      "nonplanar_or_noise": 32,
+      "qualified_candidate_pixels": 16,
+      "semantic_voxel_veto": 0
+    }
+  },
+  "new_validation": {
+    "10_15": {
+      "n": 3121,
+      "old_local_rejected": 2965,
+      "continuous_plane_candidate": 2061,
+      "identity_edge": 897,
+      "nonplanar_or_noise": 7,
+      "qualified_candidate_pixels": 1074,
+      "semantic_voxel_veto": 1336
+    },
+    "15_20": {
+      "n": 5586,
+      "old_local_rejected": 5586,
+      "continuous_plane_candidate": 2188,
+      "identity_edge": 2587,
+      "nonplanar_or_noise": 811,
+      "qualified_candidate_pixels": 1616,
+      "semantic_voxel_veto": 2531
+    },
+    "20_25": {
+      "n": 556,
+      "old_local_rejected": 556,
+      "continuous_plane_candidate": 364,
+      "identity_edge": 180,
+      "nonplanar_or_noise": 12,
+      "qualified_candidate_pixels": 334,
+      "semantic_voxel_veto": 0
+    },
+    "25_35": {
+      "n": 1461,
+      "old_local_rejected": 1461,
+      "continuous_plane_candidate": 297,
+      "identity_edge": 931,
+      "nonplanar_or_noise": 233,
+      "qualified_candidate_pixels": 248,
+      "semantic_voxel_veto": 103
+    }
+  },
+  "candidate_promoted_to_gold": false,
+  "source_sha256": "76256fdee4b79d5fb8fa43b268de7eaf628fee6332e023f1a9cd99ef233164f0",
+  "limits": "Candidate planar supports only. Independent collision query separately reported in m5e_collision_visibility.json. Collisionreference mismatch cannot become acceptednegative. No independentrenderMesh."
+}

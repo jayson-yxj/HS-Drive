@@ -1,0 +1,42 @@
+{
+  "kind": "actual_local_command_completion",
+  "commands": [
+    [
+      "supervision_isolation",
+      ".venv-gpu/bin/python",
+      [
+        "-m",
+        "tools.m5e_data_analysis",
+        "--indices",
+        "/root/gpufree-data/hs-drive-data/processed/m5e_index",
+        "/root/gpufree-data/hs-drive-data/processed/m5e_test_index",
+        "--report",
+        "reports/m5e_supervision_isolation.json"
+      ]
+    ],
+    [
+      "scene_figure",
+      ".venv-gpu/bin/python",
+      [
+        "-m",
+        "tools.m5e_scene_figure"
+      ]
+    ],
+    [
+      "final_runtime_tests",
+      ".venv-gpu/bin/python",
+      [
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_m5e_runtime.py",
+        "--junitxml=reports/m5e_runtime_unit_tests.xml"
+      ]
+    ]
+  ],
+  "exit_codes": [
+    0,
+    0,
+    0
+  ]
+}

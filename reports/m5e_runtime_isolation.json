@@ -1,0 +1,2202 @@
+{
+  "kind": "actual_CARLA_two_repeats_affinity_frequency_isolation",
+  "records": [
+    {
+      "case": "default_mixed",
+      "repeat": 0,
+      "exit_code": 0,
+      "load_exit_codes": [
+        0,
+        0
+      ],
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "tools.m5e_async_drive",
+        "--output",
+        "reports/m5e_runtime_default_mixed_0.json",
+        "--artifacts",
+        "reports/m5e_runtime_default_mixed_0",
+        "--scenarios",
+        "straight",
+        "--ticks",
+        "1200",
+        "--route-distance",
+        "100",
+        "--hold-after-route",
+        "--load-description",
+        "default_mixed_0"
+      ],
+      "report": "reports/m5e_runtime_default_mixed_0.json",
+      "results": [
+        {
+          "moving_ticks": 906,
+          "measured_travel_m": 97.76564739338427,
+          "frame_advancement_errors": 0,
+          "fault_to_brake_s": null,
+          "normal_control_expired": 0,
+          "minute_windows": [
+            {
+              "start_s": 0,
+              "interval_ms": {
+                "p50": 49.98710751533508,
+                "p95": 50.56171324104071,
+                "p99": 51.14298261702061,
+                "max": 95.19795887172222,
+                "n": 1199
+              },
+              "deadline_miss_rate": 0.0016666666666666668
+            }
+          ],
+          "worker_output_latency_ms": {
+            "p50": 65.25984965264797,
+            "p95": 91.94446969777346,
+            "p99": 100.23306697607039,
+            "max": 172.05709964036942,
+            "n": 300
+          },
+          "load_description": "default_mixed_0",
+          "stage_profile_ms": {
+            "log_buffer_ms": {
+              "p50": 0.016419216990470886,
+              "p95": 0.03387704491615295,
+              "p99": 0.05151525139808655,
+              "max": 0.12006610631942749,
+              "n": 1200
+            },
+            "world_tick_ms": {
+              "p50": 1.7925901338458061,
+              "p95": 2.271187026053667,
+              "p99": 2.9146463610231863,
+              "max": 93.37230399250984,
+              "n": 1200
+            },
+            "snapshot_serialization_ms": {
+              "p50": 0.0,
+              "p95": 0.045732129365205765,
+              "p99": 0.05328964442014694,
+              "max": 0.1360718160867691,
+              "n": 1200
+            },
+            "log_disk_ms": {
+              "p50": 0.0,
+              "p95": 0.0,
+              "p99": 0.0,
+              "max": 0.0,
+              "n": 1200
+            },
+            "controller_ms": {
+              "p50": 0.1630997285246849,
+              "p95": 0.2587636932730674,
+              "p99": 0.3628301806747912,
+              "max": 0.6443578749895096,
+              "n": 1200
+            },
+            "actor_guard_ms": {
+              "p50": 0.0015227124094963074,
+              "p95": 0.002789124846458433,
+              "p99": 0.004155635833740234,
+              "max": 0.03553926944732666,
+              "n": 1200
+            },
+            "ipc_poll_validate_resample_ms": {
+              "p50": 0.4873797297477722,
+              "p95": 0.6722473539412022,
+              "p99": 0.9514843858778472,
+              "max": 2.318684011697769,
+              "n": 1200
+            },
+            "apply_control_ms": {
+              "p50": 0.03511272370815277,
+              "p95": 0.04749558866024017,
+              "p99": 0.06313960999250409,
+              "max": 0.32770633697509766,
+              "n": 1200
+            },
+            "road_query_ms": {
+              "p50": 0.7529323920607567,
+              "p95": 1.018193457275629,
+              "p99": 1.1623671464622016,
+              "max": 1.742212101817131,
+              "n": 1200
+            },
+            "get_control_ms": {
+              "p50": 0.006886199116706848,
+              "p95": 0.009079370647668839,
+              "p99": 0.00994758680462837,
+              "max": 0.020967796444892883,
+              "n": 1200
+            },
+            "submit_ms": {
+              "p50": 0.001107342541217804,
+              "p95": 0.0777972862124443,
+              "p99": 0.08988205343484879,
+              "max": 0.4328787326812744,
+              "n": 1200
+            },
+            "snapshot_state_measurement_ms": {
+              "p50": 0.08244067430496216,
+              "p95": 0.10637203231453896,
+              "p99": 0.13050533831119535,
+              "max": 0.5177482962608337,
+              "n": 1200
+            },
+            "get_snapshot_ms": {
+              "p50": 0.019155442714691162,
+              "p95": 0.024785101413726807,
+              "p99": 0.02816827967762947,
+              "max": 0.0658668577671051,
+              "n": 1200
+            }
+          },
+          "scene": "straight",
+          "route_completion": 0.9875221609384729,
+          "route_passed": true,
+          "collisions": 0,
+          "lane_invasions": 0,
+          "road_boundary_frames": 0,
+          "ticks": 1200,
+          "sim_hz": 19.99999970197678,
+          "wall_hz": 19.999878258254103,
+          "planner_ms": {
+            "p50": 63.72347939759493,
+            "p95": 91.0024312324822,
+            "p99": 98.64739125594495,
+            "max": 105.13831861317158,
+            "n": 300
+          },
+          "controller_compute_ms": {
+            "p50": 1.5910984948277473,
+            "p95": 2.126759197562933,
+            "p99": 2.689104974269867,
+            "max": 4.647672176361084,
+            "n": 1200
+          },
+          "control_interval_ms": {
+            "p50": 49.98710751533508,
+            "p95": 50.56171324104071,
+            "p99": 51.14298261702061,
+            "max": 95.19795887172222,
+            "n": 1199
+          },
+          "deadline_miss_rate": 0.0016666666666666668,
+          "interval_over_55ms_rate": 0.0008340283569641367,
+          "plan_sim_age_s": {
+            "p50": 0.20000000298023224,
+            "p95": 0.2500000037252903,
+            "p99": 0.2500000037252903,
+            "max": 0.30000000447034836,
+            "n": 1196
+          },
+          "plan_wall_age_s": {
+            "p50": 0.20071921776980162,
+            "p95": 0.251561067532748,
+            "p99": 0.2519763527438045,
+            "max": 0.30132648162543774,
+            "n": 1196
+          },
+          "degradation_ticks": {
+            "no_valid_plan": 4
+          },
+          "rejected": [],
+          "worker_history": "reports/m5e_runtime_default_mixed_0/straight_plans.json",
+          "log": "reports/m5e_runtime_default_mixed_0/straight.jsonl",
+          "log_sha256": "eba1bcff6663e60f162c0aab9b267765df75143dc058de34606e6ccfe9431122",
+          "actual_dynamics": {
+            "max_decel_raw": 16.275893935323786,
+            "jerk_peak_raw": 367.1345701607774,
+            "jerk_p95_moving": 32.706383137165986,
+            "jerk_p95_all": 19.991660745399678,
+            "max_decel_250ms": 3.2134453201247473,
+            "jerk_p95_250ms": 6.2866491860330065,
+            "min_signed_speed": -5.394699695099825e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 6.7,
+            "api_accel_vs_velocity_derivative_mae": 0.0003295738857915208
+          }
+        }
+      ]
+    },
+    {
+      "case": "tick_reserved",
+      "repeat": 0,
+      "exit_code": 0,
+      "load_exit_codes": [
+        0,
+        0
+      ],
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "tools.m5e_async_drive",
+        "--output",
+        "reports/m5e_runtime_tick_reserved_0.json",
+        "--artifacts",
+        "reports/m5e_runtime_tick_reserved_0",
+        "--scenarios",
+        "straight",
+        "--ticks",
+        "1200",
+        "--route-distance",
+        "100",
+        "--hold-after-route",
+        "--load-description",
+        "tick_reserved_0",
+        "--tick-cpus",
+        "0,1"
+      ],
+      "report": "reports/m5e_runtime_tick_reserved_0.json",
+      "results": [
+        {
+          "moving_ticks": 892,
+          "measured_travel_m": 97.75937842677406,
+          "frame_advancement_errors": 0,
+          "fault_to_brake_s": null,
+          "normal_control_expired": 0,
+          "minute_windows": [
+            {
+              "start_s": 0,
+              "interval_ms": {
+                "p50": 49.996815621852875,
+                "p95": 51.34555008262396,
+                "p99": 63.74435607343912,
+                "max": 66.74816831946373,
+                "n": 1199
+              },
+              "deadline_miss_rate": 0.0
+            }
+          ],
+          "worker_output_latency_ms": {
+            "p50": 65.8306423574686,
+            "p95": 74.48455998674035,
+            "p99": 82.92710453271866,
+            "max": 180.99424242973328,
+            "n": 300
+          },
+          "load_description": "tick_reserved_0",
+          "stage_profile_ms": {
+            "road_query_ms": {
+              "p50": 0.6677675992250443,
+              "p95": 0.820855889469385,
+              "p99": 1.0128580406308172,
+              "max": 1.3464689254760742,
+              "n": 1200
+            },
+            "log_disk_ms": {
+              "p50": 0.0,
+              "p95": 0.0,
+              "p99": 0.0,
+              "max": 0.0,
+              "n": 1200
+            },
+            "world_tick_ms": {
+              "p50": 1.847144216299057,
+              "p95": 3.276791702955961,
+              "p99": 10.219684559851865,
+              "max": 16.603540629148483,
+              "n": 1200
+            },
+            "log_buffer_ms": {
+              "p50": 0.01688394695520401,
+              "p95": 0.030741188675165173,
+              "p99": 0.0366886705160141,
+              "max": 0.17214752733707428,
+              "n": 1200
+            },
+            "snapshot_serialization_ms": {
+              "p50": 0.0,
+              "p95": 0.04166262224316597,
+              "p99": 0.04857640713453293,
+              "max": 0.10990165174007416,
+              "n": 1200
+            },
+            "apply_control_ms": {
+              "p50": 0.036755576729774475,
+              "p95": 0.11952370405197144,
+              "p99": 0.17184494063258157,
+              "max": 15.664784237742424,
+              "n": 1200
+            },
+            "snapshot_state_measurement_ms": {
+              "p50": 0.07625762373209,
+              "p95": 0.0941552221775055,
+              "p99": 0.13850763440132136,
+              "max": 0.24056807160377502,
+              "n": 1200
+            },
+            "get_control_ms": {
+              "p50": 0.006258487701416016,
+              "p95": 0.008336827158927914,
+              "p99": 0.020428504794836044,
+              "max": 1.5773344784975052,
+              "n": 1200
+            },
+            "ipc_poll_validate_resample_ms": {
+              "p50": 0.47299545258283615,
+              "p95": 0.6867565214633937,
+              "p99": 13.947208542376757,
+              "max": 14.477264136075974,
+              "n": 1200
+            },
+            "get_snapshot_ms": {
+              "p50": 0.01867394894361496,
+              "p95": 0.032410118728876114,
+              "p99": 0.038652010262012475,
+              "max": 0.08496642112731934,
+              "n": 1200
+            },
+            "actor_guard_ms": {
+              "p50": 0.0014808028936386108,
+              "p95": 0.0021908432245254512,
+              "p99": 0.0032662972807884208,
+              "max": 0.008579343557357788,
+              "n": 1200
+            },
+            "controller_ms": {
+              "p50": 0.16446318477392197,
+              "p95": 0.2268342301249504,
+              "p99": 0.37035796791315045,
+              "max": 16.868868842720985,
+              "n": 1200
+            },
+            "submit_ms": {
+              "p50": 0.0009853392839431763,
+              "p95": 0.07203398272395133,
+              "p99": 0.08209424093365668,
+              "max": 14.291711151599884,
+              "n": 1200
+            }
+          },
+          "scene": "straight",
+          "route_completion": 0.9874517224464904,
+          "route_passed": true,
+          "collisions": 0,
+          "lane_invasions": 0,
+          "road_boundary_frames": 0,
+          "ticks": 1200,
+          "sim_hz": 19.99999970197678,
+          "wall_hz": 19.999865070274815,
+          "planner_ms": {
+            "p50": 65.0615282356739,
+            "p95": 73.26884847134352,
+            "p99": 81.04236362501979,
+            "max": 92.30336174368858,
+            "n": 300
+          },
+          "controller_compute_ms": {
+            "p50": 1.513882540166378,
+            "p95": 2.1960640326142298,
+            "p99": 15.297700427472591,
+            "max": 18.323948606848717,
+            "n": 1200
+          },
+          "control_interval_ms": {
+            "p50": 49.996815621852875,
+            "p95": 51.34555008262396,
+            "p99": 63.74435607343912,
+            "max": 66.74816831946373,
+            "n": 1199
+          },
+          "deadline_miss_rate": 0.0,
+          "interval_over_55ms_rate": 0.029190992493744787,
+          "plan_sim_age_s": {
+            "p50": 0.15000000223517418,
+            "p95": 0.2500000037252903,
+            "p99": 0.2500000037252903,
+            "max": 0.2500000037252903,
+            "n": 1196
+          },
+          "plan_wall_age_s": {
+            "p50": 0.15603764727711678,
+            "p95": 0.2514598034322262,
+            "p99": 0.25286140190437434,
+            "max": 0.2623710371553898,
+            "n": 1196
+          },
+          "degradation_ticks": {
+            "no_valid_plan": 4
+          },
+          "rejected": [],
+          "worker_history": "reports/m5e_runtime_tick_reserved_0/straight_plans.json",
+          "log": "reports/m5e_runtime_tick_reserved_0/straight.jsonl",
+          "log_sha256": "8365cdc4a5f90e33add0d4c3b4b141c8350ca75df8d3c72ee54c6894182e20d0",
+          "actual_dynamics": {
+            "max_decel_raw": 8.38042404017604,
+            "jerk_peak_raw": 183.65920325972542,
+            "jerk_p95_moving": 5.96118548238085,
+            "jerk_p95_all": 5.45531434960514,
+            "max_decel_250ms": 1.8063180727589503,
+            "jerk_p95_250ms": 3.936380716813951,
+            "min_signed_speed": -5.394796849505522e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 6.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0003661833421711428
+          }
+        }
+      ]
+    },
+    {
+      "case": "split_affinity",
+      "repeat": 0,
+      "exit_code": 0,
+      "load_exit_codes": [
+        0,
+        0
+      ],
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "tools.m5e_async_drive",
+        "--output",
+        "reports/m5e_runtime_split_affinity_0.json",
+        "--artifacts",
+        "reports/m5e_runtime_split_affinity_0",
+        "--scenarios",
+        "straight",
+        "--ticks",
+        "1200",
+        "--route-distance",
+        "100",
+        "--hold-after-route",
+        "--load-description",
+        "split_affinity_0",
+        "--tick-cpus",
+        "0,1",
+        "--worker-cpus",
+        "2,3"
+      ],
+      "report": "reports/m5e_runtime_split_affinity_0.json",
+      "results": [
+        {
+          "moving_ticks": 900,
+          "measured_travel_m": 97.76459096301627,
+          "frame_advancement_errors": 0,
+          "fault_to_brake_s": null,
+          "normal_control_expired": 0,
+          "minute_windows": [
+            {
+              "start_s": 0,
+              "interval_ms": {
+                "p50": 50.003524869680405,
+                "p95": 50.449132174253464,
+                "p99": 51.83459233492613,
+                "max": 61.28285638988018,
+                "n": 1199
+              },
+              "deadline_miss_rate": 0.0
+            }
+          ],
+          "worker_output_latency_ms": {
+            "p50": 64.53032791614532,
+            "p95": 80.24353608489037,
+            "p99": 93.46565049141645,
+            "max": 186.3935962319374,
+            "n": 300
+          },
+          "load_description": "split_affinity_0",
+          "stage_profile_ms": {
+            "log_buffer_ms": {
+              "p50": 0.015148892998695374,
+              "p95": 0.03100102767348289,
+              "p99": 0.03969399258494377,
+              "max": 0.07235445082187653,
+              "n": 1200
+            },
+            "snapshot_serialization_ms": {
+              "p50": 0.0,
+              "p95": 0.0410902313888073,
+              "p99": 0.04973389208316802,
+              "max": 0.11610612273216248,
+              "n": 1200
+            },
+            "get_control_ms": {
+              "p50": 0.005914829671382904,
+              "p95": 0.007177051156759262,
+              "p99": 0.008197836577892303,
+              "max": 0.04226714372634888,
+              "n": 1200
+            },
+            "road_query_ms": {
+              "p50": 0.6656711921095848,
+              "p95": 0.8104816079139708,
+              "p99": 0.9816570207476615,
+              "max": 1.3129934668540955,
+              "n": 1200
+            },
+            "get_snapshot_ms": {
+              "p50": 0.01707114279270172,
+              "p95": 0.02056686207652092,
+              "p99": 0.02436075359582901,
+              "max": 0.04170835018157959,
+              "n": 1200
+            },
+            "snapshot_state_measurement_ms": {
+              "p50": 0.07047690451145172,
+              "p95": 0.08819028735160828,
+              "p99": 0.11268205940723415,
+              "max": 0.31742826104164124,
+              "n": 1200
+            },
+            "ipc_poll_validate_resample_ms": {
+              "p50": 0.42831525206565857,
+              "p95": 0.5805033259093761,
+              "p99": 0.8478815667331213,
+              "max": 1.8095970153808594,
+              "n": 1200
+            },
+            "apply_control_ms": {
+              "p50": 0.031067989766597748,
+              "p95": 0.10357722640037537,
+              "p99": 0.12308742851018904,
+              "max": 0.40106475353240967,
+              "n": 1200
+            },
+            "world_tick_ms": {
+              "p50": 1.826256513595581,
+              "p95": 3.2238082028925414,
+              "p99": 5.541210658848286,
+              "max": 9.785473346710205,
+              "n": 1200
+            },
+            "log_disk_ms": {
+              "p50": 0.0,
+              "p95": 0.0,
+              "p99": 0.0,
+              "max": 0.0,
+              "n": 1200
+            },
+            "controller_ms": {
+              "p50": 0.1639062538743019,
+              "p95": 0.22445954382419575,
+              "p99": 0.352875981479883,
+              "max": 0.8071064949035645,
+              "n": 1200
+            },
+            "actor_guard_ms": {
+              "p50": 0.0014677643775939941,
+              "p95": 0.002164952456951141,
+              "p99": 0.003808364272117614,
+              "max": 0.1651924103498459,
+              "n": 1200
+            },
+            "submit_ms": {
+              "p50": 0.0008605420589447021,
+              "p95": 0.07174201309680937,
+              "p99": 0.08348735049366951,
+              "max": 0.26772357523441315,
+              "n": 1200
+            }
+          },
+          "scene": "straight",
+          "route_completion": 0.9875066492367326,
+          "route_passed": true,
+          "collisions": 0,
+          "lane_invasions": 0,
+          "road_boundary_frames": 0,
+          "ticks": 1200,
+          "sim_hz": 19.99999970197678,
+          "wall_hz": 19.999882975657066,
+          "planner_ms": {
+            "p50": 63.94378934055567,
+            "p95": 79.13323808461428,
+            "p99": 90.30809054151175,
+            "max": 93.3207031339407,
+            "n": 300
+          },
+          "controller_compute_ms": {
+            "p50": 1.4497945085167885,
+            "p95": 1.7874025739729402,
+            "p99": 2.183335553854704,
+            "max": 4.4394005089998245,
+            "n": 1200
+          },
+          "control_interval_ms": {
+            "p50": 50.003524869680405,
+            "p95": 50.449132174253464,
+            "p99": 51.83459233492613,
+            "max": 61.28285638988018,
+            "n": 1199
+          },
+          "deadline_miss_rate": 0.0,
+          "interval_over_55ms_rate": 0.003336113427856547,
+          "plan_sim_age_s": {
+            "p50": 0.15000000223517418,
+            "p95": 0.2500000037252903,
+            "p99": 0.2500000037252903,
+            "max": 0.2500000037252903,
+            "n": 1196
+          },
+          "plan_wall_age_s": {
+            "p50": 0.1547330915927887,
+            "p95": 0.25134763587266207,
+            "p99": 0.25177944311872125,
+            "max": 0.25524610839784145,
+            "n": 1196
+          },
+          "degradation_ticks": {
+            "no_valid_plan": 4
+          },
+          "rejected": [],
+          "worker_history": "reports/m5e_runtime_split_affinity_0/straight_plans.json",
+          "log": "reports/m5e_runtime_split_affinity_0/straight.jsonl",
+          "log_sha256": "00ebd5b1edc8bd30d81fab675fc4a021fcafd7a53f07c0e6b464452e37e39daf",
+          "actual_dynamics": {
+            "max_decel_raw": 7.0129565552640045,
+            "jerk_peak_raw": 192.97266486240744,
+            "jerk_p95_moving": 11.107232808602431,
+            "jerk_p95_all": 9.396190164269589,
+            "max_decel_250ms": 1.5080251570176517,
+            "jerk_p95_250ms": 4.120381298819133,
+            "min_signed_speed": -5.395373526913293e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 6.3500000000000005,
+            "api_accel_vs_velocity_derivative_mae": 0.00036333930235051795
+          }
+        }
+      ]
+    },
+    {
+      "case": "split_lowgpu",
+      "repeat": 0,
+      "exit_code": 0,
+      "load_exit_codes": [
+        0,
+        0
+      ],
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "tools.m5e_async_drive",
+        "--output",
+        "reports/m5e_runtime_split_lowgpu_0.json",
+        "--artifacts",
+        "reports/m5e_runtime_split_lowgpu_0",
+        "--scenarios",
+        "straight",
+        "--ticks",
+        "1200",
+        "--route-distance",
+        "100",
+        "--hold-after-route",
+        "--load-description",
+        "split_lowgpu_0",
+        "--tick-cpus",
+        "0,1",
+        "--worker-cpus",
+        "2,3"
+      ],
+      "report": "reports/m5e_runtime_split_lowgpu_0.json",
+      "results": [
+        {
+          "moving_ticks": 895,
+          "measured_travel_m": 97.75887614448042,
+          "frame_advancement_errors": 0,
+          "fault_to_brake_s": null,
+          "normal_control_expired": 0,
+          "minute_windows": [
+            {
+              "start_s": 0,
+              "interval_ms": {
+                "p50": 49.99916814267635,
+                "p95": 50.57275965809822,
+                "p99": 53.844811469316475,
+                "max": 56.74523673951626,
+                "n": 1199
+              },
+              "deadline_miss_rate": 0.0
+            }
+          ],
+          "worker_output_latency_ms": {
+            "p50": 64.16672375053167,
+            "p95": 72.64359565451741,
+            "p99": 80.55119493976231,
+            "max": 173.33165183663368,
+            "n": 300
+          },
+          "load_description": "split_lowgpu_0",
+          "stage_profile_ms": {
+            "get_snapshot_ms": {
+              "p50": 0.020731240510940552,
+              "p95": 0.031816773116588586,
+              "p99": 0.03828000277280807,
+              "max": 0.06471388041973114,
+              "n": 1200
+            },
+            "get_control_ms": {
+              "p50": 0.00678282231092453,
+              "p95": 0.008863117545843124,
+              "p99": 0.017502233386039734,
+              "max": 0.04910491406917572,
+              "n": 1200
+            },
+            "log_buffer_ms": {
+              "p50": 0.016121193766593933,
+              "p95": 0.03286562860012054,
+              "p99": 0.03976823762059212,
+              "max": 1.368759199976921,
+              "n": 1200
+            },
+            "world_tick_ms": {
+              "p50": 1.8076356500387192,
+              "p95": 3.1510083004832263,
+              "p99": 5.102920997887847,
+              "max": 13.767004013061523,
+              "n": 1200
+            },
+            "road_query_ms": {
+              "p50": 0.6661005318164825,
+              "p95": 0.8039514534175396,
+              "p99": 0.9637586586177347,
+              "max": 7.003536447882652,
+              "n": 1200
+            },
+            "controller_ms": {
+              "p50": 0.16760826110839844,
+              "p95": 0.22862460464239115,
+              "p99": 0.4269075393676756,
+              "max": 0.6834119558334351,
+              "n": 1200
+            },
+            "ipc_poll_validate_resample_ms": {
+              "p50": 0.4791608080267906,
+              "p95": 0.6550964899361134,
+              "p99": 0.9373308531939978,
+              "max": 1.7324257642030716,
+              "n": 1200
+            },
+            "snapshot_state_measurement_ms": {
+              "p50": 0.08289050310850143,
+              "p95": 0.10055517777800559,
+              "p99": 0.13140665367245669,
+              "max": 0.31164102256298065,
+              "n": 1200
+            },
+            "apply_control_ms": {
+              "p50": 0.03499723970890045,
+              "p95": 0.11137146502733229,
+              "p99": 0.13399071991443634,
+              "max": 0.3558844327926636,
+              "n": 1200
+            },
+            "actor_guard_ms": {
+              "p50": 0.0016521662473678589,
+              "p95": 0.0023888424038887015,
+              "p99": 0.004414282739162443,
+              "max": 0.015908852219581604,
+              "n": 1200
+            },
+            "submit_ms": {
+              "p50": 0.0009462237358093262,
+              "p95": 0.07889512926340103,
+              "p99": 0.0908024050295353,
+              "max": 0.3188084810972214,
+              "n": 1200
+            },
+            "log_disk_ms": {
+              "p50": 0.0,
+              "p95": 0.0,
+              "p99": 0.0,
+              "max": 0.0,
+              "n": 1200
+            },
+            "snapshot_serialization_ms": {
+              "p50": 0.0,
+              "p95": 0.04660403355956077,
+              "p99": 0.05464218556880951,
+              "max": 0.14392100274562836,
+              "n": 1200
+            }
+          },
+          "scene": "straight",
+          "route_completion": 0.9874529578495254,
+          "route_passed": true,
+          "collisions": 0,
+          "lane_invasions": 0,
+          "road_boundary_frames": 0,
+          "ticks": 1200,
+          "sim_hz": 19.99999970197678,
+          "wall_hz": 19.999865603605027,
+          "planner_ms": {
+            "p50": 62.96062096953392,
+            "p95": 71.56564006581903,
+            "p99": 77.29031370952723,
+            "max": 86.32907457649708,
+            "n": 300
+          },
+          "controller_compute_ms": {
+            "p50": 1.5263212844729424,
+            "p95": 1.933883875608444,
+            "p99": 2.3762073926627636,
+            "max": 8.046319708228111,
+            "n": 1200
+          },
+          "control_interval_ms": {
+            "p50": 49.99916814267635,
+            "p95": 50.57275965809822,
+            "p99": 53.844811469316475,
+            "max": 56.74523673951626,
+            "n": 1199
+          },
+          "deadline_miss_rate": 0.0,
+          "interval_over_55ms_rate": 0.004170141784820684,
+          "plan_sim_age_s": {
+            "p50": 0.15000000223517418,
+            "p95": 0.2500000037252903,
+            "p99": 0.2500000037252903,
+            "max": 0.2500000037252903,
+            "n": 1196
+          },
+          "plan_wall_age_s": {
+            "p50": 0.15245142579078674,
+            "p95": 0.2513930406421423,
+            "p99": 0.25177065348252653,
+            "max": 0.2573650125414133,
+            "n": 1196
+          },
+          "degradation_ticks": {
+            "no_valid_plan": 4
+          },
+          "rejected": [],
+          "worker_history": "reports/m5e_runtime_split_lowgpu_0/straight_plans.json",
+          "log": "reports/m5e_runtime_split_lowgpu_0/straight.jsonl",
+          "log_sha256": "33d37cde771c4025323b66892211718cfce695b90d7df92a2262b00754e7c861",
+          "actual_dynamics": {
+            "max_decel_raw": 8.01184505350433,
+            "jerk_peak_raw": 188.91085986685135,
+            "jerk_p95_moving": 5.628118384855904,
+            "jerk_p95_all": 5.404872197541497,
+            "max_decel_250ms": 1.7251500478538928,
+            "jerk_p95_250ms": 4.005235253262404,
+            "min_signed_speed": -5.395355016348398e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 6.15,
+            "api_accel_vs_velocity_derivative_mae": 0.0003288756867854478
+          }
+        }
+      ]
+    },
+    {
+      "case": "timeshare_quiet",
+      "repeat": 0,
+      "exit_code": 0,
+      "load_exit_codes": [],
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "tools.m5e_async_drive",
+        "--output",
+        "reports/m5e_runtime_timeshare_quiet_0.json",
+        "--artifacts",
+        "reports/m5e_runtime_timeshare_quiet_0",
+        "--scenarios",
+        "straight",
+        "--ticks",
+        "1200",
+        "--route-distance",
+        "100",
+        "--hold-after-route",
+        "--load-description",
+        "timeshare_quiet_0",
+        "--tick-cpus",
+        "0,1",
+        "--worker-cpus",
+        "2,3"
+      ],
+      "report": "reports/m5e_runtime_timeshare_quiet_0.json",
+      "results": [
+        {
+          "moving_ticks": 900,
+          "measured_travel_m": 97.75989771529973,
+          "frame_advancement_errors": 0,
+          "fault_to_brake_s": null,
+          "normal_control_expired": 0,
+          "minute_windows": [
+            {
+              "start_s": 0,
+              "interval_ms": {
+                "p50": 50.00855587422848,
+                "p95": 50.50754360854626,
+                "p99": 51.838080547749996,
+                "max": 59.774553403258324,
+                "n": 1199
+              },
+              "deadline_miss_rate": 0.0
+            }
+          ],
+          "worker_output_latency_ms": {
+            "p50": 62.452325597405434,
+            "p95": 74.7179093770683,
+            "p99": 84.04737573117008,
+            "max": 182.90814198553562,
+            "n": 300
+          },
+          "load_description": "timeshare_quiet_0",
+          "stage_profile_ms": {
+            "world_tick_ms": {
+              "p50": 1.8393006175756454,
+              "p95": 3.128405567258596,
+              "p99": 3.90082649886608,
+              "max": 9.105544537305832,
+              "n": 1200
+            },
+            "road_query_ms": {
+              "p50": 0.6692651659250259,
+              "p95": 0.8112612180411816,
+              "p99": 0.98780183121562,
+              "max": 1.6431156545877457,
+              "n": 1200
+            },
+            "snapshot_serialization_ms": {
+              "p50": 0.0,
+              "p95": 0.046417210251092904,
+              "p99": 0.05521992221474647,
+              "max": 0.06998702883720398,
+              "n": 1200
+            },
+            "get_control_ms": {
+              "p50": 0.006888993084430695,
+              "p95": 0.008438900113105772,
+              "p99": 0.011391770094633099,
+              "max": 0.05253218114376068,
+              "n": 1200
+            },
+            "snapshot_state_measurement_ms": {
+              "p50": 0.08011050522327423,
+              "p95": 0.09951032698154447,
+              "p99": 0.16162421554327,
+              "max": 0.28649158775806427,
+              "n": 1200
+            },
+            "ipc_poll_validate_resample_ms": {
+              "p50": 0.4904968664050102,
+              "p95": 0.6489703431725502,
+              "p99": 1.039580274373293,
+              "max": 3.8887541741132736,
+              "n": 1200
+            },
+            "actor_guard_ms": {
+              "p50": 0.0015683472156524658,
+              "p95": 0.002305954694747925,
+              "p99": 0.004016086459159848,
+              "max": 0.019120052456855774,
+              "n": 1200
+            },
+            "log_buffer_ms": {
+              "p50": 0.016191042959690094,
+              "p95": 0.03197351470589638,
+              "p99": 0.03918889909982681,
+              "max": 0.15886127948760986,
+              "n": 1200
+            },
+            "apply_control_ms": {
+              "p50": 0.034003518521785736,
+              "p95": 0.1003483310341835,
+              "p99": 0.12161390855908392,
+              "max": 0.33180415630340576,
+              "n": 1200
+            },
+            "log_disk_ms": {
+              "p50": 0.0,
+              "p95": 0.0,
+              "p99": 0.0,
+              "max": 0.0,
+              "n": 1200
+            },
+            "submit_ms": {
+              "p50": 0.000910833477973938,
+              "p95": 0.0768190249800682,
+              "p99": 0.08978163823485374,
+              "max": 0.3380868583917618,
+              "n": 1200
+            },
+            "controller_ms": {
+              "p50": 0.17030443996191025,
+              "p95": 0.23017236962914467,
+              "p99": 0.3416348807513714,
+              "max": 0.8450914174318314,
+              "n": 1200
+            },
+            "get_snapshot_ms": {
+              "p50": 0.019973143935203552,
+              "p95": 0.02459464594721794,
+              "p99": 0.03025636076927184,
+              "max": 0.06054528057575226,
+              "n": 1200
+            }
+          },
+          "scene": "straight",
+          "route_completion": 0.9874669835453611,
+          "route_passed": true,
+          "collisions": 0,
+          "lane_invasions": 0,
+          "road_boundary_frames": 0,
+          "ticks": 1200,
+          "sim_hz": 19.99999970197678,
+          "wall_hz": 19.999868446584603,
+          "planner_ms": {
+            "p50": 61.4433353766799,
+            "p95": 74.01428828015924,
+            "p99": 78.45662998035546,
+            "max": 94.13486160337925,
+            "n": 300
+          },
+          "controller_compute_ms": {
+            "p50": 1.5321988612413406,
+            "p95": 1.8858641386032102,
+            "p99": 2.4040454998612404,
+            "max": 5.16454316675663,
+            "n": 1200
+          },
+          "control_interval_ms": {
+            "p50": 50.00855587422848,
+            "p95": 50.50754360854626,
+            "p99": 51.838080547749996,
+            "max": 59.774553403258324,
+            "n": 1199
+          },
+          "deadline_miss_rate": 0.0,
+          "interval_over_55ms_rate": 0.003336113427856547,
+          "plan_sim_age_s": {
+            "p50": 0.15000000223517418,
+            "p95": 0.2500000037252903,
+            "p99": 0.2500000037252903,
+            "max": 0.2500000037252903,
+            "n": 1196
+          },
+          "plan_wall_age_s": {
+            "p50": 0.1525348275899887,
+            "p95": 0.2513932376168668,
+            "p99": 0.2519294435158372,
+            "max": 0.2566130496561527,
+            "n": 1196
+          },
+          "degradation_ticks": {
+            "no_valid_plan": 4
+          },
+          "rejected": [],
+          "worker_history": "reports/m5e_runtime_timeshare_quiet_0/straight_plans.json",
+          "log": "reports/m5e_runtime_timeshare_quiet_0/straight.jsonl",
+          "log_sha256": "389e0cdce002599d5efb9258cf7e6d06d8e09dfa0d5cbeb1d499112a273b1582",
+          "actual_dynamics": {
+            "max_decel_raw": 7.863491891392352,
+            "jerk_peak_raw": 157.3754467706795,
+            "jerk_p95_moving": 49.86305464504478,
+            "jerk_p95_all": 37.14826722230778,
+            "max_decel_250ms": 1.6933795166110486,
+            "jerk_p95_250ms": 9.029536463274342,
+            "min_signed_speed": -5.395053080865917e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 6.2,
+            "api_accel_vs_velocity_derivative_mae": 0.0003008068773876601
+          }
+        }
+      ]
+    },
+    {
+      "case": "timeshare_quiet",
+      "repeat": 1,
+      "exit_code": 0,
+      "load_exit_codes": [],
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "tools.m5e_async_drive",
+        "--output",
+        "reports/m5e_runtime_timeshare_quiet_1.json",
+        "--artifacts",
+        "reports/m5e_runtime_timeshare_quiet_1",
+        "--scenarios",
+        "straight",
+        "--ticks",
+        "1200",
+        "--route-distance",
+        "100",
+        "--hold-after-route",
+        "--load-description",
+        "timeshare_quiet_1",
+        "--tick-cpus",
+        "0,1",
+        "--worker-cpus",
+        "2,3"
+      ],
+      "report": "reports/m5e_runtime_timeshare_quiet_1.json",
+      "results": [
+        {
+          "moving_ticks": 914,
+          "measured_travel_m": 97.78200269022041,
+          "frame_advancement_errors": 0,
+          "fault_to_brake_s": null,
+          "normal_control_expired": 0,
+          "minute_windows": [
+            {
+              "start_s": 0,
+              "interval_ms": {
+                "p50": 49.99859817326069,
+                "p95": 50.47105848789215,
+                "p99": 51.34615812450647,
+                "max": 55.53867109119892,
+                "n": 1199
+              },
+              "deadline_miss_rate": 0.0
+            }
+          ],
+          "worker_output_latency_ms": {
+            "p50": 63.90454899519682,
+            "p95": 73.21876268833876,
+            "p99": 81.17081057280302,
+            "max": 185.51567569375038,
+            "n": 300
+          },
+          "load_description": "timeshare_quiet_1",
+          "stage_profile_ms": {
+            "world_tick_ms": {
+              "p50": 1.7307056114077568,
+              "p95": 3.04627688601613,
+              "p99": 5.2718364447355235,
+              "max": 13.328326866030693,
+              "n": 1200
+            },
+            "submit_ms": {
+              "p50": 0.0009015202522277832,
+              "p95": 0.0714198686182499,
+              "p99": 0.08673293516039847,
+              "max": 0.30297785997390747,
+              "n": 1200
+            },
+            "road_query_ms": {
+              "p50": 0.6744982674717903,
+              "p95": 0.8177592419087886,
+              "p99": 0.9846949949860573,
+              "max": 1.422494649887085,
+              "n": 1200
+            },
+            "get_control_ms": {
+              "p50": 0.006953254342079163,
+              "p95": 0.00841468572616577,
+              "p99": 0.010361671447753903,
+              "max": 0.043625012040138245,
+              "n": 1200
+            },
+            "controller_ms": {
+              "p50": 0.16326550394296646,
+              "p95": 0.2309284172952175,
+              "p99": 0.35922089591622314,
+              "max": 0.7207896560430527,
+              "n": 1200
+            },
+            "ipc_poll_validate_resample_ms": {
+              "p50": 0.45695342123508453,
+              "p95": 0.6195791065692902,
+              "p99": 0.9222962707281113,
+              "max": 2.4561211466789246,
+              "n": 1200
+            },
+            "log_buffer_ms": {
+              "p50": 0.015255995094776154,
+              "p95": 0.03214925527572632,
+              "p99": 0.03968140110373496,
+              "max": 0.09225867688655853,
+              "n": 1200
+            },
+            "snapshot_serialization_ms": {
+              "p50": 0.0,
+              "p95": 0.04126401618123054,
+              "p99": 0.047642625868320465,
+              "max": 0.0898074358701706,
+              "n": 1200
+            },
+            "actor_guard_ms": {
+              "p50": 0.001473352313041687,
+              "p95": 0.0021365471184253693,
+              "p99": 0.00350411981344223,
+              "max": 0.021323561668395996,
+              "n": 1200
+            },
+            "snapshot_state_measurement_ms": {
+              "p50": 0.07837451994419098,
+              "p95": 0.09762989357113837,
+              "p99": 0.14806594699621195,
+              "max": 0.27912668883800507,
+              "n": 1200
+            },
+            "apply_control_ms": {
+              "p50": 0.03295484930276871,
+              "p95": 0.09943824261426926,
+              "p99": 0.11535186320543289,
+              "max": 0.7560420781373978,
+              "n": 1200
+            },
+            "get_snapshot_ms": {
+              "p50": 0.020720064640045166,
+              "p95": 0.024668965488672256,
+              "p99": 0.030348468571901318,
+              "max": 0.08262693881988525,
+              "n": 1200
+            },
+            "log_disk_ms": {
+              "p50": 0.0,
+              "p95": 0.0,
+              "p99": 0.0,
+              "max": 0.0,
+              "n": 1200
+            }
+          },
+          "scene": "straight",
+          "route_completion": 0.9876875518089284,
+          "route_passed": true,
+          "collisions": 0,
+          "lane_invasions": 0,
+          "road_boundary_frames": 0,
+          "ticks": 1200,
+          "sim_hz": 19.99999970197678,
+          "wall_hz": 19.99990289457103,
+          "planner_ms": {
+            "p50": 62.97501269727945,
+            "p95": 72.32892084866762,
+            "p99": 78.57494201511143,
+            "max": 94.96120736002922,
+            "n": 300
+          },
+          "controller_compute_ms": {
+            "p50": 1.4970656484365463,
+            "p95": 1.8589599058032034,
+            "p99": 2.278607040643692,
+            "max": 5.088238045573235,
+            "n": 1200
+          },
+          "control_interval_ms": {
+            "p50": 49.99859817326069,
+            "p95": 50.47105848789215,
+            "p99": 51.34615812450647,
+            "max": 55.53867109119892,
+            "n": 1199
+          },
+          "deadline_miss_rate": 0.0,
+          "interval_over_55ms_rate": 0.0016680567139282735,
+          "plan_sim_age_s": {
+            "p50": 0.15000000223517418,
+            "p95": 0.2500000037252903,
+            "p99": 0.2500000037252903,
+            "max": 0.2500000037252903,
+            "n": 1196
+          },
+          "plan_wall_age_s": {
+            "p50": 0.15202056989073753,
+            "p95": 0.25139008928090334,
+            "p99": 0.25177175980061295,
+            "max": 0.25400414504110813,
+            "n": 1196
+          },
+          "degradation_ticks": {
+            "no_valid_plan": 4
+          },
+          "rejected": [],
+          "worker_history": "reports/m5e_runtime_timeshare_quiet_1/straight_plans.json",
+          "log": "reports/m5e_runtime_timeshare_quiet_1/straight.jsonl",
+          "log_sha256": "2b7ea1d8e01c70d2c7fdd75bb1ac078b3746bbe42e1396e64dd90f86d39fd026",
+          "actual_dynamics": {
+            "max_decel_raw": 21.351211385850824,
+            "jerk_peak_raw": 473.91109356899705,
+            "jerk_p95_moving": 41.82173151445413,
+            "jerk_p95_all": 30.14293046821609,
+            "max_decel_250ms": 4.129819550794376,
+            "jerk_p95_250ms": 7.505993954211863,
+            "min_signed_speed": -5.3755287595339283e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 7.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0003248607967303051
+          }
+        }
+      ]
+    },
+    {
+      "case": "split_lowgpu",
+      "repeat": 1,
+      "exit_code": 0,
+      "load_exit_codes": [
+        0,
+        0
+      ],
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "tools.m5e_async_drive",
+        "--output",
+        "reports/m5e_runtime_split_lowgpu_1.json",
+        "--artifacts",
+        "reports/m5e_runtime_split_lowgpu_1",
+        "--scenarios",
+        "straight",
+        "--ticks",
+        "1200",
+        "--route-distance",
+        "100",
+        "--hold-after-route",
+        "--load-description",
+        "split_lowgpu_1",
+        "--tick-cpus",
+        "0,1",
+        "--worker-cpus",
+        "2,3"
+      ],
+      "report": "reports/m5e_runtime_split_lowgpu_1.json",
+      "results": [
+        {
+          "moving_ticks": 886,
+          "measured_travel_m": 97.76718469766593,
+          "frame_advancement_errors": 0,
+          "fault_to_brake_s": null,
+          "normal_control_expired": 0,
+          "minute_windows": [
+            {
+              "start_s": 0,
+              "interval_ms": {
+                "p50": 50.01129303127527,
+                "p95": 50.38725147023797,
+                "p99": 53.24014360085128,
+                "max": 617.2581966966391,
+                "n": 1188
+              },
+              "deadline_miss_rate": 0.0008410428931875525
+            },
+            {
+              "start_s": 60,
+              "interval_ms": {
+                "p50": 49.978166818618774,
+                "p95": 50.34657847136259,
+                "p99": 50.38843806833029,
+                "max": 50.39890296757221,
+                "n": 11
+              },
+              "deadline_miss_rate": 0.0
+            }
+          ],
+          "worker_output_latency_ms": {
+            "p50": 65.4965927824378,
+            "p95": 94.08214278519154,
+            "p99": 97.28050829842678,
+            "max": 225.65794363617897,
+            "n": 300
+          },
+          "load_description": "split_lowgpu_1",
+          "stage_profile_ms": {
+            "snapshot_serialization_ms": {
+              "p50": 0.0,
+              "p95": 0.03758398815989494,
+              "p99": 0.04281293600797653,
+              "max": 0.18798001110553741,
+              "n": 1200
+            },
+            "actor_guard_ms": {
+              "p50": 0.001409091055393219,
+              "p95": 0.0019131228327751157,
+              "p99": 0.0027121417224407196,
+              "max": 0.010251998901367188,
+              "n": 1200
+            },
+            "log_buffer_ms": {
+              "p50": 0.013741664588451385,
+              "p95": 0.026748236268758767,
+              "p99": 0.033042263239622116,
+              "max": 0.06813555955886841,
+              "n": 1200
+            },
+            "road_query_ms": {
+              "p50": 0.6256923079490662,
+              "p95": 0.7415837608277797,
+              "p99": 0.851709358394146,
+              "max": 1.3189390301704407,
+              "n": 1200
+            },
+            "get_snapshot_ms": {
+              "p50": 0.013384968042373657,
+              "p95": 0.01912638545036316,
+              "p99": 0.02074455842375755,
+              "max": 0.035142526030540466,
+              "n": 1200
+            },
+            "controller_ms": {
+              "p50": 0.1521073281764984,
+              "p95": 0.1868699677288532,
+              "p99": 0.26539595797657967,
+              "max": 0.7122308015823364,
+              "n": 1200
+            },
+            "log_disk_ms": {
+              "p50": 0.0,
+              "p95": 0.0,
+              "p99": 0.0,
+              "max": 0.0,
+              "n": 1200
+            },
+            "get_control_ms": {
+              "p50": 0.0043548643589019775,
+              "p95": 0.006303470581769943,
+              "p99": 0.006832592189311981,
+              "max": 0.012958422303199768,
+              "n": 1200
+            },
+            "world_tick_ms": {
+              "p50": 1.7157141119241714,
+              "p95": 3.0279838480055328,
+              "p99": 5.465614330023526,
+              "max": 616.0290688276291,
+              "n": 1200
+            },
+            "ipc_poll_validate_resample_ms": {
+              "p50": 0.3963261842727661,
+              "p95": 0.5419878289103508,
+              "p99": 0.6139680929481982,
+              "max": 1.9315257668495178,
+              "n": 1200
+            },
+            "apply_control_ms": {
+              "p50": 0.02731848508119583,
+              "p95": 0.09630592539906502,
+              "p99": 0.11125240474939345,
+              "max": 3.3280886709690094,
+              "n": 1200
+            },
+            "submit_ms": {
+              "p50": 0.0008177012205123901,
+              "p95": 0.06272923201322556,
+              "p99": 0.07252404466271399,
+              "max": 0.32791122794151306,
+              "n": 1200
+            },
+            "snapshot_state_measurement_ms": {
+              "p50": 0.06490573287010193,
+              "p95": 0.07877685129642487,
+              "p99": 0.0902150571346283,
+              "max": 0.2578161656856537,
+              "n": 1200
+            }
+          },
+          "scene": "straight",
+          "route_completion": 0.9875447494436917,
+          "route_passed": true,
+          "collisions": 0,
+          "lane_invasions": 0,
+          "road_boundary_frames": 0,
+          "ticks": 1200,
+          "sim_hz": 19.99999970197678,
+          "wall_hz": 19.812488842885216,
+          "planner_ms": {
+            "p50": 64.41964581608772,
+            "p95": 92.17330161482096,
+            "p99": 95.1964627020061,
+            "max": 105.94836622476578,
+            "n": 300
+          },
+          "controller_compute_ms": {
+            "p50": 1.342729665338993,
+            "p95": 1.6239413991570473,
+            "p99": 1.8493344448506828,
+            "max": 6.329556927084923,
+            "n": 1200
+          },
+          "control_interval_ms": {
+            "p50": 50.01116544008255,
+            "p95": 50.390494242310524,
+            "p99": 53.22593133896589,
+            "max": 617.2581966966391,
+            "n": 1199
+          },
+          "deadline_miss_rate": 0.0008333333333333334,
+          "interval_over_55ms_rate": 0.003336113427856547,
+          "plan_sim_age_s": {
+            "p50": 0.15000000223517418,
+            "p95": 0.2500000037252903,
+            "p99": 0.2500000037252903,
+            "max": 0.30000000447034836,
+            "n": 1195
+          },
+          "plan_wall_age_s": {
+            "p50": 0.15466582775115967,
+            "p95": 0.25125709306448696,
+            "p99": 0.25167457561939954,
+            "max": 0.8185608331114054,
+            "n": 1195
+          },
+          "degradation_ticks": {
+            "plan_expired": 3,
+            "no_valid_plan": 5
+          },
+          "rejected": [],
+          "worker_history": "reports/m5e_runtime_split_lowgpu_1/straight_plans.json",
+          "log": "reports/m5e_runtime_split_lowgpu_1/straight.jsonl",
+          "log_sha256": "8a4191b63bff537caf520f55ce784a88f308b93a7fbd42eb4f3504c0da08f349",
+          "actual_dynamics": {
+            "max_decel_raw": 20.374213244122334,
+            "jerk_peak_raw": 405.31226420541066,
+            "jerk_p95_moving": 29.525741642336577,
+            "jerk_p95_all": 23.170690106755075,
+            "max_decel_250ms": 4.78144772819805,
+            "jerk_p95_250ms": 6.140568857499185,
+            "min_signed_speed": -0.03720444785279852,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 5.5,
+            "api_accel_vs_velocity_derivative_mae": 0.000275977650952341
+          }
+        }
+      ]
+    },
+    {
+      "case": "split_affinity",
+      "repeat": 1,
+      "exit_code": 0,
+      "load_exit_codes": [
+        0,
+        0
+      ],
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "tools.m5e_async_drive",
+        "--output",
+        "reports/m5e_runtime_split_affinity_1.json",
+        "--artifacts",
+        "reports/m5e_runtime_split_affinity_1",
+        "--scenarios",
+        "straight",
+        "--ticks",
+        "1200",
+        "--route-distance",
+        "100",
+        "--hold-after-route",
+        "--load-description",
+        "split_affinity_1",
+        "--tick-cpus",
+        "0,1",
+        "--worker-cpus",
+        "2,3"
+      ],
+      "report": "reports/m5e_runtime_split_affinity_1.json",
+      "results": [
+        {
+          "moving_ticks": 912,
+          "measured_travel_m": 97.76092539738386,
+          "frame_advancement_errors": 0,
+          "fault_to_brake_s": null,
+          "normal_control_expired": 0,
+          "minute_windows": [
+            {
+              "start_s": 0,
+              "interval_ms": {
+                "p50": 50.00420846045017,
+                "p95": 50.50191059708595,
+                "p99": 53.82643781602381,
+                "max": 60.04616618156433,
+                "n": 1199
+              },
+              "deadline_miss_rate": 0.0
+            }
+          ],
+          "worker_output_latency_ms": {
+            "p50": 64.28875215351582,
+            "p95": 72.83131880685687,
+            "p99": 80.42783444747327,
+            "max": 173.8284006714821,
+            "n": 300
+          },
+          "load_description": "split_affinity_1",
+          "stage_profile_ms": {
+            "snapshot_state_measurement_ms": {
+              "p50": 0.08038338273763657,
+              "p95": 0.09983219206333159,
+              "p99": 0.11918555945158002,
+              "max": 0.26878342032432556,
+              "n": 1200
+            },
+            "get_control_ms": {
+              "p50": 0.006313435733318329,
+              "p95": 0.008481275290250778,
+              "p99": 0.00931795686483383,
+              "max": 0.053474679589271545,
+              "n": 1200
+            },
+            "apply_control_ms": {
+              "p50": 0.03341119736433029,
+              "p95": 0.10528797283768654,
+              "p99": 0.1225365325808525,
+              "max": 0.1418963074684143,
+              "n": 1200
+            },
+            "controller_ms": {
+              "p50": 0.16204733401536942,
+              "p95": 0.21443860605359066,
+              "p99": 0.2852956391870975,
+              "max": 0.707767903804779,
+              "n": 1200
+            },
+            "world_tick_ms": {
+              "p50": 1.8255412578582764,
+              "p95": 3.1175341457128525,
+              "p99": 4.697367176413536,
+              "max": 16.970498487353325,
+              "n": 1200
+            },
+            "ipc_poll_validate_resample_ms": {
+              "p50": 0.4726443439722061,
+              "p95": 0.6352987140417098,
+              "p99": 0.8255398645997043,
+              "max": 2.9229726642370224,
+              "n": 1200
+            },
+            "road_query_ms": {
+              "p50": 0.6599361076951027,
+              "p95": 0.8009530603885651,
+              "p99": 0.9697170741856097,
+              "max": 2.183306962251663,
+              "n": 1200
+            },
+            "snapshot_serialization_ms": {
+              "p50": 0.0,
+              "p95": 0.0461268238723278,
+              "p99": 0.055877119302749634,
+              "max": 0.10317191481590271,
+              "n": 1200
+            },
+            "log_disk_ms": {
+              "p50": 0.0,
+              "p95": 0.0,
+              "p99": 0.0,
+              "max": 0.0,
+              "n": 1200
+            },
+            "actor_guard_ms": {
+              "p50": 0.001603737473487854,
+              "p95": 0.0024048611521720886,
+              "p99": 0.0034943036735057813,
+              "max": 0.012161210179328918,
+              "n": 1200
+            },
+            "log_buffer_ms": {
+              "p50": 0.014739111065864563,
+              "p95": 0.030959863215684887,
+              "p99": 0.03785492852330208,
+              "max": 0.04388578236103058,
+              "n": 1200
+            },
+            "submit_ms": {
+              "p50": 0.000908970832824707,
+              "p95": 0.07532434538006781,
+              "p99": 0.09378962218761443,
+              "max": 0.3309454768896103,
+              "n": 1200
+            },
+            "get_snapshot_ms": {
+              "p50": 0.01946091651916504,
+              "p95": 0.02472884953022003,
+              "p99": 0.02735387533903122,
+              "max": 0.07081031799316406,
+              "n": 1200
+            }
+          },
+          "scene": "straight",
+          "route_completion": 0.9874755411266312,
+          "route_passed": true,
+          "collisions": 0,
+          "lane_invasions": 0,
+          "road_boundary_frames": 0,
+          "ticks": 1200,
+          "sim_hz": 19.99999970197678,
+          "wall_hz": 19.999879020066725,
+          "planner_ms": {
+            "p50": 63.4686928242445,
+            "p95": 71.07180478051305,
+            "p99": 77.24599281325935,
+            "max": 84.40314047038555,
+            "n": 300
+          },
+          "controller_compute_ms": {
+            "p50": 1.5012463554739952,
+            "p95": 1.8351733684539795,
+            "p99": 2.209476623684168,
+            "max": 4.6693552285432816,
+            "n": 1200
+          },
+          "control_interval_ms": {
+            "p50": 50.00420846045017,
+            "p95": 50.50191059708595,
+            "p99": 53.82643781602381,
+            "max": 60.04616618156433,
+            "n": 1199
+          },
+          "deadline_miss_rate": 0.0,
+          "interval_over_55ms_rate": 0.008340283569641367,
+          "plan_sim_age_s": {
+            "p50": 0.15000000223517418,
+            "p95": 0.2500000037252903,
+            "p99": 0.2500000037252903,
+            "max": 0.2500000037252903,
+            "n": 1196
+          },
+          "plan_wall_age_s": {
+            "p50": 0.15597084444016218,
+            "p95": 0.2513735704123974,
+            "p99": 0.2518356471322477,
+            "max": 0.258308881893754,
+            "n": 1196
+          },
+          "degradation_ticks": {
+            "no_valid_plan": 4
+          },
+          "rejected": [],
+          "worker_history": "reports/m5e_runtime_split_affinity_1/straight_plans.json",
+          "log": "reports/m5e_runtime_split_affinity_1/straight.jsonl",
+          "log_sha256": "02491c55f7cc3959b13083fd9e06eb2293c95c0da4ebeeae5c504765f71f8e3c",
+          "actual_dynamics": {
+            "max_decel_raw": 21.430150403592222,
+            "jerk_peak_raw": 456.94567399504035,
+            "jerk_p95_moving": 36.13406940089678,
+            "jerk_p95_all": 24.029110745060184,
+            "max_decel_250ms": 4.308666578338589,
+            "jerk_p95_250ms": 6.246877755854122,
+            "min_signed_speed": -5.394778030549827e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 6.95,
+            "api_accel_vs_velocity_derivative_mae": 0.00032339042688508165
+          }
+        }
+      ]
+    },
+    {
+      "case": "tick_reserved",
+      "repeat": 1,
+      "exit_code": 0,
+      "load_exit_codes": [
+        0,
+        0
+      ],
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "tools.m5e_async_drive",
+        "--output",
+        "reports/m5e_runtime_tick_reserved_1.json",
+        "--artifacts",
+        "reports/m5e_runtime_tick_reserved_1",
+        "--scenarios",
+        "straight",
+        "--ticks",
+        "1200",
+        "--route-distance",
+        "100",
+        "--hold-after-route",
+        "--load-description",
+        "tick_reserved_1",
+        "--tick-cpus",
+        "0,1"
+      ],
+      "report": "reports/m5e_runtime_tick_reserved_1.json",
+      "results": [
+        {
+          "moving_ticks": 888,
+          "measured_travel_m": 97.77647650884398,
+          "frame_advancement_errors": 0,
+          "fault_to_brake_s": null,
+          "normal_control_expired": 0,
+          "minute_windows": [
+            {
+              "start_s": 0,
+              "interval_ms": {
+                "p50": 49.99887757003307,
+                "p95": 51.10472850501536,
+                "p99": 63.715255334973335,
+                "max": 64.20157290995121,
+                "n": 1199
+              },
+              "deadline_miss_rate": 0.0
+            }
+          ],
+          "worker_output_latency_ms": {
+            "p50": 65.42812753468752,
+            "p95": 76.49327395483851,
+            "p99": 93.08275274932384,
+            "max": 196.20029628276825,
+            "n": 300
+          },
+          "load_description": "tick_reserved_1",
+          "stage_profile_ms": {
+            "snapshot_serialization_ms": {
+              "p50": 0.0,
+              "p95": 0.039531104266643524,
+              "p99": 0.046389475464820855,
+              "max": 0.09524822235107422,
+              "n": 1200
+            },
+            "snapshot_state_measurement_ms": {
+              "p50": 0.07170625030994415,
+              "p95": 0.09049111977219579,
+              "p99": 0.10542480275034902,
+              "max": 0.27014873921871185,
+              "n": 1200
+            },
+            "get_control_ms": {
+              "p50": 0.0061141327023506165,
+              "p95": 0.007356517016887664,
+              "p99": 0.008885618299245834,
+              "max": 0.017466023564338684,
+              "n": 1200
+            },
+            "log_buffer_ms": {
+              "p50": 0.016238540410995483,
+              "p95": 0.031055882573127743,
+              "p99": 0.038690473884344094,
+              "max": 0.08233264088630676,
+              "n": 1200
+            },
+            "log_disk_ms": {
+              "p50": 0.0,
+              "p95": 0.0,
+              "p99": 0.0,
+              "max": 0.0,
+              "n": 1200
+            },
+            "controller_ms": {
+              "p50": 0.16024149954319,
+              "p95": 0.2569345757365227,
+              "p99": 0.3390869125723836,
+              "max": 12.87459209561348,
+              "n": 1200
+            },
+            "apply_control_ms": {
+              "p50": 0.033806078135967255,
+              "p95": 0.11255191639065741,
+              "p99": 0.13706116005778313,
+              "max": 12.627899646759033,
+              "n": 1200
+            },
+            "ipc_poll_validate_resample_ms": {
+              "p50": 0.43827854096889496,
+              "p95": 0.7152480073273182,
+              "p99": 14.017847515642643,
+              "max": 14.317980036139488,
+              "n": 1200
+            },
+            "road_query_ms": {
+              "p50": 0.6652167066931725,
+              "p95": 0.8282373659312725,
+              "p99": 0.9510289318859576,
+              "max": 1.3398602604866028,
+              "n": 1200
+            },
+            "world_tick_ms": {
+              "p50": 1.8344996497035027,
+              "p95": 3.3087366260588165,
+              "p99": 12.552181091159582,
+              "max": 24.64011125266552,
+              "n": 1200
+            },
+            "submit_ms": {
+              "p50": 0.0009257346391677856,
+              "p95": 0.07059480994939803,
+              "p99": 0.08389761671423912,
+              "max": 10.243238881230354,
+              "n": 1200
+            },
+            "actor_guard_ms": {
+              "p50": 0.0015478581190109253,
+              "p95": 0.002600066363811491,
+              "p99": 0.003528706729412078,
+              "max": 0.018922612071037292,
+              "n": 1200
+            },
+            "get_snapshot_ms": {
+              "p50": 0.017564743757247925,
+              "p95": 0.021632201969623566,
+              "p99": 0.02397187054157257,
+              "max": 0.19964203238487244,
+              "n": 1200
+            }
+          },
+          "scene": "straight",
+          "route_completion": 0.9876318708500136,
+          "route_passed": true,
+          "collisions": 0,
+          "lane_invasions": 0,
+          "road_boundary_frames": 0,
+          "ticks": 1200,
+          "sim_hz": 19.99999970197678,
+          "wall_hz": 19.999880385990068,
+          "planner_ms": {
+            "p50": 64.39469382166862,
+            "p95": 75.00272663310172,
+            "p99": 89.00622552260755,
+            "max": 94.4393016397953,
+            "n": 300
+          },
+          "controller_compute_ms": {
+            "p50": 1.4621103182435036,
+            "p95": 2.304492983967064,
+            "p99": 15.085465610027313,
+            "max": 15.625227242708206,
+            "n": 1200
+          },
+          "control_interval_ms": {
+            "p50": 49.99887757003307,
+            "p95": 51.10472850501536,
+            "p99": 63.715255334973335,
+            "max": 64.20157290995121,
+            "n": 1199
+          },
+          "deadline_miss_rate": 0.0,
+          "interval_over_55ms_rate": 0.03252710592160134,
+          "plan_sim_age_s": {
+            "p50": 0.15000000223517418,
+            "p95": 0.2500000037252903,
+            "p99": 0.2500000037252903,
+            "max": 0.2500000037252903,
+            "n": 1196
+          },
+          "plan_wall_age_s": {
+            "p50": 0.153361851349473,
+            "p95": 0.25138496747240424,
+            "p99": 0.25183417750522497,
+            "max": 0.2564273253083229,
+            "n": 1196
+          },
+          "degradation_ticks": {
+            "no_valid_plan": 4
+          },
+          "rejected": [],
+          "worker_history": "reports/m5e_runtime_tick_reserved_1/straight_plans.json",
+          "log": "reports/m5e_runtime_tick_reserved_1/straight.jsonl",
+          "log_sha256": "be7bf6df87a7527ad9ef3919b538c79cb941b1b34993803b2ca56ab1d6153f8a",
+          "actual_dynamics": {
+            "max_decel_raw": 10.00575454671173,
+            "jerk_peak_raw": 200.04484250294882,
+            "jerk_p95_moving": 16.165369011227952,
+            "jerk_p95_all": 9.867789419445323,
+            "max_decel_250ms": 2.158520351597915,
+            "jerk_p95_250ms": 4.867950331832544,
+            "min_signed_speed": -5.3950381591223074e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 6.0,
+            "api_accel_vs_velocity_derivative_mae": 0.00033106252259899736
+          }
+        }
+      ]
+    },
+    {
+      "case": "default_mixed",
+      "repeat": 1,
+      "exit_code": 0,
+      "load_exit_codes": [
+        0,
+        0
+      ],
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "tools.m5e_async_drive",
+        "--output",
+        "reports/m5e_runtime_default_mixed_1.json",
+        "--artifacts",
+        "reports/m5e_runtime_default_mixed_1",
+        "--scenarios",
+        "straight",
+        "--ticks",
+        "1200",
+        "--route-distance",
+        "100",
+        "--hold-after-route",
+        "--load-description",
+        "default_mixed_1"
+      ],
+      "report": "reports/m5e_runtime_default_mixed_1.json",
+      "results": [
+        {
+          "moving_ticks": 900,
+          "measured_travel_m": 97.769965074406,
+          "frame_advancement_errors": 0,
+          "fault_to_brake_s": null,
+          "normal_control_expired": 0,
+          "minute_windows": [
+            {
+              "start_s": 0,
+              "interval_ms": {
+                "p50": 50.00279285013676,
+                "p95": 50.54690111428499,
+                "p99": 51.729508340358734,
+                "max": 98.8659281283617,
+                "n": 1199
+              },
+              "deadline_miss_rate": 0.0016666666666666668
+            }
+          ],
+          "worker_output_latency_ms": {
+            "p50": 63.703940249979496,
+            "p95": 94.58871772512794,
+            "p99": 103.06154776364562,
+            "max": 171.43813520669937,
+            "n": 300
+          },
+          "load_description": "default_mixed_1",
+          "stage_profile_ms": {
+            "submit_ms": {
+              "p50": 0.0009955838322639465,
+              "p95": 0.07787561044096947,
+              "p99": 0.08723117411136627,
+              "max": 0.3994479775428772,
+              "n": 1200
+            },
+            "ipc_poll_validate_resample_ms": {
+              "p50": 0.48650894314050674,
+              "p95": 0.67347576841712,
+              "p99": 1.1113750748336315,
+              "max": 2.605125308036804,
+              "n": 1200
+            },
+            "snapshot_serialization_ms": {
+              "p50": 0.0,
+              "p95": 0.04868572577834129,
+              "p99": 0.05514396354556083,
+              "max": 0.13260915875434875,
+              "n": 1200
+            },
+            "apply_control_ms": {
+              "p50": 0.03545079380273819,
+              "p95": 0.046709179878234856,
+              "p99": 0.0720003433525562,
+              "max": 1.3541188091039658,
+              "n": 1200
+            },
+            "log_disk_ms": {
+              "p50": 0.0,
+              "p95": 0.0,
+              "p99": 0.0,
+              "max": 0.0,
+              "n": 1200
+            },
+            "controller_ms": {
+              "p50": 0.16801245510578156,
+              "p95": 0.22935913875699043,
+              "p99": 0.3898487240076064,
+              "max": 1.1363308876752853,
+              "n": 1200
+            },
+            "log_buffer_ms": {
+              "p50": 0.016527250409126282,
+              "p95": 0.038981158286333056,
+              "p99": 0.057021267712116235,
+              "max": 0.07865019142627716,
+              "n": 1200
+            },
+            "get_control_ms": {
+              "p50": 0.006922520697116852,
+              "p95": 0.00882260501384735,
+              "p99": 0.00997968018054962,
+              "max": 0.03621727228164673,
+              "n": 1200
+            },
+            "road_query_ms": {
+              "p50": 0.7184902206063271,
+              "p95": 0.9139993228018284,
+              "p99": 1.056230515241623,
+              "max": 88.80557492375374,
+              "n": 1200
+            },
+            "world_tick_ms": {
+              "p50": 1.8096696585416794,
+              "p95": 2.3025251924991608,
+              "p99": 2.94962577521801,
+              "max": 37.86245174705982,
+              "n": 1200
+            },
+            "snapshot_state_measurement_ms": {
+              "p50": 0.08609611541032791,
+              "p95": 0.10752473026514053,
+              "p99": 0.14235917478799814,
+              "max": 0.3637559711933136,
+              "n": 1200
+            },
+            "actor_guard_ms": {
+              "p50": 0.0016046687960624695,
+              "p95": 0.0022803433239459987,
+              "p99": 0.0036769919097423553,
+              "max": 0.011764466762542725,
+              "n": 1200
+            },
+            "get_snapshot_ms": {
+              "p50": 0.02119503915309906,
+              "p95": 0.02731811255216598,
+              "p99": 0.031499043107032776,
+              "max": 0.08649751543998718,
+              "n": 1200
+            }
+          },
+          "scene": "straight",
+          "route_completion": 0.9875458081455373,
+          "route_passed": true,
+          "collisions": 0,
+          "lane_invasions": 0,
+          "road_boundary_frames": 0,
+          "ticks": 1200,
+          "sim_hz": 19.99999970197678,
+          "wall_hz": 19.99984026020697,
+          "planner_ms": {
+            "p50": 62.83898185938597,
+            "p95": 92.71518792957067,
+            "p99": 100.13339009135962,
+            "max": 105.58953508734703,
+            "n": 300
+          },
+          "controller_compute_ms": {
+            "p50": 1.5891427174210548,
+            "p95": 2.0177099853754044,
+            "p99": 2.5259374268352985,
+            "max": 89.72842805087566,
+            "n": 1200
+          },
+          "control_interval_ms": {
+            "p50": 50.00279285013676,
+            "p95": 50.54690111428499,
+            "p99": 51.729508340358734,
+            "max": 98.8659281283617,
+            "n": 1199
+          },
+          "deadline_miss_rate": 0.0016666666666666668,
+          "interval_over_55ms_rate": 0.0025020850708924102,
+          "plan_sim_age_s": {
+            "p50": 0.20000000298023224,
+            "p95": 0.2500000037252903,
+            "p99": 0.2500000037252903,
+            "max": 0.30000000447034836,
+            "n": 1196
+          },
+          "plan_wall_age_s": {
+            "p50": 0.2007705606520176,
+            "p95": 0.2514893892221153,
+            "p99": 0.2523243311792611,
+            "max": 0.30139084719121456,
+            "n": 1196
+          },
+          "degradation_ticks": {
+            "no_valid_plan": 4
+          },
+          "rejected": [],
+          "worker_history": "reports/m5e_runtime_default_mixed_1/straight_plans.json",
+          "log": "reports/m5e_runtime_default_mixed_1/straight.jsonl",
+          "log_sha256": "5dbd307803421d3ecc4b1e9d75ab537e290b5ab98a7e78cbf3b5a481e0c2d955",
+          "actual_dynamics": {
+            "max_decel_raw": 17.66106189131573,
+            "jerk_peak_raw": 421.66577802933085,
+            "jerk_p95_moving": 26.571622635170396,
+            "jerk_p95_all": 25.717517580811553,
+            "max_decel_250ms": 6.084176885974211,
+            "jerk_p95_250ms": 7.089885026200836,
+            "min_signed_speed": -5.6152296301517244e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 6.6000000000000005,
+            "api_accel_vs_velocity_derivative_mae": 0.000441485922111105
+          }
+        }
+      ]
+    }
+  ],
+  "source_sha256": "e26eb1aea041bf2e7d25f3af602db47bf2a26b46cf4c0e755288195df37a65b9",
+  "protocol_sha256": "9ea668c2fab5d8ed5045c8b6d6690f0f946dca9c99b25941f979f80e9263488a",
+  "limits": "Fixedsamehost; notexclusivehardware. Reverseorder secondround mitigatesnoteliminates temporalconfounding. No shorterSafety/noexpiredresultreuse. SavedRGBinference pressure notfullonlinesensorstream. Serverdefaultaffinity unchanged; timesharequiet runsnoinferencelabeljob."
+}

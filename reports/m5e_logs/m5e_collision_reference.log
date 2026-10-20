@@ -1,0 +1,29 @@
+Town03_e2 100
+Town04_e2 200
+Town05_e2 300
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5e_collision_reference.py", line 37, in <module>
+    if __name__=='__main__':main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5e_collision_reference.py", line 34, in main
+    atomic_json(dest,dict(kind='actual_CARLA_world_cast_ray_static_empty_layout',records=out,source_sha256=file_hash(__file__),candidate_promoted=False,limits='Static world collision query, no placedtarget/ego actors; renderer reference captured empty samepose. Collision geometry may differ from renderMesh; firsthit mismatch/missing is unresolved, never reliable negative. Fixed first50pergroupband sample, selection independent of outcome; not allcandidate census, no newtest.'))
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py", line 21, in atomic_json
+    json.dump(value, f, indent=2, allow_nan=False)
+  File "/usr/lib/python3.10/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/usr/lib/python3.10/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.10/json/encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "/usr/lib/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.10/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bool is not JSON serializable

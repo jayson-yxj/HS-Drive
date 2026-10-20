@@ -1,0 +1,120 @@
+{
+  "protocol_sha256": "ac88d7671971954f1657c7f74b9cec8f20b75521bcb13930701230ca27b04e7c",
+  "checkpoints": {
+    "runs/m5e_learning/m5e_A_base_91.pt": "eb6ed9253d9b26b380f3033f033d739db0c285d0cacb42bc0dd7c2aa55e1ebf9",
+    "runs/m5e_learning/m5e_B_presence_91.pt": "3e38c9ae728b130a991d8215345af85691a18cd9cddecdb1a07d8b91e5615845",
+    "runs/m5e_learning/m5e_C_spatial_frozen_91.pt": "dcf7b89f99cff47516f90b10046c780e893d62ea2167da53d9b337ca47ab2f01",
+    "runs/m5e_learning/m5e_D_depth_91.pt": "f018fa8824016fa1b94dec2a0eccaad703b06676b48553dbf04d5844c7895bc1",
+    "runs/m5e_learning/m5e_A_base_92.pt": "7ec2b91d54de903dce5aac7cb6c1e741f158c3c7d067b1fc5b923ed69f4b5171",
+    "runs/m5e_learning/m5e_B_presence_92.pt": "9044822fad429e5d2cf6216a30cbd9521940c100bf7659996efa557e2379d301",
+    "runs/m5e_learning/m5e_C_spatial_frozen_92.pt": "456a749b7c2760b34ebd54c0a317ba017bd4fb2af72d736374655a98023cc495",
+    "runs/m5e_learning/m5e_D_depth_92.pt": "faeb593e71f5da1d61b2fcf8a1aea3149b3de2b83ffc706f4d58dd521e7e25f1",
+    "runs/m5d_learning/m5d_A_matched_81.pt": "96bd0290b6b7248224bb0f9c0642444e87cc6b6983d8e68630ca39efc0162d8e",
+    "runs/m5d_learning/m5d_B_existence_81.pt": "e1e0515239513cd9d2dc075ce64828d11e0ad84ec4beea3adba7f048c0389fe0",
+    "runs/m5d_learning/m5d_A_matched_82.pt": "060d87fa371c3e8c98a64f2e618068b18e3d2ab9c45222a15d7639fb5e0a9613",
+    "runs/m5d_learning/m5d_B_existence_82.pt": "7d6d6bdddb2a5b5af27700bb501d6bd72f6a9a662287dc62b622f083e664b8e5"
+  },
+  "models": [
+    {
+      "name": "A_base",
+      "seed": 91,
+      "stride": 16,
+      "checkpoint": "runs/m5e_learning/m5e_A_base_91.pt"
+    },
+    {
+      "name": "B_presence",
+      "seed": 91,
+      "stride": 16,
+      "checkpoint": "runs/m5e_learning/m5e_B_presence_91.pt"
+    },
+    {
+      "name": "C_spatial_frozen",
+      "seed": 91,
+      "stride": 16,
+      "checkpoint": "runs/m5e_learning/m5e_C_spatial_frozen_91.pt"
+    },
+    {
+      "name": "D_depth",
+      "seed": 91,
+      "stride": 16,
+      "checkpoint": "runs/m5e_learning/m5e_D_depth_91.pt"
+    },
+    {
+      "name": "A_base",
+      "seed": 92,
+      "stride": 16,
+      "checkpoint": "runs/m5e_learning/m5e_A_base_92.pt"
+    },
+    {
+      "name": "B_presence",
+      "seed": 92,
+      "stride": 16,
+      "checkpoint": "runs/m5e_learning/m5e_B_presence_92.pt"
+    },
+    {
+      "name": "C_spatial_frozen",
+      "seed": 92,
+      "stride": 16,
+      "checkpoint": "runs/m5e_learning/m5e_C_spatial_frozen_92.pt"
+    },
+    {
+      "name": "D_depth",
+      "seed": 92,
+      "stride": 16,
+      "checkpoint": "runs/m5e_learning/m5e_D_depth_92.pt"
+    },
+    {
+      "name": "Historical_A_matched",
+      "seed": 81,
+      "stride": 16,
+      "checkpoint": "runs/m5d_learning/m5d_A_matched_81.pt"
+    },
+    {
+      "name": "Historical_B_existence",
+      "seed": 81,
+      "stride": 16,
+      "checkpoint": "runs/m5d_learning/m5d_B_existence_81.pt"
+    },
+    {
+      "name": "Historical_A_matched",
+      "seed": 82,
+      "stride": 16,
+      "checkpoint": "runs/m5d_learning/m5d_A_matched_82.pt"
+    },
+    {
+      "name": "Historical_B_existence",
+      "seed": 82,
+      "stride": 16,
+      "checkpoint": "runs/m5d_learning/m5d_B_existence_82.pt"
+    }
+  ],
+  "code_sha256": {
+    "tools/m5e_capture.py": "d5f5dbed0b534a5a1fb9b58aec37a7fcb040b419623eec3446a2693c90d33696",
+    "tools/m5e_runtime_campaign.py": "e26eb1aea041bf2e7d25f3af602db47bf2a26b46cf4c0e755288195df37a65b9",
+    "tools/m5e_learning.py": "bdfeb327f1b8b51ad2bafabc30e70b3cb06a047c5e09aed693722da887252be0",
+    "tools/m5e_visualize.py": "539f395e44dafa22f7be298ecbb9e62ce1568ea22217256558a50bbcda747dce",
+    "tools/m5e_collision_reference.py": "92f5e2083de6e90376b517eba418af17944662b8e8510ff0b39d22606c2a7d01",
+    "tools/m5e_async_drive.py": "7769f0bc218f48a9846060837fa90d0785a3d79395ef77b9a81592f762827a76",
+    "tools/m5e_evaluate.py": "db0c8bcd75af0031499c1cb6d0b0adbfd4c4f3309281941e888b0d54aa5bb3d1",
+    "tools/m5e_protocol.py": "82463438e06bd5d1337c06ee6982a2ce953c6781545c6895790bb4e6edb15972",
+    "tools/m5e_stride_factorization.py": "137541e0acf86fe3d3791127245e8942f776b75fd8d85f521df7df7b1161ad21",
+    "tools/m5e_supervision.py": "af563b19a566b5ac715c12940d1afa89e48da850cdb9ed4a535a5860ba9a00c6",
+    "tools/m5e_ray_audit.py": "e9dc54bcf1f7da20619f9198c7e5eb1d0d7fe4f342ecd4b0911a97afc3add6ae",
+    "tools/m5e_depth_diagnostics.py": "3eba818c32d6c22735958bb245a659eda78fcb2eea19ad66d03f732d96ebe341",
+    "tools/m5e_quality.py": "c27945af0f5fb4308fc524055e567405234ff1dab9891b4fd193ee677b580c8a",
+    "tools/m5e_runtime_analysis.py": "d08c2130fed1ededbb68db31ce55afa3a7927ce49c7ef9bc1dce8bcc9648868d",
+    "tools/m5e_resources.py": "0a696c8db826969ed4fb048325a8569e188267f215f606cab6702788aae71a80",
+    "tools/m5e_gpu_contracts.py": "006b7ac5979b2e33c07ae4aafbb598e82c03bce40490f559903fb17d9b1ae3f4",
+    "tools/m5e_common.py": "34c0edab3e800944d7c149d8e77751b70d193ebda165d2b534d50e6b7166b3d7",
+    "tools/m5e_consolidate.py": "304a26534816ee7d2bd4f88ee869c23a53b548a6c81491b6fca4aa95b0fa908d",
+    "tools/m5e_dataset.py": "1c6cb9cdb1464b1f30bc15b12a4cbc521b1a2d7b4e1f2bb48333c3176e86fe41",
+    "tools/m5e_data_analysis.py": "4544314724182ea01e83f02a516b419a9521814ede664b8748aa5c9a49741190",
+    "tools/m5e_surface_index.py": "f989aedd8cefee70a7c4fa2fc9baa3c8b615f88e8afc084850be63c6532b86f5",
+    "models/m5e_paths.py": "19737f2c57d0ee7e05b6e73e14fb9ea11d7aa0ba5265b42be26e9942b38aa2d9",
+    "datasets/m5e_witness.py": "20c3bb076cee57f18e7b1efaba5da64c070c9393cfa384b4d3b7820aad12cfe9",
+    "datasets/m5e_visibility.py": "76256fdee4b79d5fb8fa43b268de7eaf628fee6332e023f1a9cd99ef233164f0",
+    "diagnostics/m5e_metrics.py": "9a62ed4cce345511476b31871d1b2ddead7d70eaf7fe3ade6551bdb180f5e851",
+    "training/m5e_losses.py": "6023f3d9ad0f306958e18351714465ae1cd041a8e81c55988b4c9ea6acfb171f"
+  },
+  "decisions": "No changes after freeze; A/B/C/D all reported, no additional training/threshold changes. P8 diagnosticfactorization only."
+}

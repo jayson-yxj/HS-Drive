@@ -1,0 +1,158 @@
+{
+  "task": "M5-E",
+  "status": "Partial",
+  "base": "33005efa8ad01397fff7b45da5b9b1fb06af403f",
+  "source_commit": "f9ea4e7f404152916552045ab370be94ec6c8d66",
+  "branch": "feat/m5e-far-visibility-depth",
+  "gates": {
+    "engineering_correctness": {
+      "status": "Passed",
+      "scope": "Tested contracts, gradient masks, RGB-only inference, checkpoints and historical assets intact"
+    },
+    "trusted_supervision_coverage": {
+      "status": "Partial",
+      "reason": "Reliable presence-only mid/far surfaces added; far Goldabsence sparse and lacks independent-group coverage. Candidate notpromoted."
+    },
+    "presence_absence_learning": {
+      "status": "Partial",
+      "research_numerical_status": "Passed",
+      "reason": "8 finite 200-step runs; no joint scene constraints feasible, newtest tradeoffs remain."
+    },
+    "actor_spatial_localization": {
+      "status": "Partial",
+      "reason": "Positive-only improves visible Actorrecall but absence/background errors persist, smalltargets and far support limited."
+    },
+    "depth_spatial_probability": {
+      "status": "Partial",
+      "reason": "Two matched seeds show small validation distribution improvement; error remainslarge, sparse S16actor rays and no pureCE control."
+    },
+    "high_resolution_benefit": {
+      "status": "Partial",
+      "reason": "P8/context interventions improve someActorrecall, potentialabsence costs; cannot uniquely separate features/raycenters/distribution. DefaultS16kept."
+    },
+    "multiscene_generalization": {
+      "status": "Partial",
+      "reason": "Three newtest positions only, no joint feasibility or farnegative assurance; no tuning ontest."
+    },
+    "runtime_stability": {
+      "status": "Partial",
+      "scope": "Repeated two-order controlled resource treatments",
+      "reason": "Strictcycle gates separately fromaverage20Hz; finite2repeats nothardrealtime proof."
+    },
+    "oracle_driving_safety": {
+      "status": "Partial",
+      "actual_counts": {
+        "collisions": 0,
+        "lane_invasions": 0,
+        "road_boundary_frames": 0,
+        "normal_control_expired": 0,
+        "frame_advancement_errors": 0
+      },
+      "reason": "Finite route/fault/movingActor regression only, no generaltraffic or continuousmesh/comfort assurance."
+    },
+    "pure_visual_driving_safety": {
+      "status": "NotValidated",
+      "reason": "No predicted visualevidence connectedto safety/planner; Oracle privilegedstates retained."
+    }
+  },
+  "tests": [
+    {
+      "path": "reports/m5e_final_tests.xml",
+      "tests": 249,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 5,
+      "sha256": "178625cd39ff4d8020e76090a1b2276d44e97999c4180abc5aa5251f7d0d1f1a"
+    },
+    {
+      "path": "reports/m5e_carla_api_tests.xml",
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "503f68f966fc0b96f0c7d9974aa92fbdcd1c0faa52e8e6366f4e57c9c21620b1"
+    },
+    {
+      "path": "reports/m5e_runtime_unit_tests.xml",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "212ae879f27703d4562489b5346472d709c5108673944742843d0206c0838268"
+    }
+  ],
+  "all_training_steps": 1600,
+  "runtime_ticks": 13560,
+  "validation_joint_feasible_models": 0,
+  "checkpoint_freeze_matches": {
+    "runs/m5e_learning/m5e_A_base_91.pt": true,
+    "runs/m5e_learning/m5e_B_presence_91.pt": true,
+    "runs/m5e_learning/m5e_C_spatial_frozen_91.pt": true,
+    "runs/m5e_learning/m5e_D_depth_91.pt": true,
+    "runs/m5e_learning/m5e_A_base_92.pt": true,
+    "runs/m5e_learning/m5e_B_presence_92.pt": true,
+    "runs/m5e_learning/m5e_C_spatial_frozen_92.pt": true,
+    "runs/m5e_learning/m5e_D_depth_92.pt": true,
+    "runs/m5d_learning/m5d_A_matched_81.pt": true,
+    "runs/m5d_learning/m5d_B_existence_81.pt": true,
+    "runs/m5d_learning/m5d_A_matched_82.pt": true,
+    "runs/m5d_learning/m5d_B_existence_82.pt": true
+  },
+  "scientific_code_freeze_matches": {
+    "tools/m5e_capture.py": true,
+    "tools/m5e_runtime_campaign.py": true,
+    "tools/m5e_learning.py": true,
+    "tools/m5e_visualize.py": true,
+    "tools/m5e_collision_reference.py": true,
+    "tools/m5e_async_drive.py": true,
+    "tools/m5e_evaluate.py": true,
+    "tools/m5e_protocol.py": true,
+    "tools/m5e_stride_factorization.py": true,
+    "tools/m5e_supervision.py": true,
+    "tools/m5e_ray_audit.py": true,
+    "tools/m5e_depth_diagnostics.py": true,
+    "tools/m5e_quality.py": true,
+    "tools/m5e_runtime_analysis.py": true,
+    "tools/m5e_resources.py": true,
+    "tools/m5e_gpu_contracts.py": true,
+    "tools/m5e_common.py": true,
+    "tools/m5e_consolidate.py": true,
+    "tools/m5e_dataset.py": true,
+    "tools/m5e_data_analysis.py": true,
+    "tools/m5e_surface_index.py": true,
+    "models/m5e_paths.py": true,
+    "datasets/m5e_witness.py": true,
+    "datasets/m5e_visibility.py": true,
+    "diagnostics/m5e_metrics.py": true,
+    "training/m5e_losses.py": true
+  },
+  "protocol_hash_matches": true,
+  "old_assets_preserved": true,
+  "candidate_upgraded": false,
+  "expand_formal_occupancy_training": false,
+  "test_reused_for_tuning": false,
+  "source_sha256": "4b25e079256563c922fe60e1726251dd1d50d4ba674c1314265e5e010cf9c094",
+  "evidence": {
+    "coverage": "reports/m5e_dataset_quality.json",
+    "witness": "reports/m5e_witness_attrition.json",
+    "oldfunnel": "reports/m5e_gold_funnel_review.json",
+    "visibility": "reports/m5e_visibility_validation.json",
+    "collision": "reports/m5e_collision_visibility.json",
+    "models": "reports/m5e_model_ablation.json",
+    "presence": "reports/m5e_presence_absence.json",
+    "actor": "reports/m5e_actor_localization.json",
+    "depth": "reports/m5e_depth_spatial_probability.json",
+    "depth_metric": "reports/m5e_depth_metric_review.json",
+    "stride8": "reports/m5e_stride8_factorization.json",
+    "runtime": "reports/m5e_runtime_isolation.json",
+    "runtime_attribution": "reports/m5e_runtime_attribution.json",
+    "assets": "reports/m5e_assets.json"
+  },
+  "next_steps": [
+    "New protocol for independently corroborated farnegative support and matched positive-background hardnegatives; never promoteCandidate fromplane fit alone",
+    "Improve sparse S16 object spatial supervision; preserve original48bins/defaultSplat; future CE-versusspatial objective control and matched modelselection steps",
+    "Deterministic aggregation research to quantify B/Cconstant negativecontrol variability without claiming gain fromconstant loss",
+    "Do not increase modelscale or useTemporal/SparseQuery to conceal unresolved singleframe localization",
+    "Continue server-level/tick+worker scheduling instrumentation; affinity alone not realtime guarantee"
+  ]
+}
