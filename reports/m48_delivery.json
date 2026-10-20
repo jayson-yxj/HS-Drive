@@ -1,0 +1,105 @@
+{
+  "kind": "offline_delivery_source_and_test_review",
+  "assets_preserved": true,
+  "changes_since_acceptance": {
+    "simulator/m48_schedule.py": {
+      "before": "2c051e52bca8fdb1dc9035d87df59d6a3c9b436dbc1d5fdb977ea17afb8b3f3c",
+      "after": "637f3ab5ea8769f33f2b9194151aacbde4f0fc3e5bd325ef9333886e13dc0e5a"
+    },
+    "simulator/m48_safety.py": {
+      "before": "523bc17e7cbea7e4202ea59b5156bc8ff67a45c016c91368e8c5f6d51cc4a1d4",
+      "after": "d159a88464fed1f68a978530a14063f9bee9f6494f34586685176d66ad6cc4cf"
+    },
+    "tools/m48_junction_short.py": {
+      "before": "7a3d0c4037a4a5598c6317acd3b0e1bb8d082fa00a4ead4d501ed320caf72f2b",
+      "after": "7e96e7b14b8f34ee151eb489def5a948869efd18f22be95faf7ad7c346989ab7"
+    },
+    "tools/m48_junction.py": {
+      "before": "fc5a63737fad76c17763f55ec3f329c7450faff3d9e7e417ba18ea61668dc0e9",
+      "after": "d67b7d84734f9b0e3b700a65d213390849e01c9e2d13d0a607018f71210e059a"
+    },
+    "tools/m48_multirate.py": {
+      "before": "93834bcd97bf20e997e63a7690a3883d8a76a1ed0c6f30aecb20307759baa3a9",
+      "after": "ac9eeec75e290d87130c04ae9e1034be55b59b371a6606b73c6243192d378be2"
+    },
+    "tests/test_m48_training_road.py": {
+      "before": "0de0741e96d8eb6df4fad3e0af8f1f3254b9b9609bad52693e407a4c24b06b45",
+      "after": "75abe1c4db4651ed5a07d580ae43b04d50155bbad2db474af2a818f0df4da9b8"
+    }
+  },
+  "explanation": "Schedule now deep-copies plan/state so fault injection cannot mutate authoritative age. Controller/label behavior unchanged. Whitespace cleanup in runners/safety; runtime snapshots preserved. Added regression test and reran actual CARLA four fault cases.",
+  "tests": {
+    "sim": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "16",
+      "tests": "156",
+      "time": "4.037",
+      "timestamp": "2026-10-20T18:47:35.257123+08:00",
+      "hostname": "gpufree-container",
+      "path": "reports/m48_delivery_sim_tests.xml",
+      "sha256": "fc4663a386f0176deeb2db03b2c705d6d580442a10063ad20fb18a50dbc96315"
+    },
+    "gpu": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "5",
+      "tests": "188",
+      "time": "14.759",
+      "timestamp": "2026-10-20T18:47:35.274492+08:00",
+      "hostname": "gpufree-container",
+      "path": "reports/m48_delivery_gpu_tests.xml",
+      "sha256": "d7edbde08641d9bcd46207aa9f3d48ace600a741d1eb1c87e4233aa8b622bd44"
+    },
+    "module": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "11",
+      "time": "1.708",
+      "timestamp": "2026-10-20T18:47:13.863175+08:00",
+      "hostname": "gpufree-container",
+      "path": "reports/m48_delivery_module_tests.xml",
+      "sha256": "f3895fe3ed2f66663095c4d1bbd7adee540c3c0f6ecfd3e19fe4571fbe57a65f"
+    }
+  },
+  "fault_validation_sha256": "748aa9a94bac3968e2699abef587ff166b9a61c4cd4dab1f4c2c350430a8ad30",
+  "source_sha256": {
+    "tools/m48_pilot_metrics.py": "248509c14eb7f697ce71b41ec14170b39564a063c3987131c35c16f15193210c",
+    "tools/m48_pilot.py": "5ee2383c5d40e8d58c1c5a2f76ae2c41d2562b61d9595ada58a0780a674d0b4e",
+    "tools/m48_road_diagnosis.py": "bab1c769de1a59136f6495974e68ac6551bb5543a6d403cb928efe805ffbde07",
+    "tools/m48_junction_short.py": "7e96e7b14b8f34ee151eb489def5a948869efd18f22be95faf7ad7c346989ab7",
+    "tools/m48_extra_contract.py": "b75d1412a6e41c91ad564ce19b464070f6a907b1fc57aad578784515f2a378b1",
+    "tools/m48_visibility_analysis.py": "2a7ebecd1928c24f780a87ed2d884a6cda04c07cc40543c2320d3ce3c731dfd0",
+    "tools/m48_road_audit.py": "f1d699db8a0ec045d631a903f0a47546846e9052685bd4149279604f2e04aea8",
+    "tools/m48_junction.py": "d67b7d84734f9b0e3b700a65d213390849e01c9e2d13d0a607018f71210e059a",
+    "tools/m48_visualize.py": "6090dd1848296820085a6dc56ef3e05b956bbc9a8a2faf365b7bc5e3d1e5f33e",
+    "tools/m48_multirate.py": "ac9eeec75e290d87130c04ae9e1034be55b59b371a6606b73c6243192d378be2",
+    "tools/m48_junction_metrics.py": "16a8107b6c2a8562bacd8dc79d1a58317d45afd3fa0dad50f7218e75899980e2",
+    "tools/m48_hold_feasibility_analysis.py": "cb28c2df0e7d93d5b4f8047991c287906a9401cf47ce8adc8c56133b8cfa188c",
+    "tools/m48_delivery.py": "edff296d83e08ba8d812386f23888d6f51cd2c1d1ee36352ec080ac47ffad293",
+    "tools/m48_low_speed_followup.py": "aa51859954cc58ac70ab974986660062e1409a8b31537399709c92a494e2bda2",
+    "tools/m48_acceptance.py": "4e82003d7e83c26a4921d36488f5ba558016c522fcd19956cebac2f77125b4bc",
+    "tools/m48_road_observed_audit.py": "d3440969a7f195336c82f3dd02c921ecf4015c037714bd5ca04ce70ba29029b4",
+    "tools/m48_dynamics.py": "2328f26786c936528cced569b01b5d99ecead0b0f06280225458e58d8d9863cb",
+    "tools/m48_geometry_queries.py": "0eb001718e1e4a65c1cfb5263a60bbfe500f690507ce33ecfa7a2757a667ab7a",
+    "tools/m48_spatial.py": "c70942994f248c24e6c10ae0f3794c5a19a590fe37e88429cbbc9445f9a6d9e8",
+    "tools/m48_capture.py": "8686fa57658ce28895906d4aa60cc0e3c52014273b0b14635785d3467de87dd3",
+    "simulator/m48_motion.py": "c73d8b09e1dd8cd7630abb179f2add8baa3d99dbb74ba0c6feba6d2a30e4dcb4",
+    "simulator/m48_road.py": "c9dfc16ca338cb7cac697d78f85b199470a4139f5ec02668e0cf2e39650c129a",
+    "simulator/m48_schedule.py": "637f3ab5ea8769f33f2b9194151aacbde4f0fc3e5bd325ef9333886e13dc0e5a",
+    "simulator/m48_safety.py": "d159a88464fed1f68a978530a14063f9bee9f6494f34586685176d66ad6cc4cf",
+    "datasets/m48_training.py": "454efa0d7c41168f43abd4bf5d4e57d7f1700277e19df3bcd15234208b33f34e",
+    "datasets/m48_evidence.py": "3802c0ce6729f8c02912654d297935156de334b7092c7084d24d29333db9d91c",
+    "models/m48_evidence_head.py": "b078ce3735d020f5d41bc255df97545a0ac24c32f2c022906640f9bf16afaba6",
+    "training/m48_evidence_loss.py": "ae9e9d31f6f5ed743f068ae469e5425f7036ac4a4fdef388463bc82293aa0948",
+    "tests/test_m48_training_road.py": "75abe1c4db4651ed5a07d580ae43b04d50155bbad2db474af2a818f0df4da9b8",
+    "tests/test_m48_evidence.py": "c85ad2b38c1ee6dc355772b5bad41f6217c8de2beb4a218a3f67cc3a4854c008"
+  },
+  "overall": "Partial",
+  "formal_m5_approved": false,
+  "async_controller_realtime_pass": false
+}

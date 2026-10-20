@@ -1,0 +1,40 @@
+{
+  "version": "m48",
+  "scenario": "junction_turn",
+  "settings": {
+    "v": 0
+  },
+  "replay_routes": "reports/m45_oracle_driving_artifacts",
+  "green_lights": true,
+  "ackermann": false,
+  "scope": "Same scene/route/state setup; entire planner-controller stack differs, not single-variable ablation",
+  "status": "Failed",
+  "failure": "max_ticks",
+  "ticks": 850,
+  "initial_actual_speed_mps": 0.0,
+  "initial_actual_gap_m": null,
+  "collision_count": 0,
+  "lane_invasions": 0,
+  "final_gap_m": null,
+  "min_gap_m": null,
+  "final_speed_mps": 4.741365933011854e-10,
+  "max_speed_mps": 0.0018494319422990373,
+  "route_completion": 0.0,
+  "max_decel_raw_mps2": 0.02593517263411663,
+  "jerk_abs_p95_raw_mps3": 0.0002743556770653333,
+  "jerk_abs_max_raw_mps3": 1.2584762296019474,
+  "max_decel_250ms_mps2": 0.005415305844690813,
+  "jerk_abs_p95_250ms_mps3": 3.469622105069847e-05,
+  "lateral_mean_m": 0.05379817338500191,
+  "lateral_max_m": 0.05379817338500191,
+  "safety_forced_braking_events": 418,
+  "safety_forced_braking_ticks": 628,
+  "safety_reasons": {
+    "acceleration_limit": 421,
+    "position_velocity_inconsistent": 207
+  },
+  "kinematic_violation_ticks": 628,
+  "latency_p95_ms": 88.73788984492421,
+  "log": "reports/m48_multirate_artifacts/m48_junction_turn.jsonl",
+  "log_sha256": "e8c70704550bbb00068f80380dfef2f19a54cd932de356aeb65371a359592e7c"
+}
