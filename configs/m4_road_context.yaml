@@ -1,0 +1,27 @@
+schema_version: hsd-m4-baseline-v1
+index: /root/gpufree-data/hs-drive-data/processed/hsd-dataset-v2-driving-accepted
+bev_config: configs/bev.yaml
+pretrained_weights: /root/gpufree-data/hs-drive-cache/weights/resnet18-f37072fd.pth
+seed: 7
+steps: 1200
+train_samples_per_scene: 48
+val_samples_per_scene: 16
+batch_size: 1
+workers: 2
+learning_rate: 0.0002
+weight_decay: 0.0001
+surface_loss_weight: 0.2
+amp_bf16: true
+eval_every: 200
+grad_clip_norm: 5.0
+chunk_points: 32768
+notes: 'Predeclared paired road v2 experiment: identical index, road labels, seed,
+  loss, steps; only optional Drivable dilated head differs. Select depth macro AbsRel,
+  report Drivable per-map and prior, no test tuning.'
+selection_metric: depth_macro_abs_rel
+depth_log_loss_weight: 1.0
+depth_range_balance: true
+drivable_head: true
+drivable_loss_weight: 0.5
+road_overlay: /root/gpufree-data/hs-drive-data/processed/road-overlay-v2-exact
+road_context: true

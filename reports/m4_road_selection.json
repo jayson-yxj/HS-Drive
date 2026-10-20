@@ -1,0 +1,21 @@
+{
+  "schema_version": "hsd-road-comparison-v1",
+  "status": "frozen_before_regression_test",
+  "experiments": {
+    "point": {
+      "val_metrics": "reports/m4_road_point_val/metrics.json",
+      "sha256": "6aa31d997a8cf2837a4a4ccd2a3b9109872c731d0b97153b65c544f622b9cc72",
+      "macro_scene_iou": 0.6495493880026232,
+      "checkpoint_sha256": "b2ff0118461c149b541802cfcf6cbcb96b937ba55fc8eb231329e7a73ce07db9"
+    },
+    "context": {
+      "val_metrics": "reports/m4_road_context_val/metrics.json",
+      "sha256": "fda949bb8f6ee3784c8cdcc655546b2dc7fff116dee97ec6701714830cee8668",
+      "macro_scene_iou": 0.6169702020641229,
+      "checkpoint_sha256": "817024e8ad5d0a17fbdbd4feb06b8f9dd5f1224e695a873168504c2c0cd02d02"
+    }
+  },
+  "selected": "point",
+  "selection": "validation macro-scene static road IoU; individual checkpoints selected by validation macro-depth AbsRel",
+  "test_scope": "Town05/Town10 historically observed; regression only, not fresh blind test"
+}

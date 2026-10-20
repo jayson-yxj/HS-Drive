@@ -1,0 +1,61 @@
+schema_version: hsd-driving-campaign-v1
+raw_root: /root/gpufree-data/hs-drive-data/raw
+capture_config: configs/data_capture.yaml
+frames: 161
+speed_limit_mps: 5
+runs:
+- run_id: m4drive_town01_0
+  map: Town01
+  spawn: 0
+  seed: 17
+  sun: 50
+  split: train
+- run_id: m4drive_town01_30
+  map: Town01
+  spawn: 30
+  seed: 29
+  sun: 15
+  split: train
+- run_id: m4drive_town02_0
+  map: Town02
+  spawn: 0
+  seed: 41
+  sun: 50
+  split: train
+  include_training: false
+  exclusion_reason: motion fraction 0.379 < predeclared 0.5; retained traffic-light-stop
+    diagnostic
+- run_id: m4drive_town02_40
+  map: Town02
+  spawn: 40
+  seed: 53
+  sun: 15
+  split: train
+- run_id: m4drive_town04_0
+  map: Town04
+  spawn: 0
+  seed: 67
+  sun: 50
+  split: val
+  include_training: false
+  exclusion_reason: one incomplete sensor frame dropped inside recorded interval;
+    integrity gate failed
+- run_id: m4drive_town05_0
+  map: Town05
+  spawn: 0
+  seed: 79
+  sun: 50
+  split: test
+- run_id: m4drive_town02_20
+  map: Town02
+  spawn: 20
+  seed: 83
+  sun: 50
+  split: train
+- run_id: m4drive_town04_0_retry
+  map: Town04
+  spawn: 0
+  seed: 67
+  sun: 50
+  split: val
+  tick_wall_delay: 0.7

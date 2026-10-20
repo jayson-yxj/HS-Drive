@@ -1,0 +1,72 @@
+schema_version: hsd-registry-v1
+dataset_version: hsd-dataset-v2-driving-static-lanes
+raw_root: /root/gpufree-data/hs-drive-data
+depth_evidence: ../reports/depth_convention.json
+allowed_profiles:
+- training-960-v4
+scope: Independent short TM drives; static lane labels only; no traffic interaction
+  benchmark
+split_policy:
+  seed: 7
+  val_fraction: 0.2
+  test_maps:
+  - Town10HD_Opt
+  - Town05
+  min_cross_split_distance_m: 100.0
+scenes:
+- scene_id: town03_spawn0_noon_static
+  path: imaging/stability_960_v4_everytick/training-960-v4
+  group_id: town03_spawn0_corridor
+  split: train
+  drivable_labels: labels_static_v1/town03_spawn0_noon_static
+- scene_id: town03_spawn0_sunset_static
+  path: imaging/sunset_v4_everytick/training-960-v4
+  group_id: town03_spawn0_corridor
+  split: train
+  drivable_labels: labels_static_v1/town03_spawn0_sunset_static
+- scene_id: town03_spawn0_motion
+  path: raw/imaging_motion_v4_everytick
+  group_id: town03_spawn0_corridor
+  split: train
+  drivable_labels: labels_static_v1/town03_spawn0_motion
+- scene_id: town03_spawn45_static
+  path: raw/m3_town03_val_45
+  group_id: town03_spawn45_corridor
+  split: val
+  drivable_labels: labels_static_v1/town03_spawn45_static
+- scene_id: town10_spawn0_motion
+  path: raw/m3_town10_test_0
+  group_id: town10_spawn0_corridor
+  split: test
+  drivable_labels: labels_static_v1/town10_spawn0_motion
+- scene_id: m4drive_town01_0
+  path: raw/m4drive_town01_0
+  group_id: town01_tm_routes
+  split: train
+  drivable_labels: labels_static_v1/m4drive_town01_0
+- scene_id: m4drive_town01_30
+  path: raw/m4drive_town01_30
+  group_id: town01_tm_routes
+  split: train
+  drivable_labels: labels_static_v1/m4drive_town01_30
+- scene_id: m4drive_town02_0
+  path: raw/m4drive_town02_0
+  group_id: town02_tm_routes
+  split: train
+  drivable_labels: labels_static_v1/m4drive_town02_0
+- scene_id: m4drive_town02_40
+  path: raw/m4drive_town02_40
+  group_id: town02_tm_routes
+  split: train
+  drivable_labels: labels_static_v1/m4drive_town02_40
+- scene_id: m4drive_town04_0
+  path: raw/m4drive_town04_0
+  group_id: town04_tm_routes
+  split: val
+  drivable_labels: labels_static_v1/m4drive_town04_0
+- scene_id: m4drive_town05_0
+  path: raw/m4drive_town05_0
+  group_id: town05_tm_routes
+  split: test
+  drivable_labels: labels_static_v1/m4drive_town05_0
+drivable_bev_config: bev.yaml

@@ -1,0 +1,42 @@
+{
+  "schema_version": "hsd-m4-comparison-v1",
+  "status": "frozen_before_test",
+  "experiments": {
+    "ce": {
+      "run": "runs/m4_expanded_ce",
+      "validation": "reports/m4_expanded_ce_val/metrics.json",
+      "validation_sha256": "935996ef4519d33d528ce2bb6219fc74ed3848246119524d06e14f721c266647",
+      "depth_mae_m": 4.20683190996927,
+      "depth_abs_rel": 0.4259919040924702,
+      "drivable_iou": null,
+      "checkpoint_sha256": "c6004f8b0093194d234d7d76d5cec529d7d55907000331b468db9ec9658445bb",
+      "step": 1000
+    },
+    "depth": {
+      "run": "runs/m4_expanded_depth",
+      "validation": "reports/m4_expanded_depth_val/metrics.json",
+      "validation_sha256": "65e3f030c999590ef619fc5db57b9a5ac5bda127794956dd3c6ce5c43b46683a",
+      "depth_mae_m": 4.221369029744071,
+      "depth_abs_rel": 0.4035065601851605,
+      "drivable_iou": null,
+      "checkpoint_sha256": "173d1428546ddbf677b0f7dde6228d66af9661f1646924cd9d476ca172fbea41",
+      "step": 1200
+    },
+    "joint": {
+      "run": "runs/m4_expanded_joint",
+      "validation": "reports/m4_expanded_joint_val/metrics.json",
+      "validation_sha256": "d552ece2f3582fae39d0839823186a023264fc199c3db8ededc47badca7effec",
+      "depth_mae_m": 4.151263844681916,
+      "depth_abs_rel": 0.3828578412420876,
+      "drivable_iou": 0.5109232279371588,
+      "checkpoint_sha256": "8aa09f33c591fd72018eafc193047c26da152b8a52016b04eae6acfad8488d36",
+      "step": 1200
+    }
+  },
+  "depth_selected_by_validation": "ce",
+  "test_runs": [
+    "ce",
+    "joint"
+  ],
+  "policy": "CE vs log-depth variant selected using full validation only; joint always evaluated as predeclared secondary experiment; test results never alter selection"
+}

@@ -1,0 +1,11 @@
+schema_version: hsd-imaging-acceptance-v1
+# Engineering screening, not model performance or camera radiometric calibration.
+daytime:
+  max_surface_near_black_fraction: 0.05
+  max_surface_near_white_fraction: 0.05
+  max_static_rgb_mae_8bit: 2.0
+sampling:
+  require_complete_frames: true
+  require_geometry_cross_view_pass: true
+  minimum_stability_frames: 301
+notes: Night is a diagnostic holdout; dedicated night/headlight exposure design remains separate.

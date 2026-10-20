@@ -1,0 +1,24 @@
+schema_version: hsd-simulator-v1
+carla_server_version: 0.9.15
+host: 127.0.0.1
+port: 2000
+client_timeout_s: 60.0
+synchronous_mode: true
+fixed_delta_seconds: 0.05
+traffic_manager_synchronous: true
+sensor_tick_s: 0.1
+map: Town03
+render_mode: offscreen  # do NOT set no_rendering_mode true for RGB/Depth
+seed: 7
+capture:
+  num_rgb: 6
+  num_depth_training_only: 6
+  required_complete_frame: true
+  max_buffered_frames: 20
+  sensor_queue_max_size: 400
+  frame_timeout_ticks: 20
+  on_missing_sensor: drop_with_report
+  duration_frames: 300
+privacy_and_safety:
+  inference_whitelist: [rgb, intrinsics, cam_to_ego, ego_state, route_command, timestamps, valid_cameras]
+  prohibited_in_learned_mode: [carla_depth_gt, actor_gt, gt_local_map, future_trajectory_gt]

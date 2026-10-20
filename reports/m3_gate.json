@@ -1,0 +1,186 @@
+{
+  "schema_version": "hsd-milestone-gate-v1",
+  "milestone": "M3",
+  "passed": true,
+  "scope": "Dataset engineering on 495 frames/5 scenes; not model training readiness for all M4 tasks",
+  "dataset_gate": {
+    "schema_version": "hsd-m3-gate-v1",
+    "checks": {
+      "train_full_replay": true,
+      "val_full_replay": true,
+      "test_full_replay": true,
+      "repeatable_reads": true,
+      "rgb_only_path": true,
+      "forbidden_access_rejected": true,
+      "worker_seed_reproducibility": true,
+      "temporal_shape": true,
+      "causal_scene_windows": true,
+      "supervision_loss_backward": true,
+      "held_out_map": true,
+      "group_disjoint": true,
+      "spatial_separation": true
+    },
+    "passed": true,
+    "index": "/root/gpufree-data/hs-drive-data/processed/hsd-dataset-v1-m3",
+    "index_sha256": "27469ebb06acd48991400205e2efc24317592eb4db81063cd41948b23ac42421",
+    "dataset_version": "hsd-dataset-v1-m3-smoke",
+    "splits": {
+      "train": {
+        "samples": 373,
+        "valid_depth_fraction": 0.7602477100089365,
+        "actor_records": 685,
+        "input_digest_ordered": "1e1728cc40524aceb7a6457767c534d56de499861fbcff0b19e03e45528f6a20"
+      },
+      "val": {
+        "samples": 61,
+        "valid_depth_fraction": 0.6278290072859745,
+        "actor_records": 122,
+        "input_digest_ordered": "3483d7e8dcffbb9a959bdc3fc30dc359b06da454c37b36ce7de1e87a09658716"
+      },
+      "test": {
+        "samples": 61,
+        "valid_depth_fraction": 0.7262807377049181,
+        "actor_records": 61,
+        "input_digest_ordered": "b6fa1006d8b6fc1ce4d8a5d126bb72fb03d985432feda00cba52586cb6606cac"
+      }
+    },
+    "frames_replayed": 495,
+    "temporal_windows_train": 367,
+    "probe_loss": 3.9816970825195312,
+    "environment": {
+      "torch": "2.8.0+cpu",
+      "cuda_runtime": null,
+      "cuda_available": false,
+      "workers": 2,
+      "threads": 4
+    },
+    "elapsed_s": 86.9192811679095,
+    "spatial_separation": [
+      {
+        "first": "town03_spawn0_motion",
+        "second": "town03_spawn45_static",
+        "min_distance_m": 320.2382160577145
+      },
+      {
+        "first": "town03_spawn0_noon_static",
+        "second": "town03_spawn45_static",
+        "min_distance_m": 324.65080501727385
+      },
+      {
+        "first": "town03_spawn0_sunset_static",
+        "second": "town03_spawn45_static",
+        "min_distance_m": 324.65080501727385
+      }
+    ],
+    "scope": "Engineering gate on 5 small scenes; no learned BEV model or perception accuracy claim",
+    "limitations": [
+      "ego state uses ideal simulator odometry proxy",
+      "route command unavailable (-1)",
+      "only depth and actor-box supervision available; no drivable/occupancy/future labels",
+      "train/val same map; test Town10HD_Opt is held out",
+      "depth edge mask and sampling need M4 ablation",
+      "CPU DataLoader validation does not validate CUDA training environment"
+    ]
+  },
+  "tests": {
+    "sim": {
+      "tests": 68,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1
+    },
+    "data": {
+      "tests": 76,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 5
+    }
+  },
+  "evidence": {
+    "reports/m3_dataset/gate.json": "09c70242b6020bd38940542e11bd5fe9dcfcb3e3e08d6a4183344051e50c8ddd",
+    "reports/pytest_m3_sim.xml": "e1bbbffa4840115359ed82db67dc409180827220c218829f4038372342edcb7a",
+    "reports/pytest_m3_data.xml": "43721b779b340d72272fc4e6ed3e94236ad0cce586fd56458b0e6b77e5e26534",
+    "configs/dataset_v1.yaml": "094d3110f86b6f5ce80cef8acb27fc39f4d95d8ed88e17088c594d6b87028812",
+    "configs/train_data.yaml": "dde4bdcd771cf0852e609d24b9d2361e862d2c8aec54702d276ce61734a27c17",
+    "requirements-data.lock.txt": "51e85833a179d92ea9eaf70683ab9d5408b740b47f610447c647feefc018d72f",
+    "reports/depth_convention.json": "9acf12015a0b11ba4edfe06d8a8ea43b47e0bc295dcb8a0319241bdf96c047c1"
+  },
+  "source_sha256": {
+    "configs/bev.yaml": "e0dafcca015658782a1113242b5c37190824029cabfc28a6adbb24f8afbeafb4",
+    "configs/cameras.yaml": "ceda7659ecdda891e94c8552383fd5695e0e1fcc790f72ff143eb4b0fe40685c",
+    "configs/carla.yaml": "2cf6a47b896cd4b80de64b8161d1532b7b92908b273452228e7415c5b63f3bbf",
+    "configs/carla_smoke_town10.yaml": "2325577394d8fcc3eb6c32ee0faff2d10f0c1d3e064c745907d21e715d0ec254",
+    "configs/data_capture.yaml": "de52833878743d1ece6f3820ef56c6285d819c5b1904df6b9bc3d1115fa0be02",
+    "configs/dataset_v1.yaml": "094d3110f86b6f5ce80cef8acb27fc39f4d95d8ed88e17088c594d6b87028812",
+    "configs/imaging/acceptance.yaml": "9d85d1030e284ac6bd037b66b68868eef3596d0995c410239129e300ad7b11e2",
+    "configs/imaging/geometry_1280.yaml": "bbdfed7a130ad3a41a6365cf396fd76727f7fb62f6a444acef01abb17cdc9cd8",
+    "configs/imaging/geometry_640.yaml": "66d341c5d4d2c1a378d4d552cc27ba5845b2e1681621e8cbe2ae28ac9dfa55e3",
+    "configs/imaging/geometry_960.yaml": "525449b7c2fdf58be81dd15f94ded562cc1e1e2806c19b4a87ea4ecaf043dc68",
+    "configs/imaging/training_1280.yaml": "3dbed99dbc75b6b744075a1d74fe1074447b4fdf238b9c4f8d5ba73be50d4476",
+    "configs/imaging/training_1280_v2.yaml": "9bf6b062955f1aec010d5bf7b99c33721485ef4343238be453e3a08f5e582518",
+    "configs/imaging/training_1280_v3.yaml": "2e5f560947893f6ab40e3a47ec88d30f93a03e33130da9f78b9b992eec7c9bd6",
+    "configs/imaging/training_640.yaml": "c97142e55bdbfef28974b53a3b0486c0d258b85ba40b82b03130ff20ec639e46",
+    "configs/imaging/training_640_v2.yaml": "b0cf5b2bff88b40ca9d4baf1e773d3741c284e6f8c39ac28eabf978e575798e9",
+    "configs/imaging/training_640_v3.yaml": "8ded6d06add090805a76f23c79f1d72019374a8c29d46cd2aae129d6f77de6af",
+    "configs/imaging/training_960.yaml": "4645b758a8abc8dfee6136200a1cfcf343156ea3b4ee99882363c9bc6d926ffe",
+    "configs/imaging/training_960_v2.yaml": "e79ee19655f00835d0d73ca0b087e719fc532e4524914d707d29689edd9dc5bc",
+    "configs/imaging/training_960_v3.yaml": "0fba472eeae072a92670a6b1b58f2e00c2ebe81e357a1cc55088ea3b3f66d70f",
+    "configs/imaging/training_960_v4.yaml": "6ca1fa726eaede3f90a78aa6e6de9365af78d6ffd56a5f1ac88bfbe5215dd23e",
+    "configs/m2_acceptance.yaml": "f76938d70b0bbfab5a826e26e6c316b108a953095d0bd2ef0ed3cea113ebe66c",
+    "configs/model.yaml": "459c821ec523fb457af3442b06583805ebcc43ce896390766f3ff9c219a23169",
+    "configs/train_data.yaml": "dde4bdcd771cf0852e609d24b9d2361e862d2c8aec54702d276ce61734a27c17",
+    "datasets/__init__.py": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+    "datasets/carla_dataset.py": "07ad3b7e2b675a086224d9c8c819752fcaa25fa11c88d5c00a65369e7aa2e696",
+    "datasets/index.py": "e467115175750e73479c6a40b0a6d5a608f69a72496f398018bacd4177b04591",
+    "datasets/inputs.py": "5964f7d6e71e33debba7cd8d55554c04d304ac8f4f9a22d3836bb84137eb46a8",
+    "datasets/labels.py": "a3e6855b29fbcb585b8579d569e76ad28ca3a96577c10201f4e422c8d6e1ca51",
+    "datasets/schema.py": "6c8279c7677096d7dba6f307c3ca20604aa8f03a3724db5e526dcc76fab598d1",
+    "datasets/split.py": "ba79f1746f1099051e97cfcfb62e0fc8c9ec0349ffd8bfe33120e37a13dd80ed",
+    "datasets/training.py": "ed7cb5bbc45125e991998c290898cc6f604c7b9bce13a1eb0294ad9780707bf1",
+    "geometry/__init__.py": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+    "geometry/cameras.py": "4715f3a048204635bde43a02cacaf459b24099937f27f9688aac6e80904ade62",
+    "geometry/carla_depth.py": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+    "geometry/consistency.py": "261b869b46310b71ce3ad768d90eea15640c374167b671f0af48c75ca5c1b3d6",
+    "geometry/coordinates.py": "abcd289587aafe30ae3870345885d7485fc05c2230ea716eb6a08b7a104293b7",
+    "geometry/oracle_bev.py": "5867e8aa5dac2e1e5c518f8a02fdc1aaa9af974a4301c1859488223c5b49d5e8",
+    "geometry/reference.py": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+    "geometry/visualization.py": "71a2f4f15eb7e52dc61c132d5919d91c6996045b5b80d09fe63eca4f392855a3",
+    "pyproject.toml": "085ff3a64419638d709f807e7b6b773a2d0e6f8c13b698fcdd1d4e2902b7d312",
+    "requirements-sim.lock.txt": "f4ab910480906fcba16e7dd86a8cf77ca8e00c14cd23ba4cae8d25568b22036f",
+    "simulator/__init__.py": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+    "simulator/camera_rig.py": "51291c0826c054e277678a60b7e15abc61c873d36593b8f79d309baf919178fb",
+    "simulator/capture_config.py": "42e2c65c1fff6807807741b7dab6f5ebb245bb28e6224dc9acca3fb3e4fbb491",
+    "simulator/imaging.py": "562bbc2c2b8b0434f36873e0258cac99164b4633f74c23460b41e43db9158064",
+    "simulator/recorder.py": "027c7613971ff0483dfb9ced5f43f84013753d2132f421623c81f3be538d0eb7",
+    "simulator/session.py": "b22b2fb7f9ed90561f3e0ebefc68456c3c888225ca60a662e1cb60c1688eafb3",
+    "simulator/snapshot.py": "13b6dbec8452c249ef26e521058b041f1ae57425825983c9d883e78fea1e35d3",
+    "simulator/synchronizer.py": "e917837796e2ef02107db9bd010f81999afbdb68f44e5490c4b9473f6de47069",
+    "tools/__init__.py": "97521fc2ec180f25fbee707e1d756d3233ce13d410a59ef206035b09f278d298",
+    "tools/analyze_imaging.py": "e57da591bdf5946098119291f95b67ebe9b18dc3ffb862c395b16264518e3dab",
+    "tools/build_dataset_index.py": "622dfdc2b1ee3e4d479165def43de626c8f2c153639ba31e1ee71c5af72612e9",
+    "tools/carla_depth_probe.py": "ad746a0f07cbc0849913fc404cb7e770f09d807e11120dbb59d80c789a0f8ad5",
+    "tools/check_capture_interrupt.py": "074e7ff057ce5cc7c83d312b933773a6af1cc7f5bf1623849cfd46116d8e2528",
+    "tools/check_depth_photometry.py": "d8bd611326c6fc5e561793aeb1cd1972911f4dfc184d7994a1edef9e4972743b",
+    "tools/check_depth_plane.py": "cdbd2cf116e5f47edbdfeab9a5fe208095a5025821af71ff2f9dd722c61797b9",
+    "tools/compare_imaging.py": "57b174c33bac5aa0a180e8ccf5518d883cf169154e085a67b143666de944d8cf",
+    "tools/compare_resolution.py": "3ef168dc5ba91ac26b809712c3c9c4f03480713ad35a041677d59f452fde9f67",
+    "tools/imaging_summary.py": "3d7cb4e3da20d6fc5f23d4a4150196da408f7365b56b37c66ecadcd8f78713c1",
+    "tools/occlusion_probe.py": "b58ed05417c8bcd5cc5f39540837eff82771e5c4ca1c8a1afd4445a78c0d67f0",
+    "tools/plot_geometry_report.py": "03c0f52d59915a924cf0e60a0e5ee864c1314a586756d3e5f0d1110937f0b27b",
+    "tools/provenance.py": "f1d2fb8e2a054dee30192f3923d1271e31f8113fbcd1cc99061d6b8a1236230e",
+    "tools/record_dataset.py": "76be0b2ef017d85e448e0ae7f0c643004493134aceaaecaed67914bc4f4469d9",
+    "tools/synthetic_demo.py": "cb2002446007ad6f11eda04574c3b2172b6fef1fa483e1cc86f7937f8b906c37",
+    "tools/validate_actor_surfaces.py": "d19b5aef40a4acc7d8999febf4b754a9c73708cd7c8b85d722cafc0c54835ba5",
+    "tools/validate_dataset.py": "cf793831079902b7feecf444146d44725f32a8117a2c1b6520be6d6f286f4cab",
+    "tools/validate_geometry.py": "a86e1e63bbe1c9aa14ad728fb40bf388e021c679b6f5ddaaf0f0540896401ea7",
+    "tools/validate_imaging_gate.py": "d72284b1beea16b6f8c0d2298e1c9ec27841ad1daf427bab9df95d129baa812f",
+    "tools/validate_m2_gate.py": "d5c1d32622552c2dfd8f7f6267e750edc8a49e630a8952d957f66db1b17eabb1",
+    "tools/validate_recording.py": "b8cd6e6a1667ed8328260b68e14c586b662921f7eb7f9ecbeb55193789b3cf04",
+    "tools/visualize_oracle_bev.py": "f60c42b5cba23ff06f782770b9cb19805d1a12a3a5ec6155538ff9a84dc00328"
+  },
+  "next_dependencies": [
+    "CUDA training environment",
+    "larger diverse driving corpus",
+    "drivable/occupancy label generation for respective losses"
+  ]
+}

@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=65"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hs-drive"
+version = "0.1.0"
+description = "HS-Drive CARLA geometry and versioned learning datasets"
+requires-python = ">=3.10,<3.11"
+dependencies = ["numpy>=1.24,<3", "opencv-python-headless>=4.8,<6", "PyYAML>=6,<7"]
+
+[project.optional-dependencies]
+sim = ["carla==0.9.15"]
+train = ["torch==2.8.0", "torchvision==0.23.0"]
+test = ["pytest>=8,<10"]
+
+[tool.setuptools.packages.find]
+include = ["geometry*", "simulator*", "datasets*", "tools*", "models*", "training*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,22 @@
+schema_version: hsd-capture-defaults-v1
+# Validated by reports/imaging_gate.json in the documented limited scope. Paths relative to this file.
+collector:
+  config: carla.yaml
+  cameras: cameras.yaml
+  camera_profile: imaging/training_960_v4.yaml
+  render_every_tick: true
+  frames: 301
+  warmup_ticks: 40
+  tick_wall_delay: 0.5
+  render_quality: Epic
+  motion: stationary
+network_input:
+  width: 640
+  height: 384
+  resize: area_rgb_with_half_pixel_intrinsics
+  depth: retain_native_depth_for_supervision_sampling
+validation_scope:
+  map: Town03
+  measured_sun_altitude_deg: [50, 8]
+  weather_policy: Record actual world weather; collector does not force it.
+  exclusions: [night, rain, fog, trained_model_quality, realtime]

@@ -1,0 +1,27 @@
+{
+  "convention": "optical_z",
+  "status": "verified_for_tested_carla_0.9.15_pinhole_setup",
+  "evidence": "depth_semantics_probe_2.json",
+  "map": "Carla/Maps/Town10HD_Opt",
+  "sample_count": {
+    "all": 955,
+    "center": 77,
+    "edge": 471
+  },
+  "mae_m": {
+    "all": {
+      "optical_z": 0.0004292131319464289,
+      "ray_range": 2.5214666711386857
+    },
+    "center": {
+      "optical_z": 0.00042597236607458654,
+      "ray_range": 0.2240874506045339
+    },
+    "edge": {
+      "optical_z": 0.00043254836061230016,
+      "ray_range": 3.686848132396
+    }
+  },
+  "scope": "640x384 100deg HFOV lens_k=0 lens_kcube=0; downward 10m road plane; collision/render mismatch remains scene dependent",
+  "first_probe_outliers": "15/631 collision-road rays differ from render depth >0.1m; retained in probe_1; second independent location has 0/955"
+}

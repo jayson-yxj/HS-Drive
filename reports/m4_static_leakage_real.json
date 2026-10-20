@@ -1,0 +1,27 @@
+{
+  "dataset": "/root/gpufree-data/hs-drive-data/processed/hsd-dataset-v2-driving-accepted",
+  "inference_npz_io_forbidden_passed": true,
+  "drivable_positive": 2157,
+  "drivable_negative": 1650,
+  "drivable_unknown": 15393,
+  "rule_valid_cells": 0,
+  "inputs": [
+    "images",
+    "intrinsics",
+    "cam_to_ego",
+    "ego_pose",
+    "ego_state",
+    "timestamps_s",
+    "route_command",
+    "valid_cameras"
+  ],
+  "targets": [
+    "depth_m",
+    "depth_valid",
+    "depth_bin",
+    "depth_uv",
+    "drivable_static",
+    "drivable_valid",
+    "drivable_rule_valid"
+  ]
+}

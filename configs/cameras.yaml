@@ -1,0 +1,38 @@
+schema_version: hsd-camera-v1
+coordinate: carla_ego  # CARLA: x forward, y right, z up
+image_width: 640
+image_height: 384
+horizontal_fov_deg: 100.0
+sensor_tick_s: 0.1
+camera_model: pinhole
+distortion:
+  lens_k: 0.0
+  lens_kcube: 0.0
+notes: |
+  RGB and training-only Depth sensors must have the SAME mount, size, FOV and lens geometry.
+  Verify vehicle body occlusions in selected CARLA vehicle blueprint.
+cameras:
+  front:
+    xyz_m: [1.65, 0.00, 1.65]
+    yaw_deg: 0.0
+    pitch_deg: -5.0
+  front_left:
+    xyz_m: [1.10, -0.60, 1.60]
+    yaw_deg: -60.0
+    pitch_deg: -7.0
+  front_right:
+    xyz_m: [1.10, 0.60, 1.60]
+    yaw_deg: 60.0
+    pitch_deg: -7.0
+  rear_left:
+    xyz_m: [-1.30, -0.60, 1.60]
+    yaw_deg: -120.0
+    pitch_deg: -7.0
+  rear_right:
+    xyz_m: [-1.30, 0.60, 1.60]
+    yaw_deg: 120.0
+    pitch_deg: -7.0
+  rear:
+    xyz_m: [-1.60, 0.00, 1.60]
+    yaw_deg: 180.0
+    pitch_deg: -7.0

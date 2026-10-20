@@ -1,0 +1,74 @@
+{
+  "schema_version": "hsd-imaging-gate-v1",
+  "profile_id": "training-960-v4",
+  "scope": "Town03 fixed rig at sun altitude 50deg/8deg plus low-speed geometry; daytime capture engineering screening only",
+  "checks": {
+    "noon_photometry": true,
+    "noon_integrity": true,
+    "noon_profile": true,
+    "noon_calibration": true,
+    "sunset_photometry": true,
+    "sunset_integrity": true,
+    "sunset_profile": true,
+    "sunset_calibration": true,
+    "noon_and_sunset_present": true,
+    "identical_camera_configuration": true,
+    "same_stability_profile": true,
+    "stability": false,
+    "geometry": false,
+    "motion": true,
+    "depth_photometry": true
+  },
+  "photometry_failures": {
+    "noon": [],
+    "sunset": []
+  },
+  "passed": false,
+  "stability": {
+    "scene": "/root/gpufree-data/hs-drive-data/imaging/stability_960_v4_paced/training-960-v4",
+    "frames_verified": 301,
+    "capture_duration_s": 30.100000448524952,
+    "first_frame": 140396,
+    "last_frame": 140998,
+    "interval_completeness": 0.9966887417218543,
+    "cadence_gaps": 1,
+    "rgb_nonempty_nonconstant": true,
+    "synchronization": {
+      "complete": 301,
+      "dropped_frame": 2
+    },
+    "recording_integrity_checks_passed": false,
+    "m1_automated_checks_passed": false,
+    "m2_scene_alignment_verified": false,
+    "remaining_manual_gates": [
+      "camera body occlusion",
+      "box/depth alignment",
+      "known-plane Z/range experiment"
+    ]
+  },
+  "motion_scene": "/root/gpufree-data/hs-drive-data/raw/imaging_motion_v4",
+  "capture_pacing_s": 0.5,
+  "evidence": {
+    "/root/gpufree-data/hs-drive-data/imaging/noon_v4/training-960-v4/calibration.json": "04986ea25fe241843f2129bc5ffd35c133eda49ede9ea2a268ea2394cee86e78",
+    "/root/gpufree-data/hs-drive-data/imaging/noon_v4/training-960-v4/manifest.json": "e1b1ef94b41fdab3dbdc78da16856afb62f7ba2b8f6a5703b5479ef86eab6c43",
+    "/root/gpufree-data/hs-drive-data/imaging/stability_960_v4_paced/training-960-v4/calibration.json": "04986ea25fe241843f2129bc5ffd35c133eda49ede9ea2a268ea2394cee86e78",
+    "/root/gpufree-data/hs-drive-data/imaging/stability_960_v4_paced/training-960-v4/manifest.json": "10caee3b699f123a94d1938db78cf8afaf5eb2ec47240f8ebe9d9a2e2d502cb2",
+    "/root/gpufree-data/hs-drive-data/imaging/sunset_v4/training-960-v4/calibration.json": "04986ea25fe241843f2129bc5ffd35c133eda49ede9ea2a268ea2394cee86e78",
+    "/root/gpufree-data/hs-drive-data/imaging/sunset_v4/training-960-v4/manifest.json": "c348c6f1ec01557400c2a36c98e36012e0962fe4d50bc50dfc211be383640f0b",
+    "/root/gpufree-data/hs-drive-data/raw/imaging_motion_v4/calibration.json": "04986ea25fe241843f2129bc5ffd35c133eda49ede9ea2a268ea2394cee86e78",
+    "/root/gpufree-data/hs-drive-data/raw/imaging_motion_v4/manifest.json": "ff5d0e6e0a7ee0198b9d56a8c4d1d52548a95516b3f3e388ca85bc234e20a54d",
+    "configs/imaging/acceptance.yaml": "9d85d1030e284ac6bd037b66b68868eef3596d0995c410239129e300ad7b11e2",
+    "reports/imaging_depth_photometry_v4.json": "5ede5963217859c4fb66505c8031ab7ccae1ac6b15afaf43a4087c968d8e3dbf",
+    "reports/imaging_motion_geometry_v4.json": "3f2c933bce885bbd9ff640fa69a371dd0f1e2de835411e53f65bc73a1efc9e40",
+    "reports/imaging_noon_v4/report.json": "28a24c4ab57cc0b355cf758b371e43f1e5b4dea95dfbbc2cac12ae7537623b6a",
+    "reports/imaging_stability_geometry_v4_paced.json": "f9f558b42a649440eeff94c6393469f8cfe96e62867281b5f8e4fceb5b5adf00",
+    "reports/imaging_sunset_v4/report.json": "8c089e215be151223638e645a5344fff1f367dee5796a83f8feb83f7cdec9be9"
+  },
+  "limitations": [
+    "night excluded",
+    "no trained-model quality claim",
+    "no rain/fog validation",
+    "no real-time throughput claim",
+    "finite-scene validation does not guarantee zero drops in future collections"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": "hsd-imaging-gate-v1",
+  "profile_id": "training-960-v4",
+  "scope": "Tested Town03 fixed rig at sun altitude 50deg/8deg; daytime M3 capture candidate only",
+  "checks": {
+    "noon_photometry": true,
+    "noon_integrity": true,
+    "sunset_photometry": true,
+    "sunset_integrity": true,
+    "noon_and_sunset_present": true,
+    "same_stability_profile": true,
+    "stability": false,
+    "geometry": false,
+    "depth_photometry": true
+  },
+  "photometry_failures": {
+    "noon": [],
+    "sunset": []
+  },
+  "passed": false,
+  "stability": {
+    "scene": "/root/gpufree-data/hs-drive-data/imaging/stability_960_v4/training-960-v4",
+    "frames_verified": 301,
+    "capture_duration_s": 30.200000450015068,
+    "first_frame": 118271,
+    "last_frame": 118875,
+    "interval_completeness": 0.9933993399339934,
+    "cadence_gaps": 1,
+    "rgb_nonempty_nonconstant": true,
+    "synchronization": {
+      "complete": 301,
+      "dropped_frame": 4
+    },
+    "recording_integrity_checks_passed": false,
+    "m1_automated_checks_passed": false,
+    "m2_scene_alignment_verified": false,
+    "remaining_manual_gates": [
+      "camera body occlusion",
+      "box/depth alignment",
+      "known-plane Z/range experiment"
+    ]
+  },
+  "evidence": {
+    "reports/imaging_noon_v4/report.json": "28a24c4ab57cc0b355cf758b371e43f1e5b4dea95dfbbc2cac12ae7537623b6a",
+    "reports/imaging_sunset_v4/report.json": "8c089e215be151223638e645a5344fff1f367dee5796a83f8feb83f7cdec9be9",
+    "reports/imaging_stability_geometry_v4.json": "57822bbb499a15240dd47a7dd01a74522b945b97b33b323ec3896f233592f6ad",
+    "reports/imaging_depth_photometry.json": "83be83398655d8dffa1719b89e548ba363927b1906627f424f753f394fa49f94",
+    "configs/imaging/acceptance.yaml": "9d85d1030e284ac6bd037b66b68868eef3596d0995c410239129e300ad7b11e2"
+  },
+  "limitations": [
+    "night excluded",
+    "no trained-model quality claim",
+    "no rain/fog validation",
+    "no real-time throughput claim"
+  ]
+}

@@ -1,0 +1,32 @@
+schema_version: hsd-registry-v1
+dataset_version: hsd-dataset-v1-m3-smoke
+raw_root: /root/gpufree-data/hs-drive-data
+depth_evidence: ../reports/depth_convention.json
+allowed_profiles: [training-960-v4]
+scope: Small engineering dataset; not a sufficient corpus or benchmark for model quality.
+split_policy:
+  seed: 7
+  val_fraction: 0.2
+  test_maps: [Town10HD_Opt]
+  min_cross_split_distance_m: 100.0
+scenes:
+  - scene_id: town03_spawn0_noon_static
+    path: imaging/stability_960_v4_everytick/training-960-v4
+    group_id: town03_spawn0_corridor
+    split: train
+  - scene_id: town03_spawn0_sunset_static
+    path: imaging/sunset_v4_everytick/training-960-v4
+    group_id: town03_spawn0_corridor
+    split: train
+  - scene_id: town03_spawn0_motion
+    path: raw/imaging_motion_v4_everytick
+    group_id: town03_spawn0_corridor
+    split: train
+  - scene_id: town03_spawn45_static
+    path: raw/m3_town03_val_45
+    group_id: town03_spawn45_corridor
+    split: val
+  - scene_id: town10_spawn0_motion
+    path: raw/m3_town10_test_0
+    group_id: town10_spawn0_corridor
+    split: test

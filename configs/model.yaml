@@ -1,0 +1,30 @@
+schema_version: hsd-model-v1
+arch: bev_centric_hybrid
+image_backbone: resnet18
+image_neck_channels: 64
+image_stride: 16
+context_channels: 64
+camera_aware_depth: true
+height_aware_splat: true
+num_height_bins: 4
+output_bev_channels: 128
+temporal:
+  encoder: convgru
+  align_with_ego_motion: true
+  initial_sequence_length: 3
+sparse:
+  object_queries: 128
+  map_queries: 64
+  query_channels: 128
+  decoder_layers: 3
+  bev_sampling_points: 4
+occupancy:
+  enabled: false  # enable only after M4 learned BEV gate
+  future_steps_including_now: 9
+  step_time_s: 0.5
+planner:
+  enabled: false  # enable after motion and occupancy baselines
+  candidates: 32
+  future_points: 8
+  step_time_s: 0.5
+notes: Design parameters only; no model implementation is included in starter.

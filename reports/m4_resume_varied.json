@@ -1,0 +1,28 @@
+{
+  "checks": {
+    "continued_step": true,
+    "optimizer_step_restored": true,
+    "sample_order": true,
+    "varied_samples": true,
+    "close_to_uninterrupted": true
+  },
+  "passed": true,
+  "max_abs_parameter_difference": 0.0017833542078733444,
+  "tolerance": 0.005,
+  "sample_ids": [
+    "town03_spawn0_motion/00157690",
+    "town03_spawn0_motion/00157758",
+    "town03_spawn0_noon_static/00156862",
+    "town03_spawn0_noon_static/00157034",
+    "town03_spawn0_motion/00157708",
+    "town03_spawn0_sunset_static/00157553",
+    "town03_spawn0_noon_static/00156690",
+    "town03_spawn0_sunset_static/00157539"
+  ],
+  "evidence": {
+    "runs/m4_resume_varied_part/manifest.json": "e41e9784e51a2076891daab8433930c80caef14c35ef22cde1077b659a3b211c",
+    "runs/m4_resume_varied_finish/manifest.json": "59979440cd1c51c0e9dd1587ab716729f830aa63fcdddbb0d83246361e5733bc",
+    "runs/m4_resume_varied_control/manifest.json": "9d1ab5401dd88063ab1abc709f6e8822fed98de8ddc37d276995ae7305021575"
+  },
+  "note": "Same deterministic sample order, optimizer restored; CUDA scatter/grid_sample backward are not bitwise deterministic."
+}

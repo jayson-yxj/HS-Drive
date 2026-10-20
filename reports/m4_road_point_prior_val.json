@@ -1,0 +1,127 @@
+{
+  "schema_version": "hsd-static-drivable-prior-v1",
+  "split": "val",
+  "samples": 222,
+  "prior": {
+    "confusion_tn_fp_fn_tp": [
+      [
+        201237,
+        296379
+      ],
+      [
+        307955,
+        1103963
+      ]
+    ],
+    "valid_cells": 1909534,
+    "iou_positive": 0.6462359882385791,
+    "all_positive_iou": 0.7394044829785696
+  },
+  "prior_per_scene": {
+    "m4drive_town04_0_retry": {
+      "confusion_tn_fp_fn_tp": [
+        [
+          149204,
+          265452
+        ],
+        [
+          288923,
+          886498
+        ]
+      ],
+      "valid_cells": 1590077,
+      "iou_positive": 0.6152506154255094,
+      "all_positive_iou": 0.739222691731281
+    },
+    "town03_spawn45_static": {
+      "confusion_tn_fp_fn_tp": [
+        [
+          52033,
+          30927
+        ],
+        [
+          19032,
+          217465
+        ]
+      ],
+      "valid_cells": 319457,
+      "iou_positive": 0.813184306569343,
+      "all_positive_iou": 0.7403093374069124
+    }
+  },
+  "model": {
+    "confusion_tn_fp_fn_tp": [
+      [
+        233758,
+        263858
+      ],
+      [
+        467396,
+        944522
+      ]
+    ],
+    "valid_cells": 1909534,
+    "total_cells": 4262400,
+    "iou_positive": 0.5636326096089215,
+    "valid_fraction": 0.4479950262762763,
+    "scope": "static lane support on declared valid mask; optional junction ribbons; not traffic legality",
+    "per_scene": {
+      "m4drive_town04_0_retry": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            181381,
+            233275
+          ],
+          [
+            438064,
+            737357
+          ]
+        ],
+        "valid_cells": 1590077,
+        "iou_positive": 0.5234323090290595,
+        "recall_positive": 0.6273131073887569,
+        "all_positive_iou": 0.739222691731281
+      },
+      "town03_spawn45_static": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            52377,
+            30583
+          ],
+          [
+            29332,
+            207165
+          ]
+        ],
+        "valid_cells": 319457,
+        "iou_positive": 0.7756664669761869,
+        "recall_positive": 0.8759730567406775,
+        "all_positive_iou": 0.7403093374069124
+      }
+    },
+    "junction": {
+      "confusion_tn_fp_fn_tp": [
+        [
+          0,
+          0
+        ],
+        [
+          17546,
+          37660
+        ]
+      ],
+      "valid_cells": 55206,
+      "iou_positive": 0.6821722276564142,
+      "recall_positive": 0.6821722276564142,
+      "all_positive_iou": 1.0
+    },
+    "all_positive_prior_iou": 0.7394044829785696
+  },
+  "model_beats_location_prior": false,
+  "unseen_training_cells": 873,
+  "training_positive_fraction": 0.6852079965912012,
+  "train_samples": 299,
+  "index_sha256": "eabfc2024379e12e4a60740bfeca97287849c82d9a6f91c288691174d80dc944",
+  "model_metrics_sha256": "6aa31d997a8cf2837a4a4ccd2a3b9109872c731d0b97153b65c544f622b9cc72",
+  "scope": "Fixed BEV-cell positive frequency from actual training subset only; unseen cells fall back to global train frequency; no RGB; identical evaluation masks"
+}

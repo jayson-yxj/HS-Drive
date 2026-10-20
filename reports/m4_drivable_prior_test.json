@@ -1,0 +1,77 @@
+{
+  "schema_version": "hsd-static-drivable-prior-v1",
+  "split": "test",
+  "samples": 222,
+  "prior": {
+    "confusion_tn_fp_fn_tp": [
+      [
+        136236,
+        190002
+      ],
+      [
+        233837,
+        389019
+      ]
+    ],
+    "valid_cells": 949094,
+    "iou_positive": 0.47858174490501415,
+    "all_positive_iou": 0.6562637631256757
+  },
+  "prior_per_scene": {
+    "m4drive_town05_0": {
+      "confusion_tn_fp_fn_tp": [
+        [
+          74658,
+          79003
+        ],
+        [
+          171733,
+          322309
+        ]
+      ],
+      "valid_cells": 647703,
+      "iou_positive": 0.5624497203535499,
+      "all_positive_iou": 0.7627600922027534
+    },
+    "town10_spawn0_motion": {
+      "confusion_tn_fp_fn_tp": [
+        [
+          61578,
+          110999
+        ],
+        [
+          62104,
+          66710
+        ]
+      ],
+      "valid_cells": 301391,
+      "iou_positive": 0.27817507808167197,
+      "all_positive_iou": 0.4273982965649273
+    }
+  },
+  "model": {
+    "confusion_tn_fp_fn_tp": [
+      [
+        283554,
+        42684
+      ],
+      [
+        218127,
+        404729
+      ]
+    ],
+    "valid_cells": 949094,
+    "total_cells": 4262400,
+    "iou_positive": 0.6081212248700304,
+    "valid_fraction": 0.22266657282282282,
+    "scope": "static lane support on valid mapped non-junction interiors; not current legal/free space",
+    "all_positive_prior_iou": 0.6562637631256757
+  },
+  "model_beats_location_prior": true,
+  "unseen_training_cells": 1093,
+  "training_positive_fraction": 0.5528648287425245,
+  "train_samples": 299,
+  "index_sha256": "eabfc2024379e12e4a60740bfeca97287849c82d9a6f91c288691174d80dc944",
+  "model_metrics_sha256": "c2b1fecaed9b19fa19ac5a7d5b18887492aba826284e0627ef7aaf3df8264b69",
+  "scope": "Fixed BEV-cell positive frequency from actual training subset only; unseen cells fall back to global train frequency; no RGB; identical evaluation masks"
+}

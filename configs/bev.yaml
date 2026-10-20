@@ -1,0 +1,22 @@
+schema_version: hsd-bev-v1
+coordinate_frame: hs_ego  # x forward, y left, z up
+x_range_m: [-20.0, 60.0]
+y_range_m: [-30.0, 30.0]
+z_edges_m: [-2.0, -0.5, 1.0, 2.5, 4.0]
+resolution_m: 0.5
+spatial_shape_hw: [160, 120]  # H is X axis, W is Y axis
+observability:
+  values: [free, occupied, unknown]
+  unknown_is_not_free: true
+network:
+  bev_channels: 128
+  depth_bins: 48
+  depth_range_m: [1.5, 80.0]
+  depth_strategy: lid_candidate
+  object_queries: 128
+  map_queries: 64
+  query_dim: 128
+  future_steps: 8
+  step_time_s: 0.5
+  num_trajectory_candidates: 32
+notes: All parameters are planned defaults, not benchmark-validated.

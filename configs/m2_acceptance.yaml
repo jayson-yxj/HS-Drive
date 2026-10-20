@@ -1,0 +1,23 @@
+# Engineering acceptance thresholds fixed before the new experiments.
+# Geometry grid is 0.5m; these thresholds are NOT perception accuracy claims.
+schema_version: hsd-m2-gate-v1
+cross_view:
+  min_points_per_direction: 100
+  median_abs_depth_m: 0.10
+  p95_abs_depth_m: 0.50
+  min_agreement_fraction: 0.80
+  agreement_tolerance_m: 0.50
+  # Exclude discontinuous target-depth patches; retain/report occlusions separately.
+  max_patch_spread_m: 0.20
+  min_depth_m: 2.0
+  max_depth_m: 40.0
+motion:
+  min_translation_m: 3.0
+  min_speed_mps: 1.0
+  min_temporal_points: 100
+  median_abs_depth_m: 0.10
+  p95_abs_depth_m: 0.50
+occlusion:
+  min_test_pixels: 30
+  min_blocked_fraction: 0.90
+  min_visible_fraction: 0.90

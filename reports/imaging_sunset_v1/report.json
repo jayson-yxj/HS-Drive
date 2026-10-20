@@ -1,0 +1,587 @@
+{
+  "experiment": "/root/gpufree-data/hs-drive-data/imaging/sunset_v1",
+  "weather": "sunset",
+  "results": [
+    {
+      "profile_id": "geometry-640-v1",
+      "calibration_id": "e79a39c9ba72986efed749a691125ee924623f8a27344e4150b3cac74551fb37",
+      "integrity": {
+        "scene": "/root/gpufree-data/hs-drive-data/imaging/sunset_v1/geometry-640-v1",
+        "frames_verified": 11,
+        "capture_duration_s": 1.0000000149011612,
+        "first_frame": 76522,
+        "last_frame": 76542,
+        "interval_completeness": 1.0,
+        "cadence_gaps": 0,
+        "rgb_nonempty_nonconstant": true,
+        "synchronization": {
+          "complete": 11
+        },
+        "recording_integrity_checks_passed": true,
+        "m1_automated_checks_passed": false,
+        "m2_scene_alignment_verified": false,
+        "remaining_manual_gates": [
+          "camera body occlusion",
+          "box/depth alignment",
+          "known-plane Z/range experiment"
+        ]
+      },
+      "per_camera": {
+        "front": {
+          "all_pixels": {
+            "mean_luma": 75.4015225497159,
+            "near_black_fraction": 0.16223070549242424,
+            "near_white_fraction": 0.189697265625,
+            "luma_p05": 0.0,
+            "luma_p95": 255.0
+          },
+          "depth_valid_surface": {
+            "mean_luma": 32.27342761846866,
+            "near_black_fraction": 0.20141215244272193,
+            "near_white_fraction": 0.00023181504777631585,
+            "luma_p05": 0.0,
+            "luma_p95": 112.0
+          },
+          "static_temporal_rgb_mae_8bit": 0.6008246527777776
+        },
+        "front_left": {
+          "all_pixels": {
+            "mean_luma": 77.21414979876894,
+            "near_black_fraction": 0.05262340198863636,
+            "near_white_fraction": 0.14168923117897728,
+            "luma_p05": 5.0,
+            "luma_p95": 255.0
+          },
+          "depth_valid_surface": {
+            "mean_luma": 47.478579680041314,
+            "near_black_fraction": 0.05895135744787159,
+            "near_white_fraction": 0.0,
+            "luma_p05": 5.0,
+            "luma_p95": 144.0
+          },
+          "static_temporal_rgb_mae_8bit": 0.47872694227430557
+        },
+        "front_right": {
+          "all_pixels": {
+            "mean_luma": 62.75752988873106,
+            "near_black_fraction": 0.20140195904356056,
+            "near_white_fraction": 0.0893155184659091,
+            "luma_p05": 0.0,
+            "luma_p95": 255.0
+          },
+          "depth_valid_surface": {
+            "mean_luma": 43.76899973808879,
+            "near_black_fraction": 0.2223538056353613,
+            "near_white_fraction": 0.0,
+            "luma_p05": 0.0,
+            "luma_p95": 107.0
+          },
+          "static_temporal_rgb_mae_8bit": 0.2894102647569444
+        },
+        "rear_left": {
+          "all_pixels": {
+            "mean_luma": 69.51005304509944,
+            "near_black_fraction": 0.05762162642045455,
+            "near_white_fraction": 0.10151774088541667,
+            "luma_p05": 5.0,
+            "luma_p95": 255.0
+          },
+          "depth_valid_surface": {
+            "mean_luma": 48.38855431211534,
+            "near_black_fraction": 0.06423236058730915,
+            "near_white_fraction": 0.0,
+            "luma_p05": 5.0,
+            "luma_p95": 144.0
+          },
+          "static_temporal_rgb_mae_8bit": 0.2980109320746528
+        },
+        "rear_right": {
+          "all_pixels": {
+            "mean_luma": 69.033915941643,
+            "near_black_fraction": 0.1357436671401515,
+            "near_white_fraction": 0.102880859375,
+            "luma_p05": 0.0,
+            "luma_p95": 255.0
+          },
+          "depth_valid_surface": {
+            "mean_luma": 47.27616532964453,
+            "near_black_fraction": 0.15319673662262656,
+            "near_white_fraction": 0.0,
+            "luma_p05": 0.0,
+            "luma_p95": 106.0
+          },
+          "static_temporal_rgb_mae_8bit": 0.2754326714409723
+        },
+        "rear": {
+          "all_pixels": {
+            "mean_luma": 86.72306648023199,
+            "near_black_fraction": 0.12777432528409088,
+            "near_white_fraction": 0.2308512369791667,
+            "luma_p05": 0.0,
+            "luma_p95": 255.0
+          },
+          "depth_valid_surface": {
+            "mean_luma": 37.74075945671372,
+            "near_black_fraction": 0.08640113998068646,
+            "near_white_fraction": 0.0,
+            "luma_p05": 3.0,
+            "luma_p95": 124.0
+          },
+          "static_temporal_rgb_mae_8bit": 0.23472669813368055
+        }
+      },
+      "benchmark": {
+        "scene": "/root/gpufree-data/hs-drive-data/imaging/sunset_v1/geometry-640-v1",
+        "status": "complete",
+        "profile": "configs/imaging/geometry_640.yaml",
+        "capture_wall_s": 9.495639575645328,
+        "total_wall_s": 21.701044036075473,
+        "complete_frames": 11,
+        "complete_frames_per_wall_s": 1.1584264453563609,
+        "tick_rpc_p50_s": 0.001754155382514,
+        "tick_rpc_p95_s": 0.0018489192239940166,
+        "write_p50_s": 0.25295349955558777,
+        "gpu_peak_sampled_mib": 4237.0,
+        "gpu_sampling_errors": [],
+        "bytes_on_disk": 43900793,
+        "note": "Includes tick delay and PNG/NPZ write; whole-device GPU samples at ~0.5s, not exact peak."
+      }
+    },
+    {
+      "profile_id": "training-960-v1",
+      "calibration_id": "ecc3d183bd80d14de0fd8b2be83838d6f230275fe3ed2f946237011badee3756",
+      "integrity": {
+        "scene": "/root/gpufree-data/hs-drive-data/imaging/sunset_v1/training-960-v1",
+        "frames_verified": 11,
+        "capture_duration_s": 1.0000000149011612,
+        "first_frame": 76584,
+        "last_frame": 76604,
+        "interval_completeness": 1.0,
+        "cadence_gaps": 0,
+        "rgb_nonempty_nonconstant": true,
+        "synchronization": {
+          "complete": 11
+        },
+        "recording_integrity_checks_passed": true,
+        "m1_automated_checks_passed": false,
+        "m2_scene_alignment_verified": false,
+        "remaining_manual_gates": [
+          "camera body occlusion",
+          "box/depth alignment",
+          "known-plane Z/range experiment"
+        ]
+      },
+      "per_camera": {
+        "front": {
+          "all_pixels": {
+            "mean_luma": 109.68391594164301,
+            "near_black_fraction": 0.0014411695075757576,
+            "near_white_fraction": 0.0,
+            "luma_p05": 46.54545454545455,
+            "luma_p95": 161.0
+          },
+          "depth_valid_surface": {
+            "mean_luma": 100.58241491211051,
+            "near_black_fraction": 0.0018252629941824838,
+            "near_white_fraction": 0.0,
+            "luma_p05": 41.90909090909091,
+            "luma_p95": 151.0
+          },
+          "static_temporal_rgb_mae_8bit": 0.5479283311631944
+        },
+        "front_left": {
+          "all_pixels": {
+            "mean_luma": 116.77174368193654,
+            "near_black_fraction": 1.2576941287878788e-05,
+            "near_white_fraction": 0.0,
+            "luma_p05": 86.0,
+            "luma_p95": 159.0
+          },
+          "depth_valid_surface": {
+            "mean_luma": 111.04125870186743,
+            "near_black_fraction": 1.4848325466960997e-05,
+            "near_white_fraction": 0.0,
+            "luma_p05": 85.0,
+            "luma_p95": 141.0
+          },
+          "static_temporal_rgb_mae_8bit": 0.49156046549479165
+        },
+        "front_right": {
+          "all_pixels": {
+            "mean_luma": 104.95220503373581,
+            "near_black_fraction": 0.009154533617424241,
+            "near_white_fraction": 8.396957859848483e-05,
+            "luma_p05": 28.0,
+            "luma_p95": 168.0
+          },
+          "depth_valid_surface": {
+            "mean_luma": 100.678865153703,
+            "near_black_fraction": 0.010232827237190887,
+            "near_white_fraction": 9.386030525706866e-05,
+            "luma_p05": 26.0,
+            "luma_p95": 166.0
+          },
+          "static_temporal_rgb_mae_8bit": 0.6374268934461805
+        },
+        "rear_left": {
+          "all_pixels": {
+            "mean_luma": 122.20559710878318,
+            "near_black_fraction": 0.00014389500473484848,
+            "near_white_fraction": 0.0,
+            "luma_p05": 82.0,
+            "luma_p95": 217.0
+          },
+          "depth_valid_surface": {
+            "mean_luma": 121.08910468155545,
+            "near_black_fraction": 0.00016195552343275764,
+            "near_white_fraction": 0.0,
+            "luma_p05": 80.0,
+            "luma_p95": 218.0
+          },
+          "static_temporal_rgb_mae_8bit": 0.4898192003038194
+        },
+        "rear_right": {
+          "all_pixels": {
+            "mean_luma": 108.71948316169507,
+            "near_black_fraction": 0.013915645714962122,
+            "near_white_fraction": 0.0,
+            "luma_p05": 24.09090909090909,
+            "luma_p95": 175.0
+          },
+          "depth_valid_surface": {
+            "mean_luma": 100.83273715387573,
+            "near_black_fraction": 0.015831300010689144,
+            "near_white_fraction": 0.0,
+            "luma_p05": 22.0,
+            "luma_p95": 165.0
+          },
+          "static_temporal_rgb_mae_8bit": 0.6155075412326388
+        },
+        "rear": {
+          "all_pixels": {
+            "mean_luma": 122.48082386363636,
+            "near_black_fraction": 0.0005593039772727273,
+            "near_white_fraction": 0.0,
+            "luma_p05": 44.0,
+            "luma_p95": 207.0
+          },
+          "depth_valid_surface": {
+            "mean_luma": 117.70604108934332,
+            "near_black_fraction": 0.0008383317198774439,
+            "near_white_fraction": 0.0,
+            "luma_p05": 68.0,
+            "luma_p95": 209.0
+          },
+          "static_temporal_rgb_mae_8bit": 0.5087499999999999
+        }
+      },
+      "benchmark": {
+        "scene": "/root/gpufree-data/hs-drive-data/imaging/sunset_v1/training-960-v1",
+        "status": "complete",
+        "profile": "configs/imaging/training_960.yaml",
+        "capture_wall_s": 13.09035236760974,
+        "total_wall_s": 25.26338422484696,
+        "complete_frames": 11,
+        "complete_frames_per_wall_s": 0.8403135141891195,
+        "tick_rpc_p50_s": 0.001802016980946064,
+        "tick_rpc_p95_s": 0.0019409134984016418,
+        "write_p50_s": 0.5742274690419436,
+        "gpu_peak_sampled_mib": 4746.0,
+        "gpu_sampling_errors": [],
+        "bytes_on_disk": 100476025,
+        "note": "Includes tick delay and PNG/NPZ write; whole-device GPU samples at ~0.5s, not exact peak."
+      }
+    },
+    {
+      "profile_id": "training-960-v2",
+      "calibration_id": "0968a31c3cfb8208d210b6a048f4c6933d3e9dc847a3bb02fec0ec966122e3f1",
+      "integrity": {
+        "scene": "/root/gpufree-data/hs-drive-data/imaging/sunset_v1/training-960-v2",
+        "frames_verified": 11,
+        "capture_duration_s": 1.0000000149011612,
+        "first_frame": 76646,
+        "last_frame": 76666,
+        "interval_completeness": 1.0,
+        "cadence_gaps": 0,
+        "rgb_nonempty_nonconstant": true,
+        "synchronization": {
+          "complete": 11
+        },
+        "recording_integrity_checks_passed": true,
+        "m1_automated_checks_passed": false,
+        "m2_scene_alignment_verified": false,
+        "remaining_manual_gates": [
+          "camera body occlusion",
+          "box/depth alignment",
+          "known-plane Z/range experiment"
+        ]
+      },
+      "per_camera": {
+        "front": {
+          "all_pixels": {
+            "mean_luma": 238.63023422703597,
+            "near_black_fraction": 0.0,
+            "near_white_fraction": 0.20632435191761364,
+            "luma_p05": 207.8181818181818,
+            "luma_p95": 251.54545454545453
+          },
+          "depth_valid_surface": {
+            "mean_luma": 235.97998087178513,
+            "near_black_fraction": 0.0,
+            "near_white_fraction": 0.10932247463086776,
+            "luma_p05": 202.72727272727272,
+            "luma_p95": 250.36363636363637
+          },
+          "static_temporal_rgb_mae_8bit": 1.913042399088542
+        },
+        "front_left": {
+          "all_pixels": {
+            "mean_luma": 243.02494266394407,
+            "near_black_fraction": 0.0,
+            "near_white_fraction": 0.20615419330018933,
+            "luma_p05": 234.36363636363637,
+            "luma_p95": 251.1818181818182
+          },
+          "depth_valid_surface": {
+            "mean_luma": 241.8152349205436,
+            "near_black_fraction": 0.0,
+            "near_white_fraction": 0.12928605597519238,
+            "luma_p05": 233.8181818181818,
+            "luma_p95": 248.8181818181818
+          },
+          "static_temporal_rgb_mae_8bit": 1.5526866319444443
+        },
+        "front_right": {
+          "all_pixels": {
+            "mean_luma": 234.07639345111272,
+            "near_black_fraction": 0.0,
+            "near_white_fraction": 0.23494725082859852,
+            "luma_p05": 185.27272727272728,
+            "luma_p95": 252.0909090909091
+          },
+          "depth_valid_surface": {
+            "mean_luma": 232.55318797867204,
+            "near_black_fraction": 0.0,
+            "near_white_fraction": 0.1988190025836487,
+            "luma_p05": 182.9090909090909,
+            "luma_p95": 251.72727272727272
+          },
+          "static_temporal_rgb_mae_8bit": 2.2229625108506945
+        },
+        "rear_left": {
+          "all_pixels": {
+            "mean_luma": 243.0184074633049,
+            "near_black_fraction": 0.0,
+            "near_white_fraction": 0.24067863695549238,
+            "luma_p05": 232.0909090909091,
+            "luma_p95": 254.8181818181818
+          },
+          "depth_valid_surface": {
+            "mean_luma": 242.50126983122485,
+            "near_black_fraction": 0.0,
+            "near_white_fraction": 0.2222496080176727,
+            "luma_p05": 231.0909090909091,
+            "luma_p95": 254.8181818181818
+          },
+          "static_temporal_rgb_mae_8bit": 1.5294542100694444
+        },
+        "rear_right": {
+          "all_pixels": {
+            "mean_luma": 234.6146225437974,
+            "near_black_fraction": 0.0,
+            "near_white_fraction": 0.25648489287405307,
+            "luma_p05": 180.1818181818182,
+            "luma_p95": 252.72727272727272
+          },
+          "depth_valid_surface": {
+            "mean_luma": 232.3778482999627,
+            "near_black_fraction": 0.0,
+            "near_white_fraction": 0.18805029117404706,
+            "luma_p05": 175.36363636363637,
+            "luma_p95": 251.72727272727272
+          },
+          "static_temporal_rgb_mae_8bit": 2.1172987196180557
+        },
+        "rear": {
+          "all_pixels": {
+            "mean_luma": 240.76787849195077,
+            "near_black_fraction": 0.0,
+            "near_white_fraction": 0.31868748520359846,
+            "luma_p05": 205.9090909090909,
+            "luma_p95": 254.45454545454547
+          },
+          "depth_valid_surface": {
+            "mean_luma": 240.57149716508593,
+            "near_black_fraction": 0.0,
+            "near_white_fraction": 0.23240141008282408,
+            "luma_p05": 222.63636363636363,
+            "luma_p95": 254.54545454545453
+          },
+          "static_temporal_rgb_mae_8bit": 1.6901554361979165
+        }
+      },
+      "benchmark": {
+        "scene": "/root/gpufree-data/hs-drive-data/imaging/sunset_v1/training-960-v2",
+        "status": "complete",
+        "profile": "configs/imaging/training_960_v2.yaml",
+        "capture_wall_s": 12.785281039774418,
+        "total_wall_s": 24.927877005189657,
+        "complete_frames": 11,
+        "complete_frames_per_wall_s": 0.8603643491120382,
+        "tick_rpc_p50_s": 0.0017527807503938675,
+        "tick_rpc_p95_s": 0.001919171679764986,
+        "write_p50_s": 0.5499914605170488,
+        "gpu_peak_sampled_mib": 4697.0,
+        "gpu_sampling_errors": [],
+        "bytes_on_disk": 81843900,
+        "note": "Includes tick delay and PNG/NPZ write; whole-device GPU samples at ~0.5s, not exact peak."
+      }
+    },
+    {
+      "profile_id": "training-960-v3",
+      "calibration_id": "93009323884b70e4e805bb4e520600138f9085b6d5ddf0101fe2983a9c3de688",
+      "integrity": {
+        "scene": "/root/gpufree-data/hs-drive-data/imaging/sunset_v1/training-960-v3",
+        "frames_verified": 11,
+        "capture_duration_s": 1.0000000149011612,
+        "first_frame": 76708,
+        "last_frame": 76728,
+        "interval_completeness": 1.0,
+        "cadence_gaps": 0,
+        "rgb_nonempty_nonconstant": true,
+        "synchronization": {
+          "complete": 11
+        },
+        "recording_integrity_checks_passed": true,
+        "m1_automated_checks_passed": false,
+        "m2_scene_alignment_verified": false,
+        "remaining_manual_gates": [
+          "camera body occlusion",
+          "box/depth alignment",
+          "known-plane Z/range experiment"
+        ]
+      },
+      "per_camera": {
+        "front": {
+          "all_pixels": {
+            "mean_luma": 71.70581387606533,
+            "near_black_fraction": 0.012180767637310604,
+            "near_white_fraction": 0.0,
+            "luma_p05": 19.0,
+            "luma_p95": 119.0
+          },
+          "depth_valid_surface": {
+            "mean_luma": 63.33544017774195,
+            "near_black_fraction": 0.01539913761229459,
+            "near_white_fraction": 0.0,
+            "luma_p05": 16.0,
+            "luma_p95": 110.0
+          },
+          "static_temporal_rgb_mae_8bit": 0.8147798665364583
+        },
+        "front_left": {
+          "all_pixels": {
+            "mean_luma": 77.39441546815816,
+            "near_black_fraction": 0.000831927675189394,
+            "near_white_fraction": 0.0,
+            "luma_p05": 48.0,
+            "luma_p95": 117.0
+          },
+          "depth_valid_surface": {
+            "mean_luma": 72.01344477051997,
+            "near_black_fraction": 0.0009821695369750458,
+            "near_white_fraction": 0.0,
+            "luma_p05": 47.0,
+            "luma_p95": 100.0
+          },
+          "static_temporal_rgb_mae_8bit": 0.660615234375
+        },
+        "front_right": {
+          "all_pixels": {
+            "mean_luma": 68.25542436079544,
+            "near_black_fraction": 0.03879690459280303,
+            "near_white_fraction": 7.472182765151516e-05,
+            "luma_p05": 8.0,
+            "luma_p95": 126.0
+          },
+          "depth_valid_surface": {
+            "mean_luma": 64.49442182273448,
+            "near_black_fraction": 0.043273246056672536,
+            "near_white_fraction": 8.352314103164846e-05,
+            "luma_p05": 7.0,
+            "luma_p95": 124.0
+          },
+          "static_temporal_rgb_mae_8bit": 0.939836154513889
+        },
+        "rear_left": {
+          "all_pixels": {
+            "mean_luma": 83.39963156960226,
+            "near_black_fraction": 0.001806640625,
+            "near_white_fraction": 0.0,
+            "luma_p05": 44.0,
+            "luma_p95": 180.0
+          },
+          "depth_valid_surface": {
+            "mean_luma": 82.4809179755643,
+            "near_black_fraction": 0.002033395312199456,
+            "near_white_fraction": 0.0,
+            "luma_p05": 43.0,
+            "luma_p95": 181.0
+          },
+          "static_temporal_rgb_mae_8bit": 0.6724399142795139
+        },
+        "rear_right": {
+          "all_pixels": {
+            "mean_luma": 71.80505741003789,
+            "near_black_fraction": 0.04648289535984848,
+            "near_white_fraction": 0.0,
+            "luma_p05": 6.0,
+            "luma_p95": 131.0
+          },
+          "depth_valid_surface": {
+            "mean_luma": 64.58145256249152,
+            "near_black_fraction": 0.05288181927598283,
+            "near_white_fraction": 0.0,
+            "luma_p05": 4.731818181818281,
+            "luma_p95": 122.0909090909091
+          },
+          "static_temporal_rgb_mae_8bit": 0.8837710232204861
+        },
+        "rear": {
+          "all_pixels": {
+            "mean_luma": 83.89179058652934,
+            "near_black_fraction": 0.014910703716856061,
+            "near_white_fraction": 0.0,
+            "luma_p05": 18.0,
+            "luma_p95": 166.0
+          },
+          "depth_valid_surface": {
+            "mean_luma": 79.29629980782687,
+            "near_black_fraction": 0.011437794344809384,
+            "near_white_fraction": 0.0,
+            "luma_p05": 34.0,
+            "luma_p95": 169.0
+          },
+          "static_temporal_rgb_mae_8bit": 0.7708904351128472
+        }
+      },
+      "benchmark": {
+        "scene": "/root/gpufree-data/hs-drive-data/imaging/sunset_v1/training-960-v3",
+        "status": "complete",
+        "profile": "configs/imaging/training_960_v3.yaml",
+        "capture_wall_s": 13.055244747549295,
+        "total_wall_s": 25.198524540290236,
+        "complete_frames": 11,
+        "complete_frames_per_wall_s": 0.8425732502690076,
+        "tick_rpc_p50_s": 0.0018083499744534492,
+        "tick_rpc_p95_s": 0.002008869405835867,
+        "write_p50_s": 0.5701627470552921,
+        "gpu_peak_sampled_mib": 4740.0,
+        "gpu_sampling_errors": [],
+        "bytes_on_disk": 97478914,
+        "note": "Includes tick delay and PNG/NPZ write; whole-device GPU samples at ~0.5s, not exact peak."
+      }
+    }
+  ],
+  "metrics_scope": "8-bit diagnostics at common 640x384, not true sensor saturation or trained-model accuracy. Depth mask excludes sky/80m+, temporal MAE assumes fixed scene."
+}

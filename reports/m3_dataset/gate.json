@@ -1,0 +1,79 @@
+{
+  "schema_version": "hsd-m3-gate-v1",
+  "checks": {
+    "train_full_replay": true,
+    "val_full_replay": true,
+    "test_full_replay": true,
+    "repeatable_reads": true,
+    "rgb_only_path": true,
+    "forbidden_access_rejected": true,
+    "worker_seed_reproducibility": true,
+    "temporal_shape": true,
+    "causal_scene_windows": true,
+    "supervision_loss_backward": true,
+    "held_out_map": true,
+    "group_disjoint": true,
+    "spatial_separation": true
+  },
+  "passed": true,
+  "index": "/root/gpufree-data/hs-drive-data/processed/hsd-dataset-v1-m3",
+  "index_sha256": "27469ebb06acd48991400205e2efc24317592eb4db81063cd41948b23ac42421",
+  "dataset_version": "hsd-dataset-v1-m3-smoke",
+  "splits": {
+    "train": {
+      "samples": 373,
+      "valid_depth_fraction": 0.7602477100089365,
+      "actor_records": 685,
+      "input_digest_ordered": "1e1728cc40524aceb7a6457767c534d56de499861fbcff0b19e03e45528f6a20"
+    },
+    "val": {
+      "samples": 61,
+      "valid_depth_fraction": 0.6278290072859745,
+      "actor_records": 122,
+      "input_digest_ordered": "3483d7e8dcffbb9a959bdc3fc30dc359b06da454c37b36ce7de1e87a09658716"
+    },
+    "test": {
+      "samples": 61,
+      "valid_depth_fraction": 0.7262807377049181,
+      "actor_records": 61,
+      "input_digest_ordered": "b6fa1006d8b6fc1ce4d8a5d126bb72fb03d985432feda00cba52586cb6606cac"
+    }
+  },
+  "frames_replayed": 495,
+  "temporal_windows_train": 367,
+  "probe_loss": 3.9816970825195312,
+  "environment": {
+    "torch": "2.8.0+cpu",
+    "cuda_runtime": null,
+    "cuda_available": false,
+    "workers": 2,
+    "threads": 4
+  },
+  "elapsed_s": 86.9192811679095,
+  "spatial_separation": [
+    {
+      "first": "town03_spawn0_motion",
+      "second": "town03_spawn45_static",
+      "min_distance_m": 320.2382160577145
+    },
+    {
+      "first": "town03_spawn0_noon_static",
+      "second": "town03_spawn45_static",
+      "min_distance_m": 324.65080501727385
+    },
+    {
+      "first": "town03_spawn0_sunset_static",
+      "second": "town03_spawn45_static",
+      "min_distance_m": 324.65080501727385
+    }
+  ],
+  "scope": "Engineering gate on 5 small scenes; no learned BEV model or perception accuracy claim",
+  "limitations": [
+    "ego state uses ideal simulator odometry proxy",
+    "route command unavailable (-1)",
+    "only depth and actor-box supervision available; no drivable/occupancy/future labels",
+    "train/val same map; test Town10HD_Opt is held out",
+    "depth edge mask and sampling need M4 ablation",
+    "CPU DataLoader validation does not validate CUDA training environment"
+  ]
+}

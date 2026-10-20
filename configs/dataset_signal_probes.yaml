@@ -1,0 +1,27 @@
+schema_version: hsd-registry-v1
+dataset_version: hsd-signal-probes-v1
+raw_root: /root/gpufree-data/hs-drive-data
+depth_evidence: ../reports/depth_convention.json
+allowed_profiles:
+- training-960-v4
+scope: Controlled static signal supervision diagnostics only; no learned traffic classifier
+  or moving closed-loop quality claim
+split_policy:
+  seed: 7
+  val_fraction: 0.2
+  test_maps:
+  - Town02
+  min_cross_split_distance_m: 100.0
+scenes:
+- scene_id: m4signal_v2_town01
+  path: raw/m4signal_v2_town01
+  group_id: signals_town01
+  split: train
+- scene_id: m4signal_v2_town04
+  path: raw/m4signal_v2_town04
+  group_id: signals_town04
+  split: val
+- scene_id: m4signal_v2_town02
+  path: raw/m4signal_v2_town02
+  group_id: signals_town02
+  split: test

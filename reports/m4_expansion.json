@@ -1,0 +1,1845 @@
+{
+  "schema_version": "hsd-m4-expansion-report-v1",
+  "dataset": {
+    "path": "/root/gpufree-data/hs-drive-data/processed/hsd-dataset-v2-driving-accepted",
+    "schema_version": "hsd-index-v1",
+    "status": "complete",
+    "index_sha256": "eabfc2024379e12e4a60740bfeca97287849c82d9a6f91c288691174d80dc944",
+    "samples": 1461,
+    "splits": {
+      "train": 1017,
+      "val": 222,
+      "test": 222
+    }
+  },
+  "motion_audit": {
+    "schema_version": "hsd-motion-audit-v1",
+    "scenes": [
+      {
+        "scene": "/root/gpufree-data/hs-drive-data/raw/m4drive_town01_0",
+        "map": "Town01",
+        "status": "complete",
+        "frames": 161,
+        "duration_s": 16.00000023841858,
+        "distance_m": 36.29546164796238,
+        "displacement_m": 36.28419604282475,
+        "heading_span_deg": 4.030337646469139,
+        "moving_fraction_gt_1mps": 0.5031055900621118,
+        "speed_p50_mps": 1.5223084672271643,
+        "visited_5m_cells": 10,
+        "continuous_10hz": true,
+        "motion_accepted": true,
+        "manifest_sha256": "194ffa3c8afbc7d574cdf7f1e7455d9bf5691bf76560a48012e31949fde0aa82",
+        "run_id": "m4drive_town01_0",
+        "split": "train",
+        "included": true,
+        "exclusion_reason": null
+      },
+      {
+        "scene": "/root/gpufree-data/hs-drive-data/raw/m4drive_town01_30",
+        "map": "Town01",
+        "status": "complete",
+        "frames": 161,
+        "duration_s": 16.00000023841858,
+        "distance_m": 72.36387502405026,
+        "displacement_m": 72.35985317829841,
+        "heading_span_deg": 2.578331793075695,
+        "moving_fraction_gt_1mps": 0.9627329192546584,
+        "speed_p50_mps": 4.895195791650894,
+        "visited_5m_cells": 15,
+        "continuous_10hz": true,
+        "motion_accepted": true,
+        "manifest_sha256": "4d14df7f8c54f3efa416dc91432cb207b1a604c4ae799c60459910d6d378f39b",
+        "run_id": "m4drive_town01_30",
+        "split": "train",
+        "included": true,
+        "exclusion_reason": null
+      },
+      {
+        "scene": "/root/gpufree-data/hs-drive-data/raw/m4drive_town02_0",
+        "map": "Town02",
+        "status": "complete",
+        "frames": 161,
+        "duration_s": 16.00000023841858,
+        "distance_m": 28.076331873571043,
+        "displacement_m": 28.07617474563522,
+        "heading_span_deg": 0.5769255800496076,
+        "moving_fraction_gt_1mps": 0.37888198757763975,
+        "speed_p50_mps": 0.0,
+        "visited_5m_cells": 7,
+        "continuous_10hz": true,
+        "motion_accepted": false,
+        "manifest_sha256": "fe478d599988ae462f23219ea3cd3bb76af9847a05031141acf094855890a8a1",
+        "run_id": "m4drive_town02_0",
+        "split": "train",
+        "included": false,
+        "exclusion_reason": "motion fraction 0.379 < predeclared 0.5; retained traffic-light-stop diagnostic"
+      },
+      {
+        "scene": "/root/gpufree-data/hs-drive-data/raw/m4drive_town02_40",
+        "map": "Town02",
+        "status": "complete",
+        "frames": 161,
+        "duration_s": 16.00000023841858,
+        "distance_m": 74.707303645852,
+        "displacement_m": 74.70693824705283,
+        "heading_span_deg": 0.750297290949298,
+        "moving_fraction_gt_1mps": 0.9627329192546584,
+        "speed_p50_mps": 4.8961633749547,
+        "visited_5m_cells": 16,
+        "continuous_10hz": true,
+        "motion_accepted": true,
+        "manifest_sha256": "44730f22488d2d6952a93e8164f4dc9b35d1ef4831a7edf69c3b4297a74c970f",
+        "run_id": "m4drive_town02_40",
+        "split": "train",
+        "included": true,
+        "exclusion_reason": null
+      },
+      {
+        "scene": "/root/gpufree-data/hs-drive-data/raw/m4drive_town04_0",
+        "map": "Town04",
+        "status": "complete",
+        "frames": 161,
+        "duration_s": 16.100000239908695,
+        "distance_m": 75.44570954816493,
+        "displacement_m": 74.84508811950712,
+        "heading_span_deg": 21.491859458144134,
+        "moving_fraction_gt_1mps": 0.9627329192546584,
+        "speed_p50_mps": 4.89615458320875,
+        "visited_5m_cells": 17,
+        "continuous_10hz": false,
+        "motion_accepted": false,
+        "manifest_sha256": "9447b93388d533781dac91a18ed8911c2b6a6e21ffac6946ed23c60b86e982ed",
+        "run_id": "m4drive_town04_0",
+        "split": "val",
+        "included": false,
+        "exclusion_reason": "one incomplete sensor frame dropped inside recorded interval; integrity gate failed"
+      },
+      {
+        "scene": "/root/gpufree-data/hs-drive-data/raw/m4drive_town05_0",
+        "map": "Town05",
+        "status": "complete",
+        "frames": 161,
+        "duration_s": 16.00000023841858,
+        "distance_m": 57.88785472597706,
+        "displacement_m": 57.88785391179505,
+        "heading_span_deg": 0.04432792729540698,
+        "moving_fraction_gt_1mps": 0.8074534161490683,
+        "speed_p50_mps": 4.8950125508216304,
+        "visited_5m_cells": 13,
+        "continuous_10hz": true,
+        "motion_accepted": true,
+        "manifest_sha256": "5e6dbac4ba6c9013af592b36b488922c0a736d033b5a1ab65bce3b56c30bab77",
+        "run_id": "m4drive_town05_0",
+        "split": "test",
+        "included": true,
+        "exclusion_reason": null
+      },
+      {
+        "scene": "/root/gpufree-data/hs-drive-data/raw/m4drive_town02_20",
+        "map": "Town02",
+        "status": "complete",
+        "frames": 161,
+        "duration_s": 16.00000023841858,
+        "distance_m": 73.53441644993131,
+        "displacement_m": 61.22962237867504,
+        "heading_span_deg": 90.30516716437441,
+        "moving_fraction_gt_1mps": 0.9627329192546584,
+        "speed_p50_mps": 4.896162020349807,
+        "visited_5m_cells": 16,
+        "continuous_10hz": true,
+        "motion_accepted": true,
+        "manifest_sha256": "2e5bfe9598b26bb2dfba993bd7cf5e8ea4fa8617c00cb13ed0869fadde0b3290",
+        "run_id": "m4drive_town02_20",
+        "split": "train",
+        "included": true,
+        "exclusion_reason": null
+      },
+      {
+        "scene": "/root/gpufree-data/hs-drive-data/raw/m4drive_town04_0_retry",
+        "map": "Town04",
+        "status": "complete",
+        "frames": 161,
+        "duration_s": 16.00000023841858,
+        "distance_m": 74.95621398451311,
+        "displacement_m": 74.37121391930499,
+        "heading_span_deg": 21.322443639808633,
+        "moving_fraction_gt_1mps": 0.9627329192546584,
+        "speed_p50_mps": 4.896158439984352,
+        "visited_5m_cells": 16,
+        "continuous_10hz": true,
+        "motion_accepted": true,
+        "manifest_sha256": "a79da32f829660ad5822d74d25f9663ddbc2af69d3d297ee90e420582858cf7a",
+        "run_id": "m4drive_town04_0_retry",
+        "split": "val",
+        "included": true,
+        "exclusion_reason": null
+      }
+    ],
+    "same_map_route_overlap": [
+      {
+        "first": "m4drive_town01_0",
+        "second": "m4drive_town01_30",
+        "min_ego_distance_m": 192.5421798777119,
+        "first_fraction_within_10m_of_second": 0.0
+      },
+      {
+        "first": "m4drive_town02_0",
+        "second": "m4drive_town02_40",
+        "min_ego_distance_m": 151.77138854712533,
+        "first_fraction_within_10m_of_second": 0.0
+      },
+      {
+        "first": "m4drive_town02_0",
+        "second": "m4drive_town02_20",
+        "min_ego_distance_m": 143.02934982881794,
+        "first_fraction_within_10m_of_second": 0.0
+      },
+      {
+        "first": "m4drive_town02_40",
+        "second": "m4drive_town02_20",
+        "min_ego_distance_m": 186.0442355460065,
+        "first_fraction_within_10m_of_second": 0.0
+      },
+      {
+        "first": "m4drive_town04_0",
+        "second": "m4drive_town04_0_retry",
+        "min_ego_distance_m": 0.0,
+        "first_fraction_within_10m_of_second": 1.0
+      }
+    ],
+    "all_motion_accepted": true,
+    "total_distance_m": 389.7451254782861,
+    "excluded_scenes": [
+      "m4drive_town02_0",
+      "m4drive_town04_0"
+    ],
+    "scope": "No NPC traffic; TM drives are data collection, not learned closed-loop success; map/route grouping prevents split leakage"
+  },
+  "selection": {
+    "schema_version": "hsd-m4-comparison-v1",
+    "status": "frozen_before_test",
+    "experiments": {
+      "ce": {
+        "run": "runs/m4_expanded_ce",
+        "validation": "reports/m4_expanded_ce_val/metrics.json",
+        "validation_sha256": "935996ef4519d33d528ce2bb6219fc74ed3848246119524d06e14f721c266647",
+        "depth_mae_m": 4.20683190996927,
+        "depth_abs_rel": 0.4259919040924702,
+        "drivable_iou": null,
+        "checkpoint_sha256": "c6004f8b0093194d234d7d76d5cec529d7d55907000331b468db9ec9658445bb",
+        "step": 1000
+      },
+      "depth": {
+        "run": "runs/m4_expanded_depth",
+        "validation": "reports/m4_expanded_depth_val/metrics.json",
+        "validation_sha256": "65e3f030c999590ef619fc5db57b9a5ac5bda127794956dd3c6ce5c43b46683a",
+        "depth_mae_m": 4.221369029744071,
+        "depth_abs_rel": 0.4035065601851605,
+        "drivable_iou": null,
+        "checkpoint_sha256": "173d1428546ddbf677b0f7dde6228d66af9661f1646924cd9d476ca172fbea41",
+        "step": 1200
+      },
+      "joint": {
+        "run": "runs/m4_expanded_joint",
+        "validation": "reports/m4_expanded_joint_val/metrics.json",
+        "validation_sha256": "d552ece2f3582fae39d0839823186a023264fc199c3db8ededc47badca7effec",
+        "depth_mae_m": 4.151263844681916,
+        "depth_abs_rel": 0.3828578412420876,
+        "drivable_iou": 0.5109232279371588,
+        "checkpoint_sha256": "8aa09f33c591fd72018eafc193047c26da152b8a52016b04eae6acfad8488d36",
+        "step": 1200
+      }
+    },
+    "depth_selected_by_validation": "ce",
+    "test_runs": [
+      "ce",
+      "joint"
+    ],
+    "policy": "CE vs log-depth variant selected using full validation only; joint always evaluated as predeclared secondary experiment; test results never alter selection"
+  },
+  "evaluations": {
+    "ce_val": {
+      "path": "reports/m4_expanded_ce_val/metrics.json",
+      "sha256": "935996ef4519d33d528ce2bb6219fc74ed3848246119524d06e14f721c266647",
+      "depth": {
+        "all": {
+          "count": 867467,
+          "mae_m": 4.20683190996927,
+          "abs_rel": 0.4259919040924702,
+          "rmse_m": 9.02528396551811,
+          "delta1": 0.7055277030711254
+        },
+        "1.5-10m": {
+          "count": 659858,
+          "mae_m": 1.7618580860641253,
+          "abs_rel": 0.4487434200292889,
+          "rmse_m": 4.467730567494968,
+          "delta1": 0.8253881895801825
+        },
+        "10-30m": {
+          "count": 117561,
+          "mae_m": 4.440455635008434,
+          "abs_rel": 0.26323602507837024,
+          "rmse_m": 6.086044797253054,
+          "delta1": 0.5497486411309873
+        },
+        "30-60m": {
+          "count": 79816,
+          "mae_m": 18.95748942049135,
+          "abs_rel": 0.44916584196126064,
+          "rmse_m": 20.180356096110522,
+          "delta1": 0.03450436002806455
+        },
+        "60-80m": {
+          "count": 10232,
+          "mae_m": 44.133728528414224,
+          "abs_rel": 0.6479743549467718,
+          "rmse_m": 44.902097528338416,
+          "delta1": 0.0
+        }
+      },
+      "depth_per_scene": {
+        "m4drive_town04_0_retry": {
+          "all": {
+            "count": 646873,
+            "mae_m": 4.525550716074678,
+            "abs_rel": 0.5276407023447439,
+            "rmse_m": 8.818110948746568,
+            "delta1": 0.6642803146830986
+          },
+          "1.5-10m": {
+            "count": 498818,
+            "mae_m": 2.2371047147644534,
+            "abs_rel": 0.5729974526969255,
+            "rmse_m": 5.111023064245633,
+            "delta1": 0.7782698298778312
+          },
+          "10-30m": {
+            "count": 75981,
+            "mae_m": 4.646859923438405,
+            "abs_rel": 0.29360805492446557,
+            "rmse_m": 6.347366453373401,
+            "delta1": 0.5234992958766007
+          },
+          "30-60m": {
+            "count": 66600,
+            "mae_m": 18.65548507003097,
+            "abs_rel": 0.4490008790070588,
+            "rmse_m": 19.58287296396772,
+            "delta1": 0.025735735735735735
+          },
+          "60-80m": {
+            "count": 5474,
+            "mae_m": 39.4629317462379,
+            "abs_rel": 0.5997424237171489,
+            "rmse_m": 39.793684018637485,
+            "delta1": 0.0
+          }
+        },
+        "town03_spawn45_static": {
+          "all": {
+            "count": 220594,
+            "mae_m": 3.272216325402946,
+            "abs_rel": 0.1279155145630944,
+            "rmse_m": 9.607076479952859,
+            "delta1": 0.8264821346002158
+          },
+          "1.5-10m": {
+            "count": 161040,
+            "mae_m": 0.2897916874362057,
+            "abs_rel": 0.06386917718772679,
+            "rmse_m": 0.9349525750916425,
+            "delta1": 0.9713363139592648
+          },
+          "10-30m": {
+            "count": 41580,
+            "mae_m": 4.0632838158839135,
+            "abs_rel": 0.2077358519245421,
+            "rmse_m": 5.5769776027947,
+            "delta1": 0.5977152477152478
+          },
+          "30-60m": {
+            "count": 13216,
+            "mae_m": 20.479393910553497,
+            "abs_rel": 0.4499971474054073,
+            "rmse_m": 22.9558456161864,
+            "delta1": 0.07869249394673124
+          },
+          "60-80m": {
+            "count": 4758,
+            "mae_m": 49.50740267419675,
+            "abs_rel": 0.7034643910020377,
+            "rmse_m": 50.13948289635118,
+            "delta1": 0.0
+          }
+        }
+      },
+      "camera_pixel_prior": {
+        "all": {
+          "count": 867467,
+          "mae_m": 4.244560930974175,
+          "abs_rel": 0.35270794169811087,
+          "rmse_m": 9.498133905076248,
+          "delta1": 0.7225946347238569
+        },
+        "1.5-10m": {
+          "count": 659858,
+          "mae_m": 1.534811585548031,
+          "abs_rel": 0.3482426955374019,
+          "rmse_m": 4.593334915993596,
+          "delta1": 0.8476732872830215
+        },
+        "10-30m": {
+          "count": 117561,
+          "mae_m": 4.436331834634985,
+          "abs_rel": 0.24317992126484053,
+          "rmse_m": 6.460271355513275,
+          "delta1": 0.5578890958736316
+        },
+        "30-60m": {
+          "count": 79816,
+          "mae_m": 21.819077090198082,
+          "abs_rel": 0.5213236242422208,
+          "rmse_m": 22.90347939794298,
+          "delta1": 0.021286458855367344
+        },
+        "60-80m": {
+          "count": 10232,
+          "mae_m": 39.69974143808945,
+          "abs_rel": 0.5837891620523394,
+          "rmse_m": 41.427482906396904,
+          "delta1": 0.019351055512118843
+        }
+      },
+      "camera_pixel_prior_per_scene": {
+        "m4drive_town04_0_retry": {
+          "all": {
+            "count": 646873,
+            "mae_m": 4.546801687575266,
+            "abs_rel": 0.43638300398157026,
+            "rmse_m": 9.393023726008343,
+            "delta1": 0.6911093831401218
+          },
+          "1.5-10m": {
+            "count": 498818,
+            "mae_m": 1.9834162530534685,
+            "abs_rel": 0.452020796156254,
+            "rmse_m": 5.263587216510434,
+            "delta1": 0.8009414255299528
+          },
+          "10-30m": {
+            "count": 75981,
+            "mae_m": 4.348197862004049,
+            "abs_rel": 0.2514490613130192,
+            "rmse_m": 6.714295697638131,
+            "delta1": 0.6105868572406259
+          },
+          "30-60m": {
+            "count": 66600,
+            "mae_m": 21.624881507484048,
+            "abs_rel": 0.5247949764034053,
+            "rmse_m": 22.357195389181644,
+            "delta1": 0.01418918918918919
+          },
+          "60-80m": {
+            "count": 5474,
+            "mae_m": 33.109602504809665,
+            "abs_rel": 0.5026629100021848,
+            "rmse_m": 34.55966002627174,
+            "delta1": 0.03617099013518451
+          }
+        },
+        "town03_spawn45_static": {
+          "all": {
+            "count": 220594,
+            "mae_m": 3.3582658144033837,
+            "abs_rel": 0.10733799254043556,
+            "rmse_m": 9.799862489686651,
+            "delta1": 0.8149224366936544
+          },
+          "1.5-10m": {
+            "count": 161040,
+            "mae_m": 0.14526809923576586,
+            "abs_rel": 0.02679221991336707,
+            "rmse_m": 0.7967716215716268,
+            "delta1": 0.9924242424242424
+          },
+          "10-30m": {
+            "count": 41580,
+            "mae_m": 4.597382998042177,
+            "abs_rel": 0.22806935055775387,
+            "rmse_m": 5.968216035676733,
+            "delta1": 0.4615921115921116
+          },
+          "30-60m": {
+            "count": 13216,
+            "mae_m": 22.797695871126855,
+            "abs_rel": 0.5038302787568321,
+            "rmse_m": 25.478777953291136,
+            "delta1": 0.057052058111380144
+          },
+          "60-80m": {
+            "count": 4758,
+            "mae_m": 47.28158686069843,
+            "abs_rel": 0.6771235680469899,
+            "rmse_m": 48.13143237911895,
+            "delta1": 0.0
+          }
+        }
+      },
+      "drivable": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "valid_cells": 0,
+        "total_cells": 0,
+        "iou_positive": null,
+        "valid_fraction": null,
+        "scope": "static lane support on valid mapped non-junction interiors; not current legal/free space",
+        "all_positive_prior_iou": null
+      },
+      "peak_allocated_gib": 0.7325325012207031,
+      "peak_reserved_gib": 0.814453125,
+      "best_step": 1000,
+      "training_samples": 299,
+      "rgb_only_inference_verified": true
+    },
+    "ce_test": {
+      "path": "reports/m4_expanded_ce_test/metrics.json",
+      "sha256": "a1a55fa332e027b13f79d19ac53dc0dc5ae1047c42d3f3ae9069a281983c5f1e",
+      "depth": {
+        "all": {
+          "count": 933098,
+          "mae_m": 3.6973552390087576,
+          "abs_rel": 0.35444762542824626,
+          "rmse_m": 8.503324114276484,
+          "delta1": 0.6784507093574308
+        },
+        "1.5-10m": {
+          "count": 661442,
+          "mae_m": 1.3339481501574224,
+          "abs_rel": 0.3733626403405348,
+          "rmse_m": 3.8126896612258503,
+          "delta1": 0.7999507137436087
+        },
+        "10-30m": {
+          "count": 196076,
+          "mae_m": 4.586515292589433,
+          "abs_rel": 0.2566936306694773,
+          "rmse_m": 5.92679459660806,
+          "delta1": 0.47556049695016217
+        },
+        "30-60m": {
+          "count": 62637,
+          "mae_m": 17.750162171863025,
+          "abs_rel": 0.40462602368430667,
+          "rmse_m": 20.559047397670447,
+          "delta1": 0.17072976036527931
+        },
+        "60-80m": {
+          "count": 12943,
+          "mae_m": 42.999532887475674,
+          "abs_rel": 0.6258685624020127,
+          "rmse_m": 43.499964348946705,
+          "delta1": 0.0
+        }
+      },
+      "depth_per_scene": {
+        "m4drive_town05_0": {
+          "all": {
+            "count": 677912,
+            "mae_m": 3.387845260952703,
+            "abs_rel": 0.39810740041052467,
+            "rmse_m": 7.573717977827902,
+            "delta1": 0.6828083881093712
+          },
+          "1.5-10m": {
+            "count": 496093,
+            "mae_m": 1.5735231225949964,
+            "abs_rel": 0.43356172519149594,
+            "rmse_m": 4.292949703634184,
+            "delta1": 0.7880135377842461
+          },
+          "10-30m": {
+            "count": 136547,
+            "mae_m": 4.747607376460807,
+            "abs_rel": 0.26979371487212134,
+            "rmse_m": 6.021036264100422,
+            "delta1": 0.45873581990084
+          },
+          "30-60m": {
+            "count": 40066,
+            "mae_m": 15.902450147929745,
+            "abs_rel": 0.36433979554843515,
+            "rmse_m": 18.882306168347444,
+            "delta1": 0.23254130684370788
+          },
+          "60-80m": {
+            "count": 5206,
+            "mae_m": 44.300427572021015,
+            "abs_rel": 0.6449643817261188,
+            "rmse_m": 44.92647942274008,
+            "delta1": 0.0
+          }
+        },
+        "town10_spawn0_motion": {
+          "all": {
+            "count": 255186,
+            "mae_m": 4.519581098750029,
+            "abs_rel": 0.2384636553915422,
+            "rmse_m": 10.583447648360103,
+            "delta1": 0.6668743583111926
+          },
+          "1.5-10m": {
+            "count": 165349,
+            "mae_m": 0.6151565832203778,
+            "abs_rel": 0.1927486384356677,
+            "rmse_m": 1.6902885429966565,
+            "delta1": 0.8357655625374208
+          },
+          "10-30m": {
+            "count": 59529,
+            "mae_m": 4.21700394893534,
+            "abs_rel": 0.22664479400804452,
+            "rmse_m": 5.704745827964498,
+            "delta1": 0.5141527658788154
+          },
+          "30-60m": {
+            "count": 22571,
+            "mae_m": 21.030053623323347,
+            "abs_rel": 0.4761384961707639,
+            "rmse_m": 23.23935577085966,
+            "delta1": 0.06100748748393957
+          },
+          "60-80m": {
+            "count": 7737,
+            "mae_m": 42.124199072335045,
+            "abs_rel": 0.6130195465817598,
+            "rmse_m": 42.51317307099566,
+            "delta1": 0.0
+          }
+        }
+      },
+      "camera_pixel_prior": {
+        "all": {
+          "count": 933098,
+          "mae_m": 3.475274400731153,
+          "abs_rel": 0.27304093766179094,
+          "rmse_m": 8.280204310199688,
+          "delta1": 0.7671637920132719
+        },
+        "1.5-10m": {
+          "count": 661442,
+          "mae_m": 1.309416079514619,
+          "abs_rel": 0.26384227815467765,
+          "rmse_m": 3.8956240364147687,
+          "delta1": 0.8692130224569955
+        },
+        "10-30m": {
+          "count": 196076,
+          "mae_m": 4.142826113084818,
+          "abs_rel": 0.24740392730500596,
+          "rmse_m": 6.260355592943503,
+          "delta1": 0.6530834982353781
+        },
+        "30-60m": {
+          "count": 62637,
+          "mae_m": 16.71905329611242,
+          "abs_rel": 0.38690140278671264,
+          "rmse_m": 19.511690653677725,
+          "delta1": 0.20106326931366444
+        },
+        "60-80m": {
+          "count": 12943,
+          "mae_m": 39.95431387222763,
+          "abs_rel": 0.5804893361686748,
+          "rmse_m": 41.60682456778978,
+          "delta1": 0.01985629297689871
+        }
+      },
+      "camera_pixel_prior_per_scene": {
+        "m4drive_town05_0": {
+          "all": {
+            "count": 677912,
+            "mae_m": 3.342886180285937,
+            "abs_rel": 0.3160972516885229,
+            "rmse_m": 7.635538812597345,
+            "delta1": 0.7496828496914054
+          },
+          "1.5-10m": {
+            "count": 496093,
+            "mae_m": 1.5884014071452375,
+            "abs_rel": 0.31906198739803165,
+            "rmse_m": 4.338064711262051,
+            "delta1": 0.8357223343203795
+          },
+          "10-30m": {
+            "count": 136547,
+            "mae_m": 4.569572797550363,
+            "abs_rel": 0.27712958603923854,
+            "rmse_m": 6.922756909944147,
+            "delta1": 0.6148139468461409
+          },
+          "30-60m": {
+            "count": 40066,
+            "mae_m": 16.047996562507798,
+            "abs_rel": 0.37665108078186493,
+            "rmse_m": 18.991850393748837,
+            "delta1": 0.23885588778515449
+          },
+          "60-80m": {
+            "count": 5206,
+            "mae_m": 40.57766933492454,
+            "abs_rel": 0.5896246566984958,
+            "rmse_m": 42.01970082583712,
+            "delta1": 0.019592777564348827
+          }
+        },
+        "town10_spawn0_motion": {
+          "all": {
+            "count": 255186,
+            "mae_m": 3.8269690991019787,
+            "abs_rel": 0.15866008622601505,
+            "rmse_m": 9.78870620047515,
+            "delta1": 0.8136026271033677
+          },
+          "1.5-10m": {
+            "count": 165349,
+            "mae_m": 0.472382483059506,
+            "abs_rel": 0.09816778833216148,
+            "rmse_m": 2.0606107728266783,
+            "delta1": 0.9696944039576895
+          },
+          "10-30m": {
+            "count": 59529,
+            "mae_m": 3.1639590142973906,
+            "abs_rel": 0.17921952099575744,
+            "rmse_m": 4.3773861155578455,
+            "delta1": 0.740865796502545
+          },
+          "30-60m": {
+            "count": 22571,
+            "mae_m": 17.91025258230279,
+            "abs_rel": 0.4050968483339292,
+            "rmse_m": 20.40186555466506,
+            "delta1": 0.13397722741571041
+          },
+          "60-80m": {
+            "count": 7737,
+            "mae_m": 39.53487629451015,
+            "abs_rel": 0.574342447364455,
+            "rmse_m": 41.326690804896856,
+            "delta1": 0.020033604756365515
+          }
+        }
+      },
+      "drivable": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "valid_cells": 0,
+        "total_cells": 0,
+        "iou_positive": null,
+        "valid_fraction": null,
+        "scope": "static lane support on valid mapped non-junction interiors; not current legal/free space",
+        "all_positive_prior_iou": null
+      },
+      "peak_allocated_gib": 0.7325325012207031,
+      "peak_reserved_gib": 0.814453125,
+      "best_step": 1000,
+      "training_samples": 299,
+      "rgb_only_inference_verified": true
+    },
+    "depth_val": {
+      "path": "reports/m4_expanded_depth_val/metrics.json",
+      "sha256": "65e3f030c999590ef619fc5db57b9a5ac5bda127794956dd3c6ce5c43b46683a",
+      "depth": {
+        "all": {
+          "count": 867467,
+          "mae_m": 4.221369029744071,
+          "abs_rel": 0.4035065601851605,
+          "rmse_m": 9.129825755110529,
+          "delta1": 0.7118149739413718
+        },
+        "1.5-10m": {
+          "count": 659858,
+          "mae_m": 1.6828676838995626,
+          "abs_rel": 0.41729287491378203,
+          "rmse_m": 4.2298162527115615,
+          "delta1": 0.8279766252739226
+        },
+        "10-30m": {
+          "count": 117561,
+          "mae_m": 4.45918761058089,
+          "abs_rel": 0.25877144696454707,
+          "rmse_m": 6.350156872978676,
+          "delta1": 0.5697382635397793
+        },
+        "30-60m": {
+          "count": 79816,
+          "mae_m": 19.899996627986557,
+          "abs_rel": 0.4737664130284383,
+          "rmse_m": 21.235363531363458,
+          "delta1": 0.05199458755136815
+        },
+        "60-80m": {
+          "count": 10232,
+          "mae_m": 42.89287872254802,
+          "abs_rel": 0.629301456057345,
+          "rmse_m": 43.95425576566235,
+          "delta1": 0.0
+        }
+      },
+      "depth_per_scene": {
+        "m4drive_town04_0_retry": {
+          "all": {
+            "count": 646873,
+            "mae_m": 4.60369190120926,
+            "abs_rel": 0.5024217273697127,
+            "rmse_m": 9.032361898533726,
+            "delta1": 0.6666486311841737
+          },
+          "1.5-10m": {
+            "count": 498818,
+            "mae_m": 2.142898987033472,
+            "abs_rel": 0.535133708919918,
+            "rmse_m": 4.848640932989382,
+            "delta1": 0.7807496922725322
+          },
+          "10-30m": {
+            "count": 75981,
+            "mae_m": 4.868954816443626,
+            "abs_rel": 0.29863941032319397,
+            "rmse_m": 6.9182116716164614,
+            "delta1": 0.5206038351693186
+          },
+          "30-60m": {
+            "count": 66600,
+            "mae_m": 20.029602820594032,
+            "abs_rel": 0.4843608333828213,
+            "rmse_m": 21.051208455571857,
+            "delta1": 0.03346846846846847
+          },
+          "60-80m": {
+            "count": 5474,
+            "mae_m": 37.48041501252548,
+            "abs_rel": 0.569852057102609,
+            "rmse_m": 37.981449648335186,
+            "delta1": 0.0
+          }
+        },
+        "town03_spawn45_static": {
+          "all": {
+            "count": 220594,
+            "mae_m": 3.1002399744057523,
+            "abs_rel": 0.1134463094885287,
+            "rmse_m": 9.409811453250196,
+            "delta1": 0.8442614033019937
+          },
+          "1.5-10m": {
+            "count": 161040,
+            "mae_m": 0.2579304349760007,
+            "abs_rel": 0.05228337952584931,
+            "rmse_m": 0.6998511580839801,
+            "delta1": 0.9742610531544957
+          },
+          "10-30m": {
+            "count": 41580,
+            "mae_m": 3.7104016060436957,
+            "abs_rel": 0.18591892835095045,
+            "rmse_m": 5.152814844804795,
+            "delta1": 0.6595238095238095
+          },
+          "30-60m": {
+            "count": 13216,
+            "mae_m": 19.24686614768557,
+            "abs_rel": 0.42037746057672015,
+            "rmse_m": 22.140088056908798,
+            "delta1": 0.1453541162227603
+          },
+          "60-80m": {
+            "count": 4758,
+            "mae_m": 49.119828354465504,
+            "abs_rel": 0.6976970024798387,
+            "rmse_m": 49.95004666944085,
+            "delta1": 0.0
+          }
+        }
+      },
+      "camera_pixel_prior": {
+        "all": {
+          "count": 867467,
+          "mae_m": 4.244560930974175,
+          "abs_rel": 0.35270794169811087,
+          "rmse_m": 9.498133905076248,
+          "delta1": 0.7225946347238569
+        },
+        "1.5-10m": {
+          "count": 659858,
+          "mae_m": 1.534811585548031,
+          "abs_rel": 0.3482426955374019,
+          "rmse_m": 4.593334915993596,
+          "delta1": 0.8476732872830215
+        },
+        "10-30m": {
+          "count": 117561,
+          "mae_m": 4.436331834634985,
+          "abs_rel": 0.24317992126484053,
+          "rmse_m": 6.460271355513275,
+          "delta1": 0.5578890958736316
+        },
+        "30-60m": {
+          "count": 79816,
+          "mae_m": 21.819077090198082,
+          "abs_rel": 0.5213236242422208,
+          "rmse_m": 22.90347939794298,
+          "delta1": 0.021286458855367344
+        },
+        "60-80m": {
+          "count": 10232,
+          "mae_m": 39.69974143808945,
+          "abs_rel": 0.5837891620523394,
+          "rmse_m": 41.427482906396904,
+          "delta1": 0.019351055512118843
+        }
+      },
+      "camera_pixel_prior_per_scene": {
+        "m4drive_town04_0_retry": {
+          "all": {
+            "count": 646873,
+            "mae_m": 4.546801687575266,
+            "abs_rel": 0.43638300398157026,
+            "rmse_m": 9.393023726008343,
+            "delta1": 0.6911093831401218
+          },
+          "1.5-10m": {
+            "count": 498818,
+            "mae_m": 1.9834162530534685,
+            "abs_rel": 0.452020796156254,
+            "rmse_m": 5.263587216510434,
+            "delta1": 0.8009414255299528
+          },
+          "10-30m": {
+            "count": 75981,
+            "mae_m": 4.348197862004049,
+            "abs_rel": 0.2514490613130192,
+            "rmse_m": 6.714295697638131,
+            "delta1": 0.6105868572406259
+          },
+          "30-60m": {
+            "count": 66600,
+            "mae_m": 21.624881507484048,
+            "abs_rel": 0.5247949764034053,
+            "rmse_m": 22.357195389181644,
+            "delta1": 0.01418918918918919
+          },
+          "60-80m": {
+            "count": 5474,
+            "mae_m": 33.109602504809665,
+            "abs_rel": 0.5026629100021848,
+            "rmse_m": 34.55966002627174,
+            "delta1": 0.03617099013518451
+          }
+        },
+        "town03_spawn45_static": {
+          "all": {
+            "count": 220594,
+            "mae_m": 3.3582658144033837,
+            "abs_rel": 0.10733799254043556,
+            "rmse_m": 9.799862489686651,
+            "delta1": 0.8149224366936544
+          },
+          "1.5-10m": {
+            "count": 161040,
+            "mae_m": 0.14526809923576586,
+            "abs_rel": 0.02679221991336707,
+            "rmse_m": 0.7967716215716268,
+            "delta1": 0.9924242424242424
+          },
+          "10-30m": {
+            "count": 41580,
+            "mae_m": 4.597382998042177,
+            "abs_rel": 0.22806935055775387,
+            "rmse_m": 5.968216035676733,
+            "delta1": 0.4615921115921116
+          },
+          "30-60m": {
+            "count": 13216,
+            "mae_m": 22.797695871126855,
+            "abs_rel": 0.5038302787568321,
+            "rmse_m": 25.478777953291136,
+            "delta1": 0.057052058111380144
+          },
+          "60-80m": {
+            "count": 4758,
+            "mae_m": 47.28158686069843,
+            "abs_rel": 0.6771235680469899,
+            "rmse_m": 48.13143237911895,
+            "delta1": 0.0
+          }
+        }
+      },
+      "drivable": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "valid_cells": 0,
+        "total_cells": 0,
+        "iou_positive": null,
+        "valid_fraction": null,
+        "scope": "static lane support on valid mapped non-junction interiors; not current legal/free space",
+        "all_positive_prior_iou": null
+      },
+      "peak_allocated_gib": 0.7325325012207031,
+      "peak_reserved_gib": 0.814453125,
+      "best_step": 1200,
+      "training_samples": 299,
+      "rgb_only_inference_verified": true
+    },
+    "joint_val": {
+      "path": "reports/m4_expanded_joint_val/metrics.json",
+      "sha256": "d552ece2f3582fae39d0839823186a023264fc199c3db8ededc47badca7effec",
+      "depth": {
+        "all": {
+          "count": 867467,
+          "mae_m": 4.151263844681916,
+          "abs_rel": 0.3828578412420876,
+          "rmse_m": 9.162249239411237,
+          "delta1": 0.7154312498342876
+        },
+        "1.5-10m": {
+          "count": 659858,
+          "mae_m": 1.473244334475893,
+          "abs_rel": 0.37892153759044367,
+          "rmse_m": 4.011213827855171,
+          "delta1": 0.8435708894944064
+        },
+        "10-30m": {
+          "count": 117561,
+          "mae_m": 5.432865774370593,
+          "abs_rel": 0.32970624664392567,
+          "rmse_m": 7.521465480084674,
+          "delta1": 0.49354803038422607
+        },
+        "30-60m": {
+          "count": 79816,
+          "mae_m": 19.317903360957743,
+          "abs_rel": 0.4602504401213183,
+          "rmse_m": 20.92344958733715,
+          "delta1": 0.0745965721158665
+        },
+        "60-80m": {
+          "count": 10232,
+          "mae_m": 43.821482905193264,
+          "abs_rel": 0.6436857023306244,
+          "rmse_m": 44.881328718160454,
+          "delta1": 0.0
+        }
+      },
+      "depth_per_scene": {
+        "m4drive_town04_0_retry": {
+          "all": {
+            "count": 646873,
+            "mae_m": 4.566986559765209,
+            "abs_rel": 0.4783161427633762,
+            "rmse_m": 9.197115591114498,
+            "delta1": 0.6693895092236034
+          },
+          "1.5-10m": {
+            "count": 498818,
+            "mae_m": 1.8855334264106598,
+            "abs_rel": 0.48778511399972974,
+            "rmse_m": 4.59849925294266,
+            "delta1": 0.7955526865510065
+          },
+          "10-30m": {
+            "count": 75981,
+            "mae_m": 6.359254245484685,
+            "abs_rel": 0.40914520797059745,
+            "rmse_m": 8.524172871874377,
+            "delta1": 0.4222897829720588
+          },
+          "30-60m": {
+            "count": 66600,
+            "mae_m": 19.70848637944585,
+            "abs_rel": 0.47578999779961845,
+            "rmse_m": 21.11400172312384,
+            "delta1": 0.061381381381381384
+          },
+          "60-80m": {
+            "count": 5474,
+            "mae_m": 39.81632927032906,
+            "abs_rel": 0.6063079565687253,
+            "rmse_m": 40.45244439068765,
+            "delta1": 0.0
+          }
+        },
+        "town03_spawn45_static": {
+          "all": {
+            "count": 220594,
+            "mae_m": 2.932192610314367,
+            "abs_rel": 0.10293455284811265,
+            "rmse_m": 9.059232977748021,
+            "delta1": 0.8504447083782877
+          },
+          "1.5-10m": {
+            "count": 161040,
+            "mae_m": 0.1961875767714931,
+            "abs_rel": 0.04171890807400517,
+            "rmse_m": 0.6541185701046587,
+            "delta1": 0.992306259314456
+          },
+          "10-30m": {
+            "count": 41580,
+            "mae_m": 3.7400345472489027,
+            "abs_rel": 0.18454386760203412,
+            "rmse_m": 5.212690736775193,
+            "delta1": 0.6237614237614237
+          },
+          "30-60m": {
+            "count": 13216,
+            "mae_m": 17.349620292608154,
+            "abs_rel": 0.38194122845555045,
+            "rmse_m": 19.93549436839714,
+            "delta1": 0.14119249394673122
+          },
+          "60-80m": {
+            "count": 4758,
+            "mae_m": 48.42934566207571,
+            "abs_rel": 0.6866881782239903,
+            "rmse_m": 49.48878439633258,
+            "delta1": 0.0
+          }
+        }
+      },
+      "camera_pixel_prior": {
+        "all": {
+          "count": 867467,
+          "mae_m": 4.244560930974175,
+          "abs_rel": 0.35270794169811087,
+          "rmse_m": 9.498133905076248,
+          "delta1": 0.7225946347238569
+        },
+        "1.5-10m": {
+          "count": 659858,
+          "mae_m": 1.534811585548031,
+          "abs_rel": 0.3482426955374019,
+          "rmse_m": 4.593334915993596,
+          "delta1": 0.8476732872830215
+        },
+        "10-30m": {
+          "count": 117561,
+          "mae_m": 4.436331834634985,
+          "abs_rel": 0.24317992126484053,
+          "rmse_m": 6.460271355513275,
+          "delta1": 0.5578890958736316
+        },
+        "30-60m": {
+          "count": 79816,
+          "mae_m": 21.819077090198082,
+          "abs_rel": 0.5213236242422208,
+          "rmse_m": 22.90347939794298,
+          "delta1": 0.021286458855367344
+        },
+        "60-80m": {
+          "count": 10232,
+          "mae_m": 39.69974143808945,
+          "abs_rel": 0.5837891620523394,
+          "rmse_m": 41.427482906396904,
+          "delta1": 0.019351055512118843
+        }
+      },
+      "camera_pixel_prior_per_scene": {
+        "m4drive_town04_0_retry": {
+          "all": {
+            "count": 646873,
+            "mae_m": 4.546801687575266,
+            "abs_rel": 0.43638300398157026,
+            "rmse_m": 9.393023726008343,
+            "delta1": 0.6911093831401218
+          },
+          "1.5-10m": {
+            "count": 498818,
+            "mae_m": 1.9834162530534685,
+            "abs_rel": 0.452020796156254,
+            "rmse_m": 5.263587216510434,
+            "delta1": 0.8009414255299528
+          },
+          "10-30m": {
+            "count": 75981,
+            "mae_m": 4.348197862004049,
+            "abs_rel": 0.2514490613130192,
+            "rmse_m": 6.714295697638131,
+            "delta1": 0.6105868572406259
+          },
+          "30-60m": {
+            "count": 66600,
+            "mae_m": 21.624881507484048,
+            "abs_rel": 0.5247949764034053,
+            "rmse_m": 22.357195389181644,
+            "delta1": 0.01418918918918919
+          },
+          "60-80m": {
+            "count": 5474,
+            "mae_m": 33.109602504809665,
+            "abs_rel": 0.5026629100021848,
+            "rmse_m": 34.55966002627174,
+            "delta1": 0.03617099013518451
+          }
+        },
+        "town03_spawn45_static": {
+          "all": {
+            "count": 220594,
+            "mae_m": 3.3582658144033837,
+            "abs_rel": 0.10733799254043556,
+            "rmse_m": 9.799862489686651,
+            "delta1": 0.8149224366936544
+          },
+          "1.5-10m": {
+            "count": 161040,
+            "mae_m": 0.14526809923576586,
+            "abs_rel": 0.02679221991336707,
+            "rmse_m": 0.7967716215716268,
+            "delta1": 0.9924242424242424
+          },
+          "10-30m": {
+            "count": 41580,
+            "mae_m": 4.597382998042177,
+            "abs_rel": 0.22806935055775387,
+            "rmse_m": 5.968216035676733,
+            "delta1": 0.4615921115921116
+          },
+          "30-60m": {
+            "count": 13216,
+            "mae_m": 22.797695871126855,
+            "abs_rel": 0.5038302787568321,
+            "rmse_m": 25.478777953291136,
+            "delta1": 0.057052058111380144
+          },
+          "60-80m": {
+            "count": 4758,
+            "mae_m": 47.28158686069843,
+            "abs_rel": 0.6771235680469899,
+            "rmse_m": 48.13143237911895,
+            "delta1": 0.0
+          }
+        }
+      },
+      "drivable": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            387010,
+            110606
+          ],
+          [
+            496261,
+            633975
+          ]
+        ],
+        "valid_cells": 1627852,
+        "total_cells": 4262400,
+        "iou_positive": 0.5109232279371588,
+        "valid_fraction": 0.38190972222222225,
+        "scope": "static lane support on valid mapped non-junction interiors; not current legal/free space",
+        "all_positive_prior_iou": 0.6943112764551077
+      },
+      "peak_allocated_gib": 0.7325711250305176,
+      "peak_reserved_gib": 0.81640625,
+      "best_step": 1200,
+      "training_samples": 299,
+      "rgb_only_inference_verified": true
+    },
+    "joint_test": {
+      "path": "reports/m4_expanded_joint_test/metrics.json",
+      "sha256": "c2b1fecaed9b19fa19ac5a7d5b18887492aba826284e0627ef7aaf3df8264b69",
+      "depth": {
+        "all": {
+          "count": 933098,
+          "mae_m": 3.240231951642037,
+          "abs_rel": 0.23360505185655323,
+          "rmse_m": 7.995271606147075,
+          "delta1": 0.7493789505496743
+        },
+        "1.5-10m": {
+          "count": 661442,
+          "mae_m": 0.7483953877427291,
+          "abs_rel": 0.19673931904291206,
+          "rmse_m": 2.762928093859291,
+          "delta1": 0.9092921223629585
+        },
+        "10-30m": {
+          "count": 196076,
+          "mae_m": 5.234972230354876,
+          "abs_rel": 0.2974257988144634,
+          "rmse_m": 6.608776288530927,
+          "delta1": 0.4052969256818785
+        },
+        "30-60m": {
+          "count": 62637,
+          "mae_m": 15.436738027665232,
+          "abs_rel": 0.34699489646429404,
+          "rmse_m": 19.129443499053625,
+          "delta1": 0.2926545013330779
+        },
+        "60-80m": {
+          "count": 12943,
+          "mae_m": 41.34052586962577,
+          "abs_rel": 0.6020224462067206,
+          "rmse_m": 42.25862121695458,
+          "delta1": 0.0
+        }
+      },
+      "depth_per_scene": {
+        "m4drive_town05_0": {
+          "all": {
+            "count": 677912,
+            "mae_m": 2.938333089295467,
+            "abs_rel": 0.25534606428682854,
+            "rmse_m": 7.279809410581774,
+            "delta1": 0.7562854765810312
+          },
+          "1.5-10m": {
+            "count": 496093,
+            "mae_m": 0.8667750902352742,
+            "abs_rel": 0.22883641829993948,
+            "rmse_m": 3.0876957706677026,
+            "delta1": 0.8961222996494609
+          },
+          "10-30m": {
+            "count": 136547,
+            "mae_m": 5.573802319725534,
+            "abs_rel": 0.31823160355235686,
+            "rmse_m": 6.943066881474581,
+            "delta1": 0.3902685522201147
+          },
+          "30-60m": {
+            "count": 40066,
+            "mae_m": 14.076578866428012,
+            "abs_rel": 0.3162717793031025,
+            "rmse_m": 18.23668149930223,
+            "delta1": 0.3705136524734189
+          },
+          "60-80m": {
+            "count": 5206,
+            "mae_m": 45.49596784593873,
+            "abs_rel": 0.6632152086855859,
+            "rmse_m": 46.567267859117166,
+            "delta1": 0.0
+          }
+        },
+        "town10_spawn0_motion": {
+          "all": {
+            "count": 255186,
+            "mae_m": 4.042238572581617,
+            "abs_rel": 0.17584916705631812,
+            "rmse_m": 9.641422034687404,
+            "delta1": 0.731031482918342
+          },
+          "1.5-10m": {
+            "count": 165349,
+            "mae_m": 0.39322334709758316,
+            "abs_rel": 0.10043909187663645,
+            "rmse_m": 1.3903102120705426,
+            "delta1": 0.9488052543408185
+          },
+          "10-30m": {
+            "count": 59529,
+            "mae_m": 4.457767301441314,
+            "abs_rel": 0.2497016606709512,
+            "rmse_m": 5.769269912107788,
+            "delta1": 0.439768852156092
+          },
+          "30-60m": {
+            "count": 22571,
+            "mae_m": 17.851169685727815,
+            "abs_rel": 0.40153179833750735,
+            "rmse_m": 20.61920444106894,
+            "delta1": 0.15444597049311062
+          },
+          "60-80m": {
+            "count": 7737,
+            "mae_m": 38.544451043635696,
+            "abs_rel": 0.560847634074761,
+            "rmse_m": 39.09309974414489,
+            "delta1": 0.0
+          }
+        }
+      },
+      "camera_pixel_prior": {
+        "all": {
+          "count": 933098,
+          "mae_m": 3.475274400731153,
+          "abs_rel": 0.27304093766179094,
+          "rmse_m": 8.280204310199688,
+          "delta1": 0.7671637920132719
+        },
+        "1.5-10m": {
+          "count": 661442,
+          "mae_m": 1.309416079514619,
+          "abs_rel": 0.26384227815467765,
+          "rmse_m": 3.8956240364147687,
+          "delta1": 0.8692130224569955
+        },
+        "10-30m": {
+          "count": 196076,
+          "mae_m": 4.142826113084818,
+          "abs_rel": 0.24740392730500596,
+          "rmse_m": 6.260355592943503,
+          "delta1": 0.6530834982353781
+        },
+        "30-60m": {
+          "count": 62637,
+          "mae_m": 16.71905329611242,
+          "abs_rel": 0.38690140278671264,
+          "rmse_m": 19.511690653677725,
+          "delta1": 0.20106326931366444
+        },
+        "60-80m": {
+          "count": 12943,
+          "mae_m": 39.95431387222763,
+          "abs_rel": 0.5804893361686748,
+          "rmse_m": 41.60682456778978,
+          "delta1": 0.01985629297689871
+        }
+      },
+      "camera_pixel_prior_per_scene": {
+        "m4drive_town05_0": {
+          "all": {
+            "count": 677912,
+            "mae_m": 3.342886180285937,
+            "abs_rel": 0.3160972516885229,
+            "rmse_m": 7.635538812597345,
+            "delta1": 0.7496828496914054
+          },
+          "1.5-10m": {
+            "count": 496093,
+            "mae_m": 1.5884014071452375,
+            "abs_rel": 0.31906198739803165,
+            "rmse_m": 4.338064711262051,
+            "delta1": 0.8357223343203795
+          },
+          "10-30m": {
+            "count": 136547,
+            "mae_m": 4.569572797550363,
+            "abs_rel": 0.27712958603923854,
+            "rmse_m": 6.922756909944147,
+            "delta1": 0.6148139468461409
+          },
+          "30-60m": {
+            "count": 40066,
+            "mae_m": 16.047996562507798,
+            "abs_rel": 0.37665108078186493,
+            "rmse_m": 18.991850393748837,
+            "delta1": 0.23885588778515449
+          },
+          "60-80m": {
+            "count": 5206,
+            "mae_m": 40.57766933492454,
+            "abs_rel": 0.5896246566984958,
+            "rmse_m": 42.01970082583712,
+            "delta1": 0.019592777564348827
+          }
+        },
+        "town10_spawn0_motion": {
+          "all": {
+            "count": 255186,
+            "mae_m": 3.8269690991019787,
+            "abs_rel": 0.15866008622601505,
+            "rmse_m": 9.78870620047515,
+            "delta1": 0.8136026271033677
+          },
+          "1.5-10m": {
+            "count": 165349,
+            "mae_m": 0.472382483059506,
+            "abs_rel": 0.09816778833216148,
+            "rmse_m": 2.0606107728266783,
+            "delta1": 0.9696944039576895
+          },
+          "10-30m": {
+            "count": 59529,
+            "mae_m": 3.1639590142973906,
+            "abs_rel": 0.17921952099575744,
+            "rmse_m": 4.3773861155578455,
+            "delta1": 0.740865796502545
+          },
+          "30-60m": {
+            "count": 22571,
+            "mae_m": 17.91025258230279,
+            "abs_rel": 0.4050968483339292,
+            "rmse_m": 20.40186555466506,
+            "delta1": 0.13397722741571041
+          },
+          "60-80m": {
+            "count": 7737,
+            "mae_m": 39.53487629451015,
+            "abs_rel": 0.574342447364455,
+            "rmse_m": 41.326690804896856,
+            "delta1": 0.020033604756365515
+          }
+        }
+      },
+      "drivable": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            283554,
+            42684
+          ],
+          [
+            218127,
+            404729
+          ]
+        ],
+        "valid_cells": 949094,
+        "total_cells": 4262400,
+        "iou_positive": 0.6081212248700304,
+        "valid_fraction": 0.22266657282282282,
+        "scope": "static lane support on valid mapped non-junction interiors; not current legal/free space",
+        "all_positive_prior_iou": 0.6562637631256757
+      },
+      "peak_allocated_gib": 0.7325711250305176,
+      "peak_reserved_gib": 0.81640625,
+      "best_step": 1200,
+      "training_samples": 299,
+      "rgb_only_inference_verified": true
+    }
+  },
+  "checks": {
+    "same_town03_validation_depth_improved_vs_original": true,
+    "depth_log_loss_improved_vs_equal_budget_ce": false,
+    "joint_val_static_iou_beats_all_positive": false,
+    "selected_test_depth_beats_pixel_prior": false,
+    "joint_test_depth_beats_pixel_prior": true,
+    "rgb_only_inference": true,
+    "gpu_reserved_under_20_gib": true,
+    "joint_val_static_iou_beats_location_prior": false,
+    "joint_test_static_iou_beats_location_prior": true
+  },
+  "full_m4_closed": false,
+  "remaining": [
+    "Current traffic-rule/direction/route Drivable labels",
+    "Junction, slope and multilayer-road supervision coverage",
+    "Broader independent dynamic traffic/occlusion/night/weather coverage",
+    "Repeated-seed robustness and operational quality thresholds"
+  ],
+  "label_coverage": {
+    "m4drive_town01_0": {
+      "valid_fraction": 0.16446622670807454,
+      "positive_fraction_of_valid": 0.4964830703503948,
+      "map_source": "recorded export",
+      "label_manifest_sha256": "ef46ea3247ed08422cd595a1dba4a43365bcb2372d2c65abcd41b0d9c34880d5"
+    },
+    "m4drive_town01_30": {
+      "valid_fraction": 0.17526235766045548,
+      "positive_fraction_of_valid": 0.4784124657835137,
+      "map_source": "recorded export",
+      "label_manifest_sha256": "e7a35e38e2cb05c5552677fe869bfe349485df9a2663e9d8f6b25f9b68151946"
+    },
+    "m4drive_town02_20": {
+      "valid_fraction": 0.1813192287784679,
+      "positive_fraction_of_valid": 0.493844715554493,
+      "map_source": "recorded export",
+      "label_manifest_sha256": "4413626c4af03a78dc454a66818c13550b5cec82ab47b2a2786107fdfb80dceb"
+    },
+    "m4drive_town02_40": {
+      "valid_fraction": 0.17766918995859213,
+      "positive_fraction_of_valid": 0.47819326269867135,
+      "map_source": "recorded export",
+      "label_manifest_sha256": "16c67961e2f5a2e3ac96d1c857e533acb40690906a5a280019978390136a01ef"
+    },
+    "m4drive_town04_0_retry": {
+      "valid_fraction": 0.4460368141821946,
+      "positive_fraction_of_valid": 0.6992607280736937,
+      "map_source": "recorded export",
+      "label_manifest_sha256": "1593f3e92e4f5a85fc9298646f51cd8ccbae216d02ec3447a9a3e6c1d08760ec"
+    },
+    "m4drive_town05_0": {
+      "valid_fraction": 0.20953125,
+      "positive_fraction_of_valid": 0.7627600922027534,
+      "map_source": "recorded export",
+      "label_manifest_sha256": "532d428487650a12e8a1a9a8f6a72421bc0356ea70c6afd9fa2dd6e3d158dd5c"
+    },
+    "town03_spawn0_motion": {
+      "valid_fraction": 0.16902493169398908,
+      "positive_fraction_of_valid": 0.6724775461957345,
+      "map_source": "pinned CARLA package; not contemporaneous export",
+      "label_manifest_sha256": "71e8b9763182645766a0567ce565e9f2392ddb829fc9f81a6b5b441ca391cd6c"
+    },
+    "town03_spawn0_noon_static": {
+      "valid_fraction": 0.17609375,
+      "positive_fraction_of_valid": 0.6728778467908902,
+      "map_source": "pinned CARLA package; not contemporaneous export",
+      "label_manifest_sha256": "125ed3eacc7284f161c818c66bdc4e29a58fffba161ec626a283822b183ec791"
+    },
+    "town03_spawn0_sunset_static": {
+      "valid_fraction": 0.17609375,
+      "positive_fraction_of_valid": 0.6728778467908902,
+      "map_source": "pinned CARLA package; not contemporaneous export",
+      "label_manifest_sha256": "8e8561c809c4c28bd9693b1c9110b45646db18ff0fe4bba688ef9968ce697129"
+    },
+    "town03_spawn45_static": {
+      "valid_fraction": 0.21265625,
+      "positive_fraction_of_valid": 0.6669115846191526,
+      "map_source": "pinned CARLA package; not contemporaneous export",
+      "label_manifest_sha256": "8f6326285ca0046fceb091c884d77c4f8c4b4f6580ab95f9fe878e74ef58e28c"
+    },
+    "town10_spawn0_motion": {
+      "valid_fraction": 0.2573352117486339,
+      "positive_fraction_of_valid": 0.4273982965649273,
+      "map_source": "pinned CARLA package; not contemporaneous export",
+      "label_manifest_sha256": "b1de24fcb04d65488a93dd2d58d4bc1c245b84a66cdcc9cc9a0c24ecde9d0071"
+    }
+  },
+  "drivable_location_prior": {
+    "val": {
+      "schema_version": "hsd-static-drivable-prior-v1",
+      "split": "val",
+      "samples": 222,
+      "prior": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            268152,
+            229464
+          ],
+          [
+            372633,
+            757603
+          ]
+        ],
+        "valid_cells": 1627852,
+        "iou_positive": 0.5571839376333014,
+        "all_positive_iou": 0.6943112764551077
+      },
+      "prior_per_scene": {
+        "m4drive_town04_0_retry": {
+          "confusion_tn_fp_fn_tp": [
+            [
+              209348,
+              205308
+            ],
+            [
+              354333,
+              609800
+            ]
+          ],
+          "valid_cells": 1378789,
+          "iou_positive": 0.5214457163721813,
+          "all_positive_iou": 0.6992607280736937
+        },
+        "town03_spawn45_static": {
+          "confusion_tn_fp_fn_tp": [
+            [
+              58804,
+              24156
+            ],
+            [
+              18300,
+              147803
+            ]
+          ],
+          "valid_cells": 249063,
+          "iou_positive": 0.7768515549855723,
+          "all_positive_iou": 0.6669115846191526
+        }
+      },
+      "model": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            387010,
+            110606
+          ],
+          [
+            496261,
+            633975
+          ]
+        ],
+        "valid_cells": 1627852,
+        "total_cells": 4262400,
+        "iou_positive": 0.5109232279371588,
+        "valid_fraction": 0.38190972222222225,
+        "scope": "static lane support on valid mapped non-junction interiors; not current legal/free space",
+        "all_positive_prior_iou": 0.6943112764551077
+      },
+      "model_beats_location_prior": false,
+      "unseen_training_cells": 1093,
+      "training_positive_fraction": 0.5528648287425245,
+      "train_samples": 299,
+      "index_sha256": "eabfc2024379e12e4a60740bfeca97287849c82d9a6f91c288691174d80dc944",
+      "model_metrics_sha256": "d552ece2f3582fae39d0839823186a023264fc199c3db8ededc47badca7effec",
+      "scope": "Fixed BEV-cell positive frequency from actual training subset only; unseen cells fall back to global train frequency; no RGB; identical evaluation masks"
+    },
+    "test": {
+      "schema_version": "hsd-static-drivable-prior-v1",
+      "split": "test",
+      "samples": 222,
+      "prior": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            136236,
+            190002
+          ],
+          [
+            233837,
+            389019
+          ]
+        ],
+        "valid_cells": 949094,
+        "iou_positive": 0.47858174490501415,
+        "all_positive_iou": 0.6562637631256757
+      },
+      "prior_per_scene": {
+        "m4drive_town05_0": {
+          "confusion_tn_fp_fn_tp": [
+            [
+              74658,
+              79003
+            ],
+            [
+              171733,
+              322309
+            ]
+          ],
+          "valid_cells": 647703,
+          "iou_positive": 0.5624497203535499,
+          "all_positive_iou": 0.7627600922027534
+        },
+        "town10_spawn0_motion": {
+          "confusion_tn_fp_fn_tp": [
+            [
+              61578,
+              110999
+            ],
+            [
+              62104,
+              66710
+            ]
+          ],
+          "valid_cells": 301391,
+          "iou_positive": 0.27817507808167197,
+          "all_positive_iou": 0.4273982965649273
+        }
+      },
+      "model": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            283554,
+            42684
+          ],
+          [
+            218127,
+            404729
+          ]
+        ],
+        "valid_cells": 949094,
+        "total_cells": 4262400,
+        "iou_positive": 0.6081212248700304,
+        "valid_fraction": 0.22266657282282282,
+        "scope": "static lane support on valid mapped non-junction interiors; not current legal/free space",
+        "all_positive_prior_iou": 0.6562637631256757
+      },
+      "model_beats_location_prior": true,
+      "unseen_training_cells": 1093,
+      "training_positive_fraction": 0.5528648287425245,
+      "train_samples": 299,
+      "index_sha256": "eabfc2024379e12e4a60740bfeca97287849c82d9a6f91c288691174d80dc944",
+      "model_metrics_sha256": "c2b1fecaed9b19fa19ac5a7d5b18887492aba826284e0627ef7aaf3df8264b69",
+      "scope": "Fixed BEV-cell positive frequency from actual training subset only; unseen cells fall back to global train frequency; no RGB; identical evaluation masks"
+    }
+  },
+  "alignment_reports": {
+    "m4_static_alignment_val": {
+      "road_surface_points": 2085,
+      "valid_bev_comparisons": 2085,
+      "driving_agreements": 2085,
+      "agreement": 1.0,
+      "alignment_passed": true,
+      "schema_version": "hsd-static-lane-alignment-v1",
+      "scene": "/root/gpufree-data/hs-drive-data/raw/m3_town03_val_45",
+      "label_manifest_sha256": "8f6326285ca0046fceb091c884d77c4f8c4b4f6580ab95f9fe878e74ef58e28c",
+      "scope": "Front camera smooth road surface samples; shared OpenDRIVE source, not independent semantic ground truth; no claim on unknown/junction/traffic legality"
+    },
+    "m4_static_alignment_drive": {
+      "road_surface_points": 2327,
+      "valid_bev_comparisons": 2063,
+      "driving_agreements": 2063,
+      "agreement": 1.0,
+      "alignment_passed": true,
+      "schema_version": "hsd-static-lane-alignment-v1",
+      "scene": "/root/gpufree-data/hs-drive-data/raw/m4drive_town01_0",
+      "label_manifest_sha256": "ef46ea3247ed08422cd595a1dba4a43365bcb2372d2c65abcd41b0d9c34880d5",
+      "scope": "Front camera smooth road surface samples; shared OpenDRIVE source, not independent semantic ground truth; no claim on unknown/junction/traffic legality"
+    },
+    "m4_static_alignment_curve": {
+      "road_surface_points": 2293,
+      "valid_bev_comparisons": 2151,
+      "driving_agreements": 2151,
+      "agreement": 1.0,
+      "alignment_passed": true,
+      "schema_version": "hsd-static-lane-alignment-v1",
+      "scene": "/root/gpufree-data/hs-drive-data/raw/m4drive_town04_0",
+      "label_manifest_sha256": "fea879bf8b5a963c273e37e260af48bbba314a0c0b70a6994fe494bc44cd1bf3",
+      "scope": "Front camera smooth road surface samples; shared OpenDRIVE source, not independent semantic ground truth; no claim on unknown/junction/traffic legality"
+    },
+    "m4_static_alignment_turn": {
+      "road_surface_points": 2584,
+      "valid_bev_comparisons": 2305,
+      "driving_agreements": 2305,
+      "agreement": 1.0,
+      "alignment_passed": true,
+      "schema_version": "hsd-static-lane-alignment-v1",
+      "scene": "/root/gpufree-data/hs-drive-data/raw/m4drive_town02_20",
+      "label_manifest_sha256": "4413626c4af03a78dc454a66818c13550b5cec82ab47b2a2786107fdfb80dceb",
+      "scope": "Front camera smooth road surface samples; shared OpenDRIVE source, not independent semantic ground truth; no claim on unknown/junction/traffic legality"
+    },
+    "m4_static_alignment_val_retry": {
+      "road_surface_points": 2301,
+      "valid_bev_comparisons": 2157,
+      "driving_agreements": 2157,
+      "agreement": 1.0,
+      "alignment_passed": true,
+      "schema_version": "hsd-static-lane-alignment-v1",
+      "scene": "/root/gpufree-data/hs-drive-data/raw/m4drive_town04_0_retry",
+      "label_manifest_sha256": "1593f3e92e4f5a85fc9298646f51cd8ccbae216d02ec3447a9a3e6c1d08760ec",
+      "scope": "Front camera smooth road surface samples; shared OpenDRIVE source, not independent semantic ground truth; no claim on unknown/junction/traffic legality"
+    }
+  },
+  "test_logs": {
+    "logs/m4_expanded_gpu_tests.log": {
+      "sha256": "15ef4b73ba80b91c83f11242673d11a75e61290b20f3657a6d30fcbc80c540e9",
+      "tail": [
+        "..........................................s..............s.............. [ 78%]",
+        ".....ss.s...........                                                     [100%]",
+        "87 passed, 5 skipped in 12.48s"
+      ]
+    },
+    "logs/m4_expanded_sim_tests.log": {
+      "sha256": "b6803f9330b9b2c42f9e65c1f626ae587085eecc8c7b1e79fcbc32ae29f1dc61",
+      "tail": [
+        "........................sss............................................. [ 93%]",
+        ".....                                                                    [100%]",
+        "74 passed, 5 skipped in 3.23s"
+      ]
+    }
+  }
+}

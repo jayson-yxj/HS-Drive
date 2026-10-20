@@ -1,0 +1,10 @@
+schema_version: hsd-m4-baseline-gate-v1
+# Fixed before training; these are chain/fit checks, not a full M4 quality gate.
+max_peak_allocated_gib: 20.0
+minimum_overfit_depth_ce_relative_drop: 0.2
+minimum_overfit_surface_mse_relative_drop: 0.1
+require_finite_gradients: true
+require_checkpoint_reload: true
+require_gpu_bf16: true
+require_held_out_eval: true
+notes: Full M4 remains open pending diverse data, Drivable labels and quality targets.

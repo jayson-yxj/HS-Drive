@@ -1,0 +1,58 @@
+{
+  "schema_version": "hsd-m2-gate-v1",
+  "checks": {
+    "town03_render": true,
+    "thirty_second_recording": true,
+    "ego_motion": true,
+    "six_camera_overlap": true,
+    "sloped_geometry": true,
+    "controlled_occlusion": true,
+    "dynamic_actor": true,
+    "self_body_audit": true,
+    "interrupt_cleanup": true,
+    "depth_semantics": true
+  },
+  "passed": true,
+  "evidence": {
+    "recording": {
+      "path": "reports/m2_town03_recording.json",
+      "sha256": "0af56bc071fb91cb03e509e9427aa3b493b1b7c33972a3253e2ae361350a87fa"
+    },
+    "motion": {
+      "path": "reports/m2_town03_motion_geometry.json",
+      "sha256": "71bb47e7b246d573ce178036311d6e82793eddeb974123ea6e329cc220b123f4"
+    },
+    "slope": {
+      "path": "reports/m2_town03_slope_geometry.json",
+      "sha256": "fb90a44b689bc854ebe73ec1934e201f957e312893eab72c3db5c88f8c3f45dc"
+    },
+    "occlusion": {
+      "path": "reports/m2_occlusion.json",
+      "sha256": "7b99364f61ebf8d9b7eadb7e5cc90d9c83085ebe9087db6c22bd7e485045a39f"
+    },
+    "actors": {
+      "path": "reports/m2_dynamic_actor_surfaces.json",
+      "sha256": "fd92e1f801d5118bd47d53aa94af912f4e23c127a5577e8341fb9c96f038d3dd"
+    },
+    "cleanup": {
+      "path": "reports/m2_interrupt.json",
+      "sha256": "5251a5e9f6804f05c4fc134dbc3c8a7a41f197ba098cadebbd1d4003ae889b00"
+    },
+    "render": {
+      "path": "reports/m2_render.json",
+      "sha256": "1b72e3484d54baa2c4c26c0e01d94ee105a3a373e1a7a4f4cc8bf0c0650b28ef"
+    },
+    "depth": {
+      "path": "reports/depth_convention.json",
+      "sha256": "9acf12015a0b11ba4edfe06d8a8ea43b47e0bc295dcb8a0319241bdf96c047c1"
+    }
+  },
+  "scope": "CARLA 0.9.15 Epic / Town03 / configured six-camera rig; Oracle geometry engineering gate",
+  "exclusions": [
+    "learned perception",
+    "full occupancy/free-space",
+    "closed-loop safety",
+    "all weather/maps",
+    "real-time throughput"
+  ]
+}

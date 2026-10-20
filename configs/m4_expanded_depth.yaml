@@ -1,0 +1,24 @@
+schema_version: hsd-m4-baseline-v1
+index: /root/gpufree-data/hs-drive-data/processed/hsd-dataset-v2-driving-accepted
+bev_config: configs/bev.yaml
+pretrained_weights: /root/gpufree-data/hs-drive-cache/weights/resnet18-f37072fd.pth
+seed: 7
+steps: 1200
+train_samples_per_scene: 48
+val_samples_per_scene: 16
+batch_size: 1
+workers: 2
+learning_rate: 0.0002
+weight_decay: 0.0001
+surface_loss_weight: 0.2
+amp_bf16: true
+eval_every: 200
+grad_clip_norm: 5.0
+chunk_points: 32768
+notes: 'Predeclared comparison: fixed split/seed/sample budget, CE vs CE+log depth
+  vs +masked static lane head. Test not used for selection.'
+selection_metric: depth_mae
+depth_log_loss_weight: 1.0
+depth_range_balance: false
+drivable_head: false
+drivable_loss_weight: 0.0

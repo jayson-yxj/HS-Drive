@@ -1,0 +1,2454 @@
+{
+  "schema_version": "hsd-m4-far-rules-v1",
+  "engineering_passed": true,
+  "checks": {
+    "all_new_runs_complete": true,
+    "finite_gradients_and_reload": true,
+    "same_train_plan": true,
+    "same_actual_1200_step_order": true,
+    "same_training_implementation": true,
+    "paired_config_differs_only_in_head": true,
+    "same_road_labels": true,
+    "evaluation_checkpoint_identity": true,
+    "selection_identity": true,
+    "chosen_legacy_and_test_identity": true,
+    "overlay_query_audit": true,
+    "overlay_input_isolation": true,
+    "rgb_only": true,
+    "signal_recording_audits": true,
+    "signal_strict_schema": true,
+    "signal_loader_no_leakage": true
+  },
+  "quality": {
+    "far_60_80_mae_improved": true,
+    "near_mae_regressed": true,
+    "selected_road_v2_beats_position_prior_val": false,
+    "selected_road_v2_beats_position_prior_test": true,
+    "selected_road_v2_beats_all_positive_val": false,
+    "selected_road_v2_beats_all_positive_test": false,
+    "selected_road_v2_beats_each_scene_prior_val": false,
+    "legacy_mask_iou_improved": true
+  },
+  "source_sha256": {
+    "configs/bev.yaml": "e0dafcca015658782a1113242b5c37190824029cabfc28a6adbb24f8afbeafb4",
+    "configs/cameras.yaml": "ceda7659ecdda891e94c8552383fd5695e0e1fcc790f72ff143eb4b0fe40685c",
+    "configs/capture_expanded.yaml": "db76aaba6edfed0512c692aa99b95c82131a885c62ab60399318a50ba466d1da",
+    "configs/carla.yaml": "2cf6a47b896cd4b80de64b8161d1532b7b92908b273452228e7415c5b63f3bbf",
+    "configs/carla_smoke_town10.yaml": "2325577394d8fcc3eb6c32ee0faff2d10f0c1d3e064c745907d21e715d0ec254",
+    "configs/data_capture.yaml": "de52833878743d1ece6f3820ef56c6285d819c5b1904df6b9bc3d1115fa0be02",
+    "configs/dataset_signal_probes.yaml": "5b754e133ddbfee658996a69340707347484b25f2d6ee071b33e1c643b9795c3",
+    "configs/dataset_v1.yaml": "094d3110f86b6f5ce80cef8acb27fc39f4d95d8ed88e17088c594d6b87028812",
+    "configs/dataset_v2.yaml": "17f8f537843a972c8c8e470a0f27862876e095ddbcd9eaa64d58748279d80ef2",
+    "configs/dataset_v2_accepted.yaml": "03862544a2aa1e7d06506e6ae5b56d3c0c44165e54e8361af6133f53fd5d869a",
+    "configs/imaging/acceptance.yaml": "9d85d1030e284ac6bd037b66b68868eef3596d0995c410239129e300ad7b11e2",
+    "configs/imaging/geometry_1280.yaml": "bbdfed7a130ad3a41a6365cf396fd76727f7fb62f6a444acef01abb17cdc9cd8",
+    "configs/imaging/geometry_640.yaml": "66d341c5d4d2c1a378d4d552cc27ba5845b2e1681621e8cbe2ae28ac9dfa55e3",
+    "configs/imaging/geometry_960.yaml": "525449b7c2fdf58be81dd15f94ded562cc1e1e2806c19b4a87ea4ecaf043dc68",
+    "configs/imaging/training_1280.yaml": "3dbed99dbc75b6b744075a1d74fe1074447b4fdf238b9c4f8d5ba73be50d4476",
+    "configs/imaging/training_1280_v2.yaml": "9bf6b062955f1aec010d5bf7b99c33721485ef4343238be453e3a08f5e582518",
+    "configs/imaging/training_1280_v3.yaml": "2e5f560947893f6ab40e3a47ec88d30f93a03e33130da9f78b9b992eec7c9bd6",
+    "configs/imaging/training_640.yaml": "c97142e55bdbfef28974b53a3b0486c0d258b85ba40b82b03130ff20ec639e46",
+    "configs/imaging/training_640_v2.yaml": "b0cf5b2bff88b40ca9d4baf1e773d3741c284e6f8c39ac28eabf978e575798e9",
+    "configs/imaging/training_640_v3.yaml": "8ded6d06add090805a76f23c79f1d72019374a8c29d46cd2aae129d6f77de6af",
+    "configs/imaging/training_960.yaml": "4645b758a8abc8dfee6136200a1cfcf343156ea3b4ee99882363c9bc6d926ffe",
+    "configs/imaging/training_960_v2.yaml": "e79ee19655f00835d0d73ca0b087e719fc532e4524914d707d29689edd9dc5bc",
+    "configs/imaging/training_960_v3.yaml": "0fba472eeae072a92670a6b1b58f2e00c2ebe81e357a1cc55088ea3b3f66d70f",
+    "configs/imaging/training_960_v4.yaml": "6ca1fa726eaede3f90a78aa6e6de9365af78d6ffd56a5f1ac88bfbe5215dd23e",
+    "configs/m2_acceptance.yaml": "f76938d70b0bbfab5a826e26e6c316b108a953095d0bd2ef0ed3cea113ebe66c",
+    "configs/m4_acceptance.yaml": "bd2e61561af392c884d574ad216dca2503142103eebf817287283b9d668ca16e",
+    "configs/m4_baseline.yaml": "8830c263b5aefdf68bd68c1f50e7a8c5d004cf2b45b6df3c053f994bd5e64e17",
+    "configs/m4_expanded_ce.yaml": "5cf73317862e50a7f399383aa783f1da9e281b53da97e769ed00f3ece0c8b075",
+    "configs/m4_expanded_depth.yaml": "bb8890bb48c3affca23df3a55b5cb90be2d816fd29a9aae0080349eb62e8a974",
+    "configs/m4_expanded_joint.yaml": "0a0ce31b1c66c3a8d4f3068e16118058af75273b8b9811de453e20b8649d7642",
+    "configs/m4_far_balanced.yaml": "2edae433e2d8971ac00067b391bb1992b15348c619a81addc368ee2db3b7aa2c",
+    "configs/m4_road_context.yaml": "0bf638d61696e6a4933e210c392c6e4fe1ef96f3135e98c5d33842031a1a4a28",
+    "configs/m4_road_point.yaml": "13182c69333b6a1ae7ea4b482e19994df0da9584e46bdd8100af4230ab075fbe",
+    "configs/model.yaml": "459c821ec523fb457af3442b06583805ebcc43ce896390766f3ff9c219a23169",
+    "configs/train_data.yaml": "dde4bdcd771cf0852e609d24b9d2361e862d2c8aec54702d276ce61734a27c17",
+    "datasets/__init__.py": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+    "datasets/carla_dataset.py": "07ad3b7e2b675a086224d9c8c819752fcaa25fa11c88d5c00a65369e7aa2e696",
+    "datasets/drivable.py": "3e4e7ad6fe52052dae53bb77ef5875142e57ecc8c74ee87142559fe7fa209c4c",
+    "datasets/index.py": "443dbe37ec365c3e6eae90d4b0e85d10837d4d62f1613bc9d6f3415e7bea5d7d",
+    "datasets/inputs.py": "5964f7d6e71e33debba7cd8d55554c04d304ac8f4f9a22d3836bb84137eb46a8",
+    "datasets/labels.py": "a3e6855b29fbcb585b8579d569e76ad28ca3a96577c10201f4e422c8d6e1ca51",
+    "datasets/road_supervision.py": "39a1f67aebe75cab8a261aaaedb14a319051df1dd776dfd50453ab4b0b7699b1",
+    "datasets/schema.py": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+    "datasets/split.py": "ba79f1746f1099051e97cfcfb62e0fc8c9ec0349ffd8bfe33120e37a13dd80ed",
+    "datasets/training.py": "c6011734e5c8a748ab38e23dc748c158a52db54dc2579a389f0b0237eaad899b",
+    "geometry/__init__.py": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+    "geometry/cameras.py": "4715f3a048204635bde43a02cacaf459b24099937f27f9688aac6e80904ade62",
+    "geometry/carla_depth.py": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+    "geometry/consistency.py": "261b869b46310b71ce3ad768d90eea15640c374167b671f0af48c75ca5c1b3d6",
+    "geometry/coordinates.py": "abcd289587aafe30ae3870345885d7485fc05c2230ea716eb6a08b7a104293b7",
+    "geometry/oracle_bev.py": "5867e8aa5dac2e1e5c518f8a02fdc1aaa9af974a4301c1859488223c5b49d5e8",
+    "geometry/reference.py": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+    "geometry/visualization.py": "71a2f4f15eb7e52dc61c132d5919d91c6996045b5b80d09fe63eca4f392855a3",
+    "models/__init__.py": "3b26d089b025715e8cee61f8a69c8a5784d7b710ccab6f5f8d90cc907be4e95b",
+    "models/depth_bev.py": "01e918d1884f8ea96080d82085e7b3bbb7ffd449b726a2392378069965865963",
+    "models/image_encoder.py": "fcc80c1e861b9ea1087e6ac8ba3e11774aec7e8056cd7a7d5c6a23b19c6c93f7",
+    "models/view_transform.py": "77b027a1d248d77d1119490599d1b150940dece1a55f667785b82a720a59321a",
+    "pyproject.toml": "19881edf98b36891a7ea1eceb3d338f8ba0d3b221c682218148ae2d8e04162a6",
+    "requirements-sim.lock.txt": "f4ab910480906fcba16e7dd86a8cf77ca8e00c14cd23ba4cae8d25568b22036f",
+    "requirements-train.lock.txt": "9048f2ecbf6c67265bcd1d72cb0c17060a2622f8e2cb4fe6f8ea6e2b171cfe34",
+    "simulator/__init__.py": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+    "simulator/camera_rig.py": "51291c0826c054e277678a60b7e15abc61c873d36593b8f79d309baf919178fb",
+    "simulator/capture_config.py": "2e94b875ce573d786eabf7277b4cb49eacbebc59e9abf7e390a7df3dd4e325ee",
+    "simulator/imaging.py": "562bbc2c2b8b0434f36873e0258cac99164b4633f74c23460b41e43db9158064",
+    "simulator/recorder.py": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+    "simulator/session.py": "cadd7f0582b7dafc36d4b4405e1ef9881cfc8661637d3dd8bfedf18bf0340ad3",
+    "simulator/snapshot.py": "13b6dbec8452c249ef26e521058b041f1ae57425825983c9d883e78fea1e35d3",
+    "simulator/synchronizer.py": "1aaaf1c52044c1e0d8faf9d7ba98708cddf12ab25a6d5782672db3a7bedf8368",
+    "simulator/traffic_rules.py": "9353ff97f029b4a3ad4d5f2063d9180cf763b77786e6767e887f1af5c1362835",
+    "tools/__init__.py": "97521fc2ec180f25fbee707e1d756d3233ce13d410a59ef206035b09f278d298",
+    "tools/analyze_imaging.py": "e57da591bdf5946098119291f95b67ebe9b18dc3ffb862c395b16264518e3dab",
+    "tools/audit_driving_data.py": "19caff4f4ee02d77fa7fb91002c8f08fc0b0f83fe3380b14bcfcfd1015a23807",
+    "tools/audit_road_overlay.py": "b6e476fdcbd27aa1b9465079974a7b51b682ba55e6dea614b424c3f61ee2a289",
+    "tools/audit_signal_dataset.py": "f4f5e56c442e72939098c3dd2a8df64a84c91355a0950b15127e9cf2caab5def",
+    "tools/build_dataset_index.py": "622dfdc2b1ee3e4d479165def43de626c8f2c153639ba31e1ee71c5af72612e9",
+    "tools/build_drivable_labels.py": "4c9287fa2168ea8b205deb98c28de82d720d434b9c6df13a0df1c74e8c756c50",
+    "tools/build_road_overlay.py": "b1dcd45da82304575c5be4bf236c4b6d0b48695237cb91011587bc856e55d74b",
+    "tools/capture_campaign.py": "71f26d7891fa4b35e09b48557f05846f64973946cb7bba77a5e614665a06ae72",
+    "tools/capture_signal_probes.py": "0fd4e2477ef01b67f8520fc803f0f394c846afaf02dbe3e1478343233a33760f",
+    "tools/carla_depth_probe.py": "ad746a0f07cbc0849913fc404cb7e770f09d807e11120dbb59d80c789a0f8ad5",
+    "tools/check_capture_interrupt.py": "074e7ff057ce5cc7c83d312b933773a6af1cc7f5bf1623849cfd46116d8e2528",
+    "tools/check_depth_photometry.py": "d8bd611326c6fc5e561793aeb1cd1972911f4dfc184d7994a1edef9e4972743b",
+    "tools/check_depth_plane.py": "cdbd2cf116e5f47edbdfeab9a5fe208095a5025821af71ff2f9dd722c61797b9",
+    "tools/check_training_gpu.py": "e8de25fcf92d4d9de1417f62d581f3a3155df97f05c0db9a05f37cf662e954e0",
+    "tools/check_training_resume.py": "e6d30ac461cf950aa7de1b3a8821c709e28136d0dc540be28b8e094ef79b198f",
+    "tools/compare_imaging.py": "57b174c33bac5aa0a180e8ccf5518d883cf169154e085a67b143666de944d8cf",
+    "tools/compare_resolution.py": "3ef168dc5ba91ac26b809712c3c9c4f03480713ad35a041677d59f452fde9f67",
+    "tools/eval_bev.py": "3e560d3fa1c5fcf211a77dc4fd5256f62e94bcf410db23e66ca51335cf2bdc96",
+    "tools/eval_drivable_prior.py": "696261207c8077f47e2b45a3d4ff173444e8cd119d356bb8921218ebf5de37a1",
+    "tools/eval_legacy_road_mask.py": "8d074a204138de4a10582b416ad60016f475ff635615f24c51956e2932ac9d21",
+    "tools/imaging_summary.py": "3d7cb4e3da20d6fc5f23d4a4150196da408f7365b56b37c66ecadcd8f78713c1",
+    "tools/occlusion_probe.py": "b58ed05417c8bcd5cc5f39540837eff82771e5c4ca1c8a1afd4445a78c0d67f0",
+    "tools/plot_geometry_report.py": "03c0f52d59915a924cf0e60a0e5ee864c1314a586756d3e5f0d1110937f0b27b",
+    "tools/prepare_expanded_dataset.py": "db81625aa25fc830481a7ec99588cc5c71bb12d1a145e5477ed1f7395497bf48",
+    "tools/prepare_signal_dataset.py": "535da00ff7b6da550d81c1fe01c41b51d34de1d05826ea8aebcf78f6b3da6ae9",
+    "tools/provenance.py": "c7ffe84571c86086ce9e44e1512bdce321811283287b4a34ce45270039ab3902",
+    "tools/record_dataset.py": "1c141b65a07038ffcab26ffcd78b875fbe78c39977fae7a0b26731c422ab6b42",
+    "tools/run_depth_comparison.py": "19709417699705fd3d6d2cd2423a94677d48a6a9e85490b5fc46b0fdf57a4c68",
+    "tools/run_road_comparison.py": "1e3207a5eb386f55ad7523f519127c11497215ab5e790db495e5dad61a66eafb",
+    "tools/summarize_m4_expansion.py": "89c2894a3f9297291675cd2f5834c0c5f5ebd1197ce125bcf8bca0b4012ea49d",
+    "tools/summarize_m4_far_rules.py": "c16a63a5ceb5804d64be5d1a4a498675db81c5cddc86d1449bac4c74b445e2ce",
+    "tools/synthetic_demo.py": "cb2002446007ad6f11eda04574c3b2172b6fef1fa483e1cc86f7937f8b906c37",
+    "tools/train_bev.py": "ab8d3f7b7ac93e98688a1368ec11083be4692cfdc4571b1db858085cee44fed8",
+    "tools/validate_actor_surfaces.py": "d19b5aef40a4acc7d8999febf4b754a9c73708cd7c8b85d722cafc0c54835ba5",
+    "tools/validate_dataset.py": "cf793831079902b7feecf444146d44725f32a8117a2c1b6520be6d6f286f4cab",
+    "tools/validate_drivable_labels.py": "08d6032c5292960bb733917123ed539939109e19a3ab7821b3ebd43291490410",
+    "tools/validate_geometry.py": "a86e1e63bbe1c9aa14ad728fb40bf388e021c679b6f5ddaaf0f0540896401ea7",
+    "tools/validate_imaging_gate.py": "d72284b1beea16b6f8c0d2298e1c9ec27841ad1daf427bab9df95d129baa812f",
+    "tools/validate_m2_gate.py": "d5c1d32622552c2dfd8f7f6267e750edc8a49e630a8952d957f66db1b17eabb1",
+    "tools/validate_m4_baseline.py": "9304b72e7999f9e7daf535f8477dc4db87824f7da7bc2bd6302f5506ea3c27d1",
+    "tools/validate_m4_expansion.py": "711b3cc57b524349f0c45fc61f5fae267101244a8e275be273c0b8164e6a5e5a",
+    "tools/validate_recording.py": "b8cd6e6a1667ed8328260b68e14c586b662921f7eb7f9ecbeb55193789b3cf04",
+    "tools/validate_signal_capture.py": "0ed1ef2307c44dc226d3397bc5808bcd675f5db7d8cec5c9b89238dc041d0b30",
+    "tools/visualize_oracle_bev.py": "f60c42b5cba23ff06f782770b9cb19805d1a12a3a5ec6155538ff9a84dc00328",
+    "tools/visualize_road_supervision.py": "92f9d2969751240a2d0e2c24da93365a37088c3e853cdb1903af775b9bdab665",
+    "training/__init__.py": "681ca18c4d0c7e9dad40c075ce0dda204f1ac98415cd7d9d8b41a0ef9880ce13",
+    "training/losses.py": "5fb253e5bb7f612e2fef36082a578d7eec75c32220592d0890b10238cb62b40b",
+    "training/metrics.py": "e66ecd5d2438f245adaa0e8bfbbf68633db56fbb5f4ee5ed661485abd2863f8d",
+    "training/runner.py": "4446a1c46bc012bd7561680c52513b6f842e70480b798932e4c347feed433f2e",
+    "training/runtime.py": "bc174da6bb48341badcffcc49a7df80ed2bbfaddf292b0df2e46644d95384d14"
+  },
+  "selection": {
+    "schema_version": "hsd-road-comparison-v1",
+    "status": "frozen_before_regression_test",
+    "experiments": {
+      "point": {
+        "val_metrics": "reports/m4_road_point_val/metrics.json",
+        "sha256": "6aa31d997a8cf2837a4a4ccd2a3b9109872c731d0b97153b65c544f622b9cc72",
+        "macro_scene_iou": 0.6495493880026232,
+        "checkpoint_sha256": "b2ff0118461c149b541802cfcf6cbcb96b937ba55fc8eb231329e7a73ce07db9"
+      },
+      "context": {
+        "val_metrics": "reports/m4_road_context_val/metrics.json",
+        "sha256": "fda949bb8f6ee3784c8cdcc655546b2dc7fff116dee97ec6701714830cee8668",
+        "macro_scene_iou": 0.6169702020641229,
+        "checkpoint_sha256": "817024e8ad5d0a17fbdbd4feb06b8f9dd5f1224e695a873168504c2c0cd02d02"
+      }
+    },
+    "selected": "point",
+    "selection": "validation macro-scene static road IoU; individual checkpoints selected by validation macro-depth AbsRel",
+    "test_scope": "Town05/Town10 historically observed; regression only, not fresh blind test"
+  },
+  "validation": {
+    "m4_expanded_joint": {
+      "depth": {
+        "all": {
+          "count": 867467,
+          "mae_m": 4.151263844681916,
+          "abs_rel": 0.3828578412420876,
+          "rmse_m": 9.162249239411237,
+          "delta1": 0.7154312498342876
+        },
+        "1.5-10m": {
+          "count": 659858,
+          "mae_m": 1.473244334475893,
+          "abs_rel": 0.37892153759044367,
+          "rmse_m": 4.011213827855171,
+          "delta1": 0.8435708894944064
+        },
+        "10-30m": {
+          "count": 117561,
+          "mae_m": 5.432865774370593,
+          "abs_rel": 0.32970624664392567,
+          "rmse_m": 7.521465480084674,
+          "delta1": 0.49354803038422607
+        },
+        "30-60m": {
+          "count": 79816,
+          "mae_m": 19.317903360957743,
+          "abs_rel": 0.4602504401213183,
+          "rmse_m": 20.92344958733715,
+          "delta1": 0.0745965721158665
+        },
+        "60-80m": {
+          "count": 10232,
+          "mae_m": 43.821482905193264,
+          "abs_rel": 0.6436857023306244,
+          "rmse_m": 44.881328718160454,
+          "delta1": 0.0
+        }
+      },
+      "depth_per_scene": {
+        "m4drive_town04_0_retry": {
+          "all": {
+            "count": 646873,
+            "mae_m": 4.566986559765209,
+            "abs_rel": 0.4783161427633762,
+            "rmse_m": 9.197115591114498,
+            "delta1": 0.6693895092236034
+          },
+          "1.5-10m": {
+            "count": 498818,
+            "mae_m": 1.8855334264106598,
+            "abs_rel": 0.48778511399972974,
+            "rmse_m": 4.59849925294266,
+            "delta1": 0.7955526865510065
+          },
+          "10-30m": {
+            "count": 75981,
+            "mae_m": 6.359254245484685,
+            "abs_rel": 0.40914520797059745,
+            "rmse_m": 8.524172871874377,
+            "delta1": 0.4222897829720588
+          },
+          "30-60m": {
+            "count": 66600,
+            "mae_m": 19.70848637944585,
+            "abs_rel": 0.47578999779961845,
+            "rmse_m": 21.11400172312384,
+            "delta1": 0.061381381381381384
+          },
+          "60-80m": {
+            "count": 5474,
+            "mae_m": 39.81632927032906,
+            "abs_rel": 0.6063079565687253,
+            "rmse_m": 40.45244439068765,
+            "delta1": 0.0
+          }
+        },
+        "town03_spawn45_static": {
+          "all": {
+            "count": 220594,
+            "mae_m": 2.932192610314367,
+            "abs_rel": 0.10293455284811265,
+            "rmse_m": 9.059232977748021,
+            "delta1": 0.8504447083782877
+          },
+          "1.5-10m": {
+            "count": 161040,
+            "mae_m": 0.1961875767714931,
+            "abs_rel": 0.04171890807400517,
+            "rmse_m": 0.6541185701046587,
+            "delta1": 0.992306259314456
+          },
+          "10-30m": {
+            "count": 41580,
+            "mae_m": 3.7400345472489027,
+            "abs_rel": 0.18454386760203412,
+            "rmse_m": 5.212690736775193,
+            "delta1": 0.6237614237614237
+          },
+          "30-60m": {
+            "count": 13216,
+            "mae_m": 17.349620292608154,
+            "abs_rel": 0.38194122845555045,
+            "rmse_m": 19.93549436839714,
+            "delta1": 0.14119249394673122
+          },
+          "60-80m": {
+            "count": 4758,
+            "mae_m": 48.42934566207571,
+            "abs_rel": 0.6866881782239903,
+            "rmse_m": 49.48878439633258,
+            "delta1": 0.0
+          }
+        }
+      },
+      "road": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            387010,
+            110606
+          ],
+          [
+            496261,
+            633975
+          ]
+        ],
+        "valid_cells": 1627852,
+        "total_cells": 4262400,
+        "iou_positive": 0.5109232279371588,
+        "valid_fraction": 0.38190972222222225,
+        "scope": "static lane support on valid mapped non-junction interiors; not current legal/free space",
+        "all_positive_prior_iou": 0.6943112764551077
+      }
+    },
+    "m4_far_balanced": {
+      "depth": {
+        "all": {
+          "count": 867467,
+          "mae_m": 4.408505183050191,
+          "abs_rel": 0.4735347658352926,
+          "rmse_m": 9.079640600443703,
+          "delta1": 0.7015229397775362
+        },
+        "1.5-10m": {
+          "count": 659858,
+          "mae_m": 2.0457796015444503,
+          "abs_rel": 0.5039871946688601,
+          "rmse_m": 5.135347815210434,
+          "delta1": 0.81277941617742
+        },
+        "10-30m": {
+          "count": 117561,
+          "mae_m": 5.303507697765681,
+          "abs_rel": 0.314581419615028,
+          "rmse_m": 8.058487624390153,
+          "delta1": 0.5449596379751789
+        },
+        "30-60m": {
+          "count": 79816,
+          "mae_m": 18.607525800552207,
+          "abs_rel": 0.4493238653271115,
+          "rmse_m": 20.05807194329057,
+          "delta1": 0.10043099127994387
+        },
+        "60-80m": {
+          "count": 10232,
+          "mae_m": 35.73541592023073,
+          "abs_rel": 0.5248300694133081,
+          "rmse_m": 37.47012967581006,
+          "delta1": 0.014366692728694293
+        }
+      },
+      "depth_per_scene": {
+        "m4drive_town04_0_retry": {
+          "all": {
+            "count": 646873,
+            "mae_m": 4.958547199735303,
+            "abs_rel": 0.589792234895074,
+            "rmse_m": 9.485569048159702,
+            "delta1": 0.6611715128008125
+          },
+          "1.5-10m": {
+            "count": 498818,
+            "mae_m": 2.5834495325073474,
+            "abs_rel": 0.6420703802578358,
+            "rmse_m": 5.870429490833681,
+            "delta1": 0.7711670388799121
+          },
+          "10-30m": {
+            "count": 75981,
+            "mae_m": 5.752192532610949,
+            "abs_rel": 0.3520219831247902,
+            "rmse_m": 8.741563652851237,
+            "delta1": 0.5039417749174135
+          },
+          "30-60m": {
+            "count": 66600,
+            "mae_m": 19.49656198679148,
+            "abs_rel": 0.47602508682388445,
+            "rmse_m": 20.697836480323645,
+            "delta1": 0.06884384384384384
+          },
+          "60-80m": {
+            "count": 5474,
+            "mae_m": 33.494849107802935,
+            "abs_rel": 0.5104415509053551,
+            "rmse_m": 34.92062311064115,
+            "delta1": 0.026854219948849106
+          }
+        },
+        "town03_spawn45_static": {
+          "all": {
+            "count": 220594,
+            "mae_m": 2.795554107956812,
+            "abs_rel": 0.13261970113222707,
+            "rmse_m": 7.76793209202019,
+            "delta1": 0.8198500412522552
+          },
+          "1.5-10m": {
+            "count": 161040,
+            "mae_m": 0.3803583420868602,
+            "abs_rel": 0.07627744262513389,
+            "rmse_m": 1.1457500417809134,
+            "delta1": 0.9416728763040239
+          },
+          "10-30m": {
+            "count": 41580,
+            "mae_m": 4.483605763268849,
+            "abs_rel": 0.24616459768055837,
+            "rmse_m": 6.630922914581285,
+            "delta1": 0.6199134199134199
+          },
+          "30-60m": {
+            "count": 13216,
+            "mae_m": 14.127364632003822,
+            "abs_rel": 0.3147671649877442,
+            "rmse_m": 16.4599333031506,
+            "delta1": 0.2596095641646489
+          },
+          "60-80m": {
+            "count": 4758,
+            "mae_m": 38.31315083642024,
+            "abs_rel": 0.5413838210552868,
+            "rmse_m": 40.20378885511335,
+            "delta1": 0.0
+          }
+        }
+      },
+      "road": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            319517,
+            178099
+          ],
+          [
+            484475,
+            645761
+          ]
+        ],
+        "valid_cells": 1627852,
+        "total_cells": 4262400,
+        "iou_positive": 0.49357465786667787,
+        "valid_fraction": 0.38190972222222225,
+        "scope": "static lane support on declared valid mask; optional junction ribbons; not traffic legality",
+        "per_scene": {
+          "m4drive_town04_0_retry": {
+            "confusion_tn_fp_fn_tp": [
+              [
+                248640,
+                166016
+              ],
+              [
+                437371,
+                526762
+              ]
+            ],
+            "valid_cells": 1378789,
+            "iou_positive": 0.46609960279573753,
+            "recall_positive": 0.5463582306590481,
+            "all_positive_iou": 0.6992607280736937
+          },
+          "town03_spawn45_static": {
+            "confusion_tn_fp_fn_tp": [
+              [
+                70877,
+                12083
+              ],
+              [
+                47104,
+                118999
+              ]
+            ],
+            "valid_cells": 249063,
+            "iou_positive": 0.6678358569135623,
+            "recall_positive": 0.7164169220303065,
+            "all_positive_iou": 0.6669115846191526
+          }
+        },
+        "junction": {
+          "confusion_tn_fp_fn_tp": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "valid_cells": 0,
+          "iou_positive": null,
+          "recall_positive": null,
+          "all_positive_iou": null
+        },
+        "all_positive_prior_iou": 0.6943112764551077
+      }
+    },
+    "m4_road_point": {
+      "depth": {
+        "all": {
+          "count": 867467,
+          "mae_m": 4.027560557373868,
+          "abs_rel": 0.4459069684497454,
+          "rmse_m": 8.312292765692309,
+          "delta1": 0.703789308411732
+        },
+        "1.5-10m": {
+          "count": 659858,
+          "mae_m": 1.9235284257129293,
+          "abs_rel": 0.4738789413799615,
+          "rmse_m": 4.838531807696238,
+          "delta1": 0.8078313819033792
+        },
+        "10-30m": {
+          "count": 117561,
+          "mae_m": 5.610234309126619,
+          "abs_rel": 0.3362635192447963,
+          "rmse_m": 8.681343104608787,
+          "delta1": 0.5506758193618632
+        },
+        "30-60m": {
+          "count": 79816,
+          "mae_m": 15.573624564158697,
+          "abs_rel": 0.3739981032378499,
+          "rmse_m": 17.258834830025002,
+          "delta1": 0.15201212789415655
+        },
+        "60-80m": {
+          "count": 10232,
+          "mae_m": 31.465115873025113,
+          "abs_rel": 0.46269189062483895,
+          "rmse_m": 34.0372203724087,
+          "delta1": 0.05756450351837373
+        }
+      },
+      "depth_per_scene": {
+        "m4drive_town04_0_retry": {
+          "all": {
+            "count": 646873,
+            "mae_m": 4.497399587370705,
+            "abs_rel": 0.5542803553988042,
+            "rmse_m": 8.595022187239012,
+            "delta1": 0.6548503338367809
+          },
+          "1.5-10m": {
+            "count": 498818,
+            "mae_m": 2.4418378954097486,
+            "abs_rel": 0.6048040563497578,
+            "rmse_m": 5.53564689762984,
+            "delta1": 0.7543573006587573
+          },
+          "10-30m": {
+            "count": 75981,
+            "mae_m": 6.022973860626958,
+            "abs_rel": 0.3773112957579958,
+            "rmse_m": 9.039837991046221,
+            "delta1": 0.5149182032350192
+          },
+          "30-60m": {
+            "count": 66600,
+            "mae_m": 16.03453196116038,
+            "abs_rel": 0.3852970398224152,
+            "rmse_m": 17.589158470011668,
+            "delta1": 0.11693693693693694
+          },
+          "60-80m": {
+            "count": 5474,
+            "mae_m": 30.267125289632666,
+            "abs_rel": 0.4626554986356513,
+            "rmse_m": 32.235580687914734,
+            "delta1": 0.0741687979539642
+          }
+        },
+        "town03_spawn45_static": {
+          "all": {
+            "count": 220594,
+            "mae_m": 2.649797867313651,
+            "abs_rel": 0.12811129886717085,
+            "rmse_m": 7.421367646575141,
+            "delta1": 0.8472986572617569
+          },
+          "1.5-10m": {
+            "count": 161040,
+            "mae_m": 0.318075786274106,
+            "abs_rel": 0.06834116195246644,
+            "rmse_m": 1.0052032218818798,
+            "delta1": 0.9734662195727769
+          },
+          "10-30m": {
+            "count": 41580,
+            "mae_m": 4.856016804014851,
+            "abs_rel": 0.2612550751070038,
+            "rmse_m": 7.984778164530337,
+            "delta1": 0.616017316017316
+          },
+          "30-60m": {
+            "count": 13216,
+            "mae_m": 13.250952602876012,
+            "abs_rel": 0.3170588495656307,
+            "rmse_m": 15.487378103209883,
+            "delta1": 0.3287681598062954
+          },
+          "60-80m": {
+            "count": 4758,
+            "mae_m": 32.84338414824375,
+            "abs_rel": 0.46273375900416075,
+            "rmse_m": 35.99860764972869,
+            "delta1": 0.038461538461538464
+          }
+        }
+      },
+      "road": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            233758,
+            263858
+          ],
+          [
+            467396,
+            944522
+          ]
+        ],
+        "valid_cells": 1909534,
+        "total_cells": 4262400,
+        "iou_positive": 0.5636326096089215,
+        "valid_fraction": 0.4479950262762763,
+        "scope": "static lane support on declared valid mask; optional junction ribbons; not traffic legality",
+        "per_scene": {
+          "m4drive_town04_0_retry": {
+            "confusion_tn_fp_fn_tp": [
+              [
+                181381,
+                233275
+              ],
+              [
+                438064,
+                737357
+              ]
+            ],
+            "valid_cells": 1590077,
+            "iou_positive": 0.5234323090290595,
+            "recall_positive": 0.6273131073887569,
+            "all_positive_iou": 0.739222691731281
+          },
+          "town03_spawn45_static": {
+            "confusion_tn_fp_fn_tp": [
+              [
+                52377,
+                30583
+              ],
+              [
+                29332,
+                207165
+              ]
+            ],
+            "valid_cells": 319457,
+            "iou_positive": 0.7756664669761869,
+            "recall_positive": 0.8759730567406775,
+            "all_positive_iou": 0.7403093374069124
+          }
+        },
+        "junction": {
+          "confusion_tn_fp_fn_tp": [
+            [
+              0,
+              0
+            ],
+            [
+              17546,
+              37660
+            ]
+          ],
+          "valid_cells": 55206,
+          "iou_positive": 0.6821722276564142,
+          "recall_positive": 0.6821722276564142,
+          "all_positive_iou": 1.0
+        },
+        "all_positive_prior_iou": 0.7394044829785696
+      }
+    },
+    "m4_road_context": {
+      "depth": {
+        "all": {
+          "count": 867467,
+          "mae_m": 4.494666396981816,
+          "abs_rel": 0.5080671533543613,
+          "rmse_m": 9.100357820135885,
+          "delta1": 0.6991470568909249
+        },
+        "1.5-10m": {
+          "count": 659858,
+          "mae_m": 2.195406871685455,
+          "abs_rel": 0.5396685776965269,
+          "rmse_m": 5.718452570054804,
+          "delta1": 0.8140690875915727
+        },
+        "10-30m": {
+          "count": 117561,
+          "mae_m": 6.335561392479888,
+          "abs_rel": 0.3999989220034988,
+          "rmse_m": 9.270143402556693,
+          "delta1": 0.5089187740832419
+        },
+        "30-60m": {
+          "count": 79816,
+          "mae_m": 17.03149363898294,
+          "abs_rel": 0.40752124556967473,
+          "rmse_m": 18.491419933790787,
+          "delta1": 0.11453843840833917
+        },
+        "60-80m": {
+          "count": 10232,
+          "mae_m": 33.82695103064471,
+          "abs_rel": 0.4960781680689462,
+          "rmse_m": 35.463547057879815,
+          "delta1": 0.0338154808444097
+        }
+      },
+      "depth_per_scene": {
+        "m4drive_town04_0_retry": {
+          "all": {
+            "count": 646873,
+            "mae_m": 5.048781243816406,
+            "abs_rel": 0.6330506906518938,
+            "rmse_m": 9.521452579971552,
+            "delta1": 0.6585156591788497
+          },
+          "1.5-10m": {
+            "count": 498818,
+            "mae_m": 2.78100611290403,
+            "abs_rel": 0.6880317786090067,
+            "rmse_m": 6.544270533178792,
+            "delta1": 0.7691863565468768
+          },
+          "10-30m": {
+            "count": 75981,
+            "mae_m": 7.073592957501299,
+            "abs_rel": 0.46572042819086507,
+            "rmse_m": 10.320057342084505,
+            "delta1": 0.48638475408325765
+          },
+          "30-60m": {
+            "count": 66600,
+            "mae_m": 17.664594374648086,
+            "abs_rel": 0.42647185454497466,
+            "rmse_m": 18.89958729360561,
+            "delta1": 0.07675675675675675
+          },
+          "60-80m": {
+            "count": 5474,
+            "mae_m": 30.10298067538199,
+            "abs_rel": 0.4588662951716464,
+            "rmse_m": 31.407542895650792,
+            "delta1": 0.04092071611253197
+          }
+        },
+        "town03_spawn45_static": {
+          "all": {
+            "count": 220594,
+            "mae_m": 2.8697720965183775,
+            "abs_rel": 0.14156364137186486,
+            "rmse_m": 7.734458517021377,
+            "delta1": 0.8182951485534511
+          },
+          "1.5-10m": {
+            "count": 161040,
+            "mae_m": 0.381525585631263,
+            "abs_rel": 0.08011669522781485,
+            "rmse_m": 1.1546522397868284,
+            "delta1": 0.9530923994038748
+          },
+          "10-30m": {
+            "count": 41580,
+            "mae_m": 4.986923192819189,
+            "abs_rel": 0.2799030643406254,
+            "rmse_m": 6.953465601812252,
+            "delta1": 0.5500962000962001
+          },
+          "30-60m": {
+            "count": 13216,
+            "mae_m": 13.841079822752723,
+            "abs_rel": 0.3120225653521374,
+            "rmse_m": 16.27953235066047,
+            "delta1": 0.30493341404358354
+          },
+          "60-80m": {
+            "count": 4758,
+            "mae_m": 38.111317093004544,
+            "abs_rel": 0.5388898099856799,
+            "rmse_m": 39.619542063344994,
+            "delta1": 0.02564102564102564
+          }
+        }
+      },
+      "road": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            259771,
+            237845
+          ],
+          [
+            507933,
+            903985
+          ]
+        ],
+        "valid_cells": 1909534,
+        "total_cells": 4262400,
+        "iou_positive": 0.5479484022856617,
+        "valid_fraction": 0.4479950262762763,
+        "scope": "static lane support on declared valid mask; optional junction ribbons; not traffic legality",
+        "per_scene": {
+          "m4drive_town04_0_retry": {
+            "confusion_tn_fp_fn_tp": [
+              [
+                192481,
+                222175
+              ],
+              [
+                452084,
+                723337
+              ]
+            ],
+            "valid_cells": 1590077,
+            "iou_positive": 0.5175580067487314,
+            "recall_positive": 0.61538546614362,
+            "all_positive_iou": 0.739222691731281
+          },
+          "town03_spawn45_static": {
+            "confusion_tn_fp_fn_tp": [
+              [
+                67290,
+                15670
+              ],
+              [
+                55849,
+                180648
+              ]
+            ],
+            "valid_cells": 319457,
+            "iou_positive": 0.7163823973795144,
+            "recall_positive": 0.7638490128838844,
+            "all_positive_iou": 0.7403093374069124
+          }
+        },
+        "junction": {
+          "confusion_tn_fp_fn_tp": [
+            [
+              0,
+              0
+            ],
+            [
+              23619,
+              31587
+            ]
+          ],
+          "valid_cells": 55206,
+          "iou_positive": 0.5721660689055538,
+          "recall_positive": 0.5721660689055538,
+          "all_positive_iou": 1.0
+        },
+        "all_positive_prior_iou": 0.7394044829785696
+      }
+    }
+  },
+  "selected_test": {
+    "depth": {
+      "all": {
+        "count": 933098,
+        "mae_m": 3.486612561604261,
+        "abs_rel": 0.27933602068878727,
+        "rmse_m": 8.243408309257031,
+        "delta1": 0.7147116380058687
+      },
+      "1.5-10m": {
+        "count": 661442,
+        "mae_m": 1.03985859381511,
+        "abs_rel": 0.2588186430163543,
+        "rmse_m": 3.066844783844922,
+        "delta1": 0.8465005246113794
+      },
+      "10-30m": {
+        "count": 196076,
+        "mae_m": 5.561973783294249,
+        "abs_rel": 0.30228253862635496,
+        "rmse_m": 7.921703859657225,
+        "delta1": 0.4396407515453192
+      },
+      "30-60m": {
+        "count": 62637,
+        "mae_m": 15.913581144973968,
+        "abs_rel": 0.37023378939156387,
+        "rmse_m": 19.881662913968427,
+        "delta1": 0.31751201366604404
+      },
+      "60-80m": {
+        "count": 12943,
+        "mae_m": 36.94633988111712,
+        "abs_rel": 0.5403441949466515,
+        "rmse_m": 39.42989739534752,
+        "delta1": 0.06907208529707178
+      }
+    },
+    "road": {
+      "confusion_tn_fp_fn_tp": [
+        [
+          256721,
+          69517
+        ],
+        [
+          304983,
+          964223
+        ]
+      ],
+      "valid_cells": 1595444,
+      "total_cells": 4262400,
+      "iou_positive": 0.7202557960085842,
+      "valid_fraction": 0.374306493993994,
+      "scope": "static lane support on declared valid mask; optional junction ribbons; not traffic legality",
+      "per_scene": {
+        "m4drive_town05_0": {
+          "confusion_tn_fp_fn_tp": [
+            [
+              108200,
+              45461
+            ],
+            [
+              173762,
+              686720
+            ]
+          ],
+          "valid_cells": 1014143,
+          "iou_positive": 0.7580167847204515,
+          "recall_positive": 0.7980643406834774,
+          "all_positive_iou": 0.848481920202575
+        },
+        "town10_spawn0_motion": {
+          "confusion_tn_fp_fn_tp": [
+            [
+              148521,
+              24056
+            ],
+            [
+              131221,
+              277503
+            ]
+          ],
+          "valid_cells": 581301,
+          "iou_positive": 0.6412103147095521,
+          "recall_positive": 0.6789496090271185,
+          "all_positive_iou": 0.7031193822133456
+        }
+      },
+      "junction": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            0,
+            0
+          ],
+          [
+            105479,
+            489021
+          ]
+        ],
+        "valid_cells": 594500,
+        "iou_positive": 0.8225752733389403,
+        "recall_positive": 0.8225752733389403,
+        "all_positive_iou": 1.0
+      },
+      "all_positive_prior_iou": 0.7955189903249503
+    }
+  },
+  "selected_legacy_mask_val": {
+    "confusion_tn_fp_fn_tp": [
+      [
+        233758,
+        263858
+      ],
+      [
+        375396,
+        754840
+      ]
+    ],
+    "valid_cells": 1627852,
+    "total_cells": 4262400,
+    "iou_positive": 0.5414555976856654,
+    "valid_fraction": 0.38190972222222225,
+    "scope": "static lane support on declared valid mask; optional junction ribbons; not traffic legality",
+    "per_scene": {
+      "m4drive_town04_0_retry": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            181381,
+            233275
+          ],
+          [
+            357687,
+            606446
+          ]
+        ],
+        "valid_cells": 1378789,
+        "iou_positive": 0.5064656324327214,
+        "recall_positive": 0.6290065789678395,
+        "all_positive_iou": 0.6992607280736937
+      },
+      "town03_spawn45_static": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            52377,
+            30583
+          ],
+          [
+            17709,
+            148394
+          ]
+        ],
+        "valid_cells": 249063,
+        "iou_positive": 0.7544715943178467,
+        "recall_positive": 0.8933854295226455,
+        "all_positive_iou": 0.6669115846191526
+      }
+    },
+    "junction": {
+      "confusion_tn_fp_fn_tp": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "valid_cells": 0,
+      "iou_positive": null,
+      "recall_positive": null,
+      "all_positive_iou": null
+    }
+  },
+  "road_position_priors": {
+    "point": {
+      "schema_version": "hsd-static-drivable-prior-v1",
+      "split": "val",
+      "samples": 222,
+      "prior": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            201237,
+            296379
+          ],
+          [
+            307955,
+            1103963
+          ]
+        ],
+        "valid_cells": 1909534,
+        "iou_positive": 0.6462359882385791,
+        "all_positive_iou": 0.7394044829785696
+      },
+      "prior_per_scene": {
+        "m4drive_town04_0_retry": {
+          "confusion_tn_fp_fn_tp": [
+            [
+              149204,
+              265452
+            ],
+            [
+              288923,
+              886498
+            ]
+          ],
+          "valid_cells": 1590077,
+          "iou_positive": 0.6152506154255094,
+          "all_positive_iou": 0.739222691731281
+        },
+        "town03_spawn45_static": {
+          "confusion_tn_fp_fn_tp": [
+            [
+              52033,
+              30927
+            ],
+            [
+              19032,
+              217465
+            ]
+          ],
+          "valid_cells": 319457,
+          "iou_positive": 0.813184306569343,
+          "all_positive_iou": 0.7403093374069124
+        }
+      },
+      "model": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            233758,
+            263858
+          ],
+          [
+            467396,
+            944522
+          ]
+        ],
+        "valid_cells": 1909534,
+        "total_cells": 4262400,
+        "iou_positive": 0.5636326096089215,
+        "valid_fraction": 0.4479950262762763,
+        "scope": "static lane support on declared valid mask; optional junction ribbons; not traffic legality",
+        "per_scene": {
+          "m4drive_town04_0_retry": {
+            "confusion_tn_fp_fn_tp": [
+              [
+                181381,
+                233275
+              ],
+              [
+                438064,
+                737357
+              ]
+            ],
+            "valid_cells": 1590077,
+            "iou_positive": 0.5234323090290595,
+            "recall_positive": 0.6273131073887569,
+            "all_positive_iou": 0.739222691731281
+          },
+          "town03_spawn45_static": {
+            "confusion_tn_fp_fn_tp": [
+              [
+                52377,
+                30583
+              ],
+              [
+                29332,
+                207165
+              ]
+            ],
+            "valid_cells": 319457,
+            "iou_positive": 0.7756664669761869,
+            "recall_positive": 0.8759730567406775,
+            "all_positive_iou": 0.7403093374069124
+          }
+        },
+        "junction": {
+          "confusion_tn_fp_fn_tp": [
+            [
+              0,
+              0
+            ],
+            [
+              17546,
+              37660
+            ]
+          ],
+          "valid_cells": 55206,
+          "iou_positive": 0.6821722276564142,
+          "recall_positive": 0.6821722276564142,
+          "all_positive_iou": 1.0
+        },
+        "all_positive_prior_iou": 0.7394044829785696
+      },
+      "model_beats_location_prior": false,
+      "unseen_training_cells": 873,
+      "training_positive_fraction": 0.6852079965912012,
+      "train_samples": 299,
+      "index_sha256": "eabfc2024379e12e4a60740bfeca97287849c82d9a6f91c288691174d80dc944",
+      "model_metrics_sha256": "6aa31d997a8cf2837a4a4ccd2a3b9109872c731d0b97153b65c544f622b9cc72",
+      "scope": "Fixed BEV-cell positive frequency from actual training subset only; unseen cells fall back to global train frequency; no RGB; identical evaluation masks"
+    },
+    "context": {
+      "schema_version": "hsd-static-drivable-prior-v1",
+      "split": "val",
+      "samples": 222,
+      "prior": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            201237,
+            296379
+          ],
+          [
+            307955,
+            1103963
+          ]
+        ],
+        "valid_cells": 1909534,
+        "iou_positive": 0.6462359882385791,
+        "all_positive_iou": 0.7394044829785696
+      },
+      "prior_per_scene": {
+        "m4drive_town04_0_retry": {
+          "confusion_tn_fp_fn_tp": [
+            [
+              149204,
+              265452
+            ],
+            [
+              288923,
+              886498
+            ]
+          ],
+          "valid_cells": 1590077,
+          "iou_positive": 0.6152506154255094,
+          "all_positive_iou": 0.739222691731281
+        },
+        "town03_spawn45_static": {
+          "confusion_tn_fp_fn_tp": [
+            [
+              52033,
+              30927
+            ],
+            [
+              19032,
+              217465
+            ]
+          ],
+          "valid_cells": 319457,
+          "iou_positive": 0.813184306569343,
+          "all_positive_iou": 0.7403093374069124
+        }
+      },
+      "model": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            259771,
+            237845
+          ],
+          [
+            507933,
+            903985
+          ]
+        ],
+        "valid_cells": 1909534,
+        "total_cells": 4262400,
+        "iou_positive": 0.5479484022856617,
+        "valid_fraction": 0.4479950262762763,
+        "scope": "static lane support on declared valid mask; optional junction ribbons; not traffic legality",
+        "per_scene": {
+          "m4drive_town04_0_retry": {
+            "confusion_tn_fp_fn_tp": [
+              [
+                192481,
+                222175
+              ],
+              [
+                452084,
+                723337
+              ]
+            ],
+            "valid_cells": 1590077,
+            "iou_positive": 0.5175580067487314,
+            "recall_positive": 0.61538546614362,
+            "all_positive_iou": 0.739222691731281
+          },
+          "town03_spawn45_static": {
+            "confusion_tn_fp_fn_tp": [
+              [
+                67290,
+                15670
+              ],
+              [
+                55849,
+                180648
+              ]
+            ],
+            "valid_cells": 319457,
+            "iou_positive": 0.7163823973795144,
+            "recall_positive": 0.7638490128838844,
+            "all_positive_iou": 0.7403093374069124
+          }
+        },
+        "junction": {
+          "confusion_tn_fp_fn_tp": [
+            [
+              0,
+              0
+            ],
+            [
+              23619,
+              31587
+            ]
+          ],
+          "valid_cells": 55206,
+          "iou_positive": 0.5721660689055538,
+          "recall_positive": 0.5721660689055538,
+          "all_positive_iou": 1.0
+        },
+        "all_positive_prior_iou": 0.7394044829785696
+      },
+      "model_beats_location_prior": false,
+      "unseen_training_cells": 873,
+      "training_positive_fraction": 0.6852079965912012,
+      "train_samples": 299,
+      "index_sha256": "eabfc2024379e12e4a60740bfeca97287849c82d9a6f91c288691174d80dc944",
+      "model_metrics_sha256": "fda949bb8f6ee3784c8cdcc655546b2dc7fff116dee97ec6701714830cee8668",
+      "scope": "Fixed BEV-cell positive frequency from actual training subset only; unseen cells fall back to global train frequency; no RGB; identical evaluation masks"
+    }
+  },
+  "road_position_prior_test": {
+    "schema_version": "hsd-static-drivable-prior-v1",
+    "split": "test",
+    "samples": 222,
+    "prior": {
+      "confusion_tn_fp_fn_tp": [
+        [
+          91755,
+          234483
+        ],
+        [
+          371397,
+          897809
+        ]
+      ],
+      "valid_cells": 1595444,
+      "iou_positive": 0.5970709368759098,
+      "all_positive_iou": 0.7955189903249503
+    },
+    "prior_per_scene": {
+      "m4drive_town05_0": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            61999,
+            91662
+          ],
+          [
+            226183,
+            634299
+          ]
+        ],
+        "valid_cells": 1014143,
+        "iou_positive": 0.6661796955082424,
+        "all_positive_iou": 0.848481920202575
+      },
+      "town10_spawn0_motion": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            29756,
+            142821
+          ],
+          [
+            145214,
+            263510
+          ]
+        ],
+        "valid_cells": 581301,
+        "iou_positive": 0.4777669999728037,
+        "all_positive_iou": 0.7031193822133456
+      }
+    },
+    "model": {
+      "confusion_tn_fp_fn_tp": [
+        [
+          256721,
+          69517
+        ],
+        [
+          304983,
+          964223
+        ]
+      ],
+      "valid_cells": 1595444,
+      "total_cells": 4262400,
+      "iou_positive": 0.7202557960085842,
+      "valid_fraction": 0.374306493993994,
+      "scope": "static lane support on declared valid mask; optional junction ribbons; not traffic legality",
+      "per_scene": {
+        "m4drive_town05_0": {
+          "confusion_tn_fp_fn_tp": [
+            [
+              108200,
+              45461
+            ],
+            [
+              173762,
+              686720
+            ]
+          ],
+          "valid_cells": 1014143,
+          "iou_positive": 0.7580167847204515,
+          "recall_positive": 0.7980643406834774,
+          "all_positive_iou": 0.848481920202575
+        },
+        "town10_spawn0_motion": {
+          "confusion_tn_fp_fn_tp": [
+            [
+              148521,
+              24056
+            ],
+            [
+              131221,
+              277503
+            ]
+          ],
+          "valid_cells": 581301,
+          "iou_positive": 0.6412103147095521,
+          "recall_positive": 0.6789496090271185,
+          "all_positive_iou": 0.7031193822133456
+        }
+      },
+      "junction": {
+        "confusion_tn_fp_fn_tp": [
+          [
+            0,
+            0
+          ],
+          [
+            105479,
+            489021
+          ]
+        ],
+        "valid_cells": 594500,
+        "iou_positive": 0.8225752733389403,
+        "recall_positive": 0.8225752733389403,
+        "all_positive_iou": 1.0
+      },
+      "all_positive_prior_iou": 0.7955189903249503
+    },
+    "model_beats_location_prior": true,
+    "unseen_training_cells": 873,
+    "training_positive_fraction": 0.6852079965912012,
+    "train_samples": 299,
+    "index_sha256": "eabfc2024379e12e4a60740bfeca97287849c82d9a6f91c288691174d80dc944",
+    "model_metrics_sha256": "8a84b7fc377238653a5aa772edbd2382ae416a4b48c62c3f5b5032e4f1b09af7",
+    "scope": "Fixed BEV-cell positive frequency from actual training subset only; unseen cells fall back to global train frequency; no RGB; identical evaluation masks"
+  },
+  "signals": {
+    "town01": {
+      "schema_version": "hsd-signal-audit-v1",
+      "passed": true,
+      "checks": {
+        "recording_integrity": true,
+        "red_and_green_valid": true,
+        "yellow_present_masked": true,
+        "transition_guard_exercised": true,
+        "every_frame_has_rules": true
+      },
+      "counts": {
+        "Red": 21,
+        "valid": 26,
+        "invalid": 15,
+        "valid_Red": 19,
+        "Yellow": 10,
+        "Green": 10,
+        "valid_Green": 7
+      },
+      "rows": [
+        {
+          "frame_id": 29641,
+          "state": "Red",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29643,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29645,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29647,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29649,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29651,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29653,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29655,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29657,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29659,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29661,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29663,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29665,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29667,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29669,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29671,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29673,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29675,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29677,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29679,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29681,
+          "state": "Green",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29683,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29685,
+          "state": "Green",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29687,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29689,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29691,
+          "state": "Green",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29693,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29695,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29697,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29699,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29701,
+          "state": "Red",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29703,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29705,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29707,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29709,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29711,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29713,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29715,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29717,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29719,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999999999629972
+        },
+        {
+          "frame_id": 29721,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999999999629972
+        }
+      ],
+      "integrity": {
+        "scene": "/root/gpufree-data/hs-drive-data/raw/m4signal_v2_town01",
+        "frames_verified": 41,
+        "capture_duration_s": 4.000000059604645,
+        "first_frame": 29641,
+        "last_frame": 29721,
+        "interval_completeness": 1.0,
+        "cadence_gaps": 0,
+        "rgb_nonempty_nonconstant": true,
+        "synchronization": {
+          "complete": 41,
+          "subsampled_sensor": 480
+        },
+        "recording_integrity_checks_passed": true,
+        "m1_automated_checks_passed": false,
+        "m2_scene_alignment_verified": false,
+        "remaining_manual_gates": [
+          "camera body occlusion",
+          "box/depth alignment",
+          "known-plane Z/range experiment"
+        ]
+      },
+      "manifest_sha256": "9dd9a631612f47764ce57edd641d9a4083de43f52743bebcef2caabe5a2dcc1b",
+      "scope": "Controlled stationary diagnostic; metadata/frame alignment and rule truth table. Not learned traffic perception or driving policy; painted-line alignment not asserted."
+    },
+    "town04": {
+      "schema_version": "hsd-signal-audit-v1",
+      "passed": true,
+      "checks": {
+        "recording_integrity": true,
+        "red_and_green_valid": true,
+        "yellow_present_masked": true,
+        "transition_guard_exercised": true,
+        "every_frame_has_rules": true
+      },
+      "counts": {
+        "Red": 21,
+        "valid": 27,
+        "invalid": 14,
+        "valid_Red": 19,
+        "Yellow": 10,
+        "Green": 10,
+        "valid_Green": 8
+      },
+      "rows": [
+        {
+          "frame_id": 29832,
+          "state": "Red",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29834,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29836,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29838,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29840,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29842,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29844,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29846,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29848,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29850,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29852,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29854,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29856,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29858,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29860,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29862,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29864,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29866,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29868,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29870,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29872,
+          "state": "Green",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29874,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29876,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29878,
+          "state": "Green",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29880,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29882,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29884,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29886,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29888,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29890,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29892,
+          "state": "Red",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29894,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29896,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29898,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29900,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29902,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29904,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29906,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29908,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29910,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999996594277214
+        },
+        {
+          "frame_id": 29912,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999996594277214
+        }
+      ],
+      "integrity": {
+        "scene": "/root/gpufree-data/hs-drive-data/raw/m4signal_v2_town04",
+        "frames_verified": 41,
+        "capture_duration_s": 4.000000059604645,
+        "first_frame": 29832,
+        "last_frame": 29912,
+        "interval_completeness": 1.0,
+        "cadence_gaps": 0,
+        "rgb_nonempty_nonconstant": true,
+        "synchronization": {
+          "complete": 41,
+          "subsampled_sensor": 480
+        },
+        "recording_integrity_checks_passed": true,
+        "m1_automated_checks_passed": false,
+        "m2_scene_alignment_verified": false,
+        "remaining_manual_gates": [
+          "camera body occlusion",
+          "box/depth alignment",
+          "known-plane Z/range experiment"
+        ]
+      },
+      "manifest_sha256": "9e18ca235915991e9e7455bc29563705672fc6749f5f7b8c3eb595b8a85d6252",
+      "scope": "Controlled stationary diagnostic; metadata/frame alignment and rule truth table. Not learned traffic perception or driving policy; painted-line alignment not asserted."
+    },
+    "town02": {
+      "schema_version": "hsd-signal-audit-v1",
+      "passed": true,
+      "checks": {
+        "recording_integrity": true,
+        "red_and_green_valid": true,
+        "yellow_present_masked": true,
+        "transition_guard_exercised": true,
+        "every_frame_has_rules": true
+      },
+      "counts": {
+        "Red": 21,
+        "valid": 28,
+        "invalid": 13,
+        "valid_Red": 19,
+        "Yellow": 10,
+        "Green": 10,
+        "valid_Green": 9
+      },
+      "rows": [
+        {
+          "frame_id": 56409,
+          "state": "Red",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56411,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56413,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56415,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56417,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56419,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56421,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56423,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56425,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56427,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56429,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56431,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56433,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56435,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56437,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56439,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56441,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56443,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56445,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56447,
+          "state": "Yellow",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56449,
+          "state": "Green",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56451,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56453,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56455,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56457,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56459,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56461,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56463,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56465,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56467,
+          "state": "Green",
+          "valid": true,
+          "stop_required": 0,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56469,
+          "state": "Red",
+          "valid": false,
+          "stop_required": -1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56471,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56473,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56475,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56477,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56479,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56481,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56483,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56485,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56487,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999971621880977
+        },
+        {
+          "frame_id": 56489,
+          "state": "Red",
+          "valid": true,
+          "stop_required": 1,
+          "distance_m": 11.999971621880977
+        }
+      ],
+      "integrity": {
+        "scene": "/root/gpufree-data/hs-drive-data/raw/m4signal_v2_town02",
+        "frames_verified": 41,
+        "capture_duration_s": 4.000000059604645,
+        "first_frame": 56409,
+        "last_frame": 56489,
+        "interval_completeness": 1.0,
+        "cadence_gaps": 0,
+        "rgb_nonempty_nonconstant": true,
+        "synchronization": {
+          "complete": 41,
+          "subsampled_sensor": 480
+        },
+        "recording_integrity_checks_passed": true,
+        "m1_automated_checks_passed": false,
+        "m2_scene_alignment_verified": false,
+        "remaining_manual_gates": [
+          "camera body occlusion",
+          "box/depth alignment",
+          "known-plane Z/range experiment"
+        ]
+      },
+      "manifest_sha256": "93386f846a7bff48749dc565f9adca3f0e47e29dd8e1ecfdcb14d23b7482ed7c",
+      "scope": "Controlled stationary diagnostic; metadata/frame alignment and rule truth table. Not learned traffic perception or driving policy; painted-line alignment not asserted."
+    }
+  },
+  "gpu": {
+    "m4_far_balanced": {
+      "peak_allocated_gib": 0.7325711250305176,
+      "peak_reserved_gib": 0.81640625,
+      "wall_s": 395.0856864005327,
+      "best_step": 800
+    },
+    "m4_road_point": {
+      "peak_allocated_gib": 0.7327518463134766,
+      "peak_reserved_gib": 0.81640625,
+      "wall_s": 398.0045622214675,
+      "best_step": 1000
+    },
+    "m4_road_context": {
+      "peak_allocated_gib": 0.775092601776123,
+      "peak_reserved_gib": 0.818359375,
+      "wall_s": 397.65158496424556,
+      "best_step": 800
+    }
+  },
+  "full_m4_closed": false,
+  "road_schema": "v2 junction Driving support, not full traffic permission",
+  "remaining": [
+    "Far depth still inaccurate; near/far tradeoff unresolved",
+    "Drivable unseen environments and repeated seeds",
+    "Signal visibility/occlusion and image ROI supervision absent; rule validity is not visual visibility",
+    "Signal perception network not trained",
+    "Yellow decisions/route permission/yield/stop-sign compliance absent",
+    "Road direction supervision generated but no dedicated learned direction head"
+  ],
+  "evidence": {
+    "reports/m4_road_selection.json": "d1a7230a0fc667a1e6f472c467b8b6e49acc1c549b5d37d83f724b2cb0a93028",
+    "reports/m4_road_overlay_exact_audit.json": "1d478c062e882121a1425c01db4c0681b06c5ce406f8c01ffa604eb32d418e63",
+    "reports/m4_signal_loader_audit.json": "16ab286dc080a9bbaad24816d3aef97f3bba9b01ae17f1ce24457bc7f61c2e50",
+    "logs/m4_rules_gpu_tests.log": "68eb7c029ac862bedca32388552344b752c21027eb94640eb11aa60e95324f7e",
+    "logs/m4_rules_sim_tests.log": "ae716cff55752a250393893e5e20df7328753c2d86a931f7c2232f8bd3a8f3b2"
+  }
+}
