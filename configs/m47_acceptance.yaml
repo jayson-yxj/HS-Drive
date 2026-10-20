@@ -1,0 +1,27 @@
+schema: hsd-m47-gates-v1
+scope: Criteria recorded after diagnostic pilots, before final matched validation. No threshold optimized to force passing.
+occupancy:
+  unexplained_conflicts: 0
+  forbid_whole_voxel_free_claim_from_finite_rays: true
+  independent_unseen_scene_required: true
+  collision_geometry_is_not_render_mesh: true
+stopping:
+  desired_bumper_gap_m: 3.0
+  final_gap_error_abs_m: 0.5
+  min_gap_m: 2.0
+  collision_count: 0
+  lane_invasions: 0
+  normal_max_raw_decel_mps2: 1.8
+  normal_moving_jerk_p95_mps3: 2.5
+  normal_jerk_peak_mps3: 5.0
+  hold_entry_speed_mps: 0.12
+  reverse_speed_limit_mps: 0.05
+  low_speed_motion_limit_s: 10.0
+  emergency_exempt_from_comfort: true
+latency:
+  cycle_ms: 50.0
+  planner_safety_p95_ms: 50.0
+  trajectory_max_age_s: 0.2
+training:
+  formal_m5_requires_label_quality_pass: true
+  tiny_overfit_requires_supervision_contract_pass: true

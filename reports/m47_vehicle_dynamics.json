@@ -1,0 +1,1324 @@
+{
+  "kind": "actual_carla_open_loop",
+  "carla": "0.9.15",
+  "map": "Town03",
+  "vehicle": "vehicle.tesla.model3",
+  "dt": 0.05,
+  "physics": {
+    "max_rpm": 15000.0,
+    "moi": 1.0,
+    "damping_rate_full_throttle": 0.15000000596046448,
+    "damping_rate_zero_throttle_clutch_engaged": 2.0,
+    "damping_rate_zero_throttle_clutch_disengaged": 0.3499999940395355,
+    "use_gear_autobox": true,
+    "gear_switch_time": 0.0,
+    "clutch_strength": 10.0,
+    "final_ratio": 9.0,
+    "mass": 1845.0,
+    "drag_coefficient": 0.15000000596046448,
+    "use_sweep_wheel_collision": false,
+    "center_of_mass": [
+      0.44999998807907104,
+      0.0,
+      -0.29999998211860657
+    ],
+    "torque_curve": [
+      [
+        -9.310943603515625,
+        743.0
+      ],
+      [
+        9000.0,
+        743.0
+      ],
+      [
+        9500.0,
+        660.0
+      ],
+      [
+        10400.0,
+        605.0
+      ],
+      [
+        12500.0,
+        528.0
+      ],
+      [
+        15000.0,
+        502.0
+      ]
+    ],
+    "steering_curve": [
+      [
+        0.0,
+        1.0
+      ],
+      [
+        20.0,
+        0.8999999761581421
+      ],
+      [
+        60.0,
+        0.800000011920929
+      ],
+      [
+        120.0,
+        0.699999988079071
+      ]
+    ],
+    "forward_gears": [
+      {
+        "ratio": 1.0,
+        "down_ratio": 0.0,
+        "up_ratio": 0.0
+      }
+    ],
+    "wheels": [
+      {
+        "tire_friction": 3.5,
+        "damping_rate": 0.25,
+        "max_steer_angle": 69.99999237060547,
+        "radius": 37.0,
+        "max_brake_torque": 700.0,
+        "max_handbrake_torque": 0.0,
+        "lat_stiff_max_load": 3.0,
+        "lat_stiff_value": 20.0,
+        "long_stiff_value": 3000.0
+      },
+      {
+        "tire_friction": 3.5,
+        "damping_rate": 0.25,
+        "max_steer_angle": 69.99999237060547,
+        "radius": 37.0,
+        "max_brake_torque": 700.0,
+        "max_handbrake_torque": 0.0,
+        "lat_stiff_max_load": 3.0,
+        "lat_stiff_value": 20.0,
+        "long_stiff_value": 3000.0
+      },
+      {
+        "tire_friction": 3.5,
+        "damping_rate": 0.25,
+        "max_steer_angle": 0.0,
+        "radius": 37.0,
+        "max_brake_torque": 700.0,
+        "max_handbrake_torque": 1400.0,
+        "lat_stiff_max_load": 3.0,
+        "lat_stiff_value": 20.0,
+        "long_stiff_value": 3000.0
+      },
+      {
+        "tire_friction": 3.5,
+        "damping_rate": 0.25,
+        "max_steer_angle": 0.0,
+        "radius": 37.0,
+        "max_brake_torque": 700.0,
+        "max_handbrake_torque": 1400.0,
+        "lat_stiff_max_load": 3.0,
+        "lat_stiff_value": 20.0,
+        "long_stiff_value": 3000.0
+      }
+    ]
+  },
+  "physics_sha256": "015a2717e986b8f908ee0a981ce8c1857dfdece21e750f473c9b4c887f166826",
+  "results": [
+    {
+      "case": {
+        "name": "coast_v0.5",
+        "v": 0.5,
+        "kind": "coast",
+        "duration": 8.0
+      },
+      "initial_speed": 0.44329881913561897,
+      "final_speed": -0.07484602996568936,
+      "metrics": {
+        "max_decel_raw": 0.6267749508246079,
+        "jerk_peak_raw": 19.56589934845901,
+        "jerk_p95_moving": 13.333216316170535,
+        "jerk_p95_all": 11.60171623553453,
+        "max_decel_250ms": 0.3939055495866508,
+        "jerk_p95_250ms": 2.4576385306689486,
+        "min_signed_speed": -0.089209748111645,
+        "reverse_ticks": 107,
+        "low_speed_moving_seconds": 1.85,
+        "api_accel_vs_velocity_derivative_mae": 5.62712703149877e-06
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/coast_v0.5.jsonl",
+      "sha256": "b636ee6ebb0c9ee4eed9ea27ba93005b52dee40412ff4c6ee50f7122fb6e56cd"
+    },
+    {
+      "case": {
+        "name": "brake0.005_v0.5",
+        "v": 0.5,
+        "kind": "brake",
+        "brake": 0.005,
+        "duration": 5.0
+      },
+      "initial_speed": 0.44329881913561897,
+      "final_speed": -4.410820234811639e-05,
+      "metrics": {
+        "max_decel_raw": 8.863277075196248,
+        "jerk_peak_raw": 177.1981712264331,
+        "jerk_p95_moving": 177.1981712264331,
+        "jerk_p95_all": 0.01763413945683408,
+        "max_decel_250ms": 1.7735368269605585,
+        "jerk_p95_250ms": 0.0035291529052835805,
+        "min_signed_speed": -9.120646722763224e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.05,
+        "api_accel_vs_velocity_derivative_mae": 3.600678565753998e-07
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.005_v0.5.jsonl",
+      "sha256": "9a523e42b956925497643c4f6975fe6022ad6d46064c38a6873d97a7a829fb15"
+    },
+    {
+      "case": {
+        "name": "brake0.02_v0.5",
+        "v": 0.5,
+        "kind": "brake",
+        "brake": 0.02,
+        "duration": 5.0
+      },
+      "initial_speed": 0.3943628533677301,
+      "final_speed": -4.4175644177534085e-05,
+      "metrics": {
+        "max_decel_raw": 7.884451715916155,
+        "jerk_peak_raw": 157.61896917637543,
+        "jerk_p95_moving": 157.61896917637543,
+        "jerk_p95_all": 0.017706574505188824,
+        "max_decel_250ms": 1.5778017101927602,
+        "jerk_p95_250ms": 0.003533782658909436,
+        "min_signed_speed": -9.380459073127868e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.05,
+        "api_accel_vs_velocity_derivative_mae": 9.796969118639348e-08
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.02_v0.5.jsonl",
+      "sha256": "0b5e1fc3060ef010812b414551dccb6ba979e8afc984e11a4564f49b10befebb"
+    },
+    {
+      "case": {
+        "name": "brake0.05_v0.5",
+        "v": 0.5,
+        "kind": "brake",
+        "brake": 0.05,
+        "duration": 5.0
+      },
+      "initial_speed": 0.44329881913561897,
+      "final_speed": -4.410820234811639e-05,
+      "metrics": {
+        "max_decel_raw": 8.863277075196248,
+        "jerk_peak_raw": 177.1981712264331,
+        "jerk_p95_moving": 177.1981712264331,
+        "jerk_p95_all": 0.01763413945683408,
+        "max_decel_250ms": 1.7735368269605585,
+        "jerk_p95_250ms": 0.0035291529052835805,
+        "min_signed_speed": -9.120646722763224e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.05,
+        "api_accel_vs_velocity_derivative_mae": 3.600678565753998e-07
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.05_v0.5.jsonl",
+      "sha256": "52138810caaa74f4392c0e35140692d3d814d8608fd1005ae767c14602db3785"
+    },
+    {
+      "case": {
+        "name": "brake0.1_v0.5",
+        "v": 0.5,
+        "kind": "brake",
+        "brake": 0.1,
+        "duration": 5.0
+      },
+      "initial_speed": 0.44329881913561897,
+      "final_speed": -4.410820234811639e-05,
+      "metrics": {
+        "max_decel_raw": 8.863277075196248,
+        "jerk_peak_raw": 177.1981712264331,
+        "jerk_p95_moving": 177.1981712264331,
+        "jerk_p95_all": 0.01763413945683408,
+        "max_decel_250ms": 1.7735368269605585,
+        "jerk_p95_250ms": 0.0035291529052835805,
+        "min_signed_speed": -9.120646722763224e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.05,
+        "api_accel_vs_velocity_derivative_mae": 3.600678565753998e-07
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.1_v0.5.jsonl",
+      "sha256": "f778712a153c7d6209fa6e3b0099bd9ac492622e0c9782aba2d4543f8ebc7594"
+    },
+    {
+      "case": {
+        "name": "brake0.2_v0.5",
+        "v": 0.5,
+        "kind": "brake",
+        "brake": 0.2,
+        "duration": 5.0
+      },
+      "initial_speed": 0.3943628533677301,
+      "final_speed": -4.4175644177534085e-05,
+      "metrics": {
+        "max_decel_raw": 7.884451715916155,
+        "jerk_peak_raw": 157.61896917637543,
+        "jerk_p95_moving": 157.61896917637543,
+        "jerk_p95_all": 0.017706574505188824,
+        "max_decel_250ms": 1.5778017101927602,
+        "jerk_p95_250ms": 0.003533782658909436,
+        "min_signed_speed": -9.380459073127868e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.05,
+        "api_accel_vs_velocity_derivative_mae": 9.796969118639348e-08
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.2_v0.5.jsonl",
+      "sha256": "8fbd08f021f5bb0553e3adc9a840057fb8464a9998855ed790aec18038fa6411"
+    },
+    {
+      "case": {
+        "name": "brake0.4_v0.5",
+        "v": 0.5,
+        "kind": "brake",
+        "brake": 0.4,
+        "duration": 5.0
+      },
+      "initial_speed": 0.44329881913561897,
+      "final_speed": -4.410820234811639e-05,
+      "metrics": {
+        "max_decel_raw": 8.863277075196248,
+        "jerk_peak_raw": 177.1981712264331,
+        "jerk_p95_moving": 177.1981712264331,
+        "jerk_p95_all": 0.01763413945683408,
+        "max_decel_250ms": 1.7735368269605585,
+        "jerk_p95_250ms": 0.0035291529052835805,
+        "min_signed_speed": -9.120646722763224e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.05,
+        "api_accel_vs_velocity_derivative_mae": 3.600678565753998e-07
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.4_v0.5.jsonl",
+      "sha256": "79d626da5d9c5a7aaad2945b8b807394ff28546557d4c80832444ea3772d80f6"
+    },
+    {
+      "case": {
+        "name": "brake1.0_v0.5",
+        "v": 0.5,
+        "kind": "brake",
+        "brake": 1.0,
+        "duration": 5.0
+      },
+      "initial_speed": 0.3943628533677301,
+      "final_speed": -4.4175644177534085e-05,
+      "metrics": {
+        "max_decel_raw": 7.884451715916155,
+        "jerk_peak_raw": 157.61896917637543,
+        "jerk_p95_moving": 157.61896917637543,
+        "jerk_p95_all": 0.017706574505188824,
+        "max_decel_250ms": 1.5778017101927602,
+        "jerk_p95_250ms": 0.003533782658909436,
+        "min_signed_speed": -9.380459073127868e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.05,
+        "api_accel_vs_velocity_derivative_mae": 9.796969118639348e-08
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake1.0_v0.5.jsonl",
+      "sha256": "6c53697bc0749199f8db98b2a9cbc46b3cc22cc974b3d019c077d86ea248875b"
+    },
+    {
+      "case": {
+        "name": "coast_v1.0",
+        "v": 1.0,
+        "kind": "coast",
+        "duration": 8.0
+      },
+      "initial_speed": 0.8947183258061981,
+      "final_speed": -0.09965277049379707,
+      "metrics": {
+        "max_decel_raw": 0.6251371902336252,
+        "jerk_peak_raw": 32.59390283236074,
+        "jerk_p95_moving": 5.649381810132462,
+        "jerk_p95_all": 4.696388197236745,
+        "max_decel_250ms": 0.5310081077024773,
+        "jerk_p95_250ms": 1.0885845394149236,
+        "min_signed_speed": -0.09965301260606986,
+        "reverse_ticks": 93,
+        "low_speed_moving_seconds": 2.7,
+        "api_accel_vs_velocity_derivative_mae": 1.2146883510611307e-05
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/coast_v1.0.jsonl",
+      "sha256": "d5570c7421df7c56c248e72c53aa9ea7bf1246d666ea39c4957df071400028b6"
+    },
+    {
+      "case": {
+        "name": "brake0.02_v1.0",
+        "v": 1.0,
+        "kind": "brake",
+        "brake": 0.02,
+        "duration": 5.0
+      },
+      "initial_speed": 0.8624099706937255,
+      "final_speed": -4.497121394353046e-05,
+      "metrics": {
+        "max_decel_raw": 18.492537129008046,
+        "jerk_peak_raw": 394.9757589091441,
+        "jerk_p95_moving": 393.70714899772537,
+        "jerk_p95_all": 0.036670671345313086,
+        "max_decel_250ms": 3.7014927317687065,
+        "jerk_p95_250ms": 0.007859719096332131,
+        "min_signed_speed": -0.00016505426026371003,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.1,
+        "api_accel_vs_velocity_derivative_mae": 3.295346042681122e-06
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.02_v1.0.jsonl",
+      "sha256": "3e338510c82bd518ef587547f507a3bf2fe9e0072d9d9a60c5e4ef39444fa10f"
+    },
+    {
+      "case": {
+        "name": "brake0.1_v1.0",
+        "v": 1.0,
+        "kind": "brake",
+        "brake": 0.1,
+        "duration": 5.0
+      },
+      "initial_speed": 0.8947183258061981,
+      "final_speed": -4.501287536150473e-05,
+      "metrics": {
+        "max_decel_raw": 17.77184071773694,
+        "jerk_peak_raw": 352.9969473914297,
+        "jerk_p95_moving": 352.9969473914297,
+        "jerk_p95_all": 0.019932154678977708,
+        "max_decel_250ms": 3.579489697678397,
+        "jerk_p95_250ms": 0.003631999858695691,
+        "min_signed_speed": -0.0001651624258237631,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.05,
+        "api_accel_vs_velocity_derivative_mae": 2.809068013708822e-07
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.1_v1.0.jsonl",
+      "sha256": "58e5d99c94f67504054c56eb10865cd603b55cdf3d55d1b36980082f575683ae"
+    },
+    {
+      "case": {
+        "name": "brake1.0_v1.0",
+        "v": 1.0,
+        "kind": "brake",
+        "brake": 1.0,
+        "duration": 5.0
+      },
+      "initial_speed": 0.8947183258061981,
+      "final_speed": -4.501287536150473e-05,
+      "metrics": {
+        "max_decel_raw": 17.77184071773694,
+        "jerk_peak_raw": 352.9969473914297,
+        "jerk_p95_moving": 352.9969473914297,
+        "jerk_p95_all": 0.019932154678977708,
+        "max_decel_250ms": 3.579489697678397,
+        "jerk_p95_250ms": 0.003631999858695691,
+        "min_signed_speed": -0.0001651624258237631,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.05,
+        "api_accel_vs_velocity_derivative_mae": 2.809068013708822e-07
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake1.0_v1.0.jsonl",
+      "sha256": "cf9e84417ee98d4a9552d19f94ebf0c09e70eb6380ea2080ba1741cc1599cda8"
+    },
+    {
+      "case": {
+        "name": "coast_v1.5",
+        "v": 1.5,
+        "kind": "coast",
+        "duration": 8.0
+      },
+      "initial_speed": 1.4248758105108636,
+      "final_speed": -0.10684579952792367,
+      "metrics": {
+        "max_decel_raw": 0.7128619284711903,
+        "jerk_peak_raw": 25.804481611603308,
+        "jerk_p95_moving": 2.1967878264558043,
+        "jerk_p95_all": 0.39335387949477524,
+        "max_decel_250ms": 0.7064636470727563,
+        "jerk_p95_250ms": 0.2986796431083015,
+        "min_signed_speed": -0.10684579952792367,
+        "reverse_ticks": 84,
+        "low_speed_moving_seconds": 3.2,
+        "api_accel_vs_velocity_derivative_mae": 1.0979078741172316e-05
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/coast_v1.5.jsonl",
+      "sha256": "e4d3bda3574bea94e54e0b96465cd22f97d58697fa10ba87449310a2ad52316a"
+    },
+    {
+      "case": {
+        "name": "brake0.005_v1.5",
+        "v": 1.5,
+        "kind": "brake",
+        "brake": 0.005,
+        "duration": 5.0
+      },
+      "initial_speed": 1.40606048395223,
+      "final_speed": -4.957070045384603e-05,
+      "metrics": {
+        "max_decel_raw": 17.566714206775995,
+        "jerk_peak_raw": 210.88270171361935,
+        "jerk_p95_moving": 207.3546251284782,
+        "jerk_p95_all": 0.03244207009666035,
+        "max_decel_250ms": 5.62504768900237,
+        "jerk_p95_250ms": 0.003969464189883203,
+        "min_signed_speed": -0.0002073025763358513,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.1,
+        "api_accel_vs_velocity_derivative_mae": 1.6498914986971434e-06
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.005_v1.5.jsonl",
+      "sha256": "1fd79620f3cbf0dc62e76a60e10ea0899c45aaf0152bd3b0b2fed5a9d60eb86a"
+    },
+    {
+      "case": {
+        "name": "brake0.02_v1.5",
+        "v": 1.5,
+        "kind": "brake",
+        "brake": 0.02,
+        "duration": 5.0
+      },
+      "initial_speed": 1.4248758105108636,
+      "final_speed": -4.399826818495585e-05,
+      "metrics": {
+        "max_decel_raw": 17.55852707592015,
+        "jerk_peak_raw": 218.51087112302864,
+        "jerk_p95_moving": 214.2100874770821,
+        "jerk_p95_all": 0.03519654860305508,
+        "max_decel_250ms": 5.700444628757048,
+        "jerk_p95_250ms": 0.003695929872316231,
+        "min_signed_speed": -0.0002427055118760554,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.1,
+        "api_accel_vs_velocity_derivative_mae": 1.0735708146161821e-06
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.02_v1.5.jsonl",
+      "sha256": "27346d315a33e01609a6f127a4af5f5dabaa9da0009ae9bf1ca514cf1b3ab9a5"
+    },
+    {
+      "case": {
+        "name": "brake0.05_v1.5",
+        "v": 1.5,
+        "kind": "brake",
+        "brake": 0.05,
+        "duration": 5.0
+      },
+      "initial_speed": 1.40606048395223,
+      "final_speed": -4.957562887899967e-05,
+      "metrics": {
+        "max_decel_raw": 17.59268829373043,
+        "jerk_peak_raw": 210.36366365530762,
+        "jerk_p95_moving": 206.91347392234076,
+        "jerk_p95_all": 0.03238733891290991,
+        "max_decel_250ms": 5.625047569372652,
+        "jerk_p95_250ms": 0.003969914542529365,
+        "min_signed_speed": -0.0002073213030439902,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.1,
+        "api_accel_vs_velocity_derivative_mae": 1.6665824825488854e-06
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.05_v1.5.jsonl",
+      "sha256": "aea37de032b4f3ccf27ba66bcaec1ceffc3fda42ce5fccf762c28f6da33d3ea4"
+    },
+    {
+      "case": {
+        "name": "brake0.1_v1.5",
+        "v": 1.5,
+        "kind": "brake",
+        "brake": 0.1,
+        "duration": 5.0
+      },
+      "initial_speed": 1.40606048395223,
+      "final_speed": -4.955306559079316e-05,
+      "metrics": {
+        "max_decel_raw": 17.607098188151586,
+        "jerk_peak_raw": 210.07571759459466,
+        "jerk_p95_moving": 206.6687378802235,
+        "jerk_p95_all": 0.03239584921361495,
+        "max_decel_250ms": 5.6250474230423135,
+        "jerk_p95_250ms": 0.003971450969344622,
+        "min_signed_speed": -0.0002073516985909205,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.1,
+        "api_accel_vs_velocity_derivative_mae": 1.671318548569938e-06
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.1_v1.5.jsonl",
+      "sha256": "c3f349da8d89c3fcfe1eab7bb1cfc7a34ec754dd29fada4690cebb7c0a80d641"
+    },
+    {
+      "case": {
+        "name": "brake0.2_v1.5",
+        "v": 1.5,
+        "kind": "brake",
+        "brake": 0.2,
+        "duration": 5.0
+      },
+      "initial_speed": 1.40606048395223,
+      "final_speed": -4.9553342498576366e-05,
+      "metrics": {
+        "max_decel_raw": 17.61142601176682,
+        "jerk_peak_raw": 209.9892149818465,
+        "jerk_p95_moving": 206.5952140922863,
+        "jerk_p95_all": 0.03232788269862678,
+        "max_decel_250ms": 5.625047711340567,
+        "jerk_p95_250ms": 0.003968275171793763,
+        "min_signed_speed": -0.00020732642509068485,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.1,
+        "api_accel_vs_velocity_derivative_mae": 1.6802226054990716e-06
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.2_v1.5.jsonl",
+      "sha256": "92174e429066aa201bd005490e0819a8e04036f8316b27874cfbbf18aba64083"
+    },
+    {
+      "case": {
+        "name": "brake0.4_v1.5",
+        "v": 1.5,
+        "kind": "brake",
+        "brake": 0.4,
+        "duration": 5.0
+      },
+      "initial_speed": 1.40606048395223,
+      "final_speed": -4.9553342498576366e-05,
+      "metrics": {
+        "max_decel_raw": 17.61142601176682,
+        "jerk_peak_raw": 209.9892149818465,
+        "jerk_p95_moving": 206.5952140922863,
+        "jerk_p95_all": 0.03232788269862678,
+        "max_decel_250ms": 5.625047711340567,
+        "jerk_p95_250ms": 0.003968275171793763,
+        "min_signed_speed": -0.00020732642509068485,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.1,
+        "api_accel_vs_velocity_derivative_mae": 1.6802226054990716e-06
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.4_v1.5.jsonl",
+      "sha256": "526ca0ab2a37755b31f241e3d41263b8eb5dedb459d779cddba54b2c73049e5f"
+    },
+    {
+      "case": {
+        "name": "brake1.0_v1.5",
+        "v": 1.5,
+        "kind": "brake",
+        "brake": 1.0,
+        "duration": 5.0
+      },
+      "initial_speed": 1.40606048395223,
+      "final_speed": -4.9553342498576366e-05,
+      "metrics": {
+        "max_decel_raw": 17.61142601176682,
+        "jerk_peak_raw": 209.9892149818465,
+        "jerk_p95_moving": 206.5952140922863,
+        "jerk_p95_all": 0.03232788269862678,
+        "max_decel_250ms": 5.625047711340567,
+        "jerk_p95_250ms": 0.003968275171793763,
+        "min_signed_speed": -0.00020732642509068485,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.1,
+        "api_accel_vs_velocity_derivative_mae": 1.6802226054990716e-06
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake1.0_v1.5.jsonl",
+      "sha256": "73ccb7355bce709e548444f7b6a6b691e3dab0d0eb1baf929097123f3e7e0e7a"
+    },
+    {
+      "case": {
+        "name": "coast_v2.0",
+        "v": 2.0,
+        "kind": "coast",
+        "duration": 8.0
+      },
+      "initial_speed": 2.007693677550702,
+      "final_speed": -0.10682602410138285,
+      "metrics": {
+        "max_decel_raw": 0.9155586070326298,
+        "jerk_peak_raw": 23.033984191849775,
+        "jerk_p95_moving": 1.6923775212113705,
+        "jerk_p95_all": 0.40407870903939863,
+        "max_decel_250ms": 0.9088091997853336,
+        "jerk_p95_250ms": 0.31823993248840676,
+        "min_signed_speed": -0.10686956616250573,
+        "reverse_ticks": 73,
+        "low_speed_moving_seconds": 3.0,
+        "api_accel_vs_velocity_derivative_mae": 1.9284159139128748e-05
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/coast_v2.0.jsonl",
+      "sha256": "4be0be61582a49d32bf94bc0015655fd0a1e673d79420b3b5714032d9ef1a8fa"
+    },
+    {
+      "case": {
+        "name": "brake0.02_v2.0",
+        "v": 2.0,
+        "kind": "brake",
+        "brake": 0.02,
+        "duration": 5.0
+      },
+      "initial_speed": 1.995779513175624,
+      "final_speed": -4.953921431625982e-05,
+      "metrics": {
+        "max_decel_raw": 23.125244813843093,
+        "jerk_peak_raw": 390.8840377152519,
+        "jerk_p95_moving": 365.3088825829557,
+        "jerk_p95_all": 34.703852942873176,
+        "max_decel_250ms": 7.272750370572481,
+        "jerk_p95_250ms": 10.711128511672884,
+        "min_signed_speed": -0.0002465769447239584,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.1,
+        "api_accel_vs_velocity_derivative_mae": 3.929316070505863e-06
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.02_v2.0.jsonl",
+      "sha256": "98b4528bf750e287bb65a754d68e69c11c37268bbf6f99d8c0b80fab08ec7a93"
+    },
+    {
+      "case": {
+        "name": "brake0.1_v2.0",
+        "v": 2.0,
+        "kind": "brake",
+        "brake": 0.1,
+        "duration": 5.0
+      },
+      "initial_speed": 2.007693677550702,
+      "final_speed": -4.9564719866878735e-05,
+      "metrics": {
+        "max_decel_raw": 24.925709357276563,
+        "jerk_peak_raw": 495.8237517354648,
+        "jerk_p95_moving": 441.7753924520669,
+        "jerk_p95_all": 27.656944091974797,
+        "max_decel_250ms": 7.520723531862698,
+        "jerk_p95_250ms": 8.042789672835223,
+        "min_signed_speed": -0.000245216867301465,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.05,
+        "api_accel_vs_velocity_derivative_mae": 3.783007185931191e-06
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.1_v2.0.jsonl",
+      "sha256": "5c66f239e8f081e59aeede40ff3e5a1e0a3c43e9577c298e1530876ea02f9502"
+    },
+    {
+      "case": {
+        "name": "brake1.0_v2.0",
+        "v": 2.0,
+        "kind": "brake",
+        "brake": 1.0,
+        "duration": 5.0
+      },
+      "initial_speed": 2.007693677550702,
+      "final_speed": -4.3905574621638955e-05,
+      "metrics": {
+        "max_decel_raw": 18.617487916966642,
+        "jerk_peak_raw": 368.36138134276763,
+        "jerk_p95_moving": 360.6954526365762,
+        "jerk_p95_all": 0.1052838450034032,
+        "max_decel_250ms": 8.03134418886915,
+        "jerk_p95_250ms": 0.02946135324166758,
+        "min_signed_speed": -0.000296456916411364,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.05,
+        "api_accel_vs_velocity_derivative_mae": 2.099372647669944e-06
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake1.0_v2.0.jsonl",
+      "sha256": "e8f623ce17150897ef0788ef45cfa82e73bc40b6cf89f30a44d7acfbca27f1d6"
+    },
+    {
+      "case": {
+        "name": "coast_v4.0",
+        "v": 4.0,
+        "kind": "coast",
+        "duration": 8.0
+      },
+      "initial_speed": 3.8364213196141073,
+      "final_speed": -0.12261517955149273,
+      "metrics": {
+        "max_decel_raw": 1.5772497451586445,
+        "jerk_peak_raw": 12.794814546555832,
+        "jerk_p95_moving": 0.6398631258982194,
+        "jerk_p95_all": 0.5511516875174888,
+        "max_decel_250ms": 1.5623432830881072,
+        "jerk_p95_250ms": 0.4986369059244219,
+        "min_signed_speed": -0.12261517955149273,
+        "reverse_ticks": 55,
+        "low_speed_moving_seconds": 2.8000000000000003,
+        "api_accel_vs_velocity_derivative_mae": 1.2022693966822454e-05
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/coast_v4.0.jsonl",
+      "sha256": "a0171c71d9dfb4ab58a52eacb5f2a55ff1ba2074a61d64f68f2845c417c49801"
+    },
+    {
+      "case": {
+        "name": "brake0.005_v4.0",
+        "v": 4.0,
+        "kind": "brake",
+        "brake": 0.005,
+        "duration": 5.0
+      },
+      "initial_speed": 3.8364213196141073,
+      "final_speed": -6.071313605065722e-05,
+      "metrics": {
+        "max_decel_raw": 19.43355516483659,
+        "jerk_peak_raw": 363.5335123634677,
+        "jerk_p95_moving": 185.04178746632493,
+        "jerk_p95_all": 4.267546481311176,
+        "max_decel_250ms": 7.5183074726792105,
+        "jerk_p95_250ms": 5.21063231457118,
+        "min_signed_speed": -0.000281123705029238,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.05,
+        "api_accel_vs_velocity_derivative_mae": 1.7597919697500653e-05
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.005_v4.0.jsonl",
+      "sha256": "fa7ff53aa5b5a0df8b9252df57312bb85956bdc89e759f6bd98ba9a6927ab2a7"
+    },
+    {
+      "case": {
+        "name": "brake0.02_v4.0",
+        "v": 4.0,
+        "kind": "brake",
+        "brake": 0.02,
+        "duration": 5.0
+      },
+      "initial_speed": 3.8364213196141073,
+      "final_speed": -6.072741205811638e-05,
+      "metrics": {
+        "max_decel_raw": 19.448399499400786,
+        "jerk_peak_raw": 362.8257795039426,
+        "jerk_p95_moving": 194.39833097917955,
+        "jerk_p95_all": 4.253796006647985,
+        "max_decel_250ms": 7.5713577020458676,
+        "jerk_p95_250ms": 5.334925481156238,
+        "min_signed_speed": -0.0002826295262743567,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.05,
+        "api_accel_vs_velocity_derivative_mae": 1.7416408995251638e-05
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.02_v4.0.jsonl",
+      "sha256": "b90402be586f83c18a859b8ea919b4f42001a7c8dad5494dd593079039743a6f"
+    },
+    {
+      "case": {
+        "name": "brake0.05_v4.0",
+        "v": 4.0,
+        "kind": "brake",
+        "brake": 0.05,
+        "duration": 5.0
+      },
+      "initial_speed": 3.8364213196141073,
+      "final_speed": -6.076627302026304e-05,
+      "metrics": {
+        "max_decel_raw": 19.942079004603137,
+        "jerk_peak_raw": 398.56500189836447,
+        "jerk_p95_moving": 200.19060010320206,
+        "jerk_p95_all": 4.2266676774041345,
+        "max_decel_250ms": 7.729941020324467,
+        "jerk_p95_250ms": 5.752222692659272,
+        "min_signed_speed": -0.0002804130764107481,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.05,
+        "api_accel_vs_velocity_derivative_mae": 1.734869183355433e-05
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.05_v4.0.jsonl",
+      "sha256": "4e20112e05de85527bce7d90cb0e75a2d7de6beaf7560f219e8736417bdf9ca4"
+    },
+    {
+      "case": {
+        "name": "brake0.1_v4.0",
+        "v": 4.0,
+        "kind": "brake",
+        "brake": 0.1,
+        "duration": 5.0
+      },
+      "initial_speed": 3.8407594069409146,
+      "final_speed": -6.074966198933643e-05,
+      "metrics": {
+        "max_decel_raw": 24.968148874563777,
+        "jerk_peak_raw": 398.14814795726943,
+        "jerk_p95_moving": 302.2680081904116,
+        "jerk_p95_all": 31.92856551450548,
+        "max_decel_250ms": 7.8272324209275554,
+        "jerk_p95_250ms": 17.581079755420582,
+        "min_signed_speed": -0.00029359435379001654,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.05,
+        "api_accel_vs_velocity_derivative_mae": 2.2544594510988517e-05
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.1_v4.0.jsonl",
+      "sha256": "7e9d364e69cedef4658666dc8cc6f2bfdd9753af4e67dfb915443d5cce7802bc"
+    },
+    {
+      "case": {
+        "name": "brake0.2_v4.0",
+        "v": 4.0,
+        "kind": "brake",
+        "brake": 0.2,
+        "duration": 5.0
+      },
+      "initial_speed": 3.8407594069409146,
+      "final_speed": -5.8364025129992765e-05,
+      "metrics": {
+        "max_decel_raw": 25.00125522637931,
+        "jerk_peak_raw": 393.2782535897505,
+        "jerk_p95_moving": 344.3024190402935,
+        "jerk_p95_all": 30.98339637032554,
+        "max_decel_250ms": 8.160576257657638,
+        "jerk_p95_250ms": 17.59654820773118,
+        "min_signed_speed": -0.0002894792892729368,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.05,
+        "api_accel_vs_velocity_derivative_mae": 1.9918410469850632e-05
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.2_v4.0.jsonl",
+      "sha256": "36fd4c2d08cb383e1fc1080180d13d22bfafa2bcf2858ef823b8fabae254bcff"
+    },
+    {
+      "case": {
+        "name": "brake0.4_v4.0",
+        "v": 4.0,
+        "kind": "brake",
+        "brake": 0.4,
+        "duration": 5.0
+      },
+      "initial_speed": 3.8364213196141073,
+      "final_speed": -5.810862951430934e-05,
+      "metrics": {
+        "max_decel_raw": 23.164075453419663,
+        "jerk_peak_raw": 388.67945576461284,
+        "jerk_p95_moving": 264.6397547646171,
+        "jerk_p95_all": 9.372373573619498,
+        "max_decel_250ms": 8.712759725066354,
+        "jerk_p95_250ms": 11.794453116781934,
+        "min_signed_speed": -0.00030572544905734894,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.1,
+        "api_accel_vs_velocity_derivative_mae": 1.3777273879551093e-05
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.4_v4.0.jsonl",
+      "sha256": "49c1b20f4d9b49eb0874595efc5f9de06a385f6ceceb0cd58df2e126cba24dd0"
+    },
+    {
+      "case": {
+        "name": "brake1.0_v4.0",
+        "v": 4.0,
+        "kind": "brake",
+        "brake": 1.0,
+        "duration": 5.0
+      },
+      "initial_speed": 3.8364213196141073,
+      "final_speed": -5.45021176560771e-05,
+      "metrics": {
+        "max_decel_raw": 24.27146796384453,
+        "jerk_peak_raw": 381.1521032661529,
+        "jerk_p95_moving": 366.2304827347157,
+        "jerk_p95_all": 17.64368394260668,
+        "max_decel_250ms": 11.22230187475217,
+        "jerk_p95_250ms": 18.966578697868954,
+        "min_signed_speed": -0.0004019857644595238,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.05,
+        "api_accel_vs_velocity_derivative_mae": 1.0760822436365275e-05
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake1.0_v4.0.jsonl",
+      "sha256": "64dfbb8ba4068b896669d16a3fef687d82002b4d39e90469f4c32a81b5bef7ff"
+    },
+    {
+      "case": {
+        "name": "coast_v5.0",
+        "v": 5.0,
+        "kind": "coast",
+        "duration": 8.0
+      },
+      "initial_speed": 4.758741711667692,
+      "final_speed": -0.09594538481417744,
+      "metrics": {
+        "max_decel_raw": 1.9783171436532374,
+        "jerk_peak_raw": 15.690074765354863,
+        "jerk_p95_moving": 0.9644753323938177,
+        "jerk_p95_all": 0.8397536503098739,
+        "max_decel_250ms": 1.9589602872093261,
+        "jerk_p95_250ms": 0.7616931732184697,
+        "min_signed_speed": -0.09594538481417744,
+        "reverse_ticks": 37,
+        "low_speed_moving_seconds": 3.0500000000000003,
+        "api_accel_vs_velocity_derivative_mae": 3.9315316449408355e-06
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/coast_v5.0.jsonl",
+      "sha256": "33e3f8597e662dece7bb618491342cca3f5d98cac67e40f29da005634fc065e7"
+    },
+    {
+      "case": {
+        "name": "brake0.02_v5.0",
+        "v": 5.0,
+        "kind": "brake",
+        "brake": 0.02,
+        "duration": 5.0
+      },
+      "initial_speed": 4.758741711667692,
+      "final_speed": -5.902870853973146e-05,
+      "metrics": {
+        "max_decel_raw": 25.816205412045576,
+        "jerk_peak_raw": 436.56753386790695,
+        "jerk_p95_moving": 105.54074029031395,
+        "jerk_p95_all": 9.345154679523619,
+        "max_decel_250ms": 7.460156147823133,
+        "jerk_p95_250ms": 11.51018628545088,
+        "min_signed_speed": -0.0002577831797984547,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.1,
+        "api_accel_vs_velocity_derivative_mae": 5.631239991101896e-06
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.02_v5.0.jsonl",
+      "sha256": "47db371b178f6e76ccb0dfb46c66e5cfed6b06d01c4af4e0eb992eaecbcee65b"
+    },
+    {
+      "case": {
+        "name": "brake0.1_v5.0",
+        "v": 5.0,
+        "kind": "brake",
+        "brake": 0.1,
+        "duration": 5.0
+      },
+      "initial_speed": 4.758760181671071,
+      "final_speed": -5.90040166224532e-05,
+      "metrics": {
+        "max_decel_raw": 20.30933694205122,
+        "jerk_peak_raw": 404.29141857401856,
+        "jerk_p95_moving": 159.046239032857,
+        "jerk_p95_all": 9.035304887652702,
+        "max_decel_250ms": 7.919316961883202,
+        "jerk_p95_250ms": 7.157977737225201,
+        "min_signed_speed": -0.00025993494602389385,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.05,
+        "api_accel_vs_velocity_derivative_mae": 5.10550613026443e-06
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake0.1_v5.0.jsonl",
+      "sha256": "fd4aca4fac42ccb2e55697dc52ad00cd3815473e35dd14387a372f3b7de06e93"
+    },
+    {
+      "case": {
+        "name": "brake1.0_v5.0",
+        "v": 5.0,
+        "kind": "brake",
+        "brake": 1.0,
+        "duration": 5.0
+      },
+      "initial_speed": 4.758741711667692,
+      "final_speed": -6.075092436927259e-05,
+      "metrics": {
+        "max_decel_raw": 24.871078934151374,
+        "jerk_peak_raw": 422.3863476472157,
+        "jerk_p95_moving": 299.11406552086686,
+        "jerk_p95_all": 28.032153258493796,
+        "max_decel_250ms": 10.938986256885292,
+        "jerk_p95_250ms": 18.042150688588038,
+        "min_signed_speed": -0.00038815272917364156,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.1,
+        "api_accel_vs_velocity_derivative_mae": 4.400898602505892e-06
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/brake1.0_v5.0.jsonl",
+      "sha256": "42e563fa8f3b24ea78dd5076332c4ecb44004fcfca267271b87fb5ffc8931201"
+    },
+    {
+      "case": {
+        "name": "throttle0.05",
+        "v": 0.0,
+        "kind": "throttle",
+        "throttle": 0.05,
+        "duration": 6.0
+      },
+      "initial_speed": 0.0,
+      "final_speed": -4.49982849807611e-05,
+      "metrics": {
+        "max_decel_raw": 0.0008994020319425992,
+        "jerk_peak_raw": 0.03598650101536701,
+        "jerk_p95_moving": 0.0,
+        "jerk_p95_all": 0.017554868336008934,
+        "max_decel_250ms": 0.00017995511145666736,
+        "jerk_p95_250ms": 0.0035973085669753235,
+        "min_signed_speed": -4.502334818847184e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.0,
+        "api_accel_vs_velocity_derivative_mae": 1.1771810819491191e-08
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/throttle0.05.jsonl",
+      "sha256": "5886673377783783a8ad3d77a8d172a1e6b806c9535213c493301c1413e25764"
+    },
+    {
+      "case": {
+        "name": "throttle0.1",
+        "v": 0.0,
+        "kind": "throttle",
+        "throttle": 0.1,
+        "duration": 6.0
+      },
+      "initial_speed": 0.0,
+      "final_speed": -4.49982849807611e-05,
+      "metrics": {
+        "max_decel_raw": 0.0008994020319425992,
+        "jerk_peak_raw": 0.03598650101536701,
+        "jerk_p95_moving": 0.0,
+        "jerk_p95_all": 0.017554868336008934,
+        "max_decel_250ms": 0.00017995511145666736,
+        "jerk_p95_250ms": 0.0035973085669753235,
+        "min_signed_speed": -4.502334818847184e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.0,
+        "api_accel_vs_velocity_derivative_mae": 1.1771810819491191e-08
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/throttle0.1.jsonl",
+      "sha256": "bf5a83c39ec76c498c176e86d7a0e3b3d80a127f4328d495700f60360478e1d8"
+    },
+    {
+      "case": {
+        "name": "throttle0.2",
+        "v": 0.0,
+        "kind": "throttle",
+        "throttle": 0.2,
+        "duration": 6.0
+      },
+      "initial_speed": 0.0,
+      "final_speed": 2.443999693089097,
+      "metrics": {
+        "max_decel_raw": 0.0008993275944152486,
+        "jerk_peak_raw": 200.54198449339117,
+        "jerk_p95_moving": 36.31646248614941,
+        "jerk_p95_all": 7.943669891515938,
+        "max_decel_250ms": 0.00015326580410512027,
+        "jerk_p95_250ms": 16.501277180356876,
+        "min_signed_speed": -4.5003504119803664e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.15000000000000002,
+        "api_accel_vs_velocity_derivative_mae": 0.0002868008721189208
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/throttle0.2.jsonl",
+      "sha256": "323141ea27dc123e8c0bd8d3a30d4f8d913bf3b68f58ecd47987350db76acaac"
+    },
+    {
+      "case": {
+        "name": "throttle0.3",
+        "v": 0.0,
+        "kind": "throttle",
+        "throttle": 0.3,
+        "duration": 6.0
+      },
+      "initial_speed": 0.0,
+      "final_speed": 4.71600004329816,
+      "metrics": {
+        "max_decel_raw": 0.000808066900007382,
+        "jerk_peak_raw": 305.5998900844914,
+        "jerk_p95_moving": 34.90569508228982,
+        "jerk_p95_all": 27.348823039748535,
+        "max_decel_250ms": 0.0001532646115604816,
+        "jerk_p95_250ms": 16.54019331385987,
+        "min_signed_speed": -4.497842115916653e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.1,
+        "api_accel_vs_velocity_derivative_mae": 0.0003369694625575932
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/throttle0.3.jsonl",
+      "sha256": "14a4a3b9abd4a37cf6129660a83425d56880d818994cbaa43ef7e0d6685ca062"
+    },
+    {
+      "case": {
+        "name": "throttle0.5",
+        "v": 0.0,
+        "kind": "throttle",
+        "throttle": 0.5,
+        "duration": 6.0
+      },
+      "initial_speed": 0.0,
+      "final_speed": 9.139176128175155,
+      "metrics": {
+        "max_decel_raw": 1.4894822861400439,
+        "jerk_peak_raw": 337.7036040077516,
+        "jerk_p95_moving": 47.90672506029591,
+        "jerk_p95_all": 40.61534371962704,
+        "max_decel_250ms": 0.0001532646115604816,
+        "jerk_p95_250ms": 18.70380401210986,
+        "min_signed_speed": -4.436144273017468e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.1,
+        "api_accel_vs_velocity_derivative_mae": 0.00043164564788451815
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/throttle0.5.jsonl",
+      "sha256": "2d4cd575fef907cdb0ecc1d76dca114b089cf1daf0703800a3eb4b65c2fe68c0"
+    },
+    {
+      "case": {
+        "name": "ramp0.05",
+        "v": 4.0,
+        "kind": "ramp",
+        "rate": 0.05,
+        "duration": 7.0
+      },
+      "initial_speed": 3.8364213196141073,
+      "final_speed": -6.071425590671898e-05,
+      "metrics": {
+        "max_decel_raw": 23.61566540219595,
+        "jerk_peak_raw": 425.2085096720198,
+        "jerk_p95_moving": 240.71776065107338,
+        "jerk_p95_all": 2.091728413666862,
+        "max_decel_250ms": 7.687804674521996,
+        "jerk_p95_250ms": 5.666339546326248,
+        "min_signed_speed": -0.0002887737283457419,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.05,
+        "api_accel_vs_velocity_derivative_mae": 1.2437813826902132e-05
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/ramp0.05.jsonl",
+      "sha256": "60055acc6c460a59bf961cd46c8b7e5f0fcfea938cf6edcd25c2fc220f94bf84"
+    },
+    {
+      "case": {
+        "name": "ramp0.2",
+        "v": 4.0,
+        "kind": "ramp",
+        "rate": 0.2,
+        "duration": 7.0
+      },
+      "initial_speed": 3.8407594069409146,
+      "final_speed": -6.0785192140947014e-05,
+      "metrics": {
+        "max_decel_raw": 22.73888418487515,
+        "jerk_peak_raw": 413.73197228215435,
+        "jerk_p95_moving": 236.4135818517774,
+        "jerk_p95_all": 27.019843122545545,
+        "max_decel_250ms": 8.227976225769892,
+        "jerk_p95_250ms": 6.645701245675042,
+        "min_signed_speed": -0.000307184951266014,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.05,
+        "api_accel_vs_velocity_derivative_mae": 1.576907541343608e-05
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/ramp0.2.jsonl",
+      "sha256": "80ceffcf3d0054a4fb50455521a1134c640a92287420e069e8d59adbe2fa4ced"
+    },
+    {
+      "case": {
+        "name": "ramp0.8",
+        "v": 4.0,
+        "kind": "ramp",
+        "rate": 0.8,
+        "duration": 7.0
+      },
+      "initial_speed": 3.8364213196141073,
+      "final_speed": -5.816215936837572e-05,
+      "metrics": {
+        "max_decel_raw": 23.174750516078927,
+        "jerk_peak_raw": 385.92917292192703,
+        "jerk_p95_moving": 248.9799223493215,
+        "jerk_p95_all": 4.345431921251429,
+        "max_decel_250ms": 8.745813116742598,
+        "jerk_p95_250ms": 8.562957588615534,
+        "min_signed_speed": -0.0003075722823682438,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.1,
+        "api_accel_vs_velocity_derivative_mae": 1.1310653076034564e-05
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/ramp0.8.jsonl",
+      "sha256": "dc2ce2edaf87248d5eb7b96bb777bd8f4f2621a762cd3de23a04ae5bf893de6b"
+    },
+    {
+      "case": {
+        "name": "small_throttle",
+        "v": 2.0,
+        "kind": "small_throttle",
+        "duration": 8.0
+      },
+      "initial_speed": 2.007693677550702,
+      "final_speed": 1.5327062970760832,
+      "metrics": {
+        "max_decel_raw": 0.7890012611932832,
+        "jerk_peak_raw": 27.218143432665485,
+        "jerk_p95_moving": 27.148962195264794,
+        "jerk_p95_all": 27.148962195264794,
+        "max_decel_250ms": 0.27463530638291467,
+        "jerk_p95_250ms": 5.438777089323035,
+        "min_signed_speed": 1.5327062970760832,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.0,
+        "api_accel_vs_velocity_derivative_mae": 4.7464206535594025e-05
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/small_throttle.jsonl",
+      "sha256": "dc0ab59eb5ed2f74690989b6403a912d711f8f5e5208f250c8a561426034f480"
+    },
+    {
+      "case": {
+        "name": "hold_release",
+        "v": 1.0,
+        "kind": "hold_release",
+        "duration": 10.0
+      },
+      "initial_speed": 0.8947183258061981,
+      "final_speed": 2.231446282909931,
+      "metrics": {
+        "max_decel_raw": 17.77184071773694,
+        "jerk_peak_raw": 352.9969473914297,
+        "jerk_p95_moving": 56.971074617055734,
+        "jerk_p95_all": 57.5180941963904,
+        "max_decel_250ms": 3.579489697678397,
+        "jerk_p95_250ms": 10.87368170764257,
+        "min_signed_speed": -0.07138391392176292,
+        "reverse_ticks": 3,
+        "low_speed_moving_seconds": 2.35,
+        "api_accel_vs_velocity_derivative_mae": 2.3807005663116664e-05
+      },
+      "collisions": 0,
+      "log": "reports/m47_dynamics_v3_artifacts/hold_release.jsonl",
+      "sha256": "2e2f1be4b72eba80aaab67d315087ebbe211fa0c5b8a207c1d6ac9c57d75b817"
+    }
+  ],
+  "sources": {
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_vehicle_dynamics.py": "878aab9c2bb468afe6f7b878f06e8618e64baf2308e25bc3d096f3890020f803",
+    "tools/m47_common.py": "63a4e828c0e959f1b9ffe06cda056c6fb7a02dd792cff8028834afd01144b4a7",
+    "simulator/session.py": "cadd7f0582b7dafc36d4b4405e1ef9881cfc8661637d3dd8bfedf18bf0340ad3"
+  },
+  "limitations": [
+    "Physics default identical to M46; signed longitudinal velocity is distinct from 3D speed norm.",
+    "API acceleration and derivative reported separately; raw values authoritative, smoothing supplemental.",
+    "Each experiment begins after measured warmup; no set_target_velocity or altered physics."
+  ]
+}

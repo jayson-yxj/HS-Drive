@@ -1,0 +1,89 @@
+{
+  "schema": "hsd-m47-acceptance-v1",
+  "overall": "Partial",
+  "base_commit": "e9e2e02097a77123138c3b802909c9111faf11b4",
+  "branch": "feat/m47-label-assurance-dynamics",
+  "m4_gate_closed": false,
+  "m45_gate_closed": false,
+  "m46_gate_closed": false,
+  "m47_gate_closed": false,
+  "m5_training_approved": false,
+  "default_behavior_changed": false,
+  "optimizer_created": false,
+  "depth_bins_changed": false,
+  "gates": {
+    "all_104_provenance_reconstructed": true,
+    "whole_voxel_free_certified": false,
+    "independent_geometry_complete": false,
+    "reserved_scene_quality_pass": false,
+    "supervised_gpu_contract_pass": true,
+    "matched_physics": true,
+    "all_collision_free": true,
+    "obstacle_stopping_position": true,
+    "comfort_decel": false,
+    "comfort_jerk": false,
+    "stop_hold_entry": false,
+    "route_completion": false,
+    "latency_20hz": false,
+    "exact_rotating_mesh_collision": false,
+    "overfit_phase": "Deferred: spatial quality prerequisite not met"
+  },
+  "reserved_scene_collision_conflicts": 132,
+  "tests": {
+    "gpu": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "5",
+      "tests": "176",
+      "time": "12.800",
+      "timestamp": "2026-10-20T17:15:20.257636+08:00",
+      "hostname": "gpufree-container",
+      "path": "reports/m47_gpu_tests.xml"
+    },
+    "sim": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "14",
+      "tests": "144",
+      "time": "3.903",
+      "timestamp": "2026-10-20T17:15:02.057760+08:00",
+      "hostname": "gpufree-container",
+      "path": "reports/m47_sim_tests.xml"
+    },
+    "m47": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "9",
+      "time": "0.048",
+      "timestamp": "2026-10-20T17:19:32.458914+08:00",
+      "hostname": "gpufree-container",
+      "path": "reports/m47_module_tests.xml"
+    }
+  },
+  "evidence": {
+    "reports/m47_false_free_audit.json": "f32321457797b8bec9c7c129df27068a7108fc2c81ebf03adc3e7db09f4cad7b",
+    "reports/m47_false_free_attribution_verified.json": "828cfea06a3df4d588d30b5b065f36b3a11add0586ea782b25972d851d42024e",
+    "reports/m47_collision_audit.json": "f80109991ffa1d8505626b323177a3022b1138eb95b9890908bb9192ac05261b",
+    "reports/m47_occupancy_quality.json": "91b8542a8c5c80779b004a867a803c628e28e15e78e4f09f33dee2692e04fcd1",
+    "reports/m47_vehicle_dynamics.json": "5bbab6d71b72d6b844a928d23bcf87e1cc40ee4f9964c85ac3fd0f944f621b13",
+    "reports/m47_dynamics_calibration.json": "17f9cd4ab0d048a1364674d59ef6fce4d45c85dc840a9430c92537f518044ab5",
+    "reports/m47_stopping_verified.json": "a59ca2e409747d889ff1fee42b9dbaef5c5d9bbcf68cb61cd15715922ac076e7",
+    "reports/m47_routes_verified.json": "fe8beac92f7dc79b640280149b5410a92713c12a57c78ee672563706ecc5623a",
+    "reports/m47_latency_verified.json": "8b0b981df7b3885c696e5ba7dfa06fc8b6b87c1d50638982daa4ce6d3b8c9547",
+    "reports/m47_road_profile.json": "f911b7c4323cda80d858f91fe72a9d9d529e8d5dcf5b12cb253e0a0634ed7e2a",
+    "reports/m47_gpu_contract_verified.json": "e99f4a888f2f23c126e6c7b762613adaeffcfc5e3fa4c6b4ebcce1b4af0c5761",
+    "reports/m47_asset_integrity.json": "e5022a021c43dff10498bf6a1a68ce5df673fffdbe3149ed17174e0e6d42e002",
+    "reports/m47_stopping_metrics_verified.json": "82bc88fdc5c61bc9f1ca75ded7383e50dcd3d7b271e3b1f9116e789aec829ff0",
+    "configs/m47_acceptance.yaml": "bb7a625bf11d538ac0d581e4b3ac78af1eccf447d6b0da3784fb2547f9e65e3d"
+  },
+  "decisions": [
+    "Retain M46 default; M47 controller and road corridor remain experimental.",
+    "Quarantine only evidenced conflicting cells; do not interpret repair-set zero conflicts as validation.",
+    "M5 formal training and conditional overfit deferred. GPU backward is not overfit success.",
+    "20Hz is retained as target, not claimed achieved for junction. No untested multirate scheduling adopted."
+  ]
+}

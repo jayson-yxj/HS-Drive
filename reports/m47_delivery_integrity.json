@@ -1,0 +1,291 @@
+{
+  "kind": "offline_delivery_integrity_and_controlled_state_review",
+  "assets_and_evidence_unchanged": true,
+  "mismatches": [],
+  "baseline_counts": {
+    "tracked_sha256": 1302,
+    "checkpoint_sha256": 14,
+    "data_size_mtime": 44795
+  },
+  "external_m47_sha256_count": 231,
+  "runtime_snapshots": {
+    "reports/m47_conflict_artifacts/source/manifest.json": 4,
+    "reports/m47_dynamics_v2_artifacts/source/manifest.json": 3,
+    "reports/m47_dynamics_v3_artifacts/source/manifest.json": 3,
+    "reports/m47_dynamics_artifacts/source/manifest.json": 3,
+    "reports/m47_final_source/manifest.json": 20
+  },
+  "source_sha256": {
+    "configs/m47_acceptance.yaml": "bb7a625bf11d538ac0d581e4b3ac78af1eccf447d6b0da3784fb2547f9e65e3d",
+    "datasets/m47_assurance.py": "12dcfd43ef512715591d130ca88711239edad6addaa6b2c355a41ffea47975c3",
+    "simulator/m47_motion.py": "2038afae0b6557cbbacd9ed2c0b0ccf03340b11c047ef41cb762fc4e7a24e379",
+    "simulator/m47_road.py": "5c42c995dda069b54769ebcf181a2773d6b98adb56f69b24c398229dea27786e",
+    "tests/test_m47_assurance_motion.py": "77dee8fa4cce6529702bc01aa3a0657ad0c685d9b685f53e0d626485ff72439d",
+    "tests/test_m47_hold_replay.py": "7a82528213cd2f166982e2691c49673b802517e444955b15bdf830a56e367220",
+    "tools/m47_acceptance.py": "764c6db464e80620c24eb9df6d784e422ef0c233b2ab8db9b1546b7783bc0214",
+    "tools/m47_attribute.py": "8280e1cdc855970c6135248e2d3eb65d0f8f011a561848802581b977376931c3",
+    "tools/m47_capture.py": "57971bac26ab488e49e5345551c5455555824fa9567da20dd92ef43561a22307",
+    "tools/m47_collision_audit.py": "a83eab459f88ace40b8f35d2edc4e222f071a4cd1a9669445e5e7aed130cd218",
+    "tools/m47_common.py": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+    "tools/m47_delivery_integrity.py": "521ada0f0b9346f4b4c156e28147906515b3584741fd7227191b2f6459e36912",
+    "tools/m47_false_free_audit.py": "07d72b58926f632908f35f0a339901815caafe622224e424117567db88e8b7a2",
+    "tools/m47_fit_dynamics.py": "84a717542c534ea638fa191f730fa1d77c40b430ffcb3a82aa87d9ff1715aa14",
+    "tools/m47_geometry_queries.py": "97316cd5e27697c85a6df8eb135bb7a9795ff4773d3ed537063d95f3a6fde4fb",
+    "tools/m47_gpu_contract.py": "026bd7a8775e10c44b4a83d93052ebd62959aa68cacbda19b978b003769827c6",
+    "tools/m47_hold_replay.py": "b7f5274a2eb74a31d6a346b1d7ac8f50a5e38ec7f599c179b18184404fcd4559",
+    "tools/m47_local_quality.py": "6bd6fd3a0120fb397b9ad62edf51a906ea35dab914fc5f9b9406d0b4f16ee9ed",
+    "tools/m47_profile.py": "25cde819476037eb0abe2f4154e1beddcc91c80b9cb6937498060d6cb83f4a5f",
+    "tools/m47_quality.py": "0a573c365752e56238b3f72134f7880d0b175338ea311611914e027049b6473b",
+    "tools/m47_road_profile.py": "ad06ac73326240265c40aeea3cc22f33ce71fbfeaa197f0f855e158e862ccd8f",
+    "tools/m47_stopping.py": "bf542b55a9f59627c4b9b1c5937964d4fd76182d3f3bc477ce064b9fa9f7e261",
+    "tools/m47_vehicle_dynamics.py": "d7be84deec20b57b9e73a48bdd0315b2729453210932388c47dd579517a975d9",
+    "tools/m47_visualize.py": "c9cf319c72810628591601333549515443d78780e9c3c10584f86e3a35c48395"
+  },
+  "changes_after_runtime_snapshot": {
+    "tools/m47_vehicle_dynamics.py": {
+      "current_sha256": "d7be84deec20b57b9e73a48bdd0315b2729453210932388c47dd579517a975d9",
+      "runtime_snapshot_sha256": "b40cf70061341e829ab42aac3be3281983a71422660258b234a7de61f23d5bec",
+      "python_ast_identical": true
+    },
+    "tools/m47_visualize.py": {
+      "current_sha256": "c9cf319c72810628591601333549515443d78780e9c3c10584f86e3a35c48395",
+      "runtime_snapshot_sha256": "380236c0251df1dcf7fb17be7fc507f2ad55bfba043042d16f4be70a3e6d8130",
+      "python_ast_identical": false
+    }
+  },
+  "change_explanation": "Dynamics comment-only correction; visualization now replays missing M46 HOLD state. No runtime controller or label-generation changes.",
+  "tests": {
+    "sim": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "14",
+      "tests": "145",
+      "time": "3.980",
+      "timestamp": "2026-10-20T17:38:21.067517+08:00",
+      "hostname": "gpufree-container",
+      "path": "reports/m47_release_sim_tests.xml",
+      "sha256": "fc58db426c3df0f6f71534fc125df2eac70aaff20ae93db11ab3a0afed84449f"
+    },
+    "gpu": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "5",
+      "tests": "177",
+      "time": "13.081",
+      "timestamp": "2026-10-20T17:38:25.660488+08:00",
+      "hostname": "gpufree-container",
+      "path": "reports/m47_release_gpu_tests.xml",
+      "sha256": "df5a975907940443f62a3e667959f11d697b9a8b55d2bbb97f79a648ad80cc77"
+    },
+    "module": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "10",
+      "time": "0.048",
+      "timestamp": "2026-10-20T17:37:32.068552+08:00",
+      "hostname": "gpufree-container",
+      "path": "reports/m47_review_module_tests.xml",
+      "sha256": "699d4edb64fbd497b5a6dfa3199ca55bd822c1f59d2ddf38a517417ae8c402a5"
+    }
+  },
+  "controlled_initial_states": [
+    {
+      "scenario": "static_8_v2",
+      "initial_states_match": true,
+      "ego_speed_difference": 0.0,
+      "initial_gap_difference_m": 0.0,
+      "actors": [
+        {
+          "position_delta": [
+            0.0,
+            0.0
+          ],
+          "velocity_delta": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "status": "Matched"
+    },
+    {
+      "scenario": "static_15_v4",
+      "initial_states_match": true,
+      "ego_speed_difference": 0.0,
+      "initial_gap_difference_m": 0.0,
+      "actors": [
+        {
+          "position_delta": [
+            0.0,
+            0.0
+          ],
+          "velocity_delta": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "status": "Matched"
+    },
+    {
+      "scenario": "static_30_v5",
+      "initial_states_match": true,
+      "ego_speed_difference": 0.0,
+      "initial_gap_difference_m": 0.0,
+      "actors": [
+        {
+          "position_delta": [
+            0.0,
+            0.0
+          ],
+          "velocity_delta": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "status": "Matched"
+    },
+    {
+      "scenario": "static_45_v4",
+      "initial_states_match": true,
+      "ego_speed_difference": 0.0,
+      "initial_gap_difference_m": 0.0,
+      "actors": [
+        {
+          "position_delta": [
+            0.0,
+            0.0
+          ],
+          "velocity_delta": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "status": "Matched"
+    },
+    {
+      "scenario": "lead_braking",
+      "initial_states_match": false,
+      "ego_speed_difference": 0.0,
+      "initial_gap_difference_m": -0.12497376866661014,
+      "actors": [
+        {
+          "position_delta": [
+            -0.00034332275390625,
+            0.12497329711914062
+          ],
+          "velocity_delta": [
+            -0.0068181282840669155,
+            2.4996347427368164
+          ]
+        }
+      ],
+      "status": "Not strictly controlled; descriptive comparison only"
+    },
+    {
+      "scenario": "multi_actor",
+      "initial_states_match": true,
+      "ego_speed_difference": 0.0,
+      "initial_gap_difference_m": 0.0,
+      "actors": [
+        {
+          "position_delta": [
+            0.0,
+            0.0
+          ],
+          "velocity_delta": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "position_delta": [
+            0.0,
+            0.0
+          ],
+          "velocity_delta": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "position_delta": [
+            0.0,
+            0.0
+          ],
+          "velocity_delta": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "status": "Matched"
+    },
+    {
+      "scenario": "emergency",
+      "initial_states_match": true,
+      "ego_speed_difference": 0.0,
+      "initial_gap_difference_m": null,
+      "actors": [],
+      "status": "Matched"
+    },
+    {
+      "scenario": "timeout",
+      "initial_states_match": true,
+      "ego_speed_difference": 0.0,
+      "initial_gap_difference_m": null,
+      "actors": [],
+      "status": "Matched"
+    },
+    {
+      "scenario": "invalid",
+      "initial_states_match": true,
+      "ego_speed_difference": 0.0,
+      "initial_gap_difference_m": null,
+      "actors": [],
+      "status": "Matched"
+    },
+    {
+      "scenario": "missing",
+      "initial_states_match": true,
+      "ego_speed_difference": 0.0,
+      "initial_gap_difference_m": null,
+      "actors": [],
+      "status": "Matched"
+    },
+    {
+      "scenario": "straight",
+      "initial_states_match": true,
+      "ego_speed_difference": 0.0,
+      "initial_gap_difference_m": null,
+      "actors": [],
+      "status": "Matched"
+    },
+    {
+      "scenario": "mild_curve",
+      "initial_states_match": true,
+      "ego_speed_difference": 0.0,
+      "initial_gap_difference_m": null,
+      "actors": [],
+      "status": "Matched"
+    },
+    {
+      "scenario": "junction_turn",
+      "initial_states_match": true,
+      "ego_speed_difference": 0.0,
+      "initial_gap_difference_m": null,
+      "actors": [],
+      "status": "Matched"
+    }
+  ],
+  "all_initial_states_matched": false,
+  "quality_gate": "Partial",
+  "m5_formal_training_approved": false,
+  "limitation": "Old raw data checked by size/mtime, not exhaustive content hashing. Dynamic lead initialization mismatch is retained as a protocol failure."
+}

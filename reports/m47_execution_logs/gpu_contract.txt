@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_gpu_contract.py", line 52, in <module>
+    if __name__=="__main__":main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_gpu_contract.py", line 25, in main
+    with torch.no_grad():features=model(**inputs)["bev_current"].detach()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv-gpu/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv-gpu/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/models/depth_bev.py", line 46, in forward
+    height,mass=self.splat(context,probabilities,intrinsics,cam_to_ego,(ih,iw))
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv-gpu/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv-gpu/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/models/view_transform.py", line 62, in forward
+    points=unproject(uv,depths,intrinsics,cam_to_ego)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/models/view_transform.py", line 24, in unproject
+    optical=torch.einsum('bnij,bnpj->bnpi',torch.linalg.inv(intrinsics.float()),homogeneous)
+RuntimeError: Error in dlopen: libtorch_cuda_linalg.so: cannot open shared object file: No such file or directory
