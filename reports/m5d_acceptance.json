@@ -1,0 +1,166 @@
+{
+  "task": "M5-D",
+  "status": "Partial",
+  "base": "2aa91f6",
+  "source_commit": "8f7521c098325acc9914e40810ea8c34b0c38fb7",
+  "branch": "feat/m5d-visible-existence",
+  "gates": {
+    "engineering_interfaces": {
+      "status": "Passed",
+      "scope": "tested masks,gradient isolation,RGB-only singleframe path,immutable historical source/checkpoints"
+    },
+    "research_training": {
+      "status": "Passed",
+      "scope": "10 actual RTX4090 runs x400steps; cached features; not generalization"
+    },
+    "presence_quality": {
+      "status": "Partial",
+      "reason": "Strong nearfield gain, scene/seed and medium/far miss remains"
+    },
+    "absence_quality": {
+      "status": "Partial",
+      "reason": "Certified nearfield residual reduced; no training 20-35m support, test only6 repeated point events; scene thresholds fail"
+    },
+    "absolute_localization": {
+      "status": "Partial",
+      "reason": "Actor surface recall and weak detection remain incomplete; small pedestrian/trafficcone miss"
+    },
+    "geometry_generalization": {
+      "status": "Partial",
+      "reason": "TrueP8 improves selected recalls, depth distribution still misprojects; no independentMesh or unseenweather proof"
+    },
+    "runtime_stability": {
+      "status": "Partial",
+      "reason": "At least one maxinterval/deadline gate fails; mean20Hz insufficient"
+    },
+    "oracle_closed_loop": {
+      "status": "Partial",
+      "reason": "Observed safety/fault counts recorded; long routes finite budget, dynamics/continuouscollision/generaltraffic not passed",
+      "actual_counts": {
+        "collisions": 0,
+        "lane_invasions": 0,
+        "road_boundary_frames": 0,
+        "normal_control_expired": 0
+      }
+    },
+    "pure_visual_closed_loop": {
+      "status": "NotValidated",
+      "reason": "Visual evidence never drives safety/controller; Oracle uses privileged route/state/actors"
+    }
+  },
+  "model_quality_checks": [
+    {
+      "name": "B_existence",
+      "seed": 81,
+      "each_scene_presence": true,
+      "each_scene_absence": false,
+      "change_iou_gate": false,
+      "far_recall_support_insufficient": true
+    },
+    {
+      "name": "C_stable",
+      "seed": 81,
+      "each_scene_presence": false,
+      "each_scene_absence": true,
+      "change_iou_gate": false,
+      "far_recall_support_insufficient": true
+    },
+    {
+      "name": "S8_stable",
+      "seed": 81,
+      "each_scene_presence": false,
+      "each_scene_absence": true,
+      "change_iou_gate": false,
+      "far_recall_support_insufficient": true
+    },
+    {
+      "name": "B_existence",
+      "seed": 82,
+      "each_scene_presence": false,
+      "each_scene_absence": true,
+      "change_iou_gate": false,
+      "far_recall_support_insufficient": true
+    },
+    {
+      "name": "C_stable",
+      "seed": 82,
+      "each_scene_presence": false,
+      "each_scene_absence": true,
+      "change_iou_gate": false,
+      "far_recall_support_insufficient": true
+    },
+    {
+      "name": "S8_stable",
+      "seed": 82,
+      "each_scene_presence": false,
+      "each_scene_absence": false,
+      "change_iou_gate": false,
+      "far_recall_support_insufficient": true
+    }
+  ],
+  "tests": [
+    {
+      "path": "reports/m5d_tests.xml",
+      "tests": 231,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 5,
+      "sha256": "6f83e186a4a54764efdd6f96eb55c220d5a3af758da8aef20c83531731836d67"
+    },
+    {
+      "path": "reports/m5d_carla_api_tests.xml",
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "5584cd8c79c376cf3a12de123793b4ce0cefea680ebac4e16ddbf5ce865a93bf"
+    }
+  ],
+  "all_training_steps": 4000,
+  "runtime_ticks": 17750,
+  "checkpoint_freeze_matches": {
+    "runs/m5d_learning/m5d_A_matched_81.pt": true,
+    "runs/m5d_learning/m5d_B_existence_81.pt": true,
+    "runs/m5d_learning/m5d_C_stable_81.pt": true,
+    "runs/m5d_learning/m5d_S8_stable_81.pt": true,
+    "runs/m5d_learning/m5d_P_prior_81.pt": true,
+    "runs/m5d_learning/m5d_A_matched_82.pt": true,
+    "runs/m5d_learning/m5d_B_existence_82.pt": true,
+    "runs/m5d_learning/m5d_C_stable_82.pt": true,
+    "runs/m5d_learning/m5d_S8_stable_82.pt": true,
+    "runs/m5d_learning/m5d_P_prior_82.pt": true,
+    "runs/m5c_learning/m5c_D_direct_71.pt": true,
+    "runs/m5c_learning/m5c_D_direct_72.pt": true
+  },
+  "scientific_code_freeze_matches": {
+    "tools/m5d_learning.py": true,
+    "tools/m5d_evaluate.py": true,
+    "models/m5d_stride8.py": true,
+    "datasets/m5d_witness.py": true,
+    "diagnostics/m5d_metrics.py": true,
+    "training/m5d_existence_loss.py": true
+  },
+  "protocol_hash_matches": true,
+  "old_assets_preserved": true,
+  "expand_formal_occupancy_training": false,
+  "test_reused_for_tuning": false,
+  "source_sha256": "b4d6b2b92518aee33f1b40287da4e9a6fe7f50c01e33ac7f9dbe3db407f5a24e",
+  "evidence": {
+    "supervision": "reports/m5d_supervision_audit.json",
+    "labels": "reports/m5d_dataset_quality.json",
+    "models": "reports/m5d_model_ablation.json",
+    "predictions": "reports/m5d_presence_absence.json",
+    "geometry": "reports/m5d_geometry_resolution.json",
+    "runtime": "reports/m5d_runtime_stress.json",
+    "runtime_attribution": "reports/m5d_runtime_attribution.json",
+    "faults": "reports/m5d_runtime_faults.json",
+    "assets": "reports/m5d_assets.json"
+  },
+  "next_steps": [
+    "Independent future protocol to distinguish smooth slanted far-background from occlusion discontinuities; no mask relaxation without geometric tests",
+    "Add independent mid/far visiblepositive+certifiednegative target support before any scaleup",
+    "Keep P8 optional; controlled depth-distribution localization study separate from architecture changes",
+    "Versioned affinity/quiet-host schedule experiments; preserve 6sSafety and original timestamp expiry",
+    "Do not start Temporal/SparseQuery to hide unresolved singleframe localization"
+  ]
+}

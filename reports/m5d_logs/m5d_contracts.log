@@ -1,0 +1,59 @@
+...F                                                                     [100%]
+=================================== FAILURES ===================================
+______ test_certification_veto_replacement_and_unreliable_counterfactual _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f3745efc340>
+
+    def test_certification_veto_replacement_and_unreliable_counterfactual(monkeypatch):
+        import datasets.m5d_witness as mod
+        shape=(4,160,120);blank=np.zeros(shape,bool);lab={k:blank.copy() for k in ['ego_mask','evidence_conflict_mask','semantic_conflict_mask','surface_valid','surface_evidence','obstacle_valid','mixed_cell_mask']};lab['surface_semantic']=np.zeros((3,*shape),bool)
+        uv=np.array([[1,1],[1,2],[2,1]]);ra=dict(uv=uv,endpoints=np.tile([10.,0.,1.2],(3,1)),reliable=np.ones(3,bool),semantics=np.ones(3),stable_mask=np.ones((4,4),bool),self_mask=np.zeros((4,4),bool));rb={**ra,'endpoints':np.tile([5.1,.1,1.2],(3,1)),'semantics':np.full(3,2)}
+        a=dict(frame_id=1,cameras={'f':{}},actors=[]);b=dict(frame_id=2,cameras={'f':{}},actors=[dict(is_ego=False,corners_hs_ego_m=[[4,-1,0],[6,1,2]])]);legacy={k:blank.copy() for k in ['appeared','vanished','stable']};legacy['appeared'][2,50,60]=True
+        monkeypatch.setattr(mod,'pair_witness',lambda *a:(legacy,[]))
+        def camera(root,man,f,name):return (ra if f['frame_id']==1 else rb),(np.full((4,4),10 if f['frame_id']==1 else 5.),np.ones((4,4)),np.full((4,4),f['frame_id']))
+        monkeypatch.setattr(mod,'camera_rays',camera)
+>       p,_=mod.certified_witness(None,None,a,b,lab,lab);assert p['appeared'].sum()==1
+
+tests/test_m5d_contracts.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = None, man = None, a = {'frame_id': 1, 'cameras': {'f': {}}, 'actors': []}
+b = {'frame_id': 2, 'cameras': {'f': {}}, 'actors': [{'is_ego': False, 'corners_hs_ego_m': [[4, -1, 0], [6, 1, 2]]}]}
+la = {'ego_mask': array([[[False, False, False, ..., False, False, False],
+        [False, False, False, ..., False, False,... ..., False, False, False],
+        [False, False, False, ..., False, False, False]]],
+      shape=(4, 160, 120)), ...}
+lb = {'ego_mask': array([[[False, False, False, ..., False, False, False],
+        [False, False, False, ..., False, False,... ..., False, False, False],
+        [False, False, False, ..., False, False, False]]],
+      shape=(4, 160, 120)), ...}
+cache = {(1, 'f'): ({'uv': array([[1, 1],
+       [1, 2],
+       [2, 1]]), 'endpoints': array([[10. ,  0. ,  1.2],
+       [10. ...1.],
+       [1., 1., 1., 1.]]), array([[2, 2, 2, 2],
+       [2, 2, 2, 2],
+       [2, 2, 2, 2],
+       [2, 2, 2, 2]])))}
+
+    def certified_witness(root,man,a,b,la,lb,cache=None):
+        cache={} if cache is None else cache
+        def get(f,name):
+            key=(f['frame_id'],name)
+            if key not in cache:cache[key]=camera_rays(root,man,f,name)
+            return cache[key]
+        legacy,details=pair_witness(root,man,a,b,la,lb,cache)
+        grid=VoxelGrid();size=int(np.prod(grid.shape));counts=[np.zeros(size,np.int32) for _ in range(2)];denseobs=[np.zeros(size,bool) for _ in range(2)];diagnostics=[]
+        for name in a['cameras']:
+            ra,da=get(a,name);rb,db=get(b,name)
+            for side,(frame,r,other,rd,od,own,opp) in enumerate([(a,ra,rb,da,db,la,lb),(b,rb,ra,db,da,lb,la)]):
+                ids,inside=grid.locate(r['endpoints']);seen=inside&r['reliable']&np.isin(r['semantics'],[2,3]);denseobs[side][ids[seen]]=True
+                validmap=np.zeros(od[0].shape,bool);ou,ov=other['uv'].T;validmap[ov,ou]=other['reliable']&np.isin(other['semantics'],[1,2,3,4])
+                validmap &= other['stable_mask']&~other['self_mask']&np.isfinite(od[0])&(od[0]>=1.5)&(od[0]<80)
+>               u,v=r['uv'].T;far=cv2.erode(od[0],np.ones((3,3),np.uint8));candidate=np.zeros(len(ids),bool)
+E               cv2.error: OpenCV(5.0.0) /io/opencv/modules/imgproc/src/morph.simd.hpp:762: error: (-213:The function/feature is not implemented) Unsupported data type (=4) in function 'getMorphologyRowFilter'
+
+datasets/m5d_witness.py:22: error
+=========================== short test summary info ============================
+FAILED tests/test_m5d_contracts.py::test_certification_veto_replacement_and_unreliable_counterfactual
+1 failed, 3 passed in 2.07s

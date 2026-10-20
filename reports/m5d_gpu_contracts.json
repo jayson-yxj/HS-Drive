@@ -1,0 +1,217 @@
+{
+  "kind": "actual_RTX4090_BF16_singleframe_contracts",
+  "records": [
+    {
+      "name": "A_matched",
+      "seed": 81,
+      "stride": 16,
+      "shape": [
+        1,
+        4,
+        160,
+        120
+      ],
+      "finite": true,
+      "max_score_difference": 0.0034153759479522705,
+      "mean_score_difference": 4.268207248969702e-06,
+      "threshold_flips": 0,
+      "privileged_input_rejected": true,
+      "input_keys": [
+        "images",
+        "intrinsics",
+        "cam_to_ego",
+        "ego_pose",
+        "ego_state",
+        "timestamps_s",
+        "route_command",
+        "valid_cameras"
+      ]
+    },
+    {
+      "name": "B_existence",
+      "seed": 81,
+      "stride": 16,
+      "shape": [
+        1,
+        4,
+        160,
+        120
+      ],
+      "finite": true,
+      "max_score_difference": 0.00241166353225708,
+      "mean_score_difference": 5.487535872816807e-06,
+      "threshold_flips": 0,
+      "privileged_input_rejected": true,
+      "input_keys": [
+        "images",
+        "intrinsics",
+        "cam_to_ego",
+        "ego_pose",
+        "ego_state",
+        "timestamps_s",
+        "route_command",
+        "valid_cameras"
+      ]
+    },
+    {
+      "name": "C_stable",
+      "seed": 81,
+      "stride": 16,
+      "shape": [
+        1,
+        4,
+        160,
+        120
+      ],
+      "finite": true,
+      "max_score_difference": 0.002959609031677246,
+      "mean_score_difference": 8.005130439414643e-06,
+      "threshold_flips": 0,
+      "privileged_input_rejected": true,
+      "input_keys": [
+        "images",
+        "intrinsics",
+        "cam_to_ego",
+        "ego_pose",
+        "ego_state",
+        "timestamps_s",
+        "route_command",
+        "valid_cameras"
+      ]
+    },
+    {
+      "name": "S8_stable",
+      "seed": 81,
+      "stride": 8,
+      "shape": [
+        1,
+        4,
+        160,
+        120
+      ],
+      "finite": true,
+      "max_score_difference": 0.0028908848762512207,
+      "mean_score_difference": 3.9593955989403185e-06,
+      "threshold_flips": 1,
+      "privileged_input_rejected": true,
+      "input_keys": [
+        "images",
+        "intrinsics",
+        "cam_to_ego",
+        "ego_pose",
+        "ego_state",
+        "timestamps_s",
+        "route_command",
+        "valid_cameras"
+      ]
+    },
+    {
+      "name": "A_matched",
+      "seed": 82,
+      "stride": 16,
+      "shape": [
+        1,
+        4,
+        160,
+        120
+      ],
+      "finite": true,
+      "max_score_difference": 0.0009491443634033203,
+      "mean_score_difference": 5.579439402936259e-06,
+      "threshold_flips": 5,
+      "privileged_input_rejected": true,
+      "input_keys": [
+        "images",
+        "intrinsics",
+        "cam_to_ego",
+        "ego_pose",
+        "ego_state",
+        "timestamps_s",
+        "route_command",
+        "valid_cameras"
+      ]
+    },
+    {
+      "name": "B_existence",
+      "seed": 82,
+      "stride": 16,
+      "shape": [
+        1,
+        4,
+        160,
+        120
+      ],
+      "finite": true,
+      "max_score_difference": 0.0017197728157043457,
+      "mean_score_difference": 2.090820089506451e-06,
+      "threshold_flips": 0,
+      "privileged_input_rejected": true,
+      "input_keys": [
+        "images",
+        "intrinsics",
+        "cam_to_ego",
+        "ego_pose",
+        "ego_state",
+        "timestamps_s",
+        "route_command",
+        "valid_cameras"
+      ]
+    },
+    {
+      "name": "C_stable",
+      "seed": 82,
+      "stride": 16,
+      "shape": [
+        1,
+        4,
+        160,
+        120
+      ],
+      "finite": true,
+      "max_score_difference": 0.0025409460067749023,
+      "mean_score_difference": 2.309969886482577e-06,
+      "threshold_flips": 0,
+      "privileged_input_rejected": true,
+      "input_keys": [
+        "images",
+        "intrinsics",
+        "cam_to_ego",
+        "ego_pose",
+        "ego_state",
+        "timestamps_s",
+        "route_command",
+        "valid_cameras"
+      ]
+    },
+    {
+      "name": "S8_stable",
+      "seed": 82,
+      "stride": 8,
+      "shape": [
+        1,
+        4,
+        160,
+        120
+      ],
+      "finite": true,
+      "max_score_difference": 0.0030274391174316406,
+      "mean_score_difference": 1.822358740355412e-06,
+      "threshold_flips": 0,
+      "privileged_input_rejected": true,
+      "input_keys": [
+        "images",
+        "intrinsics",
+        "cam_to_ego",
+        "ego_pose",
+        "ego_state",
+        "timestamps_s",
+        "route_command",
+        "valid_cameras"
+      ]
+    }
+  ],
+  "source_sha256": "00024b18cc17fe24fd992a8f7008591f063a92592db560c5c749469a85179bcc",
+  "wrapper_sha256": "a7f685baac30739ec02b2d6086b88c8a718163d7306ca672fd05f09fe679527c",
+  "passed": true,
+  "limits": "BF16 accumulation ordering may cause near-threshold differences; not bitwise equivalence or driving validation."
+}
