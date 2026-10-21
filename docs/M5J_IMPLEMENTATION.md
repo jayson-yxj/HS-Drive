@@ -63,3 +63,19 @@ runuser -u ubuntu -- bash scripts/start_carla.sh /root/gpufree-data/simulators/C
 实际初次Val缓存完成后写审计JSON遇到NumPy bool序列化，修复仅写出转换并使用`--audit-only`重新生成诊断，原缓存不覆盖。初次评测完成主指标后，零预测工作点Precision=None造成选择器失败；保留主指标JSON，从同一aggregate用修复后的`select()`恢复，未改变阈值集合和选择标准。初始源版本见`reports/m5j_logs/source_versions`。
 
 独立GPU全Candidate计时含输入验证、Pixel、Depth、Lift、支持计数，单独报告CPU读图/校验/解码、序列化、反序列化、H2D。未执行在线Shadow，无Tick Owner改动；不将离线GPU延迟称为20Hz驾驶。Runtime继承Partial，Oracle驾驶未重验，纯视觉安全未验证。
+
+
+## 本次实际执行补充
+
+科学冻结提交`f26c0e4`，完整源SHA在`m5j_pretest_freeze.json`。新增4位置×20配置=80个六摄样本，另80帧自车移除参考；三处为8m内近路口。采集、同步、位姿与跨集合RGB重复审计通过。无训练，原Checkpoint全部只读。
+
+附加历史同预算M5I GT回归与描述性绘图只读，无选择影响：
+
+```bash
+.venv-gpu/bin/python -m tools.m5j_matched_regression
+.venv-gpu/bin/python -m tools.m5j_more_figures
+.venv-gpu/bin/python -m tools.m5j_delivery_notes
+.venv-gpu/bin/python -m pytest -q -rs > reports/m5j_logs/full_tests_final.log 2>&1
+```
+
+主报告和ADR在生成后经delivery_notes补充口径与具体Go/No-go解释；该脚本不修改冻结的模型/协议/阈值或任何原始实验JSON。错误输入附加合成测试覆盖NaN、缺相机、非刚体外参。
