@@ -1,0 +1,26 @@
+{
+  "kind": "offline_aggregation_actual_teacher_GT_audit",
+  "totals": [
+    {
+      "split": "train",
+      "positive_kd": 581755,
+      "negative_kd": 272565789,
+      "gt_positive_teacher_miss": 3718,
+      "gt_negative_teacher_conflict": 16381,
+      "boundary_known": 124487,
+      "boundary_unknown_teacher_high": 42137
+    },
+    {
+      "split": "val",
+      "positive_kd": 335689,
+      "negative_kd": 118079717,
+      "gt_positive_teacher_miss": 2946,
+      "gt_negative_teacher_conflict": 120122,
+      "boundary_known": 74153,
+      "boundary_unknown_teacher_high": 25812
+    }
+  ],
+  "diagnostic_images": "m5i_teacher_audit_visualizations.json",
+  "source_sha256": "7c90ccadfa45d250043fed998013b845e212b973723b65140c6c09ddb2c4fdc1",
+  "interpretation": "Pixelcounts correlated. Large road falsepositive examples explain why confident teacher cannot overwriteGT; mismatches excludedKD butGTloss retained."
+}

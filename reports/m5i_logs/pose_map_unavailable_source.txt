@@ -1,0 +1,32 @@
+"""Allocate scene-isolated support expansion and sealed test using map geometry only."""
+import json
+from pathlib import Path
+import numpy as np,carla
+from simulator.recorder import atomic_json,file_hash
+
+def main():
+    client=carla.Client('localhost',2100);client.set_timeout(120);old=[]
+    for name in ['m5a_protocol','m5b_protocol','m5c_protocol','m5d_protocol','m5e_protocol','m5f_capture_protocol','m5g_capture_protocol','m5h_capture_train','m5h_capture_test']:old+=json.loads(Path('configs',name+'.json').read_text())['groups']
+    man=json.loads(Path('runs/m4_expanded_joint/manifest.json').read_text());ix=json.loads(Path(man['config']['index'],'index.json').read_text());groups=[]
+    plan=[(m,'train')for m in ['Town01','Town03','Town04','Town05']]+[(m,'val')for m in ['Town04','Town05']]+[(m,'test')for m in ['Town01','Town06','Town03','Town04','Town05','Town10HD']]
+    for j,(town,split)in enumerate(plan):
+        world=client.load_world(town);mp=world.get_map();avoid=[g['pose'][:2]for g in old+groups if g['map'].split('/')[-1]==town]
+        for scene in ix['scenes']:
+            if scene['map'].split('/')[-1]==town:avoid+=(np.array(scene['positions_xy'])*[1,-1]).tolist()
+        candidates=[]
+        for k,p in enumerate(mp.get_spawn_points()):
+            xy=np.array([p.location.x,p.location.y]);distance=min([np.linalg.norm(xy-v)for v in avoid]or[1000.])
+            if distance<45:continue
+            wp=mp.get_waypoint(p.location);ahead=wp.next(15)
+            if not ahead:continue
+            if mp.get_waypoint(p.transform(carla.Location(x=15)),project_to_road=False,lane_type=carla.LaneType.Driving)is None:continue
+            candidates.append((distance,k,p,wp.is_junction))
+        if not candidates:raise RuntimeError('No isolatedpose '+town+' '+split)
+        dist,k,p,junction=max(candidates,key=lambda v:v[0]);g=dict(group=f'{town}_i{split}',map=town,split=split,spawn_index=k,pose=[p.location.x,p.location.y,p.location.z,p.rotation.pitch,p.rotation.yaw,p.rotation.roll],geometry='junction'if junction else'straight_or_curve',min_prior_distance_m=float(dist),weather=['ClearNoon','CloudyNoon','ClearSunset','WetCloudySunset'][j%4]);groups.append(g);print(g,flush=True)
+    car='vehicle.tesla.model3';van='vehicle.mercedes.sprinter';ped='walker.pedestrian.0001';cone='static.prop.trafficcone01'
+    layouts=[[],[[8,0,car,.05]],[[8,7,car,.05]],[[8,-7,car,.05]],[[-8,7,van,.05]],[[-8,-7,car,.05]],[[-12,0,van,.05]],[[6,5,ped,.85]],[[-6,5,ped,.85]],[[6,-5,cone,.05]],[[-6,5,cone,.05]],[[25,0,van,.05]],[[32,0,van,.05]],[[22,10,van,.05]],[[25,1,ped,.85]],[]]
+    for split in ['train','val','test']:
+        p=Path(f'configs/m5i_capture_{split}.json')
+        if p.exists():raise FileExistsError(p)
+        atomic_json(p,dict(schema='hsd-m5i-capture-v1',groups=[g for g in groups if g['split']==split],configurations=layouts,source_sha256=file_hash(__file__),coordinate='CARLAworld andCARLAego yright; rawHS poses yleft; nearestprior includesM4allroutes convertedHS->CARLA',role='No testRGBbeforefreeze'))
+if __name__=='__main__':main()

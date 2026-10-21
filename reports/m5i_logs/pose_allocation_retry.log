@@ -1,0 +1,17 @@
+{'group': 'Town01_itrain', 'map': 'Town01', 'split': 'train', 'spawn_index': 86, 'pose': [210.86700439453125, 133.64796447753906, 0.29999998211860657, 0.0, 6.103515261202119e-05, 0.0], 'geometry': 'straight_or_curve', 'min_prior_distance_m': 96.41545471434965, 'weather': 'ClearNoon'}
+{'group': 'Town03_itrain', 'map': 'Town03', 'split': 'train', 'spawn_index': 170, 'pose': [22.490116119384766, 207.50567626953125, 0.27530714869499207, 0.0, -0.142974853515625, 0.0], 'geometry': 'straight_or_curve', 'min_prior_distance_m': 71.87671914295626, 'weather': 'CloudyNoon'}
+{'group': 'Town04_itrain', 'map': 'Town04', 'split': 'train', 'spawn_index': 364, 'pose': [249.52442932128906, -122.46336364746094, 0.48194244503974915, 0.0, -179.0759735107422, 0.0], 'geometry': 'junction', 'min_prior_distance_m': 100.56454761656165, 'weather': 'ClearSunset'}
+{'group': 'Town05_itrain', 'map': 'Town05', 'split': 'train', 'spawn_index': 269, 'pose': [7.148544788360596, -186.483154296875, 0.4999820590019226, -0.7672419548034668, -0.2429504096508026, -1.0422974983104183e-10], 'geometry': 'straight_or_curve', 'min_prior_distance_m': 65.72768866967546, 'weather': 'WetCloudySunset'}
+{'group': 'Town04_ival', 'map': 'Town04', 'split': 'val', 'spawn_index': 20, 'pose': [393.0981140136719, -228.0875701904297, 0.2819424271583557, 0.0, 90.59857940673828, 0.0], 'geometry': 'straight_or_curve', 'min_prior_distance_m': 82.77589432149169, 'weather': 'ClearNoon'}
+{'group': 'Town05_ival', 'map': 'Town05', 'split': 'val', 'spawn_index': 145, 'pose': [31.556598663330078, 138.83389282226562, 0.29999998211860657, 0.0, -89.97711181640625, 0.0], 'geometry': 'junction', 'min_prior_distance_m': 64.31676996071991, 'weather': 'CloudyNoon'}
+{'group': 'Town01_itest', 'map': 'Town01', 'split': 'test', 'spawn_index': 87, 'pose': [-1.980019450187683, 249.42999267578125, 0.29999998211860657, 0.0, 90.00004577636719, 0.0], 'geometry': 'straight_or_curve', 'min_prior_distance_m': 81.99124718364361, 'weather': 'ClearSunset'}
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5i_capture_protocol.py", line 32, in <module>
+    if __name__=='__main__':main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5i_capture_protocol.py", line 13, in main
+    world=client.load_world(town);mp=world.get_map();avoid=[g['pose'][:2]for g in old+groups if g['map'].split('/')[-1]==town]
+RuntimeError: Map 'Town06' not found

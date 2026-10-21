@@ -1,0 +1,190 @@
+{
+  "stage": "M5-I",
+  "status": "Partial",
+  "base": "4e50203",
+  "implementation_commit": "01d5cf47dfb967f65f00a64cde97da32fecaf8f5",
+  "gates": {
+    "engineering": {
+      "status": "Passed",
+      "evidence": {
+        "kind": "actual_pytest_and_RTX4090_contract_execution",
+        "records": [
+          {
+            "path": "reports/m5i_logs/full_tests_pretest.log",
+            "sha256": "748b00bafaf4864d2abbb5273d09b08f62d283a6a534082c5f0511b1e099d668",
+            "passed": 274,
+            "skipped": 5,
+            "elapsed_s": 16.63
+          },
+          {
+            "path": "reports/m5i_logs/carla_python_tests.log",
+            "sha256": "d198d15e1ae9a28510001be34de4df8d95918a896d7a3ea91cf638fe4805d8c4",
+            "passed": 23,
+            "skipped": 0,
+            "elapsed_s": 0.51
+          }
+        ],
+        "gpu_contract_sha256": "1b6cb955b01978fa6bd735df30ff2a8484a2da290053e37ba279face3daced2a",
+        "passed": true,
+        "source_commit": "4e50203602377a68706444461f77477b5cc526f0",
+        "source_sha256": "536e1c809b4b7c9a9fe444bd267248bd2bfa72e7ab9dad04c13cf5bdb48accce",
+        "limits": "CARLA SDK environment unit tests overlap fullsuite; do notaddcounts. ActualCARLAcapture separatelyaudited, no driving safety claim."
+      }
+    },
+    "visual_transfer": {
+      "status": "Partial",
+      "evidence": [
+        {
+          "name": "mobile_gt",
+          "seed": 101,
+          "precision_delta": 0.2570387499430151,
+          "recall_delta": 0.43721130149649295,
+          "ap_delta": 0.4603971497115211,
+          "removed_fpr_delta": -0.005032384461306782,
+          "actor_miss_delta": -0.3676470588235294
+        },
+        {
+          "name": "output_kd",
+          "seed": 101,
+          "precision_delta": 0.06833789198041917,
+          "recall_delta": -0.02709941645597891,
+          "ap_delta": 0.03766340583004851,
+          "removed_fpr_delta": -0.0018538824802257405,
+          "actor_miss_delta": 0.03676470588235298
+        },
+        {
+          "name": "mobile_gt",
+          "seed": 102,
+          "precision_delta": 0.16867946857159344,
+          "recall_delta": 0.43410870173186256,
+          "ap_delta": 0.4148010584847235,
+          "removed_fpr_delta": -0.007456467388920567,
+          "actor_miss_delta": -0.3602941176470588
+        },
+        {
+          "name": "output_kd",
+          "seed": 102,
+          "precision_delta": 0.03944657716908362,
+          "recall_delta": -0.006120736740749921,
+          "ap_delta": 0.02957714226793884,
+          "removed_fpr_delta": -0.0011725660482184899,
+          "actor_miss_delta": 0.01470588235294118
+        }
+      ]
+    },
+    "lightweight_architecture": {
+      "status": "CandidateOnly",
+      "evidence": "FrozenGTarchitecture comparison; require camera/class andBEVregression beforemigration"
+    },
+    "camera_support": {
+      "status": "PassedLimited",
+      "evidence": [
+        {
+          "split": "train",
+          "camera": "front",
+          "passed": true
+        },
+        {
+          "split": "train",
+          "camera": "front_left",
+          "passed": true
+        },
+        {
+          "split": "train",
+          "camera": "front_right",
+          "passed": true
+        },
+        {
+          "split": "train",
+          "camera": "rear_left",
+          "passed": true
+        },
+        {
+          "split": "train",
+          "camera": "rear_right",
+          "passed": true
+        },
+        {
+          "split": "train",
+          "camera": "rear",
+          "passed": true
+        },
+        {
+          "split": "val",
+          "camera": "front",
+          "passed": true
+        },
+        {
+          "split": "val",
+          "camera": "front_left",
+          "passed": true
+        },
+        {
+          "split": "val",
+          "camera": "front_right",
+          "passed": true
+        },
+        {
+          "split": "val",
+          "camera": "rear_left",
+          "passed": true
+        },
+        {
+          "split": "val",
+          "camera": "rear_right",
+          "passed": true
+        },
+        {
+          "split": "val",
+          "camera": "rear",
+          "passed": true
+        }
+      ]
+    },
+    "depth_qualification": {
+      "status": "Partial_NotUpgraded",
+      "evidence": [
+        {
+          "seed": 101,
+          "qualified": false
+        },
+        {
+          "seed": 102,
+          "qualified": false
+        }
+      ]
+    },
+    "joint_BEV": {
+      "status": "Partial",
+      "evidence": "Need Precision ANDRecall; unknown notnegative; no calibratedoccupancy"
+    },
+    "runtime": {
+      "status": "PartialInherited",
+      "evidence": "No runtime modification/longstressretest"
+    },
+    "oracle_driving_safety": {
+      "status": "NotRevalidated"
+    },
+    "pure_visual_safety": {
+      "status": "NotValidated",
+      "evidence": "No controlcommands"
+    },
+    "formal_M5_training": {
+      "status": "NotApproved"
+    }
+  },
+  "actual_execution": {
+    "gpu": "RTX4090",
+    "pixel_runs": 6,
+    "steps_per_run": 2400,
+    "seeds": [
+      101,
+      102
+    ],
+    "depth_training": false,
+    "depth_calibration": false,
+    "default_changed": false,
+    "visual_control": false
+  },
+  "source_sha256": "36eb250f67bd123c4b5fbc4685197bdedd68ecab11afe69e4c1e86a706fdc7fb"
+}

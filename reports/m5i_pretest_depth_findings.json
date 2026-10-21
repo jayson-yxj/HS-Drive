@@ -1,0 +1,40 @@
+{
+  "kind": "offline_pretest_validation_interpretation",
+  "associated_actor_near": {
+    "original_0": {
+      "name": "original",
+      "seed": 0,
+      "distance": "1.5_10",
+      "n": 3459,
+      "mae": 6.14709918250511,
+      "bias": 6.051416373719849,
+      "inside_n": 3459,
+      "space_1m_mass": 0.19149307779974248
+    },
+    "replay_101": {
+      "name": "replay",
+      "seed": 101,
+      "distance": "1.5_10",
+      "n": 3459,
+      "mae": 5.480913044021597,
+      "bias": 5.4591647409641455,
+      "inside_n": 3459,
+      "space_1m_mass": 0.18553753794488895
+    },
+    "replay_102": {
+      "name": "replay",
+      "seed": 102,
+      "distance": "1.5_10",
+      "n": 3459,
+      "mae": 5.730150609321076,
+      "bias": 5.713985429278134,
+      "inside_n": 3459,
+      "space_1m_mass": 0.1822582126185018
+    }
+  },
+  "finding": "Aggregate near MAE protection does not establish obstacle localization: associated near Actor MAE remains5.48-5.73m and same-layer1m mass declines from .1915 to .1855/.1823. Separate from pooled background-dominated near gate.",
+  "new_gate": false,
+  "default_unchanged": true,
+  "source": "m5i_associated_actor_depth_val.json",
+  "source_sha256": "7897031029c598b598b2c50759f39d8dd80e388603236e161dd64c5ac96b5a21"
+}

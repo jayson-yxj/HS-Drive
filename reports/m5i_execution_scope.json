@@ -1,0 +1,50 @@
+{
+  "kind": "delivery_scope_from_actual_execution",
+  "new_capture": {
+    "train_positions": 4,
+    "val_positions": 2,
+    "test_positions": 6,
+    "configurations_per_position": 16,
+    "actual_recorded_rgb_depth_instance_frames": 384,
+    "ego_present_samples": 192,
+    "ego_removed_references": 192,
+    "server": "CARLA0.9.15 Epic",
+    "gpu": "RTX4090"
+  },
+  "learning": {
+    "runs": 6,
+    "seeds": [
+      101,
+      102
+    ],
+    "updates_per_run": 2400,
+    "frozen_backbones": true,
+    "feature_kd_training": false,
+    "depth_training": false
+  },
+  "validation": {
+    "gpu_pytest": "274passed/5SDKimportskips",
+    "sdk_followup": "14passed/0skipped",
+    "sdk_other_subset": "23passed",
+    "not_sum_independent_tests": true
+  },
+  "read_only_defaults": [
+    "ResNet18 encoder",
+    "48 LID bins",
+    "HeightSplat",
+    "4x160x120BEV",
+    "Replay checkpoints",
+    "controller",
+    "Physics"
+  ],
+  "scientific_freeze_commit": "01d5cf47dfb967f65f00a64cde97da32fecaf8f5",
+  "actual_source_files": "m5i_pretest_freeze.json",
+  "decision": {
+    "architecture": "Mobile independent migration candidate; default unchanged",
+    "depth": "Replay not upgraded",
+    "occupancy": "No automatic formal scaleup",
+    "runtime": "Partial inherited; unchanged",
+    "visual_driving": "Not exercised"
+  },
+  "postfreeze_clarification": "m5i_delivery_review.json"
+}

@@ -1,0 +1,59 @@
+{
+  "kind": "offline_actual_source_checkpoint_lineage",
+  "files": {
+    "training/m5h_losses.py": "4e84e8f39db0b9b9fab271a66033f3c3afd27f741709e02dd2cfcd9d8d8b2c13",
+    "tools/m5h_pixel_training.py": "8737971395c0d0e2ccc8ca63daa87e6c9d2356f637bd4435d16edd3f23564395",
+    "tools/m5h_depth_training.py": "149b93e7e1daca6f6cc0c85a673c5515e66a696ac339bfd47d6220ab64ba6a89",
+    "models/image_encoder.py": "fcc80c1e861b9ea1087e6ac8ba3e11774aec7e8056cd7a7d5c6a23b19c6c93f7",
+    "training/runner.py": "4446a1c46bc012bd7561680c52513b6f842e70480b798932e4c347feed433f2e"
+  },
+  "checkpoint_keys": [
+    "schema_version",
+    "model",
+    "optimizer",
+    "step",
+    "config",
+    "index_sha256",
+    "best_score",
+    "torch_rng",
+    "cuda_rng"
+  ],
+  "original_pretrained_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+  "pretrained_sha_matches": true,
+  "m4_checkpoint_sha_matches": true,
+  "facts": {
+    "positive_only_KD": true,
+    "teacher_negative_KD": false,
+    "imagenet_initialization": true,
+    "not_from_scratch": true
+  },
+  "global_bias": [
+    {
+      "name": "original",
+      "seed": 0,
+      "bias": -0.6980765336577321
+    },
+    {
+      "name": "replay",
+      "seed": 101,
+      "bias": -1.2687781100332054
+    },
+    {
+      "name": "replay_kl",
+      "seed": 101,
+      "bias": -0.9170862923406994
+    },
+    {
+      "name": "replay",
+      "seed": 102,
+      "bias": -1.198068282313309
+    },
+    {
+      "name": "replay_kl",
+      "seed": 102,
+      "bias": -0.9226091554034226
+    }
+  ],
+  "limits": "M4fine-tuning changes weights; initlineage basedactualmanifest/checksums andloader not equalitytoImageNetcurrentweights.",
+  "source_sha256": "035c5b7e9381364f98ce5e5ed05448aa8a1bc390f6b032306944079fb44adcc8"
+}

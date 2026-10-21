@@ -1,0 +1,103 @@
+{
+  "kind": "actual_GPU_training_and_preprocessing_cost",
+  "training": [
+    {
+      "name": "gt",
+      "seed": 101,
+      "steps": 2400,
+      "trainable_parameters": 113153,
+      "elapsed_s": 47.897448068484664,
+      "peak_allocated_mib": 10982.86962890625,
+      "max_gradient": 2.484375,
+      "finite": true
+    },
+    {
+      "name": "gt",
+      "seed": 102,
+      "steps": 2400,
+      "trainable_parameters": 113153,
+      "elapsed_s": 45.72413619980216,
+      "peak_allocated_mib": 10984.80517578125,
+      "max_gradient": 2.5,
+      "finite": true
+    },
+    {
+      "name": "output_kd",
+      "seed": 101,
+      "steps": 2400,
+      "trainable_parameters": 113153,
+      "elapsed_s": 47.67248845100403,
+      "peak_allocated_mib": 10983.9248046875,
+      "max_gradient": 2.96875,
+      "finite": true
+    },
+    {
+      "name": "output_kd",
+      "seed": 102,
+      "steps": 2400,
+      "trainable_parameters": 113153,
+      "elapsed_s": 47.499586241319776,
+      "peak_allocated_mib": 10986.2353515625,
+      "max_gradient": 3.3125,
+      "finite": true
+    },
+    {
+      "name": "mobile_gt",
+      "seed": 101,
+      "steps": 2400,
+      "trainable_parameters": 126977,
+      "elapsed_s": 47.18088738434017,
+      "peak_allocated_mib": 10995.4970703125,
+      "max_gradient": 2.203125,
+      "finite": true
+    },
+    {
+      "name": "mobile_gt",
+      "seed": 102,
+      "steps": 2400,
+      "trainable_parameters": 126977,
+      "elapsed_s": 49.37878005579114,
+      "peak_allocated_mib": 11009.6298828125,
+      "max_gradient": 2.53125,
+      "finite": true
+    }
+  ],
+  "mobile_cache": {
+    "kind": "actual_GPU_RGB_only_pretrained_mobile_features",
+    "source_sha256": "1518fcd7a3d625e6d44d1fa426478be498c6974b96e1c7ab8bd16f3749a67e99",
+    "weights_sha256": "5c1a416349c4cf298f2a6a5e2600ed0ee55e604713578f5e74e6bc8bcaef7997",
+    "elapsed_s": 38.251137712970376
+  },
+  "teacher_cache": {
+    "kind": "actual_RTX4090_RGB_only_offline_teacher",
+    "weight_sha256": "73cbd0190fcbe3ba339921fbce2c3a0b6bb9126c9a133c85e43a2a8e060a109e",
+    "weight_url": "https://download.pytorch.org/models/maskrcnn_resnet50_fpn_v2_coco-73cbd019.pth",
+    "source_sha256": "ca9b14665d7fa782bb7e031d9cd478861bf9e4f968e62f9543aaffecb4bc74f0",
+    "torchvision_source_sha256": "b00ff45460ea07fa08e38495259f5954dfd2050587eb4c9398d0f6945df5f7b8",
+    "torchvision_version": "0.23.0+cu128",
+    "native_hw": [
+      384,
+      640
+    ],
+    "resize": {
+      "min_size": 800,
+      "max_size": 1333,
+      "actual_hw": [
+        799,
+        1333
+      ],
+      "padded_hw": [
+        800,
+        1344
+      ],
+      "batch_padding_divisor": 32
+    },
+    "score": "max(instance score * mask probability), quantizedfloor256; instance mask round255",
+    "elapsed_s": 94.8215335663408,
+    "peak_allocated_mib": 711.7568359375,
+    "unsupported": "cone ignored byteacher; retain GT",
+    "license_provenance": "reports/m5g_pretrained_provenance.json"
+  },
+  "feature_cache_executed": false,
+  "limits": "Training timeincludes periodic train/valforward andcheckpointwrite, excludes initialRAM/GPUcacheload andofflineteacher; peakGPU includesallsharedtrainingcaches notdeploymentmemory. Teacher mayoverlapofflineDepth andCPUaudits; isolatedinference separatelybenchmarked."
+}

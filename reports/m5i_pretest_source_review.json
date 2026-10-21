@@ -1,0 +1,17 @@
+{
+  "kind": "offline_source_review",
+  "files": {
+    "tools/m5i_run_sealed.sh": "f28f06d173f543b20ee5b90a8d69794e96f52bdef2e4790df040e8d7efe47b71",
+    "tools/m5i_depth_actor_eval.py": "ddbacf3a02efd5c25aa8e20b41371bc508dbdf549bd7fb7ce6fca9158e436130",
+    "tools/m5i_findings.py": "0834bb7c45e66cb3969083a72157f9432b0a5a4e6921e3dd845698da45224bff"
+  },
+  "checks": [
+    "GT only targets/metrics, RGB-only inference constructors",
+    "soft negative mask excludes confirmed GT target and Unknown",
+    "feature branch conditional not run based on positive B validation gains",
+    "all scientific candidates frozen before capture",
+    "semantic vs associated Actor depth separately reported"
+  ],
+  "base": "4e50203",
+  "limitations": "Manual source review plus unit and actualGPU contract tests; not formal proof"
+}
