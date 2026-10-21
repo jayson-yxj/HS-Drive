@@ -1,0 +1,67 @@
+{
+  "schema": "hsd-m5h-study-v1",
+  "base": "bf0c38d",
+  "seeds": [
+    101,
+    102
+  ],
+  "pixel": {
+    "models": [
+      "gt",
+      "distill"
+    ],
+    "steps": 2400,
+    "evaluate_every": 400,
+    "head_lr": 0.001,
+    "fpn_lr": 0.0001,
+    "teacher_lambda": 0.25,
+    "teacher_confidence": 0.7,
+    "teacher_pixel_min": 0.7,
+    "teacher_domain": "Only reliable GT vehicle/person positives with agreeing supported teacher mask>=.7 and instance confidence>=.7. No teacher negative supervision; uncertain/conflicting/unsupported pixels remain GT-only.",
+    "budget_reason": "Predeclared2400 from start: added16trainframes give1248 eligible six-camera views;1200 cannot cover one pass. No conditional extension beyond2400.",
+    "sampler": "First shuffled epoch covers ALL eligible train views once; remaining steps inverse-frequency multi-stratum weighted sampling, all arms identical.",
+    "selection": "Validation only sceneP>=.8 R>=.8 EmptyFPR<=.01 minimax thenmacroIoU thenearlieststep",
+    "conditional_hard": "Only if BOTH distill seeds improve validation macroAP by>=.01 and jointviolation not worse, and background FPR>0.001; no automatic budget extension",
+    "backbone": "No change; do not attribute residual gap uniquely tocapacity"
+  },
+  "depth": {
+    "models": [
+      "original",
+      "replay",
+      "replay_kl"
+    ],
+    "steps": 1200,
+    "evaluate_every": 200,
+    "lr": 2e-05,
+    "replay_weight": 1.0,
+    "kl_weight": 10.0,
+    "bins": 48,
+    "new_loss": "Uniform reliable-ray CE; no equal-distance or actor upweighting",
+    "replay": "All original M4 expanded_joint train_sample_ids, original S16 and diagnostic P8 near1.5-10m reliable depth, no original validation/test.",
+    "kl": "old||new on reliable near rays from newdata plusreplay, FP32,mean over rays",
+    "selection": "Nonzero step nearMAE<=1.05old on currentValP8 AND originalValS16; maximizeVal10-35 target1mmass",
+    "conditional_spatial": "Only if BOTH B and C have nonzero eligible checkpoints and no globalMAE degradation>5percent; otherwise D not run"
+  },
+  "test": {
+    "groups": 6,
+    "role": "New poses aftergeometryallocation, capture/open onlyaftermodelthresholdfreeze",
+    "distance_min_m": 45
+  },
+  "shadow": {
+    "threshold": 0.2,
+    "student_gt_mask": false,
+    "oracle": "diagnostic only",
+    "no_control": true
+  },
+  "roi": {
+    "stride": 4,
+    "selection": "student probability at validation chosen pixelthreshold",
+    "depth": "Oracle only sampling diagnosis, not implementedS4Depthnetwork"
+  },
+  "low_fpr": [
+    0.01,
+    0.001,
+    0.0001
+  ],
+  "gates": "Originalquality gates unchanged; runtime inheritedPartial; purevisualsafety notvalidated"
+}
