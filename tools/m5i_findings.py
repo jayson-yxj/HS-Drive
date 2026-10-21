@@ -16,7 +16,7 @@ def main():
             for category in ['by_scene','strata']:
                 for key,m in r['result'][category].items():
                     if category=='strata'and not key.startswith('camera:'):continue
-                    b=base['result'][category][key];comparisons.append(dict(seed=seed,name=name,category=category,key=key,positive=m['positive'],precision_delta=m['precision']-b['precision'],recall_delta=m['recall']-b['recall'],ap_delta=(m['histogram_ap']or 0)-(b['histogram_ap']or 0)))
+                    b=base['result'][category][key];comparisons.append(dict(seed=seed,name=name,category=category,key=key,positive=m['positive'],precision_delta=m['precision']-b['precision'],recall_delta=(m['recall']-b['recall']) if m['recall'] is not None and b['recall'] is not None else None,ap_delta=(m['histogram_ap']or 0)-(b['histogram_ap']or 0)))
     for r in records:
         for lo,hi in [(3,32),(33,512),(513,10**9)]:
             rr=[a for a in r['result']['actors']if lo<=a['pixels']<=hi];n=len(rr);sizes.append(dict(name=r['name'],seed=r['seed'],pixel_area=[lo,hi],actor_views=n,detected=sum(a['detected']for a in rr),recall=sum(a['detected']for a in rr)/n if n else None))
@@ -31,7 +31,7 @@ def main():
     lines=['# M5-I 补充分层诊断','', '以下为封存后描述统计，不用于重选模型/阈值。六个位置组不足以代表广泛驾驶域；重复配置和像素不是独立场景。','', '|候选|seed|未见位置AP提高数|位置P/R同时提高数|六摄P/R同时提高数|','|---|---:|---:|---:|---:|']
     for seed in [101,102]:
         for name in ['output_kd','mobile_gt']:
-            rr=[r for r in comparisons if r['seed']==seed and r['name']==name];sc=[r for r in rr if r['category']=='by_scene'];ca=[r for r in rr if r['category']=='strata'and r['key'].endswith('/all')];lines.append(f"|{name}|{seed}|{sum(r['ap_delta']>0 for r in sc)}/{len(sc)}|{sum(r['precision_delta']>0 and r['recall_delta']>0 for r in sc)}/{len(sc)}|{sum(r['precision_delta']>0 and r['recall_delta']>0 for r in ca)}/{len(ca)}|")
+            rr=[r for r in comparisons if r['seed']==seed and r['name']==name];sc=[r for r in rr if r['category']=='by_scene'];ca=[r for r in rr if r['category']=='strata'and r['key'].endswith('/all')];lines.append(f"|{name}|{seed}|{sum(r['ap_delta']>0 for r in sc)}/{len(sc)}|{sum(r['precision_delta']>0 and (r['recall_delta']or 0)>0 for r in sc)}/{len(sc)}|{sum(r['precision_delta']>0 and (r['recall_delta']or 0)>0 for r in ca)}/{len(ca)}|")
     lines+=['', '|模型|seed|小目标3–32像素Actor-view|检出Recall|','|---|---:|---:|---:|']
     for r in sizes:
         if r['pixel_area'][0]!=3:continue

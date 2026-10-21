@@ -58,6 +58,7 @@ bash tools/m5i_process_added.sh
 .venv-gpu/bin/python -m tools.m5i_cache
 .venv-gpu/bin/python -m tools.m5i_teacher_audit
 .venv-gpu/bin/python -m tools.m5i_teacher_classes
+.venv-gpu/bin/python -m tools.m5i_teacher_audit_figures
 .venv-gpu/bin/python -m tools.m5i_depth_original_task
 .venv-gpu/bin/python -m tools.m5i_depth_eval
 .venv-gpu/bin/python -m tools.m5i_depth_support
@@ -101,3 +102,7 @@ bash tools/m5i_process_added.sh
 独立GPU延迟需先停止本任务CARLA与其他GPU实验；只计GPU推理，不包含控制关键路径。原Runtime继承Partial，不重复长期压力矩阵。测试成功、视觉学习、空间泛化、Depth候选资格、安全与实时性分别报告。
 
 首次官方权重 urllib 下载在约94%长时间停顿，随后从同一官方 URL 使用 curl 成功下载并核验完整 SHA；原 partial 和失败日志保留，未替换为不明来源权重。`m5i_weight_download_recovery.json`记录恢复。
+
+实际资格复核额外区分语义目标射线与可关联具体 Actor 的严格射线（`m5i_depth_support_*`）。训练/验证只读记录中，105条20–35m语义目标射线仅71条关联Actor；不足100条，支持门禁仍未通过。不会通过放松3×3深度可靠性或引入未知区来补数量。
+
+Teacher可视化复核发现历史Val部分后向视图中，COCO教师把大块空旷道路赋予vehicle高分；这与GT发生冲突，不是可靠的背景知识。冲突位置未进入KD软标签，GT监督保留。另有边缘遮挡目标的教师漏检；仅凭图像对照不足以替代独立Mesh裁决。图片和选择记录见`m5i_teacher_audit_visualizations.json`。
