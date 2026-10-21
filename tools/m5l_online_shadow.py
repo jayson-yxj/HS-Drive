@@ -11,9 +11,7 @@ def main():
  import carla
  from simulator.session import CarlaSession
  from geometry.reference import intrinsics_from_hfov,camera_mount_to_hs_from_optical
- from geometry.coordinates import sys
- sys.path.append(str(Path(".venv/lib/python3.10/site-packages").resolve()))
- import carla_pose_to_hs
+ from geometry.coordinates import carla_pose_to_hs
  ctx=mp.get_context('spawn');channel=ctx.Queue(1);results=ctx.Queue(128);stop=ctx.Event();ready=ctx.Event();proc=ctx.Process(target=worker,args=(channel,results,stop,ready));proc.start()
  if not ready.wait(90):stop.set();proc.terminate();raise TimeoutError('Workerinit')
  cfg=yaml.safe_load(Path('configs/carla.yaml').read_text());cfg.update(port=2100,map='Town01');rig=yaml.safe_load(Path('configs/cameras.yaml').read_text());packets={};lock=threading.Lock();measure=[];received=[];sent=0;drops=0;aborted=False
