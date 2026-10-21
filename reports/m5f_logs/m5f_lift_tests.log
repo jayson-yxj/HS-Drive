@@ -1,0 +1,32 @@
+.......F                                                                 [100%]
+=================================== FAILURES ===================================
+_______ test_lift_preserves_mass_and_masks_without_normalizing_tiny_mass _______
+
+    def test_lift_preserves_mass_and_masks_without_normalizing_tiny_mass():
+        from models.view_transform import HeightSplat
+        from models.m5f_lift import lift
+        import yaml
+        cfg=yaml.safe_load(open('configs/bev.yaml'))
+        # Current production geometry config obtains network bins from training config.
+        import json
+        cfg=json.load(open('runs/m4_expanded_joint/manifest.json'))['config']
+>       splat=HeightSplat(cfg)
+
+tests/test_m5f_contracts.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = HeightSplat()
+config = {'schema_version': 'hsd-m4-baseline-v1', 'index': '/root/gpufree-data/hs-drive-data/processed/hsd-dataset-v2-driving-a...fig': 'configs/bev.yaml', 'pretrained_weights': '/root/gpufree-data/hs-drive-cache/weights/resnet18-f37072fd.pth', ...}
+chunk_points = 32768
+
+    def __init__(self,config,chunk_points=32768):
+        super().__init__()
+        if chunk_points<1:raise ValueError('chunk_points must be positive')
+        self.chunk_points=chunk_points
+>       self.resolution=float(config['resolution_m'])
+E       KeyError: 'resolution_m'
+
+models/view_transform.py:36: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_m5f_contracts.py::test_lift_preserves_mass_and_masks_without_normalizing_tiny_mass
+1 failed, 7 passed in 1.91s

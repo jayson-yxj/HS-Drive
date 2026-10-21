@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="8" time="1.816" timestamp="2026-10-21T12:54:34.256642+08:00" hostname="gpufree-container"><testcase classname="tests.test_m5f_contracts" name="test_version_correct_semantics_and_unknown_not_negative" time="0.005" /><testcase classname="tests.test_m5f_contracts" name="test_unknown_gradient_zero_and_balanced_positive_direction" time="0.091" /><testcase classname="tests.test_m5f_contracts" name="test_decoder_matches_original_pixel_grid" time="0.055" /><testcase classname="tests.test_m5f_contracts" name="test_self_and_identity_boundaries_are_ignored" time="0.002" /><testcase classname="tests.test_m5f_contracts" name="test_event_mass_not_amplified_by_tiny_totalmass" time="0.002" /><testcase classname="tests.test_m5f_contracts" name="test_foreground_model_rejects_privileged_inputs" time="0.089" /><testcase classname="tests.test_m5f_contracts" name="test_confirmed_building_negative_does_not_imply_free" time="0.002" /><testcase classname="tests.test_m5f_contracts" name="test_lift_preserves_mass_and_masks_without_normalizing_tiny_mass" time="0.004"><failure message="KeyError: 'resolution_m'">def test_lift_preserves_mass_and_masks_without_normalizing_tiny_mass():
+        from models.view_transform import HeightSplat
+        from models.m5f_lift import lift
+        import yaml
+        cfg=yaml.safe_load(open('configs/bev.yaml'))
+        # Current production geometry config obtains network bins from training config.
+        import json
+        cfg=json.load(open('runs/m4_expanded_joint/manifest.json'))['config']
+&gt;       splat=HeightSplat(cfg)
+
+tests/test_m5f_contracts.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = HeightSplat()
+config = {'schema_version': 'hsd-m4-baseline-v1', 'index': '/root/gpufree-data/hs-drive-data/processed/hsd-dataset-v2-driving-a...fig': 'configs/bev.yaml', 'pretrained_weights': '/root/gpufree-data/hs-drive-cache/weights/resnet18-f37072fd.pth', ...}
+chunk_points = 32768
+
+    def __init__(self,config,chunk_points=32768):
+        super().__init__()
+        if chunk_points&lt;1:raise ValueError('chunk_points must be positive')
+        self.chunk_points=chunk_points
+&gt;       self.resolution=float(config['resolution_m'])
+E       KeyError: 'resolution_m'
+
+models/view_transform.py:36: KeyError</failure></testcase></testsuite></testsuites>

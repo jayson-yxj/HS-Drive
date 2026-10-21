@@ -1,0 +1,104 @@
+{
+  "stage": "M5-F",
+  "status": "Partial",
+  "base": "bf989b4",
+  "branch": "feat/m5f-image-grounding",
+  "source_commit": "9e53a6c426951866faac3084549b82b40bd0d982",
+  "protocol_sha256": "2ffb46b009dede8fc9206d3dd4d7678e366606fa959c56fe4cffb37e4b52fe88",
+  "states": {
+    "engineering_interfaces": {
+      "status": "Passed",
+      "scope": "opt-in RGB pixel/lift contracts, nativeP8, FP32geometry, noGTforward, defaultunchanged"
+    },
+    "research_training_execution": {
+      "status": "Passed",
+      "scope": "6 actualGPU400step runs, 2seeds, finitegradients, matchedschedules, limitedscalarfusion"
+    },
+    "rgb_visual_learning_gain": {
+      "status": "Partial",
+      "scope": "FPN raisesAP bothseeds and meanpairedrise all3positions; insufficientprecision/residual"
+    },
+    "image_presence_generalization": {
+      "status": "Partial",
+      "scope": "0/6 validationjointfeasible; testprecisionlow, smalltargetsunsupported"
+    },
+    "bev_obstacle_generalization": {
+      "status": "Partial",
+      "scope": "oracle2D confirmsdepthbottleneck; fusionno consistentrecallgain"
+    },
+    "offline_shadow_interface": {
+      "status": "Passed",
+      "scope": "recordedRGB only no control; latencymeasured, doesnot implyquality"
+    },
+    "runtime_realtime": {
+      "status": "Partial",
+      "scope": "M5E617msticktail inherited; standaloneGPUlatencynotcontrolcycle"
+    },
+    "oracle_driving_safety": {
+      "status": "NotRevalidated",
+      "scope": "runtimeunchanged; historicalPartial unresolved"
+    },
+    "pure_visual_driving_safety": {
+      "status": "NotValidated",
+      "scope": "no visualcontrols"
+    },
+    "formal_M5_scaleup": {
+      "status": "NotApproved",
+      "scope": "qualitygate remains open; no largescale run launched"
+    }
+  },
+  "validation_joint_feasible_models": 0,
+  "tests": {
+    "gpu_environment_passed": 256,
+    "gpu_environment_skipped": 5,
+    "carla_environment_related_passed": 14,
+    "overlap": "not additive unique count",
+    "actual_gpu_contract": "Passed"
+  },
+  "actual_execution": {
+    "gpu": "RTX4090",
+    "training_models": 6,
+    "steps_each": 400,
+    "seeds": [
+      101,
+      102
+    ],
+    "train_positions": 12,
+    "val_positions": 6,
+    "new_test_positions": 3,
+    "new_test_frames": 36,
+    "ego_removed_reference_frames": 36,
+    "carla_simulation": true,
+    "visual_control": false
+  },
+  "frozen_sources_unchanged": true,
+  "frozen_checkpoints_unchanged": true,
+  "reports": {
+    "m5f_pixel_label_quality.json": "a6ab3b75454d3cd5820dbfe79f89ce158fe87e6d11a2b90d934116c075fefae7",
+    "m5f_image_foreground_training.json": "f1bea8fd88c9d88708028de187faafbfa7c05cd74fd742c4e707b812c4d17dd9",
+    "m5f_2d_presence_absence.json": "931d79ede4645c985d228de88a77c34afff3a3929288430f2cf3a4efbb6f3261",
+    "m5f_2d_3d_factorization.json": "d5814909b32932fa3fb93769e48d865eef1883893deaab619ca1da1225177f24",
+    "m5f_bev_foreground_evidence.json": "555f2a6435be13a344c0212f507de4b8d37346e4542a32365df43121182d6cb9",
+    "m5f_inference_latency.json": "e6865139b0c6273cec06d23cd03bf15ac58f5ee62e3236d03b52bff2bf7bf36d",
+    "m5f_shadow_evaluation.json": "15009b69325653d624e9126d09c5a6577d3248e709b43d664787cae44e1bb147",
+    "m5f_test_label_quality.json": "5092df52ca8021698c8a8701f3e495b4fd2bfb5e81210719bf5572abec14da00",
+    "m5f_results_digest.json": "b5c0fff5e3c5dfd36f9dab896243899b8663df4e8754a4d8ebaed41e884a5558",
+    "m5f_gpu_contract.json": "0c32d77e820a7b4491607a758580cef88ed4ee9c5cce4eb43b309df3102872e4",
+    "m5f_isolated_latency.json": "0dcfaadfcadc5a9c2c9fd20edb2c6d9acb6ae16de6c5cc1dc6458135516893b6"
+  },
+  "limits": [
+    "Only3independenttestpositions",
+    "Sameknownmaps, no new ramp",
+    "Targeteventsmostlyfrontcamera",
+    "ActorIDassociationAABBproxy notMesh",
+    "Transparent/reflectioninteriors unresolved",
+    "No<=32pixel smalltargets",
+    "HistAPapprox256bins",
+    "Oracle sharedrenderer",
+    "Perstridethresholds differ; fixed.2 supplement required",
+    "P8Depth originalS16head distribution",
+    "Classconditionalmask nevermeansphysicalfree",
+    "No defaultbehaviorchanges ormainmerge"
+  ],
+  "next": "Limitedvisualbackbone/highresolutionstudy first; depthspatialprobability parallelcontrolledproposal; noautomaticlargerOccupancy/Temporal/SparseQuery"
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "actual_RTX4090_sixcamera_contract_test",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "bf16_s16_matches_original_exactly": true,
+  "mutated_supervision_does_not_change_rgb_output": true,
+  "privileged_keys_rejected": [
+    "depth_gt",
+    "semantic",
+    "instance",
+    "actors",
+    "valid_mask",
+    "target"
+  ],
+  "output_shape": [
+    1,
+    6,
+    384,
+    640
+  ],
+  "source_sha256": "c442afffac92673fd4f572021ed059cb4971a6f6136e720b862d72b50b4eac7a",
+  "limits": "Contract test, not quality or driving. Existing geometry also syntheticCPUtested; no testsubset modelselection."
+}

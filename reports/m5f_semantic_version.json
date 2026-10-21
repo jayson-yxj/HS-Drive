@@ -1,0 +1,65 @@
+{
+  "kind": "actual_installed_CARLA_0_9_15_python_enum_and_recorded_labels",
+  "enum": {
+    "NONE": 0,
+    "Buildings": 3,
+    "Fences": 5,
+    "Other": 22,
+    "Pedestrians": 12,
+    "Poles": 6,
+    "RoadLines": 24,
+    "Roads": 1,
+    "Sidewalks": 2,
+    "TrafficSigns": 8,
+    "Vegetation": 9,
+    "Car": 14,
+    "Walls": 4,
+    "Sky": 11,
+    "Ground": 25,
+    "Bridge": 26,
+    "RailTrack": 27,
+    "GuardRail": 28,
+    "TrafficLight": 7,
+    "Static": 20,
+    "Dynamic": 21,
+    "Water": 23,
+    "Terrain": 10,
+    "Truck": 15,
+    "Motorcycle": 18,
+    "Bicycle": 19,
+    "Bus": 16,
+    "Rider": 13,
+    "Train": 17,
+    "Any": 255
+  },
+  "source": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv/lib/python3.10/site-packages/carla/__init__.py",
+  "source_sha256": "f0f260da9eafaf3168d89244ee0353dc013709fac905fd08422bc6eee2238062",
+  "official_reference": "https://carla.readthedocs.io/en/0.9.15/ref_sensors/#semantic-segmentation-camera",
+  "actual_examples": [
+    {
+      "type": "vehicle.tesla.model3",
+      "actor_id": 546,
+      "render_id": 39655,
+      "tag": 14
+    },
+    {
+      "type": "vehicle.carlamotors.carlacola",
+      "actor_id": 544,
+      "render_id": 35271,
+      "tag": 15
+    },
+    {
+      "type": "walker.pedestrian.0001",
+      "actor_id": 547,
+      "render_id": 52967,
+      "tag": 12
+    },
+    {
+      "type": "static.prop.trafficcone01",
+      "actor_id": 543,
+      "render_id": 36295,
+      "tag": 21
+    }
+  ],
+  "rule": "Dynamic21 only trafficcone01 geometrically associatedrenderidentity; no allDynamicpositive or allunknownnegative."
+}
