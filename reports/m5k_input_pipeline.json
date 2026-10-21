@@ -1,0 +1,183 @@
+{
+  "kind": "actual_RTX4090_measured_end_to_end_offline_and_actual_CARLA_buffer_replay",
+  "records": [
+    {
+      "seed": 101,
+      "mode": "file_sha",
+      "complete_pipeline_ms": {
+        "n": 40,
+        "mean": 101.4319044072181,
+        "p50": 98.62445294857025,
+        "p95": 117.31766313314438,
+        "p99": 127.38992484286426,
+        "max": 133.82613286376
+      },
+      "peak_mib": 225.955078125,
+      "over50ms": 40
+    },
+    {
+      "seed": 101,
+      "mode": "memory_float",
+      "complete_pipeline_ms": {
+        "n": 40,
+        "mean": 29.26595425233245,
+        "p50": 27.882259339094162,
+        "p95": 40.40531944483518,
+        "p99": 43.31912035122514,
+        "max": 44.042620807886124
+      },
+      "peak_mib": 225.955078125,
+      "over50ms": 0
+    },
+    {
+      "seed": 101,
+      "mode": "memory_pinned_uint8",
+      "complete_pipeline_ms": {
+        "n": 40,
+        "mean": 27.613587770611048,
+        "p50": 26.08933486044407,
+        "p95": 38.737959414720535,
+        "p99": 40.99109845235944,
+        "max": 42.26865991950035
+      },
+      "peak_mib": 225.955078125,
+      "over50ms": 0
+    },
+    {
+      "seed": 101,
+      "mode": "native_bgra_pinned",
+      "complete_pipeline_ms": {
+        "n": 40,
+        "mean": 33.15651034936309,
+        "p50": 31.200277619063854,
+        "p95": 46.80970394983888,
+        "p99": 48.40365571901202,
+        "max": 48.78171905875206
+      },
+      "peak_mib": 227.291015625,
+      "over50ms": 0
+    },
+    {
+      "seed": 101,
+      "mode": "torch_serialized",
+      "complete_pipeline_ms": {
+        "n": 40,
+        "mean": 40.44197993353009,
+        "p50": 39.08637631684542,
+        "p95": 47.09557946771381,
+        "p99": 54.88165067508817,
+        "max": 55.32084032893181
+      },
+      "peak_mib": 226.541015625,
+      "over50ms": 2
+    },
+    {
+      "seed": 102,
+      "mode": "file_sha",
+      "complete_pipeline_ms": {
+        "n": 40,
+        "mean": 103.96642619743943,
+        "p50": 102.06307005137205,
+        "p95": 118.21375479921697,
+        "p99": 127.33683060854673,
+        "max": 129.68281097710133
+      },
+      "peak_mib": 228.955078125,
+      "over50ms": 40
+    },
+    {
+      "seed": 102,
+      "mode": "memory_float",
+      "complete_pipeline_ms": {
+        "n": 40,
+        "mean": 29.669922729954123,
+        "p50": 28.513857163488865,
+        "p95": 37.53037787973881,
+        "p99": 43.64208282902836,
+        "max": 46.89447768032551
+      },
+      "peak_mib": 228.322265625,
+      "over50ms": 0
+    },
+    {
+      "seed": 102,
+      "mode": "memory_pinned_uint8",
+      "complete_pipeline_ms": {
+        "n": 40,
+        "mean": 27.653095684945583,
+        "p50": 26.66180580854416,
+        "p95": 40.2058394625783,
+        "p99": 41.790563091635704,
+        "max": 42.521826922893524
+      },
+      "peak_mib": 228.884765625,
+      "over50ms": 0
+    },
+    {
+      "seed": 102,
+      "mode": "native_bgra_pinned",
+      "complete_pipeline_ms": {
+        "n": 40,
+        "mean": 33.26072636991739,
+        "p50": 31.752292066812515,
+        "p95": 44.011668022722,
+        "p99": 46.99704682454467,
+        "max": 47.71773889660835
+      },
+      "peak_mib": 228.416015625,
+      "over50ms": 0
+    },
+    {
+      "seed": 102,
+      "mode": "torch_serialized",
+      "complete_pipeline_ms": {
+        "n": 40,
+        "mean": 42.05588577315211,
+        "p50": 39.800163358449936,
+        "p95": 55.526068713516,
+        "p99": 55.9266896545887,
+        "max": 56.040454655885696
+      },
+      "peak_mib": 227.853515625,
+      "over50ms": 6
+    }
+  ],
+  "raw": {
+    "path": "runs/m5k_logs/input_timing_raw.json",
+    "sha256": "9772e2968a490ece58ad0d3acaf708d37f649ddee184e9c9d154d8350b002db0",
+    "bytes": 72545
+  },
+  "native": {
+    "path": "runs/m5k_native_buffer/manifest.json",
+    "sha256": "e1858655cee20a5cf9509500d1077dcba168fe84ed6dcdbd5ae0b998ac804e3a",
+    "bytes": 8504
+  },
+  "packet_faults": [
+    {
+      "label": "valid",
+      "status": "accepted"
+    },
+    {
+      "label": "duplicate",
+      "status": "rejected"
+    },
+    {
+      "label": "stale",
+      "status": "rejected"
+    },
+    {
+      "label": "mismatch",
+      "status": "rejected"
+    },
+    {
+      "label": "future",
+      "status": "rejected"
+    },
+    {
+      "label": "recovery",
+      "status": "accepted"
+    }
+  ],
+  "source_sha256": "36ff6eb5e69a6c642b19c426347cf68c9d97a6b663e3f364a175fc21e8287ff9",
+  "limits": "End-to-end walltime measured directly includesconversion/H2D/inputvalidation/full dualRGB+Lift+support. Warmup5then40; no sumP95. Native BGRA actualsensor bytes, replay not live queue/tick latency. Buffer copies owned before callbacks expire. Timestampfaults synthetic unit exercise. NoIPC transport, no perframe tensorserialization in proposed path. No20Hzdrivingclaim."
+}

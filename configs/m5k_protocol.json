@@ -1,0 +1,87 @@
+{
+  "stage": "M5-K",
+  "base": "db03730a64c00f7f5116b6c450596f7541b01258",
+  "seeds": [
+    101,
+    102
+  ],
+  "threshold": 0.2,
+  "roi_threshold": 0.9,
+  "grid": [
+    4,
+    160,
+    120
+  ],
+  "depth_bins": 48,
+  "default_changes": false,
+  "alignment": {
+    "first_experiment": true,
+    "methods": [
+      "original_p8",
+      "native16_to_p8",
+      "replay101_p8",
+      "replay102_p8",
+      "oracle_p8",
+      "native16"
+    ],
+    "interpolation": "bilinear align_corners=False border replicated; native rounded UV8+16i to P8 UV4+8i; normalize D",
+    "same_mask": true,
+    "clear_gain": "both seeds P gain>=.01,R1 gain>=.05,FPR increase<=.001 and Actor detection not lower on historical and new Val"
+  },
+  "support": {
+    "each_train_and_val": true,
+    "independent_positions": 4,
+    "strict_actor_rays_20_35": 100,
+    "classes_with_at_least_10_strict_rays": 2,
+    "strict_mask": "existing semantic/instance interior +finite3x3 opticalZ range<=.5m; GTinBEV; no relaxation"
+  },
+  "residual": {
+    "conditional": "Only if alignment insufficient AND both Train/Val support pass",
+    "arms": [
+      "frozen",
+      "no_mobile",
+      "mobile"
+    ],
+    "steps": 600,
+    "seeds": [
+      101,
+      102
+    ],
+    "lr": 0.001,
+    "capacity": "shared identical inputchannel; no_mobile foreground channel zero",
+    "loss": "CE balanced near/far Actor and background + .25 negative log same-layer1m probability where candidates exist +.5 M4 near replay CE +.1 KL original near",
+    "selection": "step200/400/600 Val loss; fixedthreshold.2; stop at budget"
+  },
+  "qualification": {
+    "precision_gain": 0.01,
+    "recall1_gain": 0.05,
+    "max_fpr_increase": 0.001,
+    "actor_detection_loss": 0,
+    "near_mae_max_ratio": 1.05,
+    "global_abs_bias_increase": 0.25,
+    "band_abs_bias_increase": 0.5,
+    "near_actor_space_loss": 0,
+    "both_seeds": true
+  },
+  "sampling": {
+    "base": "P8 UV4",
+    "full": "S4 UV2",
+    "adaptive": "P8 plus S4 where frozenMobile>=.9, all six cameras",
+    "uniform": "equal extra count deterministic evenly spaced S4 ray indices",
+    "denominator": "all native reliable target reference; includes ROI missed Actors",
+    "go": "bothseeds adaptiveR1>uniformR1 and FPRincrease<=.001",
+    "no_s4_network": true
+  },
+  "split": {
+    "dev_train": 4,
+    "dev_val": 4,
+    "sealed_test": 4,
+    "min_prior_distance_m": 45,
+    "capture_test_after_freeze": true
+  },
+  "input_pipeline": {
+    "deadline_s": 0.25,
+    "no_vehicle_control": true
+  },
+  "limits": "sourceA non-target not Free; B endpointcoarsecell mismatch not physicalFP; Eunknown separate; bin_count != unique rays; no GT model input; no historical modifications; no Occupancy/Temporal/SparseQuery training"
+}
