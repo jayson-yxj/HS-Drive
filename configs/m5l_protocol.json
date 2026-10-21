@@ -1,0 +1,102 @@
+{
+  "stage": "M5-L",
+  "base": "0175f219e5551859e6fd67336f68d55ab290bf27",
+  "seeds": [
+    101,
+    102
+  ],
+  "historical_test": "M5K Test regression only",
+  "sampling": {
+    "strides": [
+      16,
+      8,
+      4
+    ],
+    "phases": "all64 P8 UV phases, strict unchanged",
+    "p4_training_gate": {
+      "each_train_val": true,
+      "positions": 4,
+      "total_far_actor_rays": 100,
+      "classes_at_least20": 2
+    },
+    "stop": "IfP4gatefails noP4Depthtraining/noadditionalimitativecapture"
+  },
+  "vehicle": {
+    "steps": 600,
+    "seeds": [
+      101,
+      102
+    ],
+    "lr": 0.001,
+    "scope": "vehicleonly spatial/target CE; otherforeground excluded from optimization; allnear evaluated",
+    "arms": [
+      "frozen",
+      "no_mobile",
+      "mobile"
+    ],
+    "sampling": "half strictvehicle-supported camera, half uniform traincamera; exact matched B/C order; M4 trainreplay every step",
+    "loss": "balancednear/farvehicle/backgroundCE +.25vehicle1mNLL(candidatesonly)+.5M4nearCE+.1nearKL(newandreplay)",
+    "selection": "step0/200/400/600 Val scopedloss minimum; ties earlier; no budgetextension",
+    "go": "bothseeds nearallMAE<=1.05baseline, absbiasglobal+0.25/bands+0.5, nearActorspatial>=baseline, 10-20/20-35vehiclespatial>=baseline with20-35gain>=.01, realBEVPgain>=.01/R1gain>=.05/FPRincrease<=.001, perposition report; no universalqualification"
+  },
+  "p4": {
+    "feature": "Mobileactualfeatures[3] S4,24channels +trainedP8fused64channels sampledwithconvcenteralignment; frozenbackbone; localresidual untrainedunlessgate",
+    "roi": "Mobileq>=.9 or fixed legalpoints; noGTinput"
+  },
+  "object": {
+    "q_threshold": 0.9,
+    "min_pixels": 6,
+    "min_height": 3,
+    "plane_z_ego_m": -0.25,
+    "max_distance_m": 50,
+    "min_downward": 0.02,
+    "max_sensitivity_m": 3.0,
+    "plane_uncertainty_m": 0.1,
+    "bottom_pixel_uncertainty": 1.0,
+    "method": "binarycomponents bottommedianpixel intersect fixedhorizontalplane; abstain border/mergedwide/horizon/sensitive; cannotverifycontact frombinaryRGB",
+    "evaluation": "one-to-one IoUoverlapmatching toassociatedvisibleActor; AABBXYcenter proxy and visiblebottomendpoint separately; no3Doccupancy",
+    "go": "bothseeds matchedvalid>=20actorviews>=3positions, planeXYmedian improves>=20% vs samecomponent denseExpected AND Mode, validrate>=.5 on detected, no claim for slope/occlusion"
+  },
+  "adaptive": {
+    "main": "M5K q>=.9 extras",
+    "controls": [
+      "global_uniform",
+      "sameforeground_region_uniform"
+    ],
+    "region": "boundingrectangles of q>=.9 components, S4 centers; exact same extra budget; uniforms deterministic",
+    "thresholds": [
+      0.01,
+      0.025,
+      0.05,
+      0.075,
+      0.1,
+      0.15,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      0.95
+    ],
+    "matching": "Val select adaptive/region threshold highestRecall subjectFPR<=uniform@.2; sameRecall selecthighestPrecision withR>=uniform@.2; frozen to newtest",
+    "mass": "newOracleendpointcells distinct from existingthresholdcrossings; rawmass unchanged"
+  },
+  "test": {
+    "positions": 4,
+    "min_prior_m": 45,
+    "capture_after_freeze": true,
+    "layouts": "targeted variations phase/direction/occlusion/empty; historical312 first"
+  },
+  "shadow": {
+    "hz": 2,
+    "ticks": 240,
+    "dt": 0.05,
+    "max_age_s": 0.25,
+    "six_seconds_safety_unchanged": true,
+    "stop": "shadowtickP95>max(1.5baseline,baseline+20ms) or anytick>1000ms; finitebaseline-shadow-baseline trials",
+    "worker": "separateprocess noCARLAclient; latestcompletepacket boundednonblockingqueue; original timestamps; no control"
+  }
+}

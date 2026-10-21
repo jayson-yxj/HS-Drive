@@ -1,0 +1,55 @@
+{
+  "kind": "actual_RTX4090_realP4feature_probe",
+  "records": [
+    {
+      "seed": 101,
+      "local_rays": 2880,
+      "feature_shape": [
+        6,
+        480,
+        88
+      ],
+      "shallow_channels": 24,
+      "semantic_channels": 64,
+      "occlusion_delta": 2.1097781658172607,
+      "latency_ms": {
+        "n": 20,
+        "mean": 9.839015081524849,
+        "p50": 7.405727170407772,
+        "p95": 18.980124127119783,
+        "p99": 22.34818806871771,
+        "max": 23.190204054117203
+      },
+      "peak_mib": 162.9736328125
+    },
+    {
+      "seed": 102,
+      "local_rays": 2880,
+      "feature_shape": [
+        6,
+        480,
+        88
+      ],
+      "shallow_channels": 24,
+      "semantic_channels": 64,
+      "occlusion_delta": 2.191424608230591,
+      "latency_ms": {
+        "n": 20,
+        "mean": 9.967635106295347,
+        "p50": 7.523930631577969,
+        "p95": 17.541799228638418,
+        "p99": 24.225143250077952,
+        "max": 25.89597925543785
+      },
+      "peak_mib": 162.9736328125
+    }
+  ],
+  "training": "NotRun_StrictSupportGate",
+  "support": {
+    "path": "reports/m5l_sampling_failure_analysis.json",
+    "sha256": "ce668ffc28b56eb8da287dd950d4acd6341ec3f1e42164d10bab6ad5a279ced8",
+    "bytes": 21636
+  },
+  "source_sha256": "f9d0a2d9b2bf787377278df9d9a08ce0c420fba0d43ccd9279f8e0fc37e57f57",
+  "limits": "S4 features fromMobilelayer3 actualRGB, P8 semantic fusion sampled atconvcenters. No trainedP4Depth/C performance claim; zeroresidualhead onlyinterface. No allsixDenseP4Splat. Localprobe legalfixedUV noGTROI."
+}
