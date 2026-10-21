@@ -1,0 +1,138 @@
+{
+  "kind": "frozen_newTest_vs_historical_regression",
+  "paired": [
+    {
+      "seed": 101,
+      "mobile": {
+        "positive": 318913,
+        "negative": 80346492,
+        "tp": 274514,
+        "fp": 63980,
+        "fn": 44399,
+        "precision": 0.8109863099493639,
+        "recall": 0.860780212785305,
+        "iou": 0.7169470321995962,
+        "fpr": 0.0007963011004886187,
+        "histogram_ap": 0.8521413077023325
+      },
+      "legacy": {
+        "positive": 318913,
+        "negative": 80346492,
+        "tp": 78882,
+        "fp": 141555,
+        "fn": 240031,
+        "precision": 0.3578437376665442,
+        "recall": 0.24734645498929175,
+        "iou": 0.17130832109940322,
+        "fpr": 0.0017618068502604943,
+        "histogram_ap": 0.19379536838301956
+      },
+      "scene_PR_both": 3,
+      "precision_gain": 0.45314257228281973,
+      "recall_gain": 0.6134337577960133,
+      "sizes": [
+        {
+          "area": [
+            3,
+            32
+          ],
+          "actor_views": 6,
+          "detected": 2,
+          "tp_pixels": 45,
+          "fn_pixels": 51,
+          "fp": "Cannot assign background FP uniquelytoGTActor; camera counts/components separately"
+        },
+        {
+          "area": [
+            33,
+            128
+          ],
+          "actor_views": 0,
+          "detected": 0,
+          "tp_pixels": 0,
+          "fn_pixels": 0,
+          "fp": "Cannot assign background FP uniquelytoGTActor; camera counts/components separately"
+        },
+        {
+          "area": [
+            129,
+            1000000000
+          ],
+          "actor_views": 114,
+          "detected": 93,
+          "tp_pixels": 274469,
+          "fn_pixels": 44048,
+          "fp": "Cannot assign background FP uniquelytoGTActor; camera counts/components separately"
+        }
+      ]
+    },
+    {
+      "seed": 102,
+      "mobile": {
+        "positive": 318913,
+        "negative": 80346492,
+        "tp": 281066,
+        "fp": 74971,
+        "fn": 37847,
+        "precision": 0.7894291885393934,
+        "recall": 0.8813250008623041,
+        "iou": 0.713575570472525,
+        "fpr": 0.0009330961207366713,
+        "histogram_ap": 0.851018710289779
+      },
+      "legacy": {
+        "positive": 318913,
+        "negative": 80346492,
+        "tp": 96150,
+        "fp": 87066,
+        "fn": 222763,
+        "precision": 0.5247904113177888,
+        "recall": 0.3014928836391116,
+        "iou": 0.2368349101800832,
+        "fpr": 0.001083631628870617,
+        "histogram_ap": 0.3022246168397116
+      },
+      "scene_PR_both": 4,
+      "precision_gain": 0.26463877722160456,
+      "recall_gain": 0.5798321172231926,
+      "sizes": [
+        {
+          "area": [
+            3,
+            32
+          ],
+          "actor_views": 6,
+          "detected": 3,
+          "tp_pixels": 57,
+          "fn_pixels": 39,
+          "fp": "Cannot assign background FP uniquelytoGTActor; camera counts/components separately"
+        },
+        {
+          "area": [
+            33,
+            128
+          ],
+          "actor_views": 0,
+          "detected": 0,
+          "tp_pixels": 0,
+          "fn_pixels": 0,
+          "fp": "Cannot assign background FP uniquelytoGTActor; camera counts/components separately"
+        },
+        {
+          "area": [
+            129,
+            1000000000
+          ],
+          "actor_views": 114,
+          "detected": 99,
+          "tp_pixels": 281009,
+          "fn_pixels": 37508,
+          "fp": "Cannot assign background FP uniquelytoGTActor; camera counts/components separately"
+        }
+      ]
+    }
+  ],
+  "new_test": "m5j_camera_quality_test.json",
+  "historical": "m5j_camera_quality_historical.json",
+  "limits": "Legacy M5G has different historical training protocol, architecture comparison not singlevariable; reportfixedexistingcandidates."
+}

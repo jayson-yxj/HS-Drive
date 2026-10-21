@@ -1,0 +1,89 @@
+{
+  "kind": "validation_only_fixed_bounded_selection",
+  "workpoints": {
+    "101_raw": {
+      "selected": 0.2,
+      "recall_matched": 0.2,
+      "precision_matched": 0.2
+    },
+    "101_gate": {
+      "selected": 0.2,
+      "recall_matched": 0.15,
+      "precision_matched": 0.05
+    },
+    "101_regularized": {
+      "selected": 0.025,
+      "recall_matched": 0.025,
+      "precision_matched": 0.01
+    },
+    "102_raw": {
+      "selected": 0.2,
+      "recall_matched": 0.2,
+      "precision_matched": 0.2
+    },
+    "102_gate": {
+      "selected": 0.15,
+      "recall_matched": 0.15,
+      "precision_matched": 0.025
+    },
+    "102_regularized": {
+      "selected": 0.025,
+      "recall_matched": 0.025,
+      "precision_matched": 0.01
+    }
+  },
+  "gains": [
+    {
+      "seed": 101,
+      "method": "raw",
+      "precision_gain": 0.0,
+      "recall1_delta": 0.0,
+      "actor_detection_delta": 0.0,
+      "passed": false
+    },
+    {
+      "seed": 101,
+      "method": "gate",
+      "precision_gain": 0.027985372861592084,
+      "recall1_delta": -0.01974055273547659,
+      "actor_detection_delta": -0.034090909090909116,
+      "passed": false
+    },
+    {
+      "seed": 101,
+      "method": "regularized",
+      "precision_gain": 0.00898469732124467,
+      "recall1_delta": 0.007332205301748468,
+      "actor_detection_delta": 0.011363636363636354,
+      "passed": false
+    },
+    {
+      "seed": 102,
+      "method": "raw",
+      "precision_gain": 0.0,
+      "recall1_delta": 0.0,
+      "actor_detection_delta": 0.0,
+      "passed": false
+    },
+    {
+      "seed": 102,
+      "method": "gate",
+      "precision_gain": 0.03205877443913195,
+      "recall1_delta": -0.002256063169768757,
+      "actor_detection_delta": 0.034090909090909116,
+      "passed": false
+    },
+    {
+      "seed": 102,
+      "method": "regularized",
+      "precision_gain": 0.00893631527383032,
+      "recall1_delta": 0.010716300056401562,
+      "actor_detection_delta": 0.034090909090909116,
+      "passed": false
+    }
+  ],
+  "selected": "raw",
+  "conditional_D": false,
+  "source_sha256": "ec064e1b3ebde86619a3b10a2595d848336d9e7371af77047972a87737398c9a",
+  "note": "Ifnoeligible keepproductionunchanged andraw main diagnostic. NoTestmodelselection."
+}
