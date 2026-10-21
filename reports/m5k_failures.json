@@ -1,0 +1,38 @@
+{
+  "kind": "actual_log_failure_index",
+  "records": [
+    {
+      "log": {
+        "path": "runs/m5k_logs/input_pipeline.log",
+        "sha256": "5b2c285e0ac04369adc54442bd2eea6b3bfae7ae54ac501a3ff11adf748db6ce",
+        "bytes": 1610
+      },
+      "tail": "ufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv-gpu/lib/python3.10/site-packages/torch/utils/_contextlib.py\", line 120, in decorate_context\n    return func(*args, **kwargs)\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5k_input_pipeline.py\", line 14, in main\n    prepare_cuda();torch.set_num_threads(2);row=rows('val')[2];cpu=inputs(row,'cpu');metadata={k:v.pin_memory()for k,v in cpu.items()if k!='images'};pinned=(cpu['images']*255).round().byte().pin_memory();native=Path('runs/m5k_native_buffer');manifest=json.loads((native/'manifest.json').read_text());buffers=[]\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5k_common.py\", line 14, in rows\n    return [r for r in json.loads((root/'index.json').read_text())['records'] if r['split']==split]\n  File \"/usr/lib/python3.10/pathlib.py\", line 1134, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n  File \"/usr/lib/python3.10/pathlib.py\", line 1119, in open\n    return self._accessor.open(self, mode, buffering, encoding, errors,\nFileNotFoundError: [Errno 2] No such file or directory: '/root/gpufree-data/hs-drive-data/processed/m5k_dev_pixels/index.json'\n"
+    },
+    {
+      "log": {
+        "path": "runs/m5k_logs/sdk_tests.log",
+        "sha256": "b180c3c39ab7fdb250565eab3babf0b8a019087525a297ad9cf5023ad6c94584",
+        "bytes": 78
+      },
+      "tail": "ERROR: file or directory not found: tests/test_carla*\n\n\nno tests ran in 0.00s\n"
+    },
+    {
+      "log": {
+        "path": "runs/m5k_logs/sdk_tests_attempt2.log",
+        "sha256": "19fa2f20a04eea30203c507b5e424f658e69af266f8ab26dcbbf35de56fd6192",
+        "bytes": 92
+      },
+      "tail": "ERROR: file or directory not found: tests/test_carla_integration.py\n\n\nno tests ran in 0.00s\n"
+    },
+    {
+      "log": {
+        "path": "runs/m5k_logs/gpu_contract.log",
+        "sha256": "08c7098cba21f9addbc2749106943087bd12d63d6f42a742119c5d5e80543015",
+        "bytes": 1132
+      },
+      "tail": "Traceback (most recent call last):\n  File \"/usr/lib/python3.10/runpy.py\", line 196, in _run_module_as_main\n    return _run_code(code, main_globals, None,\n  File \"/usr/lib/python3.10/runpy.py\", line 86, in _run_code\n    exec(code, run_globals)\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5k_gpu_contract.py\", line 30, in <module>\n    if __name__=='__main__':main()\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv-gpu/lib/python3.10/site-packages/torch/utils/_contextlib.py\", line 120, in decorate_context\n    return func(*args, **kwargs)\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5k_gpu_contract.py\", line 19, in main\n    prepare_cuda();torch.set_num_threads(2);row=rows('historical_val')[2];cpu=inputs(row,'cpu');rgb=(cpu['images'][0]*255).round().byte().permute(0,2,3,1).numpy();buffers=[np.concatenate([x[:,:,[2,1,0]],np.full((*x.shape[:2],1),255,np.uint8)],-1).tobytes()for x in rgb];p=bgra_to_pinned(buffers);gpu=to_gpu(p,{k:v.pin_memory()for k,v in cpu.items()if k!='images'});assert torch.equal(gpu['images'].cpu(),cpu['images'])\nAssertionError\n"
+    }
+  ],
+  "limits": "Failedattempts remainserver. No CARLA crash encountered thisstage. One supplementaryscript compile typo fixed beforeexecution; no experimental outputs fromfailedcompile. GPU parity check corrected tobitexactuint8 plusFP32 tolerance; measured error retained."
+}

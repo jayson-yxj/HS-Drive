@@ -1,0 +1,134 @@
+{
+  "kind": "actual_RTX4090_fixed_ray_alignment",
+  "results": {
+    "historical_val": {
+      "path": "reports/m5k_alignment_historical_val.json",
+      "sha256": "f1245d122698b776ecb280af49fd49468cb181ef1596d1503d2a6890319116a1",
+      "bytes": 192186
+    },
+    "train": {
+      "path": "reports/m5k_alignment_train.json",
+      "sha256": "8b5709acf8a72aa76ebf5a6885f97c2483f9e0a358da60c7eecfc2867caf46c7",
+      "bytes": 123076
+    },
+    "val": {
+      "path": "reports/m5k_alignment_val.json",
+      "sha256": "9974281bbd64c72fba93b1b8dc1ab64460eba0b63a9137167480088efd1bbe6d",
+      "bytes": 124302
+    },
+    "test": {
+      "path": "reports/m5k_alignment_test.json",
+      "sha256": "f48f95726c817a13f19c84fb0d277e7959599a46474aa5b78377d336305f06f2",
+      "bytes": 124641
+    }
+  },
+  "validation": {
+    "historical_val": {
+      "records": [
+        {
+          "seed": 101,
+          "precision_gain": -0.0036822251128570127,
+          "recall1_gain": -0.009024252679075001,
+          "fpr_delta": 0.00026710411860368394,
+          "actor_delta": -0.011363636363636354
+        },
+        {
+          "seed": 102,
+          "precision_gain": -0.006683950559799978,
+          "recall1_gain": -0.01071630005640159,
+          "fpr_delta": 0.0007374910177376046,
+          "actor_delta": 0.0
+        }
+      ],
+      "clear_gain": false
+    },
+    "val": {
+      "records": [
+        {
+          "seed": 101,
+          "precision_gain": -0.018297533459079248,
+          "recall1_gain": -0.030678353658536585,
+          "fpr_delta": -4.099523824540414e-05,
+          "actor_delta": 0.029411764705882353
+        },
+        {
+          "seed": 102,
+          "precision_gain": -0.023876445978787783,
+          "recall1_gain": -0.033727134146341466,
+          "fpr_delta": 6.306959730062109e-05,
+          "actor_delta": 0.029411764705882353
+        }
+      ],
+      "clear_gain": false
+    }
+  },
+  "gains": [
+    {
+      "split": "val",
+      "seed": 101,
+      "method": "native16_to_p8",
+      "deltas": {
+        "precision": -0.018297533459079248,
+        "recall1": -0.030678353658536585,
+        "fpr": -4.099523824540414e-05,
+        "actor_detection": 0.029411764705882353
+      },
+      "bev_gate": false,
+      "near_all_gate": true,
+      "bias_gate": true,
+      "near_actor_space_gate": true,
+      "combined_passed": false
+    },
+    {
+      "split": "val",
+      "seed": 102,
+      "method": "native16_to_p8",
+      "deltas": {
+        "precision": -0.023876445978787783,
+        "recall1": -0.033727134146341466,
+        "fpr": 6.306959730062109e-05,
+        "actor_detection": 0.029411764705882353
+      },
+      "bev_gate": false,
+      "near_all_gate": true,
+      "bias_gate": true,
+      "near_actor_space_gate": true,
+      "combined_passed": false
+    },
+    {
+      "split": "test",
+      "seed": 101,
+      "method": "native16_to_p8",
+      "deltas": {
+        "precision": 0.0002993562141428243,
+        "recall1": 0.006839945280437756,
+        "fpr": 0.00010693055832332928,
+        "actor_detection": 0.0
+      },
+      "bev_gate": false,
+      "near_all_gate": true,
+      "bias_gate": true,
+      "near_actor_space_gate": true,
+      "combined_passed": false
+    },
+    {
+      "split": "test",
+      "seed": 102,
+      "method": "native16_to_p8",
+      "deltas": {
+        "precision": 0.00027514656445589217,
+        "recall1": 0.004103967168262654,
+        "fpr": 7.61475188060072e-05,
+        "actor_detection": 0.0
+      },
+      "bev_gate": false,
+      "near_all_gate": true,
+      "bias_gate": true,
+      "near_actor_space_gate": true,
+      "combined_passed": false
+    }
+  ],
+  "decision": "NoDefaultUpgrade",
+  "definition": "A/B share exact strict GTinBEV mask. S16 density separate. Mode is mostlikelybincenter; Expected is softmaxmean; Oraclecontinuous diagnostic.",
+  "limits": "MAE reduction not sufficient to infer feature shift accountsfor error. Spatialmass and realMobileBEV decisive."
+}

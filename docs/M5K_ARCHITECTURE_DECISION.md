@@ -18,3 +18,13 @@ A 为可见非目标来源，不能解释为安全 Free。B 为目标射线的�
 6. 计算输入通路只测离线完整延迟和实际 CARLA BGRA buffer 回放。不得将各模块 P95 相加。无视觉控制、无 Runtime 安全升级。
 
 结果决策在实验完成后追加；原预声明协议保存在 `configs/m5k_protocol.json`。
+
+## Val 决策（封存测试前）
+
+Train/Val 分别 179/152 条 20–35m 严格 P8 Actor 射线、各四个位置，但都只有 Vehicle 支持；第二类别门禁失败。残差 B/C 不运行，不能评价 Mobile 条件的学习价值。保留代码与零初始化 GPU 合同检查，不虚构训练结论。
+
+S16→P8 在历史和新 Val 都未通过真实 BEV 增益要求。新 Val 两个种子 Precision 下降约1.83/2.39pp，同层1m Recall 下降3.07/3.37pp。保留原 P8 Head，不升级对齐候选。
+
+Adaptive 仅增加约275/300条 S4 射线（P8 基础23040条）就明显改善目标覆盖，优于同预算 Uniform；但 Learned Depth 的背景 FPR 增量约0.259/0.258pp，超过0.1pp上限。Oracle Depth 下背景代价较小。结论是 ROI 覆盖研究有依据，真实空间资格仍 No-go，优先修正深度/前景落点，不能自动采用生产 S4 或联合 Occupancy。
+
+原生 BGRA buffer 实际捕获后回放的完整推理 P95 44–47ms。不是在线 sensor→controller 测量，不修改 Runtime Partial 或任何安全状态。

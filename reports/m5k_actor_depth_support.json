@@ -1,0 +1,96 @@
+{
+  "kind": "actual_recorded_CARLA_offline_support",
+  "splits": {
+    "train": {
+      "eligibility": {
+        "passed": false,
+        "strict_actor_inBEV_20_35": 179,
+        "positions": 4,
+        "by_class": {
+          "vehicle": 179,
+          "person": 0,
+          "cone": 0
+        },
+        "minimum": {
+          "rays": 100,
+          "positions": 4,
+          "classes_at_least10": 2
+        }
+      },
+      "actor_view_size": {
+        "1_32": 11,
+        "33_128": 18,
+        "129_512": 11,
+        "513_10000000": 30
+      },
+      "report": {
+        "path": "reports/m5k_support_train.json",
+        "sha256": "a671bf0e3f9ca82ed5def9b4c5846ef54c364b969c0f58d1e877865118887e7c",
+        "bytes": 12943
+      }
+    },
+    "val": {
+      "eligibility": {
+        "passed": false,
+        "strict_actor_inBEV_20_35": 152,
+        "positions": 4,
+        "by_class": {
+          "vehicle": 152,
+          "person": 0,
+          "cone": 0
+        },
+        "minimum": {
+          "rays": 100,
+          "positions": 4,
+          "classes_at_least10": 2
+        }
+      },
+      "actor_view_size": {
+        "1_32": 14,
+        "33_128": 14,
+        "129_512": 13,
+        "513_10000000": 29
+      },
+      "report": {
+        "path": "reports/m5k_support_val.json",
+        "sha256": "14ec14167317357442d6d233029a4e462a3f4b2e76cc6effbfb7e60bdbda2455",
+        "bytes": 12938
+      }
+    },
+    "test": {
+      "eligibility": {
+        "passed": false,
+        "strict_actor_inBEV_20_35": 159,
+        "positions": 4,
+        "by_class": {
+          "vehicle": 159,
+          "person": 0,
+          "cone": 0
+        },
+        "minimum": {
+          "rays": 100,
+          "positions": 4,
+          "classes_at_least10": 2
+        }
+      },
+      "actor_view_size": {
+        "1_32": 14,
+        "33_128": 17,
+        "129_512": 11,
+        "513_10000000": 29
+      },
+      "report": {
+        "path": "reports/m5k_support_test.json",
+        "sha256": "17c3dbe5bb25ad1782be25eed7402a8157b96d43e14d197ffc3391f1adf80293",
+        "bytes": 12924
+      }
+    }
+  },
+  "decision": "NoTraining_SupportInsufficient",
+  "positions": {
+    "path": "reports/m5k_position_allocation.json",
+    "sha256": "a103886bb94d4e689921671df0b0db7fb5f69dbeda6c985c731ee89d32dc8f60",
+    "bytes": 4959
+  },
+  "limits": "No independent Mesh; strict rendererinterior+AABB association. Raycount not independent scenes. Smallview counts reliableassociated pixels. Tests never used for train support selection."
+}

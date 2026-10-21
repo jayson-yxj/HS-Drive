@@ -1,0 +1,241 @@
+{
+  "kind": "actual_GPU_fixed_Mobile_rawmass",
+  "depth_gains": [
+    {
+      "split": "val",
+      "seed": 101,
+      "method": "native16_to_p8",
+      "deltas": {
+        "precision": -0.018297533459079248,
+        "recall1": -0.030678353658536585,
+        "fpr": -4.099523824540414e-05,
+        "actor_detection": 0.029411764705882353
+      },
+      "bev_gate": false,
+      "near_all_gate": true,
+      "bias_gate": true,
+      "near_actor_space_gate": true,
+      "combined_passed": false
+    },
+    {
+      "split": "val",
+      "seed": 102,
+      "method": "native16_to_p8",
+      "deltas": {
+        "precision": -0.023876445978787783,
+        "recall1": -0.033727134146341466,
+        "fpr": 6.306959730062109e-05,
+        "actor_detection": 0.029411764705882353
+      },
+      "bev_gate": false,
+      "near_all_gate": true,
+      "bias_gate": true,
+      "near_actor_space_gate": true,
+      "combined_passed": false
+    },
+    {
+      "split": "test",
+      "seed": 101,
+      "method": "native16_to_p8",
+      "deltas": {
+        "precision": 0.0002993562141428243,
+        "recall1": 0.006839945280437756,
+        "fpr": 0.00010693055832332928,
+        "actor_detection": 0.0
+      },
+      "bev_gate": false,
+      "near_all_gate": true,
+      "bias_gate": true,
+      "near_actor_space_gate": true,
+      "combined_passed": false
+    },
+    {
+      "split": "test",
+      "seed": 102,
+      "method": "native16_to_p8",
+      "deltas": {
+        "precision": 0.00027514656445589217,
+        "recall1": 0.004103967168262654,
+        "fpr": 7.61475188060072e-05,
+        "actor_detection": 0.0
+      },
+      "bev_gate": false,
+      "near_all_gate": true,
+      "bias_gate": true,
+      "near_actor_space_gate": true,
+      "combined_passed": false
+    }
+  ],
+  "sampling_comparisons": [
+    {
+      "split": "val",
+      "seed": 101,
+      "depth": "oracle",
+      "recall1_gain": 0.17320884146341464,
+      "precision_gain": 0.12318343266204335,
+      "fpr_delta": 0.00046671502002459736,
+      "passed": true
+    },
+    {
+      "split": "val",
+      "seed": 101,
+      "depth": "oracle2d",
+      "recall1_gain": 0.17206554878048785,
+      "precision_gain": 0.0,
+      "fpr_delta": 0.0,
+      "passed": true
+    },
+    {
+      "split": "val",
+      "seed": 101,
+      "depth": "original",
+      "recall1_gain": 0.28734756097560976,
+      "precision_gain": 0.11741316776887767,
+      "fpr_delta": 0.0025921604490555324,
+      "passed": false
+    },
+    {
+      "split": "val",
+      "seed": 101,
+      "depth": "aligned",
+      "recall1_gain": 0.3239329268292683,
+      "precision_gain": 0.1260789437856756,
+      "fpr_delta": 0.0030809498281353476,
+      "passed": false
+    },
+    {
+      "split": "val",
+      "seed": 102,
+      "depth": "oracle",
+      "recall1_gain": 0.17435213414634143,
+      "precision_gain": 0.11761156826549024,
+      "fpr_delta": 0.0006306959730062122,
+      "passed": true
+    },
+    {
+      "split": "val",
+      "seed": 102,
+      "depth": "oracle2d",
+      "recall1_gain": 0.17244664634146345,
+      "precision_gain": 0.0,
+      "fpr_delta": 0.0,
+      "passed": true
+    },
+    {
+      "split": "val",
+      "seed": 102,
+      "depth": "original",
+      "recall1_gain": 0.2654344512195122,
+      "precision_gain": 0.10336278923639519,
+      "fpr_delta": 0.002579546529595409,
+      "passed": false
+    },
+    {
+      "split": "val",
+      "seed": 102,
+      "depth": "aligned",
+      "recall1_gain": 0.3083079268292683,
+      "precision_gain": 0.10272906940202853,
+      "fpr_delta": 0.003850398915202926,
+      "passed": false
+    },
+    {
+      "split": "test",
+      "seed": 101,
+      "depth": "oracle",
+      "recall1_gain": 0.16689466484268128,
+      "precision_gain": 0.026131709428252235,
+      "fpr_delta": 0.0016250204545196793,
+      "passed": false
+    },
+    {
+      "split": "test",
+      "seed": 101,
+      "depth": "oracle2d",
+      "recall1_gain": 0.16689466484268123,
+      "precision_gain": 0.0,
+      "fpr_delta": 0.0,
+      "passed": true
+    },
+    {
+      "split": "test",
+      "seed": 101,
+      "depth": "original",
+      "recall1_gain": 0.21477428180574554,
+      "precision_gain": 0.015526867547809957,
+      "fpr_delta": 0.0025468914800647413,
+      "passed": false
+    },
+    {
+      "split": "test",
+      "seed": 101,
+      "depth": "aligned",
+      "recall1_gain": 0.2079343365253078,
+      "precision_gain": 0.015713524549753086,
+      "fpr_delta": 0.002757512276762207,
+      "passed": false
+    },
+    {
+      "split": "test",
+      "seed": 102,
+      "depth": "oracle",
+      "recall1_gain": 0.1696306429548563,
+      "precision_gain": 0.030431247437458946,
+      "fpr_delta": 0.0010304217438429873,
+      "passed": false
+    },
+    {
+      "split": "test",
+      "seed": 102,
+      "depth": "oracle2d",
+      "recall1_gain": 0.1696306429548563,
+      "precision_gain": 0.0,
+      "fpr_delta": 0.0,
+      "passed": true
+    },
+    {
+      "split": "test",
+      "seed": 102,
+      "depth": "original",
+      "recall1_gain": 0.213406292749658,
+      "precision_gain": 0.01606235476232947,
+      "fpr_delta": 0.0016914470134781106,
+      "passed": false
+    },
+    {
+      "split": "test",
+      "seed": 102,
+      "depth": "aligned",
+      "recall1_gain": 0.2380300957592339,
+      "precision_gain": 0.016619994796684134,
+      "fpr_delta": 0.002136991006491981,
+      "passed": false
+    }
+  ],
+  "results": {
+    "val": {
+      "path": "reports/m5k_alignment_val.json",
+      "sha256": "9974281bbd64c72fba93b1b8dc1ab64460eba0b63a9137167480088efd1bbe6d",
+      "bytes": 124302
+    },
+    "test": {
+      "path": "reports/m5k_alignment_test.json",
+      "sha256": "f48f95726c817a13f19c84fb0d277e7959599a46474aa5b78377d336305f06f2",
+      "bytes": 124641
+    }
+  },
+  "details": {
+    "val": {
+      "path": "reports/m5k_details_val.json",
+      "sha256": "c7cb8b39ab12cbeb8884e5a34ef70c07449d4a425056839d25bc37db40db3e4c",
+      "bytes": 103436
+    },
+    "test": {
+      "path": "reports/m5k_details_test.json",
+      "sha256": "ee6bd552b804e2a58325ea4d3b07753aa14ee72af20b867d4f8f7874f49a25eb",
+      "bytes": 102070
+    }
+  },
+  "status": "Partial",
+  "limits": "Conditionalsurface P, not fullspace obstacle accuracy. Unknown/mixed not safe negative. Partial unless allpredeclared near/scene/Actor/support gates pass; no aggregate-only promotion."
+}

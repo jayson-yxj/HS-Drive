@@ -68,3 +68,32 @@ BGRA buffer 拷贝到自有 pinned uint8 内存，异步 H2D 后转 FP32。对�
 ```
 
 `runs/m5k_logs/` 保留完整日志及失败尝试。逐帧概率、统计及完整 SHA 索引留在服务器，Git 只提交代码、精简报告、引用 SHA 和必要图片。数据参考来自 CARLA 可见首表面及保守 Actor 关联，不是独立精确 Mesh 真值。Unknown 不充当安全负样本；Free-Ray 不表示整格可通行。
+
+## 补充只读审计
+
+以下只聚合已有预测或检查独立合同，不改变冻结模型、阈值、Mask 与选择规则：
+
+```bash
+.venv-gpu/bin/python -m tools.m5k_gpu_contract
+.venv-gpu/bin/python -m tools.m5k_near_replay
+.venv/bin/python -m tools.m5k_visibility_audit --split train
+.venv/bin/python -m tools.m5k_visibility_audit --split val
+.venv/bin/python -m tools.m5k_position_audit
+.venv/bin/python -m tools.m5k_sync_audit
+.venv-gpu/bin/python -m tools.m5k_distribution_figures
+.venv-gpu/bin/python -m tools.m5k_sampling_detail
+.venv-gpu/bin/python -m tools.m5k_supplement
+.venv-gpu/bin/python -m tools.m5k_figures
+.venv-gpu/bin/python -m tools.m5k_finalize
+.venv-gpu/bin/python -m tools.m5k_failure_registry
+```
+
+实际训练支持门禁失败，`m5k_train` 本轮未执行。残差接口和 Mask 梯度测试通过并不表示这个训练候选已验证。代码保留供下一阶段支持满足后审查；旧冻结 Depth/Mobile 未更新。
+
+交付只读审查：
+
+```bash
+.venv-gpu/bin/python -m tools.m5k_delivery_review
+```
+
+此步骤将明确区分“ROI覆盖有收益”和“背景FPR超门禁”。全量测试最终为290通过/5跳过，SDK专项14通过；实际GPU合同另外验证概率归一、GT输入拒绝、零残差和RGB字节一致。所有`runs/`目录均被Git忽略，大型数据约4.8GB留服务器，完整SHA索引由精简`m5k_artifact_manifest.json`引用。

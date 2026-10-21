@@ -1,0 +1,53 @@
+{
+  "kind": "actual_server_test_execution",
+  "full": {
+    "command": ".venv-gpu/bin/python -m pytest -q",
+    "passed": 290,
+    "skipped": 5,
+    "elapsed_s": 16.13,
+    "log": "runs/m5k_logs/tests_final_full.log"
+  },
+  "carla_sdk": {
+    "command": ".venv/bin/python -m pytest -q tests/test_imaging_rig.py tests/test_snapshot.py tests/test_session.py tests/test_geometry_extended.py",
+    "passed": 14,
+    "elapsed_s": 0.29,
+    "log": "runs/m5k_logs/sdk_tests_actual.log"
+  },
+  "gpu_contract": "reports/m5k_gpu_contract.json",
+  "failures": [
+    {
+      "log": "runs/m5k_logs/input_pipeline.log",
+      "reason": "New pixel index not yet ready; timing rerun on existing historical frame with new actual BGRA buffers"
+    },
+    {
+      "log": "runs/m5k_logs/sdk_tests.log",
+      "reason": "Invalid test glob, no tests executed"
+    },
+    {
+      "log": "runs/m5k_logs/sdk_tests_attempt2.log",
+      "reason": "Invalid test filename, no tests executed"
+    },
+    {
+      "log": "runs/m5k_logs/gpu_contract.log",
+      "reason": "Overstrict CPU/GPU float bitwise parity; actual RGB bytes exact and normalized FP32 error5.96e-8, corrected check"
+    }
+  ],
+  "limits": "Skipped tests have missing optional SDK in GPU environment; 14SDK tests separately run, logs disclose. GPU contract syntheticbufferRGB roundtrip and actualGPU inference, not CARLA closedloop.",
+  "log_sha256": {
+    "runs/m5k_logs/sdk_tests_actual.log": "ac7e5f0921d22cc4d9b62802d700b3fb1e8d9909b7b898cbdfcdd274becadd58",
+    "runs/m5k_logs/sdk_tests.log": "b180c3c39ab7fdb250565eab3babf0b8a019087525a297ad9cf5023ad6c94584",
+    "runs/m5k_logs/tests_final_full.log": "38ab5c9a126beb642ad79d90474a1ede8a88c3b108d00c2b6127d3e3418a5480",
+    "runs/m5k_logs/sdk_tests_attempt2.log": "19fa2f20a04eea30203c507b5e424f658e69af266f8ab26dcbbf35de56fd6192",
+    "runs/m5k_logs/tests_initial_full.log": "d1f79812fe22d60dedcf3f6b33b3952ff11457a81df4831a75d9e2107842fefe",
+    "runs/m5k_logs/adapter_tests.log": "cba204e0f005937b5cae9faa558cb1ecdae31fff7968336b0093222717a52eb3",
+    "runs/m5k_logs/geometry_tests.log": "d48a58c1c02393343bd55f586135f5afc939b24920f9b4e15f042f5b9160497c"
+  },
+  "delivery_full": {
+    "command": ".venv-gpu/bin/python -m pytest -q",
+    "passed": 290,
+    "skipped": 5,
+    "elapsed_s": 16.53,
+    "log": "runs/m5k_logs/tests_delivery_full.log",
+    "sha256": "bfa43612dcc634e1c8aba834d4e3de403a4b8a8375f62fea7036381a3b7abb02"
+  }
+}

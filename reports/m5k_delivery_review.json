@@ -1,0 +1,123 @@
+{
+  "kind": "postfreeze_readonly_review_actual_results",
+  "adaptive_coverage": "Go_ResearchSignal",
+  "adaptive_spatial_upgrade": "NoGo_ConfirmedBackgroundFPR",
+  "sampling_comparisons": [
+    {
+      "split": "val",
+      "seed": 101,
+      "depth": "original",
+      "recall1_gain": 0.28734756097560976,
+      "precision_gain": 0.11741316776887767,
+      "fpr_delta": 0.0025921604490555324,
+      "passed": false
+    },
+    {
+      "split": "val",
+      "seed": 102,
+      "depth": "original",
+      "recall1_gain": 0.2654344512195122,
+      "precision_gain": 0.10336278923639519,
+      "fpr_delta": 0.002579546529595409,
+      "passed": false
+    },
+    {
+      "split": "test",
+      "seed": 101,
+      "depth": "original",
+      "recall1_gain": 0.21477428180574554,
+      "precision_gain": 0.015526867547809957,
+      "fpr_delta": 0.0025468914800647413,
+      "passed": false
+    },
+    {
+      "split": "test",
+      "seed": 102,
+      "depth": "original",
+      "recall1_gain": 0.213406292749658,
+      "precision_gain": 0.01606235476232947,
+      "fpr_delta": 0.0016914470134781106,
+      "passed": false
+    }
+  ],
+  "unknown": [
+    {
+      "seed": 101,
+      "method": "original_p8",
+      "unknown_high": 20986,
+      "unknown_n": 7369246,
+      "fraction": 0.0028477811705566623
+    },
+    {
+      "seed": 101,
+      "method": "native16_to_p8",
+      "unknown_high": 20951,
+      "unknown_n": 7369246,
+      "fraction": 0.002843031702293559
+    },
+    {
+      "seed": 101,
+      "method": "oracle_p8",
+      "unknown_high": 98,
+      "unknown_n": 7369246,
+      "fraction": 1.3298511136688883e-05
+    },
+    {
+      "seed": 102,
+      "method": "original_p8",
+      "unknown_high": 12054,
+      "unknown_n": 7369246,
+      "fraction": 0.0016357168698127326
+    },
+    {
+      "seed": 102,
+      "method": "native16_to_p8",
+      "unknown_high": 11944,
+      "unknown_n": 7369246,
+      "fraction": 0.0016207899695572655
+    },
+    {
+      "seed": 102,
+      "method": "oracle_p8",
+      "unknown_high": 150,
+      "unknown_n": 7369246,
+      "fraction": 2.0354863984727883e-05
+    }
+  ],
+  "training": "NotRun_ClassSupportGate",
+  "conditional_code": "Residual code unit/GPUzero-init tested; fulltrainingpipeline notexecuted and notcertified",
+  "next_steps": [
+    "Before changingMask, target representative pedestrianbodyinteriors across distances/azimuth/phases at newTrainValpositions; avoid identicalUV repeatedlayouts as evidenceofindependentrays.",
+    "Revisit targetdepth spatialprobability with fixed48bins and controlledzeroresidual only aftertwo-classsupport. Retain originalnearActor andM4validation gates.",
+    "Keep ROIcoverage proof but no productionS4 until falseforeground/depthspill reduced; masked densekernel has no measuredsparseacceleration.",
+    "Do not expand Occupancy/Temporal/SparseQuery or visualPlannerintegration now."
+  ],
+  "limits": "Newpositions but layouts/Actor/weather reused; mapbackground and semanticclass ratios differ strongly. Foursealedpositions cannot support broadgeneralization. Perposition metrics reveal Town03/Town05 backgroundfalseevidence. Directed surfacedistance not Actorcenter localization; no independentmesh precision. Pipeline bytesreplayed, notonlinecamera/control. Support geometryassociates AABB withoutclaimingexactrenderMesh.",
+  "assets": [
+    {
+      "path": "reports/m5k_visibility_train.json",
+      "sha256": "698fab36b98340e199631e37e93b261947b0a5405795fa80cd850613efcd3d88",
+      "bytes": 1004
+    },
+    {
+      "path": "reports/m5k_visibility_val.json",
+      "sha256": "2449438a5d0c32ced41211ab9c993d4ac4dbe21d8a5030dfac89bc37e9806183",
+      "bytes": 1005
+    },
+    {
+      "path": "reports/m5k_sync_audit.json",
+      "sha256": "737613a2ab6e0b9eb0cac4a83725610c645f08a802df7eadcd9784b73173af3c",
+      "bytes": 8649
+    },
+    {
+      "path": "reports/m5k_split_audit.json",
+      "sha256": "27e39273c2703cc4037d4014fa1e8f41b4c5ebe0036fdee23851b9ff968ffe12",
+      "bytes": 5200
+    },
+    {
+      "path": "reports/m5k_near_protection.json",
+      "sha256": "c8d4ee86f37a97e775de1f447645fde3ae17cac65a9b8bc4d2554970bc65780e",
+      "bytes": 4495
+    }
+  ]
+}

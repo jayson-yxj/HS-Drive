@@ -1,0 +1,18 @@
+"""Postfreeze review: distinguish ROI benefit from failed spatial acceptance."""
+import json
+from pathlib import Path
+from tools.m5k_common import write,asset
+
+def main():
+ budget=json.loads(Path('reports/m5k_sampling_budget.json').read_text());checks=[r for r in budget['comparisons']if r['depth']=='original'];assert all(r['recall1_gain']>0 for r in checks);assert all(r['fpr_delta']>.001 for r in checks)
+ support=json.loads(Path('reports/m5k_actor_depth_support.json').read_text());known=json.loads(Path('reports/m5k_alignment_test.json').read_text());replay=json.loads(Path('reports/m5k_near_replay.json').read_text());raw=json.loads(Path('runs/m5k_alignment_test/raw.json').read_text());unknown=[]
+ for seed in [101,102]:
+  for method in ['original_p8','native16_to_p8','oracle_p8']:
+   r=next(r for r in known['bev']if r['seed']==seed and r['method']==method);unknown.append(dict(seed=seed,method=method,unknown_high=r['unknown_high'],unknown_n=r['unknown_n'],fraction=r['unknown_high_fraction']))
+ report=dict(kind='postfreeze_readonly_review_actual_results',adaptive_coverage='Go_ResearchSignal',adaptive_spatial_upgrade='NoGo_ConfirmedBackgroundFPR',sampling_comparisons=checks,unknown=unknown,training='NotRun_ClassSupportGate',conditional_code='Residual code unit/GPUzero-init tested; fulltrainingpipeline notexecuted and notcertified',next_steps=['Before changingMask, target representative pedestrianbodyinteriors across distances/azimuth/phases at newTrainValpositions; avoid identicalUV repeatedlayouts as evidenceofindependentrays.','Revisit targetdepth spatialprobability with fixed48bins and controlledzeroresidual only aftertwo-classsupport. Retain originalnearActor andM4validation gates.','Keep ROIcoverage proof but no productionS4 until falseforeground/depthspill reduced; masked densekernel has no measuredsparseacceleration.','Do not expand Occupancy/Temporal/SparseQuery or visualPlannerintegration now.'],limits='Newpositions but layouts/Actor/weather reused; mapbackground and semanticclass ratios differ strongly. Foursealedpositions cannot support broadgeneralization. Perposition metrics reveal Town03/Town05 backgroundfalseevidence. Directed surfacedistance not Actorcenter localization; no independentmesh precision. Pipeline bytesreplayed, notonlinecamera/control. Support geometryassociates AABB withoutclaimingexactrenderMesh.',assets=[asset('reports/m5k_visibility_train.json'),asset('reports/m5k_visibility_val.json'),asset('reports/m5k_sync_audit.json'),asset('reports/m5k_split_audit.json'),asset('reports/m5k_near_protection.json')])
+ write('reports/m5k_delivery_review.json',report)
+ summary=Path('reports/m5k_summary.md');text=summary.read_text();marker='## 验收复核与下一步'
+ if marker in text:raise FileExistsError('Review already appended')
+ text+='\n'+marker+'\n\n自适应覆盖收益在 Val/Test 的两个种子上方向一致；No-go 的明确原因是已确认背景 FPR 增量超限，而非没有采样收益。Test 原 Depth 的 Adaptive Recall 25.72%，Uniform 4.24/4.38%；背景 FPR 从 0.4008/0.5014% 增至 0.6555/0.6706%，增量 0.2547/0.1691pp 超过 0.1pp。Precision 虽升至 1.92/1.90%，绝对质量仍很低。\n\n原 M4 近场相同 P8 射线上的 MAE 1.360→1.108m，说明 S16 原生分布对近场有作用；远场 Test MAE 8.779→8.423m 仅改善约4.1%，同时同层1m概率 2.96→2.76%。该实验不支持“直接对齐即可解决目标定位”的解释。\n\n中远场行人 Train/Val 原生语义像素1106/1108，可靠内部像素335/326，固定 P8 中心可靠命中0/0。下一阶段首先补充不同方位、距离和目标投影相位下的可靠行人表面；不放宽边界规则凑数，不把重复相同UV布局视为独立支持。达到两类别支持后才重新申请600步残差 B/C 对照。\n\n新测试仅4位置，Actor布局与天气方案跨 split 复用；空间背景构成与M5-J不同，不能把跨轮聚合数值差异直接归因为模型退化。真实表面定位、背景错误和Unknown需继续分开审查。Residual训练路径本轮未执行；工程Passed限定实际执行接口，不认证条件训练代码的完整收敛。\n\n诊断图：[概率与空间落点](m5k_figures/Town01_ktrain0_m5k_ray.png)、[同预算采样](m5k_figures/m5k_sampling.png)、[输入完整延迟](m5k_figures/m5k_input_latency.png)。\n'
+ summary.write_text(text)
+if __name__=='__main__':main()

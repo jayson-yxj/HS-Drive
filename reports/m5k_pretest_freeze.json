@@ -1,0 +1,171 @@
+{
+  "kind": "before_new_sealed_capture",
+  "commit": "3e23023f9ed8b8efd947dcbcac6862ed1ebab298",
+  "sources": {
+    "tools/m5k_freeze.py": "6ac7fa85fc1edb3367d1715bfa1ed17275c37f6e84959087b59cf8e0a25f6296",
+    "tools/m5k_figures.py": "3df947396ccb39215d4af8c11b038906b0c1733bb203458eb67441451db9075b",
+    "tools/m5k_residual_eval.py": "a14de6bcfd85acd1cdb0fc85bee7a30c3a29429fc34ff5f536e6e55ff325b5ae",
+    "tools/m5k_finalize.py": "a3117c8a3bdf3e9346b627737ccd1023d6b9d9bb606b9be08688fc996245730f",
+    "tools/m5k_postdev.py": "7660286b4f1ef81483be5c5ae2285e554bb74d8847203d8d9697958d42ec12df",
+    "tools/m5k_prepare.py": "7683897f047f400bb6ac35f084f05e303569adbfce9085204a2e01cba87b6efd",
+    "tools/m5k_sampling.py": "8938a1d389042b9485735a1c62c633ca2dcaad639b52890797fc0e8e747aaa84",
+    "tools/m5k_common.py": "c04eb4da7253ee2bcd7222c3f422124d91d925b11c9e458c5027ea7230f6c4ea",
+    "tools/m5k_test_pipeline.py": "dd09c5e2a9dcac1d0c1c8dc643aacc39be7aa8e5bfa46a6ff113aac6298bce7a",
+    "tools/m5k_details.py": "0fe7e5f2a2ff883c0025bbcd6c55f5fe3b040e91d81776e8c32b35e2289046d5",
+    "tools/m5k_capture_protocol.py": "32d4a159cd649b92086a192c5922b0bd7de23bea60f46cb826f2e8d4cdeee40f",
+    "tools/m5k_dev_pipeline.py": "0312003ecbb989436495fba47fd05728e2f03e52c8d74fa033c646ea6255d3fc",
+    "tools/m5k_alignment.py": "d27e2cc78be8f3cdac6b92325c56e22a31f91f5307b8b326bf08b3ab93ce8546",
+    "tools/m5k_support.py": "1fdd1343bb82cbe92a4114f0895b138014caa55d2bbe9e2a8b66a98e51244f44",
+    "tools/m5k_visibility_audit.py": "5fb697f5e6c6a5abcc8d583e976ff2602bcfe7744087831da2107d24962ab2ea",
+    "tools/m5k_native_buffer.py": "015b2275eeaec48525db210acaa27310d31bd232c4aa324c5352ed9439a2986e",
+    "tools/m5k_train.py": "858f2bb8f087c090133d5890739438dedac0b8486bcba1201b80d0a89636d4ee",
+    "tools/m5k_decision.py": "b2239c9581c1d5a9c6ea3c8dfce8ffb6fdd586af2b5bbf8da4bf240d8f65fa8b",
+    "tools/m5k_gpu_contract.py": "c33283c1b10614d6aed7612df3daec72c546dbea58a3f0d3de7315cd95dfa75d",
+    "tools/m5k_input_pipeline.py": "36ff6eb5e69a6c642b19c426347cf68c9d97a6b663e3f364a175fc21e8287ff9",
+    "tools/m5k_integrity.py": "c263395f42cc2e27913474df2187390fbb802d1f370d3ee13018b64d913a344c",
+    "models/m5k_depth_adapter.py": "81030a6b3e7c60e7e5c284741f88159d4929e6077d432dc270b314c0ed22f603",
+    "models/m5k_geometry.py": "896dacf6091178c180ce31f89eafb6e5bcd2ae67d33a6e68786ce5132d73a02f",
+    "training/m5k_losses.py": "f3743c8aefa9e8b247c0ba0cad6dce8d90925792677a3cbdc9cb483d77092d95",
+    "simulator/m5k_input.py": "2b5b9f966662bc4253d11ee9f8dc45ae365f82185cf9c90110d7ce78124d1fea",
+    "configs/m5k_capture_test.json": "5975aa80a07ede8ad7d2e5f3f4734b2e19c3a4d71e5b2ce150a826090edaab95",
+    "configs/m5k_capture_dev.json": "171382ceaea170958017c4e3f9fb596fd0db202c2e019e4223587e06137a4405",
+    "configs/m5k_protocol.json": "08958c857d966f2f47066c9a50c4d7f7be2571ab0a44adc27da4195cd63ee78f"
+  },
+  "protocol": {
+    "path": "configs/m5k_protocol.json",
+    "sha256": "08958c857d966f2f47066c9a50c4d7f7be2571ab0a44adc27da4195cd63ee78f",
+    "bytes": 2733
+  },
+  "models": {
+    "schema": "hsd-m5j-dual-v1",
+    "cameras": [
+      "front",
+      "front_left",
+      "front_right",
+      "rear_left",
+      "rear_right",
+      "rear"
+    ],
+    "image_hw": [
+      384,
+      640
+    ],
+    "depth": {
+      "checkpoint": "runs/m4_expanded_joint/best.pt",
+      "sha256": "8aa09f33c591fd72018eafc193047c26da152b8a52016b04eae6acfad8488d36"
+    },
+    "pixel": [
+      {
+        "name": "mobile_gt",
+        "seed": 101,
+        "checkpoint": "runs/m5i_learning/m5i_mobile_gt_101_step2400.pt",
+        "sha256": "e2f0d0d85a03544186cd8c92095c95a3e2baf256fee0d9ab8f591e1c715d5c33"
+      },
+      {
+        "name": "mobile_gt",
+        "seed": 102,
+        "checkpoint": "runs/m5i_learning/m5i_mobile_gt_102_step2400.pt",
+        "sha256": "9a53e2668edf1ddbd8313b652b06b8e38e2e50b137a979b1c11a97a9a5651b1b"
+      },
+      {
+        "name": "legacy",
+        "seed": 101,
+        "checkpoint": "runs/m5g_pixels/m5g_fpn_bce_101_step1200.pt",
+        "sha256": "616a697962c6f925fc256e7c3b57fb086803ea5dd78fdc0c1c1eda4bf65930e6"
+      },
+      {
+        "name": "legacy",
+        "seed": 102,
+        "checkpoint": "runs/m5g_pixels/m5g_fpn_bce_102_step1200.pt",
+        "sha256": "8da1e15a8a293331abd4af4e1c5e6e0a896cd35d11a48f3a5ee84448f9c1477c"
+      }
+    ],
+    "default_enabled": false
+  },
+  "residual": null,
+  "decisions": {
+    "kind": "pretest_train_validation_gate",
+    "support": {
+      "train": {
+        "passed": false,
+        "strict_actor_inBEV_20_35": 179,
+        "positions": 4,
+        "by_class": {
+          "vehicle": 179,
+          "person": 0,
+          "cone": 0
+        },
+        "minimum": {
+          "rays": 100,
+          "positions": 4,
+          "classes_at_least10": 2
+        }
+      },
+      "val": {
+        "passed": false,
+        "strict_actor_inBEV_20_35": 152,
+        "positions": 4,
+        "by_class": {
+          "vehicle": 152,
+          "person": 0,
+          "cone": 0
+        },
+        "minimum": {
+          "rays": 100,
+          "positions": 4,
+          "classes_at_least10": 2
+        }
+      }
+    },
+    "alignment": {
+      "historical_val": {
+        "records": [
+          {
+            "seed": 101,
+            "precision_gain": -0.0036822251128570127,
+            "recall1_gain": -0.009024252679075001,
+            "fpr_delta": 0.00026710411860368394,
+            "actor_delta": -0.011363636363636354
+          },
+          {
+            "seed": 102,
+            "precision_gain": -0.006683950559799978,
+            "recall1_gain": -0.01071630005640159,
+            "fpr_delta": 0.0007374910177376046,
+            "actor_delta": 0.0
+          }
+        ],
+        "clear_gain": false
+      },
+      "val": {
+        "records": [
+          {
+            "seed": 101,
+            "precision_gain": -0.018297533459079248,
+            "recall1_gain": -0.030678353658536585,
+            "fpr_delta": -4.099523824540414e-05,
+            "actor_delta": 0.029411764705882353
+          },
+          {
+            "seed": 102,
+            "precision_gain": -0.023876445978787783,
+            "recall1_gain": -0.033727134146341466,
+            "fpr_delta": 6.306959730062109e-05,
+            "actor_delta": 0.029411764705882353
+          }
+        ],
+        "clear_gain": false
+      }
+    },
+    "run_residual": false,
+    "status": "NoTraining_SupportInsufficient",
+    "protocol": {
+      "path": "configs/m5k_protocol.json",
+      "sha256": "08958c857d966f2f47066c9a50c4d7f7be2571ab0a44adc27da4195cd63ee78f",
+      "bytes": 2733
+    },
+    "limits": "No test evaluated; support mask and minimum counts frozen before capture. Neither failed support nor MAE-only gain authorizes training."
+  },
+  "threshold": 0.2,
+  "limits": "No new testRGB previously read; test once frozen pipeline. Supplementary postfreeze reporting permitted but no model/mask/threshold changes."
+}

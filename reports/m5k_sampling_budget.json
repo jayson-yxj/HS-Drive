@@ -1,0 +1,163 @@
+{
+  "kind": "actual_GPU_offline_matchedbudget",
+  "results": {
+    "val": {
+      "path": "reports/m5k_sampling_val.json",
+      "sha256": "9cc90c237df1b0ece9bf037fb11e539275e6b449300964e36b8810496592fba0",
+      "bytes": 48566
+    },
+    "test": {
+      "path": "reports/m5k_sampling_test.json",
+      "sha256": "f9722034dbd58be280dd42c0ccd6b2fedfd6e46c7aec01aaf196c6f79b6880fb",
+      "bytes": 48652
+    }
+  },
+  "comparisons": [
+    {
+      "split": "val",
+      "seed": 101,
+      "depth": "oracle",
+      "recall1_gain": 0.17320884146341464,
+      "precision_gain": 0.12318343266204335,
+      "fpr_delta": 0.00046671502002459736,
+      "passed": true
+    },
+    {
+      "split": "val",
+      "seed": 101,
+      "depth": "oracle2d",
+      "recall1_gain": 0.17206554878048785,
+      "precision_gain": 0.0,
+      "fpr_delta": 0.0,
+      "passed": true
+    },
+    {
+      "split": "val",
+      "seed": 101,
+      "depth": "original",
+      "recall1_gain": 0.28734756097560976,
+      "precision_gain": 0.11741316776887767,
+      "fpr_delta": 0.0025921604490555324,
+      "passed": false
+    },
+    {
+      "split": "val",
+      "seed": 101,
+      "depth": "aligned",
+      "recall1_gain": 0.3239329268292683,
+      "precision_gain": 0.1260789437856756,
+      "fpr_delta": 0.0030809498281353476,
+      "passed": false
+    },
+    {
+      "split": "val",
+      "seed": 102,
+      "depth": "oracle",
+      "recall1_gain": 0.17435213414634143,
+      "precision_gain": 0.11761156826549024,
+      "fpr_delta": 0.0006306959730062122,
+      "passed": true
+    },
+    {
+      "split": "val",
+      "seed": 102,
+      "depth": "oracle2d",
+      "recall1_gain": 0.17244664634146345,
+      "precision_gain": 0.0,
+      "fpr_delta": 0.0,
+      "passed": true
+    },
+    {
+      "split": "val",
+      "seed": 102,
+      "depth": "original",
+      "recall1_gain": 0.2654344512195122,
+      "precision_gain": 0.10336278923639519,
+      "fpr_delta": 0.002579546529595409,
+      "passed": false
+    },
+    {
+      "split": "val",
+      "seed": 102,
+      "depth": "aligned",
+      "recall1_gain": 0.3083079268292683,
+      "precision_gain": 0.10272906940202853,
+      "fpr_delta": 0.003850398915202926,
+      "passed": false
+    },
+    {
+      "split": "test",
+      "seed": 101,
+      "depth": "oracle",
+      "recall1_gain": 0.16689466484268128,
+      "precision_gain": 0.026131709428252235,
+      "fpr_delta": 0.0016250204545196793,
+      "passed": false
+    },
+    {
+      "split": "test",
+      "seed": 101,
+      "depth": "oracle2d",
+      "recall1_gain": 0.16689466484268123,
+      "precision_gain": 0.0,
+      "fpr_delta": 0.0,
+      "passed": true
+    },
+    {
+      "split": "test",
+      "seed": 101,
+      "depth": "original",
+      "recall1_gain": 0.21477428180574554,
+      "precision_gain": 0.015526867547809957,
+      "fpr_delta": 0.0025468914800647413,
+      "passed": false
+    },
+    {
+      "split": "test",
+      "seed": 101,
+      "depth": "aligned",
+      "recall1_gain": 0.2079343365253078,
+      "precision_gain": 0.015713524549753086,
+      "fpr_delta": 0.002757512276762207,
+      "passed": false
+    },
+    {
+      "split": "test",
+      "seed": 102,
+      "depth": "oracle",
+      "recall1_gain": 0.1696306429548563,
+      "precision_gain": 0.030431247437458946,
+      "fpr_delta": 0.0010304217438429873,
+      "passed": false
+    },
+    {
+      "split": "test",
+      "seed": 102,
+      "depth": "oracle2d",
+      "recall1_gain": 0.1696306429548563,
+      "precision_gain": 0.0,
+      "fpr_delta": 0.0,
+      "passed": true
+    },
+    {
+      "split": "test",
+      "seed": 102,
+      "depth": "original",
+      "recall1_gain": 0.213406292749658,
+      "precision_gain": 0.01606235476232947,
+      "fpr_delta": 0.0016914470134781106,
+      "passed": false
+    },
+    {
+      "split": "test",
+      "seed": 102,
+      "depth": "aligned",
+      "recall1_gain": 0.2380300957592339,
+      "precision_gain": 0.016619994796684134,
+      "fpr_delta": 0.002136991006491981,
+      "passed": false
+    }
+  ],
+  "decision": "NoGo_AdaptiveNotConsistent",
+  "limits": "P8 interpolation not S4network. Dense maskedprojection timing not sparsekernel. Oracle2D sampling vs Mobile sampling separate. Alltarget denominator inclROI misses."
+}

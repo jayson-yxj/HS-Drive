@@ -1,0 +1,30 @@
+{
+  "kind": "actual_RTX4090_original_M4_validation_readonly",
+  "aggregate": [
+    {
+      "method": "original_p8",
+      "n": 372782,
+      "mae": 1.3598551781502637,
+      "bias": 1.3077610856454172
+    },
+    {
+      "method": "native16_to_p8",
+      "n": 372782,
+      "mae": 1.10812868230599,
+      "bias": 1.0056138951692033
+    },
+    {
+      "method": "native16",
+      "n": 91843,
+      "mae": 1.1140401214599693,
+      "bias": 0.9860077125782162
+    }
+  ],
+  "raw": {
+    "path": "runs/m5k_logs/m4_near_replay_raw.json",
+    "sha256": "a90b39fa30b7b45b1769bcab371e3508dda2246952ac24c11b0c134b55b2f5d1",
+    "bytes": 16691
+  },
+  "source_sha256": "d5e98e06075e36506f341eebf20a19a1b728aaa95a2b3adda62c6b115ada390a",
+  "limits": "OriginalM4 depth valid; no Actor semantics in historicalreplay. NativeS16 distinctrays. P8 versusaligned sharemask. Not used to retune scientificmodel/testthreshold."
+}
