@@ -1,0 +1,21 @@
+{
+  "schema": "hsd-m5f-study-v1",
+  "base": "bf989b4",
+  "data": {"reuse": ["m5d_index train/val", "m5e_index train/val"], "historical_tests": "not new blind; excluded training and selection", "test": "3 new geometry-only positions after checkpoint freeze; 12 configurations each; >45m from all M5A-E positions; weather change"},
+  "pixel_schema": "hsd-m5f-visible-first-surface-v1",
+  "seeds": [101,102],
+  "models": ["S16_frozen", "P8_frozen", "P8_fpn"],
+  "steps": 400,
+  "validate_every": 100,
+  "head_lr": 0.001,
+  "fpn_lr": 0.0001,
+  "sample": "Same seeded group round-robin, half target-support cameras / half uniform six cameras. One camera perstep, all six evaluated. Cache frozen backbone RGBfeatures only.",
+  "loss": "0.5 positive BCE mean + 0.5 confirmed non-target BCE mean when both supported; ignore nevernegative; no pairloss. Equal setting for allmodels.",
+  "selection": "Validation only. Each scene pixelprecision>=.8,recall>=.8,emptyFPR<=.01. Minimax normalized violation then highest macroIoU then earlierstep. All infeasible remainPartial. Thresholds .1 to .9. AP uses256fixedhistbins and is named histogramAP.",
+  "actor_detection": "Geometrically associated renderidentity (not actorID), >=3validpixels eligible; >=3predicted and >=50% pixel recall detected. Pixel size <=32 small,33-128 medium,>128 large. Zero-support actors retained.",
+  "geometry": "Four A/B/C/D interventions use identical rounded native S16 orP8 UV and reliablelabelmask; OriginalDepth and original48LID frozen. Scores accumulate foregroundmass,totalmass,raycount; no tiny-mass normalization. q=1-exp(-foregroundmass), eventscore not calibratedoccupancy. Threshold .1,.2,.4,.6,.8 chosen onlyval. Perstride nativegrid report; commonS16grid supplementary forS8/16 comparability.",
+  "fusion": "Optional scalar logistic head on oldM5E evidence logit and foreground logmass, fit reliabletraining firstsurfaces only after factorization; compare trainbudgetmatched old-only recalibration; 100steps2seeds, fixedfrozenpixel. No test-driven decision.",
+  "stop": "No extension beyond400steps/models/seeds. Nonfinite or leakage stops; labelquality first. Newtest once after schema/model/thresholdselection freeze. No defaultDepth/Splat/Runtime changes; no longruntimepressure. No formalM5pass frompixelresults.",
+  "reference": "Renderedfirsthit self-consistency; not independentMesh or physicalfree. Buildings/walls negative only for imageforeground classification. Unknown evidence notFalsePositive without reference.",
+  "shadow": "RecordedRGB offline only. No controlactions. Latency GPU isolated from CARLA tick experiments; originalruntimeunchanged."
+}
