@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/tmp/m5g_val_wait.py", line 5, in <module>
+    with open(f'reports/m5g_logs/m5g_{name}.log','w')as f:subprocess.run(['.venv-gpu/bin/python','-m','tools.m5g_'+name],stdout=f,stderr=subprocess.STDOUT,check=True)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['.venv-gpu/bin/python', '-m', 'tools.m5g_extension']' returned non-zero exit status 1.

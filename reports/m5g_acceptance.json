@@ -1,0 +1,110 @@
+{
+  "stage": "M5-G",
+  "status": "Partial",
+  "base": "5e44a77",
+  "branch": "feat/m5g-visual-representation-depth",
+  "source_commit": "0047dea17984213982da32a62259183e2560899b",
+  "protocol_sha256": "8065cd4dd501b362e4d5386461e913bb7bbf0ef20a58073fb593cb9b007f9768",
+  "states": {
+    "engineering_interfaces": {
+      "status": "Passed",
+      "evidence": "262tests+actualGPUcontracts, opt-in interfaces, noGTforward"
+    },
+    "research_training_execution": {
+      "status": "Passed",
+      "evidence": "10matched1200pixel runs,2conditionalextensions,4depthruns,officialCOCObaseline"
+    },
+    "oracle_sampling_selfconsistency": {
+      "status": "Passed",
+      "evidence": "historical852/852,new717/717denseoracle; samplingphasesquantified"
+    },
+    "rgb_representation_gain": {
+      "status": "Partial",
+      "evidence": "budgethelps, highlayernotgeneralizing, nojointP/R/residueallseeds"
+    },
+    "pretrained_external_reference": {
+      "status": "Completed",
+      "evidence": "COCOimproves supportedclasses but notfairarchitectureablation, no cones"
+    },
+    "image_generalization_quality": {
+      "status": "Partial",
+      "evidence": "noHSmodelallscenejointthresholdpass,3positions"
+    },
+    "depth_quality": {
+      "status": "Partial",
+      "evidence": "trainedheadsallfailnearMAE<=1.05old; originalretained"
+    },
+    "bev_spatial_quality": {
+      "status": "Partial",
+      "evidence": "newpixelreducesFP butnewjointrecallbelowold"
+    },
+    "runtime": {
+      "status": "Partial",
+      "evidence": "unchanged priorlongtail, isolatedGPUlatencynotonlinecontrol"
+    },
+    "oracle_driving_safety": {
+      "status": "NotRevalidated",
+      "evidence": "no newruntimeclosedloop"
+    },
+    "pure_visual_driving_safety": {
+      "status": "NotValidated",
+      "evidence": "nocontrolcommands"
+    },
+    "larger_occupancy_scaleup": {
+      "status": "NotApproved",
+      "evidence": "spatialqualityandnearregression unresolved"
+    }
+  },
+  "actual_execution": {
+    "gpu": "RTX4090",
+    "pixel_1200_runs": 10,
+    "conditional_2400_continuations": 2,
+    "depth_1200_runs": 4,
+    "seeds": [
+      101,
+      102
+    ],
+    "newtestpositions": 3,
+    "newtestframes": 36,
+    "egoremovedreferenceframes": 36,
+    "CARLA": "0.9.15 actualsynchronizedcapture",
+    "COCO_finetuning": false,
+    "visual_control": false
+  },
+  "tests": {
+    "full_passed": 262,
+    "full_skipped": 5,
+    "carla_related_passed": 14,
+    "m5g_unit_passed": 6,
+    "actual_GPU_contract": "Passed",
+    "counts_overlap": true
+  },
+  "validation_depth_release_candidate": "originalM4only; everytrainedheadfailsnear5percentgate",
+  "test_frozen": true,
+  "reports": {
+    "m5g_training_exposure.json": "a2add8274e8ddbdd9f33218289405f5560423ad2d55ce7eaf8f9d2acd15ffa28",
+    "m5g_pretrained_2d_baseline.json": "579ec33ac48570eef3cc7a1c7173808d58347992030ff9e2a1223295d45e4070",
+    "m5g_pixel_precision_recall.json": "c688e39f04b525d6a97303ad32176b610bb997e9173dedb94b4e91bec35176c7",
+    "m5g_backbone_ablation.json": "2b509ebdade58da3f0243f3131faeb0fe6d18d9fc03e96b7347b9e25211c7e0e",
+    "m5g_oracle_sampling_ceiling.json": "8cdb1d54c14ad7bc9538259b3ff1c28de19c642bbd71edc8c4990b9d701e0924",
+    "m5g_depth_training.json": "40927e2fad7ae3450515e0f18bb3330515de343ef9ca949939518b946877083b",
+    "m5g_depth_spatial_quality.json": "bd01e86ca2764ba353e1533f8fd1f0ab5abdff3be7475d31c227233e374978a9",
+    "m5g_shadow_comparison.json": "0d918ee44cd73f0f5eceeb5202a986e75b5733ff5ca094653df4d292e1dc8d66"
+  },
+  "limitations": [
+    "threepositionsonly",
+    "samevehicleassets/layouttemplates",
+    "front_rightnoTestpositives",
+    "trainrear_rightzero positives",
+    "ped24pixelscone72pixels",
+    "rendererreference notindependentMesh",
+    "AABBidentityproxy",
+    "transparency/reflectionunresolved",
+    "strict20-35depth13rays11insideBEV",
+    "COCOmodeldifferentresolutioncomputeandtrainingdata",
+    "Testnogatechanges",
+    "newDepthexploratoryfailednearquality",
+    "permodelValworkpoints differ; APandpairedresultsrequired"
+  ],
+  "next": "Stronglightweightpretraining/teacherresearch andnear-preservingdepthcontrols beforeBEVscaleup"
+}

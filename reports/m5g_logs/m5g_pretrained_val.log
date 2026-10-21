@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5g_pretrained.py", line 31, in <module>
+    if __name__=='__main__':main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5g_pretrained.py", line 16, in main
+    prepare_cuda();torch.set_num_threads(2);w=MaskRCNN_ResNet50_FPN_V2_Weights.COCO_V1;path='/root/gpufree-data/hs-drive-cache/weights/m5g/'+w.url.split('/')[-1];net=maskrcnn_resnet50_fpn_v2(weights=None,weights_backbone=None,box_score_thresh=.05);net.load_state_dict(torch.load(path,weights_only=True));net.cuda().eval();rows=[r for r in json.loads(Path(a.root,'index.json').read_text())['records']if r['split']==a.split];labels=[];scores=[];saved=[];times=[];out=Path(f'runs/m5g_pretrained_{a.split}');out.mkdir(exist_ok=False);torch.cuda.reset_peak_memory_stats()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv-gpu/lib/python3.10/site-packages/torch/serialization.py", line 1484, in load
+    with _open_file_like(f, "rb") as opened_file:
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv-gpu/lib/python3.10/site-packages/torch/serialization.py", line 759, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv-gpu/lib/python3.10/site-packages/torch/serialization.py", line 740, in __init__
+    super().__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: '/root/gpufree-data/hs-drive-cache/weights/m5g/maskrcnn_resnet50_fpn_v2_coco-73cbd019.pth'

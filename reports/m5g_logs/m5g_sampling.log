@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5g_sampling.py", line 37, in <module>
+    if __name__=='__main__':main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5g_sampling.py", line 20, in main
+    pts=transform_points(unproject_pixels_to_optical(u,v,d['depth'][c],inp['intrinsics'][0,c].numpy(),'optical_z'),inp['cam_to_ego'][0,c].numpy());rank,inside=grid.locate(pts);ids.append(rank);good.append(inside&d['valid'][c]&d['target'][c])
+ValueError: operands could not be broadcast together with shapes (245760,) (384,640) 
