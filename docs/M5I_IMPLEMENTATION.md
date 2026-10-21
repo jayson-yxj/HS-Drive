@@ -110,3 +110,10 @@ bash tools/m5i_process_added.sh
 Teacher可视化复核发现历史Val部分后向视图中，COCO教师把大块空旷道路赋予vehicle高分；这与GT发生冲突，不是可靠的背景知识。冲突位置未进入KD软标签，GT监督保留。另有边缘遮挡目标的教师漏检；仅凭图像对照不足以替代独立Mesh裁决。图片和选择记录见`m5i_teacher_audit_visualizations.json`。
 
 Depth主报告历史字段`scope=actor`实际为可靠语义前景（含未能关联Actor的目标像素），不得误称全部可关联物理Actor。`m5i_associated_actor_depth_*`专门复算actor_id>0的相同固定射线，资格要求该子集的支持与同层1m概率也不退化。
+
+
+## 本次执行结果索引
+
+封存源码提交`01d5cf4`，冻结UTC与完整选择SHA在`m5i_pretest_freeze.json`；报告澄清脚本是冻结后的文字整理，不改变任何权重、阈值、协议或指标。实际A/B/架构共6组，C条件为False，未运行教师FPN缓存或特征蒸馏训练。数据新增6个Train/Val位置与6个封存位置，共192个训练/验证/测试新增场景样本及192帧参考。完整Test解析96帧，Train/Val共享400帧（272/128）。CARLA0.9.15 Epic六摄640×384，实际同步/位姿/重复图像审计通过。
+
+M5-I模型与原始数据保留服务器，不将官方或训练权重上传Git。所有资产SHA在`m5i_artifact_manifest.json`，最终版本与推送结果另记。正式默认和旧Runtime未改，继承Partial，不以本轮GPU计时重新关闭控制实时性门禁。
