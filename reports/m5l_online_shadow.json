@@ -1,0 +1,120 @@
+{
+  "kind": "actual_CARLA_online_sixcamera_independent_process_no_control",
+  "phases": [
+    {
+      "phase": "baseline",
+      "tick_ms": {
+        "n": 240,
+        "mean": 61.71175768443694,
+        "p50": 58.76182671636343,
+        "p95": 70.78185845166443,
+        "p99": 102.25827470421788,
+        "max": 237.0452806353569
+      },
+      "interval_ms": {
+        "n": 240,
+        "mean": 61.71950658317655,
+        "p50": 58.707220479846,
+        "p95": 70.85157092660664,
+        "p99": 102.3215374536812,
+        "max": 237.11754567921162
+      }
+    },
+    {
+      "phase": "shadow",
+      "tick_ms": {
+        "n": 240,
+        "mean": 61.006558880520366,
+        "p50": 57.62950051575899,
+        "p95": 84.20170843601225,
+        "p99": 87.39860052242872,
+        "max": 88.51244114339352
+      },
+      "interval_ms": {
+        "n": 240,
+        "mean": 61.25827666837722,
+        "p50": 57.87725932896137,
+        "p95": 84.56582436338066,
+        "p99": 87.79384667053816,
+        "max": 88.93975429236889
+      }
+    },
+    {
+      "phase": "recovery",
+      "tick_ms": {
+        "n": 240,
+        "mean": 58.14311665017158,
+        "p50": 57.598632760345936,
+        "p95": 61.48144174367189,
+        "p99": 65.11125635355711,
+        "max": 70.67811861634254
+      },
+      "interval_ms": {
+        "n": 240,
+        "mean": 58.16413608069221,
+        "p50": 57.64103215187788,
+        "p95": 61.10636200755834,
+        "p99": 65.18875343725085,
+        "max": 70.75993530452251
+      }
+    }
+  ],
+  "sent": 30,
+  "owner_nonblocking_queue_drops": 0,
+  "outputs": 30,
+  "status_counts": {
+    "expired_output_discarded": 1,
+    "stale_before_compute": 1,
+    "accepted": 28
+  },
+  "timing": {
+    "queue_age_ms": {
+      "n": 30,
+      "mean": 75.216202562054,
+      "p50": 57.864596135914326,
+      "p95": 69.84403720125556,
+      "p99": 403.67326606065075,
+      "max": 539.9520490318537
+    },
+    "convert_h2d_ms": {
+      "n": 29,
+      "mean": 8.938381769533816,
+      "p50": 6.446095183491707,
+      "p95": 12.57832422852515,
+      "p99": 50.73826387524599,
+      "max": 64.64582309126854
+    },
+    "inference_ms": {
+      "n": 29,
+      "mean": 78.39142036592138,
+      "p50": 47.30571247637272,
+      "p95": 55.44593632221221,
+      "p99": 685.557440072297,
+      "max": 929.9244936555624
+    },
+    "output_ms": {
+      "n": 29,
+      "mean": 0.11758891672923646,
+      "p50": 0.0718832015991211,
+      "p95": 0.28223954141139984,
+      "p99": 0.7758816331624977,
+      "max": 0.9664390236139297
+    },
+    "end_to_end_ms": {
+      "n": 29,
+      "mean": 146.7565774660686,
+      "p50": 112.26899549365044,
+      "p95": 133.05458985269064,
+      "p99": 806.6504917293777,
+      "max": 1064.9858843535185
+    }
+  },
+  "stopped_for_tick_tail": false,
+  "worker_exitcode": 0,
+  "raw": {
+    "path": "runs/m5l_logs/shadow_raw.json",
+    "sha256": "1d89d609b35da2d7c66aad9b7f1c37b7ca34cca9321811a6ea502e261afa2799",
+    "bytes": 50705
+  },
+  "limits": "End-to-end startsfirstsensorcallback, not renderingstart. StaticdetachedRGBsensors no drivingroute/controller resourcecontention. Sole harness TickOwner, worker noCARLAclient/no control. 2Hz wallclock throttle, originalsimtimestamp unchanged; agealso usesmonotonicwall. Rawbytes copiedcallback, MP queue serializedasync boundedlatestcomplete. 20warmupticks perphase, finite240ticks. Doesnotcertify drivingreal-time or purevisualsafety."
+}

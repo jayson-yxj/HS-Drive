@@ -1,0 +1,180 @@
+{
+  "kind": "postfreeze_actual_record_diagnostic",
+  "shadow_accepted_fresh": true,
+  "accepted": 28,
+  "accepted_latency_ms": {
+    "n": 28,
+    "mean": 113.96267364865967,
+    "p50": 112.23339661955833,
+    "p95": 119.0215622074902,
+    "p99": 136.07867984101176,
+    "max": 142.35948212444782
+  },
+  "all_output_latency_ms": {
+    "n": 29,
+    "mean": 146.7565774660686,
+    "p50": 112.26899549365044,
+    "p95": 133.05458985269064,
+    "p99": 806.6504917293777,
+    "max": 1064.9858843535185
+  },
+  "objects": [
+    {
+      "split": "train",
+      "records": [
+        {
+          "seed": 101,
+          "visible_bottom_z": {
+            "n": 70,
+            "mean": 0.351219213459033,
+            "p50": 0.26544134430362354,
+            "p95": 1.1891698516245386,
+            "p99": 1.4084528002191081,
+            "max": 1.690167999794765
+          },
+          "plane_contact_supported_views": 0,
+          "plane_contact_supported_valid": 0,
+          "flat_pose_views": 70,
+          "slope_pose_views": 0,
+          "conditional_valid": 35,
+          "trusted_positions": 0
+        },
+        {
+          "seed": 102,
+          "visible_bottom_z": {
+            "n": 70,
+            "mean": 0.351219213459033,
+            "p50": 0.26544134430362354,
+            "p95": 1.1891698516245386,
+            "p99": 1.4084528002191081,
+            "max": 1.690167999794765
+          },
+          "plane_contact_supported_views": 0,
+          "plane_contact_supported_valid": 0,
+          "flat_pose_views": 70,
+          "slope_pose_views": 0,
+          "conditional_valid": 38,
+          "trusted_positions": 0
+        }
+      ]
+    },
+    {
+      "split": "val",
+      "records": [
+        {
+          "seed": 101,
+          "visible_bottom_z": {
+            "n": 70,
+            "mean": 0.37561029421114267,
+            "p50": 0.2708074513343797,
+            "p95": 0.8481221680004872,
+            "p99": 1.2258832680164469,
+            "max": 1.6883027608205916
+          },
+          "plane_contact_supported_views": 0,
+          "plane_contact_supported_valid": 0,
+          "flat_pose_views": 70,
+          "slope_pose_views": 0,
+          "conditional_valid": 32,
+          "trusted_positions": 0
+        },
+        {
+          "seed": 102,
+          "visible_bottom_z": {
+            "n": 70,
+            "mean": 0.37561029421114267,
+            "p50": 0.2708074513343797,
+            "p95": 0.8481221680004872,
+            "p99": 1.2258832680164469,
+            "max": 1.6883027608205916
+          },
+          "plane_contact_supported_views": 0,
+          "plane_contact_supported_valid": 0,
+          "flat_pose_views": 70,
+          "slope_pose_views": 0,
+          "conditional_valid": 35,
+          "trusted_positions": 0
+        }
+      ]
+    },
+    {
+      "split": "regression",
+      "records": [
+        {
+          "seed": 101,
+          "visible_bottom_z": {
+            "n": 71,
+            "mean": 0.3976212219289554,
+            "p50": 0.2708074513343797,
+            "p95": 1.0573004830268418,
+            "p99": 1.2174296770036916,
+            "max": 1.281885346056079
+          },
+          "plane_contact_supported_views": 0,
+          "plane_contact_supported_valid": 0,
+          "flat_pose_views": 71,
+          "slope_pose_views": 0,
+          "conditional_valid": 34,
+          "trusted_positions": 0
+        },
+        {
+          "seed": 102,
+          "visible_bottom_z": {
+            "n": 71,
+            "mean": 0.3976212219289554,
+            "p50": 0.2708074513343797,
+            "p95": 1.0573004830268418,
+            "p99": 1.2174296770036916,
+            "max": 1.281885346056079
+          },
+          "plane_contact_supported_views": 0,
+          "plane_contact_supported_valid": 0,
+          "flat_pose_views": 71,
+          "slope_pose_views": 0,
+          "conditional_valid": 37,
+          "trusted_positions": 0
+        }
+      ]
+    },
+    {
+      "split": "test",
+      "records": [
+        {
+          "seed": 101,
+          "visible_bottom_z": {
+            "n": 36,
+            "mean": 0.4458000874124654,
+            "p50": 0.2654383523702347,
+            "p95": 1.7864557215508456,
+            "p99": 2.3824568304381994,
+            "max": 2.3939902454493867
+          },
+          "plane_contact_supported_views": 0,
+          "plane_contact_supported_valid": 0,
+          "flat_pose_views": 18,
+          "slope_pose_views": 18,
+          "conditional_valid": 15,
+          "trusted_positions": 0
+        },
+        {
+          "seed": 102,
+          "visible_bottom_z": {
+            "n": 36,
+            "mean": 0.4458000874124654,
+            "p50": 0.2654383523702347,
+            "p95": 1.7864557215508456,
+            "p99": 2.3824568304381994,
+            "max": 2.3939902454493867
+          },
+          "plane_contact_supported_views": 0,
+          "plane_contact_supported_valid": 0,
+          "flat_pose_views": 18,
+          "slope_pose_views": 18,
+          "conditional_valid": 19,
+          "trusted_positions": 0
+        }
+      ]
+    }
+  ],
+  "limits": "Conditional position estimates are not trustedpositions: binaryforeground cannotconfirmcontact. Visiblebottom isaftererosion andmaynot beactualgroundcontact. Fixedz plane notfit toGT. Freshness measuredatworkeroutput; no planner consumesoutput. Startupinference outlier retained. TickshadowP95 grows butbelowpredeclaredstop; no strict20Hzclaim."
+}

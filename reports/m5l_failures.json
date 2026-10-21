@@ -1,0 +1,78 @@
+{
+  "kind": "actual_log_failure_inventory",
+  "records": [
+    {
+      "log": {
+        "path": "runs/m5l_logs/vehicle_training.log",
+        "sha256": "c0b71806b257b51bfb5d4fab0f591174e958e47d01ea8ee0ffc8203d153637b8",
+        "bytes": 6966
+      },
+      "tail": "val3/00016394\ncache Town05_kval3/00016398\ncache Town05_kval3/00016402\ncache Town05_kval3/00016406\ncache Town05_kval3/00016410\ncache Town05_kval3/00016414\ncache Town05_kval3/00016418\ncache Town05_kval3/00016422\ncache Town05_kval3/00016426\ncache Town05_kval3/00016430\nTraceback (most recent call last):\n  File \"/usr/lib/python3.10/runpy.py\", line 196, in _run_module_as_main\n    return _run_code(code, main_globals, None,\n  File \"/usr/lib/python3.10/runpy.py\", line 86, in _run_code\n    exec(code, run_globals)\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5l_vehicle_train.py\", line 62, in <module>\n    if __name__=='__main__':main()\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5l_vehicle_train.py\", line 44, in main\n    i,c=eligible[int(rng.integers(len(eligible)))]if step%2==0 else(int(rng.choice(train)),int(rng.integers(6)));order.append((i,c,int(rng.integers(len(rep))),int(rng.integers(6))));write(out/f'order_{seed}.json',order)\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5j_common.py\", line 12, in write\n    if Path(path).exists():raise FileExistsError(path)\nFileExistsError: runs/m5l_residual/order_101.json\n"
+    },
+    {
+      "log": {
+        "path": "runs/m5l_logs/postdev.log",
+        "sha256": "0f71772a870948d12bfab2c8c280d71d3925937b2d86ed1d76f0cc0672ca8f83",
+        "bytes": 1026
+      },
+      "tail": "Traceback (most recent call last):\n  File \"/usr/lib/python3.10/runpy.py\", line 196, in _run_module_as_main\n    return _run_code(code, main_globals, None,\n  File \"/usr/lib/python3.10/runpy.py\", line 86, in _run_code\n    exec(code, run_globals)\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5l_postdev.py\", line 15, in <module>\n    if __name__=='__main__':main()\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5l_postdev.py\", line 11, in main\n    run(['tools.m5l_online_shadow'],'online_shadow.log')\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5l_development.py\", line 5, in run\n    with open('runs/m5l_logs/'+log,'x')as f:subprocess.run([python,'-m',*args],stdout=f,stderr=subprocess.STDOUT,check=True)\n  File \"/usr/lib/python3.10/subprocess.py\", line 526, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['.venv-gpu/bin/python', '-m', 'tools.m5l_online_shadow']' returned non-zero exit status 1.\n"
+    },
+    {
+      "log": {
+        "path": "runs/m5l_logs/post_audit.log",
+        "sha256": "2a3a4aad53da9356313ef94501d32504c54a09ab7419e8f2e300a3323c8e96d4",
+        "bytes": 1083
+      },
+      "tail": "Traceback (most recent call last):\n  File \"/usr/lib/python3.10/runpy.py\", line 196, in _run_module_as_main\n    return _run_code(code, main_globals, None,\n  File \"/usr/lib/python3.10/runpy.py\", line 86, in _run_code\n    exec(code, run_globals)\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5l_post_audit.py\", line 27, in <module>\n    if __name__=='__main__':main()\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5l_post_audit.py\", line 19, in main\n    man=json.loads((directory/'manifest.json').read_text());assert file_hash(directory/'calibration.json')==man['calibration_sha256'];ids=man['frames']+list(man['references'].values());errors=[]\n  File \"/usr/lib/python3.10/pathlib.py\", line 1134, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n  File \"/usr/lib/python3.10/pathlib.py\", line 1119, in open\n    return self._accessor.open(self, mode, buffering, encoding, errors,\nNotADirectoryError: [Errno 20] Not a directory: '/root/gpufree-data/hs-drive-data/raw/m5l_test/manifest.json/manifest.json'\n"
+    },
+    {
+      "log": {
+        "path": "runs/m5l_logs/online_shadow_retry.log",
+        "sha256": "25d5ae0cc55fba12a58fe06e6c38fe60a3a2e137d194a0422cd6c1664ea6808e",
+        "bytes": 842
+      },
+      "tail": "Traceback (most recent call last):\n  File \"/usr/lib/python3.10/runpy.py\", line 196, in _run_module_as_main\n    return _run_code(code, main_globals, None,\n  File \"/usr/lib/python3.10/runpy.py\", line 86, in _run_code\n    exec(code, run_globals)\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5l_online_shadow.py\", line 63, in <module>\n    if __name__=='__main__':main()\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5l_online_shadow.py\", line 19, in main\n    with CarlaSession(cfg,load_map=True)as session:\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/session.py\", line 26, in __enter__\n    raise RuntimeError('World already synchronous; establish exclusive tick ownership first')\nRuntimeError: World already synchronous; establish exclusive tick ownership first\n"
+    },
+    {
+      "log": {
+        "path": "runs/m5l_logs/after_shadow.log",
+        "sha256": "e1037fe7c8998d2d2d5f2f96879c554f1268f5105bb822194b1556e78af90dad",
+        "bytes": 1021
+      },
+      "tail": "Traceback (most recent call last):\n  File \"/usr/lib/python3.10/runpy.py\", line 196, in _run_module_as_main\n    return _run_code(code, main_globals, None,\n  File \"/usr/lib/python3.10/runpy.py\", line 86, in _run_code\n    exec(code, run_globals)\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5l_after_shadow.py\", line 16, in <module>\n    if __name__=='__main__':main()\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5l_after_shadow.py\", line 13, in main\n    run(['tools.m5l_finalize'],'finalize.log')\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5l_development.py\", line 5, in run\n    with open('runs/m5l_logs/'+log,'x')as f:subprocess.run([python,'-m',*args],stdout=f,stderr=subprocess.STDOUT,check=True)\n  File \"/usr/lib/python3.10/subprocess.py\", line 526, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['.venv-gpu/bin/python', '-m', 'tools.m5l_finalize']' returned non-zero exit status 1.\n"
+    },
+    {
+      "log": {
+        "path": "runs/m5l_logs/finalize.log",
+        "sha256": "cee4e5511d96c5ca670552f22ed942eaf02864e25e8855abd054425016d57db8",
+        "bytes": 956
+      },
+      "tail": "Traceback (most recent call last):\n  File \"/usr/lib/python3.10/runpy.py\", line 196, in _run_module_as_main\n    return _run_code(code, main_globals, None,\n  File \"/usr/lib/python3.10/runpy.py\", line 86, in _run_code\n    exec(code, run_globals)\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5l_finalize.py\", line 43, in <module>\n    if __name__=='__main__':main()\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5l_finalize.py\", line 26, in main\n    r=find(data['aggregate'],seed=seed,scope='all');errors=r['errors'];go=r['valid']>=20 and r['positions']>=3 and r['valid_given_detected']>=.5 and errors['plane_center'].get('p50',1e6)<=.8*errors['dense_expected_center'].get('p50',0)and errors['plane_center'].get('p50',1e6)<=.8*errors['dense_mode_center'].get('p50',0);objs.append(dict(split=split,seed=seed,conditional_research_gate=go,**r))\nTypeError: dict() got multiple values for keyword argument 'seed'\n"
+    },
+    {
+      "log": {
+        "path": "runs/m5l_logs/online_shadow.log",
+        "sha256": "72e6db45c25d191fd49a635237f7d7281d1ec597ca0d7dedf0a6a66f317d3064",
+        "bytes": 694
+      },
+      "tail": "Traceback (most recent call last):\n  File \"/usr/lib/python3.10/runpy.py\", line 196, in _run_module_as_main\n    return _run_code(code, main_globals, None,\n  File \"/usr/lib/python3.10/runpy.py\", line 86, in _run_code\n    exec(code, run_globals)\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5l_online_shadow.py\", line 65, in <module>\n    if __name__=='__main__':main()\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5l_online_shadow.py\", line 14, in main\n    from geometry.coordinates import sys\nImportError: cannot import name 'sys' from 'geometry.coordinates' (/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/coordinates.py)\n"
+    },
+    {
+      "log": {
+        "path": "runs/m5l_logs/allocation.log",
+        "sha256": "4319dfea77936b96152ae08e4fdb757a25c6b5550f1fd3d650b996209faffd9b",
+        "bytes": 557
+      },
+      "tail": "Traceback (most recent call last):\n  File \"/usr/lib/python3.10/runpy.py\", line 196, in _run_module_as_main\n    return _run_code(code, main_globals, None,\n  File \"/usr/lib/python3.10/runpy.py\", line 86, in _run_code\n    exec(code, run_globals)\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5l_capture_protocol.py\", line 29, in <module>\n    if __name__=='__main__':main()\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5l_capture_protocol.py\", line 23, in main\n    assert choices,town\nAssertionError: Town02\n"
+    },
+    {
+      "log": {
+        "path": "runs/m5l_logs/finish.log",
+        "sha256": "3c42e70b626ffe85c15bd6cfd34b8fa6918d790e0f151bdd3dce458caa3d6fd1",
+        "bytes": 1015
+      },
+      "tail": "Traceback (most recent call last):\n  File \"/usr/lib/python3.10/runpy.py\", line 196, in _run_module_as_main\n    return _run_code(code, main_globals, None,\n  File \"/usr/lib/python3.10/runpy.py\", line 86, in _run_code\n    exec(code, run_globals)\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5l_finish.py\", line 14, in <module>\n    if __name__=='__main__':main()\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5l_finish.py\", line 11, in main\n    run(['tools.m5l_post_audit'],'post_audit.log')\n  File \"/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m5l_development.py\", line 5, in run\n    with open('runs/m5l_logs/'+log,'x')as f:subprocess.run([python,'-m',*args],stdout=f,stderr=subprocess.STDOUT,check=True)\n  File \"/usr/lib/python3.10/subprocess.py\", line 526, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['.venv-gpu/bin/python', '-m', 'tools.m5l_post_audit']' returned non-zero exit status 1.\n"
+    }
+  ],
+  "limits": "Failedattempts preserved. Initialresidualorderwritefailedbeforeoptimization; SDKimport andsynchronousworldrejections beforeShadow. Town02 noisolatedpose keptasfailure, no rule relaxed."
+}

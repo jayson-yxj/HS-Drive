@@ -1,0 +1,38 @@
+{
+  "kind": "actualGPU_measured_cached_training",
+  "gpu": "RTX4090",
+  "steps_per_arm_seed": 600,
+  "total_optimization_steps": 2400,
+  "trainable_parameters_per_model": 5232,
+  "records": [
+    {
+      "seed": 101,
+      "mode": "no_mobile",
+      "elapsed_s": 5.496080569922924,
+      "peak_mib": 146.74853515625,
+      "parameters": 5232
+    },
+    {
+      "seed": 101,
+      "mode": "mobile",
+      "elapsed_s": 4.569996517151594,
+      "peak_mib": 146.02880859375,
+      "parameters": 5232
+    },
+    {
+      "seed": 102,
+      "mode": "no_mobile",
+      "elapsed_s": 4.684458628296852,
+      "peak_mib": 148.3095703125,
+      "parameters": 5232
+    },
+    {
+      "seed": 102,
+      "mode": "mobile",
+      "elapsed_s": 4.7087479289621115,
+      "peak_mib": 148.33056640625,
+      "parameters": 5232
+    }
+  ],
+  "limits": "FP32 trainresidual/loss/geometry; frozenfeatures BF16; timing optimization+Val nofeaturecache generation, no fullbackbone training. P4probe sharedGPUload timestamp rawreport, no isolatedspeedclaim."
+}

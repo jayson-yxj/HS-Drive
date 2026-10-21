@@ -52,3 +52,25 @@ Shadow唯一TickOwner在主进程；worker只能接收六摄完整buffer，不�
 ```
 
 `runs/m5l_logs/`保存全部原始日志，`runs/m5l_*`保存逐Actor/逐帧数据与Checkpoint。新原始CARLA数据在`/root/gpufree-data/hs-drive-data/raw/m5l_test`，监督分别在processed sidecar与pixel路径。GT不进入输入合同。精简报告引用完整SHA索引，大文件不提交Git。
+
+## 实际失败恢复和后处理
+
+首次Shadow SDK导入错误、第二次因空闲同步世界触发独占检查拒绝，均未执行在线计量，原日志保留。释放空闲同步设置后第三次成功；最终序列由`tools.m5l_after_shadow`接续freeze→test→finalize。不存在放宽Tick Owner保护。
+
+```bash
+.venv-gpu/bin/python -m tools.m5l_checkpoint_audit
+.venv-gpu/bin/python -m tools.m5l_test_support
+.venv-gpu/bin/python -m tools.m5l_support_summary
+.venv-gpu/bin/python -m tools.m5l_support_figures
+.venv-gpu/bin/python -m tools.m5l_object_strata
+.venv-gpu/bin/python -m tools.m5l_contact_status
+.venv-gpu/bin/python -m tools.m5l_post_audit
+.venv-gpu/bin/python -m tools.m5l_delivery_audit
+.venv-gpu/bin/python -m tools.m5l_final_notes
+.venv-gpu/bin/python -m tools.m5l_figures
+.venv-gpu/bin/python -m tools.m5l_integrity
+```
+
+这些后处理只读冻结结果/元数据，不重新选择模型或阈值。所有输出工具防覆盖，批次脚本已运行的步骤不应重复执行。
+
+报告汇总首次因重复seed键失败，冻结源码保留，使用`tools.m5l_finalize_v2`仅修复字典构造；不改变任何实验结果或门禁。元数据审计首次遍历到根manifest文件，修复跳过非目录后完成；已成功生成的只读报告保留。重新执行完整汇总请在新工作副本按`finalize_v2 → object_strata → figures → post_audit → delivery_audit → final_notes`顺序，不能覆盖当前报告。
