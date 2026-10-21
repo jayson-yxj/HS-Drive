@@ -38,6 +38,10 @@ def main():
         for decision in decisions:
             decision['associated_actor_support']={k:support[k]for k in ['semantic_rays','associated_actor_rays','groups','classes','passed']}
             decision['qualified_on_this_split'] &= support['passed']
+            actor=json.loads(Path(f'reports/m5i_associated_actor_depth_{split}.json').read_text())['aggregate'];checks=[]
+            for dist in ['10_20','20_35']:
+                original=next(r for r in actor if r['name']=='original'and r['distance']==dist);candidate=next(r for r in actor if r['name']==decision['name']and r['seed']==decision['seed']and r['distance']==dist);a0=original['space_1m_mass'];b0=candidate['space_1m_mass'];checks.append(dict(distance=dist,n=candidate['n'],original=a0,candidate=b0,passed=a0 is not None and b0 is not None and b0>=a0))
+            decision['associated_actor_space_checks']=checks;decision['qualified_on_this_split'] &= all(c['passed']for c in checks)
     for seed in [101,102]:
         for group in sorted({r['sample_id'].split('/')[0]for r in orig['records']}):
             nums=[]

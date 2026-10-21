@@ -62,6 +62,7 @@ bash tools/m5i_process_added.sh
 .venv-gpu/bin/python -m tools.m5i_depth_original_task
 .venv-gpu/bin/python -m tools.m5i_depth_eval
 .venv-gpu/bin/python -m tools.m5i_depth_support
+.venv-gpu/bin/python -m tools.m5i_depth_actor_eval
 .venv-gpu/bin/python -m tools.m5i_training
 # Only if feature_condition_met=true:
 .venv-gpu/bin/python -m tools.m5i_teacher_features
@@ -90,6 +91,7 @@ bash tools/m5i_process_added.sh
 .venv-gpu/bin/python -m tools.m5i_capture_audit --test
 .venv-gpu/bin/python -m tools.m5i_test_split_audit
 .venv-gpu/bin/python -m tools.m5i_depth_support --split test
+.venv-gpu/bin/python -m tools.m5i_depth_actor_eval --split test
 .venv-gpu/bin/python -m tools.m5i_depth_report
 .venv-gpu/bin/python -m tools.m5i_shadow
 .venv-gpu/bin/python -m tools.m5i_latency
@@ -106,3 +108,5 @@ bash tools/m5i_process_added.sh
 实际资格复核额外区分语义目标射线与可关联具体 Actor 的严格射线（`m5i_depth_support_*`）。训练/验证只读记录中，105条20–35m语义目标射线仅71条关联Actor；不足100条，支持门禁仍未通过。不会通过放松3×3深度可靠性或引入未知区来补数量。
 
 Teacher可视化复核发现历史Val部分后向视图中，COCO教师把大块空旷道路赋予vehicle高分；这与GT发生冲突，不是可靠的背景知识。冲突位置未进入KD软标签，GT监督保留。另有边缘遮挡目标的教师漏检；仅凭图像对照不足以替代独立Mesh裁决。图片和选择记录见`m5i_teacher_audit_visualizations.json`。
+
+Depth主报告历史字段`scope=actor`实际为可靠语义前景（含未能关联Actor的目标像素），不得误称全部可关联物理Actor。`m5i_associated_actor_depth_*`专门复算actor_id>0的相同固定射线，资格要求该子集的支持与同层1m概率也不退化。
