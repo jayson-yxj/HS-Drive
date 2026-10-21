@@ -1,0 +1,9 @@
+...                                                                      [100%]
+=============================== warnings summary ===============================
+tests/test_m5h_contract.py::test_near_kl_zero_at_original_and_no_far_gradient
+  /root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tests/test_m5h_contract.py:10: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+  Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:835.)
+    old=torch.randn(1,48,2,2);new=old.clone().requires_grad_();m=torch.tensor([[[True,False],[False,False]]]);loss=near_kl(new,old,m);assert abs(float(loss))<1e-7
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+3 passed, 1 warning in 1.58s

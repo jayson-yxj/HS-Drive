@@ -1,0 +1,73 @@
+{
+  "kind": "postfreeze_offline_coordinate_verification_no_model_selection",
+  "records": [
+    {
+      "group": "Town01_htest",
+      "replay_distances": [
+        {
+          "scene": "m4drive_town01_0",
+          "distance_m": 89.17842155859032
+        },
+        {
+          "scene": "m4drive_town01_30",
+          "distance_m": 279.8744772813539
+        }
+      ],
+      "min_m": 89.17842155859032
+    },
+    {
+      "group": "Town02_htest",
+      "replay_distances": [
+        {
+          "scene": "m4drive_town02_20",
+          "distance_m": 138.7069007024514
+        },
+        {
+          "scene": "m4drive_town02_40",
+          "distance_m": 65.26360746038334
+        }
+      ],
+      "min_m": 65.26360746038334
+    },
+    {
+      "group": "Town03_htest",
+      "replay_distances": [
+        {
+          "scene": "town03_spawn0_motion",
+          "distance_m": 157.1002786428553
+        },
+        {
+          "scene": "town03_spawn0_noon_static",
+          "distance_m": 163.72552591083132
+        },
+        {
+          "scene": "town03_spawn0_sunset_static",
+          "distance_m": 163.72552591083132
+        }
+      ],
+      "min_m": 157.1002786428553
+    },
+    {
+      "group": "Town04_htest",
+      "replay_distances": [],
+      "min_m": 1000
+    },
+    {
+      "group": "Town05_htest",
+      "replay_distances": [],
+      "min_m": 1000
+    },
+    {
+      "group": "Town10HD_htest",
+      "replay_distances": [],
+      "min_m": 1000
+    }
+  ],
+  "source": "simulator/snapshot.py uses carla_pose_to_hs; datasets/index.py stores HS world positions_xy",
+  "correction": "m5h_split_audit_final corrected newpixels but assumed M4positionsCARLA; M4positionsalsoHS so reflect y forcomparison. Pixel/Val finaldistances unaffected. No models/dataselection modifiedaftertest.",
+  "passed": true,
+  "source_sha256": {
+    "simulator/snapshot.py": "13b6dbec8452c249ef26e521058b041f1ae57425825983c9d883e78fea1e35d3",
+    "datasets/index.py": "443dbe37ec365c3e6eae90d4b0e85d10837d4d62f1613bc9d6f3415e7bea5d7d"
+  }
+}

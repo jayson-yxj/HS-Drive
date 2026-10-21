@@ -1,0 +1,145 @@
+{
+  "stage": "M5-H",
+  "status": "Partial",
+  "base": "bf0c38d",
+  "implementation_commit": "f0c636c76b0b4a30959a2a7094d069bf3eb77f05",
+  "gates": {
+    "engineering_interfaces": {
+      "status": "Passed",
+      "evidence": "268passed5skipped + actualGPUisolation + 23CARLAenvironmentcontracts"
+    },
+    "teacher_data_mapping": {
+      "status": "PassedWithLimitations",
+      "evidence": "RGBonly instancecache, supportedclassagreement, conesGTonly; boundariesUnknown; resizedmetadata corrected"
+    },
+    "student_visual_quality": {
+      "status": "Partial",
+      "evidence": "No jointper-scene P80/R80/EmptyFPR1 pass; KDValAPgain doesnotimprovejointcriterion"
+    },
+    "background_false_positives": {
+      "status": "Partial",
+      "evidence": "LockedlowFPRpoints and RemovedFPR reported; thresholding cannotreplace Recall"
+    },
+    "actor_small_target_generalization": {
+      "status": "Partial",
+      "evidence": "6positions only; rear_righttrain2positiveviews; Actor-viewmisses remain"
+    },
+    "near_depth_preservation": {
+      "status": "PassedLimited",
+      "evidence": [
+        {
+          "name": "replay",
+          "seed": 101,
+          "near_mae": 0.8170292718812185,
+          "original_near_mae": 1.102418682007266,
+          "ratio": 0.7411242980693914,
+          "passed": true
+        },
+        {
+          "name": "replay_kl",
+          "seed": 101,
+          "near_mae": 1.046865236223476,
+          "original_near_mae": 1.102418682007266,
+          "ratio": 0.9496076702159664,
+          "passed": true
+        },
+        {
+          "name": "replay",
+          "seed": 102,
+          "near_mae": 0.8432995073209918,
+          "original_near_mae": 1.102418682007266,
+          "ratio": 0.7649539336411878,
+          "passed": true
+        },
+        {
+          "name": "replay_kl",
+          "seed": 102,
+          "near_mae": 1.03965636062774,
+          "original_near_mae": 1.102418682007266,
+          "ratio": 0.9430685252310409,
+          "passed": true
+        }
+      ],
+      "scope": "Poolednewtestcurrent-surfaces; originalS16Val also checked; scene regressions separatelyreported"
+    },
+    "midfar_depth_space": {
+      "status": "Partial",
+      "evidence": "Strict20-35targetsupport disclosed, same-layerprobability alone notspatiallocalization"
+    },
+    "joint_BEV_space": {
+      "status": "Partial",
+      "evidence": "Visiblefirstsurfaceevent metrics; no calibratedoccupancy/safety pass"
+    },
+    "six_camera_inference": {
+      "status": "Measured",
+      "evidence": "m5h_inference_latency.json; isolatedGPUonly notcontrolperiod"
+    },
+    "runtime": {
+      "status": "PartialInherited",
+      "evidence": "Unchanged; no newstressmatrix"
+    },
+    "oracle_driving_safety": {
+      "status": "NotRevalidated",
+      "evidence": "Captureonly noOracleclosedloopretest"
+    },
+    "pure_visual_safety": {
+      "status": "NotValidated",
+      "evidence": "No visualcontrolcommands"
+    },
+    "formal_M5_scaleup": {
+      "status": "NotApproved",
+      "evidence": "2Dquality/spatialreliability unresolved"
+    }
+  },
+  "actual_execution": {
+    "gpu": "RTX4090",
+    "pixel_runs": 4,
+    "pixel_steps_each": 2400,
+    "depth_runs": 4,
+    "depth_steps_each": 1200,
+    "seeds": [
+      101,
+      102
+    ],
+    "new_training_positions": 2,
+    "new_training_frames": 16,
+    "newtest_positions": 6,
+    "newtest_frames": 72,
+    "egoremoved_reference_frames": 88,
+    "teacher_carla_finetuning": false,
+    "visual_control": false
+  },
+  "tests": {
+    "full_passed": 268,
+    "full_skipped": 5,
+    "carla_environment_passed": 23,
+    "counts_overlap": true
+  },
+  "choices": {
+    "101": {
+      "pixel": "gt",
+      "pixel_checkpoint": "runs/m5h_pixels/m5h_gt_101_step1200.pt",
+      "pixel_sha256": "d47063f9d96629ab0227acb587f9f6087df6dc7c53a14e96d7eba7ea14d987dd",
+      "pixel_threshold": 0.5,
+      "pixel_step": 1200,
+      "depth": "replay",
+      "depth_checkpoint": "runs/m5h_depth/m5h_replay_101_step1000.pt",
+      "depth_sha256": "f292420fd989eb1d197369e84a644558fcae1d42447c9d89069a27d457445242",
+      "depth_step": 1000,
+      "depth_validation_eligible": true
+    },
+    "102": {
+      "pixel": "gt",
+      "pixel_checkpoint": "runs/m5h_pixels/m5h_gt_102_step1600.pt",
+      "pixel_sha256": "a01f1da855f30ad7ce20eb668cd45d0bb66c2de81d4ed522a0ec6fb2e469112e",
+      "pixel_threshold": 0.6,
+      "pixel_step": 1600,
+      "depth": "replay",
+      "depth_checkpoint": "runs/m5h_depth/m5h_replay_102_step1200.pt",
+      "depth_sha256": "79321f1a63a9686f8199fed9e2fd544425bb14db55060a4b90b279700d6c7ad6",
+      "depth_step": 1200,
+      "depth_validation_eligible": true
+    }
+  },
+  "source_sha256": "e16918d0e219d238f373d5ae9a045d8c802c0e6baffc24ce0e619813de003a10"
+}

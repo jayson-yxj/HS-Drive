@@ -18,7 +18,7 @@ Teacher 所有负预测、低置信度、GT冲突、Unknown和交通锥均不参
 
 采样先随机无放回覆盖全部1248训练视角，其余步数按场景、相机、天气、正/背景、类别、距离、目标尺寸、Empty/Removed的逆频率混合权重补采。两个种子101/102，各GT/Distill2400步；相同初始化与顺序。每400步全Train/Val评测；按旧逐场景 P≥.8、R≥.8、EmptyFPR≤.01 的 minimax violation、macroIoU、较早step选择。选中的Checkpoint可能在完整遍历之前，必须结合 `m5h_selected_exposure.json` 阅读，不能把最终训练曝光赋给早期最佳Checkpoint。
 
-深度独立训练：仅原DepthHead，LR2e-5，1200步、每200评测。新数据采用所有可靠射线均值CE，取消原五距离段/目标均衡。Replay来自M4原始manifest实际训练ID，原S16与P8近场1.5–10m；训练集不包含原Val。B=`CE_new + CE_replay`；C=B+10×平均近场KL(old||new)，KL覆盖新样本及Replay可靠近场。原分布约束并非GT。所有Deep参数从同一原Head初始化，B/C两seed同序列。当前P8 Val与原M4 S16 Val均须满足近场MAE≤1.05×原值；合格候选按Val 10–35m Actor同层1m概率质量选。原Depth始终保留，测试前不替换默认。空间D为条件允许的可选研究，本轮优先检验B/C独立泛化，明确延期，不自动扩大训练。
+深度独立训练复用M5G固定192帧Train/96帧Val及原缓存，不混入新增16帧Pixel训练数据：仅原DepthHead，LR2e-5，1200步、每200评测。新数据采用所有可靠射线均值CE，取消原五距离段/目标均衡。Replay来自M4原始manifest实际训练ID，原S16与P8近场1.5–10m；训练集不包含原Val。B=`CE_new + CE_replay`；C=B+10×平均近场KL(old||new)，KL覆盖新样本及Replay可靠近场。原分布约束并非GT。所有Deep参数从同一原Head初始化，B/C两seed同序列。当前P8 Val与原M4 S16 Val均须满足近场MAE≤1.05×原值；合格候选按Val 10–35m Actor同层1m概率质量选。原Depth始终保留，测试前不替换默认。空间D为条件允许的可选研究，本轮优先检验B/C独立泛化，明确延期，不自动扩大训练。
 
 ## 评价定义
 
@@ -77,11 +77,12 @@ runuser -u ubuntu -- bash scripts/start_carla.sh /root/gpufree-data/simulators/C
 .venv-gpu/bin/python -m tools.m5h_latency
 .venv-gpu/bin/python -m tools.m5h_figures
 .venv-gpu/bin/python -m tools.m5h_finalize
+.venv-gpu/bin/python -m tools.m5h_interpretation
 .venv-gpu/bin/python -m tools.m5h_artifacts
 ```
 
 ## 失败与局限的保留
 
-初版地图审计漏规范化地图名，第二次又混用HS/CARLA世界Y轴；最终 `m5h_split_audit_final.json` 统一坐标并纳入原M4 Replay路线，前两次审计为已纠正失败记录，不作为隔离证据。Teacher训练域首轮指标自行选了Train阈值，仅作探索诊断；`train_locked` 使用Val锁定阈值，才是与Val/Test一致的报告。首次CARLA合同测试文件名错误保留日志，正确文件重跑。
+初版地图审计漏规范化地图名，第二次又混用HS/CARLA世界Y轴；`m5h_split_audit_final.json` 统一当前Pixel数据坐标；随后复核发现原M4索引positions_xy也为HS坐标，`m5h_replay_coordinate_audit.json` 再次独立更正Replay距离。所有最终距离仍满足45m隔离，未改模型或测试位置；旧错误审计保留，不作为隔离证据。Teacher训练域首轮指标自行选了Train阈值，仅作探索诊断；`train_locked` 使用Val锁定阈值，才是与Val/Test一致的报告。首次CARLA合同测试文件名错误保留日志，正确文件重跑。首次Test Teacher作业在像素索引尚未完成时退出，未产生预测；空输出目录改名为`runs/m5h_teacher_test_failed_preindex`保留，索引完成后原命令重跑。
 
 M5-G三个已开测试位置只作历史结果参考，本轮六位置为独立封存评估，但仍共享Actor资产和配置模板。没有新车型泛化、真实世界或独立Mesh真值。每组12变体不能作为12独立场景。Runtime未改，继承Partial；Oracle安全未重验，纯视觉安全未验证。不得自动进入大型Occupancy/Temporal/SparseQuery训练。

@@ -1,0 +1,22 @@
+{
+  "kind": "offline_full_baseline_source_and_report_review",
+  "files": {
+    "tools/m5g_pixel_training.py": "cd1e6f3af24fd7c2e4a7370f8bedbe3bfd64fa5a05d9611386d0071e5d77e4ed",
+    "tools/m5g_depth_training.py": "478039f46d8ce6832f0e3c7eee7412e7aa95c200366bf92a7330db1a83d3ba49",
+    "tools/m5g_pretrained.py": "ce28e1a10f8cfde35f2c8a981e90e01e4f967c3b828bac49979863d00aabe461",
+    "docs/M5G_IMPLEMENTATION.md": "23a1496999e5110526fc1dfcfb91a4f9fefaad6ae87508434f396a99b20cafeb",
+    "models/m5f_pixel.py": "037a88e0303dfcd8130e482d09fb7ad0da15315aae2a8e1054ed4ecbb5b45eaf",
+    "models/m5f_lift.py": "c62448df9fee56688f83773effe7b7024d9bc1d810f27bd2d4e53ac5a31dd464",
+    "datasets/m5f_pixels.py": "ae15746a3690d3904253fe4dd26adc60200b9808a9d0bd68877e5ac87ecdaf36",
+    "training/m5g_losses.py": "8f7b79de077a262879fd794761888bb9da19e79bf688bc8911d177e03471574f"
+  },
+  "findings": [
+    "Original teacher thresholdselectedVal; supportedclassmask excludescone",
+    "P8 centers4::8, firstsurfacereliableMask; unknown notnegative",
+    "Pixel FPNtrained separately from originalDepthRGBfeaturepath",
+    "Depth expectedSoftmax MAE, oldrangebalancing canconflictnear",
+    "NoActortruthinput orGTROI forformalinference"
+  ],
+  "prior_report_inventory": "m5h_baseline_freeze.json",
+  "limits": "Reviewdoesnotrerunhistoricaltraining orreclassifypreviousPartialgates"
+}
