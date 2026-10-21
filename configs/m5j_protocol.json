@@ -1,0 +1,74 @@
+{
+  "stage": "M5-J",
+  "seeds": [
+    101,
+    102
+  ],
+  "visual_training": false,
+  "depth_training": false,
+  "main_depth": "originalM4",
+  "pixel": "M5I Mobile fixed",
+  "sampling": "P8 center4::8 sameK/T",
+  "grid": [
+    4,
+    160,
+    120
+  ],
+  "arms": {
+    "raw": "1-exp(-sum(q*p))",
+    "gate": "q*(q>=.9), fixed M5I pixelworkpoint, thenraw",
+    "regularized": "raw * foreground_mass/(total_mass+1); bounded<=raw, no tiny denominator"
+  },
+  "conditional_D": {
+    "condition": "A-C complete first; if regularized validation median AP exceeds raw in bothseeds, one linear sixfeature calibration on reliable Train surfaces only; otherwise stop",
+    "features": [
+      "log1p(fg)",
+      "log1p(total)",
+      "log1p(distinct_rays)",
+      "camera_count/6",
+      "massweighted_normalized_entropy",
+      "layer/3"
+    ],
+    "budget": "one shared logistic model perseed, 300Adamsteps lr.03 balancedTrainBCE L2.001; no sweep; val selects threshold only"
+  },
+  "thresholds": [
+    0.01,
+    0.025,
+    0.05,
+    0.075,
+    0.1,
+    0.15,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    0.95
+  ],
+  "selection": "Perseed candidate threshold closest to raw@.2 SAME_LAYER1mrecall subjectloss<=.02; maximize exactsurfacePrecision thenrecall thenlowerthreshold. Candidate mustpass bothseed +.05Precision, <=.02spatialrecallloss, <=.02Actor_detectedloss onVal. Selectmethod meanPgain; ifnone keepraw butdiagnose bestpreselected",
+  "gain": {
+    "precision_absolute": 0.05,
+    "spatial_recall_loss": 0.02,
+    "actor_detection_loss": 0.02,
+    "per_scene": "reportall; test stable requires >=3/4 scenes nonnegativeP andRloss<=.02 eachseed"
+  },
+  "matching": "PR and recall/precision matched thresholds fixedusingVal; Testcurves descriptive only",
+  "reference": "M5F fullnativepixel visiblefirstsurface reliable, unknownignore, mixedreferenceignore; not independentMesh",
+  "attribution": "Contribution additive nonexclusive Awrong2D BcorrectFGwrongdepth Cprobabilityspread Dlowqaccumulation Eunknown. NeverphysicalFP inUnknown.",
+  "calibration_split": "Trainfit Valparameters/thresholdselection. M5ITest historicalregressiononly.",
+  "new_test": {
+    "positions": 4,
+    "min_prior_m": 45,
+    "configurations": 20,
+    "geometryonlyallocation": true,
+    "no_capture_before_freeze": true
+  },
+  "limits": "No new productionS4; Oracle S4/P8/S16andphases diagnostics only; raw defaultunchanged; no runtime/vehiclecontrol",
+  "latency": {
+    "full_gpu_p95_ms": 50,
+    "includes": "inputchecks+MobilePixel+originalDepth+Evidence+supports; separatelyCPU/serialize/H2D"
+  }
+}

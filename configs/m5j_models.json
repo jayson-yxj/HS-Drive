@@ -1,0 +1,46 @@
+{
+  "schema": "hsd-m5j-dual-v1",
+  "cameras": [
+    "front",
+    "front_left",
+    "front_right",
+    "rear_left",
+    "rear_right",
+    "rear"
+  ],
+  "image_hw": [
+    384,
+    640
+  ],
+  "depth": {
+    "checkpoint": "runs/m4_expanded_joint/best.pt",
+    "sha256": "8aa09f33c591fd72018eafc193047c26da152b8a52016b04eae6acfad8488d36"
+  },
+  "pixel": [
+    {
+      "name": "mobile_gt",
+      "seed": 101,
+      "checkpoint": "runs/m5i_learning/m5i_mobile_gt_101_step2400.pt",
+      "sha256": "e2f0d0d85a03544186cd8c92095c95a3e2baf256fee0d9ab8f591e1c715d5c33"
+    },
+    {
+      "name": "mobile_gt",
+      "seed": 102,
+      "checkpoint": "runs/m5i_learning/m5i_mobile_gt_102_step2400.pt",
+      "sha256": "9a53e2668edf1ddbd8313b652b06b8e38e2e50b137a979b1c11a97a9a5651b1b"
+    },
+    {
+      "name": "legacy",
+      "seed": 101,
+      "checkpoint": "runs/m5g_pixels/m5g_fpn_bce_101_step1200.pt",
+      "sha256": "616a697962c6f925fc256e7c3b57fb086803ea5dd78fdc0c1c1eda4bf65930e6"
+    },
+    {
+      "name": "legacy",
+      "seed": 102,
+      "checkpoint": "runs/m5g_pixels/m5g_fpn_bce_102_step1200.pt",
+      "sha256": "8da1e15a8a293331abd4af4e1c5e6e0a896cd35d11a48f3a5ee84448f9c1477c"
+    }
+  ],
+  "default_enabled": false
+}
