@@ -29,7 +29,9 @@ def main():
     roll,pitch,yaw=ref['rotation'];bb.rotation=carla.Rotation(roll=roll,pitch=pitch,yaw=yaw)
     records=[]
     for path in sorted(Path('reports/m6c_trials').glob('final_*/result.json')):
-        result=json.loads(path.read_text());rows=[json.loads(s) for s in (path.parent/'trace.jsonl').read_text().splitlines()]
+        result=json.loads(path.read_text());recorded_body=json.loads((path.parent/'body.json').read_text());
+        assert all(np.allclose(recorded_body[k],ref[k],atol=1e-7) for k in ['location','extent','rotation'])
+        rows=[json.loads(s) for s in (path.parent/'trace.jsonl').read_text().splitlines()]
         allowed=None;bypass=result['bypass']
         if bypass['status']=='FeasibleBypass':
             selected=next(c for c in bypass['candidates'] if c['side']==bypass['selected'])
