@@ -1,0 +1,283 @@
+{
+  "source": "Privileged",
+  "route": "reports/m6a_oracle_remaining_artifacts/invalid_input_route.json",
+  "collision_events": [],
+  "lane_events": [],
+  "moving_ticks": 30,
+  "measured_travel_m": 3.842257041686144,
+  "frame_advancement_errors": 0,
+  "fault_to_brake_s": 0.20071299746632576,
+  "normal_control_expired": 0,
+  "minute_windows": [
+    {
+      "start_s": 0,
+      "interval_ms": {
+        "p50": 50.00603571534157,
+        "p95": 50.35203192383051,
+        "p99": 50.619039088487625,
+        "max": 51.88306421041489,
+        "n": 159
+      },
+      "deadline_miss_rate": 0.0
+    }
+  ],
+  "worker_output_latency_ms": {
+    "p50": 1.2168660759925842,
+    "p95": 63.12225302681327,
+    "p99": 125.76022380962962,
+    "max": 165.1833076030016,
+    "n": 40
+  },
+  "load_description": "isolated Oracle; no GPU inference",
+  "stage_profile_ms": {
+    "submit_ms": {
+      "p50": 0.01640431582927704,
+      "p95": 0.06980933248996733,
+      "p99": 0.125155188143253,
+      "max": 0.2958271652460098,
+      "n": 160
+    },
+    "snapshot_serialization_ms": {
+      "p50": 0.0,
+      "p95": 0.053681060671806335,
+      "p99": 0.07188525050878525,
+      "max": 0.12904219329357147,
+      "n": 160
+    },
+    "get_snapshot_ms": {
+      "p50": 0.013102777302265167,
+      "p95": 0.021098088473081582,
+      "p99": 0.04287758842110622,
+      "max": 0.07528997957706451,
+      "n": 160
+    },
+    "road_query_ms": {
+      "p50": 0.5791205912828445,
+      "p95": 0.850458163768053,
+      "p99": 0.9155306033790109,
+      "max": 1.068267971277237,
+      "n": 160
+    },
+    "apply_control_ms": {
+      "p50": 0.00939052551984787,
+      "p95": 0.028814468532800667,
+      "p99": 0.03397686406970023,
+      "max": 0.040085986256599426,
+      "n": 160
+    },
+    "ipc_poll_validate_resample_ms": {
+      "p50": 0.1410841941833496,
+      "p95": 0.4926367662847041,
+      "p99": 0.5432154797017573,
+      "max": 0.8155498653650284,
+      "n": 160
+    },
+    "controller_ms": {
+      "p50": 0.010042451322078705,
+      "p95": 0.17324676737189293,
+      "p99": 0.1964264921844005,
+      "max": 0.25572627782821655,
+      "n": 160
+    },
+    "get_control_ms": {
+      "p50": 0.0037495046854019165,
+      "p95": 0.00653145834803581,
+      "p99": 0.008064508438110348,
+      "max": 0.0107642263174057,
+      "n": 160
+    },
+    "log_disk_ms": {
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0,
+      "max": 0.0,
+      "n": 160
+    },
+    "actor_guard_ms": {
+      "p50": 0.0013494864106178284,
+      "p95": 0.00256570056080818,
+      "p99": 0.0035003013908863063,
+      "max": 0.003941357135772705,
+      "n": 160
+    },
+    "log_buffer_ms": {
+      "p50": 0.04451535642147064,
+      "p95": 0.07695220410823819,
+      "p99": 0.11957325041294091,
+      "max": 0.17044320702552795,
+      "n": 160
+    },
+    "snapshot_state_measurement_ms": {
+      "p50": 0.058181583881378174,
+      "p95": 0.08615693077445029,
+      "p99": 0.15082538127899153,
+      "max": 0.22986158728599548,
+      "n": 160
+    },
+    "world_tick_ms": {
+      "p50": 1.3667205348610878,
+      "p95": 1.8520123325288294,
+      "p99": 2.0055932924151416,
+      "max": 3.934023901820183,
+      "n": 160
+    }
+  },
+  "scene": "invalid_input",
+  "route_completion": 0.06016076997383929,
+  "route_passed": false,
+  "collisions": 0,
+  "lane_invasions": 0,
+  "road_boundary_frames": 0,
+  "ticks": 160,
+  "sim_hz": 19.99999970197678,
+  "wall_hz": 19.999144165148,
+  "planner_ms": {
+    "p50": 0.02422090619802475,
+    "p95": 61.50217540562153,
+    "p99": 62.92776871472597,
+    "max": 63.59156593680382,
+    "n": 40
+  },
+  "controller_compute_ms": {
+    "p50": 1.051509752869606,
+    "p95": 1.5205407515168188,
+    "p99": 1.6982476413249965,
+    "max": 1.9232463091611862,
+    "n": 160
+  },
+  "control_interval_ms": {
+    "p50": 50.00603571534157,
+    "p95": 50.35203192383051,
+    "p99": 50.619039088487625,
+    "max": 51.88306421041489,
+    "n": 159
+  },
+  "deadline_miss_rate": 0.0,
+  "interval_over_55ms_rate": 0.0,
+  "plan_sim_age_s": {
+    "p50": 0.20000000298023224,
+    "p95": 0.2500000037252903,
+    "p99": 0.2500000037252903,
+    "max": 0.2500000037252903,
+    "n": 65
+  },
+  "plan_wall_age_s": {
+    "p50": 0.20072196051478386,
+    "p95": 0.2513325560837984,
+    "p99": 0.2514841161668301,
+    "max": 0.2516496144235134,
+    "n": 65
+  },
+  "degradation_ticks": {
+    "no_valid_plan": 95
+  },
+  "rejected": [
+    {
+      "frame": 35519,
+      "reason": "worker_error"
+    },
+    {
+      "frame": 35523,
+      "reason": "worker_error"
+    },
+    {
+      "frame": 35527,
+      "reason": "worker_error"
+    },
+    {
+      "frame": 35531,
+      "reason": "worker_error"
+    },
+    {
+      "frame": 35535,
+      "reason": "worker_error"
+    },
+    {
+      "frame": 35539,
+      "reason": "worker_error"
+    },
+    {
+      "frame": 35543,
+      "reason": "worker_error"
+    },
+    {
+      "frame": 35547,
+      "reason": "worker_error"
+    },
+    {
+      "frame": 35551,
+      "reason": "worker_error"
+    },
+    {
+      "frame": 35555,
+      "reason": "worker_error"
+    },
+    {
+      "frame": 35559,
+      "reason": "worker_error"
+    },
+    {
+      "frame": 35563,
+      "reason": "worker_error"
+    },
+    {
+      "frame": 35567,
+      "reason": "worker_error"
+    },
+    {
+      "frame": 35571,
+      "reason": "worker_error"
+    },
+    {
+      "frame": 35575,
+      "reason": "worker_error"
+    },
+    {
+      "frame": 35579,
+      "reason": "worker_error"
+    },
+    {
+      "frame": 35583,
+      "reason": "worker_error"
+    },
+    {
+      "frame": 35587,
+      "reason": "worker_error"
+    },
+    {
+      "frame": 35591,
+      "reason": "worker_error"
+    },
+    {
+      "frame": 35595,
+      "reason": "worker_error"
+    },
+    {
+      "frame": 35599,
+      "reason": "worker_error"
+    },
+    {
+      "frame": 35603,
+      "reason": "worker_error"
+    },
+    {
+      "frame": 35607,
+      "reason": "worker_error"
+    }
+  ],
+  "worker_history": "reports/m6a_oracle_remaining_artifacts/invalid_input_plans.json",
+  "log": "reports/m6a_oracle_remaining_artifacts/invalid_input.jsonl",
+  "log_sha256": "a6ce2935ed820a14eea4d69b706ec56e79f488e1e952fcac91223dc001d4e5a4",
+  "actual_dynamics": {
+    "max_decel_raw": 26.634325860930296,
+    "jerk_peak_raw": 389.8076024920423,
+    "jerk_p95_moving": 247.56644705461488,
+    "jerk_p95_all": 35.982721944845615,
+    "max_decel_250ms": 10.752825894582243,
+    "jerk_p95_250ms": 28.959320357537546,
+    "min_signed_speed": -0.00032913174415628664,
+    "reverse_ticks": 0,
+    "low_speed_moving_seconds": 0.2,
+    "api_accel_vs_velocity_derivative_mae": 0.0021144376670719834
+  }
+}

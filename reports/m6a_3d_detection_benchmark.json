@@ -1,0 +1,81 @@
+{
+  "kind": "NotRun_conditioned_on_failed_P0",
+  "base": "349941e61abf706e462dce2f428149f9881be5ad",
+  "git_head": "349941e61abf706e462dce2f428149f9881be5ad",
+  "sources": {
+    "configs/m6a/protocol.json": "2c573c2fec13454a08cb7dca3da375eb4601ff3e4fae1293ecb888b483cf7a28",
+    "datasets/m6a_interfaces.py": "5c868fecfb0afc183db3d8c092f5e0c9d5af5de6f534dd1c948d98e5bed74304",
+    "diagnostics/m6a_oracle_metrics.py": "c2ef6f1800c67d38d9353b8cbce50d87feb18779a5a8cf9a00853f766cbf99bb",
+    "tests/test_m6a_system.py": "30cb4430d9f52e081046ea9564add485ca197d15c827695fdb64223a797cfe22",
+    "tools/m6a_common.py": "0d5a01ed6d5f62e474f366d331791b16917feef880dff5008abc3ef520ca92b5",
+    "tools/m6a_feasibility.py": "4bc937c4efdb417480b488ae07ecbbfe7b78e1f0282f2ce89cd8d3642eb4945a",
+    "tools/m6a_freeze.py": "6c3dcee0f6a27009e478f84867b9282e450fe9e74b5f14c1255b13a89c2acb4d",
+    "tools/m6a_oracle_drive.py": "b3e330234548b036125e48f86d878017b7758208e4b37c408b00f2a5f1c300ad",
+    "tools/m6a_report.py": "12078e70c0de2b303aed5858907c0cebd62db30cc8f9799fae414ab2b7f668f8"
+  },
+  "protocol_sha256": "2c573c2fec13454a08cb7dca3da375eb4601ff3e4fae1293ecb888b483cf7a28",
+  "visual_control": false,
+  "status": "NotRun",
+  "reason": "Official pretrained PETR checkpoint not obtained; P0 incomplete",
+  "prediction_count": null,
+  "recall": null,
+  "precision": null,
+  "xy_error": null,
+  "dimension_error": null,
+  "yaw_error": null,
+  "latency_ms": null,
+  "peak_memory_mib": null,
+  "checkpoint_sha256": null,
+  "historical_baselines": [
+    {
+      "path": "reports/m5o_localization_benchmarks.json",
+      "bytes": 2403850,
+      "sha256": "be053e0a60ffdd88471ecce74edfb69496c3fbbdc8608970c66bc43c56882f67"
+    },
+    {
+      "path": "reports/m5o_paired_method_analysis.json",
+      "bytes": 219576,
+      "sha256": "5908e6b0c3df2ec1ea82610336d75c450662a755a51a8f39bb24d7d3c9dfa8b9"
+    }
+  ],
+  "historical_numbers_are_not_petr_results": true,
+  "future_contract": {
+    "reference": "Actor Box Center",
+    "frame": "hs_ego",
+    "units": "m,radians",
+    "association": "one-to-one class-compatible global-object XY matching; report all output candidates and misses; predeclare radius/score thresholds before execution",
+    "localization": "same visible GT scope, P50/P90/P95/Max XY, >5m severe errors, dimension and wrapped yaw separately",
+    "coverage": "all eligible visible actors; unmatched outputs retained as unknown burden unless independent negative reference exists",
+    "baseline_scope": "Geometry Prior/Direct same evaluable Vehicle/Person/Cone targets; camera-view vs global object accounting cannot be mixed",
+    "selection": "M5-O Train/Val development; all opened tests historical only; any adaptation needs new independent final groups",
+    "inference_allowlist": [
+      "six_RGB",
+      "K",
+      "T",
+      "original_timestamp",
+      "image_preprocessing_metadata"
+    ],
+    "forbidden_features": [
+      "GT_actor_transform",
+      "GT_center",
+      "depth",
+      "instance_mask",
+      "GT_visibility_mask"
+    ]
+  },
+  "class_results": {
+    "Vehicle": {
+      "status": "NotRun",
+      "official_output_class_exists": true
+    },
+    "Person": {
+      "status": "NotRun",
+      "official_output_class_exists": true
+    },
+    "Cone": {
+      "status": "NotRun",
+      "official_output_class_exists": true
+    }
+  },
+  "conclusion": "No evidence to claim superiority, infer failure of PETR, or authorize migration"
+}

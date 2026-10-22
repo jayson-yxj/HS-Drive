@@ -1,0 +1,3207 @@
+{
+  "kind": "actual_CARLA_closed_loop_with_offline_trace_metrics",
+  "base": "349941e61abf706e462dce2f428149f9881be5ad",
+  "git_head": "349941e61abf706e462dce2f428149f9881be5ad",
+  "sources": {
+    "configs/m6a/protocol.json": "2c573c2fec13454a08cb7dca3da375eb4601ff3e4fae1293ecb888b483cf7a28",
+    "datasets/m6a_interfaces.py": "5c868fecfb0afc183db3d8c092f5e0c9d5af5de6f534dd1c948d98e5bed74304",
+    "diagnostics/m6a_oracle_metrics.py": "c2ef6f1800c67d38d9353b8cbce50d87feb18779a5a8cf9a00853f766cbf99bb",
+    "tests/test_m6a_system.py": "30cb4430d9f52e081046ea9564add485ca197d15c827695fdb64223a797cfe22",
+    "tools/m6a_common.py": "0d5a01ed6d5f62e474f366d331791b16917feef880dff5008abc3ef520ca92b5",
+    "tools/m6a_freeze.py": "6c3dcee0f6a27009e478f84867b9282e450fe9e74b5f14c1255b13a89c2acb4d",
+    "tools/m6a_oracle_drive.py": "b3e330234548b036125e48f86d878017b7758208e4b37c408b00f2a5f1c300ad",
+    "tools/m6a_report.py": "12078e70c0de2b303aed5858907c0cebd62db30cc8f9799fae414ab2b7f668f8"
+  },
+  "protocol_sha256": "2c573c2fec13454a08cb7dca3da375eb4601ff3e4fae1293ecb888b483cf7a28",
+  "visual_control": false,
+  "source": "Privileged",
+  "status": "Partial",
+  "decision": "Go_OracleEngineeringOnly_NotSafetyCertification",
+  "trials": [
+    {
+      "source": "Privileged",
+      "scene": "dynamic_lead",
+      "ticks": 1000,
+      "route_completion": 0.592727030810602,
+      "measured_travel_m": 34.73139985338727,
+      "cross_track_m": {
+        "n": 1000,
+        "p50": 5.810119282813187e-05,
+        "p95": 0.3568381155319199,
+        "p99": 0.4518020140337722,
+        "max": 0.4518020140337722
+      },
+      "terminal_speed_mps": 1.3523943721945887e-05,
+      "collisions": [],
+      "lane_invasions": [],
+      "curb_contact_status": "Unknown_no_dedicated_curb_contact_reference",
+      "road_boundary_frames": 0,
+      "route_success_checks": {
+        "completion": false,
+        "no_collision": true,
+        "no_lane_invasion": true,
+        "no_road_boundary": true,
+        "cross_track_p95": true,
+        "no_expired_normal_control": true,
+        "stopped": true
+      },
+      "route_success": false,
+      "task_status": "Partial",
+      "planner_outputs": 250,
+      "planner_failure_or_safety_rejection_count": 0,
+      "planner_failure_or_safety_rejection_rate": 0.0,
+      "planner_reasons": {},
+      "control_interval_ms": {
+        "n": 999,
+        "p50": 49.995794892311096,
+        "p95": 50.438376516103745,
+        "p99": 50.89816510677338,
+        "max": 55.9746827930212
+      },
+      "control_intervals_over_50ms": 492,
+      "control_intervals_over_55ms": 1,
+      "completion_deadline_misses": 0,
+      "sim_step_ms": {
+        "n": 999,
+        "p50": 50.00000074505806,
+        "p95": 50.00000074505806,
+        "p99": 50.00000074505806,
+        "max": 50.00000074505806
+      },
+      "mean_wall_hz": 19.999860463519877,
+      "controller_timeout_count": 0,
+      "stale_plan_control_ticks": 0,
+      "stale_received_plan_count": 0,
+      "expired_normal_control": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 4
+      },
+      "degradation_episodes": 1,
+      "fault_to_brake_s": null,
+      "planner_ms": {
+        "p50": 47.91868478059769,
+        "p95": 54.32622674852609,
+        "p99": 57.378526199609034,
+        "max": 63.81724588572979,
+        "n": 250
+      },
+      "plan_sim_age_s": {
+        "p50": 0.15000000223517418,
+        "p95": 0.2500000037252903,
+        "p99": 0.2500000037252903,
+        "max": 0.2500000037252903,
+        "n": 996
+      },
+      "plan_wall_age_s": {
+        "p50": 0.15113020595163107,
+        "p95": 0.251304414588958,
+        "p99": 0.25173132717609403,
+        "max": 0.2521297689527273,
+        "n": 996
+      },
+      "stages_ms": {
+        "apply_control_ms": {
+          "p50": 0.025367364287376404,
+          "p95": 0.04063472151756286,
+          "p99": 0.05079094320535659,
+          "max": 0.11947564780712128,
+          "n": 1000
+        },
+        "ipc_poll_validate_resample_ms": {
+          "p50": 0.44119544327259064,
+          "p95": 0.6438033655285835,
+          "p99": 0.8356128260493279,
+          "max": 2.5584157556295395,
+          "n": 1000
+        },
+        "log_disk_ms": {
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "n": 1000
+        },
+        "road_query_ms": {
+          "p50": 0.5783000960946083,
+          "p95": 0.7693771272897719,
+          "p99": 0.9787794202566146,
+          "max": 1.8630176782608032,
+          "n": 1000
+        },
+        "actor_guard_ms": {
+          "p50": 0.07466040551662445,
+          "p95": 0.1036242581903934,
+          "p99": 0.1512638479471206,
+          "max": 0.5307383835315704,
+          "n": 1000
+        },
+        "snapshot_state_measurement_ms": {
+          "p50": 0.05856994539499283,
+          "p95": 0.10030679404735564,
+          "p99": 0.1306552812457084,
+          "max": 0.3000795841217041,
+          "n": 1000
+        },
+        "world_tick_ms": {
+          "p50": 1.533282920718193,
+          "p95": 1.9235586747527122,
+          "p99": 2.1443248353898525,
+          "max": 3.831462934613228,
+          "n": 1000
+        },
+        "log_buffer_ms": {
+          "p50": 0.06541050970554352,
+          "p95": 0.11799754574894902,
+          "p99": 0.15358269214630121,
+          "max": 0.23113936185836792,
+          "n": 1000
+        },
+        "controller_ms": {
+          "p50": 0.14239363372325897,
+          "p95": 0.1800711266696453,
+          "p99": 0.25285424664616585,
+          "max": 0.7326193153858185,
+          "n": 1000
+        },
+        "snapshot_serialization_ms": {
+          "p50": 0.0,
+          "p95": 0.06954949349164961,
+          "p99": 0.09337937459349632,
+          "max": 0.3020353615283966,
+          "n": 1000
+        },
+        "get_snapshot_ms": {
+          "p50": 0.014087185263633728,
+          "p95": 0.027248729020357132,
+          "p99": 0.030817501246929165,
+          "max": 0.12323260307312012,
+          "n": 1000
+        },
+        "submit_ms": {
+          "p50": 0.016539357602596283,
+          "p95": 0.08593294769525528,
+          "p99": 0.10105160996317862,
+          "max": 0.3273375332355499,
+          "n": 1000
+        },
+        "get_control_ms": {
+          "p50": 0.004319474101066589,
+          "p95": 0.008861813694238661,
+          "p99": 0.010180510580539698,
+          "max": 0.02382323145866394,
+          "n": 1000
+        }
+      },
+      "min_route_arc_gap_proxy_m": 3.231540796613379,
+      "strict_20hz": false,
+      "raw": "reports/m6a_follow_scripted_artifacts/dynamic_lead.jsonl",
+      "raw_sha256": "36dc671d37ee58a744c7533268834cae61c727e96f462adbf72ef8415742b755",
+      "trial": "m6a_follow_scripted_artifacts",
+      "source_snapshot": {
+        "path": "reports/m6a_follow_scripted_artifacts/source/manifest.json",
+        "bytes": 944,
+        "sha256": "7bd0cacb4fb4af4c92f861987f1e9e0a4064bc344dbcc6a004c9ee8a20ad33ac"
+      },
+      "vehicle_physics": {
+        "path": "reports/m6a_follow_scripted_artifacts/dynamic_lead_physics.json",
+        "bytes": 2285,
+        "sha256": "015a2717e986b8f908ee0a981ce8c1857dfdece21e750f473c9b4c887f166826"
+      },
+      "dynamics": {
+        "max_decel_raw": 8.310145940416342,
+        "jerk_peak_raw": 166.14585691806232,
+        "jerk_p95_moving": 13.824451412838119,
+        "jerk_p95_all": 4.8429862577606695,
+        "max_decel_250ms": 1.7646683387683686,
+        "jerk_p95_250ms": 2.771651364407882,
+        "min_signed_speed": -5.26405203190938e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 6.3500000000000005,
+        "api_accel_vs_velocity_derivative_mae": 0.00032203128620515264
+      },
+      "result": {
+        "path": "reports/m6a_follow_scripted_artifacts/dynamic_lead_result.json",
+        "bytes": 5163,
+        "sha256": "f5527b386cb19ee2fd56cf0e905f86874d5cd6a9cf13254199e1a6061b3d2d2c"
+      },
+      "load_description": "Privileged scripted lead at 1.5m/s then physical braking; no GPU inference or tests",
+      "lead_motion": "scripted",
+      "provenance_correction": "Original envelope default said hs_ego but snapshot state/obstacles are hs_world; measurement is native CARLA world. Offline metrics use explicit Y flip. Original trace retained; no numeric control or calibration change. Final schema smoke verifies corrected metadata.",
+      "worst_interval_diagnostic": {
+        "interval_ms": 55.9746827930212,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.029295682907104492,
+          "get_control_ms": 0.008318573236465454,
+          "snapshot_state_measurement_ms": 0.10209344327449799,
+          "submit_ms": 0.021420419216156006,
+          "ipc_poll_validate_resample_ms": 0.5249995738267899,
+          "road_query_ms": 0.7654298096895218,
+          "actor_guard_ms": 0.09381957352161407,
+          "controller_ms": 0.1574680209159851,
+          "apply_control_ms": 0.03841333091259003,
+          "world_tick_ms": 1.7266888171434402,
+          "log_buffer_ms": 0.08195638656616211,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.12323260307312012,
+          "get_control_ms": 0.02382323145866394,
+          "snapshot_state_measurement_ms": 0.3000795841217041,
+          "snapshot_serialization_ms": 0.3020353615283966,
+          "submit_ms": 0.31633488833904266,
+          "ipc_poll_validate_resample_ms": 2.5584157556295395,
+          "road_query_ms": 1.8630176782608032,
+          "actor_guard_ms": 0.5307383835315704,
+          "controller_ms": 0.5400236696004868,
+          "apply_control_ms": 0.048918649554252625,
+          "world_tick_ms": 1.9463784992694855,
+          "log_buffer_ms": 0.07499754428863525,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 1.6292277723550797
+      }
+    },
+    {
+      "source": "Privileged",
+      "scene": "low_speed_stop",
+      "ticks": 1000,
+      "route_completion": 0.8413066235884978,
+      "measured_travel_m": 7.925967602556573,
+      "cross_track_m": {
+        "n": 1000,
+        "p50": 0.023726607616795934,
+        "p95": 0.3572060667747,
+        "p99": 0.4518020140337722,
+        "max": 0.4518020140337722
+      },
+      "terminal_speed_mps": 3.751840842498027e-05,
+      "collisions": [],
+      "lane_invasions": [],
+      "curb_contact_status": "Unknown_no_dedicated_curb_contact_reference",
+      "road_boundary_frames": 0,
+      "route_success_checks": {
+        "completion": false,
+        "no_collision": true,
+        "no_lane_invasion": true,
+        "no_road_boundary": true,
+        "cross_track_p95": true,
+        "no_expired_normal_control": true,
+        "stopped": true
+      },
+      "route_success": false,
+      "task_status": "Partial",
+      "planner_outputs": 250,
+      "planner_failure_or_safety_rejection_count": 0,
+      "planner_failure_or_safety_rejection_rate": 0.0,
+      "planner_reasons": {},
+      "control_interval_ms": {
+        "n": 999,
+        "p50": 49.997929483652115,
+        "p95": 50.49598067998886,
+        "p99": 50.90345129370689,
+        "max": 95.6057645380497
+      },
+      "control_intervals_over_50ms": 493,
+      "control_intervals_over_55ms": 2,
+      "completion_deadline_misses": 1,
+      "sim_step_ms": {
+        "n": 999,
+        "p50": 50.00000074505806,
+        "p95": 50.00000074505806,
+        "p99": 50.00000074505806,
+        "max": 50.00000074505806
+      },
+      "mean_wall_hz": 19.999863215726325,
+      "controller_timeout_count": 0,
+      "stale_plan_control_ticks": 0,
+      "stale_received_plan_count": 0,
+      "expired_normal_control": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 4
+      },
+      "degradation_episodes": 1,
+      "fault_to_brake_s": null,
+      "planner_ms": {
+        "p50": 38.74354436993599,
+        "p95": 43.25658194720745,
+        "p99": 47.98270845785736,
+        "max": 92.7596241235733,
+        "n": 250
+      },
+      "plan_sim_age_s": {
+        "p50": 0.15000000223517418,
+        "p95": 0.20000000298023224,
+        "p99": 0.20000000298023224,
+        "max": 0.2500000037252903,
+        "n": 996
+      },
+      "plan_wall_age_s": {
+        "p50": 0.1502999048680067,
+        "p95": 0.2013901541940868,
+        "p99": 0.20176463443785905,
+        "max": 0.2511935606598854,
+        "n": 996
+      },
+      "stages_ms": {
+        "get_snapshot_ms": {
+          "p50": 0.011981464922428131,
+          "p95": 0.021575950086116784,
+          "p99": 0.02664227038621902,
+          "max": 0.04216283559799194,
+          "n": 1000
+        },
+        "actor_guard_ms": {
+          "p50": 0.0012898817658424377,
+          "p95": 0.0017479062080383294,
+          "p99": 0.0022958219051361075,
+          "max": 0.01782923936843872,
+          "n": 1000
+        },
+        "world_tick_ms": {
+          "p50": 1.3011088594794273,
+          "p95": 1.6047236509621143,
+          "p99": 1.8649376370012758,
+          "max": 93.462398275733,
+          "n": 1000
+        },
+        "snapshot_state_measurement_ms": {
+          "p50": 0.062290579080581665,
+          "p95": 0.0952041707932949,
+          "p99": 0.11912664398550987,
+          "max": 0.23555941879749298,
+          "n": 1000
+        },
+        "get_control_ms": {
+          "p50": 0.004498288035392761,
+          "p95": 0.008657760918140411,
+          "p99": 0.01097310334444046,
+          "max": 0.012712553143501282,
+          "n": 1000
+        },
+        "submit_ms": {
+          "p50": 0.014745630323886871,
+          "p95": 0.0676344148814678,
+          "p99": 0.07743533700704575,
+          "max": 0.30449219048023224,
+          "n": 1000
+        },
+        "log_buffer_ms": {
+          "p50": 0.043946318328380585,
+          "p95": 0.06320104002952574,
+          "p99": 0.09182140231132503,
+          "max": 1.2310631573200226,
+          "n": 1000
+        },
+        "controller_ms": {
+          "p50": 0.14735199511051178,
+          "p95": 0.18214080482721326,
+          "p99": 0.2693453989923,
+          "max": 1.176983118057251,
+          "n": 1000
+        },
+        "snapshot_serialization_ms": {
+          "p50": 0.0,
+          "p95": 0.04603601992130278,
+          "p99": 0.058336649090051644,
+          "max": 0.11523626744747162,
+          "n": 1000
+        },
+        "ipc_poll_validate_resample_ms": {
+          "p50": 0.40659215301275253,
+          "p95": 0.6011302582919598,
+          "p99": 0.7289853505790234,
+          "max": 2.12981179356575,
+          "n": 1000
+        },
+        "apply_control_ms": {
+          "p50": 0.02371426671743393,
+          "p95": 0.05258573219180106,
+          "p99": 0.07340174168348312,
+          "max": 0.17784163355827332,
+          "n": 1000
+        },
+        "log_disk_ms": {
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "n": 1000
+        },
+        "road_query_ms": {
+          "p50": 0.5114218220114708,
+          "p95": 0.6515820510685444,
+          "p99": 0.7810992933809756,
+          "max": 4.505166783928871,
+          "n": 1000
+        }
+      },
+      "min_route_arc_gap_proxy_m": null,
+      "strict_20hz": false,
+      "raw": "reports/m6a_low_speed_clean_artifacts/low_speed_stop.jsonl",
+      "raw_sha256": "1808423039ee86750e15dc3187ecdcab1b5eb75e6f4c9c356853a889248f0deb",
+      "trial": "m6a_low_speed_clean_artifacts",
+      "source_snapshot": {
+        "path": "reports/m6a_low_speed_clean_artifacts/source/manifest.json",
+        "bytes": 944,
+        "sha256": "cb1d8852f1b395f2d76eb0122f85ab31e36df336a41a88209fd191bd6dae17f9"
+      },
+      "vehicle_physics": {
+        "path": "reports/m6a_low_speed_clean_artifacts/low_speed_stop_physics.json",
+        "bytes": 2285,
+        "sha256": "015a2717e986b8f908ee0a981ce8c1857dfdece21e750f473c9b4c887f166826"
+      },
+      "dynamics": {
+        "max_decel_raw": 23.059439907839838,
+        "jerk_peak_raw": 387.674606570543,
+        "jerk_p95_moving": 112.00302619651941,
+        "jerk_p95_all": 9.834030037915984,
+        "max_decel_250ms": 7.904705640178121,
+        "jerk_p95_250ms": 4.701409432101503,
+        "min_signed_speed": -0.01947420777098406,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 3.7,
+        "api_accel_vs_velocity_derivative_mae": 0.000342284353468746
+      },
+      "result": {
+        "path": "reports/m6a_low_speed_clean_artifacts/low_speed_stop_result.json",
+        "bytes": 5122,
+        "sha256": "da8cb5f32491667d38b05ac876adacd35452b38bd13acac9d139374e82adfb39"
+      },
+      "load_description": "Privileged; no GPU inference; no concurrent tests; PETR network download only",
+      "lead_motion": null,
+      "provenance_correction": "Original envelope default said hs_ego but snapshot state/obstacles are hs_world; measurement is native CARLA world. Offline metrics use explicit Y flip. Original trace retained; no numeric control or calibration change. Final schema smoke verifies corrected metadata.",
+      "worst_interval_diagnostic": {
+        "interval_ms": 95.6057645380497,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.010069459676742554,
+          "get_control_ms": 0.004859641194343567,
+          "snapshot_state_measurement_ms": 0.07770396769046783,
+          "snapshot_serialization_ms": 0.04410743713378906,
+          "submit_ms": 0.07776357233524323,
+          "ipc_poll_validate_resample_ms": 0.501580536365509,
+          "road_query_ms": 0.5939994007349014,
+          "actor_guard_ms": 0.0015981495380401611,
+          "controller_ms": 0.2187862992286682,
+          "apply_control_ms": 0.12499280273914337,
+          "world_tick_ms": 93.462398275733,
+          "log_buffer_ms": 0.11497922241687775,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.010896474123001099,
+          "get_control_ms": 0.008041039109230042,
+          "snapshot_state_measurement_ms": 0.0906083732843399,
+          "submit_ms": 0.015439465641975403,
+          "ipc_poll_validate_resample_ms": 0.6087478250265121,
+          "road_query_ms": 0.6733909249305725,
+          "actor_guard_ms": 0.001650303602218628,
+          "controller_ms": 0.18499977886676788,
+          "apply_control_ms": 0.032978132367134094,
+          "world_tick_ms": 1.3942290097475052,
+          "log_buffer_ms": 0.05819462239742279,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 45.89213617146015
+      }
+    },
+    {
+      "source": "Privileged",
+      "scene": "junction_turn",
+      "ticks": 610,
+      "route_completion": 0.9788402208414374,
+      "measured_travel_m": 56.22912010155595,
+      "cross_track_m": {
+        "n": 610,
+        "p50": 0.13164456271593467,
+        "p95": 0.3145104352898776,
+        "p99": 0.33196650943043654,
+        "max": 0.33560027558753974
+      },
+      "terminal_speed_mps": 1.0205504489292587e-06,
+      "collisions": [],
+      "lane_invasions": [],
+      "curb_contact_status": "Unknown_no_dedicated_curb_contact_reference",
+      "road_boundary_frames": 0,
+      "route_success_checks": {
+        "completion": true,
+        "no_collision": true,
+        "no_lane_invasion": true,
+        "no_road_boundary": true,
+        "cross_track_p95": true,
+        "no_expired_normal_control": true,
+        "stopped": true
+      },
+      "route_success": true,
+      "task_status": "Passed_limited_route",
+      "planner_outputs": 152,
+      "planner_failure_or_safety_rejection_count": 0,
+      "planner_failure_or_safety_rejection_rate": 0.0,
+      "planner_reasons": {},
+      "control_interval_ms": {
+        "n": 609,
+        "p50": 49.990031868219376,
+        "p95": 50.300952419638634,
+        "p99": 50.55961832404137,
+        "max": 55.492037907242775
+      },
+      "control_intervals_over_50ms": 288,
+      "control_intervals_over_55ms": 1,
+      "completion_deadline_misses": 0,
+      "sim_step_ms": {
+        "n": 609,
+        "p50": 50.00000074505806,
+        "p95": 50.00000074505806,
+        "p99": 50.00000074505806,
+        "max": 50.00000074505806
+      },
+      "mean_wall_hz": 19.999734832466668,
+      "controller_timeout_count": 0,
+      "stale_plan_control_ticks": 0,
+      "stale_received_plan_count": 0,
+      "expired_normal_control": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 4
+      },
+      "degradation_episodes": 1,
+      "fault_to_brake_s": null,
+      "planner_ms": {
+        "p50": 99.51145481318235,
+        "p95": 111.85064930468796,
+        "p99": 114.63668102398518,
+        "max": 116.2463128566742,
+        "n": 152
+      },
+      "plan_sim_age_s": {
+        "p50": 0.20000000298023224,
+        "p95": 0.30000000447034836,
+        "p99": 0.30000000447034836,
+        "max": 0.30000000447034836,
+        "n": 606
+      },
+      "plan_wall_age_s": {
+        "p50": 0.20138444751501083,
+        "p95": 0.30124596087262034,
+        "p99": 0.3014310530386865,
+        "max": 0.3016358930617571,
+        "n": 606
+      },
+      "stages_ms": {
+        "ipc_poll_validate_resample_ms": {
+          "p50": 0.35094935446977615,
+          "p95": 0.4960074089467525,
+          "p99": 0.5939019285142421,
+          "max": 2.162523567676544,
+          "n": 610
+        },
+        "snapshot_state_measurement_ms": {
+          "p50": 0.05385000258684158,
+          "p95": 0.0776802189648151,
+          "p99": 0.10183678939938531,
+          "max": 0.36518462002277374,
+          "n": 610
+        },
+        "actor_guard_ms": {
+          "p50": 0.0014593824744224548,
+          "p95": 0.0019911676645278913,
+          "p99": 0.0024919211864471423,
+          "max": 0.0036563724279403687,
+          "n": 610
+        },
+        "get_control_ms": {
+          "p50": 0.004410743713378906,
+          "p95": 0.006883032619953155,
+          "p99": 0.00904753804206847,
+          "max": 0.01603737473487854,
+          "n": 610
+        },
+        "log_buffer_ms": {
+          "p50": 0.04313606768846512,
+          "p95": 0.06016567349433898,
+          "p99": 0.08428402245044705,
+          "max": 0.11440925300121307,
+          "n": 610
+        },
+        "snapshot_serialization_ms": {
+          "p50": 0.0,
+          "p95": 0.042301323264837265,
+          "p99": 0.053513851016759845,
+          "max": 0.24245865643024445,
+          "n": 610
+        },
+        "log_disk_ms": {
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "n": 610
+        },
+        "road_query_ms": {
+          "p50": 0.8187592029571533,
+          "p95": 0.972280278801918,
+          "p99": 1.1660169623792171,
+          "max": 2.1880995482206345,
+          "n": 610
+        },
+        "controller_ms": {
+          "p50": 0.15096087008714676,
+          "p95": 0.17687231302261353,
+          "p99": 0.23772912099957427,
+          "max": 0.3697667270898819,
+          "n": 610
+        },
+        "apply_control_ms": {
+          "p50": 0.023974105715751648,
+          "p95": 0.03189286217093467,
+          "p99": 0.04241801798343652,
+          "max": 0.0994224101305008,
+          "n": 610
+        },
+        "submit_ms": {
+          "p50": 0.013981945812702179,
+          "p95": 0.058073177933692925,
+          "p99": 0.07797269150614729,
+          "max": 0.29694102704524994,
+          "n": 610
+        },
+        "get_snapshot_ms": {
+          "p50": 0.011327676475048065,
+          "p95": 0.016356725245714184,
+          "p99": 0.021415781229734393,
+          "max": 0.06816722452640533,
+          "n": 610
+        },
+        "world_tick_ms": {
+          "p50": 1.3344595208764076,
+          "p95": 1.6031836159527302,
+          "p99": 1.696075517684221,
+          "max": 1.974673941731453,
+          "n": 610
+        }
+      },
+      "min_route_arc_gap_proxy_m": null,
+      "strict_20hz": false,
+      "raw": "reports/m6a_oracle_artifacts/junction_turn.jsonl",
+      "raw_sha256": "82cf66696ae0c005ae60008712fc34b3f7e50ce9f97703aba1df9428b7f7ac5a",
+      "trial": "m6a_oracle_artifacts",
+      "source_snapshot": {
+        "path": "reports/m6a_oracle_artifacts/source/manifest.json",
+        "bytes": 944,
+        "sha256": "b8ff15eafea3d88740da65e964b57b2ec22aac2ed48e1880c9916aa076756b08"
+      },
+      "vehicle_physics": {
+        "path": "reports/m6a_oracle_artifacts/junction_turn_physics.json",
+        "bytes": 2285,
+        "sha256": "015a2717e986b8f908ee0a981ce8c1857dfdece21e750f473c9b4c887f166826"
+      },
+      "dynamics": {
+        "max_decel_raw": 9.10005096029108,
+        "jerk_peak_raw": 181.93055347858305,
+        "jerk_p95_moving": 8.813895542411265,
+        "jerk_p95_all": 8.57980946800562,
+        "max_decel_250ms": 1.9867481551919892,
+        "jerk_p95_250ms": 5.7407554137237815,
+        "min_signed_speed": -5.528645725221561e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 5.8500000000000005,
+        "api_accel_vs_velocity_derivative_mae": 0.008446107802966023
+      },
+      "result": {
+        "path": "reports/m6a_oracle_artifacts/junction_turn_result.json",
+        "bytes": 5070,
+        "sha256": "2963083472cac267a6058a124ef2dac4abb21b4b1d161bd961dd20c4de21cf14"
+      },
+      "load_description": "isolated Oracle; no GPU inference",
+      "lead_motion": null,
+      "provenance_correction": "Original envelope default said hs_ego but snapshot state/obstacles are hs_world; measurement is native CARLA world. Offline metrics use explicit Y flip. Original trace retained; no numeric control or calibration change. Final schema smoke verifies corrected metadata.",
+      "worst_interval_diagnostic": {
+        "interval_ms": 55.492037907242775,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.012135133147239685,
+          "get_control_ms": 0.0040102750062942505,
+          "snapshot_state_measurement_ms": 0.05571916699409485,
+          "submit_ms": 0.011881813406944275,
+          "ipc_poll_validate_resample_ms": 0.30728429555892944,
+          "road_query_ms": 0.8460879325866699,
+          "actor_guard_ms": 0.001648440957069397,
+          "controller_ms": 0.15345588326454163,
+          "apply_control_ms": 0.02251937985420227,
+          "world_tick_ms": 1.3175662606954575,
+          "log_buffer_ms": 0.04864297807216644,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.06816722452640533,
+          "get_control_ms": 0.01603737473487854,
+          "snapshot_state_measurement_ms": 0.36518462002277374,
+          "snapshot_serialization_ms": 0.24245865643024445,
+          "submit_ms": 0.2348031848669052,
+          "ipc_poll_validate_resample_ms": 2.162523567676544,
+          "road_query_ms": 2.1880995482206345,
+          "actor_guard_ms": 0.002175569534301758,
+          "controller_ms": 0.3697667270898819,
+          "apply_control_ms": 0.04858151078224182,
+          "world_tick_ms": 1.5477519482374191,
+          "log_buffer_ms": 0.061415135860443115,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 1.527654007077217
+      }
+    },
+    {
+      "source": "Privileged",
+      "scene": "mild_curve",
+      "ticks": 663,
+      "route_completion": 0.9791134397351078,
+      "measured_travel_m": 58.09820643495587,
+      "cross_track_m": {
+        "n": 663,
+        "p50": 0.0028338330911571404,
+        "p95": 0.2274768653253639,
+        "p99": 0.2274768653253639,
+        "max": 0.2274768653253639
+      },
+      "terminal_speed_mps": 7.493795854793112e-07,
+      "collisions": [],
+      "lane_invasions": [],
+      "curb_contact_status": "Unknown_no_dedicated_curb_contact_reference",
+      "road_boundary_frames": 0,
+      "route_success_checks": {
+        "completion": true,
+        "no_collision": true,
+        "no_lane_invasion": true,
+        "no_road_boundary": true,
+        "cross_track_p95": true,
+        "no_expired_normal_control": true,
+        "stopped": true
+      },
+      "route_success": true,
+      "task_status": "Passed_limited_route",
+      "planner_outputs": 166,
+      "planner_failure_or_safety_rejection_count": 0,
+      "planner_failure_or_safety_rejection_rate": 0.0,
+      "planner_reasons": {},
+      "control_interval_ms": {
+        "n": 662,
+        "p50": 49.993546679615974,
+        "p95": 50.3647081553936,
+        "p99": 50.645447336137295,
+        "max": 53.31545136868954
+      },
+      "control_intervals_over_50ms": 319,
+      "control_intervals_over_55ms": 0,
+      "completion_deadline_misses": 0,
+      "sim_step_ms": {
+        "n": 662,
+        "p50": 50.00000074505806,
+        "p95": 50.00000074505806,
+        "p99": 50.00000074505806,
+        "max": 50.00000074505806
+      },
+      "mean_wall_hz": 19.999860605216032,
+      "controller_timeout_count": 0,
+      "stale_plan_control_ticks": 0,
+      "stale_received_plan_count": 0,
+      "expired_normal_control": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 5
+      },
+      "degradation_episodes": 1,
+      "fault_to_brake_s": null,
+      "planner_ms": {
+        "p50": 102.157237008214,
+        "p95": 115.74608273804188,
+        "p99": 117.59917121380568,
+        "max": 123.04230034351349,
+        "n": 166
+      },
+      "plan_sim_age_s": {
+        "p50": 0.20000000298023224,
+        "p95": 0.30000000447034836,
+        "p99": 0.30000000447034836,
+        "max": 0.30000000447034836,
+        "n": 658
+      },
+      "plan_wall_age_s": {
+        "p50": 0.2014717934653163,
+        "p95": 0.301394319627434,
+        "p99": 0.3016602909378707,
+        "max": 0.30204871483147144,
+        "n": 658
+      },
+      "stages_ms": {
+        "ipc_poll_validate_resample_ms": {
+          "p50": 0.37394091486930847,
+          "p95": 0.5173191428184509,
+          "p99": 0.6034044921398163,
+          "max": 1.5911757946014404,
+          "n": 663
+        },
+        "snapshot_state_measurement_ms": {
+          "p50": 0.058922916650772095,
+          "p95": 0.07531661540269852,
+          "p99": 0.09315788745880126,
+          "max": 0.2024378627538681,
+          "n": 663
+        },
+        "actor_guard_ms": {
+          "p50": 0.0014211982488632202,
+          "p95": 0.0020006671547889705,
+          "p99": 0.002563856542110443,
+          "max": 0.01613795757293701,
+          "n": 663
+        },
+        "get_control_ms": {
+          "p50": 0.004548579454421997,
+          "p95": 0.006837956607341766,
+          "p99": 0.00798474997282028,
+          "max": 0.04919618368148804,
+          "n": 663
+        },
+        "log_buffer_ms": {
+          "p50": 0.044560059905052185,
+          "p95": 0.06016362458467483,
+          "p99": 0.07881592959165573,
+          "max": 0.09921565651893616,
+          "n": 663
+        },
+        "snapshot_serialization_ms": {
+          "p50": 0.0,
+          "p95": 0.043788738548755646,
+          "p99": 0.050846561789512634,
+          "max": 0.06601586937904358,
+          "n": 663
+        },
+        "log_disk_ms": {
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "n": 663
+        },
+        "road_query_ms": {
+          "p50": 0.825781375169754,
+          "p95": 0.9670089930295944,
+          "p99": 1.1002736166119576,
+          "max": 1.4452636241912842,
+          "n": 663
+        },
+        "controller_ms": {
+          "p50": 0.15407614409923553,
+          "p95": 0.18516909331083298,
+          "p99": 0.24642977863550186,
+          "max": 0.6522089242935181,
+          "n": 663
+        },
+        "apply_control_ms": {
+          "p50": 0.026319175958633423,
+          "p95": 0.035926327109336846,
+          "p99": 0.040194541215896606,
+          "max": 0.050084665417671204,
+          "n": 663
+        },
+        "submit_ms": {
+          "p50": 0.015117228031158447,
+          "p95": 0.06136298179626465,
+          "p99": 0.07019933313131332,
+          "max": 0.25319866836071014,
+          "n": 663
+        },
+        "get_snapshot_ms": {
+          "p50": 0.010946765542030334,
+          "p95": 0.016953609883785248,
+          "p99": 0.019148215651512146,
+          "max": 0.0778883695602417,
+          "n": 663
+        },
+        "world_tick_ms": {
+          "p50": 1.4234036207199097,
+          "p95": 1.7154337838292122,
+          "p99": 2.030663751065731,
+          "max": 5.821092054247856,
+          "n": 663
+        }
+      },
+      "min_route_arc_gap_proxy_m": null,
+      "strict_20hz": false,
+      "raw": "reports/m6a_oracle_artifacts/mild_curve.jsonl",
+      "raw_sha256": "f0a8a55351f7f1351923b5c14e6d40bf0a5e8de7aa18fa8e793be6beb9fff0a2",
+      "trial": "m6a_oracle_artifacts",
+      "source_snapshot": {
+        "path": "reports/m6a_oracle_artifacts/source/manifest.json",
+        "bytes": 944,
+        "sha256": "b8ff15eafea3d88740da65e964b57b2ec22aac2ed48e1880c9916aa076756b08"
+      },
+      "vehicle_physics": {
+        "path": "reports/m6a_oracle_artifacts/mild_curve_physics.json",
+        "bytes": 2285,
+        "sha256": "015a2717e986b8f908ee0a981ce8c1857dfdece21e750f473c9b4c887f166826"
+      },
+      "dynamics": {
+        "max_decel_raw": 20.31058341243604,
+        "jerk_peak_raw": 452.9634651776052,
+        "jerk_p95_moving": 63.134713404638575,
+        "jerk_p95_all": 62.430998733871135,
+        "max_decel_250ms": 3.879409460982792,
+        "jerk_p95_250ms": 13.230943193511557,
+        "min_signed_speed": -4.11897641901233e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 8.15,
+        "api_accel_vs_velocity_derivative_mae": 9.264608708944992e-05
+      },
+      "result": {
+        "path": "reports/m6a_oracle_artifacts/mild_curve_result.json",
+        "bytes": 5025,
+        "sha256": "a3fbf35886d2e5d9302c2b8587ae30f4a6dcb178c2fa5d94ecc810399cb82d9e"
+      },
+      "load_description": "isolated Oracle; no GPU inference",
+      "lead_motion": null,
+      "provenance_correction": "Original envelope default said hs_ego but snapshot state/obstacles are hs_world; measurement is native CARLA world. Offline metrics use explicit Y flip. Original trace retained; no numeric control or calibration change. Final schema smoke verifies corrected metadata.",
+      "worst_interval_diagnostic": {
+        "interval_ms": 53.31545136868954,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.016955658793449402,
+          "get_control_ms": 0.006822869181632996,
+          "snapshot_state_measurement_ms": 0.07111579179763794,
+          "submit_ms": 0.015927478671073914,
+          "ipc_poll_validate_resample_ms": 0.5112849175930023,
+          "road_query_ms": 0.9048059582710266,
+          "actor_guard_ms": 0.001473352313041687,
+          "controller_ms": 0.1732073724269867,
+          "apply_control_ms": 0.03077089786529541,
+          "world_tick_ms": 1.8435418605804443,
+          "log_buffer_ms": 0.0498257577419281,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.01864694058895111,
+          "get_control_ms": 0.006975606083869934,
+          "snapshot_state_measurement_ms": 0.08942931890487671,
+          "snapshot_serialization_ms": 0.04846788942813873,
+          "submit_ms": 0.06250850856304169,
+          "ipc_poll_validate_resample_ms": 0.39918534457683563,
+          "road_query_ms": 0.906873494386673,
+          "actor_guard_ms": 0.001383945345878601,
+          "controller_ms": 0.174839049577713,
+          "apply_control_ms": 0.03568828105926514,
+          "world_tick_ms": 2.0382683724164963,
+          "log_buffer_ms": 0.0681411474943161,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 3.7268176674842834
+      }
+    },
+    {
+      "source": "Privileged",
+      "scene": "straight",
+      "ticks": 613,
+      "route_completion": 0.9790535313443471,
+      "measured_travel_m": 57.13884106655375,
+      "cross_track_m": {
+        "n": 613,
+        "p50": 0.005811069298007459,
+        "p95": 0.4518020140337722,
+        "p99": 0.4518020140337722,
+        "max": 0.4518020140337722
+      },
+      "terminal_speed_mps": 5.1930808748224056e-05,
+      "collisions": [],
+      "lane_invasions": [],
+      "curb_contact_status": "Unknown_no_dedicated_curb_contact_reference",
+      "road_boundary_frames": 0,
+      "route_success_checks": {
+        "completion": true,
+        "no_collision": true,
+        "no_lane_invasion": true,
+        "no_road_boundary": true,
+        "cross_track_p95": true,
+        "no_expired_normal_control": true,
+        "stopped": true
+      },
+      "route_success": true,
+      "task_status": "Passed_limited_route",
+      "planner_outputs": 153,
+      "planner_failure_or_safety_rejection_count": 0,
+      "planner_failure_or_safety_rejection_rate": 0.0,
+      "planner_reasons": {},
+      "control_interval_ms": {
+        "n": 612,
+        "p50": 49.98759087175131,
+        "p95": 50.404435116797686,
+        "p99": 51.456023529171944,
+        "max": 133.1617683172226
+      },
+      "control_intervals_over_50ms": 294,
+      "control_intervals_over_55ms": 3,
+      "completion_deadline_misses": 1,
+      "sim_step_ms": {
+        "n": 612,
+        "p50": 50.00000074505806,
+        "p95": 50.00000074505806,
+        "p99": 50.00000074505806,
+        "max": 50.00000074505806
+      },
+      "mean_wall_hz": 19.945745582895725,
+      "controller_timeout_count": 0,
+      "stale_plan_control_ticks": 0,
+      "stale_received_plan_count": 0,
+      "expired_normal_control": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 4
+      },
+      "degradation_episodes": 1,
+      "fault_to_brake_s": null,
+      "planner_ms": {
+        "p50": 59.69545803964138,
+        "p95": 70.00963687896729,
+        "p99": 71.44739963114262,
+        "max": 73.82931932806969,
+        "n": 153
+      },
+      "plan_sim_age_s": {
+        "p50": 0.15000000223517418,
+        "p95": 0.2500000037252903,
+        "p99": 0.2500000037252903,
+        "max": 0.2500000037252903,
+        "n": 609
+      },
+      "plan_wall_age_s": {
+        "p50": 0.1511367093771696,
+        "p95": 0.2511588200926781,
+        "p99": 0.25189925633370874,
+        "max": 0.3346644565463066,
+        "n": 609
+      },
+      "stages_ms": {
+        "ipc_poll_validate_resample_ms": {
+          "p50": 0.3849528729915619,
+          "p95": 0.6435107439756393,
+          "p99": 0.8582811802625655,
+          "max": 1.6192588955163956,
+          "n": 613
+        },
+        "snapshot_state_measurement_ms": {
+          "p50": 0.05947984755039215,
+          "p95": 0.1118592917919159,
+          "p99": 0.1320669054985046,
+          "max": 0.8500777184963226,
+          "n": 613
+        },
+        "actor_guard_ms": {
+          "p50": 0.001383945345878601,
+          "p95": 0.002944841980934142,
+          "p99": 0.004474148154258727,
+          "max": 0.014789402484893799,
+          "n": 613
+        },
+        "get_control_ms": {
+          "p50": 0.004861503839492798,
+          "p95": 0.010556727647781367,
+          "p99": 0.01254446804523468,
+          "max": 0.03649294376373291,
+          "n": 613
+        },
+        "log_buffer_ms": {
+          "p50": 0.0447835773229599,
+          "p95": 0.08952245116233824,
+          "p99": 0.1044590026140213,
+          "max": 0.17104297876358032,
+          "n": 613
+        },
+        "snapshot_serialization_ms": {
+          "p50": 0.0,
+          "p95": 0.04923939704895019,
+          "p99": 0.07766008377075194,
+          "max": 0.15650875866413116,
+          "n": 613
+        },
+        "log_disk_ms": {
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "n": 613
+        },
+        "road_query_ms": {
+          "p50": 0.5325358361005783,
+          "p95": 0.847332179546356,
+          "p99": 0.9963039308786392,
+          "max": 1.3211946934461594,
+          "n": 613
+        },
+        "controller_ms": {
+          "p50": 0.14912523329257965,
+          "p95": 0.2539653331041334,
+          "p99": 0.31219005584716797,
+          "max": 0.8559878915548325,
+          "n": 613
+        },
+        "apply_control_ms": {
+          "p50": 0.02535991370677948,
+          "p95": 0.04928484559059143,
+          "p99": 0.05712427198886871,
+          "max": 0.1765117049217224,
+          "n": 613
+        },
+        "submit_ms": {
+          "p50": 0.015247613191604614,
+          "p95": 0.06994083523750304,
+          "p99": 0.0976378470659256,
+          "max": 0.30690431594848633,
+          "n": 613
+        },
+        "get_snapshot_ms": {
+          "p50": 0.01155957579612732,
+          "p95": 0.025099888443946835,
+          "p99": 0.029672980308532715,
+          "max": 0.03912672400474548,
+          "n": 613
+        },
+        "world_tick_ms": {
+          "p50": 1.3714153319597244,
+          "p95": 1.706811785697937,
+          "p99": 2.3548416048288328,
+          "max": 131.60151429474354,
+          "n": 613
+        }
+      },
+      "min_route_arc_gap_proxy_m": null,
+      "strict_20hz": false,
+      "raw": "reports/m6a_oracle_artifacts/straight.jsonl",
+      "raw_sha256": "a61f22b19bc424c0aabe09fe9364a5a1b6584786ecd8c79d7a22827ec0e08872",
+      "trial": "m6a_oracle_artifacts",
+      "source_snapshot": {
+        "path": "reports/m6a_oracle_artifacts/source/manifest.json",
+        "bytes": 944,
+        "sha256": "b8ff15eafea3d88740da65e964b57b2ec22aac2ed48e1880c9916aa076756b08"
+      },
+      "vehicle_physics": {
+        "path": "reports/m6a_oracle_artifacts/straight_physics.json",
+        "bytes": 2285,
+        "sha256": "015a2717e986b8f908ee0a981ce8c1857dfdece21e750f473c9b4c887f166826"
+      },
+      "dynamics": {
+        "max_decel_raw": 13.899235671430235,
+        "jerk_peak_raw": 277.79807165345244,
+        "jerk_p95_moving": 33.312574819317014,
+        "jerk_p95_all": 33.10763389837879,
+        "max_decel_250ms": 2.842868203719818,
+        "jerk_p95_250ms": 8.012721915274813,
+        "min_signed_speed": -5.271709499645962e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 5.550000000000001,
+        "api_accel_vs_velocity_derivative_mae": 0.0005684070643306763
+      },
+      "result": {
+        "path": "reports/m6a_oracle_artifacts/straight_result.json",
+        "bytes": 5061,
+        "sha256": "e9311582233179c4c8c0e4a97c4c4833640d806126590bc3a245d4bfe168dee8"
+      },
+      "load_description": "isolated Oracle; no GPU inference",
+      "lead_motion": null,
+      "provenance_correction": "Original envelope default said hs_ego but snapshot state/obstacles are hs_world; measurement is native CARLA world. Offline metrics use explicit Y flip. Original trace retained; no numeric control or calibration change. Final schema smoke verifies corrected metadata.",
+      "worst_interval_diagnostic": {
+        "interval_ms": 133.1617683172226,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.007988885045051575,
+          "get_control_ms": 0.0034421682357788086,
+          "snapshot_state_measurement_ms": 0.046523287892341614,
+          "snapshot_serialization_ms": 0.033574178814888,
+          "submit_ms": 0.05525350570678711,
+          "ipc_poll_validate_resample_ms": 0.38549117743968964,
+          "road_query_ms": 0.44376589357852936,
+          "actor_guard_ms": 0.001648440957069397,
+          "controller_ms": 0.14517642557621002,
+          "apply_control_ms": 0.021556392312049866,
+          "world_tick_ms": 131.60151429474354,
+          "log_buffer_ms": 0.08571892976760864,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.0030957162380218506,
+          "get_control_ms": 0.004287809133529663,
+          "snapshot_state_measurement_ms": 0.06053410470485687,
+          "submit_ms": 0.014297664165496826,
+          "ipc_poll_validate_resample_ms": 0.4688818007707596,
+          "road_query_ms": 0.539509579539299,
+          "actor_guard_ms": 0.0013485550880432129,
+          "controller_ms": 0.14849193394184113,
+          "apply_control_ms": 0.027680769562721252,
+          "world_tick_ms": 6.801087409257889,
+          "log_buffer_ms": 0.0662039965391159,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 0.28868578374385834
+      }
+    },
+    {
+      "source": "Privileged",
+      "scene": "dynamic_lead",
+      "ticks": 1000,
+      "route_completion": 0.26942065072920107,
+      "measured_travel_m": 15.980076736447863,
+      "cross_track_m": {
+        "n": 1000,
+        "p50": 0.006701498056720567,
+        "p95": 0.37141467014449925,
+        "p99": 0.4518020140337722,
+        "max": 0.4518020140337722
+      },
+      "terminal_speed_mps": 3.745719501726209e-05,
+      "collisions": [],
+      "lane_invasions": [],
+      "curb_contact_status": "Unknown_no_dedicated_curb_contact_reference",
+      "road_boundary_frames": 0,
+      "route_success_checks": {
+        "completion": false,
+        "no_collision": true,
+        "no_lane_invasion": true,
+        "no_road_boundary": true,
+        "cross_track_p95": true,
+        "no_expired_normal_control": true,
+        "stopped": true
+      },
+      "route_success": false,
+      "task_status": "Partial",
+      "planner_outputs": 250,
+      "planner_failure_or_safety_rejection_count": 0,
+      "planner_failure_or_safety_rejection_rate": 0.0,
+      "planner_reasons": {},
+      "control_interval_ms": {
+        "n": 999,
+        "p50": 49.98672381043434,
+        "p95": 50.47961138188839,
+        "p99": 51.162172220647335,
+        "max": 55.23989535868168
+      },
+      "control_intervals_over_50ms": 472,
+      "control_intervals_over_55ms": 1,
+      "completion_deadline_misses": 0,
+      "sim_step_ms": {
+        "n": 999,
+        "p50": 50.00000074505806,
+        "p95": 50.00000074505806,
+        "p99": 50.00000074505806,
+        "max": 50.00000074505806
+      },
+      "mean_wall_hz": 19.999863320778076,
+      "controller_timeout_count": 0,
+      "stale_plan_control_ticks": 0,
+      "stale_received_plan_count": 0,
+      "expired_normal_control": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 4
+      },
+      "degradation_episodes": 1,
+      "fault_to_brake_s": null,
+      "planner_ms": {
+        "p50": 42.458794079720974,
+        "p95": 50.97932452335954,
+        "p99": 53.45795933157205,
+        "max": 68.4430580586195,
+        "n": 250
+      },
+      "plan_sim_age_s": {
+        "p50": 0.15000000223517418,
+        "p95": 0.20000000298023224,
+        "p99": 0.2500000037252903,
+        "max": 0.2500000037252903,
+        "n": 996
+      },
+      "plan_wall_age_s": {
+        "p50": 0.15081513300538063,
+        "p95": 0.2016236772760749,
+        "p99": 0.2511315760202706,
+        "max": 0.25207907147705555,
+        "n": 996
+      },
+      "stages_ms": {
+        "submit_ms": {
+          "p50": 0.014259479939937592,
+          "p95": 0.08031809702515601,
+          "p99": 0.09859688580036159,
+          "max": 0.3834683448076248,
+          "n": 1000
+        },
+        "snapshot_serialization_ms": {
+          "p50": 0.0,
+          "p95": 0.05879709497094152,
+          "p99": 0.0874066539108753,
+          "max": 0.21453946828842163,
+          "n": 1000
+        },
+        "get_snapshot_ms": {
+          "p50": 0.008832663297653198,
+          "p95": 0.0159665010869503,
+          "p99": 0.019757431000471115,
+          "max": 0.03472715616226196,
+          "n": 1000
+        },
+        "road_query_ms": {
+          "p50": 0.5039405077695847,
+          "p95": 0.6907720118761063,
+          "p99": 0.8875890821218491,
+          "max": 3.586491569876671,
+          "n": 1000
+        },
+        "apply_control_ms": {
+          "p50": 0.02205371856689453,
+          "p95": 0.04307897761464118,
+          "p99": 0.06200449541211127,
+          "max": 0.14933571219444275,
+          "n": 1000
+        },
+        "ipc_poll_validate_resample_ms": {
+          "p50": 0.39876438677310944,
+          "p95": 0.5914688110351561,
+          "p99": 0.7599297538399696,
+          "max": 2.3004207760095596,
+          "n": 1000
+        },
+        "controller_ms": {
+          "p50": 0.14466512948274612,
+          "p95": 0.18853927031159398,
+          "p99": 0.27659909799695015,
+          "max": 0.5425717681646347,
+          "n": 1000
+        },
+        "get_control_ms": {
+          "p50": 0.0021085143089294434,
+          "p95": 0.003785360604524612,
+          "p99": 0.004552341997623444,
+          "max": 0.008324161171913147,
+          "n": 1000
+        },
+        "log_disk_ms": {
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "n": 1000
+        },
+        "actor_guard_ms": {
+          "p50": 0.0679120421409607,
+          "p95": 0.0906095840036869,
+          "p99": 0.1246915198862552,
+          "max": 1.874580979347229,
+          "n": 1000
+        },
+        "log_buffer_ms": {
+          "p50": 0.059118494391441345,
+          "p95": 0.08656382560729979,
+          "p99": 0.12004788964986797,
+          "max": 0.20473450422286987,
+          "n": 1000
+        },
+        "snapshot_state_measurement_ms": {
+          "p50": 0.0485740602016449,
+          "p95": 0.08979514241218566,
+          "p99": 0.11352684348821639,
+          "max": 0.2146586775779724,
+          "n": 1000
+        },
+        "world_tick_ms": {
+          "p50": 1.417817547917366,
+          "p95": 1.7397467978298664,
+          "p99": 1.9421197101473806,
+          "max": 5.077935755252838,
+          "n": 1000
+        }
+      },
+      "min_route_arc_gap_proxy_m": 3.791517046215534,
+      "strict_20hz": false,
+      "raw": "reports/m6a_oracle_remaining_artifacts/dynamic_lead.jsonl",
+      "raw_sha256": "45dfee191225173c9d81647107c6ebefcce2849a0b54e01d270369ae482b3ef8",
+      "trial": "m6a_oracle_remaining_artifacts",
+      "source_snapshot": {
+        "path": "reports/m6a_oracle_remaining_artifacts/source/manifest.json",
+        "bytes": 944,
+        "sha256": "cb1d8852f1b395f2d76eb0122f85ab31e36df336a41a88209fd191bd6dae17f9"
+      },
+      "vehicle_physics": {
+        "path": "reports/m6a_oracle_remaining_artifacts/dynamic_lead_physics.json",
+        "bytes": 2285,
+        "sha256": "015a2717e986b8f908ee0a981ce8c1857dfdece21e750f473c9b4c887f166826"
+      },
+      "dynamics": {
+        "max_decel_raw": 5.753386953199248,
+        "jerk_peak_raw": 169.19899925053923,
+        "jerk_p95_moving": 68.66053448219441,
+        "jerk_p95_all": 62.01882616725285,
+        "max_decel_250ms": 1.5957595912464455,
+        "jerk_p95_250ms": 12.623712725893334,
+        "min_signed_speed": -6.825198000746151e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 9.0,
+        "api_accel_vs_velocity_derivative_mae": 0.0003569652768615548
+      },
+      "result": {
+        "path": "reports/m6a_oracle_remaining_artifacts/dynamic_lead_result.json",
+        "bytes": 5072,
+        "sha256": "d8dfafb1b8d71b1dad035355272b3894e1f4a08a6937e10c469ff5e9c9532131"
+      },
+      "load_description": "isolated Oracle; no GPU inference",
+      "lead_motion": "actuator",
+      "provenance_correction": "Original envelope default said hs_ego but snapshot state/obstacles are hs_world; measurement is native CARLA world. Offline metrics use explicit Y flip. Original trace retained; no numeric control or calibration change. Final schema smoke verifies corrected metadata.",
+      "worst_interval_diagnostic": {
+        "interval_ms": 55.23989535868168,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.008668750524520874,
+          "get_control_ms": 0.0021364539861679077,
+          "snapshot_state_measurement_ms": 0.05801580846309662,
+          "snapshot_serialization_ms": 0.05223602056503296,
+          "submit_ms": 0.0737607479095459,
+          "ipc_poll_validate_resample_ms": 0.37268921732902527,
+          "road_query_ms": 0.5980338901281357,
+          "actor_guard_ms": 0.07301941514015198,
+          "controller_ms": 0.16663037240505219,
+          "apply_control_ms": 0.05093961954116821,
+          "world_tick_ms": 1.5870947390794754,
+          "log_buffer_ms": 0.0641699880361557,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.028856098651885986,
+          "get_control_ms": 0.0048335641622543335,
+          "snapshot_state_measurement_ms": 0.1919809728860855,
+          "submit_ms": 0.02985820174217224,
+          "ipc_poll_validate_resample_ms": 1.7636436969041824,
+          "road_query_ms": 1.0848566889762878,
+          "actor_guard_ms": 0.21387450397014618,
+          "controller_ms": 0.49016252160072327,
+          "apply_control_ms": 0.06199255585670471,
+          "world_tick_ms": 4.025181755423546,
+          "log_buffer_ms": 0.08565187454223633,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 3.0433591455221176
+      }
+    },
+    {
+      "source": "Privileged",
+      "scene": "emergency",
+      "ticks": 160,
+      "route_completion": 0.04931252157764308,
+      "measured_travel_m": 3.2137077926312716,
+      "cross_track_m": {
+        "n": 160,
+        "p50": 0.08974500836158228,
+        "p95": 0.4518020140337722,
+        "p99": 0.4518020140337722,
+        "max": 0.4518020140337722
+      },
+      "terminal_speed_mps": 3.7329198696460436e-05,
+      "collisions": [],
+      "lane_invasions": [],
+      "curb_contact_status": "Unknown_no_dedicated_curb_contact_reference",
+      "road_boundary_frames": 0,
+      "route_success_checks": {
+        "completion": false,
+        "no_collision": true,
+        "no_lane_invasion": true,
+        "no_road_boundary": true,
+        "cross_track_p95": true,
+        "no_expired_normal_control": true,
+        "stopped": true
+      },
+      "route_success": false,
+      "task_status": "Passed_limited_fault_stop",
+      "planner_outputs": 40,
+      "planner_failure_or_safety_rejection_count": 0,
+      "planner_failure_or_safety_rejection_rate": 0.0,
+      "planner_reasons": {},
+      "control_interval_ms": {
+        "n": 159,
+        "p50": 49.9942172318697,
+        "p95": 50.41454881429672,
+        "p99": 50.796612799167626,
+        "max": 51.97618715465069
+      },
+      "control_intervals_over_50ms": 77,
+      "control_intervals_over_55ms": 0,
+      "completion_deadline_misses": 0,
+      "sim_step_ms": {
+        "n": 159,
+        "p50": 50.00000074505806,
+        "p95": 50.00000074505806,
+        "p99": 50.00000074505806,
+        "max": 50.00000074505806
+      },
+      "mean_wall_hz": 19.999115608626152,
+      "controller_timeout_count": 0,
+      "stale_plan_control_ticks": 0,
+      "stale_received_plan_count": 0,
+      "expired_normal_control": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 4,
+        "emergency_command": 95
+      },
+      "degradation_episodes": 2,
+      "fault_to_brake_s": 0.0011658668518066406,
+      "planner_ms": {
+        "p50": 55.10503426194191,
+        "p95": 61.77445566281676,
+        "p99": 62.95013785362244,
+        "max": 63.316239044070244,
+        "n": 40
+      },
+      "plan_sim_age_s": {
+        "p50": 0.1750000026077032,
+        "p95": 0.2500000037252903,
+        "p99": 0.2500000037252903,
+        "max": 0.2500000037252903,
+        "n": 156
+      },
+      "plan_wall_age_s": {
+        "p50": 0.17688123043626547,
+        "p95": 0.2512565762735903,
+        "p99": 0.25154752656817436,
+        "max": 0.25193961523473263,
+        "n": 156
+      },
+      "stages_ms": {
+        "submit_ms": {
+          "p50": 0.017609447240829468,
+          "p95": 0.07348638027906416,
+          "p99": 0.0862096808850765,
+          "max": 0.3134366124868393,
+          "n": 160
+        },
+        "snapshot_serialization_ms": {
+          "p50": 0.0,
+          "p95": 0.05049183964729307,
+          "p99": 0.0560443103313446,
+          "max": 0.06138719618320465,
+          "n": 160
+        },
+        "get_snapshot_ms": {
+          "p50": 0.013581477105617523,
+          "p95": 0.022956449538469315,
+          "p99": 0.02866566181182859,
+          "max": 0.03501400351524353,
+          "n": 160
+        },
+        "road_query_ms": {
+          "p50": 0.5392041057348251,
+          "p95": 0.7027416490018367,
+          "p99": 0.8631981723010538,
+          "max": 0.932859256863594,
+          "n": 160
+        },
+        "apply_control_ms": {
+          "p50": 0.008345581591129303,
+          "p95": 0.037289131432771676,
+          "p99": 0.04386881366372106,
+          "max": 0.0747237354516983,
+          "n": 160
+        },
+        "ipc_poll_validate_resample_ms": {
+          "p50": 0.417390838265419,
+          "p95": 0.6275401450693607,
+          "p99": 0.7181132398545742,
+          "max": 1.4287587255239487,
+          "n": 160
+        },
+        "controller_ms": {
+          "p50": 0.011231750249862671,
+          "p95": 0.20105345174670217,
+          "p99": 0.3510913625359533,
+          "max": 0.7469039410352707,
+          "n": 160
+        },
+        "get_control_ms": {
+          "p50": 0.004591420292854309,
+          "p95": 0.007756706327199934,
+          "p99": 0.009934827685356138,
+          "max": 0.034790486097335815,
+          "n": 160
+        },
+        "log_disk_ms": {
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "n": 160
+        },
+        "actor_guard_ms": {
+          "p50": 0.0013457611203193665,
+          "p95": 0.0018852762877941132,
+          "p99": 0.002541728317737579,
+          "max": 0.008208677172660828,
+          "n": 160
+        },
+        "log_buffer_ms": {
+          "p50": 0.04598870873451233,
+          "p95": 0.06953924894332884,
+          "p99": 0.08710931986570354,
+          "max": 0.158039852976799,
+          "n": 160
+        },
+        "snapshot_state_measurement_ms": {
+          "p50": 0.06836652755737305,
+          "p95": 0.10103927925229064,
+          "p99": 0.2035518549382684,
+          "max": 0.5014259368181229,
+          "n": 160
+        },
+        "world_tick_ms": {
+          "p50": 1.4436356723308563,
+          "p95": 1.755201071500778,
+          "p99": 1.8767884746193886,
+          "max": 1.9735153764486313,
+          "n": 160
+        }
+      },
+      "min_route_arc_gap_proxy_m": null,
+      "strict_20hz": false,
+      "raw": "reports/m6a_oracle_remaining_artifacts/emergency.jsonl",
+      "raw_sha256": "56efafda5fdcc4b1e52baa6f43deed94dfaf648fd2022b90682c522510de955c",
+      "trial": "m6a_oracle_remaining_artifacts",
+      "source_snapshot": {
+        "path": "reports/m6a_oracle_remaining_artifacts/source/manifest.json",
+        "bytes": 944,
+        "sha256": "cb1d8852f1b395f2d76eb0122f85ab31e36df336a41a88209fd191bd6dae17f9"
+      },
+      "vehicle_physics": {
+        "path": "reports/m6a_oracle_remaining_artifacts/emergency_physics.json",
+        "bytes": 2285,
+        "sha256": "015a2717e986b8f908ee0a981ce8c1857dfdece21e750f473c9b4c887f166826"
+      },
+      "dynamics": {
+        "max_decel_raw": 26.601646615098907,
+        "jerk_peak_raw": 400.95638467826956,
+        "jerk_p95_moving": 254.805942040125,
+        "jerk_p95_all": 31.637265152916342,
+        "max_decel_250ms": 10.63725267107109,
+        "jerk_p95_250ms": 32.17593438824716,
+        "min_signed_speed": -0.0003254758657351846,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.15000000000000002,
+        "api_accel_vs_velocity_derivative_mae": 0.002222310002329286
+      },
+      "result": {
+        "path": "reports/m6a_oracle_remaining_artifacts/emergency_result.json",
+        "bytes": 5093,
+        "sha256": "ecbd19e39f82a3c754b175365cace9d1c222ebc653946b4c6be2ff36db3050aa"
+      },
+      "load_description": "isolated Oracle; no GPU inference",
+      "lead_motion": null,
+      "provenance_correction": "Original envelope default said hs_ego but snapshot state/obstacles are hs_world; measurement is native CARLA world. Offline metrics use explicit Y flip. Original trace retained; no numeric control or calibration change. Final schema smoke verifies corrected metadata.",
+      "worst_interval_diagnostic": {
+        "interval_ms": 51.97618715465069,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.017510727047920227,
+          "get_control_ms": 0.005695968866348267,
+          "snapshot_state_measurement_ms": 0.06940029561519623,
+          "submit_ms": 0.0176113098859787,
+          "ipc_poll_validate_resample_ms": 0.5431920289993286,
+          "road_query_ms": 0.613827258348465,
+          "actor_guard_ms": 0.0016298145055770874,
+          "controller_ms": 0.012133270502090454,
+          "apply_control_ms": 0.008488073945045471,
+          "world_tick_ms": 1.6288980841636658,
+          "log_buffer_ms": 0.05220435559749603,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.03299117088317871,
+          "get_control_ms": 0.034790486097335815,
+          "snapshot_state_measurement_ms": 0.24699047207832336,
+          "submit_ms": 0.05564838647842407,
+          "ipc_poll_validate_resample_ms": 1.4287587255239487,
+          "road_query_ms": 0.8958801627159119,
+          "actor_guard_ms": 0.002512708306312561,
+          "controller_ms": 0.013563781976699829,
+          "apply_control_ms": 0.00864081084728241,
+          "world_tick_ms": 1.9735153764486313,
+          "log_buffer_ms": 0.055029988288879395,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 0.983014702796936
+      }
+    },
+    {
+      "source": "Privileged",
+      "scene": "invalid_input",
+      "ticks": 160,
+      "route_completion": 0.06016076997383929,
+      "measured_travel_m": 3.8422570416861435,
+      "cross_track_m": {
+        "n": 160,
+        "p50": 0.08408648652493982,
+        "p95": 0.4518020140337722,
+        "p99": 0.4518020140337722,
+        "max": 0.4518020140337722
+      },
+      "terminal_speed_mps": 3.72114212456136e-05,
+      "collisions": [],
+      "lane_invasions": [],
+      "curb_contact_status": "Unknown_no_dedicated_curb_contact_reference",
+      "road_boundary_frames": 0,
+      "route_success_checks": {
+        "completion": false,
+        "no_collision": true,
+        "no_lane_invasion": true,
+        "no_road_boundary": true,
+        "cross_track_p95": true,
+        "no_expired_normal_control": true,
+        "stopped": true
+      },
+      "route_success": false,
+      "task_status": "Passed_limited_fault_stop",
+      "planner_outputs": 40,
+      "planner_failure_or_safety_rejection_count": 23,
+      "planner_failure_or_safety_rejection_rate": 0.575,
+      "planner_reasons": {
+        "worker_error": 23
+      },
+      "control_interval_ms": {
+        "n": 159,
+        "p50": 50.00603571534157,
+        "p95": 50.35203192383051,
+        "p99": 50.619039088487625,
+        "max": 51.88306421041489
+      },
+      "control_intervals_over_50ms": 81,
+      "control_intervals_over_55ms": 0,
+      "completion_deadline_misses": 0,
+      "sim_step_ms": {
+        "n": 159,
+        "p50": 50.00000074505806,
+        "p95": 50.00000074505806,
+        "p99": 50.00000074505806,
+        "max": 50.00000074505806
+      },
+      "mean_wall_hz": 19.999144165148,
+      "controller_timeout_count": 0,
+      "stale_plan_control_ticks": 0,
+      "stale_received_plan_count": 0,
+      "expired_normal_control": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 95
+      },
+      "degradation_episodes": 2,
+      "fault_to_brake_s": 0.20071299746632576,
+      "planner_ms": {
+        "p50": 0.02422090619802475,
+        "p95": 61.50217540562153,
+        "p99": 62.92776871472597,
+        "max": 63.59156593680382,
+        "n": 40
+      },
+      "plan_sim_age_s": {
+        "p50": 0.20000000298023224,
+        "p95": 0.2500000037252903,
+        "p99": 0.2500000037252903,
+        "max": 0.2500000037252903,
+        "n": 65
+      },
+      "plan_wall_age_s": {
+        "p50": 0.20072196051478386,
+        "p95": 0.2513325560837984,
+        "p99": 0.2514841161668301,
+        "max": 0.2516496144235134,
+        "n": 65
+      },
+      "stages_ms": {
+        "submit_ms": {
+          "p50": 0.01640431582927704,
+          "p95": 0.06980933248996733,
+          "p99": 0.125155188143253,
+          "max": 0.2958271652460098,
+          "n": 160
+        },
+        "snapshot_serialization_ms": {
+          "p50": 0.0,
+          "p95": 0.053681060671806335,
+          "p99": 0.07188525050878525,
+          "max": 0.12904219329357147,
+          "n": 160
+        },
+        "get_snapshot_ms": {
+          "p50": 0.013102777302265167,
+          "p95": 0.021098088473081582,
+          "p99": 0.04287758842110622,
+          "max": 0.07528997957706451,
+          "n": 160
+        },
+        "road_query_ms": {
+          "p50": 0.5791205912828445,
+          "p95": 0.850458163768053,
+          "p99": 0.9155306033790109,
+          "max": 1.068267971277237,
+          "n": 160
+        },
+        "apply_control_ms": {
+          "p50": 0.00939052551984787,
+          "p95": 0.028814468532800667,
+          "p99": 0.03397686406970023,
+          "max": 0.040085986256599426,
+          "n": 160
+        },
+        "ipc_poll_validate_resample_ms": {
+          "p50": 0.1410841941833496,
+          "p95": 0.4926367662847041,
+          "p99": 0.5432154797017573,
+          "max": 0.8155498653650284,
+          "n": 160
+        },
+        "controller_ms": {
+          "p50": 0.010042451322078705,
+          "p95": 0.17324676737189293,
+          "p99": 0.1964264921844005,
+          "max": 0.25572627782821655,
+          "n": 160
+        },
+        "get_control_ms": {
+          "p50": 0.0037495046854019165,
+          "p95": 0.00653145834803581,
+          "p99": 0.008064508438110348,
+          "max": 0.0107642263174057,
+          "n": 160
+        },
+        "log_disk_ms": {
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "n": 160
+        },
+        "actor_guard_ms": {
+          "p50": 0.0013494864106178284,
+          "p95": 0.00256570056080818,
+          "p99": 0.0035003013908863063,
+          "max": 0.003941357135772705,
+          "n": 160
+        },
+        "log_buffer_ms": {
+          "p50": 0.04451535642147064,
+          "p95": 0.07695220410823819,
+          "p99": 0.11957325041294091,
+          "max": 0.17044320702552795,
+          "n": 160
+        },
+        "snapshot_state_measurement_ms": {
+          "p50": 0.058181583881378174,
+          "p95": 0.08615693077445029,
+          "p99": 0.15082538127899153,
+          "max": 0.22986158728599548,
+          "n": 160
+        },
+        "world_tick_ms": {
+          "p50": 1.3667205348610878,
+          "p95": 1.8520123325288294,
+          "p99": 2.0055932924151416,
+          "max": 3.934023901820183,
+          "n": 160
+        }
+      },
+      "min_route_arc_gap_proxy_m": null,
+      "strict_20hz": false,
+      "raw": "reports/m6a_oracle_remaining_artifacts/invalid_input.jsonl",
+      "raw_sha256": "a6ce2935ed820a14eea4d69b706ec56e79f488e1e952fcac91223dc001d4e5a4",
+      "trial": "m6a_oracle_remaining_artifacts",
+      "source_snapshot": {
+        "path": "reports/m6a_oracle_remaining_artifacts/source/manifest.json",
+        "bytes": 944,
+        "sha256": "cb1d8852f1b395f2d76eb0122f85ab31e36df336a41a88209fd191bd6dae17f9"
+      },
+      "vehicle_physics": {
+        "path": "reports/m6a_oracle_remaining_artifacts/invalid_input_physics.json",
+        "bytes": 2285,
+        "sha256": "015a2717e986b8f908ee0a981ce8c1857dfdece21e750f473c9b4c887f166826"
+      },
+      "dynamics": {
+        "max_decel_raw": 26.634325860930296,
+        "jerk_peak_raw": 389.8076024920423,
+        "jerk_p95_moving": 247.56644705461488,
+        "jerk_p95_all": 35.982721944845615,
+        "max_decel_250ms": 10.752825894582243,
+        "jerk_p95_250ms": 28.959320357537546,
+        "min_signed_speed": -0.00032913174415628664,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.2,
+        "api_accel_vs_velocity_derivative_mae": 0.0021144376670719834
+      },
+      "result": {
+        "path": "reports/m6a_oracle_remaining_artifacts/invalid_input_result.json",
+        "bytes": 6588,
+        "sha256": "fdbd913643dad168d59afd407fde6c5261920df8d81c8f34c889babd7cac46bd"
+      },
+      "load_description": "isolated Oracle; no GPU inference",
+      "lead_motion": null,
+      "provenance_correction": "Original envelope default said hs_ego but snapshot state/obstacles are hs_world; measurement is native CARLA world. Offline metrics use explicit Y flip. Original trace retained; no numeric control or calibration change. Final schema smoke verifies corrected metadata.",
+      "worst_interval_diagnostic": {
+        "interval_ms": 51.88306421041489,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.007515773177146912,
+          "get_control_ms": 0.0024028122425079346,
+          "snapshot_state_measurement_ms": 0.04176050424575806,
+          "submit_ms": 0.010823830962181091,
+          "ipc_poll_validate_resample_ms": 0.041775405406951904,
+          "road_query_ms": 0.45314058661460876,
+          "actor_guard_ms": 0.0010896474123001099,
+          "controller_ms": 0.004936009645462036,
+          "apply_control_ms": 0.00574067234992981,
+          "world_tick_ms": 1.1955834925174713,
+          "log_buffer_ms": 0.040475279092788696,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.06359629333019257,
+          "get_control_ms": 0.0107642263174057,
+          "snapshot_state_measurement_ms": 0.22986158728599548,
+          "snapshot_serialization_ms": 0.12904219329357147,
+          "submit_ms": 0.18306821584701538,
+          "ipc_poll_validate_resample_ms": 0.20599365234375,
+          "road_query_ms": 1.068267971277237,
+          "actor_guard_ms": 0.002173706889152527,
+          "controller_ms": 0.006858259439468384,
+          "apply_control_ms": 0.007430091500282288,
+          "world_tick_ms": 3.934023901820183,
+          "log_buffer_ms": 0.11137127876281738,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 0.7914919406175613
+      }
+    },
+    {
+      "source": "Privileged",
+      "scene": "low_speed_stop",
+      "ticks": 1000,
+      "route_completion": 0.8039437218686037,
+      "measured_travel_m": 7.603507938486949,
+      "cross_track_m": {
+        "n": 1000,
+        "p50": 0.02684739628843108,
+        "p95": 0.3676982457052753,
+        "p99": 0.4518020140337722,
+        "max": 0.4518020140337722
+      },
+      "terminal_speed_mps": 3.747339944360468e-05,
+      "collisions": [],
+      "lane_invasions": [],
+      "curb_contact_status": "Unknown_no_dedicated_curb_contact_reference",
+      "road_boundary_frames": 0,
+      "route_success_checks": {
+        "completion": false,
+        "no_collision": true,
+        "no_lane_invasion": true,
+        "no_road_boundary": true,
+        "cross_track_p95": true,
+        "no_expired_normal_control": true,
+        "stopped": true
+      },
+      "route_success": false,
+      "task_status": "Partial",
+      "planner_outputs": 250,
+      "planner_failure_or_safety_rejection_count": 0,
+      "planner_failure_or_safety_rejection_rate": 0.0,
+      "planner_reasons": {},
+      "control_interval_ms": {
+        "n": 999,
+        "p50": 49.992118030786514,
+        "p95": 50.573715195059776,
+        "p99": 83.02555490285157,
+        "max": 130.78278861939907
+      },
+      "control_intervals_over_50ms": 492,
+      "control_intervals_over_55ms": 22,
+      "completion_deadline_misses": 17,
+      "sim_step_ms": {
+        "n": 999,
+        "p50": 50.00000074505806,
+        "p95": 50.00000074505806,
+        "p99": 50.00000074505806,
+        "max": 50.00000074505806
+      },
+      "mean_wall_hz": 19.946032268172004,
+      "controller_timeout_count": 0,
+      "stale_plan_control_ticks": 3,
+      "stale_received_plan_count": 0,
+      "expired_normal_control": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 4,
+        "plan_expired": 3
+      },
+      "degradation_episodes": 4,
+      "fault_to_brake_s": null,
+      "planner_ms": {
+        "p50": 39.088886231184006,
+        "p95": 55.13293100520963,
+        "p99": 111.86152305454011,
+        "max": 196.37680612504482,
+        "n": 250
+      },
+      "plan_sim_age_s": {
+        "p50": 0.15000000223517418,
+        "p95": 0.20000000298023224,
+        "p99": 0.2500000037252903,
+        "max": 0.3500000052154064,
+        "n": 996
+      },
+      "plan_wall_age_s": {
+        "p50": 0.1507670059800148,
+        "p95": 0.20160805294290185,
+        "p99": 0.30040483158081766,
+        "max": 0.38436172530055046,
+        "n": 996
+      },
+      "stages_ms": {
+        "submit_ms": {
+          "p50": 0.01661200076341629,
+          "p95": 0.07590511813759802,
+          "p99": 0.08933214470744133,
+          "max": 0.38485974073410034,
+          "n": 1000
+        },
+        "snapshot_serialization_ms": {
+          "p50": 0.0,
+          "p95": 0.0502861104905605,
+          "p99": 0.0620412640273571,
+          "max": 0.21879561245441437,
+          "n": 1000
+        },
+        "get_snapshot_ms": {
+          "p50": 0.012301839888095856,
+          "p95": 0.02258280292153357,
+          "p99": 0.028678495436906815,
+          "max": 0.07064826786518097,
+          "n": 1000
+        },
+        "road_query_ms": {
+          "p50": 0.5357386544346809,
+          "p95": 0.6847796030342577,
+          "p99": 0.873401015996933,
+          "max": 81.06217347085476,
+          "n": 1000
+        },
+        "apply_control_ms": {
+          "p50": 0.026545487344264984,
+          "p95": 0.04052193835377693,
+          "p99": 0.04848731681704519,
+          "max": 0.18300488591194153,
+          "n": 1000
+        },
+        "ipc_poll_validate_resample_ms": {
+          "p50": 0.4130927845835686,
+          "p95": 0.6105069071054458,
+          "p99": 0.7651813887059684,
+          "max": 91.02249518036842,
+          "n": 1000
+        },
+        "controller_ms": {
+          "p50": 0.15112943947315216,
+          "p95": 0.19793938845396036,
+          "p99": 0.28878213837742805,
+          "max": 0.5574729293584824,
+          "n": 1000
+        },
+        "get_control_ms": {
+          "p50": 0.0044889748096466064,
+          "p95": 0.008344743400812147,
+          "p99": 0.010255072265863417,
+          "max": 0.02228468656539917,
+          "n": 1000
+        },
+        "log_disk_ms": {
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "n": 1000
+        },
+        "actor_guard_ms": {
+          "p50": 0.0012759119272232056,
+          "p95": 0.0020027160644531246,
+          "p99": 0.0033698044717311855,
+          "max": 0.017842277884483337,
+          "n": 1000
+        },
+        "log_buffer_ms": {
+          "p50": 0.04592910408973694,
+          "p95": 0.07350891828536983,
+          "p99": 0.11654406785964964,
+          "max": 0.15969201922416687,
+          "n": 1000
+        },
+        "snapshot_state_measurement_ms": {
+          "p50": 0.06560329347848892,
+          "p95": 0.09810859337449074,
+          "p99": 0.12522079050540924,
+          "max": 0.46745873987674713,
+          "n": 1000
+        },
+        "world_tick_ms": {
+          "p50": 1.4480464160442352,
+          "p95": 1.8987292423844335,
+          "p99": 30.92348381876945,
+          "max": 99.08820129930973,
+          "n": 1000
+        }
+      },
+      "min_route_arc_gap_proxy_m": null,
+      "strict_20hz": false,
+      "raw": "reports/m6a_oracle_remaining_artifacts/low_speed_stop.jsonl",
+      "raw_sha256": "437ee43c7b651e74f7028da9ba6ff3fa6cefd40ba5c1910c3a4773f31923df8f",
+      "trial": "m6a_oracle_remaining_artifacts",
+      "source_snapshot": {
+        "path": "reports/m6a_oracle_remaining_artifacts/source/manifest.json",
+        "bytes": 944,
+        "sha256": "cb1d8852f1b395f2d76eb0122f85ab31e36df336a41a88209fd191bd6dae17f9"
+      },
+      "vehicle_physics": {
+        "path": "reports/m6a_oracle_remaining_artifacts/low_speed_stop_physics.json",
+        "bytes": 2285,
+        "sha256": "015a2717e986b8f908ee0a981ce8c1857dfdece21e750f473c9b4c887f166826"
+      },
+      "dynamics": {
+        "max_decel_raw": 22.99250804747624,
+        "jerk_peak_raw": 398.6000128125663,
+        "jerk_p95_moving": 117.99413328809422,
+        "jerk_p95_all": 14.368848521776583,
+        "max_decel_250ms": 7.751716984271306,
+        "jerk_p95_250ms": 5.1429300497643595,
+        "min_signed_speed": -0.02841465417580422,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 3.0,
+        "api_accel_vs_velocity_derivative_mae": 0.0003735845754955052
+      },
+      "result": {
+        "path": "reports/m6a_oracle_remaining_artifacts/low_speed_stop_result.json",
+        "bytes": 5121,
+        "sha256": "2a8f1eecffbe8316ea947a416a4a94bd65e0ff3e37d184d8cacc780cde4567b0"
+      },
+      "load_description": "isolated Oracle; no GPU inference",
+      "lead_motion": null,
+      "provenance_correction": "Original envelope default said hs_ego but snapshot state/obstacles are hs_world; measurement is native CARLA world. Offline metrics use explicit Y flip. Original trace retained; no numeric control or calibration change. Final schema smoke verifies corrected metadata.",
+      "load_correction": "Partially concurrent full test suite; not isolated. Clean repeat retained separately; do not discard either.",
+      "worst_interval_diagnostic": {
+        "interval_ms": 130.78278861939907,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.01060590147972107,
+          "get_control_ms": 0.0034831464290618896,
+          "snapshot_state_measurement_ms": 0.054271891713142395,
+          "submit_ms": 0.013887882232666016,
+          "ipc_poll_validate_resample_ms": 0.462602823972702,
+          "road_query_ms": 0.5200151354074478,
+          "actor_guard_ms": 0.0012051314115524292,
+          "controller_ms": 0.1447293907403946,
+          "apply_control_ms": 0.02147071063518524,
+          "world_tick_ms": 31.332295387983322,
+          "log_buffer_ms": 0.05806237459182739,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.010259449481964111,
+          "get_control_ms": 0.004287809133529663,
+          "snapshot_state_measurement_ms": 0.06556324660778046,
+          "submit_ms": 0.015795230865478516,
+          "ipc_poll_validate_resample_ms": 0.42060762643814087,
+          "road_query_ms": 81.06217347085476,
+          "actor_guard_ms": 0.008841976523399353,
+          "controller_ms": 0.35043805837631226,
+          "apply_control_ms": 0.0413060188293457,
+          "world_tick_ms": 2.185579389333725,
+          "log_buffer_ms": 0.07776729762554169,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 0.3263801336288452
+      }
+    },
+    {
+      "source": "Privileged",
+      "scene": "stalled_worker",
+      "ticks": 160,
+      "route_completion": 0.06541763414393802,
+      "measured_travel_m": 4.148010336339168,
+      "cross_track_m": {
+        "n": 160,
+        "p50": 0.07135617429575938,
+        "p95": 0.4518020140337722,
+        "p99": 0.4518020140337722,
+        "max": 0.4518020140337722
+      },
+      "terminal_speed_mps": 3.730093109498636e-05,
+      "collisions": [],
+      "lane_invasions": [],
+      "curb_contact_status": "Unknown_no_dedicated_curb_contact_reference",
+      "road_boundary_frames": 0,
+      "route_success_checks": {
+        "completion": false,
+        "no_collision": true,
+        "no_lane_invasion": true,
+        "no_road_boundary": true,
+        "cross_track_p95": true,
+        "no_expired_normal_control": true,
+        "stopped": true
+      },
+      "route_success": false,
+      "task_status": "Passed_limited_fault_stop",
+      "planner_outputs": 25,
+      "planner_failure_or_safety_rejection_count": 0,
+      "planner_failure_or_safety_rejection_rate": 0.0,
+      "planner_reasons": {},
+      "control_interval_ms": {
+        "n": 159,
+        "p50": 49.99753087759018,
+        "p95": 50.430759973824024,
+        "p99": 51.07745889574289,
+        "max": 51.217399537563324
+      },
+      "control_intervals_over_50ms": 79,
+      "control_intervals_over_55ms": 0,
+      "completion_deadline_misses": 0,
+      "sim_step_ms": {
+        "n": 159,
+        "p50": 50.00000074505806,
+        "p95": 50.00000074505806,
+        "p99": 50.00000074505806,
+        "max": 50.00000074505806
+      },
+      "mean_wall_hz": 19.99902045029796,
+      "controller_timeout_count": 0,
+      "stale_plan_control_ticks": 89,
+      "stale_received_plan_count": 8,
+      "expired_normal_control": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 4,
+        "plan_expired": 89
+      },
+      "degradation_episodes": 2,
+      "fault_to_brake_s": 0.3004653863608837,
+      "planner_ms": {
+        "p50": 60.625869780778885,
+        "p95": 559.0030256658792,
+        "p99": 560.9319787472486,
+        "max": 561.1732546240091,
+        "n": 25
+      },
+      "plan_sim_age_s": {
+        "p50": 0.875000013038516,
+        "p95": 4.362500065006316,
+        "p99": 4.672500069625675,
+        "max": 4.750000070780516,
+        "n": 156
+      },
+      "plan_wall_age_s": {
+        "p50": 0.8756791185587645,
+        "p95": 4.363079032395035,
+        "p99": 4.6734530063346025,
+        "max": 4.750902598723769,
+        "n": 156
+      },
+      "stages_ms": {
+        "submit_ms": {
+          "p50": 0.0278521329164505,
+          "p95": 0.06834305822849268,
+          "p99": 0.10208178311586379,
+          "max": 0.29371120035648346,
+          "n": 160
+        },
+        "snapshot_serialization_ms": {
+          "p50": 0.011680647730827332,
+          "p95": 0.048712175339460366,
+          "p99": 0.058753155171871164,
+          "max": 0.06503798067569733,
+          "n": 160
+        },
+        "get_snapshot_ms": {
+          "p50": 0.012619420886039734,
+          "p95": 0.020700693130493154,
+          "p99": 0.02385571599006652,
+          "max": 0.025628134608268738,
+          "n": 160
+        },
+        "road_query_ms": {
+          "p50": 0.5862582474946976,
+          "p95": 0.7584284059703348,
+          "p99": 0.8619082905352115,
+          "max": 0.9134765714406967,
+          "n": 160
+        },
+        "apply_control_ms": {
+          "p50": 0.007810071110725403,
+          "p95": 0.03672027960419653,
+          "p99": 0.06029279902577399,
+          "max": 0.12520886957645416,
+          "n": 160
+        },
+        "ipc_poll_validate_resample_ms": {
+          "p50": 0.10048970580101013,
+          "p95": 0.5850660614669323,
+          "p99": 0.7063211314380168,
+          "max": 0.8717328310012817,
+          "n": 160
+        },
+        "controller_ms": {
+          "p50": 0.012237578630447388,
+          "p95": 0.23784674704074857,
+          "p99": 0.4041942581534377,
+          "max": 0.5997736006975174,
+          "n": 160
+        },
+        "get_control_ms": {
+          "p50": 0.003986060619354248,
+          "p95": 0.007197540253400801,
+          "p99": 0.009861290454864498,
+          "max": 0.010747462511062622,
+          "n": 160
+        },
+        "log_disk_ms": {
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "n": 160
+        },
+        "actor_guard_ms": {
+          "p50": 0.0012842938303947449,
+          "p95": 0.001983065158128738,
+          "p99": 0.0027387961745262146,
+          "max": 0.006975606083869934,
+          "n": 160
+        },
+        "log_buffer_ms": {
+          "p50": 0.045933760702610016,
+          "p95": 0.07241554558277129,
+          "p99": 0.0883164070546627,
+          "max": 0.22165849804878235,
+          "n": 160
+        },
+        "snapshot_state_measurement_ms": {
+          "p50": 0.05929823964834213,
+          "p95": 0.08653039112687111,
+          "p99": 0.12418208643794058,
+          "max": 0.17413124442100525,
+          "n": 160
+        },
+        "world_tick_ms": {
+          "p50": 1.4407886192202568,
+          "p95": 1.773019321262836,
+          "p99": 1.8572274409234522,
+          "max": 4.051843658089638,
+          "n": 160
+        }
+      },
+      "min_route_arc_gap_proxy_m": null,
+      "strict_20hz": false,
+      "raw": "reports/m6a_oracle_remaining_artifacts/stalled_worker.jsonl",
+      "raw_sha256": "01d7fab7ee8920dc14d6830eb7d2a0fbae96c1e98c5d5df204a3e430a1303567",
+      "trial": "m6a_oracle_remaining_artifacts",
+      "source_snapshot": {
+        "path": "reports/m6a_oracle_remaining_artifacts/source/manifest.json",
+        "bytes": 944,
+        "sha256": "cb1d8852f1b395f2d76eb0122f85ab31e36df336a41a88209fd191bd6dae17f9"
+      },
+      "vehicle_physics": {
+        "path": "reports/m6a_oracle_remaining_artifacts/stalled_worker_physics.json",
+        "bytes": 2285,
+        "sha256": "015a2717e986b8f908ee0a981ce8c1857dfdece21e750f473c9b4c887f166826"
+      },
+      "dynamics": {
+        "max_decel_raw": 24.64747529868131,
+        "jerk_peak_raw": 435.94999392111896,
+        "jerk_p95_moving": 194.76583906217957,
+        "jerk_p95_all": 32.85471996789973,
+        "max_decel_250ms": 10.868478035603136,
+        "jerk_p95_250ms": 32.278141207417974,
+        "min_signed_speed": -0.0003247239823140249,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.25,
+        "api_accel_vs_velocity_derivative_mae": 0.002317791043864559
+      },
+      "result": {
+        "path": "reports/m6a_oracle_remaining_artifacts/stalled_worker_result.json",
+        "bytes": 5645,
+        "sha256": "110ae6c4cf8b34cc3b45ca7eb24a5b74d9f01ed095e407ceb015a13bf5d260f7"
+      },
+      "load_description": "isolated Oracle; no GPU inference",
+      "lead_motion": null,
+      "provenance_correction": "Original envelope default said hs_ego but snapshot state/obstacles are hs_world; measurement is native CARLA world. Offline metrics use explicit Y flip. Original trace retained; no numeric control or calibration change. Final schema smoke verifies corrected metadata.",
+      "worst_interval_diagnostic": {
+        "interval_ms": 51.217399537563324,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.015281140804290771,
+          "get_control_ms": 0.004371628165245056,
+          "snapshot_state_measurement_ms": 0.06381422281265259,
+          "submit_ms": 0.016106292605400085,
+          "ipc_poll_validate_resample_ms": 0.3758929669857025,
+          "road_query_ms": 0.5750078707933426,
+          "actor_guard_ms": 0.0014547258615493774,
+          "controller_ms": 0.14775805175304413,
+          "apply_control_ms": 0.028235837817192078,
+          "world_tick_ms": 1.598229631781578,
+          "log_buffer_ms": 0.04283897578716278,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.02125278115272522,
+          "get_control_ms": 0.006521120667457581,
+          "snapshot_state_measurement_ms": 0.07992424070835114,
+          "snapshot_serialization_ms": 0.056274235248565674,
+          "submit_ms": 0.07168948650360107,
+          "ipc_poll_validate_resample_ms": 0.5655325949192047,
+          "road_query_ms": 0.9134765714406967,
+          "actor_guard_ms": 0.0025723129510879517,
+          "controller_ms": 0.5997736006975174,
+          "apply_control_ms": 0.058807432651519775,
+          "world_tick_ms": 4.051843658089638,
+          "log_buffer_ms": 0.22165849804878235,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 0.45504607260227203
+      }
+    },
+    {
+      "source": "Privileged",
+      "scene": "static_obstacle",
+      "ticks": 600,
+      "route_completion": 0.2128741764856843,
+      "measured_travel_m": 12.699845973395476,
+      "cross_track_m": {
+        "n": 600,
+        "p50": 0.0049810986198758934,
+        "p95": 0.4518020140337722,
+        "p99": 0.4518020140337722,
+        "max": 0.4518020140337722
+      },
+      "terminal_speed_mps": 3.745403133616999e-05,
+      "collisions": [],
+      "lane_invasions": [],
+      "curb_contact_status": "Unknown_no_dedicated_curb_contact_reference",
+      "road_boundary_frames": 0,
+      "route_success_checks": {
+        "completion": false,
+        "no_collision": true,
+        "no_lane_invasion": true,
+        "no_road_boundary": true,
+        "cross_track_p95": true,
+        "no_expired_normal_control": true,
+        "stopped": true
+      },
+      "route_success": false,
+      "task_status": "Partial",
+      "planner_outputs": 150,
+      "planner_failure_or_safety_rejection_count": 0,
+      "planner_failure_or_safety_rejection_rate": 0.0,
+      "planner_reasons": {},
+      "control_interval_ms": {
+        "n": 599,
+        "p50": 50.00106245279312,
+        "p95": 50.46328008174896,
+        "p99": 50.87104357779026,
+        "max": 58.319104835391045
+      },
+      "control_intervals_over_50ms": 300,
+      "control_intervals_over_55ms": 1,
+      "completion_deadline_misses": 0,
+      "sim_step_ms": {
+        "n": 599,
+        "p50": 50.00000074505806,
+        "p95": 50.00000074505806,
+        "p99": 50.00000074505806,
+        "max": 50.00000074505806
+      },
+      "mean_wall_hz": 19.999818334143445,
+      "controller_timeout_count": 0,
+      "stale_plan_control_ticks": 0,
+      "stale_received_plan_count": 0,
+      "expired_normal_control": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 5
+      },
+      "degradation_episodes": 1,
+      "fault_to_brake_s": null,
+      "planner_ms": {
+        "p50": 42.395323514938354,
+        "p95": 54.975002817809575,
+        "p99": 61.86771133914589,
+        "max": 62.29055859148502,
+        "n": 150
+      },
+      "plan_sim_age_s": {
+        "p50": 0.15000000223517418,
+        "p95": 0.2500000037252903,
+        "p99": 0.2500000037252903,
+        "max": 0.2500000037252903,
+        "n": 595
+      },
+      "plan_wall_age_s": {
+        "p50": 0.15094071626663208,
+        "p95": 0.25087973196059465,
+        "p99": 0.2514762443676591,
+        "max": 0.25254214368760586,
+        "n": 595
+      },
+      "stages_ms": {
+        "submit_ms": {
+          "p50": 0.0167088583111763,
+          "p95": 0.08013974875211716,
+          "p99": 0.09844020009040831,
+          "max": 0.3497730940580368,
+          "n": 600
+        },
+        "snapshot_serialization_ms": {
+          "p50": 0.0,
+          "p95": 0.07067900151014327,
+          "p99": 0.10289944708347319,
+          "max": 0.15231221914291382,
+          "n": 600
+        },
+        "get_snapshot_ms": {
+          "p50": 0.012678094208240509,
+          "p95": 0.02241330221295356,
+          "p99": 0.030372459441423416,
+          "max": 0.03428012132644653,
+          "n": 600
+        },
+        "road_query_ms": {
+          "p50": 0.5646767094731331,
+          "p95": 0.7370721548795697,
+          "p99": 0.9185504354536532,
+          "max": 1.1551473289728165,
+          "n": 600
+        },
+        "apply_control_ms": {
+          "p50": 0.025105662643909454,
+          "p95": 0.03914171829819679,
+          "p99": 0.04689050838351249,
+          "max": 0.054877251386642456,
+          "n": 600
+        },
+        "ipc_poll_validate_resample_ms": {
+          "p50": 0.40951091796159744,
+          "p95": 0.5934448912739754,
+          "p99": 0.6923344917595387,
+          "max": 8.870329707860947,
+          "n": 600
+        },
+        "controller_ms": {
+          "p50": 0.14726538211107254,
+          "p95": 0.1902689225971698,
+          "p99": 0.26854924857616425,
+          "max": 0.3881603479385376,
+          "n": 600
+        },
+        "get_control_ms": {
+          "p50": 0.003973953425884247,
+          "p95": 0.007606111466884612,
+          "p99": 0.009754709899425507,
+          "max": 0.010251998901367188,
+          "n": 600
+        },
+        "log_disk_ms": {
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "n": 600
+        },
+        "actor_guard_ms": {
+          "p50": 0.06970763206481934,
+          "p95": 0.09509250521659848,
+          "p99": 0.13117263093590734,
+          "max": 0.2214387059211731,
+          "n": 600
+        },
+        "log_buffer_ms": {
+          "p50": 0.061831437051296234,
+          "p95": 0.09035663679242133,
+          "p99": 0.1346982456743717,
+          "max": 0.19790604710578918,
+          "n": 600
+        },
+        "snapshot_state_measurement_ms": {
+          "p50": 0.0527501106262207,
+          "p95": 0.08626738563179966,
+          "p99": 0.10283552110195159,
+          "max": 0.15307217836380005,
+          "n": 600
+        },
+        "world_tick_ms": {
+          "p50": 1.459839753806591,
+          "p95": 1.7980425618588922,
+          "p99": 1.948150396347046,
+          "max": 34.06820259988308,
+          "n": 600
+        }
+      },
+      "min_route_arc_gap_proxy_m": 3.401413496461917,
+      "strict_20hz": false,
+      "raw": "reports/m6a_oracle_remaining_artifacts/static_obstacle.jsonl",
+      "raw_sha256": "5f604638cb3a7490951556707bc4f6cf139a5aac9e105128561236c8b56bfda1",
+      "trial": "m6a_oracle_remaining_artifacts",
+      "source_snapshot": {
+        "path": "reports/m6a_oracle_remaining_artifacts/source/manifest.json",
+        "bytes": 944,
+        "sha256": "cb1d8852f1b395f2d76eb0122f85ab31e36df336a41a88209fd191bd6dae17f9"
+      },
+      "vehicle_physics": {
+        "path": "reports/m6a_oracle_remaining_artifacts/static_obstacle_physics.json",
+        "bytes": 2285,
+        "sha256": "015a2717e986b8f908ee0a981ce8c1857dfdece21e750f473c9b4c887f166826"
+      },
+      "dynamics": {
+        "max_decel_raw": 5.675189169875656,
+        "jerk_peak_raw": 163.0564860439802,
+        "jerk_p95_moving": 66.74451310463286,
+        "jerk_p95_all": 62.35299557533137,
+        "max_decel_250ms": 1.6154444723654386,
+        "jerk_p95_250ms": 12.585784104026033,
+        "min_signed_speed": -7.621294937707332e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 7.25,
+        "api_accel_vs_velocity_derivative_mae": 0.0005549379009470034
+      },
+      "result": {
+        "path": "reports/m6a_oracle_remaining_artifacts/static_obstacle_result.json",
+        "bytes": 5076,
+        "sha256": "49eeb7a5752dd46a5bbba99b6dabe5109e5bd24ebccbbc7b37c63600a21ac9c7"
+      },
+      "load_description": "isolated Oracle; no GPU inference",
+      "lead_motion": null,
+      "provenance_correction": "Original envelope default said hs_ego but snapshot state/obstacles are hs_world; measurement is native CARLA world. Offline metrics use explicit Y flip. Original trace retained; no numeric control or calibration change. Final schema smoke verifies corrected metadata.",
+      "worst_interval_diagnostic": {
+        "interval_ms": 58.319104835391045,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.017525628209114075,
+          "get_control_ms": 0.006528571248054504,
+          "snapshot_state_measurement_ms": 0.07339939475059509,
+          "submit_ms": 0.01932866871356964,
+          "ipc_poll_validate_resample_ms": 0.42890384793281555,
+          "road_query_ms": 0.6290692836046219,
+          "actor_guard_ms": 0.08254870772361755,
+          "controller_ms": 0.15871599316596985,
+          "apply_control_ms": 0.03201887011528015,
+          "world_tick_ms": 1.7441119998693466,
+          "log_buffer_ms": 0.07272511720657349,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.007996335625648499,
+          "get_control_ms": 0.003295019268989563,
+          "snapshot_state_measurement_ms": 0.047653913497924805,
+          "submit_ms": 0.014847144484519958,
+          "ipc_poll_validate_resample_ms": 8.870329707860947,
+          "road_query_ms": 0.7149204611778259,
+          "actor_guard_ms": 0.07815845310688019,
+          "controller_ms": 0.15356019139289856,
+          "apply_control_ms": 0.026227906346321106,
+          "world_tick_ms": 1.5706811100244522,
+          "log_buffer_ms": 0.06324425339698792,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 0.33143535256385803
+      }
+    },
+    {
+      "source": "Privileged",
+      "scene": "worker_crash",
+      "ticks": 160,
+      "route_completion": 0.05406611405406939,
+      "measured_travel_m": 3.489233948293301,
+      "cross_track_m": {
+        "n": 160,
+        "p50": 0.0827690539353739,
+        "p95": 0.4518020140337722,
+        "p99": 0.4518020140337722,
+        "max": 0.4518020140337722
+      },
+      "terminal_speed_mps": 3.7412654868000824e-05,
+      "collisions": [],
+      "lane_invasions": [],
+      "curb_contact_status": "Unknown_no_dedicated_curb_contact_reference",
+      "road_boundary_frames": 0,
+      "route_success_checks": {
+        "completion": false,
+        "no_collision": true,
+        "no_lane_invasion": true,
+        "no_road_boundary": true,
+        "cross_track_p95": true,
+        "no_expired_normal_control": true,
+        "stopped": true
+      },
+      "route_success": false,
+      "task_status": "Passed_limited_fault_stop",
+      "planner_outputs": 16,
+      "planner_failure_or_safety_rejection_count": 0,
+      "planner_failure_or_safety_rejection_rate": 0.0,
+      "planner_reasons": {},
+      "control_interval_ms": {
+        "n": 159,
+        "p50": 49.98286813497543,
+        "p95": 50.375562720000744,
+        "p99": 50.64988709986209,
+        "max": 52.23045125603676
+      },
+      "control_intervals_over_50ms": 72,
+      "control_intervals_over_55ms": 0,
+      "completion_deadline_misses": 0,
+      "sim_step_ms": {
+        "n": 159,
+        "p50": 50.00000074505806,
+        "p95": 50.00000074505806,
+        "p99": 50.00000074505806,
+        "max": 50.00000074505806
+      },
+      "mean_wall_hz": 19.998663594844203,
+      "controller_timeout_count": 0,
+      "stale_plan_control_ticks": 0,
+      "stale_received_plan_count": 0,
+      "expired_normal_control": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 4,
+        "worker_dead": 94
+      },
+      "degradation_episodes": 2,
+      "fault_to_brake_s": 0.05093121714890003,
+      "planner_ms": {
+        "p50": 56.08170107007027,
+        "p95": 61.587206553667784,
+        "p99": 62.31698086485267,
+        "max": 62.49942444264889,
+        "n": 16
+      },
+      "plan_sim_age_s": {
+        "p50": 0.20000000298023224,
+        "p95": 0.2500000037252903,
+        "p99": 0.2500000037252903,
+        "max": 0.2500000037252903,
+        "n": 62
+      },
+      "plan_wall_age_s": {
+        "p50": 0.20092276856303215,
+        "p95": 0.25115748811513183,
+        "p99": 0.25232509268447756,
+        "max": 0.2537212911993265,
+        "n": 62
+      },
+      "stages_ms": {
+        "submit_ms": {
+          "p50": 0.011071562767028809,
+          "p95": 0.05980823189020157,
+          "p99": 0.0680110044777393,
+          "max": 0.2655554562807083,
+          "n": 160
+        },
+        "snapshot_serialization_ms": {
+          "p50": 0.03375392407178879,
+          "p95": 0.05113538354635236,
+          "p99": 0.05730712786316871,
+          "max": 0.06392411887645721,
+          "n": 160
+        },
+        "get_snapshot_ms": {
+          "p50": 0.011057592928409576,
+          "p95": 0.01953756436705589,
+          "p99": 0.020469631999731064,
+          "max": 0.0211372971534729,
+          "n": 160
+        },
+        "road_query_ms": {
+          "p50": 0.5715750157833099,
+          "p95": 0.7235848344862461,
+          "p99": 0.7776380889117717,
+          "max": 0.8007306605577469,
+          "n": 160
+        },
+        "apply_control_ms": {
+          "p50": 0.007224269211292267,
+          "p95": 0.0272279605269432,
+          "p99": 0.032164771109819384,
+          "max": 0.04552491009235382,
+          "n": 160
+        },
+        "ipc_poll_validate_resample_ms": {
+          "p50": 0.0639958307147026,
+          "p95": 0.48868292942643166,
+          "p99": 0.6368090398609635,
+          "max": 0.6884969770908356,
+          "n": 160
+        },
+        "controller_ms": {
+          "p50": 0.008635222911834717,
+          "p95": 0.16350829973816872,
+          "p99": 0.2745119109749794,
+          "max": 0.28828904032707214,
+          "n": 160
+        },
+        "get_control_ms": {
+          "p50": 0.0035176053643226624,
+          "p95": 0.006388407200574874,
+          "p99": 0.006940439343452453,
+          "max": 0.007171183824539185,
+          "n": 160
+        },
+        "log_disk_ms": {
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "n": 160
+        },
+        "actor_guard_ms": {
+          "p50": 0.001194886863231659,
+          "p95": 0.0015108846127986908,
+          "p99": 0.0017987936735153192,
+          "max": 0.0019315630197525024,
+          "n": 160
+        },
+        "log_buffer_ms": {
+          "p50": 0.04146154969930649,
+          "p95": 0.05619088187813751,
+          "p99": 0.09842621162533759,
+          "max": 0.18973276019096375,
+          "n": 160
+        },
+        "snapshot_state_measurement_ms": {
+          "p50": 0.055295415222644806,
+          "p95": 0.07537482306361197,
+          "p99": 0.08371539413928986,
+          "max": 0.12461096048355103,
+          "n": 160
+        },
+        "world_tick_ms": {
+          "p50": 1.368689350783825,
+          "p95": 1.681485958397388,
+          "p99": 1.883925348520279,
+          "max": 3.552710637450218,
+          "n": 160
+        }
+      },
+      "min_route_arc_gap_proxy_m": null,
+      "strict_20hz": false,
+      "raw": "reports/m6a_oracle_remaining_artifacts/worker_crash.jsonl",
+      "raw_sha256": "d09e6ab367af7e6106e9c605e20b0a64430c4e871804daa2cf65489ddb730189",
+      "trial": "m6a_oracle_remaining_artifacts",
+      "source_snapshot": {
+        "path": "reports/m6a_oracle_remaining_artifacts/source/manifest.json",
+        "bytes": 944,
+        "sha256": "cb1d8852f1b395f2d76eb0122f85ab31e36df336a41a88209fd191bd6dae17f9"
+      },
+      "vehicle_physics": {
+        "path": "reports/m6a_oracle_remaining_artifacts/worker_crash_physics.json",
+        "bytes": 2285,
+        "sha256": "015a2717e986b8f908ee0a981ce8c1857dfdece21e750f473c9b4c887f166826"
+      },
+      "dynamics": {
+        "max_decel_raw": 25.548736735190666,
+        "jerk_peak_raw": 407.7689365458803,
+        "jerk_p95_moving": 256.8234669704035,
+        "jerk_p95_all": 50.88766468226156,
+        "max_decel_250ms": 10.558853674791125,
+        "jerk_p95_250ms": 30.86323712054764,
+        "min_signed_speed": -0.0003212658272348292,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.15000000000000002,
+        "api_accel_vs_velocity_derivative_mae": 0.002220435650236064
+      },
+      "result": {
+        "path": "reports/m6a_oracle_remaining_artifacts/worker_crash_result.json",
+        "bytes": 5120,
+        "sha256": "610ed8e7b0f7da2e661d6f07071dfae6cd6a53dc49522e8f3aa18955c56377e5"
+      },
+      "load_description": "isolated Oracle; no GPU inference",
+      "lead_motion": null,
+      "provenance_correction": "Original envelope default said hs_ego but snapshot state/obstacles are hs_world; measurement is native CARLA world. Offline metrics use explicit Y flip. Original trace retained; no numeric control or calibration change. Final schema smoke verifies corrected metadata.",
+      "worst_interval_diagnostic": {
+        "interval_ms": 52.23045125603676,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.013120472431182861,
+          "get_control_ms": 0.0036079436540603638,
+          "snapshot_state_measurement_ms": 0.07074885070323944,
+          "snapshot_serialization_ms": 0.04783459007740021,
+          "submit_ms": 0.06519071757793427,
+          "ipc_poll_validate_resample_ms": 0.5047079175710678,
+          "road_query_ms": 0.6544813513755798,
+          "actor_guard_ms": 0.0013988465070724487,
+          "controller_ms": 0.14032050967216492,
+          "apply_control_ms": 0.026592984795570374,
+          "world_tick_ms": 1.6001202166080475,
+          "log_buffer_ms": 0.04486367106437683,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.013792887330055237,
+          "get_control_ms": 0.0038854777812957764,
+          "snapshot_state_measurement_ms": 0.06472505629062653,
+          "submit_ms": 0.019079074263572693,
+          "ipc_poll_validate_resample_ms": 0.6884876638650894,
+          "road_query_ms": 0.6757434457540512,
+          "actor_guard_ms": 0.0015925616025924683,
+          "controller_ms": 0.17452985048294067,
+          "apply_control_ms": 0.036465004086494446,
+          "world_tick_ms": 1.6344226896762848,
+          "log_buffer_ms": 0.05401112139225006,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 0.3199037164449692
+      }
+    },
+    {
+      "source": "Privileged",
+      "scene": "emergency",
+      "ticks": 160,
+      "route_completion": 0.04847102916972601,
+      "measured_travel_m": 3.164394778293881,
+      "cross_track_m": {
+        "n": 160,
+        "p50": 0.09212862322447649,
+        "p95": 0.4518020140337722,
+        "p99": 0.4518020140337722,
+        "max": 0.4518020140337722
+      },
+      "terminal_speed_mps": 3.74964551035598e-05,
+      "collisions": [],
+      "lane_invasions": [],
+      "curb_contact_status": "Unknown_no_dedicated_curb_contact_reference",
+      "road_boundary_frames": 0,
+      "route_success_checks": {
+        "completion": false,
+        "no_collision": true,
+        "no_lane_invasion": true,
+        "no_road_boundary": true,
+        "cross_track_p95": true,
+        "no_expired_normal_control": true,
+        "stopped": true
+      },
+      "route_success": false,
+      "task_status": "Passed_limited_fault_stop",
+      "planner_outputs": 40,
+      "planner_failure_or_safety_rejection_count": 0,
+      "planner_failure_or_safety_rejection_rate": 0.0,
+      "planner_reasons": {},
+      "control_interval_ms": {
+        "n": 159,
+        "p50": 50.01697689294815,
+        "p95": 50.31266175210476,
+        "p99": 50.60510165989399,
+        "max": 51.96921527385712
+      },
+      "control_intervals_over_50ms": 81,
+      "control_intervals_over_55ms": 0,
+      "completion_deadline_misses": 0,
+      "sim_step_ms": {
+        "n": 159,
+        "p50": 50.00000074505806,
+        "p95": 50.00000074505806,
+        "p99": 50.00000074505806,
+        "max": 50.00000074505806
+      },
+      "mean_wall_hz": 19.99909770089293,
+      "controller_timeout_count": 0,
+      "stale_plan_control_ticks": 0,
+      "stale_received_plan_count": 0,
+      "expired_normal_control": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 4,
+        "emergency_command": 95
+      },
+      "degradation_episodes": 2,
+      "fault_to_brake_s": 0.0009087882936000824,
+      "planner_ms": {
+        "p50": 55.90270087122917,
+        "p95": 61.480451375246034,
+        "p99": 66.1360576748848,
+        "max": 66.71426817774773,
+        "n": 40
+      },
+      "plan_sim_age_s": {
+        "p50": 0.1750000026077032,
+        "p95": 0.2500000037252903,
+        "p99": 0.2500000037252903,
+        "max": 0.2500000037252903,
+        "n": 156
+      },
+      "plan_wall_age_s": {
+        "p50": 0.17592312674969435,
+        "p95": 0.25101705687120557,
+        "p99": 0.2512183404527605,
+        "max": 0.253479715436697,
+        "n": 156
+      },
+      "stages_ms": {
+        "ipc_poll_validate_resample_ms": {
+          "p50": 0.3857295960187912,
+          "p95": 0.5229350179433822,
+          "p99": 0.6173764541745181,
+          "max": 1.31228007376194,
+          "n": 160
+        },
+        "submit_ms": {
+          "p50": 0.017576850950717926,
+          "p95": 0.06359601393342018,
+          "p99": 0.07216997444629668,
+          "max": 0.348137691617012,
+          "n": 160
+        },
+        "log_buffer_ms": {
+          "p50": 0.04498567432165146,
+          "p95": 0.0628485344350338,
+          "p99": 0.09134948253631589,
+          "max": 0.10752305388450623,
+          "n": 160
+        },
+        "controller_ms": {
+          "p50": 0.009749084711074829,
+          "p95": 0.164155475795269,
+          "p99": 0.24419602006673782,
+          "max": 0.46717189252376556,
+          "n": 160
+        },
+        "get_control_ms": {
+          "p50": 0.004789792001247406,
+          "p95": 0.006992556154727934,
+          "p99": 0.0077678635716438285,
+          "max": 0.01191161572933197,
+          "n": 160
+        },
+        "snapshot_state_measurement_ms": {
+          "p50": 0.05793385207653046,
+          "p95": 0.07384279742836951,
+          "p99": 0.11494047939777348,
+          "max": 0.18120929598808289,
+          "n": 160
+        },
+        "get_snapshot_ms": {
+          "p50": 0.01102592796087265,
+          "p95": 0.016578286886215196,
+          "p99": 0.018793959170579903,
+          "max": 0.07123872637748718,
+          "n": 160
+        },
+        "snapshot_serialization_ms": {
+          "p50": 0.0,
+          "p95": 0.050014164298772805,
+          "p99": 0.06002524867653846,
+          "max": 0.06264820694923401,
+          "n": 160
+        },
+        "road_query_ms": {
+          "p50": 0.5291672423481941,
+          "p95": 0.5964357405900955,
+          "p99": 0.6995837390422819,
+          "max": 1.182137057185173,
+          "n": 160
+        },
+        "actor_guard_ms": {
+          "p50": 0.001325272023677826,
+          "p95": 0.0018425285816192625,
+          "p99": 0.002088379114866256,
+          "max": 0.0033695250749588013,
+          "n": 160
+        },
+        "world_tick_ms": {
+          "p50": 1.432846300303936,
+          "p95": 1.7443398945033548,
+          "p99": 3.671117816120371,
+          "max": 6.738822907209396,
+          "n": 160
+        },
+        "apply_control_ms": {
+          "p50": 0.008114613592624664,
+          "p95": 0.024725124239921566,
+          "p99": 0.02972736954689025,
+          "max": 0.10406412184238434,
+          "n": 160
+        },
+        "log_disk_ms": {
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "n": 160
+        }
+      },
+      "min_route_arc_gap_proxy_m": null,
+      "strict_20hz": false,
+      "raw": "reports/m6a_schema_smoke_artifacts/emergency.jsonl",
+      "raw_sha256": "f78ac51bc16e119672b4d21a8bb1151a60ac742115755d4763a93dae03f03ccf",
+      "trial": "m6a_schema_smoke_artifacts",
+      "source_snapshot": {
+        "path": "reports/m6a_schema_smoke_artifacts/source/manifest.json",
+        "bytes": 944,
+        "sha256": "540866cf06b48b18733ad00a8673cacb4a34738c2e9af2b9119483fc04d4fd57"
+      },
+      "vehicle_physics": {
+        "path": "reports/m6a_schema_smoke_artifacts/emergency_physics.json",
+        "bytes": 2285,
+        "sha256": "015a2717e986b8f908ee0a981ce8c1857dfdece21e750f473c9b4c887f166826"
+      },
+      "dynamics": {
+        "max_decel_raw": 24.741707098224925,
+        "jerk_peak_raw": 424.42532160901493,
+        "jerk_p95_moving": 216.32694751790174,
+        "jerk_p95_all": 32.79070557030919,
+        "max_decel_250ms": 10.694116102585935,
+        "jerk_p95_250ms": 30.819744632122333,
+        "min_signed_speed": -0.00032262702620329775,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.2,
+        "api_accel_vs_velocity_derivative_mae": 0.00202360665779083
+      },
+      "result": {
+        "path": "reports/m6a_schema_smoke_artifacts/emergency_result.json",
+        "bytes": 5116,
+        "sha256": "80044579ee53f5efba17492968805e4b43a2b75eb10b618593ed34267c2837e0"
+      },
+      "load_description": "Privileged final provenance-schema smoke; unchanged runtime",
+      "lead_motion": null,
+      "worst_interval_diagnostic": {
+        "interval_ms": 51.96921527385712,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.014552846550941467,
+          "get_control_ms": 0.007202848792076111,
+          "snapshot_state_measurement_ms": 0.0649280846118927,
+          "snapshot_serialization_ms": 0.0543985515832901,
+          "submit_ms": 0.06369687616825104,
+          "ipc_poll_validate_resample_ms": 0.5617029964923859,
+          "road_query_ms": 0.580446794629097,
+          "actor_guard_ms": 0.0013113021850585938,
+          "controller_ms": 0.16333162784576416,
+          "apply_control_ms": 0.026920810341835022,
+          "world_tick_ms": 1.6701910644769669,
+          "log_buffer_ms": 0.05342438817024231,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.07123872637748718,
+          "get_control_ms": 0.01191161572933197,
+          "snapshot_state_measurement_ms": 0.18120929598808289,
+          "submit_ms": 0.04567950963973999,
+          "ipc_poll_validate_resample_ms": 1.31228007376194,
+          "road_query_ms": 1.182137057185173,
+          "actor_guard_ms": 0.0033695250749588013,
+          "controller_ms": 0.46717189252376556,
+          "apply_control_ms": 0.10406412184238434,
+          "world_tick_ms": 6.239451467990875,
+          "log_buffer_ms": 0.07629208266735077,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 0.5818363279104233
+      }
+    }
+  ],
+  "total_trials": 13,
+  "total_ticks": 7286,
+  "collisions": 0,
+  "lane_invasions": 0,
+  "expired_normal_control": 0,
+  "runtime_contract_unchanged": true,
+  "visual_input_to_control": false,
+  "bypass_status": "NotImplemented_static_obstacle_trial_stops_and_fails_route_completion",
+  "reverse_bay_parking_status": "NotRun_NotImplemented",
+  "curb_contact_status": "Unknown_no_independent_curb_contact_reference",
+  "repetitions": "Normal routes one each; short stop repeated; lead actuator and scripted fixtures differ; not iid replicates",
+  "failed_batches": [
+    "runs/m6a_logs/oracle.log: missing dynamic_lead route alias after three completed routes"
+  ],
+  "evaluation_limits": [
+    "Traffic lights forced green; no red-light/rule validation.",
+    "Collision sensor events are contact events, not unique accident counts.",
+    "Road footprint checks are corners, not exact continuous mesh checks.",
+    "All trials use Oracle route/map/actor snapshots; no RGB safety conclusion.",
+    "Following completion intentionally limited by stopped lead; not a complete navigation pass.",
+    "No dedicated curb reference; no zero-curb claim."
+  ]
+}

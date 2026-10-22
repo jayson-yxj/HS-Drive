@@ -1,0 +1,943 @@
+{
+  "kind": "actual_CARLA_wall_clock_measurements",
+  "base": "349941e61abf706e462dce2f428149f9881be5ad",
+  "git_head": "349941e61abf706e462dce2f428149f9881be5ad",
+  "sources": {
+    "configs/m6a/protocol.json": "2c573c2fec13454a08cb7dca3da375eb4601ff3e4fae1293ecb888b483cf7a28",
+    "datasets/m6a_interfaces.py": "5c868fecfb0afc183db3d8c092f5e0c9d5af5de6f534dd1c948d98e5bed74304",
+    "diagnostics/m6a_oracle_metrics.py": "c2ef6f1800c67d38d9353b8cbce50d87feb18779a5a8cf9a00853f766cbf99bb",
+    "tests/test_m6a_system.py": "30cb4430d9f52e081046ea9564add485ca197d15c827695fdb64223a797cfe22",
+    "tools/m6a_common.py": "0d5a01ed6d5f62e474f366d331791b16917feef880dff5008abc3ef520ca92b5",
+    "tools/m6a_freeze.py": "6c3dcee0f6a27009e478f84867b9282e450fe9e74b5f14c1255b13a89c2acb4d",
+    "tools/m6a_oracle_drive.py": "b3e330234548b036125e48f86d878017b7758208e4b37c408b00f2a5f1c300ad",
+    "tools/m6a_report.py": "12078e70c0de2b303aed5858907c0cebd62db30cc8f9799fae414ab2b7f668f8"
+  },
+  "protocol_sha256": "2c573c2fec13454a08cb7dca3da375eb4601ff3e4fae1293ecb888b483cf7a28",
+  "visual_control": false,
+  "source": "Privileged",
+  "status": "Partial",
+  "shared_gpu_strict_20hz": "NotRevalidated_inherited_Partial",
+  "selected_periods_s": {
+    "planner": 0.2,
+    "controller": 0.05,
+    "max_plan_age": 0.35,
+    "safety_horizon": 6
+  },
+  "strict_20hz_passed": false,
+  "expired_normal_control": 0,
+  "trials": [
+    {
+      "trial": "m6a_follow_scripted_artifacts",
+      "scene": "dynamic_lead",
+      "ticks": 1000,
+      "mean_wall_hz": 19.999860463519877,
+      "control_interval_ms": {
+        "n": 999,
+        "p50": 49.995794892311096,
+        "p95": 50.438376516103745,
+        "p99": 50.89816510677338,
+        "max": 55.9746827930212
+      },
+      "control_intervals_over_50ms": 492,
+      "control_intervals_over_55ms": 1,
+      "completion_deadline_misses": 0,
+      "controller_timeout_count": 0,
+      "planner_ms": {
+        "p50": 47.91868478059769,
+        "p95": 54.32622674852609,
+        "p99": 57.378526199609034,
+        "max": 63.81724588572979,
+        "n": 250
+      },
+      "stale_plan_control_ticks": 0,
+      "stale_received_plan_count": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 4
+      },
+      "plan_wall_age_s": {
+        "p50": 0.15113020595163107,
+        "p95": 0.251304414588958,
+        "p99": 0.25173132717609403,
+        "max": 0.2521297689527273,
+        "n": 996
+      },
+      "worst_interval_diagnostic": {
+        "interval_ms": 55.9746827930212,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.029295682907104492,
+          "get_control_ms": 0.008318573236465454,
+          "snapshot_state_measurement_ms": 0.10209344327449799,
+          "submit_ms": 0.021420419216156006,
+          "ipc_poll_validate_resample_ms": 0.5249995738267899,
+          "road_query_ms": 0.7654298096895218,
+          "actor_guard_ms": 0.09381957352161407,
+          "controller_ms": 0.1574680209159851,
+          "apply_control_ms": 0.03841333091259003,
+          "world_tick_ms": 1.7266888171434402,
+          "log_buffer_ms": 0.08195638656616211,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.12323260307312012,
+          "get_control_ms": 0.02382323145866394,
+          "snapshot_state_measurement_ms": 0.3000795841217041,
+          "snapshot_serialization_ms": 0.3020353615283966,
+          "submit_ms": 0.31633488833904266,
+          "ipc_poll_validate_resample_ms": 2.5584157556295395,
+          "road_query_ms": 1.8630176782608032,
+          "actor_guard_ms": 0.5307383835315704,
+          "controller_ms": 0.5400236696004868,
+          "apply_control_ms": 0.048918649554252625,
+          "world_tick_ms": 1.9463784992694855,
+          "log_buffer_ms": 0.07499754428863525,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 1.6292277723550797
+      },
+      "load_description": "Privileged scripted lead at 1.5m/s then physical braking; no GPU inference or tests"
+    },
+    {
+      "trial": "m6a_low_speed_clean_artifacts",
+      "scene": "low_speed_stop",
+      "ticks": 1000,
+      "mean_wall_hz": 19.999863215726325,
+      "control_interval_ms": {
+        "n": 999,
+        "p50": 49.997929483652115,
+        "p95": 50.49598067998886,
+        "p99": 50.90345129370689,
+        "max": 95.6057645380497
+      },
+      "control_intervals_over_50ms": 493,
+      "control_intervals_over_55ms": 2,
+      "completion_deadline_misses": 1,
+      "controller_timeout_count": 0,
+      "planner_ms": {
+        "p50": 38.74354436993599,
+        "p95": 43.25658194720745,
+        "p99": 47.98270845785736,
+        "max": 92.7596241235733,
+        "n": 250
+      },
+      "stale_plan_control_ticks": 0,
+      "stale_received_plan_count": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 4
+      },
+      "plan_wall_age_s": {
+        "p50": 0.1502999048680067,
+        "p95": 0.2013901541940868,
+        "p99": 0.20176463443785905,
+        "max": 0.2511935606598854,
+        "n": 996
+      },
+      "worst_interval_diagnostic": {
+        "interval_ms": 95.6057645380497,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.010069459676742554,
+          "get_control_ms": 0.004859641194343567,
+          "snapshot_state_measurement_ms": 0.07770396769046783,
+          "snapshot_serialization_ms": 0.04410743713378906,
+          "submit_ms": 0.07776357233524323,
+          "ipc_poll_validate_resample_ms": 0.501580536365509,
+          "road_query_ms": 0.5939994007349014,
+          "actor_guard_ms": 0.0015981495380401611,
+          "controller_ms": 0.2187862992286682,
+          "apply_control_ms": 0.12499280273914337,
+          "world_tick_ms": 93.462398275733,
+          "log_buffer_ms": 0.11497922241687775,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.010896474123001099,
+          "get_control_ms": 0.008041039109230042,
+          "snapshot_state_measurement_ms": 0.0906083732843399,
+          "submit_ms": 0.015439465641975403,
+          "ipc_poll_validate_resample_ms": 0.6087478250265121,
+          "road_query_ms": 0.6733909249305725,
+          "actor_guard_ms": 0.001650303602218628,
+          "controller_ms": 0.18499977886676788,
+          "apply_control_ms": 0.032978132367134094,
+          "world_tick_ms": 1.3942290097475052,
+          "log_buffer_ms": 0.05819462239742279,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 45.89213617146015
+      },
+      "load_description": "Privileged; no GPU inference; no concurrent tests; PETR network download only"
+    },
+    {
+      "trial": "m6a_oracle_artifacts",
+      "scene": "junction_turn",
+      "ticks": 610,
+      "mean_wall_hz": 19.999734832466668,
+      "control_interval_ms": {
+        "n": 609,
+        "p50": 49.990031868219376,
+        "p95": 50.300952419638634,
+        "p99": 50.55961832404137,
+        "max": 55.492037907242775
+      },
+      "control_intervals_over_50ms": 288,
+      "control_intervals_over_55ms": 1,
+      "completion_deadline_misses": 0,
+      "controller_timeout_count": 0,
+      "planner_ms": {
+        "p50": 99.51145481318235,
+        "p95": 111.85064930468796,
+        "p99": 114.63668102398518,
+        "max": 116.2463128566742,
+        "n": 152
+      },
+      "stale_plan_control_ticks": 0,
+      "stale_received_plan_count": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 4
+      },
+      "plan_wall_age_s": {
+        "p50": 0.20138444751501083,
+        "p95": 0.30124596087262034,
+        "p99": 0.3014310530386865,
+        "max": 0.3016358930617571,
+        "n": 606
+      },
+      "worst_interval_diagnostic": {
+        "interval_ms": 55.492037907242775,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.012135133147239685,
+          "get_control_ms": 0.0040102750062942505,
+          "snapshot_state_measurement_ms": 0.05571916699409485,
+          "submit_ms": 0.011881813406944275,
+          "ipc_poll_validate_resample_ms": 0.30728429555892944,
+          "road_query_ms": 0.8460879325866699,
+          "actor_guard_ms": 0.001648440957069397,
+          "controller_ms": 0.15345588326454163,
+          "apply_control_ms": 0.02251937985420227,
+          "world_tick_ms": 1.3175662606954575,
+          "log_buffer_ms": 0.04864297807216644,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.06816722452640533,
+          "get_control_ms": 0.01603737473487854,
+          "snapshot_state_measurement_ms": 0.36518462002277374,
+          "snapshot_serialization_ms": 0.24245865643024445,
+          "submit_ms": 0.2348031848669052,
+          "ipc_poll_validate_resample_ms": 2.162523567676544,
+          "road_query_ms": 2.1880995482206345,
+          "actor_guard_ms": 0.002175569534301758,
+          "controller_ms": 0.3697667270898819,
+          "apply_control_ms": 0.04858151078224182,
+          "world_tick_ms": 1.5477519482374191,
+          "log_buffer_ms": 0.061415135860443115,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 1.527654007077217
+      },
+      "load_description": "isolated Oracle; no GPU inference"
+    },
+    {
+      "trial": "m6a_oracle_artifacts",
+      "scene": "mild_curve",
+      "ticks": 663,
+      "mean_wall_hz": 19.999860605216032,
+      "control_interval_ms": {
+        "n": 662,
+        "p50": 49.993546679615974,
+        "p95": 50.3647081553936,
+        "p99": 50.645447336137295,
+        "max": 53.31545136868954
+      },
+      "control_intervals_over_50ms": 319,
+      "control_intervals_over_55ms": 0,
+      "completion_deadline_misses": 0,
+      "controller_timeout_count": 0,
+      "planner_ms": {
+        "p50": 102.157237008214,
+        "p95": 115.74608273804188,
+        "p99": 117.59917121380568,
+        "max": 123.04230034351349,
+        "n": 166
+      },
+      "stale_plan_control_ticks": 0,
+      "stale_received_plan_count": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 5
+      },
+      "plan_wall_age_s": {
+        "p50": 0.2014717934653163,
+        "p95": 0.301394319627434,
+        "p99": 0.3016602909378707,
+        "max": 0.30204871483147144,
+        "n": 658
+      },
+      "worst_interval_diagnostic": {
+        "interval_ms": 53.31545136868954,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.016955658793449402,
+          "get_control_ms": 0.006822869181632996,
+          "snapshot_state_measurement_ms": 0.07111579179763794,
+          "submit_ms": 0.015927478671073914,
+          "ipc_poll_validate_resample_ms": 0.5112849175930023,
+          "road_query_ms": 0.9048059582710266,
+          "actor_guard_ms": 0.001473352313041687,
+          "controller_ms": 0.1732073724269867,
+          "apply_control_ms": 0.03077089786529541,
+          "world_tick_ms": 1.8435418605804443,
+          "log_buffer_ms": 0.0498257577419281,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.01864694058895111,
+          "get_control_ms": 0.006975606083869934,
+          "snapshot_state_measurement_ms": 0.08942931890487671,
+          "snapshot_serialization_ms": 0.04846788942813873,
+          "submit_ms": 0.06250850856304169,
+          "ipc_poll_validate_resample_ms": 0.39918534457683563,
+          "road_query_ms": 0.906873494386673,
+          "actor_guard_ms": 0.001383945345878601,
+          "controller_ms": 0.174839049577713,
+          "apply_control_ms": 0.03568828105926514,
+          "world_tick_ms": 2.0382683724164963,
+          "log_buffer_ms": 0.0681411474943161,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 3.7268176674842834
+      },
+      "load_description": "isolated Oracle; no GPU inference"
+    },
+    {
+      "trial": "m6a_oracle_artifacts",
+      "scene": "straight",
+      "ticks": 613,
+      "mean_wall_hz": 19.945745582895725,
+      "control_interval_ms": {
+        "n": 612,
+        "p50": 49.98759087175131,
+        "p95": 50.404435116797686,
+        "p99": 51.456023529171944,
+        "max": 133.1617683172226
+      },
+      "control_intervals_over_50ms": 294,
+      "control_intervals_over_55ms": 3,
+      "completion_deadline_misses": 1,
+      "controller_timeout_count": 0,
+      "planner_ms": {
+        "p50": 59.69545803964138,
+        "p95": 70.00963687896729,
+        "p99": 71.44739963114262,
+        "max": 73.82931932806969,
+        "n": 153
+      },
+      "stale_plan_control_ticks": 0,
+      "stale_received_plan_count": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 4
+      },
+      "plan_wall_age_s": {
+        "p50": 0.1511367093771696,
+        "p95": 0.2511588200926781,
+        "p99": 0.25189925633370874,
+        "max": 0.3346644565463066,
+        "n": 609
+      },
+      "worst_interval_diagnostic": {
+        "interval_ms": 133.1617683172226,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.007988885045051575,
+          "get_control_ms": 0.0034421682357788086,
+          "snapshot_state_measurement_ms": 0.046523287892341614,
+          "snapshot_serialization_ms": 0.033574178814888,
+          "submit_ms": 0.05525350570678711,
+          "ipc_poll_validate_resample_ms": 0.38549117743968964,
+          "road_query_ms": 0.44376589357852936,
+          "actor_guard_ms": 0.001648440957069397,
+          "controller_ms": 0.14517642557621002,
+          "apply_control_ms": 0.021556392312049866,
+          "world_tick_ms": 131.60151429474354,
+          "log_buffer_ms": 0.08571892976760864,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.0030957162380218506,
+          "get_control_ms": 0.004287809133529663,
+          "snapshot_state_measurement_ms": 0.06053410470485687,
+          "submit_ms": 0.014297664165496826,
+          "ipc_poll_validate_resample_ms": 0.4688818007707596,
+          "road_query_ms": 0.539509579539299,
+          "actor_guard_ms": 0.0013485550880432129,
+          "controller_ms": 0.14849193394184113,
+          "apply_control_ms": 0.027680769562721252,
+          "world_tick_ms": 6.801087409257889,
+          "log_buffer_ms": 0.0662039965391159,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 0.28868578374385834
+      },
+      "load_description": "isolated Oracle; no GPU inference"
+    },
+    {
+      "trial": "m6a_oracle_remaining_artifacts",
+      "scene": "dynamic_lead",
+      "ticks": 1000,
+      "mean_wall_hz": 19.999863320778076,
+      "control_interval_ms": {
+        "n": 999,
+        "p50": 49.98672381043434,
+        "p95": 50.47961138188839,
+        "p99": 51.162172220647335,
+        "max": 55.23989535868168
+      },
+      "control_intervals_over_50ms": 472,
+      "control_intervals_over_55ms": 1,
+      "completion_deadline_misses": 0,
+      "controller_timeout_count": 0,
+      "planner_ms": {
+        "p50": 42.458794079720974,
+        "p95": 50.97932452335954,
+        "p99": 53.45795933157205,
+        "max": 68.4430580586195,
+        "n": 250
+      },
+      "stale_plan_control_ticks": 0,
+      "stale_received_plan_count": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 4
+      },
+      "plan_wall_age_s": {
+        "p50": 0.15081513300538063,
+        "p95": 0.2016236772760749,
+        "p99": 0.2511315760202706,
+        "max": 0.25207907147705555,
+        "n": 996
+      },
+      "worst_interval_diagnostic": {
+        "interval_ms": 55.23989535868168,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.008668750524520874,
+          "get_control_ms": 0.0021364539861679077,
+          "snapshot_state_measurement_ms": 0.05801580846309662,
+          "snapshot_serialization_ms": 0.05223602056503296,
+          "submit_ms": 0.0737607479095459,
+          "ipc_poll_validate_resample_ms": 0.37268921732902527,
+          "road_query_ms": 0.5980338901281357,
+          "actor_guard_ms": 0.07301941514015198,
+          "controller_ms": 0.16663037240505219,
+          "apply_control_ms": 0.05093961954116821,
+          "world_tick_ms": 1.5870947390794754,
+          "log_buffer_ms": 0.0641699880361557,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.028856098651885986,
+          "get_control_ms": 0.0048335641622543335,
+          "snapshot_state_measurement_ms": 0.1919809728860855,
+          "submit_ms": 0.02985820174217224,
+          "ipc_poll_validate_resample_ms": 1.7636436969041824,
+          "road_query_ms": 1.0848566889762878,
+          "actor_guard_ms": 0.21387450397014618,
+          "controller_ms": 0.49016252160072327,
+          "apply_control_ms": 0.06199255585670471,
+          "world_tick_ms": 4.025181755423546,
+          "log_buffer_ms": 0.08565187454223633,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 3.0433591455221176
+      },
+      "load_description": "isolated Oracle; no GPU inference"
+    },
+    {
+      "trial": "m6a_oracle_remaining_artifacts",
+      "scene": "emergency",
+      "ticks": 160,
+      "mean_wall_hz": 19.999115608626152,
+      "control_interval_ms": {
+        "n": 159,
+        "p50": 49.9942172318697,
+        "p95": 50.41454881429672,
+        "p99": 50.796612799167626,
+        "max": 51.97618715465069
+      },
+      "control_intervals_over_50ms": 77,
+      "control_intervals_over_55ms": 0,
+      "completion_deadline_misses": 0,
+      "controller_timeout_count": 0,
+      "planner_ms": {
+        "p50": 55.10503426194191,
+        "p95": 61.77445566281676,
+        "p99": 62.95013785362244,
+        "max": 63.316239044070244,
+        "n": 40
+      },
+      "stale_plan_control_ticks": 0,
+      "stale_received_plan_count": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 4,
+        "emergency_command": 95
+      },
+      "plan_wall_age_s": {
+        "p50": 0.17688123043626547,
+        "p95": 0.2512565762735903,
+        "p99": 0.25154752656817436,
+        "max": 0.25193961523473263,
+        "n": 156
+      },
+      "worst_interval_diagnostic": {
+        "interval_ms": 51.97618715465069,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.017510727047920227,
+          "get_control_ms": 0.005695968866348267,
+          "snapshot_state_measurement_ms": 0.06940029561519623,
+          "submit_ms": 0.0176113098859787,
+          "ipc_poll_validate_resample_ms": 0.5431920289993286,
+          "road_query_ms": 0.613827258348465,
+          "actor_guard_ms": 0.0016298145055770874,
+          "controller_ms": 0.012133270502090454,
+          "apply_control_ms": 0.008488073945045471,
+          "world_tick_ms": 1.6288980841636658,
+          "log_buffer_ms": 0.05220435559749603,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.03299117088317871,
+          "get_control_ms": 0.034790486097335815,
+          "snapshot_state_measurement_ms": 0.24699047207832336,
+          "submit_ms": 0.05564838647842407,
+          "ipc_poll_validate_resample_ms": 1.4287587255239487,
+          "road_query_ms": 0.8958801627159119,
+          "actor_guard_ms": 0.002512708306312561,
+          "controller_ms": 0.013563781976699829,
+          "apply_control_ms": 0.00864081084728241,
+          "world_tick_ms": 1.9735153764486313,
+          "log_buffer_ms": 0.055029988288879395,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 0.983014702796936
+      },
+      "load_description": "isolated Oracle; no GPU inference"
+    },
+    {
+      "trial": "m6a_oracle_remaining_artifacts",
+      "scene": "invalid_input",
+      "ticks": 160,
+      "mean_wall_hz": 19.999144165148,
+      "control_interval_ms": {
+        "n": 159,
+        "p50": 50.00603571534157,
+        "p95": 50.35203192383051,
+        "p99": 50.619039088487625,
+        "max": 51.88306421041489
+      },
+      "control_intervals_over_50ms": 81,
+      "control_intervals_over_55ms": 0,
+      "completion_deadline_misses": 0,
+      "controller_timeout_count": 0,
+      "planner_ms": {
+        "p50": 0.02422090619802475,
+        "p95": 61.50217540562153,
+        "p99": 62.92776871472597,
+        "max": 63.59156593680382,
+        "n": 40
+      },
+      "stale_plan_control_ticks": 0,
+      "stale_received_plan_count": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 95
+      },
+      "plan_wall_age_s": {
+        "p50": 0.20072196051478386,
+        "p95": 0.2513325560837984,
+        "p99": 0.2514841161668301,
+        "max": 0.2516496144235134,
+        "n": 65
+      },
+      "worst_interval_diagnostic": {
+        "interval_ms": 51.88306421041489,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.007515773177146912,
+          "get_control_ms": 0.0024028122425079346,
+          "snapshot_state_measurement_ms": 0.04176050424575806,
+          "submit_ms": 0.010823830962181091,
+          "ipc_poll_validate_resample_ms": 0.041775405406951904,
+          "road_query_ms": 0.45314058661460876,
+          "actor_guard_ms": 0.0010896474123001099,
+          "controller_ms": 0.004936009645462036,
+          "apply_control_ms": 0.00574067234992981,
+          "world_tick_ms": 1.1955834925174713,
+          "log_buffer_ms": 0.040475279092788696,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.06359629333019257,
+          "get_control_ms": 0.0107642263174057,
+          "snapshot_state_measurement_ms": 0.22986158728599548,
+          "snapshot_serialization_ms": 0.12904219329357147,
+          "submit_ms": 0.18306821584701538,
+          "ipc_poll_validate_resample_ms": 0.20599365234375,
+          "road_query_ms": 1.068267971277237,
+          "actor_guard_ms": 0.002173706889152527,
+          "controller_ms": 0.006858259439468384,
+          "apply_control_ms": 0.007430091500282288,
+          "world_tick_ms": 3.934023901820183,
+          "log_buffer_ms": 0.11137127876281738,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 0.7914919406175613
+      },
+      "load_description": "isolated Oracle; no GPU inference"
+    },
+    {
+      "trial": "m6a_oracle_remaining_artifacts",
+      "scene": "low_speed_stop",
+      "ticks": 1000,
+      "mean_wall_hz": 19.946032268172004,
+      "control_interval_ms": {
+        "n": 999,
+        "p50": 49.992118030786514,
+        "p95": 50.573715195059776,
+        "p99": 83.02555490285157,
+        "max": 130.78278861939907
+      },
+      "control_intervals_over_50ms": 492,
+      "control_intervals_over_55ms": 22,
+      "completion_deadline_misses": 17,
+      "controller_timeout_count": 0,
+      "planner_ms": {
+        "p50": 39.088886231184006,
+        "p95": 55.13293100520963,
+        "p99": 111.86152305454011,
+        "max": 196.37680612504482,
+        "n": 250
+      },
+      "stale_plan_control_ticks": 3,
+      "stale_received_plan_count": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 4,
+        "plan_expired": 3
+      },
+      "plan_wall_age_s": {
+        "p50": 0.1507670059800148,
+        "p95": 0.20160805294290185,
+        "p99": 0.30040483158081766,
+        "max": 0.38436172530055046,
+        "n": 996
+      },
+      "worst_interval_diagnostic": {
+        "interval_ms": 130.78278861939907,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.01060590147972107,
+          "get_control_ms": 0.0034831464290618896,
+          "snapshot_state_measurement_ms": 0.054271891713142395,
+          "submit_ms": 0.013887882232666016,
+          "ipc_poll_validate_resample_ms": 0.462602823972702,
+          "road_query_ms": 0.5200151354074478,
+          "actor_guard_ms": 0.0012051314115524292,
+          "controller_ms": 0.1447293907403946,
+          "apply_control_ms": 0.02147071063518524,
+          "world_tick_ms": 31.332295387983322,
+          "log_buffer_ms": 0.05806237459182739,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.010259449481964111,
+          "get_control_ms": 0.004287809133529663,
+          "snapshot_state_measurement_ms": 0.06556324660778046,
+          "submit_ms": 0.015795230865478516,
+          "ipc_poll_validate_resample_ms": 0.42060762643814087,
+          "road_query_ms": 81.06217347085476,
+          "actor_guard_ms": 0.008841976523399353,
+          "controller_ms": 0.35043805837631226,
+          "apply_control_ms": 0.0413060188293457,
+          "world_tick_ms": 2.185579389333725,
+          "log_buffer_ms": 0.07776729762554169,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 0.3263801336288452
+      },
+      "load_description": "isolated Oracle; no GPU inference"
+    },
+    {
+      "trial": "m6a_oracle_remaining_artifacts",
+      "scene": "stalled_worker",
+      "ticks": 160,
+      "mean_wall_hz": 19.99902045029796,
+      "control_interval_ms": {
+        "n": 159,
+        "p50": 49.99753087759018,
+        "p95": 50.430759973824024,
+        "p99": 51.07745889574289,
+        "max": 51.217399537563324
+      },
+      "control_intervals_over_50ms": 79,
+      "control_intervals_over_55ms": 0,
+      "completion_deadline_misses": 0,
+      "controller_timeout_count": 0,
+      "planner_ms": {
+        "p50": 60.625869780778885,
+        "p95": 559.0030256658792,
+        "p99": 560.9319787472486,
+        "max": 561.1732546240091,
+        "n": 25
+      },
+      "stale_plan_control_ticks": 89,
+      "stale_received_plan_count": 8,
+      "degradation_ticks": {
+        "no_valid_plan": 4,
+        "plan_expired": 89
+      },
+      "plan_wall_age_s": {
+        "p50": 0.8756791185587645,
+        "p95": 4.363079032395035,
+        "p99": 4.6734530063346025,
+        "max": 4.750902598723769,
+        "n": 156
+      },
+      "worst_interval_diagnostic": {
+        "interval_ms": 51.217399537563324,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.015281140804290771,
+          "get_control_ms": 0.004371628165245056,
+          "snapshot_state_measurement_ms": 0.06381422281265259,
+          "submit_ms": 0.016106292605400085,
+          "ipc_poll_validate_resample_ms": 0.3758929669857025,
+          "road_query_ms": 0.5750078707933426,
+          "actor_guard_ms": 0.0014547258615493774,
+          "controller_ms": 0.14775805175304413,
+          "apply_control_ms": 0.028235837817192078,
+          "world_tick_ms": 1.598229631781578,
+          "log_buffer_ms": 0.04283897578716278,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.02125278115272522,
+          "get_control_ms": 0.006521120667457581,
+          "snapshot_state_measurement_ms": 0.07992424070835114,
+          "snapshot_serialization_ms": 0.056274235248565674,
+          "submit_ms": 0.07168948650360107,
+          "ipc_poll_validate_resample_ms": 0.5655325949192047,
+          "road_query_ms": 0.9134765714406967,
+          "actor_guard_ms": 0.0025723129510879517,
+          "controller_ms": 0.5997736006975174,
+          "apply_control_ms": 0.058807432651519775,
+          "world_tick_ms": 4.051843658089638,
+          "log_buffer_ms": 0.22165849804878235,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 0.45504607260227203
+      },
+      "load_description": "isolated Oracle; no GPU inference"
+    },
+    {
+      "trial": "m6a_oracle_remaining_artifacts",
+      "scene": "static_obstacle",
+      "ticks": 600,
+      "mean_wall_hz": 19.999818334143445,
+      "control_interval_ms": {
+        "n": 599,
+        "p50": 50.00106245279312,
+        "p95": 50.46328008174896,
+        "p99": 50.87104357779026,
+        "max": 58.319104835391045
+      },
+      "control_intervals_over_50ms": 300,
+      "control_intervals_over_55ms": 1,
+      "completion_deadline_misses": 0,
+      "controller_timeout_count": 0,
+      "planner_ms": {
+        "p50": 42.395323514938354,
+        "p95": 54.975002817809575,
+        "p99": 61.86771133914589,
+        "max": 62.29055859148502,
+        "n": 150
+      },
+      "stale_plan_control_ticks": 0,
+      "stale_received_plan_count": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 5
+      },
+      "plan_wall_age_s": {
+        "p50": 0.15094071626663208,
+        "p95": 0.25087973196059465,
+        "p99": 0.2514762443676591,
+        "max": 0.25254214368760586,
+        "n": 595
+      },
+      "worst_interval_diagnostic": {
+        "interval_ms": 58.319104835391045,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.017525628209114075,
+          "get_control_ms": 0.006528571248054504,
+          "snapshot_state_measurement_ms": 0.07339939475059509,
+          "submit_ms": 0.01932866871356964,
+          "ipc_poll_validate_resample_ms": 0.42890384793281555,
+          "road_query_ms": 0.6290692836046219,
+          "actor_guard_ms": 0.08254870772361755,
+          "controller_ms": 0.15871599316596985,
+          "apply_control_ms": 0.03201887011528015,
+          "world_tick_ms": 1.7441119998693466,
+          "log_buffer_ms": 0.07272511720657349,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.007996335625648499,
+          "get_control_ms": 0.003295019268989563,
+          "snapshot_state_measurement_ms": 0.047653913497924805,
+          "submit_ms": 0.014847144484519958,
+          "ipc_poll_validate_resample_ms": 8.870329707860947,
+          "road_query_ms": 0.7149204611778259,
+          "actor_guard_ms": 0.07815845310688019,
+          "controller_ms": 0.15356019139289856,
+          "apply_control_ms": 0.026227906346321106,
+          "world_tick_ms": 1.5706811100244522,
+          "log_buffer_ms": 0.06324425339698792,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 0.33143535256385803
+      },
+      "load_description": "isolated Oracle; no GPU inference"
+    },
+    {
+      "trial": "m6a_oracle_remaining_artifacts",
+      "scene": "worker_crash",
+      "ticks": 160,
+      "mean_wall_hz": 19.998663594844203,
+      "control_interval_ms": {
+        "n": 159,
+        "p50": 49.98286813497543,
+        "p95": 50.375562720000744,
+        "p99": 50.64988709986209,
+        "max": 52.23045125603676
+      },
+      "control_intervals_over_50ms": 72,
+      "control_intervals_over_55ms": 0,
+      "completion_deadline_misses": 0,
+      "controller_timeout_count": 0,
+      "planner_ms": {
+        "p50": 56.08170107007027,
+        "p95": 61.587206553667784,
+        "p99": 62.31698086485267,
+        "max": 62.49942444264889,
+        "n": 16
+      },
+      "stale_plan_control_ticks": 0,
+      "stale_received_plan_count": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 4,
+        "worker_dead": 94
+      },
+      "plan_wall_age_s": {
+        "p50": 0.20092276856303215,
+        "p95": 0.25115748811513183,
+        "p99": 0.25232509268447756,
+        "max": 0.2537212911993265,
+        "n": 62
+      },
+      "worst_interval_diagnostic": {
+        "interval_ms": 52.23045125603676,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.013120472431182861,
+          "get_control_ms": 0.0036079436540603638,
+          "snapshot_state_measurement_ms": 0.07074885070323944,
+          "snapshot_serialization_ms": 0.04783459007740021,
+          "submit_ms": 0.06519071757793427,
+          "ipc_poll_validate_resample_ms": 0.5047079175710678,
+          "road_query_ms": 0.6544813513755798,
+          "actor_guard_ms": 0.0013988465070724487,
+          "controller_ms": 0.14032050967216492,
+          "apply_control_ms": 0.026592984795570374,
+          "world_tick_ms": 1.6001202166080475,
+          "log_buffer_ms": 0.04486367106437683,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.013792887330055237,
+          "get_control_ms": 0.0038854777812957764,
+          "snapshot_state_measurement_ms": 0.06472505629062653,
+          "submit_ms": 0.019079074263572693,
+          "ipc_poll_validate_resample_ms": 0.6884876638650894,
+          "road_query_ms": 0.6757434457540512,
+          "actor_guard_ms": 0.0015925616025924683,
+          "controller_ms": 0.17452985048294067,
+          "apply_control_ms": 0.036465004086494446,
+          "world_tick_ms": 1.6344226896762848,
+          "log_buffer_ms": 0.05401112139225006,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 0.3199037164449692
+      },
+      "load_description": "isolated Oracle; no GPU inference"
+    },
+    {
+      "trial": "m6a_schema_smoke_artifacts",
+      "scene": "emergency",
+      "ticks": 160,
+      "mean_wall_hz": 19.99909770089293,
+      "control_interval_ms": {
+        "n": 159,
+        "p50": 50.01697689294815,
+        "p95": 50.31266175210476,
+        "p99": 50.60510165989399,
+        "max": 51.96921527385712
+      },
+      "control_intervals_over_50ms": 81,
+      "control_intervals_over_55ms": 0,
+      "completion_deadline_misses": 0,
+      "controller_timeout_count": 0,
+      "planner_ms": {
+        "p50": 55.90270087122917,
+        "p95": 61.480451375246034,
+        "p99": 66.1360576748848,
+        "max": 66.71426817774773,
+        "n": 40
+      },
+      "stale_plan_control_ticks": 0,
+      "stale_received_plan_count": 0,
+      "degradation_ticks": {
+        "no_valid_plan": 4,
+        "emergency_command": 95
+      },
+      "plan_wall_age_s": {
+        "p50": 0.17592312674969435,
+        "p95": 0.25101705687120557,
+        "p99": 0.2512183404527605,
+        "max": 0.253479715436697,
+        "n": 156
+      },
+      "worst_interval_diagnostic": {
+        "interval_ms": 51.96921527385712,
+        "previous_profile_ms": {
+          "get_snapshot_ms": 0.014552846550941467,
+          "get_control_ms": 0.007202848792076111,
+          "snapshot_state_measurement_ms": 0.0649280846118927,
+          "snapshot_serialization_ms": 0.0543985515832901,
+          "submit_ms": 0.06369687616825104,
+          "ipc_poll_validate_resample_ms": 0.5617029964923859,
+          "road_query_ms": 0.580446794629097,
+          "actor_guard_ms": 0.0013113021850585938,
+          "controller_ms": 0.16333162784576416,
+          "apply_control_ms": 0.026920810341835022,
+          "world_tick_ms": 1.6701910644769669,
+          "log_buffer_ms": 0.05342438817024231,
+          "log_disk_ms": 0.0
+        },
+        "current_profile_ms": {
+          "get_snapshot_ms": 0.07123872637748718,
+          "get_control_ms": 0.01191161572933197,
+          "snapshot_state_measurement_ms": 0.18120929598808289,
+          "submit_ms": 0.04567950963973999,
+          "ipc_poll_validate_resample_ms": 1.31228007376194,
+          "road_query_ms": 1.182137057185173,
+          "actor_guard_ms": 0.0033695250749588013,
+          "controller_ms": 0.46717189252376556,
+          "apply_control_ms": 0.10406412184238434,
+          "world_tick_ms": 6.239451467990875,
+          "log_buffer_ms": 0.07629208266735077,
+          "log_disk_ms": 0.0
+        },
+        "current_wakeup_lateness_ms": 0.5818363279104233
+      },
+      "load_description": "Privileged final provenance-schema smoke; unchanged runtime"
+    }
+  ],
+  "limits": "CPU scheduling and CARLA tick tails retained. No shared visual workload test this stage; short runs cannot certify hard realtime. Queue put timing excludes feeder serialization."
+}

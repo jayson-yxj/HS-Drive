@@ -1,0 +1,120 @@
+{
+  "kind": "mixed_actual_CARLA_server_offline_synthetic_explicitly_separated",
+  "base": "349941e61abf706e462dce2f428149f9881be5ad",
+  "git_head": "98ec2965c586dc46972214bdebdad1e2b1d2f30a",
+  "sources": {
+    "configs/m6a/protocol.json": "2c573c2fec13454a08cb7dca3da375eb4601ff3e4fae1293ecb888b483cf7a28",
+    "datasets/m6a_interfaces.py": "5c868fecfb0afc183db3d8c092f5e0c9d5af5de6f534dd1c948d98e5bed74304",
+    "diagnostics/m6a_oracle_metrics.py": "c2ef6f1800c67d38d9353b8cbce50d87feb18779a5a8cf9a00853f766cbf99bb",
+    "tests/test_m6a_system.py": "30cb4430d9f52e081046ea9564add485ca197d15c827695fdb64223a797cfe22",
+    "tools/m6a_common.py": "0d5a01ed6d5f62e474f366d331791b16917feef880dff5008abc3ef520ca92b5",
+    "tools/m6a_feasibility.py": "4bc937c4efdb417480b488ae07ecbbfe7b78e1f0282f2ce89cd8d3642eb4945a",
+    "tools/m6a_finalize.py": "18b0cc49702e85a547f8dc8cfb0d573abd672f0dc88589a3076b18339462a74e",
+    "tools/m6a_freeze.py": "6c3dcee0f6a27009e478f84867b9282e450fe9e74b5f14c1255b13a89c2acb4d",
+    "tools/m6a_oracle_drive.py": "b3e330234548b036125e48f86d878017b7758208e4b37c408b00f2a5f1c300ad",
+    "tools/m6a_report.py": "12078e70c0de2b303aed5858907c0cebd62db30cc8f9799fae414ab2b7f668f8"
+  },
+  "protocol_sha256": "2c573c2fec13454a08cb7dca3da375eb4601ff3e4fae1293ecb888b483cf7a28",
+  "visual_control": false,
+  "stage": "M6-A",
+  "status": "Partial",
+  "branch": "feat/m6a-system-baseline",
+  "states": {
+    "engineering_interfaces": "Passed_tested_scope",
+    "m5_closeout": "ResearchCompleted / CandidateNoGo / SafetyNotValidated",
+    "oracle_route_engineering": "Passed_three_limited_routes",
+    "oracle_failure_degradation": "Passed_tested_low_speed_fixtures",
+    "obstacle_bypass": "NotImplemented_route_trial_Partial",
+    "reverse_bay_parking": "NotRun",
+    "low_speed_stopping": "Partial",
+    "comfort": "Failed",
+    "oracle_driving_safety": "Partial",
+    "curb_contact_validation": "Unknown",
+    "runtime_strict_20hz": "Partial",
+    "shared_gpu_runtime": "NotRevalidated_inherited_Partial",
+    "petr_p0": "NoGo_AssetAccess",
+    "petr_dependency_compatibility": "NotValidated",
+    "petr_carla_adapter": "NotRun",
+    "petr_detection_benchmark": "NotRun",
+    "petr_adaptation_training": "NotRun",
+    "reliable_3d_perception": "Open",
+    "formal_occupancy": "Open",
+    "temporal_memory": "Open",
+    "sparse_query_quality": "Open",
+    "pure_visual_driving_safety": "SafetyNotValidated",
+    "visual_control": "Prohibited"
+  },
+  "decisions": {
+    "A": "Go_ResearchCloseout_CandidateNoGo_SafetyNotValidated",
+    "B": "Go_OracleEngineeringOnly_Partial",
+    "C": "NoGo_CurrentP0Attempt_AssetAccess_ArchitectureQualityUnknown"
+  },
+  "actual": {
+    "carla_runs": 13,
+    "control_ticks": 7286,
+    "travel_m": 268.26456960458347,
+    "training_steps": 0,
+    "visual_control": false,
+    "petr_forward_runs": 0,
+    "checkpoint_obtained": false
+  },
+  "tests": {
+    "full_passed": 333,
+    "full_skipped": 6,
+    "SDK_skip_cover_passed": 15,
+    "control_async_subset_passed": 18,
+    "module_passed": 9,
+    "counts_overlap": true,
+    "skip_reason": "GPU environment lacks CARLA; SDK subset covers those cases"
+  },
+  "evidence": [
+    {
+      "path": "reports/m6a_historical_integrity.json",
+      "bytes": 1195,
+      "sha256": "328ba7d4ce6ad93dca93be2053400df0c030a556fc4bdca6d23b9ecf66938edf"
+    },
+    {
+      "path": "reports/m6a_final_integrity.json",
+      "bytes": 1621,
+      "sha256": "e2a1758f1bf9ce13c53914df503adc58d6bc1959b63032c5cda3017c042866d0"
+    },
+    {
+      "path": "reports/m6a_oracle_planner_regression.json",
+      "bytes": 112950,
+      "sha256": "4111d49482a736b8b322c8019946e373b18d9adbe46ef36eba14a7ac71f66030"
+    },
+    {
+      "path": "reports/m6a_runtime_status.json",
+      "bytes": 34989,
+      "sha256": "a39ba35878d2e38d9ee94037154cfb5e4ba698f9bf41f19d09b6aeb7436101d3"
+    },
+    {
+      "path": "reports/m6a_perception_framework_feasibility.json",
+      "bytes": 10360,
+      "sha256": "92cc2894dd860f1084d378418cd756207db5dfec17d330347651612058e1196f"
+    },
+    {
+      "path": "reports/m6a_3d_detection_benchmark.json",
+      "bytes": 3452,
+      "sha256": "8edd2fb1a9f832e010bf1b1abea83bcc8e548947d1ef0981ca1998474d988a1f"
+    },
+    {
+      "path": "reports/m6a_release_tests.xml",
+      "bytes": 42779,
+      "sha256": "16bcbc20f0d590beeeb7b95267a9950faea3a252f5a242d5961324237a2899b6"
+    },
+    {
+      "path": "reports/m6a_carla_skips_covered.xml",
+      "bytes": 1925,
+      "sha256": "1c61f10fac9bcbfc341698604067a1cd5bf1bc4beae580edbbb0786fbf7bebfb"
+    },
+    {
+      "path": "reports/m6a_gpu_environment_smoke.json",
+      "bytes": 1372,
+      "sha256": "e2da0a1012e346fe5c8d5eb587af2f8bd2f337cd1b7f26cf149c37cfa837f42d"
+    }
+  ],
+  "default_control_and_models_unchanged": true,
+  "no_main_merge": true,
+  "no_gate_automatic_pass": true
+}
