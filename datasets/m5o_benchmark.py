@@ -29,6 +29,21 @@ def support(candidates, labels, seed):
         unique_candidates=len(records),
         groups=len({c["group"] for c, r in records}),
         by_class=dict(Counter(r["type"] for c, r in records)),
+        class_locations={
+            k: len({c["group"] for c, r in records if r["type"] == k})
+            for k in ["vehicle", "person", "cone"]
+        },
+        camera_locations={
+            k: len({c["group"] for c, r in records if c["camera"] == k})
+            for k in [
+                "front",
+                "front_left",
+                "front_right",
+                "rear",
+                "rear_left",
+                "rear_right",
+            ]
+        },
         by_camera=dict(Counter(c["camera"] for c, r in records)),
         by_distance=dict(
             Counter(

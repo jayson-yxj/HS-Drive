@@ -33,8 +33,14 @@ def main():
                     passed=s["unique_candidates"]
                     >= protocol["support"]["unique_candidates"][split]
                     and s["groups"] >= protocol["support"]["groups"][split],
-                    class_claims={c: n >= 20 for c, n in s["by_class"].items()},
-                    camera_claims={c: n >= 20 for c, n in s["by_camera"].items()},
+                    class_claims={
+                        c: s["by_class"].get(c, 0) >= 20 and n >= 3
+                        for c, n in s["class_locations"].items()
+                    },
+                    camera_claims={
+                        c: s["by_camera"].get(c, 0) >= 20 and n >= 3
+                        for c, n in s["camera_locations"].items()
+                    },
                     quality=quality(cc, sup, seed),
                 )
             )
