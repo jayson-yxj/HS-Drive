@@ -47,6 +47,7 @@ def main():
         fault_results=[dict(name=v['name'],**v['fault'],collisions=len(v['collisions']),expired_normal=v['runtime']['expired_normal_control']) for v in safety['faults']],
         safety=dict(collisions=safety['collisions'],illegal_solid_events=safety['illegal_solid_events'],expired_normal=safety['expired_normal_control'],
             body_outside_frames=sum(v['footprint_outside_frames'] for v in body['trials']),body_intersections=sum(len(v['OBB_intersections']) for v in body['trials']),
+            boundary_by_arm={arm:sum(v['footprint_outside_frames'] for v in body['trials'] if v['config']['arm']==arm and v['valid_D_contract']) for arm in ['A','C','D']},
             old_six_second_contract_unchanged=True,curb_mesh='Unknown'),
         runtime=dict(status='Partial_strict_20Hz_NotPassed',all_max_ms=runtime['all_trial_max']['runtime']['control_interval_ms']['max'],worst_name=runtime['all_trial_max']['name'],
             all_deadline_miss=runtime['all_deadline_miss'],all_over100=runtime['all_over100'],internal_UE_root_cause='Unknown_not_proven_by_client_and_proc_samples'),

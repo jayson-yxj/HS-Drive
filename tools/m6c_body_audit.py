@@ -61,7 +61,7 @@ def main():
         records.append(dict(name=path.parent.name,poses=len(selected_rows),road_queries=checks,
             footprint_outside_frames=len(violations),examples=violations[:10],OBB_intersections=collisions,
             min_XY_OBB_gap_m=min(gaps) if gaps else None,terminal_XY_OBB_gap_m=min(final_gaps) if final_gaps else None,
-            source='Privileged',result=asset(path)))
+            source='Privileged',config=result['config'],valid_D_contract=result['config']['arm']!='D' or path.parent.name.endswith('D2'),result=asset(path)))
         print(path.parent.name,len(selected_rows),len(violations),len(collisions),flush=True)
     write('reports/m6c_recorded_body_audit.json',dict(**provenance('offline_actual_CARLA_pose_OBB_and_OpenDRIVE_audit'),source='Privileged',
         map=asset('reports/m6b_execution_logs/Town03.xodr'),body=asset('reports/m6b_body_reference.json'),trials=records,
