@@ -13,7 +13,7 @@ from simulator.m48_motion import RouteController
 from simulator.m5a_async import validate_result
 from simulator.m47_motion import continuous_rectangles
 from simulator.m5b_runtime import snapshot_state_measurement
-from tools.run_oracle_closedloop import obs_of
+from simulator.m6b_obstacles import snapshot_obstacle as obs_of
 from tools.m47_stopping import traffic_lights
 from tools.m47_common import physics_dict,freeze_sources,jsonl,dynamics_metrics
 from tools.m6b_common import write,provenance,asset
@@ -32,7 +32,7 @@ def main():
     if a.tick_cpus:os.sched_setaffinity(0,set(map(int,a.tick_cpus.split(','))))
     root=Path('reports/m6b_trials')/a.name;root.mkdir(parents=True,exist_ok=False)
     write(root/'config.json',vars(a))
-    freeze_sources(root/'source',[__file__,'simulator/m6b_motion.py','simulator/m6b_worker.py','simulator/m6b_bypass.py','simulator/motion_oracle.py','simulator/m48_motion.py','simulator/m47_motion.py','simulator/m5a_async.py','configs/m6b/protocol.json'])
+    freeze_sources(root/'source',[__file__,'simulator/m6b_motion.py','simulator/m6b_worker.py','simulator/m6b_bypass.py','simulator/m6b_obstacles.py','simulator/motion_oracle.py','simulator/m48_motion.py','simulator/m47_motion.py','simulator/m5a_async.py','configs/m6b/protocol.json'])
     cfg=yaml.safe_load(Path('configs/carla.yaml').read_text());cfg.update(port=2100,map='Town03',seed=a.seed)
     with CarlaSession(cfg,load_map=True) as session:
         w=session.world;m=w.get_map();w.set_weather(carla.WeatherParameters.ClearNoon)
