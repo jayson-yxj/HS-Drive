@@ -22,7 +22,7 @@ def main():
             for f in Path('/proc').iterdir():
                 if not f.name.isdigit():continue
                 q=proc(f.name)
-                if q and any(v in q['cmdline'] for v in ['CarlaUE4-Linux-Shipping','tools.m6c_drive','multiprocessing.spawn']):ps.append(q)
+                if q and not any(v in q['cmdline'].split(' ',1)[0] for v in ['bash','sh']) and any(v in q['cmdline'] for v in ['CarlaUE4-Linux-Shipping','tools.m6c_drive','multiprocessing.spawn']):ps.append(q)
             records.append(dict(wall=start,loadavg=os.getloadavg(),processes=ps,source='Privileged_resource_observer'))
             time.sleep(max(0,.2-(time.perf_counter()-start)))
     finally:
