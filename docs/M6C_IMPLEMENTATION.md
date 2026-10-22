@@ -97,3 +97,23 @@ D最后间距≥3m、无碰撞不等于完整安全停车：还须前置可行�
 因该bug是在正式结果审查中发现，本批结果不能称作完全未经观察的盲测。即使修复后有改善，也只能作为工程回归，下一阶段需新的独立位置才能做候选升级。报告列出invalid D，与修复版分开，不删除其碰撞/长尾/失败总账。
 
 包络消融补充：初始B评估与C共用了“下坡coast不支持”的类别规则，因此并非完全无坡度B。`m6c_envelope_strict_ablation.json`另外执行严格B（忽略所有坡度，仅使用同一冻结实测表）；不改模型参数、C估计或Controller。严格B在Val的coast8/8低估（4次未停稳仍给有限估计），制动三类各4/8低估。C仅4/8 coast提供有限支持，这4次无低估；其余coast明确Unknown。原报告保留，主结论使用严格、同动作消融，不能把拒绝提供估计的样本计成停车成功。
+
+
+完整运行恢复命令（修复前结果存在时）：
+
+```bash
+.venv/bin/python -m tools.m6c_resume_matrix
+.venv/bin/python -m tools.m6c_preserved_regression
+.venv/bin/python -m tools.m6c_envelope_residuals
+.venv/bin/python -m tools.m6c_envelope_strict_ablation
+.venv/bin/python -m tools.m6c_body_audit
+.venv/bin/python -m tools.m6c_constraint_audit
+.venv/bin/python -m tools.m6c_runtime_resources
+.venv-gpu/bin/python -m tools.m6c_startup_plot
+.venv-gpu/bin/python -m tools.m6c_plot_runtime
+.venv/bin/python -m tools.m6c_verify_history
+.venv/bin/python -m tools.m6c_finalize
+.venv/bin/python -m tools.m6c_release_verify
+```
+
+恢复工具只跳过已有同名完整result，D合同修复版统一用D2后缀；若同名存在不完整目录，会拒绝覆盖，须保留失败后用新名字执行。正式过程命令与退出码见m6c_*execution.json，逐运行config/源码副本是最终复现依据。冻结历史SHA清单位于执行日志档案，原始数据本地路径及仓库内归档路径同时保留。
