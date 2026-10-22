@@ -58,6 +58,8 @@ def main():
             C_control_cycle='NoGo_strict_realtime',D_oracle_engineering='Go_targeted_fault_and_low_speed_identification_only_NoGo_complex_traffic_or_parking',
             E_visual_safety='Unchanged_No_visual_control'),
         not_run=['reverse_bay_parking','PETR_asset_retry_inference_or_training','shared_visual_GPU_runtime','complex_dynamic_avoidance','traffic_right_of_way'],
+        engineering_interfaces='Passed_contract_and_synthetic_checks_only',
+        perception_gates='Unchanged_ResearchCompleted_CandidateNoGo_SafetyNotValidated',
         original_defaults_unchanged=True,physics_changes=False,
         tests=load('reports/m6b_tests.json'),preservation=load('reports/m6b_preservation.json'))
     write('reports/m6b_acceptance.json',data)

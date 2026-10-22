@@ -51,6 +51,17 @@ def inspect(path):
         sub=[v['measurement'] for t,v in zip(times,r) if low<=t<high]
         if len(sub)>=8:phases[name]=dynamics_metrics(sub)
     primary['phase_dynamics']=phases
+    from simulator.motion_oracle import route_projection
+    path_geometry=np.array(load(root/'route.json')['selected']);lateral=[]
+    for row in r:
+        xy=np.array(row['measurement']['position'][:2])*[1,-1]
+        _,_,idx,_=route_projection(path_geometry,xy)
+        delta=path_geometry[idx+1,:2]-path_geometry[idx,:2]
+        offset=xy-path_geometry[idx,:2]
+        lateral.append(abs(float(delta[0]*offset[1]-delta[1]*offset[0]))/np.linalg.norm(delta))
+    primary['tangent_lateral_error_m']=quantiles(lateral)
+    primary['path_distance_limit']='Stored CTE is nearest finite polyline distance, includes longitudinal endpoint overshoot; tangent lateral error reported separately.'
+
     primary['normal_braking_vs_safety']={}
     for name,predicate in [('normal',lambda q:q['reason'] is None),('degraded',lambda q:q['reason'] is not None)]:
         # Measurement k+1 follows command k. Retain every raw difference.
@@ -59,6 +70,9 @@ def inspect(path):
         primary['normal_braking_vs_safety'][name]=dict(acc_samples=int(a_mask.sum()),
             max_decel_raw=float(max(0,-acc[a_mask].min())) if a_mask.any() else None,
             jerk_peak_raw=float(abs(jerk[j_mask]).max()) if j_mask.any() else None)
+    # This grouping is temporal only: asynchronous commands and actuator memory
+    # can make a later normal-control sample contain an earlier brake response.
+    primary['normal_braking_vs_safety_limit']='Temporal command-window grouping; not causal decomposition. Applied control snapshots and prior history retained.'
     primary['stop_hold_entries']=[q for q in trans if q['new']=='HOLD']
     primary['brake_release_and_gear_changes']=[dict(frame=r[k]['frame'],time=float(times[k]),speed=float(speed[k]),
         previous=r[k-1]['measurement']['applied'],current=r[k]['measurement']['applied']) for k in range(1,len(r))

@@ -66,3 +66,5 @@ runuser -u ubuntu -- bash scripts/start_carla.sh /root/gpufree-data/simulators/C
 ## 保留状态
 
 低速停车不是自动泊车。倒车入库、换挡规划、车位识别/边界、复杂交通/红灯路权未验证。PETR仍停在官方资产不可得，未执行模型能力判断。本轮不调整任何感知或安全门槛。
+
+注意旧 `route_projection` 返回的CTE实际是到有限polyline的最近距离，越过末端时包含纵向超调。报告另外计算投影段切向的横向误差，不把1m的末端超调描述成横向越界。正常路线的原polyline误差门槛仍保留。计划采样内部Jerk与跨规划重置、控制指令与实际运动是不同口径，不互相替代。
