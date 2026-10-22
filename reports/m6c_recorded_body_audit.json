@@ -1,0 +1,3887 @@
+{
+  "kind": "offline_actual_CARLA_pose_OBB_and_OpenDRIVE_audit",
+  "base": "f047ade6d7802205abadcde4363a57e0a1d00981",
+  "git_head": "20427270ee644b1848caa5b6e5539d1283ad328e",
+  "sources": {
+    "configs/m6c/envelope_model.json": "aa0f603f1f7659c04ebe405c5f02c4114332af20930898754fa017227450dc6c",
+    "configs/m6c/protocol.json": "5a9c6ad23201602616b0954e6d547932a650101c4f3e773f642ddfa4765dc6ad",
+    "simulator/m6c_envelope.py": "16775977d6cd7ec8368edc88819da1fa71e787dc2ebd79810c6a935c1f41b2e3",
+    "simulator/m6c_geometry.py": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+    "simulator/m6c_motion.py": "ebe4b50da93b4bfeccd5b67c8c38b9fd403bb66b20cec0339c0cda9917069320",
+    "simulator/m6c_worker.py": "66287ce4469f4642bb4a2e3da445db61763b78559a3425e31103061a8192e56e",
+    "tests/test_m6c_stopping.py": "4996670638d8a98af6f20d5daa5c57baf0c37718b3cd61610ffe83c5d41b0aa1",
+    "tools/m6c_analyze.py": "b8170c136de653e5f9b1942d310668a2c135619ad9196bf869a84c8136b465e7",
+    "tools/m6c_body_audit.py": "3912bb0b1529d99d6f44306a8fae5f67b303db44d2cfbc563d58c531eebb0abf",
+    "tools/m6c_campaign.py": "6f1134c592104366e5a4e7674ff5ac031d4ec26cd39a84bf61b02d20f4a4fe07",
+    "tools/m6c_common.py": "2466aabe330c599e4ccf82ae4bdcd9ce72429df254558f2d3822cceea3b20672",
+    "tools/m6c_constraint_audit.py": "5db967d96400d75ac81d61c45ea9a9af78d0ff520a9936c96e55de297b03acea",
+    "tools/m6c_drive.py": "d69690c1b5d9b25cc6ae9db6f9b4a413d4b16792cfc3671c9faf980f7e58291b",
+    "tools/m6c_envelope_quality.py": "3fb077c87c9f72bc549915836266ed95ff3da172e126d2502606476c7c2ca136",
+    "tools/m6c_envelope_residuals.py": "8616a277e1dc7c0e9401c585540d4b95ead40bfb81d1d5ceab9c88f588217801",
+    "tools/m6c_envelope_strict_ablation.py": "2f6fe64b4e54132a00f4c0ca32cef91b3b9b7bd4128e847a41ac66fef616e347",
+    "tools/m6c_failure_audit.py": "a3fd97c45eb561e2929136715f9163854f86a47f008e68d32b7f1d5f7d7506f4",
+    "tools/m6c_finalize.py": "077113c78d88798cdee37b64d0395a59c028915fa15a69801558c09be28742ac",
+    "tools/m6c_fit_envelope.py": "7b71e581d2bad02581d039ec6af23f7d8763c2653da1fdafb7cf65f918321cdb",
+    "tools/m6c_method_support.py": "936f961721476c1dd5001a73b757a806530ad2bd8e19116906c937423750b8ca",
+    "tools/m6c_plot_runtime.py": "9274de8cb84df915d49b9c33ea060cbbd9b8c4c0c02b89ba563f7327fd4aefa7",
+    "tools/m6c_preserved_regression.py": "e45e39e9928f523d0b45312e7e4662c48c22da7962c1dde10d2aac7006917356",
+    "tools/m6c_probe.py": "f043ea5847c55755fbcf4d01b9916fb6fc2140b70496d91b41237b6d9aa94bf1",
+    "tools/m6c_probe_analysis.py": "57c67c853e258605b79c7007669ae425475f5a49d828bd2826320c82c421e9b2",
+    "tools/m6c_release_verify.py": "52583dd0c559b1fcff417033a7b91fcdd75bdee73beecf64d3cf5699b6a75e50",
+    "tools/m6c_resource_monitor.py": "4b9e46729d22d7a15a9a44abab21db7b6cb1ebefd1b6cc1bccdd6d284f6c378d",
+    "tools/m6c_resume_matrix.py": "07eb10e5963d567250e9544eb69729ebfab63319ca7006d2a8c8d61e91c8dfe9",
+    "tools/m6c_runtime_resources.py": "f5884c6558ecf2c63abbdb4bc54ba0c66ea607f392ca61dfe06691af62c5b647",
+    "tools/m6c_startup_plot.py": "d1f9393409c9961c0385a7c6f61ff447069a7709317ab53f0159bd49a86963f6",
+    "tools/m6c_summarize_counts.py": "11817cfb7cdaaa7450810e42f6ddffaf2e4f21ee57f9fff747c573b00e57b5f6",
+    "tools/m6c_verify_history.py": "abf033ec52219f90b779ffdc7e9cecee6247d596ab83194a1a2d991e5db794e0"
+  },
+  "protocol_sha256": "5a9c6ad23201602616b0954e6d547932a650101c4f3e773f642ddfa4765dc6ad",
+  "visual_control": false,
+  "source": "Privileged",
+  "map": {
+    "path": "reports/m6b_execution_logs/Town03.xodr",
+    "bytes": 4589872,
+    "sha256": "abf177bcd9b66cfefb7ac4919f6456815f1384f4229f1343c8a6a90bbb7713c9"
+  },
+  "body": {
+    "path": "reports/m6b_body_reference.json",
+    "bytes": 2109,
+    "sha256": "37ff7a004daf097a8f84365540f0279b8bb6b97d7cf328a7b7274af413380679"
+  },
+  "trials": [
+    {
+      "name": "final_blocked_p126_v1_s101_C",
+      "poses": 131,
+      "road_queries": 51352,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 0.22286675557667812,
+      "terminal_XY_OBB_gap_m": 0.22286675557667812,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_blocked_p126_v1_s101_C/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_blocked_p126_v1_s101_C",
+        "arm": "C",
+        "scene": "blocked",
+        "spawn": 126,
+        "length": 100.0,
+        "speed": 1.0,
+        "seed": 101,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_blocked_p126_v1_s101_C/result.json",
+        "bytes": 6836,
+        "sha256": "cff17dd57a6e42651a26c2680ff729077192b9e211aa5980de3fef64432cf767"
+      }
+    },
+    {
+      "name": "final_blocked_p126_v1_s101_D",
+      "poses": 120,
+      "road_queries": 47040,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.442290814211196,
+      "terminal_XY_OBB_gap_m": 3.442290814211196,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_blocked_p126_v1_s101_D/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_blocked_p126_v1_s101_D",
+        "arm": "D",
+        "scene": "blocked",
+        "spawn": 126,
+        "length": 100.0,
+        "speed": 1.0,
+        "seed": 101,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": false,
+      "result": {
+        "path": "reports/m6c_trials/final_blocked_p126_v1_s101_D/result.json",
+        "bytes": 6954,
+        "sha256": "7e460f0cfae0ea90bdc8bdf8a6de4e34af5eba564b294ac8cf9e59fed8b4d6ad"
+      }
+    },
+    {
+      "name": "final_blocked_p126_v1_s101_D2",
+      "poses": 114,
+      "road_queries": 44688,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.2130736737391,
+      "terminal_XY_OBB_gap_m": 3.2130736737391,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_blocked_p126_v1_s101_D2/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_blocked_p126_v1_s101_D2",
+        "arm": "D",
+        "scene": "blocked",
+        "spawn": 126,
+        "length": 100.0,
+        "speed": 1.0,
+        "seed": 101,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_blocked_p126_v1_s101_D2/result.json",
+        "bytes": 7366,
+        "sha256": "ce9c64d3a8c6535d56d6a5c4eb702eff75cfacdb59433816ba8cefd0b5cd8f0a"
+      }
+    },
+    {
+      "name": "final_blocked_p126_v1_s102_C",
+      "poses": 132,
+      "road_queries": 51744,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 0.22775866832325306,
+      "terminal_XY_OBB_gap_m": 0.22775866832325306,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_blocked_p126_v1_s102_C/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_blocked_p126_v1_s102_C",
+        "arm": "C",
+        "scene": "blocked",
+        "spawn": 126,
+        "length": 100.0,
+        "speed": 1.0,
+        "seed": 102,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_blocked_p126_v1_s102_C/result.json",
+        "bytes": 7896,
+        "sha256": "e9c481aa315f868415630bb44997ded99cc35c797bd32d7df9fdc8c0e96f322a"
+      }
+    },
+    {
+      "name": "final_blocked_p126_v1_s102_D2",
+      "poses": 120,
+      "road_queries": 47040,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.223101873506414,
+      "terminal_XY_OBB_gap_m": 3.223101873506414,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_blocked_p126_v1_s102_D2/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_blocked_p126_v1_s102_D2",
+        "arm": "D",
+        "scene": "blocked",
+        "spawn": 126,
+        "length": 100.0,
+        "speed": 1.0,
+        "seed": 102,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_blocked_p126_v1_s102_D2/result.json",
+        "bytes": 7885,
+        "sha256": "05d3e12520a61eb7c7432cb4d13857133f3d45a54d5eb047422b4e58166108f1"
+      }
+    },
+    {
+      "name": "final_blocked_p126_v2.5_s101_C",
+      "poses": 125,
+      "road_queries": 49000,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 0.24195150333186938,
+      "terminal_XY_OBB_gap_m": 0.24195150333186938,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_blocked_p126_v2.5_s101_C/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_blocked_p126_v2.5_s101_C",
+        "arm": "C",
+        "scene": "blocked",
+        "spawn": 126,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_blocked_p126_v2.5_s101_C/result.json",
+        "bytes": 7072,
+        "sha256": "a4ba42799132add2c04e4fd26dfc225b63462c52ef966b301e0a6a5246ec5f2b"
+      }
+    },
+    {
+      "name": "final_blocked_p126_v2.5_s101_D",
+      "poses": 113,
+      "road_queries": 44296,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.2287079414778668,
+      "terminal_XY_OBB_gap_m": 3.2287079414778668,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_blocked_p126_v2.5_s101_D/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_blocked_p126_v2.5_s101_D",
+        "arm": "D",
+        "scene": "blocked",
+        "spawn": 126,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": false,
+      "result": {
+        "path": "reports/m6c_trials/final_blocked_p126_v2.5_s101_D/result.json",
+        "bytes": 7059,
+        "sha256": "d92d8d01f8c93b5dd2723173e0b822452e1b9ebe521f3864994ed636b3c56568"
+      }
+    },
+    {
+      "name": "final_blocked_p126_v2.5_s101_D2",
+      "poses": 114,
+      "road_queries": 44688,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.215391539156803,
+      "terminal_XY_OBB_gap_m": 3.215391539156803,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_blocked_p126_v2.5_s101_D2/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_blocked_p126_v2.5_s101_D2",
+        "arm": "D",
+        "scene": "blocked",
+        "spawn": 126,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_blocked_p126_v2.5_s101_D2/result.json",
+        "bytes": 7384,
+        "sha256": "b8c5b01f1d40e5433eec4e3fcc9b5c743a1abda746efbaf301e1fb35c78ee278"
+      }
+    },
+    {
+      "name": "final_blocked_p126_v2.5_s102_C",
+      "poses": 125,
+      "road_queries": 49000,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 0.22927805080968586,
+      "terminal_XY_OBB_gap_m": 0.22927805080968586,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_blocked_p126_v2.5_s102_C/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_blocked_p126_v2.5_s102_C",
+        "arm": "C",
+        "scene": "blocked",
+        "spawn": 126,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_blocked_p126_v2.5_s102_C/result.json",
+        "bytes": 7919,
+        "sha256": "8bbc9186b2f75b5fb0f85f18c2f217507cf59bff347d0fdfe3d058cfa61639aa"
+      }
+    },
+    {
+      "name": "final_blocked_p126_v2.5_s102_D2",
+      "poses": 114,
+      "road_queries": 44688,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.227044031962238,
+      "terminal_XY_OBB_gap_m": 3.227044031962238,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_blocked_p126_v2.5_s102_D2/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_blocked_p126_v2.5_s102_D2",
+        "arm": "D",
+        "scene": "blocked",
+        "spawn": 126,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_blocked_p126_v2.5_s102_D2/result.json",
+        "bytes": 7905,
+        "sha256": "88b79759d3ebb588baf4abe83df9153f5f6647fe5833fc3ff093415e83764820"
+      }
+    },
+    {
+      "name": "final_blocked_p170_v1_s101_C",
+      "poses": 119,
+      "road_queries": 46088,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.0346785337736084,
+      "terminal_XY_OBB_gap_m": 3.0346785337736084,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_blocked_p170_v1_s101_C/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_blocked_p170_v1_s101_C",
+        "arm": "C",
+        "scene": "blocked",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 1.0,
+        "seed": 101,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_blocked_p170_v1_s101_C/result.json",
+        "bytes": 7106,
+        "sha256": "5e1b7450d47710bab6ca62bf2d75fcdc15e0dd0e217c90282949a0bbd56756f5"
+      }
+    },
+    {
+      "name": "final_blocked_p170_v1_s101_D",
+      "poses": 119,
+      "road_queries": 46102,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.2472737737468744,
+      "terminal_XY_OBB_gap_m": 3.2472737737468744,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_blocked_p170_v1_s101_D/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_blocked_p170_v1_s101_D",
+        "arm": "D",
+        "scene": "blocked",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 1.0,
+        "seed": 101,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": false,
+      "result": {
+        "path": "reports/m6c_trials/final_blocked_p170_v1_s101_D/result.json",
+        "bytes": 7157,
+        "sha256": "2e2cd543156e05a48cecdc29e0370d8f5a18558f42e1e83ca399ef396b10d69f"
+      }
+    },
+    {
+      "name": "final_blocked_p170_v1_s101_D2",
+      "poses": 119,
+      "road_queries": 46102,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.256317913156924,
+      "terminal_XY_OBB_gap_m": 3.256317913156924,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_blocked_p170_v1_s101_D2/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_blocked_p170_v1_s101_D2",
+        "arm": "D",
+        "scene": "blocked",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 1.0,
+        "seed": 101,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_blocked_p170_v1_s101_D2/result.json",
+        "bytes": 7359,
+        "sha256": "3273ccaac4ddac63d30875255b24a0b4d47401377cb1912450a07cb430baee16"
+      }
+    },
+    {
+      "name": "final_blocked_p170_v1_s102_C",
+      "poses": 120,
+      "road_queries": 46480,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.0080705466142033,
+      "terminal_XY_OBB_gap_m": 3.0080705466142033,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_blocked_p170_v1_s102_C/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_blocked_p170_v1_s102_C",
+        "arm": "C",
+        "scene": "blocked",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 1.0,
+        "seed": 102,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_blocked_p170_v1_s102_C/result.json",
+        "bytes": 7867,
+        "sha256": "385efb6426e587781050e818d955598b2a0dcb24a133323189793a365640981d"
+      }
+    },
+    {
+      "name": "final_blocked_p170_v1_s102_D2",
+      "poses": 119,
+      "road_queries": 46088,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.258889269735462,
+      "terminal_XY_OBB_gap_m": 3.258889269735462,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_blocked_p170_v1_s102_D2/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_blocked_p170_v1_s102_D2",
+        "arm": "D",
+        "scene": "blocked",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 1.0,
+        "seed": 102,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_blocked_p170_v1_s102_D2/result.json",
+        "bytes": 7893,
+        "sha256": "4b1ea4856d58d7e421a7aa3d52adc7a16bbbc5d41ab1aeecae19caf989ac7d65"
+      }
+    },
+    {
+      "name": "final_blocked_p170_v2.5_s101_C",
+      "poses": 117,
+      "road_queries": 45290,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.004015641028653,
+      "terminal_XY_OBB_gap_m": 3.004015641028653,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_blocked_p170_v2.5_s101_C/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_blocked_p170_v2.5_s101_C",
+        "arm": "C",
+        "scene": "blocked",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_blocked_p170_v2.5_s101_C/result.json",
+        "bytes": 7113,
+        "sha256": "df9326a998a38004e9bf10a65e2b495214ac07a9b59b2a5e8de401b1bb3b98da"
+      }
+    },
+    {
+      "name": "final_blocked_p170_v2.5_s101_D",
+      "poses": 117,
+      "road_queries": 45304,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.243852865907244,
+      "terminal_XY_OBB_gap_m": 3.243852865907244,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_blocked_p170_v2.5_s101_D/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_blocked_p170_v2.5_s101_D",
+        "arm": "D",
+        "scene": "blocked",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": false,
+      "result": {
+        "path": "reports/m6c_trials/final_blocked_p170_v2.5_s101_D/result.json",
+        "bytes": 7148,
+        "sha256": "2b068681c5f13cbd3049eb998087fc425e42d8c5f580083ee70f2e13ce761af5"
+      }
+    },
+    {
+      "name": "final_blocked_p170_v2.5_s101_D2",
+      "poses": 117,
+      "road_queries": 45304,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.2401019600009096,
+      "terminal_XY_OBB_gap_m": 3.2401019600009096,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_blocked_p170_v2.5_s101_D2/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_blocked_p170_v2.5_s101_D2",
+        "arm": "D",
+        "scene": "blocked",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_blocked_p170_v2.5_s101_D2/result.json",
+        "bytes": 7374,
+        "sha256": "6306698197b0c0443169556c849614c92973ef1a28b531dfd2181843a6a29e5c"
+      }
+    },
+    {
+      "name": "final_blocked_p170_v2.5_s102_C",
+      "poses": 118,
+      "road_queries": 45696,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.014368185022513,
+      "terminal_XY_OBB_gap_m": 3.014368185022513,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_blocked_p170_v2.5_s102_C/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_blocked_p170_v2.5_s102_C",
+        "arm": "C",
+        "scene": "blocked",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_blocked_p170_v2.5_s102_C/result.json",
+        "bytes": 7868,
+        "sha256": "0816caee9af255c4b799c7bdc4cc71a641c298c24867b95711d5622ee5c963be"
+      }
+    },
+    {
+      "name": "final_blocked_p170_v2.5_s102_D2",
+      "poses": 117,
+      "road_queries": 45304,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.2549214593535,
+      "terminal_XY_OBB_gap_m": 3.2549214593535,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_blocked_p170_v2.5_s102_D2/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_blocked_p170_v2.5_s102_D2",
+        "arm": "D",
+        "scene": "blocked",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_blocked_p170_v2.5_s102_D2/result.json",
+        "bytes": 7893,
+        "sha256": "521410eeac7c89ad77eb9a6557e4ceec11f2843b3dcc18676411eb034dc68bc1"
+      }
+    },
+    {
+      "name": "final_bypass_p126_s101_C",
+      "poses": 369,
+      "road_queries": 144214,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 1.50585592011943,
+      "terminal_XY_OBB_gap_m": 56.025348782504516,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_bypass_p126_s101_C/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_bypass_p126_s101_C",
+        "arm": "C",
+        "scene": "bypass",
+        "spawn": 126,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1800,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_bypass_p126_s101_C/result.json",
+        "bytes": 9158,
+        "sha256": "cc72ca901b6fb24912da487e331e7c31c3b5ecaac989aa5ee54ef6979f01e156"
+      }
+    },
+    {
+      "name": "final_bypass_p126_s101_D",
+      "poses": 365,
+      "road_queries": 142646,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 1.505591069907227,
+      "terminal_XY_OBB_gap_m": 54.858024462139255,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_bypass_p126_s101_D/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_bypass_p126_s101_D",
+        "arm": "D",
+        "scene": "bypass",
+        "spawn": 126,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1800,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": false,
+      "result": {
+        "path": "reports/m6c_trials/final_bypass_p126_s101_D/result.json",
+        "bytes": 8140,
+        "sha256": "e74a90b13d4d43c80406243fee413eabe955a319791fcb7f769b2ceddd26f9fd"
+      }
+    },
+    {
+      "name": "final_bypass_p126_s101_D2",
+      "poses": 391,
+      "road_queries": 152838,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 1.5050772540486461,
+      "terminal_XY_OBB_gap_m": 55.1040503185248,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_bypass_p126_s101_D2/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_bypass_p126_s101_D2",
+        "arm": "D",
+        "scene": "bypass",
+        "spawn": 126,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1800,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_bypass_p126_s101_D2/result.json",
+        "bytes": 8350,
+        "sha256": "03f60cf377b94b8e9128b76b4733bfd136e4809cacd3af00c5200486c26b82eb"
+      }
+    },
+    {
+      "name": "final_bypass_p126_s102_C",
+      "poses": 368,
+      "road_queries": 143808,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 1.5180817903983228,
+      "terminal_XY_OBB_gap_m": 56.02833108404463,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_bypass_p126_s102_C/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_bypass_p126_s102_C",
+        "arm": "C",
+        "scene": "bypass",
+        "spawn": 126,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1800,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_bypass_p126_s102_C/result.json",
+        "bytes": 9179,
+        "sha256": "67bbf49eab4071b2e52c1c838618b56584a0996de44be94ae16f583e6c101d4e"
+      }
+    },
+    {
+      "name": "final_bypass_p126_s102_D2",
+      "poses": 390,
+      "road_queries": 152446,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 1.5065171383552456,
+      "terminal_XY_OBB_gap_m": 54.505545343235234,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_bypass_p126_s102_D2/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_bypass_p126_s102_D2",
+        "arm": "D",
+        "scene": "bypass",
+        "spawn": 126,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1800,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_bypass_p126_s102_D2/result.json",
+        "bytes": 8852,
+        "sha256": "b2e86044e971566e8832cc8d67e8ca0a956b4ffe3d32255b1fd35a8a8c6465e9"
+      }
+    },
+    {
+      "name": "final_bypass_p170_s101_C",
+      "poses": 317,
+      "road_queries": 123690,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 1.5000353449056512,
+      "terminal_XY_OBB_gap_m": 55.69576687120706,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_bypass_p170_s101_C/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_bypass_p170_s101_C",
+        "arm": "C",
+        "scene": "bypass",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1800,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_bypass_p170_s101_C/result.json",
+        "bytes": 9160,
+        "sha256": "c0e593df5cf43bbfcc2576f079e6567277fbab395b8d1009cbcec051b81e2c26"
+      }
+    },
+    {
+      "name": "final_bypass_p170_s101_D",
+      "poses": 313,
+      "road_queries": 122122,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 1.4994800369852312,
+      "terminal_XY_OBB_gap_m": 55.29838106451336,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_bypass_p170_s101_D/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_bypass_p170_s101_D",
+        "arm": "D",
+        "scene": "bypass",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1800,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": false,
+      "result": {
+        "path": "reports/m6c_trials/final_bypass_p170_s101_D/result.json",
+        "bytes": 8126,
+        "sha256": "af8d32ca334f705fd846956f52eb16b1f41acd36ef088fde3b88b36d7aa8020f"
+      }
+    },
+    {
+      "name": "final_bypass_p170_s101_D2",
+      "poses": 344,
+      "road_queries": 134274,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 1.499776316953,
+      "terminal_XY_OBB_gap_m": 54.62558903293666,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_bypass_p170_s101_D2/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_bypass_p170_s101_D2",
+        "arm": "D",
+        "scene": "bypass",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1800,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_bypass_p170_s101_D2/result.json",
+        "bytes": 8529,
+        "sha256": "a8f4fc1a3fb0cf7c7bc93a05685312daafaebca21e403aecfdd2b1dc7c3ad0d4"
+      }
+    },
+    {
+      "name": "final_bypass_p170_s102_C",
+      "poses": 317,
+      "road_queries": 123690,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 1.499966741339083,
+      "terminal_XY_OBB_gap_m": 55.6577779540731,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_bypass_p170_s102_C/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_bypass_p170_s102_C",
+        "arm": "C",
+        "scene": "bypass",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1800,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_bypass_p170_s102_C/result.json",
+        "bytes": 9161,
+        "sha256": "6c7587e14f79aad753cf5b9d3b8d051288c18a13858f9487a6dca493aa9f8a6e"
+      }
+    },
+    {
+      "name": "final_bypass_p170_s102_D2",
+      "poses": 318,
+      "road_queries": 124082,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 1.4996829383442647,
+      "terminal_XY_OBB_gap_m": 55.27850726623249,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_bypass_p170_s102_D2/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_bypass_p170_s102_D2",
+        "arm": "D",
+        "scene": "bypass",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1800,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_bypass_p170_s102_D2/result.json",
+        "bytes": 8992,
+        "sha256": "431199d3129bfcc54083dc6ee69860d18209f4c4992454cf97bf247ca71a474d"
+      }
+    },
+    {
+      "name": "final_fault_crash_D2",
+      "poses": 107,
+      "road_queries": 41384,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_fault_crash_D2/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_fault_crash_D2",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 550,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "crash",
+        "fault_tick": 300
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_fault_crash_D2/result.json",
+        "bytes": 7599,
+        "sha256": "eb4f7b1a07b2f316a2e4133e97cacd2b31d13d26bf508c236ec029f42ef05b5e"
+      }
+    },
+    {
+      "name": "final_fault_emergency_D2",
+      "poses": 106,
+      "road_queries": 40992,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_fault_emergency_D2/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_fault_emergency_D2",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 550,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "emergency",
+        "fault_tick": 300
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_fault_emergency_D2/result.json",
+        "bytes": 7627,
+        "sha256": "6823c3113966f256ecb8d4c4f782de678276a0a5384bbecaa4e478fc3e2efeae"
+      }
+    },
+    {
+      "name": "final_fault_invalid_D2",
+      "poses": 109,
+      "road_queries": 42168,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_fault_invalid_D2/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_fault_invalid_D2",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 550,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "invalid",
+        "fault_tick": 300
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_fault_invalid_D2/result.json",
+        "bytes": 9395,
+        "sha256": "30aae913a6e96b1789ce7795c69c6d5596f2093764117ca5196be762a9f6133f"
+      }
+    },
+    {
+      "name": "final_fault_timeout_D2",
+      "poses": 110,
+      "road_queries": 42546,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_fault_timeout_D2/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_fault_timeout_D2",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 550,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "timeout",
+        "fault_tick": 300
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_fault_timeout_D2/result.json",
+        "bytes": 8293,
+        "sha256": "5743a9ba10de229914c442369da0419668414c509a385fc7026e430e0c11fee0"
+      }
+    },
+    {
+      "name": "final_junction_turn_s101_C",
+      "poses": 237,
+      "road_queries": 89586,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_junction_turn_s101_C/body.json",
+        "bytes": 237,
+        "sha256": "b03eb39e20c9264a5a1bf3077da6ca63f75d39988861c80f611ba81d4f6435c9"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_junction_turn_s101_C",
+        "arm": "C",
+        "scene": "junction_turn",
+        "spawn": 27,
+        "length": 60.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_junction_turn_s101_C/result.json",
+        "bytes": 7031,
+        "sha256": "49f449d7d08ead437437db264a75d95db586ac2bb40a145960e1c13bf09fdd95"
+      }
+    },
+    {
+      "name": "final_junction_turn_s101_D2",
+      "poses": 232,
+      "road_queries": 87696,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_junction_turn_s101_D2/body.json",
+        "bytes": 237,
+        "sha256": "b03eb39e20c9264a5a1bf3077da6ca63f75d39988861c80f611ba81d4f6435c9"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_junction_turn_s101_D2",
+        "arm": "D",
+        "scene": "junction_turn",
+        "spawn": 27,
+        "length": 60.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_junction_turn_s101_D2/result.json",
+        "bytes": 7257,
+        "sha256": "1fc02421f752ad7d5ec30dceb99d4e8ccdd3b5a9b297cd48f50fae7f2117ab33"
+      }
+    },
+    {
+      "name": "final_junction_turn_s102_C",
+      "poses": 240,
+      "road_queries": 90720,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_junction_turn_s102_C/body.json",
+        "bytes": 237,
+        "sha256": "b03eb39e20c9264a5a1bf3077da6ca63f75d39988861c80f611ba81d4f6435c9"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_junction_turn_s102_C",
+        "arm": "C",
+        "scene": "junction_turn",
+        "spawn": 27,
+        "length": 60.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_junction_turn_s102_C/result.json",
+        "bytes": 7447,
+        "sha256": "32e246d6ddcb523efd7ba067ec819db77f0b7ae00c9c66a6a742430fcdf8a4c3"
+      }
+    },
+    {
+      "name": "final_junction_turn_s102_D2",
+      "poses": 235,
+      "road_queries": 88830,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_junction_turn_s102_D2/body.json",
+        "bytes": 237,
+        "sha256": "b03eb39e20c9264a5a1bf3077da6ca63f75d39988861c80f611ba81d4f6435c9"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_junction_turn_s102_D2",
+        "arm": "D",
+        "scene": "junction_turn",
+        "spawn": 27,
+        "length": 60.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_junction_turn_s102_D2/result.json",
+        "bytes": 7493,
+        "sha256": "8c5fa20ba48747524c20d36c18f3e7873f403893ab6ff737b82d85b446e7c063"
+      }
+    },
+    {
+      "name": "final_lead_s101_C",
+      "poses": 207,
+      "road_queries": 80808,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 2.960087667577022,
+      "terminal_XY_OBB_gap_m": 32.33190281969804,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_lead_s101_C/body.json",
+        "bytes": 236,
+        "sha256": "3ce34435a2344295136026c7de5901cb10ddd214be45faa0ed8c5a4e56ac9699"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_lead_s101_C",
+        "arm": "C",
+        "scene": "lead",
+        "spawn": 27,
+        "length": 60.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_lead_s101_C/result.json",
+        "bytes": 7150,
+        "sha256": "f04f95b8285fd2faa18a90a540f49d867bdf1d76ad69a228c9d952850b487b76"
+      }
+    },
+    {
+      "name": "final_lead_s101_D2",
+      "poses": 202,
+      "road_queries": 78848,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.506783123091186,
+      "terminal_XY_OBB_gap_m": 32.34738567851314,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_lead_s101_D2/body.json",
+        "bytes": 236,
+        "sha256": "3ce34435a2344295136026c7de5901cb10ddd214be45faa0ed8c5a4e56ac9699"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_lead_s101_D2",
+        "arm": "D",
+        "scene": "lead",
+        "spawn": 27,
+        "length": 60.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_lead_s101_D2/result.json",
+        "bytes": 7319,
+        "sha256": "deb557a3a92834d7ee2a918022a9add50f838b015d6c8f2bd7595f8a6a8f1fbd"
+      }
+    },
+    {
+      "name": "final_lead_s102_C",
+      "poses": 208,
+      "road_queries": 81200,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 2.8584878567005187,
+      "terminal_XY_OBB_gap_m": 32.329628074757615,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_lead_s102_C/body.json",
+        "bytes": 236,
+        "sha256": "3ce34435a2344295136026c7de5901cb10ddd214be45faa0ed8c5a4e56ac9699"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_lead_s102_C",
+        "arm": "C",
+        "scene": "lead",
+        "spawn": 27,
+        "length": 60.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_lead_s102_C/result.json",
+        "bytes": 7563,
+        "sha256": "eabaddef073bdf74892df24510559c66c215d52b9142377303956122955daf48"
+      }
+    },
+    {
+      "name": "final_lead_s102_D2",
+      "poses": 203,
+      "road_queries": 79254,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.303074281490945,
+      "terminal_XY_OBB_gap_m": 32.332620757730375,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_lead_s102_D2/body.json",
+        "bytes": 236,
+        "sha256": "3ce34435a2344295136026c7de5901cb10ddd214be45faa0ed8c5a4e56ac9699"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_lead_s102_D2",
+        "arm": "D",
+        "scene": "lead",
+        "spawn": 27,
+        "length": 60.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_lead_s102_D2/result.json",
+        "bytes": 7620,
+        "sha256": "f35053b9d67e2dc0f7ae4c8683b54249568889254ea833d11945f6fcb9acb385"
+      }
+    },
+    {
+      "name": "final_mild_curve_s101_C",
+      "poses": 221,
+      "road_queries": 83538,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_mild_curve_s101_C/body.json",
+        "bytes": 235,
+        "sha256": "d2eb798f880fb36809aa9bca3895cedfffa16928f53a584d02fa262e2eadb5d1"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_mild_curve_s101_C",
+        "arm": "C",
+        "scene": "mild_curve",
+        "spawn": 27,
+        "length": 60.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_mild_curve_s101_C/result.json",
+        "bytes": 7015,
+        "sha256": "aafa71691962b2ca0ae023fde6c84a38e4cba6034aefe405e9a39059dbcacb62"
+      }
+    },
+    {
+      "name": "final_mild_curve_s101_D2",
+      "poses": 215,
+      "road_queries": 81270,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_mild_curve_s101_D2/body.json",
+        "bytes": 235,
+        "sha256": "d2eb798f880fb36809aa9bca3895cedfffa16928f53a584d02fa262e2eadb5d1"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_mild_curve_s101_D2",
+        "arm": "D",
+        "scene": "mild_curve",
+        "spawn": 27,
+        "length": 60.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_mild_curve_s101_D2/result.json",
+        "bytes": 7067,
+        "sha256": "122d4fdfb267a3e9cff11628a01215d3a8b5c22557a70b5a51f5c6e3bf6ef2b6"
+      }
+    },
+    {
+      "name": "final_mild_curve_s102_C",
+      "poses": 220,
+      "road_queries": 83160,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_mild_curve_s102_C/body.json",
+        "bytes": 235,
+        "sha256": "d2eb798f880fb36809aa9bca3895cedfffa16928f53a584d02fa262e2eadb5d1"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_mild_curve_s102_C",
+        "arm": "C",
+        "scene": "mild_curve",
+        "spawn": 27,
+        "length": 60.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_mild_curve_s102_C/result.json",
+        "bytes": 7452,
+        "sha256": "b7762968c81b9587b716e6601c2123e3f2ef43a3aef0a415062be4a66ecdc519"
+      }
+    },
+    {
+      "name": "final_mild_curve_s102_D2",
+      "poses": 215,
+      "road_queries": 81270,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_mild_curve_s102_D2/body.json",
+        "bytes": 235,
+        "sha256": "d2eb798f880fb36809aa9bca3895cedfffa16928f53a584d02fa262e2eadb5d1"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_mild_curve_s102_D2",
+        "arm": "D",
+        "scene": "mild_curve",
+        "spawn": 27,
+        "length": 60.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_mild_curve_s102_D2/result.json",
+        "bytes": 7457,
+        "sha256": "ea202d296de9c530251d5f60e6b0d5d4a0fc8abb09dfb64eb06ae197795cb2d7"
+      }
+    },
+    {
+      "name": "final_removed_p126_C",
+      "poses": 366,
+      "road_queries": 143024,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 1.6224196086464417,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_removed_p126_C/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_removed_p126_C",
+        "arm": "C",
+        "scene": "removed",
+        "spawn": 126,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1800,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_removed_p126_C/result.json",
+        "bytes": 7550,
+        "sha256": "efd09ab736b0a0d3d961fadaf2c189e6c9be250b0e63cf6701e2edf0416d69fa"
+      }
+    },
+    {
+      "name": "final_removed_p126_D2",
+      "poses": 379,
+      "road_queries": 148120,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.2585190522711955,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_removed_p126_D2/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_removed_p126_D2",
+        "arm": "D",
+        "scene": "removed",
+        "spawn": 126,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1800,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_removed_p126_D2/result.json",
+        "bytes": 7604,
+        "sha256": "a7b92ddfe0e28aa091a54781f1c4089644a4797f66d55fdb04a7d6f82d3881b2"
+      }
+    },
+    {
+      "name": "final_removed_p170_C",
+      "poses": 314,
+      "road_queries": 122528,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.9011171008854006,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_removed_p170_C/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_removed_p170_C",
+        "arm": "C",
+        "scene": "removed",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1800,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_removed_p170_C/result.json",
+        "bytes": 7566,
+        "sha256": "0926f8a498186e468b48fe21bb67b0b702feb788c37da0790245d5b446299777"
+      }
+    },
+    {
+      "name": "final_removed_p170_D2",
+      "poses": 312,
+      "road_queries": 121744,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 4.070076629878669,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_removed_p170_D2/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_removed_p170_D2",
+        "arm": "D",
+        "scene": "removed",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1800,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_removed_p170_D2/result.json",
+        "bytes": 7578,
+        "sha256": "ccb543c6d6d4bb1ace88a462c39b604e06be8cb5b922eb15742ff76b04098a87"
+      }
+    },
+    {
+      "name": "final_stop_p126_l25_s101_C",
+      "poses": 90,
+      "road_queries": 35280,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p126_l25_s101_C/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p126_l25_s101_C",
+        "arm": "C",
+        "scene": "stop",
+        "spawn": 126,
+        "length": 25.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p126_l25_s101_C/result.json",
+        "bytes": 5838,
+        "sha256": "fdc21a704407e12f7c3751db82a863d8a9e5e03bd13ebc392cb6317ea13c7844"
+      }
+    },
+    {
+      "name": "final_stop_p126_l25_s101_D",
+      "poses": 90,
+      "road_queries": 35280,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p126_l25_s101_D/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p126_l25_s101_D",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 126,
+        "length": 25.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": false,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p126_l25_s101_D/result.json",
+        "bytes": 5850,
+        "sha256": "f160de2b3bef4df73d42879cab503c74e8ef8de3eca174a4b0ab7fffb187f239"
+      }
+    },
+    {
+      "name": "final_stop_p126_l25_s101_D2",
+      "poses": 91,
+      "road_queries": 35672,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p126_l25_s101_D2/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p126_l25_s101_D2",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 126,
+        "length": 25.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p126_l25_s101_D2/result.json",
+        "bytes": 6648,
+        "sha256": "e6d794980e6270a1f8dbe1bfbe4fbe3ec914b5a39064d840bdec3c48e3027b50"
+      }
+    },
+    {
+      "name": "final_stop_p126_l25_s102_C",
+      "poses": 91,
+      "road_queries": 35672,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p126_l25_s102_C/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p126_l25_s102_C",
+        "arm": "C",
+        "scene": "stop",
+        "spawn": 126,
+        "length": 25.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p126_l25_s102_C/result.json",
+        "bytes": 6032,
+        "sha256": "7350e34039452f230b56f1a6472b8362f0c0d4d958f171230438e07761bf6a9a"
+      }
+    },
+    {
+      "name": "final_stop_p126_l25_s102_D",
+      "poses": 91,
+      "road_queries": 35672,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p126_l25_s102_D/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p126_l25_s102_D",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 126,
+        "length": 25.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": false,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p126_l25_s102_D/result.json",
+        "bytes": 6025,
+        "sha256": "16ed965d302f57aec2c844c45311749bc27f53f43a9f5b938d50ccead498bef8"
+      }
+    },
+    {
+      "name": "final_stop_p126_l25_s102_D2",
+      "poses": 91,
+      "road_queries": 35672,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p126_l25_s102_D2/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p126_l25_s102_D2",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 126,
+        "length": 25.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p126_l25_s102_D2/result.json",
+        "bytes": 6759,
+        "sha256": "85be95d61b4295acc8008f920e2cb28b6bb449b849ee74952a34a672f43a8827"
+      }
+    },
+    {
+      "name": "final_stop_p126_l9_s101_C",
+      "poses": 37,
+      "road_queries": 14504,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p126_l9_s101_C/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p126_l9_s101_C",
+        "arm": "C",
+        "scene": "stop",
+        "spawn": 126,
+        "length": 9.0,
+        "speed": 1.0,
+        "seed": 101,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p126_l9_s101_C/result.json",
+        "bytes": 5849,
+        "sha256": "4f8b6caee040bec18249ae4271b34e0dce2980d7665194fe4f14a26dc95effac"
+      }
+    },
+    {
+      "name": "final_stop_p126_l9_s101_D",
+      "poses": 37,
+      "road_queries": 14504,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p126_l9_s101_D/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p126_l9_s101_D",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 126,
+        "length": 9.0,
+        "speed": 1.0,
+        "seed": 101,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": false,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p126_l9_s101_D/result.json",
+        "bytes": 5835,
+        "sha256": "e81ac150f9cdd3e852e1f43b37b70124bf51471921d5c0b94c3008489f7e9654"
+      }
+    },
+    {
+      "name": "final_stop_p126_l9_s101_D2",
+      "poses": 37,
+      "road_queries": 14504,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p126_l9_s101_D2/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p126_l9_s101_D2",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 126,
+        "length": 9.0,
+        "speed": 1.0,
+        "seed": 101,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p126_l9_s101_D2/result.json",
+        "bytes": 6660,
+        "sha256": "38414f857d560b6e4d8a1b874a0f86151d4c275fd56d753bd84ba76321160222"
+      }
+    },
+    {
+      "name": "final_stop_p126_l9_s102_C",
+      "poses": 37,
+      "road_queries": 14504,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p126_l9_s102_C/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p126_l9_s102_C",
+        "arm": "C",
+        "scene": "stop",
+        "spawn": 126,
+        "length": 9.0,
+        "speed": 1.0,
+        "seed": 102,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p126_l9_s102_C/result.json",
+        "bytes": 6031,
+        "sha256": "65d10ca1e1210e2f8c9be2f933791401b288a755ef6d1b8189d11288d33cf8a1"
+      }
+    },
+    {
+      "name": "final_stop_p126_l9_s102_D",
+      "poses": 36,
+      "road_queries": 14112,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p126_l9_s102_D/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p126_l9_s102_D",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 126,
+        "length": 9.0,
+        "speed": 1.0,
+        "seed": 102,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": false,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p126_l9_s102_D/result.json",
+        "bytes": 6027,
+        "sha256": "1c584fc170c5ace0fddb0d6085addc021faf4c642a2977fc7826bdf5f614fdef"
+      }
+    },
+    {
+      "name": "final_stop_p126_l9_s102_D2",
+      "poses": 37,
+      "road_queries": 14504,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p126_l9_s102_D2/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p126_l9_s102_D2",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 126,
+        "length": 9.0,
+        "speed": 1.0,
+        "seed": 102,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p126_l9_s102_D2/result.json",
+        "bytes": 6748,
+        "sha256": "87314a821438afd2c3e62dbb0724e2d964693a40dc15c49d3e0f2a056d662b18"
+      }
+    },
+    {
+      "name": "final_stop_p170_l25_s101_C",
+      "poses": 89,
+      "road_queries": 34328,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p170_l25_s101_C/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p170_l25_s101_C",
+        "arm": "C",
+        "scene": "stop",
+        "spawn": 170,
+        "length": 25.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p170_l25_s101_C/result.json",
+        "bytes": 5892,
+        "sha256": "e76c6a51e344c83d6aa649e09d10510664727ceec7f8c410b339cc6fcb9a315e"
+      }
+    },
+    {
+      "name": "final_stop_p170_l25_s101_D",
+      "poses": 86,
+      "road_queries": 33152,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p170_l25_s101_D/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p170_l25_s101_D",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 170,
+        "length": 25.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": false,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p170_l25_s101_D/result.json",
+        "bytes": 6012,
+        "sha256": "478af3b40bd4b5f778680e6683865f97d3ba75c14e2d35993f9e8a959bb672f6"
+      }
+    },
+    {
+      "name": "final_stop_p170_l25_s101_D2",
+      "poses": 88,
+      "road_queries": 33936,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p170_l25_s101_D2/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p170_l25_s101_D2",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 170,
+        "length": 25.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p170_l25_s101_D2/result.json",
+        "bytes": 6647,
+        "sha256": "41c93a78043d87fe7742d7cde265fe266eec7c4935ea80b044c021487174e067"
+      }
+    },
+    {
+      "name": "final_stop_p170_l25_s102_C",
+      "poses": 89,
+      "road_queries": 34328,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p170_l25_s102_C/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p170_l25_s102_C",
+        "arm": "C",
+        "scene": "stop",
+        "spawn": 170,
+        "length": 25.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p170_l25_s102_C/result.json",
+        "bytes": 6203,
+        "sha256": "46bbc10c1372205f8db5d5e174dca890145dad315c84441a4ebc37deba247fd5"
+      }
+    },
+    {
+      "name": "final_stop_p170_l25_s102_D",
+      "poses": 86,
+      "road_queries": 33152,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p170_l25_s102_D/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p170_l25_s102_D",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 170,
+        "length": 25.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": false,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p170_l25_s102_D/result.json",
+        "bytes": 6239,
+        "sha256": "db2f705c896124396dccd51759777c6dbcfb7380ff2664e0b41e08c7f0ac4a7f"
+      }
+    },
+    {
+      "name": "final_stop_p170_l25_s102_D2",
+      "poses": 91,
+      "road_queries": 35098,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p170_l25_s102_D2/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p170_l25_s102_D2",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 170,
+        "length": 25.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p170_l25_s102_D2/result.json",
+        "bytes": 6741,
+        "sha256": "68a4fa5594dea3b7f01a1f2ba36e7676e599dc4462098ce31484e68cb1e71fd6"
+      }
+    },
+    {
+      "name": "final_stop_p170_l9_s101_A",
+      "poses": 27,
+      "road_queries": 10206,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p170_l9_s101_A/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p170_l9_s101_A",
+        "arm": "A",
+        "scene": "stop",
+        "spawn": 170,
+        "length": 9.0,
+        "speed": 1.0,
+        "seed": 101,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p170_l9_s101_A/result.json",
+        "bytes": 5904,
+        "sha256": "ae6d0e8ecde48b5a45b18b9899a69c1908736d5310b96b7e801e6e6890ca3bb2"
+      }
+    },
+    {
+      "name": "final_stop_p170_l9_s101_C",
+      "poses": 37,
+      "road_queries": 13986,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p170_l9_s101_C/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p170_l9_s101_C",
+        "arm": "C",
+        "scene": "stop",
+        "spawn": 170,
+        "length": 9.0,
+        "speed": 1.0,
+        "seed": 101,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p170_l9_s101_C/result.json",
+        "bytes": 5890,
+        "sha256": "baf487cded055bd456be35b9970c6588d43b33371741b273ea0a144de4199d9d"
+      }
+    },
+    {
+      "name": "final_stop_p170_l9_s101_D",
+      "poses": 31,
+      "road_queries": 11718,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p170_l9_s101_D/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p170_l9_s101_D",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 170,
+        "length": 9.0,
+        "speed": 1.0,
+        "seed": 101,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": false,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p170_l9_s101_D/result.json",
+        "bytes": 5910,
+        "sha256": "31e1da57a2225ce316de0d86f959c3d1b83270160a69454304f42043694b9dcc"
+      }
+    },
+    {
+      "name": "final_stop_p170_l9_s101_D2",
+      "poses": 31,
+      "road_queries": 11718,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p170_l9_s101_D2/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p170_l9_s101_D2",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 170,
+        "length": 9.0,
+        "speed": 1.0,
+        "seed": 101,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p170_l9_s101_D2/result.json",
+        "bytes": 6629,
+        "sha256": "4e073c2105d610a9e87a55d8dbbf2873a3b79128cc4342875157bdd4f157f4fc"
+      }
+    },
+    {
+      "name": "final_stop_p170_l9_s102_A",
+      "poses": 28,
+      "road_queries": 10584,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p170_l9_s102_A/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p170_l9_s102_A",
+        "arm": "A",
+        "scene": "stop",
+        "spawn": 170,
+        "length": 9.0,
+        "speed": 1.0,
+        "seed": 102,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p170_l9_s102_A/result.json",
+        "bytes": 6013,
+        "sha256": "4751db1e68ae3c2b8a6d84ad93bb3548d138e38190c97fbd46afcf8c2f4f986e"
+      }
+    },
+    {
+      "name": "final_stop_p170_l9_s102_C",
+      "poses": 37,
+      "road_queries": 13986,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p170_l9_s102_C/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p170_l9_s102_C",
+        "arm": "C",
+        "scene": "stop",
+        "spawn": 170,
+        "length": 9.0,
+        "speed": 1.0,
+        "seed": 102,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p170_l9_s102_C/result.json",
+        "bytes": 5991,
+        "sha256": "87b52ccd4d3501f03d5a16f79d9d9890722fa6d7f748c56f6211af20797bf05e"
+      }
+    },
+    {
+      "name": "final_stop_p170_l9_s102_D",
+      "poses": 30,
+      "road_queries": 11340,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p170_l9_s102_D/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p170_l9_s102_D",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 170,
+        "length": 9.0,
+        "speed": 1.0,
+        "seed": 102,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": false,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p170_l9_s102_D/result.json",
+        "bytes": 6017,
+        "sha256": "52a1eb8318d90f2b257bd134ac82bd581211abf85e50569d2ab067355bb248cc"
+      }
+    },
+    {
+      "name": "final_stop_p170_l9_s102_D2",
+      "poses": 31,
+      "road_queries": 11718,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p170_l9_s102_D2/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p170_l9_s102_D2",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 170,
+        "length": 9.0,
+        "speed": 1.0,
+        "seed": 102,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p170_l9_s102_D2/result.json",
+        "bytes": 6727,
+        "sha256": "391a14451c0d4dc473b58b11337b727a0045cbfed0013a75d46e1ec28ad92c98"
+      }
+    },
+    {
+      "name": "final_stop_p27_l25_s101_C",
+      "poses": 85,
+      "road_queries": 33320,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p27_l25_s101_C/body.json",
+        "bytes": 236,
+        "sha256": "3ce34435a2344295136026c7de5901cb10ddd214be45faa0ed8c5a4e56ac9699"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p27_l25_s101_C",
+        "arm": "C",
+        "scene": "stop",
+        "spawn": 27,
+        "length": 25.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p27_l25_s101_C/result.json",
+        "bytes": 5781,
+        "sha256": "3eb91ef853089a4348dee2c02a7be2a8cc82b31c69464001e9b55bfd564f501b"
+      }
+    },
+    {
+      "name": "final_stop_p27_l25_s101_D",
+      "poses": 82,
+      "road_queries": 32144,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p27_l25_s101_D/body.json",
+        "bytes": 236,
+        "sha256": "3ce34435a2344295136026c7de5901cb10ddd214be45faa0ed8c5a4e56ac9699"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p27_l25_s101_D",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 27,
+        "length": 25.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": false,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p27_l25_s101_D/result.json",
+        "bytes": 5802,
+        "sha256": "d720b250ee9b946385473a4853eca2868184bd66aede4e62deb73c8d382a4c5e"
+      }
+    },
+    {
+      "name": "final_stop_p27_l25_s101_D2",
+      "poses": 86,
+      "road_queries": 33712,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p27_l25_s101_D2/body.json",
+        "bytes": 236,
+        "sha256": "3ce34435a2344295136026c7de5901cb10ddd214be45faa0ed8c5a4e56ac9699"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p27_l25_s101_D2",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 27,
+        "length": 25.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p27_l25_s101_D2/result.json",
+        "bytes": 6627,
+        "sha256": "f1bce367f51578b60e0b13a556602c8fb8dcb40bb897a424991287204ba2d3ec"
+      }
+    },
+    {
+      "name": "final_stop_p27_l25_s102_C",
+      "poses": 84,
+      "road_queries": 32928,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p27_l25_s102_C/body.json",
+        "bytes": 236,
+        "sha256": "3ce34435a2344295136026c7de5901cb10ddd214be45faa0ed8c5a4e56ac9699"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p27_l25_s102_C",
+        "arm": "C",
+        "scene": "stop",
+        "spawn": 27,
+        "length": 25.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p27_l25_s102_C/result.json",
+        "bytes": 5982,
+        "sha256": "0baa5ee9409b4b8343c15fcba82090715f65af4e38bb4d0954aae13b06941a93"
+      }
+    },
+    {
+      "name": "final_stop_p27_l25_s102_D",
+      "poses": 88,
+      "road_queries": 34496,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p27_l25_s102_D/body.json",
+        "bytes": 236,
+        "sha256": "3ce34435a2344295136026c7de5901cb10ddd214be45faa0ed8c5a4e56ac9699"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p27_l25_s102_D",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 27,
+        "length": 25.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": false,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p27_l25_s102_D/result.json",
+        "bytes": 6006,
+        "sha256": "830d47099356c1e78814db285fbc9926ec06683f6191923d1d625cbdc10e24e3"
+      }
+    },
+    {
+      "name": "final_stop_p27_l25_s102_D2",
+      "poses": 93,
+      "road_queries": 36456,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p27_l25_s102_D2/body.json",
+        "bytes": 236,
+        "sha256": "3ce34435a2344295136026c7de5901cb10ddd214be45faa0ed8c5a4e56ac9699"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p27_l25_s102_D2",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 27,
+        "length": 25.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p27_l25_s102_D2/result.json",
+        "bytes": 6732,
+        "sha256": "f999d25de96a4af95a0ca5fd2f7da336e113cd8fcd9d72b2eeb8db2e37b323c4"
+      }
+    },
+    {
+      "name": "final_stop_p27_l9_s101_A",
+      "poses": 31,
+      "road_queries": 12152,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p27_l9_s101_A/body.json",
+        "bytes": 236,
+        "sha256": "3ce34435a2344295136026c7de5901cb10ddd214be45faa0ed8c5a4e56ac9699"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p27_l9_s101_A",
+        "arm": "A",
+        "scene": "stop",
+        "spawn": 27,
+        "length": 9.0,
+        "speed": 1.0,
+        "seed": 101,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p27_l9_s101_A/result.json",
+        "bytes": 5802,
+        "sha256": "4d211aac74fde8d9f38b486934bd54e717cd432dd688ccaaa2e9be8e99e05e80"
+      }
+    },
+    {
+      "name": "final_stop_p27_l9_s101_C",
+      "poses": 36,
+      "road_queries": 14112,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p27_l9_s101_C/body.json",
+        "bytes": 236,
+        "sha256": "3ce34435a2344295136026c7de5901cb10ddd214be45faa0ed8c5a4e56ac9699"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p27_l9_s101_C",
+        "arm": "C",
+        "scene": "stop",
+        "spawn": 27,
+        "length": 9.0,
+        "speed": 1.0,
+        "seed": 101,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p27_l9_s101_C/result.json",
+        "bytes": 5794,
+        "sha256": "8e3cb9cc7aa319ec744b01f9ea4c3cf9f475718a2b122cae09191e7a9eb6a7a0"
+      }
+    },
+    {
+      "name": "final_stop_p27_l9_s101_D",
+      "poses": 33,
+      "road_queries": 12936,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p27_l9_s101_D/body.json",
+        "bytes": 236,
+        "sha256": "3ce34435a2344295136026c7de5901cb10ddd214be45faa0ed8c5a4e56ac9699"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p27_l9_s101_D",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 27,
+        "length": 9.0,
+        "speed": 1.0,
+        "seed": 101,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": false,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p27_l9_s101_D/result.json",
+        "bytes": 5791,
+        "sha256": "f4b0f02bb8ed878bbd3785a7e028422a7a65a45a4554e9cbad6f4f857e1fe0a6"
+      }
+    },
+    {
+      "name": "final_stop_p27_l9_s101_D2",
+      "poses": 68,
+      "road_queries": 26656,
+      "footprint_outside_frames": 1,
+      "examples": [
+        {
+          "frame": 676054,
+          "outside_samples": 1,
+          "example_xy": [
+            [
+              -72.35663914164206,
+              -89.34405877809104
+            ]
+          ]
+        }
+      ],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p27_l9_s101_D2/body.json",
+        "bytes": 236,
+        "sha256": "3ce34435a2344295136026c7de5901cb10ddd214be45faa0ed8c5a4e56ac9699"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p27_l9_s101_D2",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 27,
+        "length": 9.0,
+        "speed": 1.0,
+        "seed": 101,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p27_l9_s101_D2/result.json",
+        "bytes": 6685,
+        "sha256": "234f211a6e2fbcf485fa3252e496d42b0607dc2b64b0e62488fdcce25d3c4036"
+      }
+    },
+    {
+      "name": "final_stop_p27_l9_s102_A",
+      "poses": 31,
+      "road_queries": 12152,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p27_l9_s102_A/body.json",
+        "bytes": 236,
+        "sha256": "3ce34435a2344295136026c7de5901cb10ddd214be45faa0ed8c5a4e56ac9699"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p27_l9_s102_A",
+        "arm": "A",
+        "scene": "stop",
+        "spawn": 27,
+        "length": 9.0,
+        "speed": 1.0,
+        "seed": 102,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p27_l9_s102_A/result.json",
+        "bytes": 5993,
+        "sha256": "ef83ce0520a280308e9d64b762f693b37a2abc219adddbd530f1b18b055a4e6b"
+      }
+    },
+    {
+      "name": "final_stop_p27_l9_s102_C",
+      "poses": 38,
+      "road_queries": 14896,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p27_l9_s102_C/body.json",
+        "bytes": 236,
+        "sha256": "3ce34435a2344295136026c7de5901cb10ddd214be45faa0ed8c5a4e56ac9699"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p27_l9_s102_C",
+        "arm": "C",
+        "scene": "stop",
+        "spawn": 27,
+        "length": 9.0,
+        "speed": 1.0,
+        "seed": 102,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p27_l9_s102_C/result.json",
+        "bytes": 5980,
+        "sha256": "49620b2fe7da4d1a7fea0c71b87cc5a2f576ae37d7ed99598ac435f852238f9c"
+      }
+    },
+    {
+      "name": "final_stop_p27_l9_s102_D",
+      "poses": 34,
+      "road_queries": 13328,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p27_l9_s102_D/body.json",
+        "bytes": 236,
+        "sha256": "3ce34435a2344295136026c7de5901cb10ddd214be45faa0ed8c5a4e56ac9699"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p27_l9_s102_D",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 27,
+        "length": 9.0,
+        "speed": 1.0,
+        "seed": 102,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": false,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p27_l9_s102_D/result.json",
+        "bytes": 5995,
+        "sha256": "888287f2817a653f9f55397d5b17d708051be132732f45873cf029f187291c87"
+      }
+    },
+    {
+      "name": "final_stop_p27_l9_s102_D2",
+      "poses": 62,
+      "road_queries": 24304,
+      "footprint_outside_frames": 1,
+      "examples": [
+        {
+          "frame": 680688,
+          "outside_samples": 1,
+          "example_xy": [
+            [
+              -72.35856730096936,
+              -89.33995128789387
+            ]
+          ]
+        }
+      ],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_stop_p27_l9_s102_D2/body.json",
+        "bytes": 236,
+        "sha256": "3ce34435a2344295136026c7de5901cb10ddd214be45faa0ed8c5a4e56ac9699"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_stop_p27_l9_s102_D2",
+        "arm": "D",
+        "scene": "stop",
+        "spawn": 27,
+        "length": 9.0,
+        "speed": 1.0,
+        "seed": 102,
+        "ticks": 1000,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_stop_p27_l9_s102_D2/result.json",
+        "bytes": 6775,
+        "sha256": "ec1fa3eba48b910d9250776872d9c8dedcdf54887efdbf57a80b372a337bdc3b"
+      }
+    },
+    {
+      "name": "final_straight_s101_C",
+      "poses": 202,
+      "road_queries": 78792,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_straight_s101_C/body.json",
+        "bytes": 236,
+        "sha256": "3ce34435a2344295136026c7de5901cb10ddd214be45faa0ed8c5a4e56ac9699"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_straight_s101_C",
+        "arm": "C",
+        "scene": "straight",
+        "spawn": 27,
+        "length": 60.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_straight_s101_C/result.json",
+        "bytes": 6853,
+        "sha256": "79f81ea2a91bfdfa8da989125a874ee12b5f7f2125778d3e7fb76f1bb1f54782"
+      }
+    },
+    {
+      "name": "final_straight_s101_D2",
+      "poses": 212,
+      "road_queries": 82726,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_straight_s101_D2/body.json",
+        "bytes": 236,
+        "sha256": "3ce34435a2344295136026c7de5901cb10ddd214be45faa0ed8c5a4e56ac9699"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_straight_s101_D2",
+        "arm": "D",
+        "scene": "straight",
+        "spawn": 27,
+        "length": 60.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_straight_s101_D2/result.json",
+        "bytes": 6847,
+        "sha256": "9d590e5cd4ba74bb839ca2a05a6770b9e485d2f83bdd8e370988367dbb19c611"
+      }
+    },
+    {
+      "name": "final_straight_s102_C",
+      "poses": 215,
+      "road_queries": 83902,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_straight_s102_C/body.json",
+        "bytes": 236,
+        "sha256": "3ce34435a2344295136026c7de5901cb10ddd214be45faa0ed8c5a4e56ac9699"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_straight_s102_C",
+        "arm": "C",
+        "scene": "straight",
+        "spawn": 27,
+        "length": 60.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_straight_s102_C/result.json",
+        "bytes": 7473,
+        "sha256": "de449fff7bcf20dad2cbe8a318932576ec7dd36fb4d351965f95962932ed1564"
+      }
+    },
+    {
+      "name": "final_straight_s102_D2",
+      "poses": 204,
+      "road_queries": 79590,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_straight_s102_D2/body.json",
+        "bytes": 236,
+        "sha256": "3ce34435a2344295136026c7de5901cb10ddd214be45faa0ed8c5a4e56ac9699"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_straight_s102_D2",
+        "arm": "D",
+        "scene": "straight",
+        "spawn": 27,
+        "length": 60.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 1400,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_straight_s102_D2/result.json",
+        "bytes": 7500,
+        "sha256": "381df5bd31cf8d846c8a48e5628c083cade4f55094e4d80f631ca56b64262b42"
+      }
+    },
+    {
+      "name": "final_sudden_p126_s101_C",
+      "poses": 113,
+      "road_queries": 44296,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 1.7248880489942862,
+      "terminal_XY_OBB_gap_m": 1.7248880489942862,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_sudden_p126_s101_C/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_sudden_p126_s101_C",
+        "arm": "C",
+        "scene": "sudden",
+        "spawn": 126,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 500,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_sudden_p126_s101_C/result.json",
+        "bytes": 6574,
+        "sha256": "0920f5234cb2dbd1d905e8cdad86f2c62cd7d98b5db73a6c4064cdcedb0fbe88"
+      }
+    },
+    {
+      "name": "final_sudden_p126_s101_D",
+      "poses": 111,
+      "road_queries": 43512,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 2.2109183849799408,
+      "terminal_XY_OBB_gap_m": 2.2109183849799408,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_sudden_p126_s101_D/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_sudden_p126_s101_D",
+        "arm": "D",
+        "scene": "sudden",
+        "spawn": 126,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 500,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": false,
+      "result": {
+        "path": "reports/m6c_trials/final_sudden_p126_s101_D/result.json",
+        "bytes": 6599,
+        "sha256": "479bce0cf383c3f5416ff5d8d932ca0eb2fb7a87fd2ffbdb87fa0a31a4ba0b8d"
+      }
+    },
+    {
+      "name": "final_sudden_p126_s101_D2",
+      "poses": 112,
+      "road_queries": 43904,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 2.197003852605457,
+      "terminal_XY_OBB_gap_m": 2.197003852605457,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_sudden_p126_s101_D2/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_sudden_p126_s101_D2",
+        "arm": "D",
+        "scene": "sudden",
+        "spawn": 126,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 500,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_sudden_p126_s101_D2/result.json",
+        "bytes": 6806,
+        "sha256": "8fadb7ff0935d4cee5bb51e28403a2dc268dc8863c6a648ef002a4ed1a3d0da0"
+      }
+    },
+    {
+      "name": "final_sudden_p126_s102_C",
+      "poses": 113,
+      "road_queries": 44296,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 1.7760330098896684,
+      "terminal_XY_OBB_gap_m": 1.7760330098896684,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_sudden_p126_s102_C/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_sudden_p126_s102_C",
+        "arm": "C",
+        "scene": "sudden",
+        "spawn": 126,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 500,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_sudden_p126_s102_C/result.json",
+        "bytes": 7314,
+        "sha256": "0e59070521f1e75ba68310d25af1e817ed92cbd8601f73a5def2f8ef05f4eec5"
+      }
+    },
+    {
+      "name": "final_sudden_p126_s102_D2",
+      "poses": 111,
+      "road_queries": 43512,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 2.2014364248001526,
+      "terminal_XY_OBB_gap_m": 2.2014364248001526,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_sudden_p126_s102_D2/body.json",
+        "bytes": 238,
+        "sha256": "fac879c61c17442ba2b858e56c8f6d0de5363dbb2cb6a8b3ecff6694ed0ffd16"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_sudden_p126_s102_D2",
+        "arm": "D",
+        "scene": "sudden",
+        "spawn": 126,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 500,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_sudden_p126_s102_D2/result.json",
+        "bytes": 7336,
+        "sha256": "6e072b163cc364ad22c583f71d285b1020a0f9482829cc12857aee7704d0a754"
+      }
+    },
+    {
+      "name": "final_sudden_p170_s101_C",
+      "poses": 110,
+      "road_queries": 42560,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 2.0044288900817966,
+      "terminal_XY_OBB_gap_m": 2.0044288900817966,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_sudden_p170_s101_C/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_sudden_p170_s101_C",
+        "arm": "C",
+        "scene": "sudden",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 500,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_sudden_p170_s101_C/result.json",
+        "bytes": 6865,
+        "sha256": "fc3c8a85da53bc9684087936b50d6d5e0610878a4c50fa38d467c62682189ed5"
+      }
+    },
+    {
+      "name": "final_sudden_p170_s101_D2",
+      "poses": 107,
+      "road_queries": 41384,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 2.5178501736869188,
+      "terminal_XY_OBB_gap_m": 2.5178501736869188,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_sudden_p170_s101_D2/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_sudden_p170_s101_D2",
+        "arm": "D",
+        "scene": "sudden",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 101,
+        "ticks": 500,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_sudden_p170_s101_D2/result.json",
+        "bytes": 6883,
+        "sha256": "6bdad5d4bc3056bd3478da77990dbf1d44a9a247a3d2c9f0aaaca36ca1dc9a1a"
+      }
+    },
+    {
+      "name": "final_sudden_p170_s102_C",
+      "poses": 102,
+      "road_queries": 39424,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 2.0855956534448725,
+      "terminal_XY_OBB_gap_m": 2.0855956534448725,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_sudden_p170_s102_C/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_sudden_p170_s102_C",
+        "arm": "C",
+        "scene": "sudden",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 500,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_sudden_p170_s102_C/result.json",
+        "bytes": 7422,
+        "sha256": "2d61b81014de8ce7e83c3f7100e91f7ce756131a9d210db13a454a036695b037"
+      }
+    },
+    {
+      "name": "final_sudden_p170_s102_D2",
+      "poses": 109,
+      "road_queries": 42168,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 2.3265093365034306,
+      "terminal_XY_OBB_gap_m": 2.3265093365034306,
+      "body_reference": {
+        "path": "reports/m6c_trials/final_sudden_p170_s102_D2/body.json",
+        "bytes": 237,
+        "sha256": "0a817796b1adad3ab515a372b720a2bcfbbb0f245709da339b827e36510dec9d"
+      },
+      "source": "Privileged",
+      "config": {
+        "name": "final_sudden_p170_s102_D2",
+        "arm": "D",
+        "scene": "sudden",
+        "spawn": 170,
+        "length": 100.0,
+        "speed": 2.5,
+        "seed": 102,
+        "ticks": 500,
+        "fixed_budget": false,
+        "tick_cpus": "",
+        "worker_cpus": "",
+        "fault": "",
+        "fault_tick": 65
+      },
+      "valid_D_contract": true,
+      "result": {
+        "path": "reports/m6c_trials/final_sudden_p170_s102_D2/result.json",
+        "bytes": 7402,
+        "sha256": "59f2efaa097d783ad74aa2a647cae79adc3ce0449b29323648813812c2ccc229"
+      }
+    }
+  ],
+  "limits": "Measured OBB offset/roll/pitch included. Poses sampled every >=.25m or .5deg and final pose; body grid .2m plus .2/.15m margin. Discrete approximation; no exact curb mesh or continuous contact proof."
+}

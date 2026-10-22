@@ -1,0 +1,1212 @@
+{
+  "kind": "offline_reconstruction_of_actual_frozen_M6B",
+  "base": "f047ade6d7802205abadcde4363a57e0a1d00981",
+  "git_head": "f047ade6d7802205abadcde4363a57e0a1d00981",
+  "sources": {
+    "configs/m6c/protocol.json": "5a9c6ad23201602616b0954e6d547932a650101c4f3e773f642ddfa4765dc6ad",
+    "simulator/m6c_geometry.py": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+    "tools/m6c_common.py": "2466aabe330c599e4ccf82ae4bdcd9ce72429df254558f2d3822cceea3b20672",
+    "tools/m6c_failure_audit.py": "a3fd97c45eb561e2929136715f9163854f86a47f008e68d32b7f1d5f7d7506f4",
+    "tools/m6c_probe.py": "f043ea5847c55755fbcf4d01b9916fb6fc2140b70496d91b41237b6d9aa94bf1"
+  },
+  "protocol_sha256": "5a9c6ad23201602616b0954e6d547932a650101c4f3e773f642ddfa4765dc6ad",
+  "visual_control": false,
+  "source": "Privileged",
+  "events": [
+    {
+      "name": "final_stop_p170_l9_s101_C",
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p170_l9_s101_C/trace.jsonl",
+        "bytes": 855472,
+        "sha256": "17d66fc47e8975e7fd65f068df8f48a55fe286dffd10991df9a0b694cc46c266"
+      },
+      "audit": {
+        "path": "reports/m6c_failure_events/final_stop_p170_l9_s101_C.jsonl",
+        "bytes": 733239,
+        "sha256": "35c5923d158048feba7351c7d5c6afcfc5eb2706b98eb2a221fe7c62f3685196"
+      },
+      "terminal": {
+        "frame": 133986,
+        "timestamp": 1041.7670296300203,
+        "signed_speed": -8.856879890206912e-06,
+        "speed": 8.858997094954209e-06,
+        "raw_acceleration": -3.345442583183077e-07,
+        "raw_jerk": -1.199775681765379e-05,
+        "geometry": {
+          "source": "Privileged",
+          "coordinate_frame": "hs_world_x_y_left_z_up_m",
+          "timestamp": 1041.7670296300203,
+          "route_remaining_s": -0.6886382600424543,
+          "goal_signed_distance_m": -0.6886382600424543,
+          "goal_lateral_error_m": 0.0017947132279490599,
+          "goal_heading_error_rad": -0.0017923068934742048,
+          "obstacle_obb_clearance_m": null,
+          "all_obstacle_gaps": [],
+          "required_safe_gap_m": 3.0,
+          "available_clearance_to_safe_stop": -0.6886382600424543,
+          "reference": "Ego Actor origin for goal; exact projected Actor OBB including local offset/tilt for clearance; not render mesh"
+        },
+        "road": {
+          "grade": 0.004970618887383025,
+          "road_id": 67,
+          "lane_id": 3,
+          "map_pitch_deg": 360.2423095703125,
+          "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+        },
+        "vehicle_pitch": 0.23954154551029205,
+        "command": {
+          "throttle": 0.0,
+          "brake": 0.12,
+          "steer": 3.6983011792265816e-08,
+          "reason": null,
+          "target_speed": 1.8695711211796892e-18,
+          "requested_acceleration": -1.0630796513942806e-05,
+          "mode": "HOLD",
+          "transition_reason": null
+        },
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.11999999731779099,
+          "steer": 3.6983010431868024e-08,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 1
+        },
+        "predicted_coast_distance": 1.9620225628506687e-10,
+        "predicted_brake_distance": null,
+        "predicted_brake_reason": "historical_C_has_no_validated_brake_distance_model",
+        "planner_available_recomputed": -0.6886382600424579,
+        "planner_original_timestamp": 1041.617029627785,
+        "plan_wall_age": 0.1506399940699339,
+        "safety_reason": null,
+        "source": "Privileged"
+      },
+      "first_coast": {
+        "frame": 133792,
+        "timestamp": 1032.067029485479,
+        "signed_speed": 0.5026763784785527,
+        "speed": 0.5026774101578206,
+        "raw_acceleration": 0.852341369713536,
+        "raw_jerk": 41.85057889662106,
+        "geometry": {
+          "source": "Privileged",
+          "coordinate_frame": "hs_world_x_y_left_z_up_m",
+          "timestamp": 1032.067029485479,
+          "route_remaining_s": 0.48389506127401916,
+          "goal_signed_distance_m": 0.4838950775104992,
+          "goal_lateral_error_m": 0.0019815912988938,
+          "goal_heading_error_rad": -0.0010349043996047413,
+          "obstacle_obb_clearance_m": null,
+          "all_obstacle_gaps": [],
+          "required_safe_gap_m": 3.0,
+          "available_clearance_to_safe_stop": 0.48389506127401916,
+          "reference": "Ego Actor origin for goal; exact projected Actor OBB including local offset/tilt for clearance; not render mesh"
+        },
+        "road": {
+          "grade": 0.004101046869759494,
+          "road_id": 67,
+          "lane_id": 3,
+          "map_pitch_deg": 360.1924743652344,
+          "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+        },
+        "vehicle_pitch": 0.20510374009609222,
+        "command": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": 0.0010560059950229439,
+          "reason": null,
+          "target_speed": 0.20183662566989224,
+          "requested_acceleration": -0.36100894138551404,
+          "mode": "SETTLE",
+          "transition_reason": "coast_distance_reaches_target"
+        },
+        "applied": {
+          "throttle": 0.05286286398768425,
+          "brake": 0.0,
+          "steer": 0.0014420115621760488,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 1
+        },
+        "predicted_coast_distance": 0.38691725934447174,
+        "predicted_brake_distance": null,
+        "predicted_brake_reason": "historical_C_has_no_validated_brake_distance_model",
+        "planner_available_recomputed": 0.4838950612740156,
+        "planner_original_timestamp": 1032.017029484734,
+        "plan_wall_age": 0.05110781453549862,
+        "safety_reason": null,
+        "source": "Privileged"
+      },
+      "first_moving_safety": null
+    },
+    {
+      "name": "final_stop_p170_l9_s102_C",
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p170_l9_s102_C/trace.jsonl",
+        "bytes": 842989,
+        "sha256": "f5540f51ba9358c189d99efa625ac70d377886bcbdfd228d2d172eec3c525432"
+      },
+      "audit": {
+        "path": "reports/m6c_failure_events/final_stop_p170_l9_s102_C.jsonl",
+        "bytes": 722446,
+        "sha256": "0c1783236e0e4d37dc91b80b5ab2e6d716989f56aa5c8310297f7a311688a1f8"
+      },
+      "terminal": {
+        "frame": 138717,
+        "timestamp": 1259.7341285776347,
+        "signed_speed": -8.835535972107426e-06,
+        "speed": 8.84213906933137e-06,
+        "raw_acceleration": 2.803022248818767e-07,
+        "raw_jerk": 5.487201728816329e-06,
+        "geometry": {
+          "source": "Privileged",
+          "coordinate_frame": "hs_world_x_y_left_z_up_m",
+          "timestamp": 1259.7341285776347,
+          "route_remaining_s": -0.7161229540386562,
+          "goal_signed_distance_m": -0.7161229540386562,
+          "goal_lateral_error_m": 0.0019090746890812061,
+          "goal_heading_error_rad": -0.0002982740420884866,
+          "obstacle_obb_clearance_m": null,
+          "all_obstacle_gaps": [],
+          "required_safe_gap_m": 3.0,
+          "available_clearance_to_safe_stop": -0.7161229540386562,
+          "reference": "Ego Actor origin for goal; exact projected Actor OBB including local offset/tilt for clearance; not render mesh"
+        },
+        "road": {
+          "grade": 0.004991021720256888,
+          "road_id": 67,
+          "lane_id": 3,
+          "map_pitch_deg": 360.24346923828125,
+          "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+        },
+        "vehicle_pitch": 0.2395961880683899,
+        "command": {
+          "throttle": 0.0,
+          "brake": 0.12,
+          "steer": -2.7180385912590077e-08,
+          "reason": null,
+          "target_speed": 2.682383813287824e-18,
+          "requested_acceleration": -1.0610566883194425e-05,
+          "mode": "HOLD",
+          "transition_reason": null
+        },
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.11999999731779099,
+          "steer": -2.7085343745625323e-08,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 1
+        },
+        "predicted_coast_distance": 1.9545625397525477e-10,
+        "predicted_brake_distance": null,
+        "predicted_brake_reason": "historical_C_has_no_validated_brake_distance_model",
+        "planner_available_recomputed": -0.71612295403866,
+        "planner_original_timestamp": 1259.6841285768896,
+        "plan_wall_age": 0.05112561583518982,
+        "safety_reason": null,
+        "source": "Privileged"
+      },
+      "first_coast": {
+        "frame": 138520,
+        "timestamp": 1249.8841284308583,
+        "signed_speed": 0.5412565626226847,
+        "speed": 0.5412566713138777,
+        "raw_acceleration": 0.3715825827002306,
+        "raw_jerk": 17.050248353229854,
+        "geometry": {
+          "source": "Privileged",
+          "coordinate_frame": "hs_world_x_y_left_z_up_m",
+          "timestamp": 1249.8841284308583,
+          "route_remaining_s": 0.5219740767706522,
+          "goal_signed_distance_m": 0.5219741012234712,
+          "goal_lateral_error_m": 0.0029852056266066827,
+          "goal_heading_error_rad": -0.001379516924512103,
+          "obstacle_obb_clearance_m": null,
+          "all_obstacle_gaps": [],
+          "required_safe_gap_m": 3.0,
+          "available_clearance_to_safe_stop": 0.5219740767706522,
+          "reference": "Ego Actor origin for goal; exact projected Actor OBB including local offset/tilt for clearance; not render mesh"
+        },
+        "road": {
+          "grade": 0.004072807161704423,
+          "road_id": 67,
+          "lane_id": 3,
+          "map_pitch_deg": 360.19085693359375,
+          "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+        },
+        "vehicle_pitch": 0.20383332669734955,
+        "command": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": -0.00036977244863641885,
+          "reason": null,
+          "target_speed": 0.22059053745210414,
+          "requested_acceleration": -0.3847993606341283,
+          "mode": "SETTLE",
+          "transition_reason": "coast_distance_reaches_target"
+        },
+        "applied": {
+          "throttle": 0.053361013531684875,
+          "brake": 0.0,
+          "steer": 0.002529212273657322,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 1
+        },
+        "predicted_coast_distance": 0.4361723007066093,
+        "predicted_brake_distance": null,
+        "predicted_brake_reason": "historical_C_has_no_validated_brake_distance_model",
+        "planner_available_recomputed": 0.5219740767706487,
+        "planner_original_timestamp": 1249.684128427878,
+        "plan_wall_age": 0.20097429677844048,
+        "safety_reason": null,
+        "source": "Privileged"
+      },
+      "first_moving_safety": null
+    },
+    {
+      "name": "final_straight_s101",
+      "trace": {
+        "path": "reports/m6b_trials/final_straight_s101/trace.jsonl",
+        "bytes": 3201252,
+        "sha256": "abc174ed3b0b343e4a78b471497847b86ada9779d05f754aed7bfa4d50e7347c"
+      },
+      "audit": {
+        "path": "reports/m6c_failure_events/final_straight_s101.jsonl",
+        "bytes": 2775361,
+        "sha256": "bf3b1a7c4ba8deb969e9a14a5c6fed74b3c42f620f64f61effb6724fe5c6afe6"
+      },
+      "terminal": {
+        "frame": 147902,
+        "timestamp": 1682.6825329363346,
+        "signed_speed": 0.0,
+        "speed": 0.0,
+        "raw_acceleration": -0.0010656015164211506,
+        "raw_jerk": -0.021299603248603534,
+        "geometry": {
+          "source": "Privileged",
+          "coordinate_frame": "hs_world_x_y_left_z_up_m",
+          "timestamp": 1682.6825329363346,
+          "route_remaining_s": -0.6908790356626086,
+          "goal_signed_distance_m": -0.6908790356626086,
+          "goal_lateral_error_m": 0.0040279528035160215,
+          "goal_heading_error_rad": -0.0029146966550381848,
+          "obstacle_obb_clearance_m": null,
+          "all_obstacle_gaps": [],
+          "required_safe_gap_m": 3.0,
+          "available_clearance_to_safe_stop": -0.6908790356626086,
+          "reference": "Ego Actor origin for goal; exact projected Actor OBB including local offset/tilt for clearance; not render mesh"
+        },
+        "road": {
+          "grade": -0.024118068126191945,
+          "road_id": 4,
+          "lane_id": 3,
+          "map_pitch_deg": 358.5617370605469,
+          "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+        },
+        "vehicle_pitch": -1.424497365951538,
+        "command": {
+          "throttle": 0.0,
+          "brake": 0.12,
+          "steer": 2.2494578120696901e-07,
+          "reason": null,
+          "target_speed": 6.301925127571995e-19,
+          "requested_acceleration": 7.562310153086393e-19,
+          "mode": "HOLD",
+          "transition_reason": null
+        },
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.11999999731779099,
+          "steer": 2.2494577933684923e-07,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 1
+        },
+        "predicted_coast_distance": 0.0,
+        "predicted_brake_distance": null,
+        "predicted_brake_reason": "historical_C_has_no_validated_brake_distance_model",
+        "planner_available_recomputed": -0.6908790356626113,
+        "planner_original_timestamp": 1682.5325329340994,
+        "plan_wall_age": 0.15191917307674885,
+        "safety_reason": null,
+        "source": "Privileged"
+      },
+      "first_coast": {
+        "frame": 146817,
+        "timestamp": 1628.4325321279466,
+        "signed_speed": 1.88243997864874,
+        "speed": 1.8824606075114338,
+        "raw_acceleration": 1.254854611464807,
+        "raw_jerk": 47.86927059200448,
+        "geometry": {
+          "source": "Privileged",
+          "coordinate_frame": "hs_world_x_y_left_z_up_m",
+          "timestamp": 1628.4325321279466,
+          "route_remaining_s": 2.8671343714100743,
+          "goal_signed_distance_m": 2.8671343400027913,
+          "goal_lateral_error_m": 0.007371265623946814,
+          "goal_heading_error_rad": -0.0037743650549151297,
+          "obstacle_obb_clearance_m": null,
+          "all_obstacle_gaps": [],
+          "required_safe_gap_m": 3.0,
+          "available_clearance_to_safe_stop": 2.8671343714100743,
+          "reference": "Ego Actor origin for goal; exact projected Actor OBB including local offset/tilt for clearance; not render mesh"
+        },
+        "road": {
+          "grade": -0.02762073540930624,
+          "road_id": 4,
+          "lane_id": 3,
+          "map_pitch_deg": 358.3610534667969,
+          "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+        },
+        "vehicle_pitch": -1.5970689058303833,
+        "command": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": 0.006106810613565775,
+          "reason": null,
+          "target_speed": 1.2915223030173089,
+          "requested_acceleration": -0.7091259653929499,
+          "mode": "SETTLE",
+          "transition_reason": "coast_distance_reaches_target"
+        },
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": 0.007013255730271339,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 1
+        },
+        "predicted_coast_distance": 2.754550265189283,
+        "predicted_brake_distance": null,
+        "predicted_brake_reason": "historical_C_has_no_validated_brake_distance_model",
+        "planner_available_recomputed": 2.8671343714100743,
+        "planner_original_timestamp": 1628.3325321264565,
+        "plan_wall_age": 0.10118951462209225,
+        "safety_reason": null,
+        "source": "Privileged"
+      },
+      "first_moving_safety": {
+        "frame": 146868,
+        "timestamp": 1630.9825321659446,
+        "signed_speed": 0.983223384640342,
+        "speed": 0.9832235172860949,
+        "raw_acceleration": -0.4608146470905511,
+        "raw_jerk": -9.626365976716182,
+        "geometry": {
+          "source": "Privileged",
+          "coordinate_frame": "hs_world_x_y_left_z_up_m",
+          "timestamp": 1630.9825321659446,
+          "route_remaining_s": -0.6699824722230597,
+          "goal_signed_distance_m": -0.6699824722230597,
+          "goal_lateral_error_m": 0.003871783627912737,
+          "goal_heading_error_rad": -0.0025112277498902102,
+          "obstacle_obb_clearance_m": null,
+          "all_obstacle_gaps": [],
+          "required_safe_gap_m": 3.0,
+          "available_clearance_to_safe_stop": -0.6699824722230597,
+          "reference": "Ego Actor origin for goal; exact projected Actor OBB including local offset/tilt for clearance; not render mesh"
+        },
+        "road": {
+          "grade": -0.02413863173059379,
+          "road_id": 4,
+          "lane_id": 3,
+          "map_pitch_deg": 358.560546875,
+          "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+        },
+        "vehicle_pitch": -1.4291964769363403,
+        "command": {
+          "throttle": 0.0,
+          "brake": 1.0,
+          "steer": 0.0007244838608614941,
+          "reason": "position_velocity_inconsistent",
+          "mode": "EMERGENCY",
+          "transition_reason": "position_velocity_inconsistent"
+        },
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": 0.0007244838634505868,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 1
+        },
+        "predicted_coast_distance": 1.0988526031663477,
+        "predicted_brake_distance": null,
+        "predicted_brake_reason": "historical_C_has_no_validated_brake_distance_model",
+        "planner_available_recomputed": -0.6699824722230616,
+        "planner_original_timestamp": 1630.9325321651995,
+        "plan_wall_age": 0.05092126503586769,
+        "safety_reason": "position_velocity_inconsistent",
+        "source": "Privileged"
+      }
+    },
+    {
+      "name": "final_mild_curve_s101",
+      "trace": {
+        "path": "reports/m6b_trials/final_mild_curve_s101/trace.jsonl",
+        "bytes": 3215405,
+        "sha256": "ad0b5a3bd5f026c2f6a4685fdd66dd0d1878abe6f6ec75c8841fe50fac714c89"
+      },
+      "audit": {
+        "path": "reports/m6c_failure_events/final_mild_curve_s101.jsonl",
+        "bytes": 2712027,
+        "sha256": "3e9a879998b7aba8a854947335054b7244a1b371c7480cd0de57d9e8e1e6d3e2"
+      },
+      "terminal": {
+        "frame": 149588,
+        "timestamp": 1765.1042815241963,
+        "signed_speed": -9.199512614218167e-10,
+        "speed": 7.695159805901822e-08,
+        "raw_acceleration": -1.6227074478375016e-08,
+        "raw_jerk": 1.353105250615327e-06,
+        "geometry": {
+          "source": "Privileged",
+          "coordinate_frame": "hs_world_x_y_left_z_up_m",
+          "timestamp": 1765.1042815241963,
+          "route_remaining_s": -1.1109628022047124,
+          "goal_signed_distance_m": -1.1109628022047124,
+          "goal_lateral_error_m": 0.02460561747902089,
+          "goal_heading_error_rad": -0.024959678368440485,
+          "obstacle_obb_clearance_m": null,
+          "all_obstacle_gaps": [],
+          "required_safe_gap_m": 3.0,
+          "available_clearance_to_safe_stop": -1.1109628022047124,
+          "reference": "Ego Actor origin for goal; exact projected Actor OBB including local offset/tilt for clearance; not render mesh"
+        },
+        "road": {
+          "grade": 0.0,
+          "road_id": 1577,
+          "lane_id": -2,
+          "map_pitch_deg": 0.0,
+          "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+        },
+        "vehicle_pitch": -6.147169915493578e-05,
+        "command": {
+          "throttle": 0.0,
+          "brake": 0.12,
+          "steer": -2.375140366576874e-08,
+          "reason": null,
+          "target_speed": 0.0,
+          "requested_acceleration": -9.234191767082186e-08,
+          "mode": "HOLD",
+          "transition_reason": null
+        },
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.11999999731779099,
+          "steer": -2.3751404398808518e-08,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 1
+        },
+        "predicted_coast_distance": 1.4803869601945452e-14,
+        "predicted_brake_distance": null,
+        "predicted_brake_reason": "historical_C_has_no_validated_brake_distance_model",
+        "planner_available_recomputed": -1.0,
+        "planner_original_timestamp": 1764.954281521961,
+        "plan_wall_age": 0.15148133598268032,
+        "safety_reason": null,
+        "source": "Privileged"
+      },
+      "first_coast": {
+        "frame": 148592,
+        "timestamp": 1715.3042807821184,
+        "signed_speed": 0.6476160168286039,
+        "speed": 0.6478523757544324,
+        "raw_acceleration": 0.6686146599384156,
+        "raw_jerk": 12.260731031077592,
+        "geometry": {
+          "source": "Privileged",
+          "coordinate_frame": "hs_world_x_y_left_z_up_m",
+          "timestamp": 1715.3042807821184,
+          "route_remaining_s": 0.7006404063023766,
+          "goal_signed_distance_m": 0.6994872783231014,
+          "goal_lateral_error_m": 0.05884491306649344,
+          "goal_heading_error_rad": -0.04412232083405154,
+          "obstacle_obb_clearance_m": null,
+          "all_obstacle_gaps": [],
+          "required_safe_gap_m": 3.0,
+          "available_clearance_to_safe_stop": 0.7006404063023766,
+          "reference": "Ego Actor origin for goal; exact projected Actor OBB including local offset/tilt for clearance; not render mesh"
+        },
+        "road": {
+          "grade": 0.0,
+          "road_id": 1577,
+          "lane_id": -2,
+          "map_pitch_deg": 0.0,
+          "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+        },
+        "vehicle_pitch": -0.0007923019002191722,
+        "command": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": 0.023888671732945347,
+          "reason": null,
+          "target_speed": 0.35854688167267657,
+          "requested_acceleration": -0.34716659289810703,
+          "mode": "SETTLE",
+          "transition_reason": "coast_distance_reaches_target"
+        },
+        "applied": {
+          "throttle": 0.06629182398319244,
+          "brake": 0.0,
+          "steer": 0.04637864604592323,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 1
+        },
+        "predicted_coast_distance": 0.5808310923358493,
+        "predicted_brake_distance": null,
+        "predicted_brake_reason": "historical_C_has_no_validated_brake_distance_model",
+        "planner_available_recomputed": 0.7006404063023766,
+        "planner_original_timestamp": 1715.1542807798833,
+        "plan_wall_age": 0.1519916132092476,
+        "safety_reason": null,
+        "source": "Privileged"
+      },
+      "first_moving_safety": {
+        "frame": 148406,
+        "timestamp": 1706.0042806435376,
+        "signed_speed": 2.7037517522401644,
+        "speed": 2.7037520204718435,
+        "raw_acceleration": 0.4425506097729251,
+        "raw_jerk": 17.49673548191113,
+        "geometry": {
+          "source": "Privileged",
+          "coordinate_frame": "hs_world_x_y_left_z_up_m",
+          "timestamp": 1706.0042806435376,
+          "route_remaining_s": 16.048554035086518,
+          "goal_signed_distance_m": 15.943153788972692,
+          "goal_lateral_error_m": 1.674731791789713,
+          "goal_heading_error_rad": -0.17438605186531486,
+          "obstacle_obb_clearance_m": null,
+          "all_obstacle_gaps": [],
+          "required_safe_gap_m": 3.0,
+          "available_clearance_to_safe_stop": 16.048554035086518,
+          "reference": "Ego Actor origin for goal; exact projected Actor OBB including local offset/tilt for clearance; not render mesh"
+        },
+        "road": {
+          "grade": 0.0,
+          "road_id": 1691,
+          "lane_id": 2,
+          "map_pitch_deg": 360.0,
+          "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+        },
+        "vehicle_pitch": 0.0001912452862598002,
+        "command": {
+          "throttle": 0.0,
+          "brake": 1.0,
+          "steer": 0.000801040758724526,
+          "reason": "plan_expired",
+          "mode": "EMERGENCY",
+          "transition_reason": "plan_expired"
+        },
+        "applied": {
+          "throttle": 0.1659058928489685,
+          "brake": 0.0,
+          "steer": 0.0008010407327674329,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 1
+        },
+        "predicted_coast_distance": 4.4375427887867485,
+        "predicted_brake_distance": null,
+        "predicted_brake_reason": "historical_C_has_no_validated_brake_distance_model",
+        "planner_available_recomputed": 16.048554035086518,
+        "planner_original_timestamp": 1705.7542806398124,
+        "plan_wall_age": 0.43015570379793644,
+        "safety_reason": "plan_expired",
+        "source": "Privileged"
+      }
+    },
+    {
+      "name": "final_junction_turn_s101",
+      "trace": {
+        "path": "reports/m6b_trials/final_junction_turn_s101/trace.jsonl",
+        "bytes": 3207715,
+        "sha256": "2e21f89d5e352728255906f65b7c86dde518c644b4ca703c73a066982c6cb95c"
+      },
+      "audit": {
+        "path": "reports/m6c_failure_events/final_junction_turn_s101.jsonl",
+        "bytes": 2709487,
+        "sha256": "3e798ba127e2e6ae5d1f730da601ed8edc7fd261aa5427c1aeaef8f1d0fa11ac"
+      },
+      "terminal": {
+        "frame": 151278,
+        "timestamp": 1847.5137205738574,
+        "signed_speed": -2.743389206405708e-09,
+        "speed": 1.622371407141453e-07,
+        "raw_acceleration": -1.1502951287218767e-08,
+        "raw_jerk": 1.0787654694963085e-08,
+        "geometry": {
+          "source": "Privileged",
+          "coordinate_frame": "hs_world_x_y_left_z_up_m",
+          "timestamp": 1847.5137205738574,
+          "route_remaining_s": -1.1606524208033766,
+          "goal_signed_distance_m": -1.1606524208033766,
+          "goal_lateral_error_m": -0.0893380087674773,
+          "goal_heading_error_rad": 0.07061446531750759,
+          "obstacle_obb_clearance_m": null,
+          "all_obstacle_gaps": [],
+          "required_safe_gap_m": 3.0,
+          "available_clearance_to_safe_stop": -1.1606524208033766,
+          "reference": "Ego Actor origin for goal; exact projected Actor OBB including local offset/tilt for clearance; not render mesh"
+        },
+        "road": {
+          "grade": 0.0,
+          "road_id": 1655,
+          "lane_id": -5,
+          "map_pitch_deg": 0.0,
+          "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+        },
+        "vehicle_pitch": -0.00012294339830987155,
+        "command": {
+          "throttle": 0.0,
+          "brake": 0.12,
+          "steer": 2.6824022497677824e-08,
+          "reason": null,
+          "target_speed": 1.9646929210553754e-19,
+          "requested_acceleration": -1.946845688567386e-07,
+          "mode": "HOLD",
+          "transition_reason": null
+        },
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.11999999731779099,
+          "steer": 2.6824022114624313e-08,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 1
+        },
+        "predicted_coast_distance": 6.580221036999462e-14,
+        "predicted_brake_distance": null,
+        "predicted_brake_reason": "historical_C_has_no_validated_brake_distance_model",
+        "planner_available_recomputed": -1.0,
+        "planner_original_timestamp": 1847.3637205716223,
+        "plan_wall_age": 0.15148277208209038,
+        "safety_reason": null,
+        "source": "Privileged"
+      },
+      "first_coast": {
+        "frame": 150244,
+        "timestamp": 1795.8137198034674,
+        "signed_speed": 0.6419698458302063,
+        "speed": 0.6423132692639042,
+        "raw_acceleration": 0.008344989988537322,
+        "raw_jerk": 10.399867243306778,
+        "geometry": {
+          "source": "Privileged",
+          "coordinate_frame": "hs_world_x_y_left_z_up_m",
+          "timestamp": 1795.8137198034674,
+          "route_remaining_s": 0.6828075732747507,
+          "goal_signed_distance_m": 0.6783894680471946,
+          "goal_lateral_error_m": -0.1932418827841748,
+          "goal_heading_error_rad": 0.11081318420705877,
+          "obstacle_obb_clearance_m": null,
+          "all_obstacle_gaps": [],
+          "required_safe_gap_m": 3.0,
+          "available_clearance_to_safe_stop": 0.6828075732747507,
+          "reference": "Ego Actor origin for goal; exact projected Actor OBB including local offset/tilt for clearance; not render mesh"
+        },
+        "road": {
+          "grade": 0.0,
+          "road_id": 1655,
+          "lane_id": -5,
+          "map_pitch_deg": 0.0,
+          "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+        },
+        "vehicle_pitch": -0.001372867962345481,
+        "command": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": 0.02920174360902367,
+          "reason": null,
+          "target_speed": 0.34493738629504217,
+          "requested_acceleration": -0.3568510595626344,
+          "mode": "SETTLE",
+          "transition_reason": "coast_distance_reaches_target"
+        },
+        "applied": {
+          "throttle": 0.0601566880941391,
+          "brake": 0.0,
+          "steer": -0.03629138693213463,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 1
+        },
+        "predicted_coast_distance": 0.5730299600109001,
+        "predicted_brake_distance": null,
+        "predicted_brake_reason": "historical_C_has_no_validated_brake_distance_model",
+        "planner_available_recomputed": 0.6828075732747507,
+        "planner_original_timestamp": 1795.563719799742,
+        "plan_wall_age": 0.25538450479507446,
+        "safety_reason": null,
+        "source": "Privileged"
+      },
+      "first_moving_safety": null
+    },
+    {
+      "name": "final_blocked_p126_s102",
+      "trace": {
+        "path": "reports/m6b_trials/final_blocked_p126_s102/trace.jsonl",
+        "bytes": 1480055,
+        "sha256": "3bf78fb7a2134158a0d0f5fc04b35edcef076f0edef12c9aeddc8af8d9578e75"
+      },
+      "audit": {
+        "path": "reports/m6c_failure_events/final_blocked_p126_s102.jsonl",
+        "bytes": 1017310,
+        "sha256": "f2a8f97eb2afa8e967fafa9b04fbce06149dffcb090d3dc9d43ca1418505499e"
+      },
+      "terminal": {
+        "frame": 155900,
+        "timestamp": 2065.72015327774,
+        "signed_speed": 1.7894844053137427e-05,
+        "speed": 1.7922859542921145e-05,
+        "raw_acceleration": -6.375292367787401e-07,
+        "raw_jerk": -1.3632283200349259e-05,
+        "geometry": {
+          "source": "Privileged",
+          "coordinate_frame": "hs_world_x_y_left_z_up_m",
+          "timestamp": 2065.72015327774,
+          "route_remaining_s": 64.54966676738226,
+          "goal_signed_distance_m": 64.54966676392401,
+          "goal_lateral_error_m": -0.0008245799946913592,
+          "goal_heading_error_rad": 0.0007318366675539423,
+          "obstacle_obb_clearance_m": 0.25511133678853143,
+          "all_obstacle_gaps": [
+            {
+              "actor_id": 255,
+              "gap_m": 0.25511133678853143
+            },
+            {
+              "actor_id": 256,
+              "gap_m": 1.5457456554382114
+            }
+          ],
+          "required_safe_gap_m": 3.0,
+          "available_clearance_to_safe_stop": -2.7448886632114684,
+          "reference": "Ego Actor origin for goal; exact projected Actor OBB including local offset/tilt for clearance; not render mesh"
+        },
+        "road": {
+          "grade": -0.009353877100126121,
+          "road_id": 3,
+          "lane_id": -2,
+          "map_pitch_deg": -0.6075592041015625,
+          "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+        },
+        "vehicle_pitch": -0.6245114803314209,
+        "command": {
+          "throttle": 0.0,
+          "brake": 0.12,
+          "steer": -2.6727745727112125e-08,
+          "reason": null,
+          "target_speed": 0.0,
+          "requested_acceleration": -2.1507431451505375e-05,
+          "mode": "HOLD",
+          "transition_reason": null
+        },
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.11999999731779099,
+          "steer": -2.672774535028566e-08,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 1
+        },
+        "predicted_coast_distance": 8.030530448724349e-10,
+        "predicted_brake_distance": null,
+        "predicted_brake_reason": "historical_C_has_no_validated_brake_distance_model",
+        "planner_available_recomputed": -2.699034383808508,
+        "planner_original_timestamp": 2065.6201532762498,
+        "plan_wall_age": 0.10116107203066349,
+        "safety_reason": null,
+        "source": "Privileged"
+      },
+      "first_coast": {
+        "frame": 155658,
+        "timestamp": 2053.620153097436,
+        "signed_speed": 1.789621738932041,
+        "speed": 1.7896326371181799,
+        "raw_acceleration": 0.14107529523901202,
+        "raw_jerk": -2.776417549303099,
+        "geometry": {
+          "source": "Privileged",
+          "coordinate_frame": "hs_world_x_y_left_z_up_m",
+          "timestamp": 2053.620153097436,
+          "route_remaining_s": 69.93647599368961,
+          "goal_signed_distance_m": 69.93647601604688,
+          "goal_lateral_error_m": -0.0057582624980175735,
+          "goal_heading_error_rad": 0.0028901955730082918,
+          "obstacle_obb_clearance_m": 5.631132172526393,
+          "all_obstacle_gaps": [
+            {
+              "actor_id": 255,
+              "gap_m": 5.631132172526393
+            },
+            {
+              "actor_id": 256,
+              "gap_m": 5.8336199079821585
+            }
+          ],
+          "required_safe_gap_m": 3.0,
+          "available_clearance_to_safe_stop": 2.631132172526393,
+          "reference": "Ego Actor origin for goal; exact projected Actor OBB including local offset/tilt for clearance; not render mesh"
+        },
+        "road": {
+          "grade": -0.01608756337471832,
+          "road_id": 3,
+          "lane_id": -2,
+          "map_pitch_deg": -0.9933699369430542,
+          "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+        },
+        "vehicle_pitch": -0.9750640988349915,
+        "command": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": -0.004159876414229662,
+          "reason": null,
+          "target_speed": 1.1984993208755015,
+          "requested_acceleration": -0.7093599794912141,
+          "mode": "SETTLE",
+          "transition_reason": "coast_distance_reaches_target"
+        },
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": -0.005330504849553108,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 1
+        },
+        "predicted_coast_distance": 2.5721583868142712,
+        "predicted_brake_distance": null,
+        "predicted_brake_reason": "historical_C_has_no_validated_brake_distance_model",
+        "planner_available_recomputed": 2.6877748424988273,
+        "planner_original_timestamp": 2053.4201530944556,
+        "plan_wall_age": 0.20155924372375011,
+        "safety_reason": null,
+        "source": "Privileged"
+      },
+      "first_moving_safety": {
+        "frame": 155800,
+        "timestamp": 2060.720153203234,
+        "signed_speed": 0.3011695057019208,
+        "speed": 0.3011706193927039,
+        "raw_acceleration": -0.058424167372582825,
+        "raw_jerk": 0.022417047805530752,
+        "geometry": {
+          "source": "Privileged",
+          "coordinate_frame": "hs_world_x_y_left_z_up_m",
+          "timestamp": 2060.720153203234,
+          "route_remaining_s": 64.55149028981202,
+          "goal_signed_distance_m": 64.55149028647506,
+          "goal_lateral_error_m": -0.000791406264451373,
+          "goal_heading_error_rad": 0.0006511428865243474,
+          "obstacle_obb_clearance_m": 0.2569833332247749,
+          "all_obstacle_gaps": [
+            {
+              "actor_id": 255,
+              "gap_m": 0.2569833332247749
+            },
+            {
+              "actor_id": 256,
+              "gap_m": 1.5458958294581644
+            }
+          ],
+          "required_safe_gap_m": 3.0,
+          "available_clearance_to_safe_stop": -2.743016666775225,
+          "reference": "Ego Actor origin for goal; exact projected Actor OBB including local offset/tilt for clearance; not render mesh"
+        },
+        "road": {
+          "grade": -0.009356171781912575,
+          "road_id": 3,
+          "lane_id": -2,
+          "map_pitch_deg": -0.6076898574829102,
+          "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+        },
+        "vehicle_pitch": -0.6254882216453552,
+        "command": {
+          "throttle": 0.0,
+          "brake": 1.0,
+          "steer": 0.0010718072785663748,
+          "reason": "current_collision_guard",
+          "mode": "EMERGENCY",
+          "transition_reason": "current_collision_guard"
+        },
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": 0.0010718072298914194,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 1
+        },
+        "predicted_coast_distance": 0.16359425605164435,
+        "predicted_brake_distance": null,
+        "predicted_brake_reason": "historical_C_has_no_validated_brake_distance_model",
+        "planner_available_recomputed": -2.697210861378762,
+        "planner_original_timestamp": 2060.620153201744,
+        "plan_wall_age": 0.10168059915304184,
+        "safety_reason": "current_collision_guard",
+        "source": "Privileged"
+      }
+    },
+    {
+      "name": "final_blocked_p126_s101_fixture_retry",
+      "trace": {
+        "path": "reports/m6b_trials/final_blocked_p126_s101_fixture_retry/trace.jsonl",
+        "bytes": 1486936,
+        "sha256": "abed25db6ca450eacb67e5707cd6be3e9b33a47bd98f281f5c8e765ff37c8935"
+      },
+      "audit": {
+        "path": "reports/m6c_failure_events/final_blocked_p126_s101_fixture_retry.jsonl",
+        "bytes": 1021723,
+        "sha256": "beda6971f0b355406478169fc5c0e4ba6d4659d2610c1dd041f9a98127f3f049"
+      },
+      "terminal": {
+        "frame": 174403,
+        "timestamp": 2948.060153177008,
+        "signed_speed": 1.7922822154582148e-05,
+        "speed": 1.7930543055886063e-05,
+        "raw_acceleration": 6.670448198281112e-07,
+        "raw_jerk": 1.1988751967020753e-05,
+        "geometry": {
+          "source": "Privileged",
+          "coordinate_frame": "hs_world_x_y_left_z_up_m",
+          "timestamp": 2948.060153177008,
+          "route_remaining_s": 64.54298710293818,
+          "goal_signed_distance_m": 64.54298709421866,
+          "goal_lateral_error_m": -0.002263581972446619,
+          "goal_heading_error_rad": 0.0013334447578028374,
+          "obstacle_obb_clearance_m": 0.24790615013699888,
+          "all_obstacle_gaps": [
+            {
+              "actor_id": 326,
+              "gap_m": 0.24790615013699888
+            },
+            {
+              "actor_id": 327,
+              "gap_m": 1.5445787673407705
+            }
+          ],
+          "required_safe_gap_m": 3.0,
+          "available_clearance_to_safe_stop": -2.752093849863001,
+          "reference": "Ego Actor origin for goal; exact projected Actor OBB including local offset/tilt for clearance; not render mesh"
+        },
+        "road": {
+          "grade": -0.009345496701697514,
+          "road_id": 3,
+          "lane_id": -2,
+          "map_pitch_deg": -0.6070808172225952,
+          "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+        },
+        "vehicle_pitch": -0.6240265369415283,
+        "command": {
+          "throttle": 0.0,
+          "brake": 0.12,
+          "steer": -1.6832923931746262e-08,
+          "reason": null,
+          "target_speed": 0.0,
+          "requested_acceleration": -2.1516651667063274e-05,
+          "mode": "HOLD",
+          "transition_reason": null
+        },
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.11999999731779099,
+          "steer": -1.6810485448104373e-08,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 1
+        },
+        "predicted_coast_distance": 8.037417203887883e-10,
+        "predicted_brake_distance": null,
+        "predicted_brake_reason": "historical_C_has_no_validated_brake_distance_model",
+        "planner_available_recomputed": -2.7057140482526005,
+        "planner_original_timestamp": 2948.010153176263,
+        "plan_wall_age": 0.0517125204205513,
+        "safety_reason": null,
+        "source": "Privileged"
+      },
+      "first_coast": {
+        "frame": 174157,
+        "timestamp": 2935.7601529937238,
+        "signed_speed": 1.7530377161392667,
+        "speed": 1.7530531840358243,
+        "raw_acceleration": 0.08342001371308641,
+        "raw_jerk": 5.601969707131171,
+        "geometry": {
+          "source": "Privileged",
+          "coordinate_frame": "hs_world_x_y_left_z_up_m",
+          "timestamp": 2935.7601529937238,
+          "route_remaining_s": 69.83686092630172,
+          "goal_signed_distance_m": 69.83686095639985,
+          "goal_lateral_error_m": -0.007706739427446701,
+          "goal_heading_error_rad": 0.0036690370338021694,
+          "obstacle_obb_clearance_m": 5.531067585261122,
+          "all_obstacle_gaps": [
+            {
+              "actor_id": 326,
+              "gap_m": 5.531067585261122
+            },
+            {
+              "actor_id": 327,
+              "gap_m": 5.736940578265254
+            }
+          ],
+          "required_safe_gap_m": 3.0,
+          "available_clearance_to_safe_stop": 2.5310675852611224,
+          "reference": "Ego Actor origin for goal; exact projected Actor OBB including local offset/tilt for clearance; not render mesh"
+        },
+        "road": {
+          "grade": -0.01596295872996113,
+          "road_id": 3,
+          "lane_id": -2,
+          "map_pitch_deg": -0.9862353205680847,
+          "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+        },
+        "vehicle_pitch": -0.96490079164505,
+        "command": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": -0.004935745332599099,
+          "reason": null,
+          "target_speed": 1.1658511906412978,
+          "requested_acceleration": -0.7046423920734318,
+          "mode": "SETTLE",
+          "transition_reason": "coast_distance_reaches_target"
+        },
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": -0.006068652495741844,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 1
+        },
+        "predicted_coast_distance": 2.500841150581819,
+        "predicted_brake_distance": null,
+        "predicted_brake_reason": "historical_C_has_no_validated_brake_distance_model",
+        "planner_available_recomputed": 2.5881597751109435,
+        "planner_original_timestamp": 2935.6101529914886,
+        "plan_wall_age": 0.15157622657716274,
+        "safety_reason": null,
+        "source": "Privileged"
+      },
+      "first_moving_safety": {
+        "frame": 174303,
+        "timestamp": 2943.060153102502,
+        "signed_speed": 0.29195780483225614,
+        "speed": 0.29195891351597636,
+        "raw_acceleration": 0.05933568516139233,
+        "raw_jerk": 4.5330875386536205,
+        "geometry": {
+          "source": "Privileged",
+          "coordinate_frame": "hs_world_x_y_left_z_up_m",
+          "timestamp": 2943.060153102502,
+          "route_remaining_s": 64.54499360547715,
+          "goal_signed_distance_m": 64.54499359670973,
+          "goal_lateral_error_m": -0.00227668382999195,
+          "goal_heading_error_rad": 0.0013393037122009233,
+          "obstacle_obb_clearance_m": 0.24988775144130662,
+          "all_obstacle_gaps": [
+            {
+              "actor_id": 326,
+              "gap_m": 0.24988775144130662
+            },
+            {
+              "actor_id": 327,
+              "gap_m": 1.5448975898183426
+            }
+          ],
+          "required_safe_gap_m": 3.0,
+          "available_clearance_to_safe_stop": -2.7501122485586933,
+          "reference": "Ego Actor origin for goal; exact projected Actor OBB including local offset/tilt for clearance; not render mesh"
+        },
+        "road": {
+          "grade": -0.009348035747127496,
+          "road_id": 3,
+          "lane_id": -2,
+          "map_pitch_deg": -0.6072242856025696,
+          "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+        },
+        "vehicle_pitch": -0.6247847080230713,
+        "command": {
+          "throttle": 0.0,
+          "brake": 1.0,
+          "steer": 0.0017281667258276995,
+          "reason": "current_collision_guard",
+          "mode": "EMERGENCY",
+          "transition_reason": "current_collision_guard"
+        },
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": -0.0006786892772652209,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 1
+        },
+        "predicted_coast_distance": 0.15502051482392176,
+        "predicted_brake_distance": null,
+        "predicted_brake_reason": "historical_C_has_no_validated_brake_distance_model",
+        "planner_available_recomputed": -2.703707545713632,
+        "planner_original_timestamp": 2943.010153101757,
+        "plan_wall_age": 0.051413942128419876,
+        "safety_reason": "current_collision_guard",
+        "source": "Privileged"
+      }
+    }
+  ],
+  "historical_worst": {
+    "name": "final_mild_curve_s101",
+    "interval_ms": 178.08304354548454,
+    "parts_ms": {
+      "previous_apply_to_tick": 0.04832074046134949,
+      "previous_tick": 80.06316795945168,
+      "record_tail": 0.5120113492012024,
+      "sleep_wakeup": 95.58700770139694,
+      "current_preapply": 1.8725357949733734
+    },
+    "reconstruction_error_ms": 0.0,
+    "original": {
+      "ms": 178.08304354548454,
+      "previous": {
+        "scheduled": 15465607.32166747,
+        "wake_up": 15465607.321746096,
+        "previous_sleep_start": 15465607.30261082,
+        "snapshot_end": 15465607.321931101,
+        "submit_poll_end": 15465607.32255012,
+        "safety_end": 15465607.323489867,
+        "controller_end": 15465607.323936608,
+        "apply_control": 15465607.323937127,
+        "apply_end": 15465607.32398482,
+        "tick_start": 15465607.323985448,
+        "tick_end": 15465607.404048616
+      },
+      "current": {
+        "scheduled": 15465607.42166747,
+        "wake_up": 15465607.500147635,
+        "previous_sleep_start": 15465607.404560627,
+        "snapshot_end": 15465607.500413101,
+        "submit_poll_end": 15465607.50058408,
+        "safety_end": 15465607.501704112,
+        "controller_end": 15465607.502019802,
+        "apply_control": 15465607.50202017,
+        "apply_end": 15465607.502054147,
+        "tick_start": 15465607.502054663,
+        "tick_end": 15465607.504112424
+      }
+    }
+  },
+  "findings": [
+    "Goal and auxiliary1m semantics agree; signed endpoint overshoot remains negative. No target shift proposed.",
+    "3m is subtracted once from physical OBB gap; frozen planner uses route-arc gap based on actor origin, differs by local OBB offset and curvature.",
+    "Road126 residual safety gap cannot be explained by ~3cm ego OBB offset; coast model/execution dominates metre-scale loss.",
+    "Raw motion/command/grade association is not causal proof of Gear-only mechanism."
+  ]
+}

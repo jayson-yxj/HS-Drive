@@ -1,0 +1,38 @@
+[
+  {
+    "name": "preserved_regression",
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "tools.m6c_preserved_regression"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "analysis",
+    "command": [
+      ".venv-gpu/bin/python",
+      "-m",
+      "tools.m6c_analyze"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "runtime_resources",
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "tools.m6c_runtime_resources"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "body_audit",
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "tools.m6c_body_audit"
+    ],
+    "exit_code": 1
+  }
+]

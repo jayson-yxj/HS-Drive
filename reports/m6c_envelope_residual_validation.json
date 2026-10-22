@@ -1,0 +1,1046 @@
+{
+  "kind": "offline_every_frame_on_independent_CARLA_validation_roads_no_refit",
+  "base": "f047ade6d7802205abadcde4363a57e0a1d00981",
+  "git_head": "2947f558583dbb35aafa5bbbfccc98a9ff0fbf1f",
+  "sources": {
+    "configs/m6c/envelope_model.json": "aa0f603f1f7659c04ebe405c5f02c4114332af20930898754fa017227450dc6c",
+    "configs/m6c/protocol.json": "5a9c6ad23201602616b0954e6d547932a650101c4f3e773f642ddfa4765dc6ad",
+    "simulator/m6c_envelope.py": "16775977d6cd7ec8368edc88819da1fa71e787dc2ebd79810c6a935c1f41b2e3",
+    "simulator/m6c_geometry.py": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+    "simulator/m6c_motion.py": "8b0353e46a64b88773edcbe2809908feeb4fda71c50dfc3a427183c9ad07ded2",
+    "simulator/m6c_worker.py": "66287ce4469f4642bb4a2e3da445db61763b78559a3425e31103061a8192e56e",
+    "tests/test_m6c_stopping.py": "8a3cbde21fe85b29d8904a05e54102d8ffc8f7e7b079bbc49451004bb0de4dfa",
+    "tools/m6c_analyze.py": "d7aa6075e87e7980b99e03fa96c4533d8aeb974ba2bd143db4650fa676e5a84b",
+    "tools/m6c_body_audit.py": "d1fafafcb56615a8dda731014702e30a7a87a1ba431fa016442b3d3ee8e1bf69",
+    "tools/m6c_campaign.py": "6f1134c592104366e5a4e7674ff5ac031d4ec26cd39a84bf61b02d20f4a4fe07",
+    "tools/m6c_common.py": "2466aabe330c599e4ccf82ae4bdcd9ce72429df254558f2d3822cceea3b20672",
+    "tools/m6c_drive.py": "d69690c1b5d9b25cc6ae9db6f9b4a413d4b16792cfc3671c9faf980f7e58291b",
+    "tools/m6c_envelope_residuals.py": "8616a277e1dc7c0e9401c585540d4b95ead40bfb81d1d5ceab9c88f588217801",
+    "tools/m6c_failure_audit.py": "a3fd97c45eb561e2929136715f9163854f86a47f008e68d32b7f1d5f7d7506f4",
+    "tools/m6c_fit_envelope.py": "7b71e581d2bad02581d039ec6af23f7d8763c2653da1fdafb7cf65f918321cdb",
+    "tools/m6c_probe.py": "f043ea5847c55755fbcf4d01b9916fb6fc2140b70496d91b41237b6d9aa94bf1",
+    "tools/m6c_probe_analysis.py": "57c67c853e258605b79c7007669ae425475f5a49d828bd2826320c82c421e9b2",
+    "tools/m6c_resource_monitor.py": "716b4ef7de5fda3d97764242166efbef35be232787d3182a99886b58c517a93d",
+    "tools/m6c_runtime_resources.py": "7a84901a037b1e2bd61b6d9ae943b754932574e615a5c0b940ec92632a9187be",
+    "tools/m6c_verify_history.py": "175027ad611ac7b8e576581a28ce9c8df4384ca2eb8b85a8569db22b6fc33a17"
+  },
+  "protocol_sha256": "5a9c6ad23201602616b0954e6d547932a650101c4f3e773f642ddfa4765dc6ad",
+  "visual_control": false,
+  "source": "Privileged",
+  "trials": [
+    {
+      "name": "validation_p66_s101_stop_auto_1.0_0.0",
+      "action": "coast",
+      "stopped": false,
+      "stats": {
+        "B": {
+          "supported_samples": 0,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": null,
+          "examples": []
+        },
+        "C": {
+          "supported_samples": 0,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": null,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s101_stop_auto_1.0_0.0.jsonl",
+        "bytes": 427330,
+        "sha256": "49ba10d1621e7a5ee710610b0bf84e8d6620365da296061b039645b218bd7597"
+      }
+    },
+    {
+      "name": "validation_p66_s101_stop_auto_1.0_0.01",
+      "action": "brake_001",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 2,
+          "underbound_samples": 1,
+          "min_predicted_minus_observed_m": -0.023328354600139697,
+          "examples": [
+            {
+              "frame": 581495,
+              "speed": 1.1113630408729993,
+              "grade": -0.011381743806729216,
+              "predicted": 0.04898631925354503,
+              "observed_remaining_lower_bound": 0.07231467385368473
+            }
+          ]
+        },
+        "C": {
+          "supported_samples": 2,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.5151918074183204,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s101_stop_auto_1.0_0.01.jsonl",
+        "bytes": 81351,
+        "sha256": "0fc81783ee02e88acbbdb1b8725a4b843a11eb003442a708dfac3b34dabd3b51"
+      }
+    },
+    {
+      "name": "validation_p66_s101_stop_auto_1.0_0.05",
+      "action": "brake_005",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 2,
+          "underbound_samples": 1,
+          "min_predicted_minus_observed_m": -0.014099566910993233,
+          "examples": [
+            {
+              "frame": 581647,
+              "speed": 1.1113630408729993,
+              "grade": -0.011381743806729216,
+              "predicted": 0.048795261171975385,
+              "observed_remaining_lower_bound": 0.06289482808296862
+            }
+          ]
+        },
+        "C": {
+          "supported_samples": 2,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.4712463805804759,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s101_stop_auto_1.0_0.05.jsonl",
+        "bytes": 81153,
+        "sha256": "87edb4297872674b54239f68907a534a6ecefe4c808f2b529839c56b304ebc58"
+      }
+    },
+    {
+      "name": "validation_p66_s101_stop_auto_1.0_1.0",
+      "action": "emergency",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 2,
+          "underbound_samples": 1,
+          "min_predicted_minus_observed_m": -0.0071808936168826915,
+          "examples": [
+            {
+              "frame": 581799,
+              "speed": 1.1113630408729993,
+              "grade": -0.011381743806729216,
+              "predicted": 0.05551597400518084,
+              "observed_remaining_lower_bound": 0.06269686762206353
+            }
+          ]
+        },
+        "C": {
+          "supported_samples": 2,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.4768899850680687,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s101_stop_auto_1.0_1.0.jsonl",
+        "bytes": 81137,
+        "sha256": "8ea16dac204923f415efaba2c57fdaf13132bb70f223ebc78b25073958f47777"
+      }
+    },
+    {
+      "name": "validation_p66_s101_stop_auto_2.5_0.0",
+      "action": "coast",
+      "stopped": false,
+      "stats": {
+        "B": {
+          "supported_samples": 0,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": null,
+          "examples": []
+        },
+        "C": {
+          "supported_samples": 0,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": null,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s101_stop_auto_2.5_0.0.jsonl",
+        "bytes": 452602,
+        "sha256": "49dcd285d18d85173a2e668c554bf1d8846abb577a315382eb4533d7e08a4a2a"
+      }
+    },
+    {
+      "name": "validation_p66_s101_stop_auto_2.5_0.01",
+      "action": "brake_001",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 20,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.03075967016999427,
+          "examples": []
+        },
+        "C": {
+          "supported_samples": 20,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.5709101845501936,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s101_stop_auto_2.5_0.01.jsonl",
+        "bytes": 125466,
+        "sha256": "2e0af7b4646c923db4703d16ff3606f4febe857c15e565473292247c6f0fcc8b"
+      }
+    },
+    {
+      "name": "validation_p66_s101_stop_auto_2.5_0.05",
+      "action": "brake_005",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 18,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.030614356375436275,
+          "examples": []
+        },
+        "C": {
+          "supported_samples": 18,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.5704046823345437,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s101_stop_auto_2.5_0.05.jsonl",
+        "bytes": 123570,
+        "sha256": "5d24f85138f72baa38a62b4205aeeaf76615ae84d8fb577ec8aacd5fd9018dec"
+      }
+    },
+    {
+      "name": "validation_p66_s101_stop_auto_2.5_1.0",
+      "action": "emergency",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 6,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.0034295090074665247,
+          "examples": []
+        },
+        "C": {
+          "supported_samples": 6,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.6036452287827853,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s101_stop_auto_2.5_1.0.jsonl",
+        "bytes": 111952,
+        "sha256": "5d69b28e101f7a3110220fed481207409a9592584fe08e540a24c9ec11753925"
+      }
+    },
+    {
+      "name": "validation_p66_s102_stop_auto_1.0_0.0",
+      "action": "coast",
+      "stopped": false,
+      "stats": {
+        "B": {
+          "supported_samples": 0,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": null,
+          "examples": []
+        },
+        "C": {
+          "supported_samples": 0,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": null,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s102_stop_auto_1.0_0.0.jsonl",
+        "bytes": 427327,
+        "sha256": "3e8ab3c7acf3653e35237e16fcd6825cfcf9c3a6577a0108e57d67c705c8f3c8"
+      }
+    },
+    {
+      "name": "validation_p66_s102_stop_auto_1.0_0.01",
+      "action": "brake_001",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 2,
+          "underbound_samples": 1,
+          "min_predicted_minus_observed_m": -0.023328354600139697,
+          "examples": [
+            {
+              "frame": 586242,
+              "speed": 1.1113630408729993,
+              "grade": -0.011381743806729216,
+              "predicted": 0.04898631925354503,
+              "observed_remaining_lower_bound": 0.07231467385368473
+            }
+          ]
+        },
+        "C": {
+          "supported_samples": 2,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.5151918074183204,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s102_stop_auto_1.0_0.01.jsonl",
+        "bytes": 81350,
+        "sha256": "3fb995a8a6d701484c72db895b212a08ab3b18cdc3627df5594fd8640aaf81f0"
+      }
+    },
+    {
+      "name": "validation_p66_s102_stop_auto_1.0_0.05",
+      "action": "brake_005",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 2,
+          "underbound_samples": 1,
+          "min_predicted_minus_observed_m": -0.014099566910993233,
+          "examples": [
+            {
+              "frame": 586397,
+              "speed": 1.1113630408729993,
+              "grade": -0.011381743806729216,
+              "predicted": 0.048795261171975385,
+              "observed_remaining_lower_bound": 0.06289482808296862
+            }
+          ]
+        },
+        "C": {
+          "supported_samples": 2,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.4712463805804759,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s102_stop_auto_1.0_0.05.jsonl",
+        "bytes": 81153,
+        "sha256": "291ad4bec94c9a5d703c3e1bcdc2b0351a6f98fcb6df5888b41d605d9a3485a1"
+      }
+    },
+    {
+      "name": "validation_p66_s102_stop_auto_1.0_1.0",
+      "action": "emergency",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 2,
+          "underbound_samples": 1,
+          "min_predicted_minus_observed_m": -0.0071808936168826915,
+          "examples": [
+            {
+              "frame": 586552,
+              "speed": 1.1113630408729993,
+              "grade": -0.011381743806729216,
+              "predicted": 0.05551597400518084,
+              "observed_remaining_lower_bound": 0.06269686762206353
+            }
+          ]
+        },
+        "C": {
+          "supported_samples": 2,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.4768899850680687,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s102_stop_auto_1.0_1.0.jsonl",
+        "bytes": 81140,
+        "sha256": "31bcba2aa5906e8c10b5b44425895c082329f76bb8603f8c57d78783b99a3214"
+      }
+    },
+    {
+      "name": "validation_p66_s102_stop_auto_2.5_0.0",
+      "action": "coast",
+      "stopped": false,
+      "stats": {
+        "B": {
+          "supported_samples": 0,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": null,
+          "examples": []
+        },
+        "C": {
+          "supported_samples": 0,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": null,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s102_stop_auto_2.5_0.0.jsonl",
+        "bytes": 452599,
+        "sha256": "0567edc097218752b4227a9a0779f03c474f48c2038f1f3fa1a5a58e802af5d8"
+      }
+    },
+    {
+      "name": "validation_p66_s102_stop_auto_2.5_0.01",
+      "action": "brake_001",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 20,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.03075967016999427,
+          "examples": []
+        },
+        "C": {
+          "supported_samples": 20,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.5709101845501936,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s102_stop_auto_2.5_0.01.jsonl",
+        "bytes": 125470,
+        "sha256": "a1d41eb049b8b895515ccc25812c96529b95b3ab8c427f62dcdf0cd043481212"
+      }
+    },
+    {
+      "name": "validation_p66_s102_stop_auto_2.5_0.05",
+      "action": "brake_005",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 18,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.030614356375436275,
+          "examples": []
+        },
+        "C": {
+          "supported_samples": 18,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.5704046823345437,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s102_stop_auto_2.5_0.05.jsonl",
+        "bytes": 123574,
+        "sha256": "70012eb0a809ac961a86d429113719b8e174e08539164557e4880a94ed41e578"
+      }
+    },
+    {
+      "name": "validation_p66_s102_stop_auto_2.5_1.0",
+      "action": "emergency",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 6,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.0034295090074665247,
+          "examples": []
+        },
+        "C": {
+          "supported_samples": 6,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.6036452287827853,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s102_stop_auto_2.5_1.0.jsonl",
+        "bytes": 111949,
+        "sha256": "62f5c4267d4cf584bd04a65424642f1f0f92fd472233b71b02260dff437c1cc4"
+      }
+    },
+    {
+      "name": "validation_p170_s101_stop_auto_1.0_0.0",
+      "action": "coast",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 194,
+          "underbound_samples": 124,
+          "min_predicted_minus_observed_m": -1.455150127976916,
+          "examples": [
+            {
+              "frame": 590225,
+              "speed": 1.1342871379321988,
+              "grade": 0.0,
+              "predicted": 3.1684038398517744,
+              "observed_remaining_lower_bound": 4.62355396782869
+            },
+            {
+              "frame": 590226,
+              "speed": 1.468493155607102,
+              "grade": 0.0,
+              "predicted": 3.1684038398517744,
+              "observed_remaining_lower_bound": 4.55654482193
+            },
+            {
+              "frame": 590227,
+              "speed": 1.6410230587020427,
+              "grade": 0.0,
+              "predicted": 3.171405761273167,
+              "observed_remaining_lower_bound": 4.477492519150503
+            },
+            {
+              "frame": 590228,
+              "speed": 1.7391519854372413,
+              "grade": 0.0,
+              "predicted": 3.171405761273167,
+              "observed_remaining_lower_bound": 4.392249063252537
+            },
+            {
+              "frame": 590229,
+              "speed": 1.7701598669219738,
+              "grade": 0.0,
+              "predicted": 3.171405761273167,
+              "observed_remaining_lower_bound": 4.304260939871468
+            }
+          ]
+        },
+        "C": {
+          "supported_samples": 194,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.07422696161824915,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s101_stop_auto_1.0_0.0.jsonl",
+        "bytes": 259737,
+        "sha256": "54bbc6479a166964b17e4aa9aede3627e9bdbf826c8700ca696ee587fb1a45d0"
+      }
+    },
+    {
+      "name": "validation_p170_s101_stop_auto_1.0_0.01",
+      "action": "brake_001",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 2,
+          "underbound_samples": 1,
+          "min_predicted_minus_observed_m": -0.015499449082502281,
+          "examples": [
+            {
+              "frame": 590570,
+              "speed": 1.1342871379321988,
+              "grade": 0.0,
+              "predicted": 0.04898631925354503,
+              "observed_remaining_lower_bound": 0.06448576833604731
+            }
+          ]
+        },
+        "C": {
+          "supported_samples": 2,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.4833041714969407,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s101_stop_auto_1.0_0.01.jsonl",
+        "bytes": 77054,
+        "sha256": "5352047d59244babe0d69aa2e3cdc6212e1cad4512b36eb1762e6bd84833c841"
+      }
+    },
+    {
+      "name": "validation_p170_s101_stop_auto_1.0_0.05",
+      "action": "brake_005",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 2,
+          "underbound_samples": 1,
+          "min_predicted_minus_observed_m": -0.015180029242892579,
+          "examples": [
+            {
+              "frame": 590722,
+              "speed": 1.1342871379321988,
+              "grade": 0.0,
+              "predicted": 0.048795261171975385,
+              "observed_remaining_lower_bound": 0.06397529041486796
+            }
+          ]
+        },
+        "C": {
+          "supported_samples": 2,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.4532512524454342,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s101_stop_auto_1.0_0.05.jsonl",
+        "bytes": 76620,
+        "sha256": "4b63c4406551842da1ad4fad7f619fb1e04b89590e1b1471abedcba8ab668929"
+      }
+    },
+    {
+      "name": "validation_p170_s101_stop_auto_1.0_1.0",
+      "action": "emergency",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 2,
+          "underbound_samples": 1,
+          "min_predicted_minus_observed_m": -0.010061177208569694,
+          "examples": [
+            {
+              "frame": 590874,
+              "speed": 1.1342871379321988,
+              "grade": 0.0,
+              "predicted": 0.05551597400518084,
+              "observed_remaining_lower_bound": 0.06557715121375053
+            }
+          ]
+        },
+        "C": {
+          "supported_samples": 2,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.48859423685342085,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s101_stop_auto_1.0_1.0.jsonl",
+        "bytes": 76345,
+        "sha256": "23c8227fbf28a94d6607bf13d6da7f7c45f3fa34ee0f31345293bfc1a3804a0a"
+      }
+    },
+    {
+      "name": "validation_p170_s101_stop_auto_2.5_0.0",
+      "action": "coast",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 163,
+          "underbound_samples": 93,
+          "min_predicted_minus_observed_m": -1.2670888346472111,
+          "examples": [
+            {
+              "frame": 591063,
+              "speed": 2.502747323729537,
+              "grade": 0.0006924500548529448,
+              "predicted": 4.656923504578154,
+              "observed_remaining_lower_bound": 5.924012339225365
+            },
+            {
+              "frame": 591064,
+              "speed": 2.5324822581306585,
+              "grade": 0.0007850399839498854,
+              "predicted": 4.656923504578154,
+              "observed_remaining_lower_bound": 5.798027813750288
+            },
+            {
+              "frame": 591065,
+              "speed": 2.533204882792371,
+              "grade": 0.0008790721691577947,
+              "predicted": 4.656923504578154,
+              "observed_remaining_lower_bound": 5.67123457458255
+            },
+            {
+              "frame": 591066,
+              "speed": 2.510496427471934,
+              "grade": 0.0009725596892020737,
+              "predicted": 4.656923504578154,
+              "observed_remaining_lower_bound": 5.545175626691167
+            },
+            {
+              "frame": 591067,
+              "speed": 2.4750189144121277,
+              "grade": 0.0010648966442253001,
+              "predicted": 4.281925046691317,
+              "observed_remaining_lower_bound": 5.420669292446101
+            }
+          ]
+        },
+        "C": {
+          "supported_samples": 163,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.1896777841052184,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s101_stop_auto_2.5_0.0.jsonl",
+        "bytes": 265525,
+        "sha256": "0e2c275e095ba52f327c2793f050f741d5625a55004886d2197c4037fdb428b8"
+      }
+    },
+    {
+      "name": "validation_p170_s101_stop_auto_2.5_0.01",
+      "action": "brake_001",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 19,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.001162141984196438,
+          "examples": []
+        },
+        "C": {
+          "supported_samples": 19,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.3146677398598668,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s101_stop_auto_2.5_0.01.jsonl",
+        "bytes": 128442,
+        "sha256": "284dc28e50899780b3e1aad3b6aec0f126f824169c26f8d93a83944784cc3f11"
+      }
+    },
+    {
+      "name": "validation_p170_s101_stop_auto_2.5_0.05",
+      "action": "brake_005",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 17,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 9.174384681638614e-05,
+          "examples": []
+        },
+        "C": {
+          "supported_samples": 17,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.3192353335699221,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s101_stop_auto_2.5_0.05.jsonl",
+        "bytes": 126598,
+        "sha256": "52f18ff707c3ff22dac0e33d7ee117683362a7ce32c2c5efa11f30483c6777d5"
+      }
+    },
+    {
+      "name": "validation_p170_s101_stop_auto_2.5_1.0",
+      "action": "emergency",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 6,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.002155439896630751,
+          "examples": []
+        },
+        "C": {
+          "supported_samples": 6,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.29040083526157995,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s101_stop_auto_2.5_1.0.jsonl",
+        "bytes": 115853,
+        "sha256": "9c61512aa273c6c7921a0ccbd4ceafda849737dc1e3af7a55a1e4a57678c3939"
+      }
+    },
+    {
+      "name": "validation_p170_s102_stop_auto_1.0_0.0",
+      "action": "coast",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 194,
+          "underbound_samples": 124,
+          "min_predicted_minus_observed_m": -1.455150127976916,
+          "examples": [
+            {
+              "frame": 594128,
+              "speed": 1.1342871379321988,
+              "grade": 0.0,
+              "predicted": 3.1684038398517744,
+              "observed_remaining_lower_bound": 4.62355396782869
+            },
+            {
+              "frame": 594129,
+              "speed": 1.468493155607102,
+              "grade": 0.0,
+              "predicted": 3.1684038398517744,
+              "observed_remaining_lower_bound": 4.55654482193
+            },
+            {
+              "frame": 594130,
+              "speed": 1.6410230587020427,
+              "grade": 0.0,
+              "predicted": 3.171405761273167,
+              "observed_remaining_lower_bound": 4.477492519150503
+            },
+            {
+              "frame": 594131,
+              "speed": 1.7391519854372413,
+              "grade": 0.0,
+              "predicted": 3.171405761273167,
+              "observed_remaining_lower_bound": 4.392249063252537
+            },
+            {
+              "frame": 594132,
+              "speed": 1.7701598669219738,
+              "grade": 0.0,
+              "predicted": 3.171405761273167,
+              "observed_remaining_lower_bound": 4.304260939871468
+            }
+          ]
+        },
+        "C": {
+          "supported_samples": 194,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.07422696161824915,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s102_stop_auto_1.0_0.0.jsonl",
+        "bytes": 259748,
+        "sha256": "5392ce436c0e3da4e17fc2461d4268552409e85386849ece5322331c625df628"
+      }
+    },
+    {
+      "name": "validation_p170_s102_stop_auto_1.0_0.01",
+      "action": "brake_001",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 2,
+          "underbound_samples": 1,
+          "min_predicted_minus_observed_m": -0.015499449082502281,
+          "examples": [
+            {
+              "frame": 594472,
+              "speed": 1.1342871379321988,
+              "grade": 0.0,
+              "predicted": 0.04898631925354503,
+              "observed_remaining_lower_bound": 0.06448576833604731
+            }
+          ]
+        },
+        "C": {
+          "supported_samples": 2,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.4833041714969407,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s102_stop_auto_1.0_0.01.jsonl",
+        "bytes": 77055,
+        "sha256": "422ab6099ab5d22d31edd7ba2ed9e4db0be83e2cd0c11252d95ce38b4ef1115c"
+      }
+    },
+    {
+      "name": "validation_p170_s102_stop_auto_1.0_0.05",
+      "action": "brake_005",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 2,
+          "underbound_samples": 1,
+          "min_predicted_minus_observed_m": -0.015180029242892579,
+          "examples": [
+            {
+              "frame": 594625,
+              "speed": 1.1342871379321988,
+              "grade": 0.0,
+              "predicted": 0.048795261171975385,
+              "observed_remaining_lower_bound": 0.06397529041486796
+            }
+          ]
+        },
+        "C": {
+          "supported_samples": 2,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.4532512524454342,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s102_stop_auto_1.0_0.05.jsonl",
+        "bytes": 76620,
+        "sha256": "923935fc228e0366c9c295e62c3aad17c06131563a05d27b3ab54f7d11ee9078"
+      }
+    },
+    {
+      "name": "validation_p170_s102_stop_auto_1.0_1.0",
+      "action": "emergency",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 2,
+          "underbound_samples": 1,
+          "min_predicted_minus_observed_m": -0.010061177208569694,
+          "examples": [
+            {
+              "frame": 594776,
+              "speed": 1.1342871379321988,
+              "grade": 0.0,
+              "predicted": 0.05551597400518084,
+              "observed_remaining_lower_bound": 0.06557715121375053
+            }
+          ]
+        },
+        "C": {
+          "supported_samples": 2,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.48859423685342085,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s102_stop_auto_1.0_1.0.jsonl",
+        "bytes": 76344,
+        "sha256": "31be89741567235e327801bece56158c157878cdfe911e963d5c091bd5c2ca79"
+      }
+    },
+    {
+      "name": "validation_p170_s102_stop_auto_2.5_0.0",
+      "action": "coast",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 163,
+          "underbound_samples": 93,
+          "min_predicted_minus_observed_m": -1.2670888346472111,
+          "examples": [
+            {
+              "frame": 594963,
+              "speed": 2.502747323729537,
+              "grade": 0.0006924500548529448,
+              "predicted": 4.656923504578154,
+              "observed_remaining_lower_bound": 5.924012339225365
+            },
+            {
+              "frame": 594964,
+              "speed": 2.5324822581306585,
+              "grade": 0.0007850399839498854,
+              "predicted": 4.656923504578154,
+              "observed_remaining_lower_bound": 5.798027813750288
+            },
+            {
+              "frame": 594965,
+              "speed": 2.533204882792371,
+              "grade": 0.0008790721691577947,
+              "predicted": 4.656923504578154,
+              "observed_remaining_lower_bound": 5.67123457458255
+            },
+            {
+              "frame": 594966,
+              "speed": 2.510496427471934,
+              "grade": 0.0009725596892020737,
+              "predicted": 4.656923504578154,
+              "observed_remaining_lower_bound": 5.545175626691167
+            },
+            {
+              "frame": 594967,
+              "speed": 2.4750189144121277,
+              "grade": 0.0010648966442253001,
+              "predicted": 4.281925046691317,
+              "observed_remaining_lower_bound": 5.420669292446101
+            }
+          ]
+        },
+        "C": {
+          "supported_samples": 163,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.1896777841052184,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s102_stop_auto_2.5_0.0.jsonl",
+        "bytes": 265518,
+        "sha256": "36348a33ec654df448f7bb0b8aaab557b25bb86f0a1b06cba1827b283604930b"
+      }
+    },
+    {
+      "name": "validation_p170_s102_stop_auto_2.5_0.01",
+      "action": "brake_001",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 19,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.001162141984196438,
+          "examples": []
+        },
+        "C": {
+          "supported_samples": 19,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.3146677398598668,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s102_stop_auto_2.5_0.01.jsonl",
+        "bytes": 128442,
+        "sha256": "588d503019e5371704f5737db17e4f7fcad83e53724195b37f2583b8159bfbb3"
+      }
+    },
+    {
+      "name": "validation_p170_s102_stop_auto_2.5_0.05",
+      "action": "brake_005",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 17,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 9.174384681638614e-05,
+          "examples": []
+        },
+        "C": {
+          "supported_samples": 17,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.3192353335699221,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s102_stop_auto_2.5_0.05.jsonl",
+        "bytes": 126589,
+        "sha256": "952226672dc2bc99b34889f28fc26a3afacfe14398ddf65d5da99891af6cbee7"
+      }
+    },
+    {
+      "name": "validation_p170_s102_stop_auto_2.5_1.0",
+      "action": "emergency",
+      "stopped": true,
+      "stats": {
+        "B": {
+          "supported_samples": 6,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.002155439896630751,
+          "examples": []
+        },
+        "C": {
+          "supported_samples": 6,
+          "underbound_samples": 0,
+          "min_predicted_minus_observed_m": 0.29040083526157995,
+          "examples": []
+        }
+      },
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s102_stop_auto_2.5_1.0.jsonl",
+        "bytes": 115861,
+        "sha256": "17f0f4245ea58246d0eed64f49574f3771a20e3157fe9b73607df0c977909f08"
+      }
+    }
+  ],
+  "model": {
+    "path": "configs/m6c/envelope_model.json",
+    "bytes": 6450,
+    "sha256": "aa0f603f1f7659c04ebe405c5f02c4114332af20930898754fa017227450dc6c"
+  },
+  "limits": "Within-trajectory samples strongly correlated; count trial/position support separately. Censored remaining travel is lower bound. No post-validation model revision."
+}

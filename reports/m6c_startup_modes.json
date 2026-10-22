@@ -1,0 +1,1493 @@
+{
+  "kind": "actual_CARLA_startup_mode_diagnostics",
+  "base": "f047ade6d7802205abadcde4363a57e0a1d00981",
+  "git_head": "f047ade6d7802205abadcde4363a57e0a1d00981",
+  "sources": {
+    "configs/m6c/envelope_model.json": "aa0f603f1f7659c04ebe405c5f02c4114332af20930898754fa017227450dc6c",
+    "configs/m6c/protocol.json": "5a9c6ad23201602616b0954e6d547932a650101c4f3e773f642ddfa4765dc6ad",
+    "simulator/m6c_envelope.py": "16775977d6cd7ec8368edc88819da1fa71e787dc2ebd79810c6a935c1f41b2e3",
+    "simulator/m6c_geometry.py": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+    "tools/m6c_common.py": "2466aabe330c599e4ccf82ae4bdcd9ce72429df254558f2d3822cceea3b20672",
+    "tools/m6c_failure_audit.py": "a3fd97c45eb561e2929136715f9163854f86a47f008e68d32b7f1d5f7d7506f4",
+    "tools/m6c_fit_envelope.py": "7b71e581d2bad02581d039ec6af23f7d8763c2653da1fdafb7cf65f918321cdb",
+    "tools/m6c_probe.py": "f043ea5847c55755fbcf4d01b9916fb6fc2140b70496d91b41237b6d9aa94bf1"
+  },
+  "protocol_sha256": "5a9c6ad23201602616b0954e6d547932a650101c4f3e773f642ddfa4765dc6ad",
+  "visual_control": false,
+  "source": "Privileged",
+  "trials": [
+    {
+      "task": {
+        "split": "development",
+        "spawn": 27,
+        "seed": 101,
+        "mode": "startup",
+        "gear": "auto",
+        "throttle": 0.1
+      },
+      "time_to_first_moving": null,
+      "initial_gear": 0,
+      "first_moving_gear": null,
+      "max_acceleration": 0.0007498334823338564,
+      "metrics": {
+        "max_decel_raw": 0.0007487708766143293,
+        "jerk_peak_raw": 0.029972086508877033,
+        "jerk_p95_moving": 0.0,
+        "jerk_p95_all": 0.013158666567992578,
+        "max_decel_250ms": 0.00015002958944959944,
+        "jerk_p95_250ms": 0.002993685449125955,
+        "min_signed_speed": -3.758307198659202e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.0,
+        "api_accel_vs_velocity_derivative_mae": 6.851746941326483e-09
+      },
+      "gear_transitions": [],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s101_startup_auto_0.1_x.jsonl",
+        "bytes": 150564,
+        "sha256": "0f8180cefb1c9c1fe9d0f3ccebf24fdfe5f0cac7638ad344b62048f9d3b1a350"
+      }
+    },
+    {
+      "task": {
+        "split": "development",
+        "spawn": 27,
+        "seed": 101,
+        "mode": "startup",
+        "gear": "auto",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 3.6000000536441803,
+      "initial_gear": 0,
+      "first_moving_gear": 0,
+      "max_acceleration": 14.209372888885838,
+      "metrics": {
+        "max_decel_raw": 0.8697363602635912,
+        "jerk_peak_raw": 284.1874781098768,
+        "jerk_p95_moving": 19.120878712789562,
+        "jerk_p95_all": 5.620888144786419,
+        "max_decel_250ms": 0.7731951135075287,
+        "jerk_p95_250ms": 4.408909901679004,
+        "min_signed_speed": -4.394262946511821e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 3.7,
+        "api_accel_vs_velocity_derivative_mae": 2.111755236361147e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 3.6500000543892384,
+          "speed": 1.182158019206267,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s101_startup_auto_0.15_x.jsonl",
+        "bytes": 233286,
+        "sha256": "6399b7326b5f352d843fd8b9e8281d7bcfdb59575d2f278761cb55953f0460ce"
+      }
+    },
+    {
+      "task": {
+        "split": "development",
+        "spawn": 27,
+        "seed": 101,
+        "mode": "startup",
+        "gear": "manual1",
+        "throttle": 0.1
+      },
+      "time_to_first_moving": 1.8500000275671482,
+      "initial_gear": 0,
+      "first_moving_gear": 1,
+      "max_acceleration": 2.025903519094031,
+      "metrics": {
+        "max_decel_raw": 2.1225950240987106,
+        "jerk_peak_raw": 79.17588277818479,
+        "jerk_p95_moving": 58.189414485666845,
+        "jerk_p95_all": 77.51410155254834,
+        "max_decel_250ms": 0.4921882346699915,
+        "jerk_p95_250ms": 15.421091636344546,
+        "min_signed_speed": -0.07068650498171172,
+        "reverse_ticks": 8,
+        "low_speed_moving_seconds": 6.7,
+        "api_accel_vs_velocity_derivative_mae": 8.614939201974511e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 0.05000000074505806,
+          "speed": 0.0018087654212298452,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s101_startup_manual1_0.1_x.jsonl",
+        "bytes": 195781,
+        "sha256": "7ed31a76ff3072bdf79c022f6e1d1fe05d36837bd63e495ff3784baa149b0416"
+      }
+    },
+    {
+      "task": {
+        "split": "development",
+        "spawn": 27,
+        "seed": 101,
+        "mode": "startup",
+        "gear": "manual1",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 0.7500000111758709,
+      "initial_gear": 0,
+      "first_moving_gear": 1,
+      "max_acceleration": 2.4533942027474462,
+      "metrics": {
+        "max_decel_raw": 2.1197216423032845,
+        "jerk_peak_raw": 79.39912768248173,
+        "jerk_p95_moving": 54.75280572586674,
+        "jerk_p95_all": 61.446855416921466,
+        "max_decel_250ms": 0.6532647689668821,
+        "jerk_p95_250ms": 9.804814519117528,
+        "min_signed_speed": -0.052579970923983886,
+        "reverse_ticks": 1,
+        "low_speed_moving_seconds": 9.15,
+        "api_accel_vs_velocity_derivative_mae": 6.927657921450681e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 0.05000000074505806,
+          "speed": 0.0018087654212298452,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s101_startup_manual1_0.15_x.jsonl",
+        "bytes": 225899,
+        "sha256": "d4245b02a8669dd00cbfa69fea457f65b0a0bcebc1783afcb351b9c144d2a137"
+      }
+    },
+    {
+      "task": {
+        "split": "development",
+        "spawn": 27,
+        "seed": 101,
+        "mode": "warm_start",
+        "gear": "auto",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 0.7500000111758709,
+      "initial_gear": 1,
+      "first_moving_gear": 1,
+      "max_acceleration": 11.780078666113306,
+      "metrics": {
+        "max_decel_raw": 12.14385933863096,
+        "jerk_peak_raw": 478.4787494542594,
+        "jerk_p95_moving": 61.1568359852214,
+        "jerk_p95_all": 61.08301680470315,
+        "max_decel_250ms": 4.3696429208560215,
+        "jerk_p95_250ms": 12.256758771827078,
+        "min_signed_speed": -0.052583947583576984,
+        "reverse_ticks": 1,
+        "low_speed_moving_seconds": 9.15,
+        "api_accel_vs_velocity_derivative_mae": 5.881191063001641e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 2.3000000342726707,
+          "speed": 1.0923330222156087,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s101_warm_start_auto_0.15_x.jsonl",
+        "bytes": 293083,
+        "sha256": "8086338ec881797c7ab58912102e0af5e1bb83468fb212b2f2e47448ea4aa91f"
+      }
+    },
+    {
+      "task": {
+        "split": "development",
+        "spawn": 27,
+        "seed": 102,
+        "mode": "startup",
+        "gear": "auto",
+        "throttle": 0.1
+      },
+      "time_to_first_moving": null,
+      "initial_gear": 0,
+      "first_moving_gear": null,
+      "max_acceleration": 0.0007498334823338564,
+      "metrics": {
+        "max_decel_raw": 0.0007487708766143293,
+        "jerk_peak_raw": 0.029972086508877033,
+        "jerk_p95_moving": 0.0,
+        "jerk_p95_all": 0.013158666567992578,
+        "max_decel_250ms": 0.00015002958944959944,
+        "jerk_p95_250ms": 0.002993685449125955,
+        "min_signed_speed": -3.758307198659202e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.0,
+        "api_accel_vs_velocity_derivative_mae": 6.851746941326483e-09
+      },
+      "gear_transitions": [],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s102_startup_auto_0.1_x.jsonl",
+        "bytes": 150567,
+        "sha256": "6d50791fd67dc85cc02871013bcec992e51aca5e52fdd3026258a95b7ff2b969"
+      }
+    },
+    {
+      "task": {
+        "split": "development",
+        "spawn": 27,
+        "seed": 102,
+        "mode": "startup",
+        "gear": "auto",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 3.6000000536441803,
+      "initial_gear": 0,
+      "first_moving_gear": 0,
+      "max_acceleration": 14.209372888885838,
+      "metrics": {
+        "max_decel_raw": 0.8697363602635912,
+        "jerk_peak_raw": 284.1874781098768,
+        "jerk_p95_moving": 19.120878712789562,
+        "jerk_p95_all": 5.620888144786419,
+        "max_decel_250ms": 0.7731951135075287,
+        "jerk_p95_250ms": 4.408909901679004,
+        "min_signed_speed": -4.394262946511821e-05,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 3.7,
+        "api_accel_vs_velocity_derivative_mae": 2.111755236361147e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 3.6500000543892384,
+          "speed": 1.182158019206267,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s102_startup_auto_0.15_x.jsonl",
+        "bytes": 233283,
+        "sha256": "371dfa6c4d8a9f0dc123fdf7b1d746dd2d21eb7f55dd37882b3c5a7a4605852e"
+      }
+    },
+    {
+      "task": {
+        "split": "development",
+        "spawn": 27,
+        "seed": 102,
+        "mode": "startup",
+        "gear": "manual1",
+        "throttle": 0.1
+      },
+      "time_to_first_moving": 1.8500000275671482,
+      "initial_gear": 0,
+      "first_moving_gear": 1,
+      "max_acceleration": 2.025903519094031,
+      "metrics": {
+        "max_decel_raw": 2.1225950240987106,
+        "jerk_peak_raw": 79.17588277818479,
+        "jerk_p95_moving": 58.189414485666845,
+        "jerk_p95_all": 77.51410155254834,
+        "max_decel_250ms": 0.4921882346699915,
+        "jerk_p95_250ms": 15.421091636344546,
+        "min_signed_speed": -0.07068650498171172,
+        "reverse_ticks": 8,
+        "low_speed_moving_seconds": 6.7,
+        "api_accel_vs_velocity_derivative_mae": 8.614939201974511e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 0.05000000074505806,
+          "speed": 0.0018087654212298452,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s102_startup_manual1_0.1_x.jsonl",
+        "bytes": 195775,
+        "sha256": "85ecc200ebd2f1beb44912cd12589653e1bfb72ee094fef6d235bdbe2eaaa7bc"
+      }
+    },
+    {
+      "task": {
+        "split": "development",
+        "spawn": 27,
+        "seed": 102,
+        "mode": "startup",
+        "gear": "manual1",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 0.7500000111758709,
+      "initial_gear": 0,
+      "first_moving_gear": 1,
+      "max_acceleration": 2.4533942027474462,
+      "metrics": {
+        "max_decel_raw": 2.1197216423032845,
+        "jerk_peak_raw": 79.39912768248173,
+        "jerk_p95_moving": 54.75280572586674,
+        "jerk_p95_all": 61.446855416921466,
+        "max_decel_250ms": 0.6532647689668821,
+        "jerk_p95_250ms": 9.804814519117528,
+        "min_signed_speed": -0.052579970923983886,
+        "reverse_ticks": 1,
+        "low_speed_moving_seconds": 9.15,
+        "api_accel_vs_velocity_derivative_mae": 6.927657921450681e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 0.05000000074505806,
+          "speed": 0.0018087654212298452,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s102_startup_manual1_0.15_x.jsonl",
+        "bytes": 225901,
+        "sha256": "ddd14d472110e933349bce05465a205a2efd6626b1b9270d844a168bbd2b3a8b"
+      }
+    },
+    {
+      "task": {
+        "split": "development",
+        "spawn": 27,
+        "seed": 102,
+        "mode": "warm_start",
+        "gear": "auto",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 0.7500000111758709,
+      "initial_gear": 1,
+      "first_moving_gear": 1,
+      "max_acceleration": 11.780078666113306,
+      "metrics": {
+        "max_decel_raw": 12.14385933863096,
+        "jerk_peak_raw": 478.4787494542594,
+        "jerk_p95_moving": 61.1568359852214,
+        "jerk_p95_all": 61.08301680470315,
+        "max_decel_250ms": 4.3696429208560215,
+        "jerk_p95_250ms": 12.256758771827078,
+        "min_signed_speed": -0.052583947583576984,
+        "reverse_ticks": 1,
+        "low_speed_moving_seconds": 9.15,
+        "api_accel_vs_velocity_derivative_mae": 5.881191063001641e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 2.3000000342726707,
+          "speed": 1.0923330222156087,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s102_warm_start_auto_0.15_x.jsonl",
+        "bytes": 293083,
+        "sha256": "5b6bafc150abd4a26fe5024162f7a8d42dcca372096c969ac0fe243788250194"
+      }
+    },
+    {
+      "task": {
+        "split": "development",
+        "spawn": 126,
+        "seed": 101,
+        "mode": "startup",
+        "gear": "auto",
+        "throttle": 0.1
+      },
+      "time_to_first_moving": null,
+      "initial_gear": 0,
+      "first_moving_gear": null,
+      "max_acceleration": 0.0005521884223361966,
+      "metrics": {
+        "max_decel_raw": 0.0005522069183936064,
+        "jerk_peak_raw": 0.0220774665498789,
+        "jerk_p95_moving": 0.0,
+        "jerk_p95_all": 0.01078519150665298,
+        "max_decel_250ms": 0.00011044138367872128,
+        "jerk_p95_250ms": 0.0021991564631855544,
+        "min_signed_speed": 0.0,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.0,
+        "api_accel_vs_velocity_derivative_mae": 1.243973583073904e-09
+      },
+      "gear_transitions": [],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s101_startup_auto_0.1_x.jsonl",
+        "bytes": 151723,
+        "sha256": "ef21c8b9e42b1c84ac02684c6e057b35a2bff48439a5e573d2714fff660507bc"
+      }
+    },
+    {
+      "task": {
+        "split": "development",
+        "spawn": 126,
+        "seed": 101,
+        "mode": "startup",
+        "gear": "auto",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 3.6000000536441803,
+      "initial_gear": 0,
+      "first_moving_gear": 0,
+      "max_acceleration": 14.43644600883184,
+      "metrics": {
+        "max_decel_raw": 0.969806241232255,
+        "jerk_peak_raw": 288.7289084780504,
+        "jerk_p95_moving": 30.155100362477636,
+        "jerk_p95_all": 29.735158011927666,
+        "max_decel_250ms": 0.7531897725649306,
+        "jerk_p95_250ms": 5.9937106239523645,
+        "min_signed_speed": 0.0,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 12.75,
+        "api_accel_vs_velocity_derivative_mae": 1.232600898528674e-06
+      },
+      "gear_transitions": [
+        {
+          "t": 3.6500000543892384,
+          "speed": 1.2252080188881422,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s101_startup_auto_0.15_x.jsonl",
+        "bytes": 381943,
+        "sha256": "59e7793347a94178e08d0394f9977ba49aee9b1015c52e2d0c0691550fb4392a"
+      }
+    },
+    {
+      "task": {
+        "split": "development",
+        "spawn": 126,
+        "seed": 101,
+        "mode": "startup",
+        "gear": "manual1",
+        "throttle": 0.1
+      },
+      "time_to_first_moving": 0.9500000141561031,
+      "initial_gear": 0,
+      "first_moving_gear": 1,
+      "max_acceleration": 2.0289942059625643,
+      "metrics": {
+        "max_decel_raw": 1.9226948568711126,
+        "jerk_peak_raw": 78.90365456581468,
+        "jerk_p95_moving": 62.384264233319726,
+        "jerk_p95_all": 65.23774309427868,
+        "max_decel_250ms": 0.3605606267104169,
+        "jerk_p95_250ms": 12.727358438769969,
+        "min_signed_speed": -0.01808325858645486,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 19.5,
+        "api_accel_vs_velocity_derivative_mae": 6.870557869729123e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 0.05000000074505806,
+          "speed": 0.0016624897072144778,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s101_startup_manual1_0.1_x.jsonl",
+        "bytes": 382152,
+        "sha256": "e8082b887a51bca10a1a4119b46cd9526a95a99ddceaa1346f5b8fc241fdba2c"
+      }
+    },
+    {
+      "task": {
+        "split": "development",
+        "spawn": 126,
+        "seed": 101,
+        "mode": "startup",
+        "gear": "manual1",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 0.6500000096857548,
+      "initial_gear": 0,
+      "first_moving_gear": 1,
+      "max_acceleration": 2.1568489334998597,
+      "metrics": {
+        "max_decel_raw": 1.9148783826463391,
+        "jerk_peak_raw": 79.91512974156599,
+        "jerk_p95_moving": 56.77700246541172,
+        "jerk_p95_all": 58.132494541848764,
+        "max_decel_250ms": 0.7341073791017311,
+        "jerk_p95_250ms": 11.264867541913473,
+        "min_signed_speed": -0.011383862688874405,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 15.25,
+        "api_accel_vs_velocity_derivative_mae": 1.1089758937816852e-06
+      },
+      "gear_transitions": [
+        {
+          "t": 0.05000000074505806,
+          "speed": 0.0016624897072144778,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s101_startup_manual1_0.15_x.jsonl",
+        "bytes": 381096,
+        "sha256": "144ffd3d1fa3890de07ce0217ab6957d11742a60106831d2ac58e24e3f134056"
+      }
+    },
+    {
+      "task": {
+        "split": "development",
+        "spawn": 126,
+        "seed": 101,
+        "mode": "warm_start",
+        "gear": "auto",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 0.5500000081956387,
+      "initial_gear": 1,
+      "first_moving_gear": 1,
+      "max_acceleration": 12.945132710985852,
+      "metrics": {
+        "max_decel_raw": 12.870287018020917,
+        "jerk_peak_raw": 464.98146221215546,
+        "jerk_p95_moving": 57.93792585561002,
+        "jerk_p95_all": 58.03253798881364,
+        "max_decel_250ms": 4.636687713325041,
+        "jerk_p95_250ms": 11.479736313795101,
+        "min_signed_speed": -0.011301085818748776,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 15.350000000000001,
+        "api_accel_vs_velocity_derivative_mae": 9.638511321291657e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 2.3000000342726707,
+          "speed": 1.1591569208346086,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s101_warm_start_auto_0.15_x.jsonl",
+        "bytes": 448792,
+        "sha256": "6a672873235882f7c25d54b721ffa0a6d1cb22c88932342e08550dc212de11fe"
+      }
+    },
+    {
+      "task": {
+        "split": "development",
+        "spawn": 126,
+        "seed": 102,
+        "mode": "startup",
+        "gear": "auto",
+        "throttle": 0.1
+      },
+      "time_to_first_moving": null,
+      "initial_gear": 0,
+      "first_moving_gear": null,
+      "max_acceleration": 0.0005521884223361966,
+      "metrics": {
+        "max_decel_raw": 0.0005522069183936064,
+        "jerk_peak_raw": 0.0220774665498789,
+        "jerk_p95_moving": 0.0,
+        "jerk_p95_all": 0.01078519150665298,
+        "max_decel_250ms": 0.00011044138367872128,
+        "jerk_p95_250ms": 0.0021991564631855544,
+        "min_signed_speed": 0.0,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.0,
+        "api_accel_vs_velocity_derivative_mae": 1.243973583073904e-09
+      },
+      "gear_transitions": [],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s102_startup_auto_0.1_x.jsonl",
+        "bytes": 151723,
+        "sha256": "96e0908a4a3ed516a368ca40e9b1efc4126e3e65accc61a5118a1743c4d97dd6"
+      }
+    },
+    {
+      "task": {
+        "split": "development",
+        "spawn": 126,
+        "seed": 102,
+        "mode": "startup",
+        "gear": "auto",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 3.6000000536441803,
+      "initial_gear": 0,
+      "first_moving_gear": 0,
+      "max_acceleration": 14.43644600883184,
+      "metrics": {
+        "max_decel_raw": 0.969806241232255,
+        "jerk_peak_raw": 288.7289084780504,
+        "jerk_p95_moving": 30.155100362477636,
+        "jerk_p95_all": 29.735158011927666,
+        "max_decel_250ms": 0.7531897725649306,
+        "jerk_p95_250ms": 5.9937106239523645,
+        "min_signed_speed": 0.0,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 12.75,
+        "api_accel_vs_velocity_derivative_mae": 1.232600898528674e-06
+      },
+      "gear_transitions": [
+        {
+          "t": 3.6500000543892384,
+          "speed": 1.2252080188881422,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s102_startup_auto_0.15_x.jsonl",
+        "bytes": 381944,
+        "sha256": "b2647f98f01710c70373bc26c742309482777ddd7d608f3d02606374ebc128f9"
+      }
+    },
+    {
+      "task": {
+        "split": "development",
+        "spawn": 126,
+        "seed": 102,
+        "mode": "startup",
+        "gear": "manual1",
+        "throttle": 0.1
+      },
+      "time_to_first_moving": 0.9500000141561031,
+      "initial_gear": 0,
+      "first_moving_gear": 1,
+      "max_acceleration": 2.0289942059625643,
+      "metrics": {
+        "max_decel_raw": 1.9226948568711126,
+        "jerk_peak_raw": 78.90365456581468,
+        "jerk_p95_moving": 62.384264233319726,
+        "jerk_p95_all": 65.23774309427868,
+        "max_decel_250ms": 0.3605606267104169,
+        "jerk_p95_250ms": 12.727358438769969,
+        "min_signed_speed": -0.01808325858645486,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 19.5,
+        "api_accel_vs_velocity_derivative_mae": 6.870557869729123e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 0.05000000074505806,
+          "speed": 0.0016624897072144778,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s102_startup_manual1_0.1_x.jsonl",
+        "bytes": 382144,
+        "sha256": "72ea25104b3c195118890b998f22a831d3c05e17d29cabe8fbfd3fb8a7c07dd6"
+      }
+    },
+    {
+      "task": {
+        "split": "development",
+        "spawn": 126,
+        "seed": 102,
+        "mode": "startup",
+        "gear": "manual1",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 0.6500000096857548,
+      "initial_gear": 0,
+      "first_moving_gear": 1,
+      "max_acceleration": 2.1568489334998597,
+      "metrics": {
+        "max_decel_raw": 1.9148783826463391,
+        "jerk_peak_raw": 79.91512974156599,
+        "jerk_p95_moving": 56.77700246541172,
+        "jerk_p95_all": 58.132494541848764,
+        "max_decel_250ms": 0.7341073791017311,
+        "jerk_p95_250ms": 11.264867541913473,
+        "min_signed_speed": -0.011383862688874405,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 15.25,
+        "api_accel_vs_velocity_derivative_mae": 1.1089758937816852e-06
+      },
+      "gear_transitions": [
+        {
+          "t": 0.05000000074505806,
+          "speed": 0.0016624897072144778,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s102_startup_manual1_0.15_x.jsonl",
+        "bytes": 381090,
+        "sha256": "63f26eee6db936d96606c00e02020dd21aa6c190b2be9153f7a4d55a56c5c17e"
+      }
+    },
+    {
+      "task": {
+        "split": "development",
+        "spawn": 126,
+        "seed": 102,
+        "mode": "warm_start",
+        "gear": "auto",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 0.5500000081956387,
+      "initial_gear": 1,
+      "first_moving_gear": 1,
+      "max_acceleration": 12.945132710985852,
+      "metrics": {
+        "max_decel_raw": 12.870287018020917,
+        "jerk_peak_raw": 464.98146221215546,
+        "jerk_p95_moving": 57.93792585561002,
+        "jerk_p95_all": 58.03253798881364,
+        "max_decel_250ms": 4.636687713325041,
+        "jerk_p95_250ms": 11.479736313795101,
+        "min_signed_speed": -0.011301085818748776,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 15.350000000000001,
+        "api_accel_vs_velocity_derivative_mae": 9.638511321291657e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 2.3000000342726707,
+          "speed": 1.1591569208346086,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s102_warm_start_auto_0.15_x.jsonl",
+        "bytes": 448795,
+        "sha256": "2aeaf095abd9247c68cb64f04ca5e5d44a4df8e639f7ac456a8330289a7e6717"
+      }
+    },
+    {
+      "task": {
+        "split": "validation",
+        "spawn": 66,
+        "seed": 101,
+        "mode": "startup",
+        "gear": "auto",
+        "throttle": 0.1
+      },
+      "time_to_first_moving": null,
+      "initial_gear": 0,
+      "first_moving_gear": null,
+      "max_acceleration": 0.000528604381965791,
+      "metrics": {
+        "max_decel_raw": 0.0004830394013198251,
+        "jerk_peak_raw": 0.01932143207207016,
+        "jerk_p95_moving": 0.0,
+        "jerk_p95_all": 0.009629471153420733,
+        "max_decel_250ms": 9.660940268943603e-05,
+        "jerk_p95_250ms": 0.0019306871788436267,
+        "min_signed_speed": 0.0,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.0,
+        "api_accel_vs_velocity_derivative_mae": 2.0122963183663773e-09
+      },
+      "gear_transitions": [],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s101_startup_auto_0.1_x.jsonl",
+        "bytes": 151894,
+        "sha256": "aed23473965b1afe2d8b4266e02ee1b47bfa137b1125f8b09866f117089bbf02"
+      }
+    },
+    {
+      "task": {
+        "split": "validation",
+        "spawn": 66,
+        "seed": 101,
+        "mode": "startup",
+        "gear": "auto",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 3.6000000536441803,
+      "initial_gear": 0,
+      "first_moving_gear": 0,
+      "max_acceleration": 14.423710256750773,
+      "metrics": {
+        "max_decel_raw": 0.7236355897996555,
+        "jerk_peak_raw": 288.47418913083624,
+        "jerk_p95_moving": 0.8747552991707715,
+        "jerk_p95_all": 0.290752733888392,
+        "max_decel_250ms": 0.7152162624489231,
+        "jerk_p95_250ms": 0.9841042235799936,
+        "min_signed_speed": 0.0,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 12.950000000000001,
+        "api_accel_vs_velocity_derivative_mae": 4.6362325660091135e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 3.6500000543892384,
+          "speed": 1.2203190618722504,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s101_startup_auto_0.15_x.jsonl",
+        "bytes": 384889,
+        "sha256": "1b4d015ca216d86d326688e5951e8dab8415884abe5766e796ce2a0fec150c9c"
+      }
+    },
+    {
+      "task": {
+        "split": "validation",
+        "spawn": 66,
+        "seed": 101,
+        "mode": "startup",
+        "gear": "manual1",
+        "throttle": 0.1
+      },
+      "time_to_first_moving": 0.9000000134110451,
+      "initial_gear": 0,
+      "first_moving_gear": 1,
+      "max_acceleration": 2.3128671941223287,
+      "metrics": {
+        "max_decel_raw": 1.9226813763182942,
+        "jerk_peak_raw": 82.87021705456002,
+        "jerk_p95_moving": 63.346756738598536,
+        "jerk_p95_all": 65.0991458199446,
+        "max_decel_250ms": 0.36873978146696734,
+        "jerk_p95_250ms": 12.784394060246358,
+        "min_signed_speed": -0.01954482653395469,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 19.55,
+        "api_accel_vs_velocity_derivative_mae": 2.633269670035181e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 0.05000000074505806,
+          "speed": 0.001925693551479888,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s101_startup_manual1_0.1_x.jsonl",
+        "bytes": 382411,
+        "sha256": "d26278c27ea0d9884c1af627e5ea20a754ff2617eb054a839c81584312af54e4"
+      }
+    },
+    {
+      "task": {
+        "split": "validation",
+        "spawn": 66,
+        "seed": 101,
+        "mode": "startup",
+        "gear": "manual1",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 0.7000000104308128,
+      "initial_gear": 0,
+      "first_moving_gear": 1,
+      "max_acceleration": 2.4014300704187943,
+      "metrics": {
+        "max_decel_raw": 1.926154575297685,
+        "jerk_peak_raw": 79.43257309359825,
+        "jerk_p95_moving": 55.61659113187321,
+        "jerk_p95_all": 57.30381257979769,
+        "max_decel_250ms": 0.7547781930622295,
+        "jerk_p95_250ms": 11.099280661605254,
+        "min_signed_speed": -0.012513177152018454,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 15.600000000000001,
+        "api_accel_vs_velocity_derivative_mae": 3.161387224523387e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 0.05000000074505806,
+          "speed": 0.001925693551479888,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s101_startup_manual1_0.15_x.jsonl",
+        "bytes": 382333,
+        "sha256": "49b9382b262ad7a603e58a55ca59bd0b85008e6778e572ff47d1a25c7a53989c"
+      }
+    },
+    {
+      "task": {
+        "split": "validation",
+        "spawn": 66,
+        "seed": 101,
+        "mode": "warm_start",
+        "gear": "auto",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 0.6000000089406967,
+      "initial_gear": 1,
+      "first_moving_gear": 1,
+      "max_acceleration": 11.996748189822256,
+      "metrics": {
+        "max_decel_raw": 15.636086751448298,
+        "jerk_peak_raw": 371.4851882159657,
+        "jerk_p95_moving": 57.820997921750596,
+        "jerk_p95_all": 57.886084950840555,
+        "max_decel_250ms": 4.445532220899041,
+        "jerk_p95_250ms": 11.42258592861996,
+        "min_signed_speed": -0.01211280642915371,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 15.75,
+        "api_accel_vs_velocity_derivative_mae": 8.077143923274782e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 2.3000000342726707,
+          "speed": 1.1113630408729993,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s101_warm_start_auto_0.15_x.jsonl",
+        "bytes": 450908,
+        "sha256": "e3eb69b9f5907a9f38d2ddf57bb77dd2824d4411f1d9c13396736e41f69c36b8"
+      }
+    },
+    {
+      "task": {
+        "split": "validation",
+        "spawn": 66,
+        "seed": 102,
+        "mode": "startup",
+        "gear": "auto",
+        "throttle": 0.1
+      },
+      "time_to_first_moving": null,
+      "initial_gear": 0,
+      "first_moving_gear": null,
+      "max_acceleration": 0.000528604381965791,
+      "metrics": {
+        "max_decel_raw": 0.0004830394013198251,
+        "jerk_peak_raw": 0.01932143207207016,
+        "jerk_p95_moving": 0.0,
+        "jerk_p95_all": 0.009629471153420733,
+        "max_decel_250ms": 9.660940268943603e-05,
+        "jerk_p95_250ms": 0.0019306871788436267,
+        "min_signed_speed": 0.0,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.0,
+        "api_accel_vs_velocity_derivative_mae": 2.0122963183663773e-09
+      },
+      "gear_transitions": [],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s102_startup_auto_0.1_x.jsonl",
+        "bytes": 151894,
+        "sha256": "1dd380a74092b22680297700c02f6714c9bf700e056403f6d2d9962e54f8fc33"
+      }
+    },
+    {
+      "task": {
+        "split": "validation",
+        "spawn": 66,
+        "seed": 102,
+        "mode": "startup",
+        "gear": "auto",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 3.6000000536441803,
+      "initial_gear": 0,
+      "first_moving_gear": 0,
+      "max_acceleration": 14.423710256750773,
+      "metrics": {
+        "max_decel_raw": 0.7236355897996555,
+        "jerk_peak_raw": 288.47418913083624,
+        "jerk_p95_moving": 0.8747552991707715,
+        "jerk_p95_all": 0.290752733888392,
+        "max_decel_250ms": 0.7152162624489231,
+        "jerk_p95_250ms": 0.9841042235799936,
+        "min_signed_speed": 0.0,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 12.950000000000001,
+        "api_accel_vs_velocity_derivative_mae": 4.6362325660091135e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 3.6500000543892384,
+          "speed": 1.2203190618722504,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s102_startup_auto_0.15_x.jsonl",
+        "bytes": 384891,
+        "sha256": "d501fa351f2837860a0004ab77cdd2d78ee89dc570489c97522947d6ffb9df71"
+      }
+    },
+    {
+      "task": {
+        "split": "validation",
+        "spawn": 66,
+        "seed": 102,
+        "mode": "startup",
+        "gear": "manual1",
+        "throttle": 0.1
+      },
+      "time_to_first_moving": 0.9000000134110451,
+      "initial_gear": 0,
+      "first_moving_gear": 1,
+      "max_acceleration": 2.3128671941223287,
+      "metrics": {
+        "max_decel_raw": 1.9226813763182942,
+        "jerk_peak_raw": 82.87021705456002,
+        "jerk_p95_moving": 63.346756738598536,
+        "jerk_p95_all": 65.0991458199446,
+        "max_decel_250ms": 0.36873978146696734,
+        "jerk_p95_250ms": 12.784394060246358,
+        "min_signed_speed": -0.01954482653395469,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 19.55,
+        "api_accel_vs_velocity_derivative_mae": 2.633269670035181e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 0.05000000074505806,
+          "speed": 0.001925693551479888,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s102_startup_manual1_0.1_x.jsonl",
+        "bytes": 382408,
+        "sha256": "71419adfe400f2964684606ce00b1a5097bbd8ab5d97450d98d3efe97ec3a06e"
+      }
+    },
+    {
+      "task": {
+        "split": "validation",
+        "spawn": 66,
+        "seed": 102,
+        "mode": "startup",
+        "gear": "manual1",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 0.7000000104308128,
+      "initial_gear": 0,
+      "first_moving_gear": 1,
+      "max_acceleration": 2.4014300704187943,
+      "metrics": {
+        "max_decel_raw": 1.926154575297685,
+        "jerk_peak_raw": 79.43257309359825,
+        "jerk_p95_moving": 55.61659113187321,
+        "jerk_p95_all": 57.30381257979769,
+        "max_decel_250ms": 0.7547781930622295,
+        "jerk_p95_250ms": 11.099280661605254,
+        "min_signed_speed": -0.012513177152018454,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 15.600000000000001,
+        "api_accel_vs_velocity_derivative_mae": 3.161387224523387e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 0.05000000074505806,
+          "speed": 0.001925693551479888,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s102_startup_manual1_0.15_x.jsonl",
+        "bytes": 382336,
+        "sha256": "b0368b863818ae34edb9fc5416a73dd2d0d070e2db44f72374cd561e3726e747"
+      }
+    },
+    {
+      "task": {
+        "split": "validation",
+        "spawn": 66,
+        "seed": 102,
+        "mode": "warm_start",
+        "gear": "auto",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 0.6000000089406967,
+      "initial_gear": 1,
+      "first_moving_gear": 1,
+      "max_acceleration": 11.996748189822256,
+      "metrics": {
+        "max_decel_raw": 15.636086751448298,
+        "jerk_peak_raw": 371.4851882159657,
+        "jerk_p95_moving": 57.820997921750596,
+        "jerk_p95_all": 57.886084950840555,
+        "max_decel_250ms": 4.445532220899041,
+        "jerk_p95_250ms": 11.42258592861996,
+        "min_signed_speed": -0.01211280642915371,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 15.75,
+        "api_accel_vs_velocity_derivative_mae": 8.077143923274782e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 2.3000000342726707,
+          "speed": 1.1113630408729993,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s102_warm_start_auto_0.15_x.jsonl",
+        "bytes": 450896,
+        "sha256": "83e5fad950ecdf295d842651bed1553114c2a27b6fe0ea447a9d6babf8b8faed"
+      }
+    },
+    {
+      "task": {
+        "split": "validation",
+        "spawn": 170,
+        "seed": 101,
+        "mode": "startup",
+        "gear": "auto",
+        "throttle": 0.1
+      },
+      "time_to_first_moving": null,
+      "initial_gear": 0,
+      "first_moving_gear": null,
+      "max_acceleration": 3.500148366307709e-07,
+      "metrics": {
+        "max_decel_raw": 6.411072199834989e-07,
+        "jerk_peak_raw": 1.8783351298106588e-05,
+        "jerk_p95_moving": 0.0,
+        "jerk_p95_all": 1.2281447248516994e-05,
+        "max_decel_250ms": 1.299474421479258e-07,
+        "jerk_p95_250ms": 2.1312451739502285e-06,
+        "min_signed_speed": -1.6564210352828596e-08,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.0,
+        "api_accel_vs_velocity_derivative_mae": 2.7256344652852877e-15
+      },
+      "gear_transitions": [],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s101_startup_auto_0.1_x.jsonl",
+        "bytes": 141070,
+        "sha256": "4679e8aeca04bd1d24a3c979346f27ebf59008569f95be9667023034c2973e43"
+      }
+    },
+    {
+      "task": {
+        "split": "validation",
+        "spawn": 170,
+        "seed": 101,
+        "mode": "startup",
+        "gear": "auto",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 3.6000000536441803,
+      "initial_gear": 0,
+      "first_moving_gear": 0,
+      "max_acceleration": 14.340479591255644,
+      "metrics": {
+        "max_decel_raw": 0.7424219447576134,
+        "jerk_peak_raw": 286.8095834357773,
+        "jerk_p95_moving": 9.011472051691307,
+        "jerk_p95_all": 1.6854277412785081,
+        "max_decel_250ms": 0.7350936211400732,
+        "jerk_p95_250ms": 2.084948190437006,
+        "min_signed_speed": -9.572165922215592e-06,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 6.0,
+        "api_accel_vs_velocity_derivative_mae": 4.3118684863918476e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 3.6500000543892384,
+          "speed": 1.2127968825354936,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s101_startup_auto_0.15_x.jsonl",
+        "bytes": 299729,
+        "sha256": "85a62539419e0c9ff42ead3a02f763ca48eb729279a50fb8e9e841abe119079f"
+      }
+    },
+    {
+      "task": {
+        "split": "validation",
+        "spawn": 170,
+        "seed": 101,
+        "mode": "startup",
+        "gear": "manual1",
+        "throttle": 0.1
+      },
+      "time_to_first_moving": 1.2500000186264515,
+      "initial_gear": 0,
+      "first_moving_gear": 1,
+      "max_acceleration": 2.116821104002177,
+      "metrics": {
+        "max_decel_raw": 2.003630474583412,
+        "jerk_peak_raw": 79.87691201010944,
+        "jerk_p95_moving": 65.41280127336435,
+        "jerk_p95_all": 65.93421047230247,
+        "max_decel_250ms": 0.4049433444946488,
+        "jerk_p95_250ms": 13.107053960777755,
+        "min_signed_speed": -0.030718073930108274,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 11.0,
+        "api_accel_vs_velocity_derivative_mae": 5.382552777728018e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 0.05000000074505806,
+          "speed": 0.0021552848632013866,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s101_startup_manual1_0.1_x.jsonl",
+        "bytes": 298596,
+        "sha256": "46ac3dc4ded4a42ff73d96be37534ab8f8d4be7d2669c2811d939cf79e02c595"
+      }
+    },
+    {
+      "task": {
+        "split": "validation",
+        "spawn": 170,
+        "seed": 101,
+        "mode": "startup",
+        "gear": "manual1",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 0.6500000096857548,
+      "initial_gear": 0,
+      "first_moving_gear": 1,
+      "max_acceleration": 2.5055530729259026,
+      "metrics": {
+        "max_decel_raw": 2.0037717824493497,
+        "jerk_peak_raw": 79.17087284441583,
+        "jerk_p95_moving": 57.921452500391595,
+        "jerk_p95_all": 58.403179543487425,
+        "max_decel_250ms": 0.6886842204826814,
+        "jerk_p95_250ms": 9.398817995950553,
+        "min_signed_speed": -0.022372908321703244,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 9.1,
+        "api_accel_vs_velocity_derivative_mae": 4.785007678294529e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 0.05000000074505806,
+          "speed": 0.0021552848632013866,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s101_startup_manual1_0.15_x.jsonl",
+        "bytes": 276691,
+        "sha256": "42454b33a43b550164feb2072f38984681331efa00b15d866ee49244377862ae"
+      }
+    },
+    {
+      "task": {
+        "split": "validation",
+        "spawn": 170,
+        "seed": 101,
+        "mode": "warm_start",
+        "gear": "auto",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 0.6500000096857548,
+      "initial_gear": 1,
+      "first_moving_gear": 1,
+      "max_acceleration": 12.523409049481586,
+      "metrics": {
+        "max_decel_raw": 16.824040091453178,
+        "jerk_peak_raw": 367.41980804629475,
+        "jerk_p95_moving": 61.34866260379855,
+        "jerk_p95_all": 61.07610362778053,
+        "max_decel_250ms": 4.537318854184213,
+        "jerk_p95_250ms": 11.772382679192937,
+        "min_signed_speed": -0.022439482274449193,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 8.75,
+        "api_accel_vs_velocity_derivative_mae": 4.912938906266229e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 2.3000000342726707,
+          "speed": 1.1342871379321988,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s101_warm_start_auto_0.15_x.jsonl",
+        "bytes": 340794,
+        "sha256": "d517693ccb88f25a172d68cda34d723faa60a20f5760c4dc0742a35a750f427b"
+      }
+    },
+    {
+      "task": {
+        "split": "validation",
+        "spawn": 170,
+        "seed": 102,
+        "mode": "startup",
+        "gear": "auto",
+        "throttle": 0.1
+      },
+      "time_to_first_moving": null,
+      "initial_gear": 0,
+      "first_moving_gear": null,
+      "max_acceleration": 3.500148366307709e-07,
+      "metrics": {
+        "max_decel_raw": 6.411072199834989e-07,
+        "jerk_peak_raw": 1.8783351298106588e-05,
+        "jerk_p95_moving": 0.0,
+        "jerk_p95_all": 1.2281447248516994e-05,
+        "max_decel_250ms": 1.299474421479258e-07,
+        "jerk_p95_250ms": 2.1312451739502285e-06,
+        "min_signed_speed": -1.6564210352828596e-08,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.0,
+        "api_accel_vs_velocity_derivative_mae": 2.7256344652852877e-15
+      },
+      "gear_transitions": [],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s102_startup_auto_0.1_x.jsonl",
+        "bytes": 141070,
+        "sha256": "bfd1dd265523bb9579399c48368ff321e334a95b44b15026a698d1903c10a0c8"
+      }
+    },
+    {
+      "task": {
+        "split": "validation",
+        "spawn": 170,
+        "seed": 102,
+        "mode": "startup",
+        "gear": "auto",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 3.6000000536441803,
+      "initial_gear": 0,
+      "first_moving_gear": 0,
+      "max_acceleration": 14.340479591255644,
+      "metrics": {
+        "max_decel_raw": 0.7424219447576134,
+        "jerk_peak_raw": 286.8095834357773,
+        "jerk_p95_moving": 9.011472051691307,
+        "jerk_p95_all": 1.6854277412785081,
+        "max_decel_250ms": 0.7350936211400732,
+        "jerk_p95_250ms": 2.084948190437006,
+        "min_signed_speed": -9.572165922215592e-06,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 6.0,
+        "api_accel_vs_velocity_derivative_mae": 4.3118684863918476e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 3.6500000543892384,
+          "speed": 1.2127968825354936,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s102_startup_auto_0.15_x.jsonl",
+        "bytes": 299737,
+        "sha256": "968ce90c53caddc4e56f3afe7855e70797ab0537bb9129849f8ae875498d294a"
+      }
+    },
+    {
+      "task": {
+        "split": "validation",
+        "spawn": 170,
+        "seed": 102,
+        "mode": "startup",
+        "gear": "manual1",
+        "throttle": 0.1
+      },
+      "time_to_first_moving": 1.2500000186264515,
+      "initial_gear": 0,
+      "first_moving_gear": 1,
+      "max_acceleration": 2.116821104002177,
+      "metrics": {
+        "max_decel_raw": 2.003630474583412,
+        "jerk_peak_raw": 79.87691201010944,
+        "jerk_p95_moving": 65.41280127336435,
+        "jerk_p95_all": 65.93421047230247,
+        "max_decel_250ms": 0.4049433444946488,
+        "jerk_p95_250ms": 13.107053960777755,
+        "min_signed_speed": -0.030718073930108274,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 11.0,
+        "api_accel_vs_velocity_derivative_mae": 5.382552777728018e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 0.05000000074505806,
+          "speed": 0.0021552848632013866,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s102_startup_manual1_0.1_x.jsonl",
+        "bytes": 298595,
+        "sha256": "d9d6a0dcedcee1f2c4c5d026634439afc833b707b5696ffdac79e0e669351b0a"
+      }
+    },
+    {
+      "task": {
+        "split": "validation",
+        "spawn": 170,
+        "seed": 102,
+        "mode": "startup",
+        "gear": "manual1",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 0.6500000096857548,
+      "initial_gear": 0,
+      "first_moving_gear": 1,
+      "max_acceleration": 2.5055530729259026,
+      "metrics": {
+        "max_decel_raw": 2.0037717824493497,
+        "jerk_peak_raw": 79.17087284441583,
+        "jerk_p95_moving": 57.921452500391595,
+        "jerk_p95_all": 58.403179543487425,
+        "max_decel_250ms": 0.6886842204826814,
+        "jerk_p95_250ms": 9.398817995950553,
+        "min_signed_speed": -0.022372908321703244,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 9.1,
+        "api_accel_vs_velocity_derivative_mae": 4.785007678294529e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 0.05000000074505806,
+          "speed": 0.0021552848632013866,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s102_startup_manual1_0.15_x.jsonl",
+        "bytes": 276691,
+        "sha256": "85855f8b70487ec5abf0347f84e832dac9c62a9094235c292b6a625a522efaea"
+      }
+    },
+    {
+      "task": {
+        "split": "validation",
+        "spawn": 170,
+        "seed": 102,
+        "mode": "warm_start",
+        "gear": "auto",
+        "throttle": 0.15
+      },
+      "time_to_first_moving": 0.6500000096857548,
+      "initial_gear": 1,
+      "first_moving_gear": 1,
+      "max_acceleration": 12.523409049481586,
+      "metrics": {
+        "max_decel_raw": 16.824040091453178,
+        "jerk_peak_raw": 367.41980804629475,
+        "jerk_p95_moving": 61.34866260379855,
+        "jerk_p95_all": 61.07610362778053,
+        "max_decel_250ms": 4.537318854184213,
+        "jerk_p95_250ms": 11.772382679192937,
+        "min_signed_speed": -0.022439482274449193,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 8.75,
+        "api_accel_vs_velocity_derivative_mae": 4.912938906266229e-07
+      },
+      "gear_transitions": [
+        {
+          "t": 2.3000000342726707,
+          "speed": 1.1342871379321988,
+          "gear": 1
+        }
+      ],
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s102_warm_start_auto_0.15_x.jsonl",
+        "bytes": 340785,
+        "sha256": "86e55ef896f64938f6f3478dc03ac28adee7f34ec9daff66137d83803ab59a50"
+      }
+    }
+  ],
+  "limits": "manual1 vs auto changes commanded initialization only, not Physics. Gear association does not isolate drivetrain/contact causes; no candidate gear change authorized automatically."
+}

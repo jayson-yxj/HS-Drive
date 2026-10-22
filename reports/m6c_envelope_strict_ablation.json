@@ -1,0 +1,3035 @@
+{
+  "kind": "offline_action_matched_actual_CARLA_probe_quality",
+  "base": "f047ade6d7802205abadcde4363a57e0a1d00981",
+  "git_head": "6d8436f92ee5f9c1eccc89d22776e548720cec51",
+  "sources": {
+    "configs/m6c/envelope_model.json": "aa0f603f1f7659c04ebe405c5f02c4114332af20930898754fa017227450dc6c",
+    "configs/m6c/protocol.json": "5a9c6ad23201602616b0954e6d547932a650101c4f3e773f642ddfa4765dc6ad",
+    "simulator/m6c_envelope.py": "16775977d6cd7ec8368edc88819da1fa71e787dc2ebd79810c6a935c1f41b2e3",
+    "simulator/m6c_geometry.py": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+    "simulator/m6c_motion.py": "ebe4b50da93b4bfeccd5b67c8c38b9fd403bb66b20cec0339c0cda9917069320",
+    "simulator/m6c_worker.py": "66287ce4469f4642bb4a2e3da445db61763b78559a3425e31103061a8192e56e",
+    "tests/test_m6c_stopping.py": "4996670638d8a98af6f20d5daa5c57baf0c37718b3cd61610ffe83c5d41b0aa1",
+    "tools/m6c_analyze.py": "f8b52b3584af633e112e40031eacfec1e0f1b3f16f6b602d9ac2517c9b4653b9",
+    "tools/m6c_body_audit.py": "d1fafafcb56615a8dda731014702e30a7a87a1ba431fa016442b3d3ee8e1bf69",
+    "tools/m6c_campaign.py": "6f1134c592104366e5a4e7674ff5ac031d4ec26cd39a84bf61b02d20f4a4fe07",
+    "tools/m6c_common.py": "2466aabe330c599e4ccf82ae4bdcd9ce72429df254558f2d3822cceea3b20672",
+    "tools/m6c_drive.py": "d69690c1b5d9b25cc6ae9db6f9b4a413d4b16792cfc3671c9faf980f7e58291b",
+    "tools/m6c_envelope_quality.py": "3fb077c87c9f72bc549915836266ed95ff3da172e126d2502606476c7c2ca136",
+    "tools/m6c_envelope_residuals.py": "8616a277e1dc7c0e9401c585540d4b95ead40bfb81d1d5ceab9c88f588217801",
+    "tools/m6c_envelope_strict_ablation.py": "2f6fe64b4e54132a00f4c0ca32cef91b3b9b7bd4128e847a41ac66fef616e347",
+    "tools/m6c_failure_audit.py": "a3fd97c45eb561e2929136715f9163854f86a47f008e68d32b7f1d5f7d7506f4",
+    "tools/m6c_finalize.py": "8eef79a47cae536c36c94ce3643108e4bfa688da968ab41c90df2b05a6f36984",
+    "tools/m6c_fit_envelope.py": "7b71e581d2bad02581d039ec6af23f7d8763c2653da1fdafb7cf65f918321cdb",
+    "tools/m6c_preserved_regression.py": "e45e39e9928f523d0b45312e7e4662c48c22da7962c1dde10d2aac7006917356",
+    "tools/m6c_probe.py": "f043ea5847c55755fbcf4d01b9916fb6fc2140b70496d91b41237b6d9aa94bf1",
+    "tools/m6c_probe_analysis.py": "57c67c853e258605b79c7007669ae425475f5a49d828bd2826320c82c421e9b2",
+    "tools/m6c_release_verify.py": "52583dd0c559b1fcff417033a7b91fcdd75bdee73beecf64d3cf5699b6a75e50",
+    "tools/m6c_resource_monitor.py": "4b9e46729d22d7a15a9a44abab21db7b6cb1ebefd1b6cc1bccdd6d284f6c378d",
+    "tools/m6c_resume_matrix.py": "07eb10e5963d567250e9544eb69729ebfab63319ca7006d2a8c8d61e91c8dfe9",
+    "tools/m6c_runtime_resources.py": "7a84901a037b1e2bd61b6d9ae943b754932574e615a5c0b940ec92632a9187be",
+    "tools/m6c_startup_plot.py": "d1f9393409c9961c0385a7c6f61ff447069a7709317ab53f0159bd49a86963f6",
+    "tools/m6c_verify_history.py": "175027ad611ac7b8e576581a28ce9c8df4384ca2eb8b85a8569db22b6fc33a17"
+  },
+  "protocol_sha256": "5a9c6ad23201602616b0954e6d547932a650101c4f3e773f642ddfa4765dc6ad",
+  "visual_control": false,
+  "source": "Privileged",
+  "groups": [
+    {
+      "split": "development",
+      "action": "coast",
+      "trials": 8,
+      "unique_positions": [
+        27,
+        126
+      ],
+      "stopped": 4,
+      "min_observed_travel_m": 3.1684038398517744,
+      "max_observed_travel_m": 13.731934073776088,
+      "max_original_probe_raw_decel": 1.0913365742115837,
+      "max_original_probe_raw_jerk": 55.157461386001216,
+      "predictions": {
+        "A": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 8,
+          "censored_finite_claims": 4,
+          "min_upper_minus_actual": -1.8855055729563086,
+          "max_upper_minus_actual": -0.6342051626314653,
+          "mean_absolute_error": 1.2598553677938868
+        },
+        "B": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 4,
+          "censored_finite_claims": 4,
+          "min_upper_minus_actual": 0.0,
+          "max_upper_minus_actual": 0.0,
+          "mean_absolute_error": 0.0
+        },
+        "C": {
+          "action_matched": true,
+          "finite": 4,
+          "finite_coverage": 0.5,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 1.0400385403221817,
+          "max_upper_minus_actual": 1.677541294781797,
+          "mean_absolute_error": 1.3587899175519893
+        }
+      }
+    },
+    {
+      "split": "development",
+      "action": "brake_001",
+      "trials": 8,
+      "unique_positions": [
+        27,
+        126
+      ],
+      "stopped": 8,
+      "min_observed_travel_m": 0.03917628285956623,
+      "max_observed_travel_m": 2.1599355459881484,
+      "max_original_probe_raw_decel": 24.327395125017123,
+      "max_original_probe_raw_jerk": 432.4836357128839,
+      "predictions": {
+        "A": {
+          "action_matched": false,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 1.2339119476419207,
+          "max_upper_minus_actual": 2.1401285281220277,
+          "mean_absolute_error": 1.6696500893327682
+        },
+        "B": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 0.0,
+          "max_upper_minus_actual": 0.2773457321634871,
+          "mean_absolute_error": 0.07178894213936649
+        },
+        "C": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 0.532316557775463,
+          "max_upper_minus_actual": 1.3044314883744814,
+          "mean_absolute_error": 0.8705014429871201
+        }
+      }
+    },
+    {
+      "split": "development",
+      "action": "brake_005",
+      "trials": 8,
+      "unique_positions": [
+        27,
+        126
+      ],
+      "stopped": 8,
+      "min_observed_travel_m": 0.037274224595254396,
+      "max_observed_travel_m": 1.873872077382893,
+      "max_original_probe_raw_decel": 24.506395265647186,
+      "max_original_probe_raw_jerk": 477.75106342046007,
+      "predictions": {
+        "A": {
+          "action_matched": false,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 1.2341030057234905,
+          "max_upper_minus_actual": 2.3655683829709853,
+          "mean_absolute_error": 1.7980491992827918
+        },
+        "B": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 0.0,
+          "max_upper_minus_actual": 0.21672211840718925,
+          "mean_absolute_error": 0.05706078874597756
+        },
+        "C": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 0.532316557775463,
+          "max_upper_minus_actual": 1.2438078746181835,
+          "mean_absolute_error": 0.8547530571865907
+        }
+      }
+    },
+    {
+      "split": "development",
+      "action": "emergency",
+      "trials": 8,
+      "unique_positions": [
+        27,
+        126
+      ],
+      "stopped": 8,
+      "min_observed_travel_m": 0.0483970835539749,
+      "max_observed_travel_m": 0.5799441621869583,
+      "max_original_probe_raw_decel": 26.688796343712752,
+      "max_original_probe_raw_jerk": 473.5895520940696,
+      "predictions": {
+        "A": {
+          "action_matched": false,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 1.234501183341491,
+          "max_upper_minus_actual": 3.5251562147649462,
+          "mean_absolute_error": 2.404892521211976
+        },
+        "B": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 0.0,
+          "max_upper_minus_actual": 0.07408314752398226,
+          "mean_absolute_error": 0.02030050949379705
+        },
+        "C": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 0.539435448226669,
+          "max_upper_minus_actual": 1.1011689037349766,
+          "mean_absolute_error": 0.8145545114763331
+        }
+      }
+    },
+    {
+      "split": "validation",
+      "action": "coast",
+      "trials": 8,
+      "unique_positions": [
+        66,
+        170
+      ],
+      "stopped": 4,
+      "min_observed_travel_m": 4.62355396782869,
+      "max_observed_travel_m": 10.290780305370292,
+      "max_original_probe_raw_decel": 1.119001168225276,
+      "max_original_probe_raw_jerk": 67.6745173607836,
+      "predictions": {
+        "A": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 8,
+          "censored_finite_claims": 4,
+          "min_upper_minus_actual": -3.268278483708523,
+          "max_upper_minus_actual": -1.9079875608250934,
+          "mean_absolute_error": 2.588133022266808
+        },
+        "B": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 8,
+          "censored_finite_claims": 4,
+          "min_upper_minus_actual": -1.455150127976916,
+          "max_upper_minus_actual": -1.2670888346472111,
+          "mean_absolute_error": 1.3611194813120635
+        },
+        "C": {
+          "action_matched": true,
+          "finite": 4,
+          "finite_coverage": 0.5,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 1.3939836064090345,
+          "max_upper_minus_actual": 2.618111435567494,
+          "mean_absolute_error": 2.006047520988264
+        }
+      }
+    },
+    {
+      "split": "validation",
+      "action": "brake_001",
+      "trials": 8,
+      "unique_positions": [
+        66,
+        170
+      ],
+      "stopped": 8,
+      "min_observed_travel_m": 0.06448576833604731,
+      "max_observed_travel_m": 2.0357960286925683,
+      "max_original_probe_raw_decel": 23.319600187113938,
+      "max_original_probe_raw_jerk": 434.10606416573165,
+      "predictions": {
+        "A": {
+          "action_matched": false,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 1.2433084150503837,
+          "max_upper_minus_actual": 2.154191320496146,
+          "mean_absolute_error": 1.6843339055504913
+        },
+        "B": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 4,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": -0.023328354600139697,
+          "max_upper_minus_actual": 0.2981020880840224,
+          "mean_absolute_error": 0.11526735226556113
+        },
+        "C": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 0.5224875727434809,
+          "max_upper_minus_actual": 1.32406365138936,
+          "mean_absolute_error": 0.886634712128791
+        }
+      }
+    },
+    {
+      "split": "validation",
+      "action": "brake_005",
+      "trials": 8,
+      "unique_positions": [
+        66,
+        170
+      ],
+      "stopped": 8,
+      "min_observed_travel_m": 0.06289482808296862,
+      "max_observed_travel_m": 1.8203474406574514,
+      "max_original_probe_raw_decel": 23.3507138899789,
+      "max_original_probe_raw_jerk": 433.7180551735419,
+      "predictions": {
+        "A": {
+          "action_matched": false,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 1.2527282608211,
+          "max_upper_minus_actual": 2.3589935831540867,
+          "mean_absolute_error": 1.7918791991467296
+        },
+        "B": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 4,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": -0.015180029242892579,
+          "max_upper_minus_actual": 0.2168408821367076,
+          "mean_absolute_error": 0.07491127875400876
+        },
+        "C": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 0.5317163604326274,
+          "max_upper_minus_actual": 1.2428024454420452,
+          "mean_absolute_error": 0.8510527423816167
+        }
+      }
+    },
+    {
+      "split": "validation",
+      "action": "emergency",
+      "trials": 8,
+      "unique_positions": [
+        66,
+        170
+      ],
+      "stopped": 8,
+      "min_observed_travel_m": 0.06269686762206353,
+      "max_observed_travel_m": 0.5760580160653963,
+      "max_original_probe_raw_decel": 26.500148542597664,
+      "max_original_probe_raw_jerk": 466.7115950256387,
+      "predictions": {
+        "A": {
+          "action_matched": false,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 1.252926221282005,
+          "max_upper_minus_actual": 3.5087841834984874,
+          "mean_absolute_error": 2.389451822531786
+        },
+        "B": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 4,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": -0.010061177208569694,
+          "max_upper_minus_actual": 0.07031793622692195,
+          "mean_absolute_error": 0.02286153829348409
+        },
+        "C": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 0.5369393210676998,
+          "max_upper_minus_actual": 1.0962794995322598,
+          "mean_absolute_error": 0.8050217645853086
+        }
+      }
+    }
+  ],
+  "correction": "B in original report shared categorical downhill rejection with C; strict B here ignores all grade and leaves raw empirical table unchanged. C unchanged; no model/controller refit.",
+  "trials": [
+    {
+      "name": "development_p27_s101_stop_auto_1.0_0.0",
+      "split": "development",
+      "action": "coast",
+      "spawn": 27,
+      "seed": 101,
+      "initial_speed": 1.0923330222156087,
+      "grade": 0.0176709609136604,
+      "stopped": true,
+      "observed_distance_m": 3.1684038398517744,
+      "stop_time_s": 4.550000067800283,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s101_stop_auto_1.0_0.0.jsonl",
+        "bytes": 164466,
+        "sha256": "78b3fa8fe16ab5ddef3de26dc8a466ceabe7ef01f3810487a8255ffa62ff15e7"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.2828982668954658,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -1.8855055729563086,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 3.1684038398517744,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.0,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 4.208442380173956,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.0400385403221817,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p27_s101_stop_auto_1.0_0.01",
+      "split": "development",
+      "action": "brake_001",
+      "spawn": 27,
+      "seed": 101,
+      "initial_speed": 1.0923330222156087,
+      "grade": 0.0176709609136604,
+      "stopped": true,
+      "observed_distance_m": 0.04898631925354503,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s101_stop_auto_1.0_0.01.jsonl",
+        "bytes": 80347,
+        "sha256": "9e23c6148bf223bae76bb8189d4a9f62f834b1069a446a24b50cf22d58e229ad"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.2828982668954658,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.2339119476419207,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.04898631925354503,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.0,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.5813028770290081,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.532316557775463,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p27_s101_stop_auto_1.0_0.05",
+      "split": "development",
+      "action": "brake_005",
+      "spawn": 27,
+      "seed": 101,
+      "initial_speed": 1.0923330222156087,
+      "grade": 0.0176709609136604,
+      "stopped": true,
+      "observed_distance_m": 0.048795261171975385,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s101_stop_auto_1.0_0.05.jsonl",
+        "bytes": 80212,
+        "sha256": "8f6900811a17b19119d7cd40012fc243150c3faff19f306314d9bed3b64a00e8"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.2828982668954658,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.2341030057234905,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.048795261171975385,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.0,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.5811118189474385,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.532316557775463,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p27_s101_stop_auto_1.0_1.0",
+      "split": "development",
+      "action": "emergency",
+      "spawn": 27,
+      "seed": 101,
+      "initial_speed": 1.0923330222156087,
+      "grade": 0.0176709609136604,
+      "stopped": true,
+      "observed_distance_m": 0.0483970835539749,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s101_stop_auto_1.0_1.0.jsonl",
+        "bytes": 80316,
+        "sha256": "3eda2cab156f7681f775b442f937626295d0fe29720709b2ac91999a1fed5d25"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.2828982668954658,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.234501183341491,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.05551597400518084,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.0071188904512059364,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.5878325317806439,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.539435448226669,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p27_s101_stop_auto_2.5_0.0",
+      "split": "development",
+      "action": "coast",
+      "spawn": 27,
+      "seed": 101,
+      "initial_speed": 2.505959303459984,
+      "grade": 0.017670961097391486,
+      "stopped": true,
+      "observed_distance_m": 4.656923504578154,
+      "stop_time_s": 5.15000007674098,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s101_stop_auto_2.5_0.0.jsonl",
+        "bytes": 223879,
+        "sha256": "e2d085b276a4a88589f837a424f7052eb984a0598999ac42b5d0186fba4f085d"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.022718341946689,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -0.6342051626314653,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 4.656923504578154,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.0,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 6.334464799359951,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.677541294781797,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p27_s101_stop_auto_2.5_0.01",
+      "split": "development",
+      "action": "brake_001",
+      "spawn": 27,
+      "seed": 101,
+      "initial_speed": 2.505959303459984,
+      "grade": 0.017670961097391486,
+      "stopped": true,
+      "observed_distance_m": 1.8825898138246613,
+      "stop_time_s": 1.0000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s101_stop_auto_2.5_0.01.jsonl",
+        "bytes": 146048,
+        "sha256": "9a50cd3de431b3cadf1560d498c0e3c3b37aa8e928f57f9f5dca2a5cd514917d"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.022718341946689,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 2.1401285281220277,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 2.1599355459881484,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.2773457321634871,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 3.1870213021991427,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.3044314883744814,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p27_s101_stop_auto_2.5_0.05",
+      "split": "development",
+      "action": "brake_005",
+      "spawn": 27,
+      "seed": 101,
+      "initial_speed": 2.505959303459984,
+      "grade": 0.017670961097391486,
+      "stopped": true,
+      "observed_distance_m": 1.6571499589757037,
+      "stop_time_s": 0.850000012665987,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s101_stop_auto_2.5_0.05.jsonl",
+        "bytes": 143450,
+        "sha256": "03f115ff1eae971124d502a07f0f6be6472cd7e9c1d11d7752b2c0441491bdc5"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.022718341946689,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 2.3655683829709853,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 1.873872077382893,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.21672211840718925,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 2.9009578335938873,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.2438078746181835,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p27_s101_stop_auto_2.5_1.0",
+      "split": "development",
+      "action": "emergency",
+      "spawn": 27,
+      "seed": 101,
+      "initial_speed": 2.505959303459984,
+      "grade": 0.017670961097391486,
+      "stopped": true,
+      "observed_distance_m": 0.5058610146629761,
+      "stop_time_s": 0.30000000447034836,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s101_stop_auto_2.5_1.0.jsonl",
+        "bytes": 132695,
+        "sha256": "57fd9731af09ce8298118923c553494ee4a66a7474513c2ccfb3ba23299ad09c"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.022718341946689,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 3.516857327283713,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.5799441621869583,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.07408314752398226,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 1.6070299183979526,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.1011689037349766,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p27_s102_stop_auto_1.0_0.0",
+      "split": "development",
+      "action": "coast",
+      "spawn": 27,
+      "seed": 102,
+      "initial_speed": 1.0923330222156087,
+      "grade": 0.0176709609136604,
+      "stopped": true,
+      "observed_distance_m": 3.1684038398517744,
+      "stop_time_s": 4.550000067800283,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s102_stop_auto_1.0_0.0.jsonl",
+        "bytes": 164465,
+        "sha256": "cebef21370f3b0f394e998b591d0c501fdfeca8cf03144cd8c62fc2f427114b9"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.2828982668954658,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -1.8855055729563086,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 3.1684038398517744,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.0,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 4.208442380173956,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.0400385403221817,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p27_s102_stop_auto_1.0_0.01",
+      "split": "development",
+      "action": "brake_001",
+      "spawn": 27,
+      "seed": 102,
+      "initial_speed": 1.0923330222156087,
+      "grade": 0.0176709609136604,
+      "stopped": true,
+      "observed_distance_m": 0.04898631925354503,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s102_stop_auto_1.0_0.01.jsonl",
+        "bytes": 80347,
+        "sha256": "33caa1a5974fa4ebb20da4084d56e2bd235bb85fdeffef006d1de32abf525235"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.2828982668954658,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.2339119476419207,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.04898631925354503,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.0,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.5813028770290081,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.532316557775463,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p27_s102_stop_auto_1.0_0.05",
+      "split": "development",
+      "action": "brake_005",
+      "spawn": 27,
+      "seed": 102,
+      "initial_speed": 1.0923330222156087,
+      "grade": 0.0176709609136604,
+      "stopped": true,
+      "observed_distance_m": 0.048795261171975385,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s102_stop_auto_1.0_0.05.jsonl",
+        "bytes": 80214,
+        "sha256": "6b7dfacd43c0889efe4a2e7e86e7978dcd1591d96d6c354e17b31d55c8717a83"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.2828982668954658,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.2341030057234905,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.048795261171975385,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.0,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.5811118189474385,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.532316557775463,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p27_s102_stop_auto_1.0_1.0",
+      "split": "development",
+      "action": "emergency",
+      "spawn": 27,
+      "seed": 102,
+      "initial_speed": 1.0923330222156087,
+      "grade": 0.0176709609136604,
+      "stopped": true,
+      "observed_distance_m": 0.0483970835539749,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s102_stop_auto_1.0_1.0.jsonl",
+        "bytes": 80315,
+        "sha256": "e3c127f0c89fb993cab9f38a11e2400c3715fb9df9bd2fd46b0a6f0c01d30d05"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.2828982668954658,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.234501183341491,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.05551597400518084,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.0071188904512059364,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.5878325317806439,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.539435448226669,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p27_s102_stop_auto_2.5_0.0",
+      "split": "development",
+      "action": "coast",
+      "spawn": 27,
+      "seed": 102,
+      "initial_speed": 2.505959303459984,
+      "grade": 0.017670961097391486,
+      "stopped": true,
+      "observed_distance_m": 4.656923504578154,
+      "stop_time_s": 5.15000007674098,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s102_stop_auto_2.5_0.0.jsonl",
+        "bytes": 223879,
+        "sha256": "b0de7573b3bfaf012fa20c48596716c3b6b8024bd9cc40ac948210edd01a53ec"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.022718341946689,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -0.6342051626314653,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 4.656923504578154,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.0,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 6.334464799359951,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.677541294781797,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p27_s102_stop_auto_2.5_0.01",
+      "split": "development",
+      "action": "brake_001",
+      "spawn": 27,
+      "seed": 102,
+      "initial_speed": 2.505959303459984,
+      "grade": 0.017670961097391486,
+      "stopped": true,
+      "observed_distance_m": 1.8825898138246613,
+      "stop_time_s": 1.0000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s102_stop_auto_2.5_0.01.jsonl",
+        "bytes": 146052,
+        "sha256": "aff46278980862a1e285c3be7addc557de8bdc0a674be81965c14c55bc457caa"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.022718341946689,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 2.1401285281220277,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 2.1599355459881484,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.2773457321634871,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 3.1870213021991427,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.3044314883744814,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p27_s102_stop_auto_2.5_0.05",
+      "split": "development",
+      "action": "brake_005",
+      "spawn": 27,
+      "seed": 102,
+      "initial_speed": 2.505959303459984,
+      "grade": 0.017670961097391486,
+      "stopped": true,
+      "observed_distance_m": 1.6571499589757037,
+      "stop_time_s": 0.850000012665987,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s102_stop_auto_2.5_0.05.jsonl",
+        "bytes": 143451,
+        "sha256": "0c94272785cf94523c4139c93270b4ba9d88cc2b08e978beeeb1cf9917900692"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.022718341946689,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 2.3655683829709853,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 1.873872077382893,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.21672211840718925,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 2.9009578335938873,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.2438078746181835,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p27_s102_stop_auto_2.5_1.0",
+      "split": "development",
+      "action": "emergency",
+      "spawn": 27,
+      "seed": 102,
+      "initial_speed": 2.505959303459984,
+      "grade": 0.017670961097391486,
+      "stopped": true,
+      "observed_distance_m": 0.5058610146629761,
+      "stop_time_s": 0.30000000447034836,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p27_s102_stop_auto_2.5_1.0.jsonl",
+        "bytes": 132694,
+        "sha256": "1f89014ac6eb7f68092dd9e9e5b1e843050c5406c27c78eb75b73d5d67ee4b17"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.022718341946689,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 3.516857327283713,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.5799441621869583,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.07408314752398226,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 1.6070299183979526,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.1011689037349766,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p126_s101_stop_auto_1.0_0.0",
+      "split": "development",
+      "action": "coast",
+      "spawn": 126,
+      "seed": 101,
+      "initial_speed": 1.1591569208346086,
+      "grade": -0.014599063889858238,
+      "stopped": false,
+      "observed_distance_m": 11.12470878997267,
+      "stop_time_s": null,
+      "final_speed": 0.41273022919874913,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s101_stop_auto_1.0_0.0.jsonl",
+        "bytes": 426198,
+        "sha256": "c9b6855048a839180a1c0204e065c30bf5374494cb86419f94d2f8e83cfc89e2"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3985713334629342,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": true
+        },
+        "B": {
+          "distance_m": 3.1684038398517744,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": true
+        },
+        "C": {
+          "distance_m": null,
+          "unsupported_reason": "DownhillCoastDidNotStop",
+          "upper_bound_failed": false,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p126_s101_stop_auto_1.0_0.01",
+      "split": "development",
+      "action": "brake_001",
+      "spawn": 126,
+      "seed": 101,
+      "initial_speed": 1.1591569208346086,
+      "grade": -0.014599063889858238,
+      "stopped": true,
+      "observed_distance_m": 0.03917628285956623,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s101_stop_auto_1.0_0.01.jsonl",
+        "bytes": 81102,
+        "sha256": "85c89c6a84d536dcc9176909ebd1d67dbc6ae4c1934d77a9e612e9032a89c69b"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3985713334629342,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.3593950506033678,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.04898631925354503,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.009810036393978802,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.6135195479513802,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.574343265091814,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p126_s101_stop_auto_1.0_0.05",
+      "split": "development",
+      "action": "brake_005",
+      "spawn": 126,
+      "seed": 101,
+      "initial_speed": 1.1591569208346086,
+      "grade": -0.014599063889858238,
+      "stopped": true,
+      "observed_distance_m": 0.037274224595254396,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s101_stop_auto_1.0_0.05.jsonl",
+        "bytes": 81149,
+        "sha256": "e0a88d7d8cefc12d5f27b2b44bef47dfe172c059e81f114e72e2f87fd715e00b"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3985713334629342,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.3612971088676797,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.048795261171975385,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.011521036576720989,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.6133392260899908,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.5760650014947364,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p126_s101_stop_auto_1.0_1.0",
+      "split": "development",
+      "action": "emergency",
+      "spawn": 126,
+      "seed": 101,
+      "initial_speed": 1.1591569208346086,
+      "grade": -0.014599063889858238,
+      "stopped": true,
+      "observed_distance_m": 0.05551597400518084,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s101_stop_auto_1.0_1.0.jsonl",
+        "bytes": 81081,
+        "sha256": "5cbbd29bfdd34fc7b3a99795508deb70d00616dda73bff0e7e0d256dc8f0c59c"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3985713334629342,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.3430553594577532,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.05551597400518084,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.0,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.6201090171037277,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.5645930430985469,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p126_s101_stop_auto_2.5_0.0",
+      "split": "development",
+      "action": "coast",
+      "spawn": 126,
+      "seed": 101,
+      "initial_speed": 2.545435735937929,
+      "grade": -0.016806939351461568,
+      "stopped": false,
+      "observed_distance_m": 13.731934073776088,
+      "stop_time_s": null,
+      "final_speed": 0.43557391841063847,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s101_stop_auto_2.5_0.0.jsonl",
+        "bytes": 451363,
+        "sha256": "6b5d5c872ddc0d77887ceaf410b5aa02aba8e83cdbe58bd0f05b4071b22c9617"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.1051003769519046,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": true
+        },
+        "B": {
+          "distance_m": 4.656923504578154,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": true
+        },
+        "C": {
+          "distance_m": null,
+          "unsupported_reason": "DownhillCoastDidNotStop",
+          "upper_bound_failed": false,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p126_s101_stop_auto_2.5_0.01",
+      "split": "development",
+      "action": "brake_001",
+      "spawn": 126,
+      "seed": 101,
+      "initial_speed": 2.545435735937929,
+      "grade": -0.016806939351461568,
+      "stopped": true,
+      "observed_distance_m": 2.1599355459881484,
+      "stop_time_s": 1.1000000163912773,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s101_stop_auto_2.5_0.01.jsonl",
+        "bytes": 126407,
+        "sha256": "313c392b42160b1d8cf38de602c7e44190c4b528997c0d0507fce9238d024c90"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.1051003769519046,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.9451648309637561,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 2.1599355459881484,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.0,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 3.23085000669487,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.0709144607067218,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p126_s101_stop_auto_2.5_0.05",
+      "split": "development",
+      "action": "brake_005",
+      "spawn": 126,
+      "seed": 101,
+      "initial_speed": 2.545435735937929,
+      "grade": -0.016806939351461568,
+      "stopped": true,
+      "observed_distance_m": 1.873872077382893,
+      "stop_time_s": 0.9500000141561031,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s101_stop_auto_2.5_0.05.jsonl",
+        "bytes": 123437,
+        "sha256": "85e3915a97455b85426acadf7bd696207a26f2cc9ed27650c7c90d4ba4a96eca"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.1051003769519046,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 2.2312282995690116,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 1.873872077382893,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.0,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 2.9406948722408726,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.0668227948579796,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p126_s101_stop_auto_2.5_1.0",
+      "split": "development",
+      "action": "emergency",
+      "spawn": 126,
+      "seed": 101,
+      "initial_speed": 2.545435735937929,
+      "grade": -0.016806939351461568,
+      "stopped": true,
+      "observed_distance_m": 0.5799441621869583,
+      "stop_time_s": 0.30000000447034836,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s101_stop_auto_2.5_1.0.jsonl",
+        "bytes": 110880,
+        "sha256": "1ee425183a5002d88ec1d77c9a3f2870003305ae3e8c66229f596825074571e4"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.1051003769519046,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 3.5251562147649462,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.5799441621869583,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.0,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 1.6329648130320982,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.0530206508451398,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p126_s102_stop_auto_1.0_0.0",
+      "split": "development",
+      "action": "coast",
+      "spawn": 126,
+      "seed": 102,
+      "initial_speed": 1.1591569208346086,
+      "grade": -0.014599063889858238,
+      "stopped": false,
+      "observed_distance_m": 11.12470878997267,
+      "stop_time_s": null,
+      "final_speed": 0.41273022919874913,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s102_stop_auto_1.0_0.0.jsonl",
+        "bytes": 426201,
+        "sha256": "1e481e5e9bfb197aca329fc5d43b209089efeb56774c87d927839a02beb77d75"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3985713334629342,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": true
+        },
+        "B": {
+          "distance_m": 3.1684038398517744,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": true
+        },
+        "C": {
+          "distance_m": null,
+          "unsupported_reason": "DownhillCoastDidNotStop",
+          "upper_bound_failed": false,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p126_s102_stop_auto_1.0_0.01",
+      "split": "development",
+      "action": "brake_001",
+      "spawn": 126,
+      "seed": 102,
+      "initial_speed": 1.1591569208346086,
+      "grade": -0.014599063889858238,
+      "stopped": true,
+      "observed_distance_m": 0.03917628285956623,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s102_stop_auto_1.0_0.01.jsonl",
+        "bytes": 81099,
+        "sha256": "b85f8d33e15b99da3b88e29de9326b4ab30d5e3f114256f2aabd65af965042cd"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3985713334629342,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.3593950506033678,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.04898631925354503,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.009810036393978802,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.6135195479513802,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.574343265091814,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p126_s102_stop_auto_1.0_0.05",
+      "split": "development",
+      "action": "brake_005",
+      "spawn": 126,
+      "seed": 102,
+      "initial_speed": 1.1591569208346086,
+      "grade": -0.014599063889858238,
+      "stopped": true,
+      "observed_distance_m": 0.037274224595254396,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s102_stop_auto_1.0_0.05.jsonl",
+        "bytes": 81151,
+        "sha256": "dd25b7c92246a00e2ac561a447b24e996d4414643fe418d881723123c2c329f3"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3985713334629342,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.3612971088676797,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.048795261171975385,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.011521036576720989,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.6133392260899908,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.5760650014947364,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p126_s102_stop_auto_1.0_1.0",
+      "split": "development",
+      "action": "emergency",
+      "spawn": 126,
+      "seed": 102,
+      "initial_speed": 1.1591569208346086,
+      "grade": -0.014599063889858238,
+      "stopped": true,
+      "observed_distance_m": 0.05551597400518084,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s102_stop_auto_1.0_1.0.jsonl",
+        "bytes": 81081,
+        "sha256": "b359c5582da540b6ff1b08158a940ac7a4efb0e4c4b5cdd8dde7a9b891abfaa0"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3985713334629342,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.3430553594577532,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.05551597400518084,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.0,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.6201090171037277,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.5645930430985469,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p126_s102_stop_auto_2.5_0.0",
+      "split": "development",
+      "action": "coast",
+      "spawn": 126,
+      "seed": 102,
+      "initial_speed": 2.545435735937929,
+      "grade": -0.016806939351461568,
+      "stopped": false,
+      "observed_distance_m": 13.731934073776088,
+      "stop_time_s": null,
+      "final_speed": 0.43557391841063847,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s102_stop_auto_2.5_0.0.jsonl",
+        "bytes": 451352,
+        "sha256": "23dbfed6c27cf4729391827c7628cd26a3bc5c0c5f97a1460b839487757ef52c"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.1051003769519046,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": true
+        },
+        "B": {
+          "distance_m": 4.656923504578154,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": true
+        },
+        "C": {
+          "distance_m": null,
+          "unsupported_reason": "DownhillCoastDidNotStop",
+          "upper_bound_failed": false,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p126_s102_stop_auto_2.5_0.01",
+      "split": "development",
+      "action": "brake_001",
+      "spawn": 126,
+      "seed": 102,
+      "initial_speed": 2.545435735937929,
+      "grade": -0.016806939351461568,
+      "stopped": true,
+      "observed_distance_m": 2.1599355459881484,
+      "stop_time_s": 1.1000000163912773,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s102_stop_auto_2.5_0.01.jsonl",
+        "bytes": 126399,
+        "sha256": "d476bcce5a6723f15a88c1618780d1999a64c48d26f49e5e81e193d8e101e890"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.1051003769519046,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.9451648309637561,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 2.1599355459881484,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.0,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 3.23085000669487,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.0709144607067218,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p126_s102_stop_auto_2.5_0.05",
+      "split": "development",
+      "action": "brake_005",
+      "spawn": 126,
+      "seed": 102,
+      "initial_speed": 2.545435735937929,
+      "grade": -0.016806939351461568,
+      "stopped": true,
+      "observed_distance_m": 1.873872077382893,
+      "stop_time_s": 0.9500000141561031,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s102_stop_auto_2.5_0.05.jsonl",
+        "bytes": 123440,
+        "sha256": "58e53587ed78beac3571829b1a2e134fe087c78ba621a598e2c045418fcdb7fe"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.1051003769519046,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 2.2312282995690116,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 1.873872077382893,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.0,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 2.9406948722408726,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.0668227948579796,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "development_p126_s102_stop_auto_2.5_1.0",
+      "split": "development",
+      "action": "emergency",
+      "spawn": 126,
+      "seed": 102,
+      "initial_speed": 2.545435735937929,
+      "grade": -0.016806939351461568,
+      "stopped": true,
+      "observed_distance_m": 0.5799441621869583,
+      "stop_time_s": 0.30000000447034836,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/development_p126_s102_stop_auto_2.5_1.0.jsonl",
+        "bytes": 110887,
+        "sha256": "3e4ed2b12be2b3d33c5fefd35eee0763aaacd316d9cc4cf3151d683cc555ccde"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.1051003769519046,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 3.5251562147649462,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.5799441621869583,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.0,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 1.6329648130320982,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.0530206508451398,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p66_s101_stop_auto_1.0_0.0",
+      "split": "validation",
+      "action": "coast",
+      "spawn": 66,
+      "seed": 101,
+      "initial_speed": 1.1113630408729993,
+      "grade": -0.011381743806729216,
+      "stopped": false,
+      "observed_distance_m": 8.653515955912976,
+      "stop_time_s": null,
+      "final_speed": 0.21902765808840136,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s101_stop_auto_1.0_0.0.jsonl",
+        "bytes": 427330,
+        "sha256": "49ba10d1621e7a5ee710610b0bf84e8d6620365da296061b039645b218bd7597"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3156230889040685,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": true
+        },
+        "B": {
+          "distance_m": 3.1684038398517744,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": true
+        },
+        "C": {
+          "distance_m": null,
+          "unsupported_reason": "DownhillCoastDidNotStop",
+          "upper_bound_failed": false,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p66_s101_stop_auto_1.0_0.01",
+      "split": "validation",
+      "action": "brake_001",
+      "spawn": 66,
+      "seed": 101,
+      "initial_speed": 1.1113630408729993,
+      "grade": -0.011381743806729216,
+      "stopped": true,
+      "observed_distance_m": 0.07231467385368473,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s101_stop_auto_1.0_0.01.jsonl",
+        "bytes": 81351,
+        "sha256": "0fc81783ee02e88acbbdb1b8725a4b843a11eb003442a708dfac3b34dabd3b51"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3156230889040685,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.2433084150503837,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.04898631925354503,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -0.023328354600139697,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.5948022465971656,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.5224875727434809,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p66_s101_stop_auto_1.0_0.05",
+      "split": "validation",
+      "action": "brake_005",
+      "spawn": 66,
+      "seed": 101,
+      "initial_speed": 1.1113630408729993,
+      "grade": -0.011381743806729216,
+      "stopped": true,
+      "observed_distance_m": 0.06289482808296862,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s101_stop_auto_1.0_0.05.jsonl",
+        "bytes": 81153,
+        "sha256": "87edb4297872674b54239f68907a534a6ecefe4c808f2b529839c56b304ebc58"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3156230889040685,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.2527282608211,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.048795261171975385,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -0.014099566910993233,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.594611188515596,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.5317163604326274,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p66_s101_stop_auto_1.0_1.0",
+      "split": "validation",
+      "action": "emergency",
+      "spawn": 66,
+      "seed": 101,
+      "initial_speed": 1.1113630408729993,
+      "grade": -0.011381743806729216,
+      "stopped": true,
+      "observed_distance_m": 0.06269686762206353,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s101_stop_auto_1.0_1.0.jsonl",
+        "bytes": 81137,
+        "sha256": "8ea16dac204923f415efaba2c57fdaf13132bb70f223ebc78b25073958f47777"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3156230889040685,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.252926221282005,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.05551597400518084,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -0.0071808936168826915,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.6013319013488014,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.5386350337267379,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p66_s101_stop_auto_2.5_0.0",
+      "split": "validation",
+      "action": "coast",
+      "spawn": 66,
+      "seed": 101,
+      "initial_speed": 2.5357376996633505,
+      "grade": -0.011381743761347657,
+      "stopped": false,
+      "observed_distance_m": 10.290780305370292,
+      "stop_time_s": null,
+      "final_speed": 0.20449026775914766,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s101_stop_auto_2.5_0.0.jsonl",
+        "bytes": 452602,
+        "sha256": "49dcd285d18d85173a2e668c554bf1d8846abb577a315382eb4533d7e08a4a2a"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.084842199563884,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": true
+        },
+        "B": {
+          "distance_m": 4.656923504578154,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": true
+        },
+        "C": {
+          "distance_m": null,
+          "unsupported_reason": "DownhillCoastDidNotStop",
+          "upper_bound_failed": false,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p66_s101_stop_auto_2.5_0.01",
+      "split": "validation",
+      "action": "brake_001",
+      "spawn": 66,
+      "seed": 101,
+      "initial_speed": 2.5357376996633505,
+      "grade": -0.011381743761347657,
+      "stopped": true,
+      "observed_distance_m": 2.0357960286925683,
+      "stop_time_s": 1.0000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s101_stop_auto_2.5_0.01.jsonl",
+        "bytes": 125466,
+        "sha256": "2e0af7b4646c923db4703d16ff3606f4febe857c15e565473292247c6f0fcc8b"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.084842199563884,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 2.0490461708713155,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 2.1599355459881484,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.12413951729558015,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 3.204282603881124,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.1684865751885556,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p66_s101_stop_auto_2.5_0.05",
+      "split": "validation",
+      "action": "brake_005",
+      "spawn": 66,
+      "seed": 101,
+      "initial_speed": 2.5357376996633505,
+      "grade": -0.011381743761347657,
+      "stopped": true,
+      "observed_distance_m": 1.8203474406574514,
+      "stop_time_s": 0.9000000134110451,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s101_stop_auto_2.5_0.05.jsonl",
+        "bytes": 123570,
+        "sha256": "5d24f85138f72baa38a62b4205aeeaf76615ae84d8fb577ec8aacd5fd9018dec"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.084842199563884,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 2.2644947589064324,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 1.873872077382893,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.05352463672544161,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 2.9182191352758684,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.097871694618417,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p66_s101_stop_auto_2.5_1.0",
+      "split": "validation",
+      "action": "emergency",
+      "spawn": 66,
+      "seed": 101,
+      "initial_speed": 2.5357376996633505,
+      "grade": -0.011381743761347657,
+      "stopped": true,
+      "observed_distance_m": 0.5760580160653963,
+      "stop_time_s": 0.30000000447034836,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s101_stop_auto_2.5_1.0.jsonl",
+        "bytes": 111952,
+        "sha256": "5d69b28e101f7a3110220fed481207409a9592584fe08e540a24c9ec11753925"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.084842199563884,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 3.5087841834984874,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.5799441621869583,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.0038861461215620174,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 1.6242912200799335,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.0482332040145372,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p66_s102_stop_auto_1.0_0.0",
+      "split": "validation",
+      "action": "coast",
+      "spawn": 66,
+      "seed": 102,
+      "initial_speed": 1.1113630408729993,
+      "grade": -0.011381743806729216,
+      "stopped": false,
+      "observed_distance_m": 8.653515955912976,
+      "stop_time_s": null,
+      "final_speed": 0.21902765808840136,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s102_stop_auto_1.0_0.0.jsonl",
+        "bytes": 427327,
+        "sha256": "3e8ab3c7acf3653e35237e16fcd6825cfcf9c3a6577a0108e57d67c705c8f3c8"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3156230889040685,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": true
+        },
+        "B": {
+          "distance_m": 3.1684038398517744,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": true
+        },
+        "C": {
+          "distance_m": null,
+          "unsupported_reason": "DownhillCoastDidNotStop",
+          "upper_bound_failed": false,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p66_s102_stop_auto_1.0_0.01",
+      "split": "validation",
+      "action": "brake_001",
+      "spawn": 66,
+      "seed": 102,
+      "initial_speed": 1.1113630408729993,
+      "grade": -0.011381743806729216,
+      "stopped": true,
+      "observed_distance_m": 0.07231467385368473,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s102_stop_auto_1.0_0.01.jsonl",
+        "bytes": 81350,
+        "sha256": "3fb995a8a6d701484c72db895b212a08ab3b18cdc3627df5594fd8640aaf81f0"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3156230889040685,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.2433084150503837,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.04898631925354503,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -0.023328354600139697,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.5948022465971656,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.5224875727434809,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p66_s102_stop_auto_1.0_0.05",
+      "split": "validation",
+      "action": "brake_005",
+      "spawn": 66,
+      "seed": 102,
+      "initial_speed": 1.1113630408729993,
+      "grade": -0.011381743806729216,
+      "stopped": true,
+      "observed_distance_m": 0.06289482808296862,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s102_stop_auto_1.0_0.05.jsonl",
+        "bytes": 81153,
+        "sha256": "291ad4bec94c9a5d703c3e1bcdc2b0351a6f98fcb6df5888b41d605d9a3485a1"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3156230889040685,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.2527282608211,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.048795261171975385,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -0.014099566910993233,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.594611188515596,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.5317163604326274,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p66_s102_stop_auto_1.0_1.0",
+      "split": "validation",
+      "action": "emergency",
+      "spawn": 66,
+      "seed": 102,
+      "initial_speed": 1.1113630408729993,
+      "grade": -0.011381743806729216,
+      "stopped": true,
+      "observed_distance_m": 0.06269686762206353,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s102_stop_auto_1.0_1.0.jsonl",
+        "bytes": 81140,
+        "sha256": "31bcba2aa5906e8c10b5b44425895c082329f76bb8603f8c57d78783b99a3214"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3156230889040685,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.252926221282005,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.05551597400518084,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -0.0071808936168826915,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.6013319013488014,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.5386350337267379,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p66_s102_stop_auto_2.5_0.0",
+      "split": "validation",
+      "action": "coast",
+      "spawn": 66,
+      "seed": 102,
+      "initial_speed": 2.5357376996633505,
+      "grade": -0.011381743761347657,
+      "stopped": false,
+      "observed_distance_m": 10.290780305370292,
+      "stop_time_s": null,
+      "final_speed": 0.20449026775914766,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s102_stop_auto_2.5_0.0.jsonl",
+        "bytes": 452599,
+        "sha256": "0567edc097218752b4227a9a0779f03c474f48c2038f1f3fa1a5a58e802af5d8"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.084842199563884,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": true
+        },
+        "B": {
+          "distance_m": 4.656923504578154,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": true
+        },
+        "C": {
+          "distance_m": null,
+          "unsupported_reason": "DownhillCoastDidNotStop",
+          "upper_bound_failed": false,
+          "actual_stop_error_m": null,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p66_s102_stop_auto_2.5_0.01",
+      "split": "validation",
+      "action": "brake_001",
+      "spawn": 66,
+      "seed": 102,
+      "initial_speed": 2.5357376996633505,
+      "grade": -0.011381743761347657,
+      "stopped": true,
+      "observed_distance_m": 2.0357960286925683,
+      "stop_time_s": 1.0000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s102_stop_auto_2.5_0.01.jsonl",
+        "bytes": 125470,
+        "sha256": "a1d41eb049b8b895515ccc25812c96529b95b3ab8c427f62dcdf0cd043481212"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.084842199563884,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 2.0490461708713155,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 2.1599355459881484,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.12413951729558015,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 3.204282603881124,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.1684865751885556,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p66_s102_stop_auto_2.5_0.05",
+      "split": "validation",
+      "action": "brake_005",
+      "spawn": 66,
+      "seed": 102,
+      "initial_speed": 2.5357376996633505,
+      "grade": -0.011381743761347657,
+      "stopped": true,
+      "observed_distance_m": 1.8203474406574514,
+      "stop_time_s": 0.9000000134110451,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s102_stop_auto_2.5_0.05.jsonl",
+        "bytes": 123574,
+        "sha256": "70012eb0a809ac961a86d429113719b8e174e08539164557e4880a94ed41e578"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.084842199563884,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 2.2644947589064324,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 1.873872077382893,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.05352463672544161,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 2.9182191352758684,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.097871694618417,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p66_s102_stop_auto_2.5_1.0",
+      "split": "validation",
+      "action": "emergency",
+      "spawn": 66,
+      "seed": 102,
+      "initial_speed": 2.5357376996633505,
+      "grade": -0.011381743761347657,
+      "stopped": true,
+      "observed_distance_m": 0.5760580160653963,
+      "stop_time_s": 0.30000000447034836,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p66_s102_stop_auto_2.5_1.0.jsonl",
+        "bytes": 111949,
+        "sha256": "62f5c4267d4cf584bd04a65424642f1f0f92fd472233b71b02260dff437c1cc4"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.084842199563884,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 3.5087841834984874,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.5799441621869583,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.0038861461215620174,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 1.6242912200799335,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.0482332040145372,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p170_s101_stop_auto_1.0_0.0",
+      "split": "validation",
+      "action": "coast",
+      "spawn": 170,
+      "seed": 101,
+      "initial_speed": 1.1342871379321988,
+      "grade": 0.0,
+      "stopped": true,
+      "observed_distance_m": 4.62355396782869,
+      "stop_time_s": 9.700000144541264,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s101_stop_auto_1.0_0.0.jsonl",
+        "bytes": 259737,
+        "sha256": "54bbc6479a166964b17e4aa9aede3627e9bdbf826c8700ca696ee587fb1a45d0"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3552754841201673,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -3.268278483708523,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 3.1684038398517744,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -1.455150127976916,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 6.017537574237725,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.3939836064090345,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p170_s101_stop_auto_1.0_0.01",
+      "split": "validation",
+      "action": "brake_001",
+      "spawn": 170,
+      "seed": 101,
+      "initial_speed": 1.1342871379321988,
+      "grade": 0.0,
+      "stopped": true,
+      "observed_distance_m": 0.06448576833604731,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s101_stop_auto_1.0_0.01.jsonl",
+        "bytes": 77054,
+        "sha256": "5352047d59244babe0d69aa2e3cdc6212e1cad4512b36eb1762e6bd84833c841"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3552754841201673,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.29078971578412,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.04898631925354503,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -0.015499449082502281,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.5959868175298145,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.5315010491937672,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p170_s101_stop_auto_1.0_0.05",
+      "split": "validation",
+      "action": "brake_005",
+      "spawn": 170,
+      "seed": 101,
+      "initial_speed": 1.1342871379321988,
+      "grade": 0.0,
+      "stopped": true,
+      "observed_distance_m": 0.06397529041486796,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s101_stop_auto_1.0_0.05.jsonl",
+        "bytes": 76620,
+        "sha256": "4b63c4406551842da1ad4fad7f619fb1e04b89590e1b1471abedcba8ab668929"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3552754841201673,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.2913001937052992,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.048795261171975385,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -0.015180029242892579,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.5957957594482449,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.531820469033377,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p170_s101_stop_auto_1.0_1.0",
+      "split": "validation",
+      "action": "emergency",
+      "spawn": 170,
+      "seed": 101,
+      "initial_speed": 1.1342871379321988,
+      "grade": 0.0,
+      "stopped": true,
+      "observed_distance_m": 0.06557715121375053,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s101_stop_auto_1.0_1.0.jsonl",
+        "bytes": 76345,
+        "sha256": "23c8227fbf28a94d6607bf13d6da7f7c45f3fa34ee0f31345293bfc1a3804a0a"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3552754841201673,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.2896983329064167,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.05551597400518084,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -0.010061177208569694,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.6025164722814503,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.5369393210676998,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p170_s101_stop_auto_2.5_0.0",
+      "split": "validation",
+      "action": "coast",
+      "spawn": 170,
+      "seed": 101,
+      "initial_speed": 2.502747323729537,
+      "grade": 0.0006924500548529448,
+      "stopped": true,
+      "observed_distance_m": 5.924012339225365,
+      "stop_time_s": 8.150000121444464,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s101_stop_auto_2.5_0.0.jsonl",
+        "bytes": 265525,
+        "sha256": "0e2c275e095ba52f327c2793f050f741d5625a55004886d2197c4037fdb428b8"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.016024778400272,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -1.9079875608250934,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 4.656923504578154,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -1.2670888346472111,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 8.54212377479286,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 2.618111435567494,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p170_s101_stop_auto_2.5_0.01",
+      "split": "validation",
+      "action": "brake_001",
+      "spawn": 170,
+      "seed": 101,
+      "initial_speed": 2.502747323729537,
+      "grade": 0.0006924500548529448,
+      "stopped": true,
+      "observed_distance_m": 1.861833457904126,
+      "stop_time_s": 0.9500000141561031,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s101_stop_auto_2.5_0.01.jsonl",
+        "bytes": 128442,
+        "sha256": "284dc28e50899780b3e1aad3b6aec0f126f824169c26f8d93a83944784cc3f11"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.016024778400272,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 2.154191320496146,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 2.1599355459881484,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.2981020880840224,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 3.185897109293486,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.32406365138936,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p170_s101_stop_auto_2.5_0.05",
+      "split": "validation",
+      "action": "brake_005",
+      "spawn": 170,
+      "seed": 101,
+      "initial_speed": 2.502747323729537,
+      "grade": 0.0006924500548529448,
+      "stopped": true,
+      "observed_distance_m": 1.6570311952461854,
+      "stop_time_s": 0.850000012665987,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s101_stop_auto_2.5_0.05.jsonl",
+        "bytes": 126598,
+        "sha256": "52f18ff707c3ff22dac0e33d7ee117683362a7ce32c2c5efa11f30483c6777d5"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.016024778400272,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 2.3589935831540867,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 1.873872077382893,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.2168408821367076,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 2.8998336406882306,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.2428024454420452,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p170_s101_stop_auto_2.5_1.0",
+      "split": "validation",
+      "action": "emergency",
+      "spawn": 170,
+      "seed": 101,
+      "initial_speed": 2.502747323729537,
+      "grade": 0.0006924500548529448,
+      "stopped": true,
+      "observed_distance_m": 0.5096262259600364,
+      "stop_time_s": 0.30000000447034836,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s101_stop_auto_2.5_1.0.jsonl",
+        "bytes": 115853,
+        "sha256": "9c61512aa273c6c7921a0ccbd4ceafda849737dc1e3af7a55a1e4a57678c3939"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.016024778400272,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 3.5063985524402357,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.5799441621869583,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.07031793622692195,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 1.6059057254922962,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.0962794995322598,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p170_s102_stop_auto_1.0_0.0",
+      "split": "validation",
+      "action": "coast",
+      "spawn": 170,
+      "seed": 102,
+      "initial_speed": 1.1342871379321988,
+      "grade": 0.0,
+      "stopped": true,
+      "observed_distance_m": 4.62355396782869,
+      "stop_time_s": 9.700000144541264,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s102_stop_auto_1.0_0.0.jsonl",
+        "bytes": 259748,
+        "sha256": "5392ce436c0e3da4e17fc2461d4268552409e85386849ece5322331c625df628"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3552754841201673,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -3.268278483708523,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 3.1684038398517744,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -1.455150127976916,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 6.017537574237725,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.3939836064090345,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p170_s102_stop_auto_1.0_0.01",
+      "split": "validation",
+      "action": "brake_001",
+      "spawn": 170,
+      "seed": 102,
+      "initial_speed": 1.1342871379321988,
+      "grade": 0.0,
+      "stopped": true,
+      "observed_distance_m": 0.06448576833604731,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s102_stop_auto_1.0_0.01.jsonl",
+        "bytes": 77055,
+        "sha256": "422ab6099ab5d22d31edd7ba2ed9e4db0be83e2cd0c11252d95ce38b4ef1115c"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3552754841201673,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.29078971578412,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.04898631925354503,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -0.015499449082502281,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.5959868175298145,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.5315010491937672,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p170_s102_stop_auto_1.0_0.05",
+      "split": "validation",
+      "action": "brake_005",
+      "spawn": 170,
+      "seed": 102,
+      "initial_speed": 1.1342871379321988,
+      "grade": 0.0,
+      "stopped": true,
+      "observed_distance_m": 0.06397529041486796,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s102_stop_auto_1.0_0.05.jsonl",
+        "bytes": 76620,
+        "sha256": "923935fc228e0366c9c295e62c3aad17c06131563a05d27b3ab54f7d11ee9078"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3552754841201673,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.2913001937052992,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.048795261171975385,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -0.015180029242892579,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.5957957594482449,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.531820469033377,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p170_s102_stop_auto_1.0_1.0",
+      "split": "validation",
+      "action": "emergency",
+      "spawn": 170,
+      "seed": 102,
+      "initial_speed": 1.1342871379321988,
+      "grade": 0.0,
+      "stopped": true,
+      "observed_distance_m": 0.06557715121375053,
+      "stop_time_s": 0.10000000149011612,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s102_stop_auto_1.0_1.0.jsonl",
+        "bytes": 76344,
+        "sha256": "31be89741567235e327801bece56158c157878cdfe911e963d5c091bd5c2ca79"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 1.3552754841201673,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.2896983329064167,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.05551597400518084,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -0.010061177208569694,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 0.6025164722814503,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.5369393210676998,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p170_s102_stop_auto_2.5_0.0",
+      "split": "validation",
+      "action": "coast",
+      "spawn": 170,
+      "seed": 102,
+      "initial_speed": 2.502747323729537,
+      "grade": 0.0006924500548529448,
+      "stopped": true,
+      "observed_distance_m": 5.924012339225365,
+      "stop_time_s": 8.150000121444464,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s102_stop_auto_2.5_0.0.jsonl",
+        "bytes": 265518,
+        "sha256": "36348a33ec654df448f7bb0b8aaab557b25bb86f0a1b06cba1827b283604930b"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.016024778400272,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -1.9079875608250934,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 4.656923504578154,
+          "unsupported_reason": null,
+          "upper_bound_failed": true,
+          "actual_stop_error_m": -1.2670888346472111,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 8.54212377479286,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 2.618111435567494,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p170_s102_stop_auto_2.5_0.01",
+      "split": "validation",
+      "action": "brake_001",
+      "spawn": 170,
+      "seed": 102,
+      "initial_speed": 2.502747323729537,
+      "grade": 0.0006924500548529448,
+      "stopped": true,
+      "observed_distance_m": 1.861833457904126,
+      "stop_time_s": 0.9500000141561031,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s102_stop_auto_2.5_0.01.jsonl",
+        "bytes": 128442,
+        "sha256": "588d503019e5371704f5737db17e4f7fcad83e53724195b37f2583b8159bfbb3"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.016024778400272,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 2.154191320496146,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 2.1599355459881484,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.2981020880840224,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 3.185897109293486,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.32406365138936,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p170_s102_stop_auto_2.5_0.05",
+      "split": "validation",
+      "action": "brake_005",
+      "spawn": 170,
+      "seed": 102,
+      "initial_speed": 2.502747323729537,
+      "grade": 0.0006924500548529448,
+      "stopped": true,
+      "observed_distance_m": 1.6570311952461854,
+      "stop_time_s": 0.850000012665987,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s102_stop_auto_2.5_0.05.jsonl",
+        "bytes": 126589,
+        "sha256": "952226672dc2bc99b34889f28fc26a3afacfe14398ddf65d5da99891af6cbee7"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.016024778400272,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 2.3589935831540867,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 1.873872077382893,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.2168408821367076,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 2.8998336406882306,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.2428024454420452,
+          "no_stop_finite_claim": false
+        }
+      }
+    },
+    {
+      "name": "validation_p170_s102_stop_auto_2.5_1.0",
+      "split": "validation",
+      "action": "emergency",
+      "spawn": 170,
+      "seed": 102,
+      "initial_speed": 2.502747323729537,
+      "grade": 0.0006924500548529448,
+      "stopped": true,
+      "observed_distance_m": 0.5096262259600364,
+      "stop_time_s": 0.30000000447034836,
+      "final_speed": 0.0,
+      "trace": {
+        "path": "reports/m6c_probe_artifacts/validation_p170_s102_stop_auto_2.5_1.0.jsonl",
+        "bytes": 115861,
+        "sha256": "17f0f4245ea58246d0eed64f49574f3771a20e3157fe9b73607df0c977909f08"
+      },
+      "predictions": {
+        "A": {
+          "distance_m": 4.016024778400272,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 3.5063985524402357,
+          "no_stop_finite_claim": false
+        },
+        "B": {
+          "distance_m": 0.5799441621869583,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 0.07031793622692195,
+          "no_stop_finite_claim": false
+        },
+        "C": {
+          "distance_m": 1.6059057254922962,
+          "unsupported_reason": null,
+          "upper_bound_failed": false,
+          "actual_stop_error_m": 1.0962794995322598,
+          "no_stop_finite_claim": false
+        }
+      }
+    }
+  ],
+  "limits": "No CI from correlated within-location repeats; finite support percentage is not general safety coverage. Max observed travel includes non-stopping censored rows. A brake results excluded from action-matched claims."
+}

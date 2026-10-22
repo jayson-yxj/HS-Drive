@@ -1,0 +1,406 @@
+{
+  "kind": "offline_action_matched_actual_CARLA_probe_quality",
+  "base": "f047ade6d7802205abadcde4363a57e0a1d00981",
+  "git_head": "4ee67334912cea7267b9ca425503e9adbdfc3a98",
+  "sources": {
+    "configs/m6c/envelope_model.json": "aa0f603f1f7659c04ebe405c5f02c4114332af20930898754fa017227450dc6c",
+    "configs/m6c/protocol.json": "5a9c6ad23201602616b0954e6d547932a650101c4f3e773f642ddfa4765dc6ad",
+    "simulator/m6c_envelope.py": "16775977d6cd7ec8368edc88819da1fa71e787dc2ebd79810c6a935c1f41b2e3",
+    "simulator/m6c_geometry.py": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+    "simulator/m6c_motion.py": "ebe4b50da93b4bfeccd5b67c8c38b9fd403bb66b20cec0339c0cda9917069320",
+    "simulator/m6c_worker.py": "66287ce4469f4642bb4a2e3da445db61763b78559a3425e31103061a8192e56e",
+    "tests/test_m6c_stopping.py": "4996670638d8a98af6f20d5daa5c57baf0c37718b3cd61610ffe83c5d41b0aa1",
+    "tools/m6c_analyze.py": "f8b52b3584af633e112e40031eacfec1e0f1b3f16f6b602d9ac2517c9b4653b9",
+    "tools/m6c_body_audit.py": "d1fafafcb56615a8dda731014702e30a7a87a1ba431fa016442b3d3ee8e1bf69",
+    "tools/m6c_campaign.py": "6f1134c592104366e5a4e7674ff5ac031d4ec26cd39a84bf61b02d20f4a4fe07",
+    "tools/m6c_common.py": "2466aabe330c599e4ccf82ae4bdcd9ce72429df254558f2d3822cceea3b20672",
+    "tools/m6c_drive.py": "d69690c1b5d9b25cc6ae9db6f9b4a413d4b16792cfc3671c9faf980f7e58291b",
+    "tools/m6c_envelope_quality.py": "3fb077c87c9f72bc549915836266ed95ff3da172e126d2502606476c7c2ca136",
+    "tools/m6c_envelope_residuals.py": "8616a277e1dc7c0e9401c585540d4b95ead40bfb81d1d5ceab9c88f588217801",
+    "tools/m6c_failure_audit.py": "a3fd97c45eb561e2929136715f9163854f86a47f008e68d32b7f1d5f7d7506f4",
+    "tools/m6c_finalize.py": "8eef79a47cae536c36c94ce3643108e4bfa688da968ab41c90df2b05a6f36984",
+    "tools/m6c_fit_envelope.py": "7b71e581d2bad02581d039ec6af23f7d8763c2653da1fdafb7cf65f918321cdb",
+    "tools/m6c_preserved_regression.py": "e45e39e9928f523d0b45312e7e4662c48c22da7962c1dde10d2aac7006917356",
+    "tools/m6c_probe.py": "f043ea5847c55755fbcf4d01b9916fb6fc2140b70496d91b41237b6d9aa94bf1",
+    "tools/m6c_probe_analysis.py": "57c67c853e258605b79c7007669ae425475f5a49d828bd2826320c82c421e9b2",
+    "tools/m6c_resource_monitor.py": "4b9e46729d22d7a15a9a44abab21db7b6cb1ebefd1b6cc1bccdd6d284f6c378d",
+    "tools/m6c_resume_matrix.py": "07eb10e5963d567250e9544eb69729ebfab63319ca7006d2a8c8d61e91c8dfe9",
+    "tools/m6c_runtime_resources.py": "7a84901a037b1e2bd61b6d9ae943b754932574e615a5c0b940ec92632a9187be",
+    "tools/m6c_startup_plot.py": "d1f9393409c9961c0385a7c6f61ff447069a7709317ab53f0159bd49a86963f6",
+    "tools/m6c_verify_history.py": "175027ad611ac7b8e576581a28ce9c8df4384ca2eb8b85a8569db22b6fc33a17"
+  },
+  "protocol_sha256": "5a9c6ad23201602616b0954e6d547932a650101c4f3e773f642ddfa4765dc6ad",
+  "visual_control": false,
+  "source": "Privileged",
+  "groups": [
+    {
+      "split": "development",
+      "action": "coast",
+      "trials": 8,
+      "unique_positions": [
+        27,
+        126
+      ],
+      "stopped": 4,
+      "min_observed_travel_m": 3.1684038398517744,
+      "max_observed_travel_m": 13.731934073776088,
+      "max_original_probe_raw_decel": 1.0913365742115837,
+      "max_original_probe_raw_jerk": 55.157461386001216,
+      "predictions": {
+        "A": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 8,
+          "censored_finite_claims": 4,
+          "min_upper_minus_actual": -1.8855055729563086,
+          "max_upper_minus_actual": -0.6342051626314653,
+          "mean_absolute_error": 1.2598553677938868
+        },
+        "B": {
+          "action_matched": true,
+          "finite": 4,
+          "finite_coverage": 0.5,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 0.0,
+          "max_upper_minus_actual": 0.0,
+          "mean_absolute_error": 0.0
+        },
+        "C": {
+          "action_matched": true,
+          "finite": 4,
+          "finite_coverage": 0.5,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 1.0400385403221817,
+          "max_upper_minus_actual": 1.677541294781797,
+          "mean_absolute_error": 1.3587899175519893
+        }
+      }
+    },
+    {
+      "split": "development",
+      "action": "brake_001",
+      "trials": 8,
+      "unique_positions": [
+        27,
+        126
+      ],
+      "stopped": 8,
+      "min_observed_travel_m": 0.03917628285956623,
+      "max_observed_travel_m": 2.1599355459881484,
+      "max_original_probe_raw_decel": 24.327395125017123,
+      "max_original_probe_raw_jerk": 432.4836357128839,
+      "predictions": {
+        "A": {
+          "action_matched": false,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 1.2339119476419207,
+          "max_upper_minus_actual": 2.1401285281220277,
+          "mean_absolute_error": 1.6696500893327682
+        },
+        "B": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 0.0,
+          "max_upper_minus_actual": 0.2773457321634871,
+          "mean_absolute_error": 0.07178894213936649
+        },
+        "C": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 0.532316557775463,
+          "max_upper_minus_actual": 1.3044314883744814,
+          "mean_absolute_error": 0.8705014429871201
+        }
+      }
+    },
+    {
+      "split": "development",
+      "action": "brake_005",
+      "trials": 8,
+      "unique_positions": [
+        27,
+        126
+      ],
+      "stopped": 8,
+      "min_observed_travel_m": 0.037274224595254396,
+      "max_observed_travel_m": 1.873872077382893,
+      "max_original_probe_raw_decel": 24.506395265647186,
+      "max_original_probe_raw_jerk": 477.75106342046007,
+      "predictions": {
+        "A": {
+          "action_matched": false,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 1.2341030057234905,
+          "max_upper_minus_actual": 2.3655683829709853,
+          "mean_absolute_error": 1.7980491992827918
+        },
+        "B": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 0.0,
+          "max_upper_minus_actual": 0.21672211840718925,
+          "mean_absolute_error": 0.05706078874597756
+        },
+        "C": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 0.532316557775463,
+          "max_upper_minus_actual": 1.2438078746181835,
+          "mean_absolute_error": 0.8547530571865907
+        }
+      }
+    },
+    {
+      "split": "development",
+      "action": "emergency",
+      "trials": 8,
+      "unique_positions": [
+        27,
+        126
+      ],
+      "stopped": 8,
+      "min_observed_travel_m": 0.0483970835539749,
+      "max_observed_travel_m": 0.5799441621869583,
+      "max_original_probe_raw_decel": 26.688796343712752,
+      "max_original_probe_raw_jerk": 473.5895520940696,
+      "predictions": {
+        "A": {
+          "action_matched": false,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 1.234501183341491,
+          "max_upper_minus_actual": 3.5251562147649462,
+          "mean_absolute_error": 2.404892521211976
+        },
+        "B": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 0.0,
+          "max_upper_minus_actual": 0.07408314752398226,
+          "mean_absolute_error": 0.02030050949379705
+        },
+        "C": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 0.539435448226669,
+          "max_upper_minus_actual": 1.1011689037349766,
+          "mean_absolute_error": 0.8145545114763331
+        }
+      }
+    },
+    {
+      "split": "validation",
+      "action": "coast",
+      "trials": 8,
+      "unique_positions": [
+        66,
+        170
+      ],
+      "stopped": 4,
+      "min_observed_travel_m": 4.62355396782869,
+      "max_observed_travel_m": 10.290780305370292,
+      "max_original_probe_raw_decel": 1.119001168225276,
+      "max_original_probe_raw_jerk": 67.6745173607836,
+      "predictions": {
+        "A": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 8,
+          "censored_finite_claims": 4,
+          "min_upper_minus_actual": -3.268278483708523,
+          "max_upper_minus_actual": -1.9079875608250934,
+          "mean_absolute_error": 2.588133022266808
+        },
+        "B": {
+          "action_matched": true,
+          "finite": 4,
+          "finite_coverage": 0.5,
+          "bound_failures": 4,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": -1.455150127976916,
+          "max_upper_minus_actual": -1.2670888346472111,
+          "mean_absolute_error": 1.3611194813120635
+        },
+        "C": {
+          "action_matched": true,
+          "finite": 4,
+          "finite_coverage": 0.5,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 1.3939836064090345,
+          "max_upper_minus_actual": 2.618111435567494,
+          "mean_absolute_error": 2.006047520988264
+        }
+      }
+    },
+    {
+      "split": "validation",
+      "action": "brake_001",
+      "trials": 8,
+      "unique_positions": [
+        66,
+        170
+      ],
+      "stopped": 8,
+      "min_observed_travel_m": 0.06448576833604731,
+      "max_observed_travel_m": 2.0357960286925683,
+      "max_original_probe_raw_decel": 23.319600187113938,
+      "max_original_probe_raw_jerk": 434.10606416573165,
+      "predictions": {
+        "A": {
+          "action_matched": false,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 1.2433084150503837,
+          "max_upper_minus_actual": 2.154191320496146,
+          "mean_absolute_error": 1.6843339055504913
+        },
+        "B": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 4,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": -0.023328354600139697,
+          "max_upper_minus_actual": 0.2981020880840224,
+          "mean_absolute_error": 0.11526735226556113
+        },
+        "C": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 0.5224875727434809,
+          "max_upper_minus_actual": 1.32406365138936,
+          "mean_absolute_error": 0.886634712128791
+        }
+      }
+    },
+    {
+      "split": "validation",
+      "action": "brake_005",
+      "trials": 8,
+      "unique_positions": [
+        66,
+        170
+      ],
+      "stopped": 8,
+      "min_observed_travel_m": 0.06289482808296862,
+      "max_observed_travel_m": 1.8203474406574514,
+      "max_original_probe_raw_decel": 23.3507138899789,
+      "max_original_probe_raw_jerk": 433.7180551735419,
+      "predictions": {
+        "A": {
+          "action_matched": false,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 1.2527282608211,
+          "max_upper_minus_actual": 2.3589935831540867,
+          "mean_absolute_error": 1.7918791991467296
+        },
+        "B": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 4,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": -0.015180029242892579,
+          "max_upper_minus_actual": 0.2168408821367076,
+          "mean_absolute_error": 0.07491127875400876
+        },
+        "C": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 0.5317163604326274,
+          "max_upper_minus_actual": 1.2428024454420452,
+          "mean_absolute_error": 0.8510527423816167
+        }
+      }
+    },
+    {
+      "split": "validation",
+      "action": "emergency",
+      "trials": 8,
+      "unique_positions": [
+        66,
+        170
+      ],
+      "stopped": 8,
+      "min_observed_travel_m": 0.06269686762206353,
+      "max_observed_travel_m": 0.5760580160653963,
+      "max_original_probe_raw_decel": 26.500148542597664,
+      "max_original_probe_raw_jerk": 466.7115950256387,
+      "predictions": {
+        "A": {
+          "action_matched": false,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 1.252926221282005,
+          "max_upper_minus_actual": 3.5087841834984874,
+          "mean_absolute_error": 2.389451822531786
+        },
+        "B": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 4,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": -0.010061177208569694,
+          "max_upper_minus_actual": 0.07031793622692195,
+          "mean_absolute_error": 0.02286153829348409
+        },
+        "C": {
+          "action_matched": true,
+          "finite": 8,
+          "finite_coverage": 1.0,
+          "bound_failures": 0,
+          "censored_finite_claims": 0,
+          "min_upper_minus_actual": 0.5369393210676998,
+          "max_upper_minus_actual": 1.0962794995322598,
+          "mean_absolute_error": 0.8050217645853086
+        }
+      }
+    }
+  ],
+  "limits": "No CI from correlated within-location repeats; finite support percentage is not general safety coverage. Max observed travel includes non-stopping censored rows. A brake results excluded from action-matched claims."
+}

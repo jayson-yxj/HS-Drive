@@ -1,0 +1,165 @@
+{
+  "stage": "M6-C",
+  "base": "f047ade6d7802205abadcde4363a57e0a1d00981",
+  "source": "Privileged",
+  "visual_control": false,
+  "physics_changes": false,
+  "vehicle": "vehicle.tesla.model3",
+  "physics_sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6",
+  "probe_split": {
+    "development": [
+      27,
+      126
+    ],
+    "validation": [
+      66,
+      170
+    ],
+    "note": "Val not used for envelope fitting; repeated deterministic seeds are not independent worlds"
+  },
+  "probes": {
+    "repeats": [
+      101,
+      102
+    ],
+    "startup_throttle": [
+      0.1,
+      0.15
+    ],
+    "startup_gears": [
+      "auto",
+      "manual1"
+    ],
+    "startup_seconds": 6,
+    "stop_speeds": [
+      1.0,
+      2.5
+    ],
+    "stop_brakes": [
+      0,
+      0.01,
+      0.05,
+      1.0
+    ],
+    "natural_speed_initialization": true,
+    "max_rollout_seconds": 20,
+    "warm_start_extra": "auto throttle .15 after a natural launch and full brake stop",
+    "maintain_extra": ".10 throttle for4s at naturally reached1m/s, then coast"
+  },
+  "envelope": {
+    "speed_bins": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1,
+      1.5,
+      2,
+      2.5,
+      3,
+      3.5,
+      4
+    ],
+    "response_delay_s": 0.35,
+    "unmodeled_distance_m": 0.15,
+    "grade_uncertainty": 0.005,
+    "max_supported_abs_grade": 0.03,
+    "actions": [
+      "coast",
+      "brake_001",
+      "brake_005",
+      "emergency"
+    ],
+    "selection": "dev-only maximum distance and duration in each speed bin, cumulative monotonic maxima; C adverse grade correction and response bound"
+  },
+  "goal": {
+    "position_m": 0.5,
+    "heading_deg": 5,
+    "speed_mps": 0.08,
+    "hold_s": 1,
+    "obstacle_gap_m": 3
+  },
+  "comfort": {
+    "raw_decel": 1.8,
+    "moving_jerk_p95": 2.5,
+    "raw_jerk_peak": 5,
+    "also_250ms": true,
+    "startup_not_excluded": true
+  },
+  "safety": {
+    "horizon_s": 6,
+    "planner_hz": 5,
+    "controller_hz": 20,
+    "max_plan_age_s": 0.35,
+    "unchanged_original": true
+  },
+  "candidate_policy": {
+    "D": "C same feedforward/gears plus envelope-based stopping decisions and independent insufficient-margin emergency",
+    "E": "conditional only after D measured obstacle gap improvement and probe evidence; at most one execution revision",
+    "default_replacement": false
+  },
+  "development_trials": {
+    "blocked": [
+      126,
+      170
+    ],
+    "speed": 2.5,
+    "seed": 101,
+    "arms": [
+      "C",
+      "D"
+    ]
+  },
+  "final_matrix": {
+    "stop_positions": [
+      27,
+      126,
+      170
+    ],
+    "length_speed_pairs": [
+      [
+        9,
+        1
+      ],
+      [
+        25,
+        2.5
+      ]
+    ],
+    "seeds": [
+      101,
+      102
+    ],
+    "arms": [
+      "C",
+      "D"
+    ],
+    "navigation": [
+      "straight",
+      "mild_curve",
+      "junction_turn"
+    ],
+    "obstacle_positions": [
+      126,
+      170
+    ],
+    "obstacle_speeds": [
+      1,
+      2.5
+    ],
+    "sudden_obstacle_gap_m": 3.2,
+    "sudden_tick": 300,
+    "bypass_regression_repeats": 2
+  },
+  "runtime": {
+    "condition": "same driving task/controller, no stationary-minus-moving attribution",
+    "repeats": 2,
+    "ticks": 600,
+    "resource_sampling_s": 0.2,
+    "no_affinity_sweep": true,
+    "no_deadline_reset": true,
+    "no_catchup": true
+  },
+  "petr": "Paused_NotRun",
+  "reverse_parking": "NotRun"
+}
