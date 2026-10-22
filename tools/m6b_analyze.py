@@ -179,6 +179,9 @@ def main():
         expired_normal_control=sum(d['runtime']['expired_normal_control'] for d,r in allrows),
         fault_trials=[d for d in maneuvers if 'fault_gate' in d],
         unchanged_original_safety=True,horizon_s=6,curb_contacts='Unknown_no_dedicated_mesh_reference',reverse_bay_parking='NotRun'))
+    write('reports/m6b_runtime_full_campaign.json',dict(**provenance('offline_actual_CARLA_all_trials_tail_audit'),source='Privileged',
+        trials=[dict(name=d['name'],config=d['config'],runtime=d['runtime'],stages_ms=d['stages_ms'],worst_interval=d['worst_interval'],source='Privileged',result=d['result']) for d,r in allrows],
+        limits='All development and formal trials included; main thread coding/inspection occurred during some trials. Only dedicated 8x600 timing campaign intended controlled CPU affinity comparison. No attribution of all-trial maximum to affinity optimization.'))
     figures(allrows)
     print('analyzed',len(allrows),'trials')
 
