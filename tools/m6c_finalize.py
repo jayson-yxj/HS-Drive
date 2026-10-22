@@ -50,7 +50,7 @@ def main():
             motion_support=load('reports/m6c_motion_support_audit.json') if Path('reports/m6c_motion_support_audit.json').exists() else {'status':'NotRun'},body_intersections=sum(len(v['OBB_intersections']) for v in body['trials']),
             boundary_by_arm={arm:sum(v['footprint_outside_frames'] for v in body['trials'] if v['config']['arm']==arm and v['valid_D_contract']) for arm in ['A','C','D']},
             old_six_second_contract_unchanged=True,curb_mesh='Unknown'),
-        runtime=dict(status='Partial_strict_20Hz_NotPassed',all_max_ms=runtime['all_trial_max']['runtime']['control_interval_ms']['max'],worst_name=runtime['all_trial_max']['name'],
+        runtime=dict(status='Partial_strict_20Hz_NotPassed',all_max_ms=runtime['all_trial_max']['runtime']['control_interval_ms']['max'],worst_name=runtime['all_trial_max']['name'],formal_valid_worst_ms=runtime['formal_valid_worst']['runtime']['control_interval_ms']['max'],formal_valid_worst_name=runtime['formal_valid_worst']['name'],
             all_deadline_miss=runtime['all_deadline_miss'],all_over100=runtime['all_over100'],internal_UE_root_cause='Unknown_not_proven_by_client_and_proc_samples',resource_report=asset('reports/m6c_runtime_resources.json')),
         comfort='Failed_raw_gates_startup_and_physical_braking',
         default_replacement=False,reverse_parking='NoGo',E_policy_search='NotRun',PETR='Paused_NotRun',visual_safety='Unchanged_NotValidated',

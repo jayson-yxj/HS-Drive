@@ -96,8 +96,9 @@ def main():
         limits='Nearest planar Actor OBB is a geometry reference, not exact render/curb mesh. Sudden infeasibility retains failed3m score; no masking difficult trials. Normal full stop requires no moving safety fallback.'))
     runtime=[d for d,r in allrows if d['name'].startswith('runtime_')]
     worst=max((d for d,r in allrows),key=lambda d:d['runtime']['control_interval_ms']['max'])
+    formal_worst=max(formal,key=lambda d:d['runtime']['control_interval_ms']['max'])
     write('reports/m6c_runtime_tail.json',dict(**provenance('actual_CARLA_client_timeline_worker_and_OS_resource_observation'),source='Privileged',status='Partial',matched_driving_trials=runtime,
-        all_trial_count=len(allrows),all_trial_max=worst,all_deadline_miss=sum(d['runtime']['deadline_miss'] for d,r in allrows),all_over100=sum(d['runtime']['over100'] for d,r in allrows),
+        all_trial_count=len(allrows),all_trial_max=worst,formal_valid_worst=formal_worst,all_deadline_miss=sum(d['runtime']['deadline_miss'] for d,r in allrows),all_over100=sum(d['runtime']['over100'] for d,r in allrows),
         historical=load('reports/m6c_goal_geometry_regression.json')['historical_worst'],
         resources=asset('runs/m6c_logs/resources.jsonl') if Path('runs/m6c_logs/resources.jsonl').exists() else None,
         limitations=['CPU schedstat and load observations only; not per-UE-thread renderer/PhysX attribution.','Server snapshot platform timestamp clock relation must be measured; no assumption remote clocks are synchronized.','Both runtime arms drive same task; no stationary-minus-moving inference.','Strict20Hz and shared-visual-GPU quality remain unvalidated.']))
