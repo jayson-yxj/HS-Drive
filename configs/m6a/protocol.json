@@ -1,0 +1,39 @@
+{
+  "stage": "M6-A",
+  "base": "349941e61abf706e462dce2f428149f9881be5ad",
+  "branch": "feat/m6a-system-baseline",
+  "m5_closeout": "ResearchCompleted / CandidateNoGo / SafetyNotValidated",
+  "training_budget_steps": 0,
+  "visual_control": false,
+  "petr": {
+    "source": "https://github.com/megvii-research/PETR",
+    "commit": "f7525f93467a33707ef401c587a52d5e7b34de74",
+    "config": "projects/configs/petr/petr_r50dcn_gridmask_c5.py",
+    "checkpoint": "https://drive.google.com/file/d/1c5rgTpHA98dFKmQ9BJN0zZbSuBFT8_Bt/view",
+    "family": "original_single_frame_PETR",
+    "environment_budget_minutes": 45,
+    "checkpoint_download_attempts": 2,
+    "dependency_strategy": "one_isolated_Python38_torch190_cu111_mmcv140_attempt",
+    "p0_requires": ["official_checkpoint_obtained", "official_model_import", "official_six_camera_forward", "finite_output", "measured_memory_and_latency"],
+    "p1_requires": "P0_Passed",
+    "carla_adaptation_training": "NotAuthorizedByThisProtocol",
+    "stop_on": ["official_asset_unavailable", "legacy_dependency_attempt_failed", "out_of_memory", "budget_exhausted"]
+  },
+  "oracle": {
+    "source": "Privileged",
+    "map": "Town03",
+    "vehicle": "vehicle.tesla.model3",
+    "planner_period_s": 0.2,
+    "controller_period_s": 0.05,
+    "plan_max_age_s": 0.35,
+    "safety_horizon_s": 6.0,
+    "repeats": 1,
+    "route_success": {"completion_min": 0.95, "collisions_max": 0, "lane_invasions_max": 0, "road_boundary_frames_max": 0, "cross_track_p95_max_m": 0.5, "normal_control_expired_max": 0, "terminal_speed_max_mps": 0.08},
+    "strict_realtime": "every_control_interval_le_50ms; report unrounded raw values and all misses",
+    "scenarios": ["straight", "mild_curve", "junction_turn", "dynamic_lead", "static_obstacle", "low_speed_stop", "emergency", "stalled_worker", "worker_crash", "invalid_input"],
+    "parking": "forward_low_speed_stop_is_not_reverse_or_bay_parking",
+    "bypass": "evaluate_completion_with_obstacle; stop_is_not_bypass",
+    "curb": "record collision actor type and lane invasion; lack of semantic curb sensor is Unknown",
+    "scope": "single-route engineering regression; not statistically validated safety"
+  }
+}
