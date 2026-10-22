@@ -11,7 +11,7 @@ def main():
     stop=load('reports/m6c_stop_abcde_comparison.json');no=load('reports/m6c_no_bypass_safety.json');safety=load('reports/m6c_safety_regression.json');runtime=load('reports/m6c_runtime_tail.json');body=load('reports/m6c_recorded_body_audit.json');env=load('reports/m6c_coast_brake_envelope.json');residual=load('reports/m6c_envelope_residual_validation.json')
     blocked=[v for v in no['trials'] if v['config']['scene']=='blocked'];sudden=[v for v in no['trials'] if v['config']['scene']=='sudden'];bypass=[v for v in no['trials'] if v['config']['scene']=='bypass'];removed=[v for v in no['trials'] if v['config']['scene']=='removed'];bybody={v['name']:v for v in body['trials']}
     tests=[]
-    for kind in ['full_tests','sdk_tests']:
+    for kind in ['full_tests','sdk_tests','sdk_remaining_tests']:
         path=f'reports/m6c_{kind}.xml';suite=ET.parse(path).getroot().find('testsuite');a=suite.attrib
         tests.append(dict(kind=kind,tests=int(a['tests']),passed=int(a['tests'])-int(a['failures'])-int(a['errors'])-int(a['skipped']),failures=int(a['failures']),errors=int(a['errors']),skipped=int(a['skipped']),seconds=float(a['time']),junit=asset(path),
             skip_reasons=[dict(test=t.attrib,reason=t.find('skipped').get('message'),detail=t.find('skipped').text) for t in suite.findall('testcase') if t.find('skipped') is not None]))
@@ -31,7 +31,11 @@ def main():
                 final_gaps={v['name']:v.get('obstacle',{}).get('final_relevant_OBB_gap_m') for v in sub})
         return out
     result=dict(**provenance('actual_CARLA_offline_synthetic_independent_acceptance'),stage='M6-C',status='Partial',source='Privileged',
-        counts=dict(probes=112,formal_attempts=len(execution),failed_commands=sum(v['exit_code']!=0 for v in execution),completed=safety['completed_runs']),
+        counts=dict(probes=112,scheduled_execution_records=len(execution),failed_trial_commands=sum(v['exit_code']!=0 for v in execution),completed=safety['completed_runs'],
+            valid_formal_trials=safety['formal_runs'],valid_formal_traveled_m=safety['formal_traveled_m'],
+            invalid_formal_D_trials=sum(v['name'].startswith('final_') for v in stop['invalid_D_trials']),
+            development_trials=6,matched_runtime_trials=4,
+            postprocessing_initial_failure='m6c_postprocessing_execution.json: exact historical BB equality assertion; corrected to each trial recorded BB'),
         geometry=dict(status='Passed_limited_contract_and_regression',no_goal_shift=True,original_3m_gap=True,exact_mesh='Unknown'),
         envelope=dict(status='Partial_empirical_validation_not_universal_guarantee',summary_original_with_shared_downhill_guard=env['summary'],strict_ablation=load('reports/m6c_envelope_strict_ablation.json')['groups'],
             validation_remaining_samples=sum(v['stats']['C']['supported_samples'] for v in residual['trials']),
@@ -57,9 +61,13 @@ def main():
         default_replacement=False,reverse_parking='NoGo',E_policy_search='NotRun',PETR='Paused_NotRun',visual_safety='Unchanged_NotValidated',
         tests=tests,preservation=load('reports/m6c_preservation.json'))
     write('reports/m6c_acceptance.json',result)
-    out=Path('reports/m6c_execution_logs');out.mkdir()
+    out=Path('reports/m6c_execution_logs');out.mkdir(exist_ok=True)
     for p in Path('runs/m6c_logs').iterdir():
-        if p.is_file():shutil.copy2(p,out/(p.name+'.txt' if p.suffix=='.log' else p.name))
+        if p.is_file():
+            target=out/(p.name+'.txt' if p.suffix=='.log' else p.name)
+            if target.exists():
+                assert target.read_bytes()==p.read_bytes(),f'Archived log changed: {p}'
+            else:shutil.copy2(p,target)
     print(json.dumps({k:result[k] for k in ['counts','stop','blocked','sudden','bypass','removed','navigation','runtime','safety']},indent=2))
 
 if __name__=='__main__':main()

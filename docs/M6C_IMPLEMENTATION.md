@@ -24,7 +24,7 @@
 
 ## 2. 有限真实车辆探针
 
-`configs/m6c/protocol.json`先冻结，再执行。开发道路27/126，验证道路66/170，两个固定seed；112组探针全部自然启动，不使用set_target_velocity。
+`configs/m6c/protocol.json`先冻结，再执行。开发spawn位置27/126（实际road4/3），验证spawn位置66/170（road20/67），两个固定seed；112组探针全部自然启动，不使用set_target_velocity。项目沿用的Road126等名称指spawn位置，不是OpenDRIVE road_id。
 
 - 自动挡/手动固定前进1挡，Throttle .10/.15持续6s，再coast/hold。
 - 自然达到1/2.5m/s后，Brake 0/.01/.05/1，最多20s；到<.02m/s再hold至少2s。
@@ -84,6 +84,7 @@ D最后间距≥3m、无碰撞不等于完整安全停车：还须前置可行�
 .venv-gpu/bin/python -m tools.m6c_analyze
 .venv-gpu/bin/python -m pytest -q --junitxml=reports/m6c_full_tests_repro.xml
 .venv/bin/python -m pytest -q tests/test_m6c_stopping.py tests/test_m6b_obstacles_sdk.py --junitxml=reports/m6c_sdk_tests_repro.xml
+.venv/bin/python -m pytest -q tests/test_m5n_sdk.py tests/test_geometry_extended.py::test_six_mounts_against_carla_math tests/test_imaging_rig.py tests/test_session.py::test_settings_restored_after_exception tests/test_snapshot.py --junitxml=reports/m6c_sdk_remaining_tests_repro.xml
 ```
 
 环境差异：`.venv`有CARLA、无Matplotlib；`.venv-gpu`有Matplotlib/PyTorch、无CARLA。仿真与绘图使用各自现有环境，无安装或GPU训练。每trial保存执行源码副本和SHA，报告git_head若为父提交，以冻结源码为准。
@@ -113,6 +114,7 @@ D最后间距≥3m、无碰撞不等于完整安全停车：还须前置可行�
 .venv-gpu/bin/python -m tools.m6c_plot_runtime
 .venv/bin/python -m tools.m6c_verify_history
 .venv/bin/python -m tools.m6c_finalize
+.venv/bin/python -m tools.m6c_summarize_counts
 .venv/bin/python -m tools.m6c_release_verify
 ```
 
@@ -121,3 +123,7 @@ D最后间距≥3m、无碰撞不等于完整安全停车：还须前置可行�
 探针是直路纵向响应试验，没有完整导航控制或专门碰撞/车道传感器，不把探针数据称为安全闭环成绩。带碰撞/车道、地图车身、原Safety和故障的正式闭环由m6c_drive独立执行；两种证据层级分开。
 
 `main_cpu_s`在trace行构造时采样，涵盖本轮snapshot之后到tick返回的进程CPU时间（可能包含Python队列后台线程），不是纯Controller或纯pre-apply CPU时间。与wall间隔只作相关诊断，不可相减冒充OS阻塞时间。server schedstat是进程主线程，未采样所有UE渲染/物理线程。
+
+最终body审计直接读取各trial的`body.json`，不要求与历史参考的浮点偏置逐位相同；最初断言失败保留于执行日志。审计包含完整尺寸和0.2/0.15m裕量；报告的两个outside frame指Driving采样不通过，不是精确Mesh接触结论。
+
+最终测试三组分别347 passed/7 SDK相关skipped、10 passed、6 passed，后两组在已有CARLA SDK环境执行。最终报告生成时保留初版验收为`reports/m6c_intermediate_acceptance/`，补充明确区分84个有效正式场景、19个无效正式D、6个开发试验和4个匹配Runtime试验。所有报告输出禁止覆盖已有文件；复现整批报告应在独立输出副本执行。
