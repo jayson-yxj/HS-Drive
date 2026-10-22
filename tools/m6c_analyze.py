@@ -43,7 +43,12 @@ def inspect(path):
     first=obs[0] if obs else None
     stopped=[q for q in obs if q['measurement']['speed']<=.08]
     if obs:
-        trace['obstacle']=dict(discovery=event(first),first_normal_deceleration=event(next((q for q in obs if q['measurement']['speed']>.2 and not q['reason'] and (q['command']['brake']>0 or q['command']['mode']=='SETTLE')),None)),
+        estimate=first['geometry']['predicted_braking_m']
+        initial_available=first['geometry']['available_clearance_to_safe_stop']
+        trace['obstacle']=dict(initial_stopping_feasible=estimate is not None and initial_available>=estimate,
+            initial_feasibility_limit='Measured .01 brake capability with conservative delay/grade, not proof this controller normally executes that action',
+            final_stop_requires_safety=any(q['reason'] and q['measurement']['speed']>.2 for q in rows),
+            discovery=event(first),first_normal_deceleration=event(next((q for q in obs if q['measurement']['speed']>.2 and not q['reason'] and (q['command']['brake']>0 or q['command']['mode']=='SETTLE')),None)),
             first_emergency=event(next((q for q in obs if q['measurement']['speed']>.2 and q['reason']),None)),
             minimum_relevant_OBB_gap_m=min(q['geometry']['obstacle_obb_clearance_m'] for q in obs),
             final_relevant_OBB_gap_m=obs[-1]['geometry']['obstacle_obb_clearance_m'],
