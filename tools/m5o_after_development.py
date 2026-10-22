@@ -21,7 +21,8 @@ def main():
     for split in ['train','val','calibration','sealed']:
         if not Path(f'reports/m5o_all_candidate_burden_{split}.json').exists():
             run('tools.m5o_all_candidate_burden',['--split',split],f'burden_{split}.log','.venv-gpu/bin/python')
-        run('tools.m5o_dataset_checks',['--split',split],f'capture_checks_{split}.log','.venv-gpu/bin/python')
+        if not Path(f'reports/m5o_capture_checks_{split}.json').exists():
+            run('tools.m5o_dataset_checks',['--split',split],f'capture_checks_{split}.log','.venv-gpu/bin/python')
     run('tools.m5o_sampling_audit',[],'sampling_diversity.log','.venv-gpu/bin/python')
     print('Experiments completed; final interpretation and historical integrity audit remain',flush=True)
 if __name__=='__main__':main()
