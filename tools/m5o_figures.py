@@ -30,7 +30,8 @@ def main():
         ax[i].set_title(f"Historical regression seed {r['seed']}, n={r['visible']}")
         ax[i].set_ylabel("Actor views (correlated)")
     fig.tight_layout()
-    fig.savefig(out / "m5o_regression_failure_decomposition.png", dpi=140)
+    if not (out / "m5o_regression_failure_decomposition.png").exists():
+        fig.savefig(out / "m5o_regression_failure_decomposition.png", dpi=140)
     plt.close(fig)
     path = Path("reports/m5o_eval_val.json")
     if path.exists():
