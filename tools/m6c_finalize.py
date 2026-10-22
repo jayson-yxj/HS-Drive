@@ -17,7 +17,7 @@ def main():
             skip_reasons=[dict(test=t.attrib,reason=t.find('skipped').get('message'),detail=t.find('skipped').text) for t in suite.findall('testcase') if t.find('skipped') is not None]))
     write('reports/m6c_tests.json',dict(**provenance('actual_server_pytest'),suites=tests,passed=all(t['failures']==t['errors']==0 for t in tests)))
     execution=[]
-    for kind in ['stop','maneuver','corrected_matrix']:execution+=load(f'reports/m6c_{kind}_execution.json')['runs']
+    for kind in ['stop','maneuver','corrected_matrix','preserved_regression']:execution+=load(f'reports/m6c_{kind}_execution.json')['runs']
     def obstacle_summary(values):
         out={}
         for arm in ['C','D']:
@@ -38,7 +38,7 @@ def main():
             unsupported_downhill_coast_preserved=True),
         stop=dict(geometry_bug_excluded_trials=len(stop['invalid_D_trials']),status='NoGo_candidate_upgrade',by_arm=stop['by_arm'],B='Historical_only',E='NotRun'),
         blocked=dict(status='Partial',by_arm=obstacle_summary(blocked)),sudden=dict(status='Partial_infeasible_cases_retained',by_arm=obstacle_summary(sudden)),
-        bypass=dict(runs=len(bypass),goal_passed=sum(v['goal_passed'] for v in bypass),body_violation_frames=sum(bybody[v['name']]['footprint_outside_frames'] for v in bypass),
+        bypass=dict(by_arm={arm:dict(runs=sum(v['config']['arm']==arm for v in bypass),goal_passed=sum(v['config']['arm']==arm and v['goal_passed'] for v in bypass)) for arm in ['C','D']},runs=len(bypass),goal_passed=sum(v['goal_passed'] for v in bypass),body_violation_frames=sum(bybody[v['name']]['footprint_outside_frames'] for v in bypass),
             collisions=sum(len(v['collisions']) for v in bypass),comfort_passed=sum(v['comfort_passed'] for v in bypass)),
         removed=dict(runs=len(removed),restarted=sum(v['removed']['restarted'] for v in removed),goal_passed=sum(v['goal_passed'] for v in removed)),
         navigation={arm:dict(runs=sum(v['config']['arm']==arm for v in safety['navigation']),goal_passed=sum(v['config']['arm']==arm and v['goal_passed'] for v in safety['navigation'])) for arm in ['C','D']},

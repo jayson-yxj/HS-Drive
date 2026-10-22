@@ -17,7 +17,7 @@ def inspect(path):
     trace=dict(name=path.parent.name,config=d['config'],source='Privileged',result=asset(path),trace=d['trace'],physics=d['physics'],
         ticks=d['ticks'],goal_passed=d['goal_passed'],goal_checks=d['goal_checks'],error_m=d['final_goal_error_m'],completion=d['completion'],
         travelled_m=float(np.linalg.norm(np.diff([q['measurement']['position'] for q in rows],axis=0),axis=1).sum()),
-        terminal_geometry=g[-1],dynamics=d['dynamics'],comfort_passed=d['comfort_pass'],degradation=d['degradation'],
+        terminal_geometry=g[-1],valid_D_contract=(d['config']['arm']!='D' or path.parent.name.endswith('D2')),dynamics=d['dynamics'],comfort_passed=d['comfort_pass'],degradation=d['degradation'],
         collisions=d['collisions'],illegal_lanes=d['illegal_lane_events'],lane_events=d['lane_events'],boundary_ticks=sum(q['boundary'] for q in rows),
         terminal_speed=d['terminal_speed_mps'],bypass=d['bypass'],transitions=trans,
         runtime={q:d[q] for q in ['control_interval_ms','over50','over55','over100','deadline_miss','skipped_wall_slots','mean_hz','world_tick_ms','expired_normal_control','fault_to_brake_s']},
@@ -55,6 +55,10 @@ def inspect(path):
             final_3m_passed=obs[-1]['geometry']['obstacle_obb_clearance_m']>=3.,
             any_InsufficientStoppingMargin=any(q['reason']=='InsufficientStoppingMargin' for q in rows),
             stopped=bool(stopped),normal_only=not any(q['reason'] and q['measurement']['speed']>.2 for q in rows))
+    trace['true_distance_hold_audit']=[dict(frame=q['frame'],actual_remaining=q['geometry']['available_clearance_to_safe_stop'],speed=q['measurement']['speed'],source='Privileged') for q in rows if q['command'].get('transition_reason')=='near_goal_and_measured_settled']
+    trace['backward_motion']=dict(ticks=int((v<-.05).sum()),minimum_signed_speed=float(v.min()),
+        reverse_distance_lower_bound_m=float(np.maximum(-v[:-1],0).dot(np.diff(t))),
+        meaning='Signed motion along body axis; includes uncontrolled rollback, not intentional reverse parking.')
     # Full nearest physical gap includes lateral bypass actors, not only route.
     allgaps=[o['gap_m'] for q in rows for o in q['geometry']['all_obstacle_gaps']]
     trace['minimum_all_OBB_gap_m']=min(allgaps) if allgaps else None
