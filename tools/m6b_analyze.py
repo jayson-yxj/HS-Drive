@@ -23,13 +23,15 @@ def inspect(path):
     stages={k:quantiles([(v['timeline'][b]-v['timeline'][a])*1000 for v in r]) for k,a,b in [
         ('snapshot','wake_up','snapshot_end'),('submit_poll','snapshot_end','submit_poll_end'),('safety','submit_poll_end','safety_end'),
         ('controller_with_remaining_query','safety_end','controller_end'),('apply','apply_control','apply_end'),('world_tick','tick_start','tick_end')]}
+    stages['loop_tail_recording_ms']=quantiles([(r[k+1]['timeline']['previous_sleep_start']-r[k]['timeline']['tick_end'])*1000 for k in range(len(r)-1)])
+    stages['sleep_and_wakeup_ms']=quantiles([(q['timeline']['wake_up']-q['timeline']['previous_sleep_start'])*1000 for q in r])
     intervals=np.diff([v['timeline']['apply_control'] for v in r])*1000;i=int(np.argmax(intervals))+1
     primary=dict(name=root.name,config=d['config'],passed=d['goal_passed'],goal_checks=d['goal_checks'],
         error_m=d['final_goal_error_m'],heading_rad=d['heading_error_rad'],terminal_speed=d['terminal_speed_mps'],completion=d['completion'],
         signed_remaining_m=r[-1]['current_remaining_m'],
         collision_events=len(d['collisions']),lane_events=len(d['lane_events']),illegal_lane_events=len(d['illegal_lane_events']),
         travelled_m=float(np.linalg.norm(np.diff([q['measurement']['position'] for q in r],axis=0),axis=1).sum()),
-        selected_path_cte=d['selected_path_cte_m'],
+        selected_path_cte=d['selected_path_cte_m'],max_abs_steer=max(abs(q['command']['steer']) for q in r),
         dynamics=d['dynamics'],comfort_pass=d['comfort_pass'],degradation=d['degradation'],
         transitions=trans,jerk_peak_windows=peaks,
         runtime={k:d[k] for k in ['control_interval_ms','over50','over55','over100','deadline_miss','skipped_wall_slots','mean_hz','expired_normal_control','world_tick_ms','fault_to_brake_s']},
@@ -101,7 +103,10 @@ def inspect(path):
             minimum_route_arc_gap_proxy_m=min(proxy_gaps) if proxy_gaps else None,
             reference='Actor OBB; no mesh/contact safety guarantee')
         if d['config']['scene']=='blocked':
-            primary['refusal_passed']=d['bypass']['status']=='NoFeasibleBypass' and d['terminal_speed_mps']<=.08 and not d['collisions'] and not d['illegal_lane_events'] and intersections==0 and not any(v['boundary'] for v in r)
+            primary['refusal_geometry_and_collision_passed']=d['bypass']['status']=='NoFeasibleBypass' and d['terminal_speed_mps']<=.08 and not d['collisions'] and not d['illegal_lane_events'] and intersections==0 and not any(v['boundary'] for v in r)
+            # Zero contacts does not establish the original 3m safety margin.
+            primary['standstill_gap_3m_passed']=bool(proxy_gaps and min(proxy_gaps)>=3.)
+            primary['refusal_passed']=primary['refusal_geometry_and_collision_passed'] and primary['standstill_gap_3m_passed']
     return primary,r
 
 
@@ -130,7 +135,25 @@ def main():
                 'Broken crossings permitted only for audited same-direction lanes; full lane event logs retained.',
                 'NoFeasibleBypass must be explicit, then stop; endpoint failure is not failure to reject unsafe bypass.']))
     runtime=[d for d,r in allrows if d['name'].startswith('runtime_')]
-    write('reports/m6b_runtime_tail.json',dict(**provenance('actual_CARLA_monotonic_wall_time_and_offline_tail_analysis'),source='Privileged',status='Partial',trials=runtime,
+    attribution=[]
+    for d,r in allrows:
+        if not d['name'].startswith('runtime_'):continue
+        events=[]
+        for k in range(1,len(r)):
+            previous=r[k-1]['timeline'];current=r[k]['timeline']
+            interval=(current['apply_control']-previous['apply_control'])*1000
+            if interval<=55:continue
+            parts=dict(previous_apply_to_tick=(previous['tick_start']-previous['apply_control'])*1000,
+                previous_tick=(previous['tick_end']-previous['tick_start'])*1000,
+                previous_recording_tail=(current['previous_sleep_start']-previous['tick_end'])*1000,
+                sleep_and_wakeup=(current['wake_up']-current['previous_sleep_start'])*1000,
+                current_preapply=(current['apply_control']-current['wake_up'])*1000)
+            events.append(dict(frame=r[k]['frame'],interval_ms=interval,parts_ms=parts,
+                reconstruction_error_ms=abs(sum(parts.values())-interval),
+                previous_skipped_slots=r[k-1]['skipped_wall_slots'],
+                current_wakeup_lateness_ms=(current['wake_up']-current['scheduled'])*1000))
+        attribution.append(dict(name=d['name'],over55=events))
+    write('reports/m6b_runtime_tail.json',dict(**provenance('actual_CARLA_monotonic_wall_time_and_offline_tail_analysis'),source='Privileged',status='Partial',trials=runtime,over55_interval_decomposition=attribution,
         historical=asset('reports/m6b_goal_stop_geometry.json'),
         scheduler='fixed epoch+slot*.05; skip missed wall slots explicitly; no deadline reset and no catchup ticks; missed slots reported, not claimed successful cycles',
         A_limit='Stationary tick-only scaffold with snapshot/logging/sensors but no Worker/Controller. Not same motion workload as B/C/D; cannot isolate server rendering vs physics.',
@@ -160,12 +183,37 @@ def figures(allrows):
         ax[1,1].plot(t,[q['command']['throttle']-q['command']['brake'] for q in r],label=label)
     for a,title in zip(ax.flat,['Actual speed m/s','Goal distance m','Raw acceleration m/s²','Throttle - Brake']):a.set_title(title);a.set_xlabel('simulation s');a.legend();a.grid(alpha=.3)
     fig.suptitle('Privileged A/B/C matched 9m trial; raw peaks retained');fig.tight_layout();fig.savefig(root/'m6b_stop_abc.png',dpi=140);plt.close(fig)
+    fig,axes=plt.subplots(4,1,figsize=(12,10),sharex=True)
+    for d,r in allrows:
+        if d['name'] not in ['final_stop_p27_l9_s101_C','final_stop_p170_l9_s101_C']:continue
+        t=np.array([q['sim_time'] for q in r]);t-=t[0];label=d['name']
+        axes[0].plot(t,[q['measurement']['speed'] for q in r],label=label)
+        axes[1].plot(t,[q['current_remaining_m'] for q in r],label=label)
+        axes[2].plot(t,[q['command']['throttle']-q['command']['brake'] for q in r],label=label)
+        modes={'EMERGENCY':0,'APPROACH':1,'CREEP':2,'SETTLE':3,'HOLD':4}
+        axes[3].step(t,[modes[q['command']['mode']] for q in r],where='post',label=label)
+    for ax,title in zip(axes,['Actual speed m/s','Signed remaining m (negative = overshoot)','Throttle - Brake','Controller state']):ax.set_ylabel(title);ax.grid(alpha=.3)
+    axes[1].axhline(0,color='k',ls='--');axes[3].set_yticks(range(5),['EMERGENCY','APPROACH','CREEP','SETTLE','HOLD']);axes[3].set_xlabel('simulation s');axes[0].legend()
+    fig.tight_layout();fig.savefig(root/'m6b_stop_states.png',dpi=140);plt.close(fig)
+    fig,axes=plt.subplots(4,1,figsize=(12,10),sharex=True)
+    for mode in ['constant_010','constant_015','ramp_coast_hold']:
+        r=[json.loads(q) for q in Path(f'reports/m6b_calibration_artifacts/{mode}_r0.jsonl').read_text().splitlines()]
+        t=np.array([q['elapsed'] for q in r]);v=np.array([q['long_speed'] for q in r])
+        axes[0].plot(t,v,label=mode);axes[1].plot(t[:-1],np.diff(v)/np.diff(t),label=mode)
+        axes[2].plot(t,[q['command']['throttle']-q['command']['brake'] for q in r],label=mode)
+        axes[3].step(t,[q['applied']['gear'] for q in r],where='post',label=mode)
+    for ax,title in zip(axes,['Actual speed m/s','Raw acceleration m/s²','Requested Throttle - Brake','Reported applied gear']):ax.set_ylabel(title);ax.grid(alpha=.3)
+    axes[0].legend();axes[-1].set_xlabel('simulation s');fig.tight_layout();fig.savefig(root/'m6b_actuator_raw.png',dpi=140);plt.close(fig)
     fig,axes=plt.subplots(1,2,figsize=(12,5))
     for ax,spawn in zip(axes,[126,170]):
         d,r=next((d,r) for d,r in allrows if d['name']==f'final_bypass_p{spawn}_s101')
         route=load(Path(d['result']['path']).parent/'route.json');xy=np.array([[q['measurement']['position'][0],-q['measurement']['position'][1]] for q in r])
         for k in ['original','selected']:
             p=np.array(route[k]);ax.plot(p[:,0],p[:,1],label=k)
+        from matplotlib.patches import Polygon
+        from simulator.oracle_driver import footprint
+        for o in r[0]['obstacles']:
+            ax.add_patch(Polygon(footprint(*o['xy'],o['yaw'],o['half_length'],o['half_width']),color='red',alpha=.5))
         ax.plot(xy[:,0],xy[:,1],label='actual ego');ax.set_title(f'Privileged spawn{spawn} completed {d["completion"]:.1%}');ax.axis('equal');ax.legend()
     fig.tight_layout();fig.savefig(root/'m6b_bypass.png',dpi=140);plt.close(fig)
     fig,ax=plt.subplots(figsize=(12,5))

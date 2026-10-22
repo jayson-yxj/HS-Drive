@@ -11,6 +11,17 @@ from simulator.oracle_driver import footprint,polygons_intersect
 from tools.m6b_common import write,provenance,asset
 
 
+def polygon_gap(a,b):
+    if polygons_intersect(a,b):return 0.
+    distances=[]
+    for vertices,edges in [(a,b),(b,a)]:
+        delta=np.roll(edges,-1,axis=0)-edges
+        offset=vertices[:,None,:]-edges[None]
+        fraction=np.clip((offset*delta).sum(-1)/np.maximum((delta*delta).sum(-1),1e-12),0,1)
+        distances.append(np.linalg.norm(offset-fraction[:,:,None]*delta,axis=-1).min())
+    return float(min(distances))
+
+
 def main():
     ref=json.loads(Path('reports/m6b_body_reference.json').read_text())
     cmap=carla.Map('m6b_recorded_Town03',Path('runs/m6b_logs/Town03.xodr').read_text())
@@ -28,7 +39,7 @@ def main():
             xy=np.array(r['measurement']['position'][:2]);angle=r['measurement']['rotation'][2]
             if last is None or np.linalg.norm(xy-last[0])>=.25 or abs(angle-last[1])>=.5 or i==len(rows)-1:
                 selected_rows.append(r);last=(xy,angle)
-        violations=[];collisions=[];checks=0
+        violations=[];collisions=[];checks=0;gaps=[];final_gaps=[]
         for r in selected_rows:
             meas=r['measurement'];roll,pitch,yaw=meas['rotation'];tf=carla.Transform(carla.Location(*meas['position']),carla.Rotation(roll=roll,pitch=pitch,yaw=yaw))
             vertices=bb.get_world_vertices(tf);xyz=np.array([[p.x,-p.y,p.z] for p in vertices]);center=xyz.mean(0)
@@ -36,7 +47,10 @@ def main():
             extent=abs((xyz[:,:2]-center[:2])@np.array([[c,-s],[s,c]])).max(0)
             ego=footprint(*center[:2],heading,*extent)
             for obs in r['obstacles']:
-                if polygons_intersect(ego,footprint(*obs['xy'],obs['yaw'],obs['half_length'],obs['half_width'])):
+                other=footprint(*obs['xy'],obs['yaw'],obs['half_length'],obs['half_width'])
+                gap=polygon_gap(ego,other);gaps.append(gap)
+                if r is selected_rows[-1]:final_gaps.append(gap)
+                if polygons_intersect(ego,other):
                     collisions.append(dict(frame=r['frame'],actor_id=obs['actor_id']))
             bad=[]
             for xx,yy in body_samples(*center[:2],heading,extent[0]+.2,extent[1]+.15):
@@ -46,6 +60,7 @@ def main():
             if bad:violations.append(dict(frame=r['frame'],outside_samples=len(bad),example_xy=bad[:4]))
         records.append(dict(name=path.parent.name,poses=len(selected_rows),road_queries=checks,
             footprint_outside_frames=len(violations),examples=violations[:10],OBB_intersections=collisions,
+            min_XY_OBB_gap_m=min(gaps) if gaps else None,terminal_XY_OBB_gap_m=min(final_gaps) if final_gaps else None,
             source='Privileged',result=asset(path)))
         print(path.parent.name,len(selected_rows),len(violations),len(collisions),flush=True)
     write('reports/m6b_recorded_body_audit.json',dict(**provenance('offline_actual_CARLA_pose_OBB_and_OpenDRIVE_audit'),source='Privileged',

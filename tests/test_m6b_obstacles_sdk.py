@@ -18,3 +18,9 @@ def test_offset_rotation_tilt_obb_enclosure():
     local=(xyz[:,:2]-o['xy'])@basis
     assert np.all(abs(local)<=np.array([o['half_length'],o['half_width']])+1e-6)
     assert o['frame']==12 and o['timestamp']==3.5 and o['source']=='Privileged'
+
+
+def test_new_actor_without_snapshot_is_rejected():
+    snap=SimpleNamespace(find=lambda _:None)
+    with pytest.raises(ValueError,match='absent from snapshot'):
+        snapshot_obstacle(snap,SimpleNamespace(id=7))
