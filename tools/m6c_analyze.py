@@ -66,6 +66,7 @@ def inspect(path):
     # Full nearest physical gap includes lateral bypass actors, not only route.
     allgaps=[o['gap_m'] for q in rows for o in q['geometry']['all_obstacle_gaps']]
     trace['minimum_all_OBB_gap_m']=min(allgaps) if allgaps else None
+    trace['normal_navigation_passed']=bool(d['goal_passed'] and not d['lane_events'] and d['cte_m']['p95']<=.5)
     if d['config']['scene']=='lead':
         trace['lead']=dict(stopped=any(q['measurement']['speed']<=.08 for q in rows[350:500]),restarted=any(q['measurement']['speed']>.3 for q in rows[520:]),goal_passed=d['goal_passed'])
     if d['config']['scene']=='removed':trace['removed']=dict(restarted=any(q['measurement']['speed']>.3 for q in rows[420:]),goal_passed=d['goal_passed'])
