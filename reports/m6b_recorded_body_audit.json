@@ -1,0 +1,938 @@
+{
+  "kind": "offline_actual_CARLA_pose_OBB_and_OpenDRIVE_audit",
+  "base": "7ec866ff4ec5fe621c506056f41750651adcc4ab",
+  "git_head": "ffaf47082d814b07194d64b10ac16b43dfda4914",
+  "sources": {
+    "configs/m6b/protocol.json": "063cfb2bc6d0208324d43ca3f2ee980f7cc0e3bb0a42f5d2ac12148b04a5dee7",
+    "simulator/m6b_bypass.py": "b2550bdb773f1c45dc92a94a4848473a99a91201f565d916d490f69981ce3043",
+    "simulator/m6b_motion.py": "72067662faa791f44cd41ee60bcfba1003a743267e525391fc31a33f9970d3ce",
+    "simulator/m6b_obstacles.py": "2122ca6ad6ea606d7b94375d0777885459c0c3a724abf5c5a2554542fd6f286b",
+    "simulator/m6b_worker.py": "24947a1e5584e413ead9e44c251d1606ac9d01010a2977bf38c417c1810dc903",
+    "tests/test_m6b_maneuvers.py": "308fdcc19b0c481073afc6f68aa5391fe43c55a807ec5a6bdce582ff75a62c1c",
+    "tests/test_m6b_obstacles_sdk.py": "01079e75e81cc1ffb957f8982b8b9ab786854150c3fef6ffabd85f3689d7dead",
+    "tools/m6b_analyze.py": "017a1103cecaec26ee927251f89632f073b23384e78d0f8d02ae58e3445f4baa",
+    "tools/m6b_audit.py": "c0ec35c46e52f48a318f76d41c73025107d29351040e794155fc27f9aaa02f38",
+    "tools/m6b_body_audit.py": "b1c8f3cf8d7813f1ab62bad1e707d3d49df9bba34300a8c653e3847d05cb088b",
+    "tools/m6b_calibrate.py": "9cf7f3820b272d95c8b82f5e2e0c7db48bb6f4f0bdb6388cf2b986342b80b9fa",
+    "tools/m6b_calibration_analysis.py": "b3aa8f7e888787d2ab96b32f2d5dc43eae2bc6d1d26c705918415fa84be60b67",
+    "tools/m6b_campaign.py": "4e2342be4dc37fcd8e393b43ebebce425b8b0d71f542ac834c58ab2fd554c9f1",
+    "tools/m6b_common.py": "7f0493b5d8d3e8435fab695d361137f6df61be504529eff5360cc0a7a0c8cc44",
+    "tools/m6b_drive.py": "4fed31fd09f4375ecd2356748ea27c6d884aaa11d3975d6edcd27cdbc894337d",
+    "tools/m6b_finalize.py": "6f4748c2dd55fd158b0c9bfd0a6e49a33398a705ea485dbc3af6b1b95220f65f",
+    "tools/m6b_supplement.py": "7d5edfdc1c703668fde9b4dee0fe2f39f5abe5224ee5ba05a76c7d58727de9b3",
+    "tools/m6b_survey.py": "dec58f8c48fe42a644897b3cb57a885fea0f279912a114b741e0910eee05cc7b",
+    "tools/m6b_verify_preservation.py": "00a37b9ef3395a4a4f3677449c8e9ce151344112fd8bbbf29a18fef7701df179"
+  },
+  "protocol_sha256": "063cfb2bc6d0208324d43ca3f2ee980f7cc0e3bb0a42f5d2ac12148b04a5dee7",
+  "visual_control": false,
+  "source": "Privileged",
+  "map": {
+    "path": "runs/m6b_logs/Town03.xodr",
+    "bytes": 4589872,
+    "sha256": "abf177bcd9b66cfefb7ac4919f6456815f1384f4229f1343c8a6a90bbb7713c9"
+  },
+  "body": {
+    "path": "reports/m6b_body_reference.json",
+    "bytes": 2109,
+    "sha256": "37ff7a004daf097a8f84365540f0279b8bb6b97d7cf328a7b7274af413380679"
+  },
+  "trials": [
+    {
+      "name": "final_blocked_p126_s101_fixture_retry",
+      "poses": 125,
+      "road_queries": 49000,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 0.24790615013699888,
+      "terminal_XY_OBB_gap_m": 0.24790615013699888,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_blocked_p126_s101_fixture_retry/result.json",
+        "bytes": 6986,
+        "sha256": "d8023a50350c2a79b204ae88c29af7cf9bc1ea13c1283e845072fbf21d1b0b85"
+      }
+    },
+    {
+      "name": "final_blocked_p126_s102",
+      "poses": 124,
+      "road_queries": 48608,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 0.25511133678853143,
+      "terminal_XY_OBB_gap_m": 0.25511133678853143,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_blocked_p126_s102/result.json",
+        "bytes": 6601,
+        "sha256": "dc1277b4ed5ad23e735c359eb2aa3a35edb7097861958f4357ce6048cfee62a4"
+      }
+    },
+    {
+      "name": "final_blocked_p170_s101_fixture_retry",
+      "poses": 118,
+      "road_queries": 45696,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 2.9816465900732187,
+      "terminal_XY_OBB_gap_m": 2.9816465900732187,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_blocked_p170_s101_fixture_retry/result.json",
+        "bytes": 6922,
+        "sha256": "6b80f95f5c6f83f62b27069fbf9e37d3df586df545c6a7ff71659a4c1a54bb26"
+      }
+    },
+    {
+      "name": "final_blocked_p170_s102",
+      "poses": 118,
+      "road_queries": 45696,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.0201936265321194,
+      "terminal_XY_OBB_gap_m": 3.0201936265321194,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_blocked_p170_s102/result.json",
+        "bytes": 6581,
+        "sha256": "c739732557ad87657d3ada9c441f130ff8817350d323ce80e01af4ed2e69d7e0"
+      }
+    },
+    {
+      "name": "final_bypass_crash_p170",
+      "poses": 128,
+      "road_queries": 49602,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 1.8322486452716682,
+      "terminal_XY_OBB_gap_m": 1.8322486452716682,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_bypass_crash_p170/result.json",
+        "bytes": 7489,
+        "sha256": "bdff96dc350671851e1b83f07f9ab109d3cdabf1eed744b6386437eea8d27a8d"
+      }
+    },
+    {
+      "name": "final_bypass_p126_s101",
+      "poses": 371,
+      "road_queries": 144984,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 1.50500056184714,
+      "terminal_XY_OBB_gap_m": 56.03289465870232,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_bypass_p126_s101/result.json",
+        "bytes": 7313,
+        "sha256": "657970132795fa2c3d8176639bed90e2a6a596f8b5dbebf0cb922acf31a494dd"
+      }
+    },
+    {
+      "name": "final_bypass_p126_s102",
+      "poses": 369,
+      "road_queries": 144214,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 1.5055202290592684,
+      "terminal_XY_OBB_gap_m": 56.04280628010173,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_bypass_p126_s102/result.json",
+        "bytes": 7572,
+        "sha256": "2cfefda626090c4aa4a425ae5f26a50039fbc09e403ed743c25e2b6bc2d57fa8"
+      }
+    },
+    {
+      "name": "final_bypass_p170_s101",
+      "poses": 314,
+      "road_queries": 122514,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 1.4994892896996272,
+      "terminal_XY_OBB_gap_m": 55.69864002035298,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_bypass_p170_s101/result.json",
+        "bytes": 7340,
+        "sha256": "e9adfd40d1e8b0078761b7d624e0b07e1692d14c6d78fa20ee694bf285c88ef8"
+      }
+    },
+    {
+      "name": "final_bypass_p170_s102",
+      "poses": 316,
+      "road_queries": 123312,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 1.499673707762932,
+      "terminal_XY_OBB_gap_m": 55.661816878933635,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_bypass_p170_s102/result.json",
+        "bytes": 7577,
+        "sha256": "8a06824ef1b9cdd5a47eee1431f3bec986fd99fdfd131d665670583985250792"
+      }
+    },
+    {
+      "name": "final_bypass_timeout_p126",
+      "poses": 137,
+      "road_queries": 53704,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 1.5131247407019746,
+      "terminal_XY_OBB_gap_m": 1.5131247407019746,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_bypass_timeout_p126/result.json",
+        "bytes": 8975,
+        "sha256": "76a170b5d29504baa20faa66744620149801a8c5e739e594d6ccf93161cfaa8b"
+      }
+    },
+    {
+      "name": "final_crash_s101",
+      "poses": 2,
+      "road_queries": 784,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_crash_s101/result.json",
+        "bytes": 5891,
+        "sha256": "93f466ee684825bb168267ec10269b3c8af45a8729c94db0c1e0bc8a6447b81b"
+      }
+    },
+    {
+      "name": "final_crash_s102",
+      "poses": 2,
+      "road_queries": 784,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_crash_s102/result.json",
+        "bytes": 6298,
+        "sha256": "2be61646d08135a48da9d2e75664d274a2d1dd36d228490c8034710f305d3814"
+      }
+    },
+    {
+      "name": "final_emergency_s101",
+      "poses": 2,
+      "road_queries": 784,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_emergency_s101/result.json",
+        "bytes": 5911,
+        "sha256": "d60e3f415a7ed833c43816e1ba91a4ab1a81ae7779d3c21988290a0ccc4aa289"
+      }
+    },
+    {
+      "name": "final_emergency_s102",
+      "poses": 2,
+      "road_queries": 784,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_emergency_s102/result.json",
+        "bytes": 6325,
+        "sha256": "c6fcc5f845899b10c48f145b0cdc948c9ee5da90e6f47c0e79a15108107bb1f9"
+      }
+    },
+    {
+      "name": "final_invalid_s101",
+      "poses": 2,
+      "road_queries": 784,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_invalid_s101/result.json",
+        "bytes": 8188,
+        "sha256": "1e1f652ad230ca2349e06591277160f59417880f83692af7b5478086eb40751b"
+      }
+    },
+    {
+      "name": "final_invalid_s102",
+      "poses": 2,
+      "road_queries": 784,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_invalid_s102/result.json",
+        "bytes": 8499,
+        "sha256": "d0747e368a5d25a8c7cdd731d825b79497ef50410262839a6fc0a1c0edba7cb5"
+      }
+    },
+    {
+      "name": "final_junction_turn_s101",
+      "poses": 239,
+      "road_queries": 90342,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_junction_turn_s101/result.json",
+        "bytes": 5869,
+        "sha256": "39979cdd166e4a047700d4edf8fa2c49acdf695905e5ea71b9cf1b9e137a17b8"
+      }
+    },
+    {
+      "name": "final_junction_turn_s102",
+      "poses": 238,
+      "road_queries": 89964,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_junction_turn_s102/result.json",
+        "bytes": 6074,
+        "sha256": "ec4c3fa201c8e4487a41ccb1ff6301c3990a351703e1a6ac670449f01bff7110"
+      }
+    },
+    {
+      "name": "final_lead_s101",
+      "poses": 211,
+      "road_queries": 82390,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.0011178110107566,
+      "terminal_XY_OBB_gap_m": 47.38957179440351,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_lead_s101/result.json",
+        "bytes": 5925,
+        "sha256": "f23d51a49dfdca05d98b967ba5825b9069eff4b85612ccc7f243fcf27956ef47"
+      }
+    },
+    {
+      "name": "final_lead_s102",
+      "poses": 206,
+      "road_queries": 80430,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 2.923548916486864,
+      "terminal_XY_OBB_gap_m": 47.42938957264636,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_lead_s102/result.json",
+        "bytes": 6198,
+        "sha256": "d394f901ce93a43a98fe4281d580583081d14fd26b4c4192f60f8e64c8261bad"
+      }
+    },
+    {
+      "name": "final_mild_curve_s101",
+      "poses": 219,
+      "road_queries": 82782,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_mild_curve_s101/result.json",
+        "bytes": 5754,
+        "sha256": "1da484be38a5bd1ed8afbf26c9c1aa0aa8a7d4e2f58438ed5cfbcc6dec0e9e78"
+      }
+    },
+    {
+      "name": "final_mild_curve_s102",
+      "poses": 220,
+      "road_queries": 83160,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_mild_curve_s102/result.json",
+        "bytes": 6001,
+        "sha256": "fcf6a7507595567341648da4e3cadc2da83997e0030876e555d65b30838a67dd"
+      }
+    },
+    {
+      "name": "final_moving_emergency",
+      "poses": 131,
+      "road_queries": 51002,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_moving_emergency/result.json",
+        "bytes": 6342,
+        "sha256": "fdd29dc988b6019046b3338b4f2ca3b6beb202e0414a0356ceff3ec97493f28b"
+      }
+    },
+    {
+      "name": "final_moving_invalid",
+      "poses": 128,
+      "road_queries": 49840,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_moving_invalid/result.json",
+        "bytes": 8116,
+        "sha256": "bfccc1066a480abe827424d7b89999906491fb07bb8eb13198bcad18338e94cb"
+      }
+    },
+    {
+      "name": "final_removed_p126_s101",
+      "poses": 367,
+      "road_queries": 143416,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 1.610314982613334,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_removed_p126_s101/result.json",
+        "bytes": 5751,
+        "sha256": "7411311e68317cdbea94eaeeec0159a81c9f9e3975c65d7db2fc1ed27b9fac8d"
+      }
+    },
+    {
+      "name": "final_removed_p126_s102",
+      "poses": 368,
+      "road_queries": 143808,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 1.6897739356402728,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_removed_p126_s102/result.json",
+        "bytes": 5991,
+        "sha256": "1cef930bfe558cd8d361997f17434ca1da2e0e8c3d5881fee0395750cc1c95d7"
+      }
+    },
+    {
+      "name": "final_removed_p170_s101",
+      "poses": 314,
+      "road_queries": 122528,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.9024131481700652,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_removed_p170_s101/result.json",
+        "bytes": 5758,
+        "sha256": "45218ccb172ce64fcc25ba9fa62f6a757a2a3d62d0a36c4e3b6426e7ae0365a2"
+      }
+    },
+    {
+      "name": "final_removed_p170_s102",
+      "poses": 313,
+      "road_queries": 122136,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": 3.629410319865229,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_removed_p170_s102/result.json",
+        "bytes": 6001,
+        "sha256": "04dac3fb5a9c9d3deee617c1d659f823a33feffd13cfb911522c64c031fafc76"
+      }
+    },
+    {
+      "name": "final_stop_p170_l25_s101_A",
+      "poses": 79,
+      "road_queries": 30478,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p170_l25_s101_A/result.json",
+        "bytes": 5471,
+        "sha256": "3b14f4348b6de943fdaa1059f833d1e9dfc69af2ee3efc2dc27c38795961b229"
+      }
+    },
+    {
+      "name": "final_stop_p170_l25_s101_B",
+      "poses": 81,
+      "road_queries": 31262,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p170_l25_s101_B/result.json",
+        "bytes": 5567,
+        "sha256": "855d3ed183e0598aad544c393d3e1530a0df17e63e3922dfb16b4f5469e08e1d"
+      }
+    },
+    {
+      "name": "final_stop_p170_l25_s101_C",
+      "poses": 89,
+      "road_queries": 34328,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p170_l25_s101_C/result.json",
+        "bytes": 5548,
+        "sha256": "c4e550b3b04e1abfc9d81dbc82680dcec1ed283b1a3400e3d0af31ca5fa84368"
+      }
+    },
+    {
+      "name": "final_stop_p170_l25_s102_A",
+      "poses": 78,
+      "road_queries": 30086,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p170_l25_s102_A/result.json",
+        "bytes": 5753,
+        "sha256": "d6123f76fa3b77db58da04024f45a555f62f6804ea2798110755f06387ea3a42"
+      }
+    },
+    {
+      "name": "final_stop_p170_l25_s102_B",
+      "poses": 80,
+      "road_queries": 30870,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p170_l25_s102_B/result.json",
+        "bytes": 5763,
+        "sha256": "fb2306ae42b3cce7d08bcb0d8a6213a8078ab6193a9870793654f23908263fc7"
+      }
+    },
+    {
+      "name": "final_stop_p170_l25_s102_C",
+      "poses": 89,
+      "road_queries": 34328,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p170_l25_s102_C/result.json",
+        "bytes": 5742,
+        "sha256": "e07c51045f6f2a0c843ef2153fb510e0d632e522d67bc5bbd98f4e645211e875"
+      }
+    },
+    {
+      "name": "final_stop_p170_l9_s101_A",
+      "poses": 28,
+      "road_queries": 10584,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p170_l9_s101_A/result.json",
+        "bytes": 5448,
+        "sha256": "902af749eaa409e6cf3f01ebf0ff39e3c3d2082b75eb97246cbd49704cf9ee44"
+      }
+    },
+    {
+      "name": "final_stop_p170_l9_s101_B",
+      "poses": 32,
+      "road_queries": 12096,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p170_l9_s101_B/result.json",
+        "bytes": 5463,
+        "sha256": "ef63ea6121b43865702731e26c5e0d09e870ddb448d7134abcccf0ea02efce86"
+      }
+    },
+    {
+      "name": "final_stop_p170_l9_s101_C",
+      "poses": 36,
+      "road_queries": 13608,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p170_l9_s101_C/result.json",
+        "bytes": 5429,
+        "sha256": "9616ac5b81c4c90402797f47ac80e371385ccdf22932291f1a4a7ecb170957d1"
+      }
+    },
+    {
+      "name": "final_stop_p170_l9_s102_A",
+      "poses": 28,
+      "road_queries": 10584,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p170_l9_s102_A/result.json",
+        "bytes": 5757,
+        "sha256": "04ed1c2a949525f8929da6948a00fae1df96505c54546cd84b450056519118b5"
+      }
+    },
+    {
+      "name": "final_stop_p170_l9_s102_B",
+      "poses": 32,
+      "road_queries": 12096,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p170_l9_s102_B/result.json",
+        "bytes": 5535,
+        "sha256": "1c69b185312214baa7167ddc55e0f2692807a4a4d8d23f56f07656357e3b788d"
+      }
+    },
+    {
+      "name": "final_stop_p170_l9_s102_C",
+      "poses": 37,
+      "road_queries": 13986,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p170_l9_s102_C/result.json",
+        "bytes": 5541,
+        "sha256": "bb3db52641c65ea2ac0a148e675a9955bbbd0eec57fdb47fbba9314f2a76606d"
+      }
+    },
+    {
+      "name": "final_stop_p27_l25_s101_A",
+      "poses": 82,
+      "road_queries": 32144,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p27_l25_s101_A/result.json",
+        "bytes": 5453,
+        "sha256": "ab351c6bd22722f45200fd9da779c538148f03588c7ed4b212f1e342aa8219c7"
+      }
+    },
+    {
+      "name": "final_stop_p27_l25_s101_B",
+      "poses": 86,
+      "road_queries": 33712,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p27_l25_s101_B/result.json",
+        "bytes": 5447,
+        "sha256": "a54db9b5e362e43ae35af265ef5e579ba86109d6a27bfe1d3189ede06efbb70e"
+      }
+    },
+    {
+      "name": "final_stop_p27_l25_s101_C",
+      "poses": 91,
+      "road_queries": 35672,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p27_l25_s101_C/result.json",
+        "bytes": 5489,
+        "sha256": "02a971b68453811ea24c4f1b613df5c725ff6e9e0c33b4001fa8fabce0c7c377"
+      }
+    },
+    {
+      "name": "final_stop_p27_l25_s102_A",
+      "poses": 83,
+      "road_queries": 32536,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p27_l25_s102_A/result.json",
+        "bytes": 5533,
+        "sha256": "73fed7e708ef19aaac021586123b085e342763b5b62f1e9b7758fc3c47fa1a78"
+      }
+    },
+    {
+      "name": "final_stop_p27_l25_s102_B",
+      "poses": 84,
+      "road_queries": 32928,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p27_l25_s102_B/result.json",
+        "bytes": 5533,
+        "sha256": "adb8cd5f46721180c3a3d31632461d7165f87c65186ce07564764ebc9aa9865b"
+      }
+    },
+    {
+      "name": "final_stop_p27_l25_s102_C",
+      "poses": 91,
+      "road_queries": 35672,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p27_l25_s102_C/result.json",
+        "bytes": 5534,
+        "sha256": "358b28e4a7e20160d7629c8f3bba704da26725b4f5632ddbd0a5fd95dbc0d4e0"
+      }
+    },
+    {
+      "name": "final_stop_p27_l9_s101_A",
+      "poses": 30,
+      "road_queries": 11760,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p27_l9_s101_A/result.json",
+        "bytes": 5427,
+        "sha256": "e782c99ab55c7e61b3adf0869510cb55f7208d8e95d0bd05a17852a545806a33"
+      }
+    },
+    {
+      "name": "final_stop_p27_l9_s101_B",
+      "poses": 34,
+      "road_queries": 13328,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p27_l9_s101_B/result.json",
+        "bytes": 5442,
+        "sha256": "2ca821316756b2f871285a8d284cd5a9d15b828b4e8802619501ff9f2f14845b"
+      }
+    },
+    {
+      "name": "final_stop_p27_l9_s101_C",
+      "poses": 37,
+      "road_queries": 14504,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p27_l9_s101_C/result.json",
+        "bytes": 5431,
+        "sha256": "91a86fe248a2334b8b35eaf04a21f4d79d62e69d6c16c6c1a8fb3fff93e418d9"
+      }
+    },
+    {
+      "name": "final_stop_p27_l9_s102_A",
+      "poses": 31,
+      "road_queries": 12152,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p27_l9_s102_A/result.json",
+        "bytes": 5543,
+        "sha256": "0f4ec7a96a2151cea605389e4736594dd602a4020af1881cfc659694f7b3b8fd"
+      }
+    },
+    {
+      "name": "final_stop_p27_l9_s102_B",
+      "poses": 35,
+      "road_queries": 13720,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p27_l9_s102_B/result.json",
+        "bytes": 5517,
+        "sha256": "3736f0f63d117f4088e1091e40c17ecf3aa3eccda56e4914802f7149079f87f5"
+      }
+    },
+    {
+      "name": "final_stop_p27_l9_s102_C",
+      "poses": 37,
+      "road_queries": 14504,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_stop_p27_l9_s102_C/result.json",
+        "bytes": 5524,
+        "sha256": "242a2c60e6bf9e7c2746e9c303107a4980b488fbcbde393d0087b6b35c771859"
+      }
+    },
+    {
+      "name": "final_straight_s101",
+      "poses": 215,
+      "road_queries": 83902,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_straight_s101/result.json",
+        "bytes": 5744,
+        "sha256": "969ebf8f674e235b20af1658f2f99a7cdfc3460ce60fafa91020eb8993261cd8"
+      }
+    },
+    {
+      "name": "final_straight_s102",
+      "poses": 216,
+      "road_queries": 84294,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_straight_s102/result.json",
+        "bytes": 6015,
+        "sha256": "cb74763983419adc956765ca9d62f85018520e1b6c4e56bd660966e51fb1bd19"
+      }
+    },
+    {
+      "name": "final_timeout_s101",
+      "poses": 2,
+      "road_queries": 784,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_timeout_s101/result.json",
+        "bytes": 6641,
+        "sha256": "b5be600096fa7d3d2913dd88a7429a481afca24eb106f7582421bf6e4f941c97"
+      }
+    },
+    {
+      "name": "final_timeout_s102",
+      "poses": 2,
+      "road_queries": 784,
+      "footprint_outside_frames": 0,
+      "examples": [],
+      "OBB_intersections": [],
+      "min_XY_OBB_gap_m": null,
+      "terminal_XY_OBB_gap_m": null,
+      "source": "Privileged",
+      "result": {
+        "path": "reports/m6b_trials/final_timeout_s102/result.json",
+        "bytes": 7050,
+        "sha256": "30db6d6e72a54f06de1f47c7cad64e62262ed3eb5bc2f7f98f4be9c617a8525d"
+      }
+    }
+  ],
+  "limits": "Measured OBB offset/roll/pitch included. Poses sampled every >=.25m or .5deg and final pose; body grid .2m plus .2/.15m margin. Discrete approximation; no exact curb mesh or continuous contact proof."
+}

@@ -1,0 +1,216 @@
+{
+  "kind": "actual_CARLA_closed_loop",
+  "base": "7ec866ff4ec5fe621c506056f41750651adcc4ab",
+  "git_head": "7ec866ff4ec5fe621c506056f41750651adcc4ab",
+  "sources": {
+    "configs/m6b/protocol.json": "063cfb2bc6d0208324d43ca3f2ee980f7cc0e3bb0a42f5d2ac12148b04a5dee7",
+    "simulator/m6b_bypass.py": "b2550bdb773f1c45dc92a94a4848473a99a91201f565d916d490f69981ce3043",
+    "simulator/m6b_motion.py": "72067662faa791f44cd41ee60bcfba1003a743267e525391fc31a33f9970d3ce",
+    "simulator/m6b_worker.py": "35e9808ca67ae7175f58ba804bb88a774a6fb3a1f92c5280f1de27637a2586fd",
+    "tests/test_m6b_maneuvers.py": "308fdcc19b0c481073afc6f68aa5391fe43c55a807ec5a6bdce582ff75a62c1c",
+    "tools/m6b_audit.py": "c0ec35c46e52f48a318f76d41c73025107d29351040e794155fc27f9aaa02f38",
+    "tools/m6b_calibrate.py": "9cf7f3820b272d95c8b82f5e2e0c7db48bb6f4f0bdb6388cf2b986342b80b9fa",
+    "tools/m6b_campaign.py": "4e2342be4dc37fcd8e393b43ebebce425b8b0d71f542ac834c58ab2fd554c9f1",
+    "tools/m6b_common.py": "7f0493b5d8d3e8435fab695d361137f6df61be504529eff5360cc0a7a0c8cc44",
+    "tools/m6b_drive.py": "a3afd17924f4c519544b97a5f46804c92d48e5ff4d7bb7b0f5821b8e5a20dd60",
+    "tools/m6b_survey.py": "dec58f8c48fe42a644897b3cb57a885fea0f279912a114b741e0910eee05cc7b"
+  },
+  "protocol_sha256": "063cfb2bc6d0208324d43ca3f2ee980f7cc0e3bb0a42f5d2ac12148b04a5dee7",
+  "visual_control": false,
+  "source": "Privileged",
+  "config": {
+    "name": "dev_bypass126",
+    "arm": "C",
+    "scene": "bypass",
+    "spawn": 126,
+    "length": 100.0,
+    "speed": 2.5,
+    "seed": 101,
+    "ticks": 2200,
+    "fixed_budget": false,
+    "tick_cpus": "",
+    "worker_cpus": ""
+  },
+  "ticks": 1038,
+  "goal_checks": {
+    "position": true,
+    "heading": true,
+    "speed": true,
+    "hold_1s": true,
+    "no_collision": true,
+    "no_road_boundary": true,
+    "body_road": true,
+    "no_illegal_lane_crossing": true,
+    "route_completion": true
+  },
+  "goal_passed": true,
+  "final_goal_error_m": 0.24372701705407418,
+  "heading_error_rad": 0.0006705839624823184,
+  "terminal_speed_mps": 2.436599486069862e-05,
+  "completion": 1.0,
+  "collisions": [],
+  "lane_events": [
+    {
+      "frame": 117585,
+      "markings": [
+        "Broken"
+      ],
+      "source": "Privileged"
+    },
+    {
+      "frame": 117613,
+      "markings": [
+        "Broken"
+      ],
+      "source": "Privileged"
+    },
+    {
+      "frame": 117646,
+      "markings": [
+        "Broken"
+      ],
+      "source": "Privileged"
+    },
+    {
+      "frame": 117682,
+      "markings": [
+        "Broken"
+      ],
+      "source": "Privileged"
+    },
+    {
+      "frame": 117951,
+      "markings": [
+        "Broken"
+      ],
+      "source": "Privileged"
+    },
+    {
+      "frame": 117983,
+      "markings": [
+        "Broken"
+      ],
+      "source": "Privileged"
+    },
+    {
+      "frame": 118021,
+      "markings": [
+        "Broken"
+      ],
+      "source": "Privileged"
+    },
+    {
+      "frame": 118063,
+      "markings": [
+        "Broken"
+      ],
+      "source": "Privileged"
+    }
+  ],
+  "illegal_lane_events": [],
+  "cte_m": {
+    "n": 1038,
+    "p50": 0.21646171513705686,
+    "p95": 3.4991052882602127,
+    "p99": 3.4997591552172977,
+    "max": 3.4998268878147547
+  },
+  "selected_path_cte_m": {
+    "n": 1038,
+    "p50": 0.020074388313096936,
+    "p95": 0.1177938923743817,
+    "p99": 0.24200352812963782,
+    "max": 0.24372701705407418
+  },
+  "control_interval_ms": {
+    "n": 1037,
+    "p50": 49.983205273747444,
+    "p95": 50.516824796795845,
+    "p99": 51.62242829799655,
+    "max": 129.1377991437912
+  },
+  "over50": 504,
+  "over55": 4,
+  "over100": 1,
+  "deadline_miss": 2,
+  "skipped_wall_slots": 2,
+  "mean_hz": 19.96194399159096,
+  "world_tick_ms": {
+    "n": 1038,
+    "p50": 1.6377652063965797,
+    "p95": 2.047812193632126,
+    "p99": 2.3211344331502906,
+    "max": 7.544673979282379
+  },
+  "controller_ms": {
+    "n": 1038,
+    "p50": 0.49452483654022217,
+    "p95": 0.6747233681380749,
+    "p99": 0.9053836390376057,
+    "max": 2.443552017211914
+  },
+  "expired_normal_control": 0,
+  "fault_to_brake_s": null,
+  "degradation": {
+    "no_valid_plan": 3,
+    "plan_expired": 2
+  },
+  "planner_rejected": [],
+  "dynamics": {
+    "max_decel_raw": 18.35018494873478,
+    "jerk_peak_raw": 412.8624317363518,
+    "jerk_p95_moving": 54.116738917215315,
+    "jerk_p95_all": 53.10709735703429,
+    "max_decel_250ms": 6.634261742989003,
+    "jerk_p95_250ms": 10.533771585423091,
+    "min_signed_speed": -2.8313782608545743e-05,
+    "reverse_ticks": 0,
+    "low_speed_moving_seconds": 9.3,
+    "api_accel_vs_velocity_derivative_mae": 0.0014369097714805057
+  },
+  "comfort_pass": false,
+  "bypass": {
+    "source": "Privileged",
+    "status": "FeasibleBypass",
+    "candidates": [
+      {
+        "max_curvature": 0.031704701275209184,
+        "road_queries": 151578,
+        "source": "Privileged",
+        "accepted": true,
+        "reason": null,
+        "collision_padding_m": 0.13971547169056167,
+        "road_limit": "dense .2m body grid/.25m path samples; not exact continuous curb or mesh proof",
+        "side": "left",
+        "allowed_lanes": [
+          [
+            3,
+            -2
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "offset_m": 3.5
+      },
+      {
+        "side": "right",
+        "accepted": false,
+        "reason": "no_same_direction_driving_neighbor"
+      }
+    ],
+    "selected": "left"
+  },
+  "trace": {
+    "path": "reports/m6b_trials/dev_bypass126/trace.jsonl",
+    "bytes": 2257438,
+    "sha256": "70e68fa2c3d8aa5240a588fb262b290a890883a3a655e4d510e64fc1791ec6d1"
+  },
+  "physics": {
+    "path": "reports/m6b_trials/dev_bypass126/physics.json",
+    "bytes": 2286,
+    "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+  },
+  "limits": "Privileged single-map controlled trial. Broken-line crossings permitted only audited bypass. Dense footprint checks are not exact curb mesh proof. No reverse parking."
+}

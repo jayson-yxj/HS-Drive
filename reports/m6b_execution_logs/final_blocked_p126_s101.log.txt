@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6b_drive.py", line 195, in <module>
+    if __name__=='__main__':main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6b_drive.py", line 84, in main
+    selected,bypass=choose_bypass(m,route,[obs_of(w.get_snapshot(),o) for o in obstacles],hl,hw,z)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6b_drive.py", line 84, in <listcomp>
+    selected,bypass=choose_bypass(m,route,[obs_of(w.get_snapshot(),o) for o in obstacles],hl,hw,z)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6b_obstacles.py", line 8, in snapshot_obstacle
+    if current is None:raise ValueError('actor absent from snapshot')
+ValueError: actor absent from snapshot

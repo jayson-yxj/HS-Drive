@@ -1,0 +1,130 @@
+{
+  "kind": "actual_CARLA_map_offline_candidate_audit",
+  "base": "7ec866ff4ec5fe621c506056f41750651adcc4ab",
+  "git_head": "7ec866ff4ec5fe621c506056f41750651adcc4ab",
+  "sources": {
+    "configs/m6b/protocol.json": "9fddcbd0e8eb0b33820ddba47a3d5c95523999dfc3b4f1147cd0eace092a2ff9",
+    "simulator/m6b_bypass.py": "b2550bdb773f1c45dc92a94a4848473a99a91201f565d916d490f69981ce3043",
+    "simulator/m6b_motion.py": "3afe29609b213fc050f5e80af39e42435827199a15d6fff83f55ee26c36f2ef7",
+    "simulator/m6b_worker.py": "35e9808ca67ae7175f58ba804bb88a774a6fb3a1f92c5280f1de27637a2586fd",
+    "tests/test_m6b_maneuvers.py": "308fdcc19b0c481073afc6f68aa5391fe43c55a807ec5a6bdce582ff75a62c1c",
+    "tools/m6b_audit.py": "c0ec35c46e52f48a318f76d41c73025107d29351040e794155fc27f9aaa02f38",
+    "tools/m6b_calibrate.py": "9cf7f3820b272d95c8b82f5e2e0c7db48bb6f4f0bdb6388cf2b986342b80b9fa",
+    "tools/m6b_common.py": "7f0493b5d8d3e8435fab695d361137f6df61be504529eff5360cc0a7a0c8cc44",
+    "tools/m6b_drive.py": "dc86c55c3504990d9d0e221247b4e59c4f3f6533fe6977dc420f2c62db4bdb51",
+    "tools/m6b_survey.py": "dec58f8c48fe42a644897b3cb57a885fea0f279912a114b741e0910eee05cc7b"
+  },
+  "protocol_sha256": "9fddcbd0e8eb0b33820ddba47a3d5c95523999dfc3b4f1147cd0eace092a2ff9",
+  "visual_control": false,
+  "source": "Privileged",
+  "sites": [
+    {
+      "spawn": 126,
+      "audit": {
+        "source": "Privileged",
+        "status": "FeasibleBypass",
+        "candidates": [
+          {
+            "max_curvature": 0.031704701275209184,
+            "road_queries": 151578,
+            "source": "Privileged",
+            "accepted": true,
+            "reason": null,
+            "collision_padding_m": 0.13971632363114334,
+            "road_limit": "dense .2m body grid/.25m path samples; not exact continuous curb or mesh proof",
+            "side": "left",
+            "allowed_lanes": [
+              [
+                3,
+                -2
+              ],
+              [
+                3,
+                -1
+              ]
+            ],
+            "offset_m": 3.5
+          },
+          {
+            "side": "right",
+            "accepted": false,
+            "reason": "no_same_direction_driving_neighbor"
+          }
+        ],
+        "selected": "left"
+      }
+    },
+    {
+      "spawn": 170,
+      "audit": {
+        "source": "Privileged",
+        "status": "FeasibleBypass",
+        "candidates": [
+          {
+            "max_curvature": 0.031719660291748664,
+            "road_queries": 151578,
+            "source": "Privileged",
+            "accepted": true,
+            "reason": null,
+            "collision_padding_m": 0.13972140820430545,
+            "road_limit": "dense .2m body grid/.25m path samples; not exact continuous curb or mesh proof",
+            "side": "left",
+            "allowed_lanes": [
+              [
+                67,
+                2
+              ],
+              [
+                67,
+                3
+              ]
+            ],
+            "offset_m": 3.5
+          },
+          {
+            "side": "right",
+            "accepted": false,
+            "reason": "no_same_direction_driving_neighbor"
+          }
+        ],
+        "selected": "left"
+      }
+    },
+    {
+      "spawn": 261,
+      "audit": {
+        "source": "Privileged",
+        "status": "FeasibleBypass",
+        "candidates": [
+          {
+            "max_curvature": 0.031704785253802804,
+            "road_queries": 151956,
+            "source": "Privileged",
+            "accepted": true,
+            "reason": null,
+            "collision_padding_m": 0.13971636022744915,
+            "road_limit": "dense .2m body grid/.25m path samples; not exact continuous curb or mesh proof",
+            "side": "left",
+            "allowed_lanes": [
+              [
+                3,
+                2
+              ],
+              [
+                3,
+                3
+              ]
+            ],
+            "offset_m": 3.5
+          },
+          {
+            "side": "right",
+            "accepted": false,
+            "reason": "no_same_direction_driving_neighbor"
+          }
+        ],
+        "selected": "left"
+      }
+    }
+  ]
+}

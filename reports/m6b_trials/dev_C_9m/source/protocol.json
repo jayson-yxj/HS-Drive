@@ -1,0 +1,16 @@
+{
+  "base": "7ec866ff4ec5fe621c506056f41750651adcc4ab",
+  "source": "Privileged",
+  "opt_in_only": true,
+  "visual_control": false,
+  "physics_changes": false,
+  "stop_goal": {"position_tolerance_m": 0.5, "heading_tolerance_rad": 0.0872664626, "terminal_speed_mps": 0.08, "hold_seconds": 1.0, "pose_reference": "ego_actor_origin_not_front_bumper", "navigation_target_requires_body_road_check": true},
+  "comfort": {"max_raw_decel": 1.8, "moving_jerk_p95": 2.5, "raw_jerk_peak": 5.0, "emergency_exempt": true, "also_report_250ms": true},
+  "safety": {"horizon_s": 6.0, "planner_period_s": 0.2, "control_period_s": 0.05, "max_plan_age_s": 0.35, "standstill_obstacle_gap_m": 3.0, "unchanged_original_safety": true},
+  "development": {"stop_route": "historical_straight", "length_m": 9, "speed_mps": 1.0, "max_candidate_revisions": 2},
+  "final_stop_matrix": {"positions": ["historical_straight", "independent_straight"], "lengths_m": [9, 25], "speeds_mps": [1.0, 2.5], "seeds": [101, 102], "arms": ["A_frozen", "B_goal_only", "C_goal_controller"]},
+  "runtime": {"ticks_per_trial": 600, "repeats": 2, "period_s": 0.05, "no_deadline_reset": true, "no_catchup_ticks": true, "missed_slot_skip_explicit": true, "arms": ["A_server_tick_only", "B_oracle_idle", "C_tick_affinity", "D_tick_worker_isolation"]},
+  "bypass": {"static_only": true, "max_curvature_per_m": 0.10, "same_direction_driving_lanes": true, "broken_markings_and_lane_change_permission_required": true, "road_footprint_spacing_m": 0.2, "path_sample_spacing_m": 0.25, "return_to_original_route_required": true},
+  "petr": "Paused_no_dependency_install_no_inference",
+  "limits": "Few deterministic simulated roads/repeats; seeds do not create independent worlds; no reverse bay parking or public-road safety claim"
+}

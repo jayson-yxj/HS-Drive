@@ -1,0 +1,143 @@
+{
+  "kind": "actual_CARLA_closed_loop",
+  "base": "7ec866ff4ec5fe621c506056f41750651adcc4ab",
+  "git_head": "636e51fbbbe602e81f41cc0df35065440c255b69",
+  "sources": {
+    "configs/m6b/protocol.json": "063cfb2bc6d0208324d43ca3f2ee980f7cc0e3bb0a42f5d2ac12148b04a5dee7",
+    "simulator/m6b_bypass.py": "b2550bdb773f1c45dc92a94a4848473a99a91201f565d916d490f69981ce3043",
+    "simulator/m6b_motion.py": "72067662faa791f44cd41ee60bcfba1003a743267e525391fc31a33f9970d3ce",
+    "simulator/m6b_obstacles.py": "2122ca6ad6ea606d7b94375d0777885459c0c3a724abf5c5a2554542fd6f286b",
+    "simulator/m6b_worker.py": "24947a1e5584e413ead9e44c251d1606ac9d01010a2977bf38c417c1810dc903",
+    "tests/test_m6b_maneuvers.py": "308fdcc19b0c481073afc6f68aa5391fe43c55a807ec5a6bdce582ff75a62c1c",
+    "tests/test_m6b_obstacles_sdk.py": "01079e75e81cc1ffb957f8982b8b9ab786854150c3fef6ffabd85f3689d7dead",
+    "tools/m6b_analyze.py": "b85f71a19bb0dff072cf882b15623fb748edadf305b365baa3c51e301dba4847",
+    "tools/m6b_audit.py": "c0ec35c46e52f48a318f76d41c73025107d29351040e794155fc27f9aaa02f38",
+    "tools/m6b_body_audit.py": "b1c8f3cf8d7813f1ab62bad1e707d3d49df9bba34300a8c653e3847d05cb088b",
+    "tools/m6b_calibrate.py": "9cf7f3820b272d95c8b82f5e2e0c7db48bb6f4f0bdb6388cf2b986342b80b9fa",
+    "tools/m6b_calibration_analysis.py": "b3aa8f7e888787d2ab96b32f2d5dc43eae2bc6d1d26c705918415fa84be60b67",
+    "tools/m6b_campaign.py": "4e2342be4dc37fcd8e393b43ebebce425b8b0d71f542ac834c58ab2fd554c9f1",
+    "tools/m6b_common.py": "7f0493b5d8d3e8435fab695d361137f6df61be504529eff5360cc0a7a0c8cc44",
+    "tools/m6b_drive.py": "4fed31fd09f4375ecd2356748ea27c6d884aaa11d3975d6edcd27cdbc894337d",
+    "tools/m6b_finalize.py": "11f1b7df9e285621787689ec57b89355390f2c14220940e6043f2b60d0ba6016",
+    "tools/m6b_supplement.py": "7d5edfdc1c703668fde9b4dee0fe2f39f5abe5224ee5ba05a76c7d58727de9b3",
+    "tools/m6b_survey.py": "dec58f8c48fe42a644897b3cb57a885fea0f279912a114b741e0910eee05cc7b",
+    "tools/m6b_verify_preservation.py": "00a37b9ef3395a4a4f3677449c8e9ce151344112fd8bbbf29a18fef7701df179"
+  },
+  "protocol_sha256": "063cfb2bc6d0208324d43ca3f2ee980f7cc0e3bb0a42f5d2ac12148b04a5dee7",
+  "visual_control": false,
+  "source": "Privileged",
+  "config": {
+    "name": "runtime_C_r0",
+    "arm": "A",
+    "scene": "straight",
+    "spawn": 27,
+    "length": 9,
+    "speed": 2.5,
+    "seed": 101,
+    "ticks": 600,
+    "fixed_budget": true,
+    "tick_cpus": "2,3",
+    "worker_cpus": "",
+    "fault": "",
+    "fault_tick": 65
+  },
+  "ticks": 600,
+  "goal_checks": {
+    "position": false,
+    "heading": true,
+    "speed": false,
+    "hold_1s": false,
+    "no_collision": true,
+    "no_road_boundary": true,
+    "body_road": true,
+    "no_illegal_lane_crossing": true,
+    "route_completion": true
+  },
+  "goal_passed": false,
+  "final_goal_error_m": 1.2469409941074248,
+  "heading_error_rad": 7.989483270165465e-05,
+  "terminal_speed_mps": 0.7002437287150867,
+  "completion": 0.9785010154640865,
+  "collisions": [],
+  "lane_events": [],
+  "illegal_lane_events": [],
+  "cte_m": {
+    "n": 600,
+    "p50": 0.000395518211702577,
+    "p95": 0.4518020140337722,
+    "p99": 0.4518020140337722,
+    "max": 0.4518020140337722
+  },
+  "selected_path_cte_m": {
+    "n": 600,
+    "p50": 0.000395518211702577,
+    "p95": 0.4518020140337722,
+    "p99": 0.4518020140337722,
+    "max": 0.4518020140337722
+  },
+  "control_interval_ms": {
+    "n": 599,
+    "p50": 50.01239851117134,
+    "p95": 50.48985481262207,
+    "p99": 53.69889844208951,
+    "max": 63.16375732421875
+  },
+  "over50": 310,
+  "over55": 6,
+  "over100": 0,
+  "deadline_miss": 0,
+  "skipped_wall_slots": 0,
+  "mean_hz": 20.002993977476393,
+  "world_tick_ms": {
+    "n": 600,
+    "p50": 1.9282596185803413,
+    "p95": 3.508646879345177,
+    "p99": 15.25101525709033,
+    "max": 15.38757048547268
+  },
+  "controller_ms": {
+    "n": 600,
+    "p50": 0.39145350456237793,
+    "p95": 0.44557107612490654,
+    "p99": 0.4823682457208633,
+    "max": 1.467037945985794
+  },
+  "expired_normal_control": 0,
+  "fault_to_brake_s": null,
+  "degradation": {
+    "no_valid_plan": 5
+  },
+  "planner_rejected": [],
+  "dynamics": {
+    "max_decel_raw": 16.10029446373385,
+    "jerk_peak_raw": 342.2842951869867,
+    "jerk_p95_moving": 13.373487215158502,
+    "jerk_p95_all": 10.555584516905594,
+    "max_decel_250ms": 3.2255034588603433,
+    "jerk_p95_250ms": 5.798234284355536,
+    "min_signed_speed": -5.24268752177088e-05,
+    "reverse_ticks": 0,
+    "low_speed_moving_seconds": 5.75,
+    "api_accel_vs_velocity_derivative_mae": 0.0005514747831902174
+  },
+  "comfort_pass": false,
+  "bypass": {
+    "source": "Privileged",
+    "status": "NotRequested"
+  },
+  "trace": {
+    "path": "reports/m6b_trials/runtime_C_r0/trace.jsonl",
+    "bytes": 1131487,
+    "sha256": "3f54d92322a45c9aa357763a359a7b46a86fe365c6c1d3b1287e8a92d2ec6e9e"
+  },
+  "physics": {
+    "path": "reports/m6b_trials/runtime_C_r0/physics.json",
+    "bytes": 2286,
+    "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+  },
+  "tick_affinity": [
+    2,
+    3
+  ],
+  "limits": "Privileged single-map controlled trial. Broken-line crossings permitted only audited bypass. Dense footprint checks are not exact curb mesh proof. No reverse parking."
+}

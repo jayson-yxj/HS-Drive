@@ -1,0 +1,275 @@
+{
+  "kind": "offline_geometry_and_clock_audit_of_actual_CARLA",
+  "base": "7ec866ff4ec5fe621c506056f41750651adcc4ab",
+  "git_head": "7ec866ff4ec5fe621c506056f41750651adcc4ab",
+  "sources": {
+    "configs/m6b/protocol.json": "9fddcbd0e8eb0b33820ddba47a3d5c95523999dfc3b4f1147cd0eace092a2ff9",
+    "tools/m6b_audit.py": "c0ec35c46e52f48a318f76d41c73025107d29351040e794155fc27f9aaa02f38",
+    "tools/m6b_common.py": "7f0493b5d8d3e8435fab695d361137f6df61be504529eff5360cc0a7a0c8cc44",
+    "tools/m6b_survey.py": "dec58f8c48fe42a644897b3cb57a885fea0f279912a114b741e0910eee05cc7b"
+  },
+  "protocol_sha256": "9fddcbd0e8eb0b33820ddba47a3d5c95523999dfc3b4f1147cd0eace092a2ff9",
+  "visual_control": false,
+  "stops": [
+    {
+      "source": "Privileged",
+      "trace": {
+        "path": "reports/m6a_low_speed_clean_artifacts/low_speed_stop.jsonl",
+        "bytes": 2233599,
+        "sha256": "1808423039ee86750e15dc3187ecdcab1b5eb75e6f4c9c356853a889248f0deb"
+      },
+      "route_length_m": 8.999995319630841,
+      "navigation_end_xy": [
+        -74.1185073852539,
+        -90.36206817626953
+      ],
+      "implicit_stop_target_xy": [
+        -74.11577605139124,
+        -91.36206444617024
+      ],
+      "actual_stop_xy": [
+        -74.13833618164062,
+        -91.79036712646484
+      ],
+      "fixed_route_margin_m": 1.0,
+      "arc_distance_to_navigation_end_m": 1.4282396449599348,
+      "residual_to_implicit_target_m": 0.42823964495993483,
+      "lateral_error_m": 0.023726607616795934,
+      "euclidean_target_error_m": 0.42889642738592915,
+      "fixed_margin_fraction_of_endpoint_error": 0.7001626117359683,
+      "first_normal_brake": {
+        "source": "Privileged",
+        "source_envelope": {
+          "schema": "OracleSceneState",
+          "source": "Privileged",
+          "frame_id": 40723,
+          "timestamp_s": 406.9156487789005,
+          "valid_until_s": 407.2656487789005,
+          "coordinate": "hs_ego_x_forward_y_left_z_up_m",
+          "version": "m6a.v1",
+          "reference": "CARLA_snapshot_actor_box_and_map_not_render_mesh"
+        },
+        "obstacles": [],
+        "profile": {
+          "get_snapshot_ms": 0.011106953024864197,
+          "get_control_ms": 0.006232410669326782,
+          "snapshot_state_measurement_ms": 0.05188770592212677,
+          "submit_ms": 0.01226179301738739,
+          "ipc_poll_validate_resample_ms": 0.329039990901947,
+          "road_query_ms": 0.5142204463481903,
+          "actor_guard_ms": 0.0014826655387878418,
+          "controller_ms": 0.14488585293293,
+          "apply_control_ms": 0.021753832697868347,
+          "world_tick_ms": 1.4153942465782166,
+          "log_buffer_ms": 0.046584755182266235,
+          "log_disk_ms": 0.0
+        },
+        "wakeup_lateness_ms": 0.3248918801546097,
+        "dynamic_actor_speeds": [],
+        "frame": 40723,
+        "tick_return_frame": 40724,
+        "server_snapshot_platform_timestamp": 15461391.159692096,
+        "sim_time": 406.9156487789005,
+        "wall_begin": 15461391.207420608,
+        "control_apply_wall": 15461391.208501194,
+        "tick_end_wall": 15461391.209939435,
+        "deadline_wall": 15461391.257095717,
+        "deadline_missed": false,
+        "compute_ms": 1.1019948869943619,
+        "cycle_work_ms": 2.5188270956277847,
+        "measurement": {
+          "frame": 40723,
+          "t": 406.9156487789005,
+          "position": [
+            -74.38719940185547,
+            99.70574188232422,
+            0.3711465299129486
+          ],
+          "rotation": [
+            -6.100102837081067e-05,
+            1.0153485536575317,
+            -90.1561279296875
+          ],
+          "velocity": [
+            1.2148065252404194e-05,
+            7.019176700850949e-05,
+            0.0011735329171642661
+          ],
+          "speed": 0.0011756929732346052,
+          "long_speed": -4.941829220171106e-05,
+          "acceleration_api": [
+            -3.720888344105333e-06,
+            -2.801723894663155e-05,
+            -0.005282976198941469
+          ],
+          "long_acceleration_api": -6.559276719384009e-05,
+          "applied": {
+            "throttle": 0.0,
+            "brake": 0.7599999904632568,
+            "steer": 0.4181438684463501,
+            "hand_brake": false,
+            "reverse": false,
+            "gear": 0
+          }
+        },
+        "command": {
+          "steer": 0.3970563726376486,
+          "throttle": 0.0,
+          "brake": 0.7199999999999998,
+          "reason": null
+        },
+        "reason": null,
+        "boundary": false,
+        "plan_frame": 40721,
+        "plan_input_wall": 15461391.107522028,
+        "plan_output_wall": 15461391.150492964,
+        "plan_sim_age": 0.10000000149011612,
+        "plan_wall_age": 0.1009791661053896
+      },
+      "conclusion": "fixed 1m explains part of endpoint shortfall; residual anticipatory envelope/HOLD and nonlinear dynamics remain; no causal percentage for controller vs physics"
+    },
+    {
+      "source": "Privileged",
+      "trace": {
+        "path": "reports/m6a_oracle_remaining_artifacts/low_speed_stop.jsonl",
+        "bytes": 2234424,
+        "sha256": "437ee43c7b651e74f7028da9ba6ff3fa6cefd40ba5c1910c3a4773f31923df8f"
+      },
+      "route_length_m": 8.999995319630841,
+      "navigation_end_xy": [
+        -74.1185073852539,
+        -90.36206817626953
+      ],
+      "implicit_stop_target_xy": [
+        -74.11577605139124,
+        -91.36206444617024
+      ],
+      "actual_stop_xy": [
+        -74.14054107666016,
+        -92.12664031982422
+      ],
+      "fixed_route_margin_m": 1.0,
+      "arc_distance_to_navigation_end_m": 1.764505585566809,
+      "residual_to_implicit_target_m": 0.764505585566809,
+      "lateral_error_m": 0.02684739628843108,
+      "euclidean_target_error_m": 0.7649768447804939,
+      "fixed_margin_fraction_of_endpoint_error": 0.5667309914911784,
+      "first_normal_brake": {
+        "source": "Privileged",
+        "source_envelope": {
+          "schema": "OracleSceneState",
+          "source": "Privileged",
+          "frame_id": 33051,
+          "timestamp_s": 252.76971591077745,
+          "valid_until_s": 253.11971591077744,
+          "coordinate": "hs_ego_x_forward_y_left_z_up_m",
+          "version": "m6a.v1",
+          "reference": "CARLA_snapshot_actor_box_and_map_not_render_mesh"
+        },
+        "obstacles": [],
+        "profile": {
+          "get_snapshot_ms": 0.012954697012901306,
+          "get_control_ms": 0.004738569259643555,
+          "snapshot_state_measurement_ms": 0.08072331547737122,
+          "submit_ms": 0.0160951167345047,
+          "ipc_poll_validate_resample_ms": 0.4089437425136566,
+          "road_query_ms": 0.5336198955774307,
+          "actor_guard_ms": 0.0015795230865478516,
+          "controller_ms": 0.1492667943239212,
+          "apply_control_ms": 0.027935951948165894,
+          "world_tick_ms": 1.3232305645942688,
+          "log_buffer_ms": 0.04873797297477722,
+          "log_disk_ms": 0.0
+        },
+        "wakeup_lateness_ms": 0.30786357820034027,
+        "dynamic_actor_speeds": [],
+        "frame": 33051,
+        "tick_return_frame": 33052,
+        "server_snapshot_platform_timestamp": 15461242.572373446,
+        "sim_time": 252.76971591077745,
+        "wall_begin": 15461242.619221248,
+        "control_apply_wall": 15461242.620434368,
+        "tick_end_wall": 15461242.6217865,
+        "deadline_wall": 15461242.668913385,
+        "deadline_missed": false,
+        "compute_ms": 1.2406930327415466,
+        "cycle_work_ms": 2.565251663327217,
+        "measurement": {
+          "frame": 33051,
+          "t": 252.76971591077745,
+          "position": [
+            -74.38719940185547,
+            99.70574188232422,
+            0.37108126282691956
+          ],
+          "rotation": [
+            -6.105440843384713e-05,
+            1.015587568283081,
+            -90.1561279296875
+          ],
+          "velocity": [
+            1.2090867130609695e-05,
+            7.401436596410349e-05,
+            0.0014392232988029718
+          ],
+          "speed": 0.001441175915443478,
+          "long_speed": -4.85260082104074e-05,
+          "acceleration_api": [
+            -1.5588848327752203e-05,
+            1.2266682460904121e-05,
+            -0.003312882035970688
+          ],
+          "long_acceleration_api": -7.094114737311946e-05,
+          "applied": {
+            "throttle": 0.0,
+            "brake": 0.7599999904632568,
+            "steer": 0.41819608211517334,
+            "hand_brake": false,
+            "reverse": false,
+            "gear": 0
+          }
+        },
+        "command": {
+          "steer": 0.39709833323549976,
+          "throttle": 0.0,
+          "brake": 0.7199999999999998,
+          "reason": null
+        },
+        "reason": null,
+        "boundary": false,
+        "plan_frame": 33049,
+        "plan_input_wall": 15461242.519541085,
+        "plan_output_wall": 15461242.563101932,
+        "plan_sim_age": 0.10000000149011612,
+        "plan_wall_age": 0.10089328326284885
+      },
+      "conclusion": "fixed 1m explains part of endpoint shortfall; residual anticipatory envelope/HOLD and nonlinear dynamics remain; no causal percentage for controller vs physics"
+    }
+  ],
+  "timing": {
+    "previous_frame": 13901,
+    "current_frame": 13902,
+    "apply_interval_ms": 133.1617683172226,
+    "previous_world_tick_ms": 131.60151429474354,
+    "previous_apply_wall": 15461006.117825791,
+    "previous_tick_end_wall": 15461006.249454401,
+    "current_wake_wall": 15461006.249743087,
+    "current_apply_wall": 15461006.25098756,
+    "between_tick_return_and_next_wake_ms": 0.28868578374385834,
+    "current_preapply_ms": 1.2444723397493362,
+    "source": {
+      "path": "reports/m6a_oracle_artifacts/straight.jsonl",
+      "bytes": 1365574,
+      "sha256": "a61f22b19bc424c0aabe09fe9364a5a1b6584786ecd8c79d7a22827ec0e08872"
+    },
+    "conclusion": "Previous tick blocking dominates this interval; client log cannot separate UE rendering/physics/internal scheduling. Historical deadline reset exists; new runner uses fixed slot grid with explicit skipped slots."
+  },
+  "semantic_contract": "route point=ego actor origin; footprint requires body beyond point; obstacle target=rear bumper clearance minus 3m, not navigation endpoint",
+  "controller_review": [
+    "HOLD at remaining<=.25 and speed<1.5 can invoke low-speed brake discontinuity.",
+    "Alternate horizon<.8m, end speed<.08 and ego<.3 can latch early while target remains farther.",
+    "remaining at controller is aged via speed*age, not reprojected actual current pose.",
+    "low-speed effort max(0,effort) before rate limiting can retain negative previous effort.",
+    "coast cap sqrt(.4*(remaining-.5)) already encodes a second .5m anticipatory offset."
+  ]
+}

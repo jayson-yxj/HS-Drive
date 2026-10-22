@@ -1,0 +1,1475 @@
+{
+  "kind": "offline_actual_CARLA_motion_bound_audit",
+  "base": "7ec866ff4ec5fe621c506056f41750651adcc4ab",
+  "git_head": "ffaf47082d814b07194d64b10ac16b43dfda4914",
+  "sources": {
+    "configs/m6b/protocol.json": "063cfb2bc6d0208324d43ca3f2ee980f7cc0e3bb0a42f5d2ac12148b04a5dee7",
+    "simulator/m6b_bypass.py": "b2550bdb773f1c45dc92a94a4848473a99a91201f565d916d490f69981ce3043",
+    "simulator/m6b_motion.py": "72067662faa791f44cd41ee60bcfba1003a743267e525391fc31a33f9970d3ce",
+    "simulator/m6b_obstacles.py": "2122ca6ad6ea606d7b94375d0777885459c0c3a724abf5c5a2554542fd6f286b",
+    "simulator/m6b_worker.py": "24947a1e5584e413ead9e44c251d1606ac9d01010a2977bf38c417c1810dc903",
+    "tests/test_m6b_maneuvers.py": "308fdcc19b0c481073afc6f68aa5391fe43c55a807ec5a6bdce582ff75a62c1c",
+    "tests/test_m6b_obstacles_sdk.py": "01079e75e81cc1ffb957f8982b8b9ab786854150c3fef6ffabd85f3689d7dead",
+    "tools/m6b_analyze.py": "017a1103cecaec26ee927251f89632f073b23384e78d0f8d02ae58e3445f4baa",
+    "tools/m6b_audit.py": "c0ec35c46e52f48a318f76d41c73025107d29351040e794155fc27f9aaa02f38",
+    "tools/m6b_body_audit.py": "b1c8f3cf8d7813f1ab62bad1e707d3d49df9bba34300a8c653e3847d05cb088b",
+    "tools/m6b_calibrate.py": "9cf7f3820b272d95c8b82f5e2e0c7db48bb6f4f0bdb6388cf2b986342b80b9fa",
+    "tools/m6b_calibration_analysis.py": "b3aa8f7e888787d2ab96b32f2d5dc43eae2bc6d1d26c705918415fa84be60b67",
+    "tools/m6b_campaign.py": "4e2342be4dc37fcd8e393b43ebebce425b8b0d71f542ac834c58ab2fd554c9f1",
+    "tools/m6b_common.py": "7f0493b5d8d3e8435fab695d361137f6df61be504529eff5360cc0a7a0c8cc44",
+    "tools/m6b_drive.py": "4fed31fd09f4375ecd2356748ea27c6d884aaa11d3975d6edcd27cdbc894337d",
+    "tools/m6b_finalize.py": "6f4748c2dd55fd158b0c9bfd0a6e49a33398a705ea485dbc3af6b1b95220f65f",
+    "tools/m6b_motion_envelope.py": "77a9db61af20f625df12ea93936280b0623990b29ee9a6835acb47eb4e5cfe1f",
+    "tools/m6b_supplement.py": "7d5edfdc1c703668fde9b4dee0fe2f39f5abe5224ee5ba05a76c7d58727de9b3",
+    "tools/m6b_survey.py": "dec58f8c48fe42a644897b3cb57a885fea0f279912a114b741e0910eee05cc7b",
+    "tools/m6b_verify_preservation.py": "00a37b9ef3395a4a4f3677449c8e9ce151344112fd8bbbf29a18fef7701df179"
+  },
+  "protocol_sha256": "063cfb2bc6d0208324d43ca3f2ee980f7cc0e3bb0a42f5d2ac12148b04a5dee7",
+  "visual_control": false,
+  "source": "Privileged",
+  "trials": [
+    {
+      "name": "final_blocked_p126_s101_fixture_retry",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.936527494290787,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 149,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 174307,
+          "end_frame": 174403,
+          "entry_speed": 3.763321956172546e-05,
+          "entry_signed_remaining": -2.7056301252240527,
+          "duration_s": 4.800000000000001,
+          "max_displacement_m": 9.778483047542024e-05,
+          "max_speed": 3.763321956172546e-05,
+          "dynamics": {
+            "max_decel_raw": 0.00035778492421538493,
+            "jerk_peak_raw": 0.014307950158122746,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0067701630764091655,
+            "max_decel_250ms": 7.161355169371585e-05,
+            "jerk_p95_250ms": 0.0013819133272343319,
+            "min_signed_speed": -1.956470716952663e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 8.031887069256209e-10
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_blocked_p126_s101_fixture_retry/trace.jsonl",
+        "bytes": 1486936,
+        "sha256": "abed25db6ca450eacb67e5707cd6be3e9b33a47bd98f281f5c8e765ff37c8935"
+      }
+    },
+    {
+      "name": "final_blocked_p126_s102",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.9512550746849655,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 143,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 155801,
+          "end_frame": 155900,
+          "entry_speed": 0.00011714783970139112,
+          "entry_signed_remaining": -2.69895046077996,
+          "duration_s": 4.95,
+          "max_displacement_m": 0.00011151466745384326,
+          "max_speed": 0.00011714783970139112,
+          "dynamics": {
+            "max_decel_raw": 0.0021655601347878666,
+            "jerk_peak_raw": 0.03220045104380521,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.007163799334837202,
+            "max_decel_250ms": 0.0004983165381978079,
+            "jerk_p95_250ms": 0.001431154735254731,
+            "min_signed_speed": -2.0462375850649935e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.9836331518355375e-10
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_blocked_p126_s102/trace.jsonl",
+        "bytes": 1480055,
+        "sha256": "3bf78fb7a2134158a0d0f5fc04b35edcef076f0edef12c9aeddc8af8d9578e75"
+      }
+    },
+    {
+      "name": "final_blocked_p170_s101_fixture_retry",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.711541752199595,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 119,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 174966,
+          "end_frame": 175065,
+          "entry_speed": 0.017693826686166727,
+          "entry_signed_remaining": 0.010715454155530324,
+          "duration_s": 4.95,
+          "max_displacement_m": 0.00017466468666697233,
+          "max_speed": 0.017693826686166727,
+          "dynamics": {
+            "max_decel_raw": 0.3547929991293377,
+            "jerk_peak_raw": 7.0931632934597655,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0183845741446284,
+            "max_decel_250ms": 0.07097903415494582,
+            "jerk_p95_250ms": 0.003677900845184495,
+            "min_signed_speed": -5.3199258376321955e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 1.4603032399851135e-10
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_blocked_p170_s101_fixture_retry/trace.jsonl",
+        "bytes": 1472130,
+        "sha256": "3c7775613d603d4291ec665b0acbfe425fcfe0cf71f017953cbd32c45bf16daf"
+      }
+    },
+    {
+      "name": "final_blocked_p170_s102",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.732818901890895,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 122,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 158824,
+          "end_frame": 158923,
+          "entry_speed": 0.01079978471206459,
+          "entry_signed_remaining": 0.051445364971677066,
+          "duration_s": 4.95,
+          "max_displacement_m": 0.00021384658038711647,
+          "max_speed": 0.01079978471206459,
+          "dynamics": {
+            "max_decel_raw": 0.21693820531918934,
+            "jerk_peak_raw": 4.336730370198531,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.018383878817109043,
+            "max_decel_250ms": 0.04340067640224128,
+            "jerk_p95_250ms": 0.0036766110219127444,
+            "min_signed_speed": -5.2636261805731014e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 9.306080306822112e-11
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_blocked_p170_s102/trace.jsonl",
+        "bytes": 1484937,
+        "sha256": "76227dc6a498b37322f7345694fc4aaf77d4e10caa2054f4ed69c2dd86dfff36"
+      }
+    },
+    {
+      "name": "final_bypass_crash_p170",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.65092591563269,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 146,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_bypass_crash_p170/trace.jsonl",
+        "bytes": 1365243,
+        "sha256": "a3523f19d2286f347e131f189bbc4463440e4a3d4d4b8d00fb2a3530f3987100"
+      }
+    },
+    {
+      "name": "final_bypass_p126_s101",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.922190612811576,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 462,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 142333,
+          "end_frame": 142343,
+          "entry_speed": 0.014412323687343504,
+          "entry_signed_remaining": -0.2764791605142431,
+          "duration_s": 0.5,
+          "max_displacement_m": 0.000251816592376597,
+          "max_speed": 0.014412323687343504,
+          "dynamics": {
+            "max_decel_raw": 0.2886652608861248,
+            "jerk_peak_raw": 5.770972964946457,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 3.463337441533171,
+            "max_decel_250ms": 0.057756218387744855,
+            "jerk_p95_250ms": 0.9238780785228731,
+            "min_signed_speed": -2.8008526619089526e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 2.424464216268926e-09
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_bypass_p126_s101/trace.jsonl",
+        "bytes": 2279343,
+        "sha256": "2a6994ec1bcd2a6d7d76ec96453caa9524474df5b9482e129211370db1d39000"
+      }
+    },
+    {
+      "name": "final_bypass_p126_s102",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.9347613575961162,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 510,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 155221,
+          "end_frame": 155231,
+          "entry_speed": 0.018014875497727068,
+          "entry_signed_remaining": -0.28500038889299467,
+          "duration_s": 0.5,
+          "max_displacement_m": 0.0002823169080180947,
+          "max_speed": 0.018014875497727068,
+          "dynamics": {
+            "max_decel_raw": 0.3606926040051917,
+            "jerk_peak_raw": 7.211020763904097,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 4.327515457886305,
+            "max_decel_250ms": 0.0721678261019506,
+            "jerk_p95_250ms": 1.1543910714282803,
+            "min_signed_speed": -2.8398991208685742e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 1.2130641358809865e-09
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_bypass_p126_s102/trace.jsonl",
+        "bytes": 2274706,
+        "sha256": "2e104cd88a9024227705841eaed0c8f4618027ede552138609482ad8bcfa0282"
+      }
+    },
+    {
+      "name": "final_bypass_p170_s101",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.6476749386009577,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 144,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 144815,
+          "end_frame": 144829,
+          "entry_speed": 0.006622489204448702,
+          "entry_signed_remaining": 0.04646708041174463,
+          "duration_s": 0.7000000000000001,
+          "max_displacement_m": 0.00016815225632573462,
+          "max_speed": 0.006622489204448702,
+          "dynamics": {
+            "max_decel_raw": 0.1334426651843014,
+            "jerk_peak_raw": 2.667356193302994,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 1.0678476702507973,
+            "max_decel_250ms": 0.02669525281059646,
+            "jerk_p95_250ms": 0.32045908281695895,
+            "min_signed_speed": -5.343386610102278e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.3654744062712715e-10
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_bypass_p170_s101/trace.jsonl",
+        "bytes": 2417264,
+        "sha256": "cc9dfc181af884080a239e7feba5bc025871f06af741320a2fb2394cbf7c6732"
+      }
+    },
+    {
+      "name": "final_bypass_p170_s102",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.6673741235722934,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 156,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 158235,
+          "end_frame": 158249,
+          "entry_speed": 0.013278951729141926,
+          "entry_signed_remaining": 0.0833107927487049,
+          "duration_s": 0.7000000000000001,
+          "max_displacement_m": 0.0002442791490379187,
+          "max_speed": 0.013278951729141926,
+          "dynamics": {
+            "max_decel_raw": 0.26652571371578104,
+            "jerk_peak_raw": 5.328045086373212,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 2.1325444356269845,
+            "max_decel_250ms": 0.053323878621696526,
+            "jerk_p95_250ms": 0.639946696117355,
+            "min_signed_speed": -5.415494536643368e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 1.3643938568171535e-09
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_bypass_p170_s102/trace.jsonl",
+        "bytes": 2400582,
+        "sha256": "16f885a50b232cd22bea537c732217fa360b6b4950aa9d2145a8a7187d996056"
+      }
+    },
+    {
+      "name": "final_bypass_timeout_p126",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.905983754452803,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 239,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_bypass_timeout_p126/trace.jsonl",
+        "bytes": 1376976,
+        "sha256": "aeac87bd7d455a02825eb5ba429aa4001168a3894d70389c8eae96c851984169"
+      }
+    },
+    {
+      "name": "final_crash_s101",
+      "source": "Privileged",
+      "max_actual_speed_mps": 0.0018119677745536624,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 0,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_crash_s101/trace.jsonl",
+        "bytes": 382796,
+        "sha256": "36588f270f1443a8ca81fa3bcc6d23e23e52e9e2bcebe92f00a1352c71a27e2e"
+      }
+    },
+    {
+      "name": "final_crash_s102",
+      "source": "Privileged",
+      "max_actual_speed_mps": 0.0018119677745536624,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 0,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_crash_s102/trace.jsonl",
+        "bytes": 382549,
+        "sha256": "a10aa304ae180b61a9eba945d6b558991db5e49f3f80ccf80d53e181793bf3da"
+      }
+    },
+    {
+      "name": "final_emergency_s101",
+      "source": "Privileged",
+      "max_actual_speed_mps": 0.0018119677745536624,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 0,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_emergency_s101/trace.jsonl",
+        "bytes": 392203,
+        "sha256": "b1195ebd9403c56733741ae5f2d291e0a891268c04fb40e24714e7ff931fb01a"
+      }
+    },
+    {
+      "name": "final_emergency_s102",
+      "source": "Privileged",
+      "max_actual_speed_mps": 0.0018119677745536624,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 0,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_emergency_s102/trace.jsonl",
+        "bytes": 392112,
+        "sha256": "35c24796864e03e54fc36393f5b500ad0dde727a0c7899f280818abadfb2f073"
+      }
+    },
+    {
+      "name": "final_invalid_s101",
+      "source": "Privileged",
+      "max_actual_speed_mps": 0.0018119677745536624,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 0,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_invalid_s101/trace.jsonl",
+        "bytes": 383799,
+        "sha256": "40fef27167e7a2e2feb26fc5c56679aaf582288c82eb5da93f6ace52855d1d58"
+      }
+    },
+    {
+      "name": "final_invalid_s102",
+      "source": "Privileged",
+      "max_actual_speed_mps": 0.0018164546880986504,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 0,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_invalid_s102/trace.jsonl",
+        "bytes": 383511,
+        "sha256": "7fe8af5c682423a5a03b719116ec37cceb8dff47a86309265bc80d3aa94afe30"
+      }
+    },
+    {
+      "name": "final_junction_turn_s101",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.6723181856554197,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 301,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 150415,
+          "end_frame": 151278,
+          "entry_speed": 0.019689566182345963,
+          "entry_signed_remaining": -1.1603474697874487,
+          "duration_s": 43.150000000000006,
+          "max_displacement_m": 0.00030596207467389745,
+          "max_speed": 0.019689566182345963,
+          "dynamics": {
+            "max_decel_raw": 0.39362797512665826,
+            "jerk_peak_raw": 7.8691354820494555,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 1.2214525739677608e-05,
+            "max_decel_250ms": 0.07876780419707473,
+            "jerk_p95_250ms": 1.5654985676413046e-06,
+            "min_signed_speed": -2.8031551353665706e-06,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 1.6240492328683105e-11
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_junction_turn_s101/trace.jsonl",
+        "bytes": 3207715,
+        "sha256": "2e21f89d5e352728255906f65b7c86dde518c644b4ca703c73a066982c6cb95c"
+      }
+    },
+    {
+      "name": "final_junction_turn_s102",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.7148143030599887,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 302,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 164380,
+          "end_frame": 165239,
+          "entry_speed": 0.019844903697295406,
+          "entry_signed_remaining": -1.1395211203433961,
+          "duration_s": 42.95,
+          "max_displacement_m": 0.0002462780016881693,
+          "max_speed": 0.019844903697295406,
+          "dynamics": {
+            "max_decel_raw": 0.39674470018950436,
+            "jerk_peak_raw": 7.931929790645687,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 1.8438761763238e-05,
+            "max_decel_250ms": 0.07938491629192229,
+            "jerk_p95_250ms": 3.338359408155042e-06,
+            "min_signed_speed": -2.46560664063082e-06,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 1.7256799735161043e-09
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_junction_turn_s102/trace.jsonl",
+        "bytes": 3210262,
+        "sha256": "f282166d978290fbd0b3d4e673e8d266b8580b4a8c692f20091cc654dca25669"
+      }
+    },
+    {
+      "name": "final_lead_s101",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.502760729737247,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 0,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 151794,
+          "end_frame": 151912,
+          "entry_speed": 0.014408175764702493,
+          "entry_signed_remaining": -0.17539039706360082,
+          "duration_s": 5.9,
+          "max_displacement_m": 0.0007045533648069675,
+          "max_speed": 0.014408175764702493,
+          "dynamics": {
+            "max_decel_raw": 0.2884890266427085,
+            "jerk_peak_raw": 5.765730259329673,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.009636098445144287,
+            "max_decel_250ms": 0.057743762306634534,
+            "jerk_p95_250ms": 0.0019265183978174408,
+            "min_signed_speed": -2.8670879776770744e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.754123335533545e-11
+          }
+        },
+        {
+          "start_frame": 152473,
+          "end_frame": 152995,
+          "entry_speed": 3.79974008781598e-05,
+          "entry_signed_remaining": -0.7609662279185789,
+          "duration_s": 26.1,
+          "max_displacement_m": 0.0003297239303749403,
+          "max_speed": 4.963995496245642e-05,
+          "dynamics": {
+            "max_decel_raw": 0.0009918252392909048,
+            "jerk_peak_raw": 0.03967098554953546,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.01982578083855517,
+            "max_decel_250ms": 0.00019839204397051013,
+            "jerk_p95_250ms": 0.003966383548903341,
+            "min_signed_speed": -4.9102367613630514e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 4.703764922234668e-11
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_lead_s101/trace.jsonl",
+        "bytes": 3791789,
+        "sha256": "e213a7c8ffd4424c81ae0be61208925886a384c7ea6284fb11c801bd9da6a27d"
+      }
+    },
+    {
+      "name": "final_lead_s102",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.4038162531130207,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 0,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 165764,
+          "end_frame": 165871,
+          "entry_speed": 0.011465002974414221,
+          "entry_signed_remaining": -0.09598139737336009,
+          "duration_s": 5.3500000000000005,
+          "max_displacement_m": 0.00022133760088978213,
+          "max_speed": 0.011465002974414221,
+          "dynamics": {
+            "max_decel_raw": 0.2298976449097549,
+            "jerk_peak_raw": 4.595709188076426,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.01249708922526914,
+            "max_decel_250ms": 0.04599897882597682,
+            "jerk_p95_250ms": 0.002501720234579046,
+            "min_signed_speed": -3.626231865305602e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 1.4105364225420624e-10
+          }
+        },
+        {
+          "start_frame": 166433,
+          "end_frame": 166955,
+          "entry_speed": 4.9438317286254755e-05,
+          "entry_signed_remaining": -0.7212358459020123,
+          "duration_s": 26.1,
+          "max_displacement_m": 0.0002651279339138204,
+          "max_speed": 4.967351832502949e-05,
+          "dynamics": {
+            "max_decel_raw": 0.0009919413762034584,
+            "jerk_peak_raw": 0.03967348434413184,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.019838940062960702,
+            "max_decel_250ms": 0.00019848791015493553,
+            "jerk_p95_250ms": 0.003966874383001423,
+            "min_signed_speed": -4.936727282421476e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.516604386034465e-11
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_lead_s102/trace.jsonl",
+        "bytes": 3789386,
+        "sha256": "68d88789e1b90ba556387a39aba5fa6eb212f5843d41136ea1008346bef81645"
+      }
+    },
+    {
+      "name": "final_mild_curve_s101",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.7037520204718435,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 274,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 148763,
+          "end_frame": 149588,
+          "entry_speed": 0.01916429585612939,
+          "entry_signed_remaining": -1.1106589185836218,
+          "duration_s": 41.25,
+          "max_displacement_m": 0.0003040133033496223,
+          "max_speed": 0.01916429585612939,
+          "dynamics": {
+            "max_decel_raw": 0.38312685465465746,
+            "jerk_peak_raw": 7.659206536821466,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 1.2571265579456104e-05,
+            "max_decel_250ms": 0.0766665522670672,
+            "jerk_p95_250ms": 2.1914658288011464e-06,
+            "min_signed_speed": -2.715669079568234e-06,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 1.7144707522349753e-11
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_mild_curve_s101/trace.jsonl",
+        "bytes": 3215405,
+        "sha256": "ad0b5a3bd5f026c2f6a4685fdd66dd0d1878abe6f6ec75c8841fe50fac714c89"
+      }
+    },
+    {
+      "name": "final_mild_curve_s102",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.751264762348092,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 314,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 162655,
+          "end_frame": 163552,
+          "entry_speed": 2.056382509475548e-05,
+          "entry_signed_remaining": -1.0641561095371133,
+          "duration_s": 44.85,
+          "max_displacement_m": 2.142330798905302e-05,
+          "max_speed": 2.056382509475548e-05,
+          "dynamics": {
+            "max_decel_raw": 0.00043419617210064545,
+            "jerk_peak_raw": 0.006413161443133726,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 1.8133256758954807e-05,
+            "max_decel_250ms": 0.00010140422754175243,
+            "jerk_p95_250ms": 2.6350024083088448e-06,
+            "min_signed_speed": -7.331762849751093e-06,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 1.3748042232128617e-12
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_mild_curve_s102/trace.jsonl",
+        "bytes": 3210176,
+        "sha256": "ac014323ec8de07ed724c1f76e4fba079fde3ef750930d4df2f3d9289714a7fd"
+      }
+    },
+    {
+      "name": "final_moving_emergency",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.75398446014619,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 188,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_moving_emergency/trace.jsonl",
+        "bytes": 912491,
+        "sha256": "efa031540b394c178a58b387af80639bd22933ed9a8a7277a980f6b1ed07a9ee"
+      }
+    },
+    {
+      "name": "final_moving_invalid",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.6978514825321565,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 80,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_moving_invalid/trace.jsonl",
+        "bytes": 913133,
+        "sha256": "0254011894160efa3455bbb1dcbb552fd7462709061e165c6eeef9f97c2b74c9"
+      }
+    },
+    {
+      "name": "final_removed_p126_s101",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.922378156577137,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 272,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 143673,
+          "end_frame": 143681,
+          "entry_speed": 0.012775072883120556,
+          "entry_signed_remaining": -0.2632406744723123,
+          "duration_s": 0.4,
+          "max_displacement_m": 0.00023274447277015487,
+          "max_speed": 0.012775072883120556,
+          "dynamics": {
+            "max_decel_raw": 0.2559298433373002,
+            "jerk_peak_raw": 5.116468950607829,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 3.582051233762097,
+            "max_decel_250ms": 0.05120644008169189,
+            "jerk_p95_250ms": 0.9214445420917856,
+            "min_signed_speed": -2.7838561179570763e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.365014358900964e-09
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_removed_p126_s101/trace.jsonl",
+        "bytes": 2345871,
+        "sha256": "f5cd0274a3286e592f401f117c5eb2e3f7bbfd2e6dfceabe67118daeedcb6722"
+      }
+    },
+    {
+      "name": "final_removed_p126_s102",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.935328594016717,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 269,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 157104,
+          "end_frame": 157113,
+          "entry_speed": 0.015318030306573584,
+          "entry_signed_remaining": -0.28592056790777864,
+          "duration_s": 0.45,
+          "max_displacement_m": 0.00014712956004795172,
+          "max_speed": 0.015318030306573584,
+          "dynamics": {
+            "max_decel_raw": 0.30679577862600527,
+            "jerk_peak_raw": 6.133842064719521,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 3.987596319515809,
+            "max_decel_250ms": 0.06137874084408565,
+            "jerk_p95_250ms": 1.0432225171209315,
+            "min_signed_speed": -2.7940541198445698e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 4.702938410620349e-09
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_removed_p126_s102/trace.jsonl",
+        "bytes": 2350261,
+        "sha256": "624e653219e998544eff5ca9f338e4f7f2aed3fc27d7769a35f3325347af7263"
+      }
+    },
+    {
+      "name": "final_removed_p170_s101",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.6685319637672977,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 117,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 146200,
+          "end_frame": 146214,
+          "entry_speed": 0.00703455891099224,
+          "entry_signed_remaining": 0.09135439116610655,
+          "duration_s": 0.7000000000000001,
+          "max_displacement_m": 0.00017574813344763943,
+          "max_speed": 0.00703455891099224,
+          "dynamics": {
+            "max_decel_raw": 0.14167864041722647,
+            "jerk_peak_raw": 2.831950359755907,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 1.1337380593357673,
+            "max_decel_250ms": 0.02834312843576535,
+            "jerk_p95_250ms": 0.34023120234825627,
+            "min_signed_speed": -5.349472670821592e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.737557529857414e-10
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_removed_p170_s101/trace.jsonl",
+        "bytes": 2437858,
+        "sha256": "4640bfca6388269d83d2e47555bec1f4a993dd0a70be64d2e7c45e25cf1ca273"
+      }
+    },
+    {
+      "name": "final_removed_p170_s102",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.7195833908690856,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 122,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 160175,
+          "end_frame": 160189,
+          "entry_speed": 0.014776691015749752,
+          "entry_signed_remaining": 0.09999341974953779,
+          "duration_s": 0.7000000000000001,
+          "max_displacement_m": 0.0002519004837767667,
+          "max_speed": 0.014776691015749752,
+          "dynamics": {
+            "max_decel_raw": 0.29646931777055885,
+            "jerk_peak_raw": 5.926657435525586,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 2.3721103185040175,
+            "max_decel_250ms": 0.059315429633462195,
+            "jerk_p95_250ms": 0.7118326222384352,
+            "min_signed_speed": -5.4389463309461905e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 7.273617890740498e-10
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_removed_p170_s102/trace.jsonl",
+        "bytes": 2450488,
+        "sha256": "e9ab9a9b8226dc3dd1eedbc5c32cf5d0fa7811bc40430db75bf66078b2d599aa"
+      }
+    },
+    {
+      "name": "final_stop_p170_l25_s101_A",
+      "source": "Privileged",
+      "max_actual_speed_mps": 3.387987710870522,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 36,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p170_l25_s101_A/trace.jsonl",
+        "bytes": 810556,
+        "sha256": "96070d2e8df0d89b2afcf9a0c9c95ae8b243005f58c524e89a49cf34e18fff2d"
+      }
+    },
+    {
+      "name": "final_stop_p170_l25_s101_B",
+      "source": "Privileged",
+      "max_actual_speed_mps": 3.276761529235922,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 33,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p170_l25_s101_B/trace.jsonl",
+        "bytes": 835363,
+        "sha256": "161c04b0327511d83fff2975f130876d65284babe617239e6f38af96ddf111ed"
+      }
+    },
+    {
+      "name": "final_stop_p170_l25_s101_C",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.6191000570406087,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 49,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 135516,
+          "end_frame": 135528,
+          "entry_speed": 0.0089753710478791,
+          "entry_signed_remaining": -0.12384799467076285,
+          "duration_s": 0.6000000000000001,
+          "max_displacement_m": 0.0006676502805897966,
+          "max_speed": 0.01630272218886632,
+          "dynamics": {
+            "max_decel_raw": 0.326874989446489,
+            "jerk_peak_raw": 9.468400373870159,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 8.002733885617632,
+            "max_decel_250ms": 0.06536725956378933,
+            "jerk_p95_250ms": 1.0911235635562946,
+            "min_signed_speed": -4.220992626705085e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 1.4075266043102687e-08
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p170_l25_s101_C/trace.jsonl",
+        "bytes": 832006,
+        "sha256": "6ec452df11b964b784c915cd7e7598b9a8d3dac13711a48021ec1dc388f2b883"
+      }
+    },
+    {
+      "name": "final_stop_p170_l25_s102_A",
+      "source": "Privileged",
+      "max_actual_speed_mps": 3.222821146431409,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 35,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p170_l25_s102_A/trace.jsonl",
+        "bytes": 822385,
+        "sha256": "dcb7d37743507d2e7edfd93d06a92937c3588d1578cbd76a6b800182bd8bbd2c"
+      }
+    },
+    {
+      "name": "final_stop_p170_l25_s102_B",
+      "source": "Privileged",
+      "max_actual_speed_mps": 3.4700884604950333,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 38,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p170_l25_s102_B/trace.jsonl",
+        "bytes": 793818,
+        "sha256": "bf2ab461bc85d5e51b7eeaf069dce54fcc15c5bcd8fa1153e301b9fe8e055867"
+      }
+    },
+    {
+      "name": "final_stop_p170_l25_s102_C",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.6659626798252813,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 62,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 139887,
+          "end_frame": 139899,
+          "entry_speed": 0.016785088410465752,
+          "entry_signed_remaining": -0.11849848715679694,
+          "duration_s": 0.6000000000000001,
+          "max_displacement_m": 0.0007326244583013095,
+          "max_speed": 0.016785088410465752,
+          "dynamics": {
+            "max_decel_raw": 0.19587982138033386,
+            "jerk_peak_raw": 3.915927997078294,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 2.5111911268208464,
+            "max_decel_250ms": 0.06730103776728032,
+            "jerk_p95_250ms": 0.7172074349527249,
+            "min_signed_speed": -4.118199547136091e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 2.394097293061398e-08
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p170_l25_s102_C/trace.jsonl",
+        "bytes": 813876,
+        "sha256": "a5a5e0010fe96ef272f90facb943d641936626891b5a38d0c3160f63709f0545"
+      }
+    },
+    {
+      "name": "final_stop_p170_l9_s101_A",
+      "source": "Privileged",
+      "max_actual_speed_mps": 3.1159045329785977,
+      "requested_speed_limit_mps": 1.0,
+      "over_speed_limit_ticks": 44,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p170_l9_s101_A/trace.jsonl",
+        "bytes": 545305,
+        "sha256": "c480817d9c65637b316c9075ce1e3f5c1eb1df7b3f23f2bf785a1124df39fbf0"
+      }
+    },
+    {
+      "name": "final_stop_p170_l9_s101_B",
+      "source": "Privileged",
+      "max_actual_speed_mps": 3.099667254668376,
+      "requested_speed_limit_mps": 1.0,
+      "over_speed_limit_ticks": 43,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p170_l9_s101_B/trace.jsonl",
+        "bytes": 418469,
+        "sha256": "0ddfc7b37237327d0f8c9b3649e5d8ae0473e3c98d060d55b3e32c4fed3c28e8"
+      }
+    },
+    {
+      "name": "final_stop_p170_l9_s101_C",
+      "source": "Privileged",
+      "max_actual_speed_mps": 1.6682724856484075,
+      "requested_speed_limit_mps": 1.0,
+      "over_speed_limit_ticks": 92,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 133887,
+          "end_frame": 133986,
+          "entry_speed": 0.018449526392382138,
+          "entry_signed_remaining": -0.6878945867739931,
+          "duration_s": 4.95,
+          "max_displacement_m": 0.0007477685571440957,
+          "max_speed": 0.018449526392382138,
+          "dynamics": {
+            "max_decel_raw": 0.36894231628583596,
+            "jerk_peak_raw": 7.374089544569919,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0035291700226805015,
+            "max_decel_250ms": 0.0738469965671746,
+            "jerk_p95_250ms": 0.0007136303591615672,
+            "min_signed_speed": -1.2883810913850819e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 1.2219766905458072e-09
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p170_l9_s101_C/trace.jsonl",
+        "bytes": 855472,
+        "sha256": "17d66fc47e8975e7fd65f068df8f48a55fe286dffd10991df9a0b694cc46c266"
+      }
+    },
+    {
+      "name": "final_stop_p170_l9_s102_A",
+      "source": "Privileged",
+      "max_actual_speed_mps": 3.1016369369824837,
+      "requested_speed_limit_mps": 1.0,
+      "over_speed_limit_ticks": 42,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p170_l9_s102_A/trace.jsonl",
+        "bytes": 554101,
+        "sha256": "89f655b86b4e6776e5cde90241fd3c15409828e34109eeade248eb00f88a6e66"
+      }
+    },
+    {
+      "name": "final_stop_p170_l9_s102_B",
+      "source": "Privileged",
+      "max_actual_speed_mps": 3.10052950882466,
+      "requested_speed_limit_mps": 1.0,
+      "over_speed_limit_ticks": 42,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p170_l9_s102_B/trace.jsonl",
+        "bytes": 429117,
+        "sha256": "d64080795e7e371932f3d7348ce12aa9bcc591d46c77409458b698dbe678d997"
+      }
+    },
+    {
+      "name": "final_stop_p170_l9_s102_C",
+      "source": "Privileged",
+      "max_actual_speed_mps": 1.7340855403014332,
+      "requested_speed_limit_mps": 1.0,
+      "over_speed_limit_ticks": 91,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 138618,
+          "end_frame": 138717,
+          "entry_speed": 0.01640386355367973,
+          "entry_signed_remaining": -0.7153979734324669,
+          "duration_s": 4.95,
+          "max_displacement_m": 0.0007287973293969535,
+          "max_speed": 0.01640386355367973,
+          "dynamics": {
+            "max_decel_raw": 0.328037918940111,
+            "jerk_peak_raw": 6.556187677011348,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.003549286587580278,
+            "max_decel_250ms": 0.06566372182435072,
+            "jerk_p95_250ms": 0.0007126169759599702,
+            "min_signed_speed": -1.2613783745299103e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 2.708512195712789e-10
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p170_l9_s102_C/trace.jsonl",
+        "bytes": 842989,
+        "sha256": "f5540f51ba9358c189d99efa625ac70d377886bcbdfd228d2d172eec3c525432"
+      }
+    },
+    {
+      "name": "final_stop_p27_l25_s101_A",
+      "source": "Privileged",
+      "max_actual_speed_mps": 3.267668059751987,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 35,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p27_l25_s101_A/trace.jsonl",
+        "bytes": 805284,
+        "sha256": "5890ff076ddf0c8fc5f51416662b5ff0eaada92ddc26ee6222a1b7f82d6c08e1"
+      }
+    },
+    {
+      "name": "final_stop_p27_l25_s101_B",
+      "source": "Privileged",
+      "max_actual_speed_mps": 3.1838668344296046,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 33,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p27_l25_s101_B/trace.jsonl",
+        "bytes": 686025,
+        "sha256": "95bd7a35deb050cedd46ba74d68dfb8e705307cecfbfdae931576fe875e23365"
+      }
+    },
+    {
+      "name": "final_stop_p27_l25_s101_C",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.5736108947886938,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 5,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 132780,
+          "end_frame": 132790,
+          "entry_speed": 0.01924922335349505,
+          "entry_signed_remaining": -0.2670372967476483,
+          "duration_s": 0.5,
+          "max_displacement_m": 0.0003052218840558416,
+          "max_speed": 0.01924922335349505,
+          "dynamics": {
+            "max_decel_raw": 0.3854054745225185,
+            "jerk_peak_raw": 7.705884680505645,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 4.624259818236139,
+            "max_decel_250ms": 0.07710335251603978,
+            "jerk_p95_250ms": 1.233438406917416,
+            "min_signed_speed": -2.7870480919801387e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 1.218650044031167e-09
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p27_l25_s101_C/trace.jsonl",
+        "bytes": 951961,
+        "sha256": "896f8bb49dccd226a84684ef298f7c870f6d75a220b4c11963f17768a045146d"
+      }
+    },
+    {
+      "name": "final_stop_p27_l25_s102_A",
+      "source": "Privileged",
+      "max_actual_speed_mps": 3.2144661556284837,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 35,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p27_l25_s102_A/trace.jsonl",
+        "bytes": 831372,
+        "sha256": "a8431185c5b3bc3a708a146824fc9aacabb06e7008d3c4f0ac179b5db3a506b3"
+      }
+    },
+    {
+      "name": "final_stop_p27_l25_s102_B",
+      "source": "Privileged",
+      "max_actual_speed_mps": 3.0253410814364043,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 30,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p27_l25_s102_B/trace.jsonl",
+        "bytes": 836810,
+        "sha256": "612583c58a1a69e7385b92784e855a9a4bc162499abde75c2d0fd1cf263e9772"
+      }
+    },
+    {
+      "name": "final_stop_p27_l25_s102_C",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.6100635980626152,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 32,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 137137,
+          "end_frame": 137147,
+          "entry_speed": 0.014312527888046631,
+          "entry_signed_remaining": -0.2613840196456136,
+          "duration_s": 0.5,
+          "max_displacement_m": 0.00025184779411993027,
+          "max_speed": 0.014312527888046631,
+          "dynamics": {
+            "max_decel_raw": 0.28669827711463924,
+            "jerk_peak_raw": 5.732383766186608,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 3.439923652481995,
+            "max_decel_250ms": 0.057354528863267175,
+            "jerk_p95_250ms": 0.9175366297175317,
+            "min_signed_speed": -2.749528297719549e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 1.0551992815324134e-09
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p27_l25_s102_C/trace.jsonl",
+        "bytes": 843275,
+        "sha256": "cc9c73a378e7be61bdf7ad6f13d13e2095e998f1d938072dcede80568ec867eb"
+      }
+    },
+    {
+      "name": "final_stop_p27_l9_s101_A",
+      "source": "Privileged",
+      "max_actual_speed_mps": 3.138745804749888,
+      "requested_speed_limit_mps": 1.0,
+      "over_speed_limit_ticks": 42,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p27_l9_s101_A/trace.jsonl",
+        "bytes": 540394,
+        "sha256": "805bb7825a386f862c2fb5472f00be23a6f0eee84ac75a5cd920f492957bc3ac"
+      }
+    },
+    {
+      "name": "final_stop_p27_l9_s101_B",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.98448102483976,
+      "requested_speed_limit_mps": 1.0,
+      "over_speed_limit_ticks": 40,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p27_l9_s101_B/trace.jsonl",
+        "bytes": 586915,
+        "sha256": "cbe9b9e5d5d1c812d71e640084215660704db8183017eca515c120a965907f9c"
+      }
+    },
+    {
+      "name": "final_stop_p27_l9_s101_C",
+      "source": "Privileged",
+      "max_actual_speed_mps": 1.6566099866352955,
+      "requested_speed_limit_mps": 1.0,
+      "over_speed_limit_ticks": 75,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 131261,
+          "end_frame": 131273,
+          "entry_speed": 0.015330870835260484,
+          "entry_signed_remaining": -0.04805317788987104,
+          "duration_s": 0.6000000000000001,
+          "max_displacement_m": 0.0007477195885315928,
+          "max_speed": 0.015330870835260484,
+          "dynamics": {
+            "max_decel_raw": 0.2729584755937974,
+            "jerk_peak_raw": 5.457753248234854,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 5.114002513307685,
+            "max_decel_250ms": 0.06149127859050849,
+            "jerk_p95_250ms": 0.8056877133003232,
+            "min_signed_speed": -4.290194650699792e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 5.711472760464301e-10
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p27_l9_s101_C/trace.jsonl",
+        "bytes": 662037,
+        "sha256": "55256344dafeb07ea6f573d14f4dfe1546b22eb56af9546b67866f6f0a010d9c"
+      }
+    },
+    {
+      "name": "final_stop_p27_l9_s102_A",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.9753168979714144,
+      "requested_speed_limit_mps": 1.0,
+      "over_speed_limit_ticks": 40,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p27_l9_s102_A/trace.jsonl",
+        "bytes": 560575,
+        "sha256": "50f0ad87f557b9d03fff5b3f67efcbbe380eeef355e47efe7c9118a1cbc7ab62"
+      }
+    },
+    {
+      "name": "final_stop_p27_l9_s102_B",
+      "source": "Privileged",
+      "max_actual_speed_mps": 3.1485519131741744,
+      "requested_speed_limit_mps": 1.0,
+      "over_speed_limit_ticks": 40,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p27_l9_s102_B/trace.jsonl",
+        "bytes": 443612,
+        "sha256": "305bd6cf0b66ab1add39f65b5009ebc257dbb820528bb0bbf84c34c9fe618f46"
+      }
+    },
+    {
+      "name": "final_stop_p27_l9_s102_C",
+      "source": "Privileged",
+      "max_actual_speed_mps": 1.710209288349032,
+      "requested_speed_limit_mps": 1.0,
+      "over_speed_limit_ticks": 73,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 135920,
+          "end_frame": 135933,
+          "entry_speed": 0.018027141722371718,
+          "entry_signed_remaining": -0.05738484977778891,
+          "duration_s": 0.65,
+          "max_displacement_m": 0.0002824548400783527,
+          "max_speed": 0.018027141722371718,
+          "dynamics": {
+            "max_decel_raw": 0.36123533850506484,
+            "jerk_peak_raw": 7.221408292738522,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 3.2512128352871947,
+            "max_decel_250ms": 0.0722770876797473,
+            "jerk_p95_250ms": 0.9395265575909215,
+            "min_signed_speed": -4.3964047018369905e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 4.33004496984708e-09
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_stop_p27_l9_s102_C/trace.jsonl",
+        "bytes": 647432,
+        "sha256": "856da6c71795f85d641c5c762ff2706a7132463c7ac4f1ce8775a610ef441d01"
+      }
+    },
+    {
+      "name": "final_straight_s101",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.88103352655417,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 300,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 146872,
+          "end_frame": 147902,
+          "entry_speed": 8.224107724627867e-05,
+          "entry_signed_remaining": -0.6906310812623578,
+          "duration_s": 51.5,
+          "max_displacement_m": 0.0003236576118663177,
+          "max_speed": 8.224107724627867e-05,
+          "dynamics": {
+            "max_decel_raw": 0.001066344969534819,
+            "jerk_peak_raw": 0.04264628150588064,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.021312799069746043,
+            "max_decel_250ms": 0.0002133259582287288,
+            "jerk_p95_250ms": 0.004262785706682522,
+            "min_signed_speed": -7.66866465312355e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 2.2725163285801868e-10
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_straight_s101/trace.jsonl",
+        "bytes": 3201252,
+        "sha256": "abc174ed3b0b343e4a78b471497847b86ada9779d05f754aed7bfa4d50e7347c"
+      }
+    },
+    {
+      "name": "final_straight_s102",
+      "source": "Privileged",
+      "max_actual_speed_mps": 2.8794553066328628,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 298,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [
+        {
+          "start_frame": 160840,
+          "end_frame": 161870,
+          "entry_speed": 5.2360169741426833e-05,
+          "entry_signed_remaining": -0.7462854692902761,
+          "duration_s": 51.5,
+          "max_displacement_m": 0.0003935910578282458,
+          "max_speed": 7.817675035968186e-05,
+          "dynamics": {
+            "max_decel_raw": 0.0010665707914804758,
+            "jerk_peak_raw": 0.04264631062623479,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.02130380621647621,
+            "max_decel_250ms": 0.00021337717604758284,
+            "jerk_p95_250ms": 0.004263140694393763,
+            "min_signed_speed": -7.436129600674287e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 2.3264068900732878e-10
+          }
+        }
+      ],
+      "trace": {
+        "path": "reports/m6b_trials/final_straight_s102/trace.jsonl",
+        "bytes": 3212056,
+        "sha256": "96553c9f65bf9b7b4598f61061660510da399120805a246f6bac8c9fee6747db"
+      }
+    },
+    {
+      "name": "final_timeout_s101",
+      "source": "Privileged",
+      "max_actual_speed_mps": 0.0018164546880986504,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 0,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_timeout_s101/trace.jsonl",
+        "bytes": 386668,
+        "sha256": "4d48a55b5b550361847889f1a3f9b07fac2f913cad4f2fdaba1936eb0240dcb3"
+      }
+    },
+    {
+      "name": "final_timeout_s102",
+      "source": "Privileged",
+      "max_actual_speed_mps": 0.0018119677745536624,
+      "requested_speed_limit_mps": 2.5,
+      "over_speed_limit_ticks": 0,
+      "overspeed_tolerance_for_reporting_mps": 0.05,
+      "hold_intervals": [],
+      "trace": {
+        "path": "reports/m6b_trials/final_timeout_s102/trace.jsonl",
+        "bytes": 386849,
+        "sha256": "e18911c6865aee3066a2a7d5ec07ce71672e1bbf7d837d4090b06abd2bb583dd"
+      }
+    }
+  ],
+  "limitation": "0.05m/s is reporting resolution, not a new acceptance threshold. Planner cruise cap need not be an attainable instantaneous physical speed cap; actual overshoot retained. HOLD drift intervals not reverse parking validation."
+}
