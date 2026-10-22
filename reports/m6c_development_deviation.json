@@ -1,0 +1,15 @@
+{
+  "kind": "implementation_review_before_final_freeze",
+  "source": "Privileged",
+  "excluded_ablation_names": [
+    "dev_blocked_p126_D",
+    "dev_blocked_p170_D"
+  ],
+  "reason": "Initial development wrapper also commanded .01 low-speed brake; this mixes a new execution primitive into D. Keep results but exclude from D-only evidence. Remove that action before valid D reruns; unchanged feedforward/gears and original brake=1 emergency retained.",
+  "corrected_source": {
+    "path": "simulator/m6c_motion.py",
+    "bytes": 2723,
+    "sha256": "8b0353e46a64b88773edcbe2809908feeb4fda71c50dfc3a427183c9ad07ded2"
+  },
+  "E": "NotRun_pending_valid_D_evidence_and_comfort_feasibility"
+}

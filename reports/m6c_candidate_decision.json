@@ -1,0 +1,12 @@
+{
+ "kind":"decision_after_dev_only_control_trials_before_final_evaluation",
+ "source":"Privileged",
+ "D":"Freeze_distance_only_wrapper",
+ "valid_development_trials":["dev_D_distance_only_p126","dev_D_distance_only_p170"],
+ "gap_m":[3.5458467030328524,3.2599111349708174],
+ "both_required_InsufficientStoppingMargin":true,
+ "E":"NotRun",
+ "reason":"D improves gap through original emergency stop, not demonstrated comfortable normal execution. Tiny-brake and startup probes still violate original raw comfort. No evidence-backed E policy established within fixed scope; do not start additional actuator search or gear modification.",
+ "ablation_label_mapping":{"A":"M6A frozen goal margin/control (selected regression only)","B":"M6B goal-only historical reference; no new actuator changes","C":"M6B LowSpeedController frozen","D":"C plus stopping decisions and existing emergency fallback","E":"conditional execution strategy NotRun"},
+ "D_estimate_action_semantics":"brake_001 estimate is available physical capability/hypothetical action, not a statement D applies .01 brake. D keeps original actuation; actual imminent margin loss triggers original full emergency. Normal ability is evaluated separately and cannot pass if emergency required."
+}
