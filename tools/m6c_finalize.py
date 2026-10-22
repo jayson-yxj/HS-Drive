@@ -44,7 +44,7 @@ def main():
         removed=dict(runs=len(removed),restarted=sum(v['removed']['restarted'] for v in removed),goal_passed=sum(v['goal_passed'] for v in removed)),
         navigation={arm:dict(runs=sum(v['config']['arm']==arm for v in safety['navigation']),goal_passed=sum(v['config']['arm']==arm and v['goal_passed'] for v in safety['navigation']),strict_original_plus_goal_passed=sum(v['config']['arm']==arm and v['normal_navigation_passed'] for v in safety['navigation'])) for arm in ['C','D']},
         lead=[dict(name=v['name'],**v['lead']) for v in safety['lead']],
-        fault_results=[dict(name=v['name'],**v['fault'],collisions=len(v['collisions']),expired_normal=v['runtime']['expired_normal_control']) for v in safety['faults']],
+        fault_results=[dict(name=v['name'],**v['fault'],collisions=len(v['collisions']),expired_normal=v['runtime']['expired_normal_control'],valid_moving_injection=v['fault']['at_speed']>.2,body_boundary_ticks=v['boundary_ticks']) for v in safety['faults']],
         safety=dict(collisions=safety['collisions'],illegal_solid_events=safety['illegal_solid_events'],expired_normal=safety['expired_normal_control'],
             body_outside_frames=sum(v['footprint_outside_frames'] for v in body['trials']),
             motion_support=load('reports/m6c_motion_support_audit.json') if Path('reports/m6c_motion_support_audit.json').exists() else {'status':'NotRun'},body_intersections=sum(len(v['OBB_intersections']) for v in body['trials']),
