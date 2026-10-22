@@ -46,6 +46,7 @@ def inspect(path):
         estimate=first['geometry']['predicted_braking_m']
         initial_available=first['geometry']['available_clearance_to_safe_stop']
         trace['obstacle']=dict(initial_stopping_feasible=estimate is not None and initial_available>=estimate,
+            initial_feasibility_reason=None if estimate is not None and initial_available>=estimate else 'InsufficientStoppingMargin',
             initial_feasibility_limit='Measured .01 brake capability with conservative delay/grade, not proof this controller normally executes that action',
             final_stop_requires_safety=any(q['reason'] and q['measurement']['speed']>.2 for q in rows),
             discovery=event(first),first_normal_deceleration=event(next((q for q in obs if q['measurement']['speed']>.2 and not q['reason'] and (q['command']['brake']>0 or q['command']['mode']=='SETTLE')),None)),
@@ -54,6 +55,7 @@ def inspect(path):
             final_relevant_OBB_gap_m=obs[-1]['geometry']['obstacle_obb_clearance_m'],
             final_3m_passed=obs[-1]['geometry']['obstacle_obb_clearance_m']>=3.,
             any_InsufficientStoppingMargin=any(q['reason']=='InsufficientStoppingMargin' for q in rows),
+            insufficient_capability_ticks=sum(q['command'].get('envelope_decision',{}).get('stopping_feasible') is False and q['measurement']['speed']>.02 for q in obs),
             stopped=bool(stopped),normal_only=not any(q['reason'] and q['measurement']['speed']>.2 for q in rows))
     trace['true_distance_hold_audit']=[dict(frame=q['frame'],actual_remaining=q['geometry']['available_clearance_to_safe_stop'],speed=q['measurement']['speed'],source='Privileged') for q in rows if q['command'].get('transition_reason')=='near_goal_and_measured_settled']
     trace['backward_motion']=dict(ticks=int((v<-.05).sum()),minimum_signed_speed=float(v.min()),
@@ -110,13 +112,24 @@ def figures(allrows):
     out=Path('reports/m6c_figures');out.mkdir(exist_ok=True)
     fig,ax=plt.subplots(3,1,figsize=(12,9),sharex=True)
     for d,r in allrows:
-        if not d['name'].startswith('final_blocked_p126_v2.5_s101_'):continue
+        if not d['name'].startswith('final_blocked_p126_v2.5_s101_') or not d['valid_D_contract']:continue
         t=np.array([q['sim_time'] for q in r]);t-=t[0];label=d['config']['arm']
         ax[0].plot(t,[q['measurement']['speed'] for q in r],label=label)
         ax[1].plot(t,[q['geometry']['obstacle_obb_clearance_m'] for q in r],label=label)
         ax[2].plot(t,[q['command']['throttle']-q['command']['brake'] for q in r],label=label)
     for a,title in zip(ax,['Actual speed m/s','Actual relevant OBB gap m','Throttle - Brake']):a.set_ylabel(title);a.grid(alpha=.3);a.legend()
     ax[1].axhline(3,color='red',ls='--');ax[-1].set_xlabel('simulation seconds');fig.tight_layout();fig.savefig(out/'m6c_no_bypass_gap.png',dpi=140);plt.close(fig)
+    fig,axes=plt.subplots(4,1,figsize=(12,10),sharex=True)
+    for d,r in allrows:
+        if d['name'] not in ['final_stop_p27_l9_s101_C','final_stop_p27_l9_s101_D2']:continue
+        t=np.array([q['sim_time'] for q in r]);t-=t[0];label=d['config']['arm']
+        axes[0].plot(t,[q['measurement']['long_speed'] for q in r],label=label)
+        axes[1].plot(t,[q['geometry']['route_remaining_s'] for q in r],label=label)
+        axes[2].plot(t,[q['command']['throttle']-q['command']['brake'] for q in r],label=label)
+        modes={'EMERGENCY':0,'APPROACH':1,'CREEP':2,'SETTLE':3,'HOLD':4}
+        axes[3].step(t,[modes[q['command']['mode']] for q in r],where='post',label=label)
+    for ax,title in zip(axes,['Signed speed (negative=rollback)','True route remaining m','Throttle - Brake','Controller state']):ax.set_ylabel(title);ax.grid(alpha=.3);ax.legend()
+    axes[0].axhline(0,color='k',ls='--');axes[3].set_yticks(range(5),['EMERGENCY','APPROACH','CREEP','SETTLE','HOLD']);axes[-1].set_xlabel('simulation s');fig.tight_layout();fig.savefig(out/'m6c_goal_rollback.png',dpi=140);plt.close(fig)
     report=load('reports/m6c_coast_brake_envelope.json');fig,axes=plt.subplots(1,2,figsize=(12,5))
     for ax,action in zip(axes,['coast','brake_001']):
         subset=[r for r in report['trials'] if r['split']=='validation' and r['action']==action]
