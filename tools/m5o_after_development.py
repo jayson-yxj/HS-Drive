@@ -16,9 +16,11 @@ def main():
     # Only one owner of simulator tick. Development campaign must have completed.
     run('tools.m5o_sealed_run',[],'sealed_run.log','.venv-gpu/bin/python')
     for split in ['train','val','calibration']:
-        run('tools.m5o_candidate_audit',['--split',split],f'candidate_{split}.log','.venv-gpu/bin/python')
+        if not Path(f'reports/m5o_candidate_quality_{split}.json').exists():
+            run('tools.m5o_candidate_audit',['--split',split],f'candidate_{split}.log','.venv-gpu/bin/python')
     for split in ['train','val','calibration','sealed']:
-        run('tools.m5o_all_candidate_burden',['--split',split],f'burden_{split}.log','.venv-gpu/bin/python')
+        if not Path(f'reports/m5o_all_candidate_burden_{split}.json').exists():
+            run('tools.m5o_all_candidate_burden',['--split',split],f'burden_{split}.log','.venv-gpu/bin/python')
         run('tools.m5o_dataset_checks',['--split',split],f'capture_checks_{split}.log','.venv-gpu/bin/python')
     run('tools.m5o_sampling_audit',[],'sampling_diversity.log','.venv-gpu/bin/python')
     print('Experiments completed; final interpretation and historical integrity audit remain',flush=True)
