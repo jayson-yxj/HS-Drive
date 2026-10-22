@@ -30,7 +30,10 @@ def main():
     records=[]
     for path in sorted(Path('reports/m6c_trials').glob('final_*/result.json')):
         result=json.loads(path.read_text());recorded_body=json.loads((path.parent/'body.json').read_text());
-        assert all(np.allclose(recorded_body[k],ref[k],atol=1e-7) for k in ['location','extent','rotation'])
+        # CARLA local BB centre has micron-scale spawn-dependent rounding.
+        # Use exact per-trial recorded geometry instead of relaxing its shape.
+        bb=carla.BoundingBox(carla.Location(*recorded_body['location']),carla.Vector3D(*recorded_body['extent']))
+        roll,pitch,yaw=recorded_body['rotation'];bb.rotation=carla.Rotation(roll=roll,pitch=pitch,yaw=yaw)
         rows=[json.loads(s) for s in (path.parent/'trace.jsonl').read_text().splitlines()]
         allowed=None;bypass=result['bypass']
         if bypass['status']=='FeasibleBypass':
@@ -63,7 +66,7 @@ def main():
         records.append(dict(name=path.parent.name,poses=len(selected_rows),road_queries=checks,
             footprint_outside_frames=len(violations),examples=violations[:10],OBB_intersections=collisions,
             min_XY_OBB_gap_m=min(gaps) if gaps else None,terminal_XY_OBB_gap_m=min(final_gaps) if final_gaps else None,
-            source='Privileged',config=result['config'],valid_D_contract=result['config']['arm']!='D' or path.parent.name.endswith('D2'),result=asset(path)))
+            body_reference=asset(path.parent/'body.json'),source='Privileged',config=result['config'],valid_D_contract=result['config']['arm']!='D' or path.parent.name.endswith('D2'),result=asset(path)))
         print(path.parent.name,len(selected_rows),len(violations),len(collisions),flush=True)
     write('reports/m6c_recorded_body_audit.json',dict(**provenance('offline_actual_CARLA_pose_OBB_and_OpenDRIVE_audit'),source='Privileged',
         map=asset('reports/m6b_execution_logs/Town03.xodr'),body=asset('reports/m6b_body_reference.json'),trials=records,

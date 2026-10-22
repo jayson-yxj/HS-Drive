@@ -53,6 +53,7 @@ def main():
         runtime=dict(status='Partial_strict_20Hz_NotPassed',all_max_ms=runtime['all_trial_max']['runtime']['control_interval_ms']['max'],worst_name=runtime['all_trial_max']['name'],formal_valid_worst_ms=runtime['formal_valid_worst']['runtime']['control_interval_ms']['max'],formal_valid_worst_name=runtime['formal_valid_worst']['name'],
             all_deadline_miss=runtime['all_deadline_miss'],all_over100=runtime['all_over100'],internal_UE_root_cause='Unknown_not_proven_by_client_and_proc_samples',resource_report=asset('reports/m6c_runtime_resources.json')),
         comfort='Failed_raw_gates_startup_and_physical_braking',
+        gate_matrix=dict(interfaces='Passed_limited_synthetic_and_schema',dynamics_identification='Completed_limited_support',empirical_bound='Partial',normal_safe_stopping='Failed',comfort='Failed',strict_runtime='Partial_NotPassed',visual_safety='NotValidated'),
         default_replacement=False,reverse_parking='NoGo',E_policy_search='NotRun',PETR='Paused_NotRun',visual_safety='Unchanged_NotValidated',
         tests=tests,preservation=load('reports/m6c_preservation.json'))
     write('reports/m6c_acceptance.json',result)
