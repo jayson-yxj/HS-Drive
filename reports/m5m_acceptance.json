@@ -1,0 +1,41 @@
+{
+  "stage": "M5-M",
+  "overall": "Partial",
+  "engineering_interface": "Passed",
+  "contact_gold_reference": "NoGo",
+  "contact_head_training": "NotRun_GoldGateFailed",
+  "selective_geometry_quality": "NoGo",
+  "vehicle_residual_training": "NoGo",
+  "object_query_pilot": "NoGo_for_position_queries",
+  "shadow_process_isolation": "Passed_static_architecture",
+  "shadow_resource_isolation": "Partial",
+  "strict_20hz": "NotPassed",
+  "formal_occupancy": "Open",
+  "pure_visual_driving_safety": "NotValidated",
+  "visual_control": false,
+  "main_merged": false,
+  "shadow_stop": false,
+  "rationale": {
+    "contact": "Gold references absent; RGB selective tail gate cannot pass minimum coverage in both seeds",
+    "vehicle": "Reliable background largely protected; all-far-surface degradation remains in unassociated foreground, including per-position failure. NoGo under unchanged gates.",
+    "query": "Contract is usable for noncontrol diagnostics but reliable locations/confidence not demonstrated; defer target-position Query Pilot",
+    "shadow": "Independent worker/latest packet/expiry tested; shared-GPU runtime costs remain, static trial not driving certification"
+  },
+  "tests": {
+    "full": "304 passed, 5 skipped",
+    "carla_sdk": "14 passed",
+    "full_log": {
+      "path": "runs/m5m_logs/full_tests_delivery.log",
+      "sha256": "2205c5a9764c85aa79ae639388662021b2c0946713e08668ec754990416d9ff2",
+      "bytes": 432
+    },
+    "sdk_log": {
+      "path": "runs/m5m_logs/sdk_tests.log",
+      "sha256": "1b408af23d8a1058ecb06ee0bf8b40df1a274791ccaf9cc10dd6e74fb4fb8d0d",
+      "bytes": 99
+    }
+  },
+  "sealed_data_quality": "Partial_2of36_pair_mismatch_excluded",
+  "sealed_eligible_frames": 34,
+  "sealed_positions": 4
+}

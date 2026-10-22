@@ -1,0 +1,91 @@
+{
+  "stage": "M5-M",
+  "base": "f2f4e1a793559b1b6a01ec4f953ff842a3113a7d",
+  "seeds": [
+    101,
+    102
+  ],
+  "historical_tests": "Both M5K and M5L tests regression only",
+  "contact": {
+    "gold": "Multiple road collision probes agree with rendered local road (<=.10m), stable body pose, independently identifiable visible wheel/foot contact support, no occlusion/truncation/floating/penetration ambiguity. AABB/lowest rendered pixel alone never Gold.",
+    "head_gate": {
+      "each_train_val": true,
+      "positive_gold": 50,
+      "negative_reliably_unlocalizable": 50,
+      "independent_positions": 4,
+      "per_class_minimum": 20
+    },
+    "candidate": "Visible surface and local road plane but contact anatomy or collision/render agreement incomplete",
+    "unknown": "No stable road support or inconsistent/occluded contact; not absent/free"
+  },
+  "selective": {
+    "thresholds": [
+      0,
+      0.2,
+      0.4,
+      0.6,
+      0.8
+    ],
+    "min_all_visible_coverage": 0.3,
+    "min_matched": 20,
+    "min_positions": 3,
+    "max_p95_m": 5.0,
+    "max_severe5m_rate": 0.05,
+    "selection": "Val only: highest coverage satisfying all gates in BOTH seeds; no admissible point => no promotion, retain threshold0 diagnostic",
+    "confidence": "Uncalibrated RGB shape and geometric sensitivity score; no Gold => no VerifiedPosition",
+    "output": "Unknown preserves candidate and optional conditional xy; ConditionalPosition experimental assumption only; Verified disabled"
+  },
+  "residual": {
+    "rgb_gate_thresholds": [
+      0.5,
+      0.9,
+      0.95
+    ],
+    "near_mae_ratio": 1.05,
+    "near_actor_space_drop": 0.0,
+    "far_bias_increase": 0.5,
+    "vehicle_space_gain": 0.01,
+    "bev_precision_gain": 0.01,
+    "bev_recall1_gain": 0.05,
+    "fpr_increase": 0.001,
+    "selection": "Val only simultaneous two-seed gates plus per-position near/bias; no admissible gate => stop residual training",
+    "oracle": "GT vehicle mask diagnostic only, never inference"
+  },
+  "plane": {
+    "rgb": "Learned original depth fit below RGB component excluding q>=.1; no road GT. Candidate only; unstable fit rejected",
+    "fit_min_points": 12,
+    "fit_max_rmse_m": 0.1,
+    "max_slope_deg": 15
+  },
+  "shadow": {
+    "hz": 2,
+    "ticks": 160,
+    "warmup": 20,
+    "repeats": 2,
+    "max_age_s": 0.25,
+    "order": [
+      [
+        "alone",
+        "loaded_idle",
+        "shadow",
+        "recovery"
+      ],
+      [
+        "alone",
+        "shadow",
+        "loaded_idle",
+        "recovery"
+      ]
+    ],
+    "stop": "tick P95 > max(1.5 baseline, baseline+20ms) or any tick >1000ms; stop worker and restore alone",
+    "safety_horizon_s": 6,
+    "control": false
+  },
+  "sealed": {
+    "positions": 4,
+    "min_prior_m": 45,
+    "after_freeze": true,
+    "configurations": "empty, small/large vehicle, person, cone, occlusion, shifted orientation",
+    "purpose": "Independent conditional geometry regression; Gold only by same predeclared evidence. No tuning."
+  }
+}
