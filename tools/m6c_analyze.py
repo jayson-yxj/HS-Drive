@@ -25,6 +25,8 @@ def inspect(path):
         worker_execution_ms=quantiles([(q['output_wall']-q['start_wall'])*1000 for q in plans]),
         worker_queue_wait_ms=quantiles([q['queue_wait_s']*1000 for q in plans if 'queue_wait_s' in q]),
         plan_input_origin_preserved=all(q.get('planned_horizon_s',6)==6 for q in plans),
+        planner_reasons={reason:sum(q.get('reason')==reason for q in plans) for reason in sorted({q['reason'] for q in plans if q.get('reason')})},
+        planner_failure_rate=sum(q.get('reason') is not None for q in plans)/len(plans) if plans else None,
         stages_ms={name:quantiles([(q['timeline'][end]-q['timeline'][start])*1000 for q in rows]) for name,start,end in [
             ('snapshot','wake_up','snapshot_end'),('submit_poll','snapshot_end','submit_poll_end'),('safety','submit_poll_end','safety_end'),
             ('geometry_controller','safety_end','controller_end'),('apply','apply_control','apply_end'),('tick','tick_start','tick_end')]},
