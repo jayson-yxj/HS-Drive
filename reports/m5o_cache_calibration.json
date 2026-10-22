@@ -1,0 +1,1964 @@
+{
+  "kind": "actual_RTX4090_frozen_RGB_features_and_separate_supervision",
+  "oracle_candidates_diagnostic_only": false,
+  "provenance": {
+    "base": "2afe740be0cf8e0df8dff52a7ed2b03a6f001dc5",
+    "git_head": "2cf8e78deadf49ffcf47df5903017798843494f2",
+    "sources": {
+      "configs/m5o_capture_dev.json": "00f0e376fbe4d8b7ca7dcc08d69121a99a31f0b605a265868f89387fec7f9fc1",
+      "configs/m5o_capture_dev_v2.json": "421842bec0f2ec33e8b047b684e177aa1c8ffa90c1c96cf2ea073fea85c6a5a5",
+      "configs/m5o_capture_dev_v3.json": "38ee22d5cdb27b9a227aa2ee6cb9db56af43346462fa2681101d82b30b316d5a",
+      "configs/m5o_protocol.json": "30a943874951f7e10e502bcf7710d1079afa40061ea636e5ad875409347d6de1",
+      "datasets/m5o_benchmark.py": "670c5b69922f5ae3ab86e0528db57ec46eaa6584c35084bccb72cf2ab97cd104",
+      "datasets/m5o_interfaces.py": "29adfe06b7415568f41132aa3e3cb7e9a33e248a1b3f27f5b3e2283ecbb5258c",
+      "diagnostics/m5o_risk.py": "5f3accc548ef668bae79c7d5842f4242071733b7eda19928de262dac2637907a",
+      "tests/test_m5o_benchmark.py": "03d6839fc1032fc1ac51f5439c2f51db721b1ad0f9a329506f060b17278aad85",
+      "tools/m5o_after_development.py": "5b7a49651603d88ae564d0cae78dca902e005aa48d68571b6db6f2d01baf5b00",
+      "tools/m5o_all_candidate_burden.py": "b92daf4a06724153aebfc7fa2985d826d2749af2316ce16abe9777b9e8840ff8",
+      "tools/m5o_allocate.py": "7fd3a97f4e8ab96d3ec096e535f49c4d60a368efa80b9ef68902d05b30afdd24",
+      "tools/m5o_cache.py": "e3e392d2ad6e75166c8d0aa40aed65e031a36b03a49d94ec86fbf68e7ab4d533",
+      "tools/m5o_campaign.py": "b97f4c6f709cf1a6ee54a43a07182345ab7d54201c105e2e4f317236256961ac",
+      "tools/m5o_candidate_audit.py": "e21a99c0862ab99b4320254b348f61c4f84ce2a5f0038949a6f9ba2b01ad1cb0",
+      "tools/m5o_capture.py": "500ede8e1feb4418a1e8abbc29695821154be56ab2bccc0ea9cbc79f9130c60c",
+      "tools/m5o_common.py": "b1a91e75c54006e1b521f49ab980fdefee20c51b9fa94376e15ebb41cbaaed16",
+      "tools/m5o_completed_group_audit.py": "7db911edcb22cedd49c74356ef9b987686163f5e6f68995fea97329a8db28ec5",
+      "tools/m5o_dataset_checks.py": "869de7ec261fb0b8167fe57ee5140f243476d1624554d687b7fd22ada2138da5",
+      "tools/m5o_evaluate.py": "140e94226b76bd2f9aee2cfbe4aa43f0c2675023021ad6c48f39ae27926eba2c",
+      "tools/m5o_extend_allocation.py": "a54c95d7838339337261496ef2ac5244071347a1ab24102e8b24e9a88e0d648f",
+      "tools/m5o_figures.py": "10e4f3235813ca04358f1f3e611b38e6037b02a58cb773da31015bd528a163ca",
+      "tools/m5o_finalize.py": "8283a9ed739c04764b092ad197d0cf229d0fcd1f3f937913e155e33f26eca02a",
+      "tools/m5o_freeze.py": "76eeb76921c55f398a4d39da3c283da1a7aa1fc590bc82bbac1d7249424a6423",
+      "tools/m5o_frozen_diagnostic.py": "8387816a7ac480ce50e68ce10084fc5bb985b008fc762f8d45ba7102c52c0e89",
+      "tools/m5o_geometry_stream.py": "5e116907b83b57d0985974fc13218f27979d129392066565d3e39d59c315c3c7",
+      "tools/m5o_historical_now.py": "0b29bca7f08125430bfd2cef01b1be07084104e162dd97961d622622f83e8c89",
+      "tools/m5o_index.py": "db45457a4e20556a110895baf868c9d14c9eac1c2a51d72cadb2dc134ff656ee",
+      "tools/m5o_leakage_audit.py": "27d6d540006adef76e5aa08fcbd54f13be259670725fb6f7f6dca2bb7cb11450",
+      "tools/m5o_model_inference_check.py": "7b58fc14f70c8004471b0333aeb4d0df91781d971c42da1de87e99d2edd5539a",
+      "tools/m5o_paired_analysis.py": "71cd05fc97866995052c062b77728f3851af300a54a294474979d9b45bcfa950",
+      "tools/m5o_process_dev.py": "9b5d7214282762acc5b494c8070ecf3d400552d9a5b143dde9ad15f0bdfaec89",
+      "tools/m5o_regression_report.py": "1cc5f6c3e7183a878c0b3d95721e7905b67485ded6771ff32309e80220a28911",
+      "tools/m5o_report.py": "af8b40f46a1aaf0b2187696ac16d409644eedca79b3a89be77d13d1a058c61d5",
+      "tools/m5o_road_layouts.py": "3c4372534b2f57eeaaa290d83a27a0a4dafd157f9d7e8050dd9493af418e550b",
+      "tools/m5o_sampling_audit.py": "2da90ff80364ba576d67afd4416b99d032bb79a217a4b54e243e8bf07a70489b",
+      "tools/m5o_sealed_run.py": "31a914bdceaece8753bb239f2d2e804152a84dfa2995ae8010f38795262b96b2",
+      "tools/m5o_smoke_v3.py": "5fd345452c1285d32def77976cb17d57e3714a30630f9d622fd77e9e89b21041",
+      "tools/m5o_snapshot_progress.py": "3db01b9d479c87080ea690ff6ffe0bf61aa92f9199af977288cb13e3aa48ba2d",
+      "tools/m5o_split_geometry.py": "6add51ab60c61711866a9bec36a03677dbe15b444b08a6253f14e3bf68c7165b",
+      "tools/m5o_status.py": "083a182d7558c0d65c7ef30c57dcbdb28eca187c9015bb37fc0959f1c0650ed5",
+      "tools/m5o_stream_index.py": "372662c779258044d84f023b8203f7d9ea363963e0f586a014d1445c17471894",
+      "tools/m5o_summary.py": "b4998ac706dbf93a803ffc85850b06e0ad4acfddf4aab3610b84fc534ce15629",
+      "tools/m5o_support.py": "cb8bb0735e9b180548446c89b1323c7675d423edebe320c2411a051fb1d00e27",
+      "tools/m5o_train.py": "2c07336b38496e51c24af00a49c7fa0d1fac2f32ee0283d8edfe213e89ed345d",
+      "tools/m5o_unit_benchmark_probe.py": "69821783160758ffe397a51b6c1a2e1153cde825476e8c4f47aa0b3bcb47c825"
+    }
+  },
+  "frames": 188,
+  "groups": 6,
+  "candidates": 2619,
+  "visible_actor_views": 295,
+  "train_eligible": {
+    "101": 200,
+    "102": 206
+  },
+  "features": {
+    "path": "runs/m5o_cache_calibration/features.pt",
+    "sha256": "25d88156ca96ed17a0bc0cee94dacbdfb429278129e36e81ee7528290c12a644",
+    "bytes": 6287216
+  },
+  "inference_candidates": {
+    "path": "runs/m5o_cache_calibration/candidates.json",
+    "sha256": "b2fcbaa7f753fe8d4f8624ed9f1e5a36cc1b37a4e1d3ba2e347ba24fa68b1d18",
+    "bytes": 3978359
+  },
+  "supervision": {
+    "path": "runs/m5o_cache_calibration/supervision.json",
+    "sha256": "dd181372021b356e03bdf7bfec456a5d36fc770bedd7d9134b3fc2361790e21d",
+    "bytes": 6361030
+  },
+  "elapsed_s": 68.68593852035701,
+  "peak_mib": 237.02880859375,
+  "timings": [
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138173",
+      "seed": 101,
+      "mobile_ms": 204.92472499608994
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138173",
+      "seed": 102,
+      "mobile_ms": 25.934001430869102
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138207",
+      "seed": 101,
+      "mobile_ms": 20.66188119351864
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138207",
+      "seed": 102,
+      "mobile_ms": 19.20025423169136
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138241",
+      "seed": 101,
+      "mobile_ms": 14.025995507836342
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138241",
+      "seed": 102,
+      "mobile_ms": 16.061900183558464
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138275",
+      "seed": 101,
+      "mobile_ms": 14.029840007424355
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138275",
+      "seed": 102,
+      "mobile_ms": 18.928319215774536
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138309",
+      "seed": 101,
+      "mobile_ms": 14.314724132418633
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138309",
+      "seed": 102,
+      "mobile_ms": 19.281309098005295
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138343",
+      "seed": 101,
+      "mobile_ms": 14.751773327589035
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138343",
+      "seed": 102,
+      "mobile_ms": 14.499066397547722
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138377",
+      "seed": 101,
+      "mobile_ms": 14.98211920261383
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138377",
+      "seed": 102,
+      "mobile_ms": 13.751467689871788
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138411",
+      "seed": 101,
+      "mobile_ms": 16.720764338970184
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138411",
+      "seed": 102,
+      "mobile_ms": 14.963192865252495
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138445",
+      "seed": 101,
+      "mobile_ms": 16.54786616563797
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138445",
+      "seed": 102,
+      "mobile_ms": 19.564291462302208
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138479",
+      "seed": 101,
+      "mobile_ms": 14.824027195572853
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138479",
+      "seed": 102,
+      "mobile_ms": 15.086177736520767
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138513",
+      "seed": 101,
+      "mobile_ms": 13.506056740880013
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138513",
+      "seed": 102,
+      "mobile_ms": 18.74631829559803
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138547",
+      "seed": 101,
+      "mobile_ms": 13.78144696354866
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138547",
+      "seed": 102,
+      "mobile_ms": 19.92235891520977
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138581",
+      "seed": 101,
+      "mobile_ms": 15.096144750714302
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138581",
+      "seed": 102,
+      "mobile_ms": 14.839459210634232
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138615",
+      "seed": 101,
+      "mobile_ms": 17.090314999222755
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138615",
+      "seed": 102,
+      "mobile_ms": 17.215419560670853
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138649",
+      "seed": 101,
+      "mobile_ms": 14.873979613184929
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138649",
+      "seed": 102,
+      "mobile_ms": 14.62259329855442
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138683",
+      "seed": 101,
+      "mobile_ms": 13.901861384510994
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138683",
+      "seed": 102,
+      "mobile_ms": 14.95925523340702
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138717",
+      "seed": 101,
+      "mobile_ms": 15.24341106414795
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138717",
+      "seed": 102,
+      "mobile_ms": 14.620361849665642
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138751",
+      "seed": 101,
+      "mobile_ms": 15.439718961715698
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138751",
+      "seed": 102,
+      "mobile_ms": 14.648385345935822
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138785",
+      "seed": 101,
+      "mobile_ms": 14.380676671862602
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138785",
+      "seed": 102,
+      "mobile_ms": 14.865605160593987
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138819",
+      "seed": 101,
+      "mobile_ms": 16.466664150357246
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138819",
+      "seed": 102,
+      "mobile_ms": 14.293989166617393
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138853",
+      "seed": 101,
+      "mobile_ms": 14.75721038877964
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138853",
+      "seed": 102,
+      "mobile_ms": 17.949819564819336
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138887",
+      "seed": 101,
+      "mobile_ms": 18.57621781527996
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138887",
+      "seed": 102,
+      "mobile_ms": 16.91117323935032
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138921",
+      "seed": 101,
+      "mobile_ms": 17.8583562374115
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138921",
+      "seed": 102,
+      "mobile_ms": 15.318132936954498
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138955",
+      "seed": 101,
+      "mobile_ms": 15.053508803248405
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138955",
+      "seed": 102,
+      "mobile_ms": 14.801299199461937
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138989",
+      "seed": 101,
+      "mobile_ms": 18.409688025712967
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00138989",
+      "seed": 102,
+      "mobile_ms": 15.247298404574394
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00139023",
+      "seed": 101,
+      "mobile_ms": 15.168963000178337
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00139023",
+      "seed": 102,
+      "mobile_ms": 14.775749295949936
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00139057",
+      "seed": 101,
+      "mobile_ms": 15.82089252769947
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00139057",
+      "seed": 102,
+      "mobile_ms": 15.236437320709229
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00139091",
+      "seed": 101,
+      "mobile_ms": 12.712791562080383
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00139091",
+      "seed": 102,
+      "mobile_ms": 12.972163036465645
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00139125",
+      "seed": 101,
+      "mobile_ms": 18.325593322515488
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00139125",
+      "seed": 102,
+      "mobile_ms": 15.014654025435448
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00139159",
+      "seed": 101,
+      "mobile_ms": 19.380079582333565
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00139159",
+      "seed": 102,
+      "mobile_ms": 21.518712863326073
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00139193",
+      "seed": 101,
+      "mobile_ms": 15.65157063305378
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00139193",
+      "seed": 102,
+      "mobile_ms": 15.09011909365654
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00139227",
+      "seed": 101,
+      "mobile_ms": 15.782387927174568
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00139227",
+      "seed": 102,
+      "mobile_ms": 14.748362824320793
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00139261",
+      "seed": 101,
+      "mobile_ms": 18.70022341609001
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00139261",
+      "seed": 102,
+      "mobile_ms": 17.478764057159424
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00139295",
+      "seed": 101,
+      "mobile_ms": 15.33699594438076
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00139295",
+      "seed": 102,
+      "mobile_ms": 15.087420120835304
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00139329",
+      "seed": 101,
+      "mobile_ms": 22.273996844887733
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_00/00139329",
+      "seed": 102,
+      "mobile_ms": 14.936357736587524
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00139683",
+      "seed": 101,
+      "mobile_ms": 21.7270590364933
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00139683",
+      "seed": 102,
+      "mobile_ms": 13.872137293219566
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00139717",
+      "seed": 101,
+      "mobile_ms": 15.398867428302765
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00139717",
+      "seed": 102,
+      "mobile_ms": 14.151008799672127
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00139751",
+      "seed": 101,
+      "mobile_ms": 15.198083594441414
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00139751",
+      "seed": 102,
+      "mobile_ms": 15.741873532533646
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00139785",
+      "seed": 101,
+      "mobile_ms": 13.487879186868668
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00139785",
+      "seed": 102,
+      "mobile_ms": 14.974545687437057
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00139819",
+      "seed": 101,
+      "mobile_ms": 14.018965885043144
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00139819",
+      "seed": 102,
+      "mobile_ms": 14.454925432801247
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00139853",
+      "seed": 101,
+      "mobile_ms": 19.685667008161545
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00139853",
+      "seed": 102,
+      "mobile_ms": 14.538461342453957
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00139887",
+      "seed": 101,
+      "mobile_ms": 15.065619722008705
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00139887",
+      "seed": 102,
+      "mobile_ms": 16.352733597159386
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00139921",
+      "seed": 101,
+      "mobile_ms": 14.49415273964405
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00139921",
+      "seed": 102,
+      "mobile_ms": 14.328299090266228
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00139955",
+      "seed": 101,
+      "mobile_ms": 18.549710512161255
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00139955",
+      "seed": 102,
+      "mobile_ms": 15.484681352972984
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00139989",
+      "seed": 101,
+      "mobile_ms": 14.252442866563797
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00139989",
+      "seed": 102,
+      "mobile_ms": 14.954054728150368
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140023",
+      "seed": 101,
+      "mobile_ms": 15.800466760993004
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140023",
+      "seed": 102,
+      "mobile_ms": 14.842353761196136
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140057",
+      "seed": 101,
+      "mobile_ms": 13.832461088895798
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140057",
+      "seed": 102,
+      "mobile_ms": 14.94579017162323
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140091",
+      "seed": 101,
+      "mobile_ms": 15.529146417975426
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140091",
+      "seed": 102,
+      "mobile_ms": 16.33714698255062
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140125",
+      "seed": 101,
+      "mobile_ms": 14.215104281902313
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140125",
+      "seed": 102,
+      "mobile_ms": 15.102798119187355
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140159",
+      "seed": 101,
+      "mobile_ms": 14.508640393614769
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140159",
+      "seed": 102,
+      "mobile_ms": 14.69053141772747
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140193",
+      "seed": 101,
+      "mobile_ms": 14.910787343978882
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140193",
+      "seed": 102,
+      "mobile_ms": 14.508968219161034
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140227",
+      "seed": 101,
+      "mobile_ms": 21.732626482844353
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140227",
+      "seed": 102,
+      "mobile_ms": 14.83425498008728
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140261",
+      "seed": 101,
+      "mobile_ms": 13.555856421589851
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140261",
+      "seed": 102,
+      "mobile_ms": 14.70755971968174
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140295",
+      "seed": 101,
+      "mobile_ms": 14.649912714958191
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140295",
+      "seed": 102,
+      "mobile_ms": 13.94275389611721
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140329",
+      "seed": 101,
+      "mobile_ms": 17.88695715367794
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140329",
+      "seed": 102,
+      "mobile_ms": 14.31376114487648
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140363",
+      "seed": 101,
+      "mobile_ms": 14.76922444999218
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140363",
+      "seed": 102,
+      "mobile_ms": 17.01672002673149
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140397",
+      "seed": 101,
+      "mobile_ms": 11.412231251597404
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140397",
+      "seed": 102,
+      "mobile_ms": 15.225712209939957
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140431",
+      "seed": 101,
+      "mobile_ms": 15.771828591823578
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140431",
+      "seed": 102,
+      "mobile_ms": 14.98698815703392
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140465",
+      "seed": 101,
+      "mobile_ms": 14.225352555513382
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140465",
+      "seed": 102,
+      "mobile_ms": 15.420140698552132
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140499",
+      "seed": 101,
+      "mobile_ms": 13.16683366894722
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140499",
+      "seed": 102,
+      "mobile_ms": 13.507580384612083
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140533",
+      "seed": 101,
+      "mobile_ms": 15.573849901556969
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140533",
+      "seed": 102,
+      "mobile_ms": 15.626009553670883
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140567",
+      "seed": 101,
+      "mobile_ms": 15.935270115733147
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140567",
+      "seed": 102,
+      "mobile_ms": 15.45066013932228
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140601",
+      "seed": 101,
+      "mobile_ms": 17.764566466212273
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140601",
+      "seed": 102,
+      "mobile_ms": 16.940884292125702
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140635",
+      "seed": 101,
+      "mobile_ms": 14.997141435742378
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140635",
+      "seed": 102,
+      "mobile_ms": 14.686351642012596
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140669",
+      "seed": 101,
+      "mobile_ms": 15.597628429532051
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140669",
+      "seed": 102,
+      "mobile_ms": 14.714622870087624
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140703",
+      "seed": 101,
+      "mobile_ms": 19.325582310557365
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140703",
+      "seed": 102,
+      "mobile_ms": 14.332391321659088
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140737",
+      "seed": 101,
+      "mobile_ms": 15.315085649490356
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140737",
+      "seed": 102,
+      "mobile_ms": 14.39572125673294
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140771",
+      "seed": 101,
+      "mobile_ms": 16.924696043133736
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140771",
+      "seed": 102,
+      "mobile_ms": 15.440616756677628
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140805",
+      "seed": 101,
+      "mobile_ms": 23.24114367365837
+    },
+    {
+      "sample_id": "Town02_m5o_calibration_01/00140805",
+      "seed": 102,
+      "mobile_ms": 15.275238081812859
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141158",
+      "seed": 101,
+      "mobile_ms": 17.898399382829666
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141158",
+      "seed": 102,
+      "mobile_ms": 14.589844271540642
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141192",
+      "seed": 101,
+      "mobile_ms": 16.74448512494564
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141192",
+      "seed": 102,
+      "mobile_ms": 15.110600739717484
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141226",
+      "seed": 101,
+      "mobile_ms": 15.271665528416634
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141226",
+      "seed": 102,
+      "mobile_ms": 13.600029051303864
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141260",
+      "seed": 101,
+      "mobile_ms": 14.948828145861626
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141260",
+      "seed": 102,
+      "mobile_ms": 17.223605886101723
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141294",
+      "seed": 101,
+      "mobile_ms": 22.727834060788155
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141294",
+      "seed": 102,
+      "mobile_ms": 19.290287047624588
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141328",
+      "seed": 101,
+      "mobile_ms": 16.837486997246742
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141328",
+      "seed": 102,
+      "mobile_ms": 14.801792800426483
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141362",
+      "seed": 101,
+      "mobile_ms": 18.16434971988201
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141362",
+      "seed": 102,
+      "mobile_ms": 14.711955562233925
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141396",
+      "seed": 101,
+      "mobile_ms": 17.72720366716385
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141396",
+      "seed": 102,
+      "mobile_ms": 16.96578785777092
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141430",
+      "seed": 101,
+      "mobile_ms": 15.121504664421082
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141430",
+      "seed": 102,
+      "mobile_ms": 15.604287385940552
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141464",
+      "seed": 101,
+      "mobile_ms": 20.956704393029213
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141464",
+      "seed": 102,
+      "mobile_ms": 13.634944334626198
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141498",
+      "seed": 101,
+      "mobile_ms": 18.9443901181221
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141498",
+      "seed": 102,
+      "mobile_ms": 16.19294099509716
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141532",
+      "seed": 101,
+      "mobile_ms": 14.60038311779499
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141532",
+      "seed": 102,
+      "mobile_ms": 14.64848592877388
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141566",
+      "seed": 101,
+      "mobile_ms": 15.688261017203331
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141566",
+      "seed": 102,
+      "mobile_ms": 14.954427257180214
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141600",
+      "seed": 101,
+      "mobile_ms": 14.62416909635067
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141600",
+      "seed": 102,
+      "mobile_ms": 14.645984396338463
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141634",
+      "seed": 101,
+      "mobile_ms": 18.43145489692688
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141634",
+      "seed": 102,
+      "mobile_ms": 14.744177460670471
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141668",
+      "seed": 101,
+      "mobile_ms": 13.040786609053612
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141668",
+      "seed": 102,
+      "mobile_ms": 14.011196792125702
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141702",
+      "seed": 101,
+      "mobile_ms": 14.402436092495918
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141702",
+      "seed": 102,
+      "mobile_ms": 14.726681634783745
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141736",
+      "seed": 101,
+      "mobile_ms": 17.418676987290382
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141736",
+      "seed": 102,
+      "mobile_ms": 14.005802571773529
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141770",
+      "seed": 101,
+      "mobile_ms": 15.083730220794678
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141770",
+      "seed": 102,
+      "mobile_ms": 19.373474642634392
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141804",
+      "seed": 101,
+      "mobile_ms": 16.860712319612503
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141804",
+      "seed": 102,
+      "mobile_ms": 17.087846994400024
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141838",
+      "seed": 101,
+      "mobile_ms": 16.912924125790596
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141838",
+      "seed": 102,
+      "mobile_ms": 14.617593958973885
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141872",
+      "seed": 101,
+      "mobile_ms": 15.916019678115845
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141872",
+      "seed": 102,
+      "mobile_ms": 14.969870448112488
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141906",
+      "seed": 101,
+      "mobile_ms": 14.645051211118698
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141906",
+      "seed": 102,
+      "mobile_ms": 14.612643048167229
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141940",
+      "seed": 101,
+      "mobile_ms": 15.43375663459301
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141940",
+      "seed": 102,
+      "mobile_ms": 15.055367723107338
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141974",
+      "seed": 101,
+      "mobile_ms": 15.794992446899414
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00141974",
+      "seed": 102,
+      "mobile_ms": 14.757737517356873
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00142008",
+      "seed": 101,
+      "mobile_ms": 14.771433547139168
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00142008",
+      "seed": 102,
+      "mobile_ms": 14.860771596431732
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00142042",
+      "seed": 101,
+      "mobile_ms": 22.979039698839188
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00142042",
+      "seed": 102,
+      "mobile_ms": 15.583900734782219
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00142076",
+      "seed": 101,
+      "mobile_ms": 17.45256967842579
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00142076",
+      "seed": 102,
+      "mobile_ms": 15.413358807563782
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00142110",
+      "seed": 101,
+      "mobile_ms": 16.357913613319397
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00142110",
+      "seed": 102,
+      "mobile_ms": 15.255559235811234
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00142144",
+      "seed": 101,
+      "mobile_ms": 19.05026100575924
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00142144",
+      "seed": 102,
+      "mobile_ms": 14.695672318339348
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00142178",
+      "seed": 101,
+      "mobile_ms": 14.227012172341347
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00142178",
+      "seed": 102,
+      "mobile_ms": 14.803862199187279
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00142212",
+      "seed": 101,
+      "mobile_ms": 15.476418659090996
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00142212",
+      "seed": 102,
+      "mobile_ms": 14.32165876030922
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00142246",
+      "seed": 101,
+      "mobile_ms": 17.10308901965618
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00142246",
+      "seed": 102,
+      "mobile_ms": 14.79024812579155
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00142280",
+      "seed": 101,
+      "mobile_ms": 14.754816889762878
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00142280",
+      "seed": 102,
+      "mobile_ms": 14.557469636201859
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00142314",
+      "seed": 101,
+      "mobile_ms": 16.977854073047638
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00142314",
+      "seed": 102,
+      "mobile_ms": 13.95496167242527
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00142348",
+      "seed": 101,
+      "mobile_ms": 16.526592895388603
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_00/00142348",
+      "seed": 102,
+      "mobile_ms": 14.855947345495224
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00142718",
+      "seed": 101,
+      "mobile_ms": 17.325446009635925
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00142718",
+      "seed": 102,
+      "mobile_ms": 14.76585678756237
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00142752",
+      "seed": 101,
+      "mobile_ms": 17.968228086829185
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00142752",
+      "seed": 102,
+      "mobile_ms": 15.629911795258522
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00142786",
+      "seed": 101,
+      "mobile_ms": 14.659736305475235
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00142786",
+      "seed": 102,
+      "mobile_ms": 15.470549464225769
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00142820",
+      "seed": 101,
+      "mobile_ms": 14.866296201944351
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00142820",
+      "seed": 102,
+      "mobile_ms": 15.210788697004318
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00142854",
+      "seed": 101,
+      "mobile_ms": 18.975771963596344
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00142854",
+      "seed": 102,
+      "mobile_ms": 17.938226461410522
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00142888",
+      "seed": 101,
+      "mobile_ms": 15.103762969374657
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00142888",
+      "seed": 102,
+      "mobile_ms": 14.556040987372398
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00142922",
+      "seed": 101,
+      "mobile_ms": 14.709832146763802
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00142922",
+      "seed": 102,
+      "mobile_ms": 14.788303524255753
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00142956",
+      "seed": 101,
+      "mobile_ms": 18.219521269202232
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00142956",
+      "seed": 102,
+      "mobile_ms": 15.476223081350327
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00142990",
+      "seed": 101,
+      "mobile_ms": 16.626503318548203
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00142990",
+      "seed": 102,
+      "mobile_ms": 15.093628317117691
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143024",
+      "seed": 101,
+      "mobile_ms": 14.744328334927559
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143024",
+      "seed": 102,
+      "mobile_ms": 14.95053619146347
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143058",
+      "seed": 101,
+      "mobile_ms": 14.42086510360241
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143058",
+      "seed": 102,
+      "mobile_ms": 18.29627901315689
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143092",
+      "seed": 101,
+      "mobile_ms": 14.981629326939583
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143092",
+      "seed": 102,
+      "mobile_ms": 14.014091342687607
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143126",
+      "seed": 101,
+      "mobile_ms": 21.32556214928627
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143126",
+      "seed": 102,
+      "mobile_ms": 17.49248057603836
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143160",
+      "seed": 101,
+      "mobile_ms": 14.818426221609116
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143160",
+      "seed": 102,
+      "mobile_ms": 14.452753588557243
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143194",
+      "seed": 101,
+      "mobile_ms": 14.86317254602909
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143194",
+      "seed": 102,
+      "mobile_ms": 14.739109203219414
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143228",
+      "seed": 101,
+      "mobile_ms": 19.278474152088165
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143228",
+      "seed": 102,
+      "mobile_ms": 15.172716230154037
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143262",
+      "seed": 101,
+      "mobile_ms": 14.789775013923645
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143262",
+      "seed": 102,
+      "mobile_ms": 15.341615304350853
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143296",
+      "seed": 101,
+      "mobile_ms": 14.830319210886955
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143296",
+      "seed": 102,
+      "mobile_ms": 16.266772523522377
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143330",
+      "seed": 101,
+      "mobile_ms": 17.45624467730522
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143330",
+      "seed": 102,
+      "mobile_ms": 14.945181086659431
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143364",
+      "seed": 101,
+      "mobile_ms": 15.265194699168205
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143364",
+      "seed": 102,
+      "mobile_ms": 14.674309641122818
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143398",
+      "seed": 101,
+      "mobile_ms": 15.653472393751144
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143398",
+      "seed": 102,
+      "mobile_ms": 15.095485374331474
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143432",
+      "seed": 101,
+      "mobile_ms": 14.698566868901253
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143432",
+      "seed": 102,
+      "mobile_ms": 13.600373640656471
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143466",
+      "seed": 101,
+      "mobile_ms": 14.612842351198196
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143466",
+      "seed": 102,
+      "mobile_ms": 15.385011211037636
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143500",
+      "seed": 101,
+      "mobile_ms": 21.347995847463608
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143500",
+      "seed": 102,
+      "mobile_ms": 13.935817405581474
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143534",
+      "seed": 101,
+      "mobile_ms": 21.0055410861969
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_01/00143534",
+      "seed": 102,
+      "mobile_ms": 14.415156096220016
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00143840",
+      "seed": 101,
+      "mobile_ms": 18.522856757044792
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00143840",
+      "seed": 102,
+      "mobile_ms": 14.884434640407562
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00143874",
+      "seed": 101,
+      "mobile_ms": 20.722752436995506
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00143874",
+      "seed": 102,
+      "mobile_ms": 16.499672085046768
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00143908",
+      "seed": 101,
+      "mobile_ms": 15.359487384557724
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00143908",
+      "seed": 102,
+      "mobile_ms": 15.210172161459923
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00143942",
+      "seed": 101,
+      "mobile_ms": 14.735493808984756
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00143942",
+      "seed": 102,
+      "mobile_ms": 14.7533118724823
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00143976",
+      "seed": 101,
+      "mobile_ms": 18.114496022462845
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00143976",
+      "seed": 102,
+      "mobile_ms": 15.413783490657806
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144010",
+      "seed": 101,
+      "mobile_ms": 14.234041795134544
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144010",
+      "seed": 102,
+      "mobile_ms": 17.567716538906097
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144044",
+      "seed": 101,
+      "mobile_ms": 17.25323498249054
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144044",
+      "seed": 102,
+      "mobile_ms": 15.183191746473312
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144078",
+      "seed": 101,
+      "mobile_ms": 16.86648279428482
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144078",
+      "seed": 102,
+      "mobile_ms": 14.810672029852867
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144112",
+      "seed": 101,
+      "mobile_ms": 14.28191177546978
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144112",
+      "seed": 102,
+      "mobile_ms": 15.029259026050568
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144146",
+      "seed": 101,
+      "mobile_ms": 21.635182201862335
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144146",
+      "seed": 102,
+      "mobile_ms": 16.80036261677742
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144180",
+      "seed": 101,
+      "mobile_ms": 14.636078849434853
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144180",
+      "seed": 102,
+      "mobile_ms": 14.941584318876266
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144214",
+      "seed": 101,
+      "mobile_ms": 15.030331909656525
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144214",
+      "seed": 102,
+      "mobile_ms": 14.53598402440548
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144248",
+      "seed": 101,
+      "mobile_ms": 20.35212703049183
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144248",
+      "seed": 102,
+      "mobile_ms": 15.289247035980225
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144282",
+      "seed": 101,
+      "mobile_ms": 14.214089140295982
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144282",
+      "seed": 102,
+      "mobile_ms": 14.933809638023376
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144316",
+      "seed": 101,
+      "mobile_ms": 14.885958284139633
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144316",
+      "seed": 102,
+      "mobile_ms": 14.976728707551956
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144350",
+      "seed": 101,
+      "mobile_ms": 14.093143865466118
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144350",
+      "seed": 102,
+      "mobile_ms": 14.306535944342613
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144384",
+      "seed": 101,
+      "mobile_ms": 15.113327652215958
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144384",
+      "seed": 102,
+      "mobile_ms": 14.641007408499718
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144418",
+      "seed": 101,
+      "mobile_ms": 14.731239527463913
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144418",
+      "seed": 102,
+      "mobile_ms": 15.077652409672737
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144452",
+      "seed": 101,
+      "mobile_ms": 12.684931978583336
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144452",
+      "seed": 102,
+      "mobile_ms": 14.031214639544487
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144486",
+      "seed": 101,
+      "mobile_ms": 15.117483213543892
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144486",
+      "seed": 102,
+      "mobile_ms": 14.600256457924843
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144520",
+      "seed": 101,
+      "mobile_ms": 19.318850710988045
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144520",
+      "seed": 102,
+      "mobile_ms": 15.888167545199394
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144554",
+      "seed": 101,
+      "mobile_ms": 15.322316437959671
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144554",
+      "seed": 102,
+      "mobile_ms": 14.88102599978447
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144588",
+      "seed": 101,
+      "mobile_ms": 13.92475701868534
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144588",
+      "seed": 102,
+      "mobile_ms": 14.527242630720139
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144622",
+      "seed": 101,
+      "mobile_ms": 17.880629748106003
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144622",
+      "seed": 102,
+      "mobile_ms": 20.275341346859932
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144656",
+      "seed": 101,
+      "mobile_ms": 20.02643048763275
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144656",
+      "seed": 102,
+      "mobile_ms": 14.612145721912384
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144690",
+      "seed": 101,
+      "mobile_ms": 13.902796432375908
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144690",
+      "seed": 102,
+      "mobile_ms": 14.765795320272446
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144724",
+      "seed": 101,
+      "mobile_ms": 18.773293122649193
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144724",
+      "seed": 102,
+      "mobile_ms": 13.759244233369827
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144758",
+      "seed": 101,
+      "mobile_ms": 16.470812261104584
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144758",
+      "seed": 102,
+      "mobile_ms": 15.040960162878036
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144792",
+      "seed": 101,
+      "mobile_ms": 14.613309875130653
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144792",
+      "seed": 102,
+      "mobile_ms": 17.461642622947693
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144826",
+      "seed": 101,
+      "mobile_ms": 14.682009816169739
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144826",
+      "seed": 102,
+      "mobile_ms": 14.41173069179058
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144860",
+      "seed": 101,
+      "mobile_ms": 15.331534668803215
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144860",
+      "seed": 102,
+      "mobile_ms": 14.209168031811714
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144894",
+      "seed": 101,
+      "mobile_ms": 19.782789051532745
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144894",
+      "seed": 102,
+      "mobile_ms": 13.690268620848656
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144928",
+      "seed": 101,
+      "mobile_ms": 13.64985853433609
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144928",
+      "seed": 102,
+      "mobile_ms": 15.791816636919975
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144962",
+      "seed": 101,
+      "mobile_ms": 15.927325934171677
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144962",
+      "seed": 102,
+      "mobile_ms": 14.10457119345665
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144996",
+      "seed": 101,
+      "mobile_ms": 17.16141402721405
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00144996",
+      "seed": 102,
+      "mobile_ms": 14.42829705774784
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00145030",
+      "seed": 101,
+      "mobile_ms": 18.332775682210922
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_02/00145030",
+      "seed": 102,
+      "mobile_ms": 15.218758955597878
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145401",
+      "seed": 101,
+      "mobile_ms": 21.05197310447693
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145401",
+      "seed": 102,
+      "mobile_ms": 14.444371685385704
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145435",
+      "seed": 101,
+      "mobile_ms": 17.517641186714172
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145435",
+      "seed": 102,
+      "mobile_ms": 13.733979314565659
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145469",
+      "seed": 101,
+      "mobile_ms": 18.116401508450508
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145469",
+      "seed": 102,
+      "mobile_ms": 10.78566163778305
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145503",
+      "seed": 101,
+      "mobile_ms": 17.082596197724342
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145503",
+      "seed": 102,
+      "mobile_ms": 14.042295515537262
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145537",
+      "seed": 101,
+      "mobile_ms": 15.876192599534988
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145537",
+      "seed": 102,
+      "mobile_ms": 14.255892485380173
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145571",
+      "seed": 101,
+      "mobile_ms": 16.261903569102287
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145571",
+      "seed": 102,
+      "mobile_ms": 15.51022008061409
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145605",
+      "seed": 101,
+      "mobile_ms": 21.550999954342842
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145605",
+      "seed": 102,
+      "mobile_ms": 18.43380369246006
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145639",
+      "seed": 101,
+      "mobile_ms": 14.697091653943062
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145639",
+      "seed": 102,
+      "mobile_ms": 14.682028442621231
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145673",
+      "seed": 101,
+      "mobile_ms": 16.17097109556198
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145673",
+      "seed": 102,
+      "mobile_ms": 14.930684119462967
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145707",
+      "seed": 101,
+      "mobile_ms": 19.120505079627037
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145707",
+      "seed": 102,
+      "mobile_ms": 15.262855216860771
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145741",
+      "seed": 101,
+      "mobile_ms": 17.297828570008278
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145741",
+      "seed": 102,
+      "mobile_ms": 18.166031688451767
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145775",
+      "seed": 101,
+      "mobile_ms": 14.865895733237267
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145775",
+      "seed": 102,
+      "mobile_ms": 14.598621055483818
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145809",
+      "seed": 101,
+      "mobile_ms": 15.650710090994835
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145809",
+      "seed": 102,
+      "mobile_ms": 15.80771617591381
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145843",
+      "seed": 101,
+      "mobile_ms": 14.949735254049301
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145843",
+      "seed": 102,
+      "mobile_ms": 14.05048556625843
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145877",
+      "seed": 101,
+      "mobile_ms": 16.27582311630249
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145877",
+      "seed": 102,
+      "mobile_ms": 13.903327286243439
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145911",
+      "seed": 101,
+      "mobile_ms": 15.310622751712799
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145911",
+      "seed": 102,
+      "mobile_ms": 13.70181143283844
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145945",
+      "seed": 101,
+      "mobile_ms": 14.447832480072975
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145945",
+      "seed": 102,
+      "mobile_ms": 14.248751103878021
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145979",
+      "seed": 101,
+      "mobile_ms": 17.82245561480522
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00145979",
+      "seed": 102,
+      "mobile_ms": 14.526423066854477
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00146013",
+      "seed": 101,
+      "mobile_ms": 16.011569648981094
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00146013",
+      "seed": 102,
+      "mobile_ms": 14.26628790795803
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00146047",
+      "seed": 101,
+      "mobile_ms": 14.903904870152473
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00146047",
+      "seed": 102,
+      "mobile_ms": 13.895979151129723
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00146081",
+      "seed": 101,
+      "mobile_ms": 14.695383608341217
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00146081",
+      "seed": 102,
+      "mobile_ms": 15.568554401397705
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00146115",
+      "seed": 101,
+      "mobile_ms": 17.31276512145996
+    },
+    {
+      "sample_id": "Town04_m5o_calibration_03/00146115",
+      "seed": 102,
+      "mobile_ms": 14.747431501746178
+    }
+  ],
+  "source_sha256": "e3e392d2ad6e75166c8d0aa40aed65e031a36b03a49d94ec86fbf68e7ab4d533",
+  "limits": "Simulator OBB center not contactGold. Native render identity geometrically associated, not exact mesh identity. Unmatched candidates not guaranteed falseobjects. Static historical snapshots read after same tick before nexttick, not all historical manifests carry peractor frame stamps."
+}

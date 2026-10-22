@@ -1,0 +1,418 @@
+{
+  "kind": "actual_RTX4090_frozen_RGB_features_and_separate_supervision",
+  "oracle_candidates_diagnostic_only": false,
+  "provenance": {
+    "base": "2afe740be0cf8e0df8dff52a7ed2b03a6f001dc5",
+    "git_head": "2afe740be0cf8e0df8dff52a7ed2b03a6f001dc5",
+    "sources": {
+      "configs/m5o_capture_dev.json": "00f0e376fbe4d8b7ca7dcc08d69121a99a31f0b605a265868f89387fec7f9fc1",
+      "configs/m5o_capture_dev_v2.json": "421842bec0f2ec33e8b047b684e177aa1c8ffa90c1c96cf2ea073fea85c6a5a5",
+      "configs/m5o_capture_dev_v3.json": "38ee22d5cdb27b9a227aa2ee6cb9db56af43346462fa2681101d82b30b316d5a",
+      "configs/m5o_protocol.json": "30a943874951f7e10e502bcf7710d1079afa40061ea636e5ad875409347d6de1",
+      "datasets/m5o_benchmark.py": "16bd9c62c75a37d105cf57bb68653220cce6d6ec9aa1cc9de054752d140a592a",
+      "tests/test_m5o_benchmark.py": "8f83ba0c3af5039137292d1083f88cd4b07e536ea64fa591b94dd00fd5d6ba4c",
+      "tools/m5o_allocate.py": "593b2df73ac511b9e26ca09665ce0736e15552a6ab9a767cea7563b71e065913",
+      "tools/m5o_cache.py": "ec8c8556216c50ec8f0d2c3a76132bced8d5dffc96b4df9ff14dd1f21b0a40ac",
+      "tools/m5o_campaign.py": "b97f4c6f709cf1a6ee54a43a07182345ab7d54201c105e2e4f317236256961ac",
+      "tools/m5o_candidate_audit.py": "d5cc8407a6299283b0f75ba556c6441aaae40f447f70688214edca998e77a1c2",
+      "tools/m5o_capture.py": "500ede8e1feb4418a1e8abbc29695821154be56ab2bccc0ea9cbc79f9130c60c",
+      "tools/m5o_common.py": "97dac123a179db9aa49e750672595ad7b9f692b45d77b59fd559e132d4486ec6",
+      "tools/m5o_extend_allocation.py": "a54c95d7838339337261496ef2ac5244071347a1ab24102e8b24e9a88e0d648f",
+      "tools/m5o_freeze.py": "76eeb76921c55f398a4d39da3c283da1a7aa1fc590bc82bbac1d7249424a6423",
+      "tools/m5o_frozen_diagnostic.py": "05e1fc08b6f521fd2ffc464814880e90466590afa313bf8fa9fe5dcbaf1227b9",
+      "tools/m5o_index.py": "db45457a4e20556a110895baf868c9d14c9eac1c2a51d72cadb2dc134ff656ee",
+      "tools/m5o_road_layouts.py": "3c4372534b2f57eeaaa290d83a27a0a4dafd157f9d7e8050dd9493af418e550b",
+      "tools/m5o_smoke_v3.py": "5fd345452c1285d32def77976cb17d57e3714a30630f9d622fd77e9e89b21041",
+      "tools/m5o_train.py": "1ce123ca4312653d3a325b29fdb6fdb5a5cda3eba7507048d5deebb594148cd0"
+    }
+  },
+  "frames": 36,
+  "groups": 1,
+  "candidates": 589,
+  "visible_actor_views": 60,
+  "train_eligible": {
+    "101": 31,
+    "102": 32
+  },
+  "features": {
+    "path": "runs/m5o_cache_smoke_v3/features.pt",
+    "sha256": "c46b1d6dde3147c8fae174d00e868667fb93567e0ad4360598b12817317e0677",
+    "bytes": 1415216
+  },
+  "inference_candidates": {
+    "path": "runs/m5o_cache_smoke_v3/candidates.json",
+    "sha256": "28b146c0a599df19e37aaee66df18968ab6d50379940f3fa3f0f9f5502891296",
+    "bytes": 879685
+  },
+  "supervision": {
+    "path": "runs/m5o_cache_smoke_v3/supervision.json",
+    "sha256": "dfa984cb84a6725abfbf1c9e409c9b4e95b1c545c9972123feffff5d9befe72e",
+    "bytes": 1210470
+  },
+  "elapsed_s": 14.721559211611748,
+  "peak_mib": 237.02880859375,
+  "timings": [
+    {
+      "sample_id": "Town01_m5o_train_00/00073970",
+      "seed": 101,
+      "mobile_ms": 180.21024763584137
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00073970",
+      "seed": 102,
+      "mobile_ms": 21.16101235151291
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074004",
+      "seed": 101,
+      "mobile_ms": 19.406091421842575
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074004",
+      "seed": 102,
+      "mobile_ms": 17.12932623922825
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074038",
+      "seed": 101,
+      "mobile_ms": 14.614306390285492
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074038",
+      "seed": 102,
+      "mobile_ms": 15.971451997756958
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074072",
+      "seed": 101,
+      "mobile_ms": 15.265744179487228
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074072",
+      "seed": 102,
+      "mobile_ms": 14.297755435109138
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074106",
+      "seed": 101,
+      "mobile_ms": 14.648066833615303
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074106",
+      "seed": 102,
+      "mobile_ms": 17.78898574411869
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074140",
+      "seed": 101,
+      "mobile_ms": 14.061767607927322
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074140",
+      "seed": 102,
+      "mobile_ms": 15.193268656730652
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074174",
+      "seed": 101,
+      "mobile_ms": 13.889551162719727
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074174",
+      "seed": 102,
+      "mobile_ms": 14.552326872944832
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074208",
+      "seed": 101,
+      "mobile_ms": 19.56072449684143
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074208",
+      "seed": 102,
+      "mobile_ms": 13.83805088698864
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074242",
+      "seed": 101,
+      "mobile_ms": 13.69185745716095
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074242",
+      "seed": 102,
+      "mobile_ms": 20.19069530069828
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074276",
+      "seed": 101,
+      "mobile_ms": 14.803824946284294
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074276",
+      "seed": 102,
+      "mobile_ms": 15.2578204870224
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074310",
+      "seed": 101,
+      "mobile_ms": 19.478250294923782
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074310",
+      "seed": 102,
+      "mobile_ms": 14.767983928322792
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074344",
+      "seed": 101,
+      "mobile_ms": 16.96103997528553
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074344",
+      "seed": 102,
+      "mobile_ms": 17.028439790010452
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074378",
+      "seed": 101,
+      "mobile_ms": 14.3197663128376
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074378",
+      "seed": 102,
+      "mobile_ms": 13.688934966921806
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074412",
+      "seed": 101,
+      "mobile_ms": 18.76368559896946
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074412",
+      "seed": 102,
+      "mobile_ms": 14.467500150203705
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074446",
+      "seed": 101,
+      "mobile_ms": 15.44138602912426
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074446",
+      "seed": 102,
+      "mobile_ms": 15.035891905426979
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074480",
+      "seed": 101,
+      "mobile_ms": 17.115166410803795
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074480",
+      "seed": 102,
+      "mobile_ms": 14.664648100733757
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074514",
+      "seed": 101,
+      "mobile_ms": 16.025008633732796
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074514",
+      "seed": 102,
+      "mobile_ms": 15.819888561964035
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074548",
+      "seed": 101,
+      "mobile_ms": 15.28523862361908
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074548",
+      "seed": 102,
+      "mobile_ms": 14.712143689393997
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074582",
+      "seed": 101,
+      "mobile_ms": 22.388728335499763
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074582",
+      "seed": 102,
+      "mobile_ms": 15.648696571588516
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074616",
+      "seed": 101,
+      "mobile_ms": 15.331676229834557
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074616",
+      "seed": 102,
+      "mobile_ms": 14.52166773378849
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074650",
+      "seed": 101,
+      "mobile_ms": 14.727801084518433
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074650",
+      "seed": 102,
+      "mobile_ms": 15.256999060511589
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074684",
+      "seed": 101,
+      "mobile_ms": 18.919939175248146
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074684",
+      "seed": 102,
+      "mobile_ms": 17.85588264465332
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074718",
+      "seed": 101,
+      "mobile_ms": 15.325941145420074
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074718",
+      "seed": 102,
+      "mobile_ms": 13.615824282169342
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074752",
+      "seed": 101,
+      "mobile_ms": 13.966895639896393
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074752",
+      "seed": 102,
+      "mobile_ms": 14.687290415167809
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074786",
+      "seed": 101,
+      "mobile_ms": 18.283212557435036
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074786",
+      "seed": 102,
+      "mobile_ms": 15.309592708945274
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074820",
+      "seed": 101,
+      "mobile_ms": 14.36145231127739
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074820",
+      "seed": 102,
+      "mobile_ms": 14.581743627786636
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074854",
+      "seed": 101,
+      "mobile_ms": 14.65807668864727
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074854",
+      "seed": 102,
+      "mobile_ms": 14.277325943112373
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074888",
+      "seed": 101,
+      "mobile_ms": 12.786865234375
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074888",
+      "seed": 102,
+      "mobile_ms": 14.813560992479324
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074922",
+      "seed": 101,
+      "mobile_ms": 15.026535838842392
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074922",
+      "seed": 102,
+      "mobile_ms": 14.802789315581322
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074956",
+      "seed": 101,
+      "mobile_ms": 22.184278815984726
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074956",
+      "seed": 102,
+      "mobile_ms": 19.190991297364235
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074990",
+      "seed": 101,
+      "mobile_ms": 14.649787917733192
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074990",
+      "seed": 102,
+      "mobile_ms": 16.08472876250744
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00075024",
+      "seed": 101,
+      "mobile_ms": 13.629643246531487
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00075024",
+      "seed": 102,
+      "mobile_ms": 14.531368389725685
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00075058",
+      "seed": 101,
+      "mobile_ms": 19.118230789899826
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00075058",
+      "seed": 102,
+      "mobile_ms": 14.72853310406208
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00075092",
+      "seed": 101,
+      "mobile_ms": 14.098692685365677
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00075092",
+      "seed": 102,
+      "mobile_ms": 14.886679127812386
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00075126",
+      "seed": 101,
+      "mobile_ms": 15.532398596405983
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00075126",
+      "seed": 102,
+      "mobile_ms": 14.796243980526924
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00075160",
+      "seed": 101,
+      "mobile_ms": 22.0023300498724
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00075160",
+      "seed": 102,
+      "mobile_ms": 15.10283537209034
+    }
+  ],
+  "source_sha256": "ec8c8556216c50ec8f0d2c3a76132bced8d5dffc96b4df9ff14dd1f21b0a40ac",
+  "limits": "Simulator OBB center not contactGold. Native render identity geometrically associated, not exact mesh identity. Unmatched candidates not guaranteed falseobjects. Static historical snapshots read after same tick before nexttick, not all historical manifests carry peractor frame stamps."
+}

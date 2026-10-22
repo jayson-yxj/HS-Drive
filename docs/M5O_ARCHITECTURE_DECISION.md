@@ -1,6 +1,10 @@
 # M5-O 架构决策记录
 
-状态：等待预声明实验；最终以 `reports/m5o_acceptance.json` 和 `m5o_summary.md` 为准。
+状态：**停止当前冻结Mobile+DirectCenter Head路线；M5-O总体Partial；不批准Offline Object-Center Pilot。**
+
+实际完成38位置、1223个六摄配置，Train/Val/Calibration/Sealed支持分别642–658 / 198–202 / 199–205 / 269–279可靠候选。两个种子的固定预算结果均未稳定优于同候选Geometry Prior；封存Direct P95 12.33/10.66m，严重错误35.4%/32.8%。独立Calibration无合格阈值，全部准入拒绝。新增数据改善均值，但未解决尾部；不再自动增加层数、Loss或步数。
+
+工程合同与有限训练管线通过，定位泛化与选择性风险未通过，纯视觉安全没有验证。未来可复用此Benchmark预声明研究其他成熟3D表示，但本轮没有验证替代方案，不能直接批准位置型Pilot。Oracle Planner/仿真工程可独立推进。
 
 本轮只重建目标级定位研究基础。Mobile、ResNet Depth、48 LID、HeightSplat、Spatial Evidence V2 和 Oracle 控制保持原状，不引入新 Head、Loss 或视觉控制。
 

@@ -1,0 +1,6423 @@
+{
+  "kind": "actual_RTX4090_frozen_RGB_features_and_separate_supervision",
+  "oracle_candidates_diagnostic_only": false,
+  "provenance": {
+    "base": "2afe740be0cf8e0df8dff52a7ed2b03a6f001dc5",
+    "git_head": "2c4c70047fa1afa194ece8c9dc217f5b0d851096",
+    "sources": {
+      "configs/m5o_capture_dev.json": "00f0e376fbe4d8b7ca7dcc08d69121a99a31f0b605a265868f89387fec7f9fc1",
+      "configs/m5o_capture_dev_v2.json": "421842bec0f2ec33e8b047b684e177aa1c8ffa90c1c96cf2ea073fea85c6a5a5",
+      "configs/m5o_capture_dev_v3.json": "38ee22d5cdb27b9a227aa2ee6cb9db56af43346462fa2681101d82b30b316d5a",
+      "configs/m5o_protocol.json": "30a943874951f7e10e502bcf7710d1079afa40061ea636e5ad875409347d6de1",
+      "datasets/m5o_benchmark.py": "670c5b69922f5ae3ab86e0528db57ec46eaa6584c35084bccb72cf2ab97cd104",
+      "datasets/m5o_interfaces.py": "29adfe06b7415568f41132aa3e3cb7e9a33e248a1b3f27f5b3e2283ecbb5258c",
+      "diagnostics/m5o_risk.py": "5f3accc548ef668bae79c7d5842f4242071733b7eda19928de262dac2637907a",
+      "tests/test_m5o_benchmark.py": "03d6839fc1032fc1ac51f5439c2f51db721b1ad0f9a329506f060b17278aad85",
+      "tools/m5o_after_development.py": "1f7fb7616210f87e2a7a93c527b7ab66ebf410d41ae245597138352edb8a5e1b",
+      "tools/m5o_all_candidate_burden.py": "b92daf4a06724153aebfc7fa2985d826d2749af2316ce16abe9777b9e8840ff8",
+      "tools/m5o_allocate.py": "7fd3a97f4e8ab96d3ec096e535f49c4d60a368efa80b9ef68902d05b30afdd24",
+      "tools/m5o_cache.py": "e3e392d2ad6e75166c8d0aa40aed65e031a36b03a49d94ec86fbf68e7ab4d533",
+      "tools/m5o_campaign.py": "b97f4c6f709cf1a6ee54a43a07182345ab7d54201c105e2e4f317236256961ac",
+      "tools/m5o_candidate_audit.py": "e21a99c0862ab99b4320254b348f61c4f84ce2a5f0038949a6f9ba2b01ad1cb0",
+      "tools/m5o_capture.py": "500ede8e1feb4418a1e8abbc29695821154be56ab2bccc0ea9cbc79f9130c60c",
+      "tools/m5o_common.py": "b1a91e75c54006e1b521f49ab980fdefee20c51b9fa94376e15ebb41cbaaed16",
+      "tools/m5o_completed_group_audit.py": "7db911edcb22cedd49c74356ef9b987686163f5e6f68995fea97329a8db28ec5",
+      "tools/m5o_dataset_checks.py": "869de7ec261fb0b8167fe57ee5140f243476d1624554d687b7fd22ada2138da5",
+      "tools/m5o_evaluate.py": "140e94226b76bd2f9aee2cfbe4aa43f0c2675023021ad6c48f39ae27926eba2c",
+      "tools/m5o_extend_allocation.py": "a54c95d7838339337261496ef2ac5244071347a1ab24102e8b24e9a88e0d648f",
+      "tools/m5o_figures.py": "10e4f3235813ca04358f1f3e611b38e6037b02a58cb773da31015bd528a163ca",
+      "tools/m5o_finalize.py": "8283a9ed739c04764b092ad197d0cf229d0fcd1f3f937913e155e33f26eca02a",
+      "tools/m5o_freeze.py": "76eeb76921c55f398a4d39da3c283da1a7aa1fc590bc82bbac1d7249424a6423",
+      "tools/m5o_frozen_diagnostic.py": "8387816a7ac480ce50e68ce10084fc5bb985b008fc762f8d45ba7102c52c0e89",
+      "tools/m5o_geometry_stream.py": "5e116907b83b57d0985974fc13218f27979d129392066565d3e39d59c315c3c7",
+      "tools/m5o_historical_now.py": "0b29bca7f08125430bfd2cef01b1be07084104e162dd97961d622622f83e8c89",
+      "tools/m5o_index.py": "db45457a4e20556a110895baf868c9d14c9eac1c2a51d72cadb2dc134ff656ee",
+      "tools/m5o_leakage_audit.py": "27d6d540006adef76e5aa08fcbd54f13be259670725fb6f7f6dca2bb7cb11450",
+      "tools/m5o_model_inference_check.py": "7b58fc14f70c8004471b0333aeb4d0df91781d971c42da1de87e99d2edd5539a",
+      "tools/m5o_paired_analysis.py": "71cd05fc97866995052c062b77728f3851af300a54a294474979d9b45bcfa950",
+      "tools/m5o_process_dev.py": "9b5d7214282762acc5b494c8070ecf3d400552d9a5b143dde9ad15f0bdfaec89",
+      "tools/m5o_regression_report.py": "1cc5f6c3e7183a878c0b3d95721e7905b67485ded6771ff32309e80220a28911",
+      "tools/m5o_report.py": "af8b40f46a1aaf0b2187696ac16d409644eedca79b3a89be77d13d1a058c61d5",
+      "tools/m5o_road_layouts.py": "3c4372534b2f57eeaaa290d83a27a0a4dafd157f9d7e8050dd9493af418e550b",
+      "tools/m5o_sampling_audit.py": "2da90ff80364ba576d67afd4416b99d032bb79a217a4b54e243e8bf07a70489b",
+      "tools/m5o_sealed_run.py": "31a914bdceaece8753bb239f2d2e804152a84dfa2995ae8010f38795262b96b2",
+      "tools/m5o_smoke_v3.py": "5fd345452c1285d32def77976cb17d57e3714a30630f9d622fd77e9e89b21041",
+      "tools/m5o_snapshot_progress.py": "3db01b9d479c87080ea690ff6ffe0bf61aa92f9199af977288cb13e3aa48ba2d",
+      "tools/m5o_split_geometry.py": "6add51ab60c61711866a9bec36a03677dbe15b444b08a6253f14e3bf68c7165b",
+      "tools/m5o_status.py": "083a182d7558c0d65c7ef30c57dcbdb28eca187c9015bb37fc0959f1c0650ed5",
+      "tools/m5o_stream_index.py": "372662c779258044d84f023b8203f7d9ea363963e0f586a014d1445c17471894",
+      "tools/m5o_support.py": "cb8bb0735e9b180548446c89b1323c7675d423edebe320c2411a051fb1d00e27",
+      "tools/m5o_train.py": "2c07336b38496e51c24af00a49c7fa0d1fac2f32ee0283d8edfe213e89ed345d",
+      "tools/m5o_unit_benchmark_probe.py": "69821783160758ffe397a51b6c1a2e1153cde825476e8c4f47aa0b3bcb47c825"
+    }
+  },
+  "frames": 634,
+  "groups": 20,
+  "candidates": 8523,
+  "visible_actor_views": 1029,
+  "train_eligible": {
+    "101": 646,
+    "102": 662
+  },
+  "features": {
+    "path": "runs/m5o_cache_train/features.pt",
+    "sha256": "a1fae70b498c46f9d0a29197472641473e5bd555c55a6ef32e99bfacaffb41ea",
+    "bytes": 20456816
+  },
+  "inference_candidates": {
+    "path": "runs/m5o_cache_train/candidates.json",
+    "sha256": "0986bca9c4831b3944a86fd8aa44aae7a1aaf60ebfbe6378f27a98919116c137",
+    "bytes": 12681158
+  },
+  "supervision": {
+    "path": "runs/m5o_cache_train/supervision.json",
+    "sha256": "07e089271edad66d56a6507ed50e63313c332edf9612cf57ad837317018a1875",
+    "bytes": 21376074
+  },
+  "elapsed_s": 190.51832328364253,
+  "peak_mib": 237.02880859375,
+  "timings": [
+    {
+      "sample_id": "Town01_m5o_train_00/00073970",
+      "seed": 101,
+      "mobile_ms": 208.37941393256187
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00073970",
+      "seed": 102,
+      "mobile_ms": 15.779159963130951
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074004",
+      "seed": 101,
+      "mobile_ms": 16.83138869702816
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074004",
+      "seed": 102,
+      "mobile_ms": 15.942791476845741
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074038",
+      "seed": 101,
+      "mobile_ms": 12.367775663733482
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074038",
+      "seed": 102,
+      "mobile_ms": 13.85415531694889
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074072",
+      "seed": 101,
+      "mobile_ms": 12.17600516974926
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074072",
+      "seed": 102,
+      "mobile_ms": 13.549832627177238
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074106",
+      "seed": 101,
+      "mobile_ms": 9.74009744822979
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074106",
+      "seed": 102,
+      "mobile_ms": 13.968825340270996
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074140",
+      "seed": 101,
+      "mobile_ms": 11.650830507278442
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074140",
+      "seed": 102,
+      "mobile_ms": 14.344308525323868
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074174",
+      "seed": 101,
+      "mobile_ms": 13.221094384789467
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074174",
+      "seed": 102,
+      "mobile_ms": 10.745331645011902
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074208",
+      "seed": 101,
+      "mobile_ms": 10.414648801088333
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074208",
+      "seed": 102,
+      "mobile_ms": 13.233210891485214
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074242",
+      "seed": 101,
+      "mobile_ms": 12.015050277113914
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074242",
+      "seed": 102,
+      "mobile_ms": 14.811268076300621
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074276",
+      "seed": 101,
+      "mobile_ms": 10.36730781197548
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074276",
+      "seed": 102,
+      "mobile_ms": 11.60389557480812
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074310",
+      "seed": 101,
+      "mobile_ms": 10.03887690603733
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074310",
+      "seed": 102,
+      "mobile_ms": 13.545272871851921
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074344",
+      "seed": 101,
+      "mobile_ms": 13.503005728125572
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074344",
+      "seed": 102,
+      "mobile_ms": 17.592327669262886
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074378",
+      "seed": 101,
+      "mobile_ms": 12.296967208385468
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074378",
+      "seed": 102,
+      "mobile_ms": 13.737566769123077
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074412",
+      "seed": 101,
+      "mobile_ms": 12.528985738754272
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074412",
+      "seed": 102,
+      "mobile_ms": 14.33384045958519
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074446",
+      "seed": 101,
+      "mobile_ms": 8.405182510614395
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074446",
+      "seed": 102,
+      "mobile_ms": 8.344771340489388
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074480",
+      "seed": 101,
+      "mobile_ms": 14.619600027799606
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074480",
+      "seed": 102,
+      "mobile_ms": 13.679036870598793
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074514",
+      "seed": 101,
+      "mobile_ms": 16.52168296277523
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074514",
+      "seed": 102,
+      "mobile_ms": 12.174947187304497
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074548",
+      "seed": 101,
+      "mobile_ms": 10.406283661723137
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074548",
+      "seed": 102,
+      "mobile_ms": 12.621505185961723
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074582",
+      "seed": 101,
+      "mobile_ms": 17.0393455773592
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074582",
+      "seed": 102,
+      "mobile_ms": 13.352785259485245
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074616",
+      "seed": 101,
+      "mobile_ms": 13.928700238466263
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074616",
+      "seed": 102,
+      "mobile_ms": 13.131147250533104
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074650",
+      "seed": 101,
+      "mobile_ms": 11.729277670383453
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074650",
+      "seed": 102,
+      "mobile_ms": 10.168628767132759
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074684",
+      "seed": 101,
+      "mobile_ms": 13.269905000925064
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074684",
+      "seed": 102,
+      "mobile_ms": 15.259036794304848
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074718",
+      "seed": 101,
+      "mobile_ms": 13.330399990081787
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074718",
+      "seed": 102,
+      "mobile_ms": 13.984439894557
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074752",
+      "seed": 101,
+      "mobile_ms": 12.044839560985565
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074752",
+      "seed": 102,
+      "mobile_ms": 11.826688423752785
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074786",
+      "seed": 101,
+      "mobile_ms": 10.47496683895588
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074786",
+      "seed": 102,
+      "mobile_ms": 9.91542637348175
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074820",
+      "seed": 101,
+      "mobile_ms": 15.184730291366577
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074820",
+      "seed": 102,
+      "mobile_ms": 9.018931537866592
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074854",
+      "seed": 101,
+      "mobile_ms": 12.860720977187157
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074854",
+      "seed": 102,
+      "mobile_ms": 14.6940927952528
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074888",
+      "seed": 101,
+      "mobile_ms": 11.130979284644127
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074888",
+      "seed": 102,
+      "mobile_ms": 11.96674071252346
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074922",
+      "seed": 101,
+      "mobile_ms": 11.036116629838943
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074922",
+      "seed": 102,
+      "mobile_ms": 13.38941976428032
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074956",
+      "seed": 101,
+      "mobile_ms": 16.072236001491547
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074956",
+      "seed": 102,
+      "mobile_ms": 18.270596861839294
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074990",
+      "seed": 101,
+      "mobile_ms": 10.727230459451675
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00074990",
+      "seed": 102,
+      "mobile_ms": 8.491650223731995
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00075024",
+      "seed": 101,
+      "mobile_ms": 11.95221021771431
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00075024",
+      "seed": 102,
+      "mobile_ms": 13.666922226548195
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00075058",
+      "seed": 101,
+      "mobile_ms": 14.322854578495026
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00075058",
+      "seed": 102,
+      "mobile_ms": 11.173360049724579
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00075092",
+      "seed": 101,
+      "mobile_ms": 9.9269337952137
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00075092",
+      "seed": 102,
+      "mobile_ms": 15.21468348801136
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00075126",
+      "seed": 101,
+      "mobile_ms": 17.348382622003555
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00075126",
+      "seed": 102,
+      "mobile_ms": 8.056601509451866
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00075160",
+      "seed": 101,
+      "mobile_ms": 11.154400184750557
+    },
+    {
+      "sample_id": "Town01_m5o_train_00/00075160",
+      "seed": 102,
+      "mobile_ms": 12.819485738873482
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103119",
+      "seed": 101,
+      "mobile_ms": 11.611493304371834
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103119",
+      "seed": 102,
+      "mobile_ms": 14.553027227520943
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103153",
+      "seed": 101,
+      "mobile_ms": 14.257000759243965
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103153",
+      "seed": 102,
+      "mobile_ms": 9.957822039723396
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103187",
+      "seed": 101,
+      "mobile_ms": 14.754079282283783
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103187",
+      "seed": 102,
+      "mobile_ms": 10.274982079863548
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103221",
+      "seed": 101,
+      "mobile_ms": 13.7249156832695
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103221",
+      "seed": 102,
+      "mobile_ms": 11.302890256047249
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103255",
+      "seed": 101,
+      "mobile_ms": 11.506829410791397
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103255",
+      "seed": 102,
+      "mobile_ms": 10.923292487859726
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103289",
+      "seed": 101,
+      "mobile_ms": 10.965602472424507
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103289",
+      "seed": 102,
+      "mobile_ms": 12.375719845294952
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103323",
+      "seed": 101,
+      "mobile_ms": 13.530191034078598
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103323",
+      "seed": 102,
+      "mobile_ms": 12.763723731040955
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103357",
+      "seed": 101,
+      "mobile_ms": 13.852065429091454
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103357",
+      "seed": 102,
+      "mobile_ms": 13.568533584475517
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103391",
+      "seed": 101,
+      "mobile_ms": 12.567432597279549
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103391",
+      "seed": 102,
+      "mobile_ms": 12.321127578616142
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103425",
+      "seed": 101,
+      "mobile_ms": 12.616908177733421
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103425",
+      "seed": 102,
+      "mobile_ms": 14.55610804259777
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103459",
+      "seed": 101,
+      "mobile_ms": 11.474434286355972
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103459",
+      "seed": 102,
+      "mobile_ms": 14.864625409245491
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103493",
+      "seed": 101,
+      "mobile_ms": 8.729144930839539
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103493",
+      "seed": 102,
+      "mobile_ms": 7.627690210938454
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103527",
+      "seed": 101,
+      "mobile_ms": 10.5756726115942
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103527",
+      "seed": 102,
+      "mobile_ms": 12.416915968060493
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103561",
+      "seed": 101,
+      "mobile_ms": 13.665605336427689
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103561",
+      "seed": 102,
+      "mobile_ms": 14.668367803096771
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103595",
+      "seed": 101,
+      "mobile_ms": 14.789065346121788
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103595",
+      "seed": 102,
+      "mobile_ms": 14.287145808339119
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103629",
+      "seed": 101,
+      "mobile_ms": 17.82246306538582
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103629",
+      "seed": 102,
+      "mobile_ms": 10.133232921361923
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103663",
+      "seed": 101,
+      "mobile_ms": 14.760240912437439
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103663",
+      "seed": 102,
+      "mobile_ms": 14.172771945595741
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103697",
+      "seed": 101,
+      "mobile_ms": 16.100216656923294
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103697",
+      "seed": 102,
+      "mobile_ms": 13.414928689599037
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103731",
+      "seed": 101,
+      "mobile_ms": 15.57200402021408
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103731",
+      "seed": 102,
+      "mobile_ms": 15.012608841061592
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103765",
+      "seed": 101,
+      "mobile_ms": 12.96556182205677
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103765",
+      "seed": 102,
+      "mobile_ms": 16.86893217265606
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103799",
+      "seed": 101,
+      "mobile_ms": 13.44875805079937
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103799",
+      "seed": 102,
+      "mobile_ms": 14.675159007310867
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103833",
+      "seed": 101,
+      "mobile_ms": 12.093128636479378
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103833",
+      "seed": 102,
+      "mobile_ms": 11.725304648280144
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103867",
+      "seed": 101,
+      "mobile_ms": 13.355182483792305
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103867",
+      "seed": 102,
+      "mobile_ms": 9.367236867547035
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103901",
+      "seed": 101,
+      "mobile_ms": 10.665001347661018
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103901",
+      "seed": 102,
+      "mobile_ms": 14.431538060307503
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103935",
+      "seed": 101,
+      "mobile_ms": 14.590904116630554
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103935",
+      "seed": 102,
+      "mobile_ms": 14.277106150984764
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103969",
+      "seed": 101,
+      "mobile_ms": 14.586636796593666
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00103969",
+      "seed": 102,
+      "mobile_ms": 16.209367662668228
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00104003",
+      "seed": 101,
+      "mobile_ms": 15.88081382215023
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00104003",
+      "seed": 102,
+      "mobile_ms": 14.691146090626717
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00104037",
+      "seed": 101,
+      "mobile_ms": 11.495113372802734
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00104037",
+      "seed": 102,
+      "mobile_ms": 9.804030880331993
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00104071",
+      "seed": 101,
+      "mobile_ms": 13.402674347162247
+    },
+    {
+      "sample_id": "Town01_m5o_train_01/00104071",
+      "seed": 102,
+      "mobile_ms": 12.762613594532013
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104393",
+      "seed": 101,
+      "mobile_ms": 12.768570333719254
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104393",
+      "seed": 102,
+      "mobile_ms": 8.811572566628456
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104427",
+      "seed": 101,
+      "mobile_ms": 15.120008960366249
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104427",
+      "seed": 102,
+      "mobile_ms": 12.184368446469307
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104461",
+      "seed": 101,
+      "mobile_ms": 11.481873691082
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104461",
+      "seed": 102,
+      "mobile_ms": 16.071323305368423
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104495",
+      "seed": 101,
+      "mobile_ms": 13.42645101249218
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104495",
+      "seed": 102,
+      "mobile_ms": 15.330607071518898
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104529",
+      "seed": 101,
+      "mobile_ms": 10.728862136602402
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104529",
+      "seed": 102,
+      "mobile_ms": 10.50996221601963
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104563",
+      "seed": 101,
+      "mobile_ms": 12.912098318338394
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104563",
+      "seed": 102,
+      "mobile_ms": 10.609552264213562
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104597",
+      "seed": 101,
+      "mobile_ms": 11.549137532711029
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104597",
+      "seed": 102,
+      "mobile_ms": 14.780838042497635
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104631",
+      "seed": 101,
+      "mobile_ms": 13.794643804430962
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104631",
+      "seed": 102,
+      "mobile_ms": 9.859971702098846
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104665",
+      "seed": 101,
+      "mobile_ms": 12.862123548984528
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104665",
+      "seed": 102,
+      "mobile_ms": 11.932801455259323
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104699",
+      "seed": 101,
+      "mobile_ms": 11.268390342593193
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104699",
+      "seed": 102,
+      "mobile_ms": 13.708993792533875
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104733",
+      "seed": 101,
+      "mobile_ms": 8.762624114751816
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104733",
+      "seed": 102,
+      "mobile_ms": 12.327827513217926
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104767",
+      "seed": 101,
+      "mobile_ms": 12.774921953678131
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104767",
+      "seed": 102,
+      "mobile_ms": 15.73183573782444
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104801",
+      "seed": 101,
+      "mobile_ms": 12.868421152234077
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104801",
+      "seed": 102,
+      "mobile_ms": 11.277740821242332
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104835",
+      "seed": 101,
+      "mobile_ms": 12.811480090022087
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104835",
+      "seed": 102,
+      "mobile_ms": 11.058071628212929
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104869",
+      "seed": 101,
+      "mobile_ms": 9.221404790878296
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104869",
+      "seed": 102,
+      "mobile_ms": 12.922868132591248
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104903",
+      "seed": 101,
+      "mobile_ms": 12.295464053750038
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104903",
+      "seed": 102,
+      "mobile_ms": 9.745437651872635
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104937",
+      "seed": 101,
+      "mobile_ms": 11.372530832886696
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104937",
+      "seed": 102,
+      "mobile_ms": 14.469804242253304
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104971",
+      "seed": 101,
+      "mobile_ms": 11.681893840432167
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00104971",
+      "seed": 102,
+      "mobile_ms": 10.964542627334595
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105005",
+      "seed": 101,
+      "mobile_ms": 10.021070018410683
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105005",
+      "seed": 102,
+      "mobile_ms": 11.376408860087395
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105039",
+      "seed": 101,
+      "mobile_ms": 14.29940015077591
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105039",
+      "seed": 102,
+      "mobile_ms": 13.022992759943008
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105073",
+      "seed": 101,
+      "mobile_ms": 14.24943283200264
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105073",
+      "seed": 102,
+      "mobile_ms": 11.64362020790577
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105107",
+      "seed": 101,
+      "mobile_ms": 13.304049149155617
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105107",
+      "seed": 102,
+      "mobile_ms": 13.202488422393799
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105141",
+      "seed": 101,
+      "mobile_ms": 16.16099290549755
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105141",
+      "seed": 102,
+      "mobile_ms": 13.815924525260925
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105175",
+      "seed": 101,
+      "mobile_ms": 17.918886616826057
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105175",
+      "seed": 102,
+      "mobile_ms": 12.611830607056618
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105209",
+      "seed": 101,
+      "mobile_ms": 12.989575043320656
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105209",
+      "seed": 102,
+      "mobile_ms": 10.937042534351349
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105243",
+      "seed": 101,
+      "mobile_ms": 11.202380061149597
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105243",
+      "seed": 102,
+      "mobile_ms": 13.731615617871284
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105277",
+      "seed": 101,
+      "mobile_ms": 14.258768409490585
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105277",
+      "seed": 102,
+      "mobile_ms": 11.5751251578331
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105311",
+      "seed": 101,
+      "mobile_ms": 12.653356418013573
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105311",
+      "seed": 102,
+      "mobile_ms": 12.830279767513275
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105345",
+      "seed": 101,
+      "mobile_ms": 7.836384698748589
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105345",
+      "seed": 102,
+      "mobile_ms": 11.210072785615921
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105379",
+      "seed": 101,
+      "mobile_ms": 10.521627962589264
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105379",
+      "seed": 102,
+      "mobile_ms": 15.382647514343262
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105413",
+      "seed": 101,
+      "mobile_ms": 17.86738634109497
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105413",
+      "seed": 102,
+      "mobile_ms": 10.039068758487701
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105447",
+      "seed": 101,
+      "mobile_ms": 12.58079707622528
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105447",
+      "seed": 102,
+      "mobile_ms": 8.594702929258347
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105481",
+      "seed": 101,
+      "mobile_ms": 13.343431055545807
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105481",
+      "seed": 102,
+      "mobile_ms": 11.276522651314735
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105515",
+      "seed": 101,
+      "mobile_ms": 13.833323493599892
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105515",
+      "seed": 102,
+      "mobile_ms": 12.407338246703148
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105549",
+      "seed": 101,
+      "mobile_ms": 13.22842761874199
+    },
+    {
+      "sample_id": "Town01_m5o_train_02/00105549",
+      "seed": 102,
+      "mobile_ms": 15.048304572701454
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00105902",
+      "seed": 101,
+      "mobile_ms": 11.656692251563072
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00105902",
+      "seed": 102,
+      "mobile_ms": 13.764793053269386
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00105936",
+      "seed": 101,
+      "mobile_ms": 13.395942747592926
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00105936",
+      "seed": 102,
+      "mobile_ms": 13.421263545751572
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00105970",
+      "seed": 101,
+      "mobile_ms": 15.913452953100204
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00105970",
+      "seed": 102,
+      "mobile_ms": 14.494100585579872
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106004",
+      "seed": 101,
+      "mobile_ms": 15.000790357589722
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106004",
+      "seed": 102,
+      "mobile_ms": 13.924485072493553
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106038",
+      "seed": 101,
+      "mobile_ms": 12.600686401128769
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106038",
+      "seed": 102,
+      "mobile_ms": 10.084610432386398
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106072",
+      "seed": 101,
+      "mobile_ms": 12.780236080288887
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106072",
+      "seed": 102,
+      "mobile_ms": 12.32338696718216
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106106",
+      "seed": 101,
+      "mobile_ms": 11.83360442519188
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106106",
+      "seed": 102,
+      "mobile_ms": 12.706151232123375
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106140",
+      "seed": 101,
+      "mobile_ms": 14.844883233308792
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106140",
+      "seed": 102,
+      "mobile_ms": 13.258080929517746
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106174",
+      "seed": 101,
+      "mobile_ms": 13.197213411331177
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106174",
+      "seed": 102,
+      "mobile_ms": 11.654678732156754
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106208",
+      "seed": 101,
+      "mobile_ms": 8.914576843380928
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106208",
+      "seed": 102,
+      "mobile_ms": 8.887413889169693
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106242",
+      "seed": 101,
+      "mobile_ms": 14.276459813117981
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106242",
+      "seed": 102,
+      "mobile_ms": 12.020256370306015
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106276",
+      "seed": 101,
+      "mobile_ms": 12.459022924304008
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106276",
+      "seed": 102,
+      "mobile_ms": 10.422250255942345
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106310",
+      "seed": 101,
+      "mobile_ms": 12.068962678313255
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106310",
+      "seed": 102,
+      "mobile_ms": 9.676029905676842
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106344",
+      "seed": 101,
+      "mobile_ms": 13.96094635128975
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106344",
+      "seed": 102,
+      "mobile_ms": 14.245672151446342
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106378",
+      "seed": 101,
+      "mobile_ms": 14.482434839010239
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106378",
+      "seed": 102,
+      "mobile_ms": 11.90180703997612
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106412",
+      "seed": 101,
+      "mobile_ms": 15.139495953917503
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106412",
+      "seed": 102,
+      "mobile_ms": 13.33644799888134
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106446",
+      "seed": 101,
+      "mobile_ms": 12.471960857510567
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106446",
+      "seed": 102,
+      "mobile_ms": 12.276103720068932
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106480",
+      "seed": 101,
+      "mobile_ms": 23.250695317983627
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106480",
+      "seed": 102,
+      "mobile_ms": 15.589892864227295
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106514",
+      "seed": 101,
+      "mobile_ms": 13.540837913751602
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106514",
+      "seed": 102,
+      "mobile_ms": 14.61971178650856
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106548",
+      "seed": 101,
+      "mobile_ms": 12.023907154798508
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106548",
+      "seed": 102,
+      "mobile_ms": 13.07310163974762
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106582",
+      "seed": 101,
+      "mobile_ms": 16.457362100481987
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106582",
+      "seed": 102,
+      "mobile_ms": 15.363259240984917
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106616",
+      "seed": 101,
+      "mobile_ms": 12.71405816078186
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106616",
+      "seed": 102,
+      "mobile_ms": 11.23928464949131
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106650",
+      "seed": 101,
+      "mobile_ms": 12.866418808698654
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106650",
+      "seed": 102,
+      "mobile_ms": 13.073882088065147
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106684",
+      "seed": 101,
+      "mobile_ms": 12.594612315297127
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106684",
+      "seed": 102,
+      "mobile_ms": 16.27407595515251
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106718",
+      "seed": 101,
+      "mobile_ms": 11.037260293960571
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106718",
+      "seed": 102,
+      "mobile_ms": 11.276569217443466
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106752",
+      "seed": 101,
+      "mobile_ms": 13.910003006458282
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106752",
+      "seed": 102,
+      "mobile_ms": 16.125928610563278
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106786",
+      "seed": 101,
+      "mobile_ms": 11.545650660991669
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106786",
+      "seed": 102,
+      "mobile_ms": 11.974172666668892
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106820",
+      "seed": 101,
+      "mobile_ms": 8.43973457813263
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106820",
+      "seed": 102,
+      "mobile_ms": 10.874396190047264
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106854",
+      "seed": 101,
+      "mobile_ms": 22.10467867553234
+    },
+    {
+      "sample_id": "Town01_m5o_train_03/00106854",
+      "seed": 102,
+      "mobile_ms": 13.211941346526146
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107170",
+      "seed": 101,
+      "mobile_ms": 12.816248461604118
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107170",
+      "seed": 102,
+      "mobile_ms": 11.651299893856049
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107204",
+      "seed": 101,
+      "mobile_ms": 11.377723887562752
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107204",
+      "seed": 102,
+      "mobile_ms": 12.496719136834145
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107238",
+      "seed": 101,
+      "mobile_ms": 18.508775159716606
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107238",
+      "seed": 102,
+      "mobile_ms": 13.153914362192154
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107272",
+      "seed": 101,
+      "mobile_ms": 13.074712827801704
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107272",
+      "seed": 102,
+      "mobile_ms": 9.724944829940796
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107306",
+      "seed": 101,
+      "mobile_ms": 11.552529409527779
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107306",
+      "seed": 102,
+      "mobile_ms": 13.776101171970367
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107340",
+      "seed": 101,
+      "mobile_ms": 17.747193574905396
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107340",
+      "seed": 102,
+      "mobile_ms": 14.730751514434814
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107374",
+      "seed": 101,
+      "mobile_ms": 12.593287974596024
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107374",
+      "seed": 102,
+      "mobile_ms": 12.596966698765755
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107408",
+      "seed": 101,
+      "mobile_ms": 11.485552415251732
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107408",
+      "seed": 102,
+      "mobile_ms": 13.83465901017189
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107442",
+      "seed": 101,
+      "mobile_ms": 12.23066821694374
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107442",
+      "seed": 102,
+      "mobile_ms": 10.912057012319565
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107476",
+      "seed": 101,
+      "mobile_ms": 12.576203793287277
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107476",
+      "seed": 102,
+      "mobile_ms": 15.337023884057999
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107510",
+      "seed": 101,
+      "mobile_ms": 14.411970973014832
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107510",
+      "seed": 102,
+      "mobile_ms": 17.94549636542797
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107544",
+      "seed": 101,
+      "mobile_ms": 11.134067550301552
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107544",
+      "seed": 102,
+      "mobile_ms": 13.69386911392212
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107578",
+      "seed": 101,
+      "mobile_ms": 16.105860471725464
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107578",
+      "seed": 102,
+      "mobile_ms": 13.103315606713295
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107612",
+      "seed": 101,
+      "mobile_ms": 13.574864715337753
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107612",
+      "seed": 102,
+      "mobile_ms": 10.707873851060867
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107646",
+      "seed": 101,
+      "mobile_ms": 16.92911982536316
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107646",
+      "seed": 102,
+      "mobile_ms": 11.156713590025902
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107680",
+      "seed": 101,
+      "mobile_ms": 8.424118161201477
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107680",
+      "seed": 102,
+      "mobile_ms": 8.117355406284332
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107714",
+      "seed": 101,
+      "mobile_ms": 13.007907196879387
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107714",
+      "seed": 102,
+      "mobile_ms": 11.55836321413517
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107748",
+      "seed": 101,
+      "mobile_ms": 15.696501359343529
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107748",
+      "seed": 102,
+      "mobile_ms": 14.006683602929115
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107782",
+      "seed": 101,
+      "mobile_ms": 12.540601193904877
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107782",
+      "seed": 102,
+      "mobile_ms": 13.169215992093086
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107816",
+      "seed": 101,
+      "mobile_ms": 9.641185402870178
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107816",
+      "seed": 102,
+      "mobile_ms": 12.781312689185143
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107850",
+      "seed": 101,
+      "mobile_ms": 12.933317571878433
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107850",
+      "seed": 102,
+      "mobile_ms": 15.009788796305656
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107884",
+      "seed": 101,
+      "mobile_ms": 18.227428197860718
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107884",
+      "seed": 102,
+      "mobile_ms": 10.170390829443932
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107918",
+      "seed": 101,
+      "mobile_ms": 13.565102592110634
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107918",
+      "seed": 102,
+      "mobile_ms": 8.52859951555729
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107952",
+      "seed": 101,
+      "mobile_ms": 12.598512694239616
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107952",
+      "seed": 102,
+      "mobile_ms": 13.998337090015411
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107986",
+      "seed": 101,
+      "mobile_ms": 17.43047498166561
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00107986",
+      "seed": 102,
+      "mobile_ms": 15.855604782700539
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00108020",
+      "seed": 101,
+      "mobile_ms": 11.288812384009361
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00108020",
+      "seed": 102,
+      "mobile_ms": 12.424388900399208
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00108054",
+      "seed": 101,
+      "mobile_ms": 11.702502146363258
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00108054",
+      "seed": 102,
+      "mobile_ms": 9.78074036538601
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00108088",
+      "seed": 101,
+      "mobile_ms": 18.614163622260094
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00108088",
+      "seed": 102,
+      "mobile_ms": 9.532870724797249
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00108122",
+      "seed": 101,
+      "mobile_ms": 12.14054599404335
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00108122",
+      "seed": 102,
+      "mobile_ms": 10.0784320384264
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00108156",
+      "seed": 101,
+      "mobile_ms": 14.917910099029541
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00108156",
+      "seed": 102,
+      "mobile_ms": 14.39422182738781
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00108190",
+      "seed": 101,
+      "mobile_ms": 9.457919746637344
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00108190",
+      "seed": 102,
+      "mobile_ms": 12.718919664621353
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00108224",
+      "seed": 101,
+      "mobile_ms": 12.360254302620888
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00108224",
+      "seed": 102,
+      "mobile_ms": 11.730844154953957
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00108258",
+      "seed": 101,
+      "mobile_ms": 9.170636534690857
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00108258",
+      "seed": 102,
+      "mobile_ms": 8.221151307225227
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00108292",
+      "seed": 101,
+      "mobile_ms": 11.565035209059715
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00108292",
+      "seed": 102,
+      "mobile_ms": 9.726699441671371
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00108326",
+      "seed": 101,
+      "mobile_ms": 12.456722557544708
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00108326",
+      "seed": 102,
+      "mobile_ms": 15.5689287930727
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00108360",
+      "seed": 101,
+      "mobile_ms": 14.789598062634468
+    },
+    {
+      "sample_id": "Town01_m5o_train_04/00108360",
+      "seed": 102,
+      "mobile_ms": 13.339463621377945
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00108737",
+      "seed": 101,
+      "mobile_ms": 17.22080633044243
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00108737",
+      "seed": 102,
+      "mobile_ms": 12.064855545759201
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00108771",
+      "seed": 101,
+      "mobile_ms": 13.05989921092987
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00108771",
+      "seed": 102,
+      "mobile_ms": 10.026255622506142
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00108805",
+      "seed": 101,
+      "mobile_ms": 12.36492395401001
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00108805",
+      "seed": 102,
+      "mobile_ms": 12.648837640881538
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00108839",
+      "seed": 101,
+      "mobile_ms": 15.54044894874096
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00108839",
+      "seed": 102,
+      "mobile_ms": 11.080317199230194
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00108873",
+      "seed": 101,
+      "mobile_ms": 14.39252682030201
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00108873",
+      "seed": 102,
+      "mobile_ms": 11.091852560639381
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00108907",
+      "seed": 101,
+      "mobile_ms": 12.314923107624054
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00108907",
+      "seed": 102,
+      "mobile_ms": 14.829153195023537
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00108941",
+      "seed": 101,
+      "mobile_ms": 13.540215790271759
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00108941",
+      "seed": 102,
+      "mobile_ms": 12.429958209395409
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00108975",
+      "seed": 101,
+      "mobile_ms": 14.66408371925354
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00108975",
+      "seed": 102,
+      "mobile_ms": 13.661274686455727
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109009",
+      "seed": 101,
+      "mobile_ms": 14.322208240628242
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109009",
+      "seed": 102,
+      "mobile_ms": 9.79987345635891
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109043",
+      "seed": 101,
+      "mobile_ms": 11.305928230285645
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109043",
+      "seed": 102,
+      "mobile_ms": 13.308592140674591
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109077",
+      "seed": 101,
+      "mobile_ms": 13.760725036263466
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109077",
+      "seed": 102,
+      "mobile_ms": 12.689407914876938
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109111",
+      "seed": 101,
+      "mobile_ms": 11.854292824864388
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109111",
+      "seed": 102,
+      "mobile_ms": 11.843763291835785
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109145",
+      "seed": 101,
+      "mobile_ms": 14.299869537353516
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109145",
+      "seed": 102,
+      "mobile_ms": 9.653380140662193
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109179",
+      "seed": 101,
+      "mobile_ms": 12.55648210644722
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109179",
+      "seed": 102,
+      "mobile_ms": 9.367521852254868
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109213",
+      "seed": 101,
+      "mobile_ms": 8.753100410103798
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109213",
+      "seed": 102,
+      "mobile_ms": 7.753821089863777
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109247",
+      "seed": 101,
+      "mobile_ms": 13.267157599329948
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109247",
+      "seed": 102,
+      "mobile_ms": 8.529797196388245
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109281",
+      "seed": 101,
+      "mobile_ms": 16.014935448765755
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109281",
+      "seed": 102,
+      "mobile_ms": 14.423543587327003
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109315",
+      "seed": 101,
+      "mobile_ms": 15.123041346669197
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109315",
+      "seed": 102,
+      "mobile_ms": 11.683972552418709
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109349",
+      "seed": 101,
+      "mobile_ms": 18.158314749598503
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109349",
+      "seed": 102,
+      "mobile_ms": 11.874360963702202
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109383",
+      "seed": 101,
+      "mobile_ms": 12.069718912243843
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109383",
+      "seed": 102,
+      "mobile_ms": 11.89691387116909
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109417",
+      "seed": 101,
+      "mobile_ms": 12.51629926264286
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109417",
+      "seed": 102,
+      "mobile_ms": 8.899249136447906
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109451",
+      "seed": 101,
+      "mobile_ms": 12.29068823158741
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109451",
+      "seed": 102,
+      "mobile_ms": 11.798962950706482
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109485",
+      "seed": 101,
+      "mobile_ms": 13.681713491678238
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109485",
+      "seed": 102,
+      "mobile_ms": 12.442873790860176
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109519",
+      "seed": 101,
+      "mobile_ms": 13.792814686894417
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109519",
+      "seed": 102,
+      "mobile_ms": 8.850950747728348
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109553",
+      "seed": 101,
+      "mobile_ms": 11.949826031923294
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109553",
+      "seed": 102,
+      "mobile_ms": 15.438482165336609
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109587",
+      "seed": 101,
+      "mobile_ms": 10.214613750576973
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109587",
+      "seed": 102,
+      "mobile_ms": 11.038895696401596
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109621",
+      "seed": 101,
+      "mobile_ms": 13.122467324137688
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109621",
+      "seed": 102,
+      "mobile_ms": 11.547308415174484
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109655",
+      "seed": 101,
+      "mobile_ms": 14.425283297896385
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109655",
+      "seed": 102,
+      "mobile_ms": 11.73432357609272
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109689",
+      "seed": 101,
+      "mobile_ms": 10.24940051138401
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109689",
+      "seed": 102,
+      "mobile_ms": 13.693282380700111
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109723",
+      "seed": 101,
+      "mobile_ms": 19.210146740078926
+    },
+    {
+      "sample_id": "Town01_m5o_train_05/00109723",
+      "seed": 102,
+      "mobile_ms": 15.624627470970154
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110056",
+      "seed": 101,
+      "mobile_ms": 15.030767768621445
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110056",
+      "seed": 102,
+      "mobile_ms": 12.173112481832504
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110090",
+      "seed": 101,
+      "mobile_ms": 11.521438136696815
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110090",
+      "seed": 102,
+      "mobile_ms": 13.332497328519821
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110124",
+      "seed": 101,
+      "mobile_ms": 8.61191563308239
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110124",
+      "seed": 102,
+      "mobile_ms": 8.709985762834549
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110158",
+      "seed": 101,
+      "mobile_ms": 14.04113881289959
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110158",
+      "seed": 102,
+      "mobile_ms": 13.648971915245056
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110192",
+      "seed": 101,
+      "mobile_ms": 13.072384521365166
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110192",
+      "seed": 102,
+      "mobile_ms": 11.433510109782219
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110226",
+      "seed": 101,
+      "mobile_ms": 12.808708474040031
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110226",
+      "seed": 102,
+      "mobile_ms": 11.14068366587162
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110260",
+      "seed": 101,
+      "mobile_ms": 10.681143030524254
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110260",
+      "seed": 102,
+      "mobile_ms": 9.956298395991325
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110294",
+      "seed": 101,
+      "mobile_ms": 15.925979241728783
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110294",
+      "seed": 102,
+      "mobile_ms": 14.547059312462807
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110328",
+      "seed": 101,
+      "mobile_ms": 12.146765366196632
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110328",
+      "seed": 102,
+      "mobile_ms": 11.893780902028084
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110362",
+      "seed": 101,
+      "mobile_ms": 14.64245654642582
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110362",
+      "seed": 102,
+      "mobile_ms": 15.086667612195015
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110396",
+      "seed": 101,
+      "mobile_ms": 21.14107459783554
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110396",
+      "seed": 102,
+      "mobile_ms": 12.635689228773117
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110430",
+      "seed": 101,
+      "mobile_ms": 11.921459808945656
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110430",
+      "seed": 102,
+      "mobile_ms": 16.070157289505005
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110464",
+      "seed": 101,
+      "mobile_ms": 12.766441330313683
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110464",
+      "seed": 102,
+      "mobile_ms": 11.054860427975655
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110498",
+      "seed": 101,
+      "mobile_ms": 11.168934404850006
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110498",
+      "seed": 102,
+      "mobile_ms": 12.143699452280998
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110532",
+      "seed": 101,
+      "mobile_ms": 12.980826199054718
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110532",
+      "seed": 102,
+      "mobile_ms": 12.653069570660591
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110566",
+      "seed": 101,
+      "mobile_ms": 12.332972139120102
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110566",
+      "seed": 102,
+      "mobile_ms": 8.159350603818893
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110600",
+      "seed": 101,
+      "mobile_ms": 15.647770836949348
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110600",
+      "seed": 102,
+      "mobile_ms": 11.142496019601822
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110634",
+      "seed": 101,
+      "mobile_ms": 9.757988154888153
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110634",
+      "seed": 102,
+      "mobile_ms": 7.838338613510132
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110668",
+      "seed": 101,
+      "mobile_ms": 13.373661786317825
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110668",
+      "seed": 102,
+      "mobile_ms": 12.784900143742561
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110702",
+      "seed": 101,
+      "mobile_ms": 12.457670643925667
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110702",
+      "seed": 102,
+      "mobile_ms": 15.380021184682846
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110736",
+      "seed": 101,
+      "mobile_ms": 12.151626870036125
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110736",
+      "seed": 102,
+      "mobile_ms": 14.202827587723732
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110770",
+      "seed": 101,
+      "mobile_ms": 12.810152024030685
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110770",
+      "seed": 102,
+      "mobile_ms": 11.727575212717056
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110804",
+      "seed": 101,
+      "mobile_ms": 15.0928795337677
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110804",
+      "seed": 102,
+      "mobile_ms": 12.610217556357384
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110838",
+      "seed": 101,
+      "mobile_ms": 14.423878863453865
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110838",
+      "seed": 102,
+      "mobile_ms": 10.467780753970146
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110872",
+      "seed": 101,
+      "mobile_ms": 14.793060719966888
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110872",
+      "seed": 102,
+      "mobile_ms": 12.521283701062202
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110906",
+      "seed": 101,
+      "mobile_ms": 12.361915782094002
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110906",
+      "seed": 102,
+      "mobile_ms": 12.182347476482391
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110940",
+      "seed": 101,
+      "mobile_ms": 12.124544009566307
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110940",
+      "seed": 102,
+      "mobile_ms": 8.286884054541588
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110974",
+      "seed": 101,
+      "mobile_ms": 13.215376064181328
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00110974",
+      "seed": 102,
+      "mobile_ms": 10.673023760318756
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00111008",
+      "seed": 101,
+      "mobile_ms": 15.136508271098137
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00111008",
+      "seed": 102,
+      "mobile_ms": 10.46529971063137
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00111042",
+      "seed": 101,
+      "mobile_ms": 12.874552980065346
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00111042",
+      "seed": 102,
+      "mobile_ms": 10.564768686890602
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00111076",
+      "seed": 101,
+      "mobile_ms": 12.519611045718193
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00111076",
+      "seed": 102,
+      "mobile_ms": 11.086076498031616
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00111110",
+      "seed": 101,
+      "mobile_ms": 13.02010752260685
+    },
+    {
+      "sample_id": "Town03_m5o_train_00/00111110",
+      "seed": 102,
+      "mobile_ms": 10.668016970157623
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111453",
+      "seed": 101,
+      "mobile_ms": 9.45252738893032
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111453",
+      "seed": 102,
+      "mobile_ms": 8.172260597348213
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111487",
+      "seed": 101,
+      "mobile_ms": 8.211275562644005
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111487",
+      "seed": 102,
+      "mobile_ms": 12.185795232653618
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111521",
+      "seed": 101,
+      "mobile_ms": 11.703817173838615
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111521",
+      "seed": 102,
+      "mobile_ms": 14.195429161190987
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111555",
+      "seed": 101,
+      "mobile_ms": 13.888588175177574
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111555",
+      "seed": 102,
+      "mobile_ms": 11.526083573698997
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111589",
+      "seed": 101,
+      "mobile_ms": 13.453727588057518
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111589",
+      "seed": 102,
+      "mobile_ms": 11.982075870037079
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111623",
+      "seed": 101,
+      "mobile_ms": 12.93841190636158
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111623",
+      "seed": 102,
+      "mobile_ms": 11.803943663835526
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111657",
+      "seed": 101,
+      "mobile_ms": 14.242401346564293
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111657",
+      "seed": 102,
+      "mobile_ms": 12.372156605124474
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111691",
+      "seed": 101,
+      "mobile_ms": 11.821281164884567
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111691",
+      "seed": 102,
+      "mobile_ms": 11.73274964094162
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111725",
+      "seed": 101,
+      "mobile_ms": 10.685170069336891
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111725",
+      "seed": 102,
+      "mobile_ms": 10.033706203103065
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111759",
+      "seed": 101,
+      "mobile_ms": 13.535548001527786
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111759",
+      "seed": 102,
+      "mobile_ms": 13.498930260539055
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111793",
+      "seed": 101,
+      "mobile_ms": 12.899907305836678
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111793",
+      "seed": 102,
+      "mobile_ms": 14.038240537047386
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111827",
+      "seed": 101,
+      "mobile_ms": 17.325591295957565
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111827",
+      "seed": 102,
+      "mobile_ms": 17.84217730164528
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111861",
+      "seed": 101,
+      "mobile_ms": 13.816112652420998
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111861",
+      "seed": 102,
+      "mobile_ms": 12.942744418978691
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111895",
+      "seed": 101,
+      "mobile_ms": 14.031760394573212
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111895",
+      "seed": 102,
+      "mobile_ms": 15.03317803144455
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111929",
+      "seed": 101,
+      "mobile_ms": 14.42219503223896
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111929",
+      "seed": 102,
+      "mobile_ms": 13.30929808318615
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111963",
+      "seed": 101,
+      "mobile_ms": 9.762739762663841
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111963",
+      "seed": 102,
+      "mobile_ms": 17.08301529288292
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111997",
+      "seed": 101,
+      "mobile_ms": 11.952918022871017
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00111997",
+      "seed": 102,
+      "mobile_ms": 12.266911566257477
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112031",
+      "seed": 101,
+      "mobile_ms": 18.667545169591904
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112031",
+      "seed": 102,
+      "mobile_ms": 12.8821711987257
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112065",
+      "seed": 101,
+      "mobile_ms": 11.799007654190063
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112065",
+      "seed": 102,
+      "mobile_ms": 14.159811660647392
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112099",
+      "seed": 101,
+      "mobile_ms": 15.986721962690353
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112099",
+      "seed": 102,
+      "mobile_ms": 13.430476188659668
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112133",
+      "seed": 101,
+      "mobile_ms": 14.08114843070507
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112133",
+      "seed": 102,
+      "mobile_ms": 14.111163094639778
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112167",
+      "seed": 101,
+      "mobile_ms": 11.907868087291718
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112167",
+      "seed": 102,
+      "mobile_ms": 14.541219919919968
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112201",
+      "seed": 101,
+      "mobile_ms": 22.600550204515457
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112201",
+      "seed": 102,
+      "mobile_ms": 12.316035106778145
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112235",
+      "seed": 101,
+      "mobile_ms": 9.89164412021637
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112235",
+      "seed": 102,
+      "mobile_ms": 9.76264663040638
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112269",
+      "seed": 101,
+      "mobile_ms": 12.80195638537407
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112269",
+      "seed": 102,
+      "mobile_ms": 15.751035884022713
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112303",
+      "seed": 101,
+      "mobile_ms": 15.250861644744873
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112303",
+      "seed": 102,
+      "mobile_ms": 11.763075366616249
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112337",
+      "seed": 101,
+      "mobile_ms": 11.555397883057594
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112337",
+      "seed": 102,
+      "mobile_ms": 12.505806982517242
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112371",
+      "seed": 101,
+      "mobile_ms": 11.176293715834618
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112371",
+      "seed": 102,
+      "mobile_ms": 12.087834998965263
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112405",
+      "seed": 101,
+      "mobile_ms": 10.337820276618004
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112405",
+      "seed": 102,
+      "mobile_ms": 15.347117558121681
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112439",
+      "seed": 101,
+      "mobile_ms": 13.333486393094063
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112439",
+      "seed": 102,
+      "mobile_ms": 10.665453970432281
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112473",
+      "seed": 101,
+      "mobile_ms": 9.108567610383034
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112473",
+      "seed": 102,
+      "mobile_ms": 16.764795407652855
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112507",
+      "seed": 101,
+      "mobile_ms": 10.322747752070427
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112507",
+      "seed": 102,
+      "mobile_ms": 14.15787823498249
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112541",
+      "seed": 101,
+      "mobile_ms": 12.688074260950089
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112541",
+      "seed": 102,
+      "mobile_ms": 13.770516961812973
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112575",
+      "seed": 101,
+      "mobile_ms": 9.477991610765457
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112575",
+      "seed": 102,
+      "mobile_ms": 15.237370505928993
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112609",
+      "seed": 101,
+      "mobile_ms": 11.614924296736717
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112609",
+      "seed": 102,
+      "mobile_ms": 9.522680193185806
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112643",
+      "seed": 101,
+      "mobile_ms": 12.664159759879112
+    },
+    {
+      "sample_id": "Town03_m5o_train_01/00112643",
+      "seed": 102,
+      "mobile_ms": 11.456649750471115
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113007",
+      "seed": 101,
+      "mobile_ms": 14.713313430547714
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113007",
+      "seed": 102,
+      "mobile_ms": 17.078841105103493
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113041",
+      "seed": 101,
+      "mobile_ms": 12.82459869980812
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113041",
+      "seed": 102,
+      "mobile_ms": 12.797223404049873
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113075",
+      "seed": 101,
+      "mobile_ms": 11.418865993618965
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113075",
+      "seed": 102,
+      "mobile_ms": 10.12800820171833
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113109",
+      "seed": 101,
+      "mobile_ms": 13.912200927734375
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113109",
+      "seed": 102,
+      "mobile_ms": 11.267848312854767
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113143",
+      "seed": 101,
+      "mobile_ms": 13.322528451681137
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113143",
+      "seed": 102,
+      "mobile_ms": 8.107602596282959
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113177",
+      "seed": 101,
+      "mobile_ms": 14.58330824971199
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113177",
+      "seed": 102,
+      "mobile_ms": 14.213623479008675
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113211",
+      "seed": 101,
+      "mobile_ms": 15.331834554672241
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113211",
+      "seed": 102,
+      "mobile_ms": 10.811448097229004
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113245",
+      "seed": 101,
+      "mobile_ms": 11.203432455658913
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113245",
+      "seed": 102,
+      "mobile_ms": 11.153671890497208
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113279",
+      "seed": 101,
+      "mobile_ms": 12.635728344321251
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113279",
+      "seed": 102,
+      "mobile_ms": 12.26305216550827
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113313",
+      "seed": 101,
+      "mobile_ms": 8.094381541013718
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113313",
+      "seed": 102,
+      "mobile_ms": 9.961869567632675
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113347",
+      "seed": 101,
+      "mobile_ms": 14.621054753661156
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113347",
+      "seed": 102,
+      "mobile_ms": 11.98713481426239
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113381",
+      "seed": 101,
+      "mobile_ms": 11.262711137533188
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113381",
+      "seed": 102,
+      "mobile_ms": 11.158345267176628
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113415",
+      "seed": 101,
+      "mobile_ms": 13.02850991487503
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113415",
+      "seed": 102,
+      "mobile_ms": 12.542910873889923
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113449",
+      "seed": 101,
+      "mobile_ms": 12.680811807513237
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113449",
+      "seed": 102,
+      "mobile_ms": 14.146130532026291
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113483",
+      "seed": 101,
+      "mobile_ms": 13.862751424312592
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113483",
+      "seed": 102,
+      "mobile_ms": 14.005247503519058
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113517",
+      "seed": 101,
+      "mobile_ms": 14.70349170267582
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113517",
+      "seed": 102,
+      "mobile_ms": 12.737099081277847
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113551",
+      "seed": 101,
+      "mobile_ms": 10.418225079774857
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113551",
+      "seed": 102,
+      "mobile_ms": 11.624131351709366
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113585",
+      "seed": 101,
+      "mobile_ms": 11.686023324728012
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113585",
+      "seed": 102,
+      "mobile_ms": 12.229721993207932
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113619",
+      "seed": 101,
+      "mobile_ms": 17.699331045150757
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113619",
+      "seed": 102,
+      "mobile_ms": 8.138636127114296
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113653",
+      "seed": 101,
+      "mobile_ms": 9.4197578728199
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113653",
+      "seed": 102,
+      "mobile_ms": 8.680369704961777
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113687",
+      "seed": 101,
+      "mobile_ms": 14.61186446249485
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113687",
+      "seed": 102,
+      "mobile_ms": 12.792350724339485
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113721",
+      "seed": 101,
+      "mobile_ms": 12.593714520335197
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113721",
+      "seed": 102,
+      "mobile_ms": 13.274824246764183
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113755",
+      "seed": 101,
+      "mobile_ms": 11.842126026749611
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113755",
+      "seed": 102,
+      "mobile_ms": 10.818207636475563
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113789",
+      "seed": 101,
+      "mobile_ms": 14.929594472050667
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113789",
+      "seed": 102,
+      "mobile_ms": 15.840111300349236
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113823",
+      "seed": 101,
+      "mobile_ms": 11.840326711535454
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113823",
+      "seed": 102,
+      "mobile_ms": 13.251261785626411
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113857",
+      "seed": 101,
+      "mobile_ms": 11.78012229502201
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113857",
+      "seed": 102,
+      "mobile_ms": 13.109568506479263
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113891",
+      "seed": 101,
+      "mobile_ms": 13.383744284510612
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113891",
+      "seed": 102,
+      "mobile_ms": 8.658083155751228
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113925",
+      "seed": 101,
+      "mobile_ms": 15.817426145076752
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113925",
+      "seed": 102,
+      "mobile_ms": 14.728426933288574
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113959",
+      "seed": 101,
+      "mobile_ms": 13.620834797620773
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113959",
+      "seed": 102,
+      "mobile_ms": 11.746395379304886
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113993",
+      "seed": 101,
+      "mobile_ms": 13.184947893023491
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00113993",
+      "seed": 102,
+      "mobile_ms": 8.723730221390724
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00114027",
+      "seed": 101,
+      "mobile_ms": 12.510346248745918
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00114027",
+      "seed": 102,
+      "mobile_ms": 12.118246406316757
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00114061",
+      "seed": 101,
+      "mobile_ms": 8.115062490105629
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00114061",
+      "seed": 102,
+      "mobile_ms": 8.15538875758648
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00114095",
+      "seed": 101,
+      "mobile_ms": 10.706569999456406
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00114095",
+      "seed": 102,
+      "mobile_ms": 10.181644931435585
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00114129",
+      "seed": 101,
+      "mobile_ms": 15.667356550693512
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00114129",
+      "seed": 102,
+      "mobile_ms": 11.649299412965775
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00114163",
+      "seed": 101,
+      "mobile_ms": 10.876515880227089
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00114163",
+      "seed": 102,
+      "mobile_ms": 11.784164234995842
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00114197",
+      "seed": 101,
+      "mobile_ms": 12.713871896266937
+    },
+    {
+      "sample_id": "Town03_m5o_train_02/00114197",
+      "seed": 102,
+      "mobile_ms": 9.486956521868706
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114558",
+      "seed": 101,
+      "mobile_ms": 16.571829095482826
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114558",
+      "seed": 102,
+      "mobile_ms": 11.368898674845695
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114592",
+      "seed": 101,
+      "mobile_ms": 13.157632201910019
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114592",
+      "seed": 102,
+      "mobile_ms": 11.875148862600327
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114626",
+      "seed": 101,
+      "mobile_ms": 11.83464378118515
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114626",
+      "seed": 102,
+      "mobile_ms": 12.441171333193779
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114660",
+      "seed": 101,
+      "mobile_ms": 11.892138049006462
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114660",
+      "seed": 102,
+      "mobile_ms": 12.196140363812447
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114694",
+      "seed": 101,
+      "mobile_ms": 11.020150035619736
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114694",
+      "seed": 102,
+      "mobile_ms": 9.910786524415016
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114728",
+      "seed": 101,
+      "mobile_ms": 14.695743098855019
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114728",
+      "seed": 102,
+      "mobile_ms": 16.279425472021103
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114762",
+      "seed": 101,
+      "mobile_ms": 11.980341747403145
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114762",
+      "seed": 102,
+      "mobile_ms": 14.062771573662758
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114796",
+      "seed": 101,
+      "mobile_ms": 12.877902016043663
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114796",
+      "seed": 102,
+      "mobile_ms": 14.851843938231468
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114830",
+      "seed": 101,
+      "mobile_ms": 11.132907122373581
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114830",
+      "seed": 102,
+      "mobile_ms": 11.462012305855751
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114864",
+      "seed": 101,
+      "mobile_ms": 12.420842424035072
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114864",
+      "seed": 102,
+      "mobile_ms": 12.70945928990841
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114898",
+      "seed": 101,
+      "mobile_ms": 10.456502437591553
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114898",
+      "seed": 102,
+      "mobile_ms": 10.502032935619354
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114932",
+      "seed": 101,
+      "mobile_ms": 12.80914805829525
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114932",
+      "seed": 102,
+      "mobile_ms": 14.069672673940659
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114966",
+      "seed": 101,
+      "mobile_ms": 14.590298756957054
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00114966",
+      "seed": 102,
+      "mobile_ms": 11.435309424996376
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115000",
+      "seed": 101,
+      "mobile_ms": 9.786959737539291
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115000",
+      "seed": 102,
+      "mobile_ms": 12.170493602752686
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115034",
+      "seed": 101,
+      "mobile_ms": 11.083494871854782
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115034",
+      "seed": 102,
+      "mobile_ms": 12.683022767305374
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115068",
+      "seed": 101,
+      "mobile_ms": 10.559896007180214
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115068",
+      "seed": 102,
+      "mobile_ms": 11.562369763851166
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115102",
+      "seed": 101,
+      "mobile_ms": 9.581977501511574
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115102",
+      "seed": 102,
+      "mobile_ms": 8.591853082180023
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115136",
+      "seed": 101,
+      "mobile_ms": 8.44264030456543
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115136",
+      "seed": 102,
+      "mobile_ms": 14.500821009278297
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115170",
+      "seed": 101,
+      "mobile_ms": 14.19123075902462
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115170",
+      "seed": 102,
+      "mobile_ms": 9.693453088402748
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115204",
+      "seed": 101,
+      "mobile_ms": 19.220154732465744
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115204",
+      "seed": 102,
+      "mobile_ms": 8.925626054406166
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115238",
+      "seed": 101,
+      "mobile_ms": 13.01930658519268
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115238",
+      "seed": 102,
+      "mobile_ms": 12.65454851090908
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115272",
+      "seed": 101,
+      "mobile_ms": 12.589139863848686
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115272",
+      "seed": 102,
+      "mobile_ms": 12.021604925394058
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115306",
+      "seed": 101,
+      "mobile_ms": 13.503344729542732
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115306",
+      "seed": 102,
+      "mobile_ms": 10.098103433847427
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115340",
+      "seed": 101,
+      "mobile_ms": 11.954890564084053
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115340",
+      "seed": 102,
+      "mobile_ms": 13.06982897222042
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115374",
+      "seed": 101,
+      "mobile_ms": 10.779568925499916
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115374",
+      "seed": 102,
+      "mobile_ms": 14.902111142873764
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115408",
+      "seed": 101,
+      "mobile_ms": 12.281527742743492
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115408",
+      "seed": 102,
+      "mobile_ms": 12.878408655524254
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115442",
+      "seed": 101,
+      "mobile_ms": 10.986484587192535
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115442",
+      "seed": 102,
+      "mobile_ms": 13.96549865603447
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115476",
+      "seed": 101,
+      "mobile_ms": 15.975067391991615
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115476",
+      "seed": 102,
+      "mobile_ms": 14.591094106435776
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115510",
+      "seed": 101,
+      "mobile_ms": 13.619780540466309
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115510",
+      "seed": 102,
+      "mobile_ms": 11.74389012157917
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115544",
+      "seed": 101,
+      "mobile_ms": 13.546707108616829
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115544",
+      "seed": 102,
+      "mobile_ms": 11.858344078063965
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115578",
+      "seed": 101,
+      "mobile_ms": 16.316916793584824
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115578",
+      "seed": 102,
+      "mobile_ms": 10.966196656227112
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115612",
+      "seed": 101,
+      "mobile_ms": 16.303159296512604
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115612",
+      "seed": 102,
+      "mobile_ms": 15.800459310412407
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115646",
+      "seed": 101,
+      "mobile_ms": 15.146812424063683
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115646",
+      "seed": 102,
+      "mobile_ms": 8.757757022976875
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115680",
+      "seed": 101,
+      "mobile_ms": 10.619459673762321
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115680",
+      "seed": 102,
+      "mobile_ms": 9.911807253956795
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115714",
+      "seed": 101,
+      "mobile_ms": 15.202851966023445
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115714",
+      "seed": 102,
+      "mobile_ms": 11.299150064587593
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115748",
+      "seed": 101,
+      "mobile_ms": 14.67551477253437
+    },
+    {
+      "sample_id": "Town03_m5o_train_03/00115748",
+      "seed": 102,
+      "mobile_ms": 12.903260067105293
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116116",
+      "seed": 101,
+      "mobile_ms": 14.501603320240974
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116116",
+      "seed": 102,
+      "mobile_ms": 13.29638622701168
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116150",
+      "seed": 101,
+      "mobile_ms": 8.671384304761887
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116150",
+      "seed": 102,
+      "mobile_ms": 7.99240916967392
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116184",
+      "seed": 101,
+      "mobile_ms": 15.815922990441322
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116184",
+      "seed": 102,
+      "mobile_ms": 13.129517436027527
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116218",
+      "seed": 101,
+      "mobile_ms": 12.105204164981842
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116218",
+      "seed": 102,
+      "mobile_ms": 13.339968398213387
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116252",
+      "seed": 101,
+      "mobile_ms": 11.913718655705452
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116252",
+      "seed": 102,
+      "mobile_ms": 15.103403478860855
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116286",
+      "seed": 101,
+      "mobile_ms": 13.481969013810158
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116286",
+      "seed": 102,
+      "mobile_ms": 13.411806896328926
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116320",
+      "seed": 101,
+      "mobile_ms": 14.703819528222084
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116320",
+      "seed": 102,
+      "mobile_ms": 14.510422945022583
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116354",
+      "seed": 101,
+      "mobile_ms": 9.77383553981781
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116354",
+      "seed": 102,
+      "mobile_ms": 14.206914231181145
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116388",
+      "seed": 101,
+      "mobile_ms": 13.22234608232975
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116388",
+      "seed": 102,
+      "mobile_ms": 13.444280251860619
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116422",
+      "seed": 101,
+      "mobile_ms": 13.505198061466217
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116422",
+      "seed": 102,
+      "mobile_ms": 8.922154083848
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116456",
+      "seed": 101,
+      "mobile_ms": 12.471992522478104
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116456",
+      "seed": 102,
+      "mobile_ms": 11.751743033528328
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116490",
+      "seed": 101,
+      "mobile_ms": 12.070884928107262
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116490",
+      "seed": 102,
+      "mobile_ms": 21.790266036987305
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116524",
+      "seed": 101,
+      "mobile_ms": 12.654419988393784
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116524",
+      "seed": 102,
+      "mobile_ms": 10.622767731547356
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116558",
+      "seed": 101,
+      "mobile_ms": 15.767103061079979
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116558",
+      "seed": 102,
+      "mobile_ms": 12.681635096669197
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116592",
+      "seed": 101,
+      "mobile_ms": 14.421656727790833
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116592",
+      "seed": 102,
+      "mobile_ms": 11.22489757835865
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116626",
+      "seed": 101,
+      "mobile_ms": 10.207276791334152
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116626",
+      "seed": 102,
+      "mobile_ms": 12.228213250637054
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116660",
+      "seed": 101,
+      "mobile_ms": 8.95199365913868
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116660",
+      "seed": 102,
+      "mobile_ms": 8.54392722249031
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116694",
+      "seed": 101,
+      "mobile_ms": 13.131236657500267
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116694",
+      "seed": 102,
+      "mobile_ms": 11.240663006901741
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116728",
+      "seed": 101,
+      "mobile_ms": 12.188021093606949
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116728",
+      "seed": 102,
+      "mobile_ms": 14.807356521487236
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116762",
+      "seed": 101,
+      "mobile_ms": 10.913442820310593
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116762",
+      "seed": 102,
+      "mobile_ms": 12.959901243448257
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116796",
+      "seed": 101,
+      "mobile_ms": 11.22504286468029
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116796",
+      "seed": 102,
+      "mobile_ms": 11.481711640954018
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116830",
+      "seed": 101,
+      "mobile_ms": 12.383315712213516
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116830",
+      "seed": 102,
+      "mobile_ms": 11.068731546401978
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116864",
+      "seed": 101,
+      "mobile_ms": 14.317190274596214
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116864",
+      "seed": 102,
+      "mobile_ms": 14.1998790204525
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116898",
+      "seed": 101,
+      "mobile_ms": 13.753464445471764
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116898",
+      "seed": 102,
+      "mobile_ms": 12.045841664075851
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116932",
+      "seed": 101,
+      "mobile_ms": 15.570761635899544
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116932",
+      "seed": 102,
+      "mobile_ms": 17.8520530462265
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116966",
+      "seed": 101,
+      "mobile_ms": 13.574518263339996
+    },
+    {
+      "sample_id": "Town03_m5o_train_04/00116966",
+      "seed": 102,
+      "mobile_ms": 11.945558711886406
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117270",
+      "seed": 101,
+      "mobile_ms": 14.535004273056984
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117270",
+      "seed": 102,
+      "mobile_ms": 12.658171355724335
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117304",
+      "seed": 101,
+      "mobile_ms": 13.977663591504097
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117304",
+      "seed": 102,
+      "mobile_ms": 10.626563802361488
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117338",
+      "seed": 101,
+      "mobile_ms": 14.358466491103172
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117338",
+      "seed": 102,
+      "mobile_ms": 16.191400587558746
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117372",
+      "seed": 101,
+      "mobile_ms": 13.719085603952408
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117372",
+      "seed": 102,
+      "mobile_ms": 11.815812438726425
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117406",
+      "seed": 101,
+      "mobile_ms": 17.262695357203484
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117406",
+      "seed": 102,
+      "mobile_ms": 11.41665130853653
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117440",
+      "seed": 101,
+      "mobile_ms": 14.012595638632774
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117440",
+      "seed": 102,
+      "mobile_ms": 10.10952703654766
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117474",
+      "seed": 101,
+      "mobile_ms": 9.205592796206474
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117474",
+      "seed": 102,
+      "mobile_ms": 8.459717035293579
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117508",
+      "seed": 101,
+      "mobile_ms": 8.157100528478622
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117508",
+      "seed": 102,
+      "mobile_ms": 10.507898405194283
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117542",
+      "seed": 101,
+      "mobile_ms": 11.551937088370323
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117542",
+      "seed": 102,
+      "mobile_ms": 14.233767986297607
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117576",
+      "seed": 101,
+      "mobile_ms": 12.313567101955414
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117576",
+      "seed": 102,
+      "mobile_ms": 12.14822381734848
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117610",
+      "seed": 101,
+      "mobile_ms": 12.25430890917778
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117610",
+      "seed": 102,
+      "mobile_ms": 13.735415413975716
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117644",
+      "seed": 101,
+      "mobile_ms": 12.363318353891373
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117644",
+      "seed": 102,
+      "mobile_ms": 14.38969187438488
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117678",
+      "seed": 101,
+      "mobile_ms": 12.235701084136963
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117678",
+      "seed": 102,
+      "mobile_ms": 10.241234675049782
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117712",
+      "seed": 101,
+      "mobile_ms": 11.900931596755981
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117712",
+      "seed": 102,
+      "mobile_ms": 11.912094429135323
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117746",
+      "seed": 101,
+      "mobile_ms": 11.79092563688755
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117746",
+      "seed": 102,
+      "mobile_ms": 11.681074276566505
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117780",
+      "seed": 101,
+      "mobile_ms": 11.82996854186058
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117780",
+      "seed": 102,
+      "mobile_ms": 10.977361351251602
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117814",
+      "seed": 101,
+      "mobile_ms": 11.095210909843445
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117814",
+      "seed": 102,
+      "mobile_ms": 10.485619306564331
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117848",
+      "seed": 101,
+      "mobile_ms": 12.37139105796814
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117848",
+      "seed": 102,
+      "mobile_ms": 11.881465092301369
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117882",
+      "seed": 101,
+      "mobile_ms": 11.346887797117233
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117882",
+      "seed": 102,
+      "mobile_ms": 11.481432244181633
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117916",
+      "seed": 101,
+      "mobile_ms": 13.32402415573597
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117916",
+      "seed": 102,
+      "mobile_ms": 11.574938893318176
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117950",
+      "seed": 101,
+      "mobile_ms": 11.455241590738297
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117950",
+      "seed": 102,
+      "mobile_ms": 17.09732599556446
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117984",
+      "seed": 101,
+      "mobile_ms": 11.200131848454475
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00117984",
+      "seed": 102,
+      "mobile_ms": 16.659757122397423
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00118018",
+      "seed": 101,
+      "mobile_ms": 12.621188536286354
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00118018",
+      "seed": 102,
+      "mobile_ms": 9.913275018334389
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00118052",
+      "seed": 101,
+      "mobile_ms": 10.3644710034132
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00118052",
+      "seed": 102,
+      "mobile_ms": 17.419667914509773
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00118086",
+      "seed": 101,
+      "mobile_ms": 20.05804143846035
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00118086",
+      "seed": 102,
+      "mobile_ms": 10.719576850533485
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00118120",
+      "seed": 101,
+      "mobile_ms": 12.332756072282791
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00118120",
+      "seed": 102,
+      "mobile_ms": 17.82231591641903
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00118154",
+      "seed": 101,
+      "mobile_ms": 8.870011195540428
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00118154",
+      "seed": 102,
+      "mobile_ms": 11.059598997235298
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00118188",
+      "seed": 101,
+      "mobile_ms": 13.10061663389206
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00118188",
+      "seed": 102,
+      "mobile_ms": 10.793095454573631
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00118222",
+      "seed": 101,
+      "mobile_ms": 12.643028050661087
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00118222",
+      "seed": 102,
+      "mobile_ms": 13.318069279193878
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00118256",
+      "seed": 101,
+      "mobile_ms": 11.131895706057549
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00118256",
+      "seed": 102,
+      "mobile_ms": 12.511219829320908
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00118290",
+      "seed": 101,
+      "mobile_ms": 8.509162813425064
+    },
+    {
+      "sample_id": "Town03_m5o_train_05/00118290",
+      "seed": 102,
+      "mobile_ms": 7.959024980664253
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118623",
+      "seed": 101,
+      "mobile_ms": 9.395044296979904
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118623",
+      "seed": 102,
+      "mobile_ms": 12.540632858872414
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118657",
+      "seed": 101,
+      "mobile_ms": 11.099107563495636
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118657",
+      "seed": 102,
+      "mobile_ms": 12.208795174956322
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118691",
+      "seed": 101,
+      "mobile_ms": 16.36626571416855
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118691",
+      "seed": 102,
+      "mobile_ms": 11.191431432962418
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118725",
+      "seed": 101,
+      "mobile_ms": 8.786873891949654
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118725",
+      "seed": 102,
+      "mobile_ms": 8.544912561774254
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118759",
+      "seed": 101,
+      "mobile_ms": 11.990271508693695
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118759",
+      "seed": 102,
+      "mobile_ms": 12.831339612603188
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118793",
+      "seed": 101,
+      "mobile_ms": 12.465709820389748
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118793",
+      "seed": 102,
+      "mobile_ms": 11.714091524481773
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118827",
+      "seed": 101,
+      "mobile_ms": 12.761792168021202
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118827",
+      "seed": 102,
+      "mobile_ms": 8.002011105418205
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118861",
+      "seed": 101,
+      "mobile_ms": 8.687591180205345
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118861",
+      "seed": 102,
+      "mobile_ms": 7.723337039351463
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118895",
+      "seed": 101,
+      "mobile_ms": 12.614857405424118
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118895",
+      "seed": 102,
+      "mobile_ms": 14.661990106105804
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118929",
+      "seed": 101,
+      "mobile_ms": 13.247242197394371
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118929",
+      "seed": 102,
+      "mobile_ms": 9.961772710084915
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118963",
+      "seed": 101,
+      "mobile_ms": 15.138164162635803
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118963",
+      "seed": 102,
+      "mobile_ms": 7.847337052226067
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118997",
+      "seed": 101,
+      "mobile_ms": 9.290384128689766
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00118997",
+      "seed": 102,
+      "mobile_ms": 8.251432329416275
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119031",
+      "seed": 101,
+      "mobile_ms": 10.11429913341999
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119031",
+      "seed": 102,
+      "mobile_ms": 10.000789538025856
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119065",
+      "seed": 101,
+      "mobile_ms": 12.705393135547638
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119065",
+      "seed": 102,
+      "mobile_ms": 18.819592893123627
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119099",
+      "seed": 101,
+      "mobile_ms": 8.852904662489891
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119099",
+      "seed": 102,
+      "mobile_ms": 8.702129125595093
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119133",
+      "seed": 101,
+      "mobile_ms": 8.356655016541481
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119133",
+      "seed": 102,
+      "mobile_ms": 15.849936753511429
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119167",
+      "seed": 101,
+      "mobile_ms": 12.06374354660511
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119167",
+      "seed": 102,
+      "mobile_ms": 14.140337705612183
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119201",
+      "seed": 101,
+      "mobile_ms": 11.39015518128872
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119201",
+      "seed": 102,
+      "mobile_ms": 10.74966974556446
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119235",
+      "seed": 101,
+      "mobile_ms": 8.623708039522171
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119235",
+      "seed": 102,
+      "mobile_ms": 9.150667116045952
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119269",
+      "seed": 101,
+      "mobile_ms": 15.524210408329964
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119269",
+      "seed": 102,
+      "mobile_ms": 13.690512627363205
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119303",
+      "seed": 101,
+      "mobile_ms": 11.370107531547546
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119303",
+      "seed": 102,
+      "mobile_ms": 11.866439133882523
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119337",
+      "seed": 101,
+      "mobile_ms": 13.003645464777946
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119337",
+      "seed": 102,
+      "mobile_ms": 10.827615857124329
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119371",
+      "seed": 101,
+      "mobile_ms": 10.522780939936638
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119371",
+      "seed": 102,
+      "mobile_ms": 8.233577013015747
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119405",
+      "seed": 101,
+      "mobile_ms": 14.407500624656677
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119405",
+      "seed": 102,
+      "mobile_ms": 14.467872679233551
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119439",
+      "seed": 101,
+      "mobile_ms": 13.086233288049698
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119439",
+      "seed": 102,
+      "mobile_ms": 13.028500601649284
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119473",
+      "seed": 101,
+      "mobile_ms": 12.341178953647614
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119473",
+      "seed": 102,
+      "mobile_ms": 8.47560167312622
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119507",
+      "seed": 101,
+      "mobile_ms": 8.195439353585243
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119507",
+      "seed": 102,
+      "mobile_ms": 8.242208510637283
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119541",
+      "seed": 101,
+      "mobile_ms": 11.713303625583649
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119541",
+      "seed": 102,
+      "mobile_ms": 13.870844617486
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119575",
+      "seed": 101,
+      "mobile_ms": 12.163713574409485
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119575",
+      "seed": 102,
+      "mobile_ms": 13.161914423108101
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119609",
+      "seed": 101,
+      "mobile_ms": 8.696340024471283
+    },
+    {
+      "sample_id": "Town03_m5o_train_06/00119609",
+      "seed": 102,
+      "mobile_ms": 7.802119478583336
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00119941",
+      "seed": 101,
+      "mobile_ms": 12.334300205111504
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00119941",
+      "seed": 102,
+      "mobile_ms": 12.985380366444588
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00119975",
+      "seed": 101,
+      "mobile_ms": 10.411350056529045
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00119975",
+      "seed": 102,
+      "mobile_ms": 11.864200234413147
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120009",
+      "seed": 101,
+      "mobile_ms": 14.570724219083786
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120009",
+      "seed": 102,
+      "mobile_ms": 12.29519210755825
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120043",
+      "seed": 101,
+      "mobile_ms": 10.586705058813095
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120043",
+      "seed": 102,
+      "mobile_ms": 16.585228964686394
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120077",
+      "seed": 101,
+      "mobile_ms": 8.264338597655296
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120077",
+      "seed": 102,
+      "mobile_ms": 8.322291076183319
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120111",
+      "seed": 101,
+      "mobile_ms": 8.774343878030777
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120111",
+      "seed": 102,
+      "mobile_ms": 10.676883161067963
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120145",
+      "seed": 101,
+      "mobile_ms": 11.685794219374657
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120145",
+      "seed": 102,
+      "mobile_ms": 12.531137093901634
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120179",
+      "seed": 101,
+      "mobile_ms": 11.740520596504211
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120179",
+      "seed": 102,
+      "mobile_ms": 13.686034828424454
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120213",
+      "seed": 101,
+      "mobile_ms": 14.48058895766735
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120213",
+      "seed": 102,
+      "mobile_ms": 11.773999780416489
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120247",
+      "seed": 101,
+      "mobile_ms": 9.046152234077454
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120247",
+      "seed": 102,
+      "mobile_ms": 8.198164403438568
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120281",
+      "seed": 101,
+      "mobile_ms": 8.783845230937004
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120281",
+      "seed": 102,
+      "mobile_ms": 7.838694378733635
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120315",
+      "seed": 101,
+      "mobile_ms": 14.053970575332642
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120315",
+      "seed": 102,
+      "mobile_ms": 12.12557777762413
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120349",
+      "seed": 101,
+      "mobile_ms": 14.009134843945503
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120349",
+      "seed": 102,
+      "mobile_ms": 11.683408170938492
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120383",
+      "seed": 101,
+      "mobile_ms": 14.534397050738335
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120383",
+      "seed": 102,
+      "mobile_ms": 11.811032891273499
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120417",
+      "seed": 101,
+      "mobile_ms": 9.46900062263012
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120417",
+      "seed": 102,
+      "mobile_ms": 8.457189425826073
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120451",
+      "seed": 101,
+      "mobile_ms": 8.30037146806717
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120451",
+      "seed": 102,
+      "mobile_ms": 8.391538634896278
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120485",
+      "seed": 101,
+      "mobile_ms": 14.418695122003555
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120485",
+      "seed": 102,
+      "mobile_ms": 12.180129066109657
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120519",
+      "seed": 101,
+      "mobile_ms": 12.700745835900307
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120519",
+      "seed": 102,
+      "mobile_ms": 11.706657707691193
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120553",
+      "seed": 101,
+      "mobile_ms": 12.06367276608944
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120553",
+      "seed": 102,
+      "mobile_ms": 15.73999971151352
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120587",
+      "seed": 101,
+      "mobile_ms": 8.367270231246948
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120587",
+      "seed": 102,
+      "mobile_ms": 8.073916658759117
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120621",
+      "seed": 101,
+      "mobile_ms": 9.056059643626213
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120621",
+      "seed": 102,
+      "mobile_ms": 8.286446332931519
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120655",
+      "seed": 101,
+      "mobile_ms": 10.186586529016495
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120655",
+      "seed": 102,
+      "mobile_ms": 10.57487353682518
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120689",
+      "seed": 101,
+      "mobile_ms": 14.778807759284973
+    },
+    {
+      "sample_id": "Town04_m5o_train_00/00120689",
+      "seed": 102,
+      "mobile_ms": 14.295689761638641
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00120975",
+      "seed": 101,
+      "mobile_ms": 12.592628598213196
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00120975",
+      "seed": 102,
+      "mobile_ms": 10.680202394723892
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121009",
+      "seed": 101,
+      "mobile_ms": 8.644124493002892
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121009",
+      "seed": 102,
+      "mobile_ms": 8.142774924635887
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121043",
+      "seed": 101,
+      "mobile_ms": 9.616469964385033
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121043",
+      "seed": 102,
+      "mobile_ms": 8.639747276902199
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121077",
+      "seed": 101,
+      "mobile_ms": 10.774476453661919
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121077",
+      "seed": 102,
+      "mobile_ms": 12.12417148053646
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121111",
+      "seed": 101,
+      "mobile_ms": 12.952007353305817
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121111",
+      "seed": 102,
+      "mobile_ms": 11.328697204589844
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121145",
+      "seed": 101,
+      "mobile_ms": 12.95764371752739
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121145",
+      "seed": 102,
+      "mobile_ms": 13.55726458132267
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121179",
+      "seed": 101,
+      "mobile_ms": 8.399898186326027
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121179",
+      "seed": 102,
+      "mobile_ms": 8.951112627983093
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121213",
+      "seed": 101,
+      "mobile_ms": 12.785766273736954
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121213",
+      "seed": 102,
+      "mobile_ms": 11.886544525623322
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121247",
+      "seed": 101,
+      "mobile_ms": 14.621676877140999
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121247",
+      "seed": 102,
+      "mobile_ms": 14.057628810405731
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121281",
+      "seed": 101,
+      "mobile_ms": 13.019610196352005
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121281",
+      "seed": 102,
+      "mobile_ms": 10.362586006522179
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121315",
+      "seed": 101,
+      "mobile_ms": 9.092604741454124
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121315",
+      "seed": 102,
+      "mobile_ms": 8.617054671049118
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121349",
+      "seed": 101,
+      "mobile_ms": 8.005233481526375
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121349",
+      "seed": 102,
+      "mobile_ms": 9.46461595594883
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121383",
+      "seed": 101,
+      "mobile_ms": 11.771462857723236
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121383",
+      "seed": 102,
+      "mobile_ms": 9.644875302910805
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121417",
+      "seed": 101,
+      "mobile_ms": 12.075945734977722
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121417",
+      "seed": 102,
+      "mobile_ms": 10.771552100777626
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121451",
+      "seed": 101,
+      "mobile_ms": 10.130790993571281
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121451",
+      "seed": 102,
+      "mobile_ms": 12.956459075212479
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121485",
+      "seed": 101,
+      "mobile_ms": 8.561568334698677
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121485",
+      "seed": 102,
+      "mobile_ms": 8.251771330833435
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121519",
+      "seed": 101,
+      "mobile_ms": 9.018367156386375
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121519",
+      "seed": 102,
+      "mobile_ms": 14.478180557489395
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121553",
+      "seed": 101,
+      "mobile_ms": 14.597024768590927
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121553",
+      "seed": 102,
+      "mobile_ms": 13.325335457921028
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121587",
+      "seed": 101,
+      "mobile_ms": 11.994250118732452
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121587",
+      "seed": 102,
+      "mobile_ms": 13.768237084150314
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121621",
+      "seed": 101,
+      "mobile_ms": 8.69852490723133
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121621",
+      "seed": 102,
+      "mobile_ms": 8.141236379742622
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121655",
+      "seed": 101,
+      "mobile_ms": 8.469812572002411
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121655",
+      "seed": 102,
+      "mobile_ms": 7.600616663694382
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121689",
+      "seed": 101,
+      "mobile_ms": 15.050800517201424
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121689",
+      "seed": 102,
+      "mobile_ms": 11.28675602376461
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121723",
+      "seed": 101,
+      "mobile_ms": 10.701004415750504
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121723",
+      "seed": 102,
+      "mobile_ms": 15.508655458688736
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121757",
+      "seed": 101,
+      "mobile_ms": 16.13231934607029
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121757",
+      "seed": 102,
+      "mobile_ms": 10.744046419858932
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121791",
+      "seed": 101,
+      "mobile_ms": 9.463218972086906
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121791",
+      "seed": 102,
+      "mobile_ms": 8.52920114994049
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121825",
+      "seed": 101,
+      "mobile_ms": 8.19903053343296
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121825",
+      "seed": 102,
+      "mobile_ms": 8.11987929046154
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121859",
+      "seed": 101,
+      "mobile_ms": 12.873305007815361
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121859",
+      "seed": 102,
+      "mobile_ms": 13.86084221303463
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121893",
+      "seed": 101,
+      "mobile_ms": 13.478351756930351
+    },
+    {
+      "sample_id": "Town04_m5o_train_01/00121893",
+      "seed": 102,
+      "mobile_ms": 17.066236585378647
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122209",
+      "seed": 101,
+      "mobile_ms": 12.757519260048866
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122209",
+      "seed": 102,
+      "mobile_ms": 10.986888781189919
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122243",
+      "seed": 101,
+      "mobile_ms": 8.294755592942238
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122243",
+      "seed": 102,
+      "mobile_ms": 8.019836619496346
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122277",
+      "seed": 101,
+      "mobile_ms": 9.169122204184532
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122277",
+      "seed": 102,
+      "mobile_ms": 11.674812063574791
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122311",
+      "seed": 101,
+      "mobile_ms": 10.603874921798706
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122311",
+      "seed": 102,
+      "mobile_ms": 10.973330587148666
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122345",
+      "seed": 101,
+      "mobile_ms": 14.239396899938583
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122345",
+      "seed": 102,
+      "mobile_ms": 14.518611133098602
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122379",
+      "seed": 101,
+      "mobile_ms": 7.863624021410942
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122379",
+      "seed": 102,
+      "mobile_ms": 8.4150992333889
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122413",
+      "seed": 101,
+      "mobile_ms": 10.363627225160599
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122413",
+      "seed": 102,
+      "mobile_ms": 13.022910803556442
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122447",
+      "seed": 101,
+      "mobile_ms": 16.91453717648983
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122447",
+      "seed": 102,
+      "mobile_ms": 15.699340030550957
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122481",
+      "seed": 101,
+      "mobile_ms": 9.805986657738686
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122481",
+      "seed": 102,
+      "mobile_ms": 13.685157522559166
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122515",
+      "seed": 101,
+      "mobile_ms": 8.668452501296997
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122515",
+      "seed": 102,
+      "mobile_ms": 8.14761407673359
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122549",
+      "seed": 101,
+      "mobile_ms": 14.106061309576035
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122549",
+      "seed": 102,
+      "mobile_ms": 11.435456573963165
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122583",
+      "seed": 101,
+      "mobile_ms": 13.042476028203964
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122583",
+      "seed": 102,
+      "mobile_ms": 12.569312006235123
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122617",
+      "seed": 101,
+      "mobile_ms": 12.831011787056923
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122617",
+      "seed": 102,
+      "mobile_ms": 7.843999192118645
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122651",
+      "seed": 101,
+      "mobile_ms": 8.617088198661804
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122651",
+      "seed": 102,
+      "mobile_ms": 7.967866957187653
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122685",
+      "seed": 101,
+      "mobile_ms": 11.383801698684692
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122685",
+      "seed": 102,
+      "mobile_ms": 9.033506736159325
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122719",
+      "seed": 101,
+      "mobile_ms": 12.398801743984222
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122719",
+      "seed": 102,
+      "mobile_ms": 15.013881027698517
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122753",
+      "seed": 101,
+      "mobile_ms": 10.414954274892807
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122753",
+      "seed": 102,
+      "mobile_ms": 10.62963530421257
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122787",
+      "seed": 101,
+      "mobile_ms": 8.42832401394844
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122787",
+      "seed": 102,
+      "mobile_ms": 11.610593646764755
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122821",
+      "seed": 101,
+      "mobile_ms": 12.15267926454544
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122821",
+      "seed": 102,
+      "mobile_ms": 17.87291280925274
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122855",
+      "seed": 101,
+      "mobile_ms": 13.866648077964783
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122855",
+      "seed": 102,
+      "mobile_ms": 8.225353434681892
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122889",
+      "seed": 101,
+      "mobile_ms": 8.299143984913826
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122889",
+      "seed": 102,
+      "mobile_ms": 8.136885240674019
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122923",
+      "seed": 101,
+      "mobile_ms": 11.778151616454124
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122923",
+      "seed": 102,
+      "mobile_ms": 15.963416546583176
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122957",
+      "seed": 101,
+      "mobile_ms": 16.85193181037903
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122957",
+      "seed": 102,
+      "mobile_ms": 9.731367230415344
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122991",
+      "seed": 101,
+      "mobile_ms": 11.452574282884598
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00122991",
+      "seed": 102,
+      "mobile_ms": 10.742640122771263
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123025",
+      "seed": 101,
+      "mobile_ms": 8.905759081244469
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123025",
+      "seed": 102,
+      "mobile_ms": 8.424535393714905
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123059",
+      "seed": 101,
+      "mobile_ms": 12.981735169887543
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123059",
+      "seed": 102,
+      "mobile_ms": 11.184534057974815
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123093",
+      "seed": 101,
+      "mobile_ms": 14.899572357535362
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123093",
+      "seed": 102,
+      "mobile_ms": 11.987896636128426
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123127",
+      "seed": 101,
+      "mobile_ms": 12.245137244462967
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123127",
+      "seed": 102,
+      "mobile_ms": 8.286019787192345
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123161",
+      "seed": 101,
+      "mobile_ms": 8.326224982738495
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123161",
+      "seed": 102,
+      "mobile_ms": 11.634435504674911
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123195",
+      "seed": 101,
+      "mobile_ms": 10.784948244690895
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123195",
+      "seed": 102,
+      "mobile_ms": 15.150671824812889
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123229",
+      "seed": 101,
+      "mobile_ms": 14.198411256074905
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123229",
+      "seed": 102,
+      "mobile_ms": 15.667632222175598
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123263",
+      "seed": 101,
+      "mobile_ms": 8.537231013178825
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123263",
+      "seed": 102,
+      "mobile_ms": 8.334686979651451
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123297",
+      "seed": 101,
+      "mobile_ms": 13.055561110377312
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123297",
+      "seed": 102,
+      "mobile_ms": 13.509027659893036
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123331",
+      "seed": 101,
+      "mobile_ms": 11.627603322267532
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123331",
+      "seed": 102,
+      "mobile_ms": 10.808460414409637
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123365",
+      "seed": 101,
+      "mobile_ms": 8.349182084202766
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123365",
+      "seed": 102,
+      "mobile_ms": 7.993336766958237
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123399",
+      "seed": 101,
+      "mobile_ms": 8.848745375871658
+    },
+    {
+      "sample_id": "Town04_m5o_train_02/00123399",
+      "seed": 102,
+      "mobile_ms": 9.685119614005089
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00123766",
+      "seed": 101,
+      "mobile_ms": 13.495653867721558
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00123766",
+      "seed": 102,
+      "mobile_ms": 10.937968268990517
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00123800",
+      "seed": 101,
+      "mobile_ms": 13.395972549915314
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00123800",
+      "seed": 102,
+      "mobile_ms": 13.795491307973862
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00123834",
+      "seed": 101,
+      "mobile_ms": 11.652948334813118
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00123834",
+      "seed": 102,
+      "mobile_ms": 12.480504810810089
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00123868",
+      "seed": 101,
+      "mobile_ms": 8.59249010682106
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00123868",
+      "seed": 102,
+      "mobile_ms": 8.088337257504463
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00123902",
+      "seed": 101,
+      "mobile_ms": 9.5271747559309
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00123902",
+      "seed": 102,
+      "mobile_ms": 8.683240041136742
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00123936",
+      "seed": 101,
+      "mobile_ms": 11.874182149767876
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00123936",
+      "seed": 102,
+      "mobile_ms": 11.266568675637245
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00123970",
+      "seed": 101,
+      "mobile_ms": 13.240620493888855
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00123970",
+      "seed": 102,
+      "mobile_ms": 13.531455770134926
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124004",
+      "seed": 101,
+      "mobile_ms": 18.763791769742966
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124004",
+      "seed": 102,
+      "mobile_ms": 11.243818327784538
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124038",
+      "seed": 101,
+      "mobile_ms": 8.240748196840286
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124038",
+      "seed": 102,
+      "mobile_ms": 8.334020152688026
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124072",
+      "seed": 101,
+      "mobile_ms": 8.417531847953796
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124072",
+      "seed": 102,
+      "mobile_ms": 8.230211213231087
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124106",
+      "seed": 101,
+      "mobile_ms": 17.020979896187782
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124106",
+      "seed": 102,
+      "mobile_ms": 11.773699894547462
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124140",
+      "seed": 101,
+      "mobile_ms": 13.288922607898712
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124140",
+      "seed": 102,
+      "mobile_ms": 12.971842661499977
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124174",
+      "seed": 101,
+      "mobile_ms": 13.948166742920876
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124174",
+      "seed": 102,
+      "mobile_ms": 10.694976896047592
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124208",
+      "seed": 101,
+      "mobile_ms": 13.263935223221779
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124208",
+      "seed": 102,
+      "mobile_ms": 17.6603514701128
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124242",
+      "seed": 101,
+      "mobile_ms": 8.56410339474678
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124242",
+      "seed": 102,
+      "mobile_ms": 8.169116452336311
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124276",
+      "seed": 101,
+      "mobile_ms": 13.6600062251091
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124276",
+      "seed": 102,
+      "mobile_ms": 10.73058694601059
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124310",
+      "seed": 101,
+      "mobile_ms": 13.349467888474464
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124310",
+      "seed": 102,
+      "mobile_ms": 12.827586382627487
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124344",
+      "seed": 101,
+      "mobile_ms": 13.25121708214283
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124344",
+      "seed": 102,
+      "mobile_ms": 12.471616268157959
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124378",
+      "seed": 101,
+      "mobile_ms": 9.036567062139511
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124378",
+      "seed": 102,
+      "mobile_ms": 8.978869765996933
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124412",
+      "seed": 101,
+      "mobile_ms": 8.433785289525986
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124412",
+      "seed": 102,
+      "mobile_ms": 8.268071338534355
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124446",
+      "seed": 101,
+      "mobile_ms": 14.359787106513977
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124446",
+      "seed": 102,
+      "mobile_ms": 10.061543434858322
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124480",
+      "seed": 101,
+      "mobile_ms": 11.73025369644165
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124480",
+      "seed": 102,
+      "mobile_ms": 12.049976736307144
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124514",
+      "seed": 101,
+      "mobile_ms": 13.601668179035187
+    },
+    {
+      "sample_id": "Town04_m5o_train_03/00124514",
+      "seed": 102,
+      "mobile_ms": 11.568870395421982
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00124801",
+      "seed": 101,
+      "mobile_ms": 8.9605413377285
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00124801",
+      "seed": 102,
+      "mobile_ms": 8.450105786323547
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00124835",
+      "seed": 101,
+      "mobile_ms": 8.015252649784088
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00124835",
+      "seed": 102,
+      "mobile_ms": 11.571928858757019
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00124869",
+      "seed": 101,
+      "mobile_ms": 11.021068319678307
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00124869",
+      "seed": 102,
+      "mobile_ms": 10.298004373908043
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00124903",
+      "seed": 101,
+      "mobile_ms": 13.989118859171867
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00124903",
+      "seed": 102,
+      "mobile_ms": 12.253021821379662
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00124937",
+      "seed": 101,
+      "mobile_ms": 13.377021998167038
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00124937",
+      "seed": 102,
+      "mobile_ms": 8.158300071954727
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00124971",
+      "seed": 101,
+      "mobile_ms": 8.473018184304237
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00124971",
+      "seed": 102,
+      "mobile_ms": 8.182773366570473
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125005",
+      "seed": 101,
+      "mobile_ms": 18.13107542693615
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125005",
+      "seed": 102,
+      "mobile_ms": 98.07297959923744
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125039",
+      "seed": 101,
+      "mobile_ms": 15.49893245100975
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125039",
+      "seed": 102,
+      "mobile_ms": 16.928130760788918
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125073",
+      "seed": 101,
+      "mobile_ms": 15.044212341308594
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125073",
+      "seed": 102,
+      "mobile_ms": 15.386762097477913
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125107",
+      "seed": 101,
+      "mobile_ms": 9.5860306173563
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125107",
+      "seed": 102,
+      "mobile_ms": 9.51036810874939
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125141",
+      "seed": 101,
+      "mobile_ms": 16.619917005300522
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125141",
+      "seed": 102,
+      "mobile_ms": 11.779140681028366
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125175",
+      "seed": 101,
+      "mobile_ms": 12.584568932652473
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125175",
+      "seed": 102,
+      "mobile_ms": 13.728175312280655
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125209",
+      "seed": 101,
+      "mobile_ms": 12.33593188226223
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125209",
+      "seed": 102,
+      "mobile_ms": 9.849896654486656
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125243",
+      "seed": 101,
+      "mobile_ms": 10.784359648823738
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125243",
+      "seed": 102,
+      "mobile_ms": 10.49446314573288
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125277",
+      "seed": 101,
+      "mobile_ms": 10.465096682310104
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125277",
+      "seed": 102,
+      "mobile_ms": 10.98736748099327
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125311",
+      "seed": 101,
+      "mobile_ms": 11.704536154866219
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125311",
+      "seed": 102,
+      "mobile_ms": 11.850504204630852
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125345",
+      "seed": 101,
+      "mobile_ms": 12.639600783586502
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125345",
+      "seed": 102,
+      "mobile_ms": 11.804480105638504
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125379",
+      "seed": 101,
+      "mobile_ms": 12.991521507501602
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125379",
+      "seed": 102,
+      "mobile_ms": 11.592725291848183
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125413",
+      "seed": 101,
+      "mobile_ms": 12.157374992966652
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125413",
+      "seed": 102,
+      "mobile_ms": 11.441798880696297
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125447",
+      "seed": 101,
+      "mobile_ms": 13.74739594757557
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125447",
+      "seed": 102,
+      "mobile_ms": 10.768631473183632
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125481",
+      "seed": 101,
+      "mobile_ms": 16.842229291796684
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125481",
+      "seed": 102,
+      "mobile_ms": 15.378683805465698
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125515",
+      "seed": 101,
+      "mobile_ms": 13.15632276237011
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125515",
+      "seed": 102,
+      "mobile_ms": 14.479558914899826
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125549",
+      "seed": 101,
+      "mobile_ms": 11.098725721240044
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125549",
+      "seed": 102,
+      "mobile_ms": 13.04616965353489
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125583",
+      "seed": 101,
+      "mobile_ms": 13.36139626801014
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125583",
+      "seed": 102,
+      "mobile_ms": 13.074615970253944
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125617",
+      "seed": 101,
+      "mobile_ms": 12.999093160033226
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125617",
+      "seed": 102,
+      "mobile_ms": 13.544309884309769
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125651",
+      "seed": 101,
+      "mobile_ms": 19.252454861998558
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125651",
+      "seed": 102,
+      "mobile_ms": 10.330937802791595
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125685",
+      "seed": 101,
+      "mobile_ms": 11.791180819272995
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125685",
+      "seed": 102,
+      "mobile_ms": 10.899975895881653
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125719",
+      "seed": 101,
+      "mobile_ms": 11.708294972777367
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125719",
+      "seed": 102,
+      "mobile_ms": 13.66158202290535
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125753",
+      "seed": 101,
+      "mobile_ms": 17.52551645040512
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125753",
+      "seed": 102,
+      "mobile_ms": 11.197393760085106
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125787",
+      "seed": 101,
+      "mobile_ms": 12.813258916139603
+    },
+    {
+      "sample_id": "Town04_m5o_train_04/00125787",
+      "seed": 102,
+      "mobile_ms": 12.387685477733612
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126119",
+      "seed": 101,
+      "mobile_ms": 12.890825048089027
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126119",
+      "seed": 102,
+      "mobile_ms": 13.78946378827095
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126153",
+      "seed": 101,
+      "mobile_ms": 16.23043604195118
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126153",
+      "seed": 102,
+      "mobile_ms": 10.587820783257484
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126187",
+      "seed": 101,
+      "mobile_ms": 14.042064547538757
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126187",
+      "seed": 102,
+      "mobile_ms": 10.622929781675339
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126221",
+      "seed": 101,
+      "mobile_ms": 12.470746412873268
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126221",
+      "seed": 102,
+      "mobile_ms": 12.26513646543026
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126255",
+      "seed": 101,
+      "mobile_ms": 12.06868700683117
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126255",
+      "seed": 102,
+      "mobile_ms": 12.940632179379463
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126289",
+      "seed": 101,
+      "mobile_ms": 11.820461601018906
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126289",
+      "seed": 102,
+      "mobile_ms": 11.476024985313416
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126323",
+      "seed": 101,
+      "mobile_ms": 14.401813969016075
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126323",
+      "seed": 102,
+      "mobile_ms": 11.146750301122665
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126357",
+      "seed": 101,
+      "mobile_ms": 12.965207919478416
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126357",
+      "seed": 102,
+      "mobile_ms": 10.661091655492783
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126391",
+      "seed": 101,
+      "mobile_ms": 14.944951981306076
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126391",
+      "seed": 102,
+      "mobile_ms": 14.836210757493973
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126425",
+      "seed": 101,
+      "mobile_ms": 12.751419097185135
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126425",
+      "seed": 102,
+      "mobile_ms": 15.179203823208809
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126459",
+      "seed": 101,
+      "mobile_ms": 14.255516231060028
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126459",
+      "seed": 102,
+      "mobile_ms": 11.041928082704544
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126493",
+      "seed": 101,
+      "mobile_ms": 8.381413295865059
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126493",
+      "seed": 102,
+      "mobile_ms": 7.934805005788803
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126527",
+      "seed": 101,
+      "mobile_ms": 13.259600847959518
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126527",
+      "seed": 102,
+      "mobile_ms": 11.467833071947098
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126561",
+      "seed": 101,
+      "mobile_ms": 15.012569725513458
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126561",
+      "seed": 102,
+      "mobile_ms": 9.267579764127731
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126595",
+      "seed": 101,
+      "mobile_ms": 12.71146535873413
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126595",
+      "seed": 102,
+      "mobile_ms": 12.23856769502163
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126629",
+      "seed": 101,
+      "mobile_ms": 10.740907862782478
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126629",
+      "seed": 102,
+      "mobile_ms": 14.939341694116592
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126663",
+      "seed": 101,
+      "mobile_ms": 14.00730200111866
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126663",
+      "seed": 102,
+      "mobile_ms": 10.909099131822586
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126697",
+      "seed": 101,
+      "mobile_ms": 19.46667581796646
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126697",
+      "seed": 102,
+      "mobile_ms": 13.235023245215416
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126731",
+      "seed": 101,
+      "mobile_ms": 10.859191417694092
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126731",
+      "seed": 102,
+      "mobile_ms": 16.880512237548828
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126765",
+      "seed": 101,
+      "mobile_ms": 12.75591179728508
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126765",
+      "seed": 102,
+      "mobile_ms": 11.273356154561043
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126799",
+      "seed": 101,
+      "mobile_ms": 14.748843386769295
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126799",
+      "seed": 102,
+      "mobile_ms": 11.370109394192696
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126833",
+      "seed": 101,
+      "mobile_ms": 11.156795546412468
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126833",
+      "seed": 102,
+      "mobile_ms": 13.87801393866539
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126867",
+      "seed": 101,
+      "mobile_ms": 15.412811189889908
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126867",
+      "seed": 102,
+      "mobile_ms": 11.157922446727753
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126901",
+      "seed": 101,
+      "mobile_ms": 10.951295495033264
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126901",
+      "seed": 102,
+      "mobile_ms": 11.419015005230904
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126935",
+      "seed": 101,
+      "mobile_ms": 12.680735439062119
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126935",
+      "seed": 102,
+      "mobile_ms": 12.689707800745964
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126969",
+      "seed": 101,
+      "mobile_ms": 15.53136296570301
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00126969",
+      "seed": 102,
+      "mobile_ms": 10.479209944605827
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00127003",
+      "seed": 101,
+      "mobile_ms": 12.608036398887634
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00127003",
+      "seed": 102,
+      "mobile_ms": 12.035096064209938
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00127037",
+      "seed": 101,
+      "mobile_ms": 12.91881874203682
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00127037",
+      "seed": 102,
+      "mobile_ms": 11.770645156502724
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00127071",
+      "seed": 101,
+      "mobile_ms": 13.06571252644062
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00127071",
+      "seed": 102,
+      "mobile_ms": 11.744031682610512
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00127105",
+      "seed": 101,
+      "mobile_ms": 10.824628174304962
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00127105",
+      "seed": 102,
+      "mobile_ms": 11.970506981015205
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00127139",
+      "seed": 101,
+      "mobile_ms": 12.873776257038116
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00127139",
+      "seed": 102,
+      "mobile_ms": 11.788703501224518
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00127173",
+      "seed": 101,
+      "mobile_ms": 8.622245863080025
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00127173",
+      "seed": 102,
+      "mobile_ms": 8.698157966136932
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00127207",
+      "seed": 101,
+      "mobile_ms": 13.383690267801285
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00127207",
+      "seed": 102,
+      "mobile_ms": 12.651972472667694
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00127241",
+      "seed": 101,
+      "mobile_ms": 11.330237612128258
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00127241",
+      "seed": 102,
+      "mobile_ms": 11.110024526715279
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00127275",
+      "seed": 101,
+      "mobile_ms": 12.412594631314278
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00127275",
+      "seed": 102,
+      "mobile_ms": 11.572632938623428
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00127309",
+      "seed": 101,
+      "mobile_ms": 12.582065537571907
+    },
+    {
+      "sample_id": "Town04_m5o_train_05/00127309",
+      "seed": 102,
+      "mobile_ms": 12.885244563221931
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00127678",
+      "seed": 101,
+      "mobile_ms": 14.34686966240406
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00127678",
+      "seed": 102,
+      "mobile_ms": 11.726945638656616
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00127712",
+      "seed": 101,
+      "mobile_ms": 11.90672442317009
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00127712",
+      "seed": 102,
+      "mobile_ms": 11.41822524368763
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00127746",
+      "seed": 101,
+      "mobile_ms": 14.796730130910873
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00127746",
+      "seed": 102,
+      "mobile_ms": 13.285284861922264
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00127780",
+      "seed": 101,
+      "mobile_ms": 12.946903705596924
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00127780",
+      "seed": 102,
+      "mobile_ms": 12.876356020569801
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00127814",
+      "seed": 101,
+      "mobile_ms": 11.83207519352436
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00127814",
+      "seed": 102,
+      "mobile_ms": 10.269006714224815
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00127848",
+      "seed": 101,
+      "mobile_ms": 13.470672070980072
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00127848",
+      "seed": 102,
+      "mobile_ms": 12.957479804754257
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00127882",
+      "seed": 101,
+      "mobile_ms": 17.04316958785057
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00127882",
+      "seed": 102,
+      "mobile_ms": 15.019524842500687
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00127916",
+      "seed": 101,
+      "mobile_ms": 11.046910658478737
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00127916",
+      "seed": 102,
+      "mobile_ms": 11.010577902197838
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00127950",
+      "seed": 101,
+      "mobile_ms": 15.459876507520676
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00127950",
+      "seed": 102,
+      "mobile_ms": 10.625606402754784
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00127984",
+      "seed": 101,
+      "mobile_ms": 12.170270085334778
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00127984",
+      "seed": 102,
+      "mobile_ms": 10.548798367381096
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128018",
+      "seed": 101,
+      "mobile_ms": 13.802748173475266
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128018",
+      "seed": 102,
+      "mobile_ms": 10.621370747685432
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128052",
+      "seed": 101,
+      "mobile_ms": 13.100029900670052
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128052",
+      "seed": 102,
+      "mobile_ms": 13.16833682358265
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128086",
+      "seed": 101,
+      "mobile_ms": 10.871879756450653
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128086",
+      "seed": 102,
+      "mobile_ms": 13.146387413144112
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128120",
+      "seed": 101,
+      "mobile_ms": 13.093214482069016
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128120",
+      "seed": 102,
+      "mobile_ms": 14.517230913043022
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128154",
+      "seed": 101,
+      "mobile_ms": 15.659065917134285
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128154",
+      "seed": 102,
+      "mobile_ms": 12.136703357100487
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128188",
+      "seed": 101,
+      "mobile_ms": 11.507928371429443
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128188",
+      "seed": 102,
+      "mobile_ms": 8.34207609295845
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128222",
+      "seed": 101,
+      "mobile_ms": 13.131547719240189
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128222",
+      "seed": 102,
+      "mobile_ms": 12.115534394979477
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128256",
+      "seed": 101,
+      "mobile_ms": 12.50571571290493
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128256",
+      "seed": 102,
+      "mobile_ms": 12.390589341521263
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128290",
+      "seed": 101,
+      "mobile_ms": 12.377733364701271
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128290",
+      "seed": 102,
+      "mobile_ms": 13.893159106373787
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128324",
+      "seed": 101,
+      "mobile_ms": 11.27224788069725
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128324",
+      "seed": 102,
+      "mobile_ms": 12.300906702876091
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128358",
+      "seed": 101,
+      "mobile_ms": 11.61237247288227
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128358",
+      "seed": 102,
+      "mobile_ms": 11.578531935811043
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128392",
+      "seed": 101,
+      "mobile_ms": 18.644696101546288
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128392",
+      "seed": 102,
+      "mobile_ms": 10.728877037763596
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128426",
+      "seed": 101,
+      "mobile_ms": 13.396285474300385
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128426",
+      "seed": 102,
+      "mobile_ms": 15.000978484749794
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128460",
+      "seed": 101,
+      "mobile_ms": 11.810803785920143
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128460",
+      "seed": 102,
+      "mobile_ms": 11.312516406178474
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128494",
+      "seed": 101,
+      "mobile_ms": 12.595416978001595
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128494",
+      "seed": 102,
+      "mobile_ms": 12.054048478603363
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128528",
+      "seed": 101,
+      "mobile_ms": 17.458844929933548
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128528",
+      "seed": 102,
+      "mobile_ms": 15.218771994113922
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128562",
+      "seed": 101,
+      "mobile_ms": 10.969085618853569
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128562",
+      "seed": 102,
+      "mobile_ms": 11.9303148239851
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128596",
+      "seed": 101,
+      "mobile_ms": 11.78896427154541
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128596",
+      "seed": 102,
+      "mobile_ms": 11.688612401485443
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128630",
+      "seed": 101,
+      "mobile_ms": 12.41477020084858
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128630",
+      "seed": 102,
+      "mobile_ms": 14.207271859049797
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128664",
+      "seed": 101,
+      "mobile_ms": 9.878220036625862
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128664",
+      "seed": 102,
+      "mobile_ms": 13.702964410185814
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128698",
+      "seed": 101,
+      "mobile_ms": 12.049168348312378
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128698",
+      "seed": 102,
+      "mobile_ms": 12.612128630280495
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128732",
+      "seed": 101,
+      "mobile_ms": 10.535836219787598
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128732",
+      "seed": 102,
+      "mobile_ms": 14.413928613066673
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128766",
+      "seed": 101,
+      "mobile_ms": 12.357974424958229
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128766",
+      "seed": 102,
+      "mobile_ms": 10.110165923833847
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128800",
+      "seed": 101,
+      "mobile_ms": 13.817695900797844
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128800",
+      "seed": 102,
+      "mobile_ms": 12.685628607869148
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128834",
+      "seed": 101,
+      "mobile_ms": 11.780356988310814
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128834",
+      "seed": 102,
+      "mobile_ms": 12.402703985571861
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128868",
+      "seed": 101,
+      "mobile_ms": 11.787652969360352
+    },
+    {
+      "sample_id": "Town04_m5o_train_06/00128868",
+      "seed": 102,
+      "mobile_ms": 11.797528713941574
+    }
+  ],
+  "source_sha256": "e3e392d2ad6e75166c8d0aa40aed65e031a36b03a49d94ec86fbf68e7ab4d533",
+  "limits": "Simulator OBB center not contactGold. Native render identity geometrically associated, not exact mesh identity. Unmatched candidates not guaranteed falseobjects. Static historical snapshots read after same tick before nexttick, not all historical manifests carry peractor frame stamps."
+}

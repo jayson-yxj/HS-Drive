@@ -1,0 +1,574 @@
+{
+  "kind": "actual_RTX4090_oracle_candidate_diagnostic",
+  "oracle_candidates_diagnostic_only": true,
+  "provenance": {
+    "base": "2afe740be0cf8e0df8dff52a7ed2b03a6f001dc5",
+    "git_head": "2afe740be0cf8e0df8dff52a7ed2b03a6f001dc5",
+    "sources": {
+      "configs/m5o_capture_dev.json": "00f0e376fbe4d8b7ca7dcc08d69121a99a31f0b605a265868f89387fec7f9fc1",
+      "configs/m5o_capture_dev_v2.json": "421842bec0f2ec33e8b047b684e177aa1c8ffa90c1c96cf2ea073fea85c6a5a5",
+      "configs/m5o_capture_dev_v3.json": "38ee22d5cdb27b9a227aa2ee6cb9db56af43346462fa2681101d82b30b316d5a",
+      "configs/m5o_protocol.json": "30a943874951f7e10e502bcf7710d1079afa40061ea636e5ad875409347d6de1",
+      "datasets/m5o_benchmark.py": "16bd9c62c75a37d105cf57bb68653220cce6d6ec9aa1cc9de054752d140a592a",
+      "tools/m5o_allocate.py": "593b2df73ac511b9e26ca09665ce0736e15552a6ab9a767cea7563b71e065913",
+      "tools/m5o_cache.py": "ec8c8556216c50ec8f0d2c3a76132bced8d5dffc96b4df9ff14dd1f21b0a40ac",
+      "tools/m5o_campaign.py": "b97f4c6f709cf1a6ee54a43a07182345ab7d54201c105e2e4f317236256961ac",
+      "tools/m5o_candidate_audit.py": "d5cc8407a6299283b0f75ba556c6441aaae40f447f70688214edca998e77a1c2",
+      "tools/m5o_capture.py": "500ede8e1feb4418a1e8abbc29695821154be56ab2bccc0ea9cbc79f9130c60c",
+      "tools/m5o_common.py": "8e9c63d271748463eb64e0b418d73fbe1d794f916ad472220e49e1fd6a94b384",
+      "tools/m5o_extend_allocation.py": "a54c95d7838339337261496ef2ac5244071347a1ab24102e8b24e9a88e0d648f",
+      "tools/m5o_freeze.py": "76eeb76921c55f398a4d39da3c283da1a7aa1fc590bc82bbac1d7249424a6423",
+      "tools/m5o_index.py": "db45457a4e20556a110895baf868c9d14c9eac1c2a51d72cadb2dc134ff656ee",
+      "tools/m5o_road_layouts.py": "3c4372534b2f57eeaaa290d83a27a0a4dafd157f9d7e8050dd9493af418e550b"
+    }
+  },
+  "frames": 52,
+  "groups": 4,
+  "candidates": 150,
+  "visible_actor_views": 75,
+  "train_eligible": {
+    "101": 62,
+    "102": 62
+  },
+  "features": {
+    "path": "runs/m5o_cache_regression_oracle/features.pt",
+    "sha256": "51d510cf8dbe03e60876470ef1e8a4ca977534495edd24b7813d53e75aa3f7aa",
+    "bytes": 361584
+  },
+  "inference_candidates": {
+    "path": "runs/m5o_cache_regression_oracle/candidates.json",
+    "sha256": "f63a916910fe0a050f1dab328ade7c42df32bafeca6f5f6e192b18849f8f4280",
+    "bytes": 221161
+  },
+  "supervision": {
+    "path": "runs/m5o_cache_regression_oracle/supervision.json",
+    "sha256": "d24f1e2adfaef0debabf9459a6f9bf2cba1df1d9f6800fa42577b7fbaa54a6ee",
+    "bytes": 1490362
+  },
+  "elapsed_s": 13.365273704752326,
+  "peak_mib": 237.02880859375,
+  "timings": [
+    {
+      "sample_id": "Town01_m5n_sealed0/00034027",
+      "seed": 101,
+      "mobile_ms": 171.06185667216778
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034027",
+      "seed": 102,
+      "mobile_ms": 14.919225126504898
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034061",
+      "seed": 101,
+      "mobile_ms": 15.54923690855503
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034061",
+      "seed": 102,
+      "mobile_ms": 8.837403729557991
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034095",
+      "seed": 101,
+      "mobile_ms": 14.554852619767189
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034095",
+      "seed": 102,
+      "mobile_ms": 14.388488605618477
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034129",
+      "seed": 101,
+      "mobile_ms": 12.054000049829483
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034129",
+      "seed": 102,
+      "mobile_ms": 9.39740240573883
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034163",
+      "seed": 101,
+      "mobile_ms": 10.838933289051056
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034163",
+      "seed": 102,
+      "mobile_ms": 12.531613931059837
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034197",
+      "seed": 101,
+      "mobile_ms": 12.940634042024612
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034197",
+      "seed": 102,
+      "mobile_ms": 14.540424570441246
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034231",
+      "seed": 101,
+      "mobile_ms": 11.73001155257225
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034231",
+      "seed": 102,
+      "mobile_ms": 13.144299387931824
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034265",
+      "seed": 101,
+      "mobile_ms": 13.317817822098732
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034265",
+      "seed": 102,
+      "mobile_ms": 12.676836922764778
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034299",
+      "seed": 101,
+      "mobile_ms": 14.24715667963028
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034299",
+      "seed": 102,
+      "mobile_ms": 10.537650436162949
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034333",
+      "seed": 101,
+      "mobile_ms": 12.021919712424278
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034333",
+      "seed": 102,
+      "mobile_ms": 12.801609933376312
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034367",
+      "seed": 101,
+      "mobile_ms": 15.317095443606377
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034367",
+      "seed": 102,
+      "mobile_ms": 13.626091182231903
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034401",
+      "seed": 101,
+      "mobile_ms": 13.675175607204437
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034401",
+      "seed": 102,
+      "mobile_ms": 12.896578758955002
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034435",
+      "seed": 101,
+      "mobile_ms": 14.89805243909359
+    },
+    {
+      "sample_id": "Town01_m5n_sealed0/00034435",
+      "seed": 102,
+      "mobile_ms": 15.298563987016678
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034625",
+      "seed": 101,
+      "mobile_ms": 10.490147396922112
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034625",
+      "seed": 102,
+      "mobile_ms": 13.125713914632797
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034659",
+      "seed": 101,
+      "mobile_ms": 13.736965134739876
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034659",
+      "seed": 102,
+      "mobile_ms": 11.77961565554142
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034693",
+      "seed": 101,
+      "mobile_ms": 17.31610856950283
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034693",
+      "seed": 102,
+      "mobile_ms": 13.185804709792137
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034727",
+      "seed": 101,
+      "mobile_ms": 18.24057660996914
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034727",
+      "seed": 102,
+      "mobile_ms": 13.43684270977974
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034761",
+      "seed": 101,
+      "mobile_ms": 13.073161244392395
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034761",
+      "seed": 102,
+      "mobile_ms": 10.362885892391205
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034795",
+      "seed": 101,
+      "mobile_ms": 15.83622395992279
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034795",
+      "seed": 102,
+      "mobile_ms": 18.54182407259941
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034829",
+      "seed": 101,
+      "mobile_ms": 11.098960414528847
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034829",
+      "seed": 102,
+      "mobile_ms": 13.21045495569706
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034863",
+      "seed": 101,
+      "mobile_ms": 13.814838603138924
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034863",
+      "seed": 102,
+      "mobile_ms": 13.429513201117516
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034897",
+      "seed": 101,
+      "mobile_ms": 11.287961155176163
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034897",
+      "seed": 102,
+      "mobile_ms": 16.63685403764248
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034931",
+      "seed": 101,
+      "mobile_ms": 8.498771116137505
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034931",
+      "seed": 102,
+      "mobile_ms": 9.46015678346157
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034965",
+      "seed": 101,
+      "mobile_ms": 12.027626857161522
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034965",
+      "seed": 102,
+      "mobile_ms": 13.664258643984795
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034999",
+      "seed": 101,
+      "mobile_ms": 14.064949005842209
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00034999",
+      "seed": 102,
+      "mobile_ms": 13.646740466356277
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00035033",
+      "seed": 101,
+      "mobile_ms": 15.00217616558075
+    },
+    {
+      "sample_id": "Town03_m5n_sealed1/00035033",
+      "seed": 102,
+      "mobile_ms": 13.54336366057396
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035233",
+      "seed": 101,
+      "mobile_ms": 9.257158264517784
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035233",
+      "seed": 102,
+      "mobile_ms": 10.659726336598396
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035267",
+      "seed": 101,
+      "mobile_ms": 14.79329727590084
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035267",
+      "seed": 102,
+      "mobile_ms": 15.414232388138771
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035301",
+      "seed": 101,
+      "mobile_ms": 9.050438180565834
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035301",
+      "seed": 102,
+      "mobile_ms": 10.142732411623001
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035335",
+      "seed": 101,
+      "mobile_ms": 18.860600888729095
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035335",
+      "seed": 102,
+      "mobile_ms": 15.94078354537487
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035369",
+      "seed": 101,
+      "mobile_ms": 14.168566092848778
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035369",
+      "seed": 102,
+      "mobile_ms": 14.77719284594059
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035403",
+      "seed": 101,
+      "mobile_ms": 13.692852109670639
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035403",
+      "seed": 102,
+      "mobile_ms": 12.512460350990295
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035437",
+      "seed": 101,
+      "mobile_ms": 12.876760214567184
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035437",
+      "seed": 102,
+      "mobile_ms": 15.157276764512062
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035471",
+      "seed": 101,
+      "mobile_ms": 15.599887818098068
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035471",
+      "seed": 102,
+      "mobile_ms": 11.558892205357552
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035505",
+      "seed": 101,
+      "mobile_ms": 13.302672654390335
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035505",
+      "seed": 102,
+      "mobile_ms": 13.254275545477867
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035539",
+      "seed": 101,
+      "mobile_ms": 13.154605403542519
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035539",
+      "seed": 102,
+      "mobile_ms": 12.330882251262665
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035573",
+      "seed": 101,
+      "mobile_ms": 10.740254074335098
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035573",
+      "seed": 102,
+      "mobile_ms": 11.469926685094833
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035607",
+      "seed": 101,
+      "mobile_ms": 11.093460023403168
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035607",
+      "seed": 102,
+      "mobile_ms": 13.324130326509476
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035641",
+      "seed": 101,
+      "mobile_ms": 16.93454198539257
+    },
+    {
+      "sample_id": "Town04_m5n_sealed2/00035641",
+      "seed": 102,
+      "mobile_ms": 12.683877721428871
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00035839",
+      "seed": 101,
+      "mobile_ms": 12.682056054472923
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00035839",
+      "seed": 102,
+      "mobile_ms": 13.529011979699135
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00035873",
+      "seed": 101,
+      "mobile_ms": 18.78097653388977
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00035873",
+      "seed": 102,
+      "mobile_ms": 12.278279289603233
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00035907",
+      "seed": 101,
+      "mobile_ms": 14.533601701259613
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00035907",
+      "seed": 102,
+      "mobile_ms": 15.269698575139046
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00035941",
+      "seed": 101,
+      "mobile_ms": 11.250311508774757
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00035941",
+      "seed": 102,
+      "mobile_ms": 11.967204511165619
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00035975",
+      "seed": 101,
+      "mobile_ms": 8.905651047825813
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00035975",
+      "seed": 102,
+      "mobile_ms": 8.941657841205597
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00036009",
+      "seed": 101,
+      "mobile_ms": 10.356299579143524
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00036009",
+      "seed": 102,
+      "mobile_ms": 12.531707063317299
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00036043",
+      "seed": 101,
+      "mobile_ms": 13.865677639842033
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00036043",
+      "seed": 102,
+      "mobile_ms": 9.753858670592308
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00036077",
+      "seed": 101,
+      "mobile_ms": 17.150605097413063
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00036077",
+      "seed": 102,
+      "mobile_ms": 11.76433078944683
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00036111",
+      "seed": 101,
+      "mobile_ms": 14.870868995785713
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00036111",
+      "seed": 102,
+      "mobile_ms": 12.798136100172997
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00036145",
+      "seed": 101,
+      "mobile_ms": 12.481050565838814
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00036145",
+      "seed": 102,
+      "mobile_ms": 10.570883750915527
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00036179",
+      "seed": 101,
+      "mobile_ms": 12.457208707928658
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00036179",
+      "seed": 102,
+      "mobile_ms": 10.50417311489582
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00036213",
+      "seed": 101,
+      "mobile_ms": 10.24557277560234
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00036213",
+      "seed": 102,
+      "mobile_ms": 13.940859586000443
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00036247",
+      "seed": 101,
+      "mobile_ms": 18.961090594530106
+    },
+    {
+      "sample_id": "Town05_m5n_sealed3/00036247",
+      "seed": 102,
+      "mobile_ms": 10.663500055670738
+    }
+  ],
+  "source_sha256": "ec8c8556216c50ec8f0d2c3a76132bced8d5dffc96b4df9ff14dd1f21b0a40ac",
+  "limits": "Simulator OBB center not contactGold. Native render identity geometrically associated, not exact mesh identity. Unmatched candidates not guaranteed falseobjects. Static historical snapshots read after same tick before nexttick, not all historical manifests carry peractor frame stamps."
+}

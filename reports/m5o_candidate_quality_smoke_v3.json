@@ -1,0 +1,142 @@
+{
+  "kind": "offline_actual_CARLA_RGB_candidate_audit",
+  "split": "smoke_v3",
+  "aggregate": [
+    {
+      "seed": 101,
+      "candidates": 261,
+      "matched": 41,
+      "unmatched_unknown": 220,
+      "physical_false_positive": null,
+      "visible_actor_views": 60,
+      "detected": 41,
+      "missed": 19,
+      "split_actor_views": 5,
+      "merged_candidates": 3,
+      "unique_support": {
+        "unique_candidates": 30,
+        "groups": 1,
+        "by_class": {
+          "vehicle": 24,
+          "cone": 3,
+          "person": 3
+        },
+        "by_camera": {
+          "rear": 11,
+          "front": 11,
+          "rear_left": 5,
+          "front_left": 3
+        },
+        "by_distance": {
+          "10-20": 10,
+          "20-40": 12,
+          "0-10": 8
+        }
+      }
+    },
+    {
+      "seed": 102,
+      "candidates": 328,
+      "matched": 41,
+      "unmatched_unknown": 287,
+      "physical_false_positive": null,
+      "visible_actor_views": 60,
+      "detected": 41,
+      "missed": 19,
+      "split_actor_views": 4,
+      "merged_candidates": 3,
+      "unique_support": {
+        "unique_candidates": 31,
+        "groups": 1,
+        "by_class": {
+          "vehicle": 26,
+          "cone": 2,
+          "person": 3
+        },
+        "by_camera": {
+          "rear": 10,
+          "front": 11,
+          "front_left": 5,
+          "rear_left": 5
+        },
+        "by_distance": {
+          "10-20": 10,
+          "20-40": 12,
+          "0-10": 9
+        }
+      }
+    }
+  ],
+  "groups": [
+    {
+      "group": "Town01_m5o_train_00",
+      "seed": 101,
+      "candidates": 261,
+      "visible_actor_views": 60,
+      "detected": 41,
+      "split_actor_views": 5,
+      "categories": {
+        "mixed_or_unexplained": 59,
+        "rendered_background_semantic_proxy": 85,
+        "unknown_static_dynamic_surface": 67,
+        "matched": 41,
+        "unrecorded_or_unassociated_target_surface": 9
+      }
+    },
+    {
+      "group": "Town01_m5o_train_00",
+      "seed": 102,
+      "candidates": 328,
+      "visible_actor_views": 60,
+      "detected": 41,
+      "split_actor_views": 4,
+      "categories": {
+        "unknown_static_dynamic_surface": 146,
+        "rendered_background_semantic_proxy": 111,
+        "matched": 41,
+        "unrecorded_or_unassociated_target_surface": 24,
+        "mixed_or_unexplained": 6
+      }
+    }
+  ],
+  "categories": {
+    "mixed_or_unexplained": 65,
+    "rendered_background_semantic_proxy": 196,
+    "unknown_static_dynamic_surface": 213,
+    "matched": 82,
+    "unrecorded_or_unassociated_target_surface": 33
+  },
+  "figures": [
+    {
+      "path": "reports/m5o_figures/m5o_smoke_v3_Town01_m5o_train_00_candidates.jpg",
+      "sha256": "7b2ab0e5745cc2f25957a0e1e30ee86d6bd015f80a607567ce81f580f702efd5",
+      "bytes": 5055343
+    }
+  ],
+  "provenance": {
+    "base": "2afe740be0cf8e0df8dff52a7ed2b03a6f001dc5",
+    "git_head": "2afe740be0cf8e0df8dff52a7ed2b03a6f001dc5",
+    "sources": {
+      "configs/m5o_capture_dev.json": "00f0e376fbe4d8b7ca7dcc08d69121a99a31f0b605a265868f89387fec7f9fc1",
+      "configs/m5o_capture_dev_v2.json": "421842bec0f2ec33e8b047b684e177aa1c8ffa90c1c96cf2ea073fea85c6a5a5",
+      "configs/m5o_capture_dev_v3.json": "38ee22d5cdb27b9a227aa2ee6cb9db56af43346462fa2681101d82b30b316d5a",
+      "configs/m5o_protocol.json": "30a943874951f7e10e502bcf7710d1079afa40061ea636e5ad875409347d6de1",
+      "datasets/m5o_benchmark.py": "16bd9c62c75a37d105cf57bb68653220cce6d6ec9aa1cc9de054752d140a592a",
+      "tests/test_m5o_benchmark.py": "8f83ba0c3af5039137292d1083f88cd4b07e536ea64fa591b94dd00fd5d6ba4c",
+      "tools/m5o_allocate.py": "593b2df73ac511b9e26ca09665ce0736e15552a6ab9a767cea7563b71e065913",
+      "tools/m5o_cache.py": "ec8c8556216c50ec8f0d2c3a76132bced8d5dffc96b4df9ff14dd1f21b0a40ac",
+      "tools/m5o_campaign.py": "b97f4c6f709cf1a6ee54a43a07182345ab7d54201c105e2e4f317236256961ac",
+      "tools/m5o_candidate_audit.py": "d5cc8407a6299283b0f75ba556c6441aaae40f447f70688214edca998e77a1c2",
+      "tools/m5o_capture.py": "500ede8e1feb4418a1e8abbc29695821154be56ab2bccc0ea9cbc79f9130c60c",
+      "tools/m5o_common.py": "97dac123a179db9aa49e750672595ad7b9f692b45d77b59fd559e132d4486ec6",
+      "tools/m5o_extend_allocation.py": "a54c95d7838339337261496ef2ac5244071347a1ab24102e8b24e9a88e0d648f",
+      "tools/m5o_freeze.py": "76eeb76921c55f398a4d39da3c283da1a7aa1fc590bc82bbac1d7249424a6423",
+      "tools/m5o_frozen_diagnostic.py": "05e1fc08b6f521fd2ffc464814880e90466590afa313bf8fa9fe5dcbaf1227b9",
+      "tools/m5o_index.py": "db45457a4e20556a110895baf868c9d14c9eac1c2a51d72cadb2dc134ff656ee",
+      "tools/m5o_road_layouts.py": "3c4372534b2f57eeaaa290d83a27a0a4dafd157f9d7e8050dd9493af418e550b",
+      "tools/m5o_smoke_v3.py": "5fd345452c1285d32def77976cb17d57e3714a30630f9d622fd77e9e89b21041",
+      "tools/m5o_train.py": "1ce123ca4312653d3a325b29fdb6fdb5a5cda3eba7507048d5deebb594148cd0"
+    }
+  },
+  "limits": "Unmatched != physical FP. Semantic background proxy may include poles/walls that are real physical objects outside target taxonomy. Recorded-target empty does not mean empty physical scene; renderer association proxy, not mesh truth."
+}

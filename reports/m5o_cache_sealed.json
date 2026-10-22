@@ -1,0 +1,2066 @@
+{
+  "kind": "actual_RTX4090_frozen_RGB_features_and_separate_supervision",
+  "oracle_candidates_diagnostic_only": false,
+  "provenance": {
+    "base": "2afe740be0cf8e0df8dff52a7ed2b03a6f001dc5",
+    "git_head": "83a3a5da4093da3229995a8c1f066fdf9efe4db6",
+    "sources": {
+      "configs/m5o_capture_dev.json": "00f0e376fbe4d8b7ca7dcc08d69121a99a31f0b605a265868f89387fec7f9fc1",
+      "configs/m5o_capture_dev_v2.json": "421842bec0f2ec33e8b047b684e177aa1c8ffa90c1c96cf2ea073fea85c6a5a5",
+      "configs/m5o_capture_dev_v3.json": "38ee22d5cdb27b9a227aa2ee6cb9db56af43346462fa2681101d82b30b316d5a",
+      "configs/m5o_capture_sealed.json": "0d3a7b3035f9b05ff7a212ef117f40580905f5efc50200e1071f59c68b094015",
+      "configs/m5o_capture_sealed_v3.json": "e60c317c50d81c1685ceb97bd078da5d324b09e31622748765bdb24171592b93",
+      "configs/m5o_protocol.json": "30a943874951f7e10e502bcf7710d1079afa40061ea636e5ad875409347d6de1",
+      "datasets/m5o_benchmark.py": "670c5b69922f5ae3ab86e0528db57ec46eaa6584c35084bccb72cf2ab97cd104",
+      "datasets/m5o_interfaces.py": "29adfe06b7415568f41132aa3e3cb7e9a33e248a1b3f27f5b3e2283ecbb5258c",
+      "diagnostics/m5o_risk.py": "5f3accc548ef668bae79c7d5842f4242071733b7eda19928de262dac2637907a",
+      "tests/test_m5o_benchmark.py": "03d6839fc1032fc1ac51f5439c2f51db721b1ad0f9a329506f060b17278aad85",
+      "tools/m5o_after_development.py": "5b7a49651603d88ae564d0cae78dca902e005aa48d68571b6db6f2d01baf5b00",
+      "tools/m5o_all_candidate_burden.py": "b92daf4a06724153aebfc7fa2985d826d2749af2316ce16abe9777b9e8840ff8",
+      "tools/m5o_allocate.py": "7fd3a97f4e8ab96d3ec096e535f49c4d60a368efa80b9ef68902d05b30afdd24",
+      "tools/m5o_cache.py": "e3e392d2ad6e75166c8d0aa40aed65e031a36b03a49d94ec86fbf68e7ab4d533",
+      "tools/m5o_campaign.py": "b97f4c6f709cf1a6ee54a43a07182345ab7d54201c105e2e4f317236256961ac",
+      "tools/m5o_candidate_audit.py": "e21a99c0862ab99b4320254b348f61c4f84ce2a5f0038949a6f9ba2b01ad1cb0",
+      "tools/m5o_capture.py": "500ede8e1feb4418a1e8abbc29695821154be56ab2bccc0ea9cbc79f9130c60c",
+      "tools/m5o_common.py": "b1a91e75c54006e1b521f49ab980fdefee20c51b9fa94376e15ebb41cbaaed16",
+      "tools/m5o_completed_group_audit.py": "7db911edcb22cedd49c74356ef9b987686163f5e6f68995fea97329a8db28ec5",
+      "tools/m5o_dataset_checks.py": "869de7ec261fb0b8167fe57ee5140f243476d1624554d687b7fd22ada2138da5",
+      "tools/m5o_evaluate.py": "140e94226b76bd2f9aee2cfbe4aa43f0c2675023021ad6c48f39ae27926eba2c",
+      "tools/m5o_extend_allocation.py": "a54c95d7838339337261496ef2ac5244071347a1ab24102e8b24e9a88e0d648f",
+      "tools/m5o_figures.py": "10e4f3235813ca04358f1f3e611b38e6037b02a58cb773da31015bd528a163ca",
+      "tools/m5o_finalize.py": "8283a9ed739c04764b092ad197d0cf229d0fcd1f3f937913e155e33f26eca02a",
+      "tools/m5o_freeze.py": "76eeb76921c55f398a4d39da3c283da1a7aa1fc590bc82bbac1d7249424a6423",
+      "tools/m5o_frozen_diagnostic.py": "8387816a7ac480ce50e68ce10084fc5bb985b008fc762f8d45ba7102c52c0e89",
+      "tools/m5o_geometry_stream.py": "5e116907b83b57d0985974fc13218f27979d129392066565d3e39d59c315c3c7",
+      "tools/m5o_historical_now.py": "0b29bca7f08125430bfd2cef01b1be07084104e162dd97961d622622f83e8c89",
+      "tools/m5o_index.py": "db45457a4e20556a110895baf868c9d14c9eac1c2a51d72cadb2dc134ff656ee",
+      "tools/m5o_leakage_audit.py": "27d6d540006adef76e5aa08fcbd54f13be259670725fb6f7f6dca2bb7cb11450",
+      "tools/m5o_model_inference_check.py": "7b58fc14f70c8004471b0333aeb4d0df91781d971c42da1de87e99d2edd5539a",
+      "tools/m5o_paired_analysis.py": "71cd05fc97866995052c062b77728f3851af300a54a294474979d9b45bcfa950",
+      "tools/m5o_process_dev.py": "9b5d7214282762acc5b494c8070ecf3d400552d9a5b143dde9ad15f0bdfaec89",
+      "tools/m5o_regression_report.py": "1cc5f6c3e7183a878c0b3d95721e7905b67485ded6771ff32309e80220a28911",
+      "tools/m5o_report.py": "af8b40f46a1aaf0b2187696ac16d409644eedca79b3a89be77d13d1a058c61d5",
+      "tools/m5o_road_layouts.py": "3c4372534b2f57eeaaa290d83a27a0a4dafd157f9d7e8050dd9493af418e550b",
+      "tools/m5o_sampling_audit.py": "2da90ff80364ba576d67afd4416b99d032bb79a217a4b54e243e8bf07a70489b",
+      "tools/m5o_sealed_run.py": "31a914bdceaece8753bb239f2d2e804152a84dfa2995ae8010f38795262b96b2",
+      "tools/m5o_smoke_v3.py": "5fd345452c1285d32def77976cb17d57e3714a30630f9d622fd77e9e89b21041",
+      "tools/m5o_snapshot_progress.py": "3db01b9d479c87080ea690ff6ffe0bf61aa92f9199af977288cb13e3aa48ba2d",
+      "tools/m5o_split_geometry.py": "6add51ab60c61711866a9bec36a03677dbe15b444b08a6253f14e3bf68c7165b",
+      "tools/m5o_status.py": "083a182d7558c0d65c7ef30c57dcbdb28eca187c9015bb37fc0959f1c0650ed5",
+      "tools/m5o_stream_index.py": "372662c779258044d84f023b8203f7d9ea363963e0f586a014d1445c17471894",
+      "tools/m5o_summary.py": "b4998ac706dbf93a803ffc85850b06e0ad4acfddf4aab3610b84fc534ce15629",
+      "tools/m5o_support.py": "cb8bb0735e9b180548446c89b1323c7675d423edebe320c2411a051fb1d00e27",
+      "tools/m5o_train.py": "2c07336b38496e51c24af00a49c7fa0d1fac2f32ee0283d8edfe213e89ed345d",
+      "tools/m5o_unit_benchmark_probe.py": "69821783160758ffe397a51b6c1a2e1153cde825476e8c4f47aa0b3bcb47c825"
+    }
+  },
+  "frames": 198,
+  "groups": 6,
+  "candidates": 7556,
+  "visible_actor_views": 363,
+  "train_eligible": {
+    "101": 271,
+    "102": 281
+  },
+  "features": {
+    "path": "runs/m5o_cache_sealed/features.pt",
+    "sha256": "c752a6262ff6999b8d2796e0302c71d759735326d9e7773dc97bf3ad4e6df12d",
+    "bytes": 18136048
+  },
+  "inference_candidates": {
+    "path": "runs/m5o_cache_sealed/candidates.json",
+    "sha256": "e75ac4e4757f48157f390c62d1ce1c74f72881941c8de88b929d9b3160c486a2",
+    "bytes": 11228661
+  },
+  "supervision": {
+    "path": "runs/m5o_cache_sealed/supervision.json",
+    "sha256": "c51724f58c8a61ce2dccf8e62071eef835a6536bbcace6749c6905a42d5f689c",
+    "bytes": 9316406
+  },
+  "elapsed_s": 101.00297086685896,
+  "peak_mib": 237.02880859375,
+  "timings": [
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228040",
+      "seed": 101,
+      "mobile_ms": 172.66645096242428
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228040",
+      "seed": 102,
+      "mobile_ms": 17.47111603617668
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228074",
+      "seed": 101,
+      "mobile_ms": 18.248986452817917
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228074",
+      "seed": 102,
+      "mobile_ms": 23.657791316509247
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228108",
+      "seed": 101,
+      "mobile_ms": 13.941721990704536
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228108",
+      "seed": 102,
+      "mobile_ms": 14.303632080554962
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228142",
+      "seed": 101,
+      "mobile_ms": 15.419375151395798
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228142",
+      "seed": 102,
+      "mobile_ms": 15.605054795742035
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228176",
+      "seed": 101,
+      "mobile_ms": 15.557695180177689
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228176",
+      "seed": 102,
+      "mobile_ms": 17.37840659916401
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228210",
+      "seed": 101,
+      "mobile_ms": 14.54569399356842
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228210",
+      "seed": 102,
+      "mobile_ms": 12.472184374928474
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228244",
+      "seed": 101,
+      "mobile_ms": 15.469847247004509
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228244",
+      "seed": 102,
+      "mobile_ms": 14.853442087769508
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228278",
+      "seed": 101,
+      "mobile_ms": 13.559626415371895
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228278",
+      "seed": 102,
+      "mobile_ms": 15.04758931696415
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228312",
+      "seed": 101,
+      "mobile_ms": 14.486990869045258
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228312",
+      "seed": 102,
+      "mobile_ms": 14.151420444250107
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228346",
+      "seed": 101,
+      "mobile_ms": 15.233907848596573
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228346",
+      "seed": 102,
+      "mobile_ms": 14.481155201792717
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228380",
+      "seed": 101,
+      "mobile_ms": 21.12748473882675
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228380",
+      "seed": 102,
+      "mobile_ms": 15.07876068353653
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228414",
+      "seed": 101,
+      "mobile_ms": 21.412208676338196
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228414",
+      "seed": 102,
+      "mobile_ms": 12.127876281738281
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228448",
+      "seed": 101,
+      "mobile_ms": 18.10605637729168
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228448",
+      "seed": 102,
+      "mobile_ms": 14.911049976944923
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228482",
+      "seed": 101,
+      "mobile_ms": 15.585502609610558
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228482",
+      "seed": 102,
+      "mobile_ms": 15.673058107495308
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228516",
+      "seed": 101,
+      "mobile_ms": 8.535932749509811
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228516",
+      "seed": 102,
+      "mobile_ms": 8.27007181942463
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228550",
+      "seed": 101,
+      "mobile_ms": 15.96536859869957
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228550",
+      "seed": 102,
+      "mobile_ms": 18.97154562175274
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228584",
+      "seed": 101,
+      "mobile_ms": 15.964547172188759
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228584",
+      "seed": 102,
+      "mobile_ms": 13.76500353217125
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228618",
+      "seed": 101,
+      "mobile_ms": 16.176486387848854
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228618",
+      "seed": 102,
+      "mobile_ms": 13.566248118877411
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228652",
+      "seed": 101,
+      "mobile_ms": 21.458806470036507
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228652",
+      "seed": 102,
+      "mobile_ms": 14.890534803271294
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228686",
+      "seed": 101,
+      "mobile_ms": 15.187500044703484
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228686",
+      "seed": 102,
+      "mobile_ms": 9.504904970526695
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228720",
+      "seed": 101,
+      "mobile_ms": 17.734520137310028
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228720",
+      "seed": 102,
+      "mobile_ms": 15.165776014328003
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228754",
+      "seed": 101,
+      "mobile_ms": 15.08030854165554
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228754",
+      "seed": 102,
+      "mobile_ms": 14.433417469263077
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228788",
+      "seed": 101,
+      "mobile_ms": 15.065763145685196
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228788",
+      "seed": 102,
+      "mobile_ms": 13.554127886891365
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228822",
+      "seed": 101,
+      "mobile_ms": 17.98476278781891
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228822",
+      "seed": 102,
+      "mobile_ms": 16.071686521172523
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228856",
+      "seed": 101,
+      "mobile_ms": 15.41716419160366
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228856",
+      "seed": 102,
+      "mobile_ms": 13.765191659331322
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228890",
+      "seed": 101,
+      "mobile_ms": 11.695582419633865
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228890",
+      "seed": 102,
+      "mobile_ms": 14.34321142733097
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228924",
+      "seed": 101,
+      "mobile_ms": 12.726008892059326
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228924",
+      "seed": 102,
+      "mobile_ms": 14.35987837612629
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228958",
+      "seed": 101,
+      "mobile_ms": 15.160463750362396
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228958",
+      "seed": 102,
+      "mobile_ms": 10.255269706249237
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228992",
+      "seed": 101,
+      "mobile_ms": 14.62480053305626
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00228992",
+      "seed": 102,
+      "mobile_ms": 10.12580469250679
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00229026",
+      "seed": 101,
+      "mobile_ms": 16.057593747973442
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00229026",
+      "seed": 102,
+      "mobile_ms": 14.564231038093567
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00229060",
+      "seed": 101,
+      "mobile_ms": 15.359953045845032
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00229060",
+      "seed": 102,
+      "mobile_ms": 15.483226627111435
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00229094",
+      "seed": 101,
+      "mobile_ms": 10.463511571288109
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00229094",
+      "seed": 102,
+      "mobile_ms": 15.483301132917404
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00229128",
+      "seed": 101,
+      "mobile_ms": 15.278533101081848
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00229128",
+      "seed": 102,
+      "mobile_ms": 14.237949624657631
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00229162",
+      "seed": 101,
+      "mobile_ms": 14.464378356933594
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00229162",
+      "seed": 102,
+      "mobile_ms": 15.396371483802795
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00229196",
+      "seed": 101,
+      "mobile_ms": 19.36870440840721
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00229196",
+      "seed": 102,
+      "mobile_ms": 22.840047255158424
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00229230",
+      "seed": 101,
+      "mobile_ms": 22.87929132580757
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_00/00229230",
+      "seed": 102,
+      "mobile_ms": 14.97320830821991
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229563",
+      "seed": 101,
+      "mobile_ms": 14.043943956494331
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229563",
+      "seed": 102,
+      "mobile_ms": 14.17447254061699
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229597",
+      "seed": 101,
+      "mobile_ms": 15.703089535236359
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229597",
+      "seed": 102,
+      "mobile_ms": 15.324667096138
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229631",
+      "seed": 101,
+      "mobile_ms": 17.14113913476467
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229631",
+      "seed": 102,
+      "mobile_ms": 12.733036652207375
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229665",
+      "seed": 101,
+      "mobile_ms": 13.28124850988388
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229665",
+      "seed": 102,
+      "mobile_ms": 10.515958070755005
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229699",
+      "seed": 101,
+      "mobile_ms": 17.843876034021378
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229699",
+      "seed": 102,
+      "mobile_ms": 15.174655243754387
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229733",
+      "seed": 101,
+      "mobile_ms": 14.337887987494469
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229733",
+      "seed": 102,
+      "mobile_ms": 13.820365071296692
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229767",
+      "seed": 101,
+      "mobile_ms": 14.696314930915833
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229767",
+      "seed": 102,
+      "mobile_ms": 13.32974061369896
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229801",
+      "seed": 101,
+      "mobile_ms": 15.90622030198574
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229801",
+      "seed": 102,
+      "mobile_ms": 13.361690565943718
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229835",
+      "seed": 101,
+      "mobile_ms": 14.347044751048088
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229835",
+      "seed": 102,
+      "mobile_ms": 17.700694501399994
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229869",
+      "seed": 101,
+      "mobile_ms": 17.90868490934372
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229869",
+      "seed": 102,
+      "mobile_ms": 14.825424179434776
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229903",
+      "seed": 101,
+      "mobile_ms": 14.60692286491394
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229903",
+      "seed": 102,
+      "mobile_ms": 13.322306796908379
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229937",
+      "seed": 101,
+      "mobile_ms": 18.218228593468666
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229937",
+      "seed": 102,
+      "mobile_ms": 13.314897194504738
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229971",
+      "seed": 101,
+      "mobile_ms": 15.175340697169304
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00229971",
+      "seed": 102,
+      "mobile_ms": 13.353489339351654
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230005",
+      "seed": 101,
+      "mobile_ms": 15.38059301674366
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230005",
+      "seed": 102,
+      "mobile_ms": 17.679251730442047
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230039",
+      "seed": 101,
+      "mobile_ms": 16.424397006630898
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230039",
+      "seed": 102,
+      "mobile_ms": 14.563869684934616
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230073",
+      "seed": 101,
+      "mobile_ms": 14.349818229675293
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230073",
+      "seed": 102,
+      "mobile_ms": 15.513679012656212
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230107",
+      "seed": 101,
+      "mobile_ms": 16.389761120080948
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230107",
+      "seed": 102,
+      "mobile_ms": 10.037986561655998
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230141",
+      "seed": 101,
+      "mobile_ms": 15.795815736055374
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230141",
+      "seed": 102,
+      "mobile_ms": 10.725416243076324
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230175",
+      "seed": 101,
+      "mobile_ms": 15.39951004087925
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230175",
+      "seed": 102,
+      "mobile_ms": 12.067779898643494
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230209",
+      "seed": 101,
+      "mobile_ms": 16.778644174337387
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230209",
+      "seed": 102,
+      "mobile_ms": 14.326067641377449
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230243",
+      "seed": 101,
+      "mobile_ms": 18.066387623548508
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230243",
+      "seed": 102,
+      "mobile_ms": 16.096873208880424
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230277",
+      "seed": 101,
+      "mobile_ms": 23.395806550979614
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230277",
+      "seed": 102,
+      "mobile_ms": 17.034802585840225
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230311",
+      "seed": 101,
+      "mobile_ms": 19.340116530656815
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230311",
+      "seed": 102,
+      "mobile_ms": 14.308320358395576
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230345",
+      "seed": 101,
+      "mobile_ms": 15.868069604039192
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230345",
+      "seed": 102,
+      "mobile_ms": 15.246415510773659
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230379",
+      "seed": 101,
+      "mobile_ms": 14.575397595763206
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230379",
+      "seed": 102,
+      "mobile_ms": 14.614500105381012
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230413",
+      "seed": 101,
+      "mobile_ms": 16.179129481315613
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230413",
+      "seed": 102,
+      "mobile_ms": 22.758277133107185
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230447",
+      "seed": 101,
+      "mobile_ms": 14.437273144721985
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230447",
+      "seed": 102,
+      "mobile_ms": 12.83762976527214
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230481",
+      "seed": 101,
+      "mobile_ms": 15.8762838691473
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230481",
+      "seed": 102,
+      "mobile_ms": 13.366039842367172
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230515",
+      "seed": 101,
+      "mobile_ms": 14.460291713476181
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230515",
+      "seed": 102,
+      "mobile_ms": 15.081414952874184
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230549",
+      "seed": 101,
+      "mobile_ms": 16.488485038280487
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230549",
+      "seed": 102,
+      "mobile_ms": 13.947080820798874
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230583",
+      "seed": 101,
+      "mobile_ms": 16.32666401565075
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230583",
+      "seed": 102,
+      "mobile_ms": 15.443002805113792
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230617",
+      "seed": 101,
+      "mobile_ms": 15.232482925057411
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230617",
+      "seed": 102,
+      "mobile_ms": 15.187354758381844
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230651",
+      "seed": 101,
+      "mobile_ms": 11.151665821671486
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230651",
+      "seed": 102,
+      "mobile_ms": 15.348115935921669
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230685",
+      "seed": 101,
+      "mobile_ms": 8.285360410809517
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230685",
+      "seed": 102,
+      "mobile_ms": 15.088686719536781
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230719",
+      "seed": 101,
+      "mobile_ms": 15.800798311829567
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_01/00230719",
+      "seed": 102,
+      "mobile_ms": 14.668844640254974
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231049",
+      "seed": 101,
+      "mobile_ms": 22.893544286489487
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231049",
+      "seed": 102,
+      "mobile_ms": 13.187672942876816
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231083",
+      "seed": 101,
+      "mobile_ms": 14.412714168429375
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231083",
+      "seed": 102,
+      "mobile_ms": 13.20509985089302
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231117",
+      "seed": 101,
+      "mobile_ms": 15.76348952949047
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231117",
+      "seed": 102,
+      "mobile_ms": 18.686022609472275
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231151",
+      "seed": 101,
+      "mobile_ms": 17.70705170929432
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231151",
+      "seed": 102,
+      "mobile_ms": 15.067258849740028
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231185",
+      "seed": 101,
+      "mobile_ms": 15.445178374648094
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231185",
+      "seed": 102,
+      "mobile_ms": 13.02490383386612
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231219",
+      "seed": 101,
+      "mobile_ms": 15.68487286567688
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231219",
+      "seed": 102,
+      "mobile_ms": 13.62319104373455
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231253",
+      "seed": 101,
+      "mobile_ms": 14.499206095933914
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231253",
+      "seed": 102,
+      "mobile_ms": 13.07828351855278
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231287",
+      "seed": 101,
+      "mobile_ms": 19.046859815716743
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231287",
+      "seed": 102,
+      "mobile_ms": 15.14749601483345
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231321",
+      "seed": 101,
+      "mobile_ms": 14.081340283155441
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231321",
+      "seed": 102,
+      "mobile_ms": 13.217272236943245
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231355",
+      "seed": 101,
+      "mobile_ms": 19.068269059062004
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231355",
+      "seed": 102,
+      "mobile_ms": 13.345535844564438
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231389",
+      "seed": 101,
+      "mobile_ms": 15.798622742295265
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231389",
+      "seed": 102,
+      "mobile_ms": 14.292765408754349
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231423",
+      "seed": 101,
+      "mobile_ms": 14.991054311394691
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231423",
+      "seed": 102,
+      "mobile_ms": 15.825174748897552
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231457",
+      "seed": 101,
+      "mobile_ms": 18.03375408053398
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231457",
+      "seed": 102,
+      "mobile_ms": 14.509987086057663
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231491",
+      "seed": 101,
+      "mobile_ms": 17.415547743439674
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231491",
+      "seed": 102,
+      "mobile_ms": 17.19808019697666
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231525",
+      "seed": 101,
+      "mobile_ms": 15.118476003408432
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231525",
+      "seed": 102,
+      "mobile_ms": 13.829050585627556
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231559",
+      "seed": 101,
+      "mobile_ms": 17.390988767147064
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231559",
+      "seed": 102,
+      "mobile_ms": 17.265846952795982
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231593",
+      "seed": 101,
+      "mobile_ms": 16.012873500585556
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231593",
+      "seed": 102,
+      "mobile_ms": 11.9965560734272
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231627",
+      "seed": 101,
+      "mobile_ms": 14.806319028139114
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231627",
+      "seed": 102,
+      "mobile_ms": 14.858545735478401
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231661",
+      "seed": 101,
+      "mobile_ms": 14.832137152552605
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231661",
+      "seed": 102,
+      "mobile_ms": 13.517986983060837
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231695",
+      "seed": 101,
+      "mobile_ms": 14.956267550587654
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231695",
+      "seed": 102,
+      "mobile_ms": 14.237601310014725
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231729",
+      "seed": 101,
+      "mobile_ms": 19.461998715996742
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231729",
+      "seed": 102,
+      "mobile_ms": 16.365742310881615
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231763",
+      "seed": 101,
+      "mobile_ms": 17.90558733046055
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231763",
+      "seed": 102,
+      "mobile_ms": 15.171881765127182
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231797",
+      "seed": 101,
+      "mobile_ms": 20.085696130990982
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231797",
+      "seed": 102,
+      "mobile_ms": 17.378944903612137
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231831",
+      "seed": 101,
+      "mobile_ms": 14.495834708213806
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231831",
+      "seed": 102,
+      "mobile_ms": 17.759181559085846
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231865",
+      "seed": 101,
+      "mobile_ms": 15.574051067233086
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231865",
+      "seed": 102,
+      "mobile_ms": 13.091828674077988
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231899",
+      "seed": 101,
+      "mobile_ms": 16.613053157925606
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231899",
+      "seed": 102,
+      "mobile_ms": 16.715066507458687
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231933",
+      "seed": 101,
+      "mobile_ms": 15.289992094039917
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231933",
+      "seed": 102,
+      "mobile_ms": 15.967164188623428
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231967",
+      "seed": 101,
+      "mobile_ms": 14.478448778390884
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00231967",
+      "seed": 102,
+      "mobile_ms": 18.45698617398739
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00232001",
+      "seed": 101,
+      "mobile_ms": 15.894977375864983
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00232001",
+      "seed": 102,
+      "mobile_ms": 18.010122701525688
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00232035",
+      "seed": 101,
+      "mobile_ms": 16.676677390933037
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00232035",
+      "seed": 102,
+      "mobile_ms": 14.139248058199883
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00232069",
+      "seed": 101,
+      "mobile_ms": 13.667786493897438
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00232069",
+      "seed": 102,
+      "mobile_ms": 14.972962439060211
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00232103",
+      "seed": 101,
+      "mobile_ms": 13.122791424393654
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00232103",
+      "seed": 102,
+      "mobile_ms": 14.390932396054268
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00232137",
+      "seed": 101,
+      "mobile_ms": 9.828517213463783
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00232137",
+      "seed": 102,
+      "mobile_ms": 17.661670222878456
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00232171",
+      "seed": 101,
+      "mobile_ms": 10.380970314145088
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00232171",
+      "seed": 102,
+      "mobile_ms": 13.891385868191719
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00232205",
+      "seed": 101,
+      "mobile_ms": 19.729018211364746
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_02/00232205",
+      "seed": 102,
+      "mobile_ms": 16.528135165572166
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232538",
+      "seed": 101,
+      "mobile_ms": 16.05398952960968
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232538",
+      "seed": 102,
+      "mobile_ms": 14.106981456279755
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232572",
+      "seed": 101,
+      "mobile_ms": 17.444826662540436
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232572",
+      "seed": 102,
+      "mobile_ms": 14.918042346835136
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232606",
+      "seed": 101,
+      "mobile_ms": 16.430193558335304
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232606",
+      "seed": 102,
+      "mobile_ms": 13.129521161317825
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232640",
+      "seed": 101,
+      "mobile_ms": 19.447393715381622
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232640",
+      "seed": 102,
+      "mobile_ms": 14.319613575935364
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232674",
+      "seed": 101,
+      "mobile_ms": 15.426669269800186
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232674",
+      "seed": 102,
+      "mobile_ms": 14.935560524463654
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232708",
+      "seed": 101,
+      "mobile_ms": 15.45148715376854
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232708",
+      "seed": 102,
+      "mobile_ms": 13.81598599255085
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232742",
+      "seed": 101,
+      "mobile_ms": 15.470055863261223
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232742",
+      "seed": 102,
+      "mobile_ms": 11.982157826423645
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232776",
+      "seed": 101,
+      "mobile_ms": 14.853224158287048
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232776",
+      "seed": 102,
+      "mobile_ms": 13.235002756118774
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232810",
+      "seed": 101,
+      "mobile_ms": 15.316355973482132
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232810",
+      "seed": 102,
+      "mobile_ms": 11.544661596417427
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232844",
+      "seed": 101,
+      "mobile_ms": 15.44349268078804
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232844",
+      "seed": 102,
+      "mobile_ms": 14.116741716861725
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232878",
+      "seed": 101,
+      "mobile_ms": 15.335552394390106
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232878",
+      "seed": 102,
+      "mobile_ms": 15.054984018206596
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232912",
+      "seed": 101,
+      "mobile_ms": 18.740175291895866
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232912",
+      "seed": 102,
+      "mobile_ms": 13.135850429534912
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232946",
+      "seed": 101,
+      "mobile_ms": 15.766877681016922
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232946",
+      "seed": 102,
+      "mobile_ms": 13.112055137753487
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232980",
+      "seed": 101,
+      "mobile_ms": 13.88002559542656
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00232980",
+      "seed": 102,
+      "mobile_ms": 17.886707559227943
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233014",
+      "seed": 101,
+      "mobile_ms": 15.293832868337631
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233014",
+      "seed": 102,
+      "mobile_ms": 14.28111083805561
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233048",
+      "seed": 101,
+      "mobile_ms": 15.052886679768562
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233048",
+      "seed": 102,
+      "mobile_ms": 14.18335735797882
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233082",
+      "seed": 101,
+      "mobile_ms": 16.862839460372925
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233082",
+      "seed": 102,
+      "mobile_ms": 10.579399764537811
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233116",
+      "seed": 101,
+      "mobile_ms": 16.07625186443329
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233116",
+      "seed": 102,
+      "mobile_ms": 14.917198568582535
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233150",
+      "seed": 101,
+      "mobile_ms": 16.852861270308495
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233150",
+      "seed": 102,
+      "mobile_ms": 15.159344300627708
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233184",
+      "seed": 101,
+      "mobile_ms": 14.449339359998703
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233184",
+      "seed": 102,
+      "mobile_ms": 12.384774163365364
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233218",
+      "seed": 101,
+      "mobile_ms": 15.787599608302116
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233218",
+      "seed": 102,
+      "mobile_ms": 18.861010670661926
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233252",
+      "seed": 101,
+      "mobile_ms": 15.543261542916298
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233252",
+      "seed": 102,
+      "mobile_ms": 15.119025483727455
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233286",
+      "seed": 101,
+      "mobile_ms": 15.83578996360302
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233286",
+      "seed": 102,
+      "mobile_ms": 15.492284670472145
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233320",
+      "seed": 101,
+      "mobile_ms": 15.717381611466408
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233320",
+      "seed": 102,
+      "mobile_ms": 14.55746777355671
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233354",
+      "seed": 101,
+      "mobile_ms": 15.776408836245537
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233354",
+      "seed": 102,
+      "mobile_ms": 10.813146829605103
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233388",
+      "seed": 101,
+      "mobile_ms": 16.22900180518627
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233388",
+      "seed": 102,
+      "mobile_ms": 14.087025076150894
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233422",
+      "seed": 101,
+      "mobile_ms": 15.474991872906685
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233422",
+      "seed": 102,
+      "mobile_ms": 18.896369263529778
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233456",
+      "seed": 101,
+      "mobile_ms": 14.3889170140028
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233456",
+      "seed": 102,
+      "mobile_ms": 13.668660074472427
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233490",
+      "seed": 101,
+      "mobile_ms": 15.946855768561363
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233490",
+      "seed": 102,
+      "mobile_ms": 13.885468244552612
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233524",
+      "seed": 101,
+      "mobile_ms": 14.952966943383217
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233524",
+      "seed": 102,
+      "mobile_ms": 15.475604683160782
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233558",
+      "seed": 101,
+      "mobile_ms": 15.05567878484726
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233558",
+      "seed": 102,
+      "mobile_ms": 12.412624433636665
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233592",
+      "seed": 101,
+      "mobile_ms": 10.363347828388214
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233592",
+      "seed": 102,
+      "mobile_ms": 9.758556261658669
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233626",
+      "seed": 101,
+      "mobile_ms": 13.968780636787415
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233626",
+      "seed": 102,
+      "mobile_ms": 14.974553138017654
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233660",
+      "seed": 101,
+      "mobile_ms": 10.80123521387577
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233660",
+      "seed": 102,
+      "mobile_ms": 16.787363216280937
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233694",
+      "seed": 101,
+      "mobile_ms": 17.70078018307686
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_03/00233694",
+      "seed": 102,
+      "mobile_ms": 12.729663401842117
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234023",
+      "seed": 101,
+      "mobile_ms": 14.41720500588417
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234023",
+      "seed": 102,
+      "mobile_ms": 18.294062465429306
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234057",
+      "seed": 101,
+      "mobile_ms": 14.94506374001503
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234057",
+      "seed": 102,
+      "mobile_ms": 19.35706101357937
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234091",
+      "seed": 101,
+      "mobile_ms": 18.75882036983967
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234091",
+      "seed": 102,
+      "mobile_ms": 15.341635793447495
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234125",
+      "seed": 101,
+      "mobile_ms": 15.839135274291039
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234125",
+      "seed": 102,
+      "mobile_ms": 18.215680494904518
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234159",
+      "seed": 101,
+      "mobile_ms": 15.252642333507538
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234159",
+      "seed": 102,
+      "mobile_ms": 14.855626970529556
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234193",
+      "seed": 101,
+      "mobile_ms": 15.004497021436691
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234193",
+      "seed": 102,
+      "mobile_ms": 11.810332536697388
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234227",
+      "seed": 101,
+      "mobile_ms": 14.63276706635952
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234227",
+      "seed": 102,
+      "mobile_ms": 14.434140175580978
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234261",
+      "seed": 101,
+      "mobile_ms": 18.272951245307922
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234261",
+      "seed": 102,
+      "mobile_ms": 15.687322244048119
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234295",
+      "seed": 101,
+      "mobile_ms": 21.9015721231699
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234295",
+      "seed": 102,
+      "mobile_ms": 17.943844199180603
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234329",
+      "seed": 101,
+      "mobile_ms": 15.777047723531723
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234329",
+      "seed": 102,
+      "mobile_ms": 13.815538957715034
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234363",
+      "seed": 101,
+      "mobile_ms": 15.979908406734467
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234363",
+      "seed": 102,
+      "mobile_ms": 15.038322657346725
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234397",
+      "seed": 101,
+      "mobile_ms": 14.88134078681469
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234397",
+      "seed": 102,
+      "mobile_ms": 16.381964087486267
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234431",
+      "seed": 101,
+      "mobile_ms": 14.975054189562798
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234431",
+      "seed": 102,
+      "mobile_ms": 19.635047763586044
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234465",
+      "seed": 101,
+      "mobile_ms": 15.05046896636486
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234465",
+      "seed": 102,
+      "mobile_ms": 16.898952424526215
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234499",
+      "seed": 101,
+      "mobile_ms": 19.875038415193558
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234499",
+      "seed": 102,
+      "mobile_ms": 14.854568988084793
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234533",
+      "seed": 101,
+      "mobile_ms": 16.002846881747246
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234533",
+      "seed": 102,
+      "mobile_ms": 13.076713308691978
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234567",
+      "seed": 101,
+      "mobile_ms": 15.426188707351685
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234567",
+      "seed": 102,
+      "mobile_ms": 15.09052887558937
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234601",
+      "seed": 101,
+      "mobile_ms": 15.83995670080185
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234601",
+      "seed": 102,
+      "mobile_ms": 18.51934753358364
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234635",
+      "seed": 101,
+      "mobile_ms": 15.234513208270073
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234635",
+      "seed": 102,
+      "mobile_ms": 13.547444716095924
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234669",
+      "seed": 101,
+      "mobile_ms": 15.49142599105835
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234669",
+      "seed": 102,
+      "mobile_ms": 14.07480426132679
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234703",
+      "seed": 101,
+      "mobile_ms": 8.340461179614067
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234703",
+      "seed": 102,
+      "mobile_ms": 15.437670052051544
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234737",
+      "seed": 101,
+      "mobile_ms": 15.63524454832077
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234737",
+      "seed": 102,
+      "mobile_ms": 15.394721180200577
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234771",
+      "seed": 101,
+      "mobile_ms": 14.342127367854118
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234771",
+      "seed": 102,
+      "mobile_ms": 13.590238988399506
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234805",
+      "seed": 101,
+      "mobile_ms": 14.918403699994087
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234805",
+      "seed": 102,
+      "mobile_ms": 16.988761723041534
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234839",
+      "seed": 101,
+      "mobile_ms": 11.23804971575737
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234839",
+      "seed": 102,
+      "mobile_ms": 17.207885161042213
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234873",
+      "seed": 101,
+      "mobile_ms": 10.05750335752964
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234873",
+      "seed": 102,
+      "mobile_ms": 14.30949941277504
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234907",
+      "seed": 101,
+      "mobile_ms": 10.693468153476715
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234907",
+      "seed": 102,
+      "mobile_ms": 14.732107520103455
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234941",
+      "seed": 101,
+      "mobile_ms": 15.632087364792824
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234941",
+      "seed": 102,
+      "mobile_ms": 18.167268484830856
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234975",
+      "seed": 101,
+      "mobile_ms": 10.931964963674545
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00234975",
+      "seed": 102,
+      "mobile_ms": 15.141421929001808
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00235009",
+      "seed": 101,
+      "mobile_ms": 21.42111584544182
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_04/00235009",
+      "seed": 102,
+      "mobile_ms": 17.147909849882126
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235308",
+      "seed": 101,
+      "mobile_ms": 17.02837273478508
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235308",
+      "seed": 102,
+      "mobile_ms": 12.096371501684189
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235342",
+      "seed": 101,
+      "mobile_ms": 16.111845150589943
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235342",
+      "seed": 102,
+      "mobile_ms": 17.556218430399895
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235376",
+      "seed": 101,
+      "mobile_ms": 16.13135077059269
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235376",
+      "seed": 102,
+      "mobile_ms": 13.908013701438904
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235410",
+      "seed": 101,
+      "mobile_ms": 15.61792753636837
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235410",
+      "seed": 102,
+      "mobile_ms": 14.348488301038742
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235444",
+      "seed": 101,
+      "mobile_ms": 17.488548532128334
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235444",
+      "seed": 102,
+      "mobile_ms": 11.178096756339073
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235478",
+      "seed": 101,
+      "mobile_ms": 14.321636408567429
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235478",
+      "seed": 102,
+      "mobile_ms": 19.87011358141899
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235512",
+      "seed": 101,
+      "mobile_ms": 14.871880412101746
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235512",
+      "seed": 102,
+      "mobile_ms": 16.93495735526085
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235546",
+      "seed": 101,
+      "mobile_ms": 15.07512480020523
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235546",
+      "seed": 102,
+      "mobile_ms": 17.282411456108093
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235580",
+      "seed": 101,
+      "mobile_ms": 14.15211334824562
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235580",
+      "seed": 102,
+      "mobile_ms": 10.212589055299759
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235614",
+      "seed": 101,
+      "mobile_ms": 16.467832028865814
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235614",
+      "seed": 102,
+      "mobile_ms": 15.150940045714378
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235648",
+      "seed": 101,
+      "mobile_ms": 16.011975705623627
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235648",
+      "seed": 102,
+      "mobile_ms": 15.124600380659103
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235682",
+      "seed": 101,
+      "mobile_ms": 14.372356235980988
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235682",
+      "seed": 102,
+      "mobile_ms": 15.350721776485443
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235716",
+      "seed": 101,
+      "mobile_ms": 18.379347398877144
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235716",
+      "seed": 102,
+      "mobile_ms": 9.823905304074287
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235750",
+      "seed": 101,
+      "mobile_ms": 17.224416136741638
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235750",
+      "seed": 102,
+      "mobile_ms": 15.927497297525406
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235784",
+      "seed": 101,
+      "mobile_ms": 14.925040304660797
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235784",
+      "seed": 102,
+      "mobile_ms": 15.973683446645737
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235818",
+      "seed": 101,
+      "mobile_ms": 15.521826222538948
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235818",
+      "seed": 102,
+      "mobile_ms": 14.103259891271591
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235852",
+      "seed": 101,
+      "mobile_ms": 17.671313136816025
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235852",
+      "seed": 102,
+      "mobile_ms": 16.57387986779213
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235886",
+      "seed": 101,
+      "mobile_ms": 15.913665294647217
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235886",
+      "seed": 102,
+      "mobile_ms": 15.534279868006706
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235920",
+      "seed": 101,
+      "mobile_ms": 17.92764477431774
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235920",
+      "seed": 102,
+      "mobile_ms": 10.170800611376762
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235954",
+      "seed": 101,
+      "mobile_ms": 14.753798022866249
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235954",
+      "seed": 102,
+      "mobile_ms": 17.21244305372238
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235988",
+      "seed": 101,
+      "mobile_ms": 16.141006723046303
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00235988",
+      "seed": 102,
+      "mobile_ms": 13.710390776395798
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00236022",
+      "seed": 101,
+      "mobile_ms": 15.243489295244217
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00236022",
+      "seed": 102,
+      "mobile_ms": 14.47315700352192
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00236056",
+      "seed": 101,
+      "mobile_ms": 15.075398609042168
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00236056",
+      "seed": 102,
+      "mobile_ms": 15.13049378991127
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00236090",
+      "seed": 101,
+      "mobile_ms": 16.683530062437057
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00236090",
+      "seed": 102,
+      "mobile_ms": 15.122447162866592
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00236124",
+      "seed": 101,
+      "mobile_ms": 9.64345596730709
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00236124",
+      "seed": 102,
+      "mobile_ms": 18.881436437368393
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00236158",
+      "seed": 101,
+      "mobile_ms": 10.9625905752182
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00236158",
+      "seed": 102,
+      "mobile_ms": 13.398755341768265
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00236192",
+      "seed": 101,
+      "mobile_ms": 18.87028105556965
+    },
+    {
+      "sample_id": "Town10HD_m5o_sealed_05/00236192",
+      "seed": 102,
+      "mobile_ms": 13.646624982357025
+    }
+  ],
+  "source_sha256": "e3e392d2ad6e75166c8d0aa40aed65e031a36b03a49d94ec86fbf68e7ab4d533",
+  "limits": "Simulator OBB center not contactGold. Native render identity geometrically associated, not exact mesh identity. Unmatched candidates not guaranteed falseobjects. Static historical snapshots read after same tick before nexttick, not all historical manifests carry peractor frame stamps."
+}

@@ -1,0 +1,2113 @@
+{
+  "kind": "actual_RTX4090_frozen_RGB_features_and_separate_supervision",
+  "oracle_candidates_diagnostic_only": false,
+  "provenance": {
+    "base": "2afe740be0cf8e0df8dff52a7ed2b03a6f001dc5",
+    "git_head": "c67f67b0a2c3e1cb4d114c3a2ed81b58262c62ae",
+    "sources": {
+      "configs/m5o_capture_dev.json": "00f0e376fbe4d8b7ca7dcc08d69121a99a31f0b605a265868f89387fec7f9fc1",
+      "configs/m5o_capture_dev_v2.json": "421842bec0f2ec33e8b047b684e177aa1c8ffa90c1c96cf2ea073fea85c6a5a5",
+      "configs/m5o_capture_dev_v3.json": "38ee22d5cdb27b9a227aa2ee6cb9db56af43346462fa2681101d82b30b316d5a",
+      "configs/m5o_protocol.json": "30a943874951f7e10e502bcf7710d1079afa40061ea636e5ad875409347d6de1",
+      "datasets/m5o_benchmark.py": "670c5b69922f5ae3ab86e0528db57ec46eaa6584c35084bccb72cf2ab97cd104",
+      "datasets/m5o_interfaces.py": "29adfe06b7415568f41132aa3e3cb7e9a33e248a1b3f27f5b3e2283ecbb5258c",
+      "diagnostics/m5o_risk.py": "5f3accc548ef668bae79c7d5842f4242071733b7eda19928de262dac2637907a",
+      "tests/test_m5o_benchmark.py": "03d6839fc1032fc1ac51f5439c2f51db721b1ad0f9a329506f060b17278aad85",
+      "tools/m5o_after_development.py": "0ce58e18635683e9efdc7a273e84efada1863f9d099fad89ec7007370375759a",
+      "tools/m5o_all_candidate_burden.py": "b92daf4a06724153aebfc7fa2985d826d2749af2316ce16abe9777b9e8840ff8",
+      "tools/m5o_allocate.py": "7fd3a97f4e8ab96d3ec096e535f49c4d60a368efa80b9ef68902d05b30afdd24",
+      "tools/m5o_cache.py": "e3e392d2ad6e75166c8d0aa40aed65e031a36b03a49d94ec86fbf68e7ab4d533",
+      "tools/m5o_campaign.py": "b97f4c6f709cf1a6ee54a43a07182345ab7d54201c105e2e4f317236256961ac",
+      "tools/m5o_candidate_audit.py": "e21a99c0862ab99b4320254b348f61c4f84ce2a5f0038949a6f9ba2b01ad1cb0",
+      "tools/m5o_capture.py": "500ede8e1feb4418a1e8abbc29695821154be56ab2bccc0ea9cbc79f9130c60c",
+      "tools/m5o_common.py": "b1a91e75c54006e1b521f49ab980fdefee20c51b9fa94376e15ebb41cbaaed16",
+      "tools/m5o_completed_group_audit.py": "7db911edcb22cedd49c74356ef9b987686163f5e6f68995fea97329a8db28ec5",
+      "tools/m5o_dataset_checks.py": "869de7ec261fb0b8167fe57ee5140f243476d1624554d687b7fd22ada2138da5",
+      "tools/m5o_evaluate.py": "140e94226b76bd2f9aee2cfbe4aa43f0c2675023021ad6c48f39ae27926eba2c",
+      "tools/m5o_extend_allocation.py": "a54c95d7838339337261496ef2ac5244071347a1ab24102e8b24e9a88e0d648f",
+      "tools/m5o_figures.py": "10e4f3235813ca04358f1f3e611b38e6037b02a58cb773da31015bd528a163ca",
+      "tools/m5o_finalize.py": "8283a9ed739c04764b092ad197d0cf229d0fcd1f3f937913e155e33f26eca02a",
+      "tools/m5o_freeze.py": "76eeb76921c55f398a4d39da3c283da1a7aa1fc590bc82bbac1d7249424a6423",
+      "tools/m5o_frozen_diagnostic.py": "8387816a7ac480ce50e68ce10084fc5bb985b008fc762f8d45ba7102c52c0e89",
+      "tools/m5o_geometry_stream.py": "5e116907b83b57d0985974fc13218f27979d129392066565d3e39d59c315c3c7",
+      "tools/m5o_historical_now.py": "0b29bca7f08125430bfd2cef01b1be07084104e162dd97961d622622f83e8c89",
+      "tools/m5o_index.py": "db45457a4e20556a110895baf868c9d14c9eac1c2a51d72cadb2dc134ff656ee",
+      "tools/m5o_leakage_audit.py": "27d6d540006adef76e5aa08fcbd54f13be259670725fb6f7f6dca2bb7cb11450",
+      "tools/m5o_model_inference_check.py": "7b58fc14f70c8004471b0333aeb4d0df91781d971c42da1de87e99d2edd5539a",
+      "tools/m5o_paired_analysis.py": "71cd05fc97866995052c062b77728f3851af300a54a294474979d9b45bcfa950",
+      "tools/m5o_process_dev.py": "9b5d7214282762acc5b494c8070ecf3d400552d9a5b143dde9ad15f0bdfaec89",
+      "tools/m5o_regression_report.py": "1cc5f6c3e7183a878c0b3d95721e7905b67485ded6771ff32309e80220a28911",
+      "tools/m5o_report.py": "af8b40f46a1aaf0b2187696ac16d409644eedca79b3a89be77d13d1a058c61d5",
+      "tools/m5o_road_layouts.py": "3c4372534b2f57eeaaa290d83a27a0a4dafd157f9d7e8050dd9493af418e550b",
+      "tools/m5o_sampling_audit.py": "2da90ff80364ba576d67afd4416b99d032bb79a217a4b54e243e8bf07a70489b",
+      "tools/m5o_sealed_run.py": "31a914bdceaece8753bb239f2d2e804152a84dfa2995ae8010f38795262b96b2",
+      "tools/m5o_smoke_v3.py": "5fd345452c1285d32def77976cb17d57e3714a30630f9d622fd77e9e89b21041",
+      "tools/m5o_snapshot_progress.py": "3db01b9d479c87080ea690ff6ffe0bf61aa92f9199af977288cb13e3aa48ba2d",
+      "tools/m5o_split_geometry.py": "6add51ab60c61711866a9bec36a03677dbe15b444b08a6253f14e3bf68c7165b",
+      "tools/m5o_status.py": "083a182d7558c0d65c7ef30c57dcbdb28eca187c9015bb37fc0959f1c0650ed5",
+      "tools/m5o_stream_index.py": "372662c779258044d84f023b8203f7d9ea363963e0f586a014d1445c17471894",
+      "tools/m5o_support.py": "cb8bb0735e9b180548446c89b1323c7675d423edebe320c2411a051fb1d00e27",
+      "tools/m5o_train.py": "2c07336b38496e51c24af00a49c7fa0d1fac2f32ee0283d8edfe213e89ed345d",
+      "tools/m5o_unit_benchmark_probe.py": "69821783160758ffe397a51b6c1a2e1153cde825476e8c4f47aa0b3bcb47c825"
+    }
+  },
+  "frames": 203,
+  "groups": 6,
+  "candidates": 2260,
+  "visible_actor_views": 333,
+  "train_eligible": {
+    "101": 198,
+    "102": 202
+  },
+  "features": {
+    "path": "runs/m5o_cache_val/features.pt",
+    "sha256": "2b775b6b77c71112ad315dda384ff23c645d818bfe354a909a16d9534641444c",
+    "bytes": 5425648
+  },
+  "inference_candidates": {
+    "path": "runs/m5o_cache_val/candidates.json",
+    "sha256": "36d27c7767082db95f5e65a2670e95f499a2632bd0a6751074dc0ab908082b8c",
+    "bytes": 3324010
+  },
+  "supervision": {
+    "path": "runs/m5o_cache_val/supervision.json",
+    "sha256": "8e2a3d4ecc2ef190b492dcc0402529ca8250f71d0de1d5ed90b5ff90f2f72a6c",
+    "bytes": 6627067
+  },
+  "elapsed_s": 56.90598140284419,
+  "peak_mib": 237.02880859375,
+  "timings": [
+    {
+      "sample_id": "Town05_m5o_val_00/00129239",
+      "seed": 101,
+      "mobile_ms": 192.65715591609478
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129239",
+      "seed": 102,
+      "mobile_ms": 20.557032898068428
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129273",
+      "seed": 101,
+      "mobile_ms": 16.913603991270065
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129273",
+      "seed": 102,
+      "mobile_ms": 11.293301358819008
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129307",
+      "seed": 101,
+      "mobile_ms": 15.273064374923706
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129307",
+      "seed": 102,
+      "mobile_ms": 11.686880141496658
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129341",
+      "seed": 101,
+      "mobile_ms": 8.364006876945496
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129341",
+      "seed": 102,
+      "mobile_ms": 8.083239197731018
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129375",
+      "seed": 101,
+      "mobile_ms": 11.694716289639473
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129375",
+      "seed": 102,
+      "mobile_ms": 13.684853911399841
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129409",
+      "seed": 101,
+      "mobile_ms": 14.83934186398983
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129409",
+      "seed": 102,
+      "mobile_ms": 12.907609343528748
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129443",
+      "seed": 101,
+      "mobile_ms": 14.513134956359863
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129443",
+      "seed": 102,
+      "mobile_ms": 14.668820425868034
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129477",
+      "seed": 101,
+      "mobile_ms": 14.31458443403244
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129477",
+      "seed": 102,
+      "mobile_ms": 11.430751532316208
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129511",
+      "seed": 101,
+      "mobile_ms": 12.551698833703995
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129511",
+      "seed": 102,
+      "mobile_ms": 17.54920557141304
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129545",
+      "seed": 101,
+      "mobile_ms": 12.324495241045952
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129545",
+      "seed": 102,
+      "mobile_ms": 12.507691979408264
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129579",
+      "seed": 101,
+      "mobile_ms": 11.844750493764877
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129579",
+      "seed": 102,
+      "mobile_ms": 14.166120439767838
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129613",
+      "seed": 101,
+      "mobile_ms": 13.493631035089493
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129613",
+      "seed": 102,
+      "mobile_ms": 11.211816221475601
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129647",
+      "seed": 101,
+      "mobile_ms": 12.888871133327484
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129647",
+      "seed": 102,
+      "mobile_ms": 13.267839327454567
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129681",
+      "seed": 101,
+      "mobile_ms": 12.699572369456291
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129681",
+      "seed": 102,
+      "mobile_ms": 10.751690715551376
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129715",
+      "seed": 101,
+      "mobile_ms": 14.820100739598274
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129715",
+      "seed": 102,
+      "mobile_ms": 13.503585010766983
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129749",
+      "seed": 101,
+      "mobile_ms": 12.419944629073143
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129749",
+      "seed": 102,
+      "mobile_ms": 12.256616726517677
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129783",
+      "seed": 101,
+      "mobile_ms": 12.73890770971775
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129783",
+      "seed": 102,
+      "mobile_ms": 12.27395050227642
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129817",
+      "seed": 101,
+      "mobile_ms": 13.694239780306816
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129817",
+      "seed": 102,
+      "mobile_ms": 11.310676112771034
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129851",
+      "seed": 101,
+      "mobile_ms": 9.189415723085403
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129851",
+      "seed": 102,
+      "mobile_ms": 8.267603814601898
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129885",
+      "seed": 101,
+      "mobile_ms": 14.51106183230877
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129885",
+      "seed": 102,
+      "mobile_ms": 12.391345575451851
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129919",
+      "seed": 101,
+      "mobile_ms": 12.460824102163315
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129919",
+      "seed": 102,
+      "mobile_ms": 13.246310874819756
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129953",
+      "seed": 101,
+      "mobile_ms": 11.530222371220589
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129953",
+      "seed": 102,
+      "mobile_ms": 11.984391137957573
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129987",
+      "seed": 101,
+      "mobile_ms": 13.69054988026619
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00129987",
+      "seed": 102,
+      "mobile_ms": 12.501737102866173
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00130021",
+      "seed": 101,
+      "mobile_ms": 14.65257816016674
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00130021",
+      "seed": 102,
+      "mobile_ms": 12.374266982078552
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00130055",
+      "seed": 101,
+      "mobile_ms": 13.40843178331852
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00130055",
+      "seed": 102,
+      "mobile_ms": 14.128461480140686
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00130089",
+      "seed": 101,
+      "mobile_ms": 16.289308667182922
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00130089",
+      "seed": 102,
+      "mobile_ms": 9.167345240712166
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00130123",
+      "seed": 101,
+      "mobile_ms": 12.23168894648552
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00130123",
+      "seed": 102,
+      "mobile_ms": 11.282064020633698
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00130157",
+      "seed": 101,
+      "mobile_ms": 13.625210151076317
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00130157",
+      "seed": 102,
+      "mobile_ms": 13.91812413930893
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00130191",
+      "seed": 101,
+      "mobile_ms": 12.718357145786285
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00130191",
+      "seed": 102,
+      "mobile_ms": 11.058257892727852
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00130225",
+      "seed": 101,
+      "mobile_ms": 16.80147461593151
+    },
+    {
+      "sample_id": "Town05_m5o_val_00/00130225",
+      "seed": 102,
+      "mobile_ms": 11.722546070814133
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130567",
+      "seed": 101,
+      "mobile_ms": 13.014525175094604
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130567",
+      "seed": 102,
+      "mobile_ms": 12.95347698032856
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130601",
+      "seed": 101,
+      "mobile_ms": 13.243736699223518
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130601",
+      "seed": 102,
+      "mobile_ms": 12.28436827659607
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130635",
+      "seed": 101,
+      "mobile_ms": 8.736278861761093
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130635",
+      "seed": 102,
+      "mobile_ms": 8.762694895267487
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130669",
+      "seed": 101,
+      "mobile_ms": 12.832006439566612
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130669",
+      "seed": 102,
+      "mobile_ms": 14.63332213461399
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130703",
+      "seed": 101,
+      "mobile_ms": 12.547710910439491
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130703",
+      "seed": 102,
+      "mobile_ms": 11.592140421271324
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130737",
+      "seed": 101,
+      "mobile_ms": 11.323921382427216
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130737",
+      "seed": 102,
+      "mobile_ms": 11.428829282522202
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130771",
+      "seed": 101,
+      "mobile_ms": 8.528104051947594
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130771",
+      "seed": 102,
+      "mobile_ms": 7.368762046098709
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130805",
+      "seed": 101,
+      "mobile_ms": 12.568231672048569
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130805",
+      "seed": 102,
+      "mobile_ms": 14.242805540561676
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130839",
+      "seed": 101,
+      "mobile_ms": 10.85951179265976
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130839",
+      "seed": 102,
+      "mobile_ms": 13.022052124142647
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130873",
+      "seed": 101,
+      "mobile_ms": 8.641697466373444
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130873",
+      "seed": 102,
+      "mobile_ms": 7.930871099233627
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130907",
+      "seed": 101,
+      "mobile_ms": 9.202303364872932
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130907",
+      "seed": 102,
+      "mobile_ms": 11.44162006676197
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130941",
+      "seed": 101,
+      "mobile_ms": 14.831257984042168
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130941",
+      "seed": 102,
+      "mobile_ms": 13.907911255955696
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130975",
+      "seed": 101,
+      "mobile_ms": 12.13037595152855
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00130975",
+      "seed": 102,
+      "mobile_ms": 10.00213623046875
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131009",
+      "seed": 101,
+      "mobile_ms": 8.982574567198753
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131009",
+      "seed": 102,
+      "mobile_ms": 8.822513744235039
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131043",
+      "seed": 101,
+      "mobile_ms": 16.64283499121666
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131043",
+      "seed": 102,
+      "mobile_ms": 11.258270591497421
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131077",
+      "seed": 101,
+      "mobile_ms": 15.025259926915169
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131077",
+      "seed": 102,
+      "mobile_ms": 12.75167241692543
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131111",
+      "seed": 101,
+      "mobile_ms": 8.726991713047028
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131111",
+      "seed": 102,
+      "mobile_ms": 8.165163919329643
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131145",
+      "seed": 101,
+      "mobile_ms": 8.645661175251007
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131145",
+      "seed": 102,
+      "mobile_ms": 7.69180990755558
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131179",
+      "seed": 101,
+      "mobile_ms": 11.992674320936203
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131179",
+      "seed": 102,
+      "mobile_ms": 14.97526653110981
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131213",
+      "seed": 101,
+      "mobile_ms": 12.175844982266426
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131213",
+      "seed": 102,
+      "mobile_ms": 15.127968043088913
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131247",
+      "seed": 101,
+      "mobile_ms": 8.581332862377167
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131247",
+      "seed": 102,
+      "mobile_ms": 8.091222494840622
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131281",
+      "seed": 101,
+      "mobile_ms": 13.496039435267448
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131281",
+      "seed": 102,
+      "mobile_ms": 16.352755948901176
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131315",
+      "seed": 101,
+      "mobile_ms": 14.600563794374466
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131315",
+      "seed": 102,
+      "mobile_ms": 13.522511348128319
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131349",
+      "seed": 101,
+      "mobile_ms": 13.117728754878044
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131349",
+      "seed": 102,
+      "mobile_ms": 13.568036258220673
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131383",
+      "seed": 101,
+      "mobile_ms": 9.009327739477158
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131383",
+      "seed": 102,
+      "mobile_ms": 8.743397891521454
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131417",
+      "seed": 101,
+      "mobile_ms": 11.33594661951065
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131417",
+      "seed": 102,
+      "mobile_ms": 13.66630382835865
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131451",
+      "seed": 101,
+      "mobile_ms": 11.439066380262375
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131451",
+      "seed": 102,
+      "mobile_ms": 10.891493409872055
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131485",
+      "seed": 101,
+      "mobile_ms": 8.859720081090927
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131485",
+      "seed": 102,
+      "mobile_ms": 8.269652724266052
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131519",
+      "seed": 101,
+      "mobile_ms": 13.210151344537735
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131519",
+      "seed": 102,
+      "mobile_ms": 11.161260306835175
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131553",
+      "seed": 101,
+      "mobile_ms": 14.939354732632637
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131553",
+      "seed": 102,
+      "mobile_ms": 14.866981655359268
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131587",
+      "seed": 101,
+      "mobile_ms": 11.368043720722198
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131587",
+      "seed": 102,
+      "mobile_ms": 11.875797063112259
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131621",
+      "seed": 101,
+      "mobile_ms": 8.47347266972065
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131621",
+      "seed": 102,
+      "mobile_ms": 7.8761279582977295
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131655",
+      "seed": 101,
+      "mobile_ms": 21.199241280555725
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131655",
+      "seed": 102,
+      "mobile_ms": 14.880344271659851
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131689",
+      "seed": 101,
+      "mobile_ms": 12.256944552063942
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131689",
+      "seed": 102,
+      "mobile_ms": 11.599509045481682
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131723",
+      "seed": 101,
+      "mobile_ms": 8.23218747973442
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131723",
+      "seed": 102,
+      "mobile_ms": 8.307689800858498
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131757",
+      "seed": 101,
+      "mobile_ms": 14.382528141140938
+    },
+    {
+      "sample_id": "Town05_m5o_val_01/00131757",
+      "seed": 102,
+      "mobile_ms": 14.071915298700333
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132137",
+      "seed": 101,
+      "mobile_ms": 14.170574024319649
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132137",
+      "seed": 102,
+      "mobile_ms": 14.952832832932472
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132171",
+      "seed": 101,
+      "mobile_ms": 10.610884055495262
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132171",
+      "seed": 102,
+      "mobile_ms": 14.066308736801147
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132205",
+      "seed": 101,
+      "mobile_ms": 8.56025330722332
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132205",
+      "seed": 102,
+      "mobile_ms": 8.042644709348679
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132239",
+      "seed": 101,
+      "mobile_ms": 12.363769114017487
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132239",
+      "seed": 102,
+      "mobile_ms": 11.120866984128952
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132273",
+      "seed": 101,
+      "mobile_ms": 12.753734365105629
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132273",
+      "seed": 102,
+      "mobile_ms": 12.8205306828022
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132307",
+      "seed": 101,
+      "mobile_ms": 10.831186547875404
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132307",
+      "seed": 102,
+      "mobile_ms": 13.26943188905716
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132341",
+      "seed": 101,
+      "mobile_ms": 8.438639342784882
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132341",
+      "seed": 102,
+      "mobile_ms": 8.272912353277206
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132375",
+      "seed": 101,
+      "mobile_ms": 12.571729719638824
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132375",
+      "seed": 102,
+      "mobile_ms": 12.698907405138016
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132409",
+      "seed": 101,
+      "mobile_ms": 12.155435979366302
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132409",
+      "seed": 102,
+      "mobile_ms": 11.364417150616646
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132443",
+      "seed": 101,
+      "mobile_ms": 13.754216954112053
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132443",
+      "seed": 102,
+      "mobile_ms": 11.498397216200829
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132477",
+      "seed": 101,
+      "mobile_ms": 9.035235270857811
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132477",
+      "seed": 102,
+      "mobile_ms": 9.006381034851074
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132511",
+      "seed": 101,
+      "mobile_ms": 8.42294655740261
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132511",
+      "seed": 102,
+      "mobile_ms": 8.591162040829659
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132545",
+      "seed": 101,
+      "mobile_ms": 11.931560933589935
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132545",
+      "seed": 102,
+      "mobile_ms": 14.499405398964882
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132579",
+      "seed": 101,
+      "mobile_ms": 14.491736888885498
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132579",
+      "seed": 102,
+      "mobile_ms": 11.201132088899612
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132613",
+      "seed": 101,
+      "mobile_ms": 12.915762141346931
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132613",
+      "seed": 102,
+      "mobile_ms": 12.224763631820679
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132647",
+      "seed": 101,
+      "mobile_ms": 8.963005617260933
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132647",
+      "seed": 102,
+      "mobile_ms": 8.585706353187561
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132681",
+      "seed": 101,
+      "mobile_ms": 11.663813143968582
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132681",
+      "seed": 102,
+      "mobile_ms": 17.907584086060524
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132715",
+      "seed": 101,
+      "mobile_ms": 11.780507862567902
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132715",
+      "seed": 102,
+      "mobile_ms": 10.97840815782547
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132749",
+      "seed": 101,
+      "mobile_ms": 15.613691881299019
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132749",
+      "seed": 102,
+      "mobile_ms": 12.000888586044312
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132783",
+      "seed": 101,
+      "mobile_ms": 8.386077359318733
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132783",
+      "seed": 102,
+      "mobile_ms": 8.585447445511818
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132817",
+      "seed": 101,
+      "mobile_ms": 11.678392067551613
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132817",
+      "seed": 102,
+      "mobile_ms": 12.797869741916656
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132851",
+      "seed": 101,
+      "mobile_ms": 14.904569834470749
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132851",
+      "seed": 102,
+      "mobile_ms": 11.893922463059425
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132885",
+      "seed": 101,
+      "mobile_ms": 12.096110731363297
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132885",
+      "seed": 102,
+      "mobile_ms": 13.5650634765625
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132919",
+      "seed": 101,
+      "mobile_ms": 8.507618680596352
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132919",
+      "seed": 102,
+      "mobile_ms": 7.930053398013115
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132953",
+      "seed": 101,
+      "mobile_ms": 8.751610293984413
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132953",
+      "seed": 102,
+      "mobile_ms": 8.215680718421936
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132987",
+      "seed": 101,
+      "mobile_ms": 13.456853106617928
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00132987",
+      "seed": 102,
+      "mobile_ms": 13.048337772488594
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00133021",
+      "seed": 101,
+      "mobile_ms": 13.77592608332634
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00133021",
+      "seed": 102,
+      "mobile_ms": 11.954322457313538
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00133055",
+      "seed": 101,
+      "mobile_ms": 12.431347742676735
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00133055",
+      "seed": 102,
+      "mobile_ms": 14.54922929406166
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00133089",
+      "seed": 101,
+      "mobile_ms": 8.399320766329765
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00133089",
+      "seed": 102,
+      "mobile_ms": 8.372262120246887
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00133123",
+      "seed": 101,
+      "mobile_ms": 13.87694664299488
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00133123",
+      "seed": 102,
+      "mobile_ms": 17.41584576666355
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00133157",
+      "seed": 101,
+      "mobile_ms": 11.173825711011887
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00133157",
+      "seed": 102,
+      "mobile_ms": 14.209277927875519
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00133191",
+      "seed": 101,
+      "mobile_ms": 12.347076088190079
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00133191",
+      "seed": 102,
+      "mobile_ms": 8.076131343841553
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00133225",
+      "seed": 101,
+      "mobile_ms": 8.788464590907097
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00133225",
+      "seed": 102,
+      "mobile_ms": 8.675435557961464
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00133259",
+      "seed": 101,
+      "mobile_ms": 13.178844004869461
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00133259",
+      "seed": 102,
+      "mobile_ms": 13.908904045820236
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00133293",
+      "seed": 101,
+      "mobile_ms": 12.436853721737862
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00133293",
+      "seed": 102,
+      "mobile_ms": 11.107627302408218
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00133327",
+      "seed": 101,
+      "mobile_ms": 8.731141686439514
+    },
+    {
+      "sample_id": "Town05_m5o_val_02/00133327",
+      "seed": 102,
+      "mobile_ms": 8.232217282056808
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00133716",
+      "seed": 101,
+      "mobile_ms": 8.49798321723938
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00133716",
+      "seed": 102,
+      "mobile_ms": 7.632782682776451
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00133750",
+      "seed": 101,
+      "mobile_ms": 14.078548178076744
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00133750",
+      "seed": 102,
+      "mobile_ms": 12.72784173488617
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00133784",
+      "seed": 101,
+      "mobile_ms": 11.540884152054787
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00133784",
+      "seed": 102,
+      "mobile_ms": 11.1463014036417
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00133818",
+      "seed": 101,
+      "mobile_ms": 17.237290740013123
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00133818",
+      "seed": 102,
+      "mobile_ms": 7.919888943433762
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00133852",
+      "seed": 101,
+      "mobile_ms": 9.153004735708237
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00133852",
+      "seed": 102,
+      "mobile_ms": 12.5342458486557
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00133886",
+      "seed": 101,
+      "mobile_ms": 14.580309391021729
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00133886",
+      "seed": 102,
+      "mobile_ms": 13.6130191385746
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00133920",
+      "seed": 101,
+      "mobile_ms": 13.005103915929794
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00133920",
+      "seed": 102,
+      "mobile_ms": 12.330643832683563
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00133954",
+      "seed": 101,
+      "mobile_ms": 9.657064452767372
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00133954",
+      "seed": 102,
+      "mobile_ms": 8.541207760572433
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00133988",
+      "seed": 101,
+      "mobile_ms": 8.093267679214478
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00133988",
+      "seed": 102,
+      "mobile_ms": 8.154114708304405
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134022",
+      "seed": 101,
+      "mobile_ms": 12.568425387144089
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134022",
+      "seed": 102,
+      "mobile_ms": 14.677757397294044
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134056",
+      "seed": 101,
+      "mobile_ms": 14.884132891893387
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134056",
+      "seed": 102,
+      "mobile_ms": 14.074500650167465
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134090",
+      "seed": 101,
+      "mobile_ms": 8.292533457279205
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134090",
+      "seed": 102,
+      "mobile_ms": 7.385218515992165
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134124",
+      "seed": 101,
+      "mobile_ms": 8.773749694228172
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134124",
+      "seed": 102,
+      "mobile_ms": 8.515385910868645
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134158",
+      "seed": 101,
+      "mobile_ms": 11.3864466547966
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134158",
+      "seed": 102,
+      "mobile_ms": 12.537647038698196
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134192",
+      "seed": 101,
+      "mobile_ms": 13.338813558220863
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134192",
+      "seed": 102,
+      "mobile_ms": 13.578234240412712
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134226",
+      "seed": 101,
+      "mobile_ms": 9.081771597266197
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134226",
+      "seed": 102,
+      "mobile_ms": 8.165314793586731
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134260",
+      "seed": 101,
+      "mobile_ms": 7.999414578080177
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134260",
+      "seed": 102,
+      "mobile_ms": 8.280744776129723
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134294",
+      "seed": 101,
+      "mobile_ms": 13.119734823703766
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134294",
+      "seed": 102,
+      "mobile_ms": 12.824967503547668
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134328",
+      "seed": 101,
+      "mobile_ms": 12.110287323594093
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134328",
+      "seed": 102,
+      "mobile_ms": 13.12677375972271
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134362",
+      "seed": 101,
+      "mobile_ms": 8.191252127289772
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134362",
+      "seed": 102,
+      "mobile_ms": 8.372528478503227
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134396",
+      "seed": 101,
+      "mobile_ms": 8.138667792081833
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134396",
+      "seed": 102,
+      "mobile_ms": 8.314356207847595
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134430",
+      "seed": 101,
+      "mobile_ms": 15.166960656642914
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134430",
+      "seed": 102,
+      "mobile_ms": 14.158099889755249
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134464",
+      "seed": 101,
+      "mobile_ms": 14.172405004501343
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134464",
+      "seed": 102,
+      "mobile_ms": 11.874884366989136
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134498",
+      "seed": 101,
+      "mobile_ms": 8.793950080871582
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134498",
+      "seed": 102,
+      "mobile_ms": 8.300967514514923
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134532",
+      "seed": 101,
+      "mobile_ms": 8.30053724348545
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134532",
+      "seed": 102,
+      "mobile_ms": 8.466565981507301
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134566",
+      "seed": 101,
+      "mobile_ms": 13.633748516440392
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134566",
+      "seed": 102,
+      "mobile_ms": 14.381887391209602
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134600",
+      "seed": 101,
+      "mobile_ms": 17.98519305884838
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134600",
+      "seed": 102,
+      "mobile_ms": 11.421211063861847
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134634",
+      "seed": 101,
+      "mobile_ms": 11.794911697506905
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134634",
+      "seed": 102,
+      "mobile_ms": 13.367470353841782
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134668",
+      "seed": 101,
+      "mobile_ms": 8.59176553785801
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134668",
+      "seed": 102,
+      "mobile_ms": 8.395887911319733
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134702",
+      "seed": 101,
+      "mobile_ms": 12.84838281571865
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134702",
+      "seed": 102,
+      "mobile_ms": 13.59701156616211
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134736",
+      "seed": 101,
+      "mobile_ms": 12.175021693110466
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134736",
+      "seed": 102,
+      "mobile_ms": 14.849867671728134
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134770",
+      "seed": 101,
+      "mobile_ms": 13.390831649303436
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134770",
+      "seed": 102,
+      "mobile_ms": 12.523239478468895
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134804",
+      "seed": 101,
+      "mobile_ms": 8.860727772116661
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134804",
+      "seed": 102,
+      "mobile_ms": 8.083576336503029
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134838",
+      "seed": 101,
+      "mobile_ms": 13.575738295912743
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134838",
+      "seed": 102,
+      "mobile_ms": 11.30729727447033
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134872",
+      "seed": 101,
+      "mobile_ms": 18.36542785167694
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134872",
+      "seed": 102,
+      "mobile_ms": 16.447464004158974
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134906",
+      "seed": 101,
+      "mobile_ms": 10.839702561497688
+    },
+    {
+      "sample_id": "Town05_m5o_val_03/00134906",
+      "seed": 102,
+      "mobile_ms": 11.803612112998962
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135288",
+      "seed": 101,
+      "mobile_ms": 9.513990953564644
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135288",
+      "seed": 102,
+      "mobile_ms": 8.10125283896923
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135322",
+      "seed": 101,
+      "mobile_ms": 12.93146051466465
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135322",
+      "seed": 102,
+      "mobile_ms": 14.022590592503548
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135356",
+      "seed": 101,
+      "mobile_ms": 14.332897961139679
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135356",
+      "seed": 102,
+      "mobile_ms": 8.364716544747353
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135390",
+      "seed": 101,
+      "mobile_ms": 8.543679490685463
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135390",
+      "seed": 102,
+      "mobile_ms": 8.494963869452477
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135424",
+      "seed": 101,
+      "mobile_ms": 13.352829962968826
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135424",
+      "seed": 102,
+      "mobile_ms": 13.312436640262604
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135458",
+      "seed": 101,
+      "mobile_ms": 12.044630944728851
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135458",
+      "seed": 102,
+      "mobile_ms": 12.932796031236649
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135492",
+      "seed": 101,
+      "mobile_ms": 8.20913352072239
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135492",
+      "seed": 102,
+      "mobile_ms": 8.021632209420204
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135526",
+      "seed": 101,
+      "mobile_ms": 16.124483197927475
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135526",
+      "seed": 102,
+      "mobile_ms": 12.718487530946732
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135560",
+      "seed": 101,
+      "mobile_ms": 9.93204116821289
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135560",
+      "seed": 102,
+      "mobile_ms": 13.809718191623688
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135594",
+      "seed": 101,
+      "mobile_ms": 8.921785280108452
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135594",
+      "seed": 102,
+      "mobile_ms": 8.552070707082748
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135628",
+      "seed": 101,
+      "mobile_ms": 11.466395109891891
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135628",
+      "seed": 102,
+      "mobile_ms": 14.487694948911667
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135662",
+      "seed": 101,
+      "mobile_ms": 14.036262407898903
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135662",
+      "seed": 102,
+      "mobile_ms": 13.60599510371685
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135696",
+      "seed": 101,
+      "mobile_ms": 9.0764369815588
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135696",
+      "seed": 102,
+      "mobile_ms": 8.080262690782547
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135730",
+      "seed": 101,
+      "mobile_ms": 14.29435983300209
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135730",
+      "seed": 102,
+      "mobile_ms": 12.228986248373985
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135764",
+      "seed": 101,
+      "mobile_ms": 17.588363960385323
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135764",
+      "seed": 102,
+      "mobile_ms": 12.025482952594757
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135798",
+      "seed": 101,
+      "mobile_ms": 13.59025202691555
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135798",
+      "seed": 102,
+      "mobile_ms": 15.090974047780037
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135832",
+      "seed": 101,
+      "mobile_ms": 7.988287135958672
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135832",
+      "seed": 102,
+      "mobile_ms": 8.200868964195251
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135866",
+      "seed": 101,
+      "mobile_ms": 12.366827577352524
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135866",
+      "seed": 102,
+      "mobile_ms": 9.191939607262611
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135900",
+      "seed": 101,
+      "mobile_ms": 12.23410852253437
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135900",
+      "seed": 102,
+      "mobile_ms": 13.567283749580383
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135934",
+      "seed": 101,
+      "mobile_ms": 8.642628788948059
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135934",
+      "seed": 102,
+      "mobile_ms": 7.616063579916954
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135968",
+      "seed": 101,
+      "mobile_ms": 12.364048510789871
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00135968",
+      "seed": 102,
+      "mobile_ms": 17.581520602107048
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136002",
+      "seed": 101,
+      "mobile_ms": 12.658601626753807
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136002",
+      "seed": 102,
+      "mobile_ms": 11.302614584565163
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136036",
+      "seed": 101,
+      "mobile_ms": 8.52959230542183
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136036",
+      "seed": 102,
+      "mobile_ms": 7.940096780657768
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136070",
+      "seed": 101,
+      "mobile_ms": 19.873356446623802
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136070",
+      "seed": 102,
+      "mobile_ms": 44.04673911631107
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136104",
+      "seed": 101,
+      "mobile_ms": 8.28632339835167
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136104",
+      "seed": 102,
+      "mobile_ms": 8.443234488368034
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136138",
+      "seed": 101,
+      "mobile_ms": 8.494112640619278
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136138",
+      "seed": 102,
+      "mobile_ms": 8.450794965028763
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136172",
+      "seed": 101,
+      "mobile_ms": 8.854588493704796
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136172",
+      "seed": 102,
+      "mobile_ms": 8.879419416189194
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136206",
+      "seed": 101,
+      "mobile_ms": 8.486509323120117
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136206",
+      "seed": 102,
+      "mobile_ms": 8.423391729593277
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136240",
+      "seed": 101,
+      "mobile_ms": 8.615575730800629
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136240",
+      "seed": 102,
+      "mobile_ms": 8.001172915101051
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136274",
+      "seed": 101,
+      "mobile_ms": 9.8746158182621
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136274",
+      "seed": 102,
+      "mobile_ms": 8.196692913770676
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136308",
+      "seed": 101,
+      "mobile_ms": 8.577095344662666
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136308",
+      "seed": 102,
+      "mobile_ms": 7.614003494381905
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136342",
+      "seed": 101,
+      "mobile_ms": 9.171107783913612
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136342",
+      "seed": 102,
+      "mobile_ms": 8.851716294884682
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136376",
+      "seed": 101,
+      "mobile_ms": 8.172759786248207
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136376",
+      "seed": 102,
+      "mobile_ms": 8.402656763792038
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136410",
+      "seed": 101,
+      "mobile_ms": 9.67814028263092
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136410",
+      "seed": 102,
+      "mobile_ms": 14.164768159389496
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136444",
+      "seed": 101,
+      "mobile_ms": 9.30573046207428
+    },
+    {
+      "sample_id": "Town05_m5o_val_04/00136444",
+      "seed": 102,
+      "mobile_ms": 8.451847359538078
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00136831",
+      "seed": 101,
+      "mobile_ms": 8.05358961224556
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00136831",
+      "seed": 102,
+      "mobile_ms": 8.565220981836319
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00136865",
+      "seed": 101,
+      "mobile_ms": 8.383527398109436
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00136865",
+      "seed": 102,
+      "mobile_ms": 8.498264476656914
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00136899",
+      "seed": 101,
+      "mobile_ms": 8.822431787848473
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00136899",
+      "seed": 102,
+      "mobile_ms": 14.684740453958511
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00136933",
+      "seed": 101,
+      "mobile_ms": 11.024512350559235
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00136933",
+      "seed": 102,
+      "mobile_ms": 11.910377070307732
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00136967",
+      "seed": 101,
+      "mobile_ms": 13.527018949389458
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00136967",
+      "seed": 102,
+      "mobile_ms": 11.619431897997856
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137001",
+      "seed": 101,
+      "mobile_ms": 14.377355575561523
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137001",
+      "seed": 102,
+      "mobile_ms": 12.805979698896408
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137035",
+      "seed": 101,
+      "mobile_ms": 13.14237155020237
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137035",
+      "seed": 102,
+      "mobile_ms": 12.314345687627792
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137069",
+      "seed": 101,
+      "mobile_ms": 10.648304596543312
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137069",
+      "seed": 102,
+      "mobile_ms": 13.303522020578384
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137103",
+      "seed": 101,
+      "mobile_ms": 11.63390837609768
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137103",
+      "seed": 102,
+      "mobile_ms": 13.249805197119713
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137137",
+      "seed": 101,
+      "mobile_ms": 14.764826744794846
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137137",
+      "seed": 102,
+      "mobile_ms": 10.759757831692696
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137171",
+      "seed": 101,
+      "mobile_ms": 13.907182961702347
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137171",
+      "seed": 102,
+      "mobile_ms": 11.882765218615532
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137205",
+      "seed": 101,
+      "mobile_ms": 16.62921905517578
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137205",
+      "seed": 102,
+      "mobile_ms": 14.568274840712547
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137239",
+      "seed": 101,
+      "mobile_ms": 11.45063154399395
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137239",
+      "seed": 102,
+      "mobile_ms": 12.56435364484787
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137273",
+      "seed": 101,
+      "mobile_ms": 12.84743845462799
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137273",
+      "seed": 102,
+      "mobile_ms": 13.489717617630959
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137307",
+      "seed": 101,
+      "mobile_ms": 11.842699721455574
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137307",
+      "seed": 102,
+      "mobile_ms": 15.245921909809113
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137341",
+      "seed": 101,
+      "mobile_ms": 12.945843860507011
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137341",
+      "seed": 102,
+      "mobile_ms": 11.178234592080116
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137375",
+      "seed": 101,
+      "mobile_ms": 11.784041300415993
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137375",
+      "seed": 102,
+      "mobile_ms": 11.588426306843758
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137409",
+      "seed": 101,
+      "mobile_ms": 15.084335580468178
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137409",
+      "seed": 102,
+      "mobile_ms": 11.279722675681114
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137443",
+      "seed": 101,
+      "mobile_ms": 13.695504516363144
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137443",
+      "seed": 102,
+      "mobile_ms": 11.67755201458931
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137477",
+      "seed": 101,
+      "mobile_ms": 12.463469058275223
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137477",
+      "seed": 102,
+      "mobile_ms": 11.628350242972374
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137511",
+      "seed": 101,
+      "mobile_ms": 14.614684507250786
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137511",
+      "seed": 102,
+      "mobile_ms": 13.39804194867611
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137545",
+      "seed": 101,
+      "mobile_ms": 16.055911779403687
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137545",
+      "seed": 102,
+      "mobile_ms": 12.851407751441002
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137579",
+      "seed": 101,
+      "mobile_ms": 13.200823217630386
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137579",
+      "seed": 102,
+      "mobile_ms": 12.449398636817932
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137613",
+      "seed": 101,
+      "mobile_ms": 15.458891168236732
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137613",
+      "seed": 102,
+      "mobile_ms": 14.97279480099678
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137647",
+      "seed": 101,
+      "mobile_ms": 19.242210313677788
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137647",
+      "seed": 102,
+      "mobile_ms": 12.34157383441925
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137681",
+      "seed": 101,
+      "mobile_ms": 8.2720797508955
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137681",
+      "seed": 102,
+      "mobile_ms": 11.058095842599869
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137715",
+      "seed": 101,
+      "mobile_ms": 13.019181787967682
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137715",
+      "seed": 102,
+      "mobile_ms": 11.580763384699821
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137749",
+      "seed": 101,
+      "mobile_ms": 14.800703153014183
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137749",
+      "seed": 102,
+      "mobile_ms": 12.26462796330452
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137783",
+      "seed": 101,
+      "mobile_ms": 12.597138062119484
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137783",
+      "seed": 102,
+      "mobile_ms": 10.658187791705132
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137817",
+      "seed": 101,
+      "mobile_ms": 13.36621679365635
+    },
+    {
+      "sample_id": "Town05_m5o_val_05/00137817",
+      "seed": 102,
+      "mobile_ms": 10.153112933039665
+    }
+  ],
+  "source_sha256": "e3e392d2ad6e75166c8d0aa40aed65e031a36b03a49d94ec86fbf68e7ab4d533",
+  "limits": "Simulator OBB center not contactGold. Native render identity geometrically associated, not exact mesh identity. Unmatched candidates not guaranteed falseobjects. Static historical snapshots read after same tick before nexttick, not all historical manifests carry peractor frame stamps."
+}

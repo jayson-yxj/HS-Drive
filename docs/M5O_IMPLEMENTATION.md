@@ -82,3 +82,16 @@ BEV保留 `[4,160,120]` Spatial Evidence V2。Free-Ray Evidence只证明射线�
 ```
 
 `m5o_finalize` 应在最终测试日志存在、各报告完成后运行；它检查全部历史冻结资产没有改变，并生成全部新原始数据/Checkpoint/日志/源码的SHA索引。原始数据及权重保留在服务器，Git推送不等于上传这些大文件。
+
+## 本轮实际完成
+
+38位置，1223个六摄配置；真实4090上12臂各600步（没有追加预算）。Train/Val/Calibration/Sealed有效唯一候选分别642/658、198/202、199/205、269/279。模型选择、风险校准和封存严格分组；封存无再次调参。最终Partial、当前Head NoGo、Pilot不批准。
+
+补充汇总命令：
+
+```bash
+.venv-gpu/bin/python -m tools.m5o_paired_analysis
+.venv-gpu/bin/python -m tools.m5o_final_interpretation
+```
+
+`final_interpretation`在summary/report首次生成后补入最终测量结论并记录报告前后SHA；不得重跑覆盖。源码Checkpoint选择/推理与预封存资产保持原字节；仅最终报告编排变化。完整实际顺序还包括Train侧车完成后的early候选审计、日志中的watcher恢复。初始通路失败和全部运行日志均保留。
