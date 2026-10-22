@@ -122,10 +122,11 @@ def main():
             "Passed_limited_offline" if both and test_ok else "NoGo_or_unresolved"
         ),
         offline_object_center_pilot=(
-            "Eligible_limited_offline_only"
+            "NotApproved_pending_all_candidate_burden_review"
             if both and test_ok and support_ok
             else "NotApproved"
         ),
+        all_candidate_burden="Measured_NoPhysicalFPGuarantee_SeparateReviewRequired",
         direct_head_route=(
             "Continue_limited_research"
             if both and test_ok and support_ok

@@ -61,3 +61,24 @@ runuser -u ubuntu -- bash scripts/start_carla.sh /root/gpufree-data/simulators/C
 `datasets/m5o_interfaces.py` 只提供 Shadow envelope 与拒绝预测合同，无控制连接。Oracle 环境状态、RGB BEV Evidence、RGB目标候选的 provenance 显式不同。时间戳来自源帧，valid_until不能替代原始时间；过期、未来或坐标不符输入拒绝。Planner未来需要对象/空间证据/有效期/Unknown，但本轮不将视觉估计接入现有 Oracle Planner。
 
 BEV保留 `[4,160,120]` Spatial Evidence V2。Free-Ray Evidence只证明射线穿越，Mixed Cell允许 Surface 与 Free-Ray共存，不等同整格可通行。M5-M Runtime Partial继承；不重跑长期压力矩阵，不将Oracle成绩认定为RGB闭环。
+
+## 全候选与可见分母的限制
+
+`m5o_all_candidate_burden` 按 present / empty / removed 逐组统计，同时输出每个未匹配候选、每个漏检Actor-view及歧义关联。可见分母是成功几何关联渲染实例且≥3原生像素的Actor-view；无法确认渲染身份的Actor-camera条目另计，不能自动视作可见漏检或不可见。这个条件分母必须与“全部真实物理目标召回”区分。
+
+即便定位/校准数值门禁通过，全部候选负担仍需独立审查；本轮没有完整Mesh真值，不自动将未知候选认证成物理FP或把Pilot批准为安全许可。
+
+数据实际索引后运行：
+
+```bash
+.venv-gpu/bin/python -m tools.m5o_dataset_checks --split train
+.venv-gpu/bin/python -m tools.m5o_sampling_audit
+.venv-gpu/bin/python -m tools.m5o_all_candidate_burden --split calibration
+.venv-gpu/bin/python -m tools.m5o_leakage_audit
+.venv-gpu/bin/python -m tools.m5o_sealed_run
+.venv-gpu/bin/python -m tools.m5o_figures
+.venv-gpu/bin/python -m tools.m5o_report
+.venv-gpu/bin/python -m tools.m5o_finalize
+```
+
+`m5o_finalize` 应在最终测试日志存在、各报告完成后运行；它检查全部历史冻结资产没有改变，并生成全部新原始数据/Checkpoint/日志/源码的SHA索引。原始数据及权重保留在服务器，Git推送不等于上传这些大文件。
