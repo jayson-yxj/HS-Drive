@@ -15,7 +15,7 @@ def main():
                 violations.append(dict(frame=q['frame'],signed_speed=signed,norm_speed=q['measurement']['speed'],mode=q['command'].get('mode'),geometry=q['geometry'],decision=decision,reason=q['reason']))
             if q['command'].get('transition_reason')=='near_goal_and_measured_settled':holds.append(dict(frame=q['frame'],actual_remaining=q['geometry']['available_clearance_to_safe_stop'],speed=q['measurement']['speed']))
         out.append(dict(name=path.parent.name,source='Privileged',config=d['config'],trace=asset(path.parent/'trace.jsonl'),
-            valid_D_contract=d['config']['arm']!='D' or path.parent.name.endswith('D2'),
+            valid_D_contract=d['config']['arm']!='D' or (path.parent.name.endswith('D2') or path.parent.name.startswith('runtime_') and path.parent.name.endswith('2')),
             unsupported_backward_ticks=len(violations),examples=violations[:3],
             finite_envelope_during_backward_ticks=sum(v['decision'] is not None and v['decision']['estimated_stopping_distance_m'] is not None for v in violations),
             hold_entries=holds,hold_farther_than_true_point35=sum(v['actual_remaining']>.35+1e-6 for v in holds),

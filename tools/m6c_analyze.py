@@ -17,7 +17,7 @@ def inspect(path):
     trace=dict(name=path.parent.name,config=d['config'],source='Privileged',result=asset(path),trace=d['trace'],physics=d['physics'],
         ticks=d['ticks'],goal_passed=d['goal_passed'],goal_checks=d['goal_checks'],error_m=d['final_goal_error_m'],completion=d['completion'],
         travelled_m=float(np.linalg.norm(np.diff([q['measurement']['position'] for q in rows],axis=0),axis=1).sum()),
-        terminal_geometry=g[-1],valid_D_contract=(d['config']['arm']!='D' or path.parent.name.endswith('D2')),dynamics=d['dynamics'],comfort_passed=d['comfort_pass'],degradation=d['degradation'],
+        terminal_geometry=g[-1],valid_D_contract=(d['config']['arm']!='D' or (path.parent.name.endswith('D2') or path.parent.name.startswith('runtime_') and path.parent.name.endswith('2'))),dynamics=d['dynamics'],comfort_passed=d['comfort_pass'],degradation=d['degradation'],
         collisions=d['collisions'],illegal_lanes=d['illegal_lane_events'],lane_events=d['lane_events'],boundary_ticks=sum(q['boundary'] for q in rows),
         terminal_speed=d['terminal_speed_mps'],bypass=d['bypass'],transitions=trans,
         runtime={q:d[q] for q in ['control_interval_ms','over50','over55','over100','deadline_miss','skipped_wall_slots','mean_hz','world_tick_ms','expired_normal_control','fault_to_brake_s']},
@@ -89,7 +89,7 @@ def main():
     write('reports/m6c_stop_abcde_comparison.json',dict(**provenance('actual_CARLA_controlled_comparison_offline_statistics'),source='Privileged',status='Partial',trials=stop,paired=pairs,
         by_arm={arm:dict(runs=sum(d['config']['arm']==arm for d in stop),goal_passed=sum(d['config']['arm']==arm and d['goal_passed'] for d in stop),comfort_passed=sum(d['config']['arm']==arm and d['comfort_passed'] for d in stop)) for arm in ['A','C','D']},
         B='Historical_M6B_goal_only_4_of8_not_same_new_matrix',E='NotRun_no_evidence_backed_comfort_execution_candidate',
-        geometry_bug_exclusions=load('reports/m6c_geometry_bug_correction.json'),invalid_D_trials=[d for d,r in allrows if d['config']['arm']=='D' and not d['name'].endswith('D2')],
+        geometry_bug_exclusions=load('reports/m6c_geometry_bug_correction.json'),invalid_D_trials=[d for d,r in allrows if d['config']['arm']=='D' and not d['valid_D_contract']],
         development_exclusions=load('reports/m6c_development_deviation.json'),limits='Small fixed Town03 positions, paired repeats correlated; no generalization certification.'))
     obstacles=[d for d in formal if d['config']['scene'] in ['blocked','bypass','sudden','removed']]
     write('reports/m6c_no_bypass_safety.json',dict(**provenance('actual_CARLA_privileged_OBB_stopping_gap'),source='Privileged',status='Partial',trials=obstacles,
