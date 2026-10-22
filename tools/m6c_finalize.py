@@ -32,7 +32,7 @@ def main():
     result=dict(**provenance('actual_CARLA_offline_synthetic_independent_acceptance'),stage='M6-C',status='Partial',source='Privileged',
         counts=dict(probes=112,formal_attempts=len(execution),failed_commands=sum(v['exit_code']!=0 for v in execution),completed=safety['completed_runs']),
         geometry=dict(status='Passed_limited_contract_and_regression',no_goal_shift=True,original_3m_gap=True,exact_mesh='Unknown'),
-        envelope=dict(status='Partial_empirical_validation_not_universal_guarantee',summary=env['summary'],
+        envelope=dict(status='Partial_empirical_validation_not_universal_guarantee',summary_original_with_shared_downhill_guard=env['summary'],strict_ablation=load('reports/m6c_envelope_strict_ablation.json')['groups'],
             validation_remaining_samples=sum(v['stats']['C']['supported_samples'] for v in residual['trials']),
             validation_remaining_underbounds=sum(v['stats']['C']['underbound_samples'] for v in residual['trials']),
             unsupported_downhill_coast_preserved=True),
