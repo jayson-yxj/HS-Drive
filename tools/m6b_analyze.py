@@ -178,7 +178,7 @@ def main():
         illegal_lane_events=sum(d['illegal_lane_events'] for d,r in allrows),
         expired_normal_control=sum(d['runtime']['expired_normal_control'] for d,r in allrows),
         fault_trials=[d for d in maneuvers if 'fault_gate' in d],
-        unchanged_original_safety=True,horizon_s=6,visual_control=False,curb_contacts='Unknown_no_dedicated_mesh_reference',reverse_bay_parking='NotRun'))
+        unchanged_original_safety=True,horizon_s=6,curb_contacts='Unknown_no_dedicated_mesh_reference',reverse_bay_parking='NotRun'))
     figures(allrows)
     print('analyzed',len(allrows),'trials')
 

@@ -50,7 +50,7 @@ runuser -u ubuntu -- bash scripts/start_carla.sh /root/gpufree-data/simulators/C
 .venv/bin/python -m tools.m6b_campaign maneuver
 .venv/bin/python -m tools.m6b_campaign runtime
 .venv/bin/python -m tools.m6b_supplement
-.venv/bin/python -m tools.m6b_analyze
+.venv-gpu/bin/python -m tools.m6b_analyze
 .venv/bin/python -m tools.m6b_body_audit
 ```
 

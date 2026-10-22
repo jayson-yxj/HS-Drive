@@ -22,6 +22,7 @@ def main():
         d=load(f'reports/m6b_{kind}_execution.json')
         execution.extend(d['runs'])
     original_failure=[r for r in execution if r['exit_code']]
+    all_completed=[load(p) for p in Path('reports/m6b_trials').glob('*/result.json')]
     data=dict(**provenance('actual_CARLA_and_offline_independent_acceptance'),stage='M6-B',source='Privileged',status='Partial',
         trial_counts=dict(completed=safety['total_trials'],formal_attempts=len(execution),initialization_failures=len(original_failure),initialization_failure_logs=[r['log'] for r in original_failure],calibration_probes=6),
         low_speed=dict(status='Partial_candidate_NoGo_as_default',by_arm=low['by_arm'],
@@ -53,6 +54,9 @@ def main():
             over55=sum(v['runtime']['over55'] for v in runtime['trials']),over100=sum(v['runtime']['over100'] for v in runtime['trials']),
             deadline_misses=sum(v['runtime']['deadline_miss'] for v in runtime['trials']),
             skipped_slots=sum(v['runtime']['skipped_wall_slots'] for v in runtime['trials']),
+            all69_trials_max_ms=max(v['control_interval_ms']['max'] for v in all_completed),
+            all69_trials_deadline_miss=sum(v['deadline_miss'] for v in all_completed),
+            all69_trials_over100=sum(v['over100'] for v in all_completed),
             causal_improvement='NotEstablished_short_affinity_repeats_no_UE_internal_profile',shared_visual_gpu='NotRun'),
         decisions=dict(A_low_speed='NoGo_default_replacement_or_reverse_parking',B_bypass='Go_limited_offline_and_Oracle_research_Partial_full_acceptance',
             C_control_cycle='NoGo_strict_realtime',D_oracle_engineering='Go_targeted_fault_and_low_speed_identification_only_NoGo_complex_traffic_or_parking',
