@@ -14,6 +14,11 @@ def main():
             if not p.exists() or file_hash(p)!=sha:errors.append(name)
             else:total+=1
         counts[kind]=total;print(kind,total,flush=True)
+    if Path('reports/m6c_preservation.json').exists():
+        previous=json.loads(Path('reports/m6c_preservation.json').read_text())
+        assert previous['counts']==counts and previous['errors']==errors
+        print('Repeated SHA verification agrees with preserved report',flush=True)
+        return
     write('reports/m6c_preservation.json',dict(**provenance('actual_server_history_SHA256_revalidation'),passed=not errors,counts=counts,errors=errors,freeze=asset('runs/m6c_logs/freeze.json')))
 
 if __name__=='__main__':main()
