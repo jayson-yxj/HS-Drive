@@ -62,7 +62,7 @@ def main():
                 preference=(abs(r[3])*10 if i%3==0 else 35*int(r[0].is_junction) if i%3==1 else 15*int(not r[0].is_junction))
                 return preference+min(dist,300)+r[2]*.05
             r=max(viable,key=score);chosen.append(r);wp,xy,prior,pitch=r;t=wp.transform
-            number=len(groups);seed=51000+number
+            number=len(groups);seed=(53000 if a.phase=="sealed" else 51000)+number
             g=dict(group=f'{town}_m5o_{split}_{i:02d}',split=split,map=town,
                    pose=[t.location.x,t.location.y,t.location.z+.4,t.rotation.pitch,t.rotation.yaw,t.rotation.roll],
                    road_id=wp.road_id,lane_id=wp.lane_id,road_s=wp.s,is_junction=wp.is_junction,
