@@ -1,0 +1,65 @@
+{
+  "kind": "final_server_delivery_checks",
+  "base": "7ec866ff4ec5fe621c506056f41750651adcc4ab",
+  "git_head": "169c265d35b142f6b19cbf87aae30f44ba1b5a4d",
+  "sources": {
+    "configs/m6b/protocol.json": "063cfb2bc6d0208324d43ca3f2ee980f7cc0e3bb0a42f5d2ac12148b04a5dee7",
+    "simulator/m6b_bypass.py": "b2550bdb773f1c45dc92a94a4848473a99a91201f565d916d490f69981ce3043",
+    "simulator/m6b_motion.py": "72067662faa791f44cd41ee60bcfba1003a743267e525391fc31a33f9970d3ce",
+    "simulator/m6b_obstacles.py": "2122ca6ad6ea606d7b94375d0777885459c0c3a724abf5c5a2554542fd6f286b",
+    "simulator/m6b_worker.py": "24947a1e5584e413ead9e44c251d1606ac9d01010a2977bf38c417c1810dc903",
+    "tests/test_m6b_maneuvers.py": "308fdcc19b0c481073afc6f68aa5391fe43c55a807ec5a6bdce582ff75a62c1c",
+    "tests/test_m6b_obstacles_sdk.py": "01079e75e81cc1ffb957f8982b8b9ab786854150c3fef6ffabd85f3689d7dead",
+    "tools/m6b_analyze.py": "08a2519ac10ac2a26ee304033f2226cc62c8a8e3e8e85b64c1e1eed7bbe34970",
+    "tools/m6b_audit.py": "c0ec35c46e52f48a318f76d41c73025107d29351040e794155fc27f9aaa02f38",
+    "tools/m6b_body_audit.py": "b1c8f3cf8d7813f1ab62bad1e707d3d49df9bba34300a8c653e3847d05cb088b",
+    "tools/m6b_calibrate.py": "9cf7f3820b272d95c8b82f5e2e0c7db48bb6f4f0bdb6388cf2b986342b80b9fa",
+    "tools/m6b_calibration_analysis.py": "b3aa8f7e888787d2ab96b32f2d5dc43eae2bc6d1d26c705918415fa84be60b67",
+    "tools/m6b_campaign.py": "4e2342be4dc37fcd8e393b43ebebce425b8b0d71f542ac834c58ab2fd554c9f1",
+    "tools/m6b_common.py": "7f0493b5d8d3e8435fab695d361137f6df61be504529eff5360cc0a7a0c8cc44",
+    "tools/m6b_drive.py": "4fed31fd09f4375ecd2356748ea27c6d884aaa11d3975d6edcd27cdbc894337d",
+    "tools/m6b_finalize.py": "6dd504a454d69fc1ed5da9f811e8b0e7c2e9e4bf1288acf7fee42617ed4bc494",
+    "tools/m6b_motion_envelope.py": "77a9db61af20f625df12ea93936280b0623990b29ee9a6835acb47eb4e5cfe1f",
+    "tools/m6b_release_verify.py": "e25770ad73df00f969bac9b6e8f9ceb3197cf97eb7e051a4f2bc893879b50233",
+    "tools/m6b_supplement.py": "7d5edfdc1c703668fde9b4dee0fe2f39f5abe5224ee5ba05a76c7d58727de9b3",
+    "tools/m6b_survey.py": "dec58f8c48fe42a644897b3cb57a885fea0f279912a114b741e0910eee05cc7b",
+    "tools/m6b_verify_preservation.py": "00a37b9ef3395a4a4f3677449c8e9ce151344112fd8bbbf29a18fef7701df179"
+  },
+  "protocol_sha256": "063cfb2bc6d0208324d43ca3f2ee980f7cc0e3bb0a42f5d2ac12148b04a5dee7",
+  "visual_control": false,
+  "source": "Privileged",
+  "experiment_commit": "169c265",
+  "branch": "feat/m6b-oracle-maneuvers",
+  "status": "Partial",
+  "release_manifest": {
+    "path": "reports/m6b_release_manifest.json",
+    "bytes": 299364,
+    "sha256": "739d817944174d53e0c916f38b7e9d273090f43865c3f36e97b1516776082917"
+  },
+  "motion_constraints_addendum": {
+    "path": "reports/m6b_motion_constraints.md",
+    "bytes": 1785,
+    "sha256": "2fd5d2ffb9fa9a95202922ec06ae21b3f8ba3a8c60d5d3fc57b40b559a564f62"
+  },
+  "summary": {
+    "path": "reports/m6b_summary.md",
+    "bytes": 9313,
+    "sha256": "fc5c66b9f1f17534a19ac983912b555d57f3dee54782e99530f19f0fe7d0cff3"
+  },
+  "acceptance": {
+    "path": "reports/m6b_acceptance.json",
+    "bytes": 18628,
+    "sha256": "40a8d07d9d320fba05de1bc17d2897fed659bed094e3ad8ba943c4277e802ef4"
+  },
+  "full_campaign_runtime": {
+    "path": "reports/m6b_runtime_full_campaign.json",
+    "bytes": 285833,
+    "sha256": "c7cdc9d8467677581c404f80b34d66fb6c6bd0bd8e1d6f781b671b37e9e3a026"
+  },
+  "consistency_checks": "1556 files in release manifest rehashed after evidence commit; 0 SHA mismatches. git diff --check passed; all base tracked and inherited historical asset hashes unchanged.",
+  "compile_checks": "python3 -m py_compile tools/m6b_*.py simulator/m6b_*.py passed",
+  "default_controls": "Unchanged",
+  "physics": "Unchanged",
+  "visual_control_connection": "Forbidden / NotRun",
+  "main_merge": false
+}
