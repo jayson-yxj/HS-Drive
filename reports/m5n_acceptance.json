@@ -1,0 +1,41 @@
+{
+  "stage": "M5-N",
+  "overall": "Partial",
+  "reference_engineering": "Passed_simulator_OBB_center",
+  "RGB_input_isolation": "Passed",
+  "finite_training": "Completed",
+  "visual_localization_gain": "NoGo",
+  "uncertainty_selectivity": "NoGo",
+  "generalization": "NoGo",
+  "offline_object_center_query_pilot": "NoGo",
+  "contactGold": "Unchanged_NotValidated",
+  "runtime": "Inherited_M5M_Partial",
+  "pure_visual_control": "NotValidated_Prohibited",
+  "default_modules_changed": false,
+  "main_merged": false,
+  "reason": "Fixed Validation study failed coverage/tail/baseline superiority in both seeds. Freeze and stop600step; sealed cannot override failed Validation. Train fit successful but no stable cross-position feature gain over geometry prior. No additional training permitted by this protocol.",
+  "sealed_capture": {
+    "path": "reports/m5n_sealed_capture_quality.json",
+    "sha256": "60434d2b6dc1da0ef6d13447aea670af22377244cea98f835b3bcbb4a0fd58a7",
+    "bytes": 6404
+  },
+  "validation": {
+    "path": "reports/m5n_validation_lock.json",
+    "sha256": "39b181f28dcb07dc9e0a7fd7e618c75df86e932e05c1db21dc165b12fce11158",
+    "bytes": 86523
+  },
+  "tests": {
+    "full": "310 passed, 6 skipped in 21.42s",
+    "sdk": "15 passed in 0.21s",
+    "full_log": {
+      "path": "runs/m5n_logs/full_tests_final.log",
+      "sha256": "893f952cf6145f9448947e950cb405de3c6b0bbd947157698dffeb87f8fd3d00",
+      "bytes": 432
+    },
+    "sdk_log": {
+      "path": "runs/m5n_logs/sdk_tests_final.log",
+      "sha256": "bf6a9fafc95fd3ab18c002dccdd9ccc44091f860582f589c06a3bd5af3e44332",
+      "bytes": 99
+    }
+  }
+}

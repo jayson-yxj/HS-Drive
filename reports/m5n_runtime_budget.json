@@ -1,0 +1,45 @@
+{
+  "kind": "actual_RTX4090_offline_sixRGB_inference_no_CARLA",
+  "load_ms": 344.17615458369255,
+  "cold": {
+    "sample_id": "Town01_kval0/00014245",
+    "rep": 0,
+    "ms": 614.5265530794859,
+    "candidates": 6
+  },
+  "steady": {
+    "n": 39,
+    "mean": 24.27454913655917,
+    "p50": 23.54348450899124,
+    "p95": 32.88396466523409,
+    "p99": 34.025018736720085,
+    "max": 34.440239891409874,
+    "p90": 30.218975991010673
+  },
+  "peak_mib": 293.0673828125,
+  "contract_tests": [
+    {
+      "test": "actor",
+      "rejected": true,
+      "error": "Learned model input field set mismatch"
+    },
+    {
+      "test": "depth",
+      "rejected": true,
+      "error": "Learned model input field set mismatch"
+    },
+    {
+      "test": "stale",
+      "rejected": true,
+      "error": "Future or stale timestamp"
+    }
+  ],
+  "raw": {
+    "path": "runs/m5n_logs/runtime_raw.json",
+    "sha256": "8621de6fd46a86ba37d7751b9f5afa2b300a6a0fa70b5b6b0681b338f4494e2b",
+    "bytes": 4625
+  },
+  "source_sha256": "a5a4b17815ea3e791ff67559d1679ef41ee9c177fe86224ee4e8e9ec52070ebb",
+  "inherited_runtime": "M5M Partial",
+  "limits": "Inputs preloadedGPU, excludes disk/H2D/sensor IPC. Full Mobile feature+foreground/candidates+DirectHead+geometry+empirical calibration included. No Dense branch needed. Finite40frames correlated10samples; no online tick/control test."
+}

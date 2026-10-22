@@ -1,0 +1,139 @@
+{
+  "kind": "offline_actual_recorded_CARLA_OBB_audit",
+  "aggregate": [
+    {
+      "split": "train",
+      "frames": 122,
+      "positions": 6,
+      "references": 696,
+      "max_world_closure": 5.684341886080802e-14,
+      "max_orthogonality": 4.3465939651422973e-05,
+      "max_vertex_reconstruction_m": 3.1063600943070924e-05,
+      "origin_center_offset": {
+        "n": 696,
+        "mean": 0.5834676034682436,
+        "p50": 0.5664844519453921,
+        "p95": 1.2882919256451124,
+        "p99": 1.2882920239160078,
+        "max": 1.2882937007011843,
+        "p90": 1.2882918723166514
+      },
+      "all_frames_sync": true
+    },
+    {
+      "split": "val",
+      "frames": 122,
+      "positions": 6,
+      "references": 696,
+      "max_world_closure": 5.684341886080802e-14,
+      "max_orthogonality": 3.847907502406291e-05,
+      "max_vertex_reconstruction_m": 3.078356050423281e-05,
+      "origin_center_offset": {
+        "n": 696,
+        "mean": 0.5834665897966872,
+        "p50": 0.5664862985272593,
+        "p95": 1.2882919347759763,
+        "p99": 1.2883050235662705,
+        "max": 1.2883051588248406,
+        "p90": 1.2882918787927446
+      },
+      "all_frames_sync": true
+    },
+    {
+      "split": "regression",
+      "frames": 214,
+      "positions": 12,
+      "references": 1236,
+      "max_world_closure": 1.1368683772161603e-13,
+      "max_orthogonality": 2.4018357980329363e-05,
+      "max_vertex_reconstruction_m": 3.406573401321111e-05,
+      "origin_center_offset": {
+        "n": 1236,
+        "mean": 0.61007789188251,
+        "p50": 0.5665012231157432,
+        "p95": 1.2883012834688812,
+        "p99": 1.2883023642839397,
+        "max": 1.2883023943175238,
+        "p90": 1.2882962888536982
+      },
+      "all_frames_sync": true
+    }
+  ],
+  "sidecars": [
+    {
+      "path": "runs/m5n_cache_train/supervision.json",
+      "sha256": "cbe6530fd6d5f5aebaaf143007e154be3dc66b258af77889f4ac99fba574cf71",
+      "bytes": 2601092
+    },
+    {
+      "path": "runs/m5n_cache_val/supervision.json",
+      "sha256": "84873d3b1acdbe3ced3a7ab7e6bbb83a327d0ee6cadd5fca5be3c3bd63ff41ad",
+      "bytes": 2561710
+    },
+    {
+      "path": "runs/m5n_cache_regression/supervision.json",
+      "sha256": "2ef2710cd03c148d6a06b0831f5687e96ee61117c4dedce3d63a682e496de9ec",
+      "bytes": 4356750
+    }
+  ],
+  "m5m_pair_failures": [
+    {
+      "sample_id": "Town04_m5m_sealed2/00073003",
+      "single_frame_sync": true,
+      "single_frame_box_geometry": [
+        {
+          "actor_id": 1536,
+          "closure": 3.907985046680551e-14,
+          "box_center": [
+            13.011491059785769,
+            13.033405587709826,
+            2.7973615813534707
+          ]
+        }
+      ],
+      "single_frame_reference_status": "GeometricallyConsistent_ConditionalStaticSync",
+      "used_for_training": false,
+      "used_for_primary_eval": false,
+      "paired_evaluation": "Excluded",
+      "reason": "Same-frame static transform read between ticks supports box reference; paired ego-removal mismatch does not mathematically invalidate original center. Label association used paired selfmask: do not automatically reuse existing sidecar; no need to recruit old test into train."
+    },
+    {
+      "sample_id": "Town05_m5m_sealed3/00073720",
+      "single_frame_sync": true,
+      "single_frame_box_geometry": [
+        {
+          "actor_id": 1673,
+          "closure": 2.842170943040401e-14,
+          "box_center": [
+            5.149820961271203,
+            14.436441278410797,
+            -17.954654816538095
+          ]
+        }
+      ],
+      "single_frame_reference_status": "GeometricallyConsistent_ConditionalStaticSync",
+      "used_for_training": false,
+      "used_for_primary_eval": false,
+      "paired_evaluation": "Excluded",
+      "reason": "Same-frame static transform read between ticks supports box reference; paired ego-removal mismatch does not mathematically invalidate original center. Label association used paired selfmask: do not automatically reuse existing sidecar; no need to recruit old test into train."
+    }
+  ],
+  "contract": "Center is mean of eight get_world_vertices transformed into HS ego. Inverting saved ActorTransform recovers bbox-local center and local basis/dimensions, so local rotation not silently ignored. Origin, OBBcenter, rendered surface centroid, visible bottom separate. Contact absent.",
+  "sync": "Per sensor frame/time checked when available, all K/L/M manifests inspected; static actors frozen before capture and no nexttick between snapshot and actor reads. Historical peractor snapshot frame ID missing, conditional static provenance rather than fully stamped dynamic snapshot proof.",
+  "official_reference": "https://carla.readthedocs.io/en/0.9.15/python_api/#carlaboundingbox",
+  "sealed": [
+    {
+      "frames": 52,
+      "positions": 4,
+      "references": 306,
+      "max_world_closure": 5.684341886080802e-14,
+      "max_vertex_reconstruction_m": 3.127330955976504e-05,
+      "max_orthogonality": 6.0972302525006204e-05
+    }
+  ],
+  "sealed_capture_integrity": {
+    "path": "reports/m5n_sealed_capture_quality.json",
+    "sha256": "60434d2b6dc1da0ef6d13447aea670af22377244cea98f835b3bcbb4a0fd58a7",
+    "bytes": 6404
+  }
+}

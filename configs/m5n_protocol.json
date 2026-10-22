@@ -1,0 +1,73 @@
+{
+  "base": "29ad67af6a2189eb78d219aa7fa8e8e23a40f3b4",
+  "seeds": [
+    101,
+    102
+  ],
+  "reference": "Mean of eight transformed OBB vertices is simulator BoxCenter; not Actor origin/render surface/contact. Inverse actor transform recovers local bbox orientation/center. Frame joins and static between-ticks acquisition required.",
+  "matching": {
+    "iou": 0.1,
+    "min_native_pixels": 3,
+    "unique_intersection_pixels": 3,
+    "train": "one-to-one unmerged unsplit matched candidate only; no GT feature input"
+  },
+  "support": {
+    "min_train_unique_views": 40,
+    "min_val_unique_views": 30,
+    "min_positions_each": 4,
+    "min_distance_bands": 2,
+    "no_claim_for_under20_class": true
+  },
+  "features": "Frozen Mobile fusedP8 mask-bbox3x3 sampled grid (576) + legal K/T/region geometry (24); inference noGT. Companion geometry-only prior same data/order.",
+  "training": {
+    "steps": 600,
+    "batch": 32,
+    "lr": 0.001,
+    "seeds": [
+      101,
+      102
+    ],
+    "eval_steps": [
+      0,
+      100,
+      200,
+      400,
+      600
+    ],
+    "loss": "Huber(logZ) + Huber(normalized projected-center offset), equal weights; no NLL",
+    "selection": "Val position-macro XY MAE minimum; no budget extension",
+    "stop": "nonfinite loss/gradient abort; insufficient support skip"
+  },
+  "calibration": {
+    "method": "Posthoc ridge logXYerror from legal predicted logZ, RGB component shape, predicted UV offset; leave-one-position-out Val diagnostics; final allVal fit only for sealed. Empirical90% radius, no conformal guarantee.",
+    "score": "exp(-predicted_proxy_error_m/5)",
+    "thresholds": [
+      0,
+      0.2,
+      0.4,
+      0.6,
+      0.8
+    ],
+    "min_coverage": 0.3,
+    "min_matches": 20,
+    "min_positions": 3,
+    "p95_m": 5,
+    "severe5m_rate": 0.05,
+    "comparison": "same accepted targets: MAE and P95 must improve over Plane AND DenseExpected AND DenseMode; both seeds",
+    "no_qualification": "keep threshold0 research estimates, never VerifiedContact; no new training"
+  },
+  "baselines": [
+    "frozen_M5M_plane",
+    "DenseExpected_region_probability",
+    "DenseMode_region_probability",
+    "DirectHead",
+    "GeometryPrior"
+  ],
+  "splits": "K train/val + M dev original splits (6positions each), K/L/M oldtests regression only. Actor IDs reused across worlds not identities; group-based exclusion.",
+  "sealed": {
+    "positions": 4,
+    "min_prior_m": 45,
+    "layouts": "empty, near/mid/far car, side/rear, pedestrian, occlusion, cone, truncation/overlap; captured after freeze"
+  },
+  "runtime": "offline GPU only; M5M Partial inherited, no shadow matrix/control"
+}
