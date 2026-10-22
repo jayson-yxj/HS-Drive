@@ -35,6 +35,11 @@ def main():
         except ValueError:continue
         process.append(dict(pid=pid,command=values[0][1]['cmdline'],seconds=values[-1][0]-values[0][0],
             main_thread_runtime_s=(b[0]-a[0])/1e9,main_thread_runqueue_wait_s=(b[1]-a[1])/1e9,timeslices=b[2]-a[2]))
+    if Path('reports/m6c_runtime_resources.json').exists():
+        previous=json.loads(Path('reports/m6c_runtime_resources.json').read_text())
+        assert previous['trials']==trials and previous['process_schedstat']==process
+        print('Resource audit repeated identically without overwrite')
+        return
     write('reports/m6c_runtime_resources.json',dict(**provenance('actual_server_OS_GPU_observation_offline_clock_association'),source='Privileged',trials=trials,process_schedstat=process,
         resource=asset('runs/m6c_logs/resources.jsonl'),gpu=asset('runs/m6c_logs/resources.jsonl.gpu.csv'),
         load_average_range=[min(q['loadavg'][0] for q in resources),max(q['loadavg'][0] for q in resources)],
