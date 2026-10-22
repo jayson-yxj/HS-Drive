@@ -67,7 +67,7 @@ def inspect(path):
 
 
 def main():
-    allrows=[inspect(p) for p in sorted(Path('reports/m6c_trials').glob('*/result.json'))];formal=[d for d,r in allrows if d['name'].startswith('final_')]
+    allrows=[inspect(p) for p in sorted(Path('reports/m6c_trials').glob('*/result.json'))];formal=[d for d,r in allrows if d['name'].startswith('final_') and (d['config']['arm']!='D' or d['name'].endswith('D2'))]
     stop=[d for d in formal if d['name'].startswith('final_stop')];pairs=[]
     for seed in [101,102]:
         for spawn in [27,126,170]:
@@ -78,6 +78,7 @@ def main():
     write('reports/m6c_stop_abcde_comparison.json',dict(**provenance('actual_CARLA_controlled_comparison_offline_statistics'),source='Privileged',status='Partial',trials=stop,paired=pairs,
         by_arm={arm:dict(runs=sum(d['config']['arm']==arm for d in stop),goal_passed=sum(d['config']['arm']==arm and d['goal_passed'] for d in stop),comfort_passed=sum(d['config']['arm']==arm and d['comfort_passed'] for d in stop)) for arm in ['A','C','D']},
         B='Historical_M6B_goal_only_4_of8_not_same_new_matrix',E='NotRun_no_evidence_backed_comfort_execution_candidate',
+        geometry_bug_exclusions=load('reports/m6c_geometry_bug_correction.json'),invalid_D_trials=[d for d,r in allrows if d['config']['arm']=='D' and not d['name'].endswith('D2')],
         development_exclusions=load('reports/m6c_development_deviation.json'),limits='Small fixed Town03 positions, paired repeats correlated; no generalization certification.'))
     obstacles=[d for d in formal if d['config']['scene'] in ['blocked','bypass','sudden','removed']]
     write('reports/m6c_no_bypass_safety.json',dict(**provenance('actual_CARLA_privileged_OBB_stopping_gap'),source='Privileged',status='Partial',trials=obstacles,

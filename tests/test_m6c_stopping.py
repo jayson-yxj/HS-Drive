@@ -76,3 +76,13 @@ def test_D_does_not_add_light_brake_actuation():
     s.timestamp_s+=.05
     emergency=c.command(tr,s,'worker_dead',remaining_m=available,geometry=dict(available_clearance_to_safe_stop=available,obstacle_obb_clearance_m=available+3),grade=-.02)
     assert emergency['brake']==1 and emergency['reason']=='worker_dead'
+
+
+def test_D_hold_uses_true_goal_distance_not_envelope_trigger():
+    e=StoppingEnvelope(json.loads(Path('configs/m6c/envelope_model.json').read_text()));c=EnvelopeController(e)
+    r=np.c_[np.arange(10),np.zeros(10),np.zeros(10)];s=OracleState(8.13,0,0,.013,1)
+    tr,_=MotionPlanner().plan(goal_route(r,StopGoal((9,0),0)),s,[])
+    c.braking=True
+    u=c.command(tr,s,remaining_m=.87,geometry=dict(available_clearance_to_safe_stop=.87,obstacle_obb_clearance_m=None),grade=.017)
+    assert u['mode']!='HOLD'
+    assert all(q['remaining_m']==pytest.approx(.87) for q in c.transitions)

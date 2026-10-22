@@ -4,7 +4,7 @@ from simulator.m6b_motion import LowSpeedController
 
 class EnvelopeController(LowSpeedController):
     def __init__(self,envelope):
-        super().__init__();self.envelope=envelope;self.decision={};self.braking=False
+        super().__init__();self.envelope=envelope;self.decision={};self.braking=False;self.settle_threshold=None
 
     def command(self,trajectory,state,reason=None,dt=.05,remaining_m=None,geometry=None,grade=0.,**kwargs):
         available=geometry['available_clearance_to_safe_stop'];obstacle=geometry['obstacle_obb_clearance_m'] is not None
@@ -26,11 +26,10 @@ class EnvelopeController(LowSpeedController):
         trigger=estimate.distance_m is not None and available<=estimate.distance_m+max(.25,state.speed_mps*.1)
         if self.braking and available>max(1.,(estimate.distance_m or 0)+.75):self.braking=False
         if trigger:self.braking=True
-        decision_remaining=remaining_m
-        if self.braking and not reason:
-            # Frozen C enters SETTLE without advancing/relocating StopGoal.
-            decision_remaining=min(remaining_m,self.coast_distance(state.speed_mps))
-        u=super().command(trajectory,state,reason,dt,remaining_m=decision_remaining)
+        # Preserve actual remaining distance for CREEP/HOLD and transition logs.
+        # Only coast-distance decision threshold is overridden, never the goal.
+        self.settle_threshold=(estimate.distance_m+max(.25,state.speed_mps*.1)-.12) if estimate.distance_m is not None else None
+        u=super().command(trajectory,state,reason,dt,remaining_m=remaining_m)
         if self.braking and not reason and trajectory is not None:
             u['throttle']=0.;self.previous_throttle=0.
             # D changes stopping-distance decisions only. Do not introduce a
@@ -38,3 +37,7 @@ class EnvelopeController(LowSpeedController):
             # original emergency path on InsufficientStoppingMargin.
         u['envelope_decision']=self.decision
         return u
+
+    def coast_distance(self,speed):
+        if self.settle_threshold is not None:return self.settle_threshold
+        return LowSpeedController.coast_distance(speed)
