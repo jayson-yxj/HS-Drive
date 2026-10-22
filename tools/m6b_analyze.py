@@ -28,6 +28,7 @@ def inspect(path):
         error_m=d['final_goal_error_m'],heading_rad=d['heading_error_rad'],terminal_speed=d['terminal_speed_mps'],completion=d['completion'],
         signed_remaining_m=r[-1]['current_remaining_m'],
         collision_events=len(d['collisions']),lane_events=len(d['lane_events']),illegal_lane_events=len(d['illegal_lane_events']),
+        travelled_m=float(np.linalg.norm(np.diff([q['measurement']['position'] for q in r],axis=0),axis=1).sum()),
         selected_path_cte=d['selected_path_cte_m'],
         dynamics=d['dynamics'],comfort_pass=d['comfort_pass'],degradation=d['degradation'],
         transitions=trans,jerk_peak_windows=peaks,
@@ -48,6 +49,22 @@ def inspect(path):
         sub=[v['measurement'] for t,v in zip(times,r) if low<=t<high]
         if len(sub)>=8:phases[name]=dynamics_metrics(sub)
     primary['phase_dynamics']=phases
+    primary['normal_braking_vs_safety']={}
+    for name,predicate in [('normal',lambda q:q['reason'] is None),('degraded',lambda q:q['reason'] is not None)]:
+        # Measurement k+1 follows command k. Retain every raw difference.
+        a_mask=np.array([predicate(q) for q in r[:-1]])
+        j_mask=a_mask[:-1]&a_mask[1:]
+        primary['normal_braking_vs_safety'][name]=dict(acc_samples=int(a_mask.sum()),
+            max_decel_raw=float(max(0,-acc[a_mask].min())) if a_mask.any() else None,
+            jerk_peak_raw=float(abs(jerk[j_mask]).max()) if j_mask.any() else None)
+    primary['stop_hold_entries']=[q for q in trans if q['new']=='HOLD']
+    primary['brake_release_and_gear_changes']=[dict(frame=r[k]['frame'],time=float(times[k]),speed=float(speed[k]),
+        previous=r[k-1]['measurement']['applied'],current=r[k]['measurement']['applied']) for k in range(1,len(r))
+        if r[k]['measurement']['applied']['gear']!=r[k-1]['measurement']['applied']['gear']]
+    # Preserve original normal-route no-lane-invasion and CTE criteria.
+    # Legal broken crossings are an explicit bypass exception only.
+    primary['normal_route_strict_passed']=bool(d['goal_passed'] and not d['lane_events'] and d['cte_m']['p95']<=.5)
+    primary['curb_status']='Unknown_no_independent_curb_contact_reference'
     if d['config']['scene']=='lead':
         # Tick-defined fixture: lead stops at200, restarts500. Separate evidence.
         mid=r[350:500];after=r[520:]
@@ -55,6 +72,14 @@ def inspect(path):
             ego_moved_after_restart=any(v['measurement']['speed']>.3 for v in after),
             restart_displacement_m=float(np.linalg.norm(np.array(after[-1]['measurement']['position'])-after[0]['measurement']['position'])) if after else None,
             source='Privileged_constant_velocity_lead_not_lead_dynamics_validation')
+    if d['config']['scene'] in ('emergency','crash','timeout','invalid') or d['config'].get('fault'):
+        first=d['config'].get('fault_tick',65);after=r[first:]
+        primary['fault_gate']=dict(injected_at_tick=first,injected_at_speed=r[first]['measurement']['speed'] if after else None,
+            brake_reaction_s=d['fault_to_brake_s'],terminal_stopped=d['terminal_speed_mps']<=.08,
+            no_collision=not d['collisions'],no_body_boundary=not any(v['boundary'] for v in r),
+            no_expired_normal_control=d['expired_normal_control']==0,
+            requires_motion_for_stop_evidence=bool(after and r[first]['measurement']['speed']>.2),
+            fault_type=d['config'].get('fault') or d['config']['scene'])
     if d['config']['scene']=='removed':
         after=r[420:];primary['removed_recovery']=dict(moved=any(v['measurement']['speed']>.3 for v in after),goal_passed=d['goal_passed'])
     if d['config']['scene'] in ('blocked','bypass','removed','lead'):
@@ -115,7 +140,7 @@ def main():
         total_trials=len(allrows),collisions=sum(d['collision_events'] for d,r in allrows),
         illegal_lane_events=sum(d['illegal_lane_events'] for d,r in allrows),
         expired_normal_control=sum(d['runtime']['expired_normal_control'] for d,r in allrows),
-        fault_trials=[d for d in maneuvers if d['config']['scene'] in ('emergency','crash','timeout','invalid')],
+        fault_trials=[d for d in maneuvers if 'fault_gate' in d],
         unchanged_original_safety=True,horizon_s=6,visual_control=False,curb_contacts='Unknown_no_dedicated_mesh_reference',reverse_bay_parking='NotRun'))
     figures(allrows)
     print('analyzed',len(allrows),'trials')

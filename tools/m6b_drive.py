@@ -28,7 +28,10 @@ def main():
     p.add_argument('--speed',type=float,default=1);p.add_argument('--seed',type=int,default=101)
     p.add_argument('--ticks',type=int,default=1200);p.add_argument('--fixed-budget',action='store_true')
     p.add_argument('--tick-cpus',default='');p.add_argument('--worker-cpus',default='')
+    p.add_argument('--fault',choices=['','emergency','crash','timeout','invalid'],default='')
+    p.add_argument('--fault-tick',type=int,default=65)
     a=p.parse_args();np.random.seed(a.seed)
+    fault=a.fault or (a.scene if a.scene in ('emergency','crash','timeout','invalid') else '')
     if a.tick_cpus:os.sched_setaffinity(0,set(map(int,a.tick_cpus.split(','))))
     root=Path('reports/m6b_trials')/a.name;root.mkdir(parents=True,exist_ok=False)
     write(root/'config.json',vars(a))
@@ -79,6 +82,9 @@ def main():
                         pose2=neighbor.transform;pose2.location.z+=.8
                         other=session.spawn(w.get_blueprint_library().find('vehicle.audi.a2'),pose2)
                         other.set_simulate_physics(False);obstacles.append(other)
+                        # Newly spawned actors enter the synchronous snapshot
+                        # only after the tick owner advances the world.
+                        w.tick()
             selected=route.copy();bypass=dict(source='Privileged',status='NotRequested')
             if a.scene in ['bypass','blocked']:
                 selected,bypass=choose_bypass(m,route,[obs_of(w.get_snapshot(),o) for o in obstacles],hl,hw,z)
@@ -107,15 +113,15 @@ def main():
                     obs=[obs_of(snap,o) for o in obstacles]
                     tr=reason=result=None
                     if worker:
-                        if tick==65 and a.scene in ('emergency','crash','timeout','invalid'):fault_wall=begin
+                        if tick==a.fault_tick and fault:fault_wall=begin
                         if state.timestamp_s-last_submit>=.2-1e-6:
                             job=dict(scene=a.name,frame=snap.frame,state=asdict(state),input_wall=time.perf_counter(),obstacles=obs,half_length=hl,half_width=hw,z=z)
-                            if tick>=65 and a.scene=='timeout':job['delay']=.5
-                            if tick>=65 and a.scene=='invalid':job['state'].pop('x')
+                            if tick>=a.fault_tick and fault=='timeout':job['delay']=.5
+                            if tick>=a.fault_tick and fault=='invalid':job['state'].pop('x')
                             if worker.submit(job):last_submit=state.timestamp_s
-                        if tick==65 and a.scene=='crash':worker.worker.terminate()
+                        if tick==a.fault_tick and fault=='crash':worker.worker.terminate()
                         tr,reason,result=worker.poll(a.name,snap.frame,state,time.perf_counter())
-                        if tick>=65 and a.scene=='emergency':reason='emergency_command'
+                        if tick>=a.fault_tick and fault=='emergency':reason='emergency_command'
                     timeline['submit_poll_end']=time.perf_counter()
                     current_body=footprint(state.x,state.y,state.yaw,hl+.2,hw+.15)
                     boundary=not all(road(x,y) for x,y in current_body)
