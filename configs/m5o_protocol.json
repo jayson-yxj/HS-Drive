@@ -1,0 +1,107 @@
+{
+  "stage": "M5-O",
+  "base": "2afe740",
+  "seeds": [
+    101,
+    102
+  ],
+  "reference": "eight OBB vertex mean simulator ActorBoxCenter; not mesh/contact center",
+  "matching": {
+    "iou": 0.1,
+    "native_pixels": 3,
+    "intersection_pixels": 3,
+    "unique": true,
+    "source": "unchanged M5-N geometry-associated renderer instance; ambiguous supervision excluded, all detections retained"
+  },
+  "isolation": {
+    "train_maps": [
+      "Town01",
+      "Town03",
+      "Town04"
+    ],
+    "val_maps": [
+      "Town05"
+    ],
+    "calibration_maps": [
+      "Town02",
+      "Town04_disjoint_roads"
+    ],
+    "sealed_maps": [
+      "Town10HD"
+    ],
+    "min_group_m": 90,
+    "historical_regression_only": true,
+    "shared_map_cross_split_min_m": 150,
+    "shared_map_road_id_disjoint": true
+  },
+  "support": {
+    "groups": {
+      "train": 20,
+      "val": 6,
+      "calibration": 6,
+      "sealed": 6
+    },
+    "unique_candidates": {
+      "train": 300,
+      "val": 80,
+      "calibration": 80,
+      "sealed": 80
+    },
+    "count": "unique group + actor placement + model + camera; no repeated static/empty frames",
+    "insufficient": "stop training expansion; Partial, no quality relaxation"
+  },
+  "training": {
+    "fractions": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "steps": 600,
+    "batch": 32,
+    "lr": 0.001,
+    "weight_decay": 0.001,
+    "eval_steps": [
+      0,
+      100,
+      200,
+      400,
+      600
+    ],
+    "selection": "minimum Validation location-macro XY MAE on same unique matched candidates",
+    "loss": "unchanged Huber log optical-Z plus Huber normalized projected center offsets",
+    "arms": [
+      "direct",
+      "geometry_prior"
+    ],
+    "budget_extension": false,
+    "freeze": "Mobile and ResNet Depth; 48 LID, original HeightSplat unchanged",
+    "order": "same perseed/fraction for both arms; nested location subsets hash order",
+    "stop": "nonfinite loss/gradient or insufficient independent support"
+  },
+  "calibration": {
+    "method": "leave-one-calibration-location-out ridge log error diagnostics; final fit only calibration; group split independent of selection",
+    "thresholds": [
+      0,
+      0.2,
+      0.4,
+      0.6,
+      0.8
+    ],
+    "score": "exp(-predicted_error/5)",
+    "radius": "90th percentile error / predicted_error on heldout calibration-location residuals; empirical, not certified conformal",
+    "threshold_selection": "greatest calibration coverage meeting fixed quality and matched baseline gates, else abstain all"
+  },
+  "quality": {
+    "coverage": 0.3,
+    "matches": 20,
+    "groups": 3,
+    "p95_m": 5,
+    "severe5m_rate": 0.05,
+    "comparison": "same targets lower MAE and no worse P95 than geometry_prior and Fixed Plane; Dense summaries also reported",
+    "both_seeds": true
+  },
+  "sealed": "one final evaluation after source/checkpoint/threshold lock; no retrospective tuning",
+  "oracle_candidates": "GT native visible instance regions diagnostic only; frozen M5-N models evaluated without retraining; never inference input",
+  "runtime": "M5-M Partial inherited; no control or runtime matrix",
+  "limits": "Calibration uses Town02 plus Town04 roads disjoint from Train by road_id and 150m; maps/road neighborhoods are isolation units, samples within positions correlated; randomized layout families shared."
+}
