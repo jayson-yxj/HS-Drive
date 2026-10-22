@@ -54,6 +54,8 @@ def inspect(path):
             minimum_relevant_OBB_gap_m=min(q['geometry']['obstacle_obb_clearance_m'] for q in obs),
             final_relevant_OBB_gap_m=obs[-1]['geometry']['obstacle_obb_clearance_m'],
             final_3m_passed=obs[-1]['geometry']['obstacle_obb_clearance_m']>=3.,
+            final_stable_stop_1s=len(rows)>=21 and all(q['measurement']['speed']<=.08 for q in rows[-21:]),
+            final_3m_held_1s=len(rows)>=21 and all(q['geometry']['obstacle_obb_clearance_m'] is not None and q['geometry']['obstacle_obb_clearance_m']>=3. for q in rows[-21:]),
             any_InsufficientStoppingMargin=any(q['reason']=='InsufficientStoppingMargin' for q in rows),
             insufficient_capability_ticks=sum(q['command'].get('envelope_decision',{}).get('stopping_feasible') is False and q['measurement']['speed']>.02 for q in obs),
             stopped=bool(stopped),normal_only=not any(q['reason'] and q['measurement']['speed']>.2 for q in rows))

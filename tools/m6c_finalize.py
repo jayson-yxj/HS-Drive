@@ -25,7 +25,8 @@ def main():
                 final_gap3_passed=sum(v.get('obstacle',{}).get('final_3m_passed',False) for v in sub),
                 moving_safety_fallback=sum(v.get('obstacle',{}).get('final_stop_requires_safety',False) for v in sub),
                 insufficient_margin_reported=sum(v.get('obstacle',{}).get('any_InsufficientStoppingMargin',False) for v in sub),
-                normal_stop_with_gap3=sum(v.get('obstacle',{}).get('final_3m_passed',False) and v['obstacle']['normal_only'] for v in sub),
+                normal_stop_with_gap3=sum(v.get('obstacle',{}).get('final_3m_passed',False) and v['obstacle']['normal_only'] and v['obstacle']['final_stable_stop_1s'] and v['obstacle']['final_3m_held_1s'] for v in sub),
+                stable_stopped_with_gap3=sum(v['obstacle']['final_stable_stop_1s'] and v['obstacle']['final_3m_held_1s'] for v in sub),
                 initial_feasible=sum(v.get('obstacle',{}).get('initial_stopping_feasible',False) for v in sub),
                 final_gaps={v['name']:v.get('obstacle',{}).get('final_relevant_OBB_gap_m') for v in sub})
         return out
