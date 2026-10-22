@@ -7,6 +7,11 @@ from tools.m5o_common import DATA, write, asset, provenance
 
 
 def main():
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output", default="reports/m5o_leakage_audit_final.json")
+    args = parser.parse_args()
     cfg = json.loads(Path("configs/m5o_capture_dev_v3.json").read_text())
     records = []
     old = []
@@ -76,7 +81,7 @@ def main():
     names = {n.id for n in ast.walk(tree) if isinstance(n, ast.Name)}
     assert not names & {"carla", "actor_reference", "pixel_label"}
     write(
-        "reports/m5o_leakage_audit.json",
+        args.output,
         dict(
             kind="offline_actual_manifest_and_source_audit",
             failures=failures,
