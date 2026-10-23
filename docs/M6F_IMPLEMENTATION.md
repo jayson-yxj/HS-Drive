@@ -59,3 +59,16 @@ GPU仅用于CARLA渲染和停机后的离线画图；没有神经网络训练。
 Physics操作前后虽同frame，live telemetry速度会复位而ActorSnapshot缓存未变；这类初始化记录不能作为同步动力学配对。25个相位切换请求晚一帧应用，全部保留，分析采用Applied时间，同时披露Sham响应比较的命令时序混杂。
 
 下载、安装、版本校验和真实试验输入清单在m6f_execution_logs中。最终报告构建需要preservation.json；该审计逐个重算base_freeze及runs/m6b_logs/freeze.json所列SHA。数据原始JSONL和原始分析v1均保留。
+
+官方包复现获取（单文件最多900秒；可用等价Range续传，不能切换版本；完整SHA须匹配）：
+
+```bash
+mkdir -p /root/gpufree-data/simulators/m6f_CARLA_0.9.16
+curl -L --fail --max-time 900 https://downloads.carlasim.com/Linux/CARLA_0.9.16.tar.gz -o /root/gpufree-data/simulators/m6f_CARLA_0.9.16.tar.gz
+sha256sum /root/gpufree-data/simulators/m6f_CARLA_0.9.16.tar.gz
+# 本轮归档SHA: 09e3ebb28df17962f0c997e66f4b914ad5ea6f1d6a6dbbf13c9f87eb38346d57
+tar -xzf /root/gpufree-data/simulators/m6f_CARLA_0.9.16.tar.gz -C /root/gpufree-data/simulators/m6f_CARLA_0.9.16
+chown -R ubuntu:ubuntu /root/gpufree-data/simulators/m6f_CARLA_0.9.16
+```
+
+可行性通过后，本轮telemetry_gate.json写入前置条件的人工审查结果及已测Physics签名，不是盲目自动授权控制器。它不允许启动未声明的工作包。新复现若观察不满足，应停止responses/sham。报告机器时间、Git哈希和数据清单以相应launch/completion为准。

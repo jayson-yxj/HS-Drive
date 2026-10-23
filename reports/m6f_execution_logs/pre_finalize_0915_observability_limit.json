@@ -1,0 +1,9 @@
+{
+ "kind":"SDK_introspection_and_official_source_audit_with_historical_CARLA_evidence",
+ "carla_version":"0.9.15","source":"Privileged","true_engine_wheel_api":false,
+ "physics_reference":"3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6",
+ "available":["requested control","applied CARLA control and Gear","snapshot pose/velocity/API acceleration/frame/time","public PhysicsControl parameters","wheel steering angle and visual pitch (not solver omega)"],
+ "NotAvailable":["get_telemetry_data RPC in original SDK","actual wheel speed/slip/force/load via original public API","per-wheel brake torque","smoothed PhysX analog commands","solver substep/constraint impulse"],
+ "native_instrumentation":{"status":"NotRun","reason":"0916 real wheel API obtained; user instructed not to develop both paths simultaneously","full_build_environment":"NotVerified","binary_source_identity":"official0915 tag is explanatory reference, no reproducible exact UE build manifest"},
+ "default_modifications":false,"historical_P1_status":"NoGo","claim_limit":"Body acceleration alone cannot determine brake torque or solver cause. Original 0915 physical root cause remains unproven by cross-version0916 observation."
+}

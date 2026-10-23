@@ -1,30 +1,148 @@
 {
- "stage":"M6-F", "source":"Privileged", "schema":"m6f.real_engine_telemetry.v1",
- "backend":"CARLA 0.9.16 / UE4.26 / PhysX, independently installed",
- "true_engine_wheel_api":true,
- "coordinate_frame":"CARLA world x forward, y right, z up for raw body; speed is signed body forward. Wheel force/slip are local tire longitudinal/lateral scalars, NOT world vectors. Wheel order follows PVehicle index; corner mapping not independently certified.",
- "time":{"body":"ActorSnapshot frame and elapsed_seconds","telemetry":"No internal frame or timestamp field","association":"sole tick owner; snapshot brackets around synchronous RPC must have identical frame; expected next frame checked after tick","substep":"NotAvailable","force_time":"debug fields read at RPC, substep aggregation/refresh phase not certified","forbidden":"Do not claim same-frame force equals interval-averaged force or reconstruct exact solver impulse from it"},
- "vehicle_fields":{
-  "speed":{"units":"m/s","source":"GetVehicleForwardSpeed()/100","kind":"engine state"},
-  "steer/throttle/brake":{"units":"normalized command","source":"LastAppliedControl","kind":"CARLA applied command, not smoothed PhysX input"},
-  "gear":{"units":"integer index","source":"GetVehicleCurrentGear","kind":"engine state"},
-  "engine_rpm":{"units":"rpm","source":"MovementComponent.GetEngineRotationSpeed","kind":"engine state, engine model of Tesla blueprint, not electric motor validation"},
-  "drag":{"units":"N","source":"DebugDragMagnitude/100","kind":"engine debug value"}
- },
- "wheel_fields":{
-  "tire_friction":{"units":"dimensionless","source":"PxWheelQueryResult.tireFriction","kind":"contact friction coefficient, not Physics tire_friction scale"},
-  "lat_slip":{"units":"degrees","source":"RadiansToDegrees(PxWheelQueryResult.lateralSlip)"},
-  "long_slip":{"units":"dimensionless","source":"PxWheelQueryResult.longitudinalSlip"},
-  "omega":{"units":"rad/s","source":"PxVehicleWheelsDynData.getWheelRotationSpeed"},
-  "tire_load":{"units":"N","source":"UVehicleWheel.DebugTireLoad/100"},
-  "normalized_tire_load":{"units":"dimensionless","source":"UVehicleWheel.DebugNormalizedTireLoad"},
-  "torque":{"units":"N m","source":"UVehicleWheel.DebugWheelTorque/10000","semantic":"engine debug wheel torque; decomposition into tire/brake/drive unavailable; NOT actual brake torque"},
-  "long_force/lat_force":{"units":"N","source":"UVehicleWheel.DebugLongForce/DebugLatForce divided by100","semantic":"tire-axis debug force; not body net force or time-integrated impulse"},
-  "normalized_long_force/normalized_lat_force":{"units":"dimensionless","source":"abs(force)*normalized_load/load","semantic":"CARLA computed ratio, may be nonfinite at zero tire load; raw nonfinite represented explicitly, never zero imputation"}
- },
- "not_available":["actual per-wheel applied brake torque","drive and brake torque decomposition","clutch engagement state/torque","smoothed PhysX analog input","gear switch progress","wheel contact normal/point/material identity","suspension force history","solver substep timestamps","constraint/contact impulses","exact package-to-engine-source build manifest"],
- "derived_body_fields":{"acceleration":"raw finite difference of signed snapshot speed, interval ending frame; API acceleration retained separately","jerk":"difference of raw finite-difference acceleration; 50ms sample scale, not instantaneous solver jerk","not_engine_measurement":true},
- "invalid_handling":"nonfinite engine fields preserved as invalid_raw text; absent fields raise; frame mismatch aborts batch",
- "formal_control_use":false,
- "sources":["https://github.com/carla-simulator/carla/blob/0.9.16/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Vehicle/CarlaWheeledVehicle.cpp","https://github.com/carla-simulator/carla/blob/0.9.16/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Vehicle/VehicleTelemetryData.h","https://github.com/carla-simulator/carla/blob/0.9.16/LibCarla/source/carla/rpc/VehicleTelemetryData.h"]
+  "stage": "M6-F",
+  "source": "Privileged",
+  "schema": "m6f.real_engine_telemetry.v1",
+  "backend": "CARLA 0.9.16 / UE4.26 / PhysX, independently installed",
+  "true_engine_wheel_api": true,
+  "coordinate_frame": "CARLA world x forward, y right, z up for raw body; speed is signed body forward. Wheel force/slip are local tire longitudinal/lateral scalars, NOT world vectors. Wheel order follows PVehicle index; corner mapping not independently certified.",
+  "time": {
+    "body": "ActorSnapshot frame and elapsed_seconds",
+    "telemetry": "No internal frame or timestamp field",
+    "association": "sole tick owner; snapshot brackets around synchronous RPC must have identical frame; expected next frame checked after tick",
+    "substep": "NotAvailable",
+    "force_time": "debug fields read at RPC, substep aggregation/refresh phase not certified",
+    "forbidden": "Do not claim same-frame force equals interval-averaged force or reconstruct exact solver impulse from it",
+    "state_mutation_barrier": "PhysicsControl/teleport mutation invalidates same-state snapshot association even without tick. Init records kept separate; no derivatives across rebuild."
+  },
+  "vehicle_fields": {
+    "speed": {
+      "units": "m/s",
+      "source": "GetVehicleForwardSpeed()/100",
+      "kind": "engine state"
+    },
+    "steer/throttle/brake": {
+      "units": "normalized command",
+      "source": "LastAppliedControl",
+      "kind": "CARLA applied command, not smoothed PhysX input"
+    },
+    "gear": {
+      "units": "integer index",
+      "source": "GetVehicleCurrentGear",
+      "kind": "engine state"
+    },
+    "engine_rpm": {
+      "units": "rpm",
+      "source": "MovementComponent.GetEngineRotationSpeed",
+      "kind": "engine state, engine model of Tesla blueprint, not electric motor validation"
+    },
+    "drag": {
+      "units": "N",
+      "source": "DebugDragMagnitude/100",
+      "kind": "engine debug value"
+    }
+  },
+  "wheel_fields": {
+    "tire_friction": {
+      "units": "dimensionless",
+      "source": "PxWheelQueryResult.tireFriction",
+      "kind": "contact friction coefficient, not Physics tire_friction scale"
+    },
+    "lat_slip": {
+      "units": "degrees",
+      "source": "RadiansToDegrees(PxWheelQueryResult.lateralSlip)"
+    },
+    "long_slip": {
+      "units": "dimensionless",
+      "source": "PxWheelQueryResult.longitudinalSlip"
+    },
+    "omega": {
+      "units": "rad/s",
+      "source": "PxVehicleWheelsDynData.getWheelRotationSpeed"
+    },
+    "tire_load": {
+      "units": "N",
+      "source": "UVehicleWheel.DebugTireLoad/100"
+    },
+    "normalized_tire_load": {
+      "units": "dimensionless",
+      "source": "UVehicleWheel.DebugNormalizedTireLoad"
+    },
+    "torque": {
+      "units": "N m",
+      "source": "UVehicleWheel.DebugWheelTorque/10000",
+      "semantic": "engine debug wheel torque; decomposition into tire/brake/drive unavailable; NOT actual brake torque"
+    },
+    "long_force/lat_force": {
+      "units": "N",
+      "source": "UVehicleWheel.DebugLongForce/DebugLatForce divided by100",
+      "semantic": "tire-axis debug force; not body net force or time-integrated impulse"
+    },
+    "normalized_long_force/normalized_lat_force": {
+      "units": "dimensionless",
+      "source": "abs(force)*normalized_load/load",
+      "semantic": "CARLA computed ratio, may be nonfinite at zero tire load; raw nonfinite represented explicitly, never zero imputation"
+    }
+  },
+  "not_available": [
+    "actual per-wheel applied brake torque",
+    "drive and brake torque decomposition",
+    "clutch engagement state/torque",
+    "smoothed PhysX analog input",
+    "gear switch progress",
+    "wheel contact normal/point/material identity",
+    "suspension force history",
+    "solver substep timestamps",
+    "constraint/contact impulses",
+    "exact package-to-engine-source build manifest"
+  ],
+  "derived_body_fields": {
+    "acceleration": "raw finite difference of signed snapshot speed, interval ending frame; API acceleration retained separately",
+    "jerk": "difference of raw finite-difference acceleration; 50ms sample scale, not instantaneous solver jerk",
+    "not_engine_measurement": true
+  },
+  "invalid_handling": "nonfinite engine fields preserved as invalid_raw text; absent fields raise; frame mismatch aborts batch",
+  "formal_control_use": false,
+  "sources": [
+    "https://github.com/carla-simulator/carla/blob/0.9.16/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Vehicle/CarlaWheeledVehicle.cpp",
+    "https://github.com/carla-simulator/carla/blob/0.9.16/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Vehicle/VehicleTelemetryData.h",
+    "https://github.com/carla-simulator/carla/blob/0.9.16/LibCarla/source/carla/rpc/VehicleTelemetryData.h"
+  ],
+  "base": "b0ee249236415627896000d89fe6d9fa31023e59",
+  "analysis_source_commit": "67b1048f8c634406e40f93529df463ea5d72d9cb",
+  "source_sha256": {
+    "tools/m6f_evidence.py": "40b51ae15076f94f7e0dfd4ee3c6600138f779a8c164a621fa4c09f981368c26",
+    "tools/m6f_guard_analyze.py": "837db6d654e64d6135cfa38aa3230f66c449ab794fc09fe6b8300f7b4422f9e1",
+    "tools/m6f_finalize.py": "fcfb61bae27302a30ffa7bc29bbfdb054a9bcb6a95a17fe1090056cd64c08ee3",
+    "tools/m6f_analyze.py": "8eaa9bdf20acb3d9e78ffca2734b37156cd88b1edb6c672504c12db175bee57b",
+    "tools/m6f_probe.py": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+    "tools/m6f_figures.py": "46a5d3a3bce2c84da96cb555af3a6fcaedc080a80d6a2ca67a742fc65ef7a524",
+    "tools/m6f_launch.py": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+    "tools/m6f_guard_probe.py": "ce1db15b1c12ae4ff35687b0663702926a8e0ca30de24c1296827b15c2e83cfe",
+    "simulator/m6f_telemetry.py": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+    "tests/test_m6f_source_capture.py": "83773ff9da26ea4d8d7a9e0e5a92cbed9bba30571bed22d62defa6f571ac9152",
+    "tests/test_m6f_telemetry.py": "3bd5f35661a0ef01e936fef38b6a1889790f706bb1c795083c32c5cbd5c4cee8",
+    "configs/m6f/acquisition_budget.json": "ff648015bee75a0f6552e053def87e16a483342dfddce3153cdedc2705bb5e2c",
+    "configs/m6f/protocol.json": "c680b86a3bd7a242c3b686419b6ea610450ff88a394761e2eec1a3b963dfdfe7"
+  },
+  "execution_sources": "Each batch launch/completion includes actual import source/code SHA and Git commit; analysis commit is not claimed as simulation execution commit.",
+  "configuration": {
+    "path": "configs/m6f/protocol.json",
+    "sha256": "c680b86a3bd7a242c3b686419b6ea610450ff88a394761e2eec1a3b963dfdfe7",
+    "bytes": 1590
+  },
+  "acquisition_budget": {
+    "path": "configs/m6f/acquisition_budget.json",
+    "sha256": "ff648015bee75a0f6552e053def87e16a483342dfddce3153cdedc2705bb5e2c",
+    "bytes": 417
+  },
+  "reproduction": "docs/M6F_IMPLEMENTATION.md",
+  "versions": {
+    "main": "0.9.15",
+    "independent_research": "0.9.16"
+  },
+  "trial_manifest": {
+    "path": "reports/m6f_execution_logs/trial_manifest.json",
+    "sha256": "dc49fae27cc44c8505807b287fb889d02d05c09c1a44af10b706ccac8561ca26",
+    "bytes": 32130
+  }
 }

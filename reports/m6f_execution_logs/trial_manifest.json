@@ -1,0 +1,817 @@
+{
+  "base": "b0ee249236415627896000d89fe6d9fa31023e59",
+  "analysis_source_commit": "67b1048f8c634406e40f93529df463ea5d72d9cb",
+  "source_sha256": {
+    "tools/m6f_evidence.py": "40b51ae15076f94f7e0dfd4ee3c6600138f779a8c164a621fa4c09f981368c26",
+    "tools/m6f_guard_analyze.py": "837db6d654e64d6135cfa38aa3230f66c449ab794fc09fe6b8300f7b4422f9e1",
+    "tools/m6f_finalize.py": "fcfb61bae27302a30ffa7bc29bbfdb054a9bcb6a95a17fe1090056cd64c08ee3",
+    "tools/m6f_analyze.py": "8eaa9bdf20acb3d9e78ffca2734b37156cd88b1edb6c672504c12db175bee57b",
+    "tools/m6f_probe.py": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+    "tools/m6f_figures.py": "46a5d3a3bce2c84da96cb555af3a6fcaedc080a80d6a2ca67a742fc65ef7a524",
+    "tools/m6f_launch.py": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+    "tools/m6f_guard_probe.py": "ce1db15b1c12ae4ff35687b0663702926a8e0ca30de24c1296827b15c2e83cfe",
+    "simulator/m6f_telemetry.py": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+    "tests/test_m6f_source_capture.py": "83773ff9da26ea4d8d7a9e0e5a92cbed9bba30571bed22d62defa6f571ac9152",
+    "tests/test_m6f_telemetry.py": "3bd5f35661a0ef01e936fef38b6a1889790f706bb1c795083c32c5cbd5c4cee8",
+    "configs/m6f/acquisition_budget.json": "ff648015bee75a0f6552e053def87e16a483342dfddce3153cdedc2705bb5e2c",
+    "configs/m6f/protocol.json": "c680b86a3bd7a242c3b686419b6ea610450ff88a394761e2eec1a3b963dfdfe7"
+  },
+  "execution_sources": "Each batch launch/completion includes actual import source/code SHA and Git commit; analysis commit is not claimed as simulation execution commit.",
+  "configuration": {
+    "path": "configs/m6f/protocol.json",
+    "sha256": "c680b86a3bd7a242c3b686419b6ea610450ff88a394761e2eec1a3b963dfdfe7",
+    "bytes": 1590
+  },
+  "acquisition_budget": {
+    "path": "configs/m6f/acquisition_budget.json",
+    "sha256": "ff648015bee75a0f6552e053def87e16a483342dfddce3153cdedc2705bb5e2c",
+    "bytes": 417
+  },
+  "reproduction": "docs/M6F_IMPLEMENTATION.md",
+  "versions": {
+    "main": "0.9.15",
+    "independent_research": "0.9.16"
+  },
+  "files": [
+    {
+      "path": "reports/m6f_trials_0916/feasibility/completion.json",
+      "sha256": "00bed8ca9eed83ed0f0428f1433e48a53ac7be1d36ab028072e4b0b4262a6bf8",
+      "bytes": 84872
+    },
+    {
+      "path": "reports/m6f_trials_0916/feasibility/launch.json",
+      "sha256": "54263267fc9076b0bcc623c76859d6ebcf70d8e879b60f3b32572717b49cd37f",
+      "bytes": 87183
+    },
+    {
+      "path": "reports/m6f_trials_0916/feasibility/p27_api/config.json",
+      "sha256": "d188932f8ab6df4d109d454a0069b4bfc0fe21ff4324965a81b253dd83f37871",
+      "bytes": 114
+    },
+    {
+      "path": "reports/m6f_trials_0916/feasibility/p27_api/initialization.json",
+      "sha256": "3ca8eb58eaf82a814ecb07ce0aa9aa2b34ce8878fd9c7c4af7edf346b4010615",
+      "bytes": 6939
+    },
+    {
+      "path": "reports/m6f_trials_0916/feasibility/p27_api/physics.json",
+      "sha256": "f91d66387e3ad2897ca46df5e6b7f3f5db97fd7acfd20cff089b32837669320e",
+      "bytes": 6543
+    },
+    {
+      "path": "reports/m6f_trials_0916/feasibility/p27_api/result.json",
+      "sha256": "e187138386a4d48c6c90e0f24ab47ee09940ffecd68892d2bdd26479937fa283",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/feasibility/p27_api/trace.jsonl",
+      "sha256": "2f689334bed3422d1b41e62d915cc132ace706e65b151e9db8f7da849153d182",
+      "bytes": 1995423
+    },
+    {
+      "path": "reports/m6f_trials_0916/overhead/completion.json",
+      "sha256": "72dd13d6431fae142e4ae135da26413036786b10f2ff9fc5f66643eab1caad9a",
+      "bytes": 84919
+    },
+    {
+      "path": "reports/m6f_trials_0916/overhead/launch.json",
+      "sha256": "f0539476bb0517b54b81c0e67ae962205bf2428c3945059854ffde1550c81e31",
+      "bytes": 87228
+    },
+    {
+      "path": "reports/m6f_trials_0916/overhead/p27_abba/config.json",
+      "sha256": "65cbadd03ba1b7bccb80bac61801ac5f2b1732d5f31ebf724f42c7e6db3c662c",
+      "bytes": 112
+    },
+    {
+      "path": "reports/m6f_trials_0916/overhead/p27_abba/initialization.json",
+      "sha256": "22d23bd5bce513d07a8175ee2acd9f3f59a4fc65f3479a4229a55bd59fd6860f",
+      "bytes": 6955
+    },
+    {
+      "path": "reports/m6f_trials_0916/overhead/p27_abba/physics.json",
+      "sha256": "f91d66387e3ad2897ca46df5e6b7f3f5db97fd7acfd20cff089b32837669320e",
+      "bytes": 6543
+    },
+    {
+      "path": "reports/m6f_trials_0916/overhead/p27_abba/result.json",
+      "sha256": "1bf0daaeb9e716e48c786efe5f78d34ecd6ae67762fa546daff3392e9e6285cb",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/overhead/p27_abba/trace.jsonl",
+      "sha256": "7de00d23a9a4e5621a55e71c4e74c5db4a4deed60970ca54b4a7e6eb317ffcae",
+      "bytes": 2718381
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/completion.json",
+      "sha256": "a771150fb25447acde241303498bd9405ae8a50c16a144e38bea44f81163fd97",
+      "bytes": 86288
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/launch.json",
+      "sha256": "70ceae56a0584b71666e458e6a09f76ffe6bef27a094a59ec26ed802a6c85d6c",
+      "bytes": 91438
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_A_401/config.json",
+      "sha256": "ab05039cdb9f689246f86d20ab447e52a78a3fb8b88959a39066e9b04e6a10be",
+      "bytes": 132
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_A_401/initialization.json",
+      "sha256": "7a06942e522731b782a5e0a3858719bc745d4d6a590aed06f4816b1a76152e0e",
+      "bytes": 6918
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_A_401/physics.json",
+      "sha256": "1774451a8a6783a243d387c21c3639fbc274ad9173549f7ddebfa07da9e9456b",
+      "bytes": 6558
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_A_401/result.json",
+      "sha256": "b7efde1ff23ac8ad269e81b91cc1e0743af722a338c74768aa6bf14185602b26",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_A_401/trace.jsonl",
+      "sha256": "4cfce660228d5b37ac79ff074a64f05e38b3e411aff761728b31a380a93f6b05",
+      "bytes": 3254531
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_A_402/config.json",
+      "sha256": "3f63c397d05704944dba7feeb18333704f40d8a79cbf860d6bcc0d7b584bb62c",
+      "bytes": 132
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_A_402/initialization.json",
+      "sha256": "6db3ed59e586f4154ef42d405ca8ba3e9c0d5e22ba5a298a5ca3911532b5d750",
+      "bytes": 6925
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_A_402/physics.json",
+      "sha256": "1774451a8a6783a243d387c21c3639fbc274ad9173549f7ddebfa07da9e9456b",
+      "bytes": 6558
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_A_402/result.json",
+      "sha256": "b7efde1ff23ac8ad269e81b91cc1e0743af722a338c74768aa6bf14185602b26",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_A_402/trace.jsonl",
+      "sha256": "1539c777372330ab96dd48398ec06d1bfa719b4257815091198756fb9c8df231",
+      "bytes": 3259404
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_B_401/config.json",
+      "sha256": "828f36822941e848fb71122ef861f3a6ffacdd6303ad48118b4c5c360d11f2e3",
+      "bytes": 132
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_B_401/initialization.json",
+      "sha256": "8973f863865c4e7986d9d6431cf195cdbc343c7642d6b15b289e80b068be556a",
+      "bytes": 6917
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_B_401/physics.json",
+      "sha256": "1774451a8a6783a243d387c21c3639fbc274ad9173549f7ddebfa07da9e9456b",
+      "bytes": 6558
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_B_401/result.json",
+      "sha256": "b7efde1ff23ac8ad269e81b91cc1e0743af722a338c74768aa6bf14185602b26",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_B_401/trace.jsonl",
+      "sha256": "6c708b152ab105c13279c15d7fe777d0e8b74b9c823c439f0b9ff6453e694145",
+      "bytes": 3305637
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_B_402/config.json",
+      "sha256": "2273b7b6844997ef6f1cf2b3192715ab52dfaaccb5abe237fc2a64cc699b25d1",
+      "bytes": 132
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_B_402/initialization.json",
+      "sha256": "4a722321ab299e2845f84221e5479abc8df6b588323a66bfbff63b3185eb2f9a",
+      "bytes": 6926
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_B_402/physics.json",
+      "sha256": "1774451a8a6783a243d387c21c3639fbc274ad9173549f7ddebfa07da9e9456b",
+      "bytes": 6558
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_B_402/result.json",
+      "sha256": "b7efde1ff23ac8ad269e81b91cc1e0743af722a338c74768aa6bf14185602b26",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_B_402/trace.jsonl",
+      "sha256": "d3765a032ec441a7d8acbf550822bdfa5ed2c0b4861dc6a0aeba809dbf9ec75e",
+      "bytes": 3309860
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_coast_401/config.json",
+      "sha256": "f4969964b95678c5c770fecb747b1e0463d026b8b94f9140b543003362ada6f5",
+      "bytes": 136
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_coast_401/initialization.json",
+      "sha256": "9ea77e3196b3b71ae6148ddffaf1cd0f575f3f404752ad679311c8d451b954b0",
+      "bytes": 6922
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_coast_401/physics.json",
+      "sha256": "1774451a8a6783a243d387c21c3639fbc274ad9173549f7ddebfa07da9e9456b",
+      "bytes": 6558
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_coast_401/result.json",
+      "sha256": "ef5eff05ed2be1fc58e90b8d22b8bde170427fb2988096e447438eed718966c3",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_coast_401/trace.jsonl",
+      "sha256": "22bd9ae464fb98c45b2088af5d2e83cbd389a3f6cb4d347aa83e9798fac342d7",
+      "bytes": 2166123
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_coast_402/config.json",
+      "sha256": "2a178365af60b73beb6da0391f947e4b7ef3ffbd6df2b8ef568235ed01c8c322",
+      "bytes": 136
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_coast_402/initialization.json",
+      "sha256": "3bc495cbca4dbcd3bd22146e0ecb4357d7c8bd1eb098c1184c2ab76b940cc5e2",
+      "bytes": 6925
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_coast_402/physics.json",
+      "sha256": "1774451a8a6783a243d387c21c3639fbc274ad9173549f7ddebfa07da9e9456b",
+      "bytes": 6558
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_coast_402/result.json",
+      "sha256": "ef5eff05ed2be1fc58e90b8d22b8bde170427fb2988096e447438eed718966c3",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p126_coast_402/trace.jsonl",
+      "sha256": "bc95dd4c4f652c05f31b8408922118c45b6f19282a21ecfdde23c6185c5356b3",
+      "bytes": 2169541
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_A_401/config.json",
+      "sha256": "204bfbac348bd7e9c87fe3bf10e5c292a7f7c3864ba6caaa93f85bd87a20bd32",
+      "bytes": 132
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_A_401/initialization.json",
+      "sha256": "600f1684566b6e09309badd24239142ee1592b78cf6c5ab143382f1ff366fc29",
+      "bytes": 6788
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_A_401/physics.json",
+      "sha256": "7dbf7d3efc620c0ce9c473c28602fda218d393a5cd542638ef7cb10d68627cfe",
+      "bytes": 6557
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_A_401/result.json",
+      "sha256": "b7efde1ff23ac8ad269e81b91cc1e0743af722a338c74768aa6bf14185602b26",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_A_401/trace.jsonl",
+      "sha256": "b1d9db4009dcde504e961520016527e9b861c42aa6cfb96ae64ab3abe624d35b",
+      "bytes": 3344985
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_A_402/config.json",
+      "sha256": "c4b00018ebdccb02245a83f215259dd42699c7cd70122ad92e3f43af37426a15",
+      "bytes": 132
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_A_402/initialization.json",
+      "sha256": "2c158a52938a70fd61efad928d6fae08894b8c74fb490fcad9834b1fcf650a6c",
+      "bytes": 6797
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_A_402/physics.json",
+      "sha256": "7dbf7d3efc620c0ce9c473c28602fda218d393a5cd542638ef7cb10d68627cfe",
+      "bytes": 6557
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_A_402/result.json",
+      "sha256": "b7efde1ff23ac8ad269e81b91cc1e0743af722a338c74768aa6bf14185602b26",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_A_402/trace.jsonl",
+      "sha256": "7bcb1c8a0c92eeb33b1325f3bff93b839e4835aa68cca34ae939f8e0be757aeb",
+      "bytes": 3349162
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_B_401/config.json",
+      "sha256": "aacf9c2de5145c385cdd01e09ffed49a2dcf9d061058557be31eac8c87af6e1c",
+      "bytes": 132
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_B_401/initialization.json",
+      "sha256": "0596f95f6ceea2fe5103d90190e8575868a7599c3b0b0c279c6971889a6f3f33",
+      "bytes": 6789
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_B_401/physics.json",
+      "sha256": "7dbf7d3efc620c0ce9c473c28602fda218d393a5cd542638ef7cb10d68627cfe",
+      "bytes": 6557
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_B_401/result.json",
+      "sha256": "b7efde1ff23ac8ad269e81b91cc1e0743af722a338c74768aa6bf14185602b26",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_B_401/trace.jsonl",
+      "sha256": "85a60f6eef047a537780fff6528fd67e8a24ad90786954acfb981855ba1574aa",
+      "bytes": 3336244
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_B_402/config.json",
+      "sha256": "9041ae6727e22988788d37a00c02a11da5488e0172cb11c17fe875ab2e88beb9",
+      "bytes": 132
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_B_402/initialization.json",
+      "sha256": "aad0f5cc9eb73be643fd29a8f51c50f31f38eb86337b7c5bfd33354a76c98bbc",
+      "bytes": 6793
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_B_402/physics.json",
+      "sha256": "7dbf7d3efc620c0ce9c473c28602fda218d393a5cd542638ef7cb10d68627cfe",
+      "bytes": 6557
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_B_402/result.json",
+      "sha256": "b7efde1ff23ac8ad269e81b91cc1e0743af722a338c74768aa6bf14185602b26",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_B_402/trace.jsonl",
+      "sha256": "341caf657c8ba0ef6b5ac6caef7fcfd585aea32ecfbc6660b763732c552f4656",
+      "bytes": 3350348
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_coast_401/config.json",
+      "sha256": "30057a2ba7ec4e41c50aa8d5ba8496170a137fda47740421c9492489669e7867",
+      "bytes": 136
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_coast_401/initialization.json",
+      "sha256": "d67b5445c35851f26ec57cebddf0877cd08bf064c1e54abf90ac24ec4fed835d",
+      "bytes": 6789
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_coast_401/physics.json",
+      "sha256": "7dbf7d3efc620c0ce9c473c28602fda218d393a5cd542638ef7cb10d68627cfe",
+      "bytes": 6557
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_coast_401/result.json",
+      "sha256": "ef5eff05ed2be1fc58e90b8d22b8bde170427fb2988096e447438eed718966c3",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_coast_401/trace.jsonl",
+      "sha256": "f9d0acd94dcc7090fd62193d13853d17dc45ef72fc2fa94ee8d9e7ae5bea3ad5",
+      "bytes": 2169174
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_coast_402/config.json",
+      "sha256": "54c00462ddef46111d475a5a17a600f85a669895ffedf74d6bd918e5dad26465",
+      "bytes": 136
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_coast_402/initialization.json",
+      "sha256": "9dbb15bb6190e178a65fca0d251658669bf45a9548289b652fa6fb1756eaf604",
+      "bytes": 6796
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_coast_402/physics.json",
+      "sha256": "7dbf7d3efc620c0ce9c473c28602fda218d393a5cd542638ef7cb10d68627cfe",
+      "bytes": 6557
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_coast_402/result.json",
+      "sha256": "ef5eff05ed2be1fc58e90b8d22b8bde170427fb2988096e447438eed718966c3",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p170_coast_402/trace.jsonl",
+      "sha256": "90789a5ad2afd4690dda8ed11cdcf6dc8b95e6ac7d53978917d5f79b4191c711",
+      "bytes": 2172379
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_A_401/config.json",
+      "sha256": "11a33144c148b2049a000ef7fda1feba5c2b5093586f8de66cc65b37e78f8086",
+      "bytes": 130
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_A_401/initialization.json",
+      "sha256": "98910f03679cf397364f19035326720b948c6d2dc2ea2dc8c185a43d63c8003c",
+      "bytes": 6947
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_A_401/physics.json",
+      "sha256": "f91d66387e3ad2897ca46df5e6b7f3f5db97fd7acfd20cff089b32837669320e",
+      "bytes": 6543
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_A_401/result.json",
+      "sha256": "b7efde1ff23ac8ad269e81b91cc1e0743af722a338c74768aa6bf14185602b26",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_A_401/trace.jsonl",
+      "sha256": "42d6f94f30db6ba871e263867085e0bc68a5904a6929aefb4e2270abd0cec6be",
+      "bytes": 3317089
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_A_402/config.json",
+      "sha256": "c26a41f3069a2d3f0aaa9a44cb7251a4617eaaa979b00c3e3dd5cfedabb69084",
+      "bytes": 130
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_A_402/initialization.json",
+      "sha256": "448b7ae8fcb96c66c6d80a512c5d840427ad671fce2f2b5ea8d5cef1764b58b8",
+      "bytes": 6947
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_A_402/physics.json",
+      "sha256": "f91d66387e3ad2897ca46df5e6b7f3f5db97fd7acfd20cff089b32837669320e",
+      "bytes": 6543
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_A_402/result.json",
+      "sha256": "b7efde1ff23ac8ad269e81b91cc1e0743af722a338c74768aa6bf14185602b26",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_A_402/trace.jsonl",
+      "sha256": "6aa4eb553041501368f00a69d2c6bd65a773ac19045fa1869da7e746cd846585",
+      "bytes": 3318710
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_B_401/config.json",
+      "sha256": "0fd8f2721fd43a857fe02fe51545b5fd8899be92165fadd181b08bf608287b24",
+      "bytes": 130
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_B_401/initialization.json",
+      "sha256": "e19b3c2fa7ac3081638ec2f924b7193803965b4b4201201a8c4603c3f31b9c43",
+      "bytes": 6946
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_B_401/physics.json",
+      "sha256": "f91d66387e3ad2897ca46df5e6b7f3f5db97fd7acfd20cff089b32837669320e",
+      "bytes": 6543
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_B_401/result.json",
+      "sha256": "b7efde1ff23ac8ad269e81b91cc1e0743af722a338c74768aa6bf14185602b26",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_B_401/trace.jsonl",
+      "sha256": "6d3676a1b46fd2244e17a8f2e523ddd6f70b7cd6797572b3dfd4b0dfa0bf8e79",
+      "bytes": 3392059
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_B_402/config.json",
+      "sha256": "aaa9ec6b964d32a30fb2e979e6dff1c5349f3a7c3df72e9e5bb9999c7cb33fe7",
+      "bytes": 130
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_B_402/initialization.json",
+      "sha256": "fe6f463fba99943d15ddaee0fc4d9c8717c794bca0067687aeec3aab2aa73e1c",
+      "bytes": 6947
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_B_402/physics.json",
+      "sha256": "f91d66387e3ad2897ca46df5e6b7f3f5db97fd7acfd20cff089b32837669320e",
+      "bytes": 6543
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_B_402/result.json",
+      "sha256": "b7efde1ff23ac8ad269e81b91cc1e0743af722a338c74768aa6bf14185602b26",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_B_402/trace.jsonl",
+      "sha256": "770fc4cb2054d808dba3581f7663cac12db59fe9e237ef6d5428d3a46caa2f7b",
+      "bytes": 3391367
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_coast_401/config.json",
+      "sha256": "c244d7f322a607e33c62545d6e26ce133e381a54a504b5de14627b1341327c3e",
+      "bytes": 134
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_coast_401/initialization.json",
+      "sha256": "fb62b2217b53abcb89f35efa06458406ce2a6572002552ee1ef35af8b2317fa2",
+      "bytes": 6943
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_coast_401/physics.json",
+      "sha256": "f91d66387e3ad2897ca46df5e6b7f3f5db97fd7acfd20cff089b32837669320e",
+      "bytes": 6543
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_coast_401/result.json",
+      "sha256": "ef5eff05ed2be1fc58e90b8d22b8bde170427fb2988096e447438eed718966c3",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_coast_401/trace.jsonl",
+      "sha256": "a7e70e816ab14e18470b1d139614e44b5bb23c7f53d7b79c055ea0d16d4e80ae",
+      "bytes": 2179453
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_coast_402/config.json",
+      "sha256": "eeda47bf38d9b7f4f7bc42652328c6951cf31de19096b9e8e351ce3fa01e412a",
+      "bytes": 134
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_coast_402/initialization.json",
+      "sha256": "50214c626a12fc6da7dff0f27d5cea95f3718809abb86c606891d44b26448d03",
+      "bytes": 6956
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_coast_402/physics.json",
+      "sha256": "f91d66387e3ad2897ca46df5e6b7f3f5db97fd7acfd20cff089b32837669320e",
+      "bytes": 6543
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_coast_402/result.json",
+      "sha256": "ef5eff05ed2be1fc58e90b8d22b8bde170427fb2988096e447438eed718966c3",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/responses/p27_coast_402/trace.jsonl",
+      "sha256": "a7046b89db78f621e7ff649e3282a6bc175bdd1cabbba936ef0e5f1328dc5723",
+      "bytes": 2181384
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P0-sham-reapply_401/config.json",
+      "sha256": "d0ea6baa118678d2c4d662ead81a77d3a5611a44dccb434e7c205c1691b6b5d3",
+      "bytes": 142
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P0-sham-reapply_401/initialization.json",
+      "sha256": "1004ea8f05b8c704adc70bd0e159db5e5131901469720e0aa8d94576b0781e5b",
+      "bytes": 6944
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P0-sham-reapply_401/physics.json",
+      "sha256": "1789e71a782e8fe83cfdff240ab27cea1fb5a182edf1b877fe1207fae345f5d9",
+      "bytes": 6558
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P0-sham-reapply_401/result.json",
+      "sha256": "4f07c92cdb6ad6b67ed5383a33c1ef75371d0b1e68c35159d2ba28488c714056",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P0-sham-reapply_401/trace.jsonl",
+      "sha256": "98cd02e574467d3a4ba21983cc6adc056e195dad494edf4b9c47337a1ecd9210",
+      "bytes": 3336684
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P0-sham-reapply_402/config.json",
+      "sha256": "abb81795418282b6b8edf9d75b6859d20f18eeccfa1b95cd318f70adf7584f9f",
+      "bytes": 142
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P0-sham-reapply_402/initialization.json",
+      "sha256": "cbe80094884fdafbd0f02a04f4f2e0cf6363b8e4315adc847ddfde18ce538416",
+      "bytes": 6933
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P0-sham-reapply_402/physics.json",
+      "sha256": "1789e71a782e8fe83cfdff240ab27cea1fb5a182edf1b877fe1207fae345f5d9",
+      "bytes": 6558
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P0-sham-reapply_402/result.json",
+      "sha256": "4f07c92cdb6ad6b67ed5383a33c1ef75371d0b1e68c35159d2ba28488c714056",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P0-sham-reapply_402/trace.jsonl",
+      "sha256": "5f73deb8d9269bdfaecf58efa551c9f0bd889963a2a0b5cf270a89c5ce8b3a2a",
+      "bytes": 3338111
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P0-unmodified_401/config.json",
+      "sha256": "b512ad32d8c365ea7c373e6d32b8c3f2b53cf76eda87d03709c39e5c4ce0ef44",
+      "bytes": 138
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P0-unmodified_401/initialization.json",
+      "sha256": "de54c33829c2ad470df51ae140b2ac75dee30208949fa9be2ba4ffdd7b216886",
+      "bytes": 6959
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P0-unmodified_401/physics.json",
+      "sha256": "f91d66387e3ad2897ca46df5e6b7f3f5db97fd7acfd20cff089b32837669320e",
+      "bytes": 6543
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P0-unmodified_401/result.json",
+      "sha256": "4f07c92cdb6ad6b67ed5383a33c1ef75371d0b1e68c35159d2ba28488c714056",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P0-unmodified_401/trace.jsonl",
+      "sha256": "3e6f7270664ee960365750c8a2850fd4dee8ee535cb34b3f17c4a0c355084438",
+      "bytes": 3323311
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P0-unmodified_402/config.json",
+      "sha256": "bb9122a2fcaebb3892f2397201ce2d6415fbcb0f7ad61ce39c0ab28ef83fba58",
+      "bytes": 138
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P0-unmodified_402/initialization.json",
+      "sha256": "f9fc150bbba71f083850444d559a1a304104c0eb4362a48897ae7f024e5ebac5",
+      "bytes": 6955
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P0-unmodified_402/physics.json",
+      "sha256": "f91d66387e3ad2897ca46df5e6b7f3f5db97fd7acfd20cff089b32837669320e",
+      "bytes": 6543
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P0-unmodified_402/result.json",
+      "sha256": "4f07c92cdb6ad6b67ed5383a33c1ef75371d0b1e68c35159d2ba28488c714056",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P0-unmodified_402/trace.jsonl",
+      "sha256": "04625ce3e08664767562144fc52658f34bb6793ba1085a879adbd15fd99cfed9",
+      "bytes": 3323262
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P1-wheel-brake-experimental_401/config.json",
+      "sha256": "1a13e2bb5ec15f2a02c6db7feb91f905bef0d65443ed8a7e57ebc2f0f40c8a3e",
+      "bytes": 166
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P1-wheel-brake-experimental_401/initialization.json",
+      "sha256": "e224bb80d851843be7a7026ce4724d92a922a5db3a2e5dea8b145464be4caac2",
+      "bytes": 6940
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P1-wheel-brake-experimental_401/physics.json",
+      "sha256": "d4e8534000709095e06daef6b10e6671dfff85d5692d32d424876231a547a120",
+      "bytes": 6567
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P1-wheel-brake-experimental_401/result.json",
+      "sha256": "3fdb49cd53ac18c008cd90fdea107633be9cb8d80efd35c474289da37fd15444",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P1-wheel-brake-experimental_401/trace.jsonl",
+      "sha256": "32b671ec552b0203a67a738c23f93d600055b41051cb06cf0c6090fdd6fc823b",
+      "bytes": 3340412
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P1-wheel-brake-experimental_402/config.json",
+      "sha256": "fc2c8b4f3fa27c7c4c702115e3e41836fe1784f5b80106bdb1a504e7ba3678ca",
+      "bytes": 166
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P1-wheel-brake-experimental_402/initialization.json",
+      "sha256": "3178706c430387cbb1c40ce245371b7f3eec88c49c0eebcc91a0caa48bd6a61d",
+      "bytes": 6939
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P1-wheel-brake-experimental_402/physics.json",
+      "sha256": "d4e8534000709095e06daef6b10e6671dfff85d5692d32d424876231a547a120",
+      "bytes": 6567
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P1-wheel-brake-experimental_402/result.json",
+      "sha256": "3fdb49cd53ac18c008cd90fdea107633be9cb8d80efd35c474289da37fd15444",
+      "bytes": 451
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/P1-wheel-brake-experimental_402/trace.jsonl",
+      "sha256": "a3047b9d32ade5b0d48fe68f702cc355a71f49bbdcda584e7a5e40be4a4127b4",
+      "bytes": 3340465
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/completion.json",
+      "sha256": "92fd7ff979d2b5c45462489a442a4e7cb0729315beac8c0e04e060c710b4b01c",
+      "bytes": 85338
+    },
+    {
+      "path": "reports/m6f_trials_0916/sham/launch.json",
+      "sha256": "d144934c4da2bc031fbd909b971b03f47240dce7b51862d76e25b8e14bba5e55",
+      "bytes": 88596
+    },
+    {
+      "path": "reports/m6f_guard_0915/completion.json",
+      "sha256": "d548e867c0cb279b6432efcff651ed16fc28351dffc4ad5f1dc7e8ad3a3c4915",
+      "bytes": 83172
+    },
+    {
+      "path": "reports/m6f_guard_0915/launch.json",
+      "sha256": "5f326097fabef405c7e2f27c470e75f04e0c45d35deace2790c8784bb8c82160",
+      "bytes": 85881
+    },
+    {
+      "path": "reports/m6f_guard_0915/p74_401/physics.json",
+      "sha256": "5d61ce063175735331b37c23ba5d260a7f320e1561a3df0bcb08c13942f85dc2",
+      "bytes": 2676
+    },
+    {
+      "path": "reports/m6f_guard_0915/p74_401/result.json",
+      "sha256": "cb8d5795e2e563628788e4141613365a937595a6b95ffe5974b2c6982fe21729",
+      "bytes": 444
+    },
+    {
+      "path": "reports/m6f_guard_0915/p74_401/road.json",
+      "sha256": "224f9510d6ce1960cd6e316c8184fd332234e999cf023996989887d5ef6e1e28",
+      "bytes": 181
+    },
+    {
+      "path": "reports/m6f_guard_0915/p74_401/trace.jsonl",
+      "sha256": "cfb6b211c8884d30ff8865d8a4ea9c9e91cf5789b5bef493895af750ed044076",
+      "bytes": 482435
+    },
+    {
+      "path": "reports/m6f_guard_0915/p74_402/physics.json",
+      "sha256": "5d61ce063175735331b37c23ba5d260a7f320e1561a3df0bcb08c13942f85dc2",
+      "bytes": 2676
+    },
+    {
+      "path": "reports/m6f_guard_0915/p74_402/result.json",
+      "sha256": "cb8d5795e2e563628788e4141613365a937595a6b95ffe5974b2c6982fe21729",
+      "bytes": 444
+    },
+    {
+      "path": "reports/m6f_guard_0915/p74_402/road.json",
+      "sha256": "224f9510d6ce1960cd6e316c8184fd332234e999cf023996989887d5ef6e1e28",
+      "bytes": 181
+    },
+    {
+      "path": "reports/m6f_guard_0915/p74_402/trace.jsonl",
+      "sha256": "d64d5fd4b647d85bd776b31b6f6b839e78bbf910f20c72429421d30a700ee9ed",
+      "bytes": 482634
+    },
+    {
+      "path": "reports/m6f_guard_0915/p91_401/physics.json",
+      "sha256": "5d61ce063175735331b37c23ba5d260a7f320e1561a3df0bcb08c13942f85dc2",
+      "bytes": 2676
+    },
+    {
+      "path": "reports/m6f_guard_0915/p91_401/result.json",
+      "sha256": "eccfd527fc561d419c44e6290298dc285be41655f92ddd36cd35bb0f2da42c12",
+      "bytes": 444
+    },
+    {
+      "path": "reports/m6f_guard_0915/p91_401/road.json",
+      "sha256": "e797c1e3e95426edc11be82d0bb05f1ce368b360d01dff97bab2ebb6c08bb19d",
+      "bytes": 182
+    },
+    {
+      "path": "reports/m6f_guard_0915/p91_401/trace.jsonl",
+      "sha256": "184ea99dc44fe630521b56cf6d4711568f303ce3e829954e7115a17ae4b11ae1",
+      "bytes": 492588
+    },
+    {
+      "path": "reports/m6f_guard_0915/p91_402/physics.json",
+      "sha256": "5d61ce063175735331b37c23ba5d260a7f320e1561a3df0bcb08c13942f85dc2",
+      "bytes": 2676
+    },
+    {
+      "path": "reports/m6f_guard_0915/p91_402/result.json",
+      "sha256": "eccfd527fc561d419c44e6290298dc285be41655f92ddd36cd35bb0f2da42c12",
+      "bytes": 444
+    },
+    {
+      "path": "reports/m6f_guard_0915/p91_402/road.json",
+      "sha256": "e797c1e3e95426edc11be82d0bb05f1ce368b360d01dff97bab2ebb6c08bb19d",
+      "bytes": 182
+    },
+    {
+      "path": "reports/m6f_guard_0915/p91_402/trace.jsonl",
+      "sha256": "bf31466f99c8e923cedb4ea4f56df7797b00808d1f35b785cc29f3509140dad6",
+      "bytes": 492980
+    }
+  ]
+}

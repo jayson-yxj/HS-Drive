@@ -1,9 +1,68 @@
 {
- "kind":"SDK_introspection_and_official_source_audit_with_historical_CARLA_evidence",
- "carla_version":"0.9.15","source":"Privileged","true_engine_wheel_api":false,
- "physics_reference":"3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6",
- "available":["requested control","applied CARLA control and Gear","snapshot pose/velocity/API acceleration/frame/time","public PhysicsControl parameters","wheel steering angle and visual pitch (not solver omega)"],
- "NotAvailable":["get_telemetry_data RPC in original SDK","actual wheel speed/slip/force/load via original public API","per-wheel brake torque","smoothed PhysX analog commands","solver substep/constraint impulse"],
- "native_instrumentation":{"status":"NotRun","reason":"0916 real wheel API obtained; user instructed not to develop both paths simultaneously","full_build_environment":"NotVerified","binary_source_identity":"official0915 tag is explanatory reference, no reproducible exact UE build manifest"},
- "default_modifications":false,"historical_P1_status":"NoGo","claim_limit":"Body acceleration alone cannot determine brake torque or solver cause. Original 0915 physical root cause remains unproven by cross-version0916 observation."
+  "kind": "SDK_introspection_and_official_source_audit_with_historical_CARLA_evidence",
+  "carla_version": "0.9.15",
+  "source": "Privileged",
+  "true_engine_wheel_api": false,
+  "physics_reference": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6",
+  "available": [
+    "requested control",
+    "applied CARLA control and Gear",
+    "snapshot pose/velocity/API acceleration/frame/time",
+    "public PhysicsControl parameters",
+    "wheel steering angle and visual pitch (not solver omega)"
+  ],
+  "NotAvailable": [
+    "get_telemetry_data RPC in original SDK",
+    "actual wheel speed/slip/force/load via original public API",
+    "per-wheel brake torque",
+    "smoothed PhysX analog commands",
+    "solver substep/constraint impulse"
+  ],
+  "native_instrumentation": {
+    "status": "NotRun",
+    "reason": "0916 real wheel API obtained; user instructed not to develop both paths simultaneously",
+    "full_build_environment": "NotVerified",
+    "binary_source_identity": "official0915 tag is explanatory reference, no reproducible exact UE build manifest"
+  },
+  "default_modifications": false,
+  "historical_P1_status": "NoGo",
+  "claim_limit": "Body acceleration alone cannot determine brake torque or solver cause. Original 0915 physical root cause remains unproven by cross-version0916 observation.",
+  "base": "b0ee249236415627896000d89fe6d9fa31023e59",
+  "analysis_source_commit": "67b1048f8c634406e40f93529df463ea5d72d9cb",
+  "source_sha256": {
+    "tools/m6f_evidence.py": "40b51ae15076f94f7e0dfd4ee3c6600138f779a8c164a621fa4c09f981368c26",
+    "tools/m6f_guard_analyze.py": "837db6d654e64d6135cfa38aa3230f66c449ab794fc09fe6b8300f7b4422f9e1",
+    "tools/m6f_finalize.py": "fcfb61bae27302a30ffa7bc29bbfdb054a9bcb6a95a17fe1090056cd64c08ee3",
+    "tools/m6f_analyze.py": "8eaa9bdf20acb3d9e78ffca2734b37156cd88b1edb6c672504c12db175bee57b",
+    "tools/m6f_probe.py": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+    "tools/m6f_figures.py": "46a5d3a3bce2c84da96cb555af3a6fcaedc080a80d6a2ca67a742fc65ef7a524",
+    "tools/m6f_launch.py": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+    "tools/m6f_guard_probe.py": "ce1db15b1c12ae4ff35687b0663702926a8e0ca30de24c1296827b15c2e83cfe",
+    "simulator/m6f_telemetry.py": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+    "tests/test_m6f_source_capture.py": "83773ff9da26ea4d8d7a9e0e5a92cbed9bba30571bed22d62defa6f571ac9152",
+    "tests/test_m6f_telemetry.py": "3bd5f35661a0ef01e936fef38b6a1889790f706bb1c795083c32c5cbd5c4cee8",
+    "configs/m6f/acquisition_budget.json": "ff648015bee75a0f6552e053def87e16a483342dfddce3153cdedc2705bb5e2c",
+    "configs/m6f/protocol.json": "c680b86a3bd7a242c3b686419b6ea610450ff88a394761e2eec1a3b963dfdfe7"
+  },
+  "execution_sources": "Each batch launch/completion includes actual import source/code SHA and Git commit; analysis commit is not claimed as simulation execution commit.",
+  "configuration": {
+    "path": "configs/m6f/protocol.json",
+    "sha256": "c680b86a3bd7a242c3b686419b6ea610450ff88a394761e2eec1a3b963dfdfe7",
+    "bytes": 1590
+  },
+  "acquisition_budget": {
+    "path": "configs/m6f/acquisition_budget.json",
+    "sha256": "ff648015bee75a0f6552e053def87e16a483342dfddce3153cdedc2705bb5e2c",
+    "bytes": 417
+  },
+  "reproduction": "docs/M6F_IMPLEMENTATION.md",
+  "versions": {
+    "main": "0.9.15",
+    "independent_research": "0.9.16"
+  },
+  "trial_manifest": {
+    "path": "reports/m6f_execution_logs/trial_manifest.json",
+    "sha256": "dc49fae27cc44c8505807b287fb889d02d05c09c1a44af10b706ccac8561ca26",
+    "bytes": 32130
+  }
 }

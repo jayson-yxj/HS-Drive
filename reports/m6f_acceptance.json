@@ -1,0 +1,258 @@
+{
+  "base": "b0ee249236415627896000d89fe6d9fa31023e59",
+  "analysis_source_commit": "67b1048f8c634406e40f93529df463ea5d72d9cb",
+  "source_sha256": {
+    "tools/m6f_evidence.py": "40b51ae15076f94f7e0dfd4ee3c6600138f779a8c164a621fa4c09f981368c26",
+    "tools/m6f_guard_analyze.py": "837db6d654e64d6135cfa38aa3230f66c449ab794fc09fe6b8300f7b4422f9e1",
+    "tools/m6f_finalize.py": "fcfb61bae27302a30ffa7bc29bbfdb054a9bcb6a95a17fe1090056cd64c08ee3",
+    "tools/m6f_analyze.py": "8eaa9bdf20acb3d9e78ffca2734b37156cd88b1edb6c672504c12db175bee57b",
+    "tools/m6f_probe.py": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+    "tools/m6f_figures.py": "46a5d3a3bce2c84da96cb555af3a6fcaedc080a80d6a2ca67a742fc65ef7a524",
+    "tools/m6f_launch.py": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+    "tools/m6f_guard_probe.py": "ce1db15b1c12ae4ff35687b0663702926a8e0ca30de24c1296827b15c2e83cfe",
+    "simulator/m6f_telemetry.py": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+    "tests/test_m6f_source_capture.py": "83773ff9da26ea4d8d7a9e0e5a92cbed9bba30571bed22d62defa6f571ac9152",
+    "tests/test_m6f_telemetry.py": "3bd5f35661a0ef01e936fef38b6a1889790f706bb1c795083c32c5cbd5c4cee8",
+    "configs/m6f/acquisition_budget.json": "ff648015bee75a0f6552e053def87e16a483342dfddce3153cdedc2705bb5e2c",
+    "configs/m6f/protocol.json": "c680b86a3bd7a242c3b686419b6ea610450ff88a394761e2eec1a3b963dfdfe7"
+  },
+  "execution_sources": "Each batch launch/completion includes actual import source/code SHA and Git commit; analysis commit is not claimed as simulation execution commit.",
+  "configuration": {
+    "path": "configs/m6f/protocol.json",
+    "sha256": "c680b86a3bd7a242c3b686419b6ea610450ff88a394761e2eec1a3b963dfdfe7",
+    "bytes": 1590
+  },
+  "acquisition_budget": {
+    "path": "configs/m6f/acquisition_budget.json",
+    "sha256": "ff648015bee75a0f6552e053def87e16a483342dfddce3153cdedc2705bb5e2c",
+    "bytes": 417
+  },
+  "reproduction": "docs/M6F_IMPLEMENTATION.md",
+  "versions": {
+    "main": "0.9.15",
+    "independent_research": "0.9.16"
+  },
+  "stage": "M6-F",
+  "status": "Partial",
+  "kind": "separated_actual_CARLA_offline_synthetic_acceptance",
+  "source": "Privileged",
+  "decisions": {
+    "telemetry_interface": "Passed_limited_real_engine_API",
+    "execution_chain_causality": "Partial",
+    "isolated0916_research": "Go_limited_observability",
+    "main_backend_migration": "NotApproved",
+    "normal_stop_controller": "NoGo_prerequisites_not_met",
+    "Physics_P1": "NoGo_historical_unchanged",
+    "new_physics_search": "NotRun_not_justified",
+    "G1": "Partial_no_independent_dangerous_positive",
+    "strict20Hz": "Open_failed_long_tail",
+    "visual_driving_safety": "NotValidated",
+    "Oracle_complete_Pilot": "NotRun"
+  },
+  "counts": {
+    "CARLA0916": 26,
+    "CARLA0915_guard": 4,
+    "total_vehicle_trials": 30,
+    "frames0916": 14810,
+    "frame_alignment_failures": 0,
+    "delayed_applied_command_rows": 25
+  },
+  "measurements": {
+    "rpc": {
+      "n": 28740,
+      "p50": 0.4591774195432663,
+      "p95": 0.7385029457509518,
+      "p99": 0.9937260672450066,
+      "max": 185.99462695419788
+    },
+    "control_intervals": {
+      "n": 14784,
+      "p50": 49.9946940690279,
+      "p95": 50.22982442751527,
+      "p99": 50.43527439236641,
+      "max": 200.22371225059032
+    },
+    "deadline_misses": 48,
+    "sham_live_speed_jump_mps": -0.002978399395942688,
+    "guard_natural_positive_trials": 0
+  },
+  "tests": [
+    {
+      "name": "full_tests",
+      "counts": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "9",
+        "tests": "389",
+        "time": "19.631",
+        "timestamp": "2026-10-23T20:13:49.957991+08:00",
+        "hostname": "gpufree-container"
+      },
+      "artifact": {
+        "path": "reports/m6f_execution_logs/full_tests.xml",
+        "sha256": "ef63973488415cdfc21f9101998d34a685ed65932653f97e01db26f2a2331b8e",
+        "bytes": 49215
+      }
+    },
+    {
+      "name": "sdk_tests_corrected",
+      "counts": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "1",
+        "tests": "45",
+        "time": "0.327",
+        "timestamp": "2026-10-23T20:15:07.161379+08:00",
+        "hostname": "gpufree-container"
+      },
+      "artifact": {
+        "path": "reports/m6f_execution_logs/sdk_tests_corrected.xml",
+        "sha256": "69a045fee58efe1f44963e79192112da8a1275af7e79009fcbb239ae041e01be",
+        "bytes": 5748
+      }
+    },
+    {
+      "name": "preflight_tests",
+      "counts": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "22",
+        "time": "0.227",
+        "timestamp": "2026-10-23T19:48:37.762703+08:00",
+        "hostname": "gpufree-container"
+      },
+      "artifact": {
+        "path": "reports/m6f_execution_logs/preflight_tests.xml",
+        "sha256": "e221045614f7089f821e7ccc4f5cfb33b0ca9440a23acf577c11185666b223d5",
+        "bytes": 2854
+      }
+    },
+    {
+      "name": "sdk0916_tests",
+      "counts": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "9",
+        "time": "0.048",
+        "timestamp": "2026-10-23T20:22:01.933518+08:00",
+        "hostname": "gpufree-container"
+      },
+      "artifact": {
+        "path": "reports/m6f_execution_logs/sdk0916_tests.xml",
+        "bytes": 1284,
+        "sha256": "46fd657ef1b35afa69a8db09a803273d4079da367eb68b7eede4d60318f90e2a"
+      }
+    }
+  ],
+  "failed_test_command": {
+    "path": "reports/m6f_execution_logs/sdk_tests.txt",
+    "sha256": "b9d24ff3433b60175170201234abacffaaed69408740829a6e5e0f958254b3cd",
+    "bytes": 87
+  },
+  "preservation": {
+    "kind": "actual_server_SHA_audit",
+    "counts": {
+      "base_tracked": 13169,
+      "inherited_assets": 50867
+    },
+    "errors": [],
+    "passed": true,
+    "seconds": 46.70642924308777
+  },
+  "unchanged": [
+    "default_control",
+    "0915_PhysicsP0",
+    "Planner/Safety6s",
+    "DepthBins48",
+    "models",
+    "historical_reports",
+    "G1_thresholds",
+    "main_branch"
+  ],
+  "not_run": [
+    "0915_native_rebuild",
+    "new_controller_or_PID_search",
+    "new_Physics_family",
+    "full_Oracle_closed_loop_Pilot",
+    "vision_control",
+    "new_Occupancy_training",
+    "independent_dangerous_G1_protected_response_absent_natural_positive"
+  ],
+  "figures": [
+    {
+      "path": "reports/m6f_figures/m6f_guard_raw.png",
+      "sha256": "357a50e5c648231854f69c332cc4ce503be3566beb932bed5cd744c737b636f8",
+      "bytes": 211748
+    },
+    {
+      "path": "reports/m6f_figures/m6f_light_brake_chain.png",
+      "sha256": "17ebdfaa4f0c3d8d3b9b494a53606c86d4e6418a35d037fc6ae969303f36b47b",
+      "bytes": 296433
+    },
+    {
+      "path": "reports/m6f_figures/m6f_rpc_overhead.png",
+      "sha256": "523705b27b27c7ca32b5cc3b48c5be8e21302e5ce547c31318cd049287f7bdfb",
+      "bytes": 38958
+    },
+    {
+      "path": "reports/m6f_figures/m6f_sham_raw.png",
+      "sha256": "13a05b1c05e2d71fa46aee4a717e49295d4954bf48cdb3e59fc91e7d1c3b8f7a",
+      "bytes": 216401
+    },
+    {
+      "path": "reports/m6f_figures/m6f_startup_chain.png",
+      "sha256": "93b3466d982df8e72e2cc6c137a9d3a8d40c0b236f4bc6db813eda86e8f8e499",
+      "bytes": 244207
+    }
+  ],
+  "trial_manifest": {
+    "path": "reports/m6f_execution_logs/trial_manifest.json",
+    "sha256": "dc49fae27cc44c8505807b287fb889d02d05c09c1a44af10b706ccac8561ca26",
+    "bytes": 32130
+  },
+  "loaded_source_validation": {
+    "kind": "offline_actual_execution_provenance_audit",
+    "batches": [
+      {
+        "path": "reports/m6f_trials_0916/sham/completion.json",
+        "git_commit": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+        "project_modules": 15,
+        "external_modules": 218
+      },
+      {
+        "path": "reports/m6f_trials_0916/overhead/completion.json",
+        "git_commit": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+        "project_modules": 15,
+        "external_modules": 218
+      },
+      {
+        "path": "reports/m6f_trials_0916/responses/completion.json",
+        "git_commit": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+        "project_modules": 15,
+        "external_modules": 218
+      },
+      {
+        "path": "reports/m6f_trials_0916/feasibility/completion.json",
+        "git_commit": "c1e2498904537e81b27162044234a471cefe13d1",
+        "project_modules": 15,
+        "external_modules": 218
+      },
+      {
+        "path": "reports/m6f_guard_0915/completion.json",
+        "git_commit": "02e79559f8c9f36372d3356d621968b07cfdd059",
+        "project_modules": 19,
+        "external_modules": 212
+      }
+    ],
+    "errors": [],
+    "all_source_bytes_unchanged": true,
+    "final_physics_unchanged": true,
+    "trials": 26
+  }
+}
