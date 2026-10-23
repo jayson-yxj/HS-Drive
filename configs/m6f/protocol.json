@@ -1,0 +1,18 @@
+{
+ "stage":"M6-F", "base":"b0ee249", "source":"Privileged",
+ "version":"0.9.16", "port":2200, "map":"Town03", "blueprint":"vehicle.tesla.model3",
+ "dt":0.05,"max_substep_dt":0.01,"max_substeps":10,
+ "repeat_ids":[401,402], "cycle_positions":[27,126,170], "interfaces":["A","B"],
+ "cycle_phases":[["initialize",30],["hold_initial",40],["cold_run",120],["normal_stop",120],["hold_warm",40],["warm_run",120],["final_stop",120],["hold_final",40]],
+ "coast_positions":[27,126,170], "sham_position":27,
+ "sham_groups":["P0-unmodified","P0-sham-reapply","P1-wheel-brake-experimental"],
+ "sham_timing":"after first spawn tick, before fixed initialization; original reapplied before destruction",
+ "overhead":"two ABBA blocks, 100 stationary ticks each, telemetry off/on, raw acquisition cost; no strict20Hz certification",
+ "guard_0915_positions":[74,91],"guard_mode":"frozen M6E warm_service_auto_015, two repeats, no thresholds changed, no assigned velocity",
+ "gate":"P0 real stable omega and slip required before finite response probes; full force validity assessed separately",
+ "normal_comfort":{"raw_decel":1.8,"raw_jerk_peak":5,"moving_jerk_p95":2.5},
+ "no_controller_tuning":true,"no_physics_search":true,"visual_control":false,
+ "missing_fields":"NotAvailable, no formula substitution", "max_trials_0916":28,
+ "telemetry_frame":"No internal frame field; bracket exclusively owned synchronous tick; reject moving bracket; substep unknown",
+ "source_freeze":"captured source bytes + compiled module code hash at import; full external module disk inventory; verify local unchanged at end"
+}
