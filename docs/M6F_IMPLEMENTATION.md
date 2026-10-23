@@ -45,7 +45,17 @@ runuser -u ubuntu -- bash scripts/start_carla.sh /root/gpufree-data/simulators/C
 
 ```bash
 .venv-gpu/bin/python -m tools.m6f_analyze
+.venv-gpu/bin/python -m tools.m6f_guard_analyze
+.venv-gpu/bin/python -m tools.m6f_figures
+.venv-gpu/bin/python -m tools.m6f_evidence
+.venv-gpu/bin/python -m tools.m6f_finalize
 .venv/bin/python -m pytest -q tests/test_m6f_telemetry.py tests/test_m6e_guard.py tests/test_m6e_actuation.py
 ```
 
 GPU仅用于CARLA渲染和停机后的离线画图；没有神经网络训练。实际完整测试、图表和最终报告步骤随交付记录。历史资产SHA在`m6f_execution_logs/base_freeze.json`，最终逐项核验。未执行前置条件不满足的工作包必须NotRun。
+
+源码冻结顺序：可行性c1e2498，响应58a8d05，Sham/开销29670eb，Guard02e7955。分析脚本在停机后单独提交，不能替代这些执行版本。首次完整回归380passed/8skipped/1xfail；SDK补测44passed/1xfail。首次SDK命令因不存在的test_m6c_geometry.py退出4，日志保留，正确文件为test_m6c_stopping.py。
+
+Physics操作前后虽同frame，live telemetry速度会复位而ActorSnapshot缓存未变；这类初始化记录不能作为同步动力学配对。25个相位切换请求晚一帧应用，全部保留，分析采用Applied时间，同时披露Sham响应比较的命令时序混杂。
+
+下载、安装、版本校验和真实试验输入清单在m6f_execution_logs中。最终报告构建需要preservation.json；该审计逐个重算base_freeze及runs/m6b_logs/freeze.json所列SHA。数据原始JSONL和原始分析v1均保留。
