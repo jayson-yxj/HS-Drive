@@ -28,7 +28,7 @@ class GuardConfig:
 
 class DisplacementGuard:
     def __init__(self,config=GuardConfig()):
-        self.config=config;self.history=deque();self.previous=None;self.anchor=None;self.axis=None;self.route_axis=None
+        self.config=config;self.history=deque();self.previous=None;self.anchor=None;self.axis=None;self.route_axis=None;self.route_anchor=None
         self.risk=False;self.last_risk_time=None;self.latched=None;self.events=[];self.last_level='clear'
 
     def _result(self,s,reason=None,**metrics):
@@ -54,10 +54,10 @@ class DisplacementGuard:
             if df!=1 or dt>cfg.max_gap_s or abs(dt-cfg.dt_s)>.005:self.latched='SnapshotGap';return self._result(s)
             delta=p-old['p'];forward=float(delta@old['axis']);along=float(delta@old['rt'])
         else:forward=along=0.
-        if self.anchor is None:self.anchor=p.copy();self.axis=axis.copy();self.route_axis=rt.copy()
+        if self.anchor is None:self.anchor=p.copy();self.axis=axis.copy();self.route_axis=rt.copy();self.route_anchor=p.copy()
         self.history.append(dict(t=s.timestamp_s,back=max(0.,-forward),route_back=max(0.,-along),negative=s.v_forward_mps<cfg.negative_velocity_mps))
         while self.history and s.timestamp_s-self.history[0]['t']>cfg.window_s+1e-6:self.history.popleft()
-        progress=float((p-self.anchor)@self.axis);route_progress=float((p-self.anchor)@self.route_axis)
+        progress=float((p-self.anchor)@self.axis);route_progress=float((p-self.route_anchor)@self.route_axis)
         net=max(0.,-progress);net_route=max(0.,-route_progress)
         backward=sum(q['back'] for q in self.history);route_backward=sum(q['route_back'] for q in self.history);n=sum(q['negative'] for q in self.history)
         corroborated=n>=cfg.negative_samples
@@ -72,6 +72,8 @@ class DisplacementGuard:
         # Only move anchor on measured forward progress with no active risk.
         # Goal advancing, changing gear or a sign flip cannot reset accumulated risk.
         if not self.risk and not self.latched and progress>cfg.risk_release_forward_m:
-            self.anchor=p.copy();self.axis=axis.copy();self.route_axis=rt.copy()
+            self.anchor=p.copy();self.axis=axis.copy()
+        if not self.risk and not self.latched and route_progress>cfg.risk_release_forward_m:
+            self.route_anchor=p.copy();self.route_axis=rt.copy()
         self.previous=dict(t=s.timestamp_s,frame=s.frame_id,p=p.copy(),axis=axis,rt=rt)
         return self._result(s,'BackwardRisk' if self.risk else None,net_backward_m=net,window_backward_m=backward,route_net_backward_m=net_route,route_window_backward_m=route_backward,negative_samples=n)

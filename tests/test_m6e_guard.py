@@ -56,3 +56,16 @@ def test_risk_clears_only_after_forward_recovery_and_hysteresis():
     assert d['risk'] and not d['emergency']
     for i in range(3,30):d=g.update(state(i,.1),[.001*(i-3),0],[1,0],i*.05)
     assert not d['risk'] and not d['emergency']
+
+
+def test_alternating_velocity_without_supported_pose_retreat_is_not_emergency():
+    g=DisplacementGuard()
+    for i in range(40):
+        d=g.update(state(i,-.08 if i%2 else .02),[(-1)**i*.0002,0],[1,0],i*.05)
+        assert not d['emergency'] and not d['risk']
+
+
+def test_route_mismatch_is_distinct_from_body_rollback():
+    g=DisplacementGuard()
+    for i in range(10):d=g.update(state(i,.2,route=-.2),[i*.01,0],[-1,0],i*.05)
+    assert d['emergency'] and d['reason']=='ForwardRouteContractInvalid'

@@ -5,11 +5,10 @@ from tools.m6e_common import write,asset,provenance
 
 def main():
     records=[]
-    commands=[('P0_development_analysis',['.venv/bin/python','-m','tools.m6e_analyze','development']),
-              ('P0_validation',['.venv/bin/python','-m','tools.m6e_probe','validation']),
+    commands=[('P0_validation',['.venv/bin/python','-m','tools.m6e_probe','validation']),
               ('P0_validation_analysis',['.venv/bin/python','-m','tools.m6e_analyze','validation']),
               ('guard_live',['.venv/bin/python','-m','tools.m6e_probe','guard']),
-              ('guard_live_analysis',['.venv/bin/python','-m','tools.m6e_analyze','guard'])]
+              ('guard_live_analysis',['.venv/bin/python','-m','tools.m6e_analyze','guard']),('variant',['.venv/bin/python','-m','tools.m6e_probe','variant']),('variant_analysis',['.venv/bin/python','-m','tools.m6e_analyze','variant'])]
     for name,cmd in commands:
         log=Path('reports/m6e_execution_logs')/(name+'.log.txt')
         with log.open('x') as f:r=subprocess.run(cmd,stdout=f,stderr=subprocess.STDOUT)
