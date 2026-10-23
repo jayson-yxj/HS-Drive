@@ -1,0 +1,114 @@
+{
+  "decisions": {
+    "signed_observation_schema": "Go_limited_research",
+    "target_separation_schema": "Go_limited_research",
+    "complete_signed_motion_protection": "NoGo_intermittent_rollback_missed",
+    "fixed_position_hold": "Go_limited_32_trials",
+    "hold_restart_with_comfort": "NoGo",
+    "normal_stop_execution": "NoGo_CurrentPhysics_CurrentActuationPolicy",
+    "F1": "NotRun_prerequisites_failed",
+    "sealed_regression": "NotRun_prerequisites_failed",
+    "independent_physics_study": "Evidence_supports_scoped_proposal_only_NotExecuted",
+    "reverse_parking": "NoGo"
+  },
+  "runtime": {
+    "status": "Partial_strict20Hz_NotPassed",
+    "all_max_ms": 350.1312732696533,
+    "worst_name": "dev_fault_timeout_F0",
+    "deadline_miss": 4,
+    "skipped_slots": 9,
+    "expired_normal": 0,
+    "over100": 2
+  },
+  "tests": [
+    {
+      "name": "final_full_tests",
+      "tests": 366,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 9,
+      "passed": 357,
+      "seconds": 16.874,
+      "junit": {
+        "path": "reports/m6d_final_full_tests.xml",
+        "bytes": 46486,
+        "sha256": "bd827c74577262059370bd90e725413c568b33562f5324989950bbe2f395d3d2"
+      },
+      "skip_details": [
+        {
+          "name": "tests.test_m5n_sdk",
+          "type": null,
+          "message": "collection skipped"
+        },
+        {
+          "name": "tests.test_m6b_obstacles_sdk",
+          "type": null,
+          "message": "collection skipped"
+        },
+        {
+          "name": "tests.test_m6d_sdk",
+          "type": null,
+          "message": "collection skipped"
+        },
+        {
+          "name": "test_six_mounts_against_carla_math",
+          "type": "pytest.skip",
+          "message": "could not import 'carla': No module named 'carla'"
+        },
+        {
+          "name": "test_photometric_attributes_are_not_applied_to_depth",
+          "type": "pytest.skip",
+          "message": "could not import 'carla': No module named 'carla'"
+        },
+        {
+          "name": "test_known_intermittent_rollback_gap",
+          "type": "pytest.xfail",
+          "message": "Known M6-D NoGo: actual intermittent backward motion resets duration guard; no post-result threshold tuning"
+        },
+        {
+          "name": "test_settings_restored_after_exception[False]",
+          "type": "pytest.skip",
+          "message": "could not import 'carla': No module named 'carla'"
+        },
+        {
+          "name": "test_settings_restored_after_exception[True]",
+          "type": "pytest.skip",
+          "message": "could not import 'carla': No module named 'carla'"
+        },
+        {
+          "name": "test_snapshot_pose_used_for_ego_and_boxes",
+          "type": "pytest.skip",
+          "message": "could not import 'carla': No module named 'carla'"
+        }
+      ]
+    },
+    {
+      "name": "final_sdk_tests",
+      "tests": 22,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 21,
+      "seconds": 0.268,
+      "junit": {
+        "path": "reports/m6d_final_sdk_tests.xml",
+        "bytes": 2973,
+        "sha256": "59580609fbdf0b911ac0191e25de146e0757de6104186ae49d90b18df9a1a3c3"
+      },
+      "skip_details": [
+        {
+          "name": "test_known_intermittent_rollback_gap",
+          "type": "pytest.xfail",
+          "message": "Known M6-D NoGo: actual intermittent backward motion resets duration guard; no post-result threshold tuning"
+        }
+      ]
+    }
+  ],
+  "worst": {
+    "previous_apply_to_tick": 0.008691102266311646,
+    "previous_tick": 339.2933215945959,
+    "record_tail": 0.6649121642112732,
+    "sleep_wakeup": 8.58890637755394,
+    "current_preapply": 1.5754420310258865
+  }
+}

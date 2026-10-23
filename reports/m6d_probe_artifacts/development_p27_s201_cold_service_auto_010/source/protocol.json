@@ -1,0 +1,24 @@
+{
+  "stage": "M6-D", "base": "d808c21", "source": "Privileged", "map": "Town03",
+  "physics_sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6",
+  "default_changes": false, "visual_control": false,
+  "development_positions": [27,126], "validation_positions": [66,170], "seeds": [201,202],
+  "hold_protocols": [
+    {"name":"cold_service_auto_010","warm":false,"hold":"service","manual1":false,"throttle":0.10},
+    {"name":"cold_hand_auto_015","warm":false,"hold":"hand","manual1":false,"throttle":0.15},
+    {"name":"cold_hand_manual1_015","warm":false,"hold":"hand","manual1":true,"throttle":0.15},
+    {"name":"warm_service_auto_015","warm":true,"hold":"service","manual1":false,"throttle":0.15}
+  ],
+  "hold_trials":32, "rollback_diagnostics":{"positions":[27,66],"seeds":[201,202],"maximum_trials":4,"natural_coast_seconds":10},
+  "timing":{"dt_s":0.05,"hold_s":3,"release_s":6,"prepare_limit_s":8,"normal_stop_limit_s":6,"minimum_stability_s":1},
+  "actuation":{"service_hold_brake":0.12,"hand_hold_service_brake":0.0,"normal_stop_brake":0.01,"prepare_throttle":0.20,"emergency_brake":1.0},
+  "signed_contract":{"rollback_threshold_mps":-0.05,"hard_rollback_mps":-0.15,"rollback_duration_s":0.10,"state_max_age_s":0.10,"plan_max_age_s":0.35,"zero_speed_mps":0.02},
+  "hold_gate":{"max_displacement_m":0.05,"max_error_growth_m":0.02,"max_speed_mps":0.02,"restart_limit_s":2.0,"restart_speed_mps":0.10,"min_hold_s":1},
+  "comfort":{"raw_max_decel_mps2":1.8,"raw_jerk_peak_mps3":5,"moving_jerk_p95_mps3":2.5,"include_startup":true},
+  "f0_development":{"stop_positions":[27,170],"length":9,"speed":1,"seeds":[201,202],"arms":["C","D","F0"]},
+  "f0_fault_diagnostics":{"position":170,"speed":2.5,"faults":["emergency","crash","timeout","invalid"],"ticks":240},
+  "f1_policy":"At most one hold/release policy selected using development, then all validation repetitions must meet hold, restart and original raw comfort gates. Otherwise F1 and sealed route matrix NotRun; no policy search.",
+  "sealed_regression":"Conditional on F1 validation prerequisites; use new road positions only then. Not authorized to bypass gates.",
+  "runtime":"fixed wall slots, no affinity sweep/no deadline reset/no catch-up; probes have no Planner and do not certify driving runtime",
+  "rollback_recovery":"Natural coast; existing brake=1 immediate protection on measured negative speed. No forced velocity, reverse command, physics changes or reverse parking."
+}

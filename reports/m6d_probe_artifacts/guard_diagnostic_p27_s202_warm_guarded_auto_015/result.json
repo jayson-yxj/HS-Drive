@@ -1,0 +1,72 @@
+{
+  "kind": "actual_CARLA_fixed_sim_dt_unpaced_actuator_probe",
+  "source": "Privileged",
+  "base": "d808c21c1a4a2a1e7a2a14c5a4a1dc5465768fc1",
+  "git_head": "a77dfb02e651378471f82d0c6bedf497d5ca12c9",
+  "sources": {
+    "configs/m6d/guarded_warm_followup.json": "7eea3701dec9237344962a43e2ec3d34fcc78a96bf90ffe5c0365c4c9121e1a1",
+    "configs/m6d/protocol.json": "3fd40d9d20e3bd0478e6c365fd683d9bad77874c7a167a9c9c4b472779099b45",
+    "simulator/m6d_motion.py": "04212bb40ef36e00937f85d565b30f7f9cb96b5d7d2c3229609e51f56a5a2b03",
+    "simulator/m6d_state.py": "72cd039e38bbeae6890a8825d8c82590f8f420fb5401e696b0cb28addca4580f",
+    "simulator/m6d_targets.py": "5ba466cffb7429384ea43e64b5cf11cf3645b80d2384ba97ca462b9b7b28e1f8",
+    "tests/test_m6d_contract.py": "9775efa940b4bfab5ab250072f0d32302b893febe10921ff5a32d82840e233ee",
+    "tests/test_m6d_sdk.py": "36def2fda4e0d752bdc7801cc6230e20eb94d56c7291cd144855ffbc4a76f01a",
+    "tools/m6d_audit.py": "094ef4fcd54b84b72df3cb56fda0669459202c4e321f528eed1997f64cc5f29b",
+    "tools/m6d_campaign.py": "978947e7c103067a1e74f961d3c0e816a301b0fb558fdcf4a9e64b0f60b5e74f",
+    "tools/m6d_common.py": "9177c5be09b86fdd16974f87b3665bd01f55b609f95f3bff7ff19dba7ccf1181",
+    "tools/m6d_drive.py": "815f93f3cbde0dbbf047468269d4b8a1272d5f4bc2313cd9546228b0b4af511c",
+    "tools/m6d_figures.py": "92f467569fd50621a26644bc82fdfccd361a5147662790c15180c2bd4c2ff5f5",
+    "tools/m6d_guard_probe.py": "a1bd7bd03a3bd99ead3ccf1a699fa54a4a97ad88629580afda713bcfd10fa0ff",
+    "tools/m6d_physical_gate.py": "a5cee61f7b95dadf26bfdcd498b993e7f28caaac29761969f2d535705f155f15",
+    "tools/m6d_probe.py": "68551b1f630de643b237a405576133391cf35f86016cf01eaf35808d9862cf98",
+    "tools/m6d_probe_analysis.py": "efdbe63714e4a3fb37332f5ae089c904356de84000dcdfdb6715c8ebee0c5e56",
+    "tools/m6d_results.py": "17a5dad486eb7a71267c4b65d35abfe1d73f8f563e767d7a2f1deb4abe130835"
+  },
+  "visual_control": false,
+  "name": "guard_diagnostic_p27_s202_warm_guarded_auto_015",
+  "task": {
+    "split": "guard_diagnostic",
+    "spawn": 27,
+    "seed": 202,
+    "name": "warm_guarded_auto_015",
+    "warm": true,
+    "hold": "service",
+    "manual1": false,
+    "throttle": 0.15,
+    "guarded_release": true
+  },
+  "trace": {
+    "path": "reports/m6d_probe_artifacts/guard_diagnostic_p27_s202_warm_guarded_auto_015/trace.jsonl",
+    "bytes": 883358,
+    "sha256": "d52506833c124470362fe52befde8d515541f4db2562c67bd7a8a520400dd621"
+  },
+  "physics": {
+    "path": "reports/m6d_probe_artifacts/guard_diagnostic_p27_s202_warm_guarded_auto_015/physics.json",
+    "bytes": 2286,
+    "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+  },
+  "ticks": 448,
+  "collisions": [],
+  "complete": true,
+  "raw_all_including_initialize": {
+    "max_decel_raw": 18.481632826619954,
+    "jerk_peak_raw": 474.6221111530199,
+    "jerk_p95_moving": 61.87272429695991,
+    "jerk_p95_all": 73.22362610254231,
+    "max_decel_250ms": 5.50138039571788,
+    "jerk_p95_250ms": 13.87080348363968,
+    "min_signed_speed": -0.08081169008005268,
+    "reverse_ticks": 8,
+    "low_speed_moving_seconds": 11.05,
+    "api_accel_vs_velocity_derivative_mae": 0.0019842162564572066
+  },
+  "apply_interval_ms": {
+    "n": 447,
+    "p50": 5.5396463721990585,
+    "p95": 6.552192009985447,
+    "p99": 7.747417613863949,
+    "max": 9.18150320649147
+  },
+  "runtime_20Hz": "NotApplicable_unpaced_probe",
+  "limits": "Natural initialization and real snapshots. Diagnostic gear/handbrake only; not a normal controller or runtime success."
+}

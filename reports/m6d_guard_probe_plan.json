@@ -1,0 +1,59 @@
+{
+  "kind": "predeclared_unchanged_guard_followup",
+  "source": "Privileged",
+  "base": "d808c21c1a4a2a1e7a2a14c5a4a1dc5465768fc1",
+  "git_head": "a77dfb02e651378471f82d0c6bedf497d5ca12c9",
+  "sources": {
+    "configs/m6d/guarded_warm_followup.json": "7eea3701dec9237344962a43e2ec3d34fcc78a96bf90ffe5c0365c4c9121e1a1",
+    "configs/m6d/protocol.json": "3fd40d9d20e3bd0478e6c365fd683d9bad77874c7a167a9c9c4b472779099b45",
+    "simulator/m6d_motion.py": "04212bb40ef36e00937f85d565b30f7f9cb96b5d7d2c3229609e51f56a5a2b03",
+    "simulator/m6d_state.py": "72cd039e38bbeae6890a8825d8c82590f8f420fb5401e696b0cb28addca4580f",
+    "simulator/m6d_targets.py": "5ba466cffb7429384ea43e64b5cf11cf3645b80d2384ba97ca462b9b7b28e1f8",
+    "tests/test_m6d_contract.py": "9775efa940b4bfab5ab250072f0d32302b893febe10921ff5a32d82840e233ee",
+    "tests/test_m6d_sdk.py": "36def2fda4e0d752bdc7801cc6230e20eb94d56c7291cd144855ffbc4a76f01a",
+    "tools/m6d_audit.py": "094ef4fcd54b84b72df3cb56fda0669459202c4e321f528eed1997f64cc5f29b",
+    "tools/m6d_campaign.py": "978947e7c103067a1e74f961d3c0e816a301b0fb558fdcf4a9e64b0f60b5e74f",
+    "tools/m6d_common.py": "9177c5be09b86fdd16974f87b3665bd01f55b609f95f3bff7ff19dba7ccf1181",
+    "tools/m6d_drive.py": "815f93f3cbde0dbbf047468269d4b8a1272d5f4bc2313cd9546228b0b4af511c",
+    "tools/m6d_figures.py": "92f467569fd50621a26644bc82fdfccd361a5147662790c15180c2bd4c2ff5f5",
+    "tools/m6d_guard_probe.py": "a1bd7bd03a3bd99ead3ccf1a699fa54a4a97ad88629580afda713bcfd10fa0ff",
+    "tools/m6d_physical_gate.py": "a5cee61f7b95dadf26bfdcd498b993e7f28caaac29761969f2d535705f155f15",
+    "tools/m6d_probe.py": "68551b1f630de643b237a405576133391cf35f86016cf01eaf35808d9862cf98",
+    "tools/m6d_probe_analysis.py": "efdbe63714e4a3fb37332f5ae089c904356de84000dcdfdb6715c8ebee0c5e56",
+    "tools/m6d_results.py": "17a5dad486eb7a71267c4b65d35abfe1d73f8f563e767d7a2f1deb4abe130835"
+  },
+  "visual_control": false,
+  "plan": {
+    "hypothesis": "Cold zero-throttle release did not generate rollback; recorded warm .15 auto release at development p27 has v_forward<-0.05. Apply unchanged F0 SignedGuard and existing brake=1 to same physical preparation.",
+    "basis": "m6d_probe_development_analysis.json warm_service_auto_015 p27 both repeats; no validation policy selection",
+    "split": "development_only_observed_location",
+    "tasks": [
+      {
+        "split": "guard_diagnostic",
+        "spawn": 27,
+        "seed": 201,
+        "name": "warm_guarded_auto_015",
+        "warm": true,
+        "hold": "service",
+        "manual1": false,
+        "throttle": 0.15,
+        "guarded_release": true
+      },
+      {
+        "split": "guard_diagnostic",
+        "spawn": 27,
+        "seed": 202,
+        "name": "warm_guarded_auto_015",
+        "warm": true,
+        "hold": "service",
+        "manual1": false,
+        "throttle": 0.15,
+        "guarded_release": true
+      }
+    ],
+    "maximum_trials": 2,
+    "algorithm_changes": "None: same SignedGuard thresholds and latched emergency, no F1 or gains. Correct phase-anchor measurement order in new probe source; original 36 records and source snapshots retained.",
+    "criteria": "If measured rollback criterion occurs, brake=1 and throttle=0 in same observation step; stop and hold >=1s; report raw emergency jerk separately.",
+    "exit": "No additional attempts if behavior does not reproduce. Not a normal comfort or independent generalization pass."
+  }
+}

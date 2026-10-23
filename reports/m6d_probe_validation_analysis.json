@@ -1,0 +1,4536 @@
+{
+  "kind": "offline_raw_actual_CARLA_probe_analysis",
+  "source": "Privileged",
+  "base": "d808c21c1a4a2a1e7a2a14c5a4a1dc5465768fc1",
+  "git_head": "6eeaafc01e4742efbd7b08ea97755f3ce6c18b05",
+  "sources": {
+    "configs/m6d/protocol.json": "3fd40d9d20e3bd0478e6c365fd683d9bad77874c7a167a9c9c4b472779099b45",
+    "simulator/m6d_motion.py": "04212bb40ef36e00937f85d565b30f7f9cb96b5d7d2c3229609e51f56a5a2b03",
+    "simulator/m6d_state.py": "72cd039e38bbeae6890a8825d8c82590f8f420fb5401e696b0cb28addca4580f",
+    "simulator/m6d_targets.py": "5ba466cffb7429384ea43e64b5cf11cf3645b80d2384ba97ca462b9b7b28e1f8",
+    "tests/test_m6d_contract.py": "9775efa940b4bfab5ab250072f0d32302b893febe10921ff5a32d82840e233ee",
+    "tests/test_m6d_sdk.py": "36def2fda4e0d752bdc7801cc6230e20eb94d56c7291cd144855ffbc4a76f01a",
+    "tools/m6d_campaign.py": "978947e7c103067a1e74f961d3c0e816a301b0fb558fdcf4a9e64b0f60b5e74f",
+    "tools/m6d_common.py": "9177c5be09b86fdd16974f87b3665bd01f55b609f95f3bff7ff19dba7ccf1181",
+    "tools/m6d_drive.py": "815f93f3cbde0dbbf047468269d4b8a1272d5f4bc2313cd9546228b0b4af511c",
+    "tools/m6d_probe.py": "b3e03c764ad4f3600cfd5c45445191b1545ddbf67c40f1cb780d44cad0161444",
+    "tools/m6d_probe_analysis.py": "efdbe63714e4a3fb37332f5ae089c904356de84000dcdfdb6715c8ebee0c5e56"
+  },
+  "visual_control": false,
+  "split": "validation",
+  "trials": [
+    {
+      "name": "validation_p170_s201_cold_hand_auto_015",
+      "task": {
+        "split": "validation",
+        "spawn": 170,
+        "seed": 201,
+        "name": "cold_hand_auto_015",
+        "warm": false,
+        "hold": "hand",
+        "manual1": false,
+        "throttle": 0.15
+      },
+      "physics": {
+        "path": "reports/m6d_probe_artifacts/validation_p170_s201_cold_hand_auto_015/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "trace": {
+        "path": "reports/m6d_probe_artifacts/validation_p170_s201_cold_hand_auto_015/trace.jsonl",
+        "bytes": 773466,
+        "sha256": "882624752a60cdae5c386727bcd5a9929b7ecfb29ad3cd82df2fa17579ece3f2"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "duration_s": 1.4500000216066837,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 2.6741999583649075e-07,
+          "max_displacement_m": 3.814697265625e-06,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 5.349312998179153e-06,
+            "jerk_peak_raw": 0.00018628531190159254,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 9.121738818587073e-05,
+            "max_decel_250ms": 2.7668943487146067e-07,
+            "jerk_p95_250ms": 1.153488554390478e-05,
+            "min_signed_speed": -2.67419999487426e-07,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.232486098525116e-14
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "hold_initial": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.0,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "release": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 1.9460155122785672,
+          "maximum_speed": 1.9460155122785672,
+          "max_displacement_m": 4.332893801582712,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 3.6000000536441803,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 6.411072199834989e-07,
+            "jerk_peak_raw": 286.8095834357773,
+            "jerk_p95_moving": 72.1173522459292,
+            "jerk_p95_all": 6.990123115711312,
+            "max_decel_250ms": 1.299474421479258e-07,
+            "jerk_p95_250ms": 13.330888021077762,
+            "min_signed_speed": -1.6564210352828596e-08,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 5.04215774174783e-07
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            0,
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0009987172666817718
+          ]
+        },
+        "brake_stop": {
+          "ticks": 13,
+          "duration_s": 0.6000000089406967,
+          "initial_signed_speed": 1.9484021935898859,
+          "final_signed_speed": -0.00020186774602157811,
+          "maximum_speed": 1.9484021935898859,
+          "max_displacement_m": 0.7138989939035099,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.0,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 19.173787092870235,
+            "jerk_peak_raw": 363.89504389093736,
+            "jerk_p95_moving": 328.31731954161097,
+            "jerk_p95_all": 321.20177467174557,
+            "max_decel_250ms": 7.337941864350949,
+            "jerk_p95_250ms": 66.33086531144525,
+            "min_signed_speed": -0.00020648199035322857,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.05,
+            "api_accel_vs_velocity_derivative_mae": 1.067224648041469e-06
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0010709432495143107,
+            0.0016003836025730717
+          ]
+        },
+        "hold_final": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": -0.00016789543849424533,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.00022483628377290677,
+          "max_displacement_m": 0.0001888275146484375,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0020753632275117917,
+            "jerk_peak_raw": 0.19860720534599297,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.01493954873926185,
+            "max_decel_250ms": 0.0008994387046477882,
+            "jerk_p95_250ms": 0.004851129196480506,
+            "min_signed_speed": -0.00020648199035322857,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.880158965524062e-09
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0016004455869310554,
+            0.0016005855764539155
+          ]
+        },
+        "restart": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 1.795848796862728,
+          "maximum_speed": 1.8513732190761893,
+          "max_displacement_m": 6.423397963949274,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.6000000089406967,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 1.268567199905707,
+            "jerk_peak_raw": 62.009186787899694,
+            "jerk_p95_moving": 59.32885018893997,
+            "jerk_p95_all": 59.26888639862598,
+            "max_decel_250ms": 0.11549737960406194,
+            "jerk_p95_250ms": 11.827425800205763,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 3.5,
+            "api_accel_vs_velocity_derivative_mae": 1.1711374514283508e-06
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0016005855764539155,
+            0.006364307181558431
+          ]
+        }
+      },
+      "hold_passed": true,
+      "restart_passed": false,
+      "normal_comfort_passed": false,
+      "all_raw": {
+        "max_decel_raw": 19.173787092870235,
+        "jerk_peak_raw": 363.89504389093736,
+        "jerk_p95_moving": 59.931123623520946,
+        "jerk_p95_all": 58.23388911585702,
+        "max_decel_250ms": 7.337941864350949,
+        "jerk_p95_250ms": 11.738372982087064,
+        "min_signed_speed": -0.00020648199035322857,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 3.7,
+        "api_accel_vs_velocity_derivative_mae": 5.411175283025249e-07
+      },
+      "collisions": [],
+      "complete": true,
+      "reference": "Real CARLA snapshots; phase raw metrics include previous two samples at command boundary. Initialize kept separately; prepare/startup not removed from normal gates."
+    },
+    {
+      "name": "validation_p170_s201_cold_hand_manual1_015",
+      "task": {
+        "split": "validation",
+        "spawn": 170,
+        "seed": 201,
+        "name": "cold_hand_manual1_015",
+        "warm": false,
+        "hold": "hand",
+        "manual1": true,
+        "throttle": 0.15
+      },
+      "physics": {
+        "path": "reports/m6d_probe_artifacts/validation_p170_s201_cold_hand_manual1_015/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "trace": {
+        "path": "reports/m6d_probe_artifacts/validation_p170_s201_cold_hand_manual1_015/trace.jsonl",
+        "bytes": 784333,
+        "sha256": "41583e2ae974f6a4c0c6cd84cd6d993024ba05b0a42db4c6a710ddb3342bcc20"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "duration_s": 1.4500000216066837,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 2.6741999583649075e-07,
+          "max_displacement_m": 3.814697265625e-06,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 5.349312998179153e-06,
+            "jerk_peak_raw": 0.00018628531190159254,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 9.121738818587073e-05,
+            "max_decel_250ms": 2.7668943487146067e-07,
+            "jerk_p95_250ms": 1.153488554390478e-05,
+            "min_signed_speed": -2.67419999487426e-07,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.232486098525116e-14
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0,
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "hold_initial": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.0,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "release": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 1.8681387915864383,
+          "maximum_speed": 1.9222136974336061,
+          "max_displacement_m": 6.61088346132922,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.6000000089406967,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 1.3356238162000384,
+            "jerk_peak_raw": 65.72725951574186,
+            "jerk_p95_moving": 61.54877745343418,
+            "jerk_p95_all": 61.261735311020786,
+            "max_decel_250ms": 0.10727093909125276,
+            "jerk_p95_250ms": 12.224466289879466,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 3.3000000000000003,
+            "api_accel_vs_velocity_derivative_mae": 7.198082826209691e-07
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.002688121076750625
+          ]
+        },
+        "brake_stop": {
+          "ticks": 17,
+          "duration_s": 0.800000011920929,
+          "initial_signed_speed": 1.9354974924879937,
+          "final_signed_speed": -0.00019281385887951965,
+          "maximum_speed": 1.9354974924879937,
+          "max_displacement_m": 1.0146840147108955,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.0,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 17.094776775842544,
+            "jerk_peak_raw": 341.643202139753,
+            "jerk_p95_moving": 230.53915938929543,
+            "jerk_p95_all": 214.66715328208727,
+            "max_decel_250ms": 6.562673917058441,
+            "jerk_p95_250ms": 49.989079819086044,
+            "min_signed_speed": -0.0001927028851143814,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.1,
+            "api_accel_vs_velocity_derivative_mae": 2.211740283966859e-06
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.00275892457598965,
+            0.0035114352584273254
+          ]
+        },
+        "hold_final": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": -0.0001630527332631356,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.00018935664588902974,
+          "max_displacement_m": 0.00017547607421875,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.001897453605548266,
+            "jerk_peak_raw": 0.1789441334466568,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.013003988770899979,
+            "max_decel_250ms": 0.0007581542145921561,
+            "jerk_p95_250ms": 0.0031921504537032177,
+            "min_signed_speed": -0.0001927028851143814,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 1.559148163130301e-08
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0035114874125281494,
+            0.0035116168664569816
+          ]
+        },
+        "restart": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 1.8165755437795184,
+          "maximum_speed": 1.8165755437795184,
+          "max_displacement_m": 6.2938291722176825,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.6500000096857548,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 1.2490224542150945,
+            "jerk_peak_raw": 63.686239052875806,
+            "jerk_p95_moving": 61.62218073221682,
+            "jerk_p95_all": 60.851149938102054,
+            "max_decel_250ms": 0.12722239637118926,
+            "jerk_p95_250ms": 11.850939248043513,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 3.6500000000000004,
+            "api_accel_vs_velocity_derivative_mae": 1.2846432172980962e-06
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0035116168664569816,
+            0.008179214474690855
+          ]
+        }
+      },
+      "hold_passed": true,
+      "restart_passed": true,
+      "normal_comfort_passed": false,
+      "all_raw": {
+        "max_decel_raw": 17.094776775842544,
+        "jerk_peak_raw": 341.643202139753,
+        "jerk_p95_moving": 61.90426529699513,
+        "jerk_p95_all": 60.48048657922265,
+        "max_decel_250ms": 6.562673917058441,
+        "jerk_p95_250ms": 11.981987920773873,
+        "min_signed_speed": -0.0001927028851143814,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 7.050000000000001,
+        "api_accel_vs_velocity_derivative_mae": 6.887276014585985e-07
+      },
+      "collisions": [],
+      "complete": true,
+      "reference": "Real CARLA snapshots; phase raw metrics include previous two samples at command boundary. Initialize kept separately; prepare/startup not removed from normal gates."
+    },
+    {
+      "name": "validation_p170_s201_cold_service_auto_010",
+      "task": {
+        "split": "validation",
+        "spawn": 170,
+        "seed": 201,
+        "name": "cold_service_auto_010",
+        "warm": false,
+        "hold": "service",
+        "manual1": false,
+        "throttle": 0.1
+      },
+      "physics": {
+        "path": "reports/m6d_probe_artifacts/validation_p170_s201_cold_service_auto_010/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "trace": {
+        "path": "reports/m6d_probe_artifacts/validation_p170_s201_cold_service_auto_010/trace.jsonl",
+        "bytes": 740480,
+        "sha256": "840afcfdb5e54be03dd48d8eaf23bd60899ad023205722f834abd34d36eda5ab"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "duration_s": 1.4500000216066837,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 2.6741999583649075e-07,
+          "max_displacement_m": 3.814697265625e-06,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 5.349312998179153e-06,
+            "jerk_peak_raw": 0.00018628531190159254,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 9.121738818587073e-05,
+            "max_decel_250ms": 2.7668943487146067e-07,
+            "jerk_p95_250ms": 1.153488554390478e-05,
+            "min_signed_speed": -2.67419999487426e-07,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.232486098525116e-14
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "hold_initial": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.0,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "release": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": -7.351706998846228e-10,
+          "maximum_speed": 1.8949706751051154e-08,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 6.411072199834989e-07,
+            "jerk_peak_raw": 1.8783351298106588e-05,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 1.2991021939613986e-05,
+            "max_decel_250ms": 1.299474421479258e-07,
+            "jerk_p95_250ms": 2.277545791355412e-06,
+            "min_signed_speed": -1.6564210352828596e-08,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.572708046563182e-15
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "brake_stop": {
+          "ticks": 5,
+          "duration_s": 0.20000000298023224,
+          "initial_signed_speed": -1.3007632093846814e-09,
+          "final_signed_speed": -3.0738735838301606e-09,
+          "maximum_speed": 3.0738735838301606e-09,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": null,
+          "comfort_passed": false,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "hold_final": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": -3.6393459199720974e-09,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 3.6393459199720974e-09,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 1.1309446712884998e-08,
+            "jerk_peak_raw": 1.6819272758467016e-06,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 1.2353219430968811e-14,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 1.1309434191141688e-08,
+            "min_signed_speed": -3.639345970859658e-09,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 8.818265531498206e-18
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "restart": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": -1.114683216837654e-09,
+          "maximum_speed": 1.965864269595976e-08,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 5.944439870120898e-07,
+            "jerk_peak_raw": 1.8484824661640205e-05,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 1.2275904052580144e-05,
+            "max_decel_250ms": 1.0759155054215965e-07,
+            "jerk_p95_250ms": 1.436518463321344e-06,
+            "min_signed_speed": -1.9658642971247744e-08,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.0729899639132225e-15
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "hold_passed": true,
+      "restart_passed": false,
+      "normal_comfort_passed": false,
+      "all_raw": {
+        "max_decel_raw": 5.349312998179153e-06,
+        "jerk_peak_raw": 0.00018628531190159254,
+        "jerk_p95_moving": 0.0,
+        "jerk_p95_all": 1.239053122435309e-05,
+        "max_decel_250ms": 2.7668943487146067e-07,
+        "jerk_p95_250ms": 1.7965478773703683e-06,
+        "min_signed_speed": -2.67419999487426e-07,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.0,
+        "api_accel_vs_velocity_derivative_mae": 4.42291531519326e-15
+      },
+      "collisions": [],
+      "complete": true,
+      "reference": "Real CARLA snapshots; phase raw metrics include previous two samples at command boundary. Initialize kept separately; prepare/startup not removed from normal gates."
+    },
+    {
+      "name": "validation_p170_s201_warm_service_auto_015",
+      "task": {
+        "split": "validation",
+        "spawn": 170,
+        "seed": 201,
+        "name": "warm_service_auto_015",
+        "warm": true,
+        "hold": "service",
+        "manual1": false,
+        "throttle": 0.15
+      },
+      "physics": {
+        "path": "reports/m6d_probe_artifacts/validation_p170_s201_warm_service_auto_015/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "trace": {
+        "path": "reports/m6d_probe_artifacts/validation_p170_s201_warm_service_auto_015/trace.jsonl",
+        "bytes": 880699,
+        "sha256": "47fac919afa29f814ea11548b4e9bc791b7d97002afb0dc5a12c7c64765bf110"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "duration_s": 1.4500000216066837,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 2.6741999583649075e-07,
+          "max_displacement_m": 3.814697265625e-06,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 5.349312998179153e-06,
+            "jerk_peak_raw": 0.00018628531190159254,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 9.121738818587073e-05,
+            "max_decel_250ms": 2.7668943487146067e-07,
+            "jerk_p95_250ms": 1.153488554390478e-05,
+            "min_signed_speed": -2.67419999487426e-07,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.232486098525116e-14
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "prepare": {
+          "ticks": 46,
+          "duration_s": 2.2500000335276127,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.5081163527624654,
+          "maximum_speed": 0.5081163527624654,
+          "max_displacement_m": 0.012052574646639273,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 2.2500000335276127,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 6.411072199834989e-07,
+            "jerk_peak_raw": 203.24654025720037,
+            "jerk_p95_moving": 203.24654025720037,
+            "jerk_p95_all": 1.7901022393489813e-05,
+            "max_decel_250ms": 1.299474421479258e-07,
+            "jerk_p95_250ms": 2.630509963328826e-06,
+            "min_signed_speed": -1.6564210352828596e-08,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.05,
+            "api_accel_vs_velocity_derivative_mae": 8.71653400027567e-09
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "normal_stop": {
+          "ticks": 6,
+          "duration_s": 0.2500000037252903,
+          "initial_signed_speed": 1.1342871376600396,
+          "final_signed_speed": -4.305280255213863e-05,
+          "maximum_speed": 1.1342871376600396,
+          "max_displacement_m": 0.06448554992675781,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.0,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 16.811806615603658,
+            "jerk_peak_raw": 367.6885625571999,
+            "jerk_p95_moving": 362.93878491867935,
+            "jerk_p95_all": 359.772266492999,
+            "max_decel_250ms": 4.537319423668244,
+            "jerk_p95_250ms": 49.6243403054114,
+            "min_signed_speed": -4.3053043521735555e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 2.0704936999952625e-06
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "hold_warm": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": -4.460234832169438e-05,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 4.460234832169438e-05,
+          "max_displacement_m": 5.14984130859375e-05,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0006375634647743302,
+            "jerk_peak_raw": 0.01213152079375373,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0035312276260791916,
+            "max_decel_250ms": 4.530505805805797e-05,
+            "jerk_p95_250ms": 0.0005862445592571902,
+            "min_signed_speed": -4.46024143472208e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 5.612533645950141e-11
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "release": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 1.711415581649213,
+          "maximum_speed": 1.711415581649213,
+          "max_displacement_m": 6.385236662832478,
+          "backward_ticks": 2,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.5000000074505806,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 1.9378782849727874,
+            "jerk_peak_raw": 82.1310402776411,
+            "jerk_p95_moving": 61.82617800676327,
+            "jerk_p95_all": 76.3948673725686,
+            "max_decel_250ms": 0.3301652092573956,
+            "jerk_p95_250ms": 12.067540384304905,
+            "min_signed_speed": -0.05888968154401622,
+            "reverse_ticks": 2,
+            "low_speed_moving_seconds": 3.9000000000000004,
+            "api_accel_vs_velocity_derivative_mae": 6.156230387080011e-07
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0026119649136682878
+          ]
+        },
+        "brake_stop": {
+          "ticks": 8,
+          "duration_s": 0.3500000052154064,
+          "initial_signed_speed": 1.7106509688767322,
+          "final_signed_speed": -0.00020423798310228235,
+          "maximum_speed": 1.7106509688767322,
+          "max_displacement_m": 0.2637668714507604,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.0,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 22.301426506495336,
+            "jerk_peak_raw": 443.8092985823524,
+            "jerk_p95_moving": 388.2299046919097,
+            "jerk_p95_all": 365.9981471357325,
+            "max_decel_250ms": 6.842684629199999,
+            "jerk_p95_250ms": 76.82172501650975,
+            "min_signed_speed": -0.00020416396147870765,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.05,
+            "api_accel_vs_velocity_derivative_mae": 5.7191546791721805e-06
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0026754355230483246,
+            0.0028710503048226844
+          ]
+        },
+        "hold_final": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": -0.00017682555543698596,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.00017682555543698596,
+          "max_displacement_m": 0.00019073486328125,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.00035715389120611,
+            "jerk_peak_raw": 0.025692867397344152,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.003914680607153949,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.002858569746077453,
+            "min_signed_speed": -0.00020416396147870765,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 1.6991043887036414e-08
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0028710989571623883,
+            0.0028712404013382284
+          ]
+        },
+        "restart": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 1.7705271152040662,
+          "maximum_speed": 1.826612774657527,
+          "max_displacement_m": 6.337365375886501,
+          "backward_ticks": 2,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.5000000074505806,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 1.9757035669505447,
+            "jerk_peak_raw": 87.83284313560495,
+            "jerk_p95_moving": 60.69868478236333,
+            "jerk_p95_all": 76.42310857760505,
+            "max_decel_250ms": 0.3586414467761102,
+            "jerk_p95_250ms": 12.366785333137367,
+            "min_signed_speed": -0.05759379962006301,
+            "reverse_ticks": 2,
+            "low_speed_moving_seconds": 3.75,
+            "api_accel_vs_velocity_derivative_mae": 1.2179480580683279e-06
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.002869616765542436,
+            0.007571169694123142
+          ]
+        }
+      },
+      "hold_passed": true,
+      "restart_passed": false,
+      "normal_comfort_passed": false,
+      "all_raw": {
+        "max_decel_raw": 22.301426506495336,
+        "jerk_peak_raw": 443.8092985823524,
+        "jerk_p95_moving": 63.63560042810711,
+        "jerk_p95_all": 64.73658410557992,
+        "max_decel_250ms": 6.842684629199999,
+        "jerk_p95_250ms": 12.419218853802034,
+        "min_signed_speed": -0.05888968154401622,
+        "reverse_ticks": 4,
+        "low_speed_moving_seconds": 7.8500000000000005,
+        "api_accel_vs_velocity_derivative_mae": 6.353781459406425e-07
+      },
+      "collisions": [],
+      "complete": true,
+      "reference": "Real CARLA snapshots; phase raw metrics include previous two samples at command boundary. Initialize kept separately; prepare/startup not removed from normal gates."
+    },
+    {
+      "name": "validation_p170_s202_cold_hand_auto_015",
+      "task": {
+        "split": "validation",
+        "spawn": 170,
+        "seed": 202,
+        "name": "cold_hand_auto_015",
+        "warm": false,
+        "hold": "hand",
+        "manual1": false,
+        "throttle": 0.15
+      },
+      "physics": {
+        "path": "reports/m6d_probe_artifacts/validation_p170_s202_cold_hand_auto_015/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "trace": {
+        "path": "reports/m6d_probe_artifacts/validation_p170_s202_cold_hand_auto_015/trace.jsonl",
+        "bytes": 773485,
+        "sha256": "6cb674e92279e29a38815a64e94a58086ea054d5dbcebc5f82f0b3604a441a83"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "duration_s": 1.4500000216066837,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 2.6741999583649075e-07,
+          "max_displacement_m": 3.814697265625e-06,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 5.349312998179153e-06,
+            "jerk_peak_raw": 0.00018628531190159254,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 9.121738818587073e-05,
+            "max_decel_250ms": 2.7668943487146067e-07,
+            "jerk_p95_250ms": 1.153488554390478e-05,
+            "min_signed_speed": -2.67419999487426e-07,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.232486098525116e-14
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "hold_initial": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.0,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "release": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 1.9460155122785672,
+          "maximum_speed": 1.9460155122785672,
+          "max_displacement_m": 4.332893801582712,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 3.6000000536441803,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 6.411072199834989e-07,
+            "jerk_peak_raw": 286.8095834357773,
+            "jerk_p95_moving": 72.1173522459292,
+            "jerk_p95_all": 6.990123115711312,
+            "max_decel_250ms": 1.299474421479258e-07,
+            "jerk_p95_250ms": 13.330888021077762,
+            "min_signed_speed": -1.6564210352828596e-08,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 5.04215774174783e-07
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            0,
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0009987172666817718
+          ]
+        },
+        "brake_stop": {
+          "ticks": 13,
+          "duration_s": 0.6000000089406967,
+          "initial_signed_speed": 1.9484021935898859,
+          "final_signed_speed": -0.00020186774602157811,
+          "maximum_speed": 1.9484021935898859,
+          "max_displacement_m": 0.7138989939035099,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.0,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 19.173787092870235,
+            "jerk_peak_raw": 363.89504389093736,
+            "jerk_p95_moving": 328.31731954161097,
+            "jerk_p95_all": 321.20177467174557,
+            "max_decel_250ms": 7.337941864350949,
+            "jerk_p95_250ms": 66.33086531144525,
+            "min_signed_speed": -0.00020648199035322857,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.05,
+            "api_accel_vs_velocity_derivative_mae": 1.067224648041469e-06
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0010709432495143107,
+            0.0016003836025730717
+          ]
+        },
+        "hold_final": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": -0.00016789543849424533,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.00022483628377290677,
+          "max_displacement_m": 0.0001888275146484375,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0020753632275117917,
+            "jerk_peak_raw": 0.19860720534599297,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.01493954873926185,
+            "max_decel_250ms": 0.0008994387046477882,
+            "jerk_p95_250ms": 0.004851129196480506,
+            "min_signed_speed": -0.00020648199035322857,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.880158965524062e-09
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0016004455869310554,
+            0.0016005855764539155
+          ]
+        },
+        "restart": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 1.795848796862728,
+          "maximum_speed": 1.8513732190761893,
+          "max_displacement_m": 6.423397963949274,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.6000000089406967,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 1.268567199905707,
+            "jerk_peak_raw": 62.009186787899694,
+            "jerk_p95_moving": 59.32885018893997,
+            "jerk_p95_all": 59.26888639862598,
+            "max_decel_250ms": 0.11549737960406194,
+            "jerk_p95_250ms": 11.827425800205763,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 3.5,
+            "api_accel_vs_velocity_derivative_mae": 1.1711374514283508e-06
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0016005855764539155,
+            0.006364307181558431
+          ]
+        }
+      },
+      "hold_passed": true,
+      "restart_passed": false,
+      "normal_comfort_passed": false,
+      "all_raw": {
+        "max_decel_raw": 19.173787092870235,
+        "jerk_peak_raw": 363.89504389093736,
+        "jerk_p95_moving": 59.931123623520946,
+        "jerk_p95_all": 58.23388911585702,
+        "max_decel_250ms": 7.337941864350949,
+        "jerk_p95_250ms": 11.738372982087064,
+        "min_signed_speed": -0.00020648199035322857,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 3.7,
+        "api_accel_vs_velocity_derivative_mae": 5.411175283025249e-07
+      },
+      "collisions": [],
+      "complete": true,
+      "reference": "Real CARLA snapshots; phase raw metrics include previous two samples at command boundary. Initialize kept separately; prepare/startup not removed from normal gates."
+    },
+    {
+      "name": "validation_p170_s202_cold_hand_manual1_015",
+      "task": {
+        "split": "validation",
+        "spawn": 170,
+        "seed": 202,
+        "name": "cold_hand_manual1_015",
+        "warm": false,
+        "hold": "hand",
+        "manual1": true,
+        "throttle": 0.15
+      },
+      "physics": {
+        "path": "reports/m6d_probe_artifacts/validation_p170_s202_cold_hand_manual1_015/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "trace": {
+        "path": "reports/m6d_probe_artifacts/validation_p170_s202_cold_hand_manual1_015/trace.jsonl",
+        "bytes": 784315,
+        "sha256": "1da76f2825e72e652a0b190a0a3c0225e555a9226a9034aa9dbcbe29f949135a"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "duration_s": 1.4500000216066837,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 2.6741999583649075e-07,
+          "max_displacement_m": 3.814697265625e-06,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 5.349312998179153e-06,
+            "jerk_peak_raw": 0.00018628531190159254,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 9.121738818587073e-05,
+            "max_decel_250ms": 2.7668943487146067e-07,
+            "jerk_p95_250ms": 1.153488554390478e-05,
+            "min_signed_speed": -2.67419999487426e-07,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.232486098525116e-14
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0,
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "hold_initial": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.0,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "release": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 1.8681387915864383,
+          "maximum_speed": 1.9222136974336061,
+          "max_displacement_m": 6.61088346132922,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.6000000089406967,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 1.3356238162000384,
+            "jerk_peak_raw": 65.72725951574186,
+            "jerk_p95_moving": 61.54877745343418,
+            "jerk_p95_all": 61.261735311020786,
+            "max_decel_250ms": 0.10727093909125276,
+            "jerk_p95_250ms": 12.224466289879466,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 3.3000000000000003,
+            "api_accel_vs_velocity_derivative_mae": 7.198082826209691e-07
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.002688121076750625
+          ]
+        },
+        "brake_stop": {
+          "ticks": 17,
+          "duration_s": 0.800000011920929,
+          "initial_signed_speed": 1.9354974924879937,
+          "final_signed_speed": -0.00019281385887951965,
+          "maximum_speed": 1.9354974924879937,
+          "max_displacement_m": 1.0146840147108955,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.0,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 17.094776775842544,
+            "jerk_peak_raw": 341.643202139753,
+            "jerk_p95_moving": 230.53915938929543,
+            "jerk_p95_all": 214.66715328208727,
+            "max_decel_250ms": 6.562673917058441,
+            "jerk_p95_250ms": 49.989079819086044,
+            "min_signed_speed": -0.0001927028851143814,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.1,
+            "api_accel_vs_velocity_derivative_mae": 2.211740283966859e-06
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.00275892457598965,
+            0.0035114352584273254
+          ]
+        },
+        "hold_final": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": -0.0001630527332631356,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.00018935664588902974,
+          "max_displacement_m": 0.00017547607421875,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.001897453605548266,
+            "jerk_peak_raw": 0.1789441334466568,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.013003988770899979,
+            "max_decel_250ms": 0.0007581542145921561,
+            "jerk_p95_250ms": 0.0031921504537032177,
+            "min_signed_speed": -0.0001927028851143814,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 1.559148163130301e-08
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0035114874125281494,
+            0.0035116168664569816
+          ]
+        },
+        "restart": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 1.8165755437795184,
+          "maximum_speed": 1.8165755437795184,
+          "max_displacement_m": 6.2938291722176825,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.6500000096857548,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 1.2490224542150945,
+            "jerk_peak_raw": 63.686239052875806,
+            "jerk_p95_moving": 61.62218073221682,
+            "jerk_p95_all": 60.851149938102054,
+            "max_decel_250ms": 0.12722239637118926,
+            "jerk_p95_250ms": 11.850939248043513,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 3.6500000000000004,
+            "api_accel_vs_velocity_derivative_mae": 1.2846432172980962e-06
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0035116168664569816,
+            0.008179214474690855
+          ]
+        }
+      },
+      "hold_passed": true,
+      "restart_passed": true,
+      "normal_comfort_passed": false,
+      "all_raw": {
+        "max_decel_raw": 17.094776775842544,
+        "jerk_peak_raw": 341.643202139753,
+        "jerk_p95_moving": 61.90426529699513,
+        "jerk_p95_all": 60.48048657922265,
+        "max_decel_250ms": 6.562673917058441,
+        "jerk_p95_250ms": 11.981987920773873,
+        "min_signed_speed": -0.0001927028851143814,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 7.050000000000001,
+        "api_accel_vs_velocity_derivative_mae": 6.887276014585985e-07
+      },
+      "collisions": [],
+      "complete": true,
+      "reference": "Real CARLA snapshots; phase raw metrics include previous two samples at command boundary. Initialize kept separately; prepare/startup not removed from normal gates."
+    },
+    {
+      "name": "validation_p170_s202_cold_service_auto_010",
+      "task": {
+        "split": "validation",
+        "spawn": 170,
+        "seed": 202,
+        "name": "cold_service_auto_010",
+        "warm": false,
+        "hold": "service",
+        "manual1": false,
+        "throttle": 0.1
+      },
+      "physics": {
+        "path": "reports/m6d_probe_artifacts/validation_p170_s202_cold_service_auto_010/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "trace": {
+        "path": "reports/m6d_probe_artifacts/validation_p170_s202_cold_service_auto_010/trace.jsonl",
+        "bytes": 740501,
+        "sha256": "60f5e1e3086d63f825551dff1ba1085d2f036a041e864c7911676652e8b8f59c"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "duration_s": 1.4500000216066837,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 2.6741999583649075e-07,
+          "max_displacement_m": 3.814697265625e-06,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 5.349312998179153e-06,
+            "jerk_peak_raw": 0.00018628531190159254,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 9.121738818587073e-05,
+            "max_decel_250ms": 2.7668943487146067e-07,
+            "jerk_p95_250ms": 1.153488554390478e-05,
+            "min_signed_speed": -2.67419999487426e-07,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.232486098525116e-14
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "hold_initial": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.0,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "release": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": -7.351706998846228e-10,
+          "maximum_speed": 1.8949706751051154e-08,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 6.411072199834989e-07,
+            "jerk_peak_raw": 1.8783351298106588e-05,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 1.2991021939613986e-05,
+            "max_decel_250ms": 1.299474421479258e-07,
+            "jerk_p95_250ms": 2.277545791355412e-06,
+            "min_signed_speed": -1.6564210352828596e-08,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.572708046563182e-15
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "brake_stop": {
+          "ticks": 5,
+          "duration_s": 0.20000000298023224,
+          "initial_signed_speed": -1.3007632093846814e-09,
+          "final_signed_speed": -3.0738735838301606e-09,
+          "maximum_speed": 3.0738735838301606e-09,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": null,
+          "comfort_passed": false,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "hold_final": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": -3.6393459199720974e-09,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 3.6393459199720974e-09,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 1.1309446712884998e-08,
+            "jerk_peak_raw": 1.6819272758467016e-06,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 1.2353219430968811e-14,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 1.1309434191141688e-08,
+            "min_signed_speed": -3.639345970859658e-09,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 8.818265531498206e-18
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "restart": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": -1.114683216837654e-09,
+          "maximum_speed": 1.965864269595976e-08,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 5.944439870120898e-07,
+            "jerk_peak_raw": 1.8484824661640205e-05,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 1.2275904052580144e-05,
+            "max_decel_250ms": 1.0759155054215965e-07,
+            "jerk_p95_250ms": 1.436518463321344e-06,
+            "min_signed_speed": -1.9658642971247744e-08,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.0729899639132225e-15
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "hold_passed": true,
+      "restart_passed": false,
+      "normal_comfort_passed": false,
+      "all_raw": {
+        "max_decel_raw": 5.349312998179153e-06,
+        "jerk_peak_raw": 0.00018628531190159254,
+        "jerk_p95_moving": 0.0,
+        "jerk_p95_all": 1.239053122435309e-05,
+        "max_decel_250ms": 2.7668943487146067e-07,
+        "jerk_p95_250ms": 1.7965478773703683e-06,
+        "min_signed_speed": -2.67419999487426e-07,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.0,
+        "api_accel_vs_velocity_derivative_mae": 4.42291531519326e-15
+      },
+      "collisions": [],
+      "complete": true,
+      "reference": "Real CARLA snapshots; phase raw metrics include previous two samples at command boundary. Initialize kept separately; prepare/startup not removed from normal gates."
+    },
+    {
+      "name": "validation_p170_s202_warm_service_auto_015",
+      "task": {
+        "split": "validation",
+        "spawn": 170,
+        "seed": 202,
+        "name": "warm_service_auto_015",
+        "warm": true,
+        "hold": "service",
+        "manual1": false,
+        "throttle": 0.15
+      },
+      "physics": {
+        "path": "reports/m6d_probe_artifacts/validation_p170_s202_warm_service_auto_015/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "trace": {
+        "path": "reports/m6d_probe_artifacts/validation_p170_s202_warm_service_auto_015/trace.jsonl",
+        "bytes": 880679,
+        "sha256": "6d6e369c62bc79cd0359453348b71cc118be25df72924def74641b8f5bbb0333"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "duration_s": 1.4500000216066837,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 2.6741999583649075e-07,
+          "max_displacement_m": 3.814697265625e-06,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 5.349312998179153e-06,
+            "jerk_peak_raw": 0.00018628531190159254,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 9.121738818587073e-05,
+            "max_decel_250ms": 2.7668943487146067e-07,
+            "jerk_p95_250ms": 1.153488554390478e-05,
+            "min_signed_speed": -2.67419999487426e-07,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.232486098525116e-14
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "prepare": {
+          "ticks": 46,
+          "duration_s": 2.2500000335276127,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.5081163527624654,
+          "maximum_speed": 0.5081163527624654,
+          "max_displacement_m": 0.012052574646639273,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 2.2500000335276127,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 6.411072199834989e-07,
+            "jerk_peak_raw": 203.24654025720037,
+            "jerk_p95_moving": 203.24654025720037,
+            "jerk_p95_all": 1.7901022393489813e-05,
+            "max_decel_250ms": 1.299474421479258e-07,
+            "jerk_p95_250ms": 2.630509963328826e-06,
+            "min_signed_speed": -1.6564210352828596e-08,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.05,
+            "api_accel_vs_velocity_derivative_mae": 8.71653400027567e-09
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "normal_stop": {
+          "ticks": 6,
+          "duration_s": 0.2500000037252903,
+          "initial_signed_speed": 1.1342871376600396,
+          "final_signed_speed": -4.305280255213863e-05,
+          "maximum_speed": 1.1342871376600396,
+          "max_displacement_m": 0.06448554992675781,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.0,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 16.811806615603658,
+            "jerk_peak_raw": 367.6885625571999,
+            "jerk_p95_moving": 362.93878491867935,
+            "jerk_p95_all": 359.772266492999,
+            "max_decel_250ms": 4.537319423668244,
+            "jerk_p95_250ms": 49.6243403054114,
+            "min_signed_speed": -4.3053043521735555e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 2.0704936999952625e-06
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "hold_warm": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": -4.460234832169438e-05,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 4.460234832169438e-05,
+          "max_displacement_m": 5.14984130859375e-05,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0006375634647743302,
+            "jerk_peak_raw": 0.01213152079375373,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0035312276260791916,
+            "max_decel_250ms": 4.530505805805797e-05,
+            "jerk_p95_250ms": 0.0005862445592571902,
+            "min_signed_speed": -4.46024143472208e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 5.612533645950141e-11
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "release": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 1.711415581649213,
+          "maximum_speed": 1.711415581649213,
+          "max_displacement_m": 6.385236662832478,
+          "backward_ticks": 2,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.5000000074505806,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 1.9378782849727874,
+            "jerk_peak_raw": 82.1310402776411,
+            "jerk_p95_moving": 61.82617800676327,
+            "jerk_p95_all": 76.3948673725686,
+            "max_decel_250ms": 0.3301652092573956,
+            "jerk_p95_250ms": 12.067540384304905,
+            "min_signed_speed": -0.05888968154401622,
+            "reverse_ticks": 2,
+            "low_speed_moving_seconds": 3.9000000000000004,
+            "api_accel_vs_velocity_derivative_mae": 6.156230387080011e-07
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0,
+            0.0026119649136682878
+          ]
+        },
+        "brake_stop": {
+          "ticks": 8,
+          "duration_s": 0.3500000052154064,
+          "initial_signed_speed": 1.7106509688767322,
+          "final_signed_speed": -0.00020423798310228235,
+          "maximum_speed": 1.7106509688767322,
+          "max_displacement_m": 0.2637668714507604,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.0,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 22.301426506495336,
+            "jerk_peak_raw": 443.8092985823524,
+            "jerk_p95_moving": 388.2299046919097,
+            "jerk_p95_all": 365.9981471357325,
+            "max_decel_250ms": 6.842684629199999,
+            "jerk_p95_250ms": 76.82172501650975,
+            "min_signed_speed": -0.00020416396147870765,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.05,
+            "api_accel_vs_velocity_derivative_mae": 5.7191546791721805e-06
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0026754355230483246,
+            0.0028710503048226844
+          ]
+        },
+        "hold_final": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": -0.00017682555543698596,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.00017682555543698596,
+          "max_displacement_m": 0.00019073486328125,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.00035715389120611,
+            "jerk_peak_raw": 0.025692867397344152,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.003914680607153949,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.002858569746077453,
+            "min_signed_speed": -0.00020416396147870765,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 1.6991043887036414e-08
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.0028710989571623883,
+            0.0028712404013382284
+          ]
+        },
+        "restart": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 1.7705271152040662,
+          "maximum_speed": 1.826612774657527,
+          "max_displacement_m": 6.337365375886501,
+          "backward_ticks": 2,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.5000000074505806,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 1.9757035669505447,
+            "jerk_peak_raw": 87.83284313560495,
+            "jerk_p95_moving": 60.69868478236333,
+            "jerk_p95_all": 76.42310857760505,
+            "max_decel_250ms": 0.3586414467761102,
+            "jerk_p95_250ms": 12.366785333137367,
+            "min_signed_speed": -0.05759379962006301,
+            "reverse_ticks": 2,
+            "low_speed_moving_seconds": 3.75,
+            "api_accel_vs_velocity_derivative_mae": 1.2179480580683279e-06
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            0.002869616765542436,
+            0.007571169694123142
+          ]
+        }
+      },
+      "hold_passed": true,
+      "restart_passed": false,
+      "normal_comfort_passed": false,
+      "all_raw": {
+        "max_decel_raw": 22.301426506495336,
+        "jerk_peak_raw": 443.8092985823524,
+        "jerk_p95_moving": 63.63560042810711,
+        "jerk_p95_all": 64.73658410557992,
+        "max_decel_250ms": 6.842684629199999,
+        "jerk_p95_250ms": 12.419218853802034,
+        "min_signed_speed": -0.05888968154401622,
+        "reverse_ticks": 4,
+        "low_speed_moving_seconds": 7.8500000000000005,
+        "api_accel_vs_velocity_derivative_mae": 6.353781459406425e-07
+      },
+      "collisions": [],
+      "complete": true,
+      "reference": "Real CARLA snapshots; phase raw metrics include previous two samples at command boundary. Initialize kept separately; prepare/startup not removed from normal gates."
+    },
+    {
+      "name": "validation_p66_s201_cold_hand_auto_015",
+      "task": {
+        "split": "validation",
+        "spawn": 66,
+        "seed": 201,
+        "name": "cold_hand_auto_015",
+        "warm": false,
+        "hold": "hand",
+        "manual1": false,
+        "throttle": 0.15
+      },
+      "physics": {
+        "path": "reports/m6d_probe_artifacts/validation_p66_s201_cold_hand_auto_015/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "trace": {
+        "path": "reports/m6d_probe_artifacts/validation_p66_s201_cold_hand_auto_015/trace.jsonl",
+        "bytes": 798396,
+        "sha256": "5736ad8c86b3a18d0ed42c2519dc6a4a7fde1f1884093d655a977345f404a10e"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "duration_s": 1.4500000216066837,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.01503186034365702,
+          "max_displacement_m": 0.0062637514957426385,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.1020844222591919,
+            "jerk_peak_raw": 4.9899750511399095,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 2.898896353829477,
+            "max_decel_250ms": 0.02041688445183838,
+            "jerk_p95_250ms": 0.5646027525408686,
+            "min_signed_speed": -0.005104221189018416,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.024196220136879904
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381743806729216
+          ]
+        },
+        "hold_initial": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.0,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381787224790134
+          ]
+        },
+        "release": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 2.129256998283192,
+          "maximum_speed": 2.129256998283192,
+          "max_displacement_m": 4.575485235216924,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 3.6000000536441803,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0004830394013198251,
+            "jerk_peak_raw": 288.47418913083624,
+            "jerk_p95_moving": 71.65043757107694,
+            "jerk_p95_all": 6.629436895409537,
+            "max_decel_250ms": 9.650040359734099e-05,
+            "jerk_p95_250ms": 14.773324573377998,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 6.241980064522846e-07
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            0,
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381728860188527
+          ]
+        },
+        "brake_stop": {
+          "ticks": 17,
+          "duration_s": 0.800000011920929,
+          "initial_signed_speed": 2.1345406045356357,
+          "final_signed_speed": -0.00017451362492978904,
+          "maximum_speed": 2.1345406045356357,
+          "max_displacement_m": 1.1582107560027404,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.0,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 20.035225234579553,
+            "jerk_peak_raw": 398.7638433476254,
+            "jerk_p95_moving": 302.2953375753933,
+            "jerk_p95_all": 288.51412246507454,
+            "max_decel_250ms": 7.36325823793203,
+            "jerk_p95_250ms": 61.819616682399655,
+            "min_signed_speed": -0.00017454891898521538,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.05,
+            "api_accel_vs_velocity_derivative_mae": 1.5810977467783065e-06
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.01138175125730881,
+            -0.011381728905570028
+          ]
+        },
+        "hold_final": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": -0.0001441246136083115,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.0003390014279255907,
+          "max_displacement_m": 0.00024604058069758756,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.002474677280365101,
+            "jerk_peak_raw": 0.24276758833612724,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.03687553520781553,
+            "max_decel_250ms": 0.0013561905875334444,
+            "jerk_p95_250ms": 0.009708373354484242,
+            "min_signed_speed": -0.00017454891898521538,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 9.407324793183287e-10
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381743806729216,
+            -0.011381736356149622
+          ]
+        },
+        "restart": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 2.2308617502687773,
+          "maximum_speed": 2.2308617502687773,
+          "max_displacement_m": 7.693713004128791,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.5500000081956387,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 1.1378821210452335,
+            "jerk_peak_raw": 63.5178593456124,
+            "jerk_p95_moving": 60.17777476005125,
+            "jerk_p95_all": 59.670286867214756,
+            "max_decel_250ms": 0.04986304767146954,
+            "jerk_p95_250ms": 11.95877091789181,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.6500000000000004,
+            "api_accel_vs_velocity_derivative_mae": 6.945990070846697e-07
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381765515718267,
+            -0.011217324416243221
+          ]
+        }
+      },
+      "hold_passed": true,
+      "restart_passed": false,
+      "normal_comfort_passed": false,
+      "all_raw": {
+        "max_decel_raw": 20.035225234579553,
+        "jerk_peak_raw": 398.7638433476254,
+        "jerk_p95_moving": 61.64500457617234,
+        "jerk_p95_all": 58.88718884467192,
+        "max_decel_250ms": 7.36325823793203,
+        "jerk_p95_250ms": 11.915584757758173,
+        "min_signed_speed": -0.005104221189018416,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 2.85,
+        "api_accel_vs_velocity_derivative_mae": 0.0017287624051391802
+      },
+      "collisions": [],
+      "complete": true,
+      "reference": "Real CARLA snapshots; phase raw metrics include previous two samples at command boundary. Initialize kept separately; prepare/startup not removed from normal gates."
+    },
+    {
+      "name": "validation_p66_s201_cold_hand_manual1_015",
+      "task": {
+        "split": "validation",
+        "spawn": 66,
+        "seed": 201,
+        "name": "cold_hand_manual1_015",
+        "warm": false,
+        "hold": "hand",
+        "manual1": true,
+        "throttle": 0.15
+      },
+      "physics": {
+        "path": "reports/m6d_probe_artifacts/validation_p66_s201_cold_hand_manual1_015/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "trace": {
+        "path": "reports/m6d_probe_artifacts/validation_p66_s201_cold_hand_manual1_015/trace.jsonl",
+        "bytes": 811429,
+        "sha256": "9b8e1bdf37ff47aabf869c1c28a936aedd4a666d771514c84ad4afdda011f398"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "duration_s": 1.4500000216066837,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.01503186034365702,
+          "max_displacement_m": 0.0062637514957426385,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.1020844222591919,
+            "jerk_peak_raw": 4.9899750511399095,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 2.898896353829477,
+            "max_decel_250ms": 0.02041688445183838,
+            "jerk_p95_250ms": 0.5646027525408686,
+            "min_signed_speed": -0.005104221189018416,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.024196220136879904
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0,
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381743806729216
+          ]
+        },
+        "hold_initial": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.0,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381787224790134
+          ]
+        },
+        "release": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 2.1775918018602147,
+          "maximum_speed": 2.223974970200082,
+          "max_displacement_m": 7.682360140468712,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.5500000081956387,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 1.078007400174556,
+            "jerk_peak_raw": 59.58383818515459,
+            "jerk_p95_moving": 58.13242511188566,
+            "jerk_p95_all": 57.93464360202941,
+            "max_decel_250ms": 0.04479306060952228,
+            "jerk_p95_250ms": 11.477316472210163,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.6500000000000004,
+            "api_accel_vs_velocity_derivative_mae": 7.588917968337813e-07
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.01138170034361851
+          ]
+        },
+        "brake_stop": {
+          "ticks": 25,
+          "duration_s": 1.2000000178813934,
+          "initial_signed_speed": 2.240823543182851,
+          "final_signed_speed": -0.0001399582447367236,
+          "maximum_speed": 2.240823543182851,
+          "max_displacement_m": 1.806149520112699,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.0,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 21.484622297111322,
+            "jerk_peak_raw": 385.92735396251516,
+            "jerk_p95_moving": 277.0359016732473,
+            "jerk_p95_all": 261.47487291046264,
+            "max_decel_250ms": 6.436702138701856,
+            "jerk_p95_250ms": 29.635728598847653,
+            "min_signed_speed": -0.0001545136772479654,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 1.1390540796183173e-06
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381743806729216,
+            -0.01138170038899955
+          ]
+        },
+        "hold_final": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": -0.00010914958737971314,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.00024725596580654486,
+          "max_displacement_m": 0.000156402587890625,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0024810055757704,
+            "jerk_peak_raw": 0.18108501911844097,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.03937925562265827,
+            "max_decel_250ms": 0.0009890834643211958,
+            "jerk_p95_250ms": 0.008257263536662784,
+            "min_signed_speed": -0.0001545136772479654,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.370762927650038e-10
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381743761347657,
+            -0.011381736310768092
+          ]
+        },
+        "restart": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 2.163166649799184,
+          "maximum_speed": 2.210236202272548,
+          "max_displacement_m": 7.67724637835715,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.5500000081956387,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 1.2998237529356704,
+            "jerk_peak_raw": 61.31715995955914,
+            "jerk_p95_moving": 59.83800506356571,
+            "jerk_p95_all": 59.829610544786036,
+            "max_decel_250ms": 0.054006388782668634,
+            "jerk_p95_250ms": 11.723997947326886,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.6500000000000004,
+            "api_accel_vs_velocity_derivative_mae": 7.35589336620698e-07
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381765515718267,
+            -0.009841787235682681
+          ]
+        }
+      },
+      "hold_passed": true,
+      "restart_passed": true,
+      "normal_comfort_passed": false,
+      "all_raw": {
+        "max_decel_raw": 21.484622297111322,
+        "jerk_peak_raw": 385.92735396251516,
+        "jerk_p95_moving": 59.4376773818835,
+        "jerk_p95_all": 58.541851027991825,
+        "max_decel_250ms": 6.436702138701856,
+        "jerk_p95_250ms": 11.62318907436842,
+        "min_signed_speed": -0.005104221189018416,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 5.45,
+        "api_accel_vs_velocity_derivative_mae": 0.0016954074065776337
+      },
+      "collisions": [],
+      "complete": true,
+      "reference": "Real CARLA snapshots; phase raw metrics include previous two samples at command boundary. Initialize kept separately; prepare/startup not removed from normal gates."
+    },
+    {
+      "name": "validation_p66_s201_cold_service_auto_010",
+      "task": {
+        "split": "validation",
+        "spawn": 66,
+        "seed": 201,
+        "name": "cold_service_auto_010",
+        "warm": false,
+        "hold": "service",
+        "manual1": false,
+        "throttle": 0.1
+      },
+      "physics": {
+        "path": "reports/m6d_probe_artifacts/validation_p66_s201_cold_service_auto_010/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "trace": {
+        "path": "reports/m6d_probe_artifacts/validation_p66_s201_cold_service_auto_010/trace.jsonl",
+        "bytes": 776534,
+        "sha256": "aa4f8a87789ad22b2ca9c71ed08550a88f79b40405817cd3021c81f17987480b"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "duration_s": 1.4500000216066837,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.01503186034365702,
+          "max_displacement_m": 0.0062637514957426385,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.1020844222591919,
+            "jerk_peak_raw": 4.9899750511399095,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 2.898896353829477,
+            "max_decel_250ms": 0.02041688445183838,
+            "jerk_p95_250ms": 0.5646027525408686,
+            "min_signed_speed": -0.005104221189018416,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.024196220136879904
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381743806729216
+          ]
+        },
+        "hold_initial": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.0,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381787224790134
+          ]
+        },
+        "release": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 2.4149157858776244e-05,
+          "maximum_speed": 4.2835489274030734e-05,
+          "max_displacement_m": 7.62939453125e-06,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0004830394013198251,
+            "jerk_peak_raw": 0.01932143207207016,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.009664141979598693,
+            "max_decel_250ms": 9.658361636735615e-05,
+            "jerk_p95_250ms": 0.0019319483418139979,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 2.6441971281050106e-09
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381743806729216
+          ]
+        },
+        "brake_stop": {
+          "ticks": 5,
+          "duration_s": 0.20000000298023224,
+          "initial_signed_speed": 2.4139563478981882e-05,
+          "final_signed_speed": 2.4163397966862097e-05,
+          "maximum_speed": 2.4174474759341614e-05,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": null,
+          "comfort_passed": false,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381743806729216,
+            -0.011381743806729216
+          ]
+        },
+        "hold_final": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": 2.4138494300347952e-05,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 2.4138494300347952e-05,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.00048219650068954316,
+            "jerk_peak_raw": 0.009643929870085109,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 8.986539097190792e-07,
+            "max_decel_250ms": 9.660940268943603e-05,
+            "jerk_p95_250ms": 4.81411647558151e-08,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 1.1826519590310773e-13
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381743806729216,
+            -0.011381743806729216
+          ]
+        },
+        "restart": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 2.4129949514203624e-05,
+          "maximum_speed": 3.420581870679748e-05,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.00048312174059241935,
+            "jerk_peak_raw": 0.019328090825091748,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.009657742021139084,
+            "max_decel_250ms": 9.657808373837471e-05,
+            "jerk_p95_250ms": 0.0019301571748298755,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 6.565628590546178e-13
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381743806729216,
+            -0.011381743806729216
+          ]
+        }
+      },
+      "hold_passed": true,
+      "restart_passed": false,
+      "normal_comfort_passed": false,
+      "all_raw": {
+        "max_decel_raw": 0.1020844222591919,
+        "jerk_peak_raw": 4.9899750511399095,
+        "jerk_p95_moving": 0.0,
+        "jerk_p95_all": 0.009672820355815676,
+        "max_decel_250ms": 0.02041688445183838,
+        "jerk_p95_250ms": 0.0019373926753741939,
+        "min_signed_speed": -0.005104221189018416,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.0,
+        "api_accel_vs_velocity_derivative_mae": 0.0017809408731067915
+      },
+      "collisions": [],
+      "complete": true,
+      "reference": "Real CARLA snapshots; phase raw metrics include previous two samples at command boundary. Initialize kept separately; prepare/startup not removed from normal gates."
+    },
+    {
+      "name": "validation_p66_s201_natural_rollback_protection",
+      "task": {
+        "split": "validation",
+        "spawn": 66,
+        "seed": 201,
+        "name": "natural_rollback_protection",
+        "warm": false,
+        "hold": "service",
+        "manual1": false,
+        "throttle": 0.0,
+        "rollback": true
+      },
+      "physics": {
+        "path": "reports/m6d_probe_artifacts/validation_p66_s201_natural_rollback_protection/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "trace": {
+        "path": "reports/m6d_probe_artifacts/validation_p66_s201_natural_rollback_protection/trace.jsonl",
+        "bytes": 523188,
+        "sha256": "4ea8fbe40c1b28869615c9cadc40e03168585e212a2de02d1d40c7d302b2113a"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "duration_s": 1.4500000216066837,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.01503186034365702,
+          "max_displacement_m": 0.0062637514957426385,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.1020844222591919,
+            "jerk_peak_raw": 4.9899750511399095,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 2.898896353829477,
+            "max_decel_250ms": 0.02041688445183838,
+            "jerk_p95_250ms": 0.5646027525408686,
+            "min_signed_speed": -0.005104221189018416,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.024196220136879904
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381743806729216
+          ]
+        },
+        "hold_initial": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.0,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381787224790134
+          ]
+        },
+        "release_rollback": {
+          "ticks": 200,
+          "duration_s": 9.950000148266554,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.0,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381787224790134
+          ]
+        }
+      },
+      "hold_passed": true,
+      "restart_passed": false,
+      "normal_comfort_passed": true,
+      "all_raw": {
+        "max_decel_raw": 0.1020844222591919,
+        "jerk_peak_raw": 4.9899750511399095,
+        "jerk_p95_moving": 0.0,
+        "jerk_p95_all": 0.0032196609229494535,
+        "max_decel_250ms": 0.02041688445183838,
+        "jerk_p95_250ms": 0.002765943835712601,
+        "min_signed_speed": -0.005104221189018416,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.0,
+        "api_accel_vs_velocity_derivative_mae": 0.0024279944081990216
+      },
+      "collisions": [],
+      "complete": true,
+      "reference": "Real CARLA snapshots; phase raw metrics include previous two samples at command boundary. Initialize kept separately; prepare/startup not removed from normal gates."
+    },
+    {
+      "name": "validation_p66_s201_warm_service_auto_015",
+      "task": {
+        "split": "validation",
+        "spawn": 66,
+        "seed": 201,
+        "name": "warm_service_auto_015",
+        "warm": true,
+        "hold": "service",
+        "manual1": false,
+        "throttle": 0.15
+      },
+      "physics": {
+        "path": "reports/m6d_probe_artifacts/validation_p66_s201_warm_service_auto_015/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "trace": {
+        "path": "reports/m6d_probe_artifacts/validation_p66_s201_warm_service_auto_015/trace.jsonl",
+        "bytes": 926154,
+        "sha256": "5a3be32a96d39657b5daba878748dcf3a969ca6fb7bb68b63df4496b91af8b40"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "duration_s": 1.4500000216066837,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.01503186034365702,
+          "max_displacement_m": 0.0062637514957426385,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.1020844222591919,
+            "jerk_peak_raw": 4.9899750511399095,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 2.898896353829477,
+            "max_decel_250ms": 0.02041688445183838,
+            "jerk_p95_250ms": 0.5646027525408686,
+            "min_signed_speed": -0.005104221189018416,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.024196220136879904
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381743806729216
+          ]
+        },
+        "prepare": {
+          "ticks": 46,
+          "duration_s": 2.2500000335276127,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.5114921984024164,
+          "maximum_speed": 0.5114921984024164,
+          "max_displacement_m": 0.012115478515625,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 2.2500000335276127,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0004830394013198251,
+            "jerk_peak_raw": 204.60046826264863,
+            "jerk_p95_moving": 204.60046826264863,
+            "jerk_p95_all": 0.010553107513315688,
+            "max_decel_250ms": 9.650040359734099e-05,
+            "jerk_p95_250ms": 0.00193225636917364,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.05,
+            "api_accel_vs_velocity_derivative_mae": 7.556660997126645e-09
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381743806729216
+          ]
+        },
+        "normal_stop": {
+          "ticks": 6,
+          "duration_s": 0.2500000037252903,
+          "initial_signed_speed": 1.1112910416685136,
+          "final_signed_speed": -2.1441139060282522e-05,
+          "maximum_speed": 1.1112910416685136,
+          "max_displacement_m": 0.07229855953248794,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.0,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 18.53060953574792,
+            "jerk_peak_raw": 368.30391118725487,
+            "jerk_p95_moving": 359.7819680755772,
+            "jerk_p95_all": 354.1006726677921,
+            "max_decel_250ms": 4.445536659554258,
+            "jerk_p95_250ms": 47.63732705045235,
+            "min_signed_speed": -2.1449900382190478e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 3.178663374807858e-05
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381743806729216
+          ]
+        },
+        "hold_warm": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": -2.4849176311460666e-05,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 2.4849176311460666e-05,
+          "max_displacement_m": 6.866455078125e-05,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0008079553807057672,
+            "jerk_peak_raw": 0.014798100487184496,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.002225384776052833,
+            "max_decel_250ms": 7.97580333870726e-05,
+            "jerk_p95_250ms": 0.0005842063968821365,
+            "min_signed_speed": -2.4852417698946857e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 6.318279602681413e-11
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381772323574102,
+            -0.011381743806729216
+          ]
+        },
+        "release": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 2.1823643150335164,
+          "maximum_speed": 2.2287103496259815,
+          "max_displacement_m": 7.741451014808625,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.5000000074505806,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 1.848070908188791,
+            "jerk_peak_raw": 78.81205339634096,
+            "jerk_p95_moving": 60.94386248693316,
+            "jerk_p95_all": 67.9042929225114,
+            "max_decel_250ms": 0.2668492504599558,
+            "jerk_p95_250ms": 12.409190461509864,
+            "min_signed_speed": -0.048197855906130294,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.75,
+            "api_accel_vs_velocity_derivative_mae": 7.187418287734436e-07
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.01138170038899955
+          ]
+        },
+        "brake_stop": {
+          "ticks": 25,
+          "duration_s": 1.2000000178813934,
+          "initial_signed_speed": 2.245429175800292,
+          "final_signed_speed": -0.00014040000034355268,
+          "maximum_speed": 2.245429175800292,
+          "max_displacement_m": 1.8101873391272933,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.0,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 21.48878968538085,
+            "jerk_peak_raw": 385.939986495935,
+            "jerk_p95_moving": 276.1025995103727,
+            "jerk_p95_all": 260.78525157456977,
+            "max_decel_250ms": 6.451756278455884,
+            "jerk_p95_250ms": 29.881294674738687,
+            "min_signed_speed": -0.00015489414913574557,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 1.0017788464852442e-06
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381765515718267,
+            -0.01138170034361851
+          ]
+        },
+        "hold_final": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": -0.00010954717484951695,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.00010954717484951695,
+          "max_displacement_m": 0.0001373291015625,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.013700043355860766,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.002407584242158334,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.002122073256864837,
+            "min_signed_speed": -0.00015489414913574557,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 2.525686809831818e-10
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381765515718267,
+            -0.011381736356149622
+          ]
+        },
+        "restart": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 1.9794403655144064,
+          "maximum_speed": 1.9794403655144064,
+          "max_displacement_m": 7.259388680917718,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.5000000074505806,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 1.8594624101869273,
+            "jerk_peak_raw": 78.85266317517194,
+            "jerk_p95_moving": 60.38649407933277,
+            "jerk_p95_all": 65.2014151427502,
+            "max_decel_250ms": 0.27645108051458867,
+            "jerk_p95_250ms": 12.312953946058387,
+            "min_signed_speed": -0.04460003990548294,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 3.0,
+            "api_accel_vs_velocity_derivative_mae": 9.290621485054717e-07
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381765515718267,
+            -0.009926742469506162
+          ]
+        }
+      },
+      "hold_passed": true,
+      "restart_passed": true,
+      "normal_comfort_passed": false,
+      "all_raw": {
+        "max_decel_raw": 21.48878968538085,
+        "jerk_peak_raw": 385.939986495935,
+        "jerk_p95_moving": 63.034468438030075,
+        "jerk_p95_all": 63.44078237957093,
+        "max_decel_250ms": 6.451756278455884,
+        "jerk_p95_250ms": 12.492793706991456,
+        "min_signed_speed": -0.048197855906130294,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 6.050000000000001,
+        "api_accel_vs_velocity_derivative_mae": 0.0015067306035397633
+      },
+      "collisions": [],
+      "complete": true,
+      "reference": "Real CARLA snapshots; phase raw metrics include previous two samples at command boundary. Initialize kept separately; prepare/startup not removed from normal gates."
+    },
+    {
+      "name": "validation_p66_s202_cold_hand_auto_015",
+      "task": {
+        "split": "validation",
+        "spawn": 66,
+        "seed": 202,
+        "name": "cold_hand_auto_015",
+        "warm": false,
+        "hold": "hand",
+        "manual1": false,
+        "throttle": 0.15
+      },
+      "physics": {
+        "path": "reports/m6d_probe_artifacts/validation_p66_s202_cold_hand_auto_015/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "trace": {
+        "path": "reports/m6d_probe_artifacts/validation_p66_s202_cold_hand_auto_015/trace.jsonl",
+        "bytes": 797988,
+        "sha256": "f365a3254f7c6e2d0d1d955fcb85faca2ee07befd95a3ec16424c374415d789b"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "duration_s": 1.4500000216066837,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.01503186034365702,
+          "max_displacement_m": 0.0062637514957426385,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.1020844222591919,
+            "jerk_peak_raw": 4.9899750511399095,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 2.898896353829477,
+            "max_decel_250ms": 0.02041688445183838,
+            "jerk_p95_250ms": 0.5646027525408686,
+            "min_signed_speed": -0.005104221189018416,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.024196220136879904
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381743806729216
+          ]
+        },
+        "hold_initial": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.0,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381787224790134
+          ]
+        },
+        "release": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 2.129256998283192,
+          "maximum_speed": 2.129256998283192,
+          "max_displacement_m": 4.575485235216924,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 3.6000000536441803,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0004830394013198251,
+            "jerk_peak_raw": 288.47418913083624,
+            "jerk_p95_moving": 71.65043757107694,
+            "jerk_p95_all": 6.629436895409537,
+            "max_decel_250ms": 9.650040359734099e-05,
+            "jerk_p95_250ms": 14.773324573377998,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 6.241980064522846e-07
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            0,
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381728860188527
+          ]
+        },
+        "brake_stop": {
+          "ticks": 17,
+          "duration_s": 0.800000011920929,
+          "initial_signed_speed": 2.1345406045356357,
+          "final_signed_speed": -0.00017451362492978904,
+          "maximum_speed": 2.1345406045356357,
+          "max_displacement_m": 1.1582107560027404,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.0,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 20.035225234579553,
+            "jerk_peak_raw": 398.7638433476254,
+            "jerk_p95_moving": 302.2953375753933,
+            "jerk_p95_all": 288.51412246507454,
+            "max_decel_250ms": 7.36325823793203,
+            "jerk_p95_250ms": 61.819616682399655,
+            "min_signed_speed": -0.00017454891898521538,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.05,
+            "api_accel_vs_velocity_derivative_mae": 1.5810977467783065e-06
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.01138175125730881,
+            -0.011381728905570028
+          ]
+        },
+        "hold_final": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": -0.0001441246136083115,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.0003390014279255907,
+          "max_displacement_m": 0.00024604058069758756,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.002474677280365101,
+            "jerk_peak_raw": 0.24276758833612724,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.03687553520781553,
+            "max_decel_250ms": 0.0013561905875334444,
+            "jerk_p95_250ms": 0.009708373354484242,
+            "min_signed_speed": -0.00017454891898521538,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 9.407324793183287e-10
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381743806729216,
+            -0.011381736356149622
+          ]
+        },
+        "restart": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 2.2308617502687773,
+          "maximum_speed": 2.2308617502687773,
+          "max_displacement_m": 7.693713004128791,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.5500000081956387,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 1.1378821210452335,
+            "jerk_peak_raw": 63.5178593456124,
+            "jerk_p95_moving": 60.17777476005125,
+            "jerk_p95_all": 59.670286867214756,
+            "max_decel_250ms": 0.04986304767146954,
+            "jerk_p95_250ms": 11.95877091789181,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.6500000000000004,
+            "api_accel_vs_velocity_derivative_mae": 6.945990070846697e-07
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381765515718267,
+            -0.011217324416243221
+          ]
+        }
+      },
+      "hold_passed": true,
+      "restart_passed": false,
+      "normal_comfort_passed": false,
+      "all_raw": {
+        "max_decel_raw": 20.035225234579553,
+        "jerk_peak_raw": 398.7638433476254,
+        "jerk_p95_moving": 61.64500457617234,
+        "jerk_p95_all": 58.88718884467192,
+        "max_decel_250ms": 7.36325823793203,
+        "jerk_p95_250ms": 11.915584757758173,
+        "min_signed_speed": -0.005104221189018416,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 2.85,
+        "api_accel_vs_velocity_derivative_mae": 0.0017287624051391802
+      },
+      "collisions": [],
+      "complete": true,
+      "reference": "Real CARLA snapshots; phase raw metrics include previous two samples at command boundary. Initialize kept separately; prepare/startup not removed from normal gates."
+    },
+    {
+      "name": "validation_p66_s202_cold_hand_manual1_015",
+      "task": {
+        "split": "validation",
+        "spawn": 66,
+        "seed": 202,
+        "name": "cold_hand_manual1_015",
+        "warm": false,
+        "hold": "hand",
+        "manual1": true,
+        "throttle": 0.15
+      },
+      "physics": {
+        "path": "reports/m6d_probe_artifacts/validation_p66_s202_cold_hand_manual1_015/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "trace": {
+        "path": "reports/m6d_probe_artifacts/validation_p66_s202_cold_hand_manual1_015/trace.jsonl",
+        "bytes": 811274,
+        "sha256": "4645acf6f3bc5a551ac0c112fd21c1ce6440e896c458b998c3a5f7a67e44f371"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "duration_s": 1.4500000216066837,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.01503186034365702,
+          "max_displacement_m": 0.0062637514957426385,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.1020844222591919,
+            "jerk_peak_raw": 4.9899750511399095,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 2.898896353829477,
+            "max_decel_250ms": 0.02041688445183838,
+            "jerk_p95_250ms": 0.5646027525408686,
+            "min_signed_speed": -0.005104221189018416,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.024196220136879904
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0,
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381743806729216
+          ]
+        },
+        "hold_initial": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.0,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381787224790134
+          ]
+        },
+        "release": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 2.1775918018602147,
+          "maximum_speed": 2.223974970200082,
+          "max_displacement_m": 7.682360140468712,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.5500000081956387,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 1.078007400174556,
+            "jerk_peak_raw": 59.58383818515459,
+            "jerk_p95_moving": 58.13242511188566,
+            "jerk_p95_all": 57.93464360202941,
+            "max_decel_250ms": 0.04479306060952228,
+            "jerk_p95_250ms": 11.477316472210163,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.6500000000000004,
+            "api_accel_vs_velocity_derivative_mae": 7.588917968337813e-07
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.01138170034361851
+          ]
+        },
+        "brake_stop": {
+          "ticks": 25,
+          "duration_s": 1.2000000178813934,
+          "initial_signed_speed": 2.240823543182851,
+          "final_signed_speed": -0.0001399582447367236,
+          "maximum_speed": 2.240823543182851,
+          "max_displacement_m": 1.806149520112699,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.0,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 21.484622297111322,
+            "jerk_peak_raw": 385.92735396251516,
+            "jerk_p95_moving": 277.0359016732473,
+            "jerk_p95_all": 261.47487291046264,
+            "max_decel_250ms": 6.436702138701856,
+            "jerk_p95_250ms": 29.635728598847653,
+            "min_signed_speed": -0.0001545136772479654,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 1.1390540796183173e-06
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381743806729216,
+            -0.01138170038899955
+          ]
+        },
+        "hold_final": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": -0.00010914958737971314,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.00024725596580654486,
+          "max_displacement_m": 0.000156402587890625,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0024810055757704,
+            "jerk_peak_raw": 0.18108501911844097,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.03937925562265827,
+            "max_decel_250ms": 0.0009890834643211958,
+            "jerk_p95_250ms": 0.008257263536662784,
+            "min_signed_speed": -0.0001545136772479654,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.370762927650038e-10
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381743761347657,
+            -0.011381736310768092
+          ]
+        },
+        "restart": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 2.163166649799184,
+          "maximum_speed": 2.210236202272548,
+          "max_displacement_m": 7.67724637835715,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.5500000081956387,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 1.2998237529356704,
+            "jerk_peak_raw": 61.31715995955914,
+            "jerk_p95_moving": 59.83800506356571,
+            "jerk_p95_all": 59.829610544786036,
+            "max_decel_250ms": 0.054006388782668634,
+            "jerk_p95_250ms": 11.723997947326886,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.6500000000000004,
+            "api_accel_vs_velocity_derivative_mae": 7.35589336620698e-07
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381765515718267,
+            -0.009841787235682681
+          ]
+        }
+      },
+      "hold_passed": true,
+      "restart_passed": true,
+      "normal_comfort_passed": false,
+      "all_raw": {
+        "max_decel_raw": 21.484622297111322,
+        "jerk_peak_raw": 385.92735396251516,
+        "jerk_p95_moving": 59.4376773818835,
+        "jerk_p95_all": 58.541851027991825,
+        "max_decel_250ms": 6.436702138701856,
+        "jerk_p95_250ms": 11.62318907436842,
+        "min_signed_speed": -0.005104221189018416,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 5.45,
+        "api_accel_vs_velocity_derivative_mae": 0.0016954074065776337
+      },
+      "collisions": [],
+      "complete": true,
+      "reference": "Real CARLA snapshots; phase raw metrics include previous two samples at command boundary. Initialize kept separately; prepare/startup not removed from normal gates."
+    },
+    {
+      "name": "validation_p66_s202_cold_service_auto_010",
+      "task": {
+        "split": "validation",
+        "spawn": 66,
+        "seed": 202,
+        "name": "cold_service_auto_010",
+        "warm": false,
+        "hold": "service",
+        "manual1": false,
+        "throttle": 0.1
+      },
+      "physics": {
+        "path": "reports/m6d_probe_artifacts/validation_p66_s202_cold_service_auto_010/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "trace": {
+        "path": "reports/m6d_probe_artifacts/validation_p66_s202_cold_service_auto_010/trace.jsonl",
+        "bytes": 776134,
+        "sha256": "0e67ae8b4a861570bd6def41ca2dc8007d7d86c6ea87ad8b06e64bf89469b884"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "duration_s": 1.4500000216066837,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.01503186034365702,
+          "max_displacement_m": 0.0062637514957426385,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.1020844222591919,
+            "jerk_peak_raw": 4.9899750511399095,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 2.898896353829477,
+            "max_decel_250ms": 0.02041688445183838,
+            "jerk_p95_250ms": 0.5646027525408686,
+            "min_signed_speed": -0.005104221189018416,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.024196220136879904
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381743806729216
+          ]
+        },
+        "hold_initial": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.0,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381787224790134
+          ]
+        },
+        "release": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 2.4149157858776244e-05,
+          "maximum_speed": 4.2835489274030734e-05,
+          "max_displacement_m": 7.62939453125e-06,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0004830394013198251,
+            "jerk_peak_raw": 0.01932143207207016,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.009664141979598693,
+            "max_decel_250ms": 9.658361636735615e-05,
+            "jerk_p95_250ms": 0.0019319483418139979,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 2.6441971281050106e-09
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381743806729216
+          ]
+        },
+        "brake_stop": {
+          "ticks": 5,
+          "duration_s": 0.20000000298023224,
+          "initial_signed_speed": 2.4139563478981882e-05,
+          "final_signed_speed": 2.4163397966862097e-05,
+          "maximum_speed": 2.4174474759341614e-05,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": null,
+          "comfort_passed": false,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381743806729216,
+            -0.011381743806729216
+          ]
+        },
+        "hold_final": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": 2.4138494300347952e-05,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 2.4138494300347952e-05,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.00048219650068954316,
+            "jerk_peak_raw": 0.009643929870085109,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 8.986539097190792e-07,
+            "max_decel_250ms": 9.660940268943603e-05,
+            "jerk_p95_250ms": 4.81411647558151e-08,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 1.1826519590310773e-13
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381743806729216,
+            -0.011381743806729216
+          ]
+        },
+        "restart": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 2.4129949514203624e-05,
+          "maximum_speed": 3.420581870679748e-05,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.00048312174059241935,
+            "jerk_peak_raw": 0.019328090825091748,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.009657742021139084,
+            "max_decel_250ms": 9.657808373837471e-05,
+            "jerk_p95_250ms": 0.0019301571748298755,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 6.565628590546178e-13
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381743806729216,
+            -0.011381743806729216
+          ]
+        }
+      },
+      "hold_passed": true,
+      "restart_passed": false,
+      "normal_comfort_passed": false,
+      "all_raw": {
+        "max_decel_raw": 0.1020844222591919,
+        "jerk_peak_raw": 4.9899750511399095,
+        "jerk_p95_moving": 0.0,
+        "jerk_p95_all": 0.009672820355815676,
+        "max_decel_250ms": 0.02041688445183838,
+        "jerk_p95_250ms": 0.0019373926753741939,
+        "min_signed_speed": -0.005104221189018416,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.0,
+        "api_accel_vs_velocity_derivative_mae": 0.0017809408731067915
+      },
+      "collisions": [],
+      "complete": true,
+      "reference": "Real CARLA snapshots; phase raw metrics include previous two samples at command boundary. Initialize kept separately; prepare/startup not removed from normal gates."
+    },
+    {
+      "name": "validation_p66_s202_natural_rollback_protection",
+      "task": {
+        "split": "validation",
+        "spawn": 66,
+        "seed": 202,
+        "name": "natural_rollback_protection",
+        "warm": false,
+        "hold": "service",
+        "manual1": false,
+        "throttle": 0.0,
+        "rollback": true
+      },
+      "physics": {
+        "path": "reports/m6d_probe_artifacts/validation_p66_s202_natural_rollback_protection/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "trace": {
+        "path": "reports/m6d_probe_artifacts/validation_p66_s202_natural_rollback_protection/trace.jsonl",
+        "bytes": 523171,
+        "sha256": "8a16f36aec27a5c3502234b05a36fee8f0ce74b8a5a1093c2a0dd2cc85bba2f1"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "duration_s": 1.4500000216066837,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.01503186034365702,
+          "max_displacement_m": 0.0062637514957426385,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.1020844222591919,
+            "jerk_peak_raw": 4.9899750511399095,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 2.898896353829477,
+            "max_decel_250ms": 0.02041688445183838,
+            "jerk_p95_250ms": 0.5646027525408686,
+            "min_signed_speed": -0.005104221189018416,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.024196220136879904
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381743806729216
+          ]
+        },
+        "hold_initial": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.0,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381787224790134
+          ]
+        },
+        "release_rollback": {
+          "ticks": 200,
+          "duration_s": 9.950000148266554,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.0,
+          "max_displacement_m": 0.0,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381787224790134
+          ]
+        }
+      },
+      "hold_passed": true,
+      "restart_passed": false,
+      "normal_comfort_passed": true,
+      "all_raw": {
+        "max_decel_raw": 0.1020844222591919,
+        "jerk_peak_raw": 4.9899750511399095,
+        "jerk_p95_moving": 0.0,
+        "jerk_p95_all": 0.0032196609229494535,
+        "max_decel_250ms": 0.02041688445183838,
+        "jerk_p95_250ms": 0.002765943835712601,
+        "min_signed_speed": -0.005104221189018416,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 0.0,
+        "api_accel_vs_velocity_derivative_mae": 0.0024279944081990216
+      },
+      "collisions": [],
+      "complete": true,
+      "reference": "Real CARLA snapshots; phase raw metrics include previous two samples at command boundary. Initialize kept separately; prepare/startup not removed from normal gates."
+    },
+    {
+      "name": "validation_p66_s202_warm_service_auto_015",
+      "task": {
+        "split": "validation",
+        "spawn": 66,
+        "seed": 202,
+        "name": "warm_service_auto_015",
+        "warm": true,
+        "hold": "service",
+        "manual1": false,
+        "throttle": 0.15
+      },
+      "physics": {
+        "path": "reports/m6d_probe_artifacts/validation_p66_s202_warm_service_auto_015/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "trace": {
+        "path": "reports/m6d_probe_artifacts/validation_p66_s202_warm_service_auto_015/trace.jsonl",
+        "bytes": 926211,
+        "sha256": "82d4a76dfe4dec8f05e89332ea83cdc5a570f44abd309a50f2e49fd6d06c16bc"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "duration_s": 1.4500000216066837,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.01503186034365702,
+          "max_displacement_m": 0.0062637514957426385,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.1020844222591919,
+            "jerk_peak_raw": 4.9899750511399095,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 2.898896353829477,
+            "max_decel_250ms": 0.02041688445183838,
+            "jerk_p95_250ms": 0.5646027525408686,
+            "min_signed_speed": -0.005104221189018416,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.024196220136879904
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381743806729216
+          ]
+        },
+        "prepare": {
+          "ticks": 46,
+          "duration_s": 2.2500000335276127,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 0.5114921984024164,
+          "maximum_speed": 0.5114921984024164,
+          "max_displacement_m": 0.012115478515625,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 2.2500000335276127,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0004830394013198251,
+            "jerk_peak_raw": 204.60046826264863,
+            "jerk_p95_moving": 204.60046826264863,
+            "jerk_p95_all": 0.010553107513315688,
+            "max_decel_250ms": 9.650040359734099e-05,
+            "jerk_p95_250ms": 0.00193225636917364,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.05,
+            "api_accel_vs_velocity_derivative_mae": 7.556660997126645e-09
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            0
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381743806729216
+          ]
+        },
+        "normal_stop": {
+          "ticks": 6,
+          "duration_s": 0.2500000037252903,
+          "initial_signed_speed": 1.1112910416685136,
+          "final_signed_speed": -2.1441139060282522e-05,
+          "maximum_speed": 1.1112910416685136,
+          "max_displacement_m": 0.07229855953248794,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.0,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 18.53060953574792,
+            "jerk_peak_raw": 368.30391118725487,
+            "jerk_p95_moving": 359.7819680755772,
+            "jerk_p95_all": 354.1006726677921,
+            "max_decel_250ms": 4.445536659554258,
+            "jerk_p95_250ms": 47.63732705045235,
+            "min_signed_speed": -2.1449900382190478e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 3.178663374807858e-05
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.011381743806729216
+          ]
+        },
+        "hold_warm": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": -2.4849176311460666e-05,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 2.4849176311460666e-05,
+          "max_displacement_m": 6.866455078125e-05,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0008079553807057672,
+            "jerk_peak_raw": 0.014798100487184496,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.002225384776052833,
+            "max_decel_250ms": 7.97580333870726e-05,
+            "jerk_p95_250ms": 0.0005842063968821365,
+            "min_signed_speed": -2.4852417698946857e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 6.318279602681413e-11
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381772323574102,
+            -0.011381743806729216
+          ]
+        },
+        "release": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 2.1823643150335164,
+          "maximum_speed": 2.2287103496259815,
+          "max_displacement_m": 7.741451014808625,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.5000000074505806,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 1.848070908188791,
+            "jerk_peak_raw": 78.81205339634096,
+            "jerk_p95_moving": 60.94386248693316,
+            "jerk_p95_all": 67.9042929225114,
+            "max_decel_250ms": 0.2668492504599558,
+            "jerk_p95_250ms": 12.409190461509864,
+            "min_signed_speed": -0.048197855906130294,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.75,
+            "api_accel_vs_velocity_derivative_mae": 7.187418287734436e-07
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381787224790134,
+            -0.01138170038899955
+          ]
+        },
+        "brake_stop": {
+          "ticks": 25,
+          "duration_s": 1.2000000178813934,
+          "initial_signed_speed": 2.245429175800292,
+          "final_signed_speed": -0.00014040000034355268,
+          "maximum_speed": 2.245429175800292,
+          "max_displacement_m": 1.8101873391272933,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.0,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 21.48878968538085,
+            "jerk_peak_raw": 385.939986495935,
+            "jerk_p95_moving": 276.1025995103727,
+            "jerk_p95_all": 260.78525157456977,
+            "max_decel_250ms": 6.451756278455884,
+            "jerk_p95_250ms": 29.881294674738687,
+            "min_signed_speed": -0.00015489414913574557,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 1.0017788464852442e-06
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381765515718267,
+            -0.01138170034361851
+          ]
+        },
+        "hold_final": {
+          "ticks": 60,
+          "duration_s": 2.9500000439584255,
+          "initial_signed_speed": -0.00010954717484951695,
+          "final_signed_speed": 0.0,
+          "maximum_speed": 0.00010954717484951695,
+          "max_displacement_m": 0.0001373291015625,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 40,
+          "hold_physical_passed": true,
+          "restart_delay_s": null,
+          "restart_passed": false,
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.013700043355860766,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.002407584242158334,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.002122073256864837,
+            "min_signed_speed": -0.00015489414913574557,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 2.525686809831818e-10
+          },
+          "comfort_passed": true,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381765515718267,
+            -0.011381736356149622
+          ]
+        },
+        "restart": {
+          "ticks": 120,
+          "duration_s": 5.950000088661909,
+          "initial_signed_speed": 0.0,
+          "final_signed_speed": 1.9794403655144064,
+          "maximum_speed": 1.9794403655144064,
+          "max_displacement_m": 7.259388680917718,
+          "backward_ticks": 0,
+          "hold_stable_ticks": 0,
+          "hold_physical_passed": false,
+          "restart_delay_s": 0.5000000074505806,
+          "restart_passed": true,
+          "raw": {
+            "max_decel_raw": 1.8594624101869273,
+            "jerk_peak_raw": 78.85266317517194,
+            "jerk_p95_moving": 60.38649407933277,
+            "jerk_p95_all": 65.2014151427502,
+            "max_decel_250ms": 0.27645108051458867,
+            "jerk_p95_250ms": 12.312953946058387,
+            "min_signed_speed": -0.04460003990548294,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 3.0,
+            "api_accel_vs_velocity_derivative_mae": 9.290621485054717e-07
+          },
+          "comfort_passed": false,
+          "gear_states": [
+            1
+          ],
+          "emergency": false,
+          "slope_range": [
+            -0.011381765515718267,
+            -0.009926742469506162
+          ]
+        }
+      },
+      "hold_passed": true,
+      "restart_passed": true,
+      "normal_comfort_passed": false,
+      "all_raw": {
+        "max_decel_raw": 21.48878968538085,
+        "jerk_peak_raw": 385.939986495935,
+        "jerk_p95_moving": 63.034468438030075,
+        "jerk_p95_all": 63.44078237957093,
+        "max_decel_250ms": 6.451756278455884,
+        "jerk_p95_250ms": 12.492793706991456,
+        "min_signed_speed": -0.048197855906130294,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 6.050000000000001,
+        "api_accel_vs_velocity_derivative_mae": 0.0015067306035397633
+      },
+      "collisions": [],
+      "complete": true,
+      "reference": "Real CARLA snapshots; phase raw metrics include previous two samples at command boundary. Initialize kept separately; prepare/startup not removed from normal gates."
+    }
+  ],
+  "methods": {
+    "cold_hand_auto_015": {
+      "trials": 4,
+      "hold_passed": 4,
+      "restart_passed": 0,
+      "comfort_passed": 0,
+      "all_prerequisites_passed": false
+    },
+    "cold_hand_manual1_015": {
+      "trials": 4,
+      "hold_passed": 4,
+      "restart_passed": 4,
+      "comfort_passed": 0,
+      "all_prerequisites_passed": false
+    },
+    "cold_service_auto_010": {
+      "trials": 4,
+      "hold_passed": 4,
+      "restart_passed": 0,
+      "comfort_passed": 0,
+      "all_prerequisites_passed": false
+    },
+    "warm_service_auto_015": {
+      "trials": 4,
+      "hold_passed": 4,
+      "restart_passed": 2,
+      "comfort_passed": 0,
+      "all_prerequisites_passed": false
+    }
+  },
+  "F1_prerequisite_passed": false,
+  "independent_city_generalization": false,
+  "limits": "Two repeated seeds per fixed position, not independent worlds. Same Town03. Diagnostic no Planner, not closed-loop navigation or strict runtime."
+}

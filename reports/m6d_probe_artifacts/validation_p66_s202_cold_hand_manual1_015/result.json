@@ -1,0 +1,65 @@
+{
+  "kind": "actual_CARLA_fixed_sim_dt_unpaced_actuator_probe",
+  "source": "Privileged",
+  "base": "d808c21c1a4a2a1e7a2a14c5a4a1dc5465768fc1",
+  "git_head": "6eeaafc01e4742efbd7b08ea97755f3ce6c18b05",
+  "sources": {
+    "configs/m6d/protocol.json": "3fd40d9d20e3bd0478e6c365fd683d9bad77874c7a167a9c9c4b472779099b45",
+    "simulator/m6d_motion.py": "04212bb40ef36e00937f85d565b30f7f9cb96b5d7d2c3229609e51f56a5a2b03",
+    "simulator/m6d_state.py": "72cd039e38bbeae6890a8825d8c82590f8f420fb5401e696b0cb28addca4580f",
+    "simulator/m6d_targets.py": "5ba466cffb7429384ea43e64b5cf11cf3645b80d2384ba97ca462b9b7b28e1f8",
+    "tests/test_m6d_contract.py": "9775efa940b4bfab5ab250072f0d32302b893febe10921ff5a32d82840e233ee",
+    "tests/test_m6d_sdk.py": "36def2fda4e0d752bdc7801cc6230e20eb94d56c7291cd144855ffbc4a76f01a",
+    "tools/m6d_campaign.py": "978947e7c103067a1e74f961d3c0e816a301b0fb558fdcf4a9e64b0f60b5e74f",
+    "tools/m6d_common.py": "9177c5be09b86fdd16974f87b3665bd01f55b609f95f3bff7ff19dba7ccf1181",
+    "tools/m6d_drive.py": "815f93f3cbde0dbbf047468269d4b8a1272d5f4bc2313cd9546228b0b4af511c",
+    "tools/m6d_probe.py": "b3e03c764ad4f3600cfd5c45445191b1545ddbf67c40f1cb780d44cad0161444",
+    "tools/m6d_probe_analysis.py": "efdbe63714e4a3fb37332f5ae089c904356de84000dcdfdb6715c8ebee0c5e56"
+  },
+  "visual_control": false,
+  "name": "validation_p66_s202_cold_hand_manual1_015",
+  "task": {
+    "split": "validation",
+    "spawn": 66,
+    "seed": 202,
+    "name": "cold_hand_manual1_015",
+    "warm": false,
+    "hold": "hand",
+    "manual1": true,
+    "throttle": 0.15
+  },
+  "trace": {
+    "path": "reports/m6d_probe_artifacts/validation_p66_s202_cold_hand_manual1_015/trace.jsonl",
+    "bytes": 811274,
+    "sha256": "4645acf6f3bc5a551ac0c112fd21c1ce6440e896c458b998c3a5f7a67e44f371"
+  },
+  "physics": {
+    "path": "reports/m6d_probe_artifacts/validation_p66_s202_cold_hand_manual1_015/physics.json",
+    "bytes": 2286,
+    "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+  },
+  "ticks": 415,
+  "collisions": [],
+  "complete": true,
+  "raw_all_including_initialize": {
+    "max_decel_raw": 21.484622297111322,
+    "jerk_peak_raw": 385.92735396251516,
+    "jerk_p95_moving": 59.4376773818835,
+    "jerk_p95_all": 58.541851027991825,
+    "max_decel_250ms": 6.436702138701856,
+    "jerk_p95_250ms": 11.62318907436842,
+    "min_signed_speed": -0.005104221189018416,
+    "reverse_ticks": 0,
+    "low_speed_moving_seconds": 5.45,
+    "api_accel_vs_velocity_derivative_mae": 0.0016954074065776337
+  },
+  "apply_interval_ms": {
+    "n": 414,
+    "p50": 5.448920652270317,
+    "p95": 6.8332637660205355,
+    "p99": 8.765993230044844,
+    "max": 13.697691261768341
+  },
+  "runtime_20Hz": "NotApplicable_unpaced_probe",
+  "limits": "Natural initialization and real snapshots. Diagnostic gear/handbrake only; not a normal controller or runtime success."
+}

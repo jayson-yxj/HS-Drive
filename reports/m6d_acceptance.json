@@ -1,0 +1,489 @@
+{
+  "kind": "actual_CARLA_offline_and_synthetic_independent_acceptance",
+  "source": "Privileged",
+  "base": "d808c21c1a4a2a1e7a2a14c5a4a1dc5465768fc1",
+  "git_head": "389a7d0215901225fe0e2547c10af4b8af7eae32",
+  "sources": {
+    "configs/m6d/guarded_warm_followup.json": "7eea3701dec9237344962a43e2ec3d34fcc78a96bf90ffe5c0365c4c9121e1a1",
+    "configs/m6d/moving_fault_correction.json": "88aabc99e86528b07025a31af836d69175dc4c90d68c4247e9238768196ef6ad",
+    "configs/m6d/protocol.json": "3fd40d9d20e3bd0478e6c365fd683d9bad77874c7a167a9c9c4b472779099b45",
+    "simulator/m6d_motion.py": "04212bb40ef36e00937f85d565b30f7f9cb96b5d7d2c3229609e51f56a5a2b03",
+    "simulator/m6d_state.py": "72cd039e38bbeae6890a8825d8c82590f8f420fb5401e696b0cb28addca4580f",
+    "simulator/m6d_targets.py": "5ba466cffb7429384ea43e64b5cf11cf3645b80d2384ba97ca462b9b7b28e1f8",
+    "tests/test_m6d_contract.py": "ecc9eb6b6eace0cf75fe5c620eeeabdaf7bc93bc5674a474f62ad89f9ef46c7e",
+    "tests/test_m6d_sdk.py": "36def2fda4e0d752bdc7801cc6230e20eb94d56c7291cd144855ffbc4a76f01a",
+    "tools/m6d_audit.py": "094ef4fcd54b84b72df3cb56fda0669459202c4e321f528eed1997f64cc5f29b",
+    "tools/m6d_campaign.py": "978947e7c103067a1e74f961d3c0e816a301b0fb558fdcf4a9e64b0f60b5e74f",
+    "tools/m6d_common.py": "9177c5be09b86fdd16974f87b3665bd01f55b609f95f3bff7ff19dba7ccf1181",
+    "tools/m6d_drive.py": "090622fbe24e54e797adeef57adf49029bbeeb57bc983fc315899ceaacbce418",
+    "tools/m6d_figures.py": "92f467569fd50621a26644bc82fdfccd361a5147662790c15180c2bd4c2ff5f5",
+    "tools/m6d_finalize.py": "fe30981735fc2e18b98dc34153c875e6e62e6b25c4a58aaf304c6ae4b49b0b55",
+    "tools/m6d_guard_probe.py": "a1bd7bd03a3bd99ead3ccf1a699fa54a4a97ad88629580afda713bcfd10fa0ff",
+    "tools/m6d_moving_faults.py": "e4ea9098d23632859c7880acb1b35add697057a341953d9e483d0c288380ae1c",
+    "tools/m6d_physical_gate.py": "a5cee61f7b95dadf26bfdcd498b993e7f28caaac29761969f2d535705f155f15",
+    "tools/m6d_preserve.py": "e6b271a73ae797c55abb1a632c91000e8ea73f59ef7cef07238d4006c31a17c7",
+    "tools/m6d_probe.py": "68551b1f630de643b237a405576133391cf35f86016cf01eaf35808d9862cf98",
+    "tools/m6d_probe_analysis.py": "efdbe63714e4a3fb37332f5ae089c904356de84000dcdfdb6715c8ebee0c5e56",
+    "tools/m6d_results.py": "19472efb8af360ebd1ecf3686c0b22158ed2d07d7eb55c543a578929e71ddba9"
+  },
+  "visual_control": false,
+  "stage": "M6-D",
+  "status": "Partial / CandidateNoGo",
+  "counts": {
+    "probes": 38,
+    "hold_release_protocol_trials": 32,
+    "cold_release_diagnostics": 4,
+    "warm_guard_followups": 2,
+    "closed_loop_development_trials": 28,
+    "short_routes": 12,
+    "stationary_fault_trials": 8,
+    "moving_fault_trials": 8,
+    "audited_snapshot_frames": 23991
+  },
+  "decisions": {
+    "signed_observation_schema": "Go_limited_research",
+    "target_separation_schema": "Go_limited_research",
+    "complete_signed_motion_protection": "NoGo_intermittent_rollback_missed",
+    "fixed_position_hold": "Go_limited_32_trials",
+    "hold_restart_with_comfort": "NoGo",
+    "normal_stop_execution": "NoGo_CurrentPhysics_CurrentActuationPolicy",
+    "F1": "NotRun_prerequisites_failed",
+    "sealed_regression": "NotRun_prerequisites_failed",
+    "independent_physics_study": "Evidence_supports_scoped_proposal_only_NotExecuted",
+    "reverse_parking": "NoGo"
+  },
+  "hold_groups": {
+    "cold_hand_auto_015": {
+      "trials": 8,
+      "hold_passed": 8,
+      "restart_passed": 0,
+      "comfort_status_counts": {
+        "Failed": 8
+      }
+    },
+    "cold_hand_manual1_015": {
+      "trials": 8,
+      "hold_passed": 8,
+      "restart_passed": 8,
+      "comfort_status_counts": {
+        "Failed": 8
+      }
+    },
+    "cold_service_auto_010": {
+      "trials": 8,
+      "hold_passed": 8,
+      "restart_passed": 0,
+      "comfort_status_counts": {
+        "Unknown_insufficient_phase_samples": 8
+      }
+    },
+    "warm_service_auto_015": {
+      "trials": 8,
+      "hold_passed": 8,
+      "restart_passed": 4,
+      "comfort_status_counts": {
+        "Failed": 8
+      }
+    }
+  },
+  "short_route_comparison": {
+    "C": {
+      "trials": 4,
+      "goal_completed": 2,
+      "normal_stop_passed": 0,
+      "rollback_events": 0,
+      "comfort_passed": 0
+    },
+    "D": {
+      "trials": 4,
+      "goal_completed": 0,
+      "normal_stop_passed": 0,
+      "rollback_events": 22,
+      "comfort_passed": 0
+    },
+    "F0": {
+      "trials": 4,
+      "goal_completed": 2,
+      "normal_stop_passed": 0,
+      "rollback_events": 0,
+      "comfort_passed": 0
+    }
+  },
+  "guard_failures": [
+    {
+      "release_min_pose_progress_m": -0.011734008022246865,
+      "pose_backward_segments": 10,
+      "name": "guard_diagnostic_p27_s201_warm_guarded_auto_015",
+      "trace": {
+        "path": "reports/m6d_probe_artifacts/guard_diagnostic_p27_s201_warm_guarded_auto_015/trace.jsonl",
+        "bytes": 883316,
+        "sha256": "c9551fcc25acb3315d66c320a10690df54e5b100669006ca4774bf4cb6849fa4"
+      },
+      "physics": {
+        "path": "reports/m6d_probe_artifacts/guard_diagnostic_p27_s201_warm_guarded_auto_015/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "protection_triggered": false,
+      "trigger": null,
+      "immediate_brake": false,
+      "final_stopped_1s": false,
+      "min_signed_speed": -0.08081475868998302,
+      "release_max_rollback_m": 0.01707648949142775,
+      "raw": {
+        "max_decel_raw": 18.481632826619954,
+        "jerk_peak_raw": 474.6221111530199,
+        "jerk_p95_moving": 61.87272429695991,
+        "jerk_p95_all": 73.22362610254231,
+        "max_decel_250ms": 5.50138039571788,
+        "jerk_p95_250ms": 13.87080348363968,
+        "min_signed_speed": -0.08081169008005268,
+        "reverse_ticks": 8,
+        "low_speed_moving_seconds": 11.05,
+        "api_accel_vs_velocity_derivative_mae": 0.0019842162564572066
+      },
+      "source": "Privileged",
+      "evaluation": "actual_CARLA_existing_guard_emergency_probe"
+    },
+    {
+      "release_min_pose_progress_m": -0.011734008022246865,
+      "pose_backward_segments": 10,
+      "name": "guard_diagnostic_p27_s202_warm_guarded_auto_015",
+      "trace": {
+        "path": "reports/m6d_probe_artifacts/guard_diagnostic_p27_s202_warm_guarded_auto_015/trace.jsonl",
+        "bytes": 883358,
+        "sha256": "d52506833c124470362fe52befde8d515541f4db2562c67bd7a8a520400dd621"
+      },
+      "physics": {
+        "path": "reports/m6d_probe_artifacts/guard_diagnostic_p27_s202_warm_guarded_auto_015/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "protection_triggered": false,
+      "trigger": null,
+      "immediate_brake": false,
+      "final_stopped_1s": false,
+      "min_signed_speed": -0.08081475868998302,
+      "release_max_rollback_m": 0.01707648949142775,
+      "raw": {
+        "max_decel_raw": 18.481632826619954,
+        "jerk_peak_raw": 474.6221111530199,
+        "jerk_p95_moving": 61.87272429695991,
+        "jerk_p95_all": 73.22362610254231,
+        "max_decel_250ms": 5.50138039571788,
+        "jerk_p95_250ms": 13.87080348363968,
+        "min_signed_speed": -0.08081169008005268,
+        "reverse_ticks": 8,
+        "low_speed_moving_seconds": 11.05,
+        "api_accel_vs_velocity_derivative_mae": 0.0019842162564572066
+      },
+      "source": "Privileged",
+      "evaluation": "actual_CARLA_existing_guard_emergency_probe"
+    }
+  ],
+  "faults": [
+    {
+      "name": "dev_fault_crash_C",
+      "type": "crash",
+      "actual_tick": 65,
+      "injection_speed": 5.1619724291458205e-05,
+      "valid_moving_injection": false,
+      "response_s": 0.05142957158386707,
+      "final_stopped": true
+    },
+    {
+      "name": "dev_fault_crash_F0",
+      "type": "crash",
+      "actual_tick": 65,
+      "injection_speed": 5.2820064565086614e-05,
+      "valid_moving_injection": false,
+      "response_s": 0.051517464220523834,
+      "final_stopped": true
+    },
+    {
+      "name": "dev_fault_emergency_C",
+      "type": "emergency",
+      "actual_tick": 65,
+      "injection_speed": 5.147794854142932e-05,
+      "valid_moving_injection": false,
+      "response_s": 0.0017404910176992416,
+      "final_stopped": true
+    },
+    {
+      "name": "dev_fault_emergency_F0",
+      "type": "emergency",
+      "actual_tick": 65,
+      "injection_speed": 5.296530447279811e-05,
+      "valid_moving_injection": false,
+      "response_s": 0.001698330044746399,
+      "final_stopped": true
+    },
+    {
+      "name": "dev_fault_invalid_C",
+      "type": "invalid",
+      "actual_tick": 65,
+      "injection_speed": 5.148283136087615e-05,
+      "valid_moving_injection": false,
+      "response_s": 0.20201443322002888,
+      "final_stopped": true
+    },
+    {
+      "name": "dev_fault_invalid_F0",
+      "type": "invalid",
+      "actual_tick": 65,
+      "injection_speed": 4.854374693361454e-05,
+      "valid_moving_injection": false,
+      "response_s": 0.20169269107282162,
+      "final_stopped": true
+    },
+    {
+      "name": "dev_fault_timeout_C",
+      "type": "timeout",
+      "actual_tick": 65,
+      "injection_speed": 5.142541266884321e-05,
+      "valid_moving_injection": false,
+      "response_s": 0.30126732401549816,
+      "final_stopped": true
+    },
+    {
+      "name": "dev_fault_timeout_F0",
+      "type": "timeout",
+      "actual_tick": 65,
+      "injection_speed": 5.168462103550993e-05,
+      "valid_moving_injection": false,
+      "response_s": 0.3014320880174637,
+      "final_stopped": true
+    },
+    {
+      "name": "dev_moving_fault_crash_C",
+      "type": "crash",
+      "actual_tick": 79,
+      "injection_speed": 1.5578903227928094,
+      "valid_moving_injection": true,
+      "response_s": 0.05170261487364769,
+      "final_stopped": true
+    },
+    {
+      "name": "dev_moving_fault_crash_F0",
+      "type": "crash",
+      "actual_tick": 79,
+      "injection_speed": 1.5477162624404153,
+      "valid_moving_injection": true,
+      "response_s": 0.05179600603878498,
+      "final_stopped": true
+    },
+    {
+      "name": "dev_moving_fault_emergency_C",
+      "type": "emergency",
+      "actual_tick": 79,
+      "injection_speed": 1.5308235433221078,
+      "valid_moving_injection": true,
+      "response_s": 0.0019378624856472015,
+      "final_stopped": true
+    },
+    {
+      "name": "dev_moving_fault_emergency_F0",
+      "type": "emergency",
+      "actual_tick": 79,
+      "injection_speed": 1.5105848726090172,
+      "valid_moving_injection": true,
+      "response_s": 0.001646675169467926,
+      "final_stopped": true
+    },
+    {
+      "name": "dev_moving_fault_invalid_C",
+      "type": "invalid",
+      "actual_tick": 79,
+      "injection_speed": 1.553190856277514,
+      "valid_moving_injection": true,
+      "response_s": 0.10147346742451191,
+      "final_stopped": true
+    },
+    {
+      "name": "dev_moving_fault_invalid_F0",
+      "type": "invalid",
+      "actual_tick": 79,
+      "injection_speed": 1.5154378050228248,
+      "valid_moving_injection": true,
+      "response_s": 0.10189522057771683,
+      "final_stopped": true
+    },
+    {
+      "name": "dev_moving_fault_timeout_C",
+      "type": "timeout",
+      "actual_tick": 79,
+      "injection_speed": 1.537352457419778,
+      "valid_moving_injection": true,
+      "response_s": 0.20153327845036983,
+      "final_stopped": true
+    },
+    {
+      "name": "dev_moving_fault_timeout_F0",
+      "type": "timeout",
+      "actual_tick": 79,
+      "injection_speed": 1.6023766136520006,
+      "valid_moving_injection": true,
+      "response_s": 0.20132704265415668,
+      "final_stopped": true
+    }
+  ],
+  "runtime": {
+    "status": "Partial_strict20Hz_NotPassed",
+    "all_max_ms": 350.1312732696533,
+    "worst_name": "dev_fault_timeout_F0",
+    "deadline_miss": 4,
+    "skipped_slots": 9,
+    "expired_normal": 0,
+    "over100": 2
+  },
+  "runtime_worst": {
+    "path": "reports/m6d_runtime_worst_event.json",
+    "bytes": 3943,
+    "sha256": "10061e57856ac36193fcdc66603005448d9dabe09f0677a7d07a8b0b3935efec"
+  },
+  "safety": {
+    "collisions": 0,
+    "illegal_solid": 0,
+    "boundary_ticks": 200,
+    "exact_curb_contact": "Unknown"
+  },
+  "original_planner_safety_physics_unchanged": true,
+  "default_controller_unchanged": true,
+  "M5": "ResearchCompleted / CandidateNoGo / SafetyNotValidated",
+  "PETR": "Paused_NotRun",
+  "Occupancy": "NotRun",
+  "tests": [
+    {
+      "name": "final_full_tests",
+      "tests": 366,
+      "failures": 0,
+      "errors": 0,
+      "junit_skipped_including_xfail": 9,
+      "xfailed": 1,
+      "skipped": 8,
+      "passed": 357,
+      "seconds": 16.874,
+      "junit": {
+        "path": "reports/m6d_final_full_tests.xml",
+        "bytes": 46486,
+        "sha256": "bd827c74577262059370bd90e725413c568b33562f5324989950bbe2f395d3d2"
+      },
+      "skip_details": [
+        {
+          "name": "tests.test_m5n_sdk",
+          "type": null,
+          "message": "collection skipped"
+        },
+        {
+          "name": "tests.test_m6b_obstacles_sdk",
+          "type": null,
+          "message": "collection skipped"
+        },
+        {
+          "name": "tests.test_m6d_sdk",
+          "type": null,
+          "message": "collection skipped"
+        },
+        {
+          "name": "test_six_mounts_against_carla_math",
+          "type": "pytest.skip",
+          "message": "could not import 'carla': No module named 'carla'"
+        },
+        {
+          "name": "test_photometric_attributes_are_not_applied_to_depth",
+          "type": "pytest.skip",
+          "message": "could not import 'carla': No module named 'carla'"
+        },
+        {
+          "name": "test_known_intermittent_rollback_gap",
+          "type": "pytest.xfail",
+          "message": "Known M6-D NoGo: actual intermittent backward motion resets duration guard; no post-result threshold tuning"
+        },
+        {
+          "name": "test_settings_restored_after_exception[False]",
+          "type": "pytest.skip",
+          "message": "could not import 'carla': No module named 'carla'"
+        },
+        {
+          "name": "test_settings_restored_after_exception[True]",
+          "type": "pytest.skip",
+          "message": "could not import 'carla': No module named 'carla'"
+        },
+        {
+          "name": "test_snapshot_pose_used_for_ego_and_boxes",
+          "type": "pytest.skip",
+          "message": "could not import 'carla': No module named 'carla'"
+        }
+      ]
+    },
+    {
+      "name": "final_sdk_tests",
+      "tests": 22,
+      "failures": 0,
+      "errors": 0,
+      "junit_skipped_including_xfail": 1,
+      "xfailed": 1,
+      "skipped": 0,
+      "passed": 21,
+      "seconds": 0.268,
+      "junit": {
+        "path": "reports/m6d_final_sdk_tests.xml",
+        "bytes": 2973,
+        "sha256": "59580609fbdf0b911ac0191e25de146e0757de6104186ae49d90b18df9a1a3c3"
+      },
+      "skip_details": [
+        {
+          "name": "test_known_intermittent_rollback_gap",
+          "type": "pytest.xfail",
+          "message": "Known M6-D NoGo: actual intermittent backward motion resets duration guard; no post-result threshold tuning"
+        }
+      ]
+    }
+  ],
+  "preservation": {
+    "kind": "actual_server_history_SHA_verification",
+    "source": "Privileged",
+    "base": "d808c21c1a4a2a1e7a2a14c5a4a1dc5465768fc1",
+    "git_head": "389a7d0215901225fe0e2547c10af4b8af7eae32",
+    "sources": {
+      "configs/m6d/guarded_warm_followup.json": "7eea3701dec9237344962a43e2ec3d34fcc78a96bf90ffe5c0365c4c9121e1a1",
+      "configs/m6d/moving_fault_correction.json": "88aabc99e86528b07025a31af836d69175dc4c90d68c4247e9238768196ef6ad",
+      "configs/m6d/protocol.json": "3fd40d9d20e3bd0478e6c365fd683d9bad77874c7a167a9c9c4b472779099b45",
+      "simulator/m6d_motion.py": "04212bb40ef36e00937f85d565b30f7f9cb96b5d7d2c3229609e51f56a5a2b03",
+      "simulator/m6d_state.py": "72cd039e38bbeae6890a8825d8c82590f8f420fb5401e696b0cb28addca4580f",
+      "simulator/m6d_targets.py": "5ba466cffb7429384ea43e64b5cf11cf3645b80d2384ba97ca462b9b7b28e1f8",
+      "tests/test_m6d_contract.py": "ecc9eb6b6eace0cf75fe5c620eeeabdaf7bc93bc5674a474f62ad89f9ef46c7e",
+      "tests/test_m6d_sdk.py": "36def2fda4e0d752bdc7801cc6230e20eb94d56c7291cd144855ffbc4a76f01a",
+      "tools/m6d_audit.py": "094ef4fcd54b84b72df3cb56fda0669459202c4e321f528eed1997f64cc5f29b",
+      "tools/m6d_campaign.py": "978947e7c103067a1e74f961d3c0e816a301b0fb558fdcf4a9e64b0f60b5e74f",
+      "tools/m6d_common.py": "9177c5be09b86fdd16974f87b3665bd01f55b609f95f3bff7ff19dba7ccf1181",
+      "tools/m6d_drive.py": "090622fbe24e54e797adeef57adf49029bbeeb57bc983fc315899ceaacbce418",
+      "tools/m6d_figures.py": "92f467569fd50621a26644bc82fdfccd361a5147662790c15180c2bd4c2ff5f5",
+      "tools/m6d_guard_probe.py": "a1bd7bd03a3bd99ead3ccf1a699fa54a4a97ad88629580afda713bcfd10fa0ff",
+      "tools/m6d_moving_faults.py": "e4ea9098d23632859c7880acb1b35add697057a341953d9e483d0c288380ae1c",
+      "tools/m6d_physical_gate.py": "a5cee61f7b95dadf26bfdcd498b993e7f28caaac29761969f2d535705f155f15",
+      "tools/m6d_preserve.py": "e6b271a73ae797c55abb1a632c91000e8ea73f59ef7cef07238d4006c31a17c7",
+      "tools/m6d_probe.py": "68551b1f630de643b237a405576133391cf35f86016cf01eaf35808d9862cf98",
+      "tools/m6d_probe_analysis.py": "efdbe63714e4a3fb37332f5ae089c904356de84000dcdfdb6715c8ebee0c5e56",
+      "tools/m6d_results.py": "19472efb8af360ebd1ecf3686c0b22158ed2d07d7eb55c543a578929e71ddba9"
+    },
+    "visual_control": false,
+    "passed": true,
+    "counts": {
+      "M6C_tracked": 10338,
+      "inherited_assets": 50867
+    },
+    "errors": [],
+    "freeze": {
+      "path": "reports/m6d_execution_logs/base_freeze.json",
+      "bytes": 1324860,
+      "sha256": "b307d6c750613da477724b762ddaf603a9eefef1f233d8be04a0dfe286464a2e"
+    }
+  },
+  "evidence_limits": [
+    "Same Town03, position repeats correlated. No independent sealed test after failed prerequisites.",
+    "F0 normal outputs unchanged in identical-input test; actual route results still depend on physics and scheduling.",
+    "Real negative velocity supported by 11.7mm backward pose excursion; guard misses it. Schema pass cannot close complete motion gate.",
+    "No universal impossibility proof; only predeclared current actuation policies rejected."
+  ]
+}

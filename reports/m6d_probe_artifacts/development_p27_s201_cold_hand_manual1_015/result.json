@@ -1,0 +1,62 @@
+{
+  "kind": "actual_CARLA_fixed_sim_dt_unpaced_actuator_probe",
+  "source": "Privileged",
+  "base": "d808c21c1a4a2a1e7a2a14c5a4a1dc5465768fc1",
+  "git_head": "357437038e053aec22e380f46f4e535b2148ef94",
+  "sources": {
+    "configs/m6d/protocol.json": "3fd40d9d20e3bd0478e6c365fd683d9bad77874c7a167a9c9c4b472779099b45",
+    "simulator/m6d_motion.py": "04212bb40ef36e00937f85d565b30f7f9cb96b5d7d2c3229609e51f56a5a2b03",
+    "simulator/m6d_state.py": "72cd039e38bbeae6890a8825d8c82590f8f420fb5401e696b0cb28addca4580f",
+    "simulator/m6d_targets.py": "5ba466cffb7429384ea43e64b5cf11cf3645b80d2384ba97ca462b9b7b28e1f8",
+    "tests/test_m6d_contract.py": "9775efa940b4bfab5ab250072f0d32302b893febe10921ff5a32d82840e233ee",
+    "tools/m6d_common.py": "9177c5be09b86fdd16974f87b3665bd01f55b609f95f3bff7ff19dba7ccf1181",
+    "tools/m6d_drive.py": "ff55f78370696fae0cfb19cf9c5b2df3c1f6041d7cd833eee75107eba773667d",
+    "tools/m6d_probe.py": "b3e03c764ad4f3600cfd5c45445191b1545ddbf67c40f1cb780d44cad0161444"
+  },
+  "visual_control": false,
+  "name": "development_p27_s201_cold_hand_manual1_015",
+  "task": {
+    "split": "development",
+    "spawn": 27,
+    "seed": 201,
+    "name": "cold_hand_manual1_015",
+    "warm": false,
+    "hold": "hand",
+    "manual1": true,
+    "throttle": 0.15
+  },
+  "trace": {
+    "path": "reports/m6d_probe_artifacts/development_p27_s201_cold_hand_manual1_015/trace.jsonl",
+    "bytes": 774880,
+    "sha256": "bf766b44e4fcb10ad61c8998341b7ee723a854fe0924bd684d6bb3dbf1487317"
+  },
+  "physics": {
+    "path": "reports/m6d_probe_artifacts/development_p27_s201_cold_hand_manual1_015/physics.json",
+    "bytes": 2286,
+    "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+  },
+  "ticks": 399,
+  "collisions": [],
+  "complete": true,
+  "raw_all_including_initialize": {
+    "max_decel_raw": 19.378172718445693,
+    "jerk_peak_raw": 387.3010439356974,
+    "jerk_p95_moving": 61.4659934135325,
+    "jerk_p95_all": 60.58007123322294,
+    "max_decel_250ms": 6.040613101408886,
+    "jerk_p95_250ms": 12.097041388113507,
+    "min_signed_speed": -0.0050148076264007,
+    "reverse_ticks": 0,
+    "low_speed_moving_seconds": 10.850000000000001,
+    "api_accel_vs_velocity_derivative_mae": 0.002228164584421966
+  },
+  "apply_interval_ms": {
+    "n": 398,
+    "p50": 5.624664016067982,
+    "p95": 7.125135418027639,
+    "p99": 8.751569762825966,
+    "max": 10.194173082709312
+  },
+  "runtime_20Hz": "NotApplicable_unpaced_probe",
+  "limits": "Natural initialization and real snapshots. Diagnostic gear/handbrake only; not a normal controller or runtime success."
+}
