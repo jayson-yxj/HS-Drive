@@ -1,0 +1,681 @@
+{
+  "kind": "actual_CARLA_offline_synthetic_independent_acceptance",
+  "source": "Privileged",
+  "base": "ba5ba6e759b807d5e3740061bebf72b7d1ced565",
+  "git_head": "aa455612cba98b6c886e2a83f2880172f2a74f00",
+  "sources": {
+    "configs/m6e/physics_P1.json": "e1d99fd1a59526487d6aeea737c1045efcc04468880af0d5c8cbcab4e3a2d356",
+    "configs/m6e/protocol.json": "d5c15e45e1082674dcabb2d32cda96ffef276a98989bbb52944c82c6ae2ca299",
+    "simulator/m6e_actuation.py": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+    "simulator/m6e_guard.py": "6709ceb0d133ee5038f5a761a9697e3a7ce2b67e282fe02281e9cf2b0e9ef1dc",
+    "tests/test_m6e_actuation.py": "003d0a227853d7da3d2438d3bba8cb65b61bf10ae7b7c7db918ef44df7106386",
+    "tests/test_m6e_guard.py": "f1d0cb3e052e5c048044565683847e9bb72e1bffcf31bf9f4733a01d2d5bd53f",
+    "tools/m6e_analyze.py": "45bc3058907a826e04af47513205cf5f62c86036ac243dd53c4b4b7041932976",
+    "tools/m6e_common.py": "752f381796181078341d6a14f7b7bf5ceeff4a089b96f6de5b65a506b8ea3dab",
+    "tools/m6e_figures.py": "7c8178a957185710862c58e6b94a9b4d8a3ccc3857d02595b1add5a9b0e0b3af",
+    "tools/m6e_finalize.py": "cd78b29fc651b43dbece5b4ab6679932234a628c1f451e24fd8e87c8f0108411",
+    "tools/m6e_guard_audit.py": "1f09ad54a1b49ea8d5d7f24acb23f425cfaf8ed31c5afd5d05711717a3d2c035",
+    "tools/m6e_preserve.py": "696936193a14f71060dd4bb81ef723dc3ec9efd9950dc892fe27a9d687c90a48",
+    "tools/m6e_probe.py": "a5f1cdbb3bacd31bf947299407f505a3b4917dfb6df1efd61d6d3ee5f6a23cdf",
+    "tools/m6e_release.py": "546321cecf37f60b03a03d6c757d8aee094d43980bec2481d1b2a8cf4d354051",
+    "tools/m6e_runtime_plot.py": "9b35643209973b5a51117a1c5d33e224e1aa76ff0e7da9969c53346d69091366",
+    "tools/m6e_select_variant.py": "4b8a035a95101c96ff13bebbe07209053b55a4a1d580dfd825b0619c24b5cfcd",
+    "tools/m6e_sequential.py": "c38c9477809a026ad41ad32ec18cb36658a8be8c664d51a9ebd866e40678f3fe"
+  },
+  "visual_control": false,
+  "stage": "M6-E",
+  "status": "Partial / CandidateNoGo",
+  "counts": {
+    "P0_interface_cycles": 24,
+    "live_guard": 4,
+    "P1_cycles": 4,
+    "paired_safety_and_coast": 24,
+    "total_actual_trials": 56
+  },
+  "decisions": {
+    "guard": "Go_limited_research_regression_and_actual_development; independent_positive_support_Partial",
+    "P0_actuation": "NoGo_original_raw_comfort",
+    "P1": "NoGo_no_consistent_comfort_gain_and_emergency_distance_regression",
+    "normal_stop_Pilot": "NotRun_prerequisites_failed",
+    "default_replacement": false,
+    "strict_runtime": "Partial_open",
+    "visual_safety": "NotValidated",
+    "physics_road_realism": "NotValidated"
+  },
+  "guard": {
+    "known_failure_replay": {
+      "detected": 2,
+      "total": 2
+    },
+    "actual_positive_trials": 2,
+    "positive_detected_stopped": 2,
+    "actual_validation_small_motion": 2,
+    "validation_emergencies": 0,
+    "historical_quiet_false": 0,
+    "live_quiet_latched_risk_ticks": 240,
+    "live_quiet_latched_emergency_ticks": 240,
+    "live_quiet_new_events": 0,
+    "limitation": "Validation live trials did not reproduce large rollback; not independent positive sensitivity proof. No general false-positive rate from small selected controls."
+  },
+  "interface_groups": {
+    "development": {
+      "A": {
+        "trials": 4,
+        "raw_comfort_passed": 0,
+        "cold_delays_s": [
+          3.6000000536441803,
+          3.6000000536441803,
+          3.6000000536441803,
+          3.6000000536441803
+        ],
+        "warm_delays_s": [
+          0.4000000059604645,
+          0.3500000052154064,
+          0.6500000096857548,
+          0.6500000096857548
+        ],
+        "hold_passed": 4,
+        "normal_brake_max_decel": [
+          21.830626514890366,
+          21.830626514890366,
+          24.695116725144278,
+          24.695116725144278
+        ],
+        "normal_brake_jerk_peak": [
+          434.58413933094045,
+          434.58413933094045,
+          440.7141435333732,
+          440.7141435333732
+        ],
+        "normal_brake_initial_speeds": [
+          2.206645071504053,
+          2.206645071504053,
+          1.6760399885700348,
+          1.6760399885700348
+        ],
+        "startup_jerk_peak": [
+          288.7289084780504,
+          288.7289084780504,
+          284.1874781098768,
+          284.1874781098768
+        ]
+      },
+      "B": {
+        "trials": 4,
+        "raw_comfort_passed": 0,
+        "cold_delays_s": [
+          0.5500000081956387,
+          0.6000000089406967,
+          0.6000000089406967,
+          0.6500000096857548
+        ],
+        "warm_delays_s": [
+          0.5000000074505806,
+          0.5000000074505806,
+          0.6500000096857548,
+          0.7000000104308128
+        ],
+        "hold_passed": 4,
+        "normal_brake_max_decel": [
+          17.38815147839577,
+          17.38815147839577,
+          14.663449616677882,
+          14.656255991107711
+        ],
+        "normal_brake_jerk_peak": [
+          347.5197409722938,
+          347.5197409722938,
+          307.18743544011767,
+          307.27907067345205
+        ],
+        "normal_brake_initial_speeds": [
+          2.3678178369507292,
+          2.3057136709218757,
+          1.5105130010706636,
+          1.4376034468576688
+        ],
+        "startup_jerk_peak": [
+          66.77881552602028,
+          66.77881552602028,
+          69.00125700809755,
+          69.00125700809755
+        ]
+      },
+      "C": {
+        "trials": 4,
+        "raw_comfort_passed": 0,
+        "cold_delays_s": [
+          3.500000052154064,
+          3.500000052154064,
+          3.500000052154064,
+          3.500000052154064
+        ],
+        "warm_delays_s": [
+          1.600000023841858,
+          1.700000025331974,
+          1.8500000275671482,
+          2.550000037997961
+        ],
+        "hold_passed": 4,
+        "normal_brake_max_decel": [
+          14.618093083507592,
+          12.349266270573915,
+          2.1506063633833863,
+          10.475430983683843
+        ],
+        "normal_brake_jerk_peak": [
+          315.9528097704836,
+          258.14683737379204,
+          74.49501503854358,
+          238.77697150738987
+        ],
+        "normal_brake_initial_speeds": [
+          0.8357111193269868,
+          0.77479197965797,
+          0.7060300683876441,
+          0.8324874795021653
+        ],
+        "startup_jerk_peak": [
+          323.5977954706383,
+          576.9699019366616,
+          595.6127746436699,
+          293.129292593485
+        ]
+      }
+    },
+    "validation": {
+      "A": {
+        "trials": 4,
+        "raw_comfort_passed": 0,
+        "cold_delays_s": [
+          3.6500000543892384,
+          3.6000000536441803,
+          3.6000000536441803,
+          3.6000000536441803
+        ],
+        "warm_delays_s": [
+          0.5500000081956387,
+          0.5000000074505806,
+          0.5500000081956387,
+          0.5000000074505806
+        ],
+        "hold_passed": 4,
+        "normal_brake_max_decel": [
+          19.173787092870235,
+          19.17473238293331,
+          20.035225234579553,
+          20.118455595622798
+        ],
+        "normal_brake_jerk_peak": [
+          363.89504389093736,
+          363.8967799259855,
+          398.7638433476254,
+          400.38018116403975
+        ],
+        "normal_brake_initial_speeds": [
+          1.9460155122785672,
+          1.9484021935898859,
+          2.1345406045356357,
+          2.1345406045356357
+        ],
+        "startup_jerk_peak": [
+          286.8095834357773,
+          286.8095834357773,
+          288.47418913083624,
+          288.47418913083624
+        ]
+      },
+      "B": {
+        "trials": 4,
+        "raw_comfort_passed": 0,
+        "cold_delays_s": [
+          0.6500000096857548,
+          0.6500000096857548,
+          0.5500000081956387,
+          0.6000000089406967
+        ],
+        "warm_delays_s": [
+          0.6500000096857548,
+          0.6500000096857548,
+          0.6000000089406967,
+          0.6000000089406967
+        ],
+        "hold_passed": 4,
+        "normal_brake_max_decel": [
+          15.234713127360688,
+          15.234713127360688,
+          17.870794183741893,
+          24.522016302152192
+        ],
+        "normal_brake_jerk_peak": [
+          304.457653472468,
+          304.457653472468,
+          370.1998991594025,
+          470.01276210176906
+        ],
+        "normal_brake_initial_speeds": [
+          1.8681387915864383,
+          1.8681387915864383,
+          2.240823543182851,
+          2.1775918018602147
+        ],
+        "startup_jerk_peak": [
+          65.72725951574186,
+          65.72725951574186,
+          59.58383818515459,
+          59.58383818515459
+        ]
+      },
+      "C": {
+        "trials": 4,
+        "raw_comfort_passed": 0,
+        "cold_delays_s": [
+          3.500000052154064,
+          3.500000052154064,
+          3.500000052154064,
+          3.500000052154064
+        ],
+        "warm_delays_s": [
+          2.0000000298023224,
+          2.500000037252903,
+          1.9000000283122063,
+          1.750000026077032
+        ],
+        "hold_passed": 4,
+        "normal_brake_max_decel": [
+          10.840408042171603,
+          10.530174881980768,
+          13.179912253895232,
+          15.022281203075364
+        ],
+        "normal_brake_jerk_peak": [
+          246.5731115239769,
+          244.26370023339248,
+          286.23271596770377,
+          322.14144489488365
+        ],
+        "normal_brake_initial_speeds": [
+          0.6900511662625703,
+          0.7388914971981859,
+          0.8632845846727524,
+          0.7127797186136667
+        ],
+        "startup_jerk_peak": [
+          337.26296465700926,
+          552.8715498682456,
+          334.14427269597854,
+          533.8978370427799
+        ]
+      }
+    }
+  },
+  "physics_versions": {
+    "P0": [
+      "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+    ],
+    "P1": [
+      "d2440c6c44f919556f552b4cb868d3b06b3bb111d26ccdd0b3541bfee93affb7"
+    ]
+  },
+  "P1_safety_pairs": [
+    {
+      "P0": "P0_development_p126_s301_emergency",
+      "P1": "P1_development_p126_s301_emergency",
+      "mode": "emergency",
+      "split": "development",
+      "initial_speed_delta": -0.024262589435537496,
+      "stopping_distance_delta_m": 0.2794564560681376,
+      "stopping_time_delta_s": 0.15000000223517418,
+      "emergency_noninferiority": false,
+      "gap_P0": {
+        "min_gap_m": null,
+        "final_gap_m": null,
+        "final_gap3_passed": false
+      },
+      "gap_P1": {
+        "min_gap_m": null,
+        "final_gap_m": null,
+        "final_gap3_passed": false
+      }
+    },
+    {
+      "P0": "P0_development_p126_s301_obstacle",
+      "P1": "P1_development_p126_s301_obstacle",
+      "mode": "obstacle",
+      "split": "development",
+      "initial_speed_delta": -0.024262589435537496,
+      "stopping_distance_delta_m": 0.43191538023116427,
+      "stopping_time_delta_s": 0.20000000298023224,
+      "emergency_noninferiority": false,
+      "gap_P0": {
+        "min_gap_m": 4.3698189575839566,
+        "final_gap_m": 4.371346924355118,
+        "final_gap3_passed": true
+      },
+      "gap_P1": {
+        "min_gap_m": 3.937364281875348,
+        "final_gap_m": 3.938697490879738,
+        "final_gap3_passed": true
+      }
+    },
+    {
+      "P0": "P0_development_p126_s302_emergency",
+      "P1": "P1_development_p126_s302_emergency",
+      "mode": "emergency",
+      "split": "development",
+      "initial_speed_delta": -0.024262589435537496,
+      "stopping_distance_delta_m": 0.14783319961330899,
+      "stopping_time_delta_s": 0.10000000149011612,
+      "emergency_noninferiority": true,
+      "gap_P0": {
+        "min_gap_m": null,
+        "final_gap_m": null,
+        "final_gap3_passed": false
+      },
+      "gap_P1": {
+        "min_gap_m": null,
+        "final_gap_m": null,
+        "final_gap3_passed": false
+      }
+    },
+    {
+      "P0": "P0_development_p126_s302_obstacle",
+      "P1": "P1_development_p126_s302_obstacle",
+      "mode": "obstacle",
+      "split": "development",
+      "initial_speed_delta": -0.024262589435537496,
+      "stopping_distance_delta_m": 0.43191538023116427,
+      "stopping_time_delta_s": 0.20000000298023224,
+      "emergency_noninferiority": false,
+      "gap_P0": {
+        "min_gap_m": 4.3698189575839566,
+        "final_gap_m": 4.371346924355118,
+        "final_gap3_passed": true
+      },
+      "gap_P1": {
+        "min_gap_m": 3.937364281875348,
+        "final_gap_m": 3.938697490879738,
+        "final_gap3_passed": true
+      }
+    },
+    {
+      "P0": "P0_validation_p170_s301_emergency",
+      "P1": "P1_validation_p170_s301_emergency",
+      "mode": "emergency",
+      "split": "validation",
+      "initial_speed_delta": 0.02815855266566203,
+      "stopping_distance_delta_m": 0.43900602313057335,
+      "stopping_time_delta_s": 0.20000000298023224,
+      "emergency_noninferiority": false,
+      "gap_P0": {
+        "min_gap_m": null,
+        "final_gap_m": null,
+        "final_gap3_passed": false
+      },
+      "gap_P1": {
+        "min_gap_m": null,
+        "final_gap_m": null,
+        "final_gap3_passed": false
+      }
+    },
+    {
+      "P0": "P0_validation_p170_s301_obstacle",
+      "P1": "P1_validation_p170_s301_obstacle",
+      "mode": "obstacle",
+      "split": "validation",
+      "initial_speed_delta": 0.02815855266566203,
+      "stopping_distance_delta_m": 0.43592108415899866,
+      "stopping_time_delta_s": 0.20000000298023224,
+      "emergency_noninferiority": false,
+      "gap_P0": {
+        "min_gap_m": 4.464875705161501,
+        "final_gap_m": 4.465623389155721,
+        "final_gap3_passed": true
+      },
+      "gap_P1": {
+        "min_gap_m": 4.030614192009539,
+        "final_gap_m": 4.031342795663606,
+        "final_gap3_passed": true
+      }
+    },
+    {
+      "P0": "P0_validation_p170_s302_emergency",
+      "P1": "P1_validation_p170_s302_emergency",
+      "mode": "emergency",
+      "split": "validation",
+      "initial_speed_delta": 0.02815855266566203,
+      "stopping_distance_delta_m": 0.43592108415899866,
+      "stopping_time_delta_s": 0.20000000298023224,
+      "emergency_noninferiority": false,
+      "gap_P0": {
+        "min_gap_m": null,
+        "final_gap_m": null,
+        "final_gap3_passed": false
+      },
+      "gap_P1": {
+        "min_gap_m": null,
+        "final_gap_m": null,
+        "final_gap3_passed": false
+      }
+    },
+    {
+      "P0": "P0_validation_p170_s302_obstacle",
+      "P1": "P1_validation_p170_s302_obstacle",
+      "mode": "obstacle",
+      "split": "validation",
+      "initial_speed_delta": 0.02815855266566203,
+      "stopping_distance_delta_m": 0.43900602313057335,
+      "stopping_time_delta_s": 0.20000000298023224,
+      "emergency_noninferiority": false,
+      "gap_P0": {
+        "min_gap_m": 4.319125709137855,
+        "final_gap_m": 4.319754131633716,
+        "final_gap3_passed": true
+      },
+      "gap_P1": {
+        "min_gap_m": 3.8814149102895588,
+        "final_gap_m": 3.8820441851278726,
+        "final_gap3_passed": true
+      }
+    }
+  ],
+  "safety": {
+    "collisions": 0,
+    "boundary_ticks": 0,
+    "closed_loop": {
+      "status": "NotRun",
+      "reason": "Original raw dynamics prerequisites failed; no new Oracle candidate",
+      "cases": [
+        "9m",
+        "25m",
+        "lead_stop_restart",
+        "legal_bypass",
+        "NoBypass3m_navigation",
+        "worker_fault_matrix"
+      ]
+    }
+  },
+  "runtime": {
+    "status": "Partial_strict20Hz_open",
+    "max_ms": 168.56474615633488,
+    "deadline_miss": 51,
+    "skipped_slots": 53,
+    "worker_queue_and_age": "NotApplicable_no_Planner",
+    "expired_plan_normal": "NotApplicable_no_Planner"
+  },
+  "tests": [
+    {
+      "name": "full",
+      "tests": 380,
+      "passed": 371,
+      "skipped": 8,
+      "xfailed": 1,
+      "failures": 0,
+      "errors": 0,
+      "seconds": 16.456,
+      "junit": {
+        "path": "reports/m6e_full_tests.xml",
+        "bytes": 48184,
+        "sha256": "33b3ffcb5055d9a0208d446022def9e7eb52fda57f4dffcb912be4fab9bac656"
+      },
+      "skip_reasons": [
+        {
+          "test": {
+            "classname": "",
+            "name": "tests.test_m5n_sdk",
+            "time": "0.000"
+          },
+          "reason": {
+            "message": "collection skipped"
+          }
+        },
+        {
+          "test": {
+            "classname": "",
+            "name": "tests.test_m6b_obstacles_sdk",
+            "time": "0.000"
+          },
+          "reason": {
+            "message": "collection skipped"
+          }
+        },
+        {
+          "test": {
+            "classname": "",
+            "name": "tests.test_m6d_sdk",
+            "time": "0.000"
+          },
+          "reason": {
+            "message": "collection skipped"
+          }
+        },
+        {
+          "test": {
+            "classname": "tests.test_geometry_extended",
+            "name": "test_six_mounts_against_carla_math",
+            "time": "0.001"
+          },
+          "reason": {
+            "type": "pytest.skip",
+            "message": "could not import 'carla': No module named 'carla'"
+          }
+        },
+        {
+          "test": {
+            "classname": "tests.test_imaging_rig",
+            "name": "test_photometric_attributes_are_not_applied_to_depth",
+            "time": "0.001"
+          },
+          "reason": {
+            "type": "pytest.skip",
+            "message": "could not import 'carla': No module named 'carla'"
+          }
+        },
+        {
+          "test": {
+            "classname": "tests.test_m6d_contract",
+            "name": "test_known_intermittent_rollback_gap",
+            "time": "0.001"
+          },
+          "reason": {
+            "type": "pytest.xfail",
+            "message": "Known M6-D NoGo: actual intermittent backward motion resets duration guard; no post-result threshold tuning"
+          }
+        },
+        {
+          "test": {
+            "classname": "tests.test_session",
+            "name": "test_settings_restored_after_exception[False]",
+            "time": "0.001"
+          },
+          "reason": {
+            "type": "pytest.skip",
+            "message": "could not import 'carla': No module named 'carla'"
+          }
+        },
+        {
+          "test": {
+            "classname": "tests.test_session",
+            "name": "test_settings_restored_after_exception[True]",
+            "time": "0.001"
+          },
+          "reason": {
+            "type": "pytest.skip",
+            "message": "could not import 'carla': No module named 'carla'"
+          }
+        },
+        {
+          "test": {
+            "classname": "tests.test_snapshot",
+            "name": "test_snapshot_pose_used_for_ego_and_boxes",
+            "time": "0.001"
+          },
+          "reason": {
+            "type": "pytest.skip",
+            "message": "could not import 'carla': No module named 'carla'"
+          }
+        }
+      ]
+    },
+    {
+      "name": "sdk",
+      "tests": 25,
+      "passed": 25,
+      "skipped": 0,
+      "xfailed": 0,
+      "failures": 0,
+      "errors": 0,
+      "seconds": 0.211,
+      "junit": {
+        "path": "reports/m6e_sdk_tests.xml",
+        "bytes": 3153,
+        "sha256": "ef35b6f7ffc5a8ff97d4a74fdaf16fce906f5e2a50a63be666154968ded1e7f1"
+      },
+      "skip_reasons": []
+    }
+  ],
+  "preservation": {
+    "kind": "actual_server_historical_SHA_verification",
+    "source": "Privileged",
+    "base": "ba5ba6e759b807d5e3740061bebf72b7d1ced565",
+    "git_head": "bc1b688d0b4c99b08647b3aa2aefcd593b8c262c",
+    "sources": {
+      "configs/m6e/physics_P1.json": "e1d99fd1a59526487d6aeea737c1045efcc04468880af0d5c8cbcab4e3a2d356",
+      "configs/m6e/protocol.json": "d5c15e45e1082674dcabb2d32cda96ffef276a98989bbb52944c82c6ae2ca299",
+      "simulator/m6e_actuation.py": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+      "simulator/m6e_guard.py": "6709ceb0d133ee5038f5a761a9697e3a7ce2b67e282fe02281e9cf2b0e9ef1dc",
+      "tests/test_m6e_actuation.py": "003d0a227853d7da3d2438d3bba8cb65b61bf10ae7b7c7db918ef44df7106386",
+      "tests/test_m6e_guard.py": "f1d0cb3e052e5c048044565683847e9bb72e1bffcf31bf9f4733a01d2d5bd53f",
+      "tools/m6e_analyze.py": "45bc3058907a826e04af47513205cf5f62c86036ac243dd53c4b4b7041932976",
+      "tools/m6e_common.py": "752f381796181078341d6a14f7b7bf5ceeff4a089b96f6de5b65a506b8ea3dab",
+      "tools/m6e_figures.py": "7c8178a957185710862c58e6b94a9b4d8a3ccc3857d02595b1add5a9b0e0b3af",
+      "tools/m6e_finalize.py": "6a8b94a1ee4a7d1595b34786c6b9f44e7907f7f0180531b8112467ee0e500340",
+      "tools/m6e_guard_audit.py": "1f09ad54a1b49ea8d5d7f24acb23f425cfaf8ed31c5afd5d05711717a3d2c035",
+      "tools/m6e_preserve.py": "696936193a14f71060dd4bb81ef723dc3ec9efd9950dc892fe27a9d687c90a48",
+      "tools/m6e_probe.py": "a5f1cdbb3bacd31bf947299407f505a3b4917dfb6df1efd61d6d3ee5f6a23cdf",
+      "tools/m6e_select_variant.py": "4b8a035a95101c96ff13bebbe07209053b55a4a1d580dfd825b0619c24b5cfcd",
+      "tools/m6e_sequential.py": "c38c9477809a026ad41ad32ec18cb36658a8be8c664d51a9ebd866e40678f3fe"
+    },
+    "visual_control": false,
+    "counts": {
+      "base_tracked": 11930,
+      "inherited_assets": 50867
+    },
+    "errors": [],
+    "passed": true
+  },
+  "source_loading_audit": {
+    "path": "reports/m6e_loaded_source_audit.json",
+    "bytes": 17109,
+    "sha256": "6c207fa69d8ef4b3c8095be23d32cfef01611ee656d9669bf9b095fd4c810d9b"
+  },
+  "unchanged": {
+    "default_controller": true,
+    "Planner": true,
+    "Safety": true,
+    "baseline_physics": true,
+    "vision_shadow": true,
+    "M5_closeout": true
+  },
+  "next_decision": "Stop current fixed-policy/half-brake variant expansion. Limited guard research may continue. Request separate instrumented execution architecture/solver investigation before new physics/model migration; no automatic third variant."
+}

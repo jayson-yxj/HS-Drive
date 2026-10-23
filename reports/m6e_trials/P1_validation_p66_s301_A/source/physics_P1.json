@@ -1,0 +1,287 @@
+{
+  "version": "Physics-P1-Experimental",
+  "family": "wheel_max_brake_torque",
+  "scale": 0.5,
+  "changed_fields": [
+    "wheels[0].max_brake_torque",
+    "wheels[1].max_brake_torque",
+    "wheels[2].max_brake_torque",
+    "wheels[3].max_brake_torque"
+  ],
+  "old_values": [
+    700,
+    700,
+    700,
+    700
+  ],
+  "new_values": [
+    350,
+    350,
+    350,
+    350
+  ],
+  "rationale": "P0 A=.01 brake repeatedly produces >1.8m/s2; fixed half-torque intervention tests wheel-brake gain dependence, not asserted root cause. Startup unchanged is expected. Moderate single factor, no tuning to pass.",
+  "caveat": "Simple torque/mass/radius calculation at .01 predicts ~.041m/s2, far below observed peaks; tire/transmission/solver transients may dominate. P1 can falsify proportional brake hypothesis. Not a physically validated Tesla.",
+  "development_evidence": {
+    "path": "reports/m6e_development_analysis.json",
+    "bytes": 182842,
+    "sha256": "20e502e0bab9c776a1f697ed36f120d6354647b7cac55c48c0a23521d4df307c"
+  },
+  "validation_accessed_for_selection": false,
+  "tasks": [
+    {
+      "name": "P1_development_p27_s301_A",
+      "physics": "P1",
+      "split": "development",
+      "spawn": 27,
+      "seed": 301,
+      "interface": "A",
+      "mode": "cycle"
+    },
+    {
+      "name": "P1_development_p27_s302_A",
+      "physics": "P1",
+      "split": "development",
+      "spawn": 27,
+      "seed": 302,
+      "interface": "A",
+      "mode": "cycle"
+    },
+    {
+      "name": "P1_validation_p66_s301_A",
+      "physics": "P1",
+      "split": "validation",
+      "spawn": 66,
+      "seed": 301,
+      "interface": "A",
+      "mode": "cycle"
+    },
+    {
+      "name": "P1_validation_p66_s302_A",
+      "physics": "P1",
+      "split": "validation",
+      "spawn": 66,
+      "seed": 302,
+      "interface": "A",
+      "mode": "cycle"
+    },
+    {
+      "name": "P0_development_p126_s301_emergency",
+      "physics": "P0",
+      "split": "development",
+      "spawn": 126,
+      "seed": 301,
+      "interface": "A",
+      "mode": "emergency"
+    },
+    {
+      "name": "P1_development_p126_s301_emergency",
+      "physics": "P1",
+      "split": "development",
+      "spawn": 126,
+      "seed": 301,
+      "interface": "A",
+      "mode": "emergency"
+    },
+    {
+      "name": "P0_development_p126_s301_coast",
+      "physics": "P0",
+      "split": "development",
+      "spawn": 126,
+      "seed": 301,
+      "interface": "A",
+      "mode": "coast"
+    },
+    {
+      "name": "P1_development_p126_s301_coast",
+      "physics": "P1",
+      "split": "development",
+      "spawn": 126,
+      "seed": 301,
+      "interface": "A",
+      "mode": "coast"
+    },
+    {
+      "name": "P0_development_p126_s301_obstacle",
+      "physics": "P0",
+      "split": "development",
+      "spawn": 126,
+      "seed": 301,
+      "interface": "A",
+      "mode": "obstacle"
+    },
+    {
+      "name": "P1_development_p126_s301_obstacle",
+      "physics": "P1",
+      "split": "development",
+      "spawn": 126,
+      "seed": 301,
+      "interface": "A",
+      "mode": "obstacle"
+    },
+    {
+      "name": "P0_development_p126_s302_emergency",
+      "physics": "P0",
+      "split": "development",
+      "spawn": 126,
+      "seed": 302,
+      "interface": "A",
+      "mode": "emergency"
+    },
+    {
+      "name": "P1_development_p126_s302_emergency",
+      "physics": "P1",
+      "split": "development",
+      "spawn": 126,
+      "seed": 302,
+      "interface": "A",
+      "mode": "emergency"
+    },
+    {
+      "name": "P0_development_p126_s302_coast",
+      "physics": "P0",
+      "split": "development",
+      "spawn": 126,
+      "seed": 302,
+      "interface": "A",
+      "mode": "coast"
+    },
+    {
+      "name": "P1_development_p126_s302_coast",
+      "physics": "P1",
+      "split": "development",
+      "spawn": 126,
+      "seed": 302,
+      "interface": "A",
+      "mode": "coast"
+    },
+    {
+      "name": "P0_development_p126_s302_obstacle",
+      "physics": "P0",
+      "split": "development",
+      "spawn": 126,
+      "seed": 302,
+      "interface": "A",
+      "mode": "obstacle"
+    },
+    {
+      "name": "P1_development_p126_s302_obstacle",
+      "physics": "P1",
+      "split": "development",
+      "spawn": 126,
+      "seed": 302,
+      "interface": "A",
+      "mode": "obstacle"
+    },
+    {
+      "name": "P0_validation_p170_s301_emergency",
+      "physics": "P0",
+      "split": "validation",
+      "spawn": 170,
+      "seed": 301,
+      "interface": "A",
+      "mode": "emergency"
+    },
+    {
+      "name": "P1_validation_p170_s301_emergency",
+      "physics": "P1",
+      "split": "validation",
+      "spawn": 170,
+      "seed": 301,
+      "interface": "A",
+      "mode": "emergency"
+    },
+    {
+      "name": "P0_validation_p170_s301_coast",
+      "physics": "P0",
+      "split": "validation",
+      "spawn": 170,
+      "seed": 301,
+      "interface": "A",
+      "mode": "coast"
+    },
+    {
+      "name": "P1_validation_p170_s301_coast",
+      "physics": "P1",
+      "split": "validation",
+      "spawn": 170,
+      "seed": 301,
+      "interface": "A",
+      "mode": "coast"
+    },
+    {
+      "name": "P0_validation_p170_s301_obstacle",
+      "physics": "P0",
+      "split": "validation",
+      "spawn": 170,
+      "seed": 301,
+      "interface": "A",
+      "mode": "obstacle"
+    },
+    {
+      "name": "P1_validation_p170_s301_obstacle",
+      "physics": "P1",
+      "split": "validation",
+      "spawn": 170,
+      "seed": 301,
+      "interface": "A",
+      "mode": "obstacle"
+    },
+    {
+      "name": "P0_validation_p170_s302_emergency",
+      "physics": "P0",
+      "split": "validation",
+      "spawn": 170,
+      "seed": 302,
+      "interface": "A",
+      "mode": "emergency"
+    },
+    {
+      "name": "P1_validation_p170_s302_emergency",
+      "physics": "P1",
+      "split": "validation",
+      "spawn": 170,
+      "seed": 302,
+      "interface": "A",
+      "mode": "emergency"
+    },
+    {
+      "name": "P0_validation_p170_s302_coast",
+      "physics": "P0",
+      "split": "validation",
+      "spawn": 170,
+      "seed": 302,
+      "interface": "A",
+      "mode": "coast"
+    },
+    {
+      "name": "P1_validation_p170_s302_coast",
+      "physics": "P1",
+      "split": "validation",
+      "spawn": 170,
+      "seed": 302,
+      "interface": "A",
+      "mode": "coast"
+    },
+    {
+      "name": "P0_validation_p170_s302_obstacle",
+      "physics": "P0",
+      "split": "validation",
+      "spawn": 170,
+      "seed": 302,
+      "interface": "A",
+      "mode": "obstacle"
+    },
+    {
+      "name": "P1_validation_p170_s302_obstacle",
+      "physics": "P1",
+      "split": "validation",
+      "spawn": 170,
+      "seed": 302,
+      "interface": "A",
+      "mode": "obstacle"
+    }
+  ],
+  "emergency_gate": "No >0.25m longer stopping distance or >0.25s longer stopping time against matched P0; real gap>=3m at initial5m; no collision/boundary/hold degradation. Any violation blocks promotion.",
+  "success": "All original raw comfort, hold/restart, guard and safety gates. No second variant if fails."
+}

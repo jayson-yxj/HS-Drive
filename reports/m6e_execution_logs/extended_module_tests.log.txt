@@ -1,0 +1,14 @@
+..........F...                                                           [100%]
+=================================== FAILURES ===================================
+______________ test_route_mismatch_is_distinct_from_body_rollback ______________
+
+    def test_route_mismatch_is_distinct_from_body_rollback():
+        g=DisplacementGuard()
+        for i in range(10):d=g.update(state(i,.2,route=-.2),[i*.01,0],[-1,0],i*.05)
+>       assert d['emergency'] and d['reason']=='ForwardRouteContractInvalid'
+E       assert (False)
+
+tests/test_m6e_guard.py:71: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_m6e_guard.py::test_route_mismatch_is_distinct_from_body_rollback
+1 failed, 13 passed in 0.20s

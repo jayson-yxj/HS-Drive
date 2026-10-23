@@ -1,0 +1,5666 @@
+{
+  "kind": "offline_actual_CARLA_raw_phase_metrics",
+  "source": "Privileged",
+  "base": "ba5ba6e759b807d5e3740061bebf72b7d1ced565",
+  "git_head": "bc1b688d0b4c99b08647b3aa2aefcd593b8c262c",
+  "sources": {
+    "configs/m6e/physics_P1.json": "e1d99fd1a59526487d6aeea737c1045efcc04468880af0d5c8cbcab4e3a2d356",
+    "configs/m6e/protocol.json": "d5c15e45e1082674dcabb2d32cda96ffef276a98989bbb52944c82c6ae2ca299",
+    "simulator/m6e_actuation.py": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+    "simulator/m6e_guard.py": "6709ceb0d133ee5038f5a761a9697e3a7ce2b67e282fe02281e9cf2b0e9ef1dc",
+    "tests/test_m6e_actuation.py": "003d0a227853d7da3d2438d3bba8cb65b61bf10ae7b7c7db918ef44df7106386",
+    "tests/test_m6e_guard.py": "f1d0cb3e052e5c048044565683847e9bb72e1bffcf31bf9f4733a01d2d5bd53f",
+    "tools/m6e_analyze.py": "45bc3058907a826e04af47513205cf5f62c86036ac243dd53c4b4b7041932976",
+    "tools/m6e_common.py": "752f381796181078341d6a14f7b7bf5ceeff4a089b96f6de5b65a506b8ea3dab",
+    "tools/m6e_figures.py": "7c8178a957185710862c58e6b94a9b4d8a3ccc3857d02595b1add5a9b0e0b3af",
+    "tools/m6e_finalize.py": "6a8b94a1ee4a7d1595b34786c6b9f44e7907f7f0180531b8112467ee0e500340",
+    "tools/m6e_guard_audit.py": "1f09ad54a1b49ea8d5d7f24acb23f425cfaf8ed31c5afd5d05711717a3d2c035",
+    "tools/m6e_probe.py": "a5f1cdbb3bacd31bf947299407f505a3b4917dfb6df1efd61d6d3ee5f6a23cdf",
+    "tools/m6e_select_variant.py": "4b8a035a95101c96ff13bebbe07209053b55a4a1d580dfd825b0619c24b5cfcd",
+    "tools/m6e_sequential.py": "c38c9477809a026ad41ad32ec18cb36658a8be8c664d51a9ebd866e40678f3fe"
+  },
+  "visual_control": false,
+  "trials": [
+    {
+      "name": "P0_validation_p66_s301_A",
+      "config": {
+        "name": "P0_validation_p66_s301_A",
+        "physics": "P0",
+        "split": "validation",
+        "spawn": 66,
+        "seed": 301,
+        "interface": "A",
+        "mode": "cycle"
+      },
+      "result": {
+        "path": "reports/m6e_trials/P0_validation_p66_s301_A/result.json",
+        "bytes": 4226,
+        "sha256": "969af87b4bcc64b79f85f04d78e7306fa9e8fc9b9db8567e22917061a7c56cff"
+      },
+      "trace": {
+        "path": "reports/m6e_trials/P0_validation_p66_s301_A/trace.jsonl",
+        "bytes": 1571190,
+        "sha256": "d67fad47fd42c6270f0c17594ae2f93759736de98eb8d10ad041478264e774dc"
+      },
+      "physics": {
+        "path": "reports/m6e_trials/P0_validation_p66_s301_A/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "start_t": 416.6150777749717,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 3.116399778482277,
+          "start_delay_s": null,
+          "stop_duration_s": 1.0000000149011612,
+          "stopped_travel_m": -0.0050201567989145695,
+          "total_travel_m": -0.005043044979410878,
+          "net_backward_excursion_m": 0.006263740000851978,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0062637514957426385,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.0035362839662231387,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 0.1020844222591919,
+            "jerk_peak_raw": 4.9899750511399095,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 2.898896353829477,
+            "max_decel_250ms": 0.02041688445183838,
+            "jerk_p95_250ms": 0.5646027525408686,
+            "min_signed_speed": -0.005104221189018416,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.024196220136879904
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "hold_initial": {
+          "ticks": 40,
+          "start_t": 418.11507779732347,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.11999999731779099,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "cold_run": {
+          "ticks": 120,
+          "start_t": 420.1150778271258,
+          "initial_speed": 0.0,
+          "final_speed": 2.129256998283192,
+          "max_speed": 2.1293949109103916,
+          "start_delay_s": 3.6000000536441803,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 4.5754847359384225,
+          "net_backward_excursion_m": 7.629393510890075e-06,
+          "backward_frames": 0,
+          "max_displacement_m": 4.575485235216924,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.8596306425711449,
+          "actual_gear": [
+            0,
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0004830394013198251,
+            "jerk_peak_raw": 288.47418913083624,
+            "jerk_p95_moving": 71.65043757107694,
+            "jerk_p95_all": 6.629436895409537,
+            "max_decel_250ms": 9.650040359734099e-05,
+            "jerk_p95_250ms": 14.773324573377998,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 6.241980064522846e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "normal_stop": {
+          "ticks": 120,
+          "start_t": 426.11507791653275,
+          "initial_speed": 2.1345406045356357,
+          "final_speed": 0.0,
+          "max_speed": 2.134678895576507,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 1.650000024586916,
+          "stopped_travel_m": 1.158523557301533,
+          "total_travel_m": 1.158523557301533,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 1.1585235611780875,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.3940241784103223,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 20.035225234579553,
+            "jerk_peak_raw": 398.7638433476254,
+            "jerk_p95_moving": 302.2953375753933,
+            "jerk_p95_all": 2.60952067062438,
+            "max_decel_250ms": 7.36325823793203,
+            "jerk_p95_250ms": 3.7120726223618847,
+            "min_signed_speed": -0.00017454891898521538,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.05,
+            "api_accel_vs_velocity_derivative_mae": 2.3536676747657533e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "hold_warm": {
+          "ticks": 40,
+          "start_t": 432.1150780059397,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.009999999776482582,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "warm_run": {
+          "ticks": 120,
+          "start_t": 434.11507803574204,
+          "initial_speed": 0.0,
+          "final_speed": 2.2243553129869413,
+          "max_speed": 2.224478146983423,
+          "start_delay_s": 0.5500000081956387,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 7.611484415579522,
+          "net_backward_excursion_m": 0.0004043579095298909,
+          "backward_frames": 2,
+          "max_displacement_m": 7.611484740551198,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.6382630752256585,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 1.8614763871165712,
+            "jerk_peak_raw": 78.85585789079978,
+            "jerk_p95_moving": 59.751358029588445,
+            "jerk_p95_all": 65.74345587481618,
+            "max_decel_250ms": 0.27780574813127007,
+            "jerk_p95_250ms": 12.00052137626952,
+            "min_signed_speed": -0.04414477200291593,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.75,
+            "api_accel_vs_velocity_derivative_mae": 8.903108591216212e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "final_stop": {
+          "ticks": 120,
+          "start_t": 440.115078125149,
+          "initial_speed": 2.177641958768791,
+          "final_speed": 0.0,
+          "max_speed": 2.240644191751697,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 2.1000000312924385,
+          "stopped_travel_m": 1.9139939580824077,
+          "total_travel_m": 1.9139939580824077,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 1.9139939641512074,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.4820010263052652,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 21.48783396424494,
+            "jerk_peak_raw": 385.9454612530073,
+            "jerk_p95_moving": 270.9758782623553,
+            "jerk_p95_all": 55.91663502734484,
+            "max_decel_250ms": 6.415323794506104,
+            "jerk_p95_250ms": 11.696669628077798,
+            "min_signed_speed": -0.00016331491916022305,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 1.7446963158297388e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "hold_final": {
+          "ticks": 40,
+          "start_t": 446.115078214556,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.009999999776482582,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "raw_all": {
+        "max_decel_raw": 21.48783396424494,
+        "jerk_peak_raw": 398.7638433476254,
+        "jerk_p95_moving": 63.64438328916025,
+        "jerk_p95_all": 57.8314267959263,
+        "max_decel_250ms": 7.36325823793203,
+        "jerk_p95_250ms": 11.697785720279233,
+        "min_signed_speed": -0.04414477200291593,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 3.1,
+        "api_accel_vs_velocity_derivative_mae": 0.0011159336245518375
+      },
+      "complete": true,
+      "normal_comfort_passed": false,
+      "initial": {
+        "frame": 32657,
+        "t": 416.6150777749717,
+        "position": [
+          -148.97052001953125,
+          -72.44021606445312,
+          0.9805508255958557
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          90.0298080444336
+        ],
+        "velocity": [
+          0.0,
+          0.0,
+          -0.4899999797344208
+        ],
+        "speed": 0.4899999797344208,
+        "long_speed": 0.0,
+        "acceleration_api": [
+          0.0,
+          0.0,
+          -9.799999237060547
+        ],
+        "long_acceleration_api": 0.0,
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": 0.0,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 0
+        }
+      },
+      "collisions": [],
+      "boundary_ticks": 0,
+      "final_body_road": true,
+      "lane_events": [],
+      "rollback_protection": {
+        "risk": false,
+        "emergency": false,
+        "risk_to_apply_s": null,
+        "observation_to_apply_ms": null,
+        "confirmed_net_m": null,
+        "final_stopped": true
+      },
+      "obstacle": {
+        "min_gap_m": null,
+        "final_gap_m": null,
+        "final_gap3_passed": false
+      },
+      "runtime": {
+        "control_interval_ms": {
+          "n": 629,
+          "p50": 49.996331334114075,
+          "p95": 50.21741949021816,
+          "p99": 50.442083328962326,
+          "max": 51.11625976860523
+        },
+        "tick_ms": {
+          "n": 630,
+          "p50": 1.2113861739635468,
+          "p95": 1.6084748320281506,
+          "p99": 1.8822361156344416,
+          "max": 3.2503586262464523
+        },
+        "mean_hz": 20.0001781810971,
+        "deadline_miss": 0,
+        "skipped_slots": 0,
+        "worker": "NotApplicable_no_planner",
+        "expired_normal_plan": "NotApplicable_no_planner"
+      },
+      "stages_ms": {
+        "snapshot": {
+          "n": 630,
+          "p50": 0.2442728728055954,
+          "p95": 0.5204671993851661,
+          "p99": 0.6448540464043618,
+          "max": 0.9573046118021011
+        },
+        "guard_geometry_road": {
+          "n": 630,
+          "p50": 0.3078095614910126,
+          "p95": 0.4590786062180991,
+          "p99": 0.5097266286611557,
+          "max": 1.0460931807756424
+        },
+        "command": {
+          "n": 630,
+          "p50": 0.0001695007085800171,
+          "p95": 0.00022724270820617676,
+          "p99": 0.00029664486646652265,
+          "max": 0.00043958425521850586
+        }
+      },
+      "min_grade": -0.011381787224790134,
+      "max_grade": -0.010525001659185964
+    },
+    {
+      "name": "P0_validation_p66_s301_B",
+      "config": {
+        "name": "P0_validation_p66_s301_B",
+        "physics": "P0",
+        "split": "validation",
+        "spawn": 66,
+        "seed": 301,
+        "interface": "B",
+        "mode": "cycle"
+      },
+      "result": {
+        "path": "reports/m6e_trials/P0_validation_p66_s301_B/result.json",
+        "bytes": 4230,
+        "sha256": "616faf7e70c6777689b5a5a41baf1719d1672e5b102008d940cf79ae92958f35"
+      },
+      "trace": {
+        "path": "reports/m6e_trials/P0_validation_p66_s301_B/trace.jsonl",
+        "bytes": 1560398,
+        "sha256": "ef107b20950cb3ec6bb3e9ede6d17181095f5cfb6544d1371aac5f86fbadeb06"
+      },
+      "physics": {
+        "path": "reports/m6e_trials/P0_validation_p66_s301_B/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "start_t": 448.6633077785373,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 3.116399778482277,
+          "start_delay_s": null,
+          "stop_duration_s": 1.0000000149011612,
+          "stopped_travel_m": -0.0050201567989145695,
+          "total_travel_m": -0.005043044979410878,
+          "net_backward_excursion_m": 0.006263740000851978,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0062637514957426385,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.0035362839662231387,
+          "actual_gear": [
+            0,
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.1020844222591919,
+            "jerk_peak_raw": 4.9899750511399095,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 2.898896353829477,
+            "max_decel_250ms": 0.02041688445183838,
+            "jerk_p95_250ms": 0.5646027525408686,
+            "min_signed_speed": -0.005104221189018416,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.024196220136879904
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "hold_initial": {
+          "ticks": 40,
+          "start_t": 450.163307800889,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "cold_run": {
+          "ticks": 120,
+          "start_t": 452.16330783069134,
+          "initial_speed": 0.0,
+          "final_speed": 2.1775918018602147,
+          "max_speed": 2.224119035784885,
+          "start_delay_s": 0.5500000081956387,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 7.682353651340472,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 7.682360140468712,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.6434995988828612,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 1.078007400174556,
+            "jerk_peak_raw": 59.58383818515459,
+            "jerk_p95_moving": 58.13242511188566,
+            "jerk_p95_all": 57.93464360202941,
+            "max_decel_250ms": 0.04479306060952228,
+            "jerk_p95_250ms": 11.477316472210163,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.6500000000000004,
+            "api_accel_vs_velocity_derivative_mae": 7.588917968337813e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "normal_stop": {
+          "ticks": 120,
+          "start_t": 458.1633079200983,
+          "initial_speed": 2.240823543182851,
+          "final_speed": 0.0,
+          "max_speed": 2.245030445764894,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 2.1000000312924385,
+          "stopped_travel_m": 1.9385958483413381,
+          "total_travel_m": 1.9385958483413381,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 1.9385958486569381,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.4873274203289087,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 17.870794183741893,
+            "jerk_peak_raw": 370.1998991594025,
+            "jerk_p95_moving": 221.51341627703007,
+            "jerk_p95_all": 55.945851112735184,
+            "max_decel_250ms": 6.295713799726519,
+            "jerk_p95_250ms": 11.803569110521773,
+            "min_signed_speed": -0.00015189423402279262,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 2.4368721768872873e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "hold_warm": {
+          "ticks": 40,
+          "start_t": 464.1633080095053,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "warm_run": {
+          "ticks": 120,
+          "start_t": 466.1633080393076,
+          "initial_speed": 0.0,
+          "final_speed": 1.9675342145379389,
+          "max_speed": 1.9676316550221697,
+          "start_delay_s": 0.6000000089406967,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 7.137448245464929,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 7.137448281023658,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.5253792692907735,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 1.0840594297173574,
+            "jerk_peak_raw": 62.98398743958843,
+            "jerk_p95_moving": 60.745686879441436,
+            "jerk_p95_all": 60.69883671237033,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 10.439467963020476,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.9000000000000004,
+            "api_accel_vs_velocity_derivative_mae": 5.736298190584657e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "final_stop": {
+          "ticks": 120,
+          "start_t": 472.16330812871456,
+          "initial_speed": 1.979672471019957,
+          "final_speed": 0.0,
+          "max_speed": 1.9797705464974118,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 1.5000000223517418,
+          "stopped_travel_m": 0.8241352555373649,
+          "total_travel_m": 0.8241352555373649,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.8241352696439246,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.3451690518131202,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 17.50198407674844,
+            "jerk_peak_raw": 349.776659792171,
+            "jerk_p95_moving": 330.57914765706204,
+            "jerk_p95_all": 4.4695648003299056,
+            "max_decel_250ms": 7.334489919070626,
+            "jerk_p95_250ms": 3.4499073396911974,
+            "min_signed_speed": -0.00017362063595820223,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.05,
+            "api_accel_vs_velocity_derivative_mae": 1.8109395727923762e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "hold_final": {
+          "ticks": 40,
+          "start_t": 478.16330821812153,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "raw_all": {
+        "max_decel_raw": 17.870794183741893,
+        "jerk_peak_raw": 370.1998991594025,
+        "jerk_p95_moving": 59.96393893642029,
+        "jerk_p95_all": 54.96500942278897,
+        "max_decel_250ms": 7.334489919070626,
+        "jerk_p95_250ms": 10.99608662845357,
+        "min_signed_speed": -0.005104221189018416,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 5.75,
+        "api_accel_vs_velocity_derivative_mae": 0.0011158982228908832
+      },
+      "complete": true,
+      "normal_comfort_passed": false,
+      "initial": {
+        "frame": 33319,
+        "t": 448.6633077785373,
+        "position": [
+          -148.97052001953125,
+          -72.44021606445312,
+          0.9805508255958557
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          90.0298080444336
+        ],
+        "velocity": [
+          0.0,
+          0.0,
+          -0.4899999797344208
+        ],
+        "speed": 0.4899999797344208,
+        "long_speed": 0.0,
+        "acceleration_api": [
+          0.0,
+          0.0,
+          -9.799999237060547
+        ],
+        "long_acceleration_api": 0.0,
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": 0.0,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 0
+        }
+      },
+      "collisions": [],
+      "boundary_ticks": 0,
+      "final_body_road": true,
+      "lane_events": [],
+      "rollback_protection": {
+        "risk": false,
+        "emergency": false,
+        "risk_to_apply_s": null,
+        "observation_to_apply_ms": null,
+        "confirmed_net_m": null,
+        "final_stopped": true
+      },
+      "obstacle": {
+        "min_gap_m": null,
+        "final_gap_m": null,
+        "final_gap3_passed": false
+      },
+      "runtime": {
+        "control_interval_ms": {
+          "n": 629,
+          "p50": 49.99367147684097,
+          "p95": 50.195445120334625,
+          "p99": 50.41385270655155,
+          "max": 51.54074728488922
+        },
+        "tick_ms": {
+          "n": 630,
+          "p50": 1.3546738773584366,
+          "p95": 1.640872750431299,
+          "p99": 1.7753845639526846,
+          "max": 11.147337034344673
+        },
+        "mean_hz": 20.000188169085394,
+        "deadline_miss": 0,
+        "skipped_slots": 0,
+        "worker": "NotApplicable_no_planner",
+        "expired_normal_plan": "NotApplicable_no_planner"
+      },
+      "stages_ms": {
+        "snapshot": {
+          "n": 630,
+          "p50": 0.23874454200267792,
+          "p95": 0.6370181217789648,
+          "p99": 0.7262356579303743,
+          "max": 1.2768786400556564
+        },
+        "guard_geometry_road": {
+          "n": 630,
+          "p50": 0.281493179500103,
+          "p95": 0.4626319743692875,
+          "p99": 0.5189942941069605,
+          "max": 0.7803551852703094
+        },
+        "command": {
+          "n": 630,
+          "p50": 0.00017136335372924805,
+          "p95": 0.00023283064365386963,
+          "p99": 0.00033203512430191083,
+          "max": 0.0004116445779800415
+        }
+      },
+      "min_grade": -0.011381787224790134,
+      "max_grade": -0.009646291477709054
+    },
+    {
+      "name": "P0_validation_p66_s301_C",
+      "config": {
+        "name": "P0_validation_p66_s301_C",
+        "physics": "P0",
+        "split": "validation",
+        "spawn": 66,
+        "seed": 301,
+        "interface": "C",
+        "mode": "cycle"
+      },
+      "result": {
+        "path": "reports/m6e_trials/P0_validation_p66_s301_C/result.json",
+        "bytes": 4232,
+        "sha256": "809cf131011f6e4e57dc5df5dae7045aba7d3ace768044e027429f41cf06965f"
+      },
+      "trace": {
+        "path": "reports/m6e_trials/P0_validation_p66_s301_C/trace.jsonl",
+        "bytes": 1552547,
+        "sha256": "8edc4a9f8e5794b964cf058ae40603b702b12b13114772698a8562a3aa403e3f"
+      },
+      "physics": {
+        "path": "reports/m6e_trials/P0_validation_p66_s301_C/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "start_t": 480.71664481423795,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 3.116399778482277,
+          "start_delay_s": null,
+          "stop_duration_s": 1.0000000149011612,
+          "stopped_travel_m": -0.0050201567989145695,
+          "total_travel_m": -0.005043044979410878,
+          "net_backward_excursion_m": 0.006263740000851978,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0062637514957426385,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.0035362839662231387,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 0.1020844222591919,
+            "jerk_peak_raw": 4.9899750511399095,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 2.898896353829477,
+            "max_decel_250ms": 0.02041688445183838,
+            "jerk_p95_250ms": 0.5646027525408686,
+            "min_signed_speed": -0.005104221189018416,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.024196220136879904
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "hold_initial": {
+          "ticks": 40,
+          "start_t": 482.2166448365897,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "cold_run": {
+          "ticks": 120,
+          "start_t": 484.216644866392,
+          "initial_speed": 0.0,
+          "final_speed": 0.8025542267141795,
+          "max_speed": 0.8266684386168208,
+          "start_delay_s": 3.500000052154064,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 1.4511188512537896,
+          "net_backward_excursion_m": 7.629393510890075e-06,
+          "backward_frames": 0,
+          "max_displacement_m": 1.4511188967548292,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.664225848212863,
+          "actual_gear": [
+            0,
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 8.295360035679616,
+            "jerk_peak_raw": 334.14427269597854,
+            "jerk_p95_moving": 285.88165068016235,
+            "jerk_p95_all": 67.08659637586229,
+            "max_decel_250ms": 0.26744637439240054,
+            "jerk_p95_250ms": 27.966515434424863,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.4000000000000004,
+            "api_accel_vs_velocity_derivative_mae": 5.553053529709918e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.3760828375816345
+          ]
+        },
+        "normal_stop": {
+          "ticks": 120,
+          "start_t": 490.216644955799,
+          "initial_speed": 0.8632845846727524,
+          "final_speed": 0.0,
+          "max_speed": 0.9423819186152878,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 3.8500000573694706,
+          "stopped_travel_m": 2.2603225251654084,
+          "total_travel_m": 2.2603225251654084,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 2.2603225359713,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.3652828244653028,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 13.179912253895232,
+            "jerk_peak_raw": 286.23271596770377,
+            "jerk_p95_moving": 70.07034926698138,
+            "jerk_p95_all": 68.86065467988414,
+            "max_decel_250ms": 2.63711213308094,
+            "jerk_p95_250ms": 13.494695002167173,
+            "min_signed_speed": -4.943924050216795e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.95,
+            "api_accel_vs_velocity_derivative_mae": 8.443480311948728e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.14402028918266296
+          ]
+        },
+        "hold_warm": {
+          "ticks": 40,
+          "start_t": 496.21664504520595,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            1.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "warm_run": {
+          "ticks": 120,
+          "start_t": 498.2166450750083,
+          "initial_speed": 0.0,
+          "final_speed": 0.9275097868384153,
+          "max_speed": 0.9275698656638814,
+          "start_delay_s": 1.9000000283122063,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 2.0523204806476207,
+          "net_backward_excursion_m": 0.0013122531260313286,
+          "backward_frames": 2,
+          "max_displacement_m": 2.052320603181079,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.5535729358762687,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 1.9439803866562004,
+            "jerk_peak_raw": 82.92052913311151,
+            "jerk_p95_moving": 73.51129100936947,
+            "jerk_p95_all": 78.83952055057217,
+            "max_decel_250ms": 0.40017874034902906,
+            "jerk_p95_250ms": 15.783308539009488,
+            "min_signed_speed": -0.057465673475006716,
+            "reverse_ticks": 1,
+            "low_speed_moving_seconds": 4.2,
+            "api_accel_vs_velocity_derivative_mae": 7.11124139556366e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15495333075523376
+          ]
+        },
+        "final_stop": {
+          "ticks": 120,
+          "start_t": 504.21664516441524,
+          "initial_speed": 0.8469646654363855,
+          "final_speed": 0.0,
+          "max_speed": 0.9443660605357295,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 3.0500000454485416,
+          "stopped_travel_m": 1.6990536406323191,
+          "total_travel_m": 1.6990536406323191,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 1.6990536955062183,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.2452072932242699,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 14.403605098924276,
+            "jerk_peak_raw": 298.1315843656724,
+            "jerk_p95_moving": 64.56480442272438,
+            "jerk_p95_all": 47.6873987252003,
+            "max_decel_250ms": 2.8955459267262245,
+            "jerk_p95_250ms": 4.985728898290729,
+            "min_signed_speed": -5.810468073863231e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.15,
+            "api_accel_vs_velocity_derivative_mae": 2.5062108058820303e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.13303391635417938
+          ]
+        },
+        "hold_final": {
+          "ticks": 40,
+          "start_t": 510.2166452538222,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            1.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "raw_all": {
+        "max_decel_raw": 14.403605098924276,
+        "jerk_peak_raw": 334.14427269597854,
+        "jerk_p95_moving": 74.09309882830739,
+        "jerk_p95_all": 73.04303753297874,
+        "max_decel_250ms": 2.8955459267262245,
+        "jerk_p95_250ms": 15.131670744629552,
+        "min_signed_speed": -0.057465673475006716,
+        "reverse_ticks": 1,
+        "low_speed_moving_seconds": 11.5,
+        "api_accel_vs_velocity_derivative_mae": 0.0011160154507744051
+      },
+      "complete": true,
+      "normal_comfort_passed": false,
+      "initial": {
+        "frame": 33978,
+        "t": 480.71664481423795,
+        "position": [
+          -148.97052001953125,
+          -72.44021606445312,
+          0.9805508255958557
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          90.0298080444336
+        ],
+        "velocity": [
+          0.0,
+          0.0,
+          -0.4899999797344208
+        ],
+        "speed": 0.4899999797344208,
+        "long_speed": 0.0,
+        "acceleration_api": [
+          0.0,
+          0.0,
+          -9.799999237060547
+        ],
+        "long_acceleration_api": 0.0,
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": 0.0,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 0
+        }
+      },
+      "collisions": [],
+      "boundary_ticks": 0,
+      "final_body_road": true,
+      "lane_events": [],
+      "rollback_protection": {
+        "risk": false,
+        "emergency": false,
+        "risk_to_apply_s": null,
+        "observation_to_apply_ms": null,
+        "confirmed_net_m": null,
+        "final_stopped": true
+      },
+      "obstacle": {
+        "min_gap_m": null,
+        "final_gap_m": null,
+        "final_gap3_passed": false
+      },
+      "runtime": {
+        "control_interval_ms": {
+          "n": 629,
+          "p50": 49.995532259345055,
+          "p95": 50.1494437456131,
+          "p99": 50.35174794495106,
+          "max": 51.55421234667301
+        },
+        "tick_ms": {
+          "n": 630,
+          "p50": 1.4104852452874184,
+          "p95": 1.735458895564079,
+          "p99": 1.8941883742809296,
+          "max": 8.281510323286057
+        },
+        "mean_hz": 20.000138807293556,
+        "deadline_miss": 0,
+        "skipped_slots": 0,
+        "worker": "NotApplicable_no_planner",
+        "expired_normal_plan": "NotApplicable_no_planner"
+      },
+      "stages_ms": {
+        "snapshot": {
+          "n": 630,
+          "p50": 0.19089225679636002,
+          "p95": 0.3092637285590172,
+          "p99": 0.49731841310858893,
+          "max": 0.9799674153327942
+        },
+        "guard_geometry_road": {
+          "n": 630,
+          "p50": 0.27637556195259094,
+          "p95": 0.36958120763301844,
+          "p99": 0.4932722635567188,
+          "max": 0.6303600966930389
+        },
+        "command": {
+          "n": 630,
+          "p50": 0.00017695128917694092,
+          "p95": 0.00023283064365386963,
+          "p99": 0.00028630718588829046,
+          "max": 0.007944181561470032
+        }
+      },
+      "min_grade": -0.011381787224790134,
+      "max_grade": -0.011381692938448377
+    },
+    {
+      "name": "P0_validation_p66_s302_A",
+      "config": {
+        "name": "P0_validation_p66_s302_A",
+        "physics": "P0",
+        "split": "validation",
+        "spawn": 66,
+        "seed": 302,
+        "interface": "A",
+        "mode": "cycle"
+      },
+      "result": {
+        "path": "reports/m6e_trials/P0_validation_p66_s302_A/result.json",
+        "bytes": 4229,
+        "sha256": "68324f2aeea91e4c51492d6b2cdaf15d4d17927580f078ba6ef010f541888857"
+      },
+      "trace": {
+        "path": "reports/m6e_trials/P0_validation_p66_s302_A/trace.jsonl",
+        "bytes": 1570883,
+        "sha256": "045664942755bccca3b5a2fed36fbb14aeaa1c79fa0ed06320485996e4faf2be"
+      },
+      "physics": {
+        "path": "reports/m6e_trials/P0_validation_p66_s302_A/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "start_t": 512.7548311334103,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 3.116399778482277,
+          "start_delay_s": null,
+          "stop_duration_s": 1.0000000149011612,
+          "stopped_travel_m": -0.0050201567989145695,
+          "total_travel_m": -0.005043044979410878,
+          "net_backward_excursion_m": 0.006263740000851978,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0062637514957426385,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.0035362839662231387,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 0.1020844222591919,
+            "jerk_peak_raw": 4.9899750511399095,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 2.898896353829477,
+            "max_decel_250ms": 0.02041688445183838,
+            "jerk_p95_250ms": 0.5646027525408686,
+            "min_signed_speed": -0.005104221189018416,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.024196220136879904
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "hold_initial": {
+          "ticks": 40,
+          "start_t": 514.2548311557621,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.11999999731779099,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "cold_run": {
+          "ticks": 120,
+          "start_t": 516.2548311855644,
+          "initial_speed": 0.0,
+          "final_speed": 2.129256998283192,
+          "max_speed": 2.1293949109103916,
+          "start_delay_s": 3.6000000536441803,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 4.5754847359384225,
+          "net_backward_excursion_m": 7.629393510890075e-06,
+          "backward_frames": 0,
+          "max_displacement_m": 4.575485235216924,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.8596306425711449,
+          "actual_gear": [
+            0,
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0004830394013198251,
+            "jerk_peak_raw": 288.47418913083624,
+            "jerk_p95_moving": 71.65043757107694,
+            "jerk_p95_all": 6.629436895409537,
+            "max_decel_250ms": 9.650040359734099e-05,
+            "jerk_p95_250ms": 14.773324573377998,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 6.241980064522846e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "normal_stop": {
+          "ticks": 120,
+          "start_t": 522.2548312749714,
+          "initial_speed": 2.1345406045356357,
+          "final_speed": 0.0,
+          "max_speed": 2.139907014652624,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 1.700000025331974,
+          "stopped_travel_m": 1.2684249660609295,
+          "total_travel_m": 1.2684249660609295,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 1.2684249900874545,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.41098663050979295,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 20.118455595622798,
+            "jerk_peak_raw": 400.38018116403975,
+            "jerk_p95_moving": 295.81202763715714,
+            "jerk_p95_all": 2.602833843822217,
+            "max_decel_250ms": 7.3812173914709165,
+            "jerk_p95_250ms": 3.7184556498415335,
+            "min_signed_speed": -0.0001750445082576346,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.05,
+            "api_accel_vs_velocity_derivative_mae": 3.3721639230281797e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "hold_warm": {
+          "ticks": 40,
+          "start_t": 528.2548313643783,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.009999999776482582,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "warm_run": {
+          "ticks": 120,
+          "start_t": 530.2548313941807,
+          "initial_speed": 0.0,
+          "final_speed": 2.1785079834868464,
+          "max_speed": 2.2253357610682363,
+          "start_delay_s": 0.5000000074505806,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 7.728814644255315,
+          "net_backward_excursion_m": 0.00040435786374821926,
+          "backward_frames": 2,
+          "max_displacement_m": 7.728817582574106,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.6479864261943252,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 1.8608182827782762,
+            "jerk_peak_raw": 78.84300464595724,
+            "jerk_p95_moving": 60.69867638492706,
+            "jerk_p95_all": 65.49279330373929,
+            "max_decel_250ms": 0.2778515115446312,
+            "jerk_p95_250ms": 12.21664489054444,
+            "min_signed_speed": -0.044124675849849665,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.75,
+            "api_accel_vs_velocity_derivative_mae": 7.602701417933281e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "final_stop": {
+          "ticks": 120,
+          "start_t": 536.2548314835876,
+          "initial_speed": 2.2413529874723332,
+          "final_speed": 0.0,
+          "max_speed": 2.2448468847535636,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 2.1000000312924385,
+          "stopped_travel_m": 1.9357836384366542,
+          "total_travel_m": 1.9357836384366542,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 1.9357836481942357,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.48628191310352437,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 17.89150060473081,
+            "jerk_peak_raw": 370.5783122424094,
+            "jerk_p95_moving": 219.77214352676984,
+            "jerk_p95_all": 55.9996969210703,
+            "max_decel_250ms": 6.274859335516636,
+            "jerk_p95_250ms": 11.8207741407157,
+            "min_signed_speed": -0.00015193082792962196,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 1.812688151757474e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "hold_final": {
+          "ticks": 40,
+          "start_t": 542.2548315729946,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.009999999776482582,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "raw_all": {
+        "max_decel_raw": 20.118455595622798,
+        "jerk_peak_raw": 400.38018116403975,
+        "jerk_p95_moving": 65.05010013364794,
+        "jerk_p95_all": 57.80303542238511,
+        "max_decel_250ms": 7.3812173914709165,
+        "jerk_p95_250ms": 11.650593502337136,
+        "min_signed_speed": -0.044124675849849665,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 3.1,
+        "api_accel_vs_velocity_derivative_mae": 0.0011159283211886004
+      },
+      "complete": true,
+      "normal_comfort_passed": false,
+      "initial": {
+        "frame": 34635,
+        "t": 512.7548311334103,
+        "position": [
+          -148.97052001953125,
+          -72.44021606445312,
+          0.9805508255958557
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          90.0298080444336
+        ],
+        "velocity": [
+          0.0,
+          0.0,
+          -0.4899999797344208
+        ],
+        "speed": 0.4899999797344208,
+        "long_speed": 0.0,
+        "acceleration_api": [
+          0.0,
+          0.0,
+          -9.799999237060547
+        ],
+        "long_acceleration_api": 0.0,
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": 0.0,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 0
+        }
+      },
+      "collisions": [],
+      "boundary_ticks": 0,
+      "final_body_road": true,
+      "lane_events": [],
+      "rollback_protection": {
+        "risk": false,
+        "emergency": false,
+        "risk_to_apply_s": null,
+        "observation_to_apply_ms": null,
+        "confirmed_net_m": null,
+        "final_stopped": true
+      },
+      "obstacle": {
+        "min_gap_m": null,
+        "final_gap_m": null,
+        "final_gap3_passed": false
+      },
+      "runtime": {
+        "control_interval_ms": {
+          "n": 629,
+          "p50": 49.99029450118542,
+          "p95": 50.19327476620674,
+          "p99": 50.37239231169224,
+          "max": 57.69922025501728
+        },
+        "tick_ms": {
+          "n": 630,
+          "p50": 1.3253884389996529,
+          "p95": 1.612781547009945,
+          "p99": 1.7353080585598952,
+          "max": 6.724907085299492
+        },
+        "mean_hz": 20.00009399905134,
+        "deadline_miss": 0,
+        "skipped_slots": 0,
+        "worker": "NotApplicable_no_planner",
+        "expired_normal_plan": "NotApplicable_no_planner"
+      },
+      "stages_ms": {
+        "snapshot": {
+          "n": 630,
+          "p50": 0.20622555166482925,
+          "p95": 0.35601556301116927,
+          "p99": 0.5633996054530154,
+          "max": 7.918009534478188
+        },
+        "guard_geometry_road": {
+          "n": 630,
+          "p50": 0.2682637423276901,
+          "p95": 0.35524303093552584,
+          "p99": 0.4318964295089252,
+          "max": 0.5407463759183884
+        },
+        "command": {
+          "n": 630,
+          "p50": 0.0001695007085800171,
+          "p95": 0.00022351741790771484,
+          "p99": 0.00024611130356788657,
+          "max": 0.00033155083656311035
+        }
+      },
+      "min_grade": -0.011381787224790134,
+      "max_grade": -0.010430148330371519
+    },
+    {
+      "name": "P0_validation_p66_s302_B",
+      "config": {
+        "name": "P0_validation_p66_s302_B",
+        "physics": "P0",
+        "split": "validation",
+        "spawn": 66,
+        "seed": 302,
+        "interface": "B",
+        "mode": "cycle"
+      },
+      "result": {
+        "path": "reports/m6e_trials/P0_validation_p66_s302_B/result.json",
+        "bytes": 4243,
+        "sha256": "b9805781ab42354ffd390e1187579142c3b86055a95d179fd480b31fc7befc0a"
+      },
+      "trace": {
+        "path": "reports/m6e_trials/P0_validation_p66_s302_B/trace.jsonl",
+        "bytes": 1561323,
+        "sha256": "93f9594535401ae335ed06b96f3e7618ec25df8169d13fdb9c211b2a63301393"
+      },
+      "physics": {
+        "path": "reports/m6e_trials/P0_validation_p66_s302_B/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "start_t": 544.8029365036637,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 3.116399778482277,
+          "start_delay_s": null,
+          "stop_duration_s": 1.0000000149011612,
+          "stopped_travel_m": -0.0050201567989145695,
+          "total_travel_m": -0.005043044979410878,
+          "net_backward_excursion_m": 0.006263740000851978,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0062637514957426385,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.0035362839662231387,
+          "actual_gear": [
+            0,
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.1020844222591919,
+            "jerk_peak_raw": 4.9899750511399095,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 2.898896353829477,
+            "max_decel_250ms": 0.02041688445183838,
+            "jerk_p95_250ms": 0.5646027525408686,
+            "min_signed_speed": -0.005104221189018416,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.024196220136879904
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "hold_initial": {
+          "ticks": 40,
+          "start_t": 546.3029365260154,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "cold_run": {
+          "ticks": 120,
+          "start_t": 548.3029365558177,
+          "initial_speed": 0.0,
+          "final_speed": 2.223974970200082,
+          "max_speed": 2.224119035784885,
+          "start_delay_s": 0.6000000089406967,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 7.572543845779641,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 7.572550215046434,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.635039585165248,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 1.078007400174556,
+            "jerk_peak_raw": 59.58383818515459,
+            "jerk_p95_moving": 58.14890690437368,
+            "jerk_p95_all": 57.93464360202941,
+            "max_decel_250ms": 0.04119250629047004,
+            "jerk_p95_250ms": 11.477316472210163,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.6500000000000004,
+            "api_accel_vs_velocity_derivative_mae": 7.408343594481951e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "normal_stop": {
+          "ticks": 120,
+          "start_t": 554.3029366452247,
+          "initial_speed": 2.1775918018602147,
+          "final_speed": 0.0,
+          "max_speed": 2.2286764845529667,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 2.0500000305473804,
+          "stopped_travel_m": 1.7852296998031325,
+          "total_travel_m": 1.7852296998031325,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 1.785229699838062,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.45973115692748434,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 24.522016302152192,
+            "jerk_peak_raw": 470.01276210176906,
+            "jerk_p95_moving": 403.38046364629645,
+            "jerk_p95_all": 55.78781227636485,
+            "max_decel_250ms": 6.242800084878515,
+            "jerk_p95_250ms": 11.063041900104484,
+            "min_signed_speed": -0.0001547959354153576,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 2.2922329490660736e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "hold_warm": {
+          "ticks": 40,
+          "start_t": 560.3029367346317,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "warm_run": {
+          "ticks": 120,
+          "start_t": 562.302936764434,
+          "initial_speed": 0.0,
+          "final_speed": 2.155385489641467,
+          "max_speed": 2.202619882480886,
+          "start_delay_s": 0.6000000089406967,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 7.569085926205781,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 7.569086038353359,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.6318007482843498,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 1.154406028417177,
+            "jerk_peak_raw": 62.525031910440234,
+            "jerk_p95_moving": 60.72349812670293,
+            "jerk_p95_all": 60.47695532608912,
+            "max_decel_250ms": 0.0524000977066239,
+            "jerk_p95_250ms": 11.833228613465327,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.6500000000000004,
+            "api_accel_vs_velocity_derivative_mae": 7.840148612786596e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "final_stop": {
+          "ticks": 120,
+          "start_t": 568.302936853841,
+          "initial_speed": 2.218807503677365,
+          "final_speed": 0.0,
+          "max_speed": 2.222466573182063,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 2.0500000305473804,
+          "stopped_travel_m": 1.8739569113146577,
+          "total_travel_m": 1.8739569113146577,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 1.8739569920365249,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.4753930606828706,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 24.179109994711435,
+            "jerk_peak_raw": 481.1987605083366,
+            "jerk_p95_moving": 361.428246624864,
+            "jerk_p95_all": 54.95277332505683,
+            "max_decel_250ms": 6.504553233784578,
+            "jerk_p95_250ms": 11.096647841211698,
+            "min_signed_speed": -0.0001560198480686714,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.1,
+            "api_accel_vs_velocity_derivative_mae": 5.379290930184398e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "hold_final": {
+          "ticks": 40,
+          "start_t": 574.3029369432479,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "raw_all": {
+        "max_decel_raw": 24.522016302152192,
+        "jerk_peak_raw": 481.1987605083366,
+        "jerk_p95_moving": 59.60000531419058,
+        "jerk_p95_all": 57.410078014151956,
+        "max_decel_250ms": 6.504553233784578,
+        "jerk_p95_250ms": 11.4733419683469,
+        "min_signed_speed": -0.005104221189018416,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 5.550000000000001,
+        "api_accel_vs_velocity_derivative_mae": 0.0011160008084254113
+      },
+      "complete": true,
+      "normal_comfort_passed": false,
+      "initial": {
+        "frame": 35294,
+        "t": 544.8029365036637,
+        "position": [
+          -148.97052001953125,
+          -72.44021606445312,
+          0.9805508255958557
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          90.0298080444336
+        ],
+        "velocity": [
+          0.0,
+          0.0,
+          -0.4899999797344208
+        ],
+        "speed": 0.4899999797344208,
+        "long_speed": 0.0,
+        "acceleration_api": [
+          0.0,
+          0.0,
+          -9.799999237060547
+        ],
+        "long_acceleration_api": 0.0,
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": 0.0,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 0
+        }
+      },
+      "collisions": [],
+      "boundary_ticks": 0,
+      "final_body_road": true,
+      "lane_events": [],
+      "rollback_protection": {
+        "risk": false,
+        "emergency": false,
+        "risk_to_apply_s": null,
+        "observation_to_apply_ms": null,
+        "confirmed_net_m": null,
+        "final_stopped": true
+      },
+      "obstacle": {
+        "min_gap_m": null,
+        "final_gap_m": null,
+        "final_gap3_passed": false
+      },
+      "runtime": {
+        "control_interval_ms": {
+          "n": 629,
+          "p50": 49.99580420553684,
+          "p95": 50.157175213098526,
+          "p99": 50.36404684185982,
+          "max": 51.145486533641815
+        },
+        "tick_ms": {
+          "n": 630,
+          "p50": 1.1514490470290184,
+          "p95": 1.5238448046147823,
+          "p99": 1.6871424019336712,
+          "max": 3.263002261519432
+        },
+        "mean_hz": 20.00016964061692,
+        "deadline_miss": 0,
+        "skipped_slots": 0,
+        "worker": "NotApplicable_no_planner",
+        "expired_normal_plan": "NotApplicable_no_planner"
+      },
+      "stages_ms": {
+        "snapshot": {
+          "n": 630,
+          "p50": 0.21328777074813843,
+          "p95": 0.3414412960410117,
+          "p99": 0.4644854366779343,
+          "max": 1.2138839811086655
+        },
+        "guard_geometry_road": {
+          "n": 630,
+          "p50": 0.27338694781064987,
+          "p95": 0.3416099585592747,
+          "p99": 0.3931004926562316,
+          "max": 0.8722469210624695
+        },
+        "command": {
+          "n": 630,
+          "p50": 0.00016763806343078613,
+          "p95": 0.0002253800630569458,
+          "p99": 0.00025488436222076443,
+          "max": 0.0003818422555923462
+        }
+      },
+      "min_grade": -0.011381787224790134,
+      "max_grade": -0.009180306152855838
+    },
+    {
+      "name": "P0_validation_p66_s302_C",
+      "config": {
+        "name": "P0_validation_p66_s302_C",
+        "physics": "P0",
+        "split": "validation",
+        "spawn": 66,
+        "seed": 302,
+        "interface": "C",
+        "mode": "cycle"
+      },
+      "result": {
+        "path": "reports/m6e_trials/P0_validation_p66_s302_C/result.json",
+        "bytes": 4344,
+        "sha256": "d1578778220c79046cd41eef8dc655926270251bff3e239a99e60027763d3037"
+      },
+      "trace": {
+        "path": "reports/m6e_trials/P0_validation_p66_s302_C/trace.jsonl",
+        "bytes": 1552288,
+        "sha256": "31f8970f64931c6b937326114f831fedf5a486b6202e86d280de58d422b83188"
+      },
+      "physics": {
+        "path": "reports/m6e_trials/P0_validation_p66_s302_C/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "start_t": 576.8314590398222,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 3.116399778482277,
+          "start_delay_s": null,
+          "stop_duration_s": 1.0000000149011612,
+          "stopped_travel_m": -0.0050201567989145695,
+          "total_travel_m": -0.005043044979410878,
+          "net_backward_excursion_m": 0.006263740000851978,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0062637514957426385,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.0035362839662231387,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 0.1020844222591919,
+            "jerk_peak_raw": 4.9899750511399095,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 2.898896353829477,
+            "max_decel_250ms": 0.02041688445183838,
+            "jerk_p95_250ms": 0.5646027525408686,
+            "min_signed_speed": -0.005104221189018416,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.024196220136879904
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "hold_initial": {
+          "ticks": 40,
+          "start_t": 578.331459062174,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            1.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "cold_run": {
+          "ticks": 120,
+          "start_t": 580.3314590919763,
+          "initial_speed": 0.0,
+          "final_speed": 0.786558956128713,
+          "max_speed": 0.7866099701726899,
+          "start_delay_s": 3.500000052154064,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 1.3426821471257997,
+          "net_backward_excursion_m": 7.629393510890075e-06,
+          "backward_frames": 0,
+          "max_displacement_m": 1.342682156668014,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.6743324212769011,
+          "actual_gear": [
+            0,
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 12.18203662110007,
+            "jerk_peak_raw": 533.8978370427799,
+            "jerk_p95_moving": 288.0982001000307,
+            "jerk_p95_all": 72.870771337965,
+            "max_decel_250ms": 3.0496599469739074,
+            "jerk_p95_250ms": 17.814507026197443,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.4000000000000004,
+            "api_accel_vs_velocity_derivative_mae": 5.089382750404086e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.47813594341278076
+          ]
+        },
+        "normal_stop": {
+          "ticks": 120,
+          "start_t": 586.3314591813833,
+          "initial_speed": 0.7127797186136667,
+          "final_speed": 0.0,
+          "max_speed": 0.8823077908727646,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 3.1500000469386578,
+          "stopped_travel_m": 1.7306659783387703,
+          "total_travel_m": 1.7306659783387703,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 1.7306663376698823,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.2694337266260964,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 15.022281203075364,
+            "jerk_peak_raw": 322.14144489488365,
+            "jerk_p95_moving": 67.69750940666202,
+            "jerk_p95_all": 57.11387184143886,
+            "max_decel_250ms": 3.022560193022855,
+            "jerk_p95_250ms": 10.374677487033345,
+            "min_signed_speed": -6.0272728137089924e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.25,
+            "api_accel_vs_velocity_derivative_mae": 3.219489156941439e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.1427026391029358
+          ]
+        },
+        "hold_warm": {
+          "ticks": 40,
+          "start_t": 592.3314592707902,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            1.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "warm_run": {
+          "ticks": 120,
+          "start_t": 594.3314593005925,
+          "initial_speed": 0.0,
+          "final_speed": 0.8255252517177686,
+          "max_speed": 0.8984506150248286,
+          "start_delay_s": 1.750000026077032,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 1.896403957815122,
+          "net_backward_excursion_m": 0.0009536652608177495,
+          "backward_frames": 2,
+          "max_displacement_m": 1.896403965785518,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.5795532677510482,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 5.510542281628688,
+            "jerk_peak_raw": 167.33332145604663,
+            "jerk_p95_moving": 71.35590109978587,
+            "jerk_p95_all": 78.85915530361736,
+            "max_decel_250ms": 0.7155337837085683,
+            "jerk_p95_250ms": 15.78926373399559,
+            "min_signed_speed": -0.054345097339816316,
+            "reverse_ticks": 1,
+            "low_speed_moving_seconds": 4.05,
+            "api_accel_vs_velocity_derivative_mae": 9.476784586937783e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.23550771176815033
+          ]
+        },
+        "final_stop": {
+          "ticks": 120,
+          "start_t": 600.3314593899995,
+          "initial_speed": 0.9095859758545525,
+          "final_speed": 0.0,
+          "max_speed": 0.9594331518548127,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 4.000000059604645,
+          "stopped_travel_m": 2.288872352766492,
+          "total_travel_m": 2.288872352766492,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 2.2888731474486113,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.3485195011936232,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 10.185243316524817,
+            "jerk_peak_raw": 216.19074097250433,
+            "jerk_p95_moving": 68.0496984331971,
+            "jerk_p95_all": 63.356102093409724,
+            "max_decel_250ms": 2.2203540983520926,
+            "jerk_p95_250ms": 12.867315190883216,
+            "min_signed_speed": -3.723206674863877e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 3.1,
+            "api_accel_vs_velocity_derivative_mae": 1.5474678483666294e-06
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.13274049758911133
+          ]
+        },
+        "hold_final": {
+          "ticks": 40,
+          "start_t": 606.3314594794065,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            1.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "raw_all": {
+        "max_decel_raw": 15.022281203075364,
+        "jerk_peak_raw": 533.8978370427799,
+        "jerk_p95_moving": 102.15033309673206,
+        "jerk_p95_all": 74.84153207082056,
+        "max_decel_250ms": 3.0496599469739074,
+        "jerk_p95_250ms": 14.013443903592181,
+        "min_signed_speed": -0.054345097339816316,
+        "reverse_ticks": 1,
+        "low_speed_moving_seconds": 11.600000000000001,
+        "api_accel_vs_velocity_derivative_mae": 0.001116203892971903
+      },
+      "complete": true,
+      "normal_comfort_passed": false,
+      "initial": {
+        "frame": 35956,
+        "t": 576.8314590398222,
+        "position": [
+          -148.97052001953125,
+          -72.44021606445312,
+          0.9805508255958557
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          90.0298080444336
+        ],
+        "velocity": [
+          0.0,
+          0.0,
+          -0.4899999797344208
+        ],
+        "speed": 0.4899999797344208,
+        "long_speed": 0.0,
+        "acceleration_api": [
+          0.0,
+          0.0,
+          -9.799999237060547
+        ],
+        "long_acceleration_api": 0.0,
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": 0.0,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 0
+        }
+      },
+      "collisions": [],
+      "boundary_ticks": 0,
+      "final_body_road": true,
+      "lane_events": [],
+      "rollback_protection": {
+        "risk": false,
+        "emergency": false,
+        "risk_to_apply_s": null,
+        "observation_to_apply_ms": null,
+        "confirmed_net_m": null,
+        "final_stopped": true
+      },
+      "obstacle": {
+        "min_gap_m": null,
+        "final_gap_m": null,
+        "final_gap3_passed": false
+      },
+      "runtime": {
+        "control_interval_ms": {
+          "n": 629,
+          "p50": 49.995675683021545,
+          "p95": 50.11716969311237,
+          "p99": 50.268997475504875,
+          "max": 51.328856498003006
+        },
+        "tick_ms": {
+          "n": 630,
+          "p50": 1.1095432564616203,
+          "p95": 1.6327775083482263,
+          "p99": 1.7836373299360275,
+          "max": 4.607941955327988
+        },
+        "mean_hz": 20.00002519744521,
+        "deadline_miss": 0,
+        "skipped_slots": 0,
+        "worker": "NotApplicable_no_planner",
+        "expired_normal_plan": "NotApplicable_no_planner"
+      },
+      "stages_ms": {
+        "snapshot": {
+          "n": 630,
+          "p50": 0.18018949776887894,
+          "p95": 0.2777189947664737,
+          "p99": 0.37128828465938624,
+          "max": 1.046460121870041
+        },
+        "guard_geometry_road": {
+          "n": 630,
+          "p50": 0.2604527398943901,
+          "p95": 0.33849151805043215,
+          "p99": 0.37601664662361167,
+          "max": 0.7780212908983231
+        },
+        "command": {
+          "n": 630,
+          "p50": 0.00017136335372924805,
+          "p95": 0.00022267922759056083,
+          "p99": 0.0002551823854446411,
+          "max": 0.0002849847078323364
+        }
+      },
+      "min_grade": -0.011381787224790134,
+      "max_grade": -0.011381692938448377
+    },
+    {
+      "name": "P0_validation_p170_s301_A",
+      "config": {
+        "name": "P0_validation_p170_s301_A",
+        "physics": "P0",
+        "split": "validation",
+        "spawn": 170,
+        "seed": 301,
+        "interface": "A",
+        "mode": "cycle"
+      },
+      "result": {
+        "path": "reports/m6e_trials/P0_validation_p170_s301_A/result.json",
+        "bytes": 4346,
+        "sha256": "c6f2b1434e84e0fc7c6f74a638c0e953071205d42b5c6ce0195ac1f29c6358c0"
+      },
+      "trace": {
+        "path": "reports/m6e_trials/P0_validation_p170_s301_A/trace.jsonl",
+        "bytes": 1547286,
+        "sha256": "13b4b5ee98ad36334faf6136d34761fbd88487c9103868a77aca4b3081fb69d9"
+      },
+      "physics": {
+        "path": "reports/m6e_trials/P0_validation_p170_s301_A/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "start_t": 608.8729544635862,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 1.9470025300979614,
+          "start_delay_s": null,
+          "stop_duration_s": 0.7500000111758709,
+          "stopped_travel_m": 3.8146853887027697e-06,
+          "total_travel_m": 3.8146853887027697e-06,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 3.814697265625e-06,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 5.152658183167577e-08,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 5.349312998179153e-06,
+            "jerk_peak_raw": 0.00018628531190159254,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 9.121738818587073e-05,
+            "max_decel_250ms": 2.7668943487146067e-07,
+            "jerk_p95_250ms": 1.153488554390478e-05,
+            "min_signed_speed": -2.67419999487426e-07,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.232486098525116e-14
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "hold_initial": {
+          "ticks": 40,
+          "start_t": 610.372954485938,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.11999999731779099,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "cold_run": {
+          "ticks": 120,
+          "start_t": 612.3729545157403,
+          "initial_speed": 0.0,
+          "final_speed": 1.9435793250385158,
+          "max_speed": 1.9435799532301352,
+          "start_delay_s": 3.6500000543892384,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 4.235623617855424,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 4.235624128598172,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.8135037523018708,
+          "actual_gear": [
+            0,
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 6.411072199834989e-07,
+            "jerk_peak_raw": 286.8095834357773,
+            "jerk_p95_moving": 74.45781845396934,
+            "jerk_p95_all": 6.990123115711312,
+            "max_decel_250ms": 1.299474421479258e-07,
+            "jerk_p95_250ms": 13.330888021077762,
+            "min_signed_speed": -1.6564210352828596e-08,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 5.014504751549405e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "normal_stop": {
+          "ticks": 120,
+          "start_t": 618.3729546051472,
+          "initial_speed": 1.9460155122785672,
+          "final_speed": 0.0,
+          "max_speed": 1.9484028235457924,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 1.5000000223517418,
+          "stopped_travel_m": 0.8115249900916754,
+          "total_travel_m": 0.8115249900916754,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.8115250212197775,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.3428437818329207,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 19.173787092870235,
+            "jerk_peak_raw": 363.89504389093736,
+            "jerk_p95_moving": 324.75954710667827,
+            "jerk_p95_all": 2.573250011852663,
+            "max_decel_250ms": 7.337941864350949,
+            "jerk_p95_250ms": 3.8557556388836556,
+            "min_signed_speed": -0.00020648199035322857,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.05,
+            "api_accel_vs_velocity_derivative_mae": 1.340706739352521e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "hold_warm": {
+          "ticks": 40,
+          "start_t": 624.3729546945542,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.009999999776482582,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "warm_run": {
+          "ticks": 120,
+          "start_t": 626.3729547243565,
+          "initial_speed": 0.0,
+          "final_speed": 1.7949433888128885,
+          "max_speed": 1.8505012925948827,
+          "start_delay_s": 0.5500000081956387,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 6.414093556689035,
+          "net_backward_excursion_m": 0.0014686539504635242,
+          "backward_frames": 3,
+          "max_displacement_m": 6.414093604288394,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.4255475603701561,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 1.958249766319171,
+            "jerk_peak_raw": 81.83314498538752,
+            "jerk_p95_moving": 59.89641846304532,
+            "jerk_p95_all": 76.41215894222964,
+            "max_decel_250ms": 0.34643440374417844,
+            "jerk_p95_250ms": 12.148756665416432,
+            "min_signed_speed": -0.055460342167605,
+            "reverse_ticks": 2,
+            "low_speed_moving_seconds": 3.6,
+            "api_accel_vs_velocity_derivative_mae": 1.3651963504565702e-06
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "final_stop": {
+          "ticks": 120,
+          "start_t": 632.3729548137635,
+          "initial_speed": 1.8633083031516777,
+          "final_speed": 0.0,
+          "max_speed": 1.8640269200781583,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 1.650000024586916,
+          "stopped_travel_m": 0.969343906397557,
+          "total_travel_m": 0.969343906397557,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.9693439086850265,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.32363101737408834,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 21.640512916614416,
+            "jerk_peak_raw": 386.2460065568259,
+            "jerk_p95_moving": 327.60413588855477,
+            "jerk_p95_all": 55.88891030012859,
+            "max_decel_250ms": 6.482475189025539,
+            "jerk_p95_250ms": 12.368034695073343,
+            "min_signed_speed": -0.00020542012399134895,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.1,
+            "api_accel_vs_velocity_derivative_mae": 1.8472186097815587e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "hold_final": {
+          "ticks": 40,
+          "start_t": 638.3729549031705,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.009999999776482582,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "raw_all": {
+        "max_decel_raw": 21.640512916614416,
+        "jerk_peak_raw": 386.2460065568259,
+        "jerk_p95_moving": 63.508798417748494,
+        "jerk_p95_all": 58.750401574614536,
+        "max_decel_250ms": 7.337941864350949,
+        "jerk_p95_250ms": 11.820309942845018,
+        "min_signed_speed": -0.055460342167605,
+        "reverse_ticks": 2,
+        "low_speed_moving_seconds": 3.9000000000000004,
+        "api_accel_vs_velocity_derivative_mae": 4.1562783073140854e-07
+      },
+      "complete": true,
+      "normal_comfort_passed": false,
+      "initial": {
+        "frame": 36621,
+        "t": 608.8729544635862,
+        "position": [
+          22.490116119384766,
+          207.50567626953125,
+          0.26060721278190613
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          -0.142974853515625
+        ],
+        "velocity": [
+          0.0,
+          0.0,
+          -0.4899999797344208
+        ],
+        "speed": 0.4899999797344208,
+        "long_speed": 0.0,
+        "acceleration_api": [
+          0.0,
+          0.0,
+          -9.799999237060547
+        ],
+        "long_acceleration_api": 0.0,
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": 0.0,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 0
+        }
+      },
+      "collisions": [],
+      "boundary_ticks": 0,
+      "final_body_road": true,
+      "lane_events": [],
+      "rollback_protection": {
+        "risk": false,
+        "emergency": false,
+        "risk_to_apply_s": null,
+        "observation_to_apply_ms": null,
+        "confirmed_net_m": null,
+        "final_stopped": true
+      },
+      "obstacle": {
+        "min_gap_m": null,
+        "final_gap_m": null,
+        "final_gap3_passed": false
+      },
+      "runtime": {
+        "control_interval_ms": {
+          "n": 629,
+          "p50": 49.99287612736225,
+          "p95": 50.16740709543228,
+          "p99": 58.84475737810163,
+          "max": 168.56474615633488
+        },
+        "tick_ms": {
+          "n": 630,
+          "p50": 1.0877782478928566,
+          "p95": 1.60762770101428,
+          "p99": 1.9783088564872784,
+          "max": 64.06853906810284
+        },
+        "mean_hz": 19.77996727569881,
+        "deadline_miss": 7,
+        "skipped_slots": 7,
+        "worker": "NotApplicable_no_planner",
+        "expired_normal_plan": "NotApplicable_no_planner"
+      },
+      "stages_ms": {
+        "snapshot": {
+          "n": 630,
+          "p50": 0.21536089479923248,
+          "p95": 0.38909194990992546,
+          "p99": 0.499295499175787,
+          "max": 1.1375024914741516
+        },
+        "guard_geometry_road": {
+          "n": 630,
+          "p50": 0.14601461589336395,
+          "p95": 0.2320314757525921,
+          "p99": 0.24272644892334938,
+          "max": 0.5125533789396286
+        },
+        "command": {
+          "n": 630,
+          "p50": 0.00017508864402770996,
+          "p95": 0.0002413056790828704,
+          "p99": 0.0002947822213172917,
+          "max": 0.0004377216100692749
+        }
+      },
+      "min_grade": 0.0,
+      "max_grade": 0.007144376998911855
+    },
+    {
+      "name": "P0_validation_p170_s301_B",
+      "config": {
+        "name": "P0_validation_p170_s301_B",
+        "physics": "P0",
+        "split": "validation",
+        "spawn": 170,
+        "seed": 301,
+        "interface": "B",
+        "mode": "cycle"
+      },
+      "result": {
+        "path": "reports/m6e_trials/P0_validation_p170_s301_B/result.json",
+        "bytes": 4335,
+        "sha256": "e43af023fbef405418e2b17c3f54b61adc460607b1871522464ef25dcffe1d22"
+      },
+      "trace": {
+        "path": "reports/m6e_trials/P0_validation_p170_s301_B/trace.jsonl",
+        "bytes": 1544741,
+        "sha256": "e4c53e7fb570a54d3e30f09abfc4bc7a5eb43d5b64a72d1ba45bbdfa51b845de"
+      },
+      "physics": {
+        "path": "reports/m6e_trials/P0_validation_p170_s301_B/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "start_t": 640.8990936446935,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 1.9470025300979614,
+          "start_delay_s": null,
+          "stop_duration_s": 0.7500000111758709,
+          "stopped_travel_m": 3.8146853887027697e-06,
+          "total_travel_m": 3.8146853887027697e-06,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 3.814697265625e-06,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 5.152658183167577e-08,
+          "actual_gear": [
+            0,
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 5.349312998179153e-06,
+            "jerk_peak_raw": 0.00018628531190159254,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 9.121738818587073e-05,
+            "max_decel_250ms": 2.7668943487146067e-07,
+            "jerk_p95_250ms": 1.153488554390478e-05,
+            "min_signed_speed": -2.67419999487426e-07,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.232486098525116e-14
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "hold_initial": {
+          "ticks": 40,
+          "start_t": 642.3990936670452,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "cold_run": {
+          "ticks": 120,
+          "start_t": 644.3990936968476,
+          "initial_speed": 0.0,
+          "final_speed": 1.9222136974336061,
+          "max_speed": 1.922223468898046,
+          "start_delay_s": 0.6500000096857548,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 6.516361494695474,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 6.516362401796673,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.4571583734852442,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 1.3356238162000384,
+            "jerk_peak_raw": 65.72725951574186,
+            "jerk_p95_moving": 61.57085761823521,
+            "jerk_p95_all": 61.261735311020786,
+            "max_decel_250ms": 0.0996926365248375,
+            "jerk_p95_250ms": 12.224466289879466,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 3.3000000000000003,
+            "api_accel_vs_velocity_derivative_mae": 6.915886690365919e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "normal_stop": {
+          "ticks": 120,
+          "start_t": 650.3990937862545,
+          "initial_speed": 1.8681387915864383,
+          "final_speed": 0.0,
+          "max_speed": 1.9236017570051032,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 1.650000024586916,
+          "stopped_travel_m": 1.007380716203703,
+          "total_travel_m": 1.007380716203703,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 1.0073807168666713,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.3284628960217844,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 15.234713127360688,
+            "jerk_peak_raw": 304.457653472468,
+            "jerk_p95_moving": 303.5770618225945,
+            "jerk_p95_all": 55.65882514990583,
+            "max_decel_250ms": 6.349800115982033,
+            "jerk_p95_250ms": 12.181949923382627,
+            "min_signed_speed": -0.00019111101423342395,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 3.5449935492075445e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "hold_warm": {
+          "ticks": 40,
+          "start_t": 656.3990938756615,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "warm_run": {
+          "ticks": 120,
+          "start_t": 658.3990939054638,
+          "initial_speed": 0.0,
+          "final_speed": 1.602919024201428,
+          "max_speed": 1.605025827786631,
+          "start_delay_s": 0.6500000096857548,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 6.059451307954486,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 6.05945145410119,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.33428422203167824,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 1.0992637874427982,
+            "jerk_peak_raw": 62.559612176765874,
+            "jerk_p95_moving": 59.8339020541129,
+            "jerk_p95_all": 58.702810596333904,
+            "max_decel_250ms": 0.023614213855836452,
+            "jerk_p95_250ms": 10.502964051739065,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 4.25,
+            "api_accel_vs_velocity_derivative_mae": 1.104410627855698e-06
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "final_stop": {
+          "ticks": 120,
+          "start_t": 664.3990939948708,
+          "initial_speed": 1.6125800298206905,
+          "final_speed": 0.0,
+          "max_speed": 1.6126372868790806,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 1.1000000163912773,
+          "stopped_travel_m": 0.07317022340268234,
+          "total_travel_m": 0.07317022340268234,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.07317022374439264,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.3200757555768858,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 16.276166585411687,
+            "jerk_peak_raw": 329.3910788207318,
+            "jerk_p95_moving": 327.83880768365196,
+            "jerk_p95_all": 0.03566211795829551,
+            "max_decel_250ms": 6.451354922103172,
+            "jerk_p95_250ms": 0.008270309771786319,
+            "min_signed_speed": -0.00020289503411528316,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.05,
+            "api_accel_vs_velocity_derivative_mae": 4.1889964227041495e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "hold_final": {
+          "ticks": 40,
+          "start_t": 670.3990940842777,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "raw_all": {
+        "max_decel_raw": 16.276166585411687,
+        "jerk_peak_raw": 329.3910788207318,
+        "jerk_p95_moving": 61.36980845033099,
+        "jerk_p95_all": 58.69690477508111,
+        "max_decel_250ms": 6.451354922103172,
+        "jerk_p95_250ms": 11.80177673125286,
+        "min_signed_speed": -0.00020289503411528316,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 7.75,
+        "api_accel_vs_velocity_derivative_mae": 4.847221128883474e-07
+      },
+      "complete": true,
+      "normal_comfort_passed": false,
+      "initial": {
+        "frame": 37281,
+        "t": 640.8990936446935,
+        "position": [
+          22.490116119384766,
+          207.50567626953125,
+          0.26060721278190613
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          -0.142974853515625
+        ],
+        "velocity": [
+          0.0,
+          0.0,
+          -0.4899999797344208
+        ],
+        "speed": 0.4899999797344208,
+        "long_speed": 0.0,
+        "acceleration_api": [
+          0.0,
+          0.0,
+          -9.799999237060547
+        ],
+        "long_acceleration_api": 0.0,
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": 0.0,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 0
+        }
+      },
+      "collisions": [],
+      "boundary_ticks": 0,
+      "final_body_road": true,
+      "lane_events": [],
+      "rollback_protection": {
+        "risk": false,
+        "emergency": false,
+        "risk_to_apply_s": null,
+        "observation_to_apply_ms": null,
+        "confirmed_net_m": null,
+        "final_stopped": true
+      },
+      "obstacle": {
+        "min_gap_m": null,
+        "final_gap_m": null,
+        "final_gap3_passed": false
+      },
+      "runtime": {
+        "control_interval_ms": {
+          "n": 629,
+          "p50": 49.99311454594135,
+          "p95": 50.385838374495506,
+          "p99": 52.78597332537179,
+          "max": 151.3991802930832
+        },
+        "tick_ms": {
+          "n": 630,
+          "p50": 1.3355286791920662,
+          "p95": 1.6550332307815552,
+          "p99": 2.0536928996443775,
+          "max": 51.53932049870491
+        },
+        "mean_hz": 19.77994740470315,
+        "deadline_miss": 7,
+        "skipped_slots": 7,
+        "worker": "NotApplicable_no_planner",
+        "expired_normal_plan": "NotApplicable_no_planner"
+      },
+      "stages_ms": {
+        "snapshot": {
+          "n": 630,
+          "p50": 0.3483947366476059,
+          "p95": 0.7524278014898299,
+          "p99": 1.0042558237910284,
+          "max": 1.6092676669359207
+        },
+        "guard_geometry_road": {
+          "n": 630,
+          "p50": 0.17241574823856354,
+          "p95": 0.3129781223833561,
+          "p99": 0.37449451163411157,
+          "max": 0.7136445492506027
+        },
+        "command": {
+          "n": 630,
+          "p50": 0.00017508864402770996,
+          "p95": 0.0002655200660228728,
+          "p99": 0.0004267878830432894,
+          "max": 0.0005494803190231323
+        }
+      },
+      "min_grade": 0.0,
+      "max_grade": 0.008042966857065311
+    },
+    {
+      "name": "P0_validation_p170_s301_C",
+      "config": {
+        "name": "P0_validation_p170_s301_C",
+        "physics": "P0",
+        "split": "validation",
+        "spawn": 170,
+        "seed": 301,
+        "interface": "C",
+        "mode": "cycle"
+      },
+      "result": {
+        "path": "reports/m6e_trials/P0_validation_p170_s301_C/result.json",
+        "bytes": 4351,
+        "sha256": "0546e8cb639af458cd1156d7b32c7fdbe2e5759d8493bafa144f21baf5454f5e"
+      },
+      "trace": {
+        "path": "reports/m6e_trials/P0_validation_p170_s301_C/trace.jsonl",
+        "bytes": 1538940,
+        "sha256": "92bb8725fcf83cae03bde63c971aec87d8c693c053e83d37b0d247142619825a"
+      },
+      "physics": {
+        "path": "reports/m6e_trials/P0_validation_p170_s301_C/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "start_t": 672.942165100947,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 1.9470025300979614,
+          "start_delay_s": null,
+          "stop_duration_s": 0.7500000111758709,
+          "stopped_travel_m": 3.8146853887027697e-06,
+          "total_travel_m": 3.8146853887027697e-06,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 3.814697265625e-06,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 5.152658183167577e-08,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 5.349312998179153e-06,
+            "jerk_peak_raw": 0.00018628531190159254,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 9.121738818587073e-05,
+            "max_decel_250ms": 2.7668943487146067e-07,
+            "jerk_p95_250ms": 1.153488554390478e-05,
+            "min_signed_speed": -2.67419999487426e-07,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.232486098525116e-14
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "hold_initial": {
+          "ticks": 40,
+          "start_t": 674.4421651232988,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "cold_run": {
+          "ticks": 120,
+          "start_t": 676.4421651531011,
+          "initial_speed": 0.0,
+          "final_speed": 0.7578743496676775,
+          "max_speed": 0.7578744280459394,
+          "start_delay_s": 3.500000052154064,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 1.2206816802670124,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 1.2206824250865258,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.687662226103992,
+          "actual_gear": [
+            0,
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 11.129882377093146,
+            "jerk_peak_raw": 337.26296465700926,
+            "jerk_p95_moving": 243.03225754621224,
+            "jerk_p95_all": 75.8162270591517,
+            "max_decel_250ms": 2.1149363297605195,
+            "jerk_p95_250ms": 27.8742408462793,
+            "min_signed_speed": -1.6564210352828596e-08,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.35,
+            "api_accel_vs_velocity_derivative_mae": 5.985296648559376e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.47292575240135193
+          ]
+        },
+        "normal_stop": {
+          "ticks": 120,
+          "start_t": 682.442165242508,
+          "initial_speed": 0.6900511662625703,
+          "final_speed": 0.0,
+          "max_speed": 0.8945722707672434,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 4.400000065565109,
+          "stopped_travel_m": 2.512542078047672,
+          "total_travel_m": 2.512542078047672,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 2.512544646970105,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.3998204213195685,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 10.840408042171603,
+            "jerk_peak_raw": 246.5731115239769,
+            "jerk_p95_moving": 65.3992383024621,
+            "jerk_p95_all": 64.34242223272636,
+            "max_decel_250ms": 2.205870904844094,
+            "jerk_p95_250ms": 12.99987792375753,
+            "min_signed_speed": -6.419631580646326e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 3.5,
+            "api_accel_vs_velocity_derivative_mae": 7.269693921696939e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.1544649302959442
+          ]
+        },
+        "hold_warm": {
+          "ticks": 40,
+          "start_t": 688.442165331915,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            1.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "warm_run": {
+          "ticks": 120,
+          "start_t": 690.4421653617173,
+          "initial_speed": 0.0,
+          "final_speed": 0.9348627534743518,
+          "max_speed": 0.9361147921950573,
+          "start_delay_s": 2.0000000298023224,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 2.443839235286104,
+          "net_backward_excursion_m": 0.0003204343521155633,
+          "backward_frames": 0,
+          "max_displacement_m": 2.4438401412300506,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.49122509914535556,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 1.5590725674671615,
+            "jerk_peak_raw": 66.18524078390254,
+            "jerk_p95_moving": 63.85498221525369,
+            "jerk_p95_all": 63.42781522425781,
+            "max_decel_250ms": 0.2984674392341578,
+            "jerk_p95_250ms": 12.457656335050494,
+            "min_signed_speed": -0.0075574674474330195,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 4.0,
+            "api_accel_vs_velocity_derivative_mae": 7.577153569565125e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.1757533848285675
+          ]
+        },
+        "final_stop": {
+          "ticks": 120,
+          "start_t": 696.4421654511243,
+          "initial_speed": 0.8573124283210182,
+          "final_speed": 0.0,
+          "max_speed": 0.9411096397052187,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 4.700000070035458,
+          "stopped_travel_m": 2.688870196401722,
+          "total_travel_m": 2.688870196401722,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 2.688872798240374,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.4032589867677965,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 8.566149950413946,
+            "jerk_peak_raw": 194.07837975649383,
+            "jerk_p95_moving": 68.23691154779428,
+            "jerk_p95_all": 67.10628135515688,
+            "max_decel_250ms": 1.8058124397530326,
+            "jerk_p95_250ms": 13.288766258421564,
+            "min_signed_speed": -5.90638850512421e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 3.8000000000000003,
+            "api_accel_vs_velocity_derivative_mae": 9.727201855878407e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.13924875855445862
+          ]
+        },
+        "hold_final": {
+          "ticks": 40,
+          "start_t": 702.4421655405313,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            1.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "raw_all": {
+        "max_decel_raw": 11.129882377093146,
+        "jerk_peak_raw": 337.26296465700926,
+        "jerk_p95_moving": 67.89524586183462,
+        "jerk_p95_all": 63.934311064358894,
+        "max_decel_250ms": 2.205870904844094,
+        "jerk_p95_250ms": 12.868582945982817,
+        "min_signed_speed": -0.0075574674474330195,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 13.450000000000001,
+        "api_accel_vs_velocity_derivative_mae": 5.840071802355374e-07
+      },
+      "complete": true,
+      "normal_comfort_passed": false,
+      "initial": {
+        "frame": 37943,
+        "t": 672.942165100947,
+        "position": [
+          22.490116119384766,
+          207.50567626953125,
+          0.26060721278190613
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          -0.142974853515625
+        ],
+        "velocity": [
+          0.0,
+          0.0,
+          -0.4899999797344208
+        ],
+        "speed": 0.4899999797344208,
+        "long_speed": 0.0,
+        "acceleration_api": [
+          0.0,
+          0.0,
+          -9.799999237060547
+        ],
+        "long_acceleration_api": 0.0,
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": 0.0,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 0
+        }
+      },
+      "collisions": [],
+      "boundary_ticks": 0,
+      "final_body_road": true,
+      "lane_events": [],
+      "rollback_protection": {
+        "risk": false,
+        "emergency": false,
+        "risk_to_apply_s": null,
+        "observation_to_apply_ms": null,
+        "confirmed_net_m": null,
+        "final_stopped": true
+      },
+      "obstacle": {
+        "min_gap_m": null,
+        "final_gap_m": null,
+        "final_gap3_passed": false
+      },
+      "runtime": {
+        "control_interval_ms": {
+          "n": 629,
+          "p50": 49.99205656349659,
+          "p95": 50.15900209546089,
+          "p99": 50.300084203481674,
+          "max": 51.247913390398026
+        },
+        "tick_ms": {
+          "n": 630,
+          "p50": 1.18264090269804,
+          "p95": 1.5483073890209198,
+          "p99": 1.7175403423607352,
+          "max": 6.5900832414627075
+        },
+        "mean_hz": 20.000121590187206,
+        "deadline_miss": 0,
+        "skipped_slots": 0,
+        "worker": "NotApplicable_no_planner",
+        "expired_normal_plan": "NotApplicable_no_planner"
+      },
+      "stages_ms": {
+        "snapshot": {
+          "n": 630,
+          "p50": 0.22829603403806686,
+          "p95": 0.3591017797589302,
+          "p99": 0.4356194101274021,
+          "max": 1.0783206671476364
+        },
+        "guard_geometry_road": {
+          "n": 630,
+          "p50": 0.15524961054325104,
+          "p95": 0.19431188702583313,
+          "p99": 0.23151567205786705,
+          "max": 0.9112805128097534
+        },
+        "command": {
+          "n": 630,
+          "p50": 0.00017136335372924805,
+          "p95": 0.00022640451788902275,
+          "p99": 0.00024586915969848633,
+          "max": 0.00027567148208618164
+        }
+      },
+      "min_grade": 0.0,
+      "max_grade": 0.004420065632805259
+    },
+    {
+      "name": "P0_validation_p170_s302_A",
+      "config": {
+        "name": "P0_validation_p170_s302_A",
+        "physics": "P0",
+        "split": "validation",
+        "spawn": 170,
+        "seed": 302,
+        "interface": "A",
+        "mode": "cycle"
+      },
+      "result": {
+        "path": "reports/m6e_trials/P0_validation_p170_s302_A/result.json",
+        "bytes": 4337,
+        "sha256": "9f2e84e4d813af9e8393f0fc29c725408dbaa52a41b3259082e60ba715d6ddf0"
+      },
+      "trace": {
+        "path": "reports/m6e_trials/P0_validation_p170_s302_A/trace.jsonl",
+        "bytes": 1546314,
+        "sha256": "1b7ff6f1ec9fbdbe1013184c1646e7e20cb4b228d8d747d8a589bddb35ccac7a"
+      },
+      "physics": {
+        "path": "reports/m6e_trials/P0_validation_p170_s302_A/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "start_t": 704.9821480270475,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 1.9470025300979614,
+          "start_delay_s": null,
+          "stop_duration_s": 0.7500000111758709,
+          "stopped_travel_m": 3.8146853887027697e-06,
+          "total_travel_m": 3.8146853887027697e-06,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 3.814697265625e-06,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 5.152658183167577e-08,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 5.349312998179153e-06,
+            "jerk_peak_raw": 0.00018628531190159254,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 9.121738818587073e-05,
+            "max_decel_250ms": 2.7668943487146067e-07,
+            "jerk_p95_250ms": 1.153488554390478e-05,
+            "min_signed_speed": -2.67419999487426e-07,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.232486098525116e-14
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "hold_initial": {
+          "ticks": 40,
+          "start_t": 706.4821480493993,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.11999999731779099,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "cold_run": {
+          "ticks": 120,
+          "start_t": 708.4821480792016,
+          "initial_speed": 0.0,
+          "final_speed": 1.9460155122785672,
+          "max_speed": 1.946016144208159,
+          "start_delay_s": 3.6000000536441803,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 4.3328932489980065,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 4.332893801582712,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.8129654971666973,
+          "actual_gear": [
+            0,
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 6.411072199834989e-07,
+            "jerk_peak_raw": 286.8095834357773,
+            "jerk_p95_moving": 72.1173522459292,
+            "jerk_p95_all": 6.990123115711312,
+            "max_decel_250ms": 1.299474421479258e-07,
+            "jerk_p95_250ms": 13.330888021077762,
+            "min_signed_speed": -1.6564210352828596e-08,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 5.04215774174783e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "normal_stop": {
+          "ticks": 120,
+          "start_t": 714.4821481686085,
+          "initial_speed": 1.9484021935898859,
+          "final_speed": 0.0,
+          "max_speed": 1.9507740425013014,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 1.5000000223517418,
+          "stopped_travel_m": 0.8125870605464302,
+          "total_travel_m": 0.8125870605464302,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.8125870614234463,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.3433135639518825,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 19.17473238293331,
+            "jerk_peak_raw": 363.8967799259855,
+            "jerk_p95_moving": 325.21304198578315,
+            "jerk_p95_all": 2.570094960604591,
+            "max_decel_250ms": 7.3468310592411505,
+            "jerk_p95_250ms": 3.857967036484457,
+            "min_signed_speed": -0.00020684062781328277,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.05,
+            "api_accel_vs_velocity_derivative_mae": 1.0909301543799753e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "hold_warm": {
+          "ticks": 40,
+          "start_t": 720.4821482580155,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.009999999776482582,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "warm_run": {
+          "ticks": 120,
+          "start_t": 722.4821482878178,
+          "initial_speed": 0.0,
+          "final_speed": 1.6300723437020819,
+          "max_speed": 1.6300991858251523,
+          "start_delay_s": 0.5000000074505806,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 6.14446025707476,
+          "net_backward_excursion_m": 0.0014743737980199671,
+          "backward_frames": 3,
+          "max_displacement_m": 6.144465894220709,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.3429840413736057,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 1.958253372608704,
+            "jerk_peak_raw": 82.71912427359423,
+            "jerk_p95_moving": 62.11875989160009,
+            "jerk_p95_all": 77.89983480285538,
+            "max_decel_250ms": 0.34637928115019284,
+            "jerk_p95_250ms": 12.65878276244959,
+            "min_signed_speed": -0.05546541819633411,
+            "reverse_ticks": 2,
+            "low_speed_moving_seconds": 4.25,
+            "api_accel_vs_velocity_derivative_mae": 1.161652299986484e-06
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "final_stop": {
+          "ticks": 120,
+          "start_t": 728.4821483772248,
+          "initial_speed": 1.6392322046027723,
+          "final_speed": 0.0,
+          "max_speed": 1.639259737320246,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 1.1500000171363354,
+          "stopped_travel_m": 0.12187316706594964,
+          "total_travel_m": 0.12187316706594964,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.12188071141439473,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.31743234160982253,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 23.94150226329961,
+            "jerk_peak_raw": 418.76552197410075,
+            "jerk_p95_moving": 407.4283283000696,
+            "jerk_p95_all": 0.033240812521409785,
+            "max_decel_250ms": 6.557858813657493,
+            "jerk_p95_250ms": 0.011174059888631575,
+            "min_signed_speed": -0.00020495371336338896,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.1,
+            "api_accel_vs_velocity_derivative_mae": 1.5169608323699845e-06
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "hold_final": {
+          "ticks": 40,
+          "start_t": 734.4821484666318,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.009999999776482582,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "raw_all": {
+        "max_decel_raw": 23.94150226329961,
+        "jerk_peak_raw": 418.76552197410075,
+        "jerk_p95_moving": 85.03172084504102,
+        "jerk_p95_all": 59.40491351291943,
+        "max_decel_250ms": 7.3468310592411505,
+        "jerk_p95_250ms": 11.878780344308566,
+        "min_signed_speed": -0.05546541819633411,
+        "reverse_ticks": 2,
+        "low_speed_moving_seconds": 4.55,
+        "api_accel_vs_velocity_derivative_mae": 6.32120247057469e-07
+      },
+      "complete": true,
+      "normal_comfort_passed": false,
+      "initial": {
+        "frame": 38608,
+        "t": 704.9821480270475,
+        "position": [
+          22.490116119384766,
+          207.50567626953125,
+          0.26060721278190613
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          -0.142974853515625
+        ],
+        "velocity": [
+          0.0,
+          0.0,
+          -0.4899999797344208
+        ],
+        "speed": 0.4899999797344208,
+        "long_speed": 0.0,
+        "acceleration_api": [
+          0.0,
+          0.0,
+          -9.799999237060547
+        ],
+        "long_acceleration_api": 0.0,
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": 0.0,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 0
+        }
+      },
+      "collisions": [],
+      "boundary_ticks": 0,
+      "final_body_road": true,
+      "lane_events": [],
+      "rollback_protection": {
+        "risk": false,
+        "emergency": false,
+        "risk_to_apply_s": null,
+        "observation_to_apply_ms": null,
+        "confirmed_net_m": null,
+        "final_stopped": true
+      },
+      "obstacle": {
+        "min_gap_m": null,
+        "final_gap_m": null,
+        "final_gap3_passed": false
+      },
+      "runtime": {
+        "control_interval_ms": {
+          "n": 629,
+          "p50": 49.98895898461342,
+          "p95": 50.270866975188255,
+          "p99": 50.409269258379936,
+          "max": 60.601383447647095
+        },
+        "tick_ms": {
+          "n": 630,
+          "p50": 1.4367541298270226,
+          "p95": 2.0191901363432407,
+          "p99": 2.3042253777384762,
+          "max": 2.3912396281957626
+        },
+        "mean_hz": 20.000184694846872,
+        "deadline_miss": 0,
+        "skipped_slots": 0,
+        "worker": "NotApplicable_no_planner",
+        "expired_normal_plan": "NotApplicable_no_planner"
+      },
+      "stages_ms": {
+        "snapshot": {
+          "n": 630,
+          "p50": 0.20202621817588806,
+          "p95": 0.47171544283628464,
+          "p99": 0.5886930413544181,
+          "max": 1.1806003749370575
+        },
+        "guard_geometry_road": {
+          "n": 630,
+          "p50": 0.1406380906701088,
+          "p95": 0.21476419642567635,
+          "p99": 0.2734656259417534,
+          "max": 0.7320679724216461
+        },
+        "command": {
+          "n": 630,
+          "p50": 0.0001695007085800171,
+          "p95": 0.0002282671630382537,
+          "p99": 0.00027939677238464355,
+          "max": 0.00035390257835388184
+        }
+      },
+      "min_grade": 0.0,
+      "max_grade": 0.006381463086759964
+    },
+    {
+      "name": "P0_validation_p170_s302_B",
+      "config": {
+        "name": "P0_validation_p170_s302_B",
+        "physics": "P0",
+        "split": "validation",
+        "spawn": 170,
+        "seed": 302,
+        "interface": "B",
+        "mode": "cycle"
+      },
+      "result": {
+        "path": "reports/m6e_trials/P0_validation_p170_s302_B/result.json",
+        "bytes": 4334,
+        "sha256": "40b45376703eef5403c469fe4317da6a39bfcc1da102eaa16fef815e348e8e9d"
+      },
+      "trace": {
+        "path": "reports/m6e_trials/P0_validation_p170_s302_B/trace.jsonl",
+        "bytes": 1544275,
+        "sha256": "b2a4bb5db1f3f590d2e6f100190d250f32ff3ecdb15ade64d8f0dff65a8676a8"
+      },
+      "physics": {
+        "path": "reports/m6e_trials/P0_validation_p170_s302_B/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "start_t": 737.0418721437454,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 1.9470025300979614,
+          "start_delay_s": null,
+          "stop_duration_s": 0.7500000111758709,
+          "stopped_travel_m": 3.8146853887027697e-06,
+          "total_travel_m": 3.8146853887027697e-06,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 3.814697265625e-06,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 5.152658183167577e-08,
+          "actual_gear": [
+            0,
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 5.349312998179153e-06,
+            "jerk_peak_raw": 0.00018628531190159254,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 9.121738818587073e-05,
+            "max_decel_250ms": 2.7668943487146067e-07,
+            "jerk_p95_250ms": 1.153488554390478e-05,
+            "min_signed_speed": -2.67419999487426e-07,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.232486098525116e-14
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "hold_initial": {
+          "ticks": 40,
+          "start_t": 738.5418721660972,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "cold_run": {
+          "ticks": 120,
+          "start_t": 740.5418721958995,
+          "initial_speed": 0.0,
+          "final_speed": 1.9222136974336061,
+          "max_speed": 1.922223468898046,
+          "start_delay_s": 0.6500000096857548,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 6.516361494695474,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 6.516362401796673,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.4571583734852442,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 1.3356238162000384,
+            "jerk_peak_raw": 65.72725951574186,
+            "jerk_p95_moving": 61.57085761823521,
+            "jerk_p95_all": 61.261735311020786,
+            "max_decel_250ms": 0.0996926365248375,
+            "jerk_p95_250ms": 12.224466289879466,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 3.3000000000000003,
+            "api_accel_vs_velocity_derivative_mae": 6.915886690365919e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "normal_stop": {
+          "ticks": 120,
+          "start_t": 746.5418722853065,
+          "initial_speed": 1.8681387915864383,
+          "final_speed": 0.0,
+          "max_speed": 1.9236017570051032,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 1.650000024586916,
+          "stopped_travel_m": 1.007380716203703,
+          "total_travel_m": 1.007380716203703,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 1.0073807168666713,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.3284628960217844,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 15.234713127360688,
+            "jerk_peak_raw": 304.457653472468,
+            "jerk_p95_moving": 303.5770618225945,
+            "jerk_p95_all": 55.65882514990583,
+            "max_decel_250ms": 6.349800115982033,
+            "jerk_p95_250ms": 12.181949923382627,
+            "min_signed_speed": -0.00019111101423342395,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 3.5449935492075445e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "hold_warm": {
+          "ticks": 40,
+          "start_t": 752.5418723747134,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "warm_run": {
+          "ticks": 120,
+          "start_t": 754.5418724045157,
+          "initial_speed": 0.0,
+          "final_speed": 1.602919024201428,
+          "max_speed": 1.605025827786631,
+          "start_delay_s": 0.6500000096857548,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 6.059451307954486,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 6.05945145410119,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.33428422203167824,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 1.0992637874427982,
+            "jerk_peak_raw": 62.559612176765874,
+            "jerk_p95_moving": 59.8339020541129,
+            "jerk_p95_all": 58.702810596333904,
+            "max_decel_250ms": 0.023614213855836452,
+            "jerk_p95_250ms": 10.502964051739065,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 4.25,
+            "api_accel_vs_velocity_derivative_mae": 1.104410627855698e-06
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "final_stop": {
+          "ticks": 120,
+          "start_t": 760.5418724939227,
+          "initial_speed": 1.6125800298206905,
+          "final_speed": 0.0,
+          "max_speed": 1.6126372868790806,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 1.1500000171363354,
+          "stopped_travel_m": 0.17021299747126523,
+          "total_travel_m": 0.17021299747126523,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.17021299846500298,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.31316172090347877,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 21.23290282368805,
+            "jerk_peak_raw": 422.1035684732473,
+            "jerk_p95_moving": 381.05317914639477,
+            "jerk_p95_all": 0.18035422871177575,
+            "max_decel_250ms": 6.451301349193116,
+            "jerk_p95_250ms": 0.03595996709875551,
+            "min_signed_speed": -0.00020612203600585305,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.05,
+            "api_accel_vs_velocity_derivative_mae": 4.783327042065525e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "hold_final": {
+          "ticks": 40,
+          "start_t": 766.5418725833297,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "raw_all": {
+        "max_decel_raw": 21.23290282368805,
+        "jerk_peak_raw": 422.1035684732473,
+        "jerk_p95_moving": 61.58154526395139,
+        "jerk_p95_all": 58.77017624485174,
+        "max_decel_250ms": 6.451301349193116,
+        "jerk_p95_250ms": 11.80177673125286,
+        "min_signed_speed": -0.00020612203600585305,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 7.75,
+        "api_accel_vs_velocity_derivative_mae": 4.961551820366346e-07
+      },
+      "complete": true,
+      "normal_comfort_passed": false,
+      "initial": {
+        "frame": 39266,
+        "t": 737.0418721437454,
+        "position": [
+          22.490116119384766,
+          207.50567626953125,
+          0.26060721278190613
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          -0.142974853515625
+        ],
+        "velocity": [
+          0.0,
+          0.0,
+          -0.4899999797344208
+        ],
+        "speed": 0.4899999797344208,
+        "long_speed": 0.0,
+        "acceleration_api": [
+          0.0,
+          0.0,
+          -9.799999237060547
+        ],
+        "long_acceleration_api": 0.0,
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": 0.0,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 0
+        }
+      },
+      "collisions": [],
+      "boundary_ticks": 0,
+      "final_body_road": true,
+      "lane_events": [],
+      "rollback_protection": {
+        "risk": false,
+        "emergency": false,
+        "risk_to_apply_s": null,
+        "observation_to_apply_ms": null,
+        "confirmed_net_m": null,
+        "final_stopped": true
+      },
+      "obstacle": {
+        "min_gap_m": null,
+        "final_gap_m": null,
+        "final_gap3_passed": false
+      },
+      "runtime": {
+        "control_interval_ms": {
+          "n": 629,
+          "p50": 49.990300089120865,
+          "p95": 50.24374574422836,
+          "p99": 50.37161849439144,
+          "max": 51.233503967523575
+        },
+        "tick_ms": {
+          "n": 630,
+          "p50": 1.442902721464634,
+          "p95": 1.8315116874873638,
+          "p99": 2.1942198276519775,
+          "max": 2.717388793826103
+        },
+        "mean_hz": 20.00012277352917,
+        "deadline_miss": 0,
+        "skipped_slots": 0,
+        "worker": "NotApplicable_no_planner",
+        "expired_normal_plan": "NotApplicable_no_planner"
+      },
+      "stages_ms": {
+        "snapshot": {
+          "n": 630,
+          "p50": 0.23298151791095734,
+          "p95": 0.5150523968040942,
+          "p99": 0.5910732597112656,
+          "max": 0.9996425360441208
+        },
+        "guard_geometry_road": {
+          "n": 630,
+          "p50": 0.14777947217226028,
+          "p95": 0.2188911661505699,
+          "p99": 0.29456749558448797,
+          "max": 0.6257854402065277
+        },
+        "command": {
+          "n": 630,
+          "p50": 0.00017508864402770996,
+          "p95": 0.00024214386940002441,
+          "p99": 0.0002964027225971224,
+          "max": 0.0004079192876815796
+        }
+      },
+      "min_grade": 0.0,
+      "max_grade": 0.008114935944233398
+    },
+    {
+      "name": "P0_validation_p170_s302_C",
+      "config": {
+        "name": "P0_validation_p170_s302_C",
+        "physics": "P0",
+        "split": "validation",
+        "spawn": 170,
+        "seed": 302,
+        "interface": "C",
+        "mode": "cycle"
+      },
+      "result": {
+        "path": "reports/m6e_trials/P0_validation_p170_s302_C/result.json",
+        "bytes": 4334,
+        "sha256": "cc1caf318fa963c9e2178d545b769e6874657d1048eccbb65ea557d122899058"
+      },
+      "trace": {
+        "path": "reports/m6e_trials/P0_validation_p170_s302_C/trace.jsonl",
+        "bytes": 1537047,
+        "sha256": "0ef61214ab2bcbf0d61ae3f7c64fe0732fbd324627fc5a6c5efe1ac0bd2d6b89"
+      },
+      "physics": {
+        "path": "reports/m6e_trials/P0_validation_p170_s302_C/physics.json",
+        "bytes": 2286,
+        "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "start_t": 769.0675394870341,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 1.9470025300979614,
+          "start_delay_s": null,
+          "stop_duration_s": 0.7500000111758709,
+          "stopped_travel_m": 3.8146853887027697e-06,
+          "total_travel_m": 3.8146853887027697e-06,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 3.814697265625e-06,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 5.152658183167577e-08,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 5.349312998179153e-06,
+            "jerk_peak_raw": 0.00018628531190159254,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 9.121738818587073e-05,
+            "max_decel_250ms": 2.7668943487146067e-07,
+            "jerk_p95_250ms": 1.153488554390478e-05,
+            "min_signed_speed": -2.67419999487426e-07,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 3.232486098525116e-14
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "hold_initial": {
+          "ticks": 40,
+          "start_t": 770.5675395093858,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "cold_run": {
+          "ticks": 120,
+          "start_t": 772.5675395391881,
+          "initial_speed": 0.0,
+          "final_speed": 0.7635390555870444,
+          "max_speed": 0.7738318509607235,
+          "start_delay_s": 3.500000052154064,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 1.3339300039575936,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 1.3339300258904077,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.6770875461294898,
+          "actual_gear": [
+            0,
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 12.441280459013404,
+            "jerk_peak_raw": 552.8715498682456,
+            "jerk_p95_moving": 286.0774671445775,
+            "jerk_p95_all": 73.39003757238805,
+            "max_decel_250ms": 2.320381820578768,
+            "jerk_p95_250ms": 28.246243849572664,
+            "min_signed_speed": -1.6564210352828596e-08,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.45,
+            "api_accel_vs_velocity_derivative_mae": 7.782340334226338e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.4337935447692871
+          ]
+        },
+        "normal_stop": {
+          "ticks": 120,
+          "start_t": 778.5675396285951,
+          "initial_speed": 0.7388914971981859,
+          "final_speed": 0.0,
+          "max_speed": 0.9092678520799855,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 4.250000063329935,
+          "stopped_travel_m": 2.3968400048273355,
+          "total_travel_m": 2.3968400048273355,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 2.3968401072457706,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.37195637021957706,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 10.530174881980768,
+            "jerk_peak_raw": 244.26370023339248,
+            "jerk_p95_moving": 67.72830180260704,
+            "jerk_p95_all": 67.44696811241568,
+            "max_decel_250ms": 2.164083008664606,
+            "jerk_p95_250ms": 12.059516808424153,
+            "min_signed_speed": -6.231307748045262e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 3.35,
+            "api_accel_vs_velocity_derivative_mae": 9.138261454986455e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15058216452598572
+          ]
+        },
+        "hold_warm": {
+          "ticks": 40,
+          "start_t": 784.5675397180021,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            1.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "warm_run": {
+          "ticks": 120,
+          "start_t": 786.5675397478044,
+          "initial_speed": 0.0,
+          "final_speed": 0.9198977824873591,
+          "max_speed": 0.9198987192984157,
+          "start_delay_s": 2.500000037252903,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 1.9573873264341468,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 11,
+          "max_displacement_m": 1.9573882420352573,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.5731753662769464,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 2.0124725264072345,
+            "jerk_peak_raw": 78.8867427067023,
+            "jerk_p95_moving": 64.86999164060272,
+            "jerk_p95_all": 78.52866879567432,
+            "max_decel_250ms": 0.4213638045371265,
+            "jerk_p95_250ms": 15.774765826617104,
+            "min_signed_speed": -0.04555256723521901,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 3.5,
+            "api_accel_vs_velocity_derivative_mae": 6.32035470832461e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.16752402484416962
+          ]
+        },
+        "final_stop": {
+          "ticks": 120,
+          "start_t": 792.5675398372114,
+          "initial_speed": 0.8482673068700604,
+          "final_speed": 0.0,
+          "max_speed": 0.947999537976485,
+          "start_delay_s": 0.0,
+          "stop_duration_s": 4.350000064820051,
+          "stopped_travel_m": 2.5050835354690637,
+          "total_travel_m": 2.5050835354690637,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 2.5050857879056605,
+          "final_stable_1s": true,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.3797514037473592,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 9.655396672873884,
+            "jerk_peak_raw": 217.62247246090138,
+            "jerk_p95_moving": 69.40248884928967,
+            "jerk_p95_all": 67.59334736977463,
+            "max_decel_250ms": 2.035644334686935,
+            "jerk_p95_250ms": 12.577207774715612,
+            "min_signed_speed": -6.614198544855482e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 3.45,
+            "api_accel_vs_velocity_derivative_mae": 7.313961269416224e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.14012332260608673
+          ]
+        },
+        "hold_final": {
+          "ticks": 40,
+          "start_t": 798.5675399266183,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 0.0,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": 0.0,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.0,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.0,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.0
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            1.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "raw_all": {
+        "max_decel_raw": 12.441280459013404,
+        "jerk_peak_raw": 552.8715498682456,
+        "jerk_p95_moving": 69.26239851712188,
+        "jerk_p95_all": 69.48771107788565,
+        "max_decel_250ms": 2.320381820578768,
+        "jerk_p95_250ms": 13.310713205008112,
+        "min_signed_speed": -0.04555256723521901,
+        "reverse_ticks": 0,
+        "low_speed_moving_seconds": 12.55,
+        "api_accel_vs_velocity_derivative_mae": 5.862648795239987e-07
+      },
+      "complete": true,
+      "normal_comfort_passed": false,
+      "initial": {
+        "frame": 39922,
+        "t": 769.0675394870341,
+        "position": [
+          22.490116119384766,
+          207.50567626953125,
+          0.26060721278190613
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          -0.142974853515625
+        ],
+        "velocity": [
+          0.0,
+          0.0,
+          -0.4899999797344208
+        ],
+        "speed": 0.4899999797344208,
+        "long_speed": 0.0,
+        "acceleration_api": [
+          0.0,
+          0.0,
+          -9.799999237060547
+        ],
+        "long_acceleration_api": 0.0,
+        "applied": {
+          "throttle": 0.0,
+          "brake": 0.0,
+          "steer": 0.0,
+          "hand_brake": false,
+          "reverse": false,
+          "gear": 0
+        }
+      },
+      "collisions": [],
+      "boundary_ticks": 0,
+      "final_body_road": true,
+      "lane_events": [],
+      "rollback_protection": {
+        "risk": false,
+        "emergency": false,
+        "risk_to_apply_s": null,
+        "observation_to_apply_ms": null,
+        "confirmed_net_m": null,
+        "final_stopped": true
+      },
+      "obstacle": {
+        "min_gap_m": null,
+        "final_gap_m": null,
+        "final_gap3_passed": false
+      },
+      "runtime": {
+        "control_interval_ms": {
+          "n": 629,
+          "p50": 49.98796433210373,
+          "p95": 50.240588933229446,
+          "p99": 50.42410708963871,
+          "max": 51.06751620769501
+        },
+        "tick_ms": {
+          "n": 630,
+          "p50": 1.5980703756213188,
+          "p95": 2.013091929256916,
+          "p99": 2.2412310540676126,
+          "max": 3.6853235214948654
+        },
+        "mean_hz": 20.00013200099534,
+        "deadline_miss": 0,
+        "skipped_slots": 0,
+        "worker": "NotApplicable_no_planner",
+        "expired_normal_plan": "NotApplicable_no_planner"
+      },
+      "stages_ms": {
+        "snapshot": {
+          "n": 630,
+          "p50": 0.24994835257530212,
+          "p95": 0.5066790618002414,
+          "p99": 0.6306082569062712,
+          "max": 0.7781609892845154
+        },
+        "guard_geometry_road": {
+          "n": 630,
+          "p50": 0.15669874846935272,
+          "p95": 0.23293215781450258,
+          "p99": 0.3007751144468786,
+          "max": 0.517331063747406
+        },
+        "command": {
+          "n": 630,
+          "p50": 0.000173225998878479,
+          "p95": 0.00024586915969848633,
+          "p99": 0.00029532238841056856,
+          "max": 0.0003557652235031128
+        }
+      },
+      "min_grade": 0.0,
+      "max_grade": 0.003922509690170528
+    }
+  ],
+  "limits": "Raw derivatives retain previous two samples at phase changes. No filtered acceptance; initialization archived. A/B command schedules differ from C trajectory feedback; not a single-factor physical ablation."
+}

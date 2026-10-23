@@ -1,0 +1,122 @@
+{
+  "kind": "actual_CARLA_paced_actuator_probe",
+  "source": "Privileged",
+  "base": "ba5ba6e759b807d5e3740061bebf72b7d1ced565",
+  "git_head": "bc1b688d0b4c99b08647b3aa2aefcd593b8c262c",
+  "sources": {
+    "configs/m6e/physics_P1.json": "e1d99fd1a59526487d6aeea737c1045efcc04468880af0d5c8cbcab4e3a2d356",
+    "configs/m6e/protocol.json": "d5c15e45e1082674dcabb2d32cda96ffef276a98989bbb52944c82c6ae2ca299",
+    "simulator/m6e_actuation.py": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+    "simulator/m6e_guard.py": "6709ceb0d133ee5038f5a761a9697e3a7ce2b67e282fe02281e9cf2b0e9ef1dc",
+    "tests/test_m6e_actuation.py": "003d0a227853d7da3d2438d3bba8cb65b61bf10ae7b7c7db918ef44df7106386",
+    "tests/test_m6e_guard.py": "f1d0cb3e052e5c048044565683847e9bb72e1bffcf31bf9f4733a01d2d5bd53f",
+    "tools/m6e_analyze.py": "45bc3058907a826e04af47513205cf5f62c86036ac243dd53c4b4b7041932976",
+    "tools/m6e_common.py": "752f381796181078341d6a14f7b7bf5ceeff4a089b96f6de5b65a506b8ea3dab",
+    "tools/m6e_figures.py": "7c8178a957185710862c58e6b94a9b4d8a3ccc3857d02595b1add5a9b0e0b3af",
+    "tools/m6e_finalize.py": "6a8b94a1ee4a7d1595b34786c6b9f44e7907f7f0180531b8112467ee0e500340",
+    "tools/m6e_guard_audit.py": "1f09ad54a1b49ea8d5d7f24acb23f425cfaf8ed31c5afd5d05711717a3d2c035",
+    "tools/m6e_preserve.py": "696936193a14f71060dd4bb81ef723dc3ec9efd9950dc892fe27a9d687c90a48",
+    "tools/m6e_probe.py": "a5f1cdbb3bacd31bf947299407f505a3b4917dfb6df1efd61d6d3ee5f6a23cdf",
+    "tools/m6e_select_variant.py": "4b8a035a95101c96ff13bebbe07209053b55a4a1d580dfd825b0619c24b5cfcd",
+    "tools/m6e_sequential.py": "c38c9477809a026ad41ad32ec18cb36658a8be8c664d51a9ebd866e40678f3fe"
+  },
+  "visual_control": false,
+  "config": {
+    "name": "P1_development_p126_s301_obstacle",
+    "physics": "P1",
+    "split": "development",
+    "spawn": 126,
+    "seed": 301,
+    "interface": "A",
+    "mode": "obstacle"
+  },
+  "initial": {
+    "frame": 45591,
+    "t": 1032.9591946974397,
+    "position": [
+      -88.71098327636719,
+      -119.56523132324219,
+      0.26060715317726135
+    ],
+    "rotation": [
+      0.0,
+      -0.47180211544036865,
+      89.84374237060547
+    ],
+    "velocity": [
+      0.0,
+      0.0,
+      -0.4899999797344208
+    ],
+    "speed": 0.4899999797344208,
+    "long_speed": 0.004034859175625544,
+    "acceleration_api": [
+      0.0,
+      0.0,
+      -9.799999237060547
+    ],
+    "long_acceleration_api": 0.08069718056765751,
+    "applied": {
+      "throttle": 0.0,
+      "brake": 0.0,
+      "steer": 0.0,
+      "hand_brake": false,
+      "reverse": false,
+      "gear": 0
+    }
+  },
+  "trace": {
+    "path": "reports/m6e_trials/P1_development_p126_s301_obstacle/trace.jsonl",
+    "bytes": 354952,
+    "sha256": "c99f2928f0dc96c2af943067bda8d9138d1de69e3ce1a263f60d38c715fc2234"
+  },
+  "physics": {
+    "path": "reports/m6e_trials/P1_development_p126_s301_obstacle/physics.json",
+    "bytes": 2286,
+    "sha256": "d2440c6c44f919556f552b4cb868d3b06b3bb111d26ccdd0b3541bfee93affb7"
+  },
+  "physics_full": {
+    "path": "reports/m6e_trials/P1_development_p126_s301_obstacle/physics_full.json",
+    "bytes": 3490,
+    "sha256": "73f18cc3f91959db89d5889b20c5717ec128aca6306ed974b3e229c7fb27563d"
+  },
+  "ticks": 138,
+  "complete": true,
+  "collisions": [],
+  "lane_events": [],
+  "online_boundary_ticks": 0,
+  "final_body_road": true,
+  "raw": {
+    "max_decel_raw": 20.885408595938497,
+    "jerk_peak_raw": 369.1643885531662,
+    "jerk_p95_moving": 204.72181063271913,
+    "jerk_p95_all": 29.633016356373243,
+    "max_decel_250ms": 9.140747927821666,
+    "jerk_p95_250ms": 37.413625535029894,
+    "min_signed_speed": -0.00017062923129148547,
+    "reverse_ticks": 0,
+    "low_speed_moving_seconds": 0.2,
+    "api_accel_vs_velocity_derivative_mae": 0.0016648244367132258
+  },
+  "control_interval_ms": {
+    "n": 137,
+    "p50": 49.99377764761448,
+    "p95": 50.216058269143105,
+    "p99": 50.338339656591415,
+    "max": 57.87012539803982
+  },
+  "tick_ms": {
+    "n": 138,
+    "p50": 1.5012333169579506,
+    "p95": 1.723376475274563,
+    "p99": 1.993020698428154,
+    "max": 2.047846093773842
+  },
+  "mean_hz": 20.000532204239185,
+  "deadline_miss": 0,
+  "skipped_slots": 0,
+  "worker": "NotApplicable_no_planner",
+  "expired_normal_plan": "NotApplicable_no_planner",
+  "emergency_started": null,
+  "limits": "Fixed actuator probes, not navigation Pilot; sparse online corner checks plus final dense body, no exact curb mesh. Target speed profile is desired reference, never physical velocity assignment."
+}

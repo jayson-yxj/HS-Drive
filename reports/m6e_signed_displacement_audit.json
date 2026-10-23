@@ -1,0 +1,3298 @@
+{
+  "kind": "actual_CARLA_signed_pose_velocity_event_windows",
+  "source": "Privileged",
+  "base": "ba5ba6e759b807d5e3740061bebf72b7d1ced565",
+  "git_head": "bc1b688d0b4c99b08647b3aa2aefcd593b8c262c",
+  "sources": {
+    "configs/m6e/physics_P1.json": "e1d99fd1a59526487d6aeea737c1045efcc04468880af0d5c8cbcab4e3a2d356",
+    "configs/m6e/protocol.json": "d5c15e45e1082674dcabb2d32cda96ffef276a98989bbb52944c82c6ae2ca299",
+    "simulator/m6e_actuation.py": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+    "simulator/m6e_guard.py": "6709ceb0d133ee5038f5a761a9697e3a7ce2b67e282fe02281e9cf2b0e9ef1dc",
+    "tests/test_m6e_actuation.py": "003d0a227853d7da3d2438d3bba8cb65b61bf10ae7b7c7db918ef44df7106386",
+    "tests/test_m6e_guard.py": "f1d0cb3e052e5c048044565683847e9bb72e1bffcf31bf9f4733a01d2d5bd53f",
+    "tools/m6e_analyze.py": "45bc3058907a826e04af47513205cf5f62c86036ac243dd53c4b4b7041932976",
+    "tools/m6e_common.py": "752f381796181078341d6a14f7b7bf5ceeff4a089b96f6de5b65a506b8ea3dab",
+    "tools/m6e_figures.py": "7c8178a957185710862c58e6b94a9b4d8a3ccc3857d02595b1add5a9b0e0b3af",
+    "tools/m6e_finalize.py": "cd78b29fc651b43dbece5b4ab6679932234a628c1f451e24fd8e87c8f0108411",
+    "tools/m6e_guard_audit.py": "1f09ad54a1b49ea8d5d7f24acb23f425cfaf8ed31c5afd5d05711717a3d2c035",
+    "tools/m6e_preserve.py": "696936193a14f71060dd4bb81ef723dc3ec9efd9950dc892fe27a9d687c90a48",
+    "tools/m6e_probe.py": "a5f1cdbb3bacd31bf947299407f505a3b4917dfb6df1efd61d6d3ee5f6a23cdf",
+    "tools/m6e_release.py": "032efbcd19144f95f9b58007fd90276561a7dddae9af4dabfaa0a61ae3b46cd8",
+    "tools/m6e_runtime_plot.py": "9b35643209973b5a51117a1c5d33e224e1aa76ff0e7da9969c53346d69091366",
+    "tools/m6e_select_variant.py": "4b8a035a95101c96ff13bebbe07209053b55a4a1d580dfd825b0619c24b5cfcd",
+    "tools/m6e_sequential.py": "c38c9477809a026ad41ad32ec18cb36658a8be8c664d51a9ebd866e40678f3fe"
+  },
+  "visual_control": false,
+  "events": [
+    {
+      "name": "P0_guard_p27_s301",
+      "event": {
+        "level": "emergency",
+        "risk": true,
+        "emergency": true,
+        "reason": "RollbackDisplacementConfirmed",
+        "frame_id": 40826,
+        "timestamp_s": 810.007308036089,
+        "source": "Privileged",
+        "net_backward_m": 0.008163315432903672,
+        "window_backward_m": 0.011734008026192212,
+        "route_net_backward_m": 0.008162797682145187,
+        "route_window_backward_m": 0.011733965165000255,
+        "negative_samples": 5
+      },
+      "samples": [
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 40818,
+          "next_frame": 40819,
+          "measurement": {
+            "frame": 40818,
+            "t": 809.6073080301285,
+            "position": [
+              -74.38868713378906,
+              99.60164642333984,
+              0.3729339838027954
+            ],
+            "rotation": [
+              0.0022125248797237873,
+              1.0104445219039917,
+              -90.0206298828125
+            ],
+            "velocity": [
+              4.231691127642989e-05,
+              0.07545016705989838,
+              -0.0016545294784009457
+            ],
+            "speed": 0.07546831764311732,
+            "long_speed": -0.07546762173334735,
+            "acceleration_api": [
+              0.0009064132464118302,
+              2.0768675804138184,
+              0.007895659655332565
+            ],
+            "long_acceleration_api": -2.0764055749843835,
+            "applied": {
+              "throttle": 0.15000000596046448,
+              "brake": 0.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": -0.0754501774057151,
+            "v_lateral_mps": -1.5150368794781415e-05,
+            "speed_norm_mps": 0.07546831764311732,
+            "route_progress_rate_mps": -0.07545000194541536,
+            "signed_goal_distance_m": -0.1144674997749098,
+            "yaw_rad": 1.5711563861742752,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 0.0,
+            "slope": 0.0176709609136604,
+            "timestamp_s": 809.6073080301285,
+            "frame_id": 40818,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "guard_release",
+          "phase_tick": 2,
+          "road": {
+            "grade": 0.0176709609136604,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.15,
+            "brake": 0.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "clear",
+            "risk": false,
+            "emergency": false,
+            "reason": null,
+            "frame_id": 40818,
+            "timestamp_s": 809.6073080301285,
+            "source": "Privileged",
+            "net_backward_m": 0.0,
+            "window_backward_m": 0.002456664879504886,
+            "route_net_backward_m": 0.0,
+            "route_window_backward_m": 0.0024566559058062957,
+            "negative_samples": 1
+          },
+          "protection_applied": false,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.04649706051444518,
+          "hold_displacement_m": 0.0024185301001216296,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545300.273430657,
+            "previous_sleep_start": 15545300.225883648,
+            "wake_up": 15545300.273493987,
+            "snapshot_end": 15545300.27372604,
+            "safety_end": 15545300.274220772,
+            "controller_end": 15545300.274220964,
+            "apply_control": 15545300.274221038,
+            "apply_end": 15545300.274226896,
+            "tick_start": 15545300.274226988,
+            "tick_end": 15545300.275705785
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 40819,
+          "next_frame": 40820,
+          "measurement": {
+            "frame": 40819,
+            "t": 809.6573080308735,
+            "position": [
+              -74.38868713378906,
+              99.60257720947266,
+              0.3729243278503418
+            ],
+            "rotation": [
+              0.002251645317301154,
+              1.0118993520736694,
+              -90.02062225341797
+            ],
+            "velocity": [
+              8.746515050006565e-06,
+              -0.019003456458449364,
+              0.0009435367537662387
+            ],
+            "speed": 0.0190268677263341,
+            "long_speed": 0.019017151962856114,
+            "acceleration_api": [
+              -0.0006714079063385725,
+              -1.8890725374221802,
+              0.051961325109004974
+            ],
+            "long_acceleration_api": 1.8896957513698418,
+            "applied": {
+              "throttle": 0.15000000596046448,
+              "brake": 0.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": 0.01900345207943004,
+            "v_lateral_mps": -1.558635661097407e-05,
+            "speed_norm_mps": 0.0190268677263341,
+            "route_progress_rate_mps": 0.019003361958367618,
+            "signed_goal_distance_m": -0.11353671710252357,
+            "yaw_rad": 1.5711562530162209,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 0.0,
+            "slope": 0.017670975814823013,
+            "timestamp_s": 809.6573080308735,
+            "frame_id": 40819,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "guard_release",
+          "phase_tick": 3,
+          "road": {
+            "grade": 0.017670975814823013,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.15,
+            "brake": 0.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "clear",
+            "risk": false,
+            "emergency": false,
+            "reason": null,
+            "frame_id": 40819,
+            "timestamp_s": 809.6573080308735,
+            "source": "Privileged",
+            "net_backward_m": 0.0,
+            "window_backward_m": 0.003387450951982547,
+            "route_net_backward_m": 0.0,
+            "route_window_backward_m": 0.0033874385781925316,
+            "negative_samples": 1
+          },
+          "protection_applied": false,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.045566277842058946,
+          "hold_displacement_m": 0.0033493128887228892,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545300.323430657,
+            "previous_sleep_start": 15545300.275751673,
+            "wake_up": 15545300.32349044,
+            "snapshot_end": 15545300.323706476,
+            "safety_end": 15545300.324228317,
+            "controller_end": 15545300.324228495,
+            "apply_control": 15545300.324228572,
+            "apply_end": 15545300.324234275,
+            "tick_start": 15545300.324234378,
+            "tick_end": 15545300.325800225
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 40820,
+          "next_frame": 40821,
+          "measurement": {
+            "frame": 40820,
+            "t": 809.7073080316186,
+            "position": [
+              -74.38868713378906,
+              99.6046371459961,
+              0.37292996048927307
+            ],
+            "rotation": [
+              0.002270911354571581,
+              1.0116056203842163,
+              -90.02064514160156
+            ],
+            "velocity": [
+              4.144528793403879e-05,
+              0.08081474900245667,
+              -0.0005396365886554122
+            ],
+            "speed": 0.08081656130824783,
+            "long_speed": -0.08081169008005268,
+            "acceleration_api": [
+              0.00065397541038692,
+              1.9963641166687012,
+              -0.029663465917110443
+            ],
+            "long_acceleration_api": -1.9965767741862428,
+            "applied": {
+              "throttle": 0.15000000596046448,
+              "brake": 0.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": -0.08081475868998302,
+            "v_lateral_mps": -1.2325655233665553e-05,
+            "speed_norm_mps": 0.08081656130824783,
+            "route_progress_rate_mps": -0.08081456156707265,
+            "signed_goal_distance_m": -0.11147678823740649,
+            "yaw_rad": 1.5711566524903844,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 0.0,
+            "slope": 0.0176709609136604,
+            "timestamp_s": 809.7073080316186,
+            "frame_id": 40820,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "guard_release",
+          "phase_tick": 4,
+          "road": {
+            "grade": 0.0176709609136604,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.15,
+            "brake": 0.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "risk",
+            "risk": true,
+            "emergency": false,
+            "reason": "BackwardRisk",
+            "frame_id": 40820,
+            "timestamp_s": 809.7073080316186,
+            "source": "Privileged",
+            "net_backward_m": 0.001876695437381514,
+            "window_backward_m": 0.0054473873419908685,
+            "route_net_backward_m": 0.0018761999604545423,
+            "route_window_backward_m": 0.005447367443309611,
+            "negative_samples": 2
+          },
+          "protection_applied": false,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.04350634897694186,
+          "hold_displacement_m": 0.00540924610304464,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545300.373430658,
+            "previous_sleep_start": 15545300.325846624,
+            "wake_up": 15545300.373492856,
+            "snapshot_end": 15545300.373708164,
+            "safety_end": 15545300.37425406,
+            "controller_end": 15545300.374254216,
+            "apply_control": 15545300.374254292,
+            "apply_end": 15545300.374260152,
+            "tick_start": 15545300.37426024,
+            "tick_end": 15545300.37580562
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 40821,
+          "next_frame": 40822,
+          "measurement": {
+            "frame": 40821,
+            "t": 809.7573080323637,
+            "position": [
+              -74.38868713378906,
+              99.60575103759766,
+              0.3729466199874878
+            ],
+            "rotation": [
+              0.0022850551176816225,
+              1.013033151626587,
+              -90.02067565917969
+            ],
+            "velocity": [
+              7.4883614615828265e-06,
+              -0.016689976677298546,
+              0.0011674308916553855
+            ],
+            "speed": 0.01673075827483973,
+            "long_speed": 0.016708004608431345,
+            "acceleration_api": [
+              -0.000679138523992151,
+              -1.9500945806503296,
+              0.03414135053753853
+            ],
+            "long_acceleration_api": 1.9503935557917556,
+            "applied": {
+              "throttle": 0.15000000596046448,
+              "brake": 0.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": 0.016689972888387215,
+            "v_lateral_mps": -1.3511077916524922e-05,
+            "speed_norm_mps": 0.01673075827483973,
+            "route_progress_rate_mps": 0.016689894208888948,
+            "signed_goal_distance_m": -0.11036290077700985,
+            "yaw_rad": 1.5711571851226023,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 0.0,
+            "slope": 0.017670975814823013,
+            "timestamp_s": 809.7573080323637,
+            "frame_id": 40821,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "guard_release",
+          "phase_tick": 5,
+          "road": {
+            "grade": 0.017670975814823013,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.15,
+            "brake": 0.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "risk",
+            "risk": true,
+            "emergency": false,
+            "reason": "BackwardRisk",
+            "frame_id": 40821,
+            "timestamp_s": 809.7573080323637,
+            "source": "Privileged",
+            "net_backward_m": 0.0029905868443551005,
+            "window_backward_m": 0.00656127887124253,
+            "route_net_backward_m": 0.0029900874208511857,
+            "route_window_backward_m": 0.006561254903706255,
+            "negative_samples": 2
+          },
+          "protection_applied": false,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.04239246151654522,
+          "hold_displacement_m": 0.006523136785851453,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545300.423430657,
+            "previous_sleep_start": 15545300.375849525,
+            "wake_up": 15545300.423495429,
+            "snapshot_end": 15545300.423761968,
+            "safety_end": 15545300.424331281,
+            "controller_end": 15545300.424331505,
+            "apply_control": 15545300.424331632,
+            "apply_end": 15545300.424338032,
+            "tick_start": 15545300.424338132,
+            "tick_end": 15545300.425954916
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 40822,
+          "next_frame": 40823,
+          "measurement": {
+            "frame": 40822,
+            "t": 809.8073080331087,
+            "position": [
+              -74.38868713378906,
+              99.60778045654297,
+              0.372952401638031
+            ],
+            "rotation": [
+              0.0023049083538353443,
+              1.0127121210098267,
+              -90.02068328857422
+            ],
+            "velocity": [
+              3.8895330362720415e-05,
+              0.07844233512878418,
+              -0.0006388473557308316
+            ],
+            "speed": 0.07844494616766039,
+            "long_speed": -0.07844138107727737,
+            "acceleration_api": [
+              0.0006281393580138683,
+              1.9026463031768799,
+              -0.03612556308507919
+            ],
+            "long_acceleration_api": -1.90298766982914,
+            "applied": {
+              "throttle": 0.15000000596046448,
+              "brake": 0.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": -0.07844234405856636,
+            "v_lateral_mps": -1.057831333877987e-05,
+            "speed_norm_mps": 0.07844494616766039,
+            "route_progress_rate_mps": -0.07844214956018912,
+            "signed_goal_distance_m": -0.10833348937656116,
+            "yaw_rad": 1.5711573182806569,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 0.0,
+            "slope": 0.0176709609136604,
+            "timestamp_s": 809.8073080331087,
+            "frame_id": 40822,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "guard_release",
+          "phase_tick": 6,
+          "road": {
+            "grade": 0.0176709609136604,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.15,
+            "brake": 0.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "risk",
+            "risk": true,
+            "emergency": false,
+            "reason": "BackwardRisk",
+            "frame_id": 40822,
+            "timestamp_s": 809.8073080331087,
+            "source": "Privileged",
+            "net_backward_m": 0.005020005435142593,
+            "window_backward_m": 0.00859069768442085,
+            "route_net_backward_m": 0.005019498821299865,
+            "route_window_backward_m": 0.008590666304154934,
+            "negative_samples": 3
+          },
+          "protection_applied": false,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.04036305011609654,
+          "hold_displacement_m": 0.008552554672471934,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545300.473430658,
+            "previous_sleep_start": 15545300.426000496,
+            "wake_up": 15545300.473493844,
+            "snapshot_end": 15545300.473706614,
+            "safety_end": 15545300.474238949,
+            "controller_end": 15545300.474239103,
+            "apply_control": 15545300.474239193,
+            "apply_end": 15545300.474245,
+            "tick_start": 15545300.474245097,
+            "tick_end": 15545300.475895377
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 40823,
+          "next_frame": 40824,
+          "measurement": {
+            "frame": 40823,
+            "t": 809.8573080338538,
+            "position": [
+              -74.38868713378906,
+              99.60867309570312,
+              0.3729614317417145
+            ],
+            "rotation": [
+              0.0023129682522267103,
+              1.0141327381134033,
+              -90.02071380615234
+            ],
+            "velocity": [
+              3.7579327454295708e-06,
+              -0.02250499464571476,
+              0.000986928935162723
+            ],
+            "speed": 0.02252662484369929,
+            "long_speed": 0.022518934427047797,
+            "acceleration_api": [
+              -0.0007027479587122798,
+              -2.018946647644043,
+              0.032515525817871094
+            ],
+            "long_acceleration_api": 2.019206024769105,
+            "applied": {
+              "throttle": 0.15000000596046448,
+              "brake": 0.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": 0.022504991816433596,
+            "v_lateral_mps": -1.1894030662012758e-05,
+            "speed_norm_mps": 0.02252662484369929,
+            "route_progress_rate_mps": 0.02250490073070647,
+            "signed_goal_distance_m": -0.10744085353501043,
+            "yaw_rad": 1.5711578509128747,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 0.0,
+            "slope": 0.0176709609136604,
+            "timestamp_s": 809.8573080338538,
+            "frame_id": 40823,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "guard_release",
+          "phase_tick": 7,
+          "road": {
+            "grade": 0.0176709609136604,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.15,
+            "brake": 0.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "risk",
+            "risk": true,
+            "emergency": false,
+            "reason": "BackwardRisk",
+            "frame_id": 40823,
+            "timestamp_s": 809.8573080338538,
+            "source": "Privileged",
+            "net_backward_m": 0.005912644439361152,
+            "window_backward_m": 0.009483336786415029,
+            "route_net_backward_m": 0.005912134662850599,
+            "route_window_backward_m": 0.009483302145705669,
+            "negative_samples": 3
+          },
+          "protection_applied": false,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.039470414274545805,
+          "hold_displacement_m": 0.00944519351102566,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545300.523430657,
+            "previous_sleep_start": 15545300.475938393,
+            "wake_up": 15545300.523494177,
+            "snapshot_end": 15545300.523708396,
+            "safety_end": 15545300.52431681,
+            "controller_end": 15545300.524316974,
+            "apply_control": 15545300.52431707,
+            "apply_end": 15545300.524328647,
+            "tick_start": 15545300.52432877,
+            "tick_end": 15545300.525935858
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 40824,
+          "next_frame": 40825,
+          "measurement": {
+            "frame": 40824,
+            "t": 809.9073080345988,
+            "position": [
+              -74.38868713378906,
+              99.61024475097656,
+              0.37296056747436523
+            ],
+            "rotation": [
+              0.0023195857647806406,
+              1.0138254165649414,
+              -90.02067565917969
+            ],
+            "velocity": [
+              3.3954660466406494e-05,
+              0.06686589866876602,
+              -0.0007329654763452709
+            ],
+            "speed": 0.06686992445105772,
+            "long_speed": -0.06686840981147671,
+            "acceleration_api": [
+              0.0006039345753379166,
+              1.7874178886413574,
+              -0.03439788520336151
+            ],
+            "long_acceleration_api": -1.7877468548800723,
+            "applied": {
+              "throttle": 0.15000000596046448,
+              "brake": 0.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": -0.0668659065679915,
+            "v_lateral_mps": -9.825542405170612e-06,
+            "speed_norm_mps": 0.06686992445105772,
+            "route_progress_rate_mps": -0.06686574266616478,
+            "signed_goal_distance_m": -0.10586920410458778,
+            "yaw_rad": 1.5711571851226023,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 0.0,
+            "slope": 0.0176709609136604,
+            "timestamp_s": 809.9073080345988,
+            "frame_id": 40824,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "guard_release",
+          "phase_tick": 8,
+          "road": {
+            "grade": 0.0176709609136604,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.15,
+            "brake": 0.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "risk",
+            "risk": true,
+            "emergency": false,
+            "reason": "BackwardRisk",
+            "frame_id": 40824,
+            "timestamp_s": 809.9073080345988,
+            "source": "Privileged",
+            "net_backward_m": 0.007484299438241691,
+            "window_backward_m": 0.011054991957145103,
+            "route_net_backward_m": 0.00748378409327326,
+            "route_window_backward_m": 0.01105495157612833,
+            "negative_samples": 4
+          },
+          "protection_applied": false,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.03789876484412315,
+          "hold_displacement_m": 0.011016848344881792,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545300.573430657,
+            "previous_sleep_start": 15545300.525982944,
+            "wake_up": 15545300.573495856,
+            "snapshot_end": 15545300.573730893,
+            "safety_end": 15545300.574302645,
+            "controller_end": 15545300.57430286,
+            "apply_control": 15545300.574302956,
+            "apply_end": 15545300.574308792,
+            "tick_start": 15545300.574308924,
+            "tick_end": 15545300.575973962
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 40825,
+          "next_frame": 40826,
+          "measurement": {
+            "frame": 40825,
+            "t": 809.9573080353439,
+            "position": [
+              -74.38868713378906,
+              99.61042785644531,
+              0.37296774983406067
+            ],
+            "rotation": [
+              0.0023295136634260416,
+              1.0152802467346191,
+              -90.02068328857422
+            ],
+            "velocity": [
+              -3.362267079864978e-06,
+              -0.03833352401852608,
+              0.001008100458420813
+            ],
+            "speed": 0.03834677745936448,
+            "long_speed": 0.03834536722342899,
+            "acceleration_api": [
+              -0.0007463385700248182,
+              -2.1039886474609375,
+              0.034821316599845886
+            ],
+            "long_acceleration_api": 2.1042754689119962,
+            "applied": {
+              "throttle": 0.15000000596046448,
+              "brake": 0.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": 0.0383335227345621,
+            "v_lateral_mps": -1.047580862853401e-05,
+            "speed_norm_mps": 0.03834677745936448,
+            "route_progress_rate_mps": 0.0383333906724813,
+            "signed_goal_distance_m": -0.10568609931657737,
+            "yaw_rad": 1.5711573182806569,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 0.0,
+            "slope": 0.017670975814823013,
+            "timestamp_s": 809.9573080353439,
+            "frame_id": 40825,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "guard_release",
+          "phase_tick": 9,
+          "road": {
+            "grade": 0.017670975814823013,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.15,
+            "brake": 0.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "risk",
+            "risk": true,
+            "emergency": false,
+            "reason": "BackwardRisk",
+            "frame_id": 40825,
+            "timestamp_s": 809.9573080353439,
+            "source": "Privileged",
+            "net_backward_m": 0.007667404875004473,
+            "window_backward_m": 0.011238097413973223,
+            "route_net_backward_m": 0.007666888881283667,
+            "route_window_backward_m": 0.011238056364138736,
+            "negative_samples": 4
+          },
+          "protection_applied": false,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.03771566005611274,
+          "hold_displacement_m": 0.011199953770442318,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545300.623430658,
+            "previous_sleep_start": 15545300.57602726,
+            "wake_up": 15545300.623491392,
+            "snapshot_end": 15545300.62368382,
+            "safety_end": 15545300.62425394,
+            "controller_end": 15545300.62425414,
+            "apply_control": 15545300.624254216,
+            "apply_end": 15545300.624263654,
+            "tick_start": 15545300.624263767,
+            "tick_end": 15545300.625794793
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 40826,
+          "next_frame": 40827,
+          "measurement": {
+            "frame": 40826,
+            "t": 810.007308036089,
+            "position": [
+              -74.38868713378906,
+              99.61092376708984,
+              0.3729734420776367
+            ],
+            "rotation": [
+              0.0023373053409159184,
+              1.0151299238204956,
+              -90.02022552490234
+            ],
+            "velocity": [
+              2.789542304526549e-05,
+              0.03995659574866295,
+              -0.0004659747937694192
+            ],
+            "speed": 0.03995932249782428,
+            "long_speed": -0.03995858787460456,
+            "acceleration_api": [
+              0.0006251537706702948,
+              1.5658023357391357,
+              -0.02948150411248207
+            ],
+            "long_acceleration_api": -1.5660790346320155,
+            "applied": {
+              "throttle": 0.15000000596046448,
+              "brake": 0.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": -0.039956603106299005,
+            "v_lateral_mps": -1.3790663288209727e-05,
+            "speed_norm_mps": 0.03995932249782428,
+            "route_progress_rate_mps": -0.03995652326563784,
+            "signed_goal_distance_m": -0.10519019051571585,
+            "yaw_rad": 1.5711493287973866,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 0.0,
+            "slope": 0.017670975814823013,
+            "timestamp_s": 810.007308036089,
+            "frame_id": 40826,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "protected_stop",
+          "phase_tick": 0,
+          "road": {
+            "grade": 0.017670975814823013,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.0,
+            "brake": 1.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "emergency",
+            "risk": true,
+            "emergency": true,
+            "reason": "RollbackDisplacementConfirmed",
+            "frame_id": 40826,
+            "timestamp_s": 810.007308036089,
+            "source": "Privileged",
+            "net_backward_m": 0.008163315432903672,
+            "window_backward_m": 0.011734008026192212,
+            "route_net_backward_m": 0.008162797682145187,
+            "route_window_backward_m": 0.011733965165000255,
+            "negative_samples": 5
+          },
+          "protection_applied": true,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.03721975125525122,
+          "hold_displacement_m": 0.011695864304792981,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545300.673430657,
+            "previous_sleep_start": 15545300.625843644,
+            "wake_up": 15545300.673490902,
+            "snapshot_end": 15545300.673737096,
+            "safety_end": 15545300.674344992,
+            "controller_end": 15545300.674345184,
+            "apply_control": 15545300.674345277,
+            "apply_end": 15545300.674370993,
+            "tick_start": 15545300.674371105,
+            "tick_end": 15545300.67592828
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 40827,
+          "next_frame": 40828,
+          "measurement": {
+            "frame": 40827,
+            "t": 810.057308036834,
+            "position": [
+              -74.38868713378906,
+              99.61029815673828,
+              0.3729915916919708
+            ],
+            "rotation": [
+              0.0023517687804996967,
+              1.0156148672103882,
+              -90.02022552490234
+            ],
+            "velocity": [
+              3.7344623251556186e-06,
+              3.648280835477635e-05,
+              0.0001718464627629146
+            ],
+            "speed": 0.00017571610136363469,
+            "long_speed": -3.343243156719089e-05,
+            "acceleration_api": [
+              -0.0004832192207686603,
+              -0.7984023094177246,
+              0.012756425887346268
+            ],
+            "long_acceleration_api": 0.7985030954607183,
+            "applied": {
+              "throttle": 0.0,
+              "brake": 1.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": -3.648412435435908e-05,
+            "v_lateral_mps": -3.7215835883409467e-06,
+            "speed_norm_mps": 0.00017571610136363469,
+            "route_progress_rate_mps": -3.649285587995165e-05,
+            "signed_goal_distance_m": -0.10581579854141807,
+            "yaw_rad": 1.5711493287973866,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 1.0,
+            "slope": 0.0176709609136604,
+            "timestamp_s": 810.057308036834,
+            "frame_id": 40827,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "protected_stop",
+          "phase_tick": 1,
+          "road": {
+            "grade": 0.0176709609136604,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.0,
+            "brake": 1.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "emergency",
+            "risk": true,
+            "emergency": true,
+            "reason": "RollbackDisplacementConfirmed",
+            "frame_id": 40827,
+            "timestamp_s": 810.057308036834,
+            "source": "Privileged",
+            "net_backward_m": 0.007537705190630836,
+            "window_backward_m": 0.011734008026192212,
+            "route_net_backward_m": 0.007537189656442962,
+            "route_window_backward_m": 0.011733965165000255,
+            "negative_samples": 5
+          },
+          "protection_applied": true,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.03784535928095344,
+          "hold_displacement_m": 0.011070254093856027,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545300.723430658,
+            "previous_sleep_start": 15545300.6759806,
+            "wake_up": 15545300.723494189,
+            "snapshot_end": 15545300.723737568,
+            "safety_end": 15545300.724299004,
+            "controller_end": 15545300.724299164,
+            "apply_control": 15545300.724299269,
+            "apply_end": 15545300.724305307,
+            "tick_start": 15545300.72430542,
+            "tick_end": 15545300.7259581
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 40828,
+          "next_frame": 40829,
+          "measurement": {
+            "frame": 40828,
+            "t": 810.1073080375791,
+            "position": [
+              -74.38868713378906,
+              99.61029815673828,
+              0.37299999594688416
+            ],
+            "rotation": [
+              0.002355237491428852,
+              1.0153485536575317,
+              -90.02021789550781
+            ],
+            "velocity": [
+              4.515875843935646e-06,
+              3.670707155833952e-05,
+              0.00012064746260875836
+            ],
+            "speed": 0.0001261887969312595,
+            "long_speed": -3.456499702751496e-05,
+            "acceleration_api": [
+              1.562826946610585e-05,
+              4.485264071263373e-06,
+              -0.0010239799739792943
+            ],
+            "long_acceleration_api": -2.2635251766049322e-05,
+            "applied": {
+              "throttle": 0.0,
+              "brake": 1.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": -3.670866278488054e-05,
+            "v_lateral_mps": -4.502922781130699e-06,
+            "speed_norm_mps": 0.0001261887969312595,
+            "route_progress_rate_mps": -3.6719249013818034e-05,
+            "signed_goal_distance_m": -0.10581579854141807,
+            "yaw_rad": 1.5711491956393322,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 1.0,
+            "slope": 0.0176709609136604,
+            "timestamp_s": 810.1073080375791,
+            "frame_id": 40828,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "protected_stop",
+          "phase_tick": 2,
+          "road": {
+            "grade": 0.0176709609136604,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.0,
+            "brake": 1.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "emergency",
+            "risk": true,
+            "emergency": true,
+            "reason": "RollbackDisplacementConfirmed",
+            "frame_id": 40828,
+            "timestamp_s": 810.1073080375791,
+            "source": "Privileged",
+            "net_backward_m": 0.007537705190630836,
+            "window_backward_m": 0.010986327410990527,
+            "route_net_backward_m": 0.007537189656442962,
+            "route_window_backward_m": 0.010986287280624427,
+            "negative_samples": 5
+          },
+          "protection_applied": true,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.03784535928095344,
+          "hold_displacement_m": 0.011070254093856027,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545300.773430657,
+            "previous_sleep_start": 15545300.7260069,
+            "wake_up": 15545300.773498887,
+            "snapshot_end": 15545300.773915082,
+            "safety_end": 15545300.774558268,
+            "controller_end": 15545300.774558464,
+            "apply_control": 15545300.774558572,
+            "apply_end": 15545300.774567686,
+            "tick_start": 15545300.774567777,
+            "tick_end": 15545300.77623204
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 40829,
+          "next_frame": 40830,
+          "measurement": {
+            "frame": 40829,
+            "t": 810.1573080383241,
+            "position": [
+              -74.38868713378906,
+              99.61029815673828,
+              0.3730058968067169
+            ],
+            "rotation": [
+              0.0023524085991084576,
+              1.0151846408843994,
+              -90.02022552490234
+            ],
+            "velocity": [
+              3.110321358690271e-06,
+              3.67434331565164e-05,
+              8.112927025649697e-05
+            ],
+            "speed": 8.91162862300345e-05,
+            "long_speed": -3.530136360757401e-05,
+            "acceleration_api": [
+              -2.81110897049075e-05,
+              7.272319635376334e-07,
+              -0.0007903638761490583
+            ],
+            "long_acceleration_api": -1.4720378583180972e-05,
+            "applied": {
+              "throttle": 0.0,
+              "brake": 1.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": -3.674452881685443e-05,
+            "v_lateral_mps": -3.0973506596878285e-06,
+            "speed_norm_mps": 8.91162862300345e-05,
+            "route_progress_rate_mps": -3.675177780063573e-05,
+            "signed_goal_distance_m": -0.10581579854141807,
+            "yaw_rad": 1.5711493287973866,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 1.0,
+            "slope": 0.0176709609136604,
+            "timestamp_s": 810.1573080383241,
+            "frame_id": 40829,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "protected_stop",
+          "phase_tick": 3,
+          "road": {
+            "grade": 0.0176709609136604,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.0,
+            "brake": 1.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "emergency",
+            "risk": true,
+            "emergency": true,
+            "reason": "RollbackDisplacementConfirmed",
+            "frame_id": 40829,
+            "timestamp_s": 810.1573080383241,
+            "source": "Privileged",
+            "net_backward_m": 0.007537705190630836,
+            "window_backward_m": 0.009277343146687328,
+            "route_net_backward_m": 0.007537189656442962,
+            "route_window_backward_m": 0.00927730925919396,
+            "negative_samples": 4
+          },
+          "protection_applied": true,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.03784535928095344,
+          "hold_displacement_m": 0.011070254093856027,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545300.823430657,
+            "previous_sleep_start": 15545300.77629076,
+            "wake_up": 15545300.823493958,
+            "snapshot_end": 15545300.8237813,
+            "safety_end": 15545300.82434847,
+            "controller_end": 15545300.824348664,
+            "apply_control": 15545300.824348781,
+            "apply_end": 15545300.8243558,
+            "tick_start": 15545300.824355947,
+            "tick_end": 15545300.825947871
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 40830,
+          "next_frame": 40831,
+          "measurement": {
+            "frame": 40830,
+            "t": 810.2073080390692,
+            "position": [
+              -74.38868713378906,
+              99.61029815673828,
+              0.37300994992256165
+            ],
+            "rotation": [
+              0.002348726149648428,
+              1.0150343179702759,
+              -90.020263671875
+            ],
+            "velocity": [
+              4.337161499279318e-06,
+              3.701344030559994e-05,
+              5.8897629060084e-05
+            ],
+            "speed": 6.969746366996644e-05,
+            "long_speed": -3.596580505238941e-05,
+            "acceleration_api": [
+              2.4536802811780944e-05,
+              5.400142981670797e-06,
+              -0.00044463283848017454
+            ],
+            "long_acceleration_api": -1.3284536682028818e-05,
+            "applied": {
+              "throttle": 0.0,
+              "brake": 1.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": -3.701497190506494e-05,
+            "v_lateral_mps": -4.324070766568743e-06,
+            "speed_norm_mps": 6.969746366996644e-05,
+            "route_progress_rate_mps": -3.702512930250468e-05,
+            "signed_goal_distance_m": -0.10581579854141807,
+            "yaw_rad": 1.571149994587659,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 1.0,
+            "slope": 0.0176709609136604,
+            "timestamp_s": 810.2073080390692,
+            "frame_id": 40830,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "protected_stop",
+          "phase_tick": 4,
+          "road": {
+            "grade": 0.0176709609136604,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.0,
+            "brake": 1.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "emergency",
+            "risk": true,
+            "emergency": true,
+            "reason": "RollbackDisplacementConfirmed",
+            "frame_id": 40830,
+            "timestamp_s": 810.2073080390692,
+            "source": "Privileged",
+            "net_backward_m": 0.007537705190630836,
+            "window_backward_m": 0.008346557074209665,
+            "route_net_backward_m": 0.007537189656442962,
+            "route_window_backward_m": 0.008346526586807724,
+            "negative_samples": 4
+          },
+          "protection_applied": true,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.03784535928095344,
+          "hold_displacement_m": 0.011070254093856027,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545300.873430658,
+            "previous_sleep_start": 15545300.825996239,
+            "wake_up": 15545300.87349395,
+            "snapshot_end": 15545300.873753676,
+            "safety_end": 15545300.874296619,
+            "controller_end": 15545300.874296812,
+            "apply_control": 15545300.874296896,
+            "apply_end": 15545300.874303512,
+            "tick_start": 15545300.874303648,
+            "tick_end": 15545300.875864344
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 40831,
+          "next_frame": 40832,
+          "measurement": {
+            "frame": 40831,
+            "t": 810.2573080398142,
+            "position": [
+              -74.38868713378906,
+              99.61029815673828,
+              0.37301284074783325
+            ],
+            "rotation": [
+              0.002348726149648428,
+              1.0150343179702759,
+              -90.020263671875
+            ],
+            "velocity": [
+              4.9070326895162e-06,
+              3.7129222619114444e-05,
+              3.860262950183824e-05
+            ],
+            "speed": 5.378495278952964e-05,
+            "long_speed": -3.6441291819870744e-05,
+            "acceleration_api": [
+              1.1397423804737628e-05,
+              2.315646270290017e-06,
+              -0.0004059000057168305
+            ],
+            "long_acceleration_api": -9.509735607410436e-06,
+            "applied": {
+              "throttle": 0.0,
+              "brake": 1.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": -3.713095575642017e-05,
+            "v_lateral_mps": -4.893900972691213e-06,
+            "speed_norm_mps": 5.378495278952964e-05,
+            "route_progress_rate_mps": -3.71424651144693e-05,
+            "signed_goal_distance_m": -0.10581579854141807,
+            "yaw_rad": 1.571149994587659,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 1.0,
+            "slope": 0.0176709609136604,
+            "timestamp_s": 810.2573080398142,
+            "frame_id": 40831,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "protected_stop",
+          "phase_tick": 5,
+          "road": {
+            "grade": 0.0176709609136604,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.0,
+            "brake": 1.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "emergency",
+            "risk": true,
+            "emergency": true,
+            "reason": "RollbackDisplacementConfirmed",
+            "frame_id": 40831,
+            "timestamp_s": 810.2573080398142,
+            "source": "Privileged",
+            "net_backward_m": 0.007537705190630836,
+            "window_backward_m": 0.006286620684201343,
+            "route_net_backward_m": 0.007537189656442962,
+            "route_window_backward_m": 0.006286597721690643,
+            "negative_samples": 3
+          },
+          "protection_applied": true,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.03784535928095344,
+          "hold_displacement_m": 0.011070254093856027,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545300.923430657,
+            "previous_sleep_start": 15545300.875916133,
+            "wake_up": 15545300.923493551,
+            "snapshot_end": 15545300.923761228,
+            "safety_end": 15545300.9243052,
+            "controller_end": 15545300.924305398,
+            "apply_control": 15545300.924305504,
+            "apply_end": 15545300.924311927,
+            "tick_start": 15545300.92431206,
+            "tick_end": 15545300.925777322
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        }
+      ],
+      "pose_longitudinal_relative_m": [
+        0.0,
+        -0.0009307860724776607,
+        -0.0029907224623872374,
+        -0.004104613991745749,
+        -0.006134032805508518,
+        -0.007026671907802667,
+        -0.008598327079363307,
+        -0.008781432536244159,
+        -0.009277343148629798,
+        -0.008651732837620222,
+        -0.008651732837620222,
+        -0.008651732837620222,
+        -0.008651732837620222,
+        -0.008651732837620222
+      ],
+      "actual_stop_observed": true
+    },
+    {
+      "name": "P0_guard_p27_s302",
+      "event": {
+        "level": "emergency",
+        "risk": true,
+        "emergency": true,
+        "reason": "RollbackDisplacementConfirmed",
+        "frame_id": 41051,
+        "timestamp_s": 820.1416920796037,
+        "source": "Privileged",
+        "net_backward_m": 0.008163315432903672,
+        "window_backward_m": 0.011734008026192212,
+        "route_net_backward_m": 0.008162797682145187,
+        "route_window_backward_m": 0.011733965165000255,
+        "negative_samples": 5
+      },
+      "samples": [
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 41043,
+          "next_frame": 41044,
+          "measurement": {
+            "frame": 41043,
+            "t": 819.7416920736432,
+            "position": [
+              -74.38868713378906,
+              99.60164642333984,
+              0.3729339838027954
+            ],
+            "rotation": [
+              0.0022125248797237873,
+              1.0104445219039917,
+              -90.0206298828125
+            ],
+            "velocity": [
+              4.231691127642989e-05,
+              0.07545016705989838,
+              -0.0016545294784009457
+            ],
+            "speed": 0.07546831764311732,
+            "long_speed": -0.07546762173334735,
+            "acceleration_api": [
+              0.0009064132464118302,
+              2.0768675804138184,
+              0.007895659655332565
+            ],
+            "long_acceleration_api": -2.0764055749843835,
+            "applied": {
+              "throttle": 0.15000000596046448,
+              "brake": 0.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": -0.0754501774057151,
+            "v_lateral_mps": -1.5150368794781415e-05,
+            "speed_norm_mps": 0.07546831764311732,
+            "route_progress_rate_mps": -0.07545000194541536,
+            "signed_goal_distance_m": -0.1144674997749098,
+            "yaw_rad": 1.5711563861742752,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 0.0,
+            "slope": 0.0176709609136604,
+            "timestamp_s": 819.7416920736432,
+            "frame_id": 41043,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "guard_release",
+          "phase_tick": 2,
+          "road": {
+            "grade": 0.0176709609136604,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.15,
+            "brake": 0.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "clear",
+            "risk": false,
+            "emergency": false,
+            "reason": null,
+            "frame_id": 41043,
+            "timestamp_s": 819.7416920736432,
+            "source": "Privileged",
+            "net_backward_m": 0.0,
+            "window_backward_m": 0.002456664879504886,
+            "route_net_backward_m": 0.0,
+            "route_window_backward_m": 0.0024566559058062957,
+            "negative_samples": 1
+          },
+          "protection_applied": false,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.04649706051444518,
+          "hold_displacement_m": 0.0024185301001216296,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545310.460253075,
+            "previous_sleep_start": 15545310.413089512,
+            "wake_up": 15545310.4603198,
+            "snapshot_end": 15545310.460731963,
+            "safety_end": 15545310.461402385,
+            "controller_end": 15545310.46140256,
+            "apply_control": 15545310.461402653,
+            "apply_end": 15545310.461412204,
+            "tick_start": 15545310.461412309,
+            "tick_end": 15545310.463404808
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 41044,
+          "next_frame": 41045,
+          "measurement": {
+            "frame": 41044,
+            "t": 819.7916920743883,
+            "position": [
+              -74.38868713378906,
+              99.60257720947266,
+              0.3729243278503418
+            ],
+            "rotation": [
+              0.002251645317301154,
+              1.0118993520736694,
+              -90.02062225341797
+            ],
+            "velocity": [
+              8.746515050006565e-06,
+              -0.019003456458449364,
+              0.0009435367537662387
+            ],
+            "speed": 0.0190268677263341,
+            "long_speed": 0.019017151962856114,
+            "acceleration_api": [
+              -0.0006714079063385725,
+              -1.8890725374221802,
+              0.051961325109004974
+            ],
+            "long_acceleration_api": 1.8896957513698418,
+            "applied": {
+              "throttle": 0.15000000596046448,
+              "brake": 0.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": 0.01900345207943004,
+            "v_lateral_mps": -1.558635661097407e-05,
+            "speed_norm_mps": 0.0190268677263341,
+            "route_progress_rate_mps": 0.019003361958367618,
+            "signed_goal_distance_m": -0.11353671710252357,
+            "yaw_rad": 1.5711562530162209,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 0.0,
+            "slope": 0.017670975814823013,
+            "timestamp_s": 819.7916920743883,
+            "frame_id": 41044,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "guard_release",
+          "phase_tick": 3,
+          "road": {
+            "grade": 0.017670975814823013,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.15,
+            "brake": 0.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "clear",
+            "risk": false,
+            "emergency": false,
+            "reason": null,
+            "frame_id": 41044,
+            "timestamp_s": 819.7916920743883,
+            "source": "Privileged",
+            "net_backward_m": 0.0,
+            "window_backward_m": 0.003387450951982547,
+            "route_net_backward_m": 0.0,
+            "route_window_backward_m": 0.0033874385781925316,
+            "negative_samples": 1
+          },
+          "protection_applied": false,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.045566277842058946,
+          "hold_displacement_m": 0.0033493128887228892,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545310.510253076,
+            "previous_sleep_start": 15545310.463468105,
+            "wake_up": 15545310.510314744,
+            "snapshot_end": 15545310.510582455,
+            "safety_end": 15545310.511100136,
+            "controller_end": 15545310.51110034,
+            "apply_control": 15545310.51110044,
+            "apply_end": 15545310.51110769,
+            "tick_start": 15545310.511107784,
+            "tick_end": 15545310.512883209
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 41045,
+          "next_frame": 41046,
+          "measurement": {
+            "frame": 41045,
+            "t": 819.8416920751333,
+            "position": [
+              -74.38868713378906,
+              99.6046371459961,
+              0.37292996048927307
+            ],
+            "rotation": [
+              0.002270911354571581,
+              1.0116056203842163,
+              -90.02064514160156
+            ],
+            "velocity": [
+              4.144528793403879e-05,
+              0.08081474900245667,
+              -0.0005396365886554122
+            ],
+            "speed": 0.08081656130824783,
+            "long_speed": -0.08081169008005268,
+            "acceleration_api": [
+              0.00065397541038692,
+              1.9963641166687012,
+              -0.029663465917110443
+            ],
+            "long_acceleration_api": -1.9965767741862428,
+            "applied": {
+              "throttle": 0.15000000596046448,
+              "brake": 0.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": -0.08081475868998302,
+            "v_lateral_mps": -1.2325655233665553e-05,
+            "speed_norm_mps": 0.08081656130824783,
+            "route_progress_rate_mps": -0.08081456156707265,
+            "signed_goal_distance_m": -0.11147678823740649,
+            "yaw_rad": 1.5711566524903844,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 0.0,
+            "slope": 0.0176709609136604,
+            "timestamp_s": 819.8416920751333,
+            "frame_id": 41045,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "guard_release",
+          "phase_tick": 4,
+          "road": {
+            "grade": 0.0176709609136604,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.15,
+            "brake": 0.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "risk",
+            "risk": true,
+            "emergency": false,
+            "reason": "BackwardRisk",
+            "frame_id": 41045,
+            "timestamp_s": 819.8416920751333,
+            "source": "Privileged",
+            "net_backward_m": 0.001876695437381514,
+            "window_backward_m": 0.0054473873419908685,
+            "route_net_backward_m": 0.0018761999604545423,
+            "route_window_backward_m": 0.005447367443309611,
+            "negative_samples": 2
+          },
+          "protection_applied": false,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.04350634897694186,
+          "hold_displacement_m": 0.00540924610304464,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545310.560253074,
+            "previous_sleep_start": 15545310.512943601,
+            "wake_up": 15545310.560314491,
+            "snapshot_end": 15545310.560556252,
+            "safety_end": 15545310.561096383,
+            "controller_end": 15545310.56109655,
+            "apply_control": 15545310.561096648,
+            "apply_end": 15545310.56110409,
+            "tick_start": 15545310.561104182,
+            "tick_end": 15545310.56278625
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 41046,
+          "next_frame": 41047,
+          "measurement": {
+            "frame": 41046,
+            "t": 819.8916920758784,
+            "position": [
+              -74.38868713378906,
+              99.60575103759766,
+              0.3729466199874878
+            ],
+            "rotation": [
+              0.0022850551176816225,
+              1.013033151626587,
+              -90.02067565917969
+            ],
+            "velocity": [
+              7.4883614615828265e-06,
+              -0.016689976677298546,
+              0.0011674308916553855
+            ],
+            "speed": 0.01673075827483973,
+            "long_speed": 0.016708004608431345,
+            "acceleration_api": [
+              -0.000679138523992151,
+              -1.9500945806503296,
+              0.03414135053753853
+            ],
+            "long_acceleration_api": 1.9503935557917556,
+            "applied": {
+              "throttle": 0.15000000596046448,
+              "brake": 0.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": 0.016689972888387215,
+            "v_lateral_mps": -1.3511077916524922e-05,
+            "speed_norm_mps": 0.01673075827483973,
+            "route_progress_rate_mps": 0.016689894208888948,
+            "signed_goal_distance_m": -0.11036290077700985,
+            "yaw_rad": 1.5711571851226023,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 0.0,
+            "slope": 0.017670975814823013,
+            "timestamp_s": 819.8916920758784,
+            "frame_id": 41046,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "guard_release",
+          "phase_tick": 5,
+          "road": {
+            "grade": 0.017670975814823013,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.15,
+            "brake": 0.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "risk",
+            "risk": true,
+            "emergency": false,
+            "reason": "BackwardRisk",
+            "frame_id": 41046,
+            "timestamp_s": 819.8916920758784,
+            "source": "Privileged",
+            "net_backward_m": 0.0029905868443551005,
+            "window_backward_m": 0.00656127887124253,
+            "route_net_backward_m": 0.0029900874208511857,
+            "route_window_backward_m": 0.006561254903706255,
+            "negative_samples": 2
+          },
+          "protection_applied": false,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.04239246151654522,
+          "hold_displacement_m": 0.006523136785851453,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545310.610253075,
+            "previous_sleep_start": 15545310.562844448,
+            "wake_up": 15545310.610313555,
+            "snapshot_end": 15545310.610582951,
+            "safety_end": 15545310.61115309,
+            "controller_end": 15545310.611153292,
+            "apply_control": 15545310.611153422,
+            "apply_end": 15545310.611161064,
+            "tick_start": 15545310.611161284,
+            "tick_end": 15545310.612841925
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 41047,
+          "next_frame": 41048,
+          "measurement": {
+            "frame": 41047,
+            "t": 819.9416920766234,
+            "position": [
+              -74.38868713378906,
+              99.60778045654297,
+              0.372952401638031
+            ],
+            "rotation": [
+              0.0023049083538353443,
+              1.0127121210098267,
+              -90.02068328857422
+            ],
+            "velocity": [
+              3.8895330362720415e-05,
+              0.07844233512878418,
+              -0.0006388473557308316
+            ],
+            "speed": 0.07844494616766039,
+            "long_speed": -0.07844138107727737,
+            "acceleration_api": [
+              0.0006281393580138683,
+              1.9026463031768799,
+              -0.03612556308507919
+            ],
+            "long_acceleration_api": -1.90298766982914,
+            "applied": {
+              "throttle": 0.15000000596046448,
+              "brake": 0.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": -0.07844234405856636,
+            "v_lateral_mps": -1.057831333877987e-05,
+            "speed_norm_mps": 0.07844494616766039,
+            "route_progress_rate_mps": -0.07844214956018912,
+            "signed_goal_distance_m": -0.10833348937656116,
+            "yaw_rad": 1.5711573182806569,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 0.0,
+            "slope": 0.0176709609136604,
+            "timestamp_s": 819.9416920766234,
+            "frame_id": 41047,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "guard_release",
+          "phase_tick": 6,
+          "road": {
+            "grade": 0.0176709609136604,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.15,
+            "brake": 0.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "risk",
+            "risk": true,
+            "emergency": false,
+            "reason": "BackwardRisk",
+            "frame_id": 41047,
+            "timestamp_s": 819.9416920766234,
+            "source": "Privileged",
+            "net_backward_m": 0.005020005435142593,
+            "window_backward_m": 0.00859069768442085,
+            "route_net_backward_m": 0.005019498821299865,
+            "route_window_backward_m": 0.008590666304154934,
+            "negative_samples": 3
+          },
+          "protection_applied": false,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.04036305011609654,
+          "hold_displacement_m": 0.008552554672471934,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545310.660253074,
+            "previous_sleep_start": 15545310.612895964,
+            "wake_up": 15545310.66031486,
+            "snapshot_end": 15545310.660602748,
+            "safety_end": 15545310.661169194,
+            "controller_end": 15545310.661169391,
+            "apply_control": 15545310.661169508,
+            "apply_end": 15545310.661177332,
+            "tick_start": 15545310.661177456,
+            "tick_end": 15545310.662939928
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 41048,
+          "next_frame": 41049,
+          "measurement": {
+            "frame": 41048,
+            "t": 819.9916920773685,
+            "position": [
+              -74.38868713378906,
+              99.60867309570312,
+              0.3729614317417145
+            ],
+            "rotation": [
+              0.0023129682522267103,
+              1.0141327381134033,
+              -90.02071380615234
+            ],
+            "velocity": [
+              3.7579327454295708e-06,
+              -0.02250499464571476,
+              0.000986928935162723
+            ],
+            "speed": 0.02252662484369929,
+            "long_speed": 0.022518934427047797,
+            "acceleration_api": [
+              -0.0007027479587122798,
+              -2.018946647644043,
+              0.032515525817871094
+            ],
+            "long_acceleration_api": 2.019206024769105,
+            "applied": {
+              "throttle": 0.15000000596046448,
+              "brake": 0.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": 0.022504991816433596,
+            "v_lateral_mps": -1.1894030662012758e-05,
+            "speed_norm_mps": 0.02252662484369929,
+            "route_progress_rate_mps": 0.02250490073070647,
+            "signed_goal_distance_m": -0.10744085353501043,
+            "yaw_rad": 1.5711578509128747,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 0.0,
+            "slope": 0.0176709609136604,
+            "timestamp_s": 819.9916920773685,
+            "frame_id": 41048,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "guard_release",
+          "phase_tick": 7,
+          "road": {
+            "grade": 0.0176709609136604,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.15,
+            "brake": 0.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "risk",
+            "risk": true,
+            "emergency": false,
+            "reason": "BackwardRisk",
+            "frame_id": 41048,
+            "timestamp_s": 819.9916920773685,
+            "source": "Privileged",
+            "net_backward_m": 0.005912644439361152,
+            "window_backward_m": 0.009483336786415029,
+            "route_net_backward_m": 0.005912134662850599,
+            "route_window_backward_m": 0.009483302145705669,
+            "negative_samples": 3
+          },
+          "protection_applied": false,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.039470414274545805,
+          "hold_displacement_m": 0.00944519351102566,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545310.710253075,
+            "previous_sleep_start": 15545310.662986755,
+            "wake_up": 15545310.710313756,
+            "snapshot_end": 15545310.710536107,
+            "safety_end": 15545310.711038295,
+            "controller_end": 15545310.711038496,
+            "apply_control": 15545310.711038584,
+            "apply_end": 15545310.711045785,
+            "tick_start": 15545310.7110459,
+            "tick_end": 15545310.712776313
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 41049,
+          "next_frame": 41050,
+          "measurement": {
+            "frame": 41049,
+            "t": 820.0416920781136,
+            "position": [
+              -74.38868713378906,
+              99.61024475097656,
+              0.37296056747436523
+            ],
+            "rotation": [
+              0.0023195857647806406,
+              1.0138254165649414,
+              -90.02067565917969
+            ],
+            "velocity": [
+              3.3954660466406494e-05,
+              0.06686589866876602,
+              -0.0007329654763452709
+            ],
+            "speed": 0.06686992445105772,
+            "long_speed": -0.06686840981147671,
+            "acceleration_api": [
+              0.0006039345753379166,
+              1.7874178886413574,
+              -0.03439788520336151
+            ],
+            "long_acceleration_api": -1.7877468548800723,
+            "applied": {
+              "throttle": 0.15000000596046448,
+              "brake": 0.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": -0.0668659065679915,
+            "v_lateral_mps": -9.825542405170612e-06,
+            "speed_norm_mps": 0.06686992445105772,
+            "route_progress_rate_mps": -0.06686574266616478,
+            "signed_goal_distance_m": -0.10586920410458778,
+            "yaw_rad": 1.5711571851226023,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 0.0,
+            "slope": 0.0176709609136604,
+            "timestamp_s": 820.0416920781136,
+            "frame_id": 41049,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "guard_release",
+          "phase_tick": 8,
+          "road": {
+            "grade": 0.0176709609136604,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.15,
+            "brake": 0.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "risk",
+            "risk": true,
+            "emergency": false,
+            "reason": "BackwardRisk",
+            "frame_id": 41049,
+            "timestamp_s": 820.0416920781136,
+            "source": "Privileged",
+            "net_backward_m": 0.007484299438241691,
+            "window_backward_m": 0.011054991957145103,
+            "route_net_backward_m": 0.00748378409327326,
+            "route_window_backward_m": 0.01105495157612833,
+            "negative_samples": 4
+          },
+          "protection_applied": false,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.03789876484412315,
+          "hold_displacement_m": 0.011016848344881792,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545310.760253076,
+            "previous_sleep_start": 15545310.712826315,
+            "wake_up": 15545310.760315403,
+            "snapshot_end": 15545310.760602381,
+            "safety_end": 15545310.761198897,
+            "controller_end": 15545310.761199124,
+            "apply_control": 15545310.761199212,
+            "apply_end": 15545310.761207093,
+            "tick_start": 15545310.761207225,
+            "tick_end": 15545310.763012309
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 41050,
+          "next_frame": 41051,
+          "measurement": {
+            "frame": 41050,
+            "t": 820.0916920788586,
+            "position": [
+              -74.38868713378906,
+              99.61042785644531,
+              0.37296774983406067
+            ],
+            "rotation": [
+              0.0023295136634260416,
+              1.0152802467346191,
+              -90.02068328857422
+            ],
+            "velocity": [
+              -3.362267079864978e-06,
+              -0.03833352401852608,
+              0.001008100458420813
+            ],
+            "speed": 0.03834677745936448,
+            "long_speed": 0.03834536722342899,
+            "acceleration_api": [
+              -0.0007463385700248182,
+              -2.1039886474609375,
+              0.034821316599845886
+            ],
+            "long_acceleration_api": 2.1042754689119962,
+            "applied": {
+              "throttle": 0.15000000596046448,
+              "brake": 0.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": 0.0383335227345621,
+            "v_lateral_mps": -1.047580862853401e-05,
+            "speed_norm_mps": 0.03834677745936448,
+            "route_progress_rate_mps": 0.0383333906724813,
+            "signed_goal_distance_m": -0.10568609931657737,
+            "yaw_rad": 1.5711573182806569,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 0.0,
+            "slope": 0.017670975814823013,
+            "timestamp_s": 820.0916920788586,
+            "frame_id": 41050,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "guard_release",
+          "phase_tick": 9,
+          "road": {
+            "grade": 0.017670975814823013,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.15,
+            "brake": 0.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "risk",
+            "risk": true,
+            "emergency": false,
+            "reason": "BackwardRisk",
+            "frame_id": 41050,
+            "timestamp_s": 820.0916920788586,
+            "source": "Privileged",
+            "net_backward_m": 0.007667404875004473,
+            "window_backward_m": 0.011238097413973223,
+            "route_net_backward_m": 0.007666888881283667,
+            "route_window_backward_m": 0.011238056364138736,
+            "negative_samples": 4
+          },
+          "protection_applied": false,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.03771566005611274,
+          "hold_displacement_m": 0.011199953770442318,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545310.810253074,
+            "previous_sleep_start": 15545310.763060313,
+            "wake_up": 15545310.810315153,
+            "snapshot_end": 15545310.810546676,
+            "safety_end": 15545310.811096644,
+            "controller_end": 15545310.811096905,
+            "apply_control": 15545310.811096998,
+            "apply_end": 15545310.811104707,
+            "tick_start": 15545310.81110484,
+            "tick_end": 15545310.812778097
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 41051,
+          "next_frame": 41052,
+          "measurement": {
+            "frame": 41051,
+            "t": 820.1416920796037,
+            "position": [
+              -74.38868713378906,
+              99.61092376708984,
+              0.3729734420776367
+            ],
+            "rotation": [
+              0.0023373053409159184,
+              1.0151299238204956,
+              -90.02022552490234
+            ],
+            "velocity": [
+              2.789542304526549e-05,
+              0.03995659574866295,
+              -0.0004659747937694192
+            ],
+            "speed": 0.03995932249782428,
+            "long_speed": -0.03995858787460456,
+            "acceleration_api": [
+              0.0006251537706702948,
+              1.5658023357391357,
+              -0.02948150411248207
+            ],
+            "long_acceleration_api": -1.5660790346320155,
+            "applied": {
+              "throttle": 0.15000000596046448,
+              "brake": 0.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": -0.039956603106299005,
+            "v_lateral_mps": -1.3790663288209727e-05,
+            "speed_norm_mps": 0.03995932249782428,
+            "route_progress_rate_mps": -0.03995652326563784,
+            "signed_goal_distance_m": -0.10519019051571585,
+            "yaw_rad": 1.5711493287973866,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 0.0,
+            "slope": 0.017670975814823013,
+            "timestamp_s": 820.1416920796037,
+            "frame_id": 41051,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "protected_stop",
+          "phase_tick": 0,
+          "road": {
+            "grade": 0.017670975814823013,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.0,
+            "brake": 1.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "emergency",
+            "risk": true,
+            "emergency": true,
+            "reason": "RollbackDisplacementConfirmed",
+            "frame_id": 41051,
+            "timestamp_s": 820.1416920796037,
+            "source": "Privileged",
+            "net_backward_m": 0.008163315432903672,
+            "window_backward_m": 0.011734008026192212,
+            "route_net_backward_m": 0.008162797682145187,
+            "route_window_backward_m": 0.011733965165000255,
+            "negative_samples": 5
+          },
+          "protection_applied": true,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.03721975125525122,
+          "hold_displacement_m": 0.011695864304792981,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545310.860253075,
+            "previous_sleep_start": 15545310.812837096,
+            "wake_up": 15545310.860314732,
+            "snapshot_end": 15545310.86061,
+            "safety_end": 15545310.861214012,
+            "controller_end": 15545310.861214235,
+            "apply_control": 15545310.861214353,
+            "apply_end": 15545310.861240411,
+            "tick_start": 15545310.861240529,
+            "tick_end": 15545310.863069141
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 41052,
+          "next_frame": 41053,
+          "measurement": {
+            "frame": 41052,
+            "t": 820.1916920803487,
+            "position": [
+              -74.38868713378906,
+              99.61029815673828,
+              0.3729915916919708
+            ],
+            "rotation": [
+              0.0023517687804996967,
+              1.0156148672103882,
+              -90.02022552490234
+            ],
+            "velocity": [
+              3.7344623251556186e-06,
+              3.648280835477635e-05,
+              0.0001718464627629146
+            ],
+            "speed": 0.00017571610136363469,
+            "long_speed": -3.343243156719089e-05,
+            "acceleration_api": [
+              -0.0004832192207686603,
+              -0.7984023094177246,
+              0.012756425887346268
+            ],
+            "long_acceleration_api": 0.7985030954607183,
+            "applied": {
+              "throttle": 0.0,
+              "brake": 1.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": -3.648412435435908e-05,
+            "v_lateral_mps": -3.7215835883409467e-06,
+            "speed_norm_mps": 0.00017571610136363469,
+            "route_progress_rate_mps": -3.649285587995165e-05,
+            "signed_goal_distance_m": -0.10581579854141807,
+            "yaw_rad": 1.5711493287973866,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 1.0,
+            "slope": 0.0176709609136604,
+            "timestamp_s": 820.1916920803487,
+            "frame_id": 41052,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "protected_stop",
+          "phase_tick": 1,
+          "road": {
+            "grade": 0.0176709609136604,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.0,
+            "brake": 1.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "emergency",
+            "risk": true,
+            "emergency": true,
+            "reason": "RollbackDisplacementConfirmed",
+            "frame_id": 41052,
+            "timestamp_s": 820.1916920803487,
+            "source": "Privileged",
+            "net_backward_m": 0.007537705190630836,
+            "window_backward_m": 0.011734008026192212,
+            "route_net_backward_m": 0.007537189656442962,
+            "route_window_backward_m": 0.011733965165000255,
+            "negative_samples": 5
+          },
+          "protection_applied": true,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.03784535928095344,
+          "hold_displacement_m": 0.011070254093856027,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545310.910253074,
+            "previous_sleep_start": 15545310.8631248,
+            "wake_up": 15545310.910316393,
+            "snapshot_end": 15545310.910573406,
+            "safety_end": 15545310.911108974,
+            "controller_end": 15545310.911109127,
+            "apply_control": 15545310.911109203,
+            "apply_end": 15545310.91111606,
+            "tick_start": 15545310.911116213,
+            "tick_end": 15545310.913105728
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 41053,
+          "next_frame": 41054,
+          "measurement": {
+            "frame": 41053,
+            "t": 820.2416920810938,
+            "position": [
+              -74.38868713378906,
+              99.61029815673828,
+              0.37299999594688416
+            ],
+            "rotation": [
+              0.002355237491428852,
+              1.0153485536575317,
+              -90.02021789550781
+            ],
+            "velocity": [
+              4.515875843935646e-06,
+              3.670707155833952e-05,
+              0.00012064746260875836
+            ],
+            "speed": 0.0001261887969312595,
+            "long_speed": -3.456499702751496e-05,
+            "acceleration_api": [
+              1.562826946610585e-05,
+              4.485264071263373e-06,
+              -0.0010239799739792943
+            ],
+            "long_acceleration_api": -2.2635251766049322e-05,
+            "applied": {
+              "throttle": 0.0,
+              "brake": 1.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": -3.670866278488054e-05,
+            "v_lateral_mps": -4.502922781130699e-06,
+            "speed_norm_mps": 0.0001261887969312595,
+            "route_progress_rate_mps": -3.6719249013818034e-05,
+            "signed_goal_distance_m": -0.10581579854141807,
+            "yaw_rad": 1.5711491956393322,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 1.0,
+            "slope": 0.0176709609136604,
+            "timestamp_s": 820.2416920810938,
+            "frame_id": 41053,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "protected_stop",
+          "phase_tick": 2,
+          "road": {
+            "grade": 0.0176709609136604,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.0,
+            "brake": 1.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "emergency",
+            "risk": true,
+            "emergency": true,
+            "reason": "RollbackDisplacementConfirmed",
+            "frame_id": 41053,
+            "timestamp_s": 820.2416920810938,
+            "source": "Privileged",
+            "net_backward_m": 0.007537705190630836,
+            "window_backward_m": 0.010986327410990527,
+            "route_net_backward_m": 0.007537189656442962,
+            "route_window_backward_m": 0.010986287280624427,
+            "negative_samples": 5
+          },
+          "protection_applied": true,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.03784535928095344,
+          "hold_displacement_m": 0.011070254093856027,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545310.960253075,
+            "previous_sleep_start": 15545310.913167864,
+            "wake_up": 15545310.960313877,
+            "snapshot_end": 15545310.96057022,
+            "safety_end": 15545310.961086785,
+            "controller_end": 15545310.961086974,
+            "apply_control": 15545310.961087052,
+            "apply_end": 15545310.961093616,
+            "tick_start": 15545310.961093724,
+            "tick_end": 15545310.962883785
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 41054,
+          "next_frame": 41055,
+          "measurement": {
+            "frame": 41054,
+            "t": 820.2916920818388,
+            "position": [
+              -74.38868713378906,
+              99.61029815673828,
+              0.3730058968067169
+            ],
+            "rotation": [
+              0.0023524085991084576,
+              1.0151846408843994,
+              -90.02022552490234
+            ],
+            "velocity": [
+              3.110321358690271e-06,
+              3.67434331565164e-05,
+              8.112927025649697e-05
+            ],
+            "speed": 8.91162862300345e-05,
+            "long_speed": -3.530136360757401e-05,
+            "acceleration_api": [
+              -2.81110897049075e-05,
+              7.272319635376334e-07,
+              -0.0007903638761490583
+            ],
+            "long_acceleration_api": -1.4720378583180972e-05,
+            "applied": {
+              "throttle": 0.0,
+              "brake": 1.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": -3.674452881685443e-05,
+            "v_lateral_mps": -3.0973506596878285e-06,
+            "speed_norm_mps": 8.91162862300345e-05,
+            "route_progress_rate_mps": -3.675177780063573e-05,
+            "signed_goal_distance_m": -0.10581579854141807,
+            "yaw_rad": 1.5711493287973866,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 1.0,
+            "slope": 0.0176709609136604,
+            "timestamp_s": 820.2916920818388,
+            "frame_id": 41054,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "protected_stop",
+          "phase_tick": 3,
+          "road": {
+            "grade": 0.0176709609136604,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.0,
+            "brake": 1.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "emergency",
+            "risk": true,
+            "emergency": true,
+            "reason": "RollbackDisplacementConfirmed",
+            "frame_id": 41054,
+            "timestamp_s": 820.2916920818388,
+            "source": "Privileged",
+            "net_backward_m": 0.007537705190630836,
+            "window_backward_m": 0.009277343146687328,
+            "route_net_backward_m": 0.007537189656442962,
+            "route_window_backward_m": 0.00927730925919396,
+            "negative_samples": 4
+          },
+          "protection_applied": true,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.03784535928095344,
+          "hold_displacement_m": 0.011070254093856027,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545311.010253076,
+            "previous_sleep_start": 15545310.96293502,
+            "wake_up": 15545311.010313831,
+            "snapshot_end": 15545311.01061562,
+            "safety_end": 15545311.011251373,
+            "controller_end": 15545311.011251468,
+            "apply_control": 15545311.011251573,
+            "apply_end": 15545311.011259278,
+            "tick_start": 15545311.0112594,
+            "tick_end": 15545311.01309523
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 41055,
+          "next_frame": 41056,
+          "measurement": {
+            "frame": 41055,
+            "t": 820.3416920825839,
+            "position": [
+              -74.38868713378906,
+              99.61029815673828,
+              0.37300994992256165
+            ],
+            "rotation": [
+              0.002348726149648428,
+              1.0150343179702759,
+              -90.020263671875
+            ],
+            "velocity": [
+              4.337161499279318e-06,
+              3.701344030559994e-05,
+              5.8897629060084e-05
+            ],
+            "speed": 6.969746366996644e-05,
+            "long_speed": -3.596580505238941e-05,
+            "acceleration_api": [
+              2.4536802811780944e-05,
+              5.400142981670797e-06,
+              -0.00044463283848017454
+            ],
+            "long_acceleration_api": -1.3284536682028818e-05,
+            "applied": {
+              "throttle": 0.0,
+              "brake": 1.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": -3.701497190506494e-05,
+            "v_lateral_mps": -4.324070766568743e-06,
+            "speed_norm_mps": 6.969746366996644e-05,
+            "route_progress_rate_mps": -3.702512930250468e-05,
+            "signed_goal_distance_m": -0.10581579854141807,
+            "yaw_rad": 1.571149994587659,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 1.0,
+            "slope": 0.0176709609136604,
+            "timestamp_s": 820.3416920825839,
+            "frame_id": 41055,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "protected_stop",
+          "phase_tick": 4,
+          "road": {
+            "grade": 0.0176709609136604,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.0,
+            "brake": 1.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "emergency",
+            "risk": true,
+            "emergency": true,
+            "reason": "RollbackDisplacementConfirmed",
+            "frame_id": 41055,
+            "timestamp_s": 820.3416920825839,
+            "source": "Privileged",
+            "net_backward_m": 0.007537705190630836,
+            "window_backward_m": 0.008346557074209665,
+            "route_net_backward_m": 0.007537189656442962,
+            "route_window_backward_m": 0.008346526586807724,
+            "negative_samples": 4
+          },
+          "protection_applied": true,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.03784535928095344,
+          "hold_displacement_m": 0.011070254093856027,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545311.060253074,
+            "previous_sleep_start": 15545311.013144892,
+            "wake_up": 15545311.060315508,
+            "snapshot_end": 15545311.060567532,
+            "safety_end": 15545311.061098056,
+            "controller_end": 15545311.061098171,
+            "apply_control": 15545311.061098274,
+            "apply_end": 15545311.061105713,
+            "tick_start": 15545311.061105827,
+            "tick_end": 15545311.062906273
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        },
+        {
+          "source": "Privileged",
+          "physics_version": "P0",
+          "frame": 41056,
+          "next_frame": 41057,
+          "measurement": {
+            "frame": 41056,
+            "t": 820.391692083329,
+            "position": [
+              -74.38868713378906,
+              99.61029815673828,
+              0.37301284074783325
+            ],
+            "rotation": [
+              0.002348726149648428,
+              1.0150343179702759,
+              -90.020263671875
+            ],
+            "velocity": [
+              4.9070326895162e-06,
+              3.7129222619114444e-05,
+              3.860262950183824e-05
+            ],
+            "speed": 5.378495278952964e-05,
+            "long_speed": -3.6441291819870744e-05,
+            "acceleration_api": [
+              1.1397423804737628e-05,
+              2.315646270290017e-06,
+              -0.0004059000057168305
+            ],
+            "long_acceleration_api": -9.509735607410436e-06,
+            "applied": {
+              "throttle": 0.0,
+              "brake": 1.0,
+              "steer": 0.0,
+              "hand_brake": false,
+              "reverse": false,
+              "gear": 1
+            }
+          },
+          "signed": {
+            "v_forward_mps": -3.713095575642017e-05,
+            "v_lateral_mps": -4.893900972691213e-06,
+            "speed_norm_mps": 5.378495278952964e-05,
+            "route_progress_rate_mps": -3.71424651144693e-05,
+            "signed_goal_distance_m": -0.10581579854141807,
+            "yaw_rad": 1.571149994587659,
+            "gear": 1,
+            "reverse_commanded": false,
+            "hand_brake_applied": false,
+            "brake_applied": 1.0,
+            "slope": 0.0176709609136604,
+            "timestamp_s": 820.391692083329,
+            "frame_id": 41056,
+            "coordinate_frame": "hs_world_x_y_left_z_up_m",
+            "source": "Privileged"
+          },
+          "phase": "protected_stop",
+          "phase_tick": 5,
+          "road": {
+            "grade": 0.0176709609136604,
+            "road_id": 4,
+            "lane_id": 3,
+            "map_pitch_deg": 361.0124816894531,
+            "reference": "OpenDRIVE height difference over2m; positive uphill; vehicle pitch separately measured"
+          },
+          "kind": "raw",
+          "command": {
+            "throttle": 0.0,
+            "brake": 1.0,
+            "steer": 0.0,
+            "hand_brake": false,
+            "reverse": false,
+            "manual_gear_shift": false,
+            "gear": 0
+          },
+          "reference_speed": null,
+          "guard": {
+            "level": "emergency",
+            "risk": true,
+            "emergency": true,
+            "reason": "RollbackDisplacementConfirmed",
+            "frame_id": 41056,
+            "timestamp_s": 820.391692083329,
+            "source": "Privileged",
+            "net_backward_m": 0.007537705190630836,
+            "window_backward_m": 0.006286620684201343,
+            "route_net_backward_m": 0.007537189656442962,
+            "route_window_backward_m": 0.006286597721690643,
+            "negative_samples": 3
+          },
+          "protection_applied": true,
+          "road_ok": true,
+          "obstacle_obb_gap_m": null,
+          "stop_travel_m": 0.03784535928095344,
+          "hold_displacement_m": 0.011070254093856027,
+          "planner_age": null,
+          "worker_queue_ms": null,
+          "plan_source": "NotApplicable_fixed_actuator_schedule",
+          "timeline": {
+            "scheduled": 15545311.110253075,
+            "previous_sleep_start": 15545311.06296789,
+            "wake_up": 15545311.11031316,
+            "snapshot_end": 15545311.11063651,
+            "safety_end": 15545311.111245876,
+            "controller_end": 15545311.11124608,
+            "apply_control": 15545311.111246193,
+            "apply_end": 15545311.11125386,
+            "tick_start": 15545311.111253995,
+            "tick_end": 15545311.11306862
+          },
+          "deadline_missed": false,
+          "skipped_slots": 0
+        }
+      ],
+      "pose_longitudinal_relative_m": [
+        0.0,
+        -0.0009307860724776607,
+        -0.0029907224623872374,
+        -0.004104613991745749,
+        -0.006134032805508518,
+        -0.007026671907802667,
+        -0.008598327079363307,
+        -0.008781432536244159,
+        -0.009277343148629798,
+        -0.008651732837620222,
+        -0.008651732837620222,
+        -0.008651732837620222,
+        -0.008651732837620222,
+        -0.008651732837620222
+      ],
+      "actual_stop_observed": true
+    }
+  ],
+  "historical_regression": {
+    "path": "reports/m6e_guard_historical_replay.json",
+    "bytes": 46072,
+    "sha256": "45ba507ebf234fd4122ac7d1dbc6ad6beec373a648b0396f282806b5e1e8ddfe"
+  },
+  "reference": "Raw CARLA pose and velocity, XY forward projection; route-forward tracked independently. Pose quantization and finite .05s samples remain."
+}

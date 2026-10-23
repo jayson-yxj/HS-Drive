@@ -1,0 +1,2147 @@
+{
+  "kind": "synthetic_offline_and_actual_CARLA_guard_separate_evidence",
+  "source": "Privileged",
+  "base": "ba5ba6e759b807d5e3740061bebf72b7d1ced565",
+  "git_head": "bc1b688d0b4c99b08647b3aa2aefcd593b8c262c",
+  "sources": {
+    "configs/m6e/physics_P1.json": "e1d99fd1a59526487d6aeea737c1045efcc04468880af0d5c8cbcab4e3a2d356",
+    "configs/m6e/protocol.json": "d5c15e45e1082674dcabb2d32cda96ffef276a98989bbb52944c82c6ae2ca299",
+    "simulator/m6e_actuation.py": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+    "simulator/m6e_guard.py": "6709ceb0d133ee5038f5a761a9697e3a7ce2b67e282fe02281e9cf2b0e9ef1dc",
+    "tests/test_m6e_actuation.py": "003d0a227853d7da3d2438d3bba8cb65b61bf10ae7b7c7db918ef44df7106386",
+    "tests/test_m6e_guard.py": "f1d0cb3e052e5c048044565683847e9bb72e1bffcf31bf9f4733a01d2d5bd53f",
+    "tools/m6e_analyze.py": "45bc3058907a826e04af47513205cf5f62c86036ac243dd53c4b4b7041932976",
+    "tools/m6e_common.py": "752f381796181078341d6a14f7b7bf5ceeff4a089b96f6de5b65a506b8ea3dab",
+    "tools/m6e_figures.py": "7c8178a957185710862c58e6b94a9b4d8a3ccc3857d02595b1add5a9b0e0b3af",
+    "tools/m6e_finalize.py": "6a8b94a1ee4a7d1595b34786c6b9f44e7907f7f0180531b8112467ee0e500340",
+    "tools/m6e_guard_audit.py": "1f09ad54a1b49ea8d5d7f24acb23f425cfaf8ed31c5afd5d05711717a3d2c035",
+    "tools/m6e_preserve.py": "696936193a14f71060dd4bb81ef723dc3ec9efd9950dc892fe27a9d687c90a48",
+    "tools/m6e_probe.py": "a5f1cdbb3bacd31bf947299407f505a3b4917dfb6df1efd61d6d3ee5f6a23cdf",
+    "tools/m6e_release.py": "6ccb9297ea6c96335df9bcfe885014513058538a008e481d565c5980193bd9bd",
+    "tools/m6e_runtime_plot.py": "9b35643209973b5a51117a1c5d33e224e1aa76ff0e7da9969c53346d69091366",
+    "tools/m6e_select_variant.py": "4b8a035a95101c96ff13bebbe07209053b55a4a1d580dfd825b0619c24b5cfcd",
+    "tools/m6e_sequential.py": "c38c9477809a026ad41ad32ec18cb36658a8be8c664d51a9ebd866e40678f3fe"
+  },
+  "visual_control": false,
+  "config": {
+    "path": "configs/m6e/protocol.json",
+    "bytes": 2455,
+    "sha256": "d5c15e45e1082674dcabb2d32cda96ffef276a98989bbb52944c82c6ae2ca299"
+  },
+  "known_failure_replay": {
+    "detected": 2,
+    "total": 2
+  },
+  "historical_quiet_segments": 72,
+  "historical_quiet_false": 0,
+  "live": [
+    {
+      "name": "P0_guard_p27_s301",
+      "split": "development",
+      "risk": true,
+      "emergency": true,
+      "risk_to_apply_s": 0.30000000447034836,
+      "observation_to_apply_ms": 0.6081815809011459,
+      "confirmed_net_m": 0.008163315432903672,
+      "final_stopped": true,
+      "trace": {
+        "path": "reports/m6e_trials/P0_guard_p27_s301/trace.jsonl",
+        "bytes": 482010,
+        "sha256": "94267e3ca3dd6ff7dfe5e11c1cb64bd3c91e4f1c204c1cdac36591b58ed2407e"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "start_t": 802.4073079228401,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 1.9600002765655518,
+          "start_delay_s": null,
+          "stop_duration_s": 0.800000011920929,
+          "stopped_travel_m": 0.010475182162870385,
+          "total_travel_m": 0.010391259134879939,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.012138405061921327,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.0028219500976655733,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 0.21219038494803555,
+            "jerk_peak_raw": 5.435182842807966,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 3.026815126805362,
+            "max_decel_250ms": 0.04476920000415624,
+            "jerk_p95_250ms": 0.4323926207899127,
+            "min_signed_speed": -0.0046229906921005075,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.03057296729572057
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "prepare": {
+          "ticks": 46,
+          "start_t": 803.9073079451919,
+          "initial_speed": 0.0,
+          "final_speed": 0.503250337139738,
+          "max_speed": 0.5033288166288509,
+          "start_delay_s": 2.2500000335276127,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.011932411904643114,
+          "net_backward_excursion_m": 2.288809861760974e-05,
+          "backward_frames": 0,
+          "max_displacement_m": 0.01193241207184715,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": null,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 0.0007485549811272125,
+            "jerk_peak_raw": 201.34647851478852,
+            "jerk_p95_moving": 201.34647851478852,
+            "jerk_p95_all": 0.014974681209583602,
+            "max_decel_250ms": 0.0001340664180094709,
+            "jerk_p95_250ms": 0.002959417710839269,
+            "min_signed_speed": -3.757535724642853e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.05,
+            "api_accel_vs_velocity_derivative_mae": 2.9044687163647188e-08
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.20000000298023224
+          ]
+        },
+        "warm_stop": {
+          "ticks": 6,
+          "start_t": 806.2073079794645,
+          "initial_speed": 1.092162571033039,
+          "final_speed": -7.840171060429726e-05,
+          "max_speed": 1.0923330222156087,
+          "start_delay_s": 0.0,
+          "stop_duration_s": null,
+          "stopped_travel_m": null,
+          "total_travel_m": 0.04888513583569311,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.048984071729297696,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": null,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 11.951027420695564,
+            "jerk_peak_raw": 474.6221111530199,
+            "jerk_p95_moving": 433.07871395031043,
+            "jerk_p95_all": 405.383115815171,
+            "max_decel_250ms": 4.369644016890974,
+            "jerk_p95_250ms": 46.77970555341925,
+            "min_signed_speed": -7.829676690600438e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 1.4289269796749894e-05
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.20000000298023224
+          ]
+        },
+        "guard_hold": {
+          "ticks": 60,
+          "start_t": 806.5073079839349,
+          "initial_speed": -7.719840166694385e-05,
+          "final_speed": 0.0,
+          "max_speed": 8.151174444746271e-05,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 3.814973648602922e-05,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 3.8902431591741825e-05,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": null,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0004176715351778125,
+            "jerk_peak_raw": 0.022748769187041815,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.002607127065919606,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.000556920925277037,
+            "min_signed_speed": -7.829676690600438e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 1.7164375958189547e-10
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.009999999776482582,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "guard_release": {
+          "ticks": 10,
+          "start_t": 809.5073080286384,
+          "initial_speed": 0.0,
+          "final_speed": 0.0383335227345621,
+          "max_speed": 0.08081656130824783,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": -0.011238097410123299,
+          "net_backward_excursion_m": 0.011238097410123299,
+          "backward_frames": 4,
+          "max_displacement_m": 0.01123809814453125,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": null,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 2.07640510900833,
+            "jerk_peak_raw": 79.3220099134848,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 79.14984100540732,
+            "max_decel_250ms": 0.4271760590001362,
+            "jerk_p95_250ms": 16.39816810600105,
+            "min_signed_speed": -0.08081169008005268,
+            "reverse_ticks": 4,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 1.3093968807200504e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "protected_stop": {
+          "ticks": 40,
+          "start_t": 810.007308036089,
+          "initial_speed": -0.039956603106299005,
+          "final_speed": 0.0,
+          "max_speed": 0.03995932249782428,
+          "start_delay_s": null,
+          "stop_duration_s": 0.05000000074505806,
+          "stopped_travel_m": 0.000625610312583718,
+          "total_travel_m": 0.000625610312583718,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 1,
+          "max_displacement_m": 0.0006256103515625,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": null,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 1.5660790786242742,
+            "jerk_peak_raw": 73.4070906654739,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 17.5365711314199,
+            "max_decel_250ms": 0.15352532982621983,
+            "jerk_p95_250ms": 3.961596743280535,
+            "min_signed_speed": -0.06686840981147671,
+            "reverse_ticks": 1,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 2.8171820812446704e-09
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        }
+      }
+    },
+    {
+      "name": "P0_guard_p27_s302",
+      "split": "development",
+      "risk": true,
+      "emergency": true,
+      "risk_to_apply_s": 0.30000000447034836,
+      "observation_to_apply_ms": 0.6043519824743271,
+      "confirmed_net_m": 0.008163315432903672,
+      "final_stopped": true,
+      "trace": {
+        "path": "reports/m6e_trials/P0_guard_p27_s302/trace.jsonl",
+        "bytes": 481991,
+        "sha256": "71bd358ee7e4620d52cf6e829276f72f31c83837bae18d0f151048511e6e597f"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "start_t": 812.5416919663548,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 1.9600002765655518,
+          "start_delay_s": null,
+          "stop_duration_s": 0.800000011920929,
+          "stopped_travel_m": 0.010475182162870385,
+          "total_travel_m": 0.010391259134879939,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.012138405061921327,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.0028219500976655733,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 0.21219038494803555,
+            "jerk_peak_raw": 5.435182842807966,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 3.026815126805362,
+            "max_decel_250ms": 0.04476920000415624,
+            "jerk_p95_250ms": 0.4323926207899127,
+            "min_signed_speed": -0.0046229906921005075,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.03057296729572057
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "prepare": {
+          "ticks": 46,
+          "start_t": 814.0416919887066,
+          "initial_speed": 0.0,
+          "final_speed": 0.503250337139738,
+          "max_speed": 0.5033288166288509,
+          "start_delay_s": 2.2500000335276127,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.011932411904643114,
+          "net_backward_excursion_m": 2.288809861760974e-05,
+          "backward_frames": 0,
+          "max_displacement_m": 0.01193241207184715,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": null,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 0.0007485549811272125,
+            "jerk_peak_raw": 201.34647851478852,
+            "jerk_p95_moving": 201.34647851478852,
+            "jerk_p95_all": 0.014974681209583602,
+            "max_decel_250ms": 0.0001340664180094709,
+            "jerk_p95_250ms": 0.002959417710839269,
+            "min_signed_speed": -3.757535724642853e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.05,
+            "api_accel_vs_velocity_derivative_mae": 2.9044687163647188e-08
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.20000000298023224
+          ]
+        },
+        "warm_stop": {
+          "ticks": 6,
+          "start_t": 816.3416920229793,
+          "initial_speed": 1.092162571033039,
+          "final_speed": -7.840171060429726e-05,
+          "max_speed": 1.0923330222156087,
+          "start_delay_s": 0.0,
+          "stop_duration_s": null,
+          "stopped_travel_m": null,
+          "total_travel_m": 0.04888513583569311,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.048984071729297696,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": null,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 11.951027420695564,
+            "jerk_peak_raw": 474.6221111530199,
+            "jerk_p95_moving": 433.07871395031043,
+            "jerk_p95_all": 405.383115815171,
+            "max_decel_250ms": 4.369644016890974,
+            "jerk_p95_250ms": 46.77970555341925,
+            "min_signed_speed": -7.829676690600438e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 1.4289269796749894e-05
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.20000000298023224
+          ]
+        },
+        "guard_hold": {
+          "ticks": 60,
+          "start_t": 816.6416920274496,
+          "initial_speed": -7.719840166694385e-05,
+          "final_speed": 0.0,
+          "max_speed": 8.151174444746271e-05,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 3.814973648602922e-05,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 3.8902431591741825e-05,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": null,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0004176715351778125,
+            "jerk_peak_raw": 0.022748769187041815,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.002607127065919606,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.000556920925277037,
+            "min_signed_speed": -7.829676690600438e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 1.7164375958189547e-10
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.009999999776482582,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "guard_release": {
+          "ticks": 10,
+          "start_t": 819.6416920721531,
+          "initial_speed": 0.0,
+          "final_speed": 0.0383335227345621,
+          "max_speed": 0.08081656130824783,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": -0.011238097410123299,
+          "net_backward_excursion_m": 0.011238097410123299,
+          "backward_frames": 4,
+          "max_displacement_m": 0.01123809814453125,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": null,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 2.07640510900833,
+            "jerk_peak_raw": 79.3220099134848,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 79.14984100540732,
+            "max_decel_250ms": 0.4271760590001362,
+            "jerk_p95_250ms": 16.39816810600105,
+            "min_signed_speed": -0.08081169008005268,
+            "reverse_ticks": 4,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 1.3093968807200504e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        },
+        "protected_stop": {
+          "ticks": 40,
+          "start_t": 820.1416920796037,
+          "initial_speed": -0.039956603106299005,
+          "final_speed": 0.0,
+          "max_speed": 0.03995932249782428,
+          "start_delay_s": null,
+          "stop_duration_s": 0.05000000074505806,
+          "stopped_travel_m": 0.000625610312583718,
+          "total_travel_m": 0.000625610312583718,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 1,
+          "max_displacement_m": 0.0006256103515625,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": null,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 1.5660790786242742,
+            "jerk_peak_raw": 73.4070906654739,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 17.5365711314199,
+            "max_decel_250ms": 0.15352532982621983,
+            "jerk_p95_250ms": 3.961596743280535,
+            "min_signed_speed": -0.06686840981147671,
+            "reverse_ticks": 1,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 2.8171820812446704e-09
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        }
+      }
+    },
+    {
+      "name": "P0_guard_p66_s301",
+      "split": "validation",
+      "risk": false,
+      "emergency": false,
+      "risk_to_apply_s": null,
+      "observation_to_apply_ms": null,
+      "confirmed_net_m": null,
+      "final_stopped": false,
+      "trace": {
+        "path": "reports/m6e_trials/P0_guard_p66_s301/trace.jsonl",
+        "bytes": 688978,
+        "sha256": "51d817b915698ab7f33239e90e754d6e846510187f180e9dd75624ab14a0580c"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "start_t": 822.6838618740439,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 3.116399778482277,
+          "start_delay_s": null,
+          "stop_duration_s": 1.0000000149011612,
+          "stopped_travel_m": -0.0050201567989145695,
+          "total_travel_m": -0.005043044979410878,
+          "net_backward_excursion_m": 0.006263740000851978,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0062637514957426385,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.0035362839662231387,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 0.1020844222591919,
+            "jerk_peak_raw": 4.9899750511399095,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 2.898896353829477,
+            "max_decel_250ms": 0.02041688445183838,
+            "jerk_p95_250ms": 0.5646027525408686,
+            "min_signed_speed": -0.005104221189018416,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.024196220136879904
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "prepare": {
+          "ticks": 46,
+          "start_t": 824.1838618963957,
+          "initial_speed": 0.0,
+          "final_speed": 0.5114921984024164,
+          "max_speed": 0.5115253313494875,
+          "start_delay_s": 2.2500000335276127,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.012115476895293438,
+          "net_backward_excursion_m": 7.629393510890075e-06,
+          "backward_frames": 0,
+          "max_displacement_m": 0.012115478515625,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": null,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 0.0004830394013198251,
+            "jerk_peak_raw": 204.60046826264863,
+            "jerk_p95_moving": 204.60046826264863,
+            "jerk_p95_all": 0.010553107513315688,
+            "max_decel_250ms": 9.650040359734099e-05,
+            "jerk_p95_250ms": 0.00193225636917364,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.05,
+            "api_accel_vs_velocity_derivative_mae": 7.556660997126645e-09
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.20000000298023224
+          ]
+        },
+        "warm_stop": {
+          "ticks": 14,
+          "start_t": 826.4838619306684,
+          "initial_speed": 1.1112910416685136,
+          "final_speed": -0.00012547453902711375,
+          "max_speed": 1.747193612388608,
+          "start_delay_s": 0.0,
+          "stop_duration_s": null,
+          "stopped_travel_m": null,
+          "total_travel_m": 0.6749576668105435,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.6749580965581718,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": null,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 22.759836053205206,
+            "jerk_peak_raw": 385.9089620376302,
+            "jerk_p95_moving": 352.9255457740535,
+            "jerk_p95_all": 343.0305208949805,
+            "max_decel_250ms": 6.892931196498046,
+            "jerk_p95_250ms": 76.14037435942672,
+            "min_signed_speed": -0.0001426921547823686,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.25,
+            "api_accel_vs_velocity_derivative_mae": 6.839559112025835e-06
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.20000000298023224
+          ]
+        },
+        "guard_hold": {
+          "ticks": 60,
+          "start_t": 827.1838619410992,
+          "initial_speed": -9.62624156817966e-05,
+          "final_speed": 0.0,
+          "max_speed": 9.659671385654405e-05,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.0001296992433094118,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.00012969970703125,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": null,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0,
+            "jerk_peak_raw": 0.011222313312642397,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.0021630115348947932,
+            "max_decel_250ms": 0.0,
+            "jerk_p95_250ms": 0.001923625936160802,
+            "min_signed_speed": -0.0001426921547823686,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 5.51415317396029e-10
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.009999999776482582,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "guard_release": {
+          "ticks": 120,
+          "start_t": 830.1838619858027,
+          "initial_speed": 0.0,
+          "final_speed": 2.227867564269352,
+          "max_speed": 2.2280118884762037,
+          "start_delay_s": 0.5500000081956387,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 7.616793930611858,
+          "net_backward_excursion_m": 0.00048827950265853523,
+          "backward_frames": 2,
+          "max_displacement_m": 7.616796418174051,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": null,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 1.8585118480696348,
+            "jerk_peak_raw": 78.85278455816236,
+            "jerk_p95_moving": 59.95026804405846,
+            "jerk_p95_all": 65.50615072219843,
+            "max_decel_250ms": 0.2755786880323979,
+            "jerk_p95_250ms": 12.338445460653684,
+            "min_signed_speed": -0.04489643340360763,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.75,
+            "api_accel_vs_velocity_derivative_mae": 7.106687543142779e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        }
+      }
+    },
+    {
+      "name": "P0_guard_p66_s302",
+      "split": "validation",
+      "risk": false,
+      "emergency": false,
+      "risk_to_apply_s": null,
+      "observation_to_apply_ms": null,
+      "confirmed_net_m": null,
+      "final_stopped": false,
+      "trace": {
+        "path": "reports/m6e_trials/P0_guard_p66_s302/trace.jsonl",
+        "bytes": 673405,
+        "sha256": "3ebb386c1f3133dee9927807660fe14a223c3b1f91b653834c8bc30cf4706225"
+      },
+      "phases": {
+        "initialize": {
+          "ticks": 30,
+          "start_t": 836.7318916320801,
+          "initial_speed": 0.0,
+          "final_speed": 0.0,
+          "max_speed": 3.116399778482277,
+          "start_delay_s": null,
+          "stop_duration_s": 1.0000000149011612,
+          "stopped_travel_m": -0.0050201567989145695,
+          "total_travel_m": -0.005043044979410878,
+          "net_backward_excursion_m": 0.006263740000851978,
+          "backward_frames": 0,
+          "max_displacement_m": 0.0062637514957426385,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": 0.0035362839662231387,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 0.1020844222591919,
+            "jerk_peak_raw": 4.9899750511399095,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 2.898896353829477,
+            "max_decel_250ms": 0.02041688445183838,
+            "jerk_p95_250ms": 0.5646027525408686,
+            "min_signed_speed": -0.005104221189018416,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 0.024196220136879904
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "prepare": {
+          "ticks": 47,
+          "start_t": 838.2318916544318,
+          "initial_speed": 0.0,
+          "final_speed": 0.5114921984024164,
+          "max_speed": 0.5115253313494875,
+          "start_delay_s": 2.3000000342726707,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 0.012115476895293438,
+          "net_backward_excursion_m": 7.629393510890075e-06,
+          "backward_frames": 0,
+          "max_displacement_m": 0.012115478515625,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": null,
+          "actual_gear": [
+            0
+          ],
+          "raw": {
+            "max_decel_raw": 0.0004830394013198251,
+            "jerk_peak_raw": 204.60046826264863,
+            "jerk_p95_moving": 204.60046826264863,
+            "jerk_p95_all": 0.010549311551130213,
+            "max_decel_250ms": 9.650040359734099e-05,
+            "jerk_p95_250ms": 0.0019322386664535893,
+            "min_signed_speed": 0.0,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.05,
+            "api_accel_vs_velocity_derivative_mae": 7.399230559686506e-09
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            1.0
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.20000000298023224
+          ]
+        },
+        "warm_stop": {
+          "ticks": 6,
+          "start_t": 840.5818916894495,
+          "initial_speed": 1.1112910416685136,
+          "final_speed": -2.1441139060282522e-05,
+          "max_speed": 1.1113630408729993,
+          "start_delay_s": 0.0,
+          "stop_duration_s": null,
+          "stopped_travel_m": null,
+          "total_travel_m": 0.07211971840410995,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 0.07229855953248794,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": null,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 18.53060953574792,
+            "jerk_peak_raw": 368.30391118725487,
+            "jerk_p95_moving": 359.7819680755772,
+            "jerk_p95_all": 354.1006726677921,
+            "max_decel_250ms": 4.445536659554258,
+            "jerk_p95_250ms": 47.63732705045235,
+            "min_signed_speed": -2.1449900382190478e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.15000000000000002,
+            "api_accel_vs_velocity_derivative_mae": 3.178663374807858e-05
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.009999999776482582
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.20000000298023224
+          ]
+        },
+        "guard_hold": {
+          "ticks": 60,
+          "start_t": 840.8818916939199,
+          "initial_speed": -2.4849176311460666e-05,
+          "final_speed": 0.0,
+          "max_speed": 4.500160744379927e-05,
+          "start_delay_s": null,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 6.866350575035872e-05,
+          "net_backward_excursion_m": 0.0,
+          "backward_frames": 0,
+          "max_displacement_m": 6.866455078125e-05,
+          "final_stable_1s": true,
+          "hold_passed": true,
+          "reference_speed_RMSE_mps": null,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 0.0008079553807057672,
+            "jerk_peak_raw": 0.014798100487184496,
+            "jerk_p95_moving": 0.0,
+            "jerk_p95_all": 0.002225384776052833,
+            "max_decel_250ms": 7.97580333870726e-05,
+            "jerk_p95_250ms": 0.0005842063968821365,
+            "min_signed_speed": -2.4852417698946857e-05,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 0.0,
+            "api_accel_vs_velocity_derivative_mae": 6.318279602681413e-11
+          },
+          "comfort_passed": true,
+          "applied_brake_range": [
+            0.009999999776482582,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "guard_release": {
+          "ticks": 120,
+          "start_t": 843.8818917386234,
+          "initial_speed": 0.0,
+          "final_speed": 2.1823643150335164,
+          "max_speed": 2.2288547067842206,
+          "start_delay_s": 0.5000000074505806,
+          "stop_duration_s": 0.0,
+          "stopped_travel_m": 0.0,
+          "total_travel_m": 7.74144980357778,
+          "net_backward_excursion_m": 0.0008544791851820121,
+          "backward_frames": 2,
+          "max_displacement_m": 7.741451014808625,
+          "final_stable_1s": false,
+          "hold_passed": false,
+          "reference_speed_RMSE_mps": null,
+          "actual_gear": [
+            1
+          ],
+          "raw": {
+            "max_decel_raw": 1.848070908188791,
+            "jerk_peak_raw": 78.81205339634096,
+            "jerk_p95_moving": 60.94386248693316,
+            "jerk_p95_all": 67.9042929225114,
+            "max_decel_250ms": 0.2668492504599558,
+            "jerk_p95_250ms": 12.409190461509864,
+            "min_signed_speed": -0.048197855906130294,
+            "reverse_ticks": 0,
+            "low_speed_moving_seconds": 2.75,
+            "api_accel_vs_velocity_derivative_mae": 7.187418287734436e-07
+          },
+          "comfort_passed": false,
+          "applied_brake_range": [
+            0.0,
+            0.11999999731779099
+          ],
+          "applied_throttle_range": [
+            0.0,
+            0.15000000596046448
+          ]
+        }
+      }
+    }
+  ],
+  "quiet_hold_controls": [
+    {
+      "name": "P0_development_p126_s301_A",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p126_s301_A",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p126_s301_A",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p126_s301_B",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p126_s301_B",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p126_s301_B",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p126_s301_C",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p126_s301_C",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p126_s301_C",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p126_s302_A",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p126_s302_A",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p126_s302_A",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p126_s302_B",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p126_s302_B",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p126_s302_B",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p126_s302_C",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p126_s302_C",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p126_s302_C",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p27_s301_A",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p27_s301_A",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p27_s301_A",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 40,
+      "emergency_ticks": 40
+    },
+    {
+      "name": "P0_development_p27_s301_B",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p27_s301_B",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p27_s301_B",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p27_s301_C",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p27_s301_C",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p27_s301_C",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 40,
+      "emergency_ticks": 40
+    },
+    {
+      "name": "P0_development_p27_s302_A",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p27_s302_A",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p27_s302_A",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 40,
+      "emergency_ticks": 40
+    },
+    {
+      "name": "P0_development_p27_s302_B",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p27_s302_B",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p27_s302_B",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p27_s302_C",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p27_s302_C",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_development_p27_s302_C",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 40,
+      "emergency_ticks": 40
+    },
+    {
+      "name": "P0_guard_p27_s301",
+      "phase": "guard_hold",
+      "n": 60,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_guard_p27_s302",
+      "phase": "guard_hold",
+      "n": 60,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_guard_p66_s301",
+      "phase": "guard_hold",
+      "n": 60,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_guard_p66_s302",
+      "phase": "guard_hold",
+      "n": 60,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p170_s301_A",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p170_s301_A",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p170_s301_A",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p170_s301_B",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p170_s301_B",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p170_s301_B",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p170_s301_C",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p170_s301_C",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p170_s301_C",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p170_s302_A",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p170_s302_A",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p170_s302_A",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p170_s302_B",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p170_s302_B",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p170_s302_B",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p170_s302_C",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p170_s302_C",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p170_s302_C",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p66_s301_A",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p66_s301_A",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p66_s301_A",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p66_s301_B",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p66_s301_B",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p66_s301_B",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p66_s301_C",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p66_s301_C",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p66_s301_C",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p66_s302_A",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p66_s302_A",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p66_s302_A",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p66_s302_B",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p66_s302_B",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p66_s302_B",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p66_s302_C",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p66_s302_C",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P0_validation_p66_s302_C",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P1_development_p27_s301_A",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P1_development_p27_s301_A",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P1_development_p27_s301_A",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 40,
+      "emergency_ticks": 40
+    },
+    {
+      "name": "P1_development_p27_s302_A",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P1_development_p27_s302_A",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P1_development_p27_s302_A",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 40,
+      "emergency_ticks": 40
+    },
+    {
+      "name": "P1_validation_p66_s301_A",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P1_validation_p66_s301_A",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P1_validation_p66_s301_A",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P1_validation_p66_s302_A",
+      "phase": "hold_initial",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P1_validation_p66_s302_A",
+      "phase": "hold_warm",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    },
+    {
+      "name": "P1_validation_p66_s302_A",
+      "phase": "hold_final",
+      "n": 40,
+      "risk_ticks": 0,
+      "emergency_ticks": 0
+    }
+  ],
+  "all_event_logs": [
+    {
+      "name": "P0_development_p126_s301_A",
+      "mode": "cycle",
+      "events": []
+    },
+    {
+      "name": "P0_development_p126_s301_B",
+      "mode": "cycle",
+      "events": []
+    },
+    {
+      "name": "P0_development_p126_s301_C",
+      "mode": "cycle",
+      "events": []
+    },
+    {
+      "name": "P0_development_p126_s301_coast",
+      "mode": "coast",
+      "events": []
+    },
+    {
+      "name": "P0_development_p126_s301_emergency",
+      "mode": "emergency",
+      "events": []
+    },
+    {
+      "name": "P0_development_p126_s301_obstacle",
+      "mode": "obstacle",
+      "events": []
+    },
+    {
+      "name": "P0_development_p126_s302_A",
+      "mode": "cycle",
+      "events": []
+    },
+    {
+      "name": "P0_development_p126_s302_B",
+      "mode": "cycle",
+      "events": []
+    },
+    {
+      "name": "P0_development_p126_s302_C",
+      "mode": "cycle",
+      "events": []
+    },
+    {
+      "name": "P0_development_p126_s302_coast",
+      "mode": "coast",
+      "events": []
+    },
+    {
+      "name": "P0_development_p126_s302_emergency",
+      "mode": "emergency",
+      "events": []
+    },
+    {
+      "name": "P0_development_p126_s302_obstacle",
+      "mode": "obstacle",
+      "events": []
+    },
+    {
+      "name": "P0_development_p27_s301_A",
+      "mode": "cycle",
+      "events": [
+        {
+          "level": "risk",
+          "risk": true,
+          "emergency": false,
+          "reason": "BackwardRisk",
+          "frame_id": 21175,
+          "timestamp_s": 23.655686050653458,
+          "source": "Privileged",
+          "net_backward_m": 0.004302962465079011,
+          "window_backward_m": 0.004638654553220855,
+          "route_net_backward_m": 0.0043029625182445675,
+          "route_window_backward_m": 0.00463865462959698,
+          "negative_samples": 2
+        },
+        {
+          "level": "emergency",
+          "risk": true,
+          "emergency": true,
+          "reason": "RollbackDisplacementConfirmed",
+          "frame_id": 21179,
+          "timestamp_s": 23.85568605363369,
+          "source": "Privileged",
+          "net_backward_m": 0.009498560760679732,
+          "window_backward_m": 0.00983425281758411,
+          "route_net_backward_m": 0.00949856087803987,
+          "route_window_backward_m": 0.009834252989392282,
+          "negative_samples": 4
+        }
+      ]
+    },
+    {
+      "name": "P0_development_p27_s301_B",
+      "mode": "cycle",
+      "events": []
+    },
+    {
+      "name": "P0_development_p27_s301_C",
+      "mode": "cycle",
+      "events": [
+        {
+          "level": "risk",
+          "risk": true,
+          "emergency": false,
+          "reason": "BackwardRisk",
+          "frame_id": 22502,
+          "timestamp_s": 88.34739826619625,
+          "source": "Privileged",
+          "net_backward_m": 0.002418480164004278,
+          "window_backward_m": 0.011100756545225887,
+          "route_net_backward_m": 0.002418571486636007,
+          "route_window_backward_m": 0.01110072777313093,
+          "negative_samples": 5
+        },
+        {
+          "level": "emergency",
+          "risk": true,
+          "emergency": true,
+          "reason": "RollbackDisplacementConfirmed",
+          "frame_id": 22504,
+          "timestamp_s": 88.44739826768637,
+          "source": "Privileged",
+          "net_backward_m": 0.006317096194494903,
+          "window_backward_m": 0.014999372764117811,
+          "route_net_backward_m": 0.006317177598024258,
+          "route_window_backward_m": 0.01499933388451918,
+          "negative_samples": 6
+        }
+      ]
+    },
+    {
+      "name": "P0_development_p27_s302_A",
+      "mode": "cycle",
+      "events": [
+        {
+          "level": "risk",
+          "risk": true,
+          "emergency": false,
+          "reason": "BackwardRisk",
+          "frame_id": 23149,
+          "timestamp_s": 119.82958324626088,
+          "source": "Privileged",
+          "net_backward_m": 0.004302962465079011,
+          "window_backward_m": 0.004638654553220855,
+          "route_net_backward_m": 0.0043029625182445675,
+          "route_window_backward_m": 0.00463865462959698,
+          "negative_samples": 2
+        },
+        {
+          "level": "emergency",
+          "risk": true,
+          "emergency": true,
+          "reason": "RollbackDisplacementConfirmed",
+          "frame_id": 23153,
+          "timestamp_s": 120.02958324924111,
+          "source": "Privileged",
+          "net_backward_m": 0.009498560760679732,
+          "window_backward_m": 0.00983425281758411,
+          "route_net_backward_m": 0.00949856087803987,
+          "route_window_backward_m": 0.009834252989392282,
+          "negative_samples": 4
+        }
+      ]
+    },
+    {
+      "name": "P0_development_p27_s302_B",
+      "mode": "cycle",
+      "events": []
+    },
+    {
+      "name": "P0_development_p27_s302_C",
+      "mode": "cycle",
+      "events": [
+        {
+          "level": "risk",
+          "risk": true,
+          "emergency": false,
+          "reason": "BackwardRisk",
+          "frame_id": 24487,
+          "timestamp_s": 184.9610209427774,
+          "source": "Privileged",
+          "net_backward_m": 0.0037842780314562086,
+          "window_backward_m": 0.006126614536596428,
+          "route_net_backward_m": 0.003784248834435364,
+          "route_window_backward_m": 0.006126547463288773,
+          "negative_samples": 5
+        },
+        {
+          "level": "emergency",
+          "risk": true,
+          "emergency": true,
+          "reason": "RollbackDisplacementConfirmed",
+          "frame_id": 24490,
+          "timestamp_s": 185.11102094501257,
+          "source": "Privileged",
+          "net_backward_m": 0.008354375916608169,
+          "window_backward_m": 0.010040556972337331,
+          "route_net_backward_m": 0.008354322384082059,
+          "route_window_backward_m": 0.010040474718676437,
+          "negative_samples": 5
+        }
+      ]
+    },
+    {
+      "name": "P0_guard_p27_s301",
+      "mode": "guard",
+      "events": [
+        {
+          "level": "risk",
+          "risk": true,
+          "emergency": false,
+          "reason": "BackwardRisk",
+          "frame_id": 40820,
+          "timestamp_s": 809.7073080316186,
+          "source": "Privileged",
+          "net_backward_m": 0.001876695437381514,
+          "window_backward_m": 0.0054473873419908685,
+          "route_net_backward_m": 0.0018761999604545423,
+          "route_window_backward_m": 0.005447367443309611,
+          "negative_samples": 2
+        },
+        {
+          "level": "emergency",
+          "risk": true,
+          "emergency": true,
+          "reason": "RollbackDisplacementConfirmed",
+          "frame_id": 40826,
+          "timestamp_s": 810.007308036089,
+          "source": "Privileged",
+          "net_backward_m": 0.008163315432903672,
+          "window_backward_m": 0.011734008026192212,
+          "route_net_backward_m": 0.008162797682145187,
+          "route_window_backward_m": 0.011733965165000255,
+          "negative_samples": 5
+        }
+      ]
+    },
+    {
+      "name": "P0_guard_p27_s302",
+      "mode": "guard",
+      "events": [
+        {
+          "level": "risk",
+          "risk": true,
+          "emergency": false,
+          "reason": "BackwardRisk",
+          "frame_id": 41045,
+          "timestamp_s": 819.8416920751333,
+          "source": "Privileged",
+          "net_backward_m": 0.001876695437381514,
+          "window_backward_m": 0.0054473873419908685,
+          "route_net_backward_m": 0.0018761999604545423,
+          "route_window_backward_m": 0.005447367443309611,
+          "negative_samples": 2
+        },
+        {
+          "level": "emergency",
+          "risk": true,
+          "emergency": true,
+          "reason": "RollbackDisplacementConfirmed",
+          "frame_id": 41051,
+          "timestamp_s": 820.1416920796037,
+          "source": "Privileged",
+          "net_backward_m": 0.008163315432903672,
+          "window_backward_m": 0.011734008026192212,
+          "route_net_backward_m": 0.008162797682145187,
+          "route_window_backward_m": 0.011733965165000255,
+          "negative_samples": 5
+        }
+      ]
+    },
+    {
+      "name": "P0_guard_p66_s301",
+      "mode": "guard",
+      "events": []
+    },
+    {
+      "name": "P0_guard_p66_s302",
+      "mode": "guard",
+      "events": []
+    },
+    {
+      "name": "P0_validation_p170_s301_A",
+      "mode": "cycle",
+      "events": []
+    },
+    {
+      "name": "P0_validation_p170_s301_B",
+      "mode": "cycle",
+      "events": []
+    },
+    {
+      "name": "P0_validation_p170_s301_C",
+      "mode": "cycle",
+      "events": []
+    },
+    {
+      "name": "P0_validation_p170_s301_coast",
+      "mode": "coast",
+      "events": []
+    },
+    {
+      "name": "P0_validation_p170_s301_emergency",
+      "mode": "emergency",
+      "events": []
+    },
+    {
+      "name": "P0_validation_p170_s301_obstacle",
+      "mode": "obstacle",
+      "events": []
+    },
+    {
+      "name": "P0_validation_p170_s302_A",
+      "mode": "cycle",
+      "events": []
+    },
+    {
+      "name": "P0_validation_p170_s302_B",
+      "mode": "cycle",
+      "events": []
+    },
+    {
+      "name": "P0_validation_p170_s302_C",
+      "mode": "cycle",
+      "events": []
+    },
+    {
+      "name": "P0_validation_p170_s302_coast",
+      "mode": "coast",
+      "events": []
+    },
+    {
+      "name": "P0_validation_p170_s302_emergency",
+      "mode": "emergency",
+      "events": []
+    },
+    {
+      "name": "P0_validation_p170_s302_obstacle",
+      "mode": "obstacle",
+      "events": []
+    },
+    {
+      "name": "P0_validation_p66_s301_A",
+      "mode": "cycle",
+      "events": []
+    },
+    {
+      "name": "P0_validation_p66_s301_B",
+      "mode": "cycle",
+      "events": []
+    },
+    {
+      "name": "P0_validation_p66_s301_C",
+      "mode": "cycle",
+      "events": []
+    },
+    {
+      "name": "P0_validation_p66_s302_A",
+      "mode": "cycle",
+      "events": []
+    },
+    {
+      "name": "P0_validation_p66_s302_B",
+      "mode": "cycle",
+      "events": []
+    },
+    {
+      "name": "P0_validation_p66_s302_C",
+      "mode": "cycle",
+      "events": []
+    },
+    {
+      "name": "P1_development_p126_s301_coast",
+      "mode": "coast",
+      "events": []
+    },
+    {
+      "name": "P1_development_p126_s301_emergency",
+      "mode": "emergency",
+      "events": []
+    },
+    {
+      "name": "P1_development_p126_s301_obstacle",
+      "mode": "obstacle",
+      "events": []
+    },
+    {
+      "name": "P1_development_p126_s302_coast",
+      "mode": "coast",
+      "events": []
+    },
+    {
+      "name": "P1_development_p126_s302_emergency",
+      "mode": "emergency",
+      "events": []
+    },
+    {
+      "name": "P1_development_p126_s302_obstacle",
+      "mode": "obstacle",
+      "events": []
+    },
+    {
+      "name": "P1_development_p27_s301_A",
+      "mode": "cycle",
+      "events": [
+        {
+          "level": "risk",
+          "risk": true,
+          "emergency": false,
+          "reason": "BackwardRisk",
+          "frame_id": 42126,
+          "timestamp_s": 869.0918076969683,
+          "source": "Privileged",
+          "net_backward_m": 0.00302883169477717,
+          "window_backward_m": 0.004676796605090608,
+          "route_net_backward_m": 0.0030288375644504134,
+          "route_window_backward_m": 0.004676801460432482,
+          "negative_samples": 2
+        },
+        {
+          "level": "emergency",
+          "risk": true,
+          "emergency": true,
+          "reason": "RollbackDisplacementConfirmed",
+          "frame_id": 42130,
+          "timestamp_s": 869.2918076999485,
+          "source": "Privileged",
+          "net_backward_m": 0.008277830169225951,
+          "window_backward_m": 0.009925795066052366,
+          "route_net_backward_m": 0.008277841487415416,
+          "route_window_backward_m": 0.009925805383397485,
+          "negative_samples": 4
+        }
+      ]
+    },
+    {
+      "name": "P1_development_p27_s302_A",
+      "mode": "cycle",
+      "events": [
+        {
+          "level": "risk",
+          "risk": true,
+          "emergency": false,
+          "reason": "BackwardRisk",
+          "frame_id": 42798,
+          "timestamp_s": 901.2392948884517,
+          "source": "Privileged",
+          "net_backward_m": 0.0039596134010020986,
+          "window_backward_m": 0.005615207646164977,
+          "route_net_backward_m": 0.00395962023683665,
+          "route_window_backward_m": 0.005615213498985817,
+          "negative_samples": 2
+        },
+        {
+          "level": "emergency",
+          "risk": true,
+          "emergency": true,
+          "reason": "RollbackDisplacementConfirmed",
+          "frame_id": 42801,
+          "timestamp_s": 901.3892948906869,
+          "source": "Privileged",
+          "net_backward_m": 0.008201536586748498,
+          "window_backward_m": 0.009857130798178288,
+          "route_net_backward_m": 0.008201547825744414,
+          "route_window_backward_m": 0.009857141087893581,
+          "negative_samples": 4
+        }
+      ]
+    },
+    {
+      "name": "P1_validation_p170_s301_coast",
+      "mode": "coast",
+      "events": []
+    },
+    {
+      "name": "P1_validation_p170_s301_emergency",
+      "mode": "emergency",
+      "events": []
+    },
+    {
+      "name": "P1_validation_p170_s301_obstacle",
+      "mode": "obstacle",
+      "events": []
+    },
+    {
+      "name": "P1_validation_p170_s302_coast",
+      "mode": "coast",
+      "events": []
+    },
+    {
+      "name": "P1_validation_p170_s302_emergency",
+      "mode": "emergency",
+      "events": []
+    },
+    {
+      "name": "P1_validation_p170_s302_obstacle",
+      "mode": "obstacle",
+      "events": []
+    },
+    {
+      "name": "P1_validation_p66_s301_A",
+      "mode": "cycle",
+      "events": []
+    },
+    {
+      "name": "P1_validation_p66_s302_A",
+      "mode": "cycle",
+      "events": []
+    }
+  ],
+  "unit_tests": {
+    "path": "reports/m6e_guard_fixed_tests.xml",
+    "bytes": 1952,
+    "sha256": "19f4bbba28bc390a270e776b1a4e953e6f2821be525ae0522d201ce25236216e"
+  },
+  "limits": "No global false-positive estimate: quiet controls selected on measurements and few fixed locations. Guard emergency latched, recovery not automatic. Normal starts with true backward motion are positive risk, not automatically false alarms."
+}

@@ -1,0 +1,15 @@
+{
+ "stage":"M6-E","base":"ba5ba6e","source":"Privileged","map":"Town03","carla":"0.9.15","blueprint":"vehicle.tesla.model3",
+ "physics_P0_sha":"3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6",
+ "development_positions":[27,126],"validation_positions":[66,170],"seeds":[301,302],
+ "guard":{"window_s":0.5,"negative_velocity_mps":-0.03,"negative_samples":2,"risk_net_m":0.003,"risk_cumulative_m":0.005,"emergency_net_m":0.008,"emergency_cumulative_m":0.012,"emergency_min_net_m":0.004,"hard_negative_mps":-0.15,"hard_min_displacement_m":0.002,"risk_release_s":0.5,"risk_release_forward_m":0.01,"max_age_s":0.1,"max_gap_s":0.075,"dt_s":0.05},
+ "guard_basis":"Development M6D p27 recorded negative pose excursion11.7mm vs observed stationary drift<0.25mm; fixed rules, no validation tuning. Evidence of net pose motion required; not negative velocity alone.",
+ "guard_live":{"positions":[27,66],"seeds":[301,302],"mode":"same M6D warm service auto .15 release, new guard only; first emergency latched; no restart policy"},
+ "interfaces":{"A":"Frozen M6D auto throttle .15, brake .01, service hold .12","B":"fixed forward gear1, handbrake hold, throttle .15, brake .01","C":"official Ackermann, default server gains unchanged, speed profile acceleration magnitude .5 and jerk input1; no claim actual jerk enforcement"},
+ "cycle":{"initialize_s":1.5,"hold_s":2,"cold_run_s":6,"normal_stop_s":6,"warm_run_s":6,"final_stop_s":6,"final_hold_s":2,"raw_throttle":0.15,"raw_brake":0.01,"reference_speed_mps":1.0,"reference_accel_mps2":0.5,"ackermann_jerk_input":1.0},
+ "P0_trials":24,"pacing":{"dt_s":0.05,"fixed_epoch":true,"no_catchup":true,"no_reset":true,"planner":"NotApplicable_actuator_probes","horizon_legacy_s":6,"legacy_plan_age_s":0.35},
+ "gates":{"normal_raw_decel":1.8,"raw_jerk_peak":5,"moving_jerk_p95":2.5,"startup_delay_s":2,"hold_max_drift_m":0.05,"hold_min_s":1,"terminal_speed":0.08,"goal_error_m":0.5,"heading_deg":5,"obstacle_gap_m":3},
+ "P1_condition":"Only after development P0 all interfaces fail and attributable wheel-brake or transmission evidence exists. Freeze exactly one candidate and one family in separate config before any P1 trial. No further tuning. If P0 usable, P1 NotRun.",
+ "closed_loop_condition":"All dynamics, guard and validation safety gates required; otherwise complete closed-loop matrix NotRun.",
+ "default_modifications":false,"neural_training":false,"visual_control":false,"reverse_parking":false
+}

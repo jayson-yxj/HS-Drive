@@ -1,0 +1,113 @@
+{
+  "kind": "actual_CARLA_paced_actuator_probe",
+  "source": "Privileged",
+  "base": "ba5ba6e759b807d5e3740061bebf72b7d1ced565",
+  "git_head": "f15bc5b58e72ec08a1dd386437d0fce478193149",
+  "sources": {
+    "configs/m6e/protocol.json": "d5c15e45e1082674dcabb2d32cda96ffef276a98989bbb52944c82c6ae2ca299",
+    "simulator/m6e_actuation.py": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+    "simulator/m6e_guard.py": "2da0f535f29120028cb6400ff0f090f4c38f6d0c04d2350ee76758813a491982",
+    "tests/test_m6e_guard.py": "594a30897bcbe5890d423d308e0b63dfe5b94f12e174e8727e8b428def865c44",
+    "tools/m6e_common.py": "752f381796181078341d6a14f7b7bf5ceeff4a089b96f6de5b65a506b8ea3dab",
+    "tools/m6e_probe.py": "c8a826778598c00b8e99b95bc57677080dc74d67e1b5629e10d494f97b840e81"
+  },
+  "visual_control": false,
+  "config": {
+    "name": "P0_development_p27_s301_B",
+    "physics": "P0",
+    "split": "development",
+    "spawn": 27,
+    "seed": 301,
+    "interface": "B",
+    "mode": "cycle"
+  },
+  "initial": {
+    "frame": 21480,
+    "t": 38.03488841466606,
+    "position": [
+      -74.38717651367188,
+      99.71611022949219,
+      0.6853000521659851
+    ],
+    "rotation": [
+      -1.3340459403821114e-08,
+      -0.34827134013175964,
+      -90.15619659423828
+    ],
+    "velocity": [
+      0.0,
+      0.0,
+      -0.4899999797344208
+    ],
+    "speed": 0.4899999797344208,
+    "long_speed": 0.002978437643249565,
+    "acceleration_api": [
+      0.0,
+      0.0,
+      -9.799999237060547
+    ],
+    "long_acceleration_api": 0.05956875069117018,
+    "applied": {
+      "throttle": 0.0,
+      "brake": 0.0,
+      "steer": 0.0,
+      "hand_brake": false,
+      "reverse": false,
+      "gear": 0
+    }
+  },
+  "trace": {
+    "path": "reports/m6e_trials/P0_development_p27_s301_B/trace.jsonl",
+    "bytes": 1550269,
+    "sha256": "4b0f247ccd8a752ca33bbbd812603b1328e1a71413bfea4f4970ca7dbb94beb7"
+  },
+  "physics": {
+    "path": "reports/m6e_trials/P0_development_p27_s301_B/physics.json",
+    "bytes": 2286,
+    "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+  },
+  "physics_full": {
+    "path": "reports/m6e_trials/P0_development_p27_s301_B/physics_full.json",
+    "bytes": 3475,
+    "sha256": "fc1ff2ce6fe9dbb11dd3b6b25ea8b4801df42f82cb95a646c081f4b97d49e18d"
+  },
+  "ticks": 630,
+  "complete": true,
+  "collisions": [],
+  "lane_events": [],
+  "online_boundary_ticks": 0,
+  "final_body_road": true,
+  "raw": {
+    "max_decel_raw": 19.41697557791297,
+    "jerk_peak_raw": 388.0759332842214,
+    "jerk_p95_moving": 62.670202528769764,
+    "jerk_p95_all": 60.5710767681414,
+    "max_decel_250ms": 6.049708194365676,
+    "jerk_p95_250ms": 12.070145347411115,
+    "min_signed_speed": -0.005044238297297687,
+    "reverse_ticks": 0,
+    "low_speed_moving_seconds": 11.15,
+    "api_accel_vs_velocity_derivative_mae": 0.0014098713525096838
+  },
+  "control_interval_ms": {
+    "n": 629,
+    "p50": 49.99079182744026,
+    "p95": 50.26494711637497,
+    "p99": 50.45398637652397,
+    "max": 54.81597222387791
+  },
+  "tick_ms": {
+    "n": 630,
+    "p50": 1.5558646991848946,
+    "p95": 1.931746955960989,
+    "p99": 2.1243039704859257,
+    "max": 3.7703923881053925
+  },
+  "mean_hz": 20.00010280598486,
+  "deadline_miss": 0,
+  "skipped_slots": 0,
+  "worker": "NotApplicable_no_planner",
+  "expired_normal_plan": "NotApplicable_no_planner",
+  "emergency_started": null,
+  "limits": "Fixed actuator probes, not navigation Pilot; sparse online corner checks plus final dense body, no exact curb mesh. Target speed profile is desired reference, never physical velocity assignment."
+}

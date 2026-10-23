@@ -1,0 +1,117 @@
+{
+  "kind": "actual_CARLA_paced_actuator_probe",
+  "source": "Privileged",
+  "base": "ba5ba6e759b807d5e3740061bebf72b7d1ced565",
+  "git_head": "f15bc5b58e72ec08a1dd386437d0fce478193149",
+  "sources": {
+    "configs/m6e/protocol.json": "d5c15e45e1082674dcabb2d32cda96ffef276a98989bbb52944c82c6ae2ca299",
+    "simulator/m6e_actuation.py": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+    "simulator/m6e_guard.py": "2da0f535f29120028cb6400ff0f090f4c38f6d0c04d2350ee76758813a491982",
+    "tests/test_m6e_guard.py": "594a30897bcbe5890d423d308e0b63dfe5b94f12e174e8727e8b428def865c44",
+    "tools/m6e_analyze.py": "45bc3058907a826e04af47513205cf5f62c86036ac243dd53c4b4b7041932976",
+    "tools/m6e_common.py": "752f381796181078341d6a14f7b7bf5ceeff4a089b96f6de5b65a506b8ea3dab",
+    "tools/m6e_guard_audit.py": "1f09ad54a1b49ea8d5d7f24acb23f425cfaf8ed31c5afd5d05711717a3d2c035",
+    "tools/m6e_probe.py": "a5f1cdbb3bacd31bf947299407f505a3b4917dfb6df1efd61d6d3ee5f6a23cdf",
+    "tools/m6e_select_variant.py": "4b8a035a95101c96ff13bebbe07209053b55a4a1d580dfd825b0619c24b5cfcd",
+    "tools/m6e_sequential.py": "bce3f8335d3b6b1636d687858b41f0a21feb8bfd10a26540c3bf35e0c27806ad"
+  },
+  "visual_control": false,
+  "config": {
+    "name": "P0_development_p126_s302_C",
+    "physics": "P0",
+    "split": "development",
+    "spawn": 126,
+    "seed": 302,
+    "interface": "C",
+    "mode": "cycle"
+  },
+  "initial": {
+    "frame": 28074,
+    "t": 358.5169517081231,
+    "position": [
+      -88.71098327636719,
+      -119.56523132324219,
+      0.26060715317726135
+    ],
+    "rotation": [
+      0.0,
+      -0.47180211544036865,
+      89.84374237060547
+    ],
+    "velocity": [
+      0.0,
+      0.0,
+      -0.4899999797344208
+    ],
+    "speed": 0.4899999797344208,
+    "long_speed": 0.004034859175625544,
+    "acceleration_api": [
+      0.0,
+      0.0,
+      -9.799999237060547
+    ],
+    "long_acceleration_api": 0.08069718056765751,
+    "applied": {
+      "throttle": 0.0,
+      "brake": 0.0,
+      "steer": 0.0,
+      "hand_brake": false,
+      "reverse": false,
+      "gear": 0
+    }
+  },
+  "trace": {
+    "path": "reports/m6e_trials/P0_development_p126_s302_C/trace.jsonl",
+    "bytes": 1549434,
+    "sha256": "c4efb96e7fee7dea8cff742305a439f15c64c61f8bf844d38bf7febb44074109"
+  },
+  "physics": {
+    "path": "reports/m6e_trials/P0_development_p126_s302_C/physics.json",
+    "bytes": 2286,
+    "sha256": "3c4932cd550d47893d9051e335bf798424dfd07138ebf150a98820a57af047e6"
+  },
+  "physics_full": {
+    "path": "reports/m6e_trials/P0_development_p126_s302_C/physics_full.json",
+    "bytes": 3490,
+    "sha256": "82020c83ba3563d0c9b50fa98e444b5351c271156968fb33974009838d11f76d"
+  },
+  "ticks": 630,
+  "complete": true,
+  "collisions": [],
+  "lane_events": [],
+  "online_boundary_ticks": 0,
+  "final_body_road": true,
+  "raw": {
+    "max_decel_raw": 14.96615739139167,
+    "jerk_peak_raw": 576.9699019366616,
+    "jerk_p95_moving": 69.0037101135969,
+    "jerk_p95_all": 70.22193062677482,
+    "max_decel_250ms": 3.034705386600553,
+    "jerk_p95_250ms": 13.52418441860312,
+    "min_signed_speed": -0.057036076949599904,
+    "reverse_ticks": 1,
+    "low_speed_moving_seconds": 11.3,
+    "api_accel_vs_velocity_derivative_mae": 0.00036436871931031585
+  },
+  "control_interval_ms": {
+    "n": 629,
+    "p50": 49.99013803899288,
+    "p95": 50.252046808600426,
+    "p99": 50.381044521927834,
+    "max": 50.83923973143101
+  },
+  "tick_ms": {
+    "n": 630,
+    "p50": 1.4470955356955528,
+    "p95": 1.8090844154357908,
+    "p99": 2.014052588492634,
+    "max": 13.404464349150658
+  },
+  "mean_hz": 20.000150903705514,
+  "deadline_miss": 0,
+  "skipped_slots": 0,
+  "worker": "NotApplicable_no_planner",
+  "expired_normal_plan": "NotApplicable_no_planner",
+  "emergency_started": null,
+  "limits": "Fixed actuator probes, not navigation Pilot; sparse online corner checks plus final dense body, no exact curb mesh. Target speed profile is desired reference, never physical velocity assignment."
+}
