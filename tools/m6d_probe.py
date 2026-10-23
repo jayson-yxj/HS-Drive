@@ -62,12 +62,16 @@ def run(task,protocol):
             elif phase=='brake_stop':
                 stable=stable+1 if s.speed_norm_mps<=.02 else 0
                 if stable>=5 or phase_tick>=120:transition='hold_final'
+            elif task.get('guarded_release') and phase in ['release','restart'] and guard.latched:transition='protected_stop'
             elif phase=='release_rollback' and (guard.latched or phase_tick>=200):transition='protected_stop' if guard.latched else 'done'
             elif phase=='protected_stop' and phase_tick>=60:transition='done'
             if transition:
                 if transition=='done':break
                 phase=transition;phase_tick=0;phase_started=now;stable=0;phases.append(dict(phase=phase,t=now,frame=snap.frame));
                 if phase.startswith('hold'):anchor=pos.copy();observer=HoldEvidence()
+            # Use the new hold anchor on the transition frame itself.
+            distance=float((anchor-pos)@np.array([math.cos(heading),math.sin(heading)]))
+            s=signed_from_measurement(r,route,distance,grade['grade'])
             u=dict(throttle=0.,brake=0.,steer=0.,hand_brake=False,reverse=False,manual_gear_shift=task['manual1'],gear=1 if task['manual1'] else 0)
             if phase=='initialize':u.update(brake=1.,hand_brake=True)
             elif phase=='prepare':u['throttle']=.20
@@ -76,7 +80,7 @@ def run(task,protocol):
                 u.update(brake=.12 if task['hold']=='service' else 0.,hand_brake=task['hold']=='hand')
             elif phase in ['release','restart']:u['throttle']=task['throttle']
             protection=None
-            if task.get('rollback') and phase in ['release_rollback','protected_stop']:
+            if (task.get('rollback') and phase in ['release_rollback','protected_stop']) or (task.get('guarded_release') and phase in ['release','restart','protected_stop']):
                 protection=guard.check(s,now)
                 if protection or phase=='protected_stop':u.update(throttle=0.,brake=1.);protection=protection or 'RollbackDetected'
             mode=observer.update(s,pos,distance,phase.startswith('hold'),phase in ['release','restart','release_rollback'],True,protection)

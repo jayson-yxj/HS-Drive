@@ -1,0 +1,13 @@
+{
+  "hypothesis": "Cold zero-throttle release did not generate rollback; recorded warm .15 auto release at development p27 has v_forward<-0.05. Apply unchanged F0 SignedGuard and existing brake=1 to same physical preparation.",
+  "basis": "m6d_probe_development_analysis.json warm_service_auto_015 p27 both repeats; no validation policy selection",
+  "split": "development_only_observed_location",
+  "tasks": [
+    {"split":"guard_diagnostic","spawn":27,"seed":201,"name":"warm_guarded_auto_015","warm":true,"hold":"service","manual1":false,"throttle":0.15,"guarded_release":true},
+    {"split":"guard_diagnostic","spawn":27,"seed":202,"name":"warm_guarded_auto_015","warm":true,"hold":"service","manual1":false,"throttle":0.15,"guarded_release":true}
+  ],
+  "maximum_trials": 2,
+  "algorithm_changes": "None: same SignedGuard thresholds and latched emergency, no F1 or gains. Correct phase-anchor measurement order in new probe source; original 36 records and source snapshots retained.",
+  "criteria": "If measured rollback criterion occurs, brake=1 and throttle=0 in same observation step; stop and hold >=1s; report raw emergency jerk separately.",
+  "exit": "No additional attempts if behavior does not reproduce. Not a normal comfort or independent generalization pass."
+}
