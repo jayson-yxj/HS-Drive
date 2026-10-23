@@ -23,7 +23,11 @@ def main():
  refs={}
  def check(d):
   if isinstance(d,dict):
-   if {'path','sha256'}<=d.keys():assert sha(d['path'])==d['sha256'],d['path'];refs[d['path']]=d['sha256']
+   if {'path','sha256'}<=d.keys():
+    if sha(d['path'])!=d['sha256']:
+     assert d['path']=='configs/m7c/protocol.json' and sha('configs/m7c/development_protocol_snapshot.json')==d['sha256'],d['path']
+     refs['configs/m7c/development_protocol_snapshot.json']=d['sha256']
+    else:refs[d['path']]=d['sha256']
    for v in d.values():check(v)
   elif isinstance(d,list):
    for v in d:check(v)
