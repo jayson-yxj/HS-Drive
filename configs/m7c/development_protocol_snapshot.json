@@ -1,0 +1,43 @@
+{
+  "base": "684b6e6",
+  "map": "reports/m6b_execution_logs/Town03.xodr",
+  "cache": "Exact floating inputs; map SHA, allowed road/lane, z, body extent/offset, trajectory bytes/stamp; no rounding; bounded LRU; dynamic hypotheses and age recomputed",
+  "equivalence": "All205validM7Bscenes including stored witness candidates, all reasons/conflicts/stops/Unknown/selection exact; numeric tolerance1e-9 excluding latency",
+  "performance": {
+    "p95_target_ms": 150,
+    "max_target_ms": 200,
+    "online": "NotRun"
+  },
+  "development_roads": [
+    3,
+    20
+  ],
+  "validation_roads": [
+    19,
+    76
+  ],
+  "fresh_final_roads": [
+    23,
+    28
+  ],
+  "continuation": {
+    "step_m": 0.5,
+    "max_extra_m": 100,
+    "max_heading_step_rad": 0.15,
+    "max_position_step_m": 0.75,
+    "ambiguity": "Unknown_without_explicit_legal_intent",
+    "directions": "Waypoint.next only"
+  },
+  "slow_follow": {
+    "enabled": "Conditional_development_witness",
+    "target_speed_mps": 0.5,
+    "duration_s": 4.5,
+    "max_duration_s": 6,
+    "stopping_reserve": "v2/(2*1.8)+v*(1.8/2.5)+3m checked against every actor at every sample; conservative necessary reserve, no actuation guarantee"
+  },
+  "frozen_M7B_constraints": "configs/m7b/protocol.json",
+  "C_stop": "NotRun",
+  "new_vehicle_runs": 0,
+  "new_training": 0,
+  "fresh_selection": "Map-only: new curve23 and long straight28 with multi-successors; no candidate evaluation used; sameTown03"
+}
