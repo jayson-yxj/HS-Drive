@@ -1,0 +1,3394 @@
+{
+  "kind": "OfflineAnalyticReferenceAndFiniteDifferenceAudit",
+  "provenance": {
+    "base": "3d149ac872d2b8e17b3e6010bc90ecdb555d2bf4",
+    "commit": "a18f7541afb18f26a7048f9c7b6ab772829890ce",
+    "sources": {
+      "tools/m7b_common.py": "e5e42295816600bf582d061ba7eb0ca4b938a682bd16fcf0b2a46a9cf69ea94d",
+      "tools/m7b_post_audit.py": "f58a2137c53b91214d8efb6cecd79c06c2840fcae249db23d753415273974420",
+      "tools/m7b_finalize.py": "287fff1f56284f6ca5a061d22cde2d1fa7b150e83fc3ac3ba2d06dfbb862d35c",
+      "tools/m7b_history_profile.py": "448490b6faa3bcf33b452063d727fc6e37da418fc1b83d361938643063a96ac6",
+      "tools/m7b_experiment.py": "a19c2877c935f890fd2e426554d74f978ba879b562c8af2bf435f2df305264a0",
+      "tools/m7b_fixtures.py": "ce7330cf504ab2cb910429b55246ed73d735446f460232e2724e2991e1e445c8",
+      "diagnostics/m7b_motion.py": "16a6f86c3840f3a003107a95aba553cecc90087f4377ec062ed44c3967d81ec7",
+      "tests/test_m7b_dynamic.py": "5491390f04b187f42603646f1135052bb0a71c6813daf389edf81245046ab702",
+      "configs/m7b/protocol.json": "f79557f7ea61e0f23d519bcb54cc0837d6bb98a43d11a1a35696530df4e6c1e2"
+    },
+    "execution": "OfflineCARLA0915Map_SyntheticActors",
+    "new_control": false,
+    "new_training": false
+  },
+  "records": [
+    {
+      "scene_id": "development_road3_clear",
+      "checks": []
+    },
+    {
+      "scene_id": "development_road3_static_bypass",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road3_blocked_far",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        },
+        {
+          "object_id": "block_left",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road3_blocked_close",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        },
+        {
+          "object_id": "block_left",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road3_prohibited_lane",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road3_braking_0",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.01250000251000233,
+          "acceleration_range": [
+            -1.0000000000000056,
+            0.0
+          ],
+          "heading_difference_rad": 1.1285501949842569e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road3_braking_1",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 4.440892098500626e-16,
+          "first_difference_velocity_error_mps": 1.191953375724307e-05,
+          "acceleration_range": [
+            -2.2000000000000144,
+            0.0
+          ],
+          "heading_difference_rad": 1.1285498693780482e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road3_braking_2",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 4.440892098500626e-16,
+          "first_difference_velocity_error_mps": 1.191953319036244e-05,
+          "acceleration_range": [
+            -3.0000000000000178,
+            0.0
+          ],
+          "heading_difference_rad": 1.1285498007218564e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road3_braking_3",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.008750000894059485,
+          "acceleration_range": [
+            -0.7000000000000037,
+            0.0
+          ],
+          "heading_difference_rad": 3.974572852172287e-06,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road3_braking_4",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 7.946356217633993e-06,
+          "acceleration_range": [
+            -1.700000000000008,
+            0.0
+          ],
+          "heading_difference_rad": 1.1285498433544205e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road3_braking_5",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 4.440892098500626e-16,
+          "first_difference_velocity_error_mps": 1.1918674281745329e-05,
+          "acceleration_range": [
+            -2.0,
+            0.0
+          ],
+          "heading_difference_rad": 1.1285498120017223e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road3_braking_6",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 7.946355649201922e-06,
+          "acceleration_range": [
+            -0.4000000000000107,
+            0.0
+          ],
+          "heading_difference_rad": 1.1285498684898698e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road3_restart_0",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            1.0
+          ],
+          "heading_difference_rad": 1.128549816664659e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road3_restart_1",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.5
+          ],
+          "heading_difference_rad": 1.12854982403654e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road3_restart_2",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            1.3000000000000178
+          ],
+          "heading_difference_rad": 1.1285498148438933e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road3_lead_accelerating",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 7.946355649201922e-06,
+          "acceleration_range": [
+            0.0,
+            1.2000000000000497
+          ],
+          "heading_difference_rad": 1.1285498107582725e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road3_lead_stopped",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road3_crossing_conflict",
+      "checks": [
+        {
+          "object_id": "crossing",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 2.763652786999139e-13,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 1.7852386235972517e-13,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road3_crossing_early",
+      "checks": [
+        {
+          "object_id": "crossing",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 2.763652786999139e-13,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 1.7852386235972517e-13,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road3_expired",
+      "checks": []
+    },
+    {
+      "scene_id": "development_road3_future",
+      "checks": []
+    },
+    {
+      "scene_id": "development_road3_missing",
+      "checks": []
+    },
+    {
+      "scene_id": "development_road3_worker_error",
+      "checks": []
+    },
+    {
+      "scene_id": "development_road20_clear",
+      "checks": []
+    },
+    {
+      "scene_id": "development_road20_static_bypass",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road20_blocked_far",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road20_blocked_close",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road20_prohibited_lane",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road20_braking_0",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.012687738215960354,
+          "acceleration_range": [
+            -1.0000000000000056,
+            0.0
+          ],
+          "heading_difference_rad": 0.005319202336984574,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road20_braking_1",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.004483988369784866,
+          "acceleration_range": [
+            -2.2000000000000144,
+            0.0
+          ],
+          "heading_difference_rad": 0.005351787450191381,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road20_braking_2",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.005800359932261379,
+          "acceleration_range": [
+            -3.0000000000000178,
+            0.0
+          ],
+          "heading_difference_rad": 0.005521387477525508,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road20_braking_3",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.009214135798943701,
+          "acceleration_range": [
+            -0.7000000000000037,
+            0.0
+          ],
+          "heading_difference_rad": 0.005431461527658499,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road20_braking_4",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.009272382280933187,
+          "acceleration_range": [
+            -1.700000000000008,
+            0.0
+          ],
+          "heading_difference_rad": 0.005493819836630109,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road20_braking_5",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 4.440892098500626e-16,
+          "first_difference_velocity_error_mps": 0.013443991953858658,
+          "acceleration_range": [
+            -2.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0051471132178981804,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road20_braking_6",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.006442018754950467,
+          "acceleration_range": [
+            -0.4000000000000107,
+            0.0
+          ],
+          "heading_difference_rad": 0.005544679879550429,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road20_restart_0",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            1.0
+          ],
+          "heading_difference_rad": 0.005549903558890179,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road20_restart_1",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.5
+          ],
+          "heading_difference_rad": 0.0054749135213132405,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road20_restart_2",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            1.3000000000000178
+          ],
+          "heading_difference_rad": 0.00529552162478808,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road20_lead_accelerating",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.010970802269033358,
+          "acceleration_range": [
+            0.0,
+            1.2000000000000497
+          ],
+          "heading_difference_rad": 0.004943398095536011,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road20_lead_stopped",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road20_crossing_conflict",
+      "checks": [
+        {
+          "object_id": "crossing",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 4.911773216224999e-13,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 2.5934809855243657e-13,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road20_crossing_early",
+      "checks": [
+        {
+          "object_id": "crossing",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 4.911773216224999e-13,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 2.5934809855243657e-13,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "development_road20_expired",
+      "checks": []
+    },
+    {
+      "scene_id": "development_road20_future",
+      "checks": []
+    },
+    {
+      "scene_id": "development_road20_missing",
+      "checks": []
+    },
+    {
+      "scene_id": "development_road20_worker_error",
+      "checks": []
+    },
+    {
+      "scene_id": "validation_road76_clear",
+      "checks": []
+    },
+    {
+      "scene_id": "validation_road76_static_bypass",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road76_blocked_far",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road76_blocked_close",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road76_prohibited_lane",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road76_braking_0",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.012500018346445017,
+          "acceleration_range": [
+            -1.0000000000000056,
+            0.0
+          ],
+          "heading_difference_rad": 1.98815389902407e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road76_braking_1",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 3.2225457261833084e-05,
+          "acceleration_range": [
+            -2.2000000000000144,
+            0.0
+          ],
+          "heading_difference_rad": 1.98815418506193e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road76_braking_2",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 3.189865058409102e-05,
+          "acceleration_range": [
+            -3.0000000000000178,
+            0.0
+          ],
+          "heading_difference_rad": 1.9881541319044516e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road76_braking_3",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.008750022387925188,
+          "acceleration_range": [
+            -0.7000000000000037,
+            0.0
+          ],
+          "heading_difference_rad": 1.98815400356267e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road76_braking_4",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 2.1483638177256785e-05,
+          "acceleration_range": [
+            -1.700000000000008,
+            0.0
+          ],
+          "heading_difference_rad": 1.9881545179512017e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road76_braking_5",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 3.189872107897484e-05,
+          "acceleration_range": [
+            -2.0,
+            0.0
+          ],
+          "heading_difference_rad": 1.988153892140687e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road76_braking_6",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 3.976258893675996e-05,
+          "acceleration_range": [
+            -0.4000000000000107,
+            0.0
+          ],
+          "heading_difference_rad": 1.9881733321902573e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road76_restart_0",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            1.0
+          ],
+          "heading_difference_rad": 1.9881539302435414e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road76_restart_1",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.5
+          ],
+          "heading_difference_rad": 1.988153910303936e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road76_restart_2",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            1.3000000000000178
+          ],
+          "heading_difference_rad": 1.9881546715616594e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road76_lead_accelerating",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 3.9762517309178e-05,
+          "acceleration_range": [
+            0.0,
+            1.2000000000000497
+          ],
+          "heading_difference_rad": 1.988153892140687e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road76_lead_stopped",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road76_crossing_conflict",
+      "checks": [
+        {
+          "object_id": "crossing",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 5.096562711051828e-13,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 9.947598300641403e-14,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road76_crossing_early",
+      "checks": [
+        {
+          "object_id": "crossing",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 5.096562711051828e-13,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 9.947598300641403e-14,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road76_expired",
+      "checks": []
+    },
+    {
+      "scene_id": "validation_road76_future",
+      "checks": []
+    },
+    {
+      "scene_id": "validation_road76_missing",
+      "checks": []
+    },
+    {
+      "scene_id": "validation_road76_worker_error",
+      "checks": []
+    },
+    {
+      "scene_id": "validation_road19_clear",
+      "checks": []
+    },
+    {
+      "scene_id": "validation_road19_static_bypass",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road19_blocked_far",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road19_blocked_close",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road19_prohibited_lane",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road19_braking_0",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 2.220446049250313e-16,
+          "first_difference_velocity_error_mps": 0.012500004507357254,
+          "acceleration_range": [
+            -1.0000000000000056,
+            0.0
+          ],
+          "heading_difference_rad": 2.534969042544688e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road19_braking_1",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 4.440892098500626e-16,
+          "first_difference_velocity_error_mps": 1.5482706045396937e-05,
+          "acceleration_range": [
+            -2.2000000000000144,
+            0.0
+          ],
+          "heading_difference_rad": 2.5349672964747327e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road19_braking_2",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 4.440892098500626e-16,
+          "first_difference_velocity_error_mps": 1.548270718200446e-05,
+          "acceleration_range": [
+            -3.0000000000000178,
+            0.0
+          ],
+          "heading_difference_rad": 2.5349672964747327e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road19_braking_3",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 1.1102230246251565e-16,
+          "first_difference_velocity_error_mps": 0.0087500363989219,
+          "acceleration_range": [
+            -0.7000000000000037,
+            0.0
+          ],
+          "heading_difference_rad": 2.5349674017682844e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road19_braking_4",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 2.220446049250313e-16,
+          "first_difference_velocity_error_mps": 1.0321804410152387e-05,
+          "acceleration_range": [
+            -1.700000000000008,
+            0.0
+          ],
+          "heading_difference_rad": 2.5349673409724716e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road19_braking_5",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 4.440892098500626e-16,
+          "first_difference_velocity_error_mps": 1.5482706045396937e-05,
+          "acceleration_range": [
+            -2.0,
+            0.0
+          ],
+          "heading_difference_rad": 2.5349672964747327e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road19_braking_6",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 2.220446049250313e-16,
+          "first_difference_velocity_error_mps": 1.0321804413196459e-05,
+          "acceleration_range": [
+            -0.4000000000000107,
+            0.0
+          ],
+          "heading_difference_rad": 2.5349673184127397e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road19_restart_0",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            1.0
+          ],
+          "heading_difference_rad": 2.5349673090868663e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road19_restart_1",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.5
+          ],
+          "heading_difference_rad": 2.5349674067420835e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road19_restart_2",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            1.3000000000000178
+          ],
+          "heading_difference_rad": 2.5349678742792037e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road19_lead_accelerating",
+      "checks": []
+    },
+    {
+      "scene_id": "validation_road19_lead_stopped",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road19_crossing_conflict",
+      "checks": [
+        {
+          "object_id": "crossing",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 2.220446049250313e-16,
+          "first_difference_velocity_error_mps": 4.659623642464446e-13,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 5.1514348342607263e-14,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road19_crossing_early",
+      "checks": [
+        {
+          "object_id": "crossing",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 2.220446049250313e-16,
+          "first_difference_velocity_error_mps": 4.659623642464446e-13,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 5.1514348342607263e-14,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_road19_expired",
+      "checks": []
+    },
+    {
+      "scene_id": "validation_road19_future",
+      "checks": []
+    },
+    {
+      "scene_id": "validation_road19_missing",
+      "checks": []
+    },
+    {
+      "scene_id": "validation_road19_worker_error",
+      "checks": []
+    },
+    {
+      "scene_id": "fresh_final_road2_clear",
+      "checks": []
+    },
+    {
+      "scene_id": "fresh_final_road2_static_bypass",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road2_blocked_far",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        },
+        {
+          "object_id": "block_left",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road2_blocked_close",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        },
+        {
+          "object_id": "block_left",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road2_prohibited_lane",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road2_braking_0",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 2.220446049250313e-16,
+          "first_difference_velocity_error_mps": 0.012500006174672798,
+          "acceleration_range": [
+            -1.0000000000000056,
+            0.0
+          ],
+          "heading_difference_rad": 2.4180580104893323e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road2_braking_1",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 4.440892098500626e-16,
+          "first_difference_velocity_error_mps": 1.9557358902593984e-05,
+          "acceleration_range": [
+            -2.2000000000000144,
+            0.0
+          ],
+          "heading_difference_rad": 2.398872738140767e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road2_braking_2",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 4.440892098500626e-16,
+          "first_difference_velocity_error_mps": 7.254084662839386e-05,
+          "acceleration_range": [
+            -3.0000000000000178,
+            0.0
+          ],
+          "heading_difference_rad": 2.418057978692545e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road2_braking_3",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 1.1102230246251565e-16,
+          "first_difference_velocity_error_mps": 0.008750002407272696,
+          "acceleration_range": [
+            -0.7000000000000037,
+            0.0
+          ],
+          "heading_difference_rad": 6.51912101012897e-06,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road2_braking_4",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 2.220446049250313e-16,
+          "first_difference_velocity_error_mps": 4.8167717087014e-05,
+          "acceleration_range": [
+            -1.700000000000008,
+            0.0
+          ],
+          "heading_difference_rad": 2.4180579788257717e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road2_braking_5",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 4.440892098500626e-16,
+          "first_difference_velocity_error_mps": 1.9557360039103636e-05,
+          "acceleration_range": [
+            -2.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.008631282301151622,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road2_braking_6",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 2.220446049250313e-16,
+          "first_difference_velocity_error_mps": 1.2654998655604285e-05,
+          "acceleration_range": [
+            -0.4000000000000107,
+            0.0
+          ],
+          "heading_difference_rad": 2.3988727964496803e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road2_restart_0",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            1.0
+          ],
+          "heading_difference_rad": 2.418058021369518e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road2_restart_1",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.5
+          ],
+          "heading_difference_rad": 2.4180580254995476e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road2_restart_2",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            1.3000000000000178
+          ],
+          "heading_difference_rad": 2.4180579973442917e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road2_lead_accelerating",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 2.220446049250313e-16,
+          "first_difference_velocity_error_mps": 1.284662028911585e-05,
+          "acceleration_range": [
+            0.0,
+            1.2000000000000497
+          ],
+          "heading_difference_rad": 0.0063325016893927,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road2_lead_stopped",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road2_crossing_conflict",
+      "checks": [
+        {
+          "object_id": "crossing",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 3.4343609109471233e-13,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 7.283063041541027e-14,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road2_crossing_early",
+      "checks": [
+        {
+          "object_id": "crossing",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 3.4343609109471233e-13,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 7.283063041541027e-14,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road2_expired",
+      "checks": []
+    },
+    {
+      "scene_id": "fresh_final_road2_future",
+      "checks": []
+    },
+    {
+      "scene_id": "fresh_final_road2_missing",
+      "checks": []
+    },
+    {
+      "scene_id": "fresh_final_road2_worker_error",
+      "checks": []
+    },
+    {
+      "scene_id": "fresh_final_road4_clear",
+      "checks": []
+    },
+    {
+      "scene_id": "fresh_final_road4_static_bypass",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road4_blocked_far",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        },
+        {
+          "object_id": "block_left",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road4_blocked_close",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        },
+        {
+          "object_id": "block_left",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road4_prohibited_lane",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road4_braking_0",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.012500002536397216,
+          "acceleration_range": [
+            -1.0000000000000056,
+            0.0
+          ],
+          "heading_difference_rad": 1.1264782294961861e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road4_braking_1",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 4.440892098500626e-16,
+          "first_difference_velocity_error_mps": 1.198204867814445e-05,
+          "acceleration_range": [
+            -2.2000000000000144,
+            0.0
+          ],
+          "heading_difference_rad": 1.1285498725754906e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road4_braking_2",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 4.440892098500626e-16,
+          "first_difference_velocity_error_mps": 1.198204867814445e-05,
+          "acceleration_range": [
+            -3.0000000000000178,
+            0.0
+          ],
+          "heading_difference_rad": 1.1285498007218564e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road4_braking_3",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.008750000903604857,
+          "acceleration_range": [
+            -0.7000000000000037,
+            0.0
+          ],
+          "heading_difference_rad": 3.994016819941493e-06,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road4_braking_4",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 7.988032830533953e-06,
+          "acceleration_range": [
+            -1.700000000000008,
+            0.0
+          ],
+          "heading_difference_rad": 1.1264776447639235e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road4_braking_5",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 4.440892098500626e-16,
+          "first_difference_velocity_error_mps": 1.1919533758018787e-05,
+          "acceleration_range": [
+            -2.0,
+            0.0
+          ],
+          "heading_difference_rad": 1.1285498007218564e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road4_braking_6",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 7.988032831309678e-06,
+          "acceleration_range": [
+            -0.4000000000000107,
+            0.0
+          ],
+          "heading_difference_rad": 1.1285498612068068e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road4_restart_0",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            1.0
+          ],
+          "heading_difference_rad": 1.1285498124902205e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road4_restart_1",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.5
+          ],
+          "heading_difference_rad": 1.1285498345614542e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road4_restart_2",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            1.3000000000000178
+          ],
+          "heading_difference_rad": 1.1264776291763923e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road4_lead_accelerating",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 7.946355648426204e-06,
+          "acceleration_range": [
+            0.0,
+            1.2000000000000497
+          ],
+          "heading_difference_rad": 1.128549816087343e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road4_lead_stopped",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road4_crossing_conflict",
+      "checks": [
+        {
+          "object_id": "crossing",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 1.9213790005999082e-13,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 1.0613732115416497e-13,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road4_crossing_early",
+      "checks": [
+        {
+          "object_id": "crossing",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 1.9213790005999082e-13,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 1.0613732115416497e-13,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "fresh_final_road4_expired",
+      "checks": []
+    },
+    {
+      "scene_id": "fresh_final_road4_future",
+      "checks": []
+    },
+    {
+      "scene_id": "fresh_final_road4_missing",
+      "checks": []
+    },
+    {
+      "scene_id": "fresh_final_road4_worker_error",
+      "checks": []
+    },
+    {
+      "scene_id": "historical_regression_road65_clear",
+      "checks": []
+    },
+    {
+      "scene_id": "historical_regression_road65_static_bypass",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road65_blocked_far",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        },
+        {
+          "object_id": "block_left",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road65_blocked_close",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        },
+        {
+          "object_id": "block_left",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road65_prohibited_lane",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road65_braking_0",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.012499999999818101,
+          "acceleration_range": [
+            -1.0000000000000056,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road65_braking_1",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 4.547473508864641e-13,
+          "acceleration_range": [
+            -2.2000000000000144,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road65_braking_2",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 4.547473508864641e-13,
+          "acceleration_range": [
+            -3.0000000000000178,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road65_braking_3",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.008750000000418368,
+          "acceleration_range": [
+            -0.7000000000000037,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road65_braking_4",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 4.547473508864641e-13,
+          "acceleration_range": [
+            -1.700000000000008,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road65_braking_5",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 4.547473508864641e-13,
+          "acceleration_range": [
+            -2.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.006110709325227948,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road65_braking_6",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 4.547473508864641e-13,
+          "acceleration_range": [
+            -0.4000000000000107,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road65_restart_0",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            1.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road65_restart_1",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.5
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road65_restart_2",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            1.3000000000000178
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road65_lead_accelerating",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 4.547473508864641e-13,
+          "acceleration_range": [
+            0.0,
+            1.2000000000000497
+          ],
+          "heading_difference_rad": 0.0034861761827080784,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road65_lead_stopped",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road65_crossing_conflict",
+      "checks": [
+        {
+          "object_id": "crossing",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 4.54747367376497e-13,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road65_crossing_early",
+      "checks": [
+        {
+          "object_id": "crossing",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 4.54747367376497e-13,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road65_expired",
+      "checks": []
+    },
+    {
+      "scene_id": "historical_regression_road65_future",
+      "checks": []
+    },
+    {
+      "scene_id": "historical_regression_road65_missing",
+      "checks": []
+    },
+    {
+      "scene_id": "historical_regression_road65_worker_error",
+      "checks": []
+    },
+    {
+      "scene_id": "historical_regression_road67_clear",
+      "checks": []
+    },
+    {
+      "scene_id": "historical_regression_road67_static_bypass",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road67_blocked_far",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        },
+        {
+          "object_id": "block_left",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road67_blocked_close",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        },
+        {
+          "object_id": "block_left",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road67_prohibited_lane",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road67_braking_0",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.012500012230112335,
+          "acceleration_range": [
+            -1.0000000000000056,
+            0.0
+          ],
+          "heading_difference_rad": 2.1365486350788387e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road67_braking_1",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 4.440892098500626e-16,
+          "first_difference_velocity_error_mps": 2.631673068116221e-05,
+          "acceleration_range": [
+            -2.2000000000000144,
+            0.0
+          ],
+          "heading_difference_rad": 2.1736148937190336e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road67_braking_2",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 4.440892098500626e-16,
+          "first_difference_velocity_error_mps": 2.631678071622429e-05,
+          "acceleration_range": [
+            -3.0000000000000178,
+            0.0
+          ],
+          "heading_difference_rad": 2.1736148944739853e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road67_braking_3",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.008750026750799982,
+          "acceleration_range": [
+            -0.7000000000000037,
+            0.0
+          ],
+          "heading_difference_rad": 2.1736149827145113e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road67_braking_4",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 4.2722047684803556e-05,
+          "acceleration_range": [
+            -1.700000000000008,
+            0.0
+          ],
+          "heading_difference_rad": 2.1365480938673187e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road67_braking_5",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 4.440892098500626e-16,
+          "first_difference_velocity_error_mps": 2.7430055312311663e-05,
+          "acceleration_range": [
+            -2.0,
+            0.0
+          ],
+          "heading_difference_rad": 2.1736149119711e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road67_braking_6",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 1.754448635847768e-05,
+          "acceleration_range": [
+            -0.4000000000000107,
+            0.0
+          ],
+          "heading_difference_rad": 2.1736149348416944e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road67_restart_0",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            1.0
+          ],
+          "heading_difference_rad": 2.173614875555785e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road67_restart_1",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.5
+          ],
+          "heading_difference_rad": 2.1736149342643785e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road67_restart_2",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            1.3000000000000178
+          ],
+          "heading_difference_rad": 2.1736151516904556e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road67_lead_accelerating",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 1.7544486372300856e-05,
+          "acceleration_range": [
+            0.0,
+            1.2000000000000497
+          ],
+          "heading_difference_rad": 2.173614879996677e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road67_lead_stopped",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road67_crossing_conflict",
+      "checks": [
+        {
+          "object_id": "crossing",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 5.239673537392392e-13,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 1.8829382497642655e-13,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road67_crossing_early",
+      "checks": [
+        {
+          "object_id": "crossing",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 5.239673537392392e-13,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 1.8829382497642655e-13,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road67_expired",
+      "checks": []
+    },
+    {
+      "scene_id": "historical_regression_road67_future",
+      "checks": []
+    },
+    {
+      "scene_id": "historical_regression_road67_missing",
+      "checks": []
+    },
+    {
+      "scene_id": "historical_regression_road67_worker_error",
+      "checks": []
+    },
+    {
+      "scene_id": "historical_regression_road18_clear",
+      "checks": []
+    },
+    {
+      "scene_id": "historical_regression_road18_static_bypass",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road18_blocked_far",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road18_blocked_close",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road18_prohibited_lane",
+      "checks": [
+        {
+          "object_id": "obstacle",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road18_braking_0",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 2.220446049250313e-16,
+          "first_difference_velocity_error_mps": 0.012500004507618024,
+          "acceleration_range": [
+            -1.0000000000000056,
+            0.0
+          ],
+          "heading_difference_rad": 2.534969042544688e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road18_braking_1",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 4.440892098500626e-16,
+          "first_difference_velocity_error_mps": 1.5973051008688492e-05,
+          "acceleration_range": [
+            -2.2000000000000144,
+            0.0
+          ],
+          "heading_difference_rad": 2.534969119549757e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road18_braking_2",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 4.440892098500626e-16,
+          "first_difference_velocity_error_mps": 1.548270718200446e-05,
+          "acceleration_range": [
+            -3.0000000000000178,
+            0.0
+          ],
+          "heading_difference_rad": 2.5349672964747327e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road18_braking_3",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 1.1102230246251565e-16,
+          "first_difference_velocity_error_mps": 0.0087500363989219,
+          "acceleration_range": [
+            -0.7000000000000037,
+            0.0
+          ],
+          "heading_difference_rad": 2.534967445777525e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road18_braking_4",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 2.220446049250313e-16,
+          "first_difference_velocity_error_mps": 1.0321804413196459e-05,
+          "acceleration_range": [
+            -1.700000000000008,
+            0.0
+          ],
+          "heading_difference_rad": 2.5349673409724716e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road18_braking_5",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 4.440892098500626e-16,
+          "first_difference_velocity_error_mps": 1.5482706045396937e-05,
+          "acceleration_range": [
+            -2.0,
+            0.0
+          ],
+          "heading_difference_rad": 2.5349672964747327e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road18_braking_6",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 2.220446049250313e-16,
+          "first_difference_velocity_error_mps": 1.0321804407108316e-05,
+          "acceleration_range": [
+            -0.4000000000000107,
+            0.0
+          ],
+          "heading_difference_rad": 2.5349690587539442e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road18_restart_0",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            1.0
+          ],
+          "heading_difference_rad": 2.5349673155705688e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road18_restart_1",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.5
+          ],
+          "heading_difference_rad": 2.534967407585853e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road18_restart_2",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            1.3000000000000178
+          ],
+          "heading_difference_rad": 2.5349678805408615e-05,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road18_lead_accelerating",
+      "checks": []
+    },
+    {
+      "scene_id": "historical_regression_road18_lead_stopped",
+      "checks": [
+        {
+          "object_id": "lead",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 0.0,
+          "first_difference_velocity_error_mps": 0.0,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 0.0,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road18_crossing_conflict",
+      "checks": [
+        {
+          "object_id": "crossing",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 2.220446049250313e-16,
+          "first_difference_velocity_error_mps": 4.659623642464446e-13,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 1.2256862191861728e-13,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road18_crossing_early",
+      "checks": [
+        {
+          "object_id": "crossing",
+          "valid": true,
+          "initial_position_error_m": 0.0,
+          "initial_speed_error": 2.220446049250313e-16,
+          "first_difference_velocity_error_mps": 4.659623642464446e-13,
+          "acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "heading_difference_rad": 1.2256862191861728e-13,
+          "full_OBB_road_reference": true,
+          "jump_check": "analytic bounded-speed displacement; finite difference checked"
+        }
+      ]
+    },
+    {
+      "scene_id": "historical_regression_road18_expired",
+      "checks": []
+    },
+    {
+      "scene_id": "historical_regression_road18_future",
+      "checks": []
+    },
+    {
+      "scene_id": "historical_regression_road18_missing",
+      "checks": []
+    },
+    {
+      "scene_id": "historical_regression_road18_worker_error",
+      "checks": []
+    }
+  ],
+  "definition": "t0 position/speed, first difference<=0.12m/s, acceleration[-3,1.5], heading, full road OBB samples; crossing explicit corridor exception",
+  "no_future_input": true,
+  "limits": "Analytic bounded acceleration references; sampled body-road checks. Not measured actors, behavior probabilities or exact physics."
+}

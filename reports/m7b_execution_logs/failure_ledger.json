@@ -1,0 +1,35 @@
+{
+  "kind": "PreservedFailuresAndNotRun",
+  "failures": [
+    {
+      "file": "reports/m7b_historical_seven.json",
+      "classification": "InvalidDiagnosticOutput",
+      "reason": "JSON candidate stamp remained dict; dynamic checker returned invalid; profile then raised AttributeError",
+      "replacement": "reports/m7b_historical_seven_v2.json",
+      "original_preserved": true
+    },
+    {
+      "file": "reports/m7b_execution_logs/history_profile.txt",
+      "classification": "ActualFailedCommandTraceback",
+      "retained": true
+    },
+    {
+      "classification": "FixtureInvalid",
+      "scenes": [
+        "validation_road19_lead_accelerating",
+        "historical_regression_road18_lead_accelerating"
+      ],
+      "reason": "Reference reaches unsupported road end",
+      "retained": true
+    },
+    {
+      "classification": "WhitespaceCheck",
+      "reason": "Raw cProfile trailing blank line; code-only diff check passed, original log retained"
+    }
+  ],
+  "new_control": "NotRun",
+  "C_generation": "NotRun_ConditionalGateNotMet",
+  "GPU": "NotRun_NoNewInferenceNeeded",
+  "Bench2Drive": "NotRun",
+  "training": "NotRun"
+}

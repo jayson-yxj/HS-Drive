@@ -1,0 +1,643 @@
+{
+  "kind": "OfflineCandidateLibraryCoverage",
+  "provenance": {
+    "base": "3d149ac872d2b8e17b3e6010bc90ecdb555d2bf4",
+    "commit": "a18f7541afb18f26a7048f9c7b6ab772829890ce",
+    "sources": {
+      "tools/m7b_common.py": "e5e42295816600bf582d061ba7eb0ca4b938a682bd16fcf0b2a46a9cf69ea94d",
+      "tools/m7b_post_audit.py": "f58a2137c53b91214d8efb6cecd79c06c2840fcae249db23d753415273974420",
+      "tools/m7b_finalize.py": "287fff1f56284f6ca5a061d22cde2d1fa7b150e83fc3ac3ba2d06dfbb862d35c",
+      "tools/m7b_history_profile.py": "448490b6faa3bcf33b452063d727fc6e37da418fc1b83d361938643063a96ac6",
+      "tools/m7b_experiment.py": "a19c2877c935f890fd2e426554d74f978ba879b562c8af2bf435f2df305264a0",
+      "tools/m7b_fixtures.py": "ce7330cf504ab2cb910429b55246ed73d735446f460232e2724e2991e1e445c8",
+      "diagnostics/m7b_motion.py": "16a6f86c3840f3a003107a95aba553cecc90087f4377ec062ed44c3967d81ec7",
+      "tests/test_m7b_dynamic.py": "5491390f04b187f42603646f1135052bb0a71c6813daf389edf81245046ab702",
+      "configs/m7b/protocol.json": "f79557f7ea61e0f23d519bcb54cc0837d6bb98a43d11a1a35696530df4e6c1e2"
+    },
+    "execution": "OfflineCARLA0915Map_SyntheticActors",
+    "new_control": false,
+    "new_training": false
+  },
+  "per_split": {
+    "development": {
+      "attempted": 46,
+      "fixture_valid": 46,
+      "invalid": [],
+      "valid_dynamic_scenes": 28,
+      "A_CV": {
+        "generated_candidates": 105,
+        "geometry_legal_candidates": 82,
+        "accepted_candidates": 64,
+        "accepted_reference_conflicts": [
+          {
+            "scene_id": "development_road3_braking_0",
+            "candidate": "A_keep_route",
+            "reference": {
+              "collisions": [
+                {
+                  "object_id": "lead",
+                  "first_sample_s": 4.6000000000000005
+                }
+              ],
+              "min_OBB_gap_m": 0.0,
+              "dt_s": 0.025,
+              "kind": "IndependentSampledPolygon_NotContinuousMeshTruth"
+            }
+          },
+          {
+            "scene_id": "development_road3_braking_0",
+            "candidate": "B_left",
+            "reference": {
+              "collisions": [
+                {
+                  "object_id": "lead",
+                  "first_sample_s": 4.55
+                }
+              ],
+              "min_OBB_gap_m": 0.0,
+              "dt_s": 0.025,
+              "kind": "IndependentSampledPolygon_NotContinuousMeshTruth"
+            }
+          },
+          {
+            "scene_id": "development_road3_braking_4",
+            "candidate": "A_keep_route",
+            "reference": {
+              "collisions": [
+                {
+                  "object_id": "lead",
+                  "first_sample_s": 4.1000000000000005
+                }
+              ],
+              "min_OBB_gap_m": 0.0,
+              "dt_s": 0.025,
+              "kind": "IndependentSampledPolygon_NotContinuousMeshTruth"
+            }
+          },
+          {
+            "scene_id": "development_road3_braking_4",
+            "candidate": "B_left",
+            "reference": {
+              "collisions": [
+                {
+                  "object_id": "lead",
+                  "first_sample_s": 4.05
+                }
+              ],
+              "min_OBB_gap_m": 0.0,
+              "dt_s": 0.025,
+              "kind": "IndependentSampledPolygon_NotContinuousMeshTruth"
+            }
+          },
+          {
+            "scene_id": "development_road20_braking_0",
+            "candidate": "A_keep_route",
+            "reference": {
+              "collisions": [
+                {
+                  "object_id": "lead",
+                  "first_sample_s": 4.575
+                }
+              ],
+              "min_OBB_gap_m": 0.0,
+              "dt_s": 0.025,
+              "kind": "IndependentSampledPolygon_NotContinuousMeshTruth"
+            }
+          },
+          {
+            "scene_id": "development_road20_braking_4",
+            "candidate": "A_keep_route",
+            "reference": {
+              "collisions": [
+                {
+                  "object_id": "lead",
+                  "first_sample_s": 4.075
+                }
+              ],
+              "min_OBB_gap_m": 0.0,
+              "dt_s": 0.025,
+              "kind": "IndependentSampledPolygon_NotContinuousMeshTruth"
+            }
+          }
+        ],
+        "selected_scenes": 36,
+        "selected_reference_conflicts": [
+          {
+            "scene_id": "development_road3_braking_0",
+            "candidate": "A_keep_route"
+          },
+          {
+            "scene_id": "development_road3_braking_4",
+            "candidate": "A_keep_route"
+          },
+          {
+            "scene_id": "development_road20_braking_0",
+            "candidate": "A_keep_route"
+          },
+          {
+            "scene_id": "development_road20_braking_4",
+            "candidate": "A_keep_route"
+          }
+        ],
+        "all_reject_scenes": 10,
+        "known_finite_library_witness_scenes": 32,
+        "known_witness_all_rejected": 0,
+        "dynamic_selected_collision_free": 24,
+        "dynamic_selection_fraction": 0.8571428571428571,
+        "D_stop_kinematic_failures": 0,
+        "invalid_input_correct_rejects": 8,
+        "prediction_out_of_support_scenes": [],
+        "correct_no_solution": "Not globally certified; finite library all-reject and fault counts reported separately"
+      },
+      "B_hypotheses": {
+        "generated_candidates": 105,
+        "geometry_legal_candidates": 82,
+        "accepted_candidates": 42,
+        "accepted_reference_conflicts": [],
+        "selected_scenes": 32,
+        "selected_reference_conflicts": [],
+        "all_reject_scenes": 14,
+        "known_finite_library_witness_scenes": 32,
+        "known_witness_all_rejected": 0,
+        "dynamic_selected_collision_free": 24,
+        "dynamic_selection_fraction": 0.8571428571428571,
+        "D_stop_kinematic_failures": 0,
+        "invalid_input_correct_rejects": 8,
+        "prediction_out_of_support_scenes": [],
+        "correct_no_solution": "Not globally certified; finite library all-reject and fault counts reported separately"
+      }
+    },
+    "validation": {
+      "attempted": 46,
+      "fixture_valid": 45,
+      "invalid": [
+        {
+          "scene_id": "validation_road19_lead_accelerating",
+          "reasons": [
+            "lead:PredictionOutOfSupport_route_end"
+          ]
+        }
+      ],
+      "valid_dynamic_scenes": 27,
+      "A_CV": {
+        "generated_candidates": 82,
+        "geometry_legal_candidates": 64,
+        "accepted_candidates": 52,
+        "accepted_reference_conflicts": [
+          {
+            "scene_id": "validation_road76_braking_0",
+            "candidate": "A_keep_route",
+            "reference": {
+              "collisions": [
+                {
+                  "object_id": "lead",
+                  "first_sample_s": 4.6000000000000005
+                }
+              ],
+              "min_OBB_gap_m": 0.0,
+              "dt_s": 0.025,
+              "kind": "IndependentSampledPolygon_NotContinuousMeshTruth"
+            }
+          },
+          {
+            "scene_id": "validation_road76_braking_4",
+            "candidate": "A_keep_route",
+            "reference": {
+              "collisions": [
+                {
+                  "object_id": "lead",
+                  "first_sample_s": 4.1000000000000005
+                }
+              ],
+              "min_OBB_gap_m": 0.0,
+              "dt_s": 0.025,
+              "kind": "IndependentSampledPolygon_NotContinuousMeshTruth"
+            }
+          },
+          {
+            "scene_id": "validation_road19_braking_0",
+            "candidate": "A_keep_route",
+            "reference": {
+              "collisions": [
+                {
+                  "object_id": "lead",
+                  "first_sample_s": 4.6000000000000005
+                }
+              ],
+              "min_OBB_gap_m": 0.0,
+              "dt_s": 0.025,
+              "kind": "IndependentSampledPolygon_NotContinuousMeshTruth"
+            }
+          },
+          {
+            "scene_id": "validation_road19_braking_4",
+            "candidate": "A_keep_route",
+            "reference": {
+              "collisions": [
+                {
+                  "object_id": "lead",
+                  "first_sample_s": 4.1000000000000005
+                }
+              ],
+              "min_OBB_gap_m": 0.0,
+              "dt_s": 0.025,
+              "kind": "IndependentSampledPolygon_NotContinuousMeshTruth"
+            }
+          }
+        ],
+        "selected_scenes": 35,
+        "selected_reference_conflicts": [
+          {
+            "scene_id": "validation_road76_braking_0",
+            "candidate": "A_keep_route"
+          },
+          {
+            "scene_id": "validation_road76_braking_4",
+            "candidate": "A_keep_route"
+          },
+          {
+            "scene_id": "validation_road19_braking_0",
+            "candidate": "A_keep_route"
+          },
+          {
+            "scene_id": "validation_road19_braking_4",
+            "candidate": "A_keep_route"
+          }
+        ],
+        "all_reject_scenes": 10,
+        "known_finite_library_witness_scenes": 25,
+        "known_witness_all_rejected": 0,
+        "dynamic_selected_collision_free": 23,
+        "dynamic_selection_fraction": 0.8518518518518519,
+        "D_stop_kinematic_failures": 0,
+        "invalid_input_correct_rejects": 8,
+        "prediction_out_of_support_scenes": [
+          "validation_road19_braking_0",
+          "validation_road19_braking_1",
+          "validation_road19_braking_2",
+          "validation_road19_braking_4",
+          "validation_road19_braking_5",
+          "validation_road19_braking_6",
+          "validation_road19_restart_1"
+        ],
+        "correct_no_solution": "Not globally certified; finite library all-reject and fault counts reported separately"
+      },
+      "B_hypotheses": {
+        "generated_candidates": 82,
+        "geometry_legal_candidates": 64,
+        "accepted_candidates": 29,
+        "accepted_reference_conflicts": [],
+        "selected_scenes": 25,
+        "selected_reference_conflicts": [],
+        "all_reject_scenes": 20,
+        "known_finite_library_witness_scenes": 25,
+        "known_witness_all_rejected": 0,
+        "dynamic_selected_collision_free": 17,
+        "dynamic_selection_fraction": 0.6296296296296297,
+        "D_stop_kinematic_failures": 0,
+        "invalid_input_correct_rejects": 8,
+        "prediction_out_of_support_scenes": [
+          "validation_road19_braking_0",
+          "validation_road19_braking_1",
+          "validation_road19_braking_2",
+          "validation_road19_braking_4",
+          "validation_road19_braking_5",
+          "validation_road19_braking_6",
+          "validation_road19_restart_1"
+        ],
+        "correct_no_solution": "Not globally certified; finite library all-reject and fault counts reported separately"
+      }
+    },
+    "fresh_final": {
+      "attempted": 46,
+      "fixture_valid": 46,
+      "invalid": [],
+      "valid_dynamic_scenes": 28,
+      "A_CV": {
+        "generated_candidates": 126,
+        "geometry_legal_candidates": 82,
+        "accepted_candidates": 64,
+        "accepted_reference_conflicts": [
+          {
+            "scene_id": "fresh_final_road2_braking_0",
+            "candidate": "A_keep_route",
+            "reference": {
+              "collisions": [
+                {
+                  "object_id": "lead",
+                  "first_sample_s": 4.6000000000000005
+                }
+              ],
+              "min_OBB_gap_m": 0.0,
+              "dt_s": 0.025,
+              "kind": "IndependentSampledPolygon_NotContinuousMeshTruth"
+            }
+          },
+          {
+            "scene_id": "fresh_final_road2_braking_4",
+            "candidate": "A_keep_route",
+            "reference": {
+              "collisions": [
+                {
+                  "object_id": "lead",
+                  "first_sample_s": 4.1000000000000005
+                }
+              ],
+              "min_OBB_gap_m": 0.0,
+              "dt_s": 0.025,
+              "kind": "IndependentSampledPolygon_NotContinuousMeshTruth"
+            }
+          },
+          {
+            "scene_id": "fresh_final_road4_braking_0",
+            "candidate": "A_keep_route",
+            "reference": {
+              "collisions": [
+                {
+                  "object_id": "lead",
+                  "first_sample_s": 4.6000000000000005
+                }
+              ],
+              "min_OBB_gap_m": 0.0,
+              "dt_s": 0.025,
+              "kind": "IndependentSampledPolygon_NotContinuousMeshTruth"
+            }
+          },
+          {
+            "scene_id": "fresh_final_road4_braking_0",
+            "candidate": "B_left",
+            "reference": {
+              "collisions": [
+                {
+                  "object_id": "lead",
+                  "first_sample_s": 4.55
+                }
+              ],
+              "min_OBB_gap_m": 0.0,
+              "dt_s": 0.025,
+              "kind": "IndependentSampledPolygon_NotContinuousMeshTruth"
+            }
+          },
+          {
+            "scene_id": "fresh_final_road4_braking_4",
+            "candidate": "A_keep_route",
+            "reference": {
+              "collisions": [
+                {
+                  "object_id": "lead",
+                  "first_sample_s": 4.1000000000000005
+                }
+              ],
+              "min_OBB_gap_m": 0.0,
+              "dt_s": 0.025,
+              "kind": "IndependentSampledPolygon_NotContinuousMeshTruth"
+            }
+          },
+          {
+            "scene_id": "fresh_final_road4_braking_4",
+            "candidate": "B_left",
+            "reference": {
+              "collisions": [
+                {
+                  "object_id": "lead",
+                  "first_sample_s": 4.05
+                }
+              ],
+              "min_OBB_gap_m": 0.0,
+              "dt_s": 0.025,
+              "kind": "IndependentSampledPolygon_NotContinuousMeshTruth"
+            }
+          }
+        ],
+        "selected_scenes": 36,
+        "selected_reference_conflicts": [
+          {
+            "scene_id": "fresh_final_road2_braking_0",
+            "candidate": "A_keep_route"
+          },
+          {
+            "scene_id": "fresh_final_road2_braking_4",
+            "candidate": "A_keep_route"
+          },
+          {
+            "scene_id": "fresh_final_road4_braking_0",
+            "candidate": "A_keep_route"
+          },
+          {
+            "scene_id": "fresh_final_road4_braking_4",
+            "candidate": "A_keep_route"
+          }
+        ],
+        "all_reject_scenes": 10,
+        "known_finite_library_witness_scenes": 32,
+        "known_witness_all_rejected": 0,
+        "dynamic_selected_collision_free": 24,
+        "dynamic_selection_fraction": 0.8571428571428571,
+        "D_stop_kinematic_failures": 0,
+        "invalid_input_correct_rejects": 8,
+        "prediction_out_of_support_scenes": [],
+        "correct_no_solution": "Not globally certified; finite library all-reject and fault counts reported separately"
+      },
+      "B_hypotheses": {
+        "generated_candidates": 126,
+        "geometry_legal_candidates": 82,
+        "accepted_candidates": 42,
+        "accepted_reference_conflicts": [],
+        "selected_scenes": 32,
+        "selected_reference_conflicts": [],
+        "all_reject_scenes": 14,
+        "known_finite_library_witness_scenes": 32,
+        "known_witness_all_rejected": 0,
+        "dynamic_selected_collision_free": 24,
+        "dynamic_selection_fraction": 0.8571428571428571,
+        "D_stop_kinematic_failures": 0,
+        "invalid_input_correct_rejects": 8,
+        "prediction_out_of_support_scenes": [],
+        "correct_no_solution": "Not globally certified; finite library all-reject and fault counts reported separately"
+      }
+    },
+    "historical_regression": {
+      "attempted": 69,
+      "fixture_valid": 68,
+      "invalid": [
+        {
+          "scene_id": "historical_regression_road18_lead_accelerating",
+          "reasons": [
+            "lead:PredictionOutOfSupport_route_end"
+          ]
+        }
+      ],
+      "valid_dynamic_scenes": 41,
+      "A_CV": {
+        "generated_candidates": 166,
+        "geometry_legal_candidates": 97,
+        "accepted_candidates": 79,
+        "accepted_reference_conflicts": [
+          {
+            "scene_id": "historical_regression_road65_braking_0",
+            "candidate": "A_keep_route",
+            "reference": {
+              "collisions": [
+                {
+                  "object_id": "lead",
+                  "first_sample_s": 4.6000000000000005
+                }
+              ],
+              "min_OBB_gap_m": 0.0,
+              "dt_s": 0.025,
+              "kind": "IndependentSampledPolygon_NotContinuousMeshTruth"
+            }
+          },
+          {
+            "scene_id": "historical_regression_road65_braking_4",
+            "candidate": "A_keep_route",
+            "reference": {
+              "collisions": [
+                {
+                  "object_id": "lead",
+                  "first_sample_s": 4.1000000000000005
+                }
+              ],
+              "min_OBB_gap_m": 0.0,
+              "dt_s": 0.025,
+              "kind": "IndependentSampledPolygon_NotContinuousMeshTruth"
+            }
+          },
+          {
+            "scene_id": "historical_regression_road67_braking_0",
+            "candidate": "A_keep_route",
+            "reference": {
+              "collisions": [
+                {
+                  "object_id": "lead",
+                  "first_sample_s": 4.6000000000000005
+                }
+              ],
+              "min_OBB_gap_m": 0.0,
+              "dt_s": 0.025,
+              "kind": "IndependentSampledPolygon_NotContinuousMeshTruth"
+            }
+          },
+          {
+            "scene_id": "historical_regression_road67_braking_4",
+            "candidate": "A_keep_route",
+            "reference": {
+              "collisions": [
+                {
+                  "object_id": "lead",
+                  "first_sample_s": 4.1000000000000005
+                }
+              ],
+              "min_OBB_gap_m": 0.0,
+              "dt_s": 0.025,
+              "kind": "IndependentSampledPolygon_NotContinuousMeshTruth"
+            }
+          },
+          {
+            "scene_id": "historical_regression_road18_braking_0",
+            "candidate": "A_keep_route",
+            "reference": {
+              "collisions": [
+                {
+                  "object_id": "lead",
+                  "first_sample_s": 4.6000000000000005
+                }
+              ],
+              "min_OBB_gap_m": 0.0,
+              "dt_s": 0.025,
+              "kind": "IndependentSampledPolygon_NotContinuousMeshTruth"
+            }
+          },
+          {
+            "scene_id": "historical_regression_road18_braking_4",
+            "candidate": "A_keep_route",
+            "reference": {
+              "collisions": [
+                {
+                  "object_id": "lead",
+                  "first_sample_s": 4.1000000000000005
+                }
+              ],
+              "min_OBB_gap_m": 0.0,
+              "dt_s": 0.025,
+              "kind": "IndependentSampledPolygon_NotContinuousMeshTruth"
+            }
+          }
+        ],
+        "selected_scenes": 53,
+        "selected_reference_conflicts": [
+          {
+            "scene_id": "historical_regression_road65_braking_0",
+            "candidate": "A_keep_route"
+          },
+          {
+            "scene_id": "historical_regression_road65_braking_4",
+            "candidate": "A_keep_route"
+          },
+          {
+            "scene_id": "historical_regression_road67_braking_0",
+            "candidate": "A_keep_route"
+          },
+          {
+            "scene_id": "historical_regression_road67_braking_4",
+            "candidate": "A_keep_route"
+          },
+          {
+            "scene_id": "historical_regression_road18_braking_0",
+            "candidate": "A_keep_route"
+          },
+          {
+            "scene_id": "historical_regression_road18_braking_4",
+            "candidate": "A_keep_route"
+          }
+        ],
+        "all_reject_scenes": 15,
+        "known_finite_library_witness_scenes": 41,
+        "known_witness_all_rejected": 0,
+        "dynamic_selected_collision_free": 35,
+        "dynamic_selection_fraction": 0.8536585365853658,
+        "D_stop_kinematic_failures": 0,
+        "invalid_input_correct_rejects": 12,
+        "prediction_out_of_support_scenes": [
+          "historical_regression_road18_braking_0",
+          "historical_regression_road18_braking_1",
+          "historical_regression_road18_braking_2",
+          "historical_regression_road18_braking_4",
+          "historical_regression_road18_braking_5",
+          "historical_regression_road18_braking_6",
+          "historical_regression_road18_restart_1"
+        ],
+        "correct_no_solution": "Not globally certified; finite library all-reject and fault counts reported separately"
+      },
+      "B_hypotheses": {
+        "generated_candidates": 166,
+        "geometry_legal_candidates": 97,
+        "accepted_candidates": 48,
+        "accepted_reference_conflicts": [],
+        "selected_scenes": 41,
+        "selected_reference_conflicts": [],
+        "all_reject_scenes": 27,
+        "known_finite_library_witness_scenes": 41,
+        "known_witness_all_rejected": 0,
+        "dynamic_selected_collision_free": 29,
+        "dynamic_selection_fraction": 0.7073170731707317,
+        "D_stop_kinematic_failures": 0,
+        "invalid_input_correct_rejects": 12,
+        "prediction_out_of_support_scenes": [
+          "historical_regression_road18_braking_0",
+          "historical_regression_road18_braking_1",
+          "historical_regression_road18_braking_2",
+          "historical_regression_road18_braking_4",
+          "historical_regression_road18_braking_5",
+          "historical_regression_road18_braking_6",
+          "historical_regression_road18_restart_1"
+        ],
+        "correct_no_solution": "Not globally certified; finite library all-reject and fault counts reported separately"
+      }
+    }
+  },
+  "C": "NotRun: development did not reveal legacy all-reject with a legal stop witness",
+  "witness": "Cosine speed jerk-bounded stopsT2.5..5.5 used only as independent finite existence witnesses; not selected or actuation",
+  "no_solution": "General completeness not established. NoFeasibleCandidate is not proof no physical solution exists.",
+  "success": "Selected AND reference collision-free; stops counted separately in per-scene decisions, not route completion"
+}
