@@ -1,0 +1,116 @@
+{
+  "stage": "M6-G",
+  "base": "51b410942428e9994a180f5717aec9fd22369d2e",
+  "source": "Privileged",
+  "new_CARLA_trials": 0,
+  "analysis_commit": "8e8ab43f3cc37bf0d1d7593a965ed6043848d7b7",
+  "source_sha256": {
+    "diagnostics/m6g_events.py": "e3909e3ce4a8a6c8f4037c8cade46eee826d185771d759849c601fb963012586",
+    "tools/m6g_release.py": "b0b37cbb90eaade47304452bca57f2a8c19d9626b0bacb9c6b8197781ca14159",
+    "tools/m6g_analyze.py": "abe5565a097151ea4a1db754e25fd07b9447e3c91001b3c516f8303dcf8aa45a",
+    "tools/m6g_finalize.py": "3f5ea761c7360ca66e0f7eefe5b2926df03140093f60ba29de6d07610b387df0",
+    "tools/m6g_sources.py": "c735751a46326485a8944c9335e979cb7b164677b01a8aee219baca80d56037b",
+    "tools/m6g_details.py": "5ba43edaa987992caeea59927205a8a83f30ea7568867eb66ffad72ca7c69330",
+    "tools/m6g_figures.py": "68fafc464e21f9dde7d3d3c841efe1dd3be80694cb31cafdbfa26f7e376b898e",
+    "tools/m6g_reproduce.py": "12c7c098d6c7e789b69085234cb1ea54fcd7227e8fccacfaa1512f4b7141b798",
+    "tests/test_m6g_events.py": "a3b9e993366c3b20d10466d45e09bb4a23fa127bfeddcb4f6de0d511cf5d46e5",
+    "tests/test_m6g_regression.py": "c6139f6dd6bb754289951a558ca927fc052604ea2af7589ad5a90862fa7b8631",
+    "configs/m6g/protocol.json": "b4a050ac0f0f2961a42c5c3613d857ceabb00544775e885258e99856135d41df"
+  },
+  "protocol": {
+    "path": "configs/m6g/protocol.json",
+    "bytes": 1741,
+    "sha256": "b4a050ac0f0f2961a42c5c3613d857ceabb00544775e885258e99856135d41df"
+  },
+  "reproduction": "docs/M6G_IMPLEMENTATION.md",
+  "original_binary_manifest": {
+    "path": "reports/m6f_execution_logs/server_binary_manifest.json",
+    "bytes": 690,
+    "sha256": "8cd0acd1097ec0329594c8393b649aeb76d20ecc7ef9c0e1a24965ebf935665c"
+  },
+  "original_trial_SHA": {
+    "path": "reports/m6f_execution_logs/trial_manifest.json",
+    "bytes": 32130,
+    "sha256": "dc49fae27cc44c8505807b287fb889d02d05c09c1a44af10b706ccac8561ca26"
+  },
+  "event_acquisition_source_and_Physics": "reports/m6g_execution_logs/trial_manifest.json; per-event acquisition_git/physics_sha256/trace_sha256",
+  "evidence_types": [
+    "OfflineAnalysisOfActualM6F_CARLA",
+    "OfficialSourceReview",
+    "ActualServerBuildEnvironmentAudit",
+    "SyntheticAndRecordedUnitTests"
+  ],
+  "new_engine_internal_fields": "None",
+  "original_binary_exact_source_identity": "NotVerified",
+  "kind": "ActualServerBuildEnvironmentAudit",
+  "status": "Instrumentation_NotRun_BuildPrerequisiteFailed",
+  "prerequisites": {
+    "official_CARLA_source": "Retrieved_pinned294096e",
+    "authorized_UE_source": "NotEstablished_404_and_repository_not_found",
+    "local_UE_source": "Absent_in_searched_roots",
+    "matching_UE_toolchain": "NotAvailable",
+    "resources": "Disk194867585024bytes_free; containerRAM50GiB CPUquota14; host503GiB/128CPUs not container allocation",
+    "storage": "Above_official130GB_reference_only_not_validated_build_peak",
+    "isolated_build_directory": "Possible_not_created_no_build",
+    "original_Physics_and_binary": "Frozen_available",
+    "rebuilt_binary_equivalence": "NotRun",
+    "observation_only_patch": "NotRun",
+    "true_substep_field_provenance": "NotAvailable_runtime"
+  },
+  "evidence": {
+    "environment": {
+      "path": "reports/m6g_execution_logs/build_environment.json",
+      "bytes": 1909,
+      "sha256": "575e2b80e33e850c2d3d16432d37341523c479d07f264cfe98aacded5bdb454a"
+    },
+    "access": {
+      "path": "reports/m6g_execution_logs/official_UE_access.json",
+      "bytes": 450,
+      "sha256": "4b63cbc8c0b0b723f4d6ec178aaca37786d405e53925e1579edaa868b86e0141"
+    },
+    "configured_git_access": {
+      "path": "reports/m6g_execution_logs/UE_access_existing_git_configuration.json",
+      "bytes": 215,
+      "sha256": "6526621bd2834405e484222905ac39a90a3e77bc1138ebeeaabcdfac1a586203"
+    }
+  },
+  "exact_reason": "No accessible matching Unreal source or engine toolchain/build identity; stop before compilation, no unofficial UE mirror, no environment repair loop.",
+  "binary_SHA_new": null,
+  "compile_started": false,
+  "server_started": false,
+  "physics_modified": false,
+  "desired_fields_not_implemented": [
+    {
+      "name": "accepted_analog_inputs",
+      "unit": "normalized",
+      "location": "mControlAnalogVals before vehicle update",
+      "availability": "NotAvailable"
+    },
+    {
+      "name": "actual_brake_torques",
+      "unit": "engine scale torque; SI conversion requires engine length scale",
+      "location": "computeBrakeAndHandBrakeTorques local output at each vehicle substep",
+      "availability": "NotAvailable"
+    },
+    {
+      "name": "current_target_gear_and_timers",
+      "unit": "engine enum / seconds",
+      "location": "PxVehicleDriveDynData",
+      "availability": "NotAvailable"
+    },
+    {
+      "name": "sticky_flags_and_constraint_impulse",
+      "unit": "bool / impulse with explicit units",
+      "location": "vehicle constraint creation and scene solver",
+      "availability": "NotAvailable"
+    },
+    {
+      "name": "true_solver_time",
+      "unit": "s",
+      "location": "UE scene step and vehicle internal k/subTimestep separately",
+      "availability": "NotAvailable"
+    }
+  ],
+  "stop_decision": "Seal DynamicsObservabilityBaseline; no active instrumentation follow-up without separately established prerequisites and bounded benefit",
+  "official_build_reference": "https://carla.readthedocs.io/en/0.9.16/build_linux/"
+}

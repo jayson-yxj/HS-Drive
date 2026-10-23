@@ -1,0 +1,3853 @@
+{
+  "stage": "M6-G",
+  "kind": "OfflineAnalysisOfActualM6F_CARLA",
+  "new_CARLA_trials": 0,
+  "source": "Privileged",
+  "carla_version": "0.9.16",
+  "analysis_git": "6e9d7d433f80276b3e400072e5b4e4981267537f",
+  "protocol": {
+    "path": "configs/m6g/protocol.json",
+    "bytes": 1741,
+    "sha256": "b4a050ac0f0f2961a42c5c3613d857ceabb00544775e885258e99856135d41df"
+  },
+  "sources": {
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6g_analyze.py": "abe5565a097151ea4a1db754e25fd07b9447e3c91001b3c516f8303dcf8aa45a",
+    "diagnostics/m6g_events.py": "e3909e3ce4a8a6c8f4037c8cade46eee826d185771d759849c601fb963012586"
+  },
+  "acquisition_manifest": "reports/m6g_execution_logs/trial_manifest.json",
+  "solver_causality": "NotEstablished",
+  "events": [
+    {
+      "event_id": "feasibility__p27_api__command_1",
+      "trial_id": "feasibility__p27_api",
+      "kind": "startup",
+      "source_trace_sha256": "2f689334bed3422d1b41e62d915cc132ace706e65b151e9db8f7da849153d182",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "c1e2498904537e81b27162044234a471cefe13d1",
+      "source_manifest_trial_id": "feasibility__p27_api",
+      "request_wall_time": 15548497.51085299,
+      "request_rpc_return_wall_time": 15548497.510892343,
+      "request_source_frame": 366,
+      "phase": "cold_run",
+      "request_index": 30,
+      "end_index": 150,
+      "applied_index": 30,
+      "changed_fields": [
+        "throttle",
+        "brake",
+        "hand_brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 367,
+      "first_applied_observed_sim_s": 10.208555379882455,
+      "actual_application_sim_bracket_s": [
+        10.158555379137397,
+        10.208555379882455
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548497.513633076,
+      "timeline_lines_1based": [
+        21,
+        150
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 30,
+          "frame": 367,
+          "timestamp_s": 10.208555379882455,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 101,
+          "frame": 438,
+          "timestamp_s": 13.758555432781577,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "wheel_motion": {
+          "index": 101,
+          "frame": 438,
+          "timestamp_s": 13.758555432781577,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "body_motion": {
+          "index": 101,
+          "frame": 438,
+          "timestamp_s": 13.758555432781577,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": false,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 71,
+      "gear0_rpm_range": [
+        44.36627960205078,
+        2254.52880859375
+      ],
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p126_A_401__command_2",
+      "trial_id": "responses__p126_A_401",
+      "kind": "startup",
+      "source_trace_sha256": "4cfce660228d5b37ac79ff074a64f05e38b3e411aff761728b31a380a93f6b05",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p126_A_401",
+      "request_wall_time": 15548615.948358417,
+      "request_rpc_return_wall_time": 15548615.948397422,
+      "request_source_frame": 5378,
+      "phase": "cold_run",
+      "request_index": 70,
+      "end_index": 190,
+      "applied_index": 70,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 5379,
+      "first_applied_observed_sim_s": 8.291560241952538,
+      "actual_application_sim_bracket_s": [
+        8.24156024120748,
+        8.291560241952538
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548615.950784013,
+      "timeline_lines_1based": [
+        61,
+        190
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 70,
+          "frame": 5379,
+          "timestamp_s": 8.291560241952538,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 141,
+          "frame": 5450,
+          "timestamp_s": 11.84156029485166,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "wheel_motion": {
+          "index": 141,
+          "frame": 5450,
+          "timestamp_s": 11.84156029485166,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "body_motion": {
+          "index": 141,
+          "frame": 5450,
+          "timestamp_s": 11.84156029485166,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": false,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 71,
+      "gear0_rpm_range": [
+        44.36627960205078,
+        2254.52880859375
+      ],
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p126_A_401__command_5",
+      "trial_id": "responses__p126_A_401",
+      "kind": "startup",
+      "source_trace_sha256": "4cfce660228d5b37ac79ff074a64f05e38b3e411aff761728b31a380a93f6b05",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p126_A_401",
+      "request_wall_time": 15548630.047910577,
+      "request_rpc_return_wall_time": 15548630.047943937,
+      "request_source_frame": 5658,
+      "phase": "warm_run",
+      "request_index": 350,
+      "end_index": 470,
+      "applied_index": 351,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 1,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 5660,
+      "first_applied_observed_sim_s": 22.341560451313853,
+      "actual_application_sim_bracket_s": [
+        22.291560450568795,
+        22.341560451313853
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548630.100905996,
+      "timeline_lines_1based": [
+        342,
+        470
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 351,
+          "frame": 5660,
+          "timestamp_s": 22.341560451313853,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 351,
+          "frame": 5660,
+          "timestamp_s": 22.341560451313853,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 351,
+          "frame": 5660,
+          "timestamp_s": 22.341560451313853,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 355,
+          "frame": 5664,
+          "timestamp_s": 22.541560454294086,
+          "relative_to_first_applied_observation_s": 0.20000000298023224
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p126_A_402__command_2",
+      "trial_id": "responses__p126_A_402",
+      "kind": "startup",
+      "source_trace_sha256": "1539c777372330ab96dd48398ec06d1bfa719b4257815091198756fb9c8df231",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p126_A_402",
+      "request_wall_time": 15548915.389614755,
+      "request_rpc_return_wall_time": 15548915.389643276,
+      "request_source_frame": 10552,
+      "phase": "cold_run",
+      "request_index": 70,
+      "end_index": 190,
+      "applied_index": 70,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 10553,
+      "first_applied_observed_sim_s": 8.444933963939548,
+      "actual_application_sim_bracket_s": [
+        8.39493396319449,
+        8.444933963939548
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548915.391454542,
+      "timeline_lines_1based": [
+        61,
+        190
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 70,
+          "frame": 10553,
+          "timestamp_s": 8.444933963939548,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 141,
+          "frame": 10624,
+          "timestamp_s": 11.99493401683867,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "wheel_motion": {
+          "index": 141,
+          "frame": 10624,
+          "timestamp_s": 11.99493401683867,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "body_motion": {
+          "index": 141,
+          "frame": 10624,
+          "timestamp_s": 11.99493401683867,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": false,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 71,
+      "gear0_rpm_range": [
+        44.36627960205078,
+        2254.52880859375
+      ],
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p126_A_402__command_5",
+      "trial_id": "responses__p126_A_402",
+      "kind": "startup",
+      "source_trace_sha256": "1539c777372330ab96dd48398ec06d1bfa719b4257815091198756fb9c8df231",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p126_A_402",
+      "request_wall_time": 15548929.43951862,
+      "request_rpc_return_wall_time": 15548929.439548813,
+      "request_source_frame": 10832,
+      "phase": "warm_run",
+      "request_index": 350,
+      "end_index": 470,
+      "applied_index": 350,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 10833,
+      "first_applied_observed_sim_s": 22.444934172555804,
+      "actual_application_sim_bracket_s": [
+        22.394934171810746,
+        22.444934172555804
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548929.44129036,
+      "timeline_lines_1based": [
+        341,
+        470
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 350,
+          "frame": 10833,
+          "timestamp_s": 22.444934172555804,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 350,
+          "frame": 10833,
+          "timestamp_s": 22.444934172555804,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 350,
+          "frame": 10833,
+          "timestamp_s": 22.444934172555804,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 354,
+          "frame": 10837,
+          "timestamp_s": 22.644934175536036,
+          "relative_to_first_applied_observation_s": 0.20000000298023224
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p126_B_401__command_2",
+      "trial_id": "responses__p126_B_401",
+      "kind": "startup",
+      "source_trace_sha256": "6c708b152ab105c13279c15d7fe777d0e8b74b9c823c439f0b9ff6453e694145",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p126_B_401",
+      "request_wall_time": 15548653.27940524,
+      "request_rpc_return_wall_time": 15548653.279424842,
+      "request_source_frame": 6034,
+      "phase": "cold_run",
+      "request_index": 70,
+      "end_index": 190,
+      "applied_index": 70,
+      "changed_fields": [
+        "throttle",
+        "hand_brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": true,
+        "gear": 1
+      },
+      "first_applied_frame": 6035,
+      "first_applied_observed_sim_s": 8.632177082821727,
+      "actual_application_sim_bracket_s": [
+        8.582177082076669,
+        8.632177082821727
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548653.28114741,
+      "timeline_lines_1based": [
+        61,
+        190
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 70,
+          "frame": 6035,
+          "timestamp_s": 8.632177082821727,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 70,
+          "frame": 6035,
+          "timestamp_s": 8.632177082821727,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 70,
+          "frame": 6035,
+          "timestamp_s": 8.632177082821727,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 80,
+          "frame": 6045,
+          "timestamp_s": 9.132177090272307,
+          "relative_to_first_applied_observation_s": 0.5000000074505806
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p126_B_401__command_5",
+      "trial_id": "responses__p126_B_401",
+      "kind": "startup",
+      "source_trace_sha256": "6c708b152ab105c13279c15d7fe777d0e8b74b9c823c439f0b9ff6453e694145",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p126_B_401",
+      "request_wall_time": 15548667.379386036,
+      "request_rpc_return_wall_time": 15548667.379402792,
+      "request_source_frame": 6314,
+      "phase": "warm_run",
+      "request_index": 350,
+      "end_index": 470,
+      "applied_index": 350,
+      "changed_fields": [
+        "throttle",
+        "hand_brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": true,
+        "gear": 1
+      },
+      "first_applied_frame": 6315,
+      "first_applied_observed_sim_s": 22.632177291437984,
+      "actual_application_sim_bracket_s": [
+        22.582177290692925,
+        22.632177291437984
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548667.381594649,
+      "timeline_lines_1based": [
+        341,
+        470
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 350,
+          "frame": 6315,
+          "timestamp_s": 22.632177291437984,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 350,
+          "frame": 6315,
+          "timestamp_s": 22.632177291437984,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 350,
+          "frame": 6315,
+          "timestamp_s": 22.632177291437984,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 356,
+          "frame": 6321,
+          "timestamp_s": 22.932177295908332,
+          "relative_to_first_applied_observation_s": 0.30000000447034836
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p126_B_402__command_2",
+      "trial_id": "responses__p126_B_402",
+      "kind": "startup",
+      "source_trace_sha256": "d3765a032ec441a7d8acbf550822bdfa5ed2c0b4861dc6a0aeba809dbf9ec75e",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p126_B_402",
+      "request_wall_time": 15548952.261277627,
+      "request_rpc_return_wall_time": 15548952.261315852,
+      "request_source_frame": 11207,
+      "phase": "cold_run",
+      "request_index": 70,
+      "end_index": 190,
+      "applied_index": 70,
+      "changed_fields": [
+        "throttle",
+        "hand_brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": true,
+        "gear": 1
+      },
+      "first_applied_frame": 11208,
+      "first_applied_observed_sim_s": 8.235826900228858,
+      "actual_application_sim_bracket_s": [
+        8.1858268994838,
+        8.235826900228858
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548952.263223872,
+      "timeline_lines_1based": [
+        61,
+        190
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 70,
+          "frame": 11208,
+          "timestamp_s": 8.235826900228858,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 70,
+          "frame": 11208,
+          "timestamp_s": 8.235826900228858,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 70,
+          "frame": 11208,
+          "timestamp_s": 8.235826900228858,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 80,
+          "frame": 11218,
+          "timestamp_s": 8.735826907679439,
+          "relative_to_first_applied_observation_s": 0.5000000074505806
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p126_B_402__command_5",
+      "trial_id": "responses__p126_B_402",
+      "kind": "startup",
+      "source_trace_sha256": "d3765a032ec441a7d8acbf550822bdfa5ed2c0b4861dc6a0aeba809dbf9ec75e",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p126_B_402",
+      "request_wall_time": 15548966.3611748,
+      "request_rpc_return_wall_time": 15548966.361194637,
+      "request_source_frame": 11487,
+      "phase": "warm_run",
+      "request_index": 350,
+      "end_index": 470,
+      "applied_index": 351,
+      "changed_fields": [
+        "throttle",
+        "hand_brake"
+      ],
+      "delay_outer_ticks": 1,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": true,
+        "gear": 1
+      },
+      "first_applied_frame": 11489,
+      "first_applied_observed_sim_s": 22.285827109590173,
+      "actual_application_sim_bracket_s": [
+        22.235827108845115,
+        22.285827109590173
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548966.412867907,
+      "timeline_lines_1based": [
+        342,
+        470
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 351,
+          "frame": 11489,
+          "timestamp_s": 22.285827109590173,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 351,
+          "frame": 11489,
+          "timestamp_s": 22.285827109590173,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 351,
+          "frame": 11489,
+          "timestamp_s": 22.285827109590173,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 357,
+          "frame": 11495,
+          "timestamp_s": 22.58582711406052,
+          "relative_to_first_applied_observation_s": 0.30000000447034836
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p126_coast_401__command_1",
+      "trial_id": "responses__p126_coast_401",
+      "kind": "startup",
+      "source_trace_sha256": "22bd9ae464fb98c45b2088af5d2e83cbd389a3f6cb4d347aa83e9798fac342d7",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p126_coast_401",
+      "request_wall_time": 15548788.197589207,
+      "request_rpc_return_wall_time": 15548788.197621647,
+      "request_source_frame": 8375,
+      "phase": "cold_run",
+      "request_index": 30,
+      "end_index": 150,
+      "applied_index": 30,
+      "changed_fields": [
+        "throttle",
+        "brake",
+        "hand_brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 8376,
+      "first_applied_observed_sim_s": 6.81803935021162,
+      "actual_application_sim_bracket_s": [
+        6.768039349466562,
+        6.81803935021162
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548788.200401036,
+      "timeline_lines_1based": [
+        21,
+        150
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 30,
+          "frame": 8376,
+          "timestamp_s": 6.81803935021162,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 101,
+          "frame": 8447,
+          "timestamp_s": 10.368039403110743,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "wheel_motion": {
+          "index": 101,
+          "frame": 8447,
+          "timestamp_s": 10.368039403110743,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "body_motion": {
+          "index": 101,
+          "frame": 8447,
+          "timestamp_s": 10.368039403110743,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": false,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 71,
+      "gear0_rpm_range": [
+        44.36627960205078,
+        2254.52880859375
+      ],
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p126_coast_402__command_1",
+      "trial_id": "responses__p126_coast_402",
+      "kind": "startup",
+      "source_trace_sha256": "bc95dd4c4f652c05f31b8408922118c45b6f19282a21ecfdde23c6185c5356b3",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p126_coast_402",
+      "request_wall_time": 15549086.530540587,
+      "request_rpc_return_wall_time": 15549086.53055922,
+      "request_source_frame": 13547,
+      "phase": "cold_run",
+      "request_index": 30,
+      "end_index": 150,
+      "applied_index": 30,
+      "changed_fields": [
+        "throttle",
+        "brake",
+        "hand_brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 13548,
+      "first_applied_observed_sim_s": 6.2587978933006525,
+      "actual_application_sim_bracket_s": [
+        6.2087978925555944,
+        6.2587978933006525
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15549086.53240098,
+      "timeline_lines_1based": [
+        21,
+        150
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 30,
+          "frame": 13548,
+          "timestamp_s": 6.2587978933006525,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 101,
+          "frame": 13619,
+          "timestamp_s": 9.808797946199775,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "wheel_motion": {
+          "index": 101,
+          "frame": 13619,
+          "timestamp_s": 9.808797946199775,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "body_motion": {
+          "index": 101,
+          "frame": 13619,
+          "timestamp_s": 9.808797946199775,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": false,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 71,
+      "gear0_rpm_range": [
+        44.36627960205078,
+        2254.52880859375
+      ],
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p170_A_401__command_2",
+      "trial_id": "responses__p170_A_401",
+      "kind": "startup",
+      "source_trace_sha256": "b1d9db4009dcde504e961520016527e9b861c42aa6cfb96ae64ab3abe624d35b",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p170_A_401",
+      "request_wall_time": 15548690.318319121,
+      "request_rpc_return_wall_time": 15548690.318345003,
+      "request_source_frame": 6688,
+      "phase": "cold_run",
+      "request_index": 70,
+      "end_index": 190,
+      "applied_index": 70,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 6689,
+      "first_applied_observed_sim_s": 8.341020992025733,
+      "actual_application_sim_bracket_s": [
+        8.291020991280675,
+        8.341020992025733
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548690.320068106,
+      "timeline_lines_1based": [
+        61,
+        190
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 70,
+          "frame": 6689,
+          "timestamp_s": 8.341020992025733,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 141,
+          "frame": 6760,
+          "timestamp_s": 11.891021044924855,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "wheel_motion": {
+          "index": 141,
+          "frame": 6760,
+          "timestamp_s": 11.891021044924855,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "body_motion": {
+          "index": 141,
+          "frame": 6760,
+          "timestamp_s": 11.891021044924855,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": false,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 71,
+      "gear0_rpm_range": [
+        44.36627960205078,
+        2254.52880859375
+      ],
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p170_A_401__command_5",
+      "trial_id": "responses__p170_A_401",
+      "kind": "startup",
+      "source_trace_sha256": "b1d9db4009dcde504e961520016527e9b861c42aa6cfb96ae64ab3abe624d35b",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p170_A_401",
+      "request_wall_time": 15548704.368435595,
+      "request_rpc_return_wall_time": 15548704.368492968,
+      "request_source_frame": 6968,
+      "phase": "warm_run",
+      "request_index": 350,
+      "end_index": 470,
+      "applied_index": 350,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 6969,
+      "first_applied_observed_sim_s": 22.34102120064199,
+      "actual_application_sim_bracket_s": [
+        22.29102119989693,
+        22.34102120064199
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548704.370210383,
+      "timeline_lines_1based": [
+        341,
+        470
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 350,
+          "frame": 6969,
+          "timestamp_s": 22.34102120064199,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 350,
+          "frame": 6969,
+          "timestamp_s": 22.34102120064199,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 350,
+          "frame": 6969,
+          "timestamp_s": 22.34102120064199,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 358,
+          "frame": 6977,
+          "timestamp_s": 22.741021206602454,
+          "relative_to_first_applied_observation_s": 0.4000000059604645
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p170_A_402__command_2",
+      "trial_id": "responses__p170_A_402",
+      "kind": "startup",
+      "source_trace_sha256": "7bcb1c8a0c92eeb33b1325f3bff93b839e4835aa68cca34ae939f8e0be757aeb",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p170_A_402",
+      "request_wall_time": 15548989.47235452,
+      "request_rpc_return_wall_time": 15548989.472372416,
+      "request_source_frame": 11861,
+      "phase": "cold_run",
+      "request_index": 70,
+      "end_index": 190,
+      "applied_index": 71,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 1,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 11863,
+      "first_applied_observed_sim_s": 8.624509448185563,
+      "actual_application_sim_bracket_s": [
+        8.574509447440505,
+        8.624509448185563
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548989.524579044,
+      "timeline_lines_1based": [
+        62,
+        190
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 71,
+          "frame": 11863,
+          "timestamp_s": 8.624509448185563,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 142,
+          "frame": 11934,
+          "timestamp_s": 12.174509501084685,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "wheel_motion": {
+          "index": 142,
+          "frame": 11934,
+          "timestamp_s": 12.174509501084685,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "body_motion": {
+          "index": 142,
+          "frame": 11934,
+          "timestamp_s": 12.174509501084685,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": false,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 71,
+      "gear0_rpm_range": [
+        44.36627960205078,
+        2254.52880859375
+      ],
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p170_A_402__command_5",
+      "trial_id": "responses__p170_A_402",
+      "kind": "startup",
+      "source_trace_sha256": "7bcb1c8a0c92eeb33b1325f3bff93b839e4835aa68cca34ae939f8e0be757aeb",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p170_A_402",
+      "request_wall_time": 15549003.622570088,
+      "request_rpc_return_wall_time": 15549003.622597057,
+      "request_source_frame": 12141,
+      "phase": "warm_run",
+      "request_index": 350,
+      "end_index": 470,
+      "applied_index": 351,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 1,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 12143,
+      "first_applied_observed_sim_s": 22.62450965680182,
+      "actual_application_sim_bracket_s": [
+        22.57450965605676,
+        22.62450965680182
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15549003.6744591,
+      "timeline_lines_1based": [
+        342,
+        470
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 351,
+          "frame": 12143,
+          "timestamp_s": 22.62450965680182,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 351,
+          "frame": 12143,
+          "timestamp_s": 22.62450965680182,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 351,
+          "frame": 12143,
+          "timestamp_s": 22.62450965680182,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 359,
+          "frame": 12151,
+          "timestamp_s": 23.024509662762284,
+          "relative_to_first_applied_observation_s": 0.4000000059604645
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p170_B_401__command_2",
+      "trial_id": "responses__p170_B_401",
+      "kind": "startup",
+      "source_trace_sha256": "85a60f6eef047a537780fff6528fd67e8a24ad90786954acfb981855ba1574aa",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p170_B_401",
+      "request_wall_time": 15548727.294065602,
+      "request_rpc_return_wall_time": 15548727.294104628,
+      "request_source_frame": 7345,
+      "phase": "cold_run",
+      "request_index": 70,
+      "end_index": 190,
+      "applied_index": 70,
+      "changed_fields": [
+        "throttle",
+        "hand_brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": true,
+        "gear": 1
+      },
+      "first_applied_frame": 7346,
+      "first_applied_observed_sim_s": 8.265829617157578,
+      "actual_application_sim_bracket_s": [
+        8.21582961641252,
+        8.265829617157578
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548727.295968045,
+      "timeline_lines_1based": [
+        61,
+        190
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 70,
+          "frame": 7346,
+          "timestamp_s": 8.265829617157578,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 70,
+          "frame": 7346,
+          "timestamp_s": 8.265829617157578,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 70,
+          "frame": 7346,
+          "timestamp_s": 8.265829617157578,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 81,
+          "frame": 7357,
+          "timestamp_s": 8.815829625353217,
+          "relative_to_first_applied_observation_s": 0.5500000081956387
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p170_B_401__command_5",
+      "trial_id": "responses__p170_B_401",
+      "kind": "startup",
+      "source_trace_sha256": "85a60f6eef047a537780fff6528fd67e8a24ad90786954acfb981855ba1574aa",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p170_B_401",
+      "request_wall_time": 15548741.343928868,
+      "request_rpc_return_wall_time": 15548741.343951155,
+      "request_source_frame": 7625,
+      "phase": "warm_run",
+      "request_index": 350,
+      "end_index": 470,
+      "applied_index": 350,
+      "changed_fields": [
+        "throttle",
+        "hand_brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": true,
+        "gear": 1
+      },
+      "first_applied_frame": 7626,
+      "first_applied_observed_sim_s": 22.265829825773835,
+      "actual_application_sim_bracket_s": [
+        22.215829825028777,
+        22.265829825773835
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548741.345763031,
+      "timeline_lines_1based": [
+        341,
+        470
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 350,
+          "frame": 7626,
+          "timestamp_s": 22.265829825773835,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 350,
+          "frame": 7626,
+          "timestamp_s": 22.265829825773835,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 350,
+          "frame": 7626,
+          "timestamp_s": 22.265829825773835,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 362,
+          "frame": 7638,
+          "timestamp_s": 22.865829834714532,
+          "relative_to_first_applied_observation_s": 0.6000000089406967
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p170_B_402__command_2",
+      "trial_id": "responses__p170_B_402",
+      "kind": "startup",
+      "source_trace_sha256": "341caf657c8ba0ef6b5ac6caef7fcfd585aea32ecfbc6660b763732c552f4656",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p170_B_402",
+      "request_wall_time": 15549026.613429427,
+      "request_rpc_return_wall_time": 15549026.613455148,
+      "request_source_frame": 12516,
+      "phase": "cold_run",
+      "request_index": 70,
+      "end_index": 190,
+      "applied_index": 70,
+      "changed_fields": [
+        "throttle",
+        "hand_brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": true,
+        "gear": 1
+      },
+      "first_applied_frame": 12517,
+      "first_applied_observed_sim_s": 8.436072224751115,
+      "actual_application_sim_bracket_s": [
+        8.386072224006057,
+        8.436072224751115
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15549026.615483986,
+      "timeline_lines_1based": [
+        61,
+        190
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 70,
+          "frame": 12517,
+          "timestamp_s": 8.436072224751115,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 70,
+          "frame": 12517,
+          "timestamp_s": 8.436072224751115,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 70,
+          "frame": 12517,
+          "timestamp_s": 8.436072224751115,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 81,
+          "frame": 12528,
+          "timestamp_s": 8.986072232946754,
+          "relative_to_first_applied_observation_s": 0.5500000081956387
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p170_B_402__command_5",
+      "trial_id": "responses__p170_B_402",
+      "kind": "startup",
+      "source_trace_sha256": "341caf657c8ba0ef6b5ac6caef7fcfd585aea32ecfbc6660b763732c552f4656",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p170_B_402",
+      "request_wall_time": 15549040.713628905,
+      "request_rpc_return_wall_time": 15549040.713653576,
+      "request_source_frame": 12796,
+      "phase": "warm_run",
+      "request_index": 350,
+      "end_index": 470,
+      "applied_index": 350,
+      "changed_fields": [
+        "throttle",
+        "hand_brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": true,
+        "gear": 1
+      },
+      "first_applied_frame": 12797,
+      "first_applied_observed_sim_s": 22.43607243336737,
+      "actual_application_sim_bracket_s": [
+        22.386072432622313,
+        22.43607243336737
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15549040.71542373,
+      "timeline_lines_1based": [
+        341,
+        470
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 350,
+          "frame": 12797,
+          "timestamp_s": 22.43607243336737,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 350,
+          "frame": 12797,
+          "timestamp_s": 22.43607243336737,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 350,
+          "frame": 12797,
+          "timestamp_s": 22.43607243336737,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 361,
+          "frame": 12808,
+          "timestamp_s": 22.98607244156301,
+          "relative_to_first_applied_observation_s": 0.5500000081956387
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p170_coast_401__command_1",
+      "trial_id": "responses__p170_coast_401",
+      "kind": "startup",
+      "source_trace_sha256": "f9d0acd94dcc7090fd62193d13853d17dc45ef72fc2fa94ee8d9e7ae5bea3ad5",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p170_coast_401",
+      "request_wall_time": 15548813.358779963,
+      "request_rpc_return_wall_time": 15548813.35880429,
+      "request_source_frame": 8789,
+      "phase": "cold_run",
+      "request_index": 30,
+      "end_index": 150,
+      "applied_index": 30,
+      "changed_fields": [
+        "throttle",
+        "brake",
+        "hand_brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 8790,
+      "first_applied_observed_sim_s": 6.490878578275442,
+      "actual_application_sim_bracket_s": [
+        6.440878577530384,
+        6.490878578275442
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548813.360637289,
+      "timeline_lines_1based": [
+        21,
+        150
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 30,
+          "frame": 8790,
+          "timestamp_s": 6.490878578275442,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 101,
+          "frame": 8861,
+          "timestamp_s": 10.040878631174564,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "wheel_motion": {
+          "index": 101,
+          "frame": 8861,
+          "timestamp_s": 10.040878631174564,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "body_motion": {
+          "index": 101,
+          "frame": 8861,
+          "timestamp_s": 10.040878631174564,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": false,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 71,
+      "gear0_rpm_range": [
+        44.36627960205078,
+        2254.52880859375
+      ],
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p170_coast_402__command_1",
+      "trial_id": "responses__p170_coast_402",
+      "kind": "startup",
+      "source_trace_sha256": "90789a5ad2afd4690dda8ed11cdcf6dc8b95e6ac7d53978917d5f79b4191c711",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p170_coast_402",
+      "request_wall_time": 15549111.43203028,
+      "request_rpc_return_wall_time": 15549111.432048516,
+      "request_source_frame": 13962,
+      "phase": "cold_run",
+      "request_index": 30,
+      "end_index": 150,
+      "applied_index": 30,
+      "changed_fields": [
+        "throttle",
+        "brake",
+        "hand_brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 13963,
+      "first_applied_observed_sim_s": 6.204037142917514,
+      "actual_application_sim_bracket_s": [
+        6.154037142172456,
+        6.204037142917514
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15549111.43390614,
+      "timeline_lines_1based": [
+        21,
+        150
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 30,
+          "frame": 13963,
+          "timestamp_s": 6.204037142917514,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 101,
+          "frame": 14034,
+          "timestamp_s": 9.754037195816636,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "wheel_motion": {
+          "index": 101,
+          "frame": 14034,
+          "timestamp_s": 9.754037195816636,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "body_motion": {
+          "index": 101,
+          "frame": 14034,
+          "timestamp_s": 9.754037195816636,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": false,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 71,
+      "gear0_rpm_range": [
+        44.36627960205078,
+        2254.52880859375
+      ],
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p27_A_401__command_2",
+      "trial_id": "responses__p27_A_401",
+      "kind": "startup",
+      "source_trace_sha256": "42d6f94f30db6ba871e263867085e0bc68a5904a6929aefb4e2270abd0cec6be",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p27_A_401",
+      "request_wall_time": 15548541.328106018,
+      "request_rpc_return_wall_time": 15548541.328123355,
+      "request_source_frame": 4068,
+      "phase": "cold_run",
+      "request_index": 70,
+      "end_index": 190,
+      "applied_index": 70,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 4069,
+      "first_applied_observed_sim_s": 8.914510665461421,
+      "actual_application_sim_bracket_s": [
+        8.864510664716363,
+        8.914510665461421
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548541.329845764,
+      "timeline_lines_1based": [
+        61,
+        190
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 70,
+          "frame": 4069,
+          "timestamp_s": 8.914510665461421,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 141,
+          "frame": 4140,
+          "timestamp_s": 12.464510718360543,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "wheel_motion": {
+          "index": 141,
+          "frame": 4140,
+          "timestamp_s": 12.464510718360543,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "body_motion": {
+          "index": 141,
+          "frame": 4140,
+          "timestamp_s": 12.464510718360543,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": false,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 71,
+      "gear0_rpm_range": [
+        44.36627960205078,
+        2254.52880859375
+      ],
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p27_A_401__command_5",
+      "trial_id": "responses__p27_A_401",
+      "kind": "startup",
+      "source_trace_sha256": "42d6f94f30db6ba871e263867085e0bc68a5904a6929aefb4e2270abd0cec6be",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p27_A_401",
+      "request_wall_time": 15548555.427931955,
+      "request_rpc_return_wall_time": 15548555.427948385,
+      "request_source_frame": 4348,
+      "phase": "warm_run",
+      "request_index": 350,
+      "end_index": 470,
+      "applied_index": 350,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 4349,
+      "first_applied_observed_sim_s": 22.914510874077678,
+      "actual_application_sim_bracket_s": [
+        22.86451087333262,
+        22.914510874077678
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548555.430172248,
+      "timeline_lines_1based": [
+        341,
+        470
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 350,
+          "frame": 4349,
+          "timestamp_s": 22.914510874077678,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 350,
+          "frame": 4349,
+          "timestamp_s": 22.914510874077678,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 350,
+          "frame": 4349,
+          "timestamp_s": 22.914510874077678,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 361,
+          "frame": 4360,
+          "timestamp_s": 23.464510882273316,
+          "relative_to_first_applied_observation_s": 0.5500000081956387
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p27_A_402__command_2",
+      "trial_id": "responses__p27_A_402",
+      "kind": "startup",
+      "source_trace_sha256": "6aa4eb553041501368f00a69d2c6bd65a773ac19045fa1869da7e746cd846585",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p27_A_402",
+      "request_wall_time": 15548841.020726174,
+      "request_rpc_return_wall_time": 15548841.020765604,
+      "request_source_frame": 9244,
+      "phase": "cold_run",
+      "request_index": 70,
+      "end_index": 190,
+      "applied_index": 70,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 9245,
+      "first_applied_observed_sim_s": 8.905585428699851,
+      "actual_application_sim_bracket_s": [
+        8.855585427954793,
+        8.905585428699851
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548841.023713231,
+      "timeline_lines_1based": [
+        61,
+        190
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 70,
+          "frame": 9245,
+          "timestamp_s": 8.905585428699851,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 141,
+          "frame": 9316,
+          "timestamp_s": 12.455585481598973,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "wheel_motion": {
+          "index": 141,
+          "frame": 9316,
+          "timestamp_s": 12.455585481598973,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "body_motion": {
+          "index": 141,
+          "frame": 9316,
+          "timestamp_s": 12.455585481598973,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": false,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 71,
+      "gear0_rpm_range": [
+        44.36627960205078,
+        2254.52880859375
+      ],
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p27_A_402__command_5",
+      "trial_id": "responses__p27_A_402",
+      "kind": "startup",
+      "source_trace_sha256": "6aa4eb553041501368f00a69d2c6bd65a773ac19045fa1869da7e746cd846585",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p27_A_402",
+      "request_wall_time": 15548855.12052072,
+      "request_rpc_return_wall_time": 15548855.120540967,
+      "request_source_frame": 9524,
+      "phase": "warm_run",
+      "request_index": 350,
+      "end_index": 470,
+      "applied_index": 350,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 9525,
+      "first_applied_observed_sim_s": 22.905585637316108,
+      "actual_application_sim_bracket_s": [
+        22.85558563657105,
+        22.905585637316108
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548855.12302248,
+      "timeline_lines_1based": [
+        341,
+        470
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 350,
+          "frame": 9525,
+          "timestamp_s": 22.905585637316108,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 350,
+          "frame": 9525,
+          "timestamp_s": 22.905585637316108,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 350,
+          "frame": 9525,
+          "timestamp_s": 22.905585637316108,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 361,
+          "frame": 9536,
+          "timestamp_s": 23.455585645511746,
+          "relative_to_first_applied_observation_s": 0.5500000081956387
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p27_B_401__command_2",
+      "trial_id": "responses__p27_B_401",
+      "kind": "startup",
+      "source_trace_sha256": "6d3676a1b46fd2244e17a8f2e523ddd6f70b7cd6797572b3dfd4b0dfa0bf8e79",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p27_B_401",
+      "request_wall_time": 15548578.949632356,
+      "request_rpc_return_wall_time": 15548578.949657172,
+      "request_source_frame": 4723,
+      "phase": "cold_run",
+      "request_index": 70,
+      "end_index": 190,
+      "applied_index": 70,
+      "changed_fields": [
+        "throttle",
+        "hand_brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": true,
+        "gear": 1
+      },
+      "first_applied_frame": 4724,
+      "first_applied_observed_sim_s": 8.887403853237629,
+      "actual_application_sim_bracket_s": [
+        8.83740385249257,
+        8.887403853237629
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548578.951737603,
+      "timeline_lines_1based": [
+        61,
+        190
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 70,
+          "frame": 4724,
+          "timestamp_s": 8.887403853237629,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 70,
+          "frame": 4724,
+          "timestamp_s": 8.887403853237629,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 70,
+          "frame": 4724,
+          "timestamp_s": 8.887403853237629,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 81,
+          "frame": 4735,
+          "timestamp_s": 9.437403861433268,
+          "relative_to_first_applied_observation_s": 0.5500000081956387
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p27_B_401__command_5",
+      "trial_id": "responses__p27_B_401",
+      "kind": "startup",
+      "source_trace_sha256": "6d3676a1b46fd2244e17a8f2e523ddd6f70b7cd6797572b3dfd4b0dfa0bf8e79",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p27_B_401",
+      "request_wall_time": 15548593.049659556,
+      "request_rpc_return_wall_time": 15548593.04967514,
+      "request_source_frame": 5003,
+      "phase": "warm_run",
+      "request_index": 350,
+      "end_index": 470,
+      "applied_index": 350,
+      "changed_fields": [
+        "throttle",
+        "hand_brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": true,
+        "gear": 1
+      },
+      "first_applied_frame": 5004,
+      "first_applied_observed_sim_s": 22.887404061853886,
+      "actual_application_sim_bracket_s": [
+        22.837404061108828,
+        22.887404061853886
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548593.052117769,
+      "timeline_lines_1based": [
+        341,
+        470
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 350,
+          "frame": 5004,
+          "timestamp_s": 22.887404061853886,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 350,
+          "frame": 5004,
+          "timestamp_s": 22.887404061853886,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 350,
+          "frame": 5004,
+          "timestamp_s": 22.887404061853886,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 362,
+          "frame": 5016,
+          "timestamp_s": 23.487404070794582,
+          "relative_to_first_applied_observation_s": 0.6000000089406967
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p27_B_402__command_2",
+      "trial_id": "responses__p27_B_402",
+      "kind": "startup",
+      "source_trace_sha256": "770fc4cb2054d808dba3581f7663cac12db59fe9e237ef6d5428d3a46caa2f7b",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p27_B_402",
+      "request_wall_time": 15548878.204382107,
+      "request_rpc_return_wall_time": 15548878.204418564,
+      "request_source_frame": 9898,
+      "phase": "cold_run",
+      "request_index": 70,
+      "end_index": 190,
+      "applied_index": 70,
+      "changed_fields": [
+        "throttle",
+        "hand_brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": true,
+        "gear": 1
+      },
+      "first_applied_frame": 9899,
+      "first_applied_observed_sim_s": 8.570290006697178,
+      "actual_application_sim_bracket_s": [
+        8.52029000595212,
+        8.570290006697178
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548878.206361003,
+      "timeline_lines_1based": [
+        61,
+        190
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 70,
+          "frame": 9899,
+          "timestamp_s": 8.570290006697178,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 70,
+          "frame": 9899,
+          "timestamp_s": 8.570290006697178,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 70,
+          "frame": 9899,
+          "timestamp_s": 8.570290006697178,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 81,
+          "frame": 9910,
+          "timestamp_s": 9.120290014892817,
+          "relative_to_first_applied_observation_s": 0.5500000081956387
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p27_B_402__command_5",
+      "trial_id": "responses__p27_B_402",
+      "kind": "startup",
+      "source_trace_sha256": "770fc4cb2054d808dba3581f7663cac12db59fe9e237ef6d5428d3a46caa2f7b",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p27_B_402",
+      "request_wall_time": 15548892.304515792,
+      "request_rpc_return_wall_time": 15548892.304539531,
+      "request_source_frame": 10178,
+      "phase": "warm_run",
+      "request_index": 350,
+      "end_index": 470,
+      "applied_index": 350,
+      "changed_fields": [
+        "throttle",
+        "hand_brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": true,
+        "gear": 1
+      },
+      "first_applied_frame": 10179,
+      "first_applied_observed_sim_s": 22.570290215313435,
+      "actual_application_sim_bracket_s": [
+        22.520290214568377,
+        22.570290215313435
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548892.306387693,
+      "timeline_lines_1based": [
+        341,
+        470
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 350,
+          "frame": 10179,
+          "timestamp_s": 22.570290215313435,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 350,
+          "frame": 10179,
+          "timestamp_s": 22.570290215313435,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 350,
+          "frame": 10179,
+          "timestamp_s": 22.570290215313435,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 361,
+          "frame": 10190,
+          "timestamp_s": 23.120290223509073,
+          "relative_to_first_applied_observation_s": 0.5500000081956387
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p27_coast_401__command_1",
+      "trial_id": "responses__p27_coast_401",
+      "kind": "startup",
+      "source_trace_sha256": "a7e70e816ab14e18470b1d139614e44b5bb23c7f53d7b79c055ea0d16d4e80ae",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p27_coast_401",
+      "request_wall_time": 15548762.70173604,
+      "request_rpc_return_wall_time": 15548762.701763872,
+      "request_source_frame": 7961,
+      "phase": "cold_run",
+      "request_index": 30,
+      "end_index": 150,
+      "applied_index": 30,
+      "changed_fields": [
+        "throttle",
+        "brake",
+        "hand_brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 7962,
+      "first_applied_observed_sim_s": 6.75716701336205,
+      "actual_application_sim_bracket_s": [
+        6.707167012616992,
+        6.75716701336205
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15548762.704153445,
+      "timeline_lines_1based": [
+        21,
+        150
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 30,
+          "frame": 7962,
+          "timestamp_s": 6.75716701336205,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 101,
+          "frame": 8033,
+          "timestamp_s": 10.307167066261172,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "wheel_motion": {
+          "index": 101,
+          "frame": 8033,
+          "timestamp_s": 10.307167066261172,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "body_motion": {
+          "index": 101,
+          "frame": 8033,
+          "timestamp_s": 10.307167066261172,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": false,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 71,
+      "gear0_rpm_range": [
+        44.36627960205078,
+        2254.52880859375
+      ],
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "responses__p27_coast_402__command_1",
+      "trial_id": "responses__p27_coast_402",
+      "kind": "startup",
+      "source_trace_sha256": "a7046b89db78f621e7ff649e3282a6bc175bdd1cabbba936ef0e5f1328dc5723",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "source_manifest_trial_id": "responses__p27_coast_402",
+      "request_wall_time": 15549061.65691556,
+      "request_rpc_return_wall_time": 15549061.656935425,
+      "request_source_frame": 13132,
+      "phase": "cold_run",
+      "request_index": 30,
+      "end_index": 150,
+      "applied_index": 30,
+      "changed_fields": [
+        "throttle",
+        "brake",
+        "hand_brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 13133,
+      "first_applied_observed_sim_s": 6.3674822971224785,
+      "actual_application_sim_bracket_s": [
+        6.31748229637742,
+        6.3674822971224785
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15549061.659005024,
+      "timeline_lines_1based": [
+        21,
+        150
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 30,
+          "frame": 13133,
+          "timestamp_s": 6.3674822971224785,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 101,
+          "frame": 13204,
+          "timestamp_s": 9.9174823500216,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "wheel_motion": {
+          "index": 101,
+          "frame": 13204,
+          "timestamp_s": 9.9174823500216,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "body_motion": {
+          "index": 101,
+          "frame": 13204,
+          "timestamp_s": 9.9174823500216,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": false,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 71,
+      "gear0_rpm_range": [
+        44.36627960205078,
+        2254.52880859375
+      ],
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "sham__P0-sham-reapply_401__command_2",
+      "trial_id": "sham__P0-sham-reapply_401",
+      "kind": "startup",
+      "source_trace_sha256": "98cd02e574467d3a4ba21983cc6adc056e195dad494edf4b9c47337a1ecd9210",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "source_manifest_trial_id": "sham__P0-sham-reapply_401",
+      "request_wall_time": 15549191.122881217,
+      "request_rpc_return_wall_time": 15549191.122900892,
+      "request_source_frame": 17679,
+      "phase": "cold_run",
+      "request_index": 70,
+      "end_index": 190,
+      "applied_index": 71,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 1,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 17681,
+      "first_applied_observed_sim_s": 8.298906108364463,
+      "actual_application_sim_bracket_s": [
+        8.248906107619405,
+        8.298906108364463
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15549191.174650228,
+      "timeline_lines_1based": [
+        62,
+        190
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 71,
+          "frame": 17681,
+          "timestamp_s": 8.298906108364463,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 142,
+          "frame": 17752,
+          "timestamp_s": 11.848906161263585,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "wheel_motion": {
+          "index": 142,
+          "frame": 17752,
+          "timestamp_s": 11.848906161263585,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "body_motion": {
+          "index": 142,
+          "frame": 17752,
+          "timestamp_s": 11.848906161263585,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": false,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 71,
+      "gear0_rpm_range": [
+        44.36627960205078,
+        2254.52880859375
+      ],
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "sham__P0-sham-reapply_401__command_5",
+      "trial_id": "sham__P0-sham-reapply_401",
+      "kind": "startup",
+      "source_trace_sha256": "98cd02e574467d3a4ba21983cc6adc056e195dad494edf4b9c47337a1ecd9210",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "source_manifest_trial_id": "sham__P0-sham-reapply_401",
+      "request_wall_time": 15549205.17306252,
+      "request_rpc_return_wall_time": 15549205.173078172,
+      "request_source_frame": 17959,
+      "phase": "warm_run",
+      "request_index": 350,
+      "end_index": 470,
+      "applied_index": 350,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 17960,
+      "first_applied_observed_sim_s": 22.24890631623566,
+      "actual_application_sim_bracket_s": [
+        22.198906315490603,
+        22.24890631623566
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15549205.174778504,
+      "timeline_lines_1based": [
+        341,
+        470
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 350,
+          "frame": 17960,
+          "timestamp_s": 22.24890631623566,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 350,
+          "frame": 17960,
+          "timestamp_s": 22.24890631623566,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 350,
+          "frame": 17960,
+          "timestamp_s": 22.24890631623566,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 361,
+          "frame": 17971,
+          "timestamp_s": 22.7989063244313,
+          "relative_to_first_applied_observation_s": 0.5500000081956387
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "sham__P0-sham-reapply_402__command_2",
+      "trial_id": "sham__P0-sham-reapply_402",
+      "kind": "startup",
+      "source_trace_sha256": "5f73deb8d9269bdfaecf58efa551c9f0bd889963a2a0b5cf270a89c5ce8b3a2a",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "source_manifest_trial_id": "sham__P0-sham-reapply_402",
+      "request_wall_time": 15549301.42770092,
+      "request_rpc_return_wall_time": 15549301.427722264,
+      "request_source_frame": 19645,
+      "phase": "cold_run",
+      "request_index": 70,
+      "end_index": 190,
+      "applied_index": 70,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 19646,
+      "first_applied_observed_sim_s": 8.156690381467342,
+      "actual_application_sim_bracket_s": [
+        8.106690380722284,
+        8.156690381467342
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15549301.429514395,
+      "timeline_lines_1based": [
+        61,
+        190
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 70,
+          "frame": 19646,
+          "timestamp_s": 8.156690381467342,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 141,
+          "frame": 19717,
+          "timestamp_s": 11.706690434366465,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "wheel_motion": {
+          "index": 141,
+          "frame": 19717,
+          "timestamp_s": 11.706690434366465,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "body_motion": {
+          "index": 141,
+          "frame": 19717,
+          "timestamp_s": 11.706690434366465,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": false,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 71,
+      "gear0_rpm_range": [
+        44.36627960205078,
+        2254.52880859375
+      ],
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "sham__P0-sham-reapply_402__command_5",
+      "trial_id": "sham__P0-sham-reapply_402",
+      "kind": "startup",
+      "source_trace_sha256": "5f73deb8d9269bdfaecf58efa551c9f0bd889963a2a0b5cf270a89c5ce8b3a2a",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "source_manifest_trial_id": "sham__P0-sham-reapply_402",
+      "request_wall_time": 15549315.527905604,
+      "request_rpc_return_wall_time": 15549315.527929572,
+      "request_source_frame": 19925,
+      "phase": "warm_run",
+      "request_index": 350,
+      "end_index": 470,
+      "applied_index": 350,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 19926,
+      "first_applied_observed_sim_s": 22.1566905900836,
+      "actual_application_sim_bracket_s": [
+        22.10669058933854,
+        22.1566905900836
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15549315.529895574,
+      "timeline_lines_1based": [
+        341,
+        470
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 350,
+          "frame": 19926,
+          "timestamp_s": 22.1566905900836,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 350,
+          "frame": 19926,
+          "timestamp_s": 22.1566905900836,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 350,
+          "frame": 19926,
+          "timestamp_s": 22.1566905900836,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 361,
+          "frame": 19937,
+          "timestamp_s": 22.706690598279238,
+          "relative_to_first_applied_observation_s": 0.5500000081956387
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "sham__P0-unmodified_401__command_2",
+      "trial_id": "sham__P0-unmodified_401",
+      "kind": "startup",
+      "source_trace_sha256": "3e6f7270664ee960365750c8a2850fd4dee8ee535cb34b3f17c4a0c355084438",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "source_manifest_trial_id": "sham__P0-unmodified_401",
+      "request_wall_time": 15549154.125490844,
+      "request_rpc_return_wall_time": 15549154.12551013,
+      "request_source_frame": 17022,
+      "phase": "cold_run",
+      "request_index": 70,
+      "end_index": 190,
+      "applied_index": 70,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 17023,
+      "first_applied_observed_sim_s": 8.150535745546222,
+      "actual_application_sim_bracket_s": [
+        8.100535744801164,
+        8.150535745546222
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15549154.127226353,
+      "timeline_lines_1based": [
+        61,
+        190
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 70,
+          "frame": 17023,
+          "timestamp_s": 8.150535745546222,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 141,
+          "frame": 17094,
+          "timestamp_s": 11.700535798445344,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "wheel_motion": {
+          "index": 141,
+          "frame": 17094,
+          "timestamp_s": 11.700535798445344,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "body_motion": {
+          "index": 141,
+          "frame": 17094,
+          "timestamp_s": 11.700535798445344,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": false,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 71,
+      "gear0_rpm_range": [
+        44.36627960205078,
+        2254.52880859375
+      ],
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "sham__P0-unmodified_401__command_5",
+      "trial_id": "sham__P0-unmodified_401",
+      "kind": "startup",
+      "source_trace_sha256": "3e6f7270664ee960365750c8a2850fd4dee8ee535cb34b3f17c4a0c355084438",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "source_manifest_trial_id": "sham__P0-unmodified_401",
+      "request_wall_time": 15549168.225561304,
+      "request_rpc_return_wall_time": 15549168.22560211,
+      "request_source_frame": 17302,
+      "phase": "warm_run",
+      "request_index": 350,
+      "end_index": 470,
+      "applied_index": 350,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 17303,
+      "first_applied_observed_sim_s": 22.15053595416248,
+      "actual_application_sim_bracket_s": [
+        22.10053595341742,
+        22.15053595416248
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15549168.227344273,
+      "timeline_lines_1based": [
+        341,
+        470
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 350,
+          "frame": 17303,
+          "timestamp_s": 22.15053595416248,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 350,
+          "frame": 17303,
+          "timestamp_s": 22.15053595416248,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 350,
+          "frame": 17303,
+          "timestamp_s": 22.15053595416248,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 361,
+          "frame": 17314,
+          "timestamp_s": 22.700535962358117,
+          "relative_to_first_applied_observation_s": 0.5500000081956387
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "sham__P0-unmodified_402__command_2",
+      "trial_id": "sham__P0-unmodified_402",
+      "kind": "startup",
+      "source_trace_sha256": "04625ce3e08664767562144fc52658f34bb6793ba1085a879adbd15fd99cfed9",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "source_manifest_trial_id": "sham__P0-unmodified_402",
+      "request_wall_time": 15549338.485907195,
+      "request_rpc_return_wall_time": 15549338.485927405,
+      "request_source_frame": 20302,
+      "phase": "cold_run",
+      "request_index": 70,
+      "end_index": 190,
+      "applied_index": 70,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 20303,
+      "first_applied_observed_sim_s": 8.275586787611246,
+      "actual_application_sim_bracket_s": [
+        8.225586786866188,
+        8.275586787611246
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15549338.487888364,
+      "timeline_lines_1based": [
+        61,
+        190
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 70,
+          "frame": 20303,
+          "timestamp_s": 8.275586787611246,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 141,
+          "frame": 20374,
+          "timestamp_s": 11.825586840510368,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "wheel_motion": {
+          "index": 141,
+          "frame": 20374,
+          "timestamp_s": 11.825586840510368,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "body_motion": {
+          "index": 141,
+          "frame": 20374,
+          "timestamp_s": 11.825586840510368,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": false,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 71,
+      "gear0_rpm_range": [
+        44.36627960205078,
+        2254.52880859375
+      ],
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "sham__P0-unmodified_402__command_5",
+      "trial_id": "sham__P0-unmodified_402",
+      "kind": "startup",
+      "source_trace_sha256": "04625ce3e08664767562144fc52658f34bb6793ba1085a879adbd15fd99cfed9",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "source_manifest_trial_id": "sham__P0-unmodified_402",
+      "request_wall_time": 15549352.535667397,
+      "request_rpc_return_wall_time": 15549352.535684835,
+      "request_source_frame": 20582,
+      "phase": "warm_run",
+      "request_index": 350,
+      "end_index": 470,
+      "applied_index": 351,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 1,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 20584,
+      "first_applied_observed_sim_s": 22.32558699697256,
+      "actual_application_sim_bracket_s": [
+        22.275586996227503,
+        22.32558699697256
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15549352.587476192,
+      "timeline_lines_1based": [
+        342,
+        470
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 351,
+          "frame": 20584,
+          "timestamp_s": 22.32558699697256,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 351,
+          "frame": 20584,
+          "timestamp_s": 22.32558699697256,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 351,
+          "frame": 20584,
+          "timestamp_s": 22.32558699697256,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 362,
+          "frame": 20595,
+          "timestamp_s": 22.8755870051682,
+          "relative_to_first_applied_observation_s": 0.5500000081956387
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "sham__P1-wheel-brake-experimental_401__command_2",
+      "trial_id": "sham__P1-wheel-brake-experimental_401",
+      "kind": "startup",
+      "source_trace_sha256": "32b671ec552b0203a67a738c23f93d600055b41051cb06cf0c6090fdd6fc823b",
+      "physics_sha256": "43acaf0ae7be05e3bf4d537aee6c2f8ff036b649cb235c1f72401081389556d6",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "source_manifest_trial_id": "sham__P1-wheel-brake-experimental_401",
+      "request_wall_time": 15549227.928662352,
+      "request_rpc_return_wall_time": 15549227.928693049,
+      "request_source_frame": 18334,
+      "phase": "cold_run",
+      "request_index": 70,
+      "end_index": 190,
+      "applied_index": 70,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 18335,
+      "first_applied_observed_sim_s": 8.208806451410055,
+      "actual_application_sim_bracket_s": [
+        8.158806450664997,
+        8.208806451410055
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15549227.930516737,
+      "timeline_lines_1based": [
+        61,
+        190
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 70,
+          "frame": 18335,
+          "timestamp_s": 8.208806451410055,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 141,
+          "frame": 18406,
+          "timestamp_s": 11.758806504309177,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "wheel_motion": {
+          "index": 141,
+          "frame": 18406,
+          "timestamp_s": 11.758806504309177,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "body_motion": {
+          "index": 141,
+          "frame": 18406,
+          "timestamp_s": 11.758806504309177,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": false,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 71,
+      "gear0_rpm_range": [
+        44.36627960205078,
+        2254.52880859375
+      ],
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "sham__P1-wheel-brake-experimental_401__command_5",
+      "trial_id": "sham__P1-wheel-brake-experimental_401",
+      "kind": "startup",
+      "source_trace_sha256": "32b671ec552b0203a67a738c23f93d600055b41051cb06cf0c6090fdd6fc823b",
+      "physics_sha256": "43acaf0ae7be05e3bf4d537aee6c2f8ff036b649cb235c1f72401081389556d6",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "source_manifest_trial_id": "sham__P1-wheel-brake-experimental_401",
+      "request_wall_time": 15549242.028624369,
+      "request_rpc_return_wall_time": 15549242.028652094,
+      "request_source_frame": 18614,
+      "phase": "warm_run",
+      "request_index": 350,
+      "end_index": 470,
+      "applied_index": 350,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 18615,
+      "first_applied_observed_sim_s": 22.208806660026312,
+      "actual_application_sim_bracket_s": [
+        22.158806659281254,
+        22.208806660026312
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15549242.030508328,
+      "timeline_lines_1based": [
+        341,
+        470
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 350,
+          "frame": 18615,
+          "timestamp_s": 22.208806660026312,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 350,
+          "frame": 18615,
+          "timestamp_s": 22.208806660026312,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 350,
+          "frame": 18615,
+          "timestamp_s": 22.208806660026312,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 361,
+          "frame": 18626,
+          "timestamp_s": 22.75880666822195,
+          "relative_to_first_applied_observation_s": 0.5500000081956387
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "sham__P1-wheel-brake-experimental_402__command_2",
+      "trial_id": "sham__P1-wheel-brake-experimental_402",
+      "kind": "startup",
+      "source_trace_sha256": "a3047b9d32ade5b0d48fe68f702cc355a71f49bbdcda584e7a5e40be4a4127b4",
+      "physics_sha256": "43acaf0ae7be05e3bf4d537aee6c2f8ff036b649cb235c1f72401081389556d6",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "source_manifest_trial_id": "sham__P1-wheel-brake-experimental_402",
+      "request_wall_time": 15549264.719355743,
+      "request_rpc_return_wall_time": 15549264.719397772,
+      "request_source_frame": 18990,
+      "phase": "cold_run",
+      "request_index": 70,
+      "end_index": 190,
+      "applied_index": 70,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 18991,
+      "first_applied_observed_sim_s": 8.139294136315584,
+      "actual_application_sim_bracket_s": [
+        8.089294135570526,
+        8.139294136315584
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15549264.721394977,
+      "timeline_lines_1based": [
+        61,
+        190
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 70,
+          "frame": 18991,
+          "timestamp_s": 8.139294136315584,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 141,
+          "frame": 19062,
+          "timestamp_s": 11.689294189214706,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "wheel_motion": {
+          "index": 141,
+          "frame": 19062,
+          "timestamp_s": 11.689294189214706,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        },
+        "body_motion": {
+          "index": 141,
+          "frame": 19062,
+          "timestamp_s": 11.689294189214706,
+          "relative_to_first_applied_observation_s": 3.5500000528991222
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": false,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 71,
+      "gear0_rpm_range": [
+        44.36627960205078,
+        2254.52880859375
+      ],
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    },
+    {
+      "event_id": "sham__P1-wheel-brake-experimental_402__command_5",
+      "trial_id": "sham__P1-wheel-brake-experimental_402",
+      "kind": "startup",
+      "source_trace_sha256": "a3047b9d32ade5b0d48fe68f702cc355a71f49bbdcda584e7a5e40be4a4127b4",
+      "physics_sha256": "43acaf0ae7be05e3bf4d537aee6c2f8ff036b649cb235c1f72401081389556d6",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "source_manifest_trial_id": "sham__P1-wheel-brake-experimental_402",
+      "request_wall_time": 15549278.76928092,
+      "request_rpc_return_wall_time": 15549278.769311128,
+      "request_source_frame": 19270,
+      "phase": "warm_run",
+      "request_index": 350,
+      "end_index": 470,
+      "applied_index": 350,
+      "changed_fields": [
+        "throttle",
+        "brake"
+      ],
+      "delay_outer_ticks": 0,
+      "status": "Observed",
+      "command": {
+        "throttle": 0.15,
+        "brake": 0.0,
+        "steer": 0.0,
+        "hand_brake": false,
+        "reverse": false,
+        "manual_gear_shift": false,
+        "gear": 0
+      },
+      "first_applied_frame": 19271,
+      "first_applied_observed_sim_s": 22.13929434493184,
+      "actual_application_sim_bracket_s": [
+        22.089294344186783,
+        22.13929434493184
+      ],
+      "actual_application_wall_time": "NotAvailable; request walltime and observation upper bound retained",
+      "observation_wall_upper_bound": 15549278.771251336,
+      "timeline_lines_1based": [
+        341,
+        470
+      ],
+      "first": {
+        "rpm_rise": {
+          "index": 350,
+          "frame": 19271,
+          "timestamp_s": 22.13929434493184,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "gear1": {
+          "index": 350,
+          "frame": 19271,
+          "timestamp_s": 22.13929434493184,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "wheel_motion": {
+          "index": 350,
+          "frame": 19271,
+          "timestamp_s": 22.13929434493184,
+          "relative_to_first_applied_observation_s": 0.0
+        },
+        "body_motion": {
+          "index": 361,
+          "frame": 19282,
+          "timestamp_s": 22.68929435312748,
+          "relative_to_first_applied_observation_s": 0.5500000081956387
+        }
+      },
+      "already_true_before": {
+        "rpm_rise": false,
+        "gear1": true,
+        "wheel_motion": false,
+        "body_motion": false
+      },
+      "baseline_rpm": 0.0,
+      "gear0_samples": 0,
+      "gear0_rpm_range": null,
+      "evidence": "Correlated",
+      "inference": "Gear0 wait followed by gear1/wheel/body response; internal target gear, clutch and auto latency unobserved"
+    }
+  ],
+  "gear_events": [
+    {
+      "event_id": "feasibility__p27_api__gear_101",
+      "trial_id": "feasibility__p27_api",
+      "frame": 438,
+      "timestamp_s": 13.758555432781577,
+      "from_gear": 0.0,
+      "to_gear": 1.0,
+      "phase": "cold_run",
+      "timeline_lines_1based": [
+        92,
+        132
+      ],
+      "source_trace_sha256": "2f689334bed3422d1b41e62d915cc132ace706e65b151e9db8f7da849153d182",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "c1e2498904537e81b27162044234a471cefe13d1",
+      "evidence": "Observed"
+    },
+    {
+      "event_id": "responses__p126_A_401__gear_141",
+      "trial_id": "responses__p126_A_401",
+      "frame": 5450,
+      "timestamp_s": 11.84156029485166,
+      "from_gear": 0.0,
+      "to_gear": 1.0,
+      "phase": "cold_run",
+      "timeline_lines_1based": [
+        132,
+        172
+      ],
+      "source_trace_sha256": "4cfce660228d5b37ac79ff074a64f05e38b3e411aff761728b31a380a93f6b05",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "evidence": "Observed"
+    },
+    {
+      "event_id": "responses__p126_A_402__gear_141",
+      "trial_id": "responses__p126_A_402",
+      "frame": 10624,
+      "timestamp_s": 11.99493401683867,
+      "from_gear": 0.0,
+      "to_gear": 1.0,
+      "phase": "cold_run",
+      "timeline_lines_1based": [
+        132,
+        172
+      ],
+      "source_trace_sha256": "1539c777372330ab96dd48398ec06d1bfa719b4257815091198756fb9c8df231",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "evidence": "Observed"
+    },
+    {
+      "event_id": "responses__p126_coast_401__gear_101",
+      "trial_id": "responses__p126_coast_401",
+      "frame": 8447,
+      "timestamp_s": 10.368039403110743,
+      "from_gear": 0.0,
+      "to_gear": 1.0,
+      "phase": "cold_run",
+      "timeline_lines_1based": [
+        92,
+        132
+      ],
+      "source_trace_sha256": "22bd9ae464fb98c45b2088af5d2e83cbd389a3f6cb4d347aa83e9798fac342d7",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "evidence": "Observed"
+    },
+    {
+      "event_id": "responses__p126_coast_402__gear_101",
+      "trial_id": "responses__p126_coast_402",
+      "frame": 13619,
+      "timestamp_s": 9.808797946199775,
+      "from_gear": 0.0,
+      "to_gear": 1.0,
+      "phase": "cold_run",
+      "timeline_lines_1based": [
+        92,
+        132
+      ],
+      "source_trace_sha256": "bc95dd4c4f652c05f31b8408922118c45b6f19282a21ecfdde23c6185c5356b3",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "evidence": "Observed"
+    },
+    {
+      "event_id": "responses__p170_A_401__gear_141",
+      "trial_id": "responses__p170_A_401",
+      "frame": 6760,
+      "timestamp_s": 11.891021044924855,
+      "from_gear": 0.0,
+      "to_gear": 1.0,
+      "phase": "cold_run",
+      "timeline_lines_1based": [
+        132,
+        172
+      ],
+      "source_trace_sha256": "b1d9db4009dcde504e961520016527e9b861c42aa6cfb96ae64ab3abe624d35b",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "evidence": "Observed"
+    },
+    {
+      "event_id": "responses__p170_A_402__gear_142",
+      "trial_id": "responses__p170_A_402",
+      "frame": 11934,
+      "timestamp_s": 12.174509501084685,
+      "from_gear": 0.0,
+      "to_gear": 1.0,
+      "phase": "cold_run",
+      "timeline_lines_1based": [
+        133,
+        173
+      ],
+      "source_trace_sha256": "7bcb1c8a0c92eeb33b1325f3bff93b839e4835aa68cca34ae939f8e0be757aeb",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "evidence": "Observed"
+    },
+    {
+      "event_id": "responses__p170_coast_401__gear_101",
+      "trial_id": "responses__p170_coast_401",
+      "frame": 8861,
+      "timestamp_s": 10.040878631174564,
+      "from_gear": 0.0,
+      "to_gear": 1.0,
+      "phase": "cold_run",
+      "timeline_lines_1based": [
+        92,
+        132
+      ],
+      "source_trace_sha256": "f9d0acd94dcc7090fd62193d13853d17dc45ef72fc2fa94ee8d9e7ae5bea3ad5",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "evidence": "Observed"
+    },
+    {
+      "event_id": "responses__p170_coast_402__gear_101",
+      "trial_id": "responses__p170_coast_402",
+      "frame": 14034,
+      "timestamp_s": 9.754037195816636,
+      "from_gear": 0.0,
+      "to_gear": 1.0,
+      "phase": "cold_run",
+      "timeline_lines_1based": [
+        92,
+        132
+      ],
+      "source_trace_sha256": "90789a5ad2afd4690dda8ed11cdcf6dc8b95e6ac7d53978917d5f79b4191c711",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "evidence": "Observed"
+    },
+    {
+      "event_id": "responses__p27_A_401__gear_141",
+      "trial_id": "responses__p27_A_401",
+      "frame": 4140,
+      "timestamp_s": 12.464510718360543,
+      "from_gear": 0.0,
+      "to_gear": 1.0,
+      "phase": "cold_run",
+      "timeline_lines_1based": [
+        132,
+        172
+      ],
+      "source_trace_sha256": "42d6f94f30db6ba871e263867085e0bc68a5904a6929aefb4e2270abd0cec6be",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "evidence": "Observed"
+    },
+    {
+      "event_id": "responses__p27_A_402__gear_141",
+      "trial_id": "responses__p27_A_402",
+      "frame": 9316,
+      "timestamp_s": 12.455585481598973,
+      "from_gear": 0.0,
+      "to_gear": 1.0,
+      "phase": "cold_run",
+      "timeline_lines_1based": [
+        132,
+        172
+      ],
+      "source_trace_sha256": "6aa4eb553041501368f00a69d2c6bd65a773ac19045fa1869da7e746cd846585",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "evidence": "Observed"
+    },
+    {
+      "event_id": "responses__p27_coast_401__gear_101",
+      "trial_id": "responses__p27_coast_401",
+      "frame": 8033,
+      "timestamp_s": 10.307167066261172,
+      "from_gear": 0.0,
+      "to_gear": 1.0,
+      "phase": "cold_run",
+      "timeline_lines_1based": [
+        92,
+        132
+      ],
+      "source_trace_sha256": "a7e70e816ab14e18470b1d139614e44b5bb23c7f53d7b79c055ea0d16d4e80ae",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "evidence": "Observed"
+    },
+    {
+      "event_id": "responses__p27_coast_402__gear_101",
+      "trial_id": "responses__p27_coast_402",
+      "frame": 13204,
+      "timestamp_s": 9.9174823500216,
+      "from_gear": 0.0,
+      "to_gear": 1.0,
+      "phase": "cold_run",
+      "timeline_lines_1based": [
+        92,
+        132
+      ],
+      "source_trace_sha256": "a7046b89db78f621e7ff649e3282a6bc175bdd1cabbba936ef0e5f1328dc5723",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "evidence": "Observed"
+    },
+    {
+      "event_id": "sham__P0-sham-reapply_401__gear_142",
+      "trial_id": "sham__P0-sham-reapply_401",
+      "frame": 17752,
+      "timestamp_s": 11.848906161263585,
+      "from_gear": 0.0,
+      "to_gear": 1.0,
+      "phase": "cold_run",
+      "timeline_lines_1based": [
+        133,
+        173
+      ],
+      "source_trace_sha256": "98cd02e574467d3a4ba21983cc6adc056e195dad494edf4b9c47337a1ecd9210",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "evidence": "Observed"
+    },
+    {
+      "event_id": "sham__P0-sham-reapply_402__gear_141",
+      "trial_id": "sham__P0-sham-reapply_402",
+      "frame": 19717,
+      "timestamp_s": 11.706690434366465,
+      "from_gear": 0.0,
+      "to_gear": 1.0,
+      "phase": "cold_run",
+      "timeline_lines_1based": [
+        132,
+        172
+      ],
+      "source_trace_sha256": "5f73deb8d9269bdfaecf58efa551c9f0bd889963a2a0b5cf270a89c5ce8b3a2a",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "evidence": "Observed"
+    },
+    {
+      "event_id": "sham__P0-unmodified_401__gear_141",
+      "trial_id": "sham__P0-unmodified_401",
+      "frame": 17094,
+      "timestamp_s": 11.700535798445344,
+      "from_gear": 0.0,
+      "to_gear": 1.0,
+      "phase": "cold_run",
+      "timeline_lines_1based": [
+        132,
+        172
+      ],
+      "source_trace_sha256": "3e6f7270664ee960365750c8a2850fd4dee8ee535cb34b3f17c4a0c355084438",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "evidence": "Observed"
+    },
+    {
+      "event_id": "sham__P0-unmodified_402__gear_141",
+      "trial_id": "sham__P0-unmodified_402",
+      "frame": 20374,
+      "timestamp_s": 11.825586840510368,
+      "from_gear": 0.0,
+      "to_gear": 1.0,
+      "phase": "cold_run",
+      "timeline_lines_1based": [
+        132,
+        172
+      ],
+      "source_trace_sha256": "04625ce3e08664767562144fc52658f34bb6793ba1085a879adbd15fd99cfed9",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "evidence": "Observed"
+    },
+    {
+      "event_id": "sham__P1-wheel-brake-experimental_401__gear_141",
+      "trial_id": "sham__P1-wheel-brake-experimental_401",
+      "frame": 18406,
+      "timestamp_s": 11.758806504309177,
+      "from_gear": 0.0,
+      "to_gear": 1.0,
+      "phase": "cold_run",
+      "timeline_lines_1based": [
+        132,
+        172
+      ],
+      "source_trace_sha256": "32b671ec552b0203a67a738c23f93d600055b41051cb06cf0c6090fdd6fc823b",
+      "physics_sha256": "43acaf0ae7be05e3bf4d537aee6c2f8ff036b649cb235c1f72401081389556d6",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "evidence": "Observed"
+    },
+    {
+      "event_id": "sham__P1-wheel-brake-experimental_402__gear_141",
+      "trial_id": "sham__P1-wheel-brake-experimental_402",
+      "frame": 19062,
+      "timestamp_s": 11.689294189214706,
+      "from_gear": 0.0,
+      "to_gear": 1.0,
+      "phase": "cold_run",
+      "timeline_lines_1based": [
+        132,
+        172
+      ],
+      "source_trace_sha256": "a3047b9d32ade5b0d48fe68f702cc355a71f49bbdcda584e7a5e40be4a4127b4",
+      "physics_sha256": "43acaf0ae7be05e3bf4d537aee6c2f8ff036b649cb235c1f72401081389556d6",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "evidence": "Observed"
+    }
+  ],
+  "actual_internal_target_gear": "NotAvailable",
+  "autobox_timers": "NotAvailable",
+  "evidence": "Correlated; mechanism reference does not establish Shipping causal identity"
+}

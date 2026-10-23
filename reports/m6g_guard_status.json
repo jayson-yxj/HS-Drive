@@ -1,0 +1,93 @@
+{
+  "stage": "M6-G",
+  "base": "51b410942428e9994a180f5717aec9fd22369d2e",
+  "source": "Privileged",
+  "new_CARLA_trials": 0,
+  "analysis_commit": "8e8ab43f3cc37bf0d1d7593a965ed6043848d7b7",
+  "source_sha256": {
+    "diagnostics/m6g_events.py": "e3909e3ce4a8a6c8f4037c8cade46eee826d185771d759849c601fb963012586",
+    "tools/m6g_release.py": "b0b37cbb90eaade47304452bca57f2a8c19d9626b0bacb9c6b8197781ca14159",
+    "tools/m6g_analyze.py": "abe5565a097151ea4a1db754e25fd07b9447e3c91001b3c516f8303dcf8aa45a",
+    "tools/m6g_finalize.py": "3f5ea761c7360ca66e0f7eefe5b2926df03140093f60ba29de6d07610b387df0",
+    "tools/m6g_sources.py": "c735751a46326485a8944c9335e979cb7b164677b01a8aee219baca80d56037b",
+    "tools/m6g_details.py": "5ba43edaa987992caeea59927205a8a83f30ea7568867eb66ffad72ca7c69330",
+    "tools/m6g_figures.py": "68fafc464e21f9dde7d3d3c841efe1dd3be80694cb31cafdbfa26f7e376b898e",
+    "tools/m6g_reproduce.py": "12c7c098d6c7e789b69085234cb1ea54fcd7227e8fccacfaa1512f4b7141b798",
+    "tests/test_m6g_events.py": "a3b9e993366c3b20d10466d45e09bb4a23fa127bfeddcb4f6de0d511cf5d46e5",
+    "tests/test_m6g_regression.py": "c6139f6dd6bb754289951a558ca927fc052604ea2af7589ad5a90862fa7b8631",
+    "configs/m6g/protocol.json": "b4a050ac0f0f2961a42c5c3613d857ceabb00544775e885258e99856135d41df"
+  },
+  "protocol": {
+    "path": "configs/m6g/protocol.json",
+    "bytes": 1741,
+    "sha256": "b4a050ac0f0f2961a42c5c3613d857ceabb00544775e885258e99856135d41df"
+  },
+  "reproduction": "docs/M6G_IMPLEMENTATION.md",
+  "original_binary_manifest": {
+    "path": "reports/m6f_execution_logs/server_binary_manifest.json",
+    "bytes": 690,
+    "sha256": "8cd0acd1097ec0329594c8393b649aeb76d20ecc7ef9c0e1a24965ebf935665c"
+  },
+  "original_trial_SHA": {
+    "path": "reports/m6f_execution_logs/trial_manifest.json",
+    "bytes": 32130,
+    "sha256": "dc49fae27cc44c8505807b287fb889d02d05c09c1a44af10b706ccac8561ca26"
+  },
+  "event_acquisition_source_and_Physics": "reports/m6g_execution_logs/trial_manifest.json; per-event acquisition_git/physics_sha256/trace_sha256",
+  "evidence_types": [
+    "OfflineAnalysisOfActualM6F_CARLA",
+    "OfficialSourceReview",
+    "ActualServerBuildEnvironmentAudit",
+    "SyntheticAndRecordedUnitTests"
+  ],
+  "new_engine_internal_fields": "None",
+  "original_binary_exact_source_identity": "NotVerified",
+  "kind": "OfflineReviewOfExistingCARLA0915",
+  "carla_version": "0.9.15",
+  "status": "Guard_Partial_NoIndependentPositive",
+  "guard_source": {
+    "path": "simulator/m6e_guard.py",
+    "bytes": 5200,
+    "sha256": "6709ceb0d133ee5038f5a761a9697e3a7ce2b67e282fe02281e9cf2b0e9ef1dc"
+  },
+  "historical_report": {
+    "path": "reports/m6f_guard_validation.json",
+    "bytes": 10993,
+    "sha256": "fecbb14e6113263f50d06838899dac9bebbdc35fde9cb500e4bc464ff09c7aae"
+  },
+  "new_live_tests": 0,
+  "inherited_trials": [
+    {
+      "path": "reports/m6f_guard_0915/p74_401",
+      "max_release_backward_m": 0.002154161052766383,
+      "guard_events": [],
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "source_commit": "02e79559f8c9f36372d3356d621968b07cfdd059"
+    },
+    {
+      "path": "reports/m6f_guard_0915/p74_402",
+      "max_release_backward_m": 0.002154161052766383,
+      "guard_events": [],
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "source_commit": "02e79559f8c9f36372d3356d621968b07cfdd059"
+    },
+    {
+      "path": "reports/m6f_guard_0915/p91_401",
+      "max_release_backward_m": 0.001480873343303503,
+      "guard_events": [],
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "source_commit": "02e79559f8c9f36372d3356d621968b07cfdd059"
+    },
+    {
+      "path": "reports/m6f_guard_0915/p91_402",
+      "max_release_backward_m": 0.001480873343303503,
+      "guard_events": [],
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "source_commit": "02e79559f8c9f36372d3356d621968b07cfdd059"
+    }
+  ],
+  "natural_independent_positive_trials": 0,
+  "new_protected_response": "NotRun",
+  "threshold_changes": false,
+  "synthetic_tests_certify_real_safety": false
+}

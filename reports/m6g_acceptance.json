@@ -1,0 +1,174 @@
+{
+  "stage": "M6-G",
+  "base": "51b410942428e9994a180f5717aec9fd22369d2e",
+  "source": "Privileged",
+  "new_CARLA_trials": 0,
+  "analysis_commit": "8e8ab43f3cc37bf0d1d7593a965ed6043848d7b7",
+  "source_sha256": {
+    "diagnostics/m6g_events.py": "e3909e3ce4a8a6c8f4037c8cade46eee826d185771d759849c601fb963012586",
+    "tools/m6g_release.py": "b0b37cbb90eaade47304452bca57f2a8c19d9626b0bacb9c6b8197781ca14159",
+    "tools/m6g_analyze.py": "abe5565a097151ea4a1db754e25fd07b9447e3c91001b3c516f8303dcf8aa45a",
+    "tools/m6g_finalize.py": "3f5ea761c7360ca66e0f7eefe5b2926df03140093f60ba29de6d07610b387df0",
+    "tools/m6g_sources.py": "c735751a46326485a8944c9335e979cb7b164677b01a8aee219baca80d56037b",
+    "tools/m6g_details.py": "5ba43edaa987992caeea59927205a8a83f30ea7568867eb66ffad72ca7c69330",
+    "tools/m6g_figures.py": "68fafc464e21f9dde7d3d3c841efe1dd3be80694cb31cafdbfa26f7e376b898e",
+    "tools/m6g_reproduce.py": "12c7c098d6c7e789b69085234cb1ea54fcd7227e8fccacfaa1512f4b7141b798",
+    "tests/test_m6g_events.py": "a3b9e993366c3b20d10466d45e09bb4a23fa127bfeddcb4f6de0d511cf5d46e5",
+    "tests/test_m6g_regression.py": "c6139f6dd6bb754289951a558ca927fc052604ea2af7589ad5a90862fa7b8631",
+    "configs/m6g/protocol.json": "b4a050ac0f0f2961a42c5c3613d857ceabb00544775e885258e99856135d41df"
+  },
+  "protocol": {
+    "path": "configs/m6g/protocol.json",
+    "bytes": 1741,
+    "sha256": "b4a050ac0f0f2961a42c5c3613d857ceabb00544775e885258e99856135d41df"
+  },
+  "reproduction": "docs/M6G_IMPLEMENTATION.md",
+  "original_binary_manifest": {
+    "path": "reports/m6f_execution_logs/server_binary_manifest.json",
+    "bytes": 690,
+    "sha256": "8cd0acd1097ec0329594c8393b649aeb76d20ecc7ef9c0e1a24965ebf935665c"
+  },
+  "original_trial_SHA": {
+    "path": "reports/m6f_execution_logs/trial_manifest.json",
+    "bytes": 32130,
+    "sha256": "dc49fae27cc44c8505807b287fb889d02d05c09c1a44af10b706ccac8561ca26"
+  },
+  "event_acquisition_source_and_Physics": "reports/m6g_execution_logs/trial_manifest.json; per-event acquisition_git/physics_sha256/trace_sha256",
+  "evidence_types": [
+    "OfflineAnalysisOfActualM6F_CARLA",
+    "OfficialSourceReview",
+    "ActualServerBuildEnvironmentAudit",
+    "SyntheticAndRecordedUnitTests"
+  ],
+  "new_engine_internal_fields": "None",
+  "original_binary_exact_source_identity": "NotVerified",
+  "status": "Partial / ResearchCompleted / InstrumentationNotRun",
+  "independent_decisions": {
+    "A_offline_evidence": "Partial: startup wait externally localized; initial rebuild discontinuity demonstrated; braking mechanism not causally resolved",
+    "B_instrumentation": "NoGo_current_build_prerequisites_failed_stop_deep_dive",
+    "C_controller_or_Physics": "NotApproved",
+    "default_backend": "CARLA0915_unchanged",
+    "Physics_P1": "NoGo",
+    "Guard": "Guard_Partial_NoIndependentPositive",
+    "normal_comfort": "Open_Failed",
+    "strict20Hz": "Open_Failed",
+    "visual_safety": "NotValidated"
+  },
+  "engineering_checks": {
+    "rows": 14810,
+    "trials": 26,
+    "commands": 174,
+    "gear_events": 19,
+    "delayed25_preserved": true,
+    "source_manifest": true,
+    "no_new_collection": true,
+    "no_new_model": true,
+    "no_main_merge": true
+  },
+  "findings": {
+    "light_brake_events": {
+      "events": 37,
+      "ordering": {
+        "wheel_decrease_observed_first": 28,
+        "body_deceleration_observed_first": 3,
+        "same_outer_frame": 6
+      },
+      "preexisting_large_slip": 22
+    },
+    "jerk_summary": {
+      "clusters": 181,
+      "same_frame_debug_force_insufficient": 41,
+      "candidate_counts": {
+        "wheel_lock_or_stationary_contact_correlated": 101,
+        "same_frame_debug_force_insufficient": 41,
+        "large_tire_slip_correlated": 149,
+        "gear_change_correlated": 19,
+        "current_telemetry_unresolved": 8,
+        "physics_rebuild_related_initialization": 4
+      }
+    },
+    "detail_summary": {
+      "ordinary_events": 37,
+      "P0_events": 33,
+      "P0_order": {
+        "wheel_decrease_observed_first": 24,
+        "body_deceleration_observed_first": 3,
+        "same_outer_frame": 6
+      },
+      "peak_force_zero": 17,
+      "wheel_high_slip_observations": 148,
+      "wheel_slip_left_censored": 50
+    },
+    "rebuild_first_tick_vz_difference_mps": 0.4900000989437103,
+    "rebuild_first_tick_z_difference_m": 0.024500012397766113
+  },
+  "evidence_levels": {
+    "Observed": "recorded outer-frame values and reset discontinuity",
+    "Correlated": "gear/slip/lock associations",
+    "MechanismSupported": "pinned official upstream source mechanisms; not Shipping execution certification",
+    "Unresolved": "accepted analog controls/brake torque/sticky activation/impulse/substep phase"
+  },
+  "tests": [
+    {
+      "name": "full_tests",
+      "xml": {
+        "path": "reports/m6g_execution_logs/full_tests.xml",
+        "bytes": 50452,
+        "sha256": "feca20b7d236b61214f95523783da2af466c2d8ef0a4e16164a4a6bfdb2c9242"
+      },
+      "result": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "9",
+        "tests": "399",
+        "time": "19.565",
+        "timestamp": "2026-10-23T20:56:08.164650+08:00",
+        "hostname": "gpufree-container"
+      }
+    },
+    {
+      "name": "sdk_tests",
+      "xml": {
+        "path": "reports/m6g_execution_logs/sdk_tests.xml",
+        "bytes": 2522,
+        "sha256": "4e058dcccc1879fa0d31bb9aefc7ab92653eb5585be99cc3c14fe047ab7c2c3d"
+      },
+      "result": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "19",
+        "time": "1.655",
+        "timestamp": "2026-10-23T20:59:50.167274+08:00",
+        "hostname": "gpufree-container"
+      }
+    }
+  ],
+  "preservation": {
+    "kind": "ActualServerSHA256Verification",
+    "status": "Passed",
+    "checks": {
+      "base_tracked": 13422,
+      "inherited_external_assets": 50867,
+      "official_0916_binary_files": 4,
+      "M6F_release_assets": 252
+    },
+    "base": "51b410942428e9994a180f5717aec9fd22369d2e",
+    "changed": [],
+    "scope": "Inventoried assets only; no claim of unfrozen external files"
+  },
+  "instrumentation": "Instrumentation_NotRun_BuildPrerequisiteFailed",
+  "not_run": [
+    "native_compile",
+    "instrumented_binary_equivalence",
+    "new_physics_events",
+    "async_diagnostic_runtime",
+    "new_G1_live_positive",
+    "new_controller",
+    "Physics_search",
+    "vision_control"
+  ],
+  "next_action": "End unbounded PhysX root-cause work; reuse sealed baseline. Oracle route/planning and perception may independently advance under original contracts; no dynamics/safety gates waived."
+}
