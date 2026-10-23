@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m7c_connected_audit.py", line 39, in <module>
+    if __name__=='__main__':main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m7c_connected_audit.py", line 19, in main
+    f=map_fixture(m,road,'history');path,conn,join=extend_existing(m,f['route'],f['z'])
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/diagnostics/m7c_routes.py", line 65, in extend_existing
+    if np.linalg.norm(anchor[:2]-last[:2])>.15 or abs(wrap(anchor[2]-last[2]))>.08:raise ValueError('LastPointAnchorMismatch')
+ValueError: LastPointAnchorMismatch

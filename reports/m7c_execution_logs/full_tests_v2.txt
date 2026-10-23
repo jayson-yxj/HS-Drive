@@ -1,0 +1,52 @@
+..........................................s..............s.............. [ 16%]
+........................................................................ [ 32%]
+........................................................................ [ 48%]
+........................................................................ [ 65%]
+..x..................................................................... [ 81%]
+......FF.................................................ss.s........... [ 97%]
+..........                                                               [100%]
+=================================== FAILURES ===================================
+_________________ test_unique_connection_ambiguity_and_intent __________________
+
+    def test_unique_connection_ambiguity_and_intent():
+>       from diagnostics.m7c_routes import continue_waypoints
+
+tests/test_m7c_geometry.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+diagnostics/m7c_routes.py:6: in <module>
+    from tools.m7a_scenarios import pose
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """CARLA SDK offline OpenDRIVE fixtures. No Client, world.tick, or actuation."""
+    import argparse,math,time
+    from dataclasses import asdict,replace
+    from pathlib import Path
+    import numpy as np
+>   import carla
+E   ModuleNotFoundError: No module named 'carla'
+
+tools/m7a_scenarios.py:6: ModuleNotFoundError
+_______________ test_dead_end_reverse_and_discontinuity_unknown ________________
+
+    def test_dead_end_reverse_and_discontinuity_unknown():
+>       from diagnostics.m7c_routes import continue_waypoints
+
+tests/test_m7c_geometry.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+diagnostics/m7c_routes.py:6: in <module>
+    from tools.m7a_scenarios import pose
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """CARLA SDK offline OpenDRIVE fixtures. No Client, world.tick, or actuation."""
+    import argparse,math,time
+    from dataclasses import asdict,replace
+    from pathlib import Path
+    import numpy as np
+>   import carla
+E   ModuleNotFoundError: No module named 'carla'
+
+tools/m7a_scenarios.py:6: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_m7c_geometry.py::test_unique_connection_ambiguity_and_intent
+FAILED tests/test_m7c_geometry.py::test_dead_end_reverse_and_discontinuity_unknown
+2 failed, 434 passed, 8 skipped, 1 xfailed in 18.93s

@@ -1,0 +1,17 @@
+
+==================================== ERRORS ====================================
+_________________ ERROR collecting tests/test_m7c_geometry.py __________________
+ImportError while importing test module '/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tests/test_m7c_geometry.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.10/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+tests/test_m7c_geometry.py:9: in <module>
+    from tools.m7c_equivalence import equal
+tools/m7c_equivalence.py:6: in <module>
+    import carla
+E   ModuleNotFoundError: No module named 'carla'
+=========================== short test summary info ============================
+ERROR tests/test_m7c_geometry.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+3 skipped, 1 error in 3.01s
