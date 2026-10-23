@@ -1,0 +1,16 @@
+{
+  "stage": "M7-B", "base": "3d149ac", "planning_map": "reports/m6b_execution_logs/Town03.xodr",
+  "splits": {"development": [3,20], "validation": [76,19], "fresh_final": [2,4], "historical_regression": [65,67,18]},
+  "selection": "Map-only road inventory before any new planner result; fresh final roads2/4 excluded from M7A and M7B development. Same Town03, shared templates, not cross-map generalization.",
+  "horizon_s":6.0, "candidate_dt_s":0.1, "motion_dt_s":0.05, "reference_dt_s":0.025,
+  "max_age_s":0.2, "max_ego_speed":5.6, "max_ego_acceleration":1.5, "max_ego_deceleration":1.8, "max_ego_jerk":2.5,
+  "stationary_gap_m":3.0, "body_margin_m":[0.2,0.15],
+  "actor_acceleration_support":[-3.0,1.5], "actor_speed_support":[0.0,8.0],
+  "hypothesis_accelerations":[-3.0,-1.5,-0.5,0.0,0.75,1.5], "hypothesis_onsets_s":[0.0,1.0,2.0],
+  "initial_velocity_tolerance_mps":0.12, "path_match_tolerance_m":0.15, "path_heading_tolerance_rad":0.08,
+  "road_inset_m":0.03, "candidate_priority":["A_keep_route","B_left","C_right","D_stop"],
+  "conditional_C": "Only after development A/B demonstrate a valid stop witness missed by the legacy candidates; no controller changes",
+  "witness_scope":"Finite candidate library and analytically necessary straight-lane stopping bound. No assertion of globally unsolvable general planning.",
+  "acceptance": {"fresh_fixture_valid_fraction":1.0,"historical_seven_detected":7,"accepted_future_collisions":0,"invalid_input_accepts":0,"dynamic_witness_coverage_min":0.5,"minimum_dynamic_scenes":12},
+  "online_budget_ms":200,"online_run":"NotRun","visual_model":"CandidateNoGo","runtime":"RuntimePartial"
+}
