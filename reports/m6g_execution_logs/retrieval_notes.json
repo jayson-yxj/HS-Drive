@@ -1,0 +1,32 @@
+{
+  "kind": "TaskExecutionFailureNotes",
+  "new_CARLA_failures": 0,
+  "notes": [
+    {
+      "operation": "GitHub recursive CARLA tree metadata query",
+      "result": "IncompleteRead",
+      "record_type": "tool_exception_observed; full traceback not persisted as file",
+      "resolution": "Stopped whole-tree transfer; read official contents directory and corrected filename; no engine download"
+    },
+    {
+      "operation": "Wrong official CARLA AIController filename",
+      "result": "HTTP404",
+      "original_record": "reports/m6g_sources/flush_manifest.json",
+      "resolution": "reports/m6g_sources/flush_corrected_manifest.json"
+    },
+    {
+      "operation": "Unreal access checks",
+      "result": "BuildPrerequisiteFailed",
+      "records": [
+        "reports/m6g_execution_logs/build_environment.json",
+        "reports/m6g_execution_logs/official_UE_access.json",
+        "reports/m6g_execution_logs/UE_access_existing_git_configuration.json"
+      ]
+    },
+    {
+      "operation": "M6G report patch edit",
+      "result": "Patch rejected invalid hunk separator; no files applied",
+      "resolution": "Corrected patch syntax; no experimental data affected"
+    }
+  ]
+}

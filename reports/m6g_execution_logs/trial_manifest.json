@@ -1,0 +1,2696 @@
+{
+  "stage": "M6-G",
+  "kind": "OfflineAnalysisOfActualM6F_CARLA",
+  "new_CARLA_trials": 0,
+  "source": "Privileged",
+  "carla_version": "0.9.16",
+  "analysis_git": "6e9d7d433f80276b3e400072e5b4e4981267537f",
+  "protocol": {
+    "path": "configs/m6g/protocol.json",
+    "bytes": 1741,
+    "sha256": "b4a050ac0f0f2961a42c5c3613d857ceabb00544775e885258e99856135d41df"
+  },
+  "sources": {
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6g_analyze.py": "abe5565a097151ea4a1db754e25fd07b9447e3c91001b3c516f8303dcf8aa45a",
+    "diagnostics/m6g_events.py": "e3909e3ce4a8a6c8f4037c8cade46eee826d185771d759849c601fb963012586"
+  },
+  "solver_causality": "NotEstablished",
+  "trials": [
+    {
+      "trial_id": "feasibility__p27_api",
+      "trace": {
+        "path": "reports/m6f_trials_0916/feasibility/p27_api/trace.jsonl",
+        "bytes": 1995423,
+        "sha256": "2f689334bed3422d1b41e62d915cc132ace706e65b151e9db8f7da849153d182"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/feasibility__p27_api.jsonl",
+        "bytes": 692804,
+        "sha256": "d278d5af8f0b85483dc0086a7c5f663e224b2066530a4b703df3a7d024daebc5"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "c1e2498904537e81b27162044234a471cefe13d1",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "p27_api",
+        "spawn": 27,
+        "mode": "feasibility",
+        "physics": "P0-unmodified",
+        "interface": "A"
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "overhead__p27_abba",
+      "trace": {
+        "path": "reports/m6f_trials_0916/overhead/p27_abba/trace.jsonl",
+        "bytes": 2718381,
+        "sha256": "7de00d23a9a4e5621a55e71c4e74c5db4a4deed60970ca54b4a7e6eb317ffcae"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/overhead__p27_abba.jsonl",
+        "bytes": 1327764,
+        "sha256": "3edf64511988d836e899e2c504096a0c5831fd94e4c13eb364cc3c86df95c35b"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "p27_abba",
+        "spawn": 27,
+        "mode": "overhead",
+        "physics": "P0-unmodified",
+        "interface": "A"
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "responses__p126_A_401",
+      "trace": {
+        "path": "reports/m6f_trials_0916/responses/p126_A_401/trace.jsonl",
+        "bytes": 3254531,
+        "sha256": "4cfce660228d5b37ac79ff074a64f05e38b3e411aff761728b31a380a93f6b05"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/responses__p126_A_401.jsonl",
+        "bytes": 1504813,
+        "sha256": "bc3b72ff8ce5d99d59ffd2b6bb2b7785cb711a3f828145321ee0d5215b76bbe0"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "p126_A_401",
+        "spawn": 126,
+        "mode": "cycle",
+        "physics": "P0-unmodified",
+        "interface": "A",
+        "repeat_id": 401
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "responses__p126_A_402",
+      "trace": {
+        "path": "reports/m6f_trials_0916/responses/p126_A_402/trace.jsonl",
+        "bytes": 3259404,
+        "sha256": "1539c777372330ab96dd48398ec06d1bfa719b4257815091198756fb9c8df231"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/responses__p126_A_402.jsonl",
+        "bytes": 1505227,
+        "sha256": "9a60727d2effdd8bfd2e3f03fb43445acecd2fdfb862edbe10dea8e5e69a2ee1"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "p126_A_402",
+        "spawn": 126,
+        "mode": "cycle",
+        "physics": "P0-unmodified",
+        "interface": "A",
+        "repeat_id": 402
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "responses__p126_B_401",
+      "trace": {
+        "path": "reports/m6f_trials_0916/responses/p126_B_401/trace.jsonl",
+        "bytes": 3305637,
+        "sha256": "6c708b152ab105c13279c15d7fe777d0e8b74b9c823c439f0b9ff6453e694145"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/responses__p126_B_401.jsonl",
+        "bytes": 1528101,
+        "sha256": "5b4bb176a2988b08c84a8024fbdba14527cb9fb308da0e64361fcfeccd7334f4"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "p126_B_401",
+        "spawn": 126,
+        "mode": "cycle",
+        "physics": "P0-unmodified",
+        "interface": "B",
+        "repeat_id": 401
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "responses__p126_B_402",
+      "trace": {
+        "path": "reports/m6f_trials_0916/responses/p126_B_402/trace.jsonl",
+        "bytes": 3309860,
+        "sha256": "d3765a032ec441a7d8acbf550822bdfa5ed2c0b4861dc6a0aeba809dbf9ec75e"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/responses__p126_B_402.jsonl",
+        "bytes": 1528237,
+        "sha256": "0f5546ad09a7037792bbd349029ff34c9a9758b791644075e0a443cb887bb76f"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "p126_B_402",
+        "spawn": 126,
+        "mode": "cycle",
+        "physics": "P0-unmodified",
+        "interface": "B",
+        "repeat_id": 402
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "responses__p126_coast_401",
+      "trace": {
+        "path": "reports/m6f_trials_0916/responses/p126_coast_401/trace.jsonl",
+        "bytes": 2166123,
+        "sha256": "22bd9ae464fb98c45b2088af5d2e83cbd389a3f6cb4d347aa83e9798fac342d7"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/responses__p126_coast_401.jsonl",
+        "bytes": 1000988,
+        "sha256": "7612a5ceb9f0840d5a131da764299ccedfc4b4c6f4595bf803baaccd0f7ef16d"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "p126_coast_401",
+        "spawn": 126,
+        "mode": "coast",
+        "physics": "P0-unmodified",
+        "interface": "A",
+        "repeat_id": 401
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "responses__p126_coast_402",
+      "trace": {
+        "path": "reports/m6f_trials_0916/responses/p126_coast_402/trace.jsonl",
+        "bytes": 2169541,
+        "sha256": "bc95dd4c4f652c05f31b8408922118c45b6f19282a21ecfdde23c6185c5356b3"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/responses__p126_coast_402.jsonl",
+        "bytes": 1001400,
+        "sha256": "2c74b370b172661c30575d2816ff485cc757f2417e4635d10bf9ed7008d8e4a4"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "p126_coast_402",
+        "spawn": 126,
+        "mode": "coast",
+        "physics": "P0-unmodified",
+        "interface": "A",
+        "repeat_id": 402
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "responses__p170_A_401",
+      "trace": {
+        "path": "reports/m6f_trials_0916/responses/p170_A_401/trace.jsonl",
+        "bytes": 3344985,
+        "sha256": "b1d9db4009dcde504e961520016527e9b861c42aa6cfb96ae64ab3abe624d35b"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/responses__p170_A_401.jsonl",
+        "bytes": 1554344,
+        "sha256": "a5682a643b6f24777ce217929874329f26db7f629ed326ba3cbd770bf265b851"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "p170_A_401",
+        "spawn": 170,
+        "mode": "cycle",
+        "physics": "P0-unmodified",
+        "interface": "A",
+        "repeat_id": 401
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "responses__p170_A_402",
+      "trace": {
+        "path": "reports/m6f_trials_0916/responses/p170_A_402/trace.jsonl",
+        "bytes": 3349162,
+        "sha256": "7bcb1c8a0c92eeb33b1325f3bff93b839e4835aa68cca34ae939f8e0be757aeb"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/responses__p170_A_402.jsonl",
+        "bytes": 1553307,
+        "sha256": "f1302f8841a0ec012465d04dd8576c201380fefc243934b55d5859a953d3e498"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "p170_A_402",
+        "spawn": 170,
+        "mode": "cycle",
+        "physics": "P0-unmodified",
+        "interface": "A",
+        "repeat_id": 402
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "responses__p170_B_401",
+      "trace": {
+        "path": "reports/m6f_trials_0916/responses/p170_B_401/trace.jsonl",
+        "bytes": 3336244,
+        "sha256": "85a60f6eef047a537780fff6528fd67e8a24ad90786954acfb981855ba1574aa"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/responses__p170_B_401.jsonl",
+        "bytes": 1547411,
+        "sha256": "fbb48bbdc1f4a1f6c22cae2b536cdf5d003b1d97f27ff1995042be0478139345"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "p170_B_401",
+        "spawn": 170,
+        "mode": "cycle",
+        "physics": "P0-unmodified",
+        "interface": "B",
+        "repeat_id": 401
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "responses__p170_B_402",
+      "trace": {
+        "path": "reports/m6f_trials_0916/responses/p170_B_402/trace.jsonl",
+        "bytes": 3350348,
+        "sha256": "341caf657c8ba0ef6b5ac6caef7fcfd585aea32ecfbc6660b763732c552f4656"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/responses__p170_B_402.jsonl",
+        "bytes": 1550910,
+        "sha256": "1289f67d5d3e0e227c3cca125a80b97d1f0147758a31ccefea63a433573754c3"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "p170_B_402",
+        "spawn": 170,
+        "mode": "cycle",
+        "physics": "P0-unmodified",
+        "interface": "B",
+        "repeat_id": 402
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "responses__p170_coast_401",
+      "trace": {
+        "path": "reports/m6f_trials_0916/responses/p170_coast_401/trace.jsonl",
+        "bytes": 2169174,
+        "sha256": "f9d0acd94dcc7090fd62193d13853d17dc45ef72fc2fa94ee8d9e7ae5bea3ad5"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/responses__p170_coast_401.jsonl",
+        "bytes": 1006649,
+        "sha256": "439ed51fab65b41c0dd4423bf32a60d60ff6f713ce662646ec0933243f662f4b"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "p170_coast_401",
+        "spawn": 170,
+        "mode": "coast",
+        "physics": "P0-unmodified",
+        "interface": "A",
+        "repeat_id": 401
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "responses__p170_coast_402",
+      "trace": {
+        "path": "reports/m6f_trials_0916/responses/p170_coast_402/trace.jsonl",
+        "bytes": 2172379,
+        "sha256": "90789a5ad2afd4690dda8ed11cdcf6dc8b95e6ac7d53978917d5f79b4191c711"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/responses__p170_coast_402.jsonl",
+        "bytes": 1007079,
+        "sha256": "7aed4c84e59250e0feb877c5bf32d8964597daf764a764cf49b8a9e5f798c16e"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "p170_coast_402",
+        "spawn": 170,
+        "mode": "coast",
+        "physics": "P0-unmodified",
+        "interface": "A",
+        "repeat_id": 402
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "responses__p27_A_401",
+      "trace": {
+        "path": "reports/m6f_trials_0916/responses/p27_A_401/trace.jsonl",
+        "bytes": 3317089,
+        "sha256": "42d6f94f30db6ba871e263867085e0bc68a5904a6929aefb4e2270abd0cec6be"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/responses__p27_A_401.jsonl",
+        "bytes": 1536357,
+        "sha256": "01ad965beb952a6ef90be31d6f5dbf9ed6f20ba2df25ea28cf284d44dc9ca324"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "p27_A_401",
+        "spawn": 27,
+        "mode": "cycle",
+        "physics": "P0-unmodified",
+        "interface": "A",
+        "repeat_id": 401
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "responses__p27_A_402",
+      "trace": {
+        "path": "reports/m6f_trials_0916/responses/p27_A_402/trace.jsonl",
+        "bytes": 3318710,
+        "sha256": "6aa4eb553041501368f00a69d2c6bd65a773ac19045fa1869da7e746cd846585"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/responses__p27_A_402.jsonl",
+        "bytes": 1536827,
+        "sha256": "7e46d9839da291a5f0fa5cba998b3c71d9935d77a5c3148529d8e20743b63f8e"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "p27_A_402",
+        "spawn": 27,
+        "mode": "cycle",
+        "physics": "P0-unmodified",
+        "interface": "A",
+        "repeat_id": 402
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "responses__p27_B_401",
+      "trace": {
+        "path": "reports/m6f_trials_0916/responses/p27_B_401/trace.jsonl",
+        "bytes": 3392059,
+        "sha256": "6d3676a1b46fd2244e17a8f2e523ddd6f70b7cd6797572b3dfd4b0dfa0bf8e79"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/responses__p27_B_401.jsonl",
+        "bytes": 1572875,
+        "sha256": "43d06ad6767020c503f0877a822f73d9a911c65ae9bdfc026447faa379800afe"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "p27_B_401",
+        "spawn": 27,
+        "mode": "cycle",
+        "physics": "P0-unmodified",
+        "interface": "B",
+        "repeat_id": 401
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "responses__p27_B_402",
+      "trace": {
+        "path": "reports/m6f_trials_0916/responses/p27_B_402/trace.jsonl",
+        "bytes": 3391367,
+        "sha256": "770fc4cb2054d808dba3581f7663cac12db59fe9e237ef6d5428d3a46caa2f7b"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/responses__p27_B_402.jsonl",
+        "bytes": 1571888,
+        "sha256": "55a5e8f152703a60ce301601f9956067d9bc1fa9f2c9d66bf2d69343d586f7b8"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "p27_B_402",
+        "spawn": 27,
+        "mode": "cycle",
+        "physics": "P0-unmodified",
+        "interface": "B",
+        "repeat_id": 402
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "responses__p27_coast_401",
+      "trace": {
+        "path": "reports/m6f_trials_0916/responses/p27_coast_401/trace.jsonl",
+        "bytes": 2179453,
+        "sha256": "a7e70e816ab14e18470b1d139614e44b5bb23c7f53d7b79c055ea0d16d4e80ae"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/responses__p27_coast_401.jsonl",
+        "bytes": 1006604,
+        "sha256": "08aa281e2048a72aff4b3cfd720789b4e0b84c0c8fa2df8546d906dc48eda13c"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "p27_coast_401",
+        "spawn": 27,
+        "mode": "coast",
+        "physics": "P0-unmodified",
+        "interface": "A",
+        "repeat_id": 401
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "responses__p27_coast_402",
+      "trace": {
+        "path": "reports/m6f_trials_0916/responses/p27_coast_402/trace.jsonl",
+        "bytes": 2181384,
+        "sha256": "a7046b89db78f621e7ff649e3282a6bc175bdd1cabbba936ef0e5f1328dc5723"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/responses__p27_coast_402.jsonl",
+        "bytes": 1006376,
+        "sha256": "e463963c8e949ee451870a6432cd7857ccf7d6bfda040beee019b5edf22a8212"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "58a8d05fe576127242a970d57f34c2a2c2c9120d",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "p27_coast_402",
+        "spawn": 27,
+        "mode": "coast",
+        "physics": "P0-unmodified",
+        "interface": "A",
+        "repeat_id": 402
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "sham__P0-sham-reapply_401",
+      "trace": {
+        "path": "reports/m6f_trials_0916/sham/P0-sham-reapply_401/trace.jsonl",
+        "bytes": 3336684,
+        "sha256": "98cd02e574467d3a4ba21983cc6adc056e195dad494edf4b9c47337a1ecd9210"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/sham__P0-sham-reapply_401.jsonl",
+        "bytes": 1543484,
+        "sha256": "eac8ca3614b3cdc08218043967558b0843c7bef63187e8418611618bd7d9ee96"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "P0-sham-reapply_401",
+        "spawn": 27,
+        "mode": "cycle",
+        "physics": "P0-sham-reapply",
+        "interface": "A",
+        "repeat_id": 401
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "sham__P0-sham-reapply_402",
+      "trace": {
+        "path": "reports/m6f_trials_0916/sham/P0-sham-reapply_402/trace.jsonl",
+        "bytes": 3338111,
+        "sha256": "5f73deb8d9269bdfaecf58efa551c9f0bd889963a2a0b5cf270a89c5ce8b3a2a"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/sham__P0-sham-reapply_402.jsonl",
+        "bytes": 1544425,
+        "sha256": "ebfc6f950ca993b8237ba3bae7a58f4f36279ecf2f5ee3794d2a7c8d091b70a5"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "P0-sham-reapply_402",
+        "spawn": 27,
+        "mode": "cycle",
+        "physics": "P0-sham-reapply",
+        "interface": "A",
+        "repeat_id": 402
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "sham__P0-unmodified_401",
+      "trace": {
+        "path": "reports/m6f_trials_0916/sham/P0-unmodified_401/trace.jsonl",
+        "bytes": 3323311,
+        "sha256": "3e6f7270664ee960365750c8a2850fd4dee8ee535cb34b3f17c4a0c355084438"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/sham__P0-unmodified_401.jsonl",
+        "bytes": 1537449,
+        "sha256": "fe57c56ad4ca8abe33d487b6d7b4b1dccd9718bbef69c91c5ab6f9cc241f8487"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "P0-unmodified_401",
+        "spawn": 27,
+        "mode": "cycle",
+        "physics": "P0-unmodified",
+        "interface": "A",
+        "repeat_id": 401
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "sham__P0-unmodified_402",
+      "trace": {
+        "path": "reports/m6f_trials_0916/sham/P0-unmodified_402/trace.jsonl",
+        "bytes": 3323262,
+        "sha256": "04625ce3e08664767562144fc52658f34bb6793ba1085a879adbd15fd99cfed9"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/sham__P0-unmodified_402.jsonl",
+        "bytes": 1537340,
+        "sha256": "6c00b1a60c8a9bb79c92636aa8d49d3d91e9a9b9fd0faae131e86e1d0f684168"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "5fabd76f75512661a18700622619982f6ed22bcf079485bb82c24e239973f5a9",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "P0-unmodified_402",
+        "spawn": 27,
+        "mode": "cycle",
+        "physics": "P0-unmodified",
+        "interface": "A",
+        "repeat_id": 402
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "sham__P1-wheel-brake-experimental_401",
+      "trace": {
+        "path": "reports/m6f_trials_0916/sham/P1-wheel-brake-experimental_401/trace.jsonl",
+        "bytes": 3340412,
+        "sha256": "32b671ec552b0203a67a738c23f93d600055b41051cb06cf0c6090fdd6fc823b"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/sham__P1-wheel-brake-experimental_401.jsonl",
+        "bytes": 1545470,
+        "sha256": "e171a962d854adb80b0714ced910615ffa47e085416af7437688abe386ba7e0b"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "43acaf0ae7be05e3bf4d537aee6c2f8ff036b649cb235c1f72401081389556d6",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "P1-wheel-brake-experimental_401",
+        "spawn": 27,
+        "mode": "cycle",
+        "physics": "P1-wheel-brake-experimental",
+        "interface": "A",
+        "repeat_id": 401
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    },
+    {
+      "trial_id": "sham__P1-wheel-brake-experimental_402",
+      "trace": {
+        "path": "reports/m6f_trials_0916/sham/P1-wheel-brake-experimental_402/trace.jsonl",
+        "bytes": 3340465,
+        "sha256": "a3047b9d32ade5b0d48fe68f702cc355a71f49bbdcda584e7a5e40be4a4127b4"
+      },
+      "timeline": {
+        "path": "reports/m6g_event_timelines/sham__P1-wheel-brake-experimental_402.jsonl",
+        "bytes": 1545458,
+        "sha256": "2cd82f1e6a583a6f00ec19ec475abb6333942f31337a6ac0dce8b27bd44b21ef"
+      },
+      "carla_version": "0.9.16",
+      "physics_sha256": "43acaf0ae7be05e3bf4d537aee6c2f8ff036b649cb235c1f72401081389556d6",
+      "acquisition_git": "29670ebe1cc0ed6a1a55b59b716a6ecb2a179835",
+      "loaded_source": {
+        "__main__": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_launch.py",
+          "source_sha256": "b429b2956a90dcc487148d1fd87cdbd92c50bf429a5714796216e3368eee3cb4",
+          "loaded_code_sha256": "acb70d7e398af70814086891a0be1d01b975dfcc493f0360ff686af62db708fd"
+        },
+        "tools.m6f_probe": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m6f_probe.py",
+          "source_sha256": "f53ed24751140d81705618e46d7f90627fcd0a61c128e3e9294f2471c5791849",
+          "loaded_code_sha256": "a02e9f9c74a8e2c6afe454975d1270992cee2268164f48f9d22d829035b13748"
+        },
+        "simulator": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/__init__.py",
+          "source_sha256": "00004669830c09950b0436d9c0a0748110b808df0818fd4ac29bd531ee70a522",
+          "loaded_code_sha256": "13984ec33a5faac4ce9c82903d4355e680cdd654892557d015b667c4e2698cf1"
+        },
+        "simulator.m6f_telemetry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6f_telemetry.py",
+          "source_sha256": "af0e9edd57c6edc59bcf65a13e17c57e8f3598f887ef39f3d1dbe287beb9cedf",
+          "loaded_code_sha256": "060e7ff403f689cdb1ff7603516f571699e2dc2f189eb4684c116bb9da31658d"
+        },
+        "simulator.m6e_actuation": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6e_actuation.py",
+          "source_sha256": "69259370cf5fcd3787c48629a20b52ae0a5cf7d03ee4c7af1d7efd01af8baae5",
+          "loaded_code_sha256": "08c652eb67577b6b25fa0b32b43d0ac4529f7feebca2399545c842bf82258994"
+        },
+        "tools.m47_common": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m47_common.py",
+          "source_sha256": "3e3cdbbd8cb8b6d42e3a6e49005363a242ba4735ad37c3886c87f323e0d19155",
+          "loaded_code_sha256": "cc150fea7c952861dd390af344ae5aca23e25a0c9ffae8df9dedc739dfb78cca"
+        },
+        "simulator.recorder": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/recorder.py",
+          "source_sha256": "dc5e23fb05ef7fda19ac425020c121f162ad43c0e8568e590ef90b8f2de9db8d",
+          "loaded_code_sha256": "31e3b25853fc6b58196358ee195c1df5567b2dcf000924168ee018d91cc962cc"
+        },
+        "datasets": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/__init__.py",
+          "source_sha256": "c84868c17ab9b649acd1ef57282213fa00d1171eeb777e67bec1edd73f602984",
+          "loaded_code_sha256": "8200eee0832563a045bd872a6b51221649fd1b83407aee87679ba87ae6dc16bd"
+        },
+        "datasets.schema": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/schema.py",
+          "source_sha256": "3787ad69f0bf85b7f9a7add5f36dff0b9479f400a65e37ba36adc5d3a1d71367",
+          "loaded_code_sha256": "99a3d5082a0e4e1ef34bcac2c9d8a6171a86521c9efa723db38c4ea10fbde000"
+        },
+        "geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/__init__.py",
+          "source_sha256": "dc32b77fc255b36f638d6467e31a0a3b737ad5fbffc00004786f237d01379908",
+          "loaded_code_sha256": "932f4f890a81a877c67dc1aa60c560af7ddde6ea18d044cab737ffe3b7d1ac28"
+        },
+        "geometry.carla_depth": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/carla_depth.py",
+          "source_sha256": "98cc4e3e0ad49bbdaa53911064fdcffea802160c41aa26d1900c01e5e388365b",
+          "loaded_code_sha256": "7b928a6f734713fb5135911cff76e8f2f42a752305aa6494a5551b105fb63278"
+        },
+        "geometry.reference": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/geometry/reference.py",
+          "source_sha256": "ee7d2d142baa2bbcbcc2c7e830c09285a07d6f6ea325366d96155c45fb90c0c9",
+          "loaded_code_sha256": "352e3f030989da958976eedb44f1ee2e4b2718a2af6807a888e79ff444df7659"
+        },
+        "simulator.m6c_geometry": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m6c_geometry.py",
+          "source_sha256": "9ae83f0910b19ea64c7c5d49d8b43bec7b4aade52b632c8f78edfd873ed27317",
+          "loaded_code_sha256": "8f3f89dbccc32ed70b491c4600bd21ad0a359294aa821380d457ace686919492"
+        },
+        "simulator.oracle_driver": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/oracle_driver.py",
+          "source_sha256": "8079d679f00660f54ce0a6fa1fb6f41c543af4f39e3d3a34f262e7ace82046a5",
+          "loaded_code_sha256": "7c4c68561f8d5a91c38b9f2f986da96f70006c18681227b1aa16568dad70092b"
+        },
+        "simulator.motion_oracle": {
+          "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/motion_oracle.py",
+          "source_sha256": "7528c36b632d51386a69bf758c9dc46276171edd08582c12ddc65c3d3bb0a554",
+          "loaded_code_sha256": "ee86947525c9a29e052c93bdfb78966ed6c11d3a1cfbd25c636a7b87d7750fcb"
+        }
+      },
+      "config": {
+        "name": "P1-wheel-brake-experimental_402",
+        "spawn": 27,
+        "mode": "cycle",
+        "physics": "P1-wheel-brake-experimental",
+        "interface": "A",
+        "repeat_id": 402
+      },
+      "wheel_telemetry": "actual M6F API observations, not M6G new collection",
+      "engine_substep": "NotAvailable"
+    }
+  ]
+}
