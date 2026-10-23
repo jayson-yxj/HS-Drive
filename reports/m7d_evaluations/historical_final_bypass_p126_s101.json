@@ -1,0 +1,4975 @@
+{
+  "kind": "OfflineIndependentFutureReadOfMeasuredCARLA",
+  "provenance": {
+    "base": "d9899fac94f320195f85bb6fe34d7c52752c58d7",
+    "commit": "d9899fac94f320195f85bb6fe34d7c52752c58d7",
+    "sources": {
+      "tools/m7d_inventory.py": "d817031a79ec530dd2d699be65face56515eebeeffc2f18b7fe165ecd94b4c91",
+      "tools/m7d_equivalence.py": "27f1601a0542dba2f59281ebc0b8a8e964be68df10ab4fe49feba530edb57220",
+      "tools/m7d_replay.py": "4af86b2ac3c21a4daaeed53f5b313cea62412ced35287f70a40c19c5260c1a84",
+      "tools/m7d_paired.py": "ad8263674d11731e64f5774f19b9dd685fedada78ea9eef6c0e4f1550f7a9b34",
+      "tools/m7d_collect.py": "5f8be52b8a13bc76100a71fb49bda8378c1324b4192320da17180519036bd624",
+      "tools/m7d_evaluate.py": "dfa7e23764ed79d798b01b4bdb1cafe655c1c79b8811e7bb99c92332e93dcbfb",
+      "tools/m7d_common.py": "5683adb3a2449382e22b77d73254623ee752c027d8ae5763105604039393344b",
+      "tools/m7d_batch.py": "c5bc8ee0b64ab52037473397cb2d296c9ec21d2b6b858bc9a3f955f18ded50bc",
+      "tools/m7d_prepare.py": "077cca7f7f3f8e6ecb85c51da022969b7fa0077e60d56500e4b9a1a2fc625611",
+      "tools/m7d_history_prepare.py": "7da27ecdd7e94ea58e834ce9ba3781e6316575285d93c09378d9b3701af17e04",
+      "datasets/m7d_temporal.py": "19ad8ce7f3e40dc8eace48acaf54c5113216ba6cddf95f8ab626b4f31e970185",
+      "diagnostics/m7d_scene.py": "0417b658ad22398de68b2ae908e99a7c0ff63e644cc9d75b6d884c33fbbeb374",
+      "diagnostics/m7d_geometry.py": "ace04d6d6fcbb44142dd8c85e129953d17a22eea26fc002ad40c158d2fac3254",
+      "tests/test_m7d_temporal.py": "342053885ca0757838098df34145829365691d8d4c6c34a8f1d123c48f875dbf",
+      "configs/m7d/protocol.json": "9d40f8892b27d45b4030a1644b59d3244e2221f471b228ec2762c1f4a96857f7"
+    },
+    "new_planner_control": false,
+    "new_training": false
+  },
+  "planner_output": {
+    "path": "reports/m7d_replays/historical_final_bypass_p126_s101_stream.json",
+    "bytes": 25750160,
+    "sha256": "23e25cee2fb3e7c47e5d6f5fe1f14e6d23d018a0897ad1dbf92fcda4eacacf0a"
+  },
+  "records": [
+    {
+      "frame": 141367,
+      "input_index": 0,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 23.603418778819915,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 11.984745849799397,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 35.724728164694874,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 0.0,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 33.84707731648862,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.8749999999863474,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141371,
+      "input_index": 4,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 23.60336641905699,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 11.984797527234871,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 35.72471078026675,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.738528618435588e-05,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 33.84701721282531,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.875060102827077,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141375,
+      "input_index": 8,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 23.603366801693127,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 11.98479714958503,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 35.72471090730915,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.725823750227373e-05,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 33.847017652052564,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.8750596636058432,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141379,
+      "input_index": 12,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 23.60336536251817,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 11.984798570005493,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 35.7247104294759,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.773609433961203e-05,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 33.8470160000265,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.8750613156092937,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141383,
+      "input_index": 16,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 23.603365353336603,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 11.9847985790674,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 35.724710426427464,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.7739142926152e-05,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 33.847015989487005,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.8750613261486426,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141387,
+      "input_index": 20,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 23.60336681831818,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 11.98479713317663,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 35.72471091282899,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.72527173929693e-05,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 33.84701767113643,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.875059644522243,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141391,
+      "input_index": 24,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 23.60336501504643,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 11.984798912949175,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 35.72471031410874,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.785146719995497e-05,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 33.84701560116438,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.8750617144659514,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141395,
+      "input_index": 28,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 23.60336499736371,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 11.984798930401451,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 35.72471030823775,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.7857338473439823e-05,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 33.84701558086643,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.8750617347636178,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141399,
+      "input_index": 32,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 23.603365148690823,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 11.98479878104634,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 35.72471035848122,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.7807092534221344e-05,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 33.84701575457455,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.875061561057884,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141403,
+      "input_index": 36,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 23.603365013957607,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 11.98479891402382,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 35.72471031374724,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.7851828724457404e-05,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 33.847015599914506,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.8750617157158007,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141407,
+      "input_index": 40,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 23.603365021527257,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 11.984798906552799,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 35.724710316260506,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.784931533339345e-05,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 33.84701560860372,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.875061707026712,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141411,
+      "input_index": 44,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 23.603365008909382,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 11.984798919006245,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 35.72471031207113,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.7853504901518344e-05,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 33.84701559411969,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.8750617215105398,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141415,
+      "input_index": 48,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 23.603365029676823,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 11.98479889850945,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 35.7247103189663,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.7846609397974796e-05,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 33.847015617958554,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.8750616976719985,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141419,
+      "input_index": 52,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 23.603365035851155,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 11.984798892415565,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 35.72471032101631,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.7844559289170492e-05,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 33.84701562504608,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.875061690584564,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141423,
+      "input_index": 56,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 23.60336506056271,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 11.984798868026036,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 35.72471032922101,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.7836354178777154e-05,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 33.847015653412434,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.8750616622186123,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141427,
+      "input_index": 60,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 23.603365151581734,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 11.984798778193106,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 35.72471035944105,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.7806132656190786e-05,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 33.847015757893026,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.8750615577394525,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141431,
+      "input_index": 64,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 23.603365124178914,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 11.984798805238851,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 35.72471035034279,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.7815231359885343e-05,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 33.84701572643732,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.8750615891947136,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141435,
+      "input_index": 68,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 23.603365047247824,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 11.984798881167414,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 35.72471032480022,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.784077518936587e-05,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 33.84701563812829,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.8750616775025428,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141439,
+      "input_index": 72,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 23.6033650418271,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 11.984798886517481,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 35.72471032300044,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.784257506740352e-05,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 33.84701563190589,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.8750616837248597,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141443,
+      "input_index": 76,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 21.79984351315821,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 13.717725335858074,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 34.664855324560094,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.0012780852504295,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 31.22051770311841,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 4.445583557835314,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141447,
+      "input_index": 80,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 20.83138208351851,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 14.372379775720175,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 33.595149270810744,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.7537884193789726,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 29.49125009129218,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 5.8482602382423,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141451,
+      "input_index": 84,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 20.362189685807667,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 14.473514466629572,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 33.071382833335335,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 1.9048340768488825,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 28.855583584215807,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 6.09999406526366,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141455,
+      "input_index": 88,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 19.907886585582162,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 14.544269241073243,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 32.56508446040205,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 2.0212437122697127,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 28.2592561001201,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 6.293442448496703,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141459,
+      "input_index": 92,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 19.412099764986678,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 14.6385386505737,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 31.985970599376756,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 2.1900187217565645,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 27.570747585796198,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 6.554799601182,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141463,
+      "input_index": 96,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 18.900149127614224,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 14.72859702274784,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 31.372786311947856,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 2.36930733039843,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 26.85027446263667,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 6.822985140155329,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141467,
+      "input_index": 100,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 18.38156846438558,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 14.806138540075299,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 30.749751247607737,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 2.5358789104986914,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 26.134875633049045,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 7.0639973788307,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141471,
+      "input_index": 104,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 17.86741070150924,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 14.863134070617964,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 30.12742853844808,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 2.68034347545411,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 25.446812407101252,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 7.260509953813212,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141475,
+      "input_index": 108,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 17.349907763443753,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 14.910764466815161,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 29.506124006528353,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 2.803164806042305,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 24.77648331330687,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 7.4259165141849826,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141479,
+      "input_index": 112,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 16.8290356689934,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 14.951581864023929,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 28.88507188507311,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 2.908512431988408,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 24.124601366111296,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 7.562710292642278,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141483,
+      "input_index": 116,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 16.302286453414613,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 14.989618216308953,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 28.257828202795974,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.005683247279933,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 23.4788610547757,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 7.685192019760017,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141487,
+      "input_index": 120,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 15.771439017529353,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.024097733861517,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 27.631876785092718,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.0898505219795873,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 22.843120485898563,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 7.791312329201824,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141491,
+      "input_index": 124,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 15.232671457208085,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.059676102337521,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 26.99803990916358,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.1720256517779553,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 22.204472382322162,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 7.895379466068398,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141495,
+      "input_index": 128,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 14.720145958380357,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.066138342325472,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 26.442242731154135,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.1755785006052424,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 21.666777747645217,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 7.8992069526948665,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141499,
+      "input_index": 132,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 14.18626001969904,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.091920819824011,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 25.8358425950837,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.225676873552009,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 21.07162067077276,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 7.960417765375889,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141503,
+      "input_index": 136,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 13.64856150742249,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.116463829538398,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 25.22922588759848,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.27225045213723,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 20.47793101870535,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.018115004757643,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141507,
+      "input_index": 140,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 13.108697549809158,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.138165283910133,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 24.627075696025354,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.3118531495649233,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 19.8901335677365,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.06796011804629,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141511,
+      "input_index": 144,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 12.564797327663719,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.158533507998166,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 24.02474732807002,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.3499577022913445,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 19.30187293201293,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.116580194251497,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141515,
+      "input_index": 148,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 12.021510957003676,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.173377829388151,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 23.435166584898912,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.3746024519481947,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 18.728711412743138,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.14846448796235,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141519,
+      "input_index": 152,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 11.475313877958083,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.186580959758839,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 22.845603557300983,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.399909189775601,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 18.155057672802446,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.181824284156658,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141523,
+      "input_index": 156,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 10.925453482387239,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.198539311582312,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 22.256615695127863,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.424765281029355,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 17.581374626776633,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.214532061505604,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141527,
+      "input_index": 160,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 10.373333080033605,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.207944734916005,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 21.6712936126692,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.4464192235897793,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 17.01087714832275,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.24321690835775,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141531,
+      "input_index": 164,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 9.816620844456917,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.217031405630195,
+          "geometry_feasible": false
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 21.084646403474984,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.4699294409515136,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 16.437561456621143,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.273044942716805,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141535,
+      "input_index": 168,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 9.25640056621765,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.224676469277924,
+          "geometry_feasible": false
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 20.49695945670649,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.494791944196844,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 15.861787683999896,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.30488854214411,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141539,
+      "input_index": 172,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 8.695738193707074,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.22807917692611,
+          "geometry_feasible": false
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 19.915086568677005,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.5142184014894413,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 15.293280351328992,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.327723422814932,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141543,
+      "input_index": 176,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 8.133871233365507,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.228730683126479,
+          "geometry_feasible": false
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 19.339822141012316,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.527481374020625,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 14.730170978135424,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.342636079673351,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141547,
+      "input_index": 180,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 7.572266572775302,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.226137995233655,
+          "geometry_feasible": false
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 18.772413200394197,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.53466287759523,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 14.173310945037551,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.350726626035698,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141551,
+      "input_index": 184,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 7.007842464551591,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.224308257272899,
+          "geometry_feasible": false
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 18.20456228861224,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.5443224904072785,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 13.613243862804065,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.36114850202427,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141555,
+      "input_index": 188,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 6.444383142179161,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.220739960497342,
+          "geometry_feasible": false
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 17.64301830882621,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.5493852408630566,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 13.057662647920308,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.36575044907419,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141559,
+      "input_index": 192,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 5.881210757136229,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.217654184381628,
+          "geometry_feasible": false
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 17.084101351333153,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.553334600273922,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 12.502683687599637,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.368276053361782,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141563,
+      "input_index": 196,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 5.3210365949115905,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.215528538602051,
+          "geometry_feasible": false
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 16.526404163031128,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.557435828820198,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 11.946912594794687,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.371065584781649,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141567,
+      "input_index": 200,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 4.766421235216071,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.214189355240899,
+          "geometry_feasible": false
+        },
+        {
+          "name": "D_stop",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 15.9706810564751,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.560488158589468,
+          "geometry_feasible": false
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 11.391335081948844,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.372348342822875,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141571,
+      "input_index": 204,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 4.219364212354642,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.21378244805873,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 15.416360733075702,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.5627995951315876,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 10.835629913176687,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.372632747289934,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141575,
+      "input_index": 208,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 3.683138669822988,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.214308815839793,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 14.863125578570381,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.5644276522086806,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 10.279660392363766,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.37211118339821,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141579,
+      "input_index": 212,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 3.1620758097823263,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.216794278885697,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 14.308030983475767,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.5680231263781113,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 9.720142531750593,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.374014001132753,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141583,
+      "input_index": 216,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 2.6674115817426234,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.219002194289029,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 13.755456060216266,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.5686666251419914,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 9.16242079364076,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.372824881245693,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141587,
+      "input_index": 220,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 2.2147764716421157,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.222728339708608,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 13.201244884612,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.570675929282184,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 8.601772222641795,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.37366598686586,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141591,
+      "input_index": 224,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 1.8372979727237673,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.225835946653397,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 12.649431656983557,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.569555099872043,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 8.04294744344548,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.37152411140733,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141595,
+      "input_index": 228,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 1.5876275919577583,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.229929777626227,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 12.09597503773246,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.5693522032300127,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 7.481602895561508,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.37113044833144,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141599,
+      "input_index": 232,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 1.5241398300947013,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.235720363774107,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 11.538613640903716,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.572217628500663,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 6.915406851236626,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.375115550752799,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141603,
+      "input_index": 236,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 1.5241284393595054,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.23950286002974,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 10.985240493248645,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.569857526830164,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 6.354099546822169,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.37395658080219,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    },
+    {
+      "frame": 141607,
+      "input_index": 240,
+      "complete_measured_future": true,
+      "missing_original_actor": false,
+      "new_actor_ids": [],
+      "evaluations": [
+        {
+          "name": "A_keep_route",
+          "accepted": true,
+          "selected": true,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 1.5241096803785905,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 15.243764050526845,
+          "geometry_feasible": true
+        },
+        {
+          "name": "D_stop",
+          "accepted": true,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 10.430489102295656,
+          "stop_3m_preserved": true,
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 3.567889788686818,
+          "geometry_feasible": true
+        },
+        {
+          "name": "E_slow_follow",
+          "accepted": false,
+          "selected": false,
+          "RobustWithinHypotheses": true,
+          "SafeForRecordedFuture": true,
+          "FeasibleToExecute": "NotValidated",
+          "measured_sample_OBB_conflicts": [],
+          "minimum_gap_m": 5.792875752596783,
+          "stop_3m_preserved": "NotApplicable",
+          "full_body_road_violation_samples": [],
+          "finite_reference_safe_but_rejected": false,
+          "plan_progress_m": 8.37383560538398,
+          "geometry_feasible": false
+        }
+      ],
+      "prediction_errors": [
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 1.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 3.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        },
+        {
+          "actor_id": 204,
+          "category": "Vehicle",
+          "horizon_s": 6.0,
+          "best_finite_hypothesis_error_m": 0.000238422899411329,
+          "constant_speed_error_m": null,
+          "hypotheses": 7
+        }
+      ],
+      "reference": "ActualCARLA0.05sActorSnapshot_planarOBB_notMesh_notExactContinuousCollision"
+    }
+  ],
+  "limits": "No future feedback to Planner. Sampled .05s OBB, not physical mesh or exact continuous truth. Ego candidate is counterfactual; actual target actors followed collection script and do not react to candidate Ego."
+}

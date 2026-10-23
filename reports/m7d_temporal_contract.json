@@ -1,0 +1,231 @@
+{
+  "provenance": {
+    "base": "d9899fac94f320195f85bb6fe34d7c52752c58d7",
+    "commit": "d9899fac94f320195f85bb6fe34d7c52752c58d7",
+    "sources": {
+      "tools/m7d_support_audit.py": "30651e6930d864055b0533aa8b5cad6629aa102ff8fb90eda86f601df2f28f59",
+      "tools/m7d_inventory.py": "d817031a79ec530dd2d699be65face56515eebeeffc2f18b7fe165ecd94b4c91",
+      "tools/m7d_leakage_probe.py": "5514055cfe94dec08648051435a7ea2e09268a86e449004bc6389dd425d640c0",
+      "tools/m7d_equivalence.py": "27f1601a0542dba2f59281ebc0b8a8e964be68df10ab4fe49feba530edb57220",
+      "tools/m7d_replay.py": "4af86b2ac3c21a4daaeed53f5b313cea62412ced35287f70a40c19c5260c1a84",
+      "tools/m7d_paired.py": "ad8263674d11731e64f5774f19b9dd685fedada78ea9eef6c0e4f1550f7a9b34",
+      "tools/m7d_collect.py": "5f8be52b8a13bc76100a71fb49bda8378c1324b4192320da17180519036bd624",
+      "tools/m7d_availability.py": "5da69f6338c1b8ae084a113c887da573f4e0971ccbbc5236f179cbdb6fb0d378",
+      "tools/m7d_release.py": "87ee5944acb64fba57283dd83efa10c6037ddcc130c847c2ea9af4b9dfbd9d09",
+      "tools/m7d_evaluate.py": "dfa7e23764ed79d798b01b4bdb1cafe655c1c79b8811e7bb99c92332e93dcbfb",
+      "tools/m7d_common.py": "5683adb3a2449382e22b77d73254623ee752c027d8ae5763105604039393344b",
+      "tools/m7d_seven.py": "92921ac0855e5a15700a5edf6b7c77316c7cde85b493b59974b8e309202e569c",
+      "tools/m7d_figures.py": "348fda1e2d6663273888ac00a503c7639f1bed7bb3c4140324a870825b29e516",
+      "tools/m7d_report.py": "a6a652a15128abb04d15345bddd7bdc87ab6d6608c9ed74f9b49524ede88e3d2",
+      "tools/m7d_batch.py": "c5bc8ee0b64ab52037473397cb2d296c9ec21d2b6b858bc9a3f955f18ded50bc",
+      "tools/m7d_prepare.py": "077cca7f7f3f8e6ecb85c51da022969b7fa0077e60d56500e4b9a1a2fc625611",
+      "tools/m7d_history_prepare.py": "7da27ecdd7e94ea58e834ce9ba3781e6316575285d93c09378d9b3701af17e04",
+      "datasets/m7d_temporal.py": "19ad8ce7f3e40dc8eace48acaf54c5113216ba6cddf95f8ab626b4f31e970185",
+      "diagnostics/m7d_scene.py": "0417b658ad22398de68b2ae908e99a7c0ff63e644cc9d75b6d884c33fbbeb374",
+      "diagnostics/m7d_geometry.py": "ace04d6d6fcbb44142dd8c85e129953d17a22eea26fc002ad40c158d2fac3254",
+      "tests/test_m7d_temporal.py": "342053885ca0757838098df34145829365691d8d4c6c34a8f1d123c48f875dbf",
+      "configs/m7d/protocol.json": "9d40f8892b27d45b4030a1644b59d3244e2221f471b228ec2762c1f4a96857f7"
+    },
+    "new_planner_control": false,
+    "new_training": false
+  },
+  "kind": "ActualServerOfflineAnalysisOfActualCARLA_SeparateSyntheticTests",
+  "control_authorized": false,
+  "status": "PassedWithinRecordedScope",
+  "schema": "datasets/m7d_temporal.py",
+  "original_simulation_timestamp_preserved": true,
+  "inputs": "Current actors + history stamps + predeclared Ego route only",
+  "wall_clock": "Original collection availability; new offline computation start/end; cannot subtract wall from simulation",
+  "modeled_age": "input delay + measured compute time; offline model, not real-time tick claim",
+  "max_age_s": 0.2,
+  "missing_actor_policy": "Unknown; no reconstructed measured samples",
+  "input_rejections": 0,
+  "all_result_times_original": true,
+  "full_payload_ready_audit": [
+    {
+      "episode": "dev_braking_r20",
+      "all_scientific_results_equal": true,
+      "payload_ready_ms": {
+        "p50": 436.16809137165546,
+        "p95": 458.312775939703,
+        "p99": 474.8051915317774,
+        "max": 474.97374936938286
+      },
+      "serialization_ms": {
+        "p50": 6.500851362943649,
+        "p95": 6.867609918117523,
+        "p99": 7.18073733150959,
+        "max": 7.221333682537079
+      },
+      "expired": 60,
+      "records": 61,
+      "artifact": {
+        "path": "reports/m7d_replays/dev_braking_r20_availability.json",
+        "bytes": 29740954,
+        "sha256": "459c599c94bf05a6c8005b7cbd76caf0dd2b0e995cdd5643da07cba55a278964"
+      }
+    },
+    {
+      "episode": "dev_constant_r3",
+      "all_scientific_results_equal": true,
+      "payload_ready_ms": {
+        "p50": 396.548256278038,
+        "p95": 410.20666249096394,
+        "p99": 416.94268956780434,
+        "max": 418.7618810683489
+      },
+      "serialization_ms": {
+        "p50": 7.174501195549965,
+        "p95": 7.599383592605591,
+        "p99": 7.852357625961304,
+        "max": 8.031044155359268
+      },
+      "expired": 61,
+      "records": 61,
+      "artifact": {
+        "path": "reports/m7d_replays/dev_constant_r3_availability.json",
+        "bytes": 33795524,
+        "sha256": "e4827d00438cdac308abfdc17a9c96b73544824594cc5cf6f967bd1e7695fe01"
+      }
+    },
+    {
+      "episode": "final_braking_r30",
+      "all_scientific_results_equal": true,
+      "payload_ready_ms": {
+        "p50": 564.5685959607363,
+        "p95": 583.4917295724154,
+        "p99": 588.9087617397308,
+        "max": 590.8179134130478
+      },
+      "serialization_ms": {
+        "p50": 6.6580455750226974,
+        "p95": 6.997516378760338,
+        "p99": 8.18294212222099,
+        "max": 9.668219834566116
+      },
+      "expired": 58,
+      "records": 61,
+      "artifact": {
+        "path": "reports/m7d_replays/final_braking_r30_availability.json",
+        "bytes": 30376992,
+        "sha256": "e2a5e36e895a56c7b2a809489459029f6663a50d2fbd9e3b85f364f3ce110e29"
+      }
+    },
+    {
+      "episode": "final_crossing_r1",
+      "all_scientific_results_equal": true,
+      "payload_ready_ms": {
+        "p50": 455.13129979372025,
+        "p95": 471.00659273564816,
+        "p99": 495.8815082907676,
+        "max": 523.8117519766092
+      },
+      "serialization_ms": {
+        "p50": 7.423996925354004,
+        "p95": 7.615102455019951,
+        "p99": 7.756466045975685,
+        "max": 7.801348343491554
+      },
+      "expired": 61,
+      "records": 61,
+      "artifact": {
+        "path": "reports/m7d_replays/final_crossing_r1_availability.json",
+        "bytes": 34072004,
+        "sha256": "164d1864d4df2b5a8575d7b1e8f9f2f84c1c6f20b06c4ce9725a68616e713462"
+      }
+    },
+    {
+      "episode": "historical_final_bypass_p126_s101",
+      "all_scientific_results_equal": true,
+      "payload_ready_ms": {
+        "p50": 397.9500699788332,
+        "p95": 417.3118397593498,
+        "p99": 433.280236274004,
+        "max": 435.3515990078449
+      },
+      "serialization_ms": {
+        "p50": 5.482297390699387,
+        "p95": 5.707753822207451,
+        "p99": 6.489264592528341,
+        "max": 7.104072719812393
+      },
+      "expired": 61,
+      "records": 61,
+      "artifact": {
+        "path": "reports/m7d_replays/historical_final_bypass_p126_s101_availability.json",
+        "bytes": 25815215,
+        "sha256": "971b8431674800da67a0c6e1d7cb3af2b272152620be40c6cbabd5dbc3b85b62"
+      }
+    },
+    {
+      "episode": "historical_final_lead_s101",
+      "all_scientific_results_equal": true,
+      "payload_ready_ms": {
+        "p50": 409.58835929632187,
+        "p95": 430.2029926329851,
+        "p99": 437.62932009994984,
+        "max": 440.2209408581257
+      },
+      "serialization_ms": {
+        "p50": 6.030350923538208,
+        "p95": 6.621791049838066,
+        "p99": 6.665287166833878,
+        "max": 6.681052967905998
+      },
+      "expired": 61,
+      "records": 61,
+      "artifact": {
+        "path": "reports/m7d_replays/historical_final_lead_s101_availability.json",
+        "bytes": 28349917,
+        "sha256": "b646a75903dceeab7c3db4e14caddb1a671a3e47215e980badc9c6cdd5dcf71a"
+      }
+    },
+    {
+      "episode": "val_connection_r0",
+      "all_scientific_results_equal": true,
+      "payload_ready_ms": {
+        "p50": 328.66134867072105,
+        "p95": 379.79206815361977,
+        "p99": 389.2834756523371,
+        "max": 395.43840661644936
+      },
+      "serialization_ms": {
+        "p50": 6.013479083776474,
+        "p95": 7.742160931229591,
+        "p99": 8.183205127716064,
+        "max": 8.202452212572098
+      },
+      "expired": 61,
+      "records": 61,
+      "artifact": {
+        "path": "reports/m7d_replays/val_connection_r0_availability.json",
+        "bytes": 29156624,
+        "sha256": "5a5d05eb757b59b69a26c1f22ea5162d6e92748de2c96459ea1cd7d8d37a6e9b"
+      }
+    },
+    {
+      "episode": "val_restart_r76",
+      "all_scientific_results_equal": true,
+      "payload_ready_ms": {
+        "p50": 306.3297998160124,
+        "p95": 320.9502398967743,
+        "p99": 327.2399503737688,
+        "max": 329.7341074794531
+      },
+      "serialization_ms": {
+        "p50": 6.4440760761499405,
+        "p95": 7.235703989863396,
+        "p99": 8.481081575155256,
+        "max": 8.92665795981884
+      },
+      "expired": 61,
+      "records": 61,
+      "artifact": {
+        "path": "reports/m7d_replays/val_restart_r76_availability.json",
+        "bytes": 29494274,
+        "sha256": "0c47a275103939ba491e6abc0d3a7ade5d76235fd0c9ac7578b8a79e039447e4"
+      }
+    }
+  ],
+  "core_clock_limitation": "Initial reports core clock ends before result construction; supplemental availability replay measures complete payload serialization without changing frozen plan or final decisions"
+}

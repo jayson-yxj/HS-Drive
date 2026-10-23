@@ -1,0 +1,217 @@
+{
+  "provenance": {
+    "base": "d9899fac94f320195f85bb6fe34d7c52752c58d7",
+    "commit": "d9899fac94f320195f85bb6fe34d7c52752c58d7",
+    "sources": {
+      "tools/m7d_support_audit.py": "30651e6930d864055b0533aa8b5cad6629aa102ff8fb90eda86f601df2f28f59",
+      "tools/m7d_inventory.py": "d817031a79ec530dd2d699be65face56515eebeeffc2f18b7fe165ecd94b4c91",
+      "tools/m7d_leakage_probe.py": "5514055cfe94dec08648051435a7ea2e09268a86e449004bc6389dd425d640c0",
+      "tools/m7d_equivalence.py": "27f1601a0542dba2f59281ebc0b8a8e964be68df10ab4fe49feba530edb57220",
+      "tools/m7d_replay.py": "4af86b2ac3c21a4daaeed53f5b313cea62412ced35287f70a40c19c5260c1a84",
+      "tools/m7d_paired.py": "ad8263674d11731e64f5774f19b9dd685fedada78ea9eef6c0e4f1550f7a9b34",
+      "tools/m7d_collect.py": "5f8be52b8a13bc76100a71fb49bda8378c1324b4192320da17180519036bd624",
+      "tools/m7d_availability.py": "5da69f6338c1b8ae084a113c887da573f4e0971ccbbc5236f179cbdb6fb0d378",
+      "tools/m7d_release.py": "87ee5944acb64fba57283dd83efa10c6037ddcc130c847c2ea9af4b9dfbd9d09",
+      "tools/m7d_evaluate.py": "dfa7e23764ed79d798b01b4bdb1cafe655c1c79b8811e7bb99c92332e93dcbfb",
+      "tools/m7d_common.py": "5683adb3a2449382e22b77d73254623ee752c027d8ae5763105604039393344b",
+      "tools/m7d_seven.py": "92921ac0855e5a15700a5edf6b7c77316c7cde85b493b59974b8e309202e569c",
+      "tools/m7d_figures.py": "348fda1e2d6663273888ac00a503c7639f1bed7bb3c4140324a870825b29e516",
+      "tools/m7d_report.py": "a6a652a15128abb04d15345bddd7bdc87ab6d6608c9ed74f9b49524ede88e3d2",
+      "tools/m7d_batch.py": "c5bc8ee0b64ab52037473397cb2d296c9ec21d2b6b858bc9a3f955f18ded50bc",
+      "tools/m7d_prepare.py": "077cca7f7f3f8e6ecb85c51da022969b7fa0077e60d56500e4b9a1a2fc625611",
+      "tools/m7d_history_prepare.py": "7da27ecdd7e94ea58e834ce9ba3781e6316575285d93c09378d9b3701af17e04",
+      "datasets/m7d_temporal.py": "19ad8ce7f3e40dc8eace48acaf54c5113216ba6cddf95f8ab626b4f31e970185",
+      "diagnostics/m7d_scene.py": "0417b658ad22398de68b2ae908e99a7c0ff63e644cc9d75b6d884c33fbbeb374",
+      "diagnostics/m7d_geometry.py": "ace04d6d6fcbb44142dd8c85e129953d17a22eea26fc002ad40c158d2fac3254",
+      "tests/test_m7d_temporal.py": "342053885ca0757838098df34145829365691d8d4c6c34a8f1d123c48f875dbf",
+      "configs/m7d/protocol.json": "9d40f8892b27d45b4030a1644b59d3244e2221f471b228ec2762c1f4a96857f7"
+    },
+    "new_planner_control": false,
+    "new_training": false
+  },
+  "kind": "ActualServerOfflineAnalysisOfActualCARLA_SeparateSyntheticTests",
+  "control_authorized": false,
+  "episodes": [
+    {
+      "episode": "dev_braking_r20",
+      "baseline_decisions": {
+        "A_keep_route": 4,
+        "D_stop": 14,
+        "None": 43
+      },
+      "with_slow": {
+        "A_keep_route": 4,
+        "D_stop": 14,
+        "None": 43
+      },
+      "slow_added_progress_snapshots": 0,
+      "selected_progress_m": {
+        "p50": 2.149888279084208,
+        "p95": 11.96418343251211,
+        "p99": 11.964184711515648,
+        "max": 11.964185031266533
+      },
+      "finite_future_safe_geometry_feasible_rejected": 10,
+      "snapshots_with_only_stop_accepted": 14,
+      "snapshots_without_accepted_candidate": 43,
+      "no_geometry_feasible_candidate": 43,
+      "interpretation": "No accepted candidate != globally impossible. Recorded-safe rejected != robust-safe; no tuning to future. Planned distances not actual driven progress."
+    },
+    {
+      "episode": "dev_constant_r3",
+      "baseline_decisions": {
+        "A_keep_route": 4,
+        "D_stop": 51,
+        "B_left": 6
+      },
+      "with_slow": {
+        "A_keep_route": 4,
+        "E_slow_follow": 3,
+        "D_stop": 48,
+        "B_left": 6
+      },
+      "slow_added_progress_snapshots": 3,
+      "selected_progress_m": {
+        "p50": 2.239215417217232,
+        "p95": 14.654017306545608,
+        "p99": 14.656447018041678,
+        "max": 14.65664510348964
+      },
+      "finite_future_safe_geometry_feasible_rejected": 67,
+      "snapshots_with_only_stop_accepted": 48,
+      "snapshots_without_accepted_candidate": 0,
+      "no_geometry_feasible_candidate": 0,
+      "interpretation": "No accepted candidate != globally impossible. Recorded-safe rejected != robust-safe; no tuning to future. Planned distances not actual driven progress."
+    },
+    {
+      "episode": "final_braking_r30",
+      "baseline_decisions": {
+        "None": 23,
+        "D_stop": 38
+      },
+      "with_slow": {
+        "None": 23,
+        "D_stop": 38
+      },
+      "slow_added_progress_snapshots": 0,
+      "selected_progress_m": {
+        "p50": 2.188469642676546,
+        "p95": 2.286303654428927,
+        "p99": 2.443329832278633,
+        "max": 2.4998178820686894
+      },
+      "finite_future_safe_geometry_feasible_rejected": 0,
+      "snapshots_with_only_stop_accepted": 38,
+      "snapshots_without_accepted_candidate": 23,
+      "no_geometry_feasible_candidate": 23,
+      "interpretation": "No accepted candidate != globally impossible. Recorded-safe rejected != robust-safe; no tuning to future. Planned distances not actual driven progress."
+    },
+    {
+      "episode": "final_crossing_r1",
+      "baseline_decisions": {
+        "None": 61
+      },
+      "with_slow": {
+        "None": 61
+      },
+      "slow_added_progress_snapshots": 0,
+      "selected_progress_m": null,
+      "finite_future_safe_geometry_feasible_rejected": 30,
+      "snapshots_with_only_stop_accepted": 0,
+      "snapshots_without_accepted_candidate": 61,
+      "no_geometry_feasible_candidate": 0,
+      "interpretation": "No accepted candidate != globally impossible. Recorded-safe rejected != robust-safe; no tuning to future. Planned distances not actual driven progress."
+    },
+    {
+      "episode": "historical_final_bypass_p126_s101",
+      "baseline_decisions": {
+        "A_keep_route": 51,
+        "None": 10
+      },
+      "with_slow": {
+        "A_keep_route": 51,
+        "None": 10
+      },
+      "slow_added_progress_snapshots": 0,
+      "selected_progress_m": {
+        "p50": 14.806138540075299,
+        "p95": 15.232825070700166,
+        "p99": 15.241633455278293,
+        "max": 15.243764050526845
+      },
+      "finite_future_safe_geometry_feasible_rejected": 0,
+      "snapshots_with_only_stop_accepted": 0,
+      "snapshots_without_accepted_candidate": 10,
+      "no_geometry_feasible_candidate": 10,
+      "interpretation": "No accepted candidate != globally impossible. Recorded-safe rejected != robust-safe; no tuning to future. Planned distances not actual driven progress."
+    },
+    {
+      "episode": "historical_final_lead_s101",
+      "baseline_decisions": {
+        "A_keep_route": 26,
+        "None": 12,
+        "D_stop": 23
+      },
+      "with_slow": {
+        "A_keep_route": 26,
+        "None": 12,
+        "D_stop": 23
+      },
+      "slow_added_progress_snapshots": 0,
+      "selected_progress_m": {
+        "p50": 12.00151827375073,
+        "p95": 14.991924977973126,
+        "p99": 15.000720357825054,
+        "max": 15.001676344470717
+      },
+      "finite_future_safe_geometry_feasible_rejected": 6,
+      "snapshots_with_only_stop_accepted": 23,
+      "snapshots_without_accepted_candidate": 12,
+      "no_geometry_feasible_candidate": 12,
+      "interpretation": "No accepted candidate != globally impossible. Recorded-safe rejected != robust-safe; no tuning to future. Planned distances not actual driven progress."
+    },
+    {
+      "episode": "val_connection_r0",
+      "baseline_decisions": {
+        "None": 61
+      },
+      "with_slow": {
+        "None": 61
+      },
+      "slow_added_progress_snapshots": 0,
+      "selected_progress_m": null,
+      "finite_future_safe_geometry_feasible_rejected": 34,
+      "snapshots_with_only_stop_accepted": 0,
+      "snapshots_without_accepted_candidate": 61,
+      "no_geometry_feasible_candidate": 13,
+      "interpretation": "No accepted candidate != globally impossible. Recorded-safe rejected != robust-safe; no tuning to future. Planned distances not actual driven progress."
+    },
+    {
+      "episode": "val_restart_r76",
+      "baseline_decisions": {
+        "A_keep_route": 4,
+        "D_stop": 38,
+        "None": 19
+      },
+      "with_slow": {
+        "A_keep_route": 4,
+        "D_stop": 38,
+        "None": 19
+      },
+      "slow_added_progress_snapshots": 0,
+      "selected_progress_m": {
+        "p50": 2.198681358707031,
+        "p95": 11.997933929736522,
+        "p99": 11.99793429716414,
+        "max": 11.997934504112242
+      },
+      "finite_future_safe_geometry_feasible_rejected": 32,
+      "snapshots_with_only_stop_accepted": 38,
+      "snapshots_without_accepted_candidate": 19,
+      "no_geometry_feasible_candidate": 0,
+      "interpretation": "No accepted candidate != globally impossible. Recorded-safe rejected != robust-safe; no tuning to future. Planned distances not actual driven progress."
+    }
+  ],
+  "slow_parameters": "Frozen target0.5m/s,4.5s cosine transition, no second family",
+  "no_actual_plan_tracking": true
+}

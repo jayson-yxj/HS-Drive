@@ -1,0 +1,237 @@
+{
+  "provenance": {
+    "base": "d9899fac94f320195f85bb6fe34d7c52752c58d7",
+    "commit": "d9899fac94f320195f85bb6fe34d7c52752c58d7",
+    "sources": {
+      "tools/m7d_support_audit.py": "30651e6930d864055b0533aa8b5cad6629aa102ff8fb90eda86f601df2f28f59",
+      "tools/m7d_inventory.py": "d817031a79ec530dd2d699be65face56515eebeeffc2f18b7fe165ecd94b4c91",
+      "tools/m7d_leakage_probe.py": "5514055cfe94dec08648051435a7ea2e09268a86e449004bc6389dd425d640c0",
+      "tools/m7d_equivalence.py": "27f1601a0542dba2f59281ebc0b8a8e964be68df10ab4fe49feba530edb57220",
+      "tools/m7d_replay.py": "4af86b2ac3c21a4daaeed53f5b313cea62412ced35287f70a40c19c5260c1a84",
+      "tools/m7d_paired.py": "ad8263674d11731e64f5774f19b9dd685fedada78ea9eef6c0e4f1550f7a9b34",
+      "tools/m7d_collect.py": "5f8be52b8a13bc76100a71fb49bda8378c1324b4192320da17180519036bd624",
+      "tools/m7d_availability.py": "5da69f6338c1b8ae084a113c887da573f4e0971ccbbc5236f179cbdb6fb0d378",
+      "tools/m7d_release.py": "87ee5944acb64fba57283dd83efa10c6037ddcc130c847c2ea9af4b9dfbd9d09",
+      "tools/m7d_evaluate.py": "dfa7e23764ed79d798b01b4bdb1cafe655c1c79b8811e7bb99c92332e93dcbfb",
+      "tools/m7d_common.py": "5683adb3a2449382e22b77d73254623ee752c027d8ae5763105604039393344b",
+      "tools/m7d_seven.py": "92921ac0855e5a15700a5edf6b7c77316c7cde85b493b59974b8e309202e569c",
+      "tools/m7d_figures.py": "348fda1e2d6663273888ac00a503c7639f1bed7bb3c4140324a870825b29e516",
+      "tools/m7d_report.py": "a6a652a15128abb04d15345bddd7bdc87ab6d6608c9ed74f9b49524ede88e3d2",
+      "tools/m7d_batch.py": "c5bc8ee0b64ab52037473397cb2d296c9ec21d2b6b858bc9a3f955f18ded50bc",
+      "tools/m7d_prepare.py": "077cca7f7f3f8e6ecb85c51da022969b7fa0077e60d56500e4b9a1a2fc625611",
+      "tools/m7d_history_prepare.py": "7da27ecdd7e94ea58e834ce9ba3781e6316575285d93c09378d9b3701af17e04",
+      "datasets/m7d_temporal.py": "19ad8ce7f3e40dc8eace48acaf54c5113216ba6cddf95f8ab626b4f31e970185",
+      "diagnostics/m7d_scene.py": "0417b658ad22398de68b2ae908e99a7c0ff63e644cc9d75b6d884c33fbbeb374",
+      "diagnostics/m7d_geometry.py": "ace04d6d6fcbb44142dd8c85e129953d17a22eea26fc002ad40c158d2fac3254",
+      "tests/test_m7d_temporal.py": "342053885ca0757838098df34145829365691d8d4c6c34a8f1d123c48f875dbf",
+      "configs/m7d/protocol.json": "9d40f8892b27d45b4030a1644b59d3244e2221f471b228ec2762c1f4a96857f7"
+    },
+    "new_planner_control": false,
+    "new_training": false
+  },
+  "kind": "ActualServerOfflineAnalysisOfActualCARLA_SeparateSyntheticTests",
+  "control_authorized": false,
+  "episodes": [
+    {
+      "episode": "dev_braking_r20",
+      "split": "development",
+      "snapshots": 61,
+      "decisions": {
+        "A_keep_route": 4,
+        "D_stop": 14,
+        "None": 43
+      },
+      "input_rejections": [],
+      "unknown_snapshots": 0,
+      "unknown_reasons": {},
+      "geometry_reasons": {
+        "curvature_limit": 90,
+        "initial_state_mismatch": 61
+      },
+      "artifact": {
+        "path": "reports/m7d_replays/dev_braking_r20_stream.json",
+        "bytes": 29677431,
+        "sha256": "f36864349cb233d02ed968c0b453c5c02d262497f12c9b3e2823f123b80228ea"
+      }
+    },
+    {
+      "episode": "dev_constant_r3",
+      "split": "development",
+      "snapshots": 61,
+      "decisions": {
+        "A_keep_route": 4,
+        "E_slow_follow": 3,
+        "D_stop": 48,
+        "B_left": 6
+      },
+      "input_rejections": [],
+      "unknown_snapshots": 0,
+      "unknown_reasons": {},
+      "geometry_reasons": {
+        "curvature_limit": 45,
+        "initial_state_mismatch": 54,
+        "heading_path_inconsistent": 33,
+        "body_outside_allowed_road": 27,
+        "position_velocity_inconsistent": 21
+      },
+      "artifact": {
+        "path": "reports/m7d_replays/dev_constant_r3_stream.json",
+        "bytes": 33731547,
+        "sha256": "fffc1a382b5d40f226e10c8f68f81eb5002274b77e7a5b63943efdd655d90c25"
+      }
+    },
+    {
+      "episode": "final_braking_r30",
+      "split": "fresh_final",
+      "snapshots": 61,
+      "decisions": {
+        "None": 23,
+        "D_stop": 38
+      },
+      "input_rejections": [],
+      "unknown_snapshots": 0,
+      "unknown_reasons": {},
+      "geometry_reasons": {
+        "guide_path_road_violation": 183,
+        "body_outside_allowed_road": 61,
+        "curvature_limit": 64,
+        "heading_path_inconsistent": 33,
+        "initial_state_mismatch": 9
+      },
+      "artifact": {
+        "path": "reports/m7d_replays/final_braking_r30_stream.json",
+        "bytes": 30313676,
+        "sha256": "26284982944565a405b8067851245f683211822d5b08d460a3fce892a4d03341"
+      }
+    },
+    {
+      "episode": "final_crossing_r1",
+      "split": "fresh_final",
+      "snapshots": 61,
+      "decisions": {
+        "None": 61
+      },
+      "input_rejections": [],
+      "unknown_snapshots": 61,
+      "unknown_reasons": {
+        "ActorCategoryWithoutDeclaredMotionCorridor": 61,
+        "missing_motion_observation": 61,
+        "FutureBodyOutsideSupportedRoad": 276
+      },
+      "geometry_reasons": {
+        "guide_path_road_violation": 183,
+        "lane_change_prohibited": 61,
+        "body_outside_allowed_road": 61,
+        "initial_state_mismatch": 52,
+        "curvature_limit": 36,
+        "heading_path_inconsistent": 25,
+        "position_velocity_inconsistent": 7
+      },
+      "artifact": {
+        "path": "reports/m7d_replays/final_crossing_r1_stream.json",
+        "bytes": 34008783,
+        "sha256": "0bd9872e0acebccf7e147c39888efe58cf0bd5376330e5ef90b36abf6e0f54c1"
+      }
+    },
+    {
+      "episode": "historical_final_bypass_p126_s101",
+      "split": "historical_regression",
+      "snapshots": 61,
+      "decisions": {
+        "A_keep_route": 51,
+        "None": 10
+      },
+      "input_rejections": [],
+      "unknown_snapshots": 0,
+      "unknown_reasons": {},
+      "geometry_reasons": {
+        "curvature_limit": 39,
+        "initial_state_mismatch": 61
+      },
+      "artifact": {
+        "path": "reports/m7d_replays/historical_final_bypass_p126_s101_stream.json",
+        "bytes": 25750160,
+        "sha256": "23e25cee2fb3e7c47e5d6f5fe1f14e6d23d018a0897ad1dbf92fcda4eacacf0a"
+      }
+    },
+    {
+      "episode": "historical_final_lead_s101",
+      "split": "historical_regression",
+      "snapshots": 61,
+      "decisions": {
+        "A_keep_route": 26,
+        "None": 12,
+        "D_stop": 23
+      },
+      "input_rejections": [],
+      "unknown_snapshots": 0,
+      "unknown_reasons": {},
+      "geometry_reasons": {
+        "body_outside_allowed_road": 61,
+        "guide_path_road_violation": 61,
+        "curvature_limit": 83,
+        "initial_state_mismatch": 61,
+        "heading_path_inconsistent": 19,
+        "position_velocity_inconsistent": 7
+      },
+      "artifact": {
+        "path": "reports/m7d_replays/historical_final_lead_s101_stream.json",
+        "bytes": 28285430,
+        "sha256": "9c7a8b332258c67d7dafb49a2bab8b58ae2db2179ac5448d301cfc744482da13"
+      }
+    },
+    {
+      "episode": "val_connection_r0",
+      "split": "validation",
+      "snapshots": 61,
+      "decisions": {
+        "None": 61
+      },
+      "input_rejections": [],
+      "unknown_snapshots": 61,
+      "unknown_reasons": {
+        "FutureBodyOutsideSupportedRoad": 122
+      },
+      "geometry_reasons": {
+        "guide_path_road_violation": 183,
+        "lane_change_prohibited": 61,
+        "body_outside_allowed_road": 61,
+        "initial_state_mismatch": 49,
+        "curvature_limit": 62,
+        "heading_path_inconsistent": 25
+      },
+      "artifact": {
+        "path": "reports/m7d_replays/val_connection_r0_stream.json",
+        "bytes": 29093376,
+        "sha256": "919c85fea7ed774dfaad7f968f632d2448596678751ea67266d5bbefcf82a877"
+      }
+    },
+    {
+      "episode": "val_restart_r76",
+      "split": "validation",
+      "snapshots": 61,
+      "decisions": {
+        "A_keep_route": 4,
+        "D_stop": 38,
+        "None": 19
+      },
+      "input_rejections": [],
+      "unknown_snapshots": 0,
+      "unknown_reasons": {},
+      "geometry_reasons": {
+        "initial_state_mismatch": 57,
+        "curvature_limit": 19
+      },
+      "artifact": {
+        "path": "reports/m7d_replays/val_restart_r76_stream.json",
+        "bytes": 29431003,
+        "sha256": "4b4b93fe39b7b7ee0d771f9b2f31d2b1b7691f3673ecf43ea1c8244c7f6a1f68"
+      }
+    }
+  ],
+  "independent_episodes": 8,
+  "snapshots": 488,
+  "sample_dependence": "0.2s overlapping six-second windows are strongly correlated, not independent scenes",
+  "RobustWithinHypotheses": "Per-candidate only; finite declared family",
+  "FeasibleToExecute": "NotValidated"
+}

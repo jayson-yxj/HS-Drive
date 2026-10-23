@@ -1,0 +1,303 @@
+{
+  "provenance": {
+    "base": "d9899fac94f320195f85bb6fe34d7c52752c58d7",
+    "commit": "d9899fac94f320195f85bb6fe34d7c52752c58d7",
+    "sources": {
+      "tools/m7d_support_audit.py": "30651e6930d864055b0533aa8b5cad6629aa102ff8fb90eda86f601df2f28f59",
+      "tools/m7d_inventory.py": "d817031a79ec530dd2d699be65face56515eebeeffc2f18b7fe165ecd94b4c91",
+      "tools/m7d_leakage_probe.py": "5514055cfe94dec08648051435a7ea2e09268a86e449004bc6389dd425d640c0",
+      "tools/m7d_equivalence.py": "27f1601a0542dba2f59281ebc0b8a8e964be68df10ab4fe49feba530edb57220",
+      "tools/m7d_replay.py": "4af86b2ac3c21a4daaeed53f5b313cea62412ced35287f70a40c19c5260c1a84",
+      "tools/m7d_paired.py": "ad8263674d11731e64f5774f19b9dd685fedada78ea9eef6c0e4f1550f7a9b34",
+      "tools/m7d_collect.py": "5f8be52b8a13bc76100a71fb49bda8378c1324b4192320da17180519036bd624",
+      "tools/m7d_availability.py": "5da69f6338c1b8ae084a113c887da573f4e0971ccbbc5236f179cbdb6fb0d378",
+      "tools/m7d_release.py": "87ee5944acb64fba57283dd83efa10c6037ddcc130c847c2ea9af4b9dfbd9d09",
+      "tools/m7d_evaluate.py": "dfa7e23764ed79d798b01b4bdb1cafe655c1c79b8811e7bb99c92332e93dcbfb",
+      "tools/m7d_common.py": "5683adb3a2449382e22b77d73254623ee752c027d8ae5763105604039393344b",
+      "tools/m7d_seven.py": "92921ac0855e5a15700a5edf6b7c77316c7cde85b493b59974b8e309202e569c",
+      "tools/m7d_figures.py": "348fda1e2d6663273888ac00a503c7639f1bed7bb3c4140324a870825b29e516",
+      "tools/m7d_report.py": "a6a652a15128abb04d15345bddd7bdc87ab6d6608c9ed74f9b49524ede88e3d2",
+      "tools/m7d_batch.py": "c5bc8ee0b64ab52037473397cb2d296c9ec21d2b6b858bc9a3f955f18ded50bc",
+      "tools/m7d_prepare.py": "077cca7f7f3f8e6ecb85c51da022969b7fa0077e60d56500e4b9a1a2fc625611",
+      "tools/m7d_history_prepare.py": "7da27ecdd7e94ea58e834ce9ba3781e6316575285d93c09378d9b3701af17e04",
+      "datasets/m7d_temporal.py": "19ad8ce7f3e40dc8eace48acaf54c5113216ba6cddf95f8ab626b4f31e970185",
+      "diagnostics/m7d_scene.py": "0417b658ad22398de68b2ae908e99a7c0ff63e644cc9d75b6d884c33fbbeb374",
+      "diagnostics/m7d_geometry.py": "ace04d6d6fcbb44142dd8c85e129953d17a22eea26fc002ad40c158d2fac3254",
+      "tests/test_m7d_temporal.py": "342053885ca0757838098df34145829365691d8d4c6c34a8f1d123c48f875dbf",
+      "configs/m7d/protocol.json": "9d40f8892b27d45b4030a1644b59d3244e2221f471b228ec2762c1f4a96857f7"
+    },
+    "new_planner_control": false,
+    "new_training": false
+  },
+  "kind": "ActualServerOfflineAnalysisOfActualCARLA_SeparateSyntheticTests",
+  "control_authorized": false,
+  "episodes": [
+    {
+      "episode": "dev_braking_r20",
+      "switch_count": 2,
+      "switches": [
+        {
+          "frame": 5345,
+          "from_candidate": "A_keep_route",
+          "to_candidate": "D_stop"
+        },
+        {
+          "frame": 5401,
+          "from_candidate": "D_stop",
+          "to_candidate": null
+        }
+      ],
+      "stop_to_progress_frames": [],
+      "longest_reject_run_s": 8.6,
+      "reject_runs_s": [
+        8.6
+      ],
+      "overlap_trajectory_max_delta_m": {
+        "p50": 0.47902923070959164,
+        "p95": 3.1675766897653643,
+        "p99": 8.973416616402714,
+        "max": 10.42487659806205
+      },
+      "one_second_speed_target_delta_mps": {
+        "p50": 0.2538271629164629,
+        "p95": 0.6566258713809942,
+        "p99": 0.8415347822876039,
+        "max": 0.8877620100142564
+      },
+      "interpretation": "Replay state is actual script Ego, not previous plan execution; changes alone do not prove unnecessary oscillation."
+    },
+    {
+      "episode": "dev_constant_r3",
+      "switch_count": 6,
+      "switches": [
+        {
+          "frame": 4924,
+          "from_candidate": "A_keep_route",
+          "to_candidate": "E_slow_follow"
+        },
+        {
+          "frame": 4928,
+          "from_candidate": "E_slow_follow",
+          "to_candidate": "D_stop"
+        },
+        {
+          "frame": 4932,
+          "from_candidate": "D_stop",
+          "to_candidate": "E_slow_follow"
+        },
+        {
+          "frame": 4940,
+          "from_candidate": "E_slow_follow",
+          "to_candidate": "D_stop"
+        },
+        {
+          "frame": 4964,
+          "from_candidate": "D_stop",
+          "to_candidate": "B_left"
+        },
+        {
+          "frame": 4988,
+          "from_candidate": "B_left",
+          "to_candidate": "D_stop"
+        }
+      ],
+      "stop_to_progress_frames": [
+        4932,
+        4964
+      ],
+      "longest_reject_run_s": 0,
+      "reject_runs_s": [],
+      "overlap_trajectory_max_delta_m": {
+        "p50": 0.47856093984823345,
+        "p95": 4.7856864068453575,
+        "p99": 12.187439123996919,
+        "max": 12.311503173874858
+      },
+      "one_second_speed_target_delta_mps": {
+        "p50": 0.25928703785411744,
+        "p95": 0.9237920996105806,
+        "p99": 1.620673522157623,
+        "max": 1.724295051024653
+      },
+      "interpretation": "Replay state is actual script Ego, not previous plan execution; changes alone do not prove unnecessary oscillation."
+    },
+    {
+      "episode": "final_braking_r30",
+      "switch_count": 3,
+      "switches": [
+        {
+          "frame": 65279,
+          "from_candidate": null,
+          "to_candidate": "D_stop"
+        },
+        {
+          "frame": 65391,
+          "from_candidate": "D_stop",
+          "to_candidate": null
+        },
+        {
+          "frame": 65467,
+          "from_candidate": null,
+          "to_candidate": "D_stop"
+        }
+      ],
+      "stop_to_progress_frames": [],
+      "longest_reject_run_s": 3.8000000000000003,
+      "reject_runs_s": [
+        0.8,
+        3.8000000000000003
+      ],
+      "overlap_trajectory_max_delta_m": {
+        "p50": 0.4432778204379169,
+        "p95": 0.8470513361209844,
+        "p99": 1.2196850533017383,
+        "max": 1.415957794430314
+      },
+      "one_second_speed_target_delta_mps": {
+        "p50": 0.2358784345387519,
+        "p95": 0.3473829336583068,
+        "p99": 0.5385060531616314,
+        "max": 0.6385777215232974
+      },
+      "interpretation": "Replay state is actual script Ego, not previous plan execution; changes alone do not prove unnecessary oscillation."
+    },
+    {
+      "episode": "final_crossing_r1",
+      "switch_count": 0,
+      "switches": [],
+      "stop_to_progress_frames": [],
+      "longest_reject_run_s": 12.200000000000001,
+      "reject_runs_s": [
+        12.200000000000001
+      ],
+      "overlap_trajectory_max_delta_m": null,
+      "one_second_speed_target_delta_mps": null,
+      "interpretation": "Replay state is actual script Ego, not previous plan execution; changes alone do not prove unnecessary oscillation."
+    },
+    {
+      "episode": "historical_final_bypass_p126_s101",
+      "switch_count": 2,
+      "switches": [
+        {
+          "frame": 141531,
+          "from_candidate": "A_keep_route",
+          "to_candidate": null
+        },
+        {
+          "frame": 141571,
+          "from_candidate": null,
+          "to_candidate": "A_keep_route"
+        }
+      ],
+      "stop_to_progress_frames": [],
+      "longest_reject_run_s": 2.0,
+      "reject_runs_s": [
+        2.0
+      ],
+      "overlap_trajectory_max_delta_m": {
+        "p50": 0.08149560333053062,
+        "p95": 0.49984489304901125,
+        "p99": 0.920850008145917,
+        "max": 1.309469035840596
+      },
+      "one_second_speed_target_delta_mps": {
+        "p50": 0.02482013605113842,
+        "p95": 0.3000001524770294,
+        "p99": 0.46660644688425634,
+        "max": 0.6203963192144748
+      },
+      "interpretation": "Replay state is actual script Ego, not previous plan execution; changes alone do not prove unnecessary oscillation."
+    },
+    {
+      "episode": "historical_final_lead_s101",
+      "switch_count": 3,
+      "switches": [
+        {
+          "frame": 151476,
+          "from_candidate": "A_keep_route",
+          "to_candidate": null
+        },
+        {
+          "frame": 151524,
+          "from_candidate": null,
+          "to_candidate": "A_keep_route"
+        },
+        {
+          "frame": 151548,
+          "from_candidate": "A_keep_route",
+          "to_candidate": "D_stop"
+        }
+      ],
+      "stop_to_progress_frames": [],
+      "longest_reject_run_s": 2.4000000000000004,
+      "reject_runs_s": [
+        2.4000000000000004
+      ],
+      "overlap_trajectory_max_delta_m": {
+        "p50": 0.4107710141701179,
+        "p95": 0.4998611202310444,
+        "p99": 6.890640336342991,
+        "max": 11.69475472682909
+      },
+      "one_second_speed_target_delta_mps": {
+        "p50": 0.26860365587318846,
+        "p95": 0.3017057765692785,
+        "p99": 0.9562582643750808,
+        "max": 1.2653087151800702
+      },
+      "interpretation": "Replay state is actual script Ego, not previous plan execution; changes alone do not prove unnecessary oscillation."
+    },
+    {
+      "episode": "val_connection_r0",
+      "switch_count": 0,
+      "switches": [],
+      "stop_to_progress_frames": [],
+      "longest_reject_run_s": 12.200000000000001,
+      "reject_runs_s": [
+        12.200000000000001
+      ],
+      "overlap_trajectory_max_delta_m": null,
+      "one_second_speed_target_delta_mps": null,
+      "interpretation": "Replay state is actual script Ego, not previous plan execution; changes alone do not prove unnecessary oscillation."
+    },
+    {
+      "episode": "val_restart_r76",
+      "switch_count": 3,
+      "switches": [
+        {
+          "frame": 50598,
+          "from_candidate": "A_keep_route",
+          "to_candidate": "D_stop"
+        },
+        {
+          "frame": 50710,
+          "from_candidate": "D_stop",
+          "to_candidate": null
+        },
+        {
+          "frame": 50786,
+          "from_candidate": null,
+          "to_candidate": "D_stop"
+        }
+      ],
+      "stop_to_progress_frames": [],
+      "longest_reject_run_s": 3.8000000000000003,
+      "reject_runs_s": [
+        3.8000000000000003
+      ],
+      "overlap_trajectory_max_delta_m": {
+        "p50": 0.44678149568505926,
+        "p95": 0.8842030167503847,
+        "p99": 7.429003607351203,
+        "max": 11.052829601544799
+      },
+      "one_second_speed_target_delta_mps": {
+        "p50": 0.2493057504485166,
+        "p95": 0.34907034613663335,
+        "p99": 0.9517664369486224,
+        "max": 1.1065794490726726
+      },
+      "interpretation": "Replay state is actual script Ego, not previous plan execution; changes alone do not prove unnecessary oscillation."
+    }
+  ]
+}

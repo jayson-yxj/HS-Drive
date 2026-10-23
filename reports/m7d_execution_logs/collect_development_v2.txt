@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m7d_collect.py", line 88, in <module>
+    ap=argparse.ArgumentParser();ap.add_argument('--split',choices=['development','validation','fresh_final'],required=True);a=ap.parse_args();run(a.split)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m7d_collect.py", line 43, in run
+    w=client.load_world('Town03');m=w.get_map();original=w.get_settings();settings=w.get_settings();settings.synchronous_mode=True;settings.fixed_delta_seconds=.05;settings.no_rendering_mode=True;w.apply_settings(settings);w.set_weather(carla.WeatherParameters.ClearNoon)
+RuntimeError: time-out of 30000ms while waiting for the simulator, make sure the simulator is ready and connected to 127.0.0.1:2400

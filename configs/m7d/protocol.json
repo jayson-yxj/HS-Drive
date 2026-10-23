@@ -1,0 +1,19 @@
+{
+ "stage":"M7-D","base":"d9899fa","carla_version":"0.9.15","port":2400,"map":"Town03",
+ "tick_s":0.05,"replan_s":0.2,"episode_seconds":18,"horizon_s":6,"plan_validity_s":0.2,
+ "episodes":[
+  {"id":"dev_constant_r3","split":"development","road":3,"kind":"constant","ego_speed":2.0},
+  {"id":"dev_braking_r20","split":"development","road":20,"kind":"brake_restart","ego_speed":2.0},
+  {"id":"val_restart_r76","split":"validation","road":76,"kind":"brake_restart","ego_speed":2.0},
+  {"id":"val_connection_r0","split":"validation","road":0,"kind":"static","ego_speed":1.5},
+  {"id":"final_braking_r30","split":"fresh_final","road":30,"kind":"brake_restart","ego_speed":2.0},
+  {"id":"final_crossing_r1","split":"fresh_final","road":1,"kind":"crossing","ego_speed":1.5}
+ ],
+ "history_selection":["final_lead_s101","final_bypass_p126_s101"],
+ "split_rule":"Map-only selection before episode results; differentRoadIDs. Historical M7C23/28 not new final; sameTown03 not cross-map. Six new episodes, two historical windows.",
+ "planner":"Frozen M7C candidates/constraints; no new slow family, no HS outputs to vehicle",
+ "optimization":"One snapshot-scoped hypothesis polygon reuse for body support and slow reserve; no actor/time cross-frame reuse",
+ "time_model":"Simulation timestamp never replaced; input availability recorded monotonic wall; compute start/end wall; offline modeled availability=input_sim+input_delay+compute_duration; maxage0.2",
+ "future_reference":"Evaluator-only actual measured frames; interpolated pose between adjacent0.05s measurements explicitly marked; never fill missing frames/IDs",
+ "budget_ms":200,"max_episodes":12,"new_training":false,"new_planner_control":false
+}
