@@ -59,7 +59,10 @@ def main():
     guard=[]
     for p in sorted(Path('reports/m6d_probe_artifacts').glob('guard_diagnostic*/result.json')):
         d=load(p);r=[json.loads(s) for s in (p.parent/'trace.jsonl').read_text().splitlines()];i=next((i for i,q in enumerate(r) if q['protection']),None)
-        guard.append(dict(name=p.parent.name,trace=asset(p.parent/'trace.jsonl'),physics=d['physics'],
+        release_rows=[q for q in r if q['phase']=='release']
+        positions=np.array([q['measurement']['position'][:2] for q in release_rows])*[1,-1]
+        yaw=release_rows[0]['signed']['yaw_rad'];projected=(positions-positions[0])@np.array([math.cos(yaw),math.sin(yaw)])
+        guard.append(dict(release_min_pose_progress_m=float(projected.min()),pose_backward_segments=int((np.diff(projected)<-.0001).sum()),name=p.parent.name,trace=asset(p.parent/'trace.jsonl'),physics=d['physics'],
             protection_triggered=i is not None,trigger=None if i is None else dict(frame=r[i]['frame'],signed=r[i]['signed'],command=r[i]['command'],phase=r[i]['phase']),
             immediate_brake=bool(i is not None and r[i]['command']['brake']==1 and r[i]['command']['throttle']==0),
             final_stopped_1s=all(q['signed']['speed_norm_mps']<=.02 for q in r[-21:]),
