@@ -71,7 +71,7 @@ PYTHONPATH=runs/m7a_geometry_deps:. .venv/bin/python -m tools.m7a_scenarios --sp
 .venv-gpu/bin/python -m tools.m7a_shadow_infer --manifest reports/m7a_shadow_inference_manifest.json --output /tmp/m7a_shadow_reproduce.json
 ```
 
-原始执行序列如下，其输出排他创建；复现时在新worktree运行或保留原输出后选择新名字，禁止覆盖历史资产：
+以下是原始执行序列，作为实验记录保留；这些工具使用固定输出名并排他创建，不能直接在已包含封存报告的工作树再次执行。上方带新suffix/新output的命令可直接复跑规划与GPU前向。完整流水线重建需单独准备不含M7-A输出的隔离工作副本，同时保留并挂载原始输入资产；仅创建当前HEAD的worktree仍会带有封存报告，不足以避免名称冲突。禁止删除或覆盖原工作树的历史资产：
 
 ```bash
 .venv-gpu/bin/python -m tools.m7a_shadow_prepare
@@ -101,5 +101,7 @@ Driving Score按route completion乘处罚因子后在220固定分母平均；min
 ## 验收与失败记录
 
 完整最终测试413 passed、8 skipped、1 xfailed；SDK专项40 passed。8个skip为未配置CARLA的GPU环境合同，SDK另补测；原M6-D已知失败xfail保留。初始合成高速横穿单测错误地把目标放在Ego不会到达的x，修正测试输入后通过，原失败日志保留；此修正早于验证/最终规则冻结。
+
+封存前实际重跑了开发集28项，场景目录以及去除耗时后的全部候选、判定和指标逐值一致。没有据此改变验证/最终结果。逐项交付、源码及引用SHA和复现比对见`reports/m7a_delivery_validation.json`，审计命令为`.venv-gpu/bin/python -m tools.m7a_delivery_audit`，同样排他写入。最终资产清单见`reports/m7a_release_manifest.json`。
 
 开发v1、v2、验证/最终、官方树/文件下载错误、历史车辆失败均保留。协议没有按结果放宽。最终状态及下一步见[架构决策](M7A_ARCHITECTURE_DECISION.md)，数据分母和限制见[总结](../reports/m7a_summary.md)。

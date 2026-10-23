@@ -50,7 +50,7 @@ M6-A13次、M6-B69次运行的碰撞、路线距离、终点、停车和舒适�
 
 历史M6-B控制间隔P50/P95/P99/Max：49.992/50.512/51.171/**178.083ms**；world tick P95/Max 2.365/94.276ms；Worker P95/Max87.259/569.282ms。15次deadline miss、16个跳槽、过期规划用于正常控制0。新评价器完整离线审计P95超过200ms，也不认证5Hz生产运行。没有CARLA与视觉共享GPU实测，严格20Hz保持Partial。
 
-[历史执行与重放](m7a_historical_regression.json)、[Runtime状态](m7a_runtime_status.json)、[离线耗时图](m7a_figures/m7a_planning_latency.png)。
+[历史执行与重放](m7a_historical_regression.json)、[按任务修正的执行分类](m7a_execution_accounting.json)、[Runtime状态](m7a_runtime_status.json)、[离线耗时图](m7a_figures/m7a_planning_latency.png)。后者分类区分Runtime/Fault探针与真实导航成功，不以comfort布尔值替代任务验收。
 
 ## C：六摄Shadow接口是否稳定？
 
@@ -77,5 +77,7 @@ README要求CARLA0.9.15和附加地图，但仓内ScenarioRunner版本文件仍0
 **当前不批准。** 本轮没有新的合法官方Checkpoint、完整隔离环境和4090前向显存证据，M6-A PETR资产NoGo保持；不重启Direct Head扩训。
 
 下一阶段优先修正开发场景生成/未来连续性、补充动态预测不确定性及道路连接审计，预留新的最终道路；六摄Shadow继续保持离线。Bench2Drive可另做隔离环境准备，但正式视觉闭环评分仍需先有合格候选。
+
+封存前重跑开发集28项，除耗时外所有候选、判定及指标逐值一致，见[交付与复现核验](m7a_delivery_validation.json)。
 
 [验收JSON](m7a_acceptance.json)、[实现及复现](../docs/M7A_IMPLEMENTATION.md)、[独立决策](../docs/M7A_ARCHITECTURE_DECISION.md)。原停车、舒适、Physics-P1、G1、Occupancy、视觉驾驶和共享GPU实时门禁均不升级。

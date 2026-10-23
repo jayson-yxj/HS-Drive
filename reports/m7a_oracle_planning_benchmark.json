@@ -1,0 +1,167 @@
+{
+  "kind": "OfflinePlannerBenchmark_AndSeparateHistoricalCARLAExecution",
+  "provenance": {
+    "stage": "M7-A",
+    "base": "eb2c8f409632cfcdfe610b538b2634c540558232",
+    "commit": "f56d4e477fe382f67476a2a224a6a326b91c3415",
+    "sources": {
+      "tools/m7a_shadow_evaluate.py": "0a94dc73f38c78e8dc3aa5c72bceb2739154a95be5143588d2e91522f3288ff6",
+      "tools/m7a_bench2drive_audit.py": "244b58ab9210b4d4e4ccf267dc440ab763cffdc8218458dafa31e822e92f4c84",
+      "tools/m7a_release.py": "872f9fd467608d4300d1eb625c3d92941bc6364159c707b1b706741ecbb1d3d1",
+      "tools/m7a_reference_audit.py": "2349bc472c1b34e32c289a7a33fc4d595e4bec997e5e3407857981af7357f638",
+      "tools/m7a_scenarios.py": "c0ae9c3f8344ddc0d3730f4283f2422b99f20ab5ad013a6de11f4567943032a7",
+      "tools/m7a_historical.py": "430e267f18047be7456bdc09b8431620dd82f65c05dfa25d244651d7e5fe1ad7",
+      "tools/m7a_shadow_infer.py": "03e6421b048bb737b5c6419de1ed6e78490ed0b36571bd2572519aef81712557",
+      "tools/m7a_shadow_prepare.py": "0e430858936824ba2fd91881e207ebcbd3ad3b6c1bd8bd9a1d98845e844b5d89",
+      "tools/m7a_figures.py": "cb9680f74fc9262fe2aa12f89f0243b206f761d82d77edf42d2228b364bd9f3c",
+      "tools/m7a_shadow_audit.py": "830bd86654d106eb47c07f591f5ece6475c77888908215cb2cc63e394eb67084",
+      "tools/m7a_source_review.py": "c91e1c041f3a84e609bebb8de31fffdc0973d9ef6d5b9516a2eba6170c3d57d2",
+      "tools/m7a_common.py": "d73157640ed0ae8f8b5b9d9e198f6fbdbc877a160fc65e99afc7672a16bc4c2e",
+      "tools/m7a_finalize.py": "2234abd458174b0790a2827b192697fc777f0db8b1e0e65082a4038cf836cc67",
+      "datasets/m7a_shadow.py": "d45aa3fa27a5b7c9d50dc4385bd8bd47ddee4c9253f3baaf2d89bb7e3cb3d4c2",
+      "datasets/m7a_contracts.py": "8c2de18e4c42934c70d30b30ee2923f85ec2b159a9eee5651d3c0da9291db6e3",
+      "diagnostics/m7a_planning.py": "d392546a1cc9ff50745132a4b20b1d5fc1cb9b265bea124100aee4ec47719814",
+      "tests/test_m7a_planning.py": "67dd86f03825f91ee2782d92a0cbc240dcb0de6781b2f53e63af5ea1f80536ee",
+      "tests/test_m7a_shadow.py": "9824341e7b12129649bfd7a34d688496e882ee6a71bddb6e913b992a2e671dfe",
+      "configs/m7a/protocol.json": "6faf828c83601f772434c79ff5030ea141b6dd10ba9dd0096b3d03ee45361671"
+    },
+    "protocol": {
+      "path": "configs/m7a/protocol.json",
+      "bytes": 1881,
+      "sha256": "6faf828c83601f772434c79ff5030ea141b6dd10ba9dd0096b3d03ee45361671"
+    },
+    "default_modules_modified": false,
+    "visual_control": false,
+    "new_training_steps": 0
+  },
+  "status": "ReusableResearchHarness_Partial_NotDynamicSafetyPassed",
+  "per_split": {
+    "development_v2": {
+      "scenarios": 28,
+      "expectation_met": 26,
+      "generation_success": 24,
+      "timing_ms": {
+        "p50": 45.327940955758095,
+        "p95": 297.89004912599916,
+        "p99": 338.5986312292516,
+        "max": 347.193643450737
+      },
+      "generated_nonfault_requests": 24,
+      "generation_success_rate": 1.0,
+      "expected_reject_count": 10,
+      "correct_reject_count": 10,
+      "decisions": {
+        "PlanningFeasible": 9,
+        "StopAndDegrade": 7,
+        "RejectNoFeasibleCandidate_DegradationRequired": 12
+      },
+      "rejected_when_predeclared_safe": [
+        "development_road3_crossing_conflict",
+        "development_road18_crossing_conflict"
+      ],
+      "future_metrics": "Independent audit must be read; expectation count alone is not safety pass"
+    },
+    "validation": {
+      "scenarios": 28,
+      "expectation_met": 26,
+      "generation_success": 24,
+      "timing_ms": {
+        "p50": 149.74840823560953,
+        "p95": 313.69298575446,
+        "p99": 353.01419051364064,
+        "max": 358.8508199900389
+      },
+      "generated_nonfault_requests": 24,
+      "generation_success_rate": 1.0,
+      "expected_reject_count": 10,
+      "correct_reject_count": 10,
+      "decisions": {
+        "PlanningFeasible": 8,
+        "StopAndDegrade": 8,
+        "RejectNoFeasibleCandidate_DegradationRequired": 12
+      },
+      "rejected_when_predeclared_safe": [
+        "validation_road67_crossing_conflict",
+        "validation_road19_crossing_conflict"
+      ],
+      "future_metrics": "Independent audit must be read; expectation count alone is not safety pass"
+    },
+    "final": {
+      "scenarios": 28,
+      "expectation_met": 24,
+      "generation_success": 24,
+      "timing_ms": {
+        "p50": 192.8692115470767,
+        "p95": 232.74425361305472,
+        "p99": 246.07884345576167,
+        "max": 248.545590788126
+      },
+      "generated_nonfault_requests": 24,
+      "generation_success_rate": 1.0,
+      "expected_reject_count": 10,
+      "correct_reject_count": 10,
+      "decisions": {
+        "PlanningFeasible": 11,
+        "StopAndDegrade": 5,
+        "RejectNoFeasibleCandidate_DegradationRequired": 12
+      },
+      "rejected_when_predeclared_safe": [
+        "final_road65_crossing_conflict",
+        "final_road20_crossing_conflict"
+      ],
+      "future_metrics": "Independent audit must be read; expectation count alone is not safety pass"
+    }
+  },
+  "reports": {
+    "development_v2": {
+      "path": "reports/m7a_planner_development_v2.json",
+      "bytes": 3117317,
+      "sha256": "1421033e6c07d0e28ec0248ad21ba88454769bbe7e4b3fd2481cc1c29fe02e4e"
+    },
+    "validation": {
+      "path": "reports/m7a_planner_validation.json",
+      "bytes": 3097344,
+      "sha256": "ac21b6637b44fed5dadd43b6e58e4a2f324eeefe9e289b8cb1b2346845fe26cc"
+    },
+    "final": {
+      "path": "reports/m7a_planner_final.json",
+      "bytes": 3549946,
+      "sha256": "5ee6998b6f2e4bfa1c365aec0b239c8e6ae4f955276951b739139d353b3e22e3"
+    }
+  },
+  "generated_candidate_count": 180,
+  "accepted_candidate_count": 74,
+  "expected_no_solution_and_fault_reject_total": 30,
+  "invalid_candidates_accepted": {
+    "under_CV_dense_reference": 0,
+    "exact_map_sampled": 0,
+    "under_scripted_future_raw": 13,
+    "under_valid_initial_motion_scripted_future": 7
+  },
+  "execution": {
+    "path": "reports/m7a_historical_regression.json",
+    "bytes": 716976,
+    "sha256": "af4358a0967677787682f80e2b8a186d37cc490b8cf8309c21dc0eec7ce542b3"
+  },
+  "execution_scope": {
+    "path": "reports/m7a_execution_accounting.json",
+    "bytes": 17893,
+    "sha256": "6bc1e52113925d0814c34f9bcb7808e2f8b517d965eab629c6c72460261e70f6"
+  },
+  "new_vehicle_experiments": 0,
+  "historical_execution_counts": {
+    "M6A": 13,
+    "M6B": 69,
+    "M6B_initialization_failures": 2
+  },
+  "historical_regression": "Default source byte unchanged;16 cold planner replays use stronger offline evaluator, not exact worker-state replay or new vehicle A/B",
+  "PlanningFeasible": "Only within input snapshot, CV/yaw-rate forecast and geometric reference; not VehicleExecutedSuccessfully",
+  "VehicleExecutedSuccessfully": "New scenarios NotRun; historical low-speed/comfort failures retained as ActuationFailure",
+  "actuator_status": "ControlNoGo_no_comfort_upgrade",
+  "dynamic_forecast": "Partial_constant_velocity_does_not_cover_lead_braking",
+  "independent_audit": {
+    "path": "reports/m7a_independent_geometry_audit.json",
+    "bytes": 71231,
+    "sha256": "a9b28a5a45a5c714147acc3fdcf845326b3b3b0c40a7f25cd3b08f0347fc1912"
+  }
+}

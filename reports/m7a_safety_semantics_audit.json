@@ -1,0 +1,63 @@
+{
+  "kind": "OfflineCodeContract_AndSyntheticRegression",
+  "provenance": {
+    "stage": "M7-A",
+    "base": "eb2c8f409632cfcdfe610b538b2634c540558232",
+    "commit": "f56d4e477fe382f67476a2a224a6a326b91c3415",
+    "sources": {
+      "tools/m7a_shadow_evaluate.py": "0a94dc73f38c78e8dc3aa5c72bceb2739154a95be5143588d2e91522f3288ff6",
+      "tools/m7a_bench2drive_audit.py": "244b58ab9210b4d4e4ccf267dc440ab763cffdc8218458dafa31e822e92f4c84",
+      "tools/m7a_release.py": "872f9fd467608d4300d1eb625c3d92941bc6364159c707b1b706741ecbb1d3d1",
+      "tools/m7a_reference_audit.py": "2349bc472c1b34e32c289a7a33fc4d595e4bec997e5e3407857981af7357f638",
+      "tools/m7a_scenarios.py": "c0ae9c3f8344ddc0d3730f4283f2422b99f20ab5ad013a6de11f4567943032a7",
+      "tools/m7a_historical.py": "430e267f18047be7456bdc09b8431620dd82f65c05dfa25d244651d7e5fe1ad7",
+      "tools/m7a_shadow_infer.py": "03e6421b048bb737b5c6419de1ed6e78490ed0b36571bd2572519aef81712557",
+      "tools/m7a_shadow_prepare.py": "0e430858936824ba2fd91881e207ebcbd3ad3b6c1bd8bd9a1d98845e844b5d89",
+      "tools/m7a_figures.py": "cb9680f74fc9262fe2aa12f89f0243b206f761d82d77edf42d2228b364bd9f3c",
+      "tools/m7a_shadow_audit.py": "830bd86654d106eb47c07f591f5ece6475c77888908215cb2cc63e394eb67084",
+      "tools/m7a_source_review.py": "c91e1c041f3a84e609bebb8de31fffdc0973d9ef6d5b9516a2eba6170c3d57d2",
+      "tools/m7a_common.py": "d73157640ed0ae8f8b5b9d9e198f6fbdbc877a160fc65e99afc7672a16bc4c2e",
+      "tools/m7a_finalize.py": "2234abd458174b0790a2827b192697fc777f0db8b1e0e65082a4038cf836cc67",
+      "datasets/m7a_shadow.py": "d45aa3fa27a5b7c9d50dc4385bd8bd47ddee4c9253f3baaf2d89bb7e3cb3d4c2",
+      "datasets/m7a_contracts.py": "8c2de18e4c42934c70d30b30ee2923f85ec2b159a9eee5651d3c0da9291db6e3",
+      "diagnostics/m7a_planning.py": "d392546a1cc9ff50745132a4b20b1d5fc1cb9b265bea124100aee4ec47719814",
+      "tests/test_m7a_planning.py": "67dd86f03825f91ee2782d92a0cbc240dcb0de6781b2f53e63af5ea1f80536ee",
+      "tests/test_m7a_shadow.py": "9824341e7b12129649bfd7a34d688496e882ee6a71bddb6e913b992a2e671dfe",
+      "configs/m7a/protocol.json": "6faf828c83601f772434c79ff5030ea141b6dd10ba9dd0096b3d03ee45361671"
+    },
+    "protocol": {
+      "path": "configs/m7a/protocol.json",
+      "bytes": 1881,
+      "sha256": "6faf828c83601f772434c79ff5030ea141b6dd10ba9dd0096b3d03ee45361671"
+    },
+    "default_modules_modified": false,
+    "visual_control": false,
+    "new_training_steps": 0
+  },
+  "status": "ContractVerified_SafetyNotValidated",
+  "states": {
+    "OracleSceneState": "Privileged",
+    "RGBSpatialEvidence": "RGB_estimate_OfflineShadow",
+    "Unknown": "not_Free"
+  },
+  "full_horizon_s": 6.0,
+  "original_age_s": 0.2,
+  "source_schema": "m7a.v1",
+  "continuous_claim": "Constant velocity/yaw SAT intervals with conservative rotation padding; not exact accelerating rotating mesh collision",
+  "body": "M6B Tesla measured half extents and center offset; full2D polygon envelope, not just actor origin or corners",
+  "roads": "same-direction route and permitted neighbor polygons; Broken and go/return permission; no junction right-of-way certification",
+  "time_faults": [
+    "expired",
+    "future",
+    "missing",
+    "worker_error"
+  ],
+  "fault_method": "Offline missing-result/error representation plus existing runtime unit tests; no new live Worker crash",
+  "production_adoption": false,
+  "original_Planner_Safety_Controller": "unchanged SHA",
+  "no_safe_plan": "Explicit RejectNoFeasibleCandidate_DegradationRequired; real protected stop not implied",
+  "stop_accepted": "Geometric D_stop only; current vehicle execution remains ControlNoGo",
+  "G1": "Guard_Partial_NoIndependentPositive",
+  "Physics_P1": "NoGo",
+  "visual_driving": "NotValidated"
+}
