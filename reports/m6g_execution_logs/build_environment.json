@@ -1,0 +1,44 @@
+{
+  "resources": {
+    "command": [
+      "bash",
+      "-c",
+      "df -B1 .; free -b; nproc; cat /sys/fs/cgroup/memory.max /sys/fs/cgroup/cpu.max 2>/dev/null"
+    ],
+    "returncode": 0,
+    "stdout": "Filesystem                                                           1B-blocks         Used    Available Use% Mounted on\n/dev/mapper/lvmdata-pvc--139ba942--0806--41ae--aeb4--7ab9e2bbf079 368766496768 173882134528 194867585024  48% /root/gpufree-data\n               total        used        free      shared  buff/cache   available\nMem:     540684107776 58289545216 60288475136  2563502080 422106087424 476323557376\nSwap:              0           0           0\n128\n53687091200\n1400000 100000\n",
+    "stderr": ""
+  },
+  "tools": {
+    "command": [
+      "bash",
+      "-c",
+      "command -v clang clang-10 clang++ cmake ninja make gcc g++; cmake --version; gcc --version"
+    ],
+    "returncode": 0,
+    "stdout": "/usr/bin/cmake\n/usr/bin/make\n/usr/bin/gcc\n/usr/bin/g++\ncmake version 3.22.1\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).\ngcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0\nCopyright (C) 2021 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "stderr": ""
+  },
+  "UE_access": {
+    "command": [
+      "timeout",
+      "20",
+      "env",
+      "GIT_TERMINAL_PROMPT=0",
+      "git",
+      "ls-remote",
+      "https://github.com/CarlaUnreal/UnrealEngine.git",
+      "refs/heads/carla"
+    ],
+    "returncode": 128,
+    "stdout": "",
+    "stderr": "fatal: could not read Username for 'https://github.chenc.dev': terminal prompts disabled\n"
+  },
+  "UE4_ROOT": null,
+  "searched_roots": [
+    "/opt",
+    "/root/gpufree-data",
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0"
+  ],
+  "local_UE_source": []
+}
