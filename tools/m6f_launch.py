@@ -55,7 +55,11 @@ def main():
         raise RuntimeError('Commit tracked edits before a batch')
     sys.modules['tools.m6f_launch'] = sys.modules[__name__]
     sys.meta_path.insert(0, CaptureFinder())
-    from tools.m6f_probe import main as probe
+    if len(sys.argv)>1 and sys.argv[1]=='guard':
+        sys.argv.pop(1)
+        from tools.m6f_guard_probe import main as probe
+    else:
+        from tools.m6f_probe import main as probe
     probe()
 
 
