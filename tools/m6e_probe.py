@@ -26,7 +26,14 @@ def run(task,protocol):
         w=session.world;m=w.get_map();w.set_weather(carla.WeatherParameters.ClearNoon);spawn=m.get_spawn_points()[task['spawn']]
         ego=session.spawn(w.get_blueprint_library().find('vehicle.tesla.model3'),spawn);w.tick()
         write(root/'physics_original.json',physics_dict(ego));assert asset(root/'physics_original.json')['sha256']==protocol['physics_P0_sha']
-        if task['physics']=='P1':apply_variant(ego,json.loads(Path('configs/m6e/physics_P1.json').read_text()))
+        if task['physics']=='P1':
+            original_control=ego.get_physics_control()
+            session.cleanup_callbacks.append(lambda:ego.apply_physics_control(original_control))
+            apply_variant(ego,json.loads(Path('configs/m6e/physics_P1.json').read_text()))
+            before=json.loads((root/'physics_original.json').read_text());after=physics_dict(ego)
+            expected=json.loads(json.dumps(before))
+            for wheel in expected['wheels']:wheel['max_brake_torque']*=.5
+            if after!=expected:raise ValueError('Physics readback differs from sole declared wheel brake change')
         write(root/'physics.json',physics_dict(ego));write(root/'physics_full.json',serialize_physics(ego))
         if task['physics']=='P0':assert asset(root/'physics.json')['sha256']==protocol['physics_P0_sha']
         settings=ego.get_ackermann_controller_settings();write(root/'ackermann_settings.json',{k:getattr(settings,k) for k in ['speed_kp','speed_ki','speed_kd','accel_kp','accel_ki','accel_kd']})
