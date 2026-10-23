@@ -88,3 +88,11 @@ def test_f0_equals_c_normal_actuation_and_never_negative_oracle_speed():
     out=f.command(tr,s,remaining_m=.871,signed=signed(-.2,2,50),target=separate_targets(dict(geom(),timestamp=2),50),position=(0,0))
     assert out['brake']==1 and out['throttle']==0 and out['reason']=='RollbackDetected'
     assert s.speed_mps==.2
+
+@pytest.mark.xfail(strict=True,reason='Known M6-D NoGo: actual intermittent backward motion resets duration guard; no post-result threshold tuning')
+def test_known_intermittent_rollback_gap():
+    g=SignedGuard();observed=[]
+    # Actual warm-release pattern alternates negative motion with positive speed.
+    for i,v in enumerate([-.075,.02,-.081,.02,-.078,.02,-.067]):
+        observed.append(g.check(signed(v=v,t=i*.05,frame=i+1),i*.05))
+    assert 'RollbackDetected' in observed

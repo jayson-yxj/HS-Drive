@@ -30,6 +30,7 @@ def main():
     p.add_argument('--tick-cpus',default='');p.add_argument('--worker-cpus',default='')
     p.add_argument('--fault',choices=['','emergency','crash','timeout','invalid'],default='')
     p.add_argument('--fault-tick',type=int,default=65)
+    p.add_argument('--fault-on-motion',action='store_true')
     a=p.parse_args();np.random.seed(a.seed)
     from simulator.m6c_envelope import StoppingEnvelope
     from simulator.m6c_motion import EnvelopeController
@@ -108,6 +109,7 @@ def main():
             sensor=session.spawn(w.get_blueprint_library().find('sensor.other.lane_invasion'),carla.Transform(),parent=ego)
             sensor.listen(lambda e:lanes.append(dict(frame=e.frame,markings=[str(v.type) for v in e.crossed_lane_markings],source='Privileged')))
             rows=[];last_submit=-1.;epoch=time.perf_counter();slot=0;stable=0;fault_wall=None;first_brake=None;removed=False;stationary=0
+            trigger_tick=10**9 if a.fault_on_motion else a.fault_tick;motion_ticks=0
             try:
                 for tick in range(a.ticks):
                     scheduled=epoch+slot*.05;sleep_start=time.perf_counter()
@@ -130,15 +132,18 @@ def main():
                     obs=[obs_of(snap,o) for o in obstacles if snap.find(o.id) is not None]
                     tr=reason=result=None
                     if worker:
-                        if tick==a.fault_tick and fault:fault_wall=begin
+                        if a.fault_on_motion and fault_wall is None:
+                            motion_ticks=motion_ticks+1 if state.speed_mps>=1. else 0
+                            if motion_ticks>=3 and tick>=65:trigger_tick=tick
+                        if tick==trigger_tick and fault:fault_wall=begin
                         if state.timestamp_s-last_submit>=.2-1e-6:
                             job=dict(scene=a.name,frame=snap.frame,state=asdict(state),input_wall=time.perf_counter(),obstacles=obs,half_length=hl,half_width=hw,z=z)
-                            if tick>=a.fault_tick and fault=='timeout':job['delay']=.5
-                            if tick>=a.fault_tick and fault=='invalid':job['state'].pop('x')
+                            if tick>=trigger_tick and fault=='timeout':job['delay']=.5
+                            if tick>=trigger_tick and fault=='invalid':job['state'].pop('x')
                             if worker.submit(job):last_submit=state.timestamp_s
-                        if tick==a.fault_tick and fault=='crash':worker.worker.terminate()
+                        if tick==trigger_tick and fault=='crash':worker.worker.terminate()
                         tr,reason,result=worker.poll(a.name,snap.frame,state,time.perf_counter())
-                        if tick>=a.fault_tick and fault=='emergency':reason='emergency_command'
+                        if tick>=trigger_tick and fault=='emergency':reason='emergency_command'
                     timeline['submit_poll_end']=time.perf_counter()
                     current_body=footprint(state.x,state.y,state.yaw,hl+.2,hw+.15)
                     boundary=not all(road(x,y) for x,y in current_body)
@@ -225,6 +230,7 @@ def main():
                 world_tick_ms=quantiles([(r['timeline']['tick_end']-r['timeline']['tick_start'])*1000 for r in rows]),
                 controller_ms=quantiles([(r['timeline']['controller_end']-r['timeline']['safety_end'])*1000 for r in rows]),
                 expired_normal_control=sum(r['reason'] is None and a.arm!='tick_only' and (r['plan_sim_age'] is None or r['plan_sim_age']>.35+1e-6 or r['plan_wall_age']>.35+1e-6) for r in rows),
+                fault_tick_actual=trigger_tick if fault_wall is not None else None,
                 fault_to_brake_s=None if first_brake is None else first_brake-fault_wall,
                 degradation={v:sum(r['reason']==v for r in rows) for v in sorted({r['reason'] for r in rows if r['reason']})},
                 planner_rejected=[] if worker is None else worker.rejected,dynamics=raw,

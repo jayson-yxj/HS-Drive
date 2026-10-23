@@ -1,0 +1,8 @@
+{
+  "reason":"Initial fixed tick65 fault trials injected at ~0.00005m/s due slow cold startup. Preserve as stationary fault tests; cannot claim moving protection.",
+  "scope":"Correct injection validity only; no controller, physics, gain or safety threshold changes. Eight maximum paired C/F0 trials.",
+  "scene":"straight", "arms":["C","F0"], "faults":["emergency","crash","timeout","invalid"],
+  "seed":201, "speed":2.5, "minimum_injection_speed_mps":1.0,"consecutive_samples":3,"earliest_tick":65,"maximum_ticks":500,
+  "exit":"If no moving injection by budget, mark NotRun_moving. Do not retry or tune policy.",
+  "fresh_hold_release_search":false
+}
