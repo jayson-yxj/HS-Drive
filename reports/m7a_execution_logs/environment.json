@@ -1,0 +1,27 @@
+{
+  "gpu": {
+    "command": [
+      "nvidia-smi",
+      "--query-gpu=name,memory.total,memory.used",
+      "--format=csv,noheader"
+    ],
+    "returncode": 0,
+    "stdout": "NVIDIA GeForce RTX 4090, 24564 MiB, 84 MiB\n",
+    "stderr": ""
+  },
+  "python": {
+    "command": [
+      ".venv-gpu/bin/python",
+      "-c",
+      "import torch,numpy,sys;print(sys.version);print(torch.__version__,torch.version.cuda,numpy.__version__)"
+    ],
+    "returncode": 0,
+    "stdout": "3.10.12 (main, Jul 15 2026, 23:40:17) [GCC 11.4.0]\n2.8.0+cu128 12.8 2.2.6\n",
+    "stderr": ""
+  },
+  "geometry_install": {
+    "path": "reports/m7a_execution_logs/geometry_dependency.txt",
+    "bytes": 527,
+    "sha256": "c8f02fb7aec340963fc558ff231002def1bbc22a1a818bed5543f07f0c9e0d83"
+  }
+}

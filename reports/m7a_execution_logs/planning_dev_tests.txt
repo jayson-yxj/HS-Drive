@@ -1,0 +1,16 @@
+.F........                                                               [100%]
+=================================== FAILURES ===================================
+__________ test_rotated_narrow_crossing_cannot_tunnel_between_samples __________
+
+    def test_rotated_narrow_crossing_cannot_tunnel_between_samples():
+        r,c=fixture((Box('fast',(5.,-30.),np.pi/4,.1,.1,(0.,120.)),))
+>       assert 'predicted_collision' in evaluate(r,c,box(-5,-3,35,3),1.).reasons
+E       AssertionError: assert 'predicted_collision' in ()
+E        +  where () = PlanningEvaluation(candidate='A_keep_route', planning_feasible=True, reasons=(), metrics=(('horizon_s', 6.0), ('age_s'...ontinuous_translation_SAT_with_conservative_rotation_bound_under_CV_yawrate')), vehicle_executed_successfully='NotRun').reasons
+E        +    where PlanningEvaluation(candidate='A_keep_route', planning_feasible=True, reasons=(), metrics=(('horizon_s', 6.0), ('age_s'...ontinuous_translation_SAT_with_conservative_rotation_bound_under_CV_yawrate')), vehicle_executed_successfully='NotRun') = evaluate(PlanningRequest(scene=OracleSceneState(stamp=Stamp(frame_id=10, timestamp_s=1.0, valid_until_s=1.2, coordinate='hs_wor...nter_offset=(0.0, 0.0)), route=((0.0, 0.0, 0.0), (30.0, 0.0, 0.0)), scene_id='synthetic', goal_xy_yaw=(30.0, 0.0, 0.0)), CandidateTrajectory(stamp=Stamp(frame_id=10, timestamp_s=1.0, valid_until_s=1.2, coordinate='hs_world_x_y_left_z_up_m'...000001), np.float64(5.9), np.float64(6.0)), guide_path=((0.0, 0.0, 0.0), (30.0, 0.0, 0.0)), lane_change_permitted=True), <POLYGON ((35 -3, 35 3, -5 3, -5 -3, 35 -3))>, 1.0)
+E        +      where <POLYGON ((35 -3, 35 3, -5 3, -5 -3, 35 -3))> = box(-5, -3, 35, 3)
+
+tests/test_m7a_planning.py:27: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_m7a_planning.py::test_rotated_narrow_crossing_cannot_tunnel_between_samples
+1 failed, 9 passed in 0.17s

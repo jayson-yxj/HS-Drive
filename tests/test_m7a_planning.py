@@ -68,3 +68,41 @@ def test_static_collision_beyond_horizon_is_not_bypass_success():
     r,c=fixture((Box('far',(25.,0.),0.,2.,1.),))
     e=evaluate(r,c,box(-5,-3,35,3),1.)
     assert 'guide_path_static_collision' in e.reasons
+
+
+def test_lane_permission_and_ego_box_offset_are_enforced():
+    r,c=fixture()
+    denied=replace(c,name='C_right',lane_change_permitted=False)
+    assert 'lane_change_prohibited' in evaluate(r,denied,box(-5,-3,35,3),1.).reasons
+    r=replace(r,scene=replace(r.scene,body_center_offset=(0.,2.)))
+    assert 'body_outside_allowed_road' in evaluate(r,c,box(-5,-3,35,3),1.).reasons
+
+
+def test_wrong_frame_and_empty_candidate_rejected():
+    r,c=fixture()
+    bad=replace(c,stamp=Stamp(11,1,1.2,WORLD))
+    assert 'snapshot_stamp_mismatch' in evaluate(r,bad,box(-5,-3,35,3),1.).reasons
+    assert not evaluate(r,None,box(-5,-3,35,3),1.).planning_feasible
+
+
+def test_internal_jerk_and_heading_limits_independent_of_speed_integral():
+    r,c=fixture()
+    p=np.array(c.points);p[:,2]=.3;p[0,2]=0.
+    e=evaluate(r,replace(c,points=tuple(map(tuple,p))),box(-5,-5,35,5),1.)
+    assert 'heading_path_inconsistent' in e.reasons
+    # Integrate valid speed and acceleration but alternate acceleration every tick.
+    v=2+np.tile([0.,.1],31)[:61];v[0]=2.
+    x=np.r_[0,np.cumsum((v[:-1]+v[1:])*.05)]
+    p=np.c_[x,np.zeros(61),np.zeros(61),v]
+    e=evaluate(r,replace(c,points=tuple(map(tuple,p))),box(-5,-5,35,5),1.)
+    assert 'internal_jerk_limit' in e.reasons
+    assert 'position_velocity_inconsistent' not in e.reasons
+
+
+def test_safe_right_guide_synthetic_geometry_without_actor_truth():
+    from diagnostics.m7a_planning import generate
+    r,_=fixture()
+    r=replace(r,route=tuple((float(x),0.,0.) for x in np.arange(0,100.1,.5)),goal_xy_yaw=(100.,0.,0.))
+    c=next(c for c in generate(r,right_offset=-3.5) if c.name=='C_right')
+    e=evaluate(r,c,box(-5,-5.5,105,2),1.)
+    assert e.planning_feasible
