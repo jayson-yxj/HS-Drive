@@ -1,0 +1,855 @@
+{
+  "kind": "OfflineFrozenBaselineVersusSingleSlowFamily",
+  "provenance": {
+    "base": "684b6e64bfd7fce89be48a0a9599ee22c8c25226",
+    "commit": "87cd11df5381b094b213a2c12e4abd6c6506e50a",
+    "sources": {
+      "tools/m7c_slow_development.py": "b298b2de74eea7856d7fa6f6acb38155a47d925a886af9a675fda985eac8fb89",
+      "tools/m7c_equivalence.py": "4fb108d1bdf094cc601392940960dba0fda5ebb19e008af0b8f4faae7a17512a",
+      "tools/m7c_common.py": "3ee72cb8f461271633c007c4e7dc097172ba5958d118c2781f318d77284d67e1",
+      "tools/m7c_independent_audit.py": "f2828200e1d7784de5d5da81eb612b19bcc28a53b3a8905b730429016ff6c4f6",
+      "tools/m7c_scenarios.py": "2fe8e11dce2714427088587f69c8a90a9c840b5564806f193d578c7adfa1ab65",
+      "tools/m7c_history.py": "6e209ddaf9e3354c176f95743d523c10445cacf66bc90bf2d7f4261420d92e80",
+      "tools/m7c_shadow.py": "cbb59ed22e538eb6a5d02e7ebaf6f356e344d4183980d479b5a5f3f49bb9a12a",
+      "tools/m7c_results.py": "5cbc91b3b9cbe1ba8679e49840c44b9fbe443d867ab4d9a186ed6475ad08d907",
+      "tools/m7c_connected_audit.py": "3f9e73b481c645d92230d868a0ba084079538002056a7c294ce469dc71f21815",
+      "diagnostics/m7c_slow.py": "30635531cc93903b175f901819fdd0265269976221a8d7cafdccab540aed4d2c",
+      "diagnostics/m7c_geometry.py": "ce890dba246b50f7a7b32450ce61cb1243a3bcc43058edd649558b8f4461fd90",
+      "diagnostics/m7c_routes.py": "c11acb71248d03782917f2377cf95ad22571875feb2ff792b57fb537eb86946b",
+      "tests/test_m7c_geometry.py": "80bcbb4c3795a355494ce04241a654395f301398a61da03b1b8cc602f8ec2e9c",
+      "configs/m7c/protocol.json": "0231f38fcea0303457a2cc6647aeb0c947fb9b7704d651625cad62dbb1bf8117"
+    },
+    "execution": "OfflineCARLA0915Map_SyntheticActors",
+    "new_control": false,
+    "new_training": false
+  },
+  "per_split": {
+    "development": {
+      "attempted": 46,
+      "valid": 46,
+      "invalid": [],
+      "road_errors": [],
+      "dynamic_valid": 28,
+      "dynamic_selected": 24,
+      "baseline_choices": {
+        "A_keep_route": 6,
+        "B_left": 1,
+        "D_stop": 25,
+        "None": 14
+      },
+      "new_choices": {
+        "A_keep_route": 6,
+        "B_left": 1,
+        "D_stop": 19,
+        "None": 14,
+        "E_slow_follow": 6
+      },
+      "continuing_gain": [
+        "development_road3_braking_1",
+        "development_road3_braking_6",
+        "development_road3_restart_1",
+        "development_road20_braking_1",
+        "development_road20_braking_6",
+        "development_road20_restart_1"
+      ],
+      "selection_losses": [],
+      "accepted_candidates": 54,
+      "unknown_scenes": [],
+      "progress": [
+        {
+          "scene": "development_road3_clear",
+          "selected": "A_keep_route",
+          "progress_m": 14.999999999999993,
+          "reference_min_gap": null,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road3_static_bypass",
+          "selected": "B_left",
+          "progress_m": 14.910135804232496,
+          "reference_min_gap": 20.579118956005253,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road3_blocked_far",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492295,
+          "reference_min_gap": 32.82275879053521,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road3_prohibited_lane",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492295,
+          "reference_min_gap": 32.82275879053521,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road3_braking_0",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492295,
+          "reference_min_gap": 8.822758791087308,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road3_braking_1",
+          "selected": "E_slow_follow",
+          "progress_m": 10.874999999999996,
+          "reference_min_gap": 5.845345538738699,
+          "stop_reserve": {
+            "passed": true,
+            "failures": [],
+            "minimum_actor_reserve_m": 0.3704465488837494,
+            "route_tail_m": 73.69989219105592,
+            "stop_distance_required_m": 3.4294444444444445,
+            "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+          }
+        },
+        {
+          "scene": "development_road3_braking_2",
+          "selected": "A_keep_route",
+          "progress_m": 17.85213220214922,
+          "reference_min_gap": 3.4227587912067357,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road3_braking_5",
+          "selected": "A_keep_route",
+          "progress_m": 14.630036173329813,
+          "reference_min_gap": 13.794854819779689,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road3_braking_6",
+          "selected": "E_slow_follow",
+          "progress_m": 7.499999999999995,
+          "reference_min_gap": 10.174890993198295,
+          "stop_reserve": {
+            "passed": true,
+            "failures": [],
+            "minimum_actor_reserve_m": 1.4121132155462237,
+            "route_tail_m": 77.07489219105592,
+            "stop_distance_required_m": 3.4294444444444445,
+            "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+          }
+        },
+        {
+          "scene": "development_road3_restart_0",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492295,
+          "reference_min_gap": 6.971093555534416,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road3_restart_1",
+          "selected": "E_slow_follow",
+          "progress_m": 8.625000000000005,
+          "reference_min_gap": 7.86800493185468,
+          "stop_reserve": {
+            "passed": true,
+            "failures": [],
+            "minimum_actor_reserve_m": 1.6204465488778212,
+            "route_tail_m": 75.94989219105592,
+            "stop_distance_required_m": 3.4294444444444445,
+            "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+          }
+        },
+        {
+          "scene": "development_road3_restart_2",
+          "selected": "D_stop",
+          "progress_m": 2.0737596200068213,
+          "reference_min_gap": 3.624929638514585,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road3_lead_accelerating",
+          "selected": "D_stop",
+          "progress_m": 6.028666479080243,
+          "reference_min_gap": 7.288890993276657,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road3_lead_stopped",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492295,
+          "reference_min_gap": 6.822758791131076,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road3_crossing_conflict",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492295,
+          "reference_min_gap": 6.434133878781187,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road3_crossing_early",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492295,
+          "reference_min_gap": 6.870426853444006,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road20_clear",
+          "selected": "A_keep_route",
+          "progress_m": 14.999999999999996,
+          "reference_min_gap": null,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road20_static_bypass",
+          "selected": "D_stop",
+          "progress_m": 2.85213220214922,
+          "reference_min_gap": 31.444179972103814,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road20_blocked_far",
+          "selected": "D_stop",
+          "progress_m": 2.85213220214922,
+          "reference_min_gap": 31.444179972103814,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road20_prohibited_lane",
+          "selected": "D_stop",
+          "progress_m": 2.85213220214922,
+          "reference_min_gap": 31.444179972103814,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road20_braking_0",
+          "selected": "D_stop",
+          "progress_m": 2.85213220214922,
+          "reference_min_gap": 8.557191088358222,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road20_braking_1",
+          "selected": "E_slow_follow",
+          "progress_m": 10.874999999999996,
+          "reference_min_gap": 5.6433528651398595,
+          "stop_reserve": {
+            "passed": true,
+            "failures": [],
+            "minimum_actor_reserve_m": 0.21382764553994704,
+            "route_tail_m": 76.31175545869041,
+            "stop_distance_required_m": 3.4294444444444445,
+            "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+          }
+        },
+        {
+          "scene": "development_road20_braking_2",
+          "selected": "A_keep_route",
+          "progress_m": 17.85213220214921,
+          "reference_min_gap": 3.272174273573394,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road20_braking_5",
+          "selected": "A_keep_route",
+          "progress_m": 14.630036173329808,
+          "reference_min_gap": 13.392217037621595,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road20_braking_6",
+          "selected": "E_slow_follow",
+          "progress_m": 7.500000000000008,
+          "reference_min_gap": 9.875819113839825,
+          "stop_reserve": {
+            "passed": true,
+            "failures": [],
+            "minimum_actor_reserve_m": 1.2372589492553767,
+            "route_tail_m": 79.6867554586904,
+            "stop_distance_required_m": 3.4294444444444445,
+            "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+          }
+        },
+        {
+          "scene": "development_road20_restart_0",
+          "selected": "D_stop",
+          "progress_m": 2.85213220214922,
+          "reference_min_gap": 6.748859611008642,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road20_restart_1",
+          "selected": "E_slow_follow",
+          "progress_m": 8.624999999999991,
+          "reference_min_gap": 7.62506681462177,
+          "stop_reserve": {
+            "passed": true,
+            "failures": [],
+            "minimum_actor_reserve_m": 1.4409266067214532,
+            "route_tail_m": 78.56175545869043,
+            "stop_distance_required_m": 3.4294444444444445,
+            "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+          }
+        },
+        {
+          "scene": "development_road20_restart_2",
+          "selected": "D_stop",
+          "progress_m": 2.07375962000682,
+          "reference_min_gap": 3.4771102650354706,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road20_lead_accelerating",
+          "selected": "D_stop",
+          "progress_m": 6.028666479080244,
+          "reference_min_gap": 7.059291104855261,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road20_lead_stopped",
+          "selected": "D_stop",
+          "progress_m": 2.85213220214922,
+          "reference_min_gap": 6.603852512949797,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road20_crossing_conflict",
+          "selected": "D_stop",
+          "progress_m": 2.85213220214922,
+          "reference_min_gap": 6.205247622792973,
+          "stop_reserve": null
+        },
+        {
+          "scene": "development_road20_crossing_early",
+          "selected": "D_stop",
+          "progress_m": 2.85213220214922,
+          "reference_min_gap": 6.553267734388906,
+          "stop_reserve": null
+        }
+      ]
+    },
+    "validation": {
+      "attempted": 46,
+      "valid": 46,
+      "invalid": [],
+      "road_errors": [],
+      "dynamic_valid": 28,
+      "dynamic_selected": 17,
+      "baseline_choices": {
+        "A_keep_route": 4,
+        "D_stop": 21,
+        "None": 21
+      },
+      "new_choices": {
+        "A_keep_route": 4,
+        "D_stop": 18,
+        "None": 21,
+        "E_slow_follow": 3
+      },
+      "continuing_gain": [
+        "validation_road76_braking_1",
+        "validation_road76_braking_6",
+        "validation_road76_restart_1"
+      ],
+      "selection_losses": [],
+      "accepted_candidates": 36,
+      "unknown_scenes": [
+        "validation_road19_braking_0",
+        "validation_road19_braking_1",
+        "validation_road19_braking_2",
+        "validation_road19_braking_4",
+        "validation_road19_braking_5",
+        "validation_road19_braking_6",
+        "validation_road19_restart_1",
+        "validation_road19_lead_accelerating"
+      ],
+      "progress": [
+        {
+          "scene": "validation_road19_clear",
+          "selected": "A_keep_route",
+          "progress_m": 15.000000000000002,
+          "reference_min_gap": null,
+          "stop_reserve": null
+        },
+        {
+          "scene": "validation_road19_static_bypass",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492264,
+          "reference_min_gap": 32.82275878888979,
+          "stop_reserve": null
+        },
+        {
+          "scene": "validation_road19_blocked_far",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492264,
+          "reference_min_gap": 32.82275878888979,
+          "stop_reserve": null
+        },
+        {
+          "scene": "validation_road19_prohibited_lane",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492264,
+          "reference_min_gap": 32.82275878888979,
+          "stop_reserve": null
+        },
+        {
+          "scene": "validation_road19_restart_0",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492264,
+          "reference_min_gap": 6.971093555023738,
+          "stop_reserve": null
+        },
+        {
+          "scene": "validation_road19_restart_2",
+          "selected": "D_stop",
+          "progress_m": 2.0737596200068205,
+          "reference_min_gap": 3.6249296382995904,
+          "stop_reserve": null
+        },
+        {
+          "scene": "validation_road19_lead_stopped",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492264,
+          "reference_min_gap": 6.822758790621226,
+          "stop_reserve": null
+        },
+        {
+          "scene": "validation_road19_crossing_conflict",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492264,
+          "reference_min_gap": 6.434133879139011,
+          "stop_reserve": null
+        },
+        {
+          "scene": "validation_road19_crossing_early",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492264,
+          "reference_min_gap": 6.870426329758395,
+          "stop_reserve": null
+        },
+        {
+          "scene": "validation_road76_clear",
+          "selected": "A_keep_route",
+          "progress_m": 15.000000000000004,
+          "reference_min_gap": null,
+          "stop_reserve": null
+        },
+        {
+          "scene": "validation_road76_static_bypass",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492277,
+          "reference_min_gap": 32.82275878745513,
+          "stop_reserve": null
+        },
+        {
+          "scene": "validation_road76_blocked_far",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492277,
+          "reference_min_gap": 32.82275878745513,
+          "stop_reserve": null
+        },
+        {
+          "scene": "validation_road76_prohibited_lane",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492277,
+          "reference_min_gap": 32.82275878745513,
+          "stop_reserve": null
+        },
+        {
+          "scene": "validation_road76_braking_0",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492277,
+          "reference_min_gap": 8.82275879000278,
+          "stop_reserve": null
+        },
+        {
+          "scene": "validation_road76_braking_1",
+          "selected": "E_slow_follow",
+          "progress_m": 10.874999999999998,
+          "reference_min_gap": 5.845345537881018,
+          "stop_reserve": {
+            "passed": true,
+            "failures": [],
+            "minimum_actor_reserve_m": 0.3704465481753001,
+            "route_tail_m": 73.69988424164607,
+            "stop_distance_required_m": 3.4294444444444445,
+            "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+          }
+        },
+        {
+          "scene": "validation_road76_braking_2",
+          "selected": "A_keep_route",
+          "progress_m": 17.852132202149214,
+          "reference_min_gap": 3.422758790449573,
+          "stop_reserve": null
+        },
+        {
+          "scene": "validation_road76_braking_5",
+          "selected": "A_keep_route",
+          "progress_m": 14.630036173329815,
+          "reference_min_gap": 13.794854818222682,
+          "stop_reserve": null
+        },
+        {
+          "scene": "validation_road76_braking_6",
+          "selected": "E_slow_follow",
+          "progress_m": 7.499999999999999,
+          "reference_min_gap": 10.17489099193309,
+          "stop_reserve": {
+            "passed": true,
+            "failures": [],
+            "minimum_actor_reserve_m": 1.4121132147401663,
+            "route_tail_m": 77.07488424164607,
+            "stop_distance_required_m": 3.4294444444444445,
+            "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+          }
+        },
+        {
+          "scene": "validation_road76_restart_0",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492277,
+          "reference_min_gap": 6.971093554584164,
+          "stop_reserve": null
+        },
+        {
+          "scene": "validation_road76_restart_1",
+          "selected": "E_slow_follow",
+          "progress_m": 8.625,
+          "reference_min_gap": 7.868004930793454,
+          "stop_reserve": {
+            "passed": true,
+            "failures": [],
+            "minimum_actor_reserve_m": 1.620446548077887,
+            "route_tail_m": 75.94988424164607,
+            "stop_distance_required_m": 3.4294444444444445,
+            "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+          }
+        },
+        {
+          "scene": "validation_road76_restart_2",
+          "selected": "D_stop",
+          "progress_m": 2.0737596200068196,
+          "reference_min_gap": 3.6249296379103995,
+          "stop_reserve": null
+        },
+        {
+          "scene": "validation_road76_lead_accelerating",
+          "selected": "D_stop",
+          "progress_m": 6.02866647908024,
+          "reference_min_gap": 7.2888909923098435,
+          "stop_reserve": null
+        },
+        {
+          "scene": "validation_road76_lead_stopped",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492277,
+          "reference_min_gap": 6.822758790188136,
+          "stop_reserve": null
+        },
+        {
+          "scene": "validation_road76_crossing_conflict",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492277,
+          "reference_min_gap": 6.434133988686345,
+          "stop_reserve": null
+        },
+        {
+          "scene": "validation_road76_crossing_early",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492277,
+          "reference_min_gap": 6.870428293713004,
+          "stop_reserve": null
+        }
+      ]
+    },
+    "fresh_final": {
+      "attempted": 46,
+      "valid": 46,
+      "invalid": [],
+      "road_errors": [],
+      "dynamic_valid": 28,
+      "dynamic_selected": 21,
+      "baseline_choices": {
+        "A_keep_route": 4,
+        "D_stop": 25,
+        "None": 17
+      },
+      "new_choices": {
+        "A_keep_route": 4,
+        "D_stop": 20,
+        "None": 17,
+        "E_slow_follow": 5
+      },
+      "continuing_gain": [
+        "fresh_final_road23_braking_6",
+        "fresh_final_road23_restart_1",
+        "fresh_final_road28_braking_1",
+        "fresh_final_road28_braking_6",
+        "fresh_final_road28_restart_1"
+      ],
+      "selection_losses": [],
+      "accepted_candidates": 42,
+      "unknown_scenes": [
+        "fresh_final_road23_braking_1",
+        "fresh_final_road23_braking_2",
+        "fresh_final_road23_braking_5"
+      ],
+      "progress": [
+        {
+          "scene": "fresh_final_road23_clear",
+          "selected": "A_keep_route",
+          "progress_m": 15.00000000000001,
+          "reference_min_gap": null,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road23_static_bypass",
+          "selected": "D_stop",
+          "progress_m": 2.852132202149216,
+          "reference_min_gap": 29.950212829249732,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road23_blocked_far",
+          "selected": "D_stop",
+          "progress_m": 2.852132202149216,
+          "reference_min_gap": 29.950212829249732,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road23_prohibited_lane",
+          "selected": "D_stop",
+          "progress_m": 2.852132202149216,
+          "reference_min_gap": 29.950212829249732,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road23_braking_0",
+          "selected": "D_stop",
+          "progress_m": 2.852132202149216,
+          "reference_min_gap": 8.391084282796262,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road23_braking_6",
+          "selected": "E_slow_follow",
+          "progress_m": 7.500000000000006,
+          "reference_min_gap": 9.628426389542962,
+          "stop_reserve": {
+            "passed": true,
+            "failures": [],
+            "minimum_actor_reserve_m": 1.111127129898692,
+            "route_tail_m": 42.677418431587874,
+            "stop_distance_required_m": 3.4294444444444445,
+            "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+          }
+        },
+        {
+          "scene": "fresh_final_road23_restart_0",
+          "selected": "D_stop",
+          "progress_m": 2.852132202149216,
+          "reference_min_gap": 6.622894580674596,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road23_restart_1",
+          "selected": "E_slow_follow",
+          "progress_m": 8.624999999999998,
+          "reference_min_gap": 7.442283896489325,
+          "stop_reserve": {
+            "passed": true,
+            "failures": [],
+            "minimum_actor_reserve_m": 1.3021210516351087,
+            "route_tail_m": 41.55241843158788,
+            "stop_distance_required_m": 3.4294444444444445,
+            "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+          }
+        },
+        {
+          "scene": "fresh_final_road23_restart_2",
+          "selected": "D_stop",
+          "progress_m": 2.0737596200068227,
+          "reference_min_gap": 3.408127548084536,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road23_lead_accelerating",
+          "selected": "D_stop",
+          "progress_m": 6.028666479080241,
+          "reference_min_gap": 6.918603667601019,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road23_lead_stopped",
+          "selected": "D_stop",
+          "progress_m": 2.852132202149216,
+          "reference_min_gap": 6.47965002660013,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road23_crossing_conflict",
+          "selected": "D_stop",
+          "progress_m": 2.852132202149216,
+          "reference_min_gap": 6.064330912077603,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road23_crossing_early",
+          "selected": "D_stop",
+          "progress_m": 2.852132202149216,
+          "reference_min_gap": 6.361175068206609,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road28_clear",
+          "selected": "A_keep_route",
+          "progress_m": 14.999999999999995,
+          "reference_min_gap": null,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road28_static_bypass",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492272,
+          "reference_min_gap": 32.82275879137258,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road28_blocked_far",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492272,
+          "reference_min_gap": 32.82275879137258,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road28_prohibited_lane",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492272,
+          "reference_min_gap": 32.82275879137258,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road28_braking_0",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492272,
+          "reference_min_gap": 8.822758791382784,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road28_braking_1",
+          "selected": "E_slow_follow",
+          "progress_m": 10.875,
+          "reference_min_gap": 5.845345538985581,
+          "stop_reserve": {
+            "passed": true,
+            "failures": [],
+            "minimum_actor_reserve_m": 0.370446549087569,
+            "route_tail_m": 56.19989199024394,
+            "stop_distance_required_m": 3.4294444444444445,
+            "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+          }
+        },
+        {
+          "scene": "fresh_final_road28_braking_2",
+          "selected": "A_keep_route",
+          "progress_m": 17.852132202149217,
+          "reference_min_gap": 3.4227587913827366,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road28_braking_5",
+          "selected": "A_keep_route",
+          "progress_m": 14.630036173329811,
+          "reference_min_gap": 13.794854820198,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road28_braking_6",
+          "selected": "E_slow_follow",
+          "progress_m": 7.499999999999998,
+          "reference_min_gap": 10.17489099353019,
+          "stop_reserve": {
+            "passed": true,
+            "failures": [],
+            "minimum_actor_reserve_m": 1.412113215754672,
+            "route_tail_m": 59.57489199024394,
+            "stop_distance_required_m": 3.4294444444444445,
+            "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+          }
+        },
+        {
+          "scene": "fresh_final_road28_restart_0",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492272,
+          "reference_min_gap": 6.971093555787811,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road28_restart_1",
+          "selected": "E_slow_follow",
+          "progress_m": 8.624999999999998,
+          "reference_min_gap": 7.868004932119638,
+          "stop_reserve": {
+            "passed": true,
+            "failures": [],
+            "minimum_actor_reserve_m": 1.6204465490875957,
+            "route_tail_m": 58.44989199024394,
+            "stop_distance_required_m": 3.4294444444444445,
+            "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+          }
+        },
+        {
+          "scene": "fresh_final_road28_restart_2",
+          "selected": "D_stop",
+          "progress_m": 2.073759620006818,
+          "reference_min_gap": 3.6249296387127723,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road28_lead_accelerating",
+          "selected": "D_stop",
+          "progress_m": 6.028666479080246,
+          "reference_min_gap": 7.288890993532631,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road28_lead_stopped",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492272,
+          "reference_min_gap": 6.822758791383337,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road28_crossing_conflict",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492272,
+          "reference_min_gap": 6.434133898434303,
+          "stop_reserve": null
+        },
+        {
+          "scene": "fresh_final_road28_crossing_early",
+          "selected": "D_stop",
+          "progress_m": 2.8521322021492272,
+          "reference_min_gap": 6.87042706723047,
+          "stop_reserve": null
+        }
+      ]
+    }
+  },
+  "raw": {
+    "development": {
+      "path": "reports/m7c_development_v2.json",
+      "bytes": 17422641,
+      "sha256": "8ecaad96ae7b60dabe52c2d65cd0b4e2f0a5ccc33ca7152f431a616170193c00"
+    },
+    "validation": {
+      "path": "reports/m7c_validation_frozen.json",
+      "bytes": 14547465,
+      "sha256": "d8c1ca86ed5b4ab6955f2eae8b47a1b6807bc1b97c1782a74850db5f03989ca1"
+    },
+    "fresh_final": {
+      "path": "reports/m7c_fresh_final_frozen.json",
+      "bytes": 15768483,
+      "sha256": "5e95b6777677a7791f919460d8ac780c8db8a48f756c6d0ada5fd49c36189a89"
+    }
+  },
+  "C_stop": "NotRun_no_new_admission",
+  "metrics": "Continue means selected non-stop trajectory over6s, not route completion; rejection is finite-library failure not global impossibility",
+  "VehicleExecutedSuccessfully": "NotRun"
+}

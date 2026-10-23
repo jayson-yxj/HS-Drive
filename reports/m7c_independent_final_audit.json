@@ -1,0 +1,756 @@
+{
+  "kind": "PostFinalIndependentSampledSDKBodyAudit",
+  "provenance": {
+    "base": "684b6e64bfd7fce89be48a0a9599ee22c8c25226",
+    "commit": "87cd11df5381b094b213a2c12e4abd6c6506e50a",
+    "sources": {
+      "tools/m7c_slow_development.py": "b298b2de74eea7856d7fa6f6acb38155a47d925a886af9a675fda985eac8fb89",
+      "tools/m7c_equivalence.py": "4fb108d1bdf094cc601392940960dba0fda5ebb19e008af0b8f4faae7a17512a",
+      "tools/m7c_common.py": "3ee72cb8f461271633c007c4e7dc097172ba5958d118c2781f318d77284d67e1",
+      "tools/m7c_independent_audit.py": "f2828200e1d7784de5d5da81eb612b19bcc28a53b3a8905b730429016ff6c4f6",
+      "tools/m7c_scenarios.py": "2fe8e11dce2714427088587f69c8a90a9c840b5564806f193d578c7adfa1ab65",
+      "tools/m7c_history.py": "6e209ddaf9e3354c176f95743d523c10445cacf66bc90bf2d7f4261420d92e80",
+      "tools/m7c_shadow.py": "cbb59ed22e538eb6a5d02e7ebaf6f356e344d4183980d479b5a5f3f49bb9a12a",
+      "tools/m7c_results.py": "5cbc91b3b9cbe1ba8679e49840c44b9fbe443d867ab4d9a186ed6475ad08d907",
+      "tools/m7c_connected_audit.py": "3f9e73b481c645d92230d868a0ba084079538002056a7c294ce469dc71f21815",
+      "diagnostics/m7c_slow.py": "30635531cc93903b175f901819fdd0265269976221a8d7cafdccab540aed4d2c",
+      "diagnostics/m7c_geometry.py": "ce890dba246b50f7a7b32450ce61cb1243a3bcc43058edd649558b8f4461fd90",
+      "diagnostics/m7c_routes.py": "c11acb71248d03782917f2377cf95ad22571875feb2ff792b57fb537eb86946b",
+      "tests/test_m7c_geometry.py": "80bcbb4c3795a355494ce04241a654395f301398a61da03b1b8cc602f8ec2e9c",
+      "configs/m7c/protocol.json": "0231f38fcea0303457a2cc6647aeb0c947fb9b7704d651625cad62dbb1bf8117"
+    },
+    "execution": "OfflineCARLA0915Map_SyntheticActors",
+    "new_control": false,
+    "new_training": false
+  },
+  "actor_checks": [
+    {
+      "scene": "fresh_final_road23_static_bypass",
+      "actor": "obstacle",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road23_blocked_far",
+      "actor": "obstacle",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road23_blocked_close",
+      "actor": "obstacle",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.001095236273558342,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road23_prohibited_lane",
+      "actor": "obstacle",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road23_braking_0",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0005342331485036489,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road23_braking_1",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.002873009198654408,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road23_braking_2",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0019594314398361234,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road23_braking_3",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0007620153468756996,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road23_braking_4",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0009901208819842466,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road23_braking_5",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0012762922890150463,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road23_braking_6",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 7.768815014763675e-05,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road23_restart_0",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0005342331485036489,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road23_restart_1",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.002873009198654408,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road23_restart_2",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0007620153468756996,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road23_lead_accelerating",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0007624462755120298,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road23_lead_stopped",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0005342331485036489,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road28_static_bypass",
+      "actor": "obstacle",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road28_blocked_far",
+      "actor": "obstacle",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road28_blocked_far",
+      "actor": "block_left",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road28_blocked_close",
+      "actor": "obstacle",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road28_blocked_close",
+      "actor": "block_left",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road28_prohibited_lane",
+      "actor": "obstacle",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road28_braking_0",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road28_braking_1",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road28_braking_2",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road28_braking_3",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road28_braking_4",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road28_braking_5",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road28_braking_6",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road28_restart_0",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road28_restart_1",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road28_restart_2",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road28_lead_accelerating",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0,
+      "passed": true
+    },
+    {
+      "scene": "fresh_final_road28_lead_stopped",
+      "actor": "lead",
+      "road_lane_ok": true,
+      "heading_error_rad": 0.0,
+      "passed": true
+    }
+  ],
+  "candidates": [
+    {
+      "scene": "fresh_final_road23_clear",
+      "candidate": "A_keep_route",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road23_clear",
+      "candidate": "D_stop",
+      "selected": false,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road23_clear",
+      "candidate": "E_slow_follow",
+      "selected": false,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": {
+        "passed": true,
+        "failures": [],
+        "minimum_actor_reserve_m": null,
+        "route_tail_m": 42.677418431587874,
+        "stop_distance_required_m": 3.4294444444444445,
+        "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+      }
+    },
+    {
+      "scene": "fresh_final_road23_static_bypass",
+      "candidate": "D_stop",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road23_blocked_far",
+      "candidate": "D_stop",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road23_prohibited_lane",
+      "candidate": "D_stop",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road23_braking_0",
+      "candidate": "D_stop",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road23_braking_6",
+      "candidate": "D_stop",
+      "selected": false,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road23_braking_6",
+      "candidate": "E_slow_follow",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": {
+        "passed": true,
+        "failures": [],
+        "minimum_actor_reserve_m": 1.111127129898692,
+        "route_tail_m": 42.677418431587874,
+        "stop_distance_required_m": 3.4294444444444445,
+        "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+      }
+    },
+    {
+      "scene": "fresh_final_road23_restart_0",
+      "candidate": "D_stop",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road23_restart_1",
+      "candidate": "D_stop",
+      "selected": false,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road23_restart_1",
+      "candidate": "E_slow_follow",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": {
+        "passed": true,
+        "failures": [],
+        "minimum_actor_reserve_m": 1.3021210516351087,
+        "route_tail_m": 41.55241843158788,
+        "stop_distance_required_m": 3.4294444444444445,
+        "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+      }
+    },
+    {
+      "scene": "fresh_final_road23_restart_2",
+      "candidate": "D_stop",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road23_lead_accelerating",
+      "candidate": "D_stop",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road23_lead_stopped",
+      "candidate": "D_stop",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road23_crossing_conflict",
+      "candidate": "D_stop",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road23_crossing_early",
+      "candidate": "D_stop",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road28_clear",
+      "candidate": "A_keep_route",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road28_clear",
+      "candidate": "D_stop",
+      "selected": false,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road28_clear",
+      "candidate": "E_slow_follow",
+      "selected": false,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": {
+        "passed": true,
+        "failures": [],
+        "minimum_actor_reserve_m": null,
+        "route_tail_m": 59.57489199024394,
+        "stop_distance_required_m": 3.4294444444444445,
+        "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+      }
+    },
+    {
+      "scene": "fresh_final_road28_static_bypass",
+      "candidate": "D_stop",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road28_blocked_far",
+      "candidate": "D_stop",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road28_prohibited_lane",
+      "candidate": "D_stop",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road28_braking_0",
+      "candidate": "D_stop",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road28_braking_1",
+      "candidate": "D_stop",
+      "selected": false,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road28_braking_1",
+      "candidate": "E_slow_follow",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": {
+        "passed": true,
+        "failures": [],
+        "minimum_actor_reserve_m": 0.370446549087569,
+        "route_tail_m": 56.19989199024394,
+        "stop_distance_required_m": 3.4294444444444445,
+        "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+      }
+    },
+    {
+      "scene": "fresh_final_road28_braking_2",
+      "candidate": "A_keep_route",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road28_braking_2",
+      "candidate": "D_stop",
+      "selected": false,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road28_braking_2",
+      "candidate": "E_slow_follow",
+      "selected": false,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": {
+        "passed": true,
+        "failures": [],
+        "minimum_actor_reserve_m": 1.3977815160122713,
+        "route_tail_m": 53.94989199024394,
+        "stop_distance_required_m": 3.4294444444444445,
+        "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+      }
+    },
+    {
+      "scene": "fresh_final_road28_braking_5",
+      "candidate": "A_keep_route",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road28_braking_5",
+      "candidate": "D_stop",
+      "selected": false,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road28_braking_5",
+      "candidate": "E_slow_follow",
+      "selected": false,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": {
+        "passed": true,
+        "failures": [],
+        "minimum_actor_reserve_m": 11.870446549083772,
+        "route_tail_m": 60.69989199024394,
+        "stop_distance_required_m": 3.4294444444444445,
+        "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+      }
+    },
+    {
+      "scene": "fresh_final_road28_braking_6",
+      "candidate": "D_stop",
+      "selected": false,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road28_braking_6",
+      "candidate": "E_slow_follow",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": {
+        "passed": true,
+        "failures": [],
+        "minimum_actor_reserve_m": 1.412113215754672,
+        "route_tail_m": 59.57489199024394,
+        "stop_distance_required_m": 3.4294444444444445,
+        "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+      }
+    },
+    {
+      "scene": "fresh_final_road28_restart_0",
+      "candidate": "D_stop",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road28_restart_1",
+      "candidate": "D_stop",
+      "selected": false,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road28_restart_1",
+      "candidate": "E_slow_follow",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": {
+        "passed": true,
+        "failures": [],
+        "minimum_actor_reserve_m": 1.6204465490875957,
+        "route_tail_m": 58.44989199024394,
+        "stop_distance_required_m": 3.4294444444444445,
+        "meaning": "Conservative finite-hypothesis planning reserve; FeasibleToExecute=NotValidated"
+      }
+    },
+    {
+      "scene": "fresh_final_road28_restart_2",
+      "candidate": "D_stop",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road28_lead_accelerating",
+      "candidate": "D_stop",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road28_lead_stopped",
+      "candidate": "D_stop",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road28_crossing_conflict",
+      "candidate": "D_stop",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    },
+    {
+      "scene": "fresh_final_road28_crossing_early",
+      "candidate": "D_stop",
+      "selected": true,
+      "body_grid_samples": 13552,
+      "body_grid_violations": 0,
+      "stop_reference_gap_ok": true,
+      "reference_conflicts": [],
+      "slow_reserve": null
+    }
+  ],
+  "actor_failures": 0,
+  "accepted_road_failures": 0,
+  "stop_gap_failures": 0,
+  "future_conflicts": 0,
+  "scope": "Different numerical method on same OpenDRIVE.0.05s/0.4m body grid; future collision0.025s Shapely in source; not continuous mesh certificate."
+}

@@ -1,0 +1,566 @@
+{
+  "kind": "HistoricalPostEvaluationBodySupportAudit",
+  "provenance": {
+    "base": "684b6e64bfd7fce89be48a0a9599ee22c8c25226",
+    "commit": "87cd11df5381b094b213a2c12e4abd6c6506e50a",
+    "sources": {
+      "tools/m7c_slow_development.py": "b298b2de74eea7856d7fa6f6acb38155a47d925a886af9a675fda985eac8fb89",
+      "tools/m7c_equivalence.py": "4fb108d1bdf094cc601392940960dba0fda5ebb19e008af0b8f4faae7a17512a",
+      "tools/m7c_common.py": "3ee72cb8f461271633c007c4e7dc097172ba5958d118c2781f318d77284d67e1",
+      "tools/m7c_route_quality.py": "0230b13f6832d2ca3aca644bc20b0f75d76ef1652587db31a0738d67d86eb1a8",
+      "tools/m7c_independent_audit.py": "f2828200e1d7784de5d5da81eb612b19bcc28a53b3a8905b730429016ff6c4f6",
+      "tools/m7c_scenarios.py": "2fe8e11dce2714427088587f69c8a90a9c840b5564806f193d578c7adfa1ab65",
+      "tools/m7c_history.py": "6e209ddaf9e3354c176f95743d523c10445cacf66bc90bf2d7f4261420d92e80",
+      "tools/m7c_shadow.py": "cbb59ed22e538eb6a5d02e7ebaf6f356e344d4183980d479b5a5f3f49bb9a12a",
+      "tools/m7c_results.py": "5cbc91b3b9cbe1ba8679e49840c44b9fbe443d867ab4d9a186ed6475ad08d907",
+      "tools/m7c_connected_audit.py": "3f9e73b481c645d92230d868a0ba084079538002056a7c294ce469dc71f21815",
+      "diagnostics/m7c_slow.py": "30635531cc93903b175f901819fdd0265269976221a8d7cafdccab540aed4d2c",
+      "diagnostics/m7c_geometry.py": "ce890dba246b50f7a7b32450ce61cb1243a3bcc43058edd649558b8f4461fd90",
+      "diagnostics/m7c_routes.py": "c11acb71248d03782917f2377cf95ad22571875feb2ff792b57fb537eb86946b",
+      "tests/test_m7c_geometry.py": "80bcbb4c3795a355494ce04241a654395f301398a61da03b1b8cc602f8ec2e9c",
+      "configs/m7c/protocol.json": "0231f38fcea0303457a2cc6647aeb0c947fb9b7704d651625cad62dbb1bf8117"
+    },
+    "execution": "OfflineCARLA0915Map_SyntheticActors",
+    "new_control": false,
+    "new_training": false
+  },
+  "segments": [
+    {
+      "origin_road": 18,
+      "road_lane_section": [
+        18,
+        -1,
+        0
+      ],
+      "sampled_length_m": 3.000001545645741,
+      "cumulative_segment_start_m": 0,
+      "predecessor": null,
+      "successor": null,
+      "width_range": [
+        3.5,
+        3.5
+      ],
+      "junction": false,
+      "direction": "Waypoint.next_forward",
+      "selection": "OnlyUniqueLegalSuccessor",
+      "stop_reason": "AmbiguousSuccessors"
+    },
+    {
+      "origin_road": 19,
+      "road_lane_section": [
+        19,
+        -1,
+        0
+      ],
+      "sampled_length_m": 3.000005359467518,
+      "cumulative_segment_start_m": 0,
+      "predecessor": null,
+      "successor": null,
+      "width_range": [
+        3.5,
+        3.5
+      ],
+      "junction": false,
+      "direction": "Waypoint.next_forward",
+      "selection": "OnlyUniqueLegalSuccessor",
+      "stop_reason": "AmbiguousSuccessors"
+    }
+  ],
+  "records": [
+    {
+      "scene": "historical_regression_road18_braking_0",
+      "all_hypotheses_supported": false,
+      "route_unknown": [
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 0.0
+        }
+      ],
+      "body_road_unsupported_hypotheses": [
+        "acceleration_1.5_delay1.0"
+      ],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "historical_regression_road18_braking_1",
+      "all_hypotheses_supported": false,
+      "route_unknown": [
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 0.75,
+          "onset": 0.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 0.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 1.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 2.0
+        }
+      ],
+      "body_road_unsupported_hypotheses": [
+        "acceleration_0.75_delay1.0"
+      ],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "historical_regression_road18_braking_2",
+      "all_hypotheses_supported": false,
+      "route_unknown": [
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 0.75,
+          "onset": 0.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 0.75,
+          "onset": 1.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 0.75,
+          "onset": 2.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 0.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 1.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 2.0
+        }
+      ],
+      "body_road_unsupported_hypotheses": [],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "historical_regression_road18_braking_3",
+      "all_hypotheses_supported": true,
+      "route_unknown": [],
+      "body_road_unsupported_hypotheses": [],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "historical_regression_road18_braking_4",
+      "all_hypotheses_supported": false,
+      "route_unknown": [
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 0.0
+        }
+      ],
+      "body_road_unsupported_hypotheses": [],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "historical_regression_road18_braking_5",
+      "all_hypotheses_supported": false,
+      "route_unknown": [
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 0.75,
+          "onset": 0.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 0.75,
+          "onset": 1.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 0.75,
+          "onset": 2.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 0.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 1.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 2.0
+        }
+      ],
+      "body_road_unsupported_hypotheses": [],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "historical_regression_road18_braking_6",
+      "all_hypotheses_supported": false,
+      "route_unknown": [
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 0.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 1.0
+        }
+      ],
+      "body_road_unsupported_hypotheses": [],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "historical_regression_road18_restart_0",
+      "all_hypotheses_supported": true,
+      "route_unknown": [],
+      "body_road_unsupported_hypotheses": [],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "historical_regression_road18_restart_1",
+      "all_hypotheses_supported": false,
+      "route_unknown": [],
+      "body_road_unsupported_hypotheses": [
+        "acceleration_1.5_delay0.0"
+      ],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "historical_regression_road18_restart_2",
+      "all_hypotheses_supported": true,
+      "route_unknown": [],
+      "body_road_unsupported_hypotheses": [],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "historical_regression_road18_lead_accelerating",
+      "all_hypotheses_supported": false,
+      "route_unknown": [
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 0.0
+        }
+      ],
+      "body_road_unsupported_hypotheses": [],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "historical_regression_road18_lead_stopped",
+      "all_hypotheses_supported": true,
+      "route_unknown": [],
+      "body_road_unsupported_hypotheses": [],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "validation_road19_braking_0",
+      "all_hypotheses_supported": false,
+      "route_unknown": [
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 0.0
+        }
+      ],
+      "body_road_unsupported_hypotheses": [
+        "acceleration_1.5_delay1.0"
+      ],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "validation_road19_braking_1",
+      "all_hypotheses_supported": false,
+      "route_unknown": [
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 0.75,
+          "onset": 0.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 0.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 1.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 2.0
+        }
+      ],
+      "body_road_unsupported_hypotheses": [
+        "acceleration_0.75_delay1.0"
+      ],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "validation_road19_braking_2",
+      "all_hypotheses_supported": false,
+      "route_unknown": [
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 0.75,
+          "onset": 0.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 0.75,
+          "onset": 1.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 0.75,
+          "onset": 2.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 0.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 1.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 2.0
+        }
+      ],
+      "body_road_unsupported_hypotheses": [],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "validation_road19_braking_3",
+      "all_hypotheses_supported": true,
+      "route_unknown": [],
+      "body_road_unsupported_hypotheses": [],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "validation_road19_braking_4",
+      "all_hypotheses_supported": false,
+      "route_unknown": [
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 0.0
+        }
+      ],
+      "body_road_unsupported_hypotheses": [],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "validation_road19_braking_5",
+      "all_hypotheses_supported": false,
+      "route_unknown": [
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 0.75,
+          "onset": 0.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 0.75,
+          "onset": 1.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 0.75,
+          "onset": 2.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 0.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 1.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 2.0
+        }
+      ],
+      "body_road_unsupported_hypotheses": [],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "validation_road19_braking_6",
+      "all_hypotheses_supported": false,
+      "route_unknown": [
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 0.0
+        },
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 1.0
+        }
+      ],
+      "body_road_unsupported_hypotheses": [],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "validation_road19_restart_0",
+      "all_hypotheses_supported": true,
+      "route_unknown": [],
+      "body_road_unsupported_hypotheses": [],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "validation_road19_restart_1",
+      "all_hypotheses_supported": false,
+      "route_unknown": [],
+      "body_road_unsupported_hypotheses": [
+        "acceleration_1.5_delay0.0"
+      ],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "validation_road19_restart_2",
+      "all_hypotheses_supported": true,
+      "route_unknown": [],
+      "body_road_unsupported_hypotheses": [],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "validation_road19_lead_accelerating",
+      "all_hypotheses_supported": false,
+      "route_unknown": [
+        {
+          "object_id": "lead",
+          "reason": "route_end",
+          "acceleration": 1.5,
+          "onset": 0.0
+        }
+      ],
+      "body_road_unsupported_hypotheses": [],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    },
+    {
+      "scene": "validation_road19_lead_stopped",
+      "all_hypotheses_supported": true,
+      "route_unknown": [],
+      "body_road_unsupported_hypotheses": [],
+      "reference_same_parameters_supported": true,
+      "reference_body_road_pass": true,
+      "decisions_reexecuted": false
+    }
+  ],
+  "scope": "Actual CARLA topology with sampled OpenDRIVE corridor OBB coverage; same physical reference limitations, no changes to prior outcomes"
+}
