@@ -78,7 +78,14 @@ def main():
             q=[x for x in rows if x['phase']==phase]
             if phase.startswith('hold') or phase=='guard_hold':
                 if max(x['signed']['speed_norm_mps'] for x in q)<=.02:
-                    quiet.append(dict(name=r['name'],phase=phase,n=len(q),risk_ticks=sum(x['guard']['risk'] for x in q),emergency_ticks=sum(x['guard']['emergency'] for x in q)))
+                    first_index=rows.index(q[0]);prior=rows[first_index-1]['guard'] if first_index else dict(risk=False,emergency=False)
+                    new_risk=new_emergency=0
+                    for sample in q:
+                        new_risk+=bool(sample['guard']['risk'] and not prior['risk'])
+                        new_emergency+=bool(sample['guard']['emergency'] and not prior['emergency'])
+                        prior=sample['guard']
+                    quiet.append(dict(name=r['name'],phase=phase,n=len(q),risk_ticks=sum(x['guard']['risk'] for x in q),emergency_ticks=sum(x['guard']['emergency'] for x in q),new_risk_events=new_risk,new_emergency_events=new_emergency,
+                        explanation='Already latched risk/emergency from preceding measured rollback is not a new quiet-hold false trigger.'))
         em=next((i for i,x in enumerate(rows) if x['protection_applied']),None)
         if em is not None:
             ix=max(0,em-8);q=rows[ix:em+6];pose=np.array([x['measurement']['position'][:2] for x in q])*[1,-1];yaw=q[0]['signed']['yaw_rad'];proj=(pose-pose[0])@np.array([math.cos(yaw),math.sin(yaw)])
