@@ -1,4 +1,5 @@
 """Archive integrity and reproducible restricted CPU inspection launcher."""
+import argparse
 import json
 from pathlib import Path
 import pickletools
@@ -17,6 +18,9 @@ def limits():
 
 
 def main():
+    parser=argparse.ArgumentParser()
+    parser.add_argument("--run-id",default="v2",choices=["v2"])
+    args=parser.parse_args()
     cfg=json.loads(CONFIG.read_text())
     p=Path(cfg["checkpoint_output"])
     if not p.exists():raise FileNotFoundError(p)
@@ -36,7 +40,7 @@ def main():
                     official_expected_sha256=None,
                     local_sha_is_not_independent_authenticity_proof=True)
     root=p.parent.parent
-    out=root/"inspection"
+    out=root/("inspection_"+args.run_id)
     out.mkdir(exist_ok=False)
     script=Path("tools/m8a_proxy_inspect.py").resolve()
     runtime=Path(".venv-gpu/lib/python3.10/site-packages").resolve()
@@ -45,15 +49,15 @@ def main():
         "--dir","/etc","--ro-bind","/etc/ld.so.cache","/etc/ld.so.cache",
         "--ro-bind",str(root/"inspect-env"),"/inspect-env",
         "--ro-bind",str(runtime),"/runtime","--ro-bind",str(p),"/input/epoch_24.pth",
-        "--ro-bind",str(script),"/inspect.py","--bind",str(out),"/output",
+        "--ro-bind",str(script),"/checkpoint_reader.py","--bind",str(out),"/output",
         "--tmpfs","/tmp","--tmpfs","/proc","--dev","/dev","--clearenv",
         "--setenv","PATH","/usr/bin","--setenv","PYTHONPATH","/runtime",
         "--setenv","PYTHONDONTWRITEBYTECODE","1","--setenv","CUDA_VISIBLE_DEVICES","",
         "--setenv","OMP_NUM_THREADS","1","--setenv","M8A_ISOLATED","1",
-        "--chdir","/tmp","/inspect-env/bin/python","-s","/inspect.py"]
+        "--chdir","/tmp","/inspect-env/bin/python","-s","/checkpoint_reader.py"]
     result=subprocess.run(cmd,capture_output=True,text=True,timeout=120,preexec_fn=limits)
-    write("reports/m8a_proxy_retry_logs/checkpoint_archive.json",dict(**provenance(static.pop("kind")),**static))
-    write("reports/m8a_proxy_retry_logs/isolated_load_execution.json",
+    write(f"reports/m8a_proxy_retry_logs/checkpoint_archive_{args.run_id}.json",dict(**provenance(static.pop("kind")),**static))
+    write(f"reports/m8a_proxy_retry_logs/isolated_load_execution_{args.run_id}.json",
         dict(**provenance("ActualRestrictedCheckpointLoadExecution"),command=cmd,
              returncode=result.returncode,stdout=redact(result.stdout),stderr=redact(result.stderr),
              filesystem_mode="ReadOnlySystemAndTrustedRuntime_NoProjectOrCredentials",
@@ -61,7 +65,7 @@ def main():
              memory_limit_gib=12,cpu_limit_s=90,wall_limit_s=120,
              output=asset(out/"inspection.json") if (out/"inspection.json").exists() else None))
     if result.returncode:raise RuntimeError("Isolated loader failed; no unrestricted fallback")
-    write("reports/m8a_proxy_retry_logs/checkpoint_structure.json",
+    write(f"reports/m8a_proxy_retry_logs/checkpoint_structure_{args.run_id}.json",
           dict(**provenance("ActualRestrictedCheckpointStructure"),
                inspection=json.loads((out/"inspection.json").read_text())))
     print(result.stdout)
