@@ -16,11 +16,11 @@ ORDER=['front','front_left','front_right','rear_left','rear_right','rear']
 
 def main():
     assert os.environ.get('M8A_ISOLATED')=='1'
-    p=json.loads(Path('/input/shadow.json').read_text());assert p['camera_order']==ORDER
+    p=json.loads(Path(os.environ['M8A_SHADOW_PACKET']).read_text());assert p['camera_order']==ORDER
     assert p['image_size']==[384,640]
     assert all(c['frame_id']==p['frame_id'] and c['timestamp_s']==p['timestamp_s'] for c in p['cameras'])
     # Ignore ego_pose completely; no actor/depth/instance/GT fields passed to any model.
-    bgr=[np.array(Image.open('/input/'+name+'.png').convert('RGB'))[...,::-1].copy() for name in ORDER]
+    bgr=[np.array(Image.open(camera['path']).convert('RGB'))[...,::-1].copy() for camera in p['cameras']]
     intr=[np.eye(4) for _ in ORDER]
     for k,mat in zip(p['intrinsics'],intr):mat[:3,:3]=k
     c2e=[np.array(t) for t in p['cam_to_ego']]
@@ -79,6 +79,6 @@ def main():
             yaw_formula='yaw_old_lidar = -yaw_HS - pi/2; yaw_HS=-yaw_CARLA',non_square_corner_max_m=error,
             projection_roundtrip_max_m=box_error),GT_model_input=False,carla_model_forward=False,
         limitations=['No full adapter','No zero-shot or detection quality evaluation','No live synchronization evidence','No control or planning authorization'])
-    Path('/output/camera_contract.json').write_text(json.dumps(result,indent=2,allow_nan=False))
+    (Path(os.environ['M8A_OUTPUT'])/'camera_contract.json').write_text(json.dumps(result,indent=2,allow_nan=False))
 
 if __name__=='__main__':main()
