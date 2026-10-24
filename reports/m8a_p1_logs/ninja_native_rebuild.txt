@@ -1,0 +1,34 @@
+Collecting ninja==1.11.1.1
+  WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))': /packages/37/2c/d717d13a413d6f7579cdaa1e28e6e2c98de95461549b08d311c8a5bf4c51/ninja-1.11.1.1.tar.gz
+  Downloading ninja-1.11.1.1.tar.gz (132 kB)
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × Preparing metadata (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [14 lines of output]
+      Traceback (most recent call last):
+        File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 353, in <module>
+          main()
+        File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 335, in main
+          json_out['return_val'] = hook(**hook_input['kwargs'])
+        File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 149, in prepare_metadata_for_build_wheel
+          return hook(metadata_directory, config_settings)
+        File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/setuptools/build_meta.py", line 174, in prepare_metadata_for_build_wheel
+          self.run_setup()
+        File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/setuptools/build_meta.py", line 158, in run_setup
+          exec(compile(code, __file__, 'exec'), locals())
+        File "setup.py", line 8, in <module>
+          from skbuild import setup
+      ModuleNotFoundError: No module named 'skbuild'
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: metadata-generation-failed
+
+× Encountered error while generating package metadata.
+╰─> See above for output.
+
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for details.

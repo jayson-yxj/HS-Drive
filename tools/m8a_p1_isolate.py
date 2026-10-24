@@ -1,4 +1,4 @@
-"""Run PETR unpickling and CUDA inference with no network or user credentials."""
+"""Restricted CPU unpickling; separate no-network numeric-only GPU subprocess."""
 import argparse
 from pathlib import Path
 import subprocess
@@ -33,8 +33,11 @@ def command(output, script):
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--run-id',required=True);args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--run-id',required=True);parser.add_argument('--extract-only',action='store_true');args=parser.parse_args()
     out=ROOT/'artifacts'/args.run_id;out.mkdir(exist_ok=False)
+    if args.extract_only:
+        run('extract_'+args.run_id,command(out,Path('tools/m8a_p1_safe_extract.py')),timeout=120)
+        return
     import json
     extraction=json.loads((ROOT/'artifacts/safe_extract/safe_extract.json').read_text())
     cmd=['unshare','--net',str(ROOT/'env/bin/python'),'-s',str(Path('tools/m8a_p1_gpu_probe.py').resolve())]

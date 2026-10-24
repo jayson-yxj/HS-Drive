@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/gpu_probe.py", line 132, in <module>
+    try:main()
+  File "/gpu_probe.py", line 23, in main
+    t=time.perf_counter();torch.cuda.init();torch.cuda.synchronize()
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/torch/cuda/__init__.py", line 216, in init
+    _lazy_init()
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/torch/cuda/__init__.py", line 247, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: Unexpected error from cudaGetDeviceCount(). Did you run some cuda functions before calling NumCudaDevices() that might have already set an error? Error 304: OS call failed or operation not supported on this OS

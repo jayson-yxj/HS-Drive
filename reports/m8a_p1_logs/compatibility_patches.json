@@ -1,0 +1,184 @@
+{
+  "kind": "ExplicitIsolatedCompatibilityPatches",
+  "base": "f4c49a5dbf20f5ee4870f78c93eaf0f87ae2434e",
+  "git_head": "83a592b8aeb9d375ba964393f7668d0fa1476d66",
+  "sources": {
+    "configs/m8a/p1_protocol.json": "c37fb7b273ea6671b454d79648689e12a6325bc889101bb74ab55026e490d4a4",
+    "tools/m8a_p1_common.py": "123190a37eec1d5b5ba005153f46eb68966546a763b4e4673b983d296f88f93a",
+    "tools/m8a_p1_compat.py": "db55be5f4afe00db01dc8563fcbcdddf766f86f6f9c05a7f2a64e7a0134a8b4e",
+    "tools/m8a_p1_download.py": "e89d89951f584dc2780cd5488c4a8eed54e2c197725bb465fde6dd5d026c0ed6",
+    "tools/m8a_p1_gpu_probe.py": "0c16d7a08bffe0ae37ab3c0e6093c85b51e60907ca93a3fd030f7ad26a13352b",
+    "tools/m8a_p1_isolate.py": "795760e8e017aaf0142ae4c4c0cab4d2b6e2b2e5552124fd0e952f74c8338053",
+    "tools/m8a_p1_setup.py": "65f615c05390b10c8acd29fb9c4c9c9d440ba664276b89af05fc1066e807de55",
+    "tools/m8a_p1_toolkit.py": "0bd89db1cad75abd7bf7174d3461e12e8bd81bf901e1d0d8480e6552e1611a7f"
+  },
+  "training_steps": 0,
+  "visual_control": false,
+  "records": [
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/__init__.py",
+      "before_sha256": "c1c081030a51e68b14f2cd34d22b3c0d1dd791bdfd7b575db6d6e6f2308db00d",
+      "after": {
+        "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/__init__.py",
+        "bytes": 1736,
+        "sha256": "5dc1f56c140884bda2397e5557fb697bb99135393433482b66190f07b7a0a37e"
+      },
+      "reason": "Permit frozen MMCV1.7.2 version; no fake version or assertion removal; real CUDA and model tests required"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmdet/__init__.py",
+      "before_sha256": "1c272ec54b63f22e8dd530300949e1e44c8417bab7c4e57329def6f42f155378",
+      "after": {
+        "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmdet/__init__.py",
+        "bytes": 909,
+        "sha256": "8845fea367763cd156ce316d049524cd6865d28777e1491318227e1e5453e912"
+      },
+      "reason": "Permit frozen MMCV1.7.2 version; no fake version or assertion removal; real CUDA and model tests required"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmseg/__init__.py",
+      "before_sha256": "6d58ae2d73ece211d1879615a5925a21c5bbf3360e292f06e35ccc5cab2ba21c",
+      "after": {
+        "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmseg/__init__.py",
+        "bytes": 1935,
+        "sha256": "fcea3fb063fe4ec5602d5b78682fdfbdb2765352dafabe715b5d1cd3aa68241f"
+      },
+      "reason": "Permit frozen MMCV1.7.2 version; no fake version or assertion removal; real CUDA and model tests required"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/ball_query/src/ball_query.cpp",
+      "before_sha256": "db0b4dabf6d5dff26d9c0e4d250e53bb185b8e0c0537f35531b0179031ee25d4",
+      "after": {
+        "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/ball_query/src/ball_query.cpp",
+        "bytes": 1726,
+        "sha256": "bfaf635777c876e1b2339adc88b1871f162f769411c86d5f6b45c60678c8911c"
+      },
+      "reason": "Remove obsolete unused THC header; ATen CUDAContext and kernels unchanged"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/ball_query/src/ball_query.cpp",
+      "before_sha256": "bfaf635777c876e1b2339adc88b1871f162f769411c86d5f6b45c60678c8911c",
+      "after": {
+        "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/ball_query/src/ball_query.cpp",
+        "bytes": 1702,
+        "sha256": "d71169419a0ee24f1c928bd63fef62ef5ee2254de2491661e371730b608b6b9a"
+      },
+      "reason": "Remove unused extern; not referenced by implementation"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/furthest_point_sample/src/furthest_point_sample.cpp",
+      "before_sha256": "06baab9e41373ebce47197c9e6398485c928a7652b7dd4d3f402aa3aa14129f5",
+      "after": {
+        "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/furthest_point_sample/src/furthest_point_sample.cpp",
+        "bytes": 2766,
+        "sha256": "673e9bf0b94afb9d3aba99f55ebd8ead9088e1190256b9eed8458a0309cee053"
+      },
+      "reason": "Remove obsolete unused THC header; ATen CUDAContext and kernels unchanged"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/furthest_point_sample/src/furthest_point_sample.cpp",
+      "before_sha256": "673e9bf0b94afb9d3aba99f55ebd8ead9088e1190256b9eed8458a0309cee053",
+      "after": {
+        "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/furthest_point_sample/src/furthest_point_sample.cpp",
+        "bytes": 2742,
+        "sha256": "20d3601d5be292a8f5684d998c7cd592f24f9695e54cc3b52d31dfff09d640e2"
+      },
+      "reason": "Remove unused extern; not referenced by implementation"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/gather_points/src/gather_points.cpp",
+      "before_sha256": "daa1a3283dd5766b49f189d16ba0848fd012e1b087c18cabdf5ee24946426218",
+      "after": {
+        "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/gather_points/src/gather_points.cpp",
+        "bytes": 2420,
+        "sha256": "c16ac8e083d8d5e4b999d8ad706a35d3ffb5e1176e14d765799add5e6e78f785"
+      },
+      "reason": "Remove obsolete unused THC header; ATen CUDAContext and kernels unchanged"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/gather_points/src/gather_points.cpp",
+      "before_sha256": "c16ac8e083d8d5e4b999d8ad706a35d3ffb5e1176e14d765799add5e6e78f785",
+      "after": {
+        "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/gather_points/src/gather_points.cpp",
+        "bytes": 2396,
+        "sha256": "dedd549ba0416ccd96cc81c170c498e563640737cb9de9fd5abce1cad14a5c98"
+      },
+      "reason": "Remove unused extern; not referenced by implementation"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/group_points/src/group_points.cpp",
+      "before_sha256": "5bb8def20d31a71ada88a4a41f58634d099aee2ea8330900b2a1d96e1ba04f05",
+      "after": {
+        "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/group_points/src/group_points.cpp",
+        "bytes": 2538,
+        "sha256": "173726126cbd4d340d7480ab131e8974e9523e9825c469aaf22185bba9cce8d1"
+      },
+      "reason": "Remove obsolete unused THC header; ATen CUDAContext and kernels unchanged"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/group_points/src/group_points.cpp",
+      "before_sha256": "173726126cbd4d340d7480ab131e8974e9523e9825c469aaf22185bba9cce8d1",
+      "after": {
+        "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/group_points/src/group_points.cpp",
+        "bytes": 2514,
+        "sha256": "3dae06c781dffd4922d8184013426426774889516bb0a820cac7e0e7e94a8d4e"
+      },
+      "reason": "Remove unused extern; not referenced by implementation"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/interpolate/src/interpolate.cpp",
+      "before_sha256": "67b13eca08e7e2c8f441ee558211c77affb50c93d1effca287ea6abe153b52e9",
+      "after": {
+        "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/interpolate/src/interpolate.cpp",
+        "bytes": 4155,
+        "sha256": "643b69f8424a80c77395e3f12d703c787b0e7f269002c0528f114901d9b2df7f"
+      },
+      "reason": "Remove obsolete unused THC header; ATen CUDAContext and kernels unchanged"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/interpolate/src/interpolate.cpp",
+      "before_sha256": "643b69f8424a80c77395e3f12d703c787b0e7f269002c0528f114901d9b2df7f",
+      "after": {
+        "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/interpolate/src/interpolate.cpp",
+        "bytes": 4131,
+        "sha256": "9c7b5c6a4a496bcf9dfabf8b07e93ad078284baee1b65902b9f6589d2d002bc9"
+      },
+      "reason": "Remove unused extern; not referenced by implementation"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/knn/src/knn.cpp",
+      "before_sha256": "8e0a5eeb2eb1e2a873a239a3ee5671cbeb97053bb947f357c8f38288aaeeb59f",
+      "after": {
+        "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/knn/src/knn.cpp",
+        "bytes": 1324,
+        "sha256": "601d675113b820e2ed92cfd609e163be3aa26d9d73eba382fb4fd5d5bb3d5538"
+      },
+      "reason": "Remove obsolete unused THC header; ATen CUDAContext and kernels unchanged"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/knn/src/knn.cpp",
+      "before_sha256": "601d675113b820e2ed92cfd609e163be3aa26d9d73eba382fb4fd5d5bb3d5538",
+      "after": {
+        "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/knn/src/knn.cpp",
+        "bytes": 1300,
+        "sha256": "1b7eddac456e3e510f92596a3e326f45048744191a8cb8afcb632a0490045d7d"
+      },
+      "reason": "Remove unused extern; not referenced by implementation"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/requirements/runtime.txt",
+      "before_sha256": "d7618210918305f4c719e939bee5d5f6a9758141ddc1aeb867234a45888cde64",
+      "after": {
+        "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/requirements/runtime.txt",
+        "bytes": 240,
+        "sha256": "603e396a4a14ec62f79033b5af523244f358d5a0993be96259f85c30374efe56"
+      },
+      "reason": "Frozen Python3.8 compatible numba runtime; no PETR computation change"
+    }
+  ],
+  "patch": {
+    "path": "reports/m8a_p1_logs/compatibility.patch",
+    "bytes": 7137,
+    "sha256": "1056b5b267f7b308c82632d87e65ae5a32f8e21a4e13cdec66dc0f60565b768d"
+  }
+}

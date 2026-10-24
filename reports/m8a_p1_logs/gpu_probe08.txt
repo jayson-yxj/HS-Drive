@@ -1,0 +1,39 @@
+STAGE:2026-10-24 22:55:16 549276:549276 ActivityProfilerController.cpp:311] Completed Stage: Warm Up
+STAGE:2026-10-24 22:55:17 549276:549276 ActivityProfilerController.cpp:317] Completed Stage: Collection
+STAGE:2026-10-24 22:55:17 549276:549276 ActivityProfilerController.cpp:321] Completed Stage: Post Processing
+/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8a_p1_gpu_probe.py", line 135, in <module>
+    try:main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8a_p1_gpu_probe.py", line 50, in main
+    import projects.mmdet3d_plugin
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/__init__.py", line 13, in <module>
+    from .datasets import CustomNuScenesDataset
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/datasets/__init__.py", line 10, in <module>
+    from .nuscenes_dataset import CustomNuScenesDataset
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/datasets/nuscenes_dataset.py", line 12, in <module>
+    from mmdet3d.datasets import NuScenesDataset
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/datasets/__init__.py", line 4, in <module>
+    from .custom_3d import Custom3DDataset
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/datasets/custom_3d.py", line 10, in <module>
+    from ..core.bbox import get_box_type
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/core/__init__.py", line 3, in <module>
+    from .bbox import *  # noqa: F401, F403
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/core/bbox/__init__.py", line 5, in <module>
+    from .iou_calculators import (AxisAlignedBboxOverlaps3D, BboxOverlaps3D,
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/core/bbox/iou_calculators/__init__.py", line 2, in <module>
+    from .iou3d_calculator import (AxisAlignedBboxOverlaps3D, BboxOverlaps3D,
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/core/bbox/iou_calculators/iou3d_calculator.py", line 6, in <module>
+    from ..structures import get_box_type
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/core/bbox/structures/__init__.py", line 2, in <module>
+    from .base_box3d import BaseInstance3DBoxes
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/core/bbox/structures/base_box3d.py", line 6, in <module>
+    from mmdet3d.ops.iou3d import iou3d_cuda
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/__init__.py", line 6, in <module>
+    from .ball_query import ball_query
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/ball_query/__init__.py", line 1, in <module>
+    from .ball_query import ball_query
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/ball_query/ball_query.py", line 4, in <module>
+    from . import ball_query_ext
+ImportError: cannot import name 'ball_query_ext' from partially initialized module 'mmdet3d.ops.ball_query' (most likely due to a circular import) (/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/ball_query/__init__.py)

@@ -1,0 +1,11 @@
+--- /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/setup.py
++++ /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/setup.py
+@@ -241,7 +241,7 @@
+                     'src/maxpool.cc',
+                     'src/maxpool_cuda.cu',
+                 ],
+-                extra_args=['-w', '-std=c++14']),
++                extra_args=['-w', '-std=c++17']),
+             make_cuda_ext(
+                 name='iou3d_cuda',
+                 module='mmdet3d.ops.iou3d',

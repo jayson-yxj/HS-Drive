@@ -1,0 +1,55 @@
+{
+  "status": "Passed",
+  "device": {
+    "pid": 592862,
+    "name": "NVIDIA GeForce RTX 4090",
+    "capability": [
+      8,
+      9
+    ],
+    "torch": "2.0.0+cu118",
+    "runtime": "11.8",
+    "arch_list": [
+      "sm_37",
+      "sm_50",
+      "sm_60",
+      "sm_70",
+      "sm_75",
+      "sm_80",
+      "sm_86",
+      "sm_90"
+    ],
+    "cuda_initialization_ms": 183.10115113854408
+  },
+  "mmcv": "1.7.2",
+  "compiler": "GCC 9.3",
+  "compiling_cuda": "11.8",
+  "extension": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/_ext.cpython-38-x86_64-linux-gnu.so",
+  "extension_sha256": "dd87c905c1961644157a3e11deb52dd14abc7df64c3ec8573f431c4b21fc394d",
+  "input_shape": [
+    2,
+    8,
+    32,
+    32
+  ],
+  "output_shape": [
+    2,
+    16,
+    32,
+    32
+  ],
+  "dtype": "torch.float32",
+  "cuda_kernels": [
+    "Memset (Device)",
+    "void at::native::(anonymous namespace)::CatArrayBatchedCopy<float, unsigned int, 4, 64, 64>(float*, at::native::(anonymous namespace)::CatArrInputTensorMetadata<float, unsigned int, 64, 64>, at::native::(anonymous namespace)::TensorSizeStride<unsigned int, 4u>, int, unsigned int)",
+    "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+    "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1})",
+    "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, at::detail::Array<char*, 1> >(int, at::native::FillFunctor<float>, at::detail::Array<char*, 1>)",
+    "void gemmSN_NN_kernel<float, 256, 4, 2, 8, 4, 4, false, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float> >(cublasGemmSmallNParams<cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>)",
+    "void implicit_convolve_sgemm<float, float, 128, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, int, int)",
+    "void modulated_deformable_im2col_gpu_kernel<float>(int, float const*, float const*, float const*, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, float*)"
+  ],
+  "repeated_bitwise_equal": true,
+  "all_finite": true,
+  "fallback": false
+}

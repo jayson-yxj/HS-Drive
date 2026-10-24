@@ -1,0 +1,570 @@
+{
+  "provenance": {
+    "kind": "OfflineM7ARecordedCalibrationAndSyntheticBoxTests",
+    "base": "f4c49a5dbf20f5ee4870f78c93eaf0f87ae2434e",
+    "git_head": "e7a7ac0a164059d50b5ca0caaac8cc4e562c92d5",
+    "sources": {
+      "configs/m8a/p1_protocol.json": "c37fb7b273ea6671b454d79648689e12a6325bc889101bb74ab55026e490d4a4",
+      "configs/m8a/p1_runtime_requirements.txt": "7c377b8c6ccdf1d8d3340428cf360aace658fab703a7a8ddacc369e5de42aa8b",
+      "tools/m8a_p1_build.py": "1385ea0ff5a73473ca96197af39f7199bc803e69d76f5793a63295958f639123",
+      "tools/m8a_p1_camera_check.py": "c76e9a2a3a78a6ed32ea88cdcd9daf549bf89e79d6ae4dd5b1aef9cd8f6f6e1e",
+      "tools/m8a_p1_camera_launch.py": "ba1c693817b1ead43a4b027ebd83e5181dd292011e09ecd8d7edda956864758d",
+      "tools/m8a_p1_common.py": "b5860c10d450e905f309d54f4407d15c2f53bfaa525dcfcdb26bfe0c5438493e",
+      "tools/m8a_p1_compat.py": "db55be5f4afe00db01dc8563fcbcdddf766f86f6f9c05a7f2a64e7a0134a8b4e",
+      "tools/m8a_p1_cuda_headers.py": "27988fa1cd773475eef295348fddd19075f2ab598a1fa7d2089f07397180db11",
+      "tools/m8a_p1_download.py": "e89d89951f584dc2780cd5488c4a8eed54e2c197725bb465fde6dd5d026c0ed6",
+      "tools/m8a_p1_gpu_probe.py": "db5637202324f217c9c82c94176eb8adb5adf7a623856f8ae5f96f048543395d",
+      "tools/m8a_p1_isolate.py": "78e3c9e3fe9e54a339ec9d98fcf0af458946382fb17bac9817e5d333526b56b0",
+      "tools/m8a_p1_lock.py": "f58ed2e8a388f74cef6edc1f916483255a73f4241c0dabe5ce0dfc4a1e5b2cea",
+      "tools/m8a_p1_report.py": "09b23e375ca6159afb9239442bc757a1783806de0fd71ddbf48a95599e0ba417",
+      "tools/m8a_p1_safe_extract.py": "4d3d969d75e905dc2c1f864cdf54ea81cc3eb48fa3eb332b87d838f68cd1ebb2",
+      "tools/m8a_p1_setup.py": "65f615c05390b10c8acd29fb9c4c9c9d440ba664276b89af05fc1066e807de55",
+      "tools/m8a_p1_toolkit.py": "0bd89db1cad75abd7bf7174d3461e12e8bd81bf901e1d0d8480e6552e1611a7f",
+      "tests/test_m8a_p1.py": "73b5cbe679eb63120e2e96d7a0a579a288fde21424c62897fbc53b422207b5e9"
+    },
+    "training_steps": 0,
+    "visual_control": false,
+    "execution_git_commit": "09c14d5a7a457d642bb16533adb76757f118359b",
+    "execution_source_hashes": {
+      "configs/m8a/p1_protocol.json": "c37fb7b273ea6671b454d79648689e12a6325bc889101bb74ab55026e490d4a4",
+      "configs/m8a/p1_runtime_requirements.txt": "7c377b8c6ccdf1d8d3340428cf360aace658fab703a7a8ddacc369e5de42aa8b",
+      "tools/m8a_p1_build.py": "1385ea0ff5a73473ca96197af39f7199bc803e69d76f5793a63295958f639123",
+      "tools/m8a_p1_camera_check.py": "c76e9a2a3a78a6ed32ea88cdcd9daf549bf89e79d6ae4dd5b1aef9cd8f6f6e1e",
+      "tools/m8a_p1_camera_launch.py": "ba1c693817b1ead43a4b027ebd83e5181dd292011e09ecd8d7edda956864758d",
+      "tools/m8a_p1_common.py": "b5860c10d450e905f309d54f4407d15c2f53bfaa525dcfcdb26bfe0c5438493e",
+      "tools/m8a_p1_compat.py": "db55be5f4afe00db01dc8563fcbcdddf766f86f6f9c05a7f2a64e7a0134a8b4e",
+      "tools/m8a_p1_cuda_headers.py": "27988fa1cd773475eef295348fddd19075f2ab598a1fa7d2089f07397180db11",
+      "tools/m8a_p1_download.py": "e89d89951f584dc2780cd5488c4a8eed54e2c197725bb465fde6dd5d026c0ed6",
+      "tools/m8a_p1_gpu_probe.py": "db5637202324f217c9c82c94176eb8adb5adf7a623856f8ae5f96f048543395d",
+      "tools/m8a_p1_isolate.py": "d20c5bca3bee1f8e29d66f493cf65ad92a5f625f4690ad414192172f6ca3428f",
+      "tools/m8a_p1_lock.py": "f58ed2e8a388f74cef6edc1f916483255a73f4241c0dabe5ce0dfc4a1e5b2cea",
+      "tools/m8a_p1_safe_extract.py": "4d3d969d75e905dc2c1f864cdf54ea81cc3eb48fa3eb332b87d838f68cd1ebb2",
+      "tools/m8a_p1_setup.py": "65f615c05390b10c8acd29fb9c4c9c9d440ba664276b89af05fc1066e807de55",
+      "tools/m8a_p1_toolkit.py": "0bd89db1cad75abd7bf7174d3461e12e8bd81bf901e1d0d8480e6552e1611a7f",
+      "tests/test_m8a_p1.py": "73b5cbe679eb63120e2e96d7a0a579a288fde21424c62897fbc53b422207b5e9"
+    }
+  },
+  "status": "Passed_BasicReadOnlyContract",
+  "kind": "OfflineM7AShadowCalibrationAndSyntheticBoxTests",
+  "sample_id": "Town01_m5o_train_00/00074004",
+  "frame_id": 74004,
+  "timestamp_s": 10.146551871672273,
+  "camera_order": [
+    "front",
+    "front_left",
+    "front_right",
+    "rear_left",
+    "rear_right",
+    "rear"
+  ],
+  "source_image_shape": [
+    384,
+    640,
+    3
+  ],
+  "output_image_shape": [
+    512,
+    1408,
+    3
+  ],
+  "RGB_to_BGR": true,
+  "official_to_rgb": false,
+  "augmentation": {
+    "scale": 2.2,
+    "resized_dims": [
+      1408,
+      844
+    ],
+    "crop": [
+      0,
+      332,
+      1408,
+      844
+    ],
+    "flip": false,
+    "rotation_deg": 0,
+    "matrix": [
+      [
+        2.2,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.2,
+        -332.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "integer_resize_height_rounding_pixels": 0.8,
+    "note": "Official nominal scale convention; image sampling has subpixel rounding; substantial upper-image crop, not quality validated"
+  },
+  "camera_checks": [
+    {
+      "camera": "front",
+      "roundtrip_xyz_max_m": 7.105427357601002e-15,
+      "new_K": [
+        [
+          590.7261531524493,
+          0.0,
+          702.9000152349472
+        ],
+        [
+          0.0,
+          590.7261531524493,
+          89.30000913143158
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_cam_to_ego": [
+        [
+          0.0,
+          -0.08715573698282242,
+          0.9961947202682495,
+          1.649999976158142
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -0.9961947202682495,
+          -0.08715573698282242,
+          1.649999976158142
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lidar2img": [
+        [
+          700.2252538182518,
+          -590.7261531524493,
+          -61.26176620779538,
+          -1054.2897393231765
+        ],
+        [
+          37.475022765461965,
+          0.0,
+          -596.2612572570896,
+          921.9972735886837
+        ],
+        [
+          0.996194677253206,
+          0.0,
+          -0.08715573321949407,
+          -1.4999142359824473
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "camera": "front_left",
+      "roundtrip_xyz_max_m": 3.552713678800501e-14,
+      "new_K": [
+        [
+          590.7261531524493,
+          0.0,
+          702.9000152349472
+        ],
+        [
+          0.0,
+          590.7261531524493,
+          89.30000913143158
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_cam_to_ego": [
+        [
+          0.866025447845459,
+          -0.06093467026948929,
+          0.4962730407714844,
+          1.100000023841858
+        ],
+        [
+          -0.4999999701976776,
+          -0.10554195940494537,
+          0.8595702052116394,
+          0.6000000238418579
+        ],
+        [
+          0.0,
+          -0.9925461411476135,
+          -0.12186934798955917,
+          1.600000023841858
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lidar2img": [
+        [
+          860.4141780309672,
+          308.8288598264374,
+          -85.66196944968344,
+          -994.6937864450186
+        ],
+        [
+          8.321483530929463,
+          14.41323386231928,
+          -597.2059095060193,
+          937.7278967046775
+        ],
+        [
+          0.49627303237831055,
+          0.8595702014724772,
+          -0.12186935386324904,
+          -0.8666515197386593
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "camera": "front_right",
+      "roundtrip_xyz_max_m": 1.8207657603852567e-14,
+      "new_K": [
+        [
+          590.7261531524493,
+          0.0,
+          702.9000152349472
+        ],
+        [
+          0.0,
+          590.7261531524493,
+          89.30000913143158
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_cam_to_ego": [
+        [
+          -0.866025447845459,
+          -0.06093467026948929,
+          0.4962730407714844,
+          1.100000023841858
+        ],
+        [
+          -0.4999999701976776,
+          0.10554195940494537,
+          -0.8595702052116394,
+          -0.6000000238418579
+        ],
+        [
+          0.0,
+          -0.9925461411476135,
+          -0.12186934798955917,
+          1.600000023841858
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lidar2img": [
+        [
+          -162.7535339921513,
+          -899.5549555945845,
+          -85.66197192461841,
+          -223.6449464103688
+        ],
+        [
+          8.321483530929463,
+          -14.41323386231928,
+          -597.2059095060193,
+          937.7278967046775
+        ],
+        [
+          0.49627303237831055,
+          -0.8595702014724772,
+          -0.12186935386324904,
+          -0.8666515197386593
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "camera": "rear_left",
+      "roundtrip_xyz_max_m": 2.7755575615628914e-14,
+      "new_K": [
+        [
+          590.7261531524493,
+          0.0,
+          702.9000152349472
+        ],
+        [
+          0.0,
+          590.7261531524493,
+          89.30000913143158
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_cam_to_ego": [
+        [
+          0.8660253882408142,
+          0.060934681445360184,
+          -0.49627313017845154,
+          -1.2999999523162842
+        ],
+        [
+          0.5000000596046448,
+          -0.10554195195436478,
+          0.8595701456069946,
+          0.6000000238418579
+        ],
+        [
+          0.0,
+          -0.9925461411476135,
+          -0.12186934798955917,
+          1.600000023841858
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lidar2img": [
+        [
+          162.75343839232488,
+          899.5549797271074,
+          -85.66197177472046,
+          -191.09439025209969
+        ],
+        [
+          -8.321485134471466,
+          14.41323307045036,
+          -597.2059095057664,
+          936.0635989838024
+        ],
+        [
+          -0.4962731280096544,
+          0.8595701542473412,
+          -0.12186935384815524,
+          -0.965906186727918
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "camera": "rear_right",
+      "roundtrip_xyz_max_m": 3.552713678800501e-14,
+      "new_K": [
+        [
+          590.7261531524493,
+          0.0,
+          702.9000152349472
+        ],
+        [
+          0.0,
+          590.7261531524493,
+          89.30000913143158
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_cam_to_ego": [
+        [
+          -0.8660253882408142,
+          0.060934681445360184,
+          -0.49627313017845154,
+          -1.2999999523162842
+        ],
+        [
+          0.5000000596046448,
+          0.10554195195436478,
+          -0.8595701456069946,
+          -0.6000000238418579
+        ],
+        [
+          0.0,
+          -0.9925461411476135,
+          -0.12186934798955917,
+          1.600000023841858
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lidar2img": [
+        [
+          -860.4142168696869,
+          -308.8287693048166,
+          -85.66196957836252,
+          -1166.776556481067
+        ],
+        [
+          -8.321485134471466,
+          -14.41323307045036,
+          -597.2059095057664,
+          936.0635989838024
+        ],
+        [
+          -0.4962731280096544,
+          -0.8595701542473412,
+          -0.12186935384815524,
+          -0.965906186727918
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "camera": "rear",
+      "roundtrip_xyz_max_m": 1.1657341758564144e-14,
+      "new_K": [
+        [
+          590.7261531524493,
+          0.0,
+          702.9000152349472
+        ],
+        [
+          0.0,
+          590.7261531524493,
+          89.30000913143158
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_cam_to_ego": [
+        [
+          8.742277657347586e-08,
+          0.12186934798955917,
+          -0.9925461411476135,
+          -1.600000023841858
+        ],
+        [
+          1.0,
+          -1.0654156668010728e-08,
+          8.677113783051027e-08,
+          0.0
+        ],
+        [
+          0.0,
+          -0.9925461411476135,
+          -0.12186934798955917,
+          1.600000023841858
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lidar2img": [
+        [
+          -697.660659844512,
+          590.7262141438813,
+          -85.66196824723846,
+          -979.1979211468234
+        ],
+        [
+          -16.64296867087198,
+          1.4549745316329992e-06,
+          -597.2059094478143,
+          928.9007190848068
+        ],
+        [
+          -0.9925461607142455,
+          8.677114124698275e-08,
+          -0.12186935039204053,
+          -1.3930829172740806
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "HS_frame": "x_forward_y_left_z_up",
+  "camera_frame": "x_right_y_down_z_forward",
+  "model_reference_frame": "HS ego used as right-handed pseudo-LiDAR frame; not claiming identical nuScenes sensor mounting",
+  "old_framework_box": {
+    "center": "bottom_center; head internally gravity center then z-=h/2",
+    "dims": "width,length,height",
+    "yaw_formula": "yaw_old_lidar = -yaw_HS - pi/2; yaw_HS=-yaw_CARLA",
+    "non_square_corner_max_m": 3.912257510755294e-07,
+    "projection_roundtrip_max_m": 8.881784197001252e-15
+  },
+  "GT_model_input": false,
+  "carla_model_forward": false,
+  "limitations": [
+    "No full adapter",
+    "No zero-shot or detection quality evaluation",
+    "No live synchronization evidence",
+    "No control or planning authorization"
+  ],
+  "actual_camera_images": 6,
+  "new_CARLA_execution": false,
+  "scope": "Minimal contract only; full CARLA inference adapter and domain quality not run",
+  "yaw_scope": "local ego yaw; arbitrary pitched/rolled3D Actor orientation not certified by this flat synthetic box",
+  "RGB_channel_check": "official NormalizeMultiviewImage sentinel test; to_rgb=False after RGB->BGR",
+  "camera_order_scope": "HS order frozen and matrices paired; no claim of canonical nuScenes dataset serialization order"
+}

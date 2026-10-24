@@ -1,0 +1,162 @@
+--- /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/__init__.py
++++ /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/__init__.py
+@@ -19,7 +19,7 @@
+ 
+ 
+ mmcv_minimum_version = '1.3.8'
+-mmcv_maximum_version = '1.4.0'
++mmcv_maximum_version = '1.7.2'
+ mmcv_version = digit_version(mmcv.__version__)
+ 
+ 
+--- /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmdet/__init__.py
++++ /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmdet/__init__.py
+@@ -17,7 +17,7 @@
+ 
+ 
+ mmcv_minimum_version = '1.3.17'
+-mmcv_maximum_version = '1.6.0'
++mmcv_maximum_version = '1.7.2'
+ mmcv_version = digit_version(mmcv.__version__)
+ 
+ 
+--- /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmseg/__init__.py
++++ /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmseg/__init__.py
+@@ -7,7 +7,7 @@
+ from .version import __version__, version_info
+ 
+ MMCV_MIN = '1.3.13'
+-MMCV_MAX = '1.5.0'
++MMCV_MAX = '1.7.2'
+ 
+ 
+ def digit_version(version_str: str, length: int = 4):
+--- /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/ball_query/src/ball_query.cpp
++++ /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/ball_query/src/ball_query.cpp
+@@ -1,7 +1,6 @@
+ // Modified from
+ // https://github.com/sshaoshuai/Pointnet2.PyTorch/tree/master/pointnet2/src/ball_query.cpp
+ 
+-#include <THC/THC.h>
+ #include <cuda.h>
+ #include <cuda_runtime_api.h>
+ #include <torch/extension.h>
+--- /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/ball_query/src/ball_query.cpp
++++ /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/ball_query/src/ball_query.cpp
+@@ -8,7 +8,6 @@
+ 
+ #include <vector>
+ 
+-extern THCState *state;
+ 
+ #define CHECK_CUDA(x) \
+   TORCH_CHECK(x.type().is_cuda(), #x, " must be a CUDAtensor ")
+--- /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/furthest_point_sample/src/furthest_point_sample.cpp
++++ /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/furthest_point_sample/src/furthest_point_sample.cpp
+@@ -2,7 +2,6 @@
+ // https://github.com/sshaoshuai/Pointnet2.PyTorch/tree/master/pointnet2/src/sampling.cpp
+ 
+ #include <ATen/cuda/CUDAContext.h>
+-#include <THC/THC.h>
+ #include <torch/extension.h>
+ #include <torch/serialize/tensor.h>
+ 
+--- /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/furthest_point_sample/src/furthest_point_sample.cpp
++++ /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/furthest_point_sample/src/furthest_point_sample.cpp
+@@ -7,7 +7,6 @@
+ 
+ #include <vector>
+ 
+-extern THCState *state;
+ 
+ int furthest_point_sampling_wrapper(int b, int n, int m,
+                                     at::Tensor points_tensor,
+--- /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/gather_points/src/gather_points.cpp
++++ /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/gather_points/src/gather_points.cpp
+@@ -1,5 +1,4 @@
+ #include <ATen/cuda/CUDAContext.h>
+-#include <THC/THC.h>
+ #include <torch/extension.h>
+ #include <torch/serialize/tensor.h>
+ 
+--- /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/gather_points/src/gather_points.cpp
++++ /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/gather_points/src/gather_points.cpp
+@@ -4,7 +4,6 @@
+ 
+ #include <vector>
+ 
+-extern THCState *state;
+ 
+ int gather_points_wrapper(int b, int c, int n, int npoints,
+                           at::Tensor points_tensor, at::Tensor idx_tensor,
+--- /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/group_points/src/group_points.cpp
++++ /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/group_points/src/group_points.cpp
+@@ -1,7 +1,6 @@
+ // Modified from
+ // https://github.com/sshaoshuai/Pointnet2.PyTorch/tree/master/pointnet2/src/group_points.cpp
+ 
+-#include <THC/THC.h>
+ #include <cuda.h>
+ #include <cuda_runtime_api.h>
+ #include <torch/extension.h>
+--- /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/group_points/src/group_points.cpp
++++ /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/group_points/src/group_points.cpp
+@@ -8,7 +8,6 @@
+ 
+ #include <vector>
+ 
+-extern THCState *state;
+ 
+ int group_points_wrapper(int b, int c, int n, int npoints, int nsample,
+                          at::Tensor points_tensor, at::Tensor idx_tensor,
+--- /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/interpolate/src/interpolate.cpp
++++ /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/interpolate/src/interpolate.cpp
+@@ -1,7 +1,6 @@
+ // Modified from
+ // https://github.com/sshaoshuai/Pointnet2.PyTorch/tree/master/pointnet2/src/interpolate.cpp
+ 
+-#include <THC/THC.h>
+ #include <cuda.h>
+ #include <cuda_runtime_api.h>
+ #include <math.h>
+--- /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/interpolate/src/interpolate.cpp
++++ /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/interpolate/src/interpolate.cpp
+@@ -11,7 +11,6 @@
+ 
+ #include <vector>
+ 
+-extern THCState *state;
+ 
+ void three_nn_wrapper(int b, int n, int m, at::Tensor unknown_tensor,
+                       at::Tensor known_tensor, at::Tensor dist2_tensor,
+--- /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/knn/src/knn.cpp
++++ /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/knn/src/knn.cpp
+@@ -3,7 +3,6 @@
+ #include <torch/serialize/tensor.h>
+ #include <torch/extension.h>
+ #include <vector>
+-#include <THC/THC.h>
+ #include <ATen/cuda/CUDAContext.h>
+ 
+ extern THCState *state;
+--- /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/knn/src/knn.cpp
++++ /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/ops/knn/src/knn.cpp
+@@ -5,7 +5,6 @@
+ #include <vector>
+ #include <ATen/cuda/CUDAContext.h>
+ 
+-extern THCState *state;
+ 
+ #define CHECK_CUDA(x) TORCH_CHECK(x.is_cuda(), #x, " must be a CUDAtensor ")
+ #define CHECK_CONTIGUOUS(x) TORCH_CHECK(x.is_contiguous(), #x, " must be contiguous ")
+--- /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/requirements/runtime.txt
++++ /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/requirements/runtime.txt
+@@ -1,7 +1,7 @@
+ lyft_dataset_sdk
+ networkx>=2.2,<2.3
+ # we may unlock the verion of numba in the future
+-numba==0.48.0
++numba==0.53.1
+ numpy<1.20.0
+ nuscenes-devkit
+ plyfile

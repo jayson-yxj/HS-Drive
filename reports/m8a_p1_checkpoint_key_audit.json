@@ -1,0 +1,5988 @@
+{
+  "provenance": {
+    "kind": "ActualCompleteModelTensorAudit",
+    "base": "f4c49a5dbf20f5ee4870f78c93eaf0f87ae2434e",
+    "git_head": "e7a7ac0a164059d50b5ca0caaac8cc4e562c92d5",
+    "sources": {
+      "configs/m8a/p1_protocol.json": "c37fb7b273ea6671b454d79648689e12a6325bc889101bb74ab55026e490d4a4",
+      "configs/m8a/p1_runtime_requirements.txt": "7c377b8c6ccdf1d8d3340428cf360aace658fab703a7a8ddacc369e5de42aa8b",
+      "tools/m8a_p1_build.py": "1385ea0ff5a73473ca96197af39f7199bc803e69d76f5793a63295958f639123",
+      "tools/m8a_p1_camera_check.py": "c76e9a2a3a78a6ed32ea88cdcd9daf549bf89e79d6ae4dd5b1aef9cd8f6f6e1e",
+      "tools/m8a_p1_camera_launch.py": "ba1c693817b1ead43a4b027ebd83e5181dd292011e09ecd8d7edda956864758d",
+      "tools/m8a_p1_common.py": "b5860c10d450e905f309d54f4407d15c2f53bfaa525dcfcdb26bfe0c5438493e",
+      "tools/m8a_p1_compat.py": "db55be5f4afe00db01dc8563fcbcdddf766f86f6f9c05a7f2a64e7a0134a8b4e",
+      "tools/m8a_p1_cuda_headers.py": "27988fa1cd773475eef295348fddd19075f2ab598a1fa7d2089f07397180db11",
+      "tools/m8a_p1_download.py": "e89d89951f584dc2780cd5488c4a8eed54e2c197725bb465fde6dd5d026c0ed6",
+      "tools/m8a_p1_gpu_probe.py": "db5637202324f217c9c82c94176eb8adb5adf7a623856f8ae5f96f048543395d",
+      "tools/m8a_p1_isolate.py": "78e3c9e3fe9e54a339ec9d98fcf0af458946382fb17bac9817e5d333526b56b0",
+      "tools/m8a_p1_lock.py": "f58ed2e8a388f74cef6edc1f916483255a73f4241c0dabe5ce0dfc4a1e5b2cea",
+      "tools/m8a_p1_report.py": "09b23e375ca6159afb9239442bc757a1783806de0fd71ddbf48a95599e0ba417",
+      "tools/m8a_p1_safe_extract.py": "4d3d969d75e905dc2c1f864cdf54ea81cc3eb48fa3eb332b87d838f68cd1ebb2",
+      "tools/m8a_p1_setup.py": "65f615c05390b10c8acd29fb9c4c9c9d440ba664276b89af05fc1066e807de55",
+      "tools/m8a_p1_toolkit.py": "0bd89db1cad75abd7bf7174d3461e12e8bd81bf901e1d0d8480e6552e1611a7f",
+      "tests/test_m8a_p1.py": "73b5cbe679eb63120e2e96d7a0a579a288fde21424c62897fbc53b422207b5e9"
+    },
+    "training_steps": 0,
+    "visual_control": false,
+    "execution_git_commit": "09c14d5a7a457d642bb16533adb76757f118359b",
+    "execution_source_hashes": {
+      "configs/m8a/p1_protocol.json": "c37fb7b273ea6671b454d79648689e12a6325bc889101bb74ab55026e490d4a4",
+      "configs/m8a/p1_runtime_requirements.txt": "7c377b8c6ccdf1d8d3340428cf360aace658fab703a7a8ddacc369e5de42aa8b",
+      "tools/m8a_p1_build.py": "1385ea0ff5a73473ca96197af39f7199bc803e69d76f5793a63295958f639123",
+      "tools/m8a_p1_camera_check.py": "c76e9a2a3a78a6ed32ea88cdcd9daf549bf89e79d6ae4dd5b1aef9cd8f6f6e1e",
+      "tools/m8a_p1_camera_launch.py": "ba1c693817b1ead43a4b027ebd83e5181dd292011e09ecd8d7edda956864758d",
+      "tools/m8a_p1_common.py": "b5860c10d450e905f309d54f4407d15c2f53bfaa525dcfcdb26bfe0c5438493e",
+      "tools/m8a_p1_compat.py": "db55be5f4afe00db01dc8563fcbcdddf766f86f6f9c05a7f2a64e7a0134a8b4e",
+      "tools/m8a_p1_cuda_headers.py": "27988fa1cd773475eef295348fddd19075f2ab598a1fa7d2089f07397180db11",
+      "tools/m8a_p1_download.py": "e89d89951f584dc2780cd5488c4a8eed54e2c197725bb465fde6dd5d026c0ed6",
+      "tools/m8a_p1_gpu_probe.py": "db5637202324f217c9c82c94176eb8adb5adf7a623856f8ae5f96f048543395d",
+      "tools/m8a_p1_isolate.py": "d20c5bca3bee1f8e29d66f493cf65ad92a5f625f4690ad414192172f6ca3428f",
+      "tools/m8a_p1_lock.py": "f58ed2e8a388f74cef6edc1f916483255a73f4241c0dabe5ce0dfc4a1e5b2cea",
+      "tools/m8a_p1_safe_extract.py": "4d3d969d75e905dc2c1f864cdf54ea81cc3eb48fa3eb332b87d838f68cd1ebb2",
+      "tools/m8a_p1_setup.py": "65f615c05390b10c8acd29fb9c4c9c9d440ba664276b89af05fc1066e807de55",
+      "tools/m8a_p1_toolkit.py": "0bd89db1cad75abd7bf7174d3461e12e8bd81bf901e1d0d8480e6552e1611a7f",
+      "tests/test_m8a_p1.py": "73b5cbe679eb63120e2e96d7a0a579a288fde21424c62897fbc53b422207b5e9"
+    }
+  },
+  "status": "Passed",
+  "missing": [],
+  "unexpected": [],
+  "shape_mismatches": [],
+  "keys": [
+    {
+      "key": "pts_bbox_head.code_weights",
+      "model_shape": [
+        10
+      ],
+      "checkpoint_shape": [
+        10
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.input_proj.weight",
+      "model_shape": [
+        256,
+        2048,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        256,
+        2048,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.input_proj.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.0.0.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.0.0.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.0.1.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.0.1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.0.3.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.0.3.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.0.4.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.0.4.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.0.6.weight",
+      "model_shape": [
+        10,
+        256
+      ],
+      "checkpoint_shape": [
+        10,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.0.6.bias",
+      "model_shape": [
+        10
+      ],
+      "checkpoint_shape": [
+        10
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.1.0.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.1.0.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.1.1.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.1.1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.1.3.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.1.3.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.1.4.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.1.4.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.1.6.weight",
+      "model_shape": [
+        10,
+        256
+      ],
+      "checkpoint_shape": [
+        10,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.1.6.bias",
+      "model_shape": [
+        10
+      ],
+      "checkpoint_shape": [
+        10
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.2.0.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.2.0.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.2.1.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.2.1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.2.3.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.2.3.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.2.4.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.2.4.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.2.6.weight",
+      "model_shape": [
+        10,
+        256
+      ],
+      "checkpoint_shape": [
+        10,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.2.6.bias",
+      "model_shape": [
+        10
+      ],
+      "checkpoint_shape": [
+        10
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.3.0.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.3.0.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.3.1.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.3.1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.3.3.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.3.3.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.3.4.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.3.4.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.3.6.weight",
+      "model_shape": [
+        10,
+        256
+      ],
+      "checkpoint_shape": [
+        10,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.3.6.bias",
+      "model_shape": [
+        10
+      ],
+      "checkpoint_shape": [
+        10
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.4.0.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.4.0.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.4.1.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.4.1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.4.3.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.4.3.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.4.4.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.4.4.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.4.6.weight",
+      "model_shape": [
+        10,
+        256
+      ],
+      "checkpoint_shape": [
+        10,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.4.6.bias",
+      "model_shape": [
+        10
+      ],
+      "checkpoint_shape": [
+        10
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.5.0.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.5.0.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.5.1.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.5.1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.5.3.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.5.3.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.5.4.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.5.4.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.5.6.weight",
+      "model_shape": [
+        10,
+        256
+      ],
+      "checkpoint_shape": [
+        10,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.cls_branches.5.6.bias",
+      "model_shape": [
+        10
+      ],
+      "checkpoint_shape": [
+        10
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.0.0.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.0.0.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.0.2.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.0.2.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.0.4.weight",
+      "model_shape": [
+        10,
+        256
+      ],
+      "checkpoint_shape": [
+        10,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.0.4.bias",
+      "model_shape": [
+        10
+      ],
+      "checkpoint_shape": [
+        10
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.1.0.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.1.0.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.1.2.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.1.2.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.1.4.weight",
+      "model_shape": [
+        10,
+        256
+      ],
+      "checkpoint_shape": [
+        10,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.1.4.bias",
+      "model_shape": [
+        10
+      ],
+      "checkpoint_shape": [
+        10
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.2.0.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.2.0.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.2.2.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.2.2.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.2.4.weight",
+      "model_shape": [
+        10,
+        256
+      ],
+      "checkpoint_shape": [
+        10,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.2.4.bias",
+      "model_shape": [
+        10
+      ],
+      "checkpoint_shape": [
+        10
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.3.0.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.3.0.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.3.2.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.3.2.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.3.4.weight",
+      "model_shape": [
+        10,
+        256
+      ],
+      "checkpoint_shape": [
+        10,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.3.4.bias",
+      "model_shape": [
+        10
+      ],
+      "checkpoint_shape": [
+        10
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.4.0.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.4.0.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.4.2.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.4.2.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.4.4.weight",
+      "model_shape": [
+        10,
+        256
+      ],
+      "checkpoint_shape": [
+        10,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.4.4.bias",
+      "model_shape": [
+        10
+      ],
+      "checkpoint_shape": [
+        10
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.5.0.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.5.0.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.5.2.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.5.2.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.5.4.weight",
+      "model_shape": [
+        10,
+        256
+      ],
+      "checkpoint_shape": [
+        10,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reg_branches.5.4.bias",
+      "model_shape": [
+        10
+      ],
+      "checkpoint_shape": [
+        10
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.adapt_pos3d.0.weight",
+      "model_shape": [
+        1024,
+        384,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        1024,
+        384,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.adapt_pos3d.0.bias",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.adapt_pos3d.2.weight",
+      "model_shape": [
+        256,
+        1024,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        256,
+        1024,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.adapt_pos3d.2.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.position_encoder.0.weight",
+      "model_shape": [
+        1024,
+        192,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        1024,
+        192,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.position_encoder.0.bias",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.position_encoder.2.weight",
+      "model_shape": [
+        256,
+        1024,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        256,
+        1024,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.position_encoder.2.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.reference_points.weight",
+      "model_shape": [
+        900,
+        3
+      ],
+      "checkpoint_shape": [
+        900,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.query_embedding.0.weight",
+      "model_shape": [
+        256,
+        384
+      ],
+      "checkpoint_shape": [
+        256,
+        384
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.query_embedding.0.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.query_embedding.2.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.query_embedding.2.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.0.attentions.0.attn.in_proj_weight",
+      "model_shape": [
+        768,
+        256
+      ],
+      "checkpoint_shape": [
+        768,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.0.attentions.0.attn.in_proj_bias",
+      "model_shape": [
+        768
+      ],
+      "checkpoint_shape": [
+        768
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.0.attentions.0.attn.out_proj.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.0.attentions.0.attn.out_proj.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.0.attentions.1.attn.in_proj_weight",
+      "model_shape": [
+        768,
+        256
+      ],
+      "checkpoint_shape": [
+        768,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.0.attentions.1.attn.in_proj_bias",
+      "model_shape": [
+        768
+      ],
+      "checkpoint_shape": [
+        768
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.0.attentions.1.attn.out_proj.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.0.attentions.1.attn.out_proj.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.0.ffns.0.layers.0.0.weight",
+      "model_shape": [
+        2048,
+        256
+      ],
+      "checkpoint_shape": [
+        2048,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.0.ffns.0.layers.0.0.bias",
+      "model_shape": [
+        2048
+      ],
+      "checkpoint_shape": [
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.0.ffns.0.layers.1.weight",
+      "model_shape": [
+        256,
+        2048
+      ],
+      "checkpoint_shape": [
+        256,
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.0.ffns.0.layers.1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.0.norms.0.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.0.norms.0.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.0.norms.1.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.0.norms.1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.0.norms.2.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.0.norms.2.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.1.attentions.0.attn.in_proj_weight",
+      "model_shape": [
+        768,
+        256
+      ],
+      "checkpoint_shape": [
+        768,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.1.attentions.0.attn.in_proj_bias",
+      "model_shape": [
+        768
+      ],
+      "checkpoint_shape": [
+        768
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.1.attentions.0.attn.out_proj.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.1.attentions.0.attn.out_proj.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.1.attentions.1.attn.in_proj_weight",
+      "model_shape": [
+        768,
+        256
+      ],
+      "checkpoint_shape": [
+        768,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.1.attentions.1.attn.in_proj_bias",
+      "model_shape": [
+        768
+      ],
+      "checkpoint_shape": [
+        768
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.1.attentions.1.attn.out_proj.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.1.attentions.1.attn.out_proj.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.1.ffns.0.layers.0.0.weight",
+      "model_shape": [
+        2048,
+        256
+      ],
+      "checkpoint_shape": [
+        2048,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.1.ffns.0.layers.0.0.bias",
+      "model_shape": [
+        2048
+      ],
+      "checkpoint_shape": [
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.1.ffns.0.layers.1.weight",
+      "model_shape": [
+        256,
+        2048
+      ],
+      "checkpoint_shape": [
+        256,
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.1.ffns.0.layers.1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.1.norms.0.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.1.norms.0.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.1.norms.1.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.1.norms.1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.1.norms.2.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.1.norms.2.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.2.attentions.0.attn.in_proj_weight",
+      "model_shape": [
+        768,
+        256
+      ],
+      "checkpoint_shape": [
+        768,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.2.attentions.0.attn.in_proj_bias",
+      "model_shape": [
+        768
+      ],
+      "checkpoint_shape": [
+        768
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.2.attentions.0.attn.out_proj.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.2.attentions.0.attn.out_proj.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.2.attentions.1.attn.in_proj_weight",
+      "model_shape": [
+        768,
+        256
+      ],
+      "checkpoint_shape": [
+        768,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.2.attentions.1.attn.in_proj_bias",
+      "model_shape": [
+        768
+      ],
+      "checkpoint_shape": [
+        768
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.2.attentions.1.attn.out_proj.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.2.attentions.1.attn.out_proj.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.2.ffns.0.layers.0.0.weight",
+      "model_shape": [
+        2048,
+        256
+      ],
+      "checkpoint_shape": [
+        2048,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.2.ffns.0.layers.0.0.bias",
+      "model_shape": [
+        2048
+      ],
+      "checkpoint_shape": [
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.2.ffns.0.layers.1.weight",
+      "model_shape": [
+        256,
+        2048
+      ],
+      "checkpoint_shape": [
+        256,
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.2.ffns.0.layers.1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.2.norms.0.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.2.norms.0.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.2.norms.1.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.2.norms.1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.2.norms.2.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.2.norms.2.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.3.attentions.0.attn.in_proj_weight",
+      "model_shape": [
+        768,
+        256
+      ],
+      "checkpoint_shape": [
+        768,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.3.attentions.0.attn.in_proj_bias",
+      "model_shape": [
+        768
+      ],
+      "checkpoint_shape": [
+        768
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.3.attentions.0.attn.out_proj.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.3.attentions.0.attn.out_proj.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.3.attentions.1.attn.in_proj_weight",
+      "model_shape": [
+        768,
+        256
+      ],
+      "checkpoint_shape": [
+        768,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.3.attentions.1.attn.in_proj_bias",
+      "model_shape": [
+        768
+      ],
+      "checkpoint_shape": [
+        768
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.3.attentions.1.attn.out_proj.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.3.attentions.1.attn.out_proj.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.3.ffns.0.layers.0.0.weight",
+      "model_shape": [
+        2048,
+        256
+      ],
+      "checkpoint_shape": [
+        2048,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.3.ffns.0.layers.0.0.bias",
+      "model_shape": [
+        2048
+      ],
+      "checkpoint_shape": [
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.3.ffns.0.layers.1.weight",
+      "model_shape": [
+        256,
+        2048
+      ],
+      "checkpoint_shape": [
+        256,
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.3.ffns.0.layers.1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.3.norms.0.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.3.norms.0.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.3.norms.1.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.3.norms.1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.3.norms.2.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.3.norms.2.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.4.attentions.0.attn.in_proj_weight",
+      "model_shape": [
+        768,
+        256
+      ],
+      "checkpoint_shape": [
+        768,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.4.attentions.0.attn.in_proj_bias",
+      "model_shape": [
+        768
+      ],
+      "checkpoint_shape": [
+        768
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.4.attentions.0.attn.out_proj.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.4.attentions.0.attn.out_proj.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.4.attentions.1.attn.in_proj_weight",
+      "model_shape": [
+        768,
+        256
+      ],
+      "checkpoint_shape": [
+        768,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.4.attentions.1.attn.in_proj_bias",
+      "model_shape": [
+        768
+      ],
+      "checkpoint_shape": [
+        768
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.4.attentions.1.attn.out_proj.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.4.attentions.1.attn.out_proj.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.4.ffns.0.layers.0.0.weight",
+      "model_shape": [
+        2048,
+        256
+      ],
+      "checkpoint_shape": [
+        2048,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.4.ffns.0.layers.0.0.bias",
+      "model_shape": [
+        2048
+      ],
+      "checkpoint_shape": [
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.4.ffns.0.layers.1.weight",
+      "model_shape": [
+        256,
+        2048
+      ],
+      "checkpoint_shape": [
+        256,
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.4.ffns.0.layers.1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.4.norms.0.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.4.norms.0.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.4.norms.1.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.4.norms.1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.4.norms.2.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.4.norms.2.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.5.attentions.0.attn.in_proj_weight",
+      "model_shape": [
+        768,
+        256
+      ],
+      "checkpoint_shape": [
+        768,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.5.attentions.0.attn.in_proj_bias",
+      "model_shape": [
+        768
+      ],
+      "checkpoint_shape": [
+        768
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.5.attentions.0.attn.out_proj.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.5.attentions.0.attn.out_proj.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.5.attentions.1.attn.in_proj_weight",
+      "model_shape": [
+        768,
+        256
+      ],
+      "checkpoint_shape": [
+        768,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.5.attentions.1.attn.in_proj_bias",
+      "model_shape": [
+        768
+      ],
+      "checkpoint_shape": [
+        768
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.5.attentions.1.attn.out_proj.weight",
+      "model_shape": [
+        256,
+        256
+      ],
+      "checkpoint_shape": [
+        256,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.5.attentions.1.attn.out_proj.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.5.ffns.0.layers.0.0.weight",
+      "model_shape": [
+        2048,
+        256
+      ],
+      "checkpoint_shape": [
+        2048,
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.5.ffns.0.layers.0.0.bias",
+      "model_shape": [
+        2048
+      ],
+      "checkpoint_shape": [
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.5.ffns.0.layers.1.weight",
+      "model_shape": [
+        256,
+        2048
+      ],
+      "checkpoint_shape": [
+        256,
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.5.ffns.0.layers.1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.5.norms.0.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.5.norms.0.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.5.norms.1.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.5.norms.1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.5.norms.2.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.layers.5.norms.2.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.post_norm.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "pts_bbox_head.transformer.decoder.post_norm.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.conv1.weight",
+      "model_shape": [
+        64,
+        3,
+        7,
+        7
+      ],
+      "checkpoint_shape": [
+        64,
+        3,
+        7,
+        7
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.bn1.weight",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.bn1.bias",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.bn1.running_mean",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.bn1.running_var",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.bn1.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.conv1.weight",
+      "model_shape": [
+        64,
+        64,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        64,
+        64,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.bn1.weight",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.bn1.bias",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.bn1.running_mean",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.bn1.running_var",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.bn1.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.conv2.weight",
+      "model_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.bn2.weight",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.bn2.bias",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.bn2.running_mean",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.bn2.running_var",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.bn2.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.conv3.weight",
+      "model_shape": [
+        256,
+        64,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        256,
+        64,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.bn3.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.bn3.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.bn3.running_mean",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.bn3.running_var",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.bn3.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.downsample.0.weight",
+      "model_shape": [
+        256,
+        64,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        256,
+        64,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.downsample.1.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.downsample.1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.downsample.1.running_mean",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.downsample.1.running_var",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.0.downsample.1.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.1.conv1.weight",
+      "model_shape": [
+        64,
+        256,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        64,
+        256,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.1.bn1.weight",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.1.bn1.bias",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.1.bn1.running_mean",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.1.bn1.running_var",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.1.bn1.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.1.conv2.weight",
+      "model_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.1.bn2.weight",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.1.bn2.bias",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.1.bn2.running_mean",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.1.bn2.running_var",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.1.bn2.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.1.conv3.weight",
+      "model_shape": [
+        256,
+        64,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        256,
+        64,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.1.bn3.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.1.bn3.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.1.bn3.running_mean",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.1.bn3.running_var",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.1.bn3.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.2.conv1.weight",
+      "model_shape": [
+        64,
+        256,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        64,
+        256,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.2.bn1.weight",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.2.bn1.bias",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.2.bn1.running_mean",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.2.bn1.running_var",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.2.bn1.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.2.conv2.weight",
+      "model_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.2.bn2.weight",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.2.bn2.bias",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.2.bn2.running_mean",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.2.bn2.running_var",
+      "model_shape": [
+        64
+      ],
+      "checkpoint_shape": [
+        64
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.2.bn2.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.2.conv3.weight",
+      "model_shape": [
+        256,
+        64,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        256,
+        64,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.2.bn3.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.2.bn3.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.2.bn3.running_mean",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.2.bn3.running_var",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer1.2.bn3.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.conv1.weight",
+      "model_shape": [
+        128,
+        256,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        128,
+        256,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.bn1.weight",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.bn1.bias",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.bn1.running_mean",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.bn1.running_var",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.bn1.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.conv2.weight",
+      "model_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.bn2.weight",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.bn2.bias",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.bn2.running_mean",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.bn2.running_var",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.bn2.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.conv3.weight",
+      "model_shape": [
+        512,
+        128,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        512,
+        128,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.bn3.weight",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.bn3.bias",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.bn3.running_mean",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.bn3.running_var",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.bn3.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.downsample.0.weight",
+      "model_shape": [
+        512,
+        256,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        512,
+        256,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.downsample.1.weight",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.downsample.1.bias",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.downsample.1.running_mean",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.downsample.1.running_var",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.0.downsample.1.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.1.conv1.weight",
+      "model_shape": [
+        128,
+        512,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        128,
+        512,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.1.bn1.weight",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.1.bn1.bias",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.1.bn1.running_mean",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.1.bn1.running_var",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.1.bn1.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.1.conv2.weight",
+      "model_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.1.bn2.weight",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.1.bn2.bias",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.1.bn2.running_mean",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.1.bn2.running_var",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.1.bn2.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.1.conv3.weight",
+      "model_shape": [
+        512,
+        128,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        512,
+        128,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.1.bn3.weight",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.1.bn3.bias",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.1.bn3.running_mean",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.1.bn3.running_var",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.1.bn3.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.2.conv1.weight",
+      "model_shape": [
+        128,
+        512,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        128,
+        512,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.2.bn1.weight",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.2.bn1.bias",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.2.bn1.running_mean",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.2.bn1.running_var",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.2.bn1.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.2.conv2.weight",
+      "model_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.2.bn2.weight",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.2.bn2.bias",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.2.bn2.running_mean",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.2.bn2.running_var",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.2.bn2.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.2.conv3.weight",
+      "model_shape": [
+        512,
+        128,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        512,
+        128,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.2.bn3.weight",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.2.bn3.bias",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.2.bn3.running_mean",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.2.bn3.running_var",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.2.bn3.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.3.conv1.weight",
+      "model_shape": [
+        128,
+        512,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        128,
+        512,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.3.bn1.weight",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.3.bn1.bias",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.3.bn1.running_mean",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.3.bn1.running_var",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.3.bn1.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.3.conv2.weight",
+      "model_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.3.bn2.weight",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.3.bn2.bias",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.3.bn2.running_mean",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.3.bn2.running_var",
+      "model_shape": [
+        128
+      ],
+      "checkpoint_shape": [
+        128
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.3.bn2.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.3.conv3.weight",
+      "model_shape": [
+        512,
+        128,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        512,
+        128,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.3.bn3.weight",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.3.bn3.bias",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.3.bn3.running_mean",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.3.bn3.running_var",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer2.3.bn3.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.conv1.weight",
+      "model_shape": [
+        256,
+        512,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        256,
+        512,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.bn1.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.bn1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.bn1.running_mean",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.bn1.running_var",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.bn1.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.conv2.weight",
+      "model_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.conv2.conv_offset.weight",
+      "model_shape": [
+        27,
+        256,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        27,
+        256,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.conv2.conv_offset.bias",
+      "model_shape": [
+        27
+      ],
+      "checkpoint_shape": [
+        27
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.bn2.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.bn2.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.bn2.running_mean",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.bn2.running_var",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.bn2.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.conv3.weight",
+      "model_shape": [
+        1024,
+        256,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        1024,
+        256,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.bn3.weight",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.bn3.bias",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.bn3.running_mean",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.bn3.running_var",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.bn3.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.downsample.0.weight",
+      "model_shape": [
+        1024,
+        512,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        1024,
+        512,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.downsample.1.weight",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.downsample.1.bias",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.downsample.1.running_mean",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.downsample.1.running_var",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.0.downsample.1.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.1.conv1.weight",
+      "model_shape": [
+        256,
+        1024,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        256,
+        1024,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.1.bn1.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.1.bn1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.1.bn1.running_mean",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.1.bn1.running_var",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.1.bn1.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.1.conv2.weight",
+      "model_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.1.conv2.conv_offset.weight",
+      "model_shape": [
+        27,
+        256,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        27,
+        256,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.1.conv2.conv_offset.bias",
+      "model_shape": [
+        27
+      ],
+      "checkpoint_shape": [
+        27
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.1.bn2.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.1.bn2.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.1.bn2.running_mean",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.1.bn2.running_var",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.1.bn2.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.1.conv3.weight",
+      "model_shape": [
+        1024,
+        256,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        1024,
+        256,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.1.bn3.weight",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.1.bn3.bias",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.1.bn3.running_mean",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.1.bn3.running_var",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.1.bn3.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.2.conv1.weight",
+      "model_shape": [
+        256,
+        1024,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        256,
+        1024,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.2.bn1.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.2.bn1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.2.bn1.running_mean",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.2.bn1.running_var",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.2.bn1.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.2.conv2.weight",
+      "model_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.2.conv2.conv_offset.weight",
+      "model_shape": [
+        27,
+        256,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        27,
+        256,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.2.conv2.conv_offset.bias",
+      "model_shape": [
+        27
+      ],
+      "checkpoint_shape": [
+        27
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.2.bn2.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.2.bn2.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.2.bn2.running_mean",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.2.bn2.running_var",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.2.bn2.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.2.conv3.weight",
+      "model_shape": [
+        1024,
+        256,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        1024,
+        256,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.2.bn3.weight",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.2.bn3.bias",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.2.bn3.running_mean",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.2.bn3.running_var",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.2.bn3.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.3.conv1.weight",
+      "model_shape": [
+        256,
+        1024,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        256,
+        1024,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.3.bn1.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.3.bn1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.3.bn1.running_mean",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.3.bn1.running_var",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.3.bn1.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.3.conv2.weight",
+      "model_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.3.conv2.conv_offset.weight",
+      "model_shape": [
+        27,
+        256,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        27,
+        256,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.3.conv2.conv_offset.bias",
+      "model_shape": [
+        27
+      ],
+      "checkpoint_shape": [
+        27
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.3.bn2.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.3.bn2.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.3.bn2.running_mean",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.3.bn2.running_var",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.3.bn2.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.3.conv3.weight",
+      "model_shape": [
+        1024,
+        256,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        1024,
+        256,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.3.bn3.weight",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.3.bn3.bias",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.3.bn3.running_mean",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.3.bn3.running_var",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.3.bn3.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.4.conv1.weight",
+      "model_shape": [
+        256,
+        1024,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        256,
+        1024,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.4.bn1.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.4.bn1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.4.bn1.running_mean",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.4.bn1.running_var",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.4.bn1.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.4.conv2.weight",
+      "model_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.4.conv2.conv_offset.weight",
+      "model_shape": [
+        27,
+        256,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        27,
+        256,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.4.conv2.conv_offset.bias",
+      "model_shape": [
+        27
+      ],
+      "checkpoint_shape": [
+        27
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.4.bn2.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.4.bn2.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.4.bn2.running_mean",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.4.bn2.running_var",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.4.bn2.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.4.conv3.weight",
+      "model_shape": [
+        1024,
+        256,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        1024,
+        256,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.4.bn3.weight",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.4.bn3.bias",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.4.bn3.running_mean",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.4.bn3.running_var",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.4.bn3.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.5.conv1.weight",
+      "model_shape": [
+        256,
+        1024,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        256,
+        1024,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.5.bn1.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.5.bn1.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.5.bn1.running_mean",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.5.bn1.running_var",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.5.bn1.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.5.conv2.weight",
+      "model_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.5.conv2.conv_offset.weight",
+      "model_shape": [
+        27,
+        256,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        27,
+        256,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.5.conv2.conv_offset.bias",
+      "model_shape": [
+        27
+      ],
+      "checkpoint_shape": [
+        27
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.5.bn2.weight",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.5.bn2.bias",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.5.bn2.running_mean",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.5.bn2.running_var",
+      "model_shape": [
+        256
+      ],
+      "checkpoint_shape": [
+        256
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.5.bn2.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.5.conv3.weight",
+      "model_shape": [
+        1024,
+        256,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        1024,
+        256,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.5.bn3.weight",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.5.bn3.bias",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.5.bn3.running_mean",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.5.bn3.running_var",
+      "model_shape": [
+        1024
+      ],
+      "checkpoint_shape": [
+        1024
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer3.5.bn3.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.conv1.weight",
+      "model_shape": [
+        512,
+        1024,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        512,
+        1024,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.bn1.weight",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.bn1.bias",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.bn1.running_mean",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.bn1.running_var",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.bn1.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.conv2.weight",
+      "model_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.conv2.conv_offset.weight",
+      "model_shape": [
+        27,
+        512,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        27,
+        512,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.conv2.conv_offset.bias",
+      "model_shape": [
+        27
+      ],
+      "checkpoint_shape": [
+        27
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.bn2.weight",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.bn2.bias",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.bn2.running_mean",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.bn2.running_var",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.bn2.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.conv3.weight",
+      "model_shape": [
+        2048,
+        512,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        2048,
+        512,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.bn3.weight",
+      "model_shape": [
+        2048
+      ],
+      "checkpoint_shape": [
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.bn3.bias",
+      "model_shape": [
+        2048
+      ],
+      "checkpoint_shape": [
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.bn3.running_mean",
+      "model_shape": [
+        2048
+      ],
+      "checkpoint_shape": [
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.bn3.running_var",
+      "model_shape": [
+        2048
+      ],
+      "checkpoint_shape": [
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.bn3.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.downsample.0.weight",
+      "model_shape": [
+        2048,
+        1024,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        2048,
+        1024,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.downsample.1.weight",
+      "model_shape": [
+        2048
+      ],
+      "checkpoint_shape": [
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.downsample.1.bias",
+      "model_shape": [
+        2048
+      ],
+      "checkpoint_shape": [
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.downsample.1.running_mean",
+      "model_shape": [
+        2048
+      ],
+      "checkpoint_shape": [
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.downsample.1.running_var",
+      "model_shape": [
+        2048
+      ],
+      "checkpoint_shape": [
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.0.downsample.1.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.1.conv1.weight",
+      "model_shape": [
+        512,
+        2048,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        512,
+        2048,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.1.bn1.weight",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.1.bn1.bias",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.1.bn1.running_mean",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.1.bn1.running_var",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.1.bn1.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.1.conv2.weight",
+      "model_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.1.conv2.conv_offset.weight",
+      "model_shape": [
+        27,
+        512,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        27,
+        512,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.1.conv2.conv_offset.bias",
+      "model_shape": [
+        27
+      ],
+      "checkpoint_shape": [
+        27
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.1.bn2.weight",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.1.bn2.bias",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.1.bn2.running_mean",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.1.bn2.running_var",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.1.bn2.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.1.conv3.weight",
+      "model_shape": [
+        2048,
+        512,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        2048,
+        512,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.1.bn3.weight",
+      "model_shape": [
+        2048
+      ],
+      "checkpoint_shape": [
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.1.bn3.bias",
+      "model_shape": [
+        2048
+      ],
+      "checkpoint_shape": [
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.1.bn3.running_mean",
+      "model_shape": [
+        2048
+      ],
+      "checkpoint_shape": [
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.1.bn3.running_var",
+      "model_shape": [
+        2048
+      ],
+      "checkpoint_shape": [
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.1.bn3.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.2.conv1.weight",
+      "model_shape": [
+        512,
+        2048,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        512,
+        2048,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.2.bn1.weight",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.2.bn1.bias",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.2.bn1.running_mean",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.2.bn1.running_var",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.2.bn1.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.2.conv2.weight",
+      "model_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        512,
+        512,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.2.conv2.conv_offset.weight",
+      "model_shape": [
+        27,
+        512,
+        3,
+        3
+      ],
+      "checkpoint_shape": [
+        27,
+        512,
+        3,
+        3
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.2.conv2.conv_offset.bias",
+      "model_shape": [
+        27
+      ],
+      "checkpoint_shape": [
+        27
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.2.bn2.weight",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.2.bn2.bias",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.2.bn2.running_mean",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.2.bn2.running_var",
+      "model_shape": [
+        512
+      ],
+      "checkpoint_shape": [
+        512
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.2.bn2.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.2.conv3.weight",
+      "model_shape": [
+        2048,
+        512,
+        1,
+        1
+      ],
+      "checkpoint_shape": [
+        2048,
+        512,
+        1,
+        1
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.2.bn3.weight",
+      "model_shape": [
+        2048
+      ],
+      "checkpoint_shape": [
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.2.bn3.bias",
+      "model_shape": [
+        2048
+      ],
+      "checkpoint_shape": [
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.2.bn3.running_mean",
+      "model_shape": [
+        2048
+      ],
+      "checkpoint_shape": [
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.2.bn3.running_var",
+      "model_shape": [
+        2048
+      ],
+      "checkpoint_shape": [
+        2048
+      ],
+      "shape_equal": true
+    },
+    {
+      "key": "img_backbone.layer4.2.bn3.num_batches_tracked",
+      "model_shape": [],
+      "checkpoint_shape": [],
+      "shape_equal": true
+    }
+  ],
+  "model_tensor_count": 558,
+  "checkpoint_tensor_count": 558,
+  "source": {
+    "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/artifacts/probe13/checkpoint_key_audit.json",
+    "bytes": 111583,
+    "sha256": "396b500824f3f68085237da4d8fdf8e8e0e3f8881aa7c56377c39b066fda4235"
+  },
+  "safe_extraction": {
+    "status": "Passed",
+    "method": "torch.load_weights_only_CPU_restricted_bwrap",
+    "tensor_count": 558,
+    "sha256": "cf33dccb1d549c425a89cf346d6f05401c49f6cccbd5a579cb7d8937b5a6d591",
+    "output_format": "NPZ_numeric_arrays_only_allow_pickle_False",
+    "optimizer_exported": false
+  }
+}

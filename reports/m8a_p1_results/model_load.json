@@ -1,0 +1,28 @@
+{
+  "status": "Passed",
+  "strict": true,
+  "all_loaded_tensors_bitwise_equal": true,
+  "parameter_count": 35805405,
+  "checkpoint_tensor_count": 558,
+  "dcn_modules": [
+    "img_backbone.layer3.0.conv2",
+    "img_backbone.layer3.1.conv2",
+    "img_backbone.layer3.2.conv2",
+    "img_backbone.layer3.3.conv2",
+    "img_backbone.layer3.4.conv2",
+    "img_backbone.layer3.5.conv2",
+    "img_backbone.layer4.0.conv2",
+    "img_backbone.layer4.1.conv2",
+    "img_backbone.layer4.2.conv2"
+  ],
+  "num_query": 900,
+  "decoder_layers": 6,
+  "classes": 10,
+  "configuration_changes": {
+    "img_backbone.pretrained": {
+      "before": "ckpts/resnet50_msra-5891d200.pth",
+      "after": null,
+      "reason": "All final backbone tensors strictly loaded and compared"
+    }
+  }
+}
