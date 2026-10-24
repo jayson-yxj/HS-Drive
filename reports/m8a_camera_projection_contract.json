@@ -1,0 +1,41 @@
+{
+  "kind": "ConditionalCARLAProjectionContract_NotRun",
+  "base": "478070b51f03daf7e4ff2e7cb0b0a96e7507d9ba",
+  "git_head": "e0bfa7dc1c2d9806f5f20a66b583c92c3ca04e2e",
+  "sources": {
+    "configs/m8a/protocol.json": "a2eec5eb9ba50794461395a0c89321a8c8a995a21f04271da47194e944ed016f",
+    "tools/m8a_assets.py": "446fc56f724b3ec83504583a34d6bbc958e08ce01aa79ab2f6716798277b1710",
+    "tools/m8a_common.py": "c3d7ad1a98bfce1e733dfe11ef4cf5ac993350e5724ad42648f675039ec49ea8",
+    "tools/m8a_report.py": "2f04b55a7f9072aa3b47f087192c00e464eb48bd591636c4d111c9f5191622ba",
+    "tests/test_m8a_assets.py": "ef338fba56b1881db8fd1c5326c3e9db6b8b358aab42e16cb28f2e11ce52ba2c"
+  },
+  "protocol_sha256": "a2eec5eb9ba50794461395a0c89321a8c8a995a21f04271da47194e944ed016f",
+  "training_steps": 0,
+  "visual_control": false,
+  "status": "NotRun",
+  "reason": "AssetNoGo: no official checkpoint bytes acquired in the bounded attempt.",
+  "prerequisite": "AssetAccessPassed",
+  "additional_prerequisite": "OfficialModelLoadAndOriginalSpecificationGPUForwardPassed",
+  "new_analytic_point_tests": 0,
+  "new_non_square_box_tests": 0,
+  "existing_carla_KT_tests": 0,
+  "rgb_inference_executed": false,
+  "carla_adapter_developed": false,
+  "official_camera_order": null,
+  "verified_yaw_convention": null,
+  "projection_closure_residual": null,
+  "all_camera_depth_signs": null,
+  "historical_review_reference": {
+    "path": "reports/m8_0_perception_readiness.md",
+    "bytes": 15828,
+    "sha256": "6c201472a6db1d3a2dd0013e77886687b16b46ad9871a07bd69adec8e7702e19"
+  },
+  "historical_review_not_promoted_to_current_test": true,
+  "forbidden_inputs": [
+    "GT_actor_transform",
+    "instance_mask",
+    "GT_depth",
+    "future_trajectory"
+  ],
+  "control_connection": false
+}

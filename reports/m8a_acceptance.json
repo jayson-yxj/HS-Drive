@@ -1,0 +1,61 @@
+{
+  "kind": "ActualServerBoundedP0Exit",
+  "base": "478070b51f03daf7e4ff2e7cb0b0a96e7507d9ba",
+  "git_head": "e0bfa7dc1c2d9806f5f20a66b583c92c3ca04e2e",
+  "sources": {
+    "configs/m8a/protocol.json": "a2eec5eb9ba50794461395a0c89321a8c8a995a21f04271da47194e944ed016f",
+    "tools/m8a_assets.py": "446fc56f724b3ec83504583a34d6bbc958e08ce01aa79ab2f6716798277b1710",
+    "tools/m8a_common.py": "c3d7ad1a98bfce1e733dfe11ef4cf5ac993350e5724ad42648f675039ec49ea8",
+    "tools/m8a_report.py": "2f04b55a7f9072aa3b47f087192c00e464eb48bd591636c4d111c9f5191622ba",
+    "tests/test_m8a_assets.py": "ef338fba56b1881db8fd1c5326c3e9db6b8b358aab42e16cb28f2e11ce52ba2c"
+  },
+  "protocol_sha256": "a2eec5eb9ba50794461395a0c89321a8c8a995a21f04271da47194e944ed016f",
+  "training_steps": 0,
+  "visual_control": false,
+  "overall": "AssetNoGo",
+  "A_AssetAccess": {
+    "status": "AssetNoGo",
+    "complete_trained_checkpoint_obtained": false
+  },
+  "B_Dependency": {
+    "status": "NotRun",
+    "reason": "AssetNoGo: no official checkpoint bytes acquired in the bounded attempt."
+  },
+  "C_ModelLoad": {
+    "status": "NotRun",
+    "reason": "AssetNoGo: no official checkpoint bytes acquired in the bounded attempt."
+  },
+  "D_Forward": {
+    "status": "NotRun",
+    "reason": "AssetNoGo: no official checkpoint bytes acquired in the bounded attempt."
+  },
+  "E_Resource": {
+    "status": "NotRun",
+    "reason": "AssetNoGo: no official checkpoint bytes acquired in the bounded attempt."
+  },
+  "F_Contract": {
+    "status": "NotRun",
+    "reason": "AssetNoGo: no official checkpoint bytes acquired in the bounded attempt."
+  },
+  "upstream_failure_stopped_downstream": true,
+  "architecture_quality": "NotValidated_NotAnArchitectureFailure",
+  "inherited_gates": {
+    "M5O": "ResearchCompleted / CandidateNoGo",
+    "M7": "ResearchCompleted / OfflinePlannerResearchGo / OnlinePlannerNoGo",
+    "vehicle_control": "ControlNoGo",
+    "runtime": "RuntimePartial",
+    "occupancy": "NotPassed",
+    "visual_driving": "SafetyNotValidated"
+  },
+  "preservation_status": "Passed",
+  "tests": {
+    "path": "reports/m8a_execution_logs/asset_gate_tests.json",
+    "bytes": 311,
+    "sha256": "c072c0ae3ae7cb98a787e9cfa97ea531dbd52ebc8e58c08e14add82a5f5d84e8"
+  },
+  "next_stage": "NoAutomaticContinuation_NoTraining_NoAlternativeFramework",
+  "no_default_changes": true,
+  "no_new_carla": true,
+  "no_shared_gpu_tests": true,
+  "acquisition_source_commit": "242487ef96038b67670ed3f720c39c892df3e136"
+}

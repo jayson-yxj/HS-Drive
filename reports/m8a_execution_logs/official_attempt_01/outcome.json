@@ -1,0 +1,100 @@
+{
+  "kind": "ActualServerOfficialAssetAcquisition",
+  "base": "478070b51f03daf7e4ff2e7cb0b0a96e7507d9ba",
+  "git_head": "242487ef96038b67670ed3f720c39c892df3e136",
+  "sources": {
+    "configs/m8a/protocol.json": "a2eec5eb9ba50794461395a0c89321a8c8a995a21f04271da47194e944ed016f",
+    "tools/m8a_assets.py": "446fc56f724b3ec83504583a34d6bbc958e08ce01aa79ab2f6716798277b1710",
+    "tools/m8a_common.py": "c3d7ad1a98bfce1e733dfe11ef4cf5ac993350e5724ad42648f675039ec49ea8",
+    "tests/test_m8a_assets.py": "ef338fba56b1881db8fd1c5326c3e9db6b8b358aab42e16cb28f2e11ce52ba2c"
+  },
+  "protocol_sha256": "a2eec5eb9ba50794461395a0c89321a8c8a995a21f04271da47194e944ed016f",
+  "training_steps": 0,
+  "visual_control": false,
+  "status": "AssetNoGo",
+  "official_source_confirmed": true,
+  "official_files": {
+    "README.md": {
+      "path": "/root/gpufree-data/hs-drive-experiments/m6a-petr/source/README.md",
+      "bytes": 11733,
+      "sha256": "a724b1c469ca5fe9477253cd00108f4a475cdd3b8a715a13555c1b135090a1a9"
+    },
+    "LICENSE": {
+      "path": "/root/gpufree-data/hs-drive-experiments/m6a-petr/source/LICENSE",
+      "bytes": 10787,
+      "sha256": "51766d103d0ddae36a7e5f28451b7618db228b69f8d8a80d945740c434ba1662"
+    },
+    "projects/configs/petr/petr_r50dcn_gridmask_c5.py": {
+      "path": "/root/gpufree-data/hs-drive-experiments/m6a-petr/source/projects/configs/petr/petr_r50dcn_gridmask_c5.py",
+      "bytes": 8876,
+      "sha256": "435db70e9e8bf6dd0ccf1f9e6a49c865ae0b6daff28152d228ffdd0a98a23e30"
+    }
+  },
+  "checkpoint": null,
+  "elapsed_s": 18.141244899481535,
+  "events": [
+    {
+      "name": "google_view",
+      "request_url": "https://drive.google.com/file/d/1c5rgTpHA98dFKmQ9BJN0zZbSuBFT8_Bt/view",
+      "transport": "curl_no_config_no_retries",
+      "returncode": 28,
+      "transfer": "000\t0\t7.705694\t",
+      "error": "curl: (28) Failed to connect to drive.google.com port 443 after 7705 ms: Connection timed out\n",
+      "elapsed_s": 7.712172346189618
+    },
+    {
+      "name": "google_checkpoint",
+      "request_url": "https://drive.google.com/uc",
+      "transport": "curl_no_config_no_retries",
+      "returncode": 28,
+      "transfer": "000\t0\t7.706992\t",
+      "error": "curl: (28) Failed to connect to drive.google.com port 443 after 7707 ms: Connection timed out\n",
+      "elapsed_s": 7.714656967669725
+    },
+    {
+      "name": "baidu_share",
+      "request_url": "https://pan.baidu.com/s/1-JkzOxKy4isMiiNHd20Z-w",
+      "status": 200,
+      "bytes": 15253,
+      "elapsed_s": 1.2816545013338327,
+      "response_sha256": "d264d891ddf7d7eba2d28290e6f003dc71ee3f1112ea0420855d76c5a0882431"
+    },
+    {
+      "name": "baidu_public_code",
+      "request_url": "https://pan.baidu.com/share/verify",
+      "status": 200,
+      "bytes": 117,
+      "elapsed_s": 0.3120395913720131,
+      "response_sha256": "0a50577c42b6f2ff2727e3f0a6d9382063fe57d79a6efb90abb5d209c045d983"
+    },
+    {
+      "name": "baidu_verify",
+      "errno": 0,
+      "result": "Verified"
+    },
+    {
+      "name": "baidu_verified_page",
+      "request_url": "https://pan.baidu.com/s/1-JkzOxKy4isMiiNHd20Z-w",
+      "status": 200,
+      "bytes": 74708,
+      "elapsed_s": 0.6497042216360569,
+      "response_sha256": "ec040f55d2d07f7fe3fdfc9a426d45353ad8ed3ddc3ee9afa48dcf862cab699f"
+    },
+    {
+      "name": "baidu_directory",
+      "request_url": "https://pan.baidu.com/share/list",
+      "status": 200,
+      "bytes": 189,
+      "elapsed_s": 0.4551753085106611,
+      "response_sha256": "a5ca5f6c37c1995ee151244656005f31d60e6dc469c2537d3d0e36e97bd70f1c"
+    },
+    {
+      "name": "baidu_matching_file",
+      "result": "NoUniqueOfficialFile_Stop"
+    }
+  ],
+  "dependency_install_authorized": false,
+  "checkpoint_loaded": false,
+  "safety_gates_unchanged": true,
+  "limitation": "Official filename/listing/header alone cannot establish a valid trained detector."
+}
