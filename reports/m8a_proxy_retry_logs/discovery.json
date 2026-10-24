@@ -1,0 +1,65 @@
+{
+  "kind": "ActualServerProxyDiscovery",
+  "git_head": "9daeabd79bef5377738484e56d77bb70b990ca9f",
+  "sources": {
+    "configs/m8a/proxy_retry.json": "38e4c337b233b02c0d2e5430fefd448103926bfa27b17b72ee67e10e2a1f8419",
+    "tools/m8a_proxy_audit.py": "c630db11528a45ee913eabe4bedf990346206652d5143c644a9bf37119f0b063",
+    "tests/test_m8a_proxy.py": "fa8a5d896bdc61fd62ad101b3f2cf9ad11f0b645acd498eccff22743cdc25c37"
+  },
+  "training_steps": 0,
+  "visual_control": false,
+  "proxy_environment": {},
+  "proxy_processes": [
+    {
+      "pid": 284279,
+      "name": "clash-verge"
+    },
+    {
+      "pid": 286442,
+      "name": "verge-mihomo"
+    }
+  ],
+  "listeners": [
+    {
+      "port": 35775,
+      "loopback": true,
+      "process": [
+        "clash-verge"
+      ]
+    },
+    {
+      "port": 7897,
+      "loopback": true,
+      "process": [
+        "verge-mihomo"
+      ]
+    }
+  ],
+  "proxy_config_selected_fields": [
+    {
+      "process": "verge-mihomo",
+      "mixed-port": "7897",
+      "mode": "rule",
+      "allow-lan": "false",
+      "tun_enabled": false
+    }
+  ],
+  "interface_types": [
+    {
+      "name": "lo",
+      "kind": null,
+      "type": "loopback"
+    },
+    {
+      "name": "tunl0",
+      "kind": "ipip",
+      "type": "ipip"
+    },
+    {
+      "name": "eth0",
+      "kind": "veth",
+      "type": "ether"
+    }
+  ],
+  "external_egress_probe": "NotRun_private_exit_not_collected"
+}

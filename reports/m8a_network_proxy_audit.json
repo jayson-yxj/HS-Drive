@@ -1,0 +1,240 @@
+{
+  "kind": "ActualGPUHostPairedProxyAndTLSAudit",
+  "git_head": "7c839b869f67f7bdfdb2fc219717b8d7bc1f82b1",
+  "sources": {
+    "configs/m8a/proxy_retry.json": "38e4c337b233b02c0d2e5430fefd448103926bfa27b17b72ee67e10e2a1f8419",
+    "tools/m8a_proxy_audit.py": "c630db11528a45ee913eabe4bedf990346206652d5143c644a9bf37119f0b063",
+    "tools/m8a_proxy_download.py": "c7f0c27cfb3cdc3e35f0aa95662c9a567aea1eebf29373fbf207c0b9e309da30",
+    "tools/m8a_proxy_finalize.py": "ed62bd4757632b9a6d6d6a57c13653ab6413ae8c045e48fc871ecce4d0e35aaf",
+    "tools/m8a_proxy_inspect.py": "593615dd1e82474082f64f93292926cbb48af058fbbac25d1e7e3e07f5e21065",
+    "tools/m8a_proxy_isolate.py": "f843e94391d7962e51eb09d24add3623205a6bd879cf02c3169db6aaddbee2ac",
+    "tests/test_m8a_proxy.py": "9545d47fd4e213c0312628faefd18667953715f33390f0456d305188cc220f54"
+  },
+  "training_steps": 0,
+  "visual_control": false,
+  "status": "ProxyVerified",
+  "audit_host": "HS-Drive RTX4090 server, not user workstation",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "discovery": {
+    "kind": "ActualServerProxyDiscovery",
+    "git_head": "9daeabd79bef5377738484e56d77bb70b990ca9f",
+    "sources": {
+      "configs/m8a/proxy_retry.json": "38e4c337b233b02c0d2e5430fefd448103926bfa27b17b72ee67e10e2a1f8419",
+      "tools/m8a_proxy_audit.py": "c630db11528a45ee913eabe4bedf990346206652d5143c644a9bf37119f0b063",
+      "tests/test_m8a_proxy.py": "fa8a5d896bdc61fd62ad101b3f2cf9ad11f0b645acd498eccff22743cdc25c37"
+    },
+    "training_steps": 0,
+    "visual_control": false,
+    "proxy_environment": {},
+    "proxy_processes": [
+      {
+        "pid": 284279,
+        "name": "clash-verge"
+      },
+      {
+        "pid": 286442,
+        "name": "verge-mihomo"
+      }
+    ],
+    "listeners": [
+      {
+        "port": 35775,
+        "loopback": true,
+        "process": [
+          "clash-verge"
+        ]
+      },
+      {
+        "port": 7897,
+        "loopback": true,
+        "process": [
+          "verge-mihomo"
+        ]
+      }
+    ],
+    "proxy_config_selected_fields": [
+      {
+        "process": "verge-mihomo",
+        "mixed-port": "7897",
+        "mode": "rule",
+        "allow-lan": "false",
+        "tun_enabled": false
+      }
+    ],
+    "interface_types": [
+      {
+        "name": "lo",
+        "kind": null,
+        "type": "loopback"
+      },
+      {
+        "name": "tunl0",
+        "kind": "ipip",
+        "type": "ipip"
+      },
+      {
+        "name": "eth0",
+        "kind": "veth",
+        "type": "ether"
+      }
+    ],
+    "external_egress_probe": "NotRun_private_exit_not_collected"
+  },
+  "effective_type": "Explicit HTTP CONNECT selected; same mixed port supports SOCKS5h",
+  "effective_endpoint": "http://127.0.0.1:7897",
+  "system_tun_enabled_observed": false,
+  "inherited_proxy_env_present": false,
+  "upstream_transparent_routing": "NotClaimed_not_exhaustively_audited",
+  "curl": [
+    {
+      "http_code": 200,
+      "http_connect": 0,
+      "ssl_verify_result": 0,
+      "time_total": 0.876627,
+      "time_connect": 0.101623,
+      "time_appconnect": 0.241245,
+      "num_redirects": 0,
+      "size_download": 0,
+      "exitcode": 0,
+      "name": "github_inherited",
+      "proxy": null,
+      "mode": "inherited_environment",
+      "returncode": 0,
+      "elapsed_s": 0.885965134948492,
+      "error": "",
+      "tls_verification_disabled": false,
+      "connected_to_configured_loopback": null,
+      "https_verified": true
+    },
+    {
+      "http_code": 200,
+      "http_connect": 200,
+      "ssl_verify_result": 0,
+      "time_total": 1.478408,
+      "time_connect": 8.9e-05,
+      "time_appconnect": 0.95946,
+      "num_redirects": 0,
+      "size_download": 0,
+      "exitcode": 0,
+      "name": "github_explicit_http",
+      "proxy": "http://127.0.0.1:7897",
+      "mode": "explicit_proxy",
+      "returncode": 0,
+      "elapsed_s": 1.4877249393612146,
+      "error": "",
+      "tls_verification_disabled": false,
+      "connected_to_configured_loopback": true,
+      "https_verified": true
+    },
+    {
+      "http_code": 0,
+      "http_connect": 0,
+      "ssl_verify_result": 0,
+      "time_total": 5.206744,
+      "time_connect": 0.0,
+      "time_appconnect": 0.0,
+      "num_redirects": 0,
+      "size_download": 0,
+      "exitcode": 28,
+      "name": "google_drive_inherited",
+      "proxy": null,
+      "mode": "inherited_environment",
+      "returncode": 28,
+      "elapsed_s": 5.214284457266331,
+      "error": "curl: (28) Failed to connect to drive.google.com port 443 after 5206 ms: Connection timed out\n",
+      "tls_verification_disabled": false,
+      "connected_to_configured_loopback": null,
+      "https_verified": false
+    },
+    {
+      "http_code": 200,
+      "http_connect": 200,
+      "ssl_verify_result": 0,
+      "time_total": 1.784953,
+      "time_connect": 8.6e-05,
+      "time_appconnect": 1.387601,
+      "num_redirects": 0,
+      "size_download": 0,
+      "exitcode": 0,
+      "name": "google_drive_explicit_http",
+      "proxy": "http://127.0.0.1:7897",
+      "mode": "explicit_proxy",
+      "returncode": 0,
+      "elapsed_s": 1.7932318840175867,
+      "error": "",
+      "tls_verification_disabled": false,
+      "connected_to_configured_loopback": true,
+      "https_verified": true
+    },
+    {
+      "http_code": 200,
+      "http_connect": 0,
+      "ssl_verify_result": 0,
+      "time_total": 1.484526,
+      "time_connect": 0.000168,
+      "time_appconnect": 1.067418,
+      "num_redirects": 0,
+      "size_download": 0,
+      "exitcode": 0,
+      "name": "google_drive_socks5h",
+      "proxy": "socks5h://127.0.0.1:7897",
+      "mode": "explicit_proxy",
+      "returncode": 0,
+      "elapsed_s": 1.4966220818459988,
+      "error": "",
+      "tls_verification_disabled": false,
+      "connected_to_configured_loopback": true,
+      "https_verified": true
+    }
+  ],
+  "python": [
+    {
+      "name": "github",
+      "client": "Python requests",
+      "status": 200,
+      "elapsed_s": 1.9376860037446022,
+      "https_verified": true,
+      "verify": true,
+      "connected_to_configured_loopback": true,
+      "certificate_valid_from": "Sep  1 00:00:00 2026 GMT",
+      "certificate_valid_until": "Nov 29 23:59:59 2026 GMT",
+      "history_status": [],
+      "response_body_not_logged": true,
+      "external_egress_not_collected": true
+    },
+    {
+      "name": "google_drive",
+      "client": "Python requests",
+      "status": 200,
+      "elapsed_s": 6.94856620579958,
+      "https_verified": true,
+      "verify": true,
+      "connected_to_configured_loopback": true,
+      "certificate_valid_from": "Sep 28 18:38:33 2026 GMT",
+      "certificate_valid_until": "Dec 21 18:38:32 2026 GMT",
+      "history_status": [],
+      "response_body_not_logged": true,
+      "external_egress_not_collected": true
+    }
+  ],
+  "tls_certificate_checks_enabled": true,
+  "same_local_proxy_verified": true,
+  "same_public_exit_identity_verified": false,
+  "causal_analysis": {
+    "same_server_paired_control": true,
+    "inherited_github_http": 200,
+    "inherited_drive_http": 0,
+    "inherited_drive_curl_exit": 28,
+    "explicit_drive_http": 200,
+    "conclusion": "Current download environment did not automatically use the running proxy. Explicit proxy changes Google Drive from connection timeout to verified HTTP200 and successful official checkpoint download.",
+    "historical_scope": "Strong evidence for the same Google connectivity failure mode; not proof that every M6-A failure had the same cause. Baidu errno=-7/2 remains separate.",
+    "no_public_exit_identity_claim": true,
+    "limitations": "Same configured local proxy and explicit socket/CONNECT evidence; rule-based routing may use different upstream exits by hostname. No private exit IP collected."
+  },
+  "secrets_and_exit_ips_logged": false,
+  "reproduction": [
+    "curl --disable -IL --connect-timeout 10 --max-time 30 https://github.com/megvii-research/PETR",
+    "curl --disable -IL --proxy http://127.0.0.1:7897 --connect-timeout 10 --max-time 30 https://drive.google.com/file/d/1c5rgTpHA98dFKmQ9BJN0zZbSuBFT8_Bt/view"
+  ],
+  "note": "Published logs contain allowlisted fields, not response cookies or private upstream URLs."
+}
