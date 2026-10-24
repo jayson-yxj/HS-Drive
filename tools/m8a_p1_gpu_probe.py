@@ -105,6 +105,11 @@ def main():
         lidar2img=[v.tolist() for v in data['lidar2img']],img_norm_cfg=dict(cfg.img_norm_cfg),
         note='Synthetic calibrated ring, not official nuScenes camera poses or detection quality evidence'))
     shape_trace={}
+    dcn_calls=[]
+    def dcn_trace(module,args,output):
+        assert output.is_cuda and torch.isfinite(output).all()
+        dcn_calls.append(dict(type=type(module).__name__,input_shape=list(args[0].shape),output_shape=list(output.shape),device=str(output.device)))
+    dcn_handles=[module.register_forward_hook(dcn_trace) for module in model.modules() if isinstance(module,ModulatedDeformConv2dPack)]
     def trace(name):
         def hook(module,args,output):
             if isinstance(output,dict):
@@ -124,9 +129,11 @@ def main():
         assert torch.isfinite(box).all() and torch.isfinite(scores).all()
         outputs.append(dict(iteration=index,boxes=box.cpu().tolist(),scores=scores.cpu().tolist(),labels=labels.cpu().tolist(),shape=list(box.shape)))
         print('forward',index,'ms',round(ms,3),'boxes',list(box.shape),flush=True)
-        if index==0:handle.remove()
+        if index==0:
+            handle.remove()
+            for h in dcn_handles:h.remove()
     measured=timings[4:]
-    save('forward_results',dict(status='Passed',kind='ActualRTX4090_SyntheticInputSmoke',outputs=outputs,head_shape_trace=shape_trace,
+    save('forward_results',dict(status='Passed',kind='ActualRTX4090_SyntheticInputSmoke',outputs=outputs,head_shape_trace=shape_trace,full_model_dcn_calls=dcn_calls,
         input_shape=[1,6,3,512,1408],precision='FP32_no_autocast_no_TF32',all_finite=True,training_steps=0,quality_validated=False))
     save('gpu_memory_latency',dict(status='Passed',cold_forward_ms=timings[0],warmup_ms=timings[1:4],measured_ms=measured,
         p50_ms=float(np.percentile(measured,50)),p95_ms=float(np.percentile(measured,95)),max_ms=max(measured),
