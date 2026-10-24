@@ -69,7 +69,10 @@ def main():
     model.load_state_dict(state,strict=True)
     assert all(torch.equal(model.state_dict()[k],v) for k,v in state.items())
     assert model.pts_bbox_head.num_query==900
+    assert model.pts_bbox_head.num_classes==10
+    assert len(model.pts_bbox_head.transformer.decoder.layers)==6
     dcn_names=[name for name,module in model.named_modules() if isinstance(module,ModulatedDeformConv2dPack)]
+    assert len(dcn_names)==9,dcn_names
     save('model_load',dict(status='Passed',strict=True,all_loaded_tensors_bitwise_equal=True,parameter_count=sum(p.numel() for p in model.parameters()),
         checkpoint_tensor_count=len(state),dcn_modules=dcn_names,num_query=900,decoder_layers=6,classes=10,
         configuration_changes={'img_backbone.pretrained':{'before':previous,'after':None,'reason':'All final backbone tensors strictly loaded and compared'}}))

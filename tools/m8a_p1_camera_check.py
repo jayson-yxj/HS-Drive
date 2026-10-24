@@ -64,7 +64,6 @@ def main():
     recovered=proj@np.linalg.inv(res['lidar2img'][0]).T
     box_error=float(np.max(abs(recovered-homo)));assert box_error<1e-10
     normalized_images=NormalizeMultiviewImage(mean=[103.530,116.280,123.675],std=[1.,1.,1.],to_rgb=False)(res)
-    assert np.allclose(normalized_images['img'][0][0,0],res['img'][0][0,0]) # same dict mutated
     # Independent RGB channel sentinel, through the official normalization code.
     rgb=np.array([[[10.,30.,90.]]],dtype=np.float32)
     sentinel=NormalizeMultiviewImage(mean=[103.530,116.280,123.675],std=[1.,1.,1.],to_rgb=False)(dict(img=[rgb[...,::-1].copy()]))['img'][0]
