@@ -1,0 +1,131 @@
+{
+  "kind": "ActualRTX4090_FrozenRealRGBInference",
+  "base": "a3a892219e29c3c16d969e8b0d934173a6f8dbb0",
+  "commit": "a3a892219e29c3c16d969e8b0d934173a6f8dbb0",
+  "sources": {
+    "configs/m8b/protocol.json": "9cd00fa33727a81583e1aa6f399e39485da8fa76c2a41a53b9d8cc328dccfc8d",
+    "tools/m8b_common.py": "0150f287270afc6b2d136f42a87f16470995d7b09be454d5f162c1e13e32cabc",
+    "tools/m8b_evaluate.py": "a815ee55e590458ad4e9e8ace2173f0fc2e72cef96c301ae8230530fdc69b669",
+    "tools/m8b_infer.py": "3b434a4260caa1870b21cfa6376d59e5108b8b5d2d25929c08c127f0536f9db3",
+    "tools/m8b_pair.py": "2771254707c238c64bd0657e0b78efa39571dcff10eb5333645a116f316cccc0",
+    "tools/m8b_prepare.py": "8d910462aa588ddf48545dfb40872b5a62b190ab77f88f2a6893e41db74df159",
+    "tools/m8b_run.py": "06f27874cc1753c2282a4a02acea749f939f2f18cf466f1fece1fe62373b8b27",
+    "tools/m8b_runtime_report.py": "81ef38269ff1f8b647bf32d9220db2b21d8c72fbac483df9725f9743cc36f4d2",
+    "datasets/m8b_petr_adapter.py": "011b53bb0f613c49808db75ae74ff9f5d0f7ff0a15eaf289c59bef323de111c6",
+    "diagnostics/m8b_metrics.py": "4cbaff9e09ae70e848d68a340b7e5c6aafb90605334f1aa82f2b2ea867265d20",
+    "tests/test_m8b_adapter.py": "bc052f76346ead05574ea40d2cceb002ad19525504e6a5010eabf781ce21457b",
+    "tests/test_m8b_metrics.py": "c819e92cb41e8e9790175b44f9fd1f7b68c0205cf7390bb5b0d14f3886d0bf78"
+  },
+  "training_steps": 0,
+  "visual_control": false,
+  "device": "NVIDIA GeForce RTX 4090",
+  "torch": "2.0.0+cu118",
+  "cuda": "11.8",
+  "precision": "FP32_no_autocast_no_TF32",
+  "frames": 192,
+  "steady_frames": 191,
+  "cold_first_frame": {
+    "read_six_rgb_ms": 51.25865526497364,
+    "rgb_to_bgr_ms": 5.77038899064064,
+    "resize_crop_calibration_ms": 127.68317759037018,
+    "normalize_pad_ms": 52.07095481455326,
+    "assemble_ms": 37.16321662068367,
+    "h2d_ms": 5.751771852374077,
+    "model_forward_ms": 377.8746910393238,
+    "box_decode_ms": 55.458107963204384,
+    "to_cpu_ms": 0.09270943701267242,
+    "serialization_ms": 3.2697971910238266,
+    "total_e2e_ms": 718.6882644891739
+  },
+  "steady_stage_ms": {
+    "read_six_rgb_ms": {
+      "n": 191,
+      "p50": 48.409782350063324,
+      "p95": 51.24340020120144,
+      "p99": 52.55779027938843,
+      "max": 160.9771940857172
+    },
+    "rgb_to_bgr_ms": {
+      "n": 191,
+      "p50": 7.011285051703453,
+      "p95": 7.251783274114132,
+      "p99": 7.38565269857645,
+      "max": 10.632777586579323
+    },
+    "resize_crop_calibration_ms": {
+      "n": 191,
+      "p50": 123.00717644393444,
+      "p95": 125.19717682152987,
+      "p99": 130.93548323959112,
+      "max": 133.51665623486042
+    },
+    "normalize_pad_ms": {
+      "n": 191,
+      "p50": 49.69779774546623,
+      "p95": 51.337989047169685,
+      "p99": 55.952121131122105,
+      "max": 63.39159421622753
+    },
+    "assemble_ms": {
+      "n": 191,
+      "p50": 36.86371445655823,
+      "p95": 37.83241007477045,
+      "p99": 42.01738797128198,
+      "max": 45.68341560661793
+    },
+    "h2d_ms": {
+      "n": 191,
+      "p50": 5.408167839050293,
+      "p95": 5.634951405227184,
+      "p99": 5.993007123470306,
+      "max": 6.168503314256668
+    },
+    "model_forward_ms": {
+      "n": 191,
+      "p50": 52.96097509562969,
+      "p95": 53.51219326257706,
+      "p99": 53.63797806203365,
+      "max": 61.214808374643326
+    },
+    "box_decode_ms": {
+      "n": 191,
+      "p50": 0.6021484732627869,
+      "p95": 0.653386116027832,
+      "p99": 0.6868321448564528,
+      "max": 0.9564105421304703
+    },
+    "to_cpu_ms": {
+      "n": 191,
+      "p50": 0.08283928036689758,
+      "p95": 0.09154994040727615,
+      "p99": 0.09403955191373822,
+      "max": 0.09891390800476074
+    },
+    "serialization_ms": {
+      "n": 191,
+      "p50": 3.317544236779213,
+      "p95": 3.4451251849532127,
+      "p99": 3.5518944263458243,
+      "max": 3.9447396993637085
+    },
+    "total_e2e_ms": {
+      "n": 191,
+      "p50": 330.44368401169777,
+      "p95": 337.9430491477251,
+      "p99": 344.81781926006073,
+      "max": 441.62286445498466
+    }
+  },
+  "peak_allocated_bytes": 1106198528,
+  "peak_reserved_bytes": 1344274432,
+  "allocator_not_total_device_memory": true,
+  "observed_serial_throughput_hz": 3.0284361263871262,
+  "shared_GPU_stress": "NotRun",
+  "real_time_20Hz": "NotValidated",
+  "timing_scope": "Synchronized CUDA. CPU SHA+PNG decode included. Fixed official augmentation. First sample cold, thereafter filesystem/page-cache uncontrolled/warm; after first record only an equivalence repeat, no long warmup. Minimal JSON encoding included; output disk write/startup/cleanup and evaluator excluded. Stage sum includes extra contract/finite checks. P99 descriptive n191, no WCET claim.",
+  "raw": {
+    "path": "/root/gpufree-data/hs-drive-experiments/m8b-petr-zero-shot/forward/run.json",
+    "bytes": 242780,
+    "sha256": "882bb856088eff28bcee8804643bf72eab915c5ed51f8fae79b36c0e94ddf0a8"
+  }
+}

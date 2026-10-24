@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.8.20-linux-x86_64-gnu/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/root/.local/share/uv/python/cpython-3.8.20-linux-x86_64-gnu/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8b_pair.py", line 36, in <module>
+    if __name__=='__main__':main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8b_pair.py", line 35, in main
+    write('reports/m8b_paired_baseline_comparison.json',dict(**provenance('OfflineHistoricalFrozenPredictions_PairedRegression'),results=result,ledger=asset(ROOT/'paired_ledger.json'),sources=[asset('runs/m5o_eval_'+s+'/predictions.json') for s in ['val','calibration','sealed']],baseline_checkpoint_selection=asset('reports/m5o_training.json'),limits=['Legacy2D component detection and PETR3D center2m detection are different tasks; not interchangeable detection rates','Conditional pairing repeats PETR object estimate across camera views to align old actor-view denominator; not independent observations','Projected PETR association is proxy not exact actor identity; common subset is selective','Every legacy candidate retained in burden; no comparable legacy class output or 3Ddimensions; no fabricated precision metric','Train paired comparison NotRun: no frozen baseline evaluation predictions, not trained or regenerated','Historical calibration failed; no legacy threshold retuning','No fresh blind set; cannot establish architecture superiority']))
+TypeError: type object got multiple values for keyword argument 'sources'

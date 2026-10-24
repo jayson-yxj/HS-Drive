@@ -1,0 +1,39 @@
+"""Pair frozen legacy results with the same visible actor-view denominator."""
+import json
+from pathlib import Path
+import numpy as np
+from tools.m8b_common import *
+from diagnostics.m8b_metrics import summary
+
+def main():
+    ledger=json.loads((ROOT/'evaluation_ledger.json').read_text())['frames'];result=[];paired_rows=[]
+    for split in ['val','calibration','sealed']:
+        cache=json.loads(Path('runs/m5o_cache_'+split+'/supervision.json').read_text());pred=json.loads(Path('runs/m5o_eval_'+split+'/predictions.json').read_text())
+        ff=[f for f in ledger if f['split']==split];samples={f['sample_id'] for f in ff};byid={f['sample_id']:f for f in ff}
+        for seed in [101,102]:
+            actors=[a for a in cache['actors'] if a['seed']==seed and a['sample_id'] in samples];pp=pred[str(seed)+'_1.0'];selected={k:v for k,v in pp.items() if k.split(':')[0] in samples}
+            conditional={(f['sample_id'],r['actor_id']):r for f in ff for r in f['curves']['0.1']['conditional']}
+            natural={(f['sample_id'],f['gts'][gi]['actor_id']) for f in ff for pi,gi in f['curves']['0.1']['natural']['pairs']}
+            row=dict(split=split,seed=seed,actor_view_denominator=len(actors),groups=len({a['group'] for a in actors}),legacy_natural_2D_component_detected=sum(a['detected'] for a in actors),legacy_unique_association=sum(a['unique_association'] for a in actors),legacy_all_candidates=len(selected),legacy_unmatched_candidates=sum(not q['matched'] for q in cache['labels'] if q['candidate_id'] in selected),PETR_natural3D_detected_actor_views=sum((a['sample_id'],a['actor_id']) in natural for a in actors),PETR_conditional_actor_views=sum((a['sample_id'],a['actor_id']) in conditional for a in actors),methods={})
+            for method in ['plane','geometry_prior','direct']:
+                allold=[];interold=[];internew=[];oldonly=0;newonly=0;neither=0;successold=0;successnew=0;details=[]
+                for a in actors:
+                    candidate=pp.get(a.get('candidate_id'));old=candidate['positions'][method] if candidate and a['unique_association'] else None
+                    new=conditional.get((a['sample_id'],a['actor_id']));old_error=float(np.linalg.norm(np.array(old)[:2]-np.array(a['box_center_ego'])[:2])) if old is not None else None
+                    new_error=new['xy'] if new else None
+                    if old_error is not None:allold.append(old_error);successold+=old_error<=5
+                    if new_error is not None:successnew+=new_error<=5
+                    if old_error is not None and new_error is not None:interold.append(old_error);internew.append(new_error)
+                    elif old_error is not None:oldonly+=1
+                    elif new_error is not None:newonly+=1
+                    else:neither+=1
+                    details.append(dict(sample_id=a['sample_id'],group=a['group'],camera=a['camera'],actor_id=a['actor_id'],legacy_xy=old_error,PETR_xy=new_error))
+                row['methods'][method]=dict(legacy_all_conditionally_associated_xy=summary(allold),common_gt_legacy_xy=summary(interold),common_gt_PETR_xy=summary(internew),paired_count=len(interold),legacy_only=oldonly,PETR_only=newonly,neither=neither,union=len(interold)+oldonly+newonly,legacy_within5m_all_actor_views=successold,PETR_within5m_all_actor_views=successnew,paired_delta_mean_PETR_minus_legacy=float(np.mean(np.array(internew)-interold)) if interold else None)
+                paired_rows.append(dict(split=split,seed=seed,method=method,rows=details))
+            result.append(row)
+    
+    ledger_path=ROOT/'paired_ledger.json'
+    if ledger_path.exists():assert json.loads(ledger_path.read_text())==paired_rows
+    else:write(ledger_path,paired_rows)
+    write('reports/m8b_paired_baseline_comparison.json',dict(**provenance('OfflineHistoricalFrozenPredictions_PairedRegression'),results=result,ledger=asset(ROOT/'paired_ledger.json'),baseline_sources=[asset('runs/m5o_eval_'+s+'/predictions.json') for s in ['val','calibration','sealed']],baseline_checkpoint_selection=asset('reports/m5o_training.json'),limits=['Legacy2D component detection and PETR3D center2m detection are different tasks; not interchangeable detection rates','Conditional pairing repeats PETR object estimate across camera views to align old actor-view denominator; not independent observations','Projected PETR association is proxy not exact actor identity; common subset is selective','Every legacy candidate retained in burden; no comparable legacy class output or 3Ddimensions; no fabricated precision metric','Train paired comparison NotRun: no frozen baseline evaluation predictions, not trained or regenerated','Historical calibration failed; no legacy threshold retuning','No fresh blind set; cannot establish architecture superiority']))
+if __name__=='__main__':main()

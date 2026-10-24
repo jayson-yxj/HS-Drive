@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.8.20-linux-x86_64-gnu/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/root/.local/share/uv/python/cpython-3.8.20-linux-x86_64-gnu/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8b_evaluate.py", line 108, in <module>
+    if __name__=='__main__':main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8b_evaluate.py", line 49, in main
+    matrix=conditional_matrix(p,g,packet);r=item['row']
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/diagnostics/m8b_metrics.py", line 60, in conditional_matrix
+    matrix[pi,gi]=max([iou2(projected[v['camera_index']][pi],v['bounds_aug']) for v in g['views'] if v['retained_pixels']>=3] or [0.])
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/diagnostics/m8b_metrics.py", line 60, in <listcomp>
+    matrix[pi,gi]=max([iou2(projected[v['camera_index']][pi],v['bounds_aug']) for v in g['views'] if v['retained_pixels']>=3] or [0.])
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/diagnostics/m8b_metrics.py", line 36, in iou2
+    return float(inter/(np.prod(a[2:]-a[:2])+np.prod(b[2:]-b[:2])-inter+1e-12))
+TypeError: unsupported operand type(s) for -: 'list' and 'list'

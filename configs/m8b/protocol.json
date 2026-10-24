@@ -1,0 +1,43 @@
+{
+  "stage": "M8-B Frozen PETR CARLA Adapter & Zero-Shot Quality Pilot",
+  "base": "a3a892219e29c3c16d969e8b0d934173a6f8dbb0",
+  "runtime": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime",
+  "root": "/root/gpufree-data/hs-drive-experiments/m8b-petr-zero-shot",
+  "petr_commit": "f7525f93467a33707ef401c587a52d5e7b34de74",
+  "checkpoint_sha256": "16d8a4875c36e7d1cba75b357901ff031b18d9d9374f12780b9b72cc621cefad",
+  "numeric_weights_sha256": "cf33dccb1d549c425a89cf346d6f05401c49f6cccbd5a579cb7d8937b5a6d591",
+  "camera_order": ["front","front_left","front_right","rear_left","rear_right","rear"],
+  "official_camera_semantics": ["CAM_FRONT","CAM_FRONT_LEFT","CAM_FRONT_RIGHT","CAM_BACK_LEFT","CAM_BACK_RIGHT","CAM_BACK"],
+  "input_shape": [1,6,3,512,1408],
+  "precision": "FP32_no_autocast_no_TF32",
+  "sampling": {
+    "mandatory": "All40 M7A packets in frozen manifest order; two GPU_replay samples remain Train",
+    "extension_trigger": "Pre-inference inventory:38/40 recorded-target empty; only2 visible actor-views. Insufficient class/direction/range support",
+    "extension_rule": "For each of38 M5O groups, sort rows with at least one historical visible_eligible actor by configuration/frame; select rounded quantile ranks0.2,0.4,0.6,0.8. Deduplicate sample_id, union mandatory40. No model output used",
+    "extension_quantiles": [0.2,0.4,0.6,0.8],
+    "maximum_frames": 200,
+    "smoke": "First all40 core, report absence of Person/Cone/near support. Additional fixed coverage smoke is earliest supplemental Train row for each requested class/direction/range/Town bucket; no inference-based selection",
+    "split_roles": {"train":"adapter_contract_development","val":"domain_diagnosis","calibration":"risk_threshold_only","sealed":"previously_opened_historical_regression"}
+  },
+  "matching": {
+    "reference": "Recorded CARLA Actor OBB center, not contact or precise render mesh",
+    "GT_support": "Historical M5O seed101 visible actor-views deduplicated into sample/Actor. Renderer instance-AABB association proxy; require >=3 supported pixels. Original and crop-retained denominators reported separately",
+    "natural": "Score-ordered one-to-one same coarse class 3D center association with XY<=2m and abs(Z)<=2m;4mXY sensitivity separate. All300 topK retained. Benchmark FP means unmatched to recorded annotation, physicalFP unknown",
+    "operating_score": 0.1,
+    "score_grid": [0.0,0.001,0.003,0.01,0.03,0.05,0.1,0.2,0.3,0.5],
+    "conditional": "Independent one-to-one maximum projected2D-box IoU over reliably visible views, IoU>=0.1 and coarse class match, no center distance cutoff. Raw topK and score0.1 both reported. This is image-projection association proxy, not identity proof",
+    "pairing": "Same GT Actor-view intersection for conditional localization only; union and each-method misses accompany intersection. Both legacy seeds101/102 retained. GeometryPrior/Direct/Plane frozen historical predictions, no retraining",
+    "unknown": "No detection or unmatched annotation never implies safe Free"
+  },
+  "risk": {
+    "selection_split": "calibration_only",
+    "fixed_grid": [0.0,0.001,0.003,0.01,0.03,0.05,0.1,0.2,0.3,0.5],
+    "requirements": {"coverage_min":0.3,"matched_min":20,"groups_min":3,"xy_p95_max_m":5,"severe_gt5m_rate_max":0.05,"annotation_precision_min":0.5},
+    "rule": "Choose lowest threshold satisfying all requirements on independent Calibration; else reject-all/no qualified risk threshold. Sealed never selects anything",
+    "uncertainty": "Location-cluster descriptive bootstrap, seed8082,1000 draws when >=3groups. No iid frame/pixel interpretation; no new blind final set"
+  },
+  "class_support": "minimum20 GT actors across3groups for descriptive stratum; no generalization certification regardless",
+  "time": {"original_sim_ttl_s":0.35,"offline_delivery":"Always control_authorized=false; original simulation timestamps never replaced with wall clock","latency":"All stages separately; CUDA synchronize. Cold first image plus steady remaining, disk/cache state disclosed; no sharedGPU test"},
+  "training_steps":0,"new_CARLA_collection":false,"visual_control":false,"default_changes":false,
+  "no_automatic_training":true,"final_quality_scope":"PilotOnly_NoNewBlindPositions"
+}

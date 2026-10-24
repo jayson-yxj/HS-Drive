@@ -1,0 +1,61 @@
+{
+  "kind": "ActualRTX4090_FrozenRealRGBInference",
+  "base": "a3a892219e29c3c16d969e8b0d934173a6f8dbb0",
+  "commit": "a3a892219e29c3c16d969e8b0d934173a6f8dbb0",
+  "sources": {
+    "configs/m8b/protocol.json": "9cd00fa33727a81583e1aa6f399e39485da8fa76c2a41a53b9d8cc328dccfc8d",
+    "tools/m8b_common.py": "0150f287270afc6b2d136f42a87f16470995d7b09be454d5f162c1e13e32cabc",
+    "tools/m8b_evaluate.py": "a815ee55e590458ad4e9e8ace2173f0fc2e72cef96c301ae8230530fdc69b669",
+    "tools/m8b_infer.py": "3b434a4260caa1870b21cfa6376d59e5108b8b5d2d25929c08c127f0536f9db3",
+    "tools/m8b_pair.py": "2771254707c238c64bd0657e0b78efa39571dcff10eb5333645a116f316cccc0",
+    "tools/m8b_prepare.py": "8d910462aa588ddf48545dfb40872b5a62b190ab77f88f2a6893e41db74df159",
+    "tools/m8b_run.py": "06f27874cc1753c2282a4a02acea749f939f2f18cf466f1fece1fe62373b8b27",
+    "tools/m8b_runtime_report.py": "81ef38269ff1f8b647bf32d9220db2b21d8c72fbac483df9725f9743cc36f4d2",
+    "datasets/m8b_petr_adapter.py": "011b53bb0f613c49808db75ae74ff9f5d0f7ff0a15eaf289c59bef323de111c6",
+    "diagnostics/m8b_metrics.py": "4cbaff9e09ae70e848d68a340b7e5c6aafb90605334f1aa82f2b2ea867265d20",
+    "tests/test_m8b_adapter.py": "bc052f76346ead05574ea40d2cceb002ad19525504e6a5010eabf781ce21457b",
+    "tests/test_m8b_metrics.py": "c819e92cb41e8e9790175b44f9fd1f7b68c0205cf7390bb5b0d14f3886d0bf78"
+  },
+  "training_steps": 0,
+  "visual_control": false,
+  "status": "CARLAForwardGo",
+  "frames": 192,
+  "core40_completed": {
+    "path": "/root/gpufree-data/hs-drive-experiments/m8b-petr-zero-shot/forward/core40_completed.json",
+    "bytes": 89,
+    "sha256": "d84d1116b1b15e2210f1290efaf1da81c4480620517d466f8f0ec41cf94e1514"
+  },
+  "outputs": 57600,
+  "topK": 300,
+  "score_quantiles": {
+    "0": 0.004221725277602673,
+    "1": 0.006828240188769996,
+    "10": 0.022208181209862232,
+    "50": 0.05212394520640373,
+    "90": 0.14269707202911375,
+    "95": 0.19180999696254716,
+    "99": 0.31748094499111174,
+    "100": 0.951907217502594
+  },
+  "strict_loaded_tensors": 558,
+  "parameters": 35805405,
+  "weights_unchanged": true,
+  "checkpoint_sha256": "16d8a4875c36e7d1cba75b357901ff031b18d9d9374f12780b9b72cc621cefad",
+  "safe_numeric_SHA": "cf33dccb1d549c425a89cf346d6f05401c49f6cccbd5a579cb7d8937b5a6d591",
+  "finite": true,
+  "training_steps_verified": 0,
+  "control_authorized": false,
+  "output": "DetectedObjectHypothesis_OfflineShadow",
+  "validity": "Original simulation timestamp+0.35s; offline output not dispatchable, wall completion not substituted",
+  "all_per_frame_records": {
+    "path": "/root/gpufree-data/hs-drive-experiments/m8b-petr-zero-shot/forward/run.json",
+    "bytes": 242780,
+    "sha256": "882bb856088eff28bcee8804643bf72eab915c5ed51f8fae79b36c0e94ddf0a8"
+  },
+  "failure_records": [
+    "reports/m8b_logs/evaluation.txt",
+    "reports/m8b_logs/evaluation_v1.txt",
+    "reports/m8b_logs/tests_v1.txt"
+  ],
+  "failures_scope": "Evaluator environment lacked shapely in primary env; used existing isolated environment. Test discovery namespace issue fixed via discover. Serialized list bbox bug fixed with ndarray conversion. No GPU failure; no metric rule/model tuning."
+}

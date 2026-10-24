@@ -1,0 +1,809 @@
+{
+  "kind": "OfflineHistoricalFrozenPredictions_PairedRegression",
+  "base": "a3a892219e29c3c16d969e8b0d934173a6f8dbb0",
+  "commit": "a3a892219e29c3c16d969e8b0d934173a6f8dbb0",
+  "sources": {
+    "configs/m8b/protocol.json": "9cd00fa33727a81583e1aa6f399e39485da8fa76c2a41a53b9d8cc328dccfc8d",
+    "tools/m8b_common.py": "0150f287270afc6b2d136f42a87f16470995d7b09be454d5f162c1e13e32cabc",
+    "tools/m8b_evaluate.py": "a815ee55e590458ad4e9e8ace2173f0fc2e72cef96c301ae8230530fdc69b669",
+    "tools/m8b_infer.py": "3b434a4260caa1870b21cfa6376d59e5108b8b5d2d25929c08c127f0536f9db3",
+    "tools/m8b_pair.py": "13e5be7088ee792ebbbc490316fc35d08339b36881ce581e45ed16ddac2502b3",
+    "tools/m8b_prepare.py": "8d910462aa588ddf48545dfb40872b5a62b190ab77f88f2a6893e41db74df159",
+    "tools/m8b_run.py": "06f27874cc1753c2282a4a02acea749f939f2f18cf466f1fece1fe62373b8b27",
+    "tools/m8b_runtime_report.py": "81ef38269ff1f8b647bf32d9220db2b21d8c72fbac483df9725f9743cc36f4d2",
+    "datasets/m8b_petr_adapter.py": "011b53bb0f613c49808db75ae74ff9f5d0f7ff0a15eaf289c59bef323de111c6",
+    "diagnostics/m8b_metrics.py": "4cbaff9e09ae70e848d68a340b7e5c6aafb90605334f1aa82f2b2ea867265d20",
+    "tests/test_m8b_adapter.py": "bc052f76346ead05574ea40d2cceb002ad19525504e6a5010eabf781ce21457b",
+    "tests/test_m8b_metrics.py": "c819e92cb41e8e9790175b44f9fd1f7b68c0205cf7390bb5b0d14f3886d0bf78"
+  },
+  "training_steps": 0,
+  "visual_control": false,
+  "results": [
+    {
+      "split": "val",
+      "seed": 101,
+      "actor_view_denominator": 42,
+      "groups": 6,
+      "legacy_natural_2D_component_detected": 33,
+      "legacy_unique_association": 30,
+      "legacy_all_candidates": 188,
+      "legacy_unmatched_candidates": 155,
+      "PETR_natural3D_detected_actor_views": 12,
+      "PETR_conditional_actor_views": 25,
+      "methods": {
+        "plane": {
+          "legacy_all_conditionally_associated_xy": {
+            "n": 19,
+            "mean": 2.2529859983066833,
+            "median": 1.6744632115266431,
+            "p90": 4.582987873587808,
+            "p95": 7.322303866048206,
+            "max": 8.34948199405078,
+            "over5_rate": 0.10526315789473684
+          },
+          "common_gt_legacy_xy": {
+            "n": 13,
+            "mean": 1.7722142726575478,
+            "median": 1.6744632115266431,
+            "p90": 3.2190509039660884,
+            "p95": 3.555133854532745,
+            "max": 3.9266916012505595,
+            "over5_rate": 0.0
+          },
+          "common_gt_PETR_xy": {
+            "n": 13,
+            "mean": 6.664385455709731,
+            "median": 4.924648429912508,
+            "p90": 15.133826395298001,
+            "p95": 15.85350852957474,
+            "max": 15.853508529574741,
+            "over5_rate": 0.3076923076923077
+          },
+          "paired_count": 13,
+          "legacy_only": 6,
+          "PETR_only": 12,
+          "neither": 11,
+          "union": 31,
+          "legacy_within5m_all_actor_views": 17,
+          "PETR_within5m_all_actor_views": 17,
+          "paired_delta_mean_PETR_minus_legacy": 4.892171183052183
+        },
+        "geometry_prior": {
+          "legacy_all_conditionally_associated_xy": {
+            "n": 30,
+            "mean": 2.424351051553527,
+            "median": 1.5545050092629635,
+            "p90": 3.8411461083272576,
+            "p95": 10.008728644450146,
+            "max": 11.663727350739844,
+            "over5_rate": 0.1
+          },
+          "common_gt_legacy_xy": {
+            "n": 19,
+            "mean": 1.6106452426448268,
+            "median": 1.4045974102763408,
+            "p90": 2.6246164409357964,
+            "p95": 2.852567394919985,
+            "max": 3.1579341820326077,
+            "over5_rate": 0.0
+          },
+          "common_gt_PETR_xy": {
+            "n": 19,
+            "mean": 6.1277709032300365,
+            "median": 4.924648429912508,
+            "p90": 12.974779992467772,
+            "p95": 15.853508529574741,
+            "max": 15.853508529574741,
+            "over5_rate": 0.3157894736842105
+          },
+          "paired_count": 19,
+          "legacy_only": 11,
+          "PETR_only": 6,
+          "neither": 6,
+          "union": 36,
+          "legacy_within5m_all_actor_views": 27,
+          "PETR_within5m_all_actor_views": 17,
+          "paired_delta_mean_PETR_minus_legacy": 4.517125660585211
+        },
+        "direct": {
+          "legacy_all_conditionally_associated_xy": {
+            "n": 30,
+            "mean": 4.6538765623104945,
+            "median": 2.7244301666888084,
+            "p90": 12.829971778311647,
+            "p95": 16.858565167930962,
+            "max": 17.8022750500969,
+            "over5_rate": 0.36666666666666664
+          },
+          "common_gt_legacy_xy": {
+            "n": 19,
+            "mean": 3.5287468189883864,
+            "median": 2.318317847400851,
+            "p90": 6.565963635032513,
+            "p95": 8.140731519592602,
+            "max": 16.14166222512452,
+            "over5_rate": 0.3157894736842105
+          },
+          "common_gt_PETR_xy": {
+            "n": 19,
+            "mean": 6.1277709032300365,
+            "median": 4.924648429912508,
+            "p90": 12.974779992467772,
+            "p95": 15.853508529574741,
+            "max": 15.853508529574741,
+            "over5_rate": 0.3157894736842105
+          },
+          "paired_count": 19,
+          "legacy_only": 11,
+          "PETR_only": 6,
+          "neither": 6,
+          "union": 36,
+          "legacy_within5m_all_actor_views": 19,
+          "PETR_within5m_all_actor_views": 17,
+          "paired_delta_mean_PETR_minus_legacy": 2.59902408424165
+        }
+      }
+    },
+    {
+      "split": "val",
+      "seed": 102,
+      "actor_view_denominator": 42,
+      "groups": 6,
+      "legacy_natural_2D_component_detected": 35,
+      "legacy_unique_association": 33,
+      "legacy_all_candidates": 140,
+      "legacy_unmatched_candidates": 105,
+      "PETR_natural3D_detected_actor_views": 12,
+      "PETR_conditional_actor_views": 25,
+      "methods": {
+        "plane": {
+          "legacy_all_conditionally_associated_xy": {
+            "n": 22,
+            "mean": 2.9557361219016127,
+            "median": 1.8402827700930033,
+            "p90": 6.6983595536392535,
+            "p95": 7.258126475624795,
+            "max": 11.836207584133117,
+            "over5_rate": 0.22727272727272727
+          },
+          "common_gt_legacy_xy": {
+            "n": 15,
+            "mean": 2.259912107874081,
+            "median": 1.6941910106729987,
+            "p90": 5.112905943030954,
+            "p95": 5.204203216701774,
+            "max": 5.205189644645718,
+            "over5_rate": 0.13333333333333333
+          },
+          "common_gt_PETR_xy": {
+            "n": 15,
+            "mean": 5.905415618372645,
+            "median": 4.596867529626207,
+            "p90": 14.414144261021256,
+            "p95": 15.853508529574743,
+            "max": 15.853508529574741,
+            "over5_rate": 0.26666666666666666
+          },
+          "paired_count": 15,
+          "legacy_only": 7,
+          "PETR_only": 10,
+          "neither": 10,
+          "union": 32,
+          "legacy_within5m_all_actor_views": 17,
+          "PETR_within5m_all_actor_views": 17,
+          "paired_delta_mean_PETR_minus_legacy": 3.6455035104985636
+        },
+        "geometry_prior": {
+          "legacy_all_conditionally_associated_xy": {
+            "n": 33,
+            "mean": 2.5653824221481654,
+            "median": 1.9926682644911116,
+            "p90": 4.826428987169555,
+            "p95": 8.888920576838968,
+            "max": 11.722286777193794,
+            "over5_rate": 0.09090909090909091
+          },
+          "common_gt_legacy_xy": {
+            "n": 21,
+            "mean": 1.7655902286972154,
+            "median": 1.8922529475608296,
+            "p90": 2.912410536147378,
+            "p95": 3.1203904947231456,
+            "max": 4.934268430454369,
+            "over5_rate": 0.0
+          },
+          "common_gt_PETR_xy": {
+            "n": 21,
+            "mean": 5.636755738701612,
+            "median": 4.596867529626207,
+            "p90": 12.255097858191032,
+            "p95": 15.853508529574741,
+            "max": 15.853508529574741,
+            "over5_rate": 0.2857142857142857
+          },
+          "paired_count": 21,
+          "legacy_only": 12,
+          "PETR_only": 4,
+          "neither": 5,
+          "union": 37,
+          "legacy_within5m_all_actor_views": 30,
+          "PETR_within5m_all_actor_views": 17,
+          "paired_delta_mean_PETR_minus_legacy": 3.8711655100043973
+        },
+        "direct": {
+          "legacy_all_conditionally_associated_xy": {
+            "n": 33,
+            "mean": 3.6646107727223316,
+            "median": 3.092941562913382,
+            "p90": 7.775312551305138,
+            "p95": 8.736274116665246,
+            "max": 14.623261995480084,
+            "over5_rate": 0.18181818181818182
+          },
+          "common_gt_legacy_xy": {
+            "n": 21,
+            "mean": 2.7186593152174825,
+            "median": 2.5401256333280635,
+            "p90": 4.184446099696767,
+            "p95": 4.68905510121982,
+            "max": 5.970014944782338,
+            "over5_rate": 0.047619047619047616
+          },
+          "common_gt_PETR_xy": {
+            "n": 21,
+            "mean": 5.636755738701612,
+            "median": 4.596867529626207,
+            "p90": 12.255097858191032,
+            "p95": 15.853508529574741,
+            "max": 15.853508529574741,
+            "over5_rate": 0.2857142857142857
+          },
+          "paired_count": 21,
+          "legacy_only": 12,
+          "PETR_only": 4,
+          "neither": 5,
+          "union": 37,
+          "legacy_within5m_all_actor_views": 27,
+          "PETR_within5m_all_actor_views": 17,
+          "paired_delta_mean_PETR_minus_legacy": 2.9180964234841307
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "seed": 101,
+      "actor_view_denominator": 42,
+      "groups": 6,
+      "legacy_natural_2D_component_detected": 29,
+      "legacy_unique_association": 28,
+      "legacy_all_candidates": 194,
+      "legacy_unmatched_candidates": 165,
+      "PETR_natural3D_detected_actor_views": 8,
+      "PETR_conditional_actor_views": 26,
+      "methods": {
+        "plane": {
+          "legacy_all_conditionally_associated_xy": {
+            "n": 14,
+            "mean": 3.25069906944429,
+            "median": 2.5439479595940653,
+            "p90": 6.756393062325127,
+            "p95": 8.115482731824708,
+            "max": 9.223218232189305,
+            "over5_rate": 0.14285714285714285
+          },
+          "common_gt_legacy_xy": {
+            "n": 14,
+            "mean": 3.25069906944429,
+            "median": 2.5439479595940653,
+            "p90": 6.756393062325127,
+            "p95": 8.115482731824708,
+            "max": 9.223218232189305,
+            "over5_rate": 0.14285714285714285
+          },
+          "common_gt_PETR_xy": {
+            "n": 14,
+            "mean": 9.844173545753023,
+            "median": 8.857225061423586,
+            "p90": 18.951994420577474,
+            "p95": 21.18196386142054,
+            "max": 22.804525995111657,
+            "over5_rate": 0.7857142857142857
+          },
+          "paired_count": 14,
+          "legacy_only": 0,
+          "PETR_only": 12,
+          "neither": 16,
+          "union": 26,
+          "legacy_within5m_all_actor_views": 12,
+          "PETR_within5m_all_actor_views": 8,
+          "paired_delta_mean_PETR_minus_legacy": 6.59347447630873
+        },
+        "geometry_prior": {
+          "legacy_all_conditionally_associated_xy": {
+            "n": 28,
+            "mean": 3.335917794396742,
+            "median": 2.7918730211602107,
+            "p90": 6.9425681372836205,
+            "p95": 7.669403745762448,
+            "max": 7.879779900513362,
+            "over5_rate": 0.2857142857142857
+          },
+          "common_gt_legacy_xy": {
+            "n": 22,
+            "mean": 3.053816816938445,
+            "median": 2.69506125096248,
+            "p90": 6.575812343262782,
+            "p95": 7.730564258749709,
+            "max": 7.879779900513362,
+            "over5_rate": 0.22727272727272727
+          },
+          "common_gt_PETR_xy": {
+            "n": 22,
+            "mean": 10.486348355513783,
+            "median": 8.857225061423586,
+            "p90": 20.30827655866379,
+            "p95": 22.679713523289262,
+            "max": 22.804525995111657,
+            "over5_rate": 0.7727272727272727
+          },
+          "paired_count": 22,
+          "legacy_only": 6,
+          "PETR_only": 4,
+          "neither": 10,
+          "union": 32,
+          "legacy_within5m_all_actor_views": 20,
+          "PETR_within5m_all_actor_views": 8,
+          "paired_delta_mean_PETR_minus_legacy": 7.432531538575342
+        },
+        "direct": {
+          "legacy_all_conditionally_associated_xy": {
+            "n": 28,
+            "mean": 4.247999577911186,
+            "median": 3.128435188676856,
+            "p90": 9.948620141408853,
+            "p95": 11.5302670369999,
+            "max": 14.49818828324587,
+            "over5_rate": 0.2857142857142857
+          },
+          "common_gt_legacy_xy": {
+            "n": 22,
+            "mean": 3.8232048442852955,
+            "median": 2.825261777991974,
+            "p90": 9.679087853745509,
+            "p95": 10.22527306044543,
+            "max": 12.22149710465198,
+            "over5_rate": 0.2727272727272727
+          },
+          "common_gt_PETR_xy": {
+            "n": 22,
+            "mean": 10.486348355513783,
+            "median": 8.857225061423586,
+            "p90": 20.30827655866379,
+            "p95": 22.679713523289262,
+            "max": 22.804525995111657,
+            "over5_rate": 0.7727272727272727
+          },
+          "paired_count": 22,
+          "legacy_only": 6,
+          "PETR_only": 4,
+          "neither": 10,
+          "union": 32,
+          "legacy_within5m_all_actor_views": 20,
+          "PETR_within5m_all_actor_views": 8,
+          "paired_delta_mean_PETR_minus_legacy": 6.663143511228491
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "seed": 102,
+      "actor_view_denominator": 42,
+      "groups": 6,
+      "legacy_natural_2D_component_detected": 31,
+      "legacy_unique_association": 31,
+      "legacy_all_candidates": 189,
+      "legacy_unmatched_candidates": 158,
+      "PETR_natural3D_detected_actor_views": 8,
+      "PETR_conditional_actor_views": 26,
+      "methods": {
+        "plane": {
+          "legacy_all_conditionally_associated_xy": {
+            "n": 14,
+            "mean": 2.0340136570166716,
+            "median": 1.8115652422249464,
+            "p90": 3.927544420731437,
+            "p95": 4.505069052477442,
+            "max": 5.070935996719074,
+            "over5_rate": 0.07142857142857142
+          },
+          "common_gt_legacy_xy": {
+            "n": 13,
+            "mean": 1.8004042462703334,
+            "median": 1.7666980959388356,
+            "p90": 3.0812002646965095,
+            "p95": 3.654717374346307,
+            "max": 4.200371467116564,
+            "over5_rate": 0.0
+          },
+          "common_gt_PETR_xy": {
+            "n": 13,
+            "mean": 8.645797399335258,
+            "median": 8.857225061423586,
+            "p90": 15.24481953838584,
+            "p95": 18.594212057070287,
+            "max": 22.804525995111657,
+            "over5_rate": 0.6923076923076923
+          },
+          "paired_count": 13,
+          "legacy_only": 1,
+          "PETR_only": 13,
+          "neither": 15,
+          "union": 27,
+          "legacy_within5m_all_actor_views": 13,
+          "PETR_within5m_all_actor_views": 8,
+          "paired_delta_mean_PETR_minus_legacy": 6.845393153064925
+        },
+        "geometry_prior": {
+          "legacy_all_conditionally_associated_xy": {
+            "n": 31,
+            "mean": 3.202344213840185,
+            "median": 2.4717539372817807,
+            "p90": 7.937602874633619,
+            "p95": 9.976183448361326,
+            "max": 12.229655155672097,
+            "over5_rate": 0.1935483870967742
+          },
+          "common_gt_legacy_xy": {
+            "n": 23,
+            "mean": 2.393566678183273,
+            "median": 1.6641631471118683,
+            "p90": 5.342161957074514,
+            "p95": 6.42334054240331,
+            "max": 8.278676873509536,
+            "over5_rate": 0.13043478260869565
+          },
+          "common_gt_PETR_xy": {
+            "n": 23,
+            "mean": 10.054360258475166,
+            "median": 8.857225061423586,
+            "p90": 20.30827655866379,
+            "p95": 22.554901051466867,
+            "max": 22.804525995111657,
+            "over5_rate": 0.7391304347826086
+          },
+          "paired_count": 23,
+          "legacy_only": 8,
+          "PETR_only": 3,
+          "neither": 8,
+          "union": 34,
+          "legacy_within5m_all_actor_views": 25,
+          "PETR_within5m_all_actor_views": 8,
+          "paired_delta_mean_PETR_minus_legacy": 7.660793580291896
+        },
+        "direct": {
+          "legacy_all_conditionally_associated_xy": {
+            "n": 31,
+            "mean": 4.583916286322317,
+            "median": 3.5455959508979635,
+            "p90": 8.951818485285967,
+            "p95": 13.425901484165948,
+            "max": 17.002768738354284,
+            "over5_rate": 0.2903225806451613
+          },
+          "common_gt_legacy_xy": {
+            "n": 23,
+            "mean": 5.0102112555239104,
+            "median": 3.8842581694092337,
+            "p90": 12.122499431055003,
+            "p95": 13.834486937500897,
+            "max": 17.002768738354284,
+            "over5_rate": 0.34782608695652173
+          },
+          "common_gt_PETR_xy": {
+            "n": 23,
+            "mean": 10.054360258475166,
+            "median": 8.857225061423586,
+            "p90": 20.30827655866379,
+            "p95": 22.554901051466867,
+            "max": 22.804525995111657,
+            "over5_rate": 0.7391304347826086
+          },
+          "paired_count": 23,
+          "legacy_only": 8,
+          "PETR_only": 3,
+          "neither": 8,
+          "union": 34,
+          "legacy_within5m_all_actor_views": 22,
+          "PETR_within5m_all_actor_views": 8,
+          "paired_delta_mean_PETR_minus_legacy": 5.044149002951259
+        }
+      }
+    },
+    {
+      "split": "sealed",
+      "seed": 101,
+      "actor_view_denominator": 45,
+      "groups": 6,
+      "legacy_natural_2D_component_detected": 39,
+      "legacy_unique_association": 30,
+      "legacy_all_candidates": 666,
+      "legacy_unmatched_candidates": 627,
+      "PETR_natural3D_detected_actor_views": 24,
+      "PETR_conditional_actor_views": 32,
+      "methods": {
+        "plane": {
+          "legacy_all_conditionally_associated_xy": {
+            "n": 15,
+            "mean": 3.101580723733037,
+            "median": 1.7010607716688906,
+            "p90": 7.687279539849506,
+            "p95": 10.386264549626631,
+            "max": 13.035281444857302,
+            "over5_rate": 0.2
+          },
+          "common_gt_legacy_xy": {
+            "n": 13,
+            "mean": 3.336856066066134,
+            "median": 1.7010607716688906,
+            "p90": 8.469125567188645,
+            "p95": 10.76469553465958,
+            "max": 13.035281444857302,
+            "over5_rate": 0.23076923076923078
+          },
+          "common_gt_PETR_xy": {
+            "n": 13,
+            "mean": 8.373741060861375,
+            "median": 8.513363708879236,
+            "p90": 10.609635868578412,
+            "p95": 18.493738044629154,
+            "max": 30.31989130870534,
+            "over5_rate": 0.6923076923076923
+          },
+          "paired_count": 13,
+          "legacy_only": 2,
+          "PETR_only": 19,
+          "neither": 11,
+          "union": 34,
+          "legacy_within5m_all_actor_views": 12,
+          "PETR_within5m_all_actor_views": 16,
+          "paired_delta_mean_PETR_minus_legacy": 5.0368849947952405
+        },
+        "geometry_prior": {
+          "legacy_all_conditionally_associated_xy": {
+            "n": 30,
+            "mean": 4.171571050176335,
+            "median": 2.4632622678050113,
+            "p90": 11.574331554612392,
+            "p95": 12.196620057891565,
+            "max": 13.01941197323426,
+            "over5_rate": 0.3
+          },
+          "common_gt_legacy_xy": {
+            "n": 20,
+            "mean": 3.7050135056505615,
+            "median": 2.416396242813877,
+            "p90": 9.808553259945835,
+            "p95": 11.774814605522044,
+            "max": 12.576244965024138,
+            "over5_rate": 0.25
+          },
+          "common_gt_PETR_xy": {
+            "n": 20,
+            "mean": 7.25380621773382,
+            "median": 5.679569878325919,
+            "p90": 10.655464547952159,
+            "p95": 12.030521094635334,
+            "max": 30.31989130870534,
+            "over5_rate": 0.6
+          },
+          "paired_count": 20,
+          "legacy_only": 10,
+          "PETR_only": 12,
+          "neither": 3,
+          "union": 42,
+          "legacy_within5m_all_actor_views": 21,
+          "PETR_within5m_all_actor_views": 16,
+          "paired_delta_mean_PETR_minus_legacy": 3.5487927120832587
+        },
+        "direct": {
+          "legacy_all_conditionally_associated_xy": {
+            "n": 30,
+            "mean": 3.89541042307743,
+            "median": 2.8993907733188173,
+            "p90": 8.708122570839684,
+            "p95": 9.09995723909439,
+            "max": 10.351663941309907,
+            "over5_rate": 0.36666666666666664
+          },
+          "common_gt_legacy_xy": {
+            "n": 20,
+            "mean": 3.3392785155515106,
+            "median": 2.820274872122318,
+            "p90": 7.579928854692486,
+            "p95": 8.693171173942378,
+            "max": 8.97724771499116,
+            "over5_rate": 0.25
+          },
+          "common_gt_PETR_xy": {
+            "n": 20,
+            "mean": 7.25380621773382,
+            "median": 5.679569878325919,
+            "p90": 10.655464547952159,
+            "p95": 12.030521094635334,
+            "max": 30.31989130870534,
+            "over5_rate": 0.6
+          },
+          "paired_count": 20,
+          "legacy_only": 10,
+          "PETR_only": 12,
+          "neither": 3,
+          "union": 42,
+          "legacy_within5m_all_actor_views": 19,
+          "PETR_within5m_all_actor_views": 16,
+          "paired_delta_mean_PETR_minus_legacy": 3.9145277021823106
+        }
+      }
+    },
+    {
+      "split": "sealed",
+      "seed": 102,
+      "actor_view_denominator": 45,
+      "groups": 6,
+      "legacy_natural_2D_component_detected": 36,
+      "legacy_unique_association": 29,
+      "legacy_all_candidates": 516,
+      "legacy_unmatched_candidates": 480,
+      "PETR_natural3D_detected_actor_views": 24,
+      "PETR_conditional_actor_views": 32,
+      "methods": {
+        "plane": {
+          "legacy_all_conditionally_associated_xy": {
+            "n": 14,
+            "mean": 2.5308666564198945,
+            "median": 1.6832602785261725,
+            "p90": 3.3496473772606823,
+            "p95": 6.842198928636776,
+            "max": 12.560977720806585,
+            "over5_rate": 0.07142857142857142
+          },
+          "common_gt_legacy_xy": {
+            "n": 12,
+            "mean": 2.440315327926777,
+            "median": 1.576534961938128,
+            "p90": 2.360178901694618,
+            "p95": 6.951509257490123,
+            "max": 12.560977720806585,
+            "over5_rate": 0.08333333333333333
+          },
+          "common_gt_PETR_xy": {
+            "n": 12,
+            "mean": 8.694345684581325,
+            "median": 8.513363708879236,
+            "p90": 10.609635868578414,
+            "p95": 19.479250816635517,
+            "max": 30.31989130870534,
+            "over5_rate": 0.75
+          },
+          "paired_count": 12,
+          "legacy_only": 2,
+          "PETR_only": 20,
+          "neither": 11,
+          "union": 34,
+          "legacy_within5m_all_actor_views": 13,
+          "PETR_within5m_all_actor_views": 16,
+          "paired_delta_mean_PETR_minus_legacy": 6.254030356654549
+        },
+        "geometry_prior": {
+          "legacy_all_conditionally_associated_xy": {
+            "n": 29,
+            "mean": 2.186017403339769,
+            "median": 1.4109850473832124,
+            "p90": 4.068686615325241,
+            "p95": 5.514448323846626,
+            "max": 10.989980221210049,
+            "over5_rate": 0.10344827586206896
+          },
+          "common_gt_legacy_xy": {
+            "n": 21,
+            "mean": 2.104047512708326,
+            "median": 1.3198428295268558,
+            "p90": 3.791837826622873,
+            "p95": 5.740026026321232,
+            "max": 10.989980221210049,
+            "over5_rate": 0.09523809523809523
+          },
+          "common_gt_PETR_xy": {
+            "n": 21,
+            "mean": 6.55845402459848,
+            "median": 5.150552153684023,
+            "p90": 10.609635868578414,
+            "p95": 11.067922662315846,
+            "max": 30.31989130870534,
+            "over5_rate": 0.5238095238095238
+          },
+          "paired_count": 21,
+          "legacy_only": 8,
+          "PETR_only": 11,
+          "neither": 5,
+          "union": 40,
+          "legacy_within5m_all_actor_views": 26,
+          "PETR_within5m_all_actor_views": 16,
+          "paired_delta_mean_PETR_minus_legacy": 4.454406511890157
+        },
+        "direct": {
+          "legacy_all_conditionally_associated_xy": {
+            "n": 29,
+            "mean": 3.2454578636165934,
+            "median": 3.0390529230273806,
+            "p90": 6.315401701826755,
+            "p95": 6.744811704600535,
+            "max": 8.4704123888893,
+            "over5_rate": 0.20689655172413793
+          },
+          "common_gt_legacy_xy": {
+            "n": 21,
+            "mean": 3.181998349492041,
+            "median": 2.083909734892897,
+            "p90": 6.313666698971631,
+            "p95": 7.0264583655027275,
+            "max": 8.4704123888893,
+            "over5_rate": 0.19047619047619047
+          },
+          "common_gt_PETR_xy": {
+            "n": 21,
+            "mean": 6.55845402459848,
+            "median": 5.150552153684023,
+            "p90": 10.609635868578414,
+            "p95": 11.067922662315846,
+            "max": 30.31989130870534,
+            "over5_rate": 0.5238095238095238
+          },
+          "paired_count": 21,
+          "legacy_only": 8,
+          "PETR_only": 11,
+          "neither": 5,
+          "union": 40,
+          "legacy_within5m_all_actor_views": 23,
+          "PETR_within5m_all_actor_views": 16,
+          "paired_delta_mean_PETR_minus_legacy": 3.3764556751064396
+        }
+      }
+    }
+  ],
+  "ledger": {
+    "path": "/root/gpufree-data/hs-drive-experiments/m8b-petr-zero-shot/paired_ledger.json",
+    "bytes": 185950,
+    "sha256": "010dc08893964c61bade84f003b7302c6bba80e100d671092d6de4175a111ba4"
+  },
+  "baseline_sources": [
+    {
+      "path": "runs/m5o_eval_val/predictions.json",
+      "bytes": 8779626,
+      "sha256": "b6ac6f255cf6705325b123ecce004f77b015a4c436563d4befe07834efddc198"
+    },
+    {
+      "path": "runs/m5o_eval_calibration/predictions.json",
+      "bytes": 3579074,
+      "sha256": "9c5ab4a443af0b0ac77e981255b6c9f7219f5404c93f5e71e4c8790f12a46790"
+    },
+    {
+      "path": "runs/m5o_eval_sealed/predictions.json",
+      "bytes": 10117875,
+      "sha256": "30746e397b356e07c04dbbb91d925ea1dfd6c0305bff0c84761c2e7b1458a55d"
+    }
+  ],
+  "baseline_checkpoint_selection": {
+    "path": "reports/m5o_training.json",
+    "bytes": 88340,
+    "sha256": "073b957b21a20f2ff74b9a2cbeff63b92dde084f1be5eeb452a9baf56bbd04f8"
+  },
+  "limits": [
+    "Legacy2D component detection and PETR3D center2m detection are different tasks; not interchangeable detection rates",
+    "Conditional pairing repeats PETR object estimate across camera views to align old actor-view denominator; not independent observations",
+    "Projected PETR association is proxy not exact actor identity; common subset is selective",
+    "Every legacy candidate retained in burden; no comparable legacy class output or 3Ddimensions; no fabricated precision metric",
+    "Train paired comparison NotRun: no frozen baseline evaluation predictions, not trained or regenerated",
+    "Historical calibration failed; no legacy threshold retuning",
+    "No fresh blind set; cannot establish architecture superiority"
+  ]
+}
