@@ -3,6 +3,7 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import signal
 import time
 from tools.m8a_common import asset,sha,write
 
@@ -13,7 +14,7 @@ LOG=Path("reports/m8a_p1_logs")
 
 
 def provenance(kind):
-    paths=[CONFIG,*sorted(Path("tools").glob("m8a_p1_*.py")),
+    paths=[*sorted(Path("configs/m8a").glob("p1_*")),*sorted(Path("tools").glob("m8a_p1_*.py")),
            *sorted(Path("tests").glob("test_m8a_p1*.py"))]
     return dict(kind=kind,base=CFG["base"],
         git_head=subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip(),
@@ -37,9 +38,11 @@ def run(name,command,network=False,timeout=900,cwd=None,extra_env=None):
     started=time.monotonic()
     with (LOG/f"{name}.txt").open("x") as output:
         try:
-            result=subprocess.run(command,env=env,cwd=cwd,stdout=output,stderr=subprocess.STDOUT,timeout=timeout)
-            rc=result.returncode
+            process=subprocess.Popen(command,env=env,cwd=cwd,stdout=output,stderr=subprocess.STDOUT,start_new_session=True)
+            rc=process.wait(timeout=timeout)
         except subprocess.TimeoutExpired:
+            os.killpg(process.pid,signal.SIGKILL)
+            process.wait()
             rc=124
     write(LOG/f"{name}.json",dict(**provenance("ActualIsolatedSubprocess"),
         command=command,cwd=str(cwd) if cwd else None,exit_code=rc,
