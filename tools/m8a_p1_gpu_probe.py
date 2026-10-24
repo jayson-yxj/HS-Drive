@@ -21,7 +21,7 @@ def main():
     torch.backends.cudnn.allow_tf32=False
     torch.backends.cudnn.benchmark=False
     t=time.perf_counter();torch.cuda.init();torch.cuda.synchronize()
-    device=dict(name=torch.cuda.get_device_name(),capability=list(torch.cuda.get_device_capability()),
+    device=dict(pid=os.getpid(),name=torch.cuda.get_device_name(),capability=list(torch.cuda.get_device_capability()),
         torch=torch.__version__,runtime=torch.version.cuda,arch_list=torch.cuda.get_arch_list(),
         cuda_initialization_ms=1000*(time.perf_counter()-t))
     a=torch.randn(128,128,device='cuda');b=a@a.T;torch.cuda.synchronize()

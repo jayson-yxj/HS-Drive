@@ -12,7 +12,7 @@ def main():
     data=json.loads(packet.read_text());out=ROOT/'artifacts'/args.run_id;out.mkdir(exist_ok=False)
     # No checkpoint/GT deserialization in this contract-only process; no CARLA client.
     env=dict(M8A_ISOLATED='1',M8A_OUTPUT=str(out),M8A_SHADOW_PACKET=str(packet.resolve()),PETR_SOURCE=str(ROOT/'sources/PETR'),
-             PYTHONPATH=str(ROOT/'sources/mmdetection3d'),LD_LIBRARY_PATH=str(ROOT/'env/lib/python3.8/site-packages/torch/lib'),OPENBLAS_NUM_THREADS='2')
+             PYTHONPATH=str(ROOT/'sources/mmdetection3d'),LD_LIBRARY_PATH=str(ROOT/'env/lib/python3.8/site-packages/torch/lib')+':'+str(ROOT/'cuda-11.8/lib'),OPENBLAS_NUM_THREADS='2')
     for camera in data['cameras']:assert asset(camera['path'])['sha256']==camera['sha256']
     run('camera_'+args.run_id,['unshare','--net',str(ROOT/'env/bin/python'),'-s',str(Path('tools/m8a_p1_camera_check.py').resolve())],extra_env=env,timeout=120)
     write(LOG/('camera_'+args.run_id+'_artifacts.json'),dict(**provenance('ActualOfflineContractExecution'),packet=asset(packet),files=[asset(x) for x in out.iterdir()]))

@@ -41,7 +41,7 @@ def main():
     runtime_env=dict(M8A_ISOLATED='1',M8A_OUTPUT=str(out),PETR_SOURCE=str(ROOT/'sources/PETR'),
         PYTHONPATH=str(ROOT/'sources/mmdetection3d'),M8A_SAFE_WEIGHTS=str(ROOT/'artifacts/safe_extract/model_tensors.npz'),
         M8A_SAFE_SHA256=extraction['sha256'],OPENBLAS_NUM_THREADS='2',
-        LD_LIBRARY_PATH=str(ROOT/'env/lib/python3.8/site-packages/torch/lib'))
+        LD_LIBRARY_PATH=str(ROOT/'env/lib/python3.8/site-packages/torch/lib')+':'+str(ROOT/'cuda-11.8/lib'))
     stop=threading.Event();samples=[]
     def monitor():
         while not stop.is_set():
