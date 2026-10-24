@@ -7,7 +7,7 @@ from pathlib import Path
 import time
 import traceback
 
-OUT=Path('/output')
+OUT=Path(os.environ.get('M8A_OUTPUT','/output'))
 def save(name,data):
     with (OUT/(name+'.json')).open('x') as stream:json.dump(data,stream,indent=2,allow_nan=False)
 
@@ -54,7 +54,10 @@ def main():
     previous=cfg.model.img_backbone.pretrained
     cfg.model.img_backbone.pretrained=None
     model=build_model(cfg.model,train_cfg=cfg.get('train_cfg'),test_cfg=cfg.get('test_cfg'))
-    state=torch.load('/input/epoch_24.pth',map_location='cpu',weights_only=True)['state_dict']
+    safe_file=Path(os.environ['M8A_SAFE_WEIGHTS'])
+    assert hashlib.sha256(safe_file.read_bytes()).hexdigest()==os.environ['M8A_SAFE_SHA256']
+    with np.load(safe_file,allow_pickle=False) as arrays:
+        state={key:torch.from_numpy(arrays[key].copy()) for key in arrays.files}
     expected=model.state_dict()
     missing=sorted(set(expected)-set(state));unexpected=sorted(set(state)-set(expected))
     comparisons=[dict(key=k,model_shape=list(v.shape),checkpoint_shape=list(state[k].shape) if k in state else None,

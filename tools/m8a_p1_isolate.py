@@ -8,7 +8,7 @@ from tools.m8a_p1_common import ROOT,LOG,CFG,provenance,write,asset,run
 
 
 def command(output, script):
-    pybase=Path(ROOT/'env/bin/python').resolve().parent.parent
+    pybase=Path('/root/.local/share/uv/python/cpython-3.8.20-linux-x86_64-gnu')
     cmd=['bwrap','--unshare-all','--die-with-parent','--new-session','--cap-drop','ALL',
         '--ro-bind','/usr','/usr','--ro-bind','/lib','/lib','--ro-bind','/lib64','/lib64',
         '--dir','/etc','--ro-bind','/etc/ld.so.cache','/etc/ld.so.cache',
@@ -23,7 +23,7 @@ def command(output, script):
         p=Path('/proc')/name
         if p.exists():cmd+=['--ro-bind',str(p),str(p)]
     cmd+=['--clearenv','--setenv','PATH',str(ROOT/'env/bin')+':/usr/bin',
-        '--setenv','HOME','/tmp','--setenv','PYTHONDONTWRITEBYTECODE','1',
+        '--setenv','LD_PRELOAD',str(pybase/'lib/libpython3.8.so.1.0'),'--setenv','LD_LIBRARY_PATH',str(pybase/'lib')+':'+str(ROOT/'env/lib/python3.8/site-packages/torch/lib'),'--setenv','HOME','/tmp','--setenv','PYTHONDONTWRITEBYTECODE','1',
         '--setenv','OMP_NUM_THREADS','2','--setenv','MKL_NUM_THREADS','2',
         '--setenv','OPENBLAS_NUM_THREADS','2','--setenv','M8A_ISOLATED','1',
         '--setenv','PETR_SOURCE',str(ROOT/'sources/PETR'),
@@ -35,7 +35,13 @@ def command(output, script):
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--run-id',required=True);args=parser.parse_args()
     out=ROOT/'artifacts'/args.run_id;out.mkdir(exist_ok=False)
-    cmd=command(out,Path('tools/m8a_p1_gpu_probe.py'))
+    import json
+    extraction=json.loads((ROOT/'artifacts/safe_extract/safe_extract.json').read_text())
+    cmd=['unshare','--net',str(ROOT/'env/bin/python'),'-s',str(Path('tools/m8a_p1_gpu_probe.py').resolve())]
+    runtime_env=dict(M8A_ISOLATED='1',M8A_OUTPUT=str(out),PETR_SOURCE=str(ROOT/'sources/PETR'),
+        PYTHONPATH=str(ROOT/'sources/mmdetection3d'),M8A_SAFE_WEIGHTS=str(ROOT/'artifacts/safe_extract/model_tensors.npz'),
+        M8A_SAFE_SHA256=extraction['sha256'],OPENBLAS_NUM_THREADS='2',
+        LD_LIBRARY_PATH=str(ROOT/'env/lib/python3.8/site-packages/torch/lib'))
     stop=threading.Event();samples=[]
     def monitor():
         while not stop.is_set():
@@ -43,7 +49,7 @@ def main():
             samples.append(dict(monotonic_s=time.monotonic(),result=p.stdout.strip(),returncode=p.returncode))
             stop.wait(.25)
     thread=threading.Thread(target=monitor,daemon=True);thread.start()
-    try:run('gpu_'+args.run_id,cmd,timeout=600)
+    try:run('gpu_'+args.run_id,cmd,timeout=600,extra_env=runtime_env)
     finally:
         stop.set();thread.join()
         write(LOG/('gpu_monitor_'+args.run_id+'.json'),dict(**provenance('ActualExternalGPUProcessSampling'),samples=samples,interval_s=.25))

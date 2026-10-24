@@ -24,7 +24,7 @@ def environment(network=False):
     # No inherited credentials, proxy configuration or user package settings.
     env={"PATH":f"{ROOT}/env/bin:/usr/bin:/bin","HOME":str(ROOT/"home"),
          "LANG":"C.UTF-8","PYTHONNOUSERSITE":"1","PYTHONDONTWRITEBYTECODE":"1",
-         "PIP_DISABLE_PIP_VERSION_CHECK":"1","PIP_CACHE_DIR":str(ROOT/"wheel-cache"),
+         "PIP_CONFIG_FILE":"/dev/null","PIP_DISABLE_PIP_VERSION_CHECK":"1","PIP_CACHE_DIR":str(ROOT/"wheel-cache"),
          "OMP_NUM_THREADS":"2","MKL_NUM_THREADS":"2","MAX_JOBS":"4"}
     if network:env.update(HTTP_PROXY=CFG["proxy"],HTTPS_PROXY=CFG["proxy"])
     return env
