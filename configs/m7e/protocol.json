@@ -1,0 +1,13 @@
+{
+ "stage":"M7-E", "base":"6ed646c", "development":["dev_constant_r3","dev_braking_r20"],
+ "historical":"All other M7D episodes, including former final road30/1, regression only",
+ "candidate":"F_state_anchored_slow", "algorithm":"Single quintic Hermite XY connection, arc-length parameterized; measured initial XY/yaw/speed, terminal route tangent",
+ "connection_length_m":12.0,"geometry_step_m":0.02,"max_lateral_error_m":0.8,"max_heading_error_rad":0.2,
+ "target_speed_mps":0.5,"speed_transition_s":4.5,"horizon_s":6.0,"max_age_s":0.2,"budget_ms":200,
+ "initial_unobserved":"Zero planned initial acceleration and curvature assumed, not measured. No initial yaw-rate/acceleration continuity claim.",
+ "selection_order":["A_keep_route","B_left","C_right","E_slow_follow","F_state_anchored_slow","D_stop"],
+ "development_gate":"At least 5 newly selected continuing snapshots spanning >=1s, zero accepted sampled reference conflicts and no loosened constraints; otherwise stop F without second algorithm",
+ "optimization":"One immutable map/road/lane/section/polygon-WKB/inset region cache only",
+ "fresh_collection":"Conditional on development gate; at most 4 episodes; independent script not HS planning; map-only road choice before final results",
+ "no_default_changes":true,"no_new_motion_family":true,"control_authorized":false
+}

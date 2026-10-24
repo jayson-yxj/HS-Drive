@@ -1,0 +1,651 @@
+{
+  "provenance": {
+    "base": "6ed646ccffbafe760f5bba8d01b58be94ed11089",
+    "commit": "6ed646ccffbafe760f5bba8d01b58be94ed11089",
+    "sources": {
+      "tools/m7e_seven.py": "d759274a52dd3fcf2a294bf504ddcce3183e3dbdf183107eb1838e21c772492b",
+      "tools/m7e_figures.py": "45c27af3bcb4cb163c4452d45149c664e29e565ff3807d748def0892d48e40a2",
+      "tools/m7e_development_gate.py": "9e63ea38a60b3331d07504781e33784a8daad67dac0e3431374558c84f117b45",
+      "tools/m7e_attribution.py": "ca5c83c7f0ce2654ca2c29cf420c4c0cb54b89776f7c3e9775f7907eb0555a7f",
+      "tools/m7e_release.py": "1a491d0a9dc84584dccb8b592b473d17091ddce77603bb7cb5b4cbeae56e3be7",
+      "tools/m7e_collect.py": "4b45d4cd9f4d02918369e7d3e634e099023cfabd7d0c88f42f7963614e1a923d",
+      "tools/m7e_report.py": "0cc89c3012a8d54934bcfa39e809f6d5d776391894218acecd0b0c2d9cdd0849",
+      "tools/m7e_safety.py": "40af5599e28b19e40380eeca269537dd83f3893b7f90af51dcc1a9e6cb0cddb9",
+      "tools/m7e_support.py": "99f70f240a60d954457bab6e7c9a32b60575d75ab3c0374b64dfd26392888b2d",
+      "tools/m7e_replay.py": "a1b7af51e464e0eec97614dd38d6820d2715633e221d327e78b8a5cd92c251f5",
+      "tools/m7e_campaign.py": "ec87578ac8210e4b53c4a83ce5004f252ae4ccc528cc982cd221a089c4509c6d",
+      "tools/m7e_equivalence.py": "0e5a0e6ea61ae2dd6599fb91aa80f9880e661d970a6052dae3f70816498babc6",
+      "tools/m7e_pair.py": "bf37673ae38d4c86ec8510dc98b3add8d31032441910b5f1f834c28de092c5cc",
+      "tools/m7e_prepare.py": "da1226fc0d170f410bdec1a35261c489e51fc3147a759e583df2ec624786d3eb",
+      "tools/m7e_common.py": "8a11c7581731f6e966b2b81501c3a6be0ffe3b6a8e28c863dfb0e1d6c4674788",
+      "tools/m7e_evaluate.py": "c8570cf7517026aa8debceaa9b0beb725d821cd666f8a8917a9b648dd696fa3e",
+      "diagnostics/m7e_trajectory.py": "8e36f7ed20b4eaa67296436cf79237106a4738c8469fbefae8a41f11399eb8f5",
+      "diagnostics/m7e_region.py": "9c6b8a6ce9ab573894621fe9cdedbdc426d599f0ffc67af5996ba17f62402d7c",
+      "tests/test_m7e_trajectory.py": "d55f03cabef1ffd4ae712ac3a3be93e36ae07bb3473317877258512f6577d030",
+      "configs/m7e/protocol.json": "2c0f92fc71bef5f156a58534e699686781a158dada1fb6f660a521da5b516cd5",
+      "configs/m7e/collection.json": "1e776562fd98415689989860f8eaa780b3e1a1fb0534f756683694cbc1d20e18"
+    },
+    "new_control": false,
+    "new_training": false
+  },
+  "kind": "OfflineActualCARLARecords_SeparateSyntheticTests",
+  "control_authorized": false,
+  "episodes": [
+    {
+      "episode": "dev_braking_r20",
+      "group": "M7D_development",
+      "snapshots": 61,
+      "A": {
+        "A_keep_route": 4,
+        "D_stop": 14,
+        "None": 43
+      },
+      "B": {
+        "A_keep_route": 4,
+        "F_state_anchored_slow": 26,
+        "None": 31
+      },
+      "added_continue": 26,
+      "added_frames": [
+        5345,
+        5349,
+        5353,
+        5357,
+        5361,
+        5365,
+        5369,
+        5373,
+        5377,
+        5381,
+        5385,
+        5389,
+        5393,
+        5397,
+        5401,
+        5405,
+        5409,
+        5413,
+        5417,
+        5421,
+        5425,
+        5429,
+        5481,
+        5533,
+        5537,
+        5541
+      ],
+      "old_candidates_unchanged": true,
+      "F_generated": 40,
+      "F_geometry_pass": 40,
+      "F_dynamic_pass": 40,
+      "F_reserve_pass": 27,
+      "F_accepted": 27,
+      "F_final_connection_status": {
+        "GeometryKinematicsPassed": 40
+      },
+      "F_infeasible": {
+        "InitialStateConnectionInfeasible:negative_measured_speed_no_clipping": 21
+      },
+      "F_geometry_reasons": {},
+      "unknown_snapshots": 0,
+      "artifact": {
+        "path": "reports/m7e_replays/dev_braking_r20_B.json",
+        "bytes": 34521649,
+        "sha256": "86c877c64258dd6c9d92a66a1fac9c0a1035d2a138da1e984c1c1ad5559bcf82"
+      }
+    },
+    {
+      "episode": "dev_constant_r3",
+      "group": "M7D_development",
+      "snapshots": 61,
+      "A": {
+        "A_keep_route": 4,
+        "E_slow_follow": 3,
+        "D_stop": 48,
+        "B_left": 6
+      },
+      "B": {
+        "A_keep_route": 4,
+        "E_slow_follow": 3,
+        "F_state_anchored_slow": 23,
+        "B_left": 6,
+        "D_stop": 25
+      },
+      "added_continue": 23,
+      "added_frames": [
+        4928,
+        4940,
+        4944,
+        4948,
+        4952,
+        4956,
+        4960,
+        4988,
+        4992,
+        4996,
+        5000,
+        5004,
+        5008,
+        5012,
+        5016,
+        5020,
+        5024,
+        5028,
+        5032,
+        5036,
+        5040,
+        5044,
+        5048
+      ],
+      "old_candidates_unchanged": true,
+      "F_generated": 61,
+      "F_geometry_pass": 61,
+      "F_dynamic_pass": 61,
+      "F_reserve_pass": 36,
+      "F_accepted": 36,
+      "F_final_connection_status": {
+        "GeometryKinematicsPassed": 61
+      },
+      "F_infeasible": {},
+      "F_geometry_reasons": {},
+      "unknown_snapshots": 0,
+      "artifact": {
+        "path": "reports/m7e_replays/dev_constant_r3_B.json",
+        "bytes": 40931051,
+        "sha256": "f04ed5eb8917a023d4d44cfeb05d4b5bd76d23696d78b7c9e09162e821b7ebba"
+      }
+    },
+    {
+      "episode": "final_braking_r30",
+      "group": "historical_regression",
+      "snapshots": 61,
+      "A": {
+        "None": 23,
+        "D_stop": 38
+      },
+      "B": {
+        "None": 23,
+        "D_stop": 38
+      },
+      "added_continue": 0,
+      "added_frames": [],
+      "old_candidates_unchanged": true,
+      "F_generated": 48,
+      "F_geometry_pass": 0,
+      "F_dynamic_pass": 48,
+      "F_reserve_pass": 32,
+      "F_accepted": 0,
+      "F_final_connection_status": {
+        "InitialStateConnectionInfeasible:guide_path_road_violation": 48
+      },
+      "F_infeasible": {
+        "InitialStateConnectionInfeasible:negative_measured_speed_no_clipping": 13
+      },
+      "F_geometry_reasons": {
+        "guide_path_road_violation": 48
+      },
+      "unknown_snapshots": 0,
+      "artifact": {
+        "path": "reports/m7e_replays/final_braking_r30_B.json",
+        "bytes": 35911116,
+        "sha256": "73defd9915f668b23e055e8219e34244e237caaa9a1665e8527c80769b504e33"
+      }
+    },
+    {
+      "episode": "final_crossing_r1",
+      "group": "historical_regression",
+      "snapshots": 61,
+      "A": {
+        "None": 61
+      },
+      "B": {
+        "None": 61
+      },
+      "added_continue": 0,
+      "added_frames": [],
+      "old_candidates_unchanged": true,
+      "F_generated": 61,
+      "F_geometry_pass": 0,
+      "F_dynamic_pass": 0,
+      "F_reserve_pass": 61,
+      "F_accepted": 0,
+      "F_final_connection_status": {
+        "InitialStateConnectionInfeasible:guide_path_road_violation": 61
+      },
+      "F_infeasible": {},
+      "F_geometry_reasons": {
+        "guide_path_road_violation": 61
+      },
+      "unknown_snapshots": 61,
+      "artifact": {
+        "path": "reports/m7e_replays/final_crossing_r1_B.json",
+        "bytes": 41260827,
+        "sha256": "07f474504e853a108561e2592ad485209d84b1e6315549b418e72079900a1b7b"
+      }
+    },
+    {
+      "episode": "historical_final_bypass_p126_s101",
+      "group": "historical_regression",
+      "snapshots": 61,
+      "A": {
+        "A_keep_route": 51,
+        "None": 10
+      },
+      "B": {
+        "A_keep_route": 51,
+        "F_state_anchored_slow": 10
+      },
+      "added_continue": 10,
+      "added_frames": [
+        141531,
+        141535,
+        141539,
+        141543,
+        141547,
+        141551,
+        141555,
+        141559,
+        141563,
+        141567
+      ],
+      "old_candidates_unchanged": true,
+      "F_generated": 61,
+      "F_geometry_pass": 61,
+      "F_dynamic_pass": 61,
+      "F_reserve_pass": 61,
+      "F_accepted": 61,
+      "F_final_connection_status": {
+        "GeometryKinematicsPassed": 61
+      },
+      "F_infeasible": {},
+      "F_geometry_reasons": {},
+      "unknown_snapshots": 0,
+      "artifact": {
+        "path": "reports/m7e_replays/historical_final_bypass_p126_s101_B.json",
+        "bytes": 33362825,
+        "sha256": "f7d649a157bb47c16e10cd4253803d35a6f8184bbefb4dbebe00c6713d80df09"
+      }
+    },
+    {
+      "episode": "historical_final_lead_s101",
+      "group": "historical_regression",
+      "snapshots": 61,
+      "A": {
+        "A_keep_route": 26,
+        "None": 12,
+        "D_stop": 23
+      },
+      "B": {
+        "A_keep_route": 26,
+        "F_state_anchored_slow": 31,
+        "D_stop": 4
+      },
+      "added_continue": 31,
+      "added_frames": [
+        151476,
+        151480,
+        151484,
+        151488,
+        151492,
+        151496,
+        151500,
+        151504,
+        151508,
+        151512,
+        151516,
+        151520,
+        151548,
+        151552,
+        151556,
+        151560,
+        151564,
+        151568,
+        151572,
+        151576,
+        151580,
+        151584,
+        151588,
+        151592,
+        151596,
+        151600,
+        151604,
+        151608,
+        151612,
+        151616,
+        151620
+      ],
+      "old_candidates_unchanged": true,
+      "F_generated": 43,
+      "F_geometry_pass": 43,
+      "F_dynamic_pass": 43,
+      "F_reserve_pass": 39,
+      "F_accepted": 39,
+      "F_final_connection_status": {
+        "GeometryKinematicsPassed": 43
+      },
+      "F_infeasible": {
+        "InitialStateConnectionInfeasible:negative_measured_speed_no_clipping": 18
+      },
+      "F_geometry_reasons": {},
+      "unknown_snapshots": 0,
+      "artifact": {
+        "path": "reports/m7e_replays/historical_final_lead_s101_B.json",
+        "bytes": 33141091,
+        "sha256": "cfdd5c76e67b01eb1f56ea6af64728d6b741ab476925030ff06f782f805f581c"
+      }
+    },
+    {
+      "episode": "m7e_final_braking_r65",
+      "group": "new_final",
+      "snapshots": 61,
+      "A": {
+        "None": 40,
+        "D_stop": 21
+      },
+      "B": {
+        "F_state_anchored_slow": 27,
+        "D_stop": 16,
+        "None": 18
+      },
+      "added_continue": 27,
+      "added_frames": [
+        2433,
+        2437,
+        2441,
+        2445,
+        2449,
+        2453,
+        2457,
+        2461,
+        2465,
+        2469,
+        2473,
+        2477,
+        2481,
+        2485,
+        2489,
+        2493,
+        2497,
+        2501,
+        2505,
+        2509,
+        2513,
+        2517,
+        2521,
+        2525,
+        2609,
+        2637,
+        2641
+      ],
+      "old_candidates_unchanged": "SeparatePairedSameSnapshotAEmbedded",
+      "F_generated": 43,
+      "F_geometry_pass": 43,
+      "F_dynamic_pass": 43,
+      "F_reserve_pass": 27,
+      "F_accepted": 27,
+      "F_final_connection_status": {
+        "GeometryKinematicsPassed": 43
+      },
+      "F_infeasible": {
+        "InitialStateConnectionInfeasible:negative_measured_speed_no_clipping": 18
+      },
+      "F_geometry_reasons": {},
+      "unknown_snapshots": 0,
+      "artifact": {
+        "path": "reports/m7e_replays/m7e_final_braking_r65_B.json",
+        "bytes": 34771794,
+        "sha256": "28113472756139155618d3f595e7018ac2645106f55dfbe641abe16583503b7b"
+      }
+    },
+    {
+      "episode": "m7e_final_constant_r67",
+      "group": "new_final",
+      "snapshots": 61,
+      "A": {
+        "None": 17,
+        "D_stop": 44
+      },
+      "B": {
+        "F_state_anchored_slow": 28,
+        "None": 3,
+        "D_stop": 30
+      },
+      "added_continue": 28,
+      "added_frames": [
+        2853,
+        2869,
+        2873,
+        2877,
+        2881,
+        2885,
+        2889,
+        2893,
+        2897,
+        2901,
+        2905,
+        2909,
+        2913,
+        2917,
+        2921,
+        2925,
+        2929,
+        2933,
+        2937,
+        2941,
+        2945,
+        2949,
+        2953,
+        2957,
+        2961,
+        2965,
+        2969,
+        2973
+      ],
+      "old_candidates_unchanged": "SeparatePairedSameSnapshotAEmbedded",
+      "F_generated": 58,
+      "F_geometry_pass": 58,
+      "F_dynamic_pass": 52,
+      "F_reserve_pass": 28,
+      "F_accepted": 28,
+      "F_final_connection_status": {
+        "GeometryKinematicsPassed": 58
+      },
+      "F_infeasible": {
+        "InitialStateConnectionInfeasible:negative_measured_speed_no_clipping": 3
+      },
+      "F_geometry_reasons": {},
+      "unknown_snapshots": 0,
+      "artifact": {
+        "path": "reports/m7e_replays/m7e_final_constant_r67_B.json",
+        "bytes": 40479453,
+        "sha256": "8e746909697635000a1ec7820d8439fc2e049b2280c6346697f5ac2479fca5f7"
+      }
+    },
+    {
+      "episode": "m7e_final_crossing_r28",
+      "group": "new_final",
+      "snapshots": 61,
+      "A": {
+        "None": 61
+      },
+      "B": {
+        "None": 61
+      },
+      "added_continue": 0,
+      "added_frames": [],
+      "old_candidates_unchanged": "SeparatePairedSameSnapshotAEmbedded",
+      "F_generated": 61,
+      "F_geometry_pass": 0,
+      "F_dynamic_pass": 0,
+      "F_reserve_pass": 61,
+      "F_accepted": 0,
+      "F_final_connection_status": {
+        "InitialStateConnectionInfeasible:guide_path_road_violation": 61
+      },
+      "F_infeasible": {},
+      "F_geometry_reasons": {
+        "guide_path_road_violation": 61
+      },
+      "unknown_snapshots": 61,
+      "artifact": {
+        "path": "reports/m7e_replays/m7e_final_crossing_r28_B.json",
+        "bytes": 39409054,
+        "sha256": "ec72567fb49aabed8e16e4b41efa23e335964f71dd9729eb058d7cef3e18a054"
+      }
+    },
+    {
+      "episode": "val_connection_r0",
+      "group": "historical_regression",
+      "snapshots": 61,
+      "A": {
+        "None": 61
+      },
+      "B": {
+        "None": 61
+      },
+      "added_continue": 0,
+      "added_frames": [],
+      "old_candidates_unchanged": true,
+      "F_generated": 57,
+      "F_geometry_pass": 0,
+      "F_dynamic_pass": 0,
+      "F_reserve_pass": 20,
+      "F_accepted": 0,
+      "F_final_connection_status": {
+        "InitialStateConnectionInfeasible:guide_path_road_violation": 57
+      },
+      "F_infeasible": {
+        "InitialStateConnectionInfeasible:negative_measured_speed_no_clipping": 4
+      },
+      "F_geometry_reasons": {
+        "guide_path_road_violation": 57
+      },
+      "unknown_snapshots": 61,
+      "artifact": {
+        "path": "reports/m7e_replays/val_connection_r0_B.json",
+        "bytes": 35983532,
+        "sha256": "52fdf44339c2c660414650a84d4c058e04c84f84d0e1da2bbcb7919a1456f15b"
+      }
+    },
+    {
+      "episode": "val_restart_r76",
+      "group": "historical_regression",
+      "snapshots": 61,
+      "A": {
+        "A_keep_route": 4,
+        "D_stop": 38,
+        "None": 19
+      },
+      "B": {
+        "A_keep_route": 4,
+        "F_state_anchored_slow": 28,
+        "D_stop": 16,
+        "None": 13
+      },
+      "added_continue": 28,
+      "added_frames": [
+        50598,
+        50602,
+        50606,
+        50610,
+        50614,
+        50618,
+        50622,
+        50626,
+        50630,
+        50634,
+        50638,
+        50642,
+        50646,
+        50650,
+        50654,
+        50658,
+        50662,
+        50666,
+        50670,
+        50674,
+        50750,
+        50754,
+        50762,
+        50770,
+        50774,
+        50778,
+        50786,
+        50790
+      ],
+      "old_candidates_unchanged": true,
+      "F_generated": 48,
+      "F_geometry_pass": 48,
+      "F_dynamic_pass": 48,
+      "F_reserve_pass": 32,
+      "F_accepted": 32,
+      "F_final_connection_status": {
+        "GeometryKinematicsPassed": 48
+      },
+      "F_infeasible": {
+        "InitialStateConnectionInfeasible:negative_measured_speed_no_clipping": 13
+      },
+      "F_geometry_reasons": {},
+      "unknown_snapshots": 0,
+      "artifact": {
+        "path": "reports/m7e_replays/val_restart_r76_B.json",
+        "bytes": 35237647,
+        "sha256": "793a661b37a457f110e75456a3f367a41414f7f976ed408ff6cba84419d0eb1e"
+      }
+    }
+  ],
+  "old_candidates_all_equal": true,
+  "new_F_not_equivalent_by_design": true,
+  "development_gate": {
+    "kind": "ActualServerOfflineDevelopmentDecision",
+    "provenance": {
+      "base": "6ed646ccffbafe760f5bba8d01b58be94ed11089",
+      "commit": "6ed646ccffbafe760f5bba8d01b58be94ed11089",
+      "sources": {
+        "tools/m7e_development_gate.py": "9e63ea38a60b3331d07504781e33784a8daad67dac0e3431374558c84f117b45",
+        "tools/m7e_attribution.py": "ca5c83c7f0ce2654ca2c29cf420c4c0cb54b89776f7c3e9775f7907eb0555a7f",
+        "tools/m7e_collect.py": "4b45d4cd9f4d02918369e7d3e634e099023cfabd7d0c88f42f7963614e1a923d",
+        "tools/m7e_replay.py": "a1b7af51e464e0eec97614dd38d6820d2715633e221d327e78b8a5cd92c251f5",
+        "tools/m7e_campaign.py": "ec87578ac8210e4b53c4a83ce5004f252ae4ccc528cc982cd221a089c4509c6d",
+        "tools/m7e_equivalence.py": "0e5a0e6ea61ae2dd6599fb91aa80f9880e661d970a6052dae3f70816498babc6",
+        "tools/m7e_prepare.py": "da1226fc0d170f410bdec1a35261c489e51fc3147a759e583df2ec624786d3eb",
+        "tools/m7e_common.py": "8a11c7581731f6e966b2b81501c3a6be0ffe3b6a8e28c863dfb0e1d6c4674788",
+        "tools/m7e_evaluate.py": "c8570cf7517026aa8debceaa9b0beb725d821cd666f8a8917a9b648dd696fa3e",
+        "diagnostics/m7e_trajectory.py": "8e36f7ed20b4eaa67296436cf79237106a4738c8469fbefae8a41f11399eb8f5",
+        "diagnostics/m7e_region.py": "9c6b8a6ce9ab573894621fe9cdedbdc426d599f0ffc67af5996ba17f62402d7c",
+        "tests/test_m7e_trajectory.py": "57d318fa60cdc656ce97f468a3e25a26665eb51fd0db096ebd35c7c175f60c03",
+        "configs/m7e/protocol.json": "2c0f92fc71bef5f156a58534e699686781a158dada1fb6f660a521da5b516cd5",
+        "configs/m7e/collection.json": "1e776562fd98415689989860f8eaa780b3e1a1fb0534f756683694cbc1d20e18"
+      },
+      "new_control": false,
+      "new_training": false
+    },
+    "episodes": [
+      {
+        "episode": "dev_constant_r3",
+        "added_continue": 23,
+        "span_s": 6.0,
+        "accepted_F": 36,
+        "accepted_F_conflicts": 0,
+        "accepted_F_road_violations": 0,
+        "accepted_F_recorded_reserve_failures": 0
+      },
+      {
+        "episode": "dev_braking_r20",
+        "added_continue": 26,
+        "span_s": 9.8,
+        "accepted_F": 27,
+        "accepted_F_conflicts": 0,
+        "accepted_F_road_violations": 0,
+        "accepted_F_recorded_reserve_failures": 0
+      }
+    ],
+    "passed": true,
+    "decision": "FreezeSingleCandidateAndEvaluateIndependentEpisodes",
+    "params": {
+      "path": "configs/m7e/protocol.json",
+      "bytes": 1334,
+      "sha256": "2c0f92fc71bef5f156a58534e699686781a158dada1fb6f660a521da5b516cd5"
+    }
+  }
+}

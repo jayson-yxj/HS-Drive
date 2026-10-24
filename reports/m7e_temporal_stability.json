@@ -1,0 +1,807 @@
+{
+  "provenance": {
+    "base": "6ed646ccffbafe760f5bba8d01b58be94ed11089",
+    "commit": "6ed646ccffbafe760f5bba8d01b58be94ed11089",
+    "sources": {
+      "tools/m7e_seven.py": "d759274a52dd3fcf2a294bf504ddcce3183e3dbdf183107eb1838e21c772492b",
+      "tools/m7e_figures.py": "45c27af3bcb4cb163c4452d45149c664e29e565ff3807d748def0892d48e40a2",
+      "tools/m7e_development_gate.py": "9e63ea38a60b3331d07504781e33784a8daad67dac0e3431374558c84f117b45",
+      "tools/m7e_attribution.py": "ca5c83c7f0ce2654ca2c29cf420c4c0cb54b89776f7c3e9775f7907eb0555a7f",
+      "tools/m7e_release.py": "1a491d0a9dc84584dccb8b592b473d17091ddce77603bb7cb5b4cbeae56e3be7",
+      "tools/m7e_collect.py": "4b45d4cd9f4d02918369e7d3e634e099023cfabd7d0c88f42f7963614e1a923d",
+      "tools/m7e_report.py": "0cc89c3012a8d54934bcfa39e809f6d5d776391894218acecd0b0c2d9cdd0849",
+      "tools/m7e_safety.py": "40af5599e28b19e40380eeca269537dd83f3893b7f90af51dcc1a9e6cb0cddb9",
+      "tools/m7e_support.py": "99f70f240a60d954457bab6e7c9a32b60575d75ab3c0374b64dfd26392888b2d",
+      "tools/m7e_replay.py": "a1b7af51e464e0eec97614dd38d6820d2715633e221d327e78b8a5cd92c251f5",
+      "tools/m7e_campaign.py": "ec87578ac8210e4b53c4a83ce5004f252ae4ccc528cc982cd221a089c4509c6d",
+      "tools/m7e_equivalence.py": "0e5a0e6ea61ae2dd6599fb91aa80f9880e661d970a6052dae3f70816498babc6",
+      "tools/m7e_pair.py": "bf37673ae38d4c86ec8510dc98b3add8d31032441910b5f1f834c28de092c5cc",
+      "tools/m7e_prepare.py": "da1226fc0d170f410bdec1a35261c489e51fc3147a759e583df2ec624786d3eb",
+      "tools/m7e_common.py": "8a11c7581731f6e966b2b81501c3a6be0ffe3b6a8e28c863dfb0e1d6c4674788",
+      "tools/m7e_evaluate.py": "c8570cf7517026aa8debceaa9b0beb725d821cd666f8a8917a9b648dd696fa3e",
+      "diagnostics/m7e_trajectory.py": "8e36f7ed20b4eaa67296436cf79237106a4738c8469fbefae8a41f11399eb8f5",
+      "diagnostics/m7e_region.py": "9c6b8a6ce9ab573894621fe9cdedbdc426d599f0ffc67af5996ba17f62402d7c",
+      "tests/test_m7e_trajectory.py": "d55f03cabef1ffd4ae712ac3a3be93e36ae07bb3473317877258512f6577d030",
+      "configs/m7e/protocol.json": "2c0f92fc71bef5f156a58534e699686781a158dada1fb6f660a521da5b516cd5",
+      "configs/m7e/collection.json": "1e776562fd98415689989860f8eaa780b3e1a1fb0534f756683694cbc1d20e18"
+    },
+    "new_control": false,
+    "new_training": false
+  },
+  "kind": "OfflineActualCARLARecords_SeparateSyntheticTests",
+  "control_authorized": false,
+  "episodes": [
+    {
+      "episode": "dev_braking_r20",
+      "A": {
+        "switch_count": 2,
+        "switches": [
+          {
+            "frame": 5345,
+            "before": "A_keep_route",
+            "after": "D_stop"
+          },
+          {
+            "frame": 5401,
+            "before": "D_stop",
+            "after": null
+          }
+        ],
+        "recovery_frames": [],
+        "longest_reject_s": 8.6,
+        "speed_target_delta_mps": {
+          "p50": 0.2538271629164629,
+          "p95": 0.6566258713809942,
+          "p99": 0.8415347822876039,
+          "max": 0.8877620100142564
+        },
+        "overlap_trajectory_max_delta_m": {
+          "p50": 0.47902923070959164,
+          "p95": 3.1675766897653643,
+          "p99": 8.973416616402714,
+          "max": 10.42487659806205
+        },
+        "note": "Actual script state each step; these are not executed plan transitions or jerk at vehicle."
+      },
+      "B": {
+        "switch_count": 6,
+        "switches": [
+          {
+            "frame": 5345,
+            "before": "A_keep_route",
+            "after": "F_state_anchored_slow"
+          },
+          {
+            "frame": 5433,
+            "before": "F_state_anchored_slow",
+            "after": null
+          },
+          {
+            "frame": 5481,
+            "before": null,
+            "after": "F_state_anchored_slow"
+          },
+          {
+            "frame": 5485,
+            "before": "F_state_anchored_slow",
+            "after": null
+          },
+          {
+            "frame": 5533,
+            "before": null,
+            "after": "F_state_anchored_slow"
+          },
+          {
+            "frame": 5545,
+            "before": "F_state_anchored_slow",
+            "after": null
+          }
+        ],
+        "recovery_frames": [
+          5481,
+          5533
+        ],
+        "longest_reject_s": 2.4000000000000004,
+        "speed_target_delta_mps": {
+          "p50": 0.11288187885146095,
+          "p95": 0.4778391593328093,
+          "p99": 0.6225566635807698,
+          "max": 0.6665307761853614
+        },
+        "overlap_trajectory_max_delta_m": {
+          "p50": 0.4169673584152326,
+          "p95": 1.6997087260671124,
+          "p99": 5.443808912706463,
+          "max": 6.698280242223747
+        },
+        "note": "Actual script state each step; these are not executed plan transitions or jerk at vehicle."
+      }
+    },
+    {
+      "episode": "dev_constant_r3",
+      "A": {
+        "switch_count": 6,
+        "switches": [
+          {
+            "frame": 4924,
+            "before": "A_keep_route",
+            "after": "E_slow_follow"
+          },
+          {
+            "frame": 4928,
+            "before": "E_slow_follow",
+            "after": "D_stop"
+          },
+          {
+            "frame": 4932,
+            "before": "D_stop",
+            "after": "E_slow_follow"
+          },
+          {
+            "frame": 4940,
+            "before": "E_slow_follow",
+            "after": "D_stop"
+          },
+          {
+            "frame": 4964,
+            "before": "D_stop",
+            "after": "B_left"
+          },
+          {
+            "frame": 4988,
+            "before": "B_left",
+            "after": "D_stop"
+          }
+        ],
+        "recovery_frames": [
+          4932,
+          4964
+        ],
+        "longest_reject_s": 0,
+        "speed_target_delta_mps": {
+          "p50": 0.25928703785411744,
+          "p95": 0.9237920996105806,
+          "p99": 1.620673522157623,
+          "max": 1.724295051024653
+        },
+        "overlap_trajectory_max_delta_m": {
+          "p50": 0.47856093984823345,
+          "p95": 4.7856864068453575,
+          "p99": 12.187439123996919,
+          "max": 12.311503173874858
+        },
+        "note": "Actual script state each step; these are not executed plan transitions or jerk at vehicle."
+      },
+      "B": {
+        "switch_count": 7,
+        "switches": [
+          {
+            "frame": 4924,
+            "before": "A_keep_route",
+            "after": "E_slow_follow"
+          },
+          {
+            "frame": 4928,
+            "before": "E_slow_follow",
+            "after": "F_state_anchored_slow"
+          },
+          {
+            "frame": 4932,
+            "before": "F_state_anchored_slow",
+            "after": "E_slow_follow"
+          },
+          {
+            "frame": 4940,
+            "before": "E_slow_follow",
+            "after": "F_state_anchored_slow"
+          },
+          {
+            "frame": 4964,
+            "before": "F_state_anchored_slow",
+            "after": "B_left"
+          },
+          {
+            "frame": 4988,
+            "before": "B_left",
+            "after": "F_state_anchored_slow"
+          },
+          {
+            "frame": 5052,
+            "before": "F_state_anchored_slow",
+            "after": "D_stop"
+          }
+        ],
+        "recovery_frames": [],
+        "longest_reject_s": 0,
+        "speed_target_delta_mps": {
+          "p50": 0.19198733901122356,
+          "p95": 0.535924906857721,
+          "p99": 0.7738248726669198,
+          "max": 0.8878942725062487
+        },
+        "overlap_trajectory_max_delta_m": {
+          "p50": 0.3868709453703194,
+          "p95": 3.975969800216769,
+          "p99": 7.992302595300567,
+          "max": 7.997884098771173
+        },
+        "note": "Actual script state each step; these are not executed plan transitions or jerk at vehicle."
+      }
+    },
+    {
+      "episode": "final_braking_r30",
+      "A": {
+        "switch_count": 3,
+        "switches": [
+          {
+            "frame": 65279,
+            "before": null,
+            "after": "D_stop"
+          },
+          {
+            "frame": 65391,
+            "before": "D_stop",
+            "after": null
+          },
+          {
+            "frame": 65467,
+            "before": null,
+            "after": "D_stop"
+          }
+        ],
+        "recovery_frames": [],
+        "longest_reject_s": 3.8000000000000003,
+        "speed_target_delta_mps": {
+          "p50": 0.2358784345387519,
+          "p95": 0.3473829336583068,
+          "p99": 0.5385060531616314,
+          "max": 0.6385777215232974
+        },
+        "overlap_trajectory_max_delta_m": {
+          "p50": 0.4432778204379169,
+          "p95": 0.8470513361209844,
+          "p99": 1.2196850533017383,
+          "max": 1.415957794430314
+        },
+        "note": "Actual script state each step; these are not executed plan transitions or jerk at vehicle."
+      },
+      "B": {
+        "switch_count": 3,
+        "switches": [
+          {
+            "frame": 65279,
+            "before": null,
+            "after": "D_stop"
+          },
+          {
+            "frame": 65391,
+            "before": "D_stop",
+            "after": null
+          },
+          {
+            "frame": 65467,
+            "before": null,
+            "after": "D_stop"
+          }
+        ],
+        "recovery_frames": [],
+        "longest_reject_s": 3.8000000000000003,
+        "speed_target_delta_mps": {
+          "p50": 0.2358784345387519,
+          "p95": 0.3473829336583068,
+          "p99": 0.5385060531616314,
+          "max": 0.6385777215232974
+        },
+        "overlap_trajectory_max_delta_m": {
+          "p50": 0.4432778204379169,
+          "p95": 0.8470513361209844,
+          "p99": 1.2196850533017383,
+          "max": 1.415957794430314
+        },
+        "note": "Actual script state each step; these are not executed plan transitions or jerk at vehicle."
+      }
+    },
+    {
+      "episode": "final_crossing_r1",
+      "A": {
+        "switch_count": 0,
+        "switches": [],
+        "recovery_frames": [],
+        "longest_reject_s": 12.200000000000001,
+        "speed_target_delta_mps": null,
+        "overlap_trajectory_max_delta_m": null,
+        "note": "Actual script state each step; these are not executed plan transitions or jerk at vehicle."
+      },
+      "B": {
+        "switch_count": 0,
+        "switches": [],
+        "recovery_frames": [],
+        "longest_reject_s": 12.200000000000001,
+        "speed_target_delta_mps": null,
+        "overlap_trajectory_max_delta_m": null,
+        "note": "Actual script state each step; these are not executed plan transitions or jerk at vehicle."
+      }
+    },
+    {
+      "episode": "historical_final_bypass_p126_s101",
+      "A": {
+        "switch_count": 2,
+        "switches": [
+          {
+            "frame": 141531,
+            "before": "A_keep_route",
+            "after": null
+          },
+          {
+            "frame": 141571,
+            "before": null,
+            "after": "A_keep_route"
+          }
+        ],
+        "recovery_frames": [
+          141571
+        ],
+        "longest_reject_s": 2.0,
+        "speed_target_delta_mps": {
+          "p50": 0.02482013605113842,
+          "p95": 0.3000001524770294,
+          "p99": 0.46660644688425634,
+          "max": 0.6203963192144748
+        },
+        "overlap_trajectory_max_delta_m": {
+          "p50": 0.08149560333053062,
+          "p95": 0.49984489304901125,
+          "p99": 0.920850008145917,
+          "max": 1.309469035840596
+        },
+        "note": "Actual script state each step; these are not executed plan transitions or jerk at vehicle."
+      },
+      "B": {
+        "switch_count": 2,
+        "switches": [
+          {
+            "frame": 141531,
+            "before": "A_keep_route",
+            "after": "F_state_anchored_slow"
+          },
+          {
+            "frame": 141571,
+            "before": "F_state_anchored_slow",
+            "after": "A_keep_route"
+          }
+        ],
+        "recovery_frames": [],
+        "longest_reject_s": 0,
+        "speed_target_delta_mps": {
+          "p50": 0.06126733599772183,
+          "p95": 0.30000008757323987,
+          "p99": 0.4313629344752485,
+          "max": 0.6203963192144748
+        },
+        "overlap_trajectory_max_delta_m": {
+          "p50": 0.4834533661392091,
+          "p95": 0.5453176846547467,
+          "p99": 6.676910523647656,
+          "max": 6.971047484325713
+        },
+        "note": "Actual script state each step; these are not executed plan transitions or jerk at vehicle."
+      }
+    },
+    {
+      "episode": "historical_final_lead_s101",
+      "A": {
+        "switch_count": 3,
+        "switches": [
+          {
+            "frame": 151476,
+            "before": "A_keep_route",
+            "after": null
+          },
+          {
+            "frame": 151524,
+            "before": null,
+            "after": "A_keep_route"
+          },
+          {
+            "frame": 151548,
+            "before": "A_keep_route",
+            "after": "D_stop"
+          }
+        ],
+        "recovery_frames": [
+          151524
+        ],
+        "longest_reject_s": 2.4000000000000004,
+        "speed_target_delta_mps": {
+          "p50": 0.26860365587318846,
+          "p95": 0.3017057765692785,
+          "p99": 0.9562582643750808,
+          "max": 1.2653087151800702
+        },
+        "overlap_trajectory_max_delta_m": {
+          "p50": 0.4107710141701179,
+          "p95": 0.4998611202310444,
+          "p99": 6.890640336342991,
+          "max": 11.69475472682909
+        },
+        "note": "Actual script state each step; these are not executed plan transitions or jerk at vehicle."
+      },
+      "B": {
+        "switch_count": 4,
+        "switches": [
+          {
+            "frame": 151476,
+            "before": "A_keep_route",
+            "after": "F_state_anchored_slow"
+          },
+          {
+            "frame": 151524,
+            "before": "F_state_anchored_slow",
+            "after": "A_keep_route"
+          },
+          {
+            "frame": 151548,
+            "before": "A_keep_route",
+            "after": "F_state_anchored_slow"
+          },
+          {
+            "frame": 151624,
+            "before": "F_state_anchored_slow",
+            "after": "D_stop"
+          }
+        ],
+        "recovery_frames": [],
+        "longest_reject_s": 0,
+        "speed_target_delta_mps": {
+          "p50": 0.14206274318345702,
+          "p95": 0.4156219593266721,
+          "p99": 0.7346792216502939,
+          "max": 0.9378972568091627
+        },
+        "overlap_trajectory_max_delta_m": {
+          "p50": 0.46294064460340445,
+          "p95": 4.063331190287106,
+          "p99": 7.71975221604744,
+          "max": 7.781798512608886
+        },
+        "note": "Actual script state each step; these are not executed plan transitions or jerk at vehicle."
+      }
+    },
+    {
+      "episode": "m7e_final_braking_r65",
+      "A": {
+        "switch_count": 5,
+        "switches": [
+          {
+            "frame": 2453,
+            "before": null,
+            "after": "D_stop"
+          },
+          {
+            "frame": 2465,
+            "before": "D_stop",
+            "after": null
+          },
+          {
+            "frame": 2521,
+            "before": null,
+            "after": "D_stop"
+          },
+          {
+            "frame": 2561,
+            "before": "D_stop",
+            "after": null
+          },
+          {
+            "frame": 2645,
+            "before": null,
+            "after": "D_stop"
+          }
+        ],
+        "recovery_frames": [],
+        "longest_reject_s": 4.2,
+        "speed_target_delta_mps": {
+          "p50": 0.22257570023256146,
+          "p95": 0.34695318374648715,
+          "p99": 0.35245294819268835,
+          "max": 0.35382788930423864
+        },
+        "overlap_trajectory_max_delta_m": {
+          "p50": 0.3774110487806318,
+          "p95": 0.7352173621662826,
+          "p99": 0.824062323266965,
+          "max": 0.8462735635421359
+        },
+        "note": "Actual script state each step; these are not executed plan transitions or jerk at vehicle."
+      },
+      "B": {
+        "switch_count": 6,
+        "switches": [
+          {
+            "frame": 2529,
+            "before": "F_state_anchored_slow",
+            "after": "D_stop"
+          },
+          {
+            "frame": 2561,
+            "before": "D_stop",
+            "after": null
+          },
+          {
+            "frame": 2609,
+            "before": null,
+            "after": "F_state_anchored_slow"
+          },
+          {
+            "frame": 2613,
+            "before": "F_state_anchored_slow",
+            "after": null
+          },
+          {
+            "frame": 2637,
+            "before": null,
+            "after": "F_state_anchored_slow"
+          },
+          {
+            "frame": 2645,
+            "before": "F_state_anchored_slow",
+            "after": "D_stop"
+          }
+        ],
+        "recovery_frames": [
+          2609,
+          2637
+        ],
+        "longest_reject_s": 2.4000000000000004,
+        "speed_target_delta_mps": {
+          "p50": 0.13065960695258816,
+          "p95": 0.6850982611326665,
+          "p99": 1.161254531596055,
+          "max": 1.3272335449322046
+        },
+        "overlap_trajectory_max_delta_m": {
+          "p50": 0.39508056506977873,
+          "p95": 2.172972208651851,
+          "p99": 3.6993163319065543,
+          "max": 3.858283175022573
+        },
+        "note": "Actual script state each step; these are not executed plan transitions or jerk at vehicle."
+      }
+    },
+    {
+      "episode": "m7e_final_constant_r67",
+      "A": {
+        "switch_count": 3,
+        "switches": [
+          {
+            "frame": 2873,
+            "before": null,
+            "after": "D_stop"
+          },
+          {
+            "frame": 2885,
+            "before": "D_stop",
+            "after": null
+          },
+          {
+            "frame": 2933,
+            "before": null,
+            "after": "D_stop"
+          }
+        ],
+        "recovery_frames": [],
+        "longest_reject_s": 2.4000000000000004,
+        "speed_target_delta_mps": {
+          "p50": 0.23310119729653428,
+          "p95": 0.2669059908878537,
+          "p99": 0.27082436083490985,
+          "max": 0.27147868212136383
+        },
+        "overlap_trajectory_max_delta_m": {
+          "p50": 0.418544405430185,
+          "p95": 0.49280154570169726,
+          "p99": 0.5000335278018314,
+          "max": 0.5010949609224759
+        },
+        "note": "Actual script state each step; these are not executed plan transitions or jerk at vehicle."
+      },
+      "B": {
+        "switch_count": 3,
+        "switches": [
+          {
+            "frame": 2857,
+            "before": "F_state_anchored_slow",
+            "after": null
+          },
+          {
+            "frame": 2869,
+            "before": null,
+            "after": "F_state_anchored_slow"
+          },
+          {
+            "frame": 2977,
+            "before": "F_state_anchored_slow",
+            "after": "D_stop"
+          }
+        ],
+        "recovery_frames": [
+          2869
+        ],
+        "longest_reject_s": 0.6000000000000001,
+        "speed_target_delta_mps": {
+          "p50": 0.18497297832368992,
+          "p95": 0.2702817529388261,
+          "p99": 0.773435699573189,
+          "max": 0.8937114045200316
+        },
+        "overlap_trajectory_max_delta_m": {
+          "p50": 0.40974851672828594,
+          "p95": 0.4991533149700775,
+          "p99": 2.772365772166423,
+          "max": 3.844659564094657
+        },
+        "note": "Actual script state each step; these are not executed plan transitions or jerk at vehicle."
+      }
+    },
+    {
+      "episode": "m7e_final_crossing_r28",
+      "A": {
+        "switch_count": 0,
+        "switches": [],
+        "recovery_frames": [],
+        "longest_reject_s": 12.200000000000001,
+        "speed_target_delta_mps": null,
+        "overlap_trajectory_max_delta_m": null,
+        "note": "Actual script state each step; these are not executed plan transitions or jerk at vehicle."
+      },
+      "B": {
+        "switch_count": 0,
+        "switches": [],
+        "recovery_frames": [],
+        "longest_reject_s": 12.200000000000001,
+        "speed_target_delta_mps": null,
+        "overlap_trajectory_max_delta_m": null,
+        "note": "Actual script state each step; these are not executed plan transitions or jerk at vehicle."
+      }
+    },
+    {
+      "episode": "val_connection_r0",
+      "A": {
+        "switch_count": 0,
+        "switches": [],
+        "recovery_frames": [],
+        "longest_reject_s": 12.200000000000001,
+        "speed_target_delta_mps": null,
+        "overlap_trajectory_max_delta_m": null,
+        "note": "Actual script state each step; these are not executed plan transitions or jerk at vehicle."
+      },
+      "B": {
+        "switch_count": 0,
+        "switches": [],
+        "recovery_frames": [],
+        "longest_reject_s": 12.200000000000001,
+        "speed_target_delta_mps": null,
+        "overlap_trajectory_max_delta_m": null,
+        "note": "Actual script state each step; these are not executed plan transitions or jerk at vehicle."
+      }
+    },
+    {
+      "episode": "val_restart_r76",
+      "A": {
+        "switch_count": 3,
+        "switches": [
+          {
+            "frame": 50598,
+            "before": "A_keep_route",
+            "after": "D_stop"
+          },
+          {
+            "frame": 50710,
+            "before": "D_stop",
+            "after": null
+          },
+          {
+            "frame": 50786,
+            "before": null,
+            "after": "D_stop"
+          }
+        ],
+        "recovery_frames": [],
+        "longest_reject_s": 3.8000000000000003,
+        "speed_target_delta_mps": {
+          "p50": 0.2493057504485166,
+          "p95": 0.34907034613663335,
+          "p99": 0.9517664369486224,
+          "max": 1.1065794490726726
+        },
+        "overlap_trajectory_max_delta_m": {
+          "p50": 0.44678149568505926,
+          "p95": 0.8842030167503847,
+          "p99": 7.429003607351203,
+          "max": 11.052829601544799
+        },
+        "note": "Actual script state each step; these are not executed plan transitions or jerk at vehicle."
+      },
+      "B": {
+        "switch_count": 11,
+        "switches": [
+          {
+            "frame": 50598,
+            "before": "A_keep_route",
+            "after": "F_state_anchored_slow"
+          },
+          {
+            "frame": 50678,
+            "before": "F_state_anchored_slow",
+            "after": "D_stop"
+          },
+          {
+            "frame": 50710,
+            "before": "D_stop",
+            "after": null
+          },
+          {
+            "frame": 50750,
+            "before": null,
+            "after": "F_state_anchored_slow"
+          },
+          {
+            "frame": 50758,
+            "before": "F_state_anchored_slow",
+            "after": null
+          },
+          {
+            "frame": 50762,
+            "before": null,
+            "after": "F_state_anchored_slow"
+          },
+          {
+            "frame": 50766,
+            "before": "F_state_anchored_slow",
+            "after": null
+          },
+          {
+            "frame": 50770,
+            "before": null,
+            "after": "F_state_anchored_slow"
+          },
+          {
+            "frame": 50782,
+            "before": "F_state_anchored_slow",
+            "after": null
+          },
+          {
+            "frame": 50786,
+            "before": null,
+            "after": "F_state_anchored_slow"
+          },
+          {
+            "frame": 50794,
+            "before": "F_state_anchored_slow",
+            "after": "D_stop"
+          }
+        ],
+        "recovery_frames": [
+          50750,
+          50762,
+          50770,
+          50786
+        ],
+        "longest_reject_s": 2.0,
+        "speed_target_delta_mps": {
+          "p50": 0.13741071368118485,
+          "p95": 0.5314829709534182,
+          "p99": 0.9801318356467416,
+          "max": 1.00508307942457
+        },
+        "overlap_trajectory_max_delta_m": {
+          "p50": 0.3827991869562533,
+          "p95": 2.6923415266437147,
+          "p99": 6.203168006939427,
+          "max": 7.814177626533688
+        },
+        "note": "Actual script state each step; these are not executed plan transitions or jerk at vehicle."
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+ "stage":"M7-E","carla_version":"0.9.15","port":2400,"map":"Town03","episode_seconds":18,
+ "episodes":[
+  {"id":"m7e_final_braking_r65","split":"fresh_final","road":65,"kind":"brake_restart","ego_speed":2.0,"ego_lateral_offset_m":0.25,"ego_heading_offset_rad":0.03},
+  {"id":"m7e_final_constant_r67","split":"fresh_final","road":67,"kind":"constant","ego_speed":2.0,"ego_lateral_offset_m":-0.25,"ego_heading_offset_rad":-0.03},
+  {"id":"m7e_final_crossing_r28","split":"fresh_final","road":28,"kind":"crossing","ego_speed":1.5,"ego_lateral_offset_m":0.2,"ego_heading_offset_rad":0.03}
+ ],
+ "selection":"Map-only length/curvature and distinct road from M7E development3/20. Historical map roads seen in frozen M7B/C regression, not unseen cities. No result-driven choice.",
+ "max_episodes":4,"initial_perturbation":"Spawn-only measured physical offset; no teleport/speed/pose reset after settle. Actual snapshot used, no measured-state snapping.",
+ "driver":"IndependentM7DCollectionScript, no M7E planner imports or controls","physics_changes":false
+}
