@@ -1,0 +1,4822 @@
+{
+  "kind": "OfflineAdditionalCompletenessAndSeparationAudit",
+  "base": "037ddba29d6eaaa292e8ad74db58bd94e5f42b50",
+  "execution_commit": "037ddba29d6eaaa292e8ad74db58bd94e5f42b50",
+  "sources": {
+    "configs/m8e/development_amendment.json": "3518f13bb9f67bf9198c8101ca2697b446dc8a4a5b9317a1ed9c0111d5576098",
+    "configs/m8e/protocol.json": "0da014be555f7427f976324dec8b536aee54bf91467edc3a8668476f8b07f285",
+    "datasets/m8e_reference.py": "a365f4323e7c1e6087219543f516c2a3d5c68b1a96b3d54c0e56c3232cf37e35",
+    "tests/test_m8e_reference.py": "844e0baee91c35242525bc42b492c51c36af8587efe3a291f4dbe501a2600392",
+    "tools/m8e_allocate.py": "74114e27b677f8b57413944432933a8139900f5f12074f425f660502c948dde9",
+    "tools/m8e_audit.py": "f0c0badc2440936d0ed8c8de2413b015f27ba3b48715a3ea20e28d262acf715a",
+    "tools/m8e_capture.py": "acecbfa7a88eec50249be5d65a305ead2d16043f7bc155803c5768200f620a64",
+    "tools/m8e_common.py": "8162ab46902b4377e507c213f11170c3b0a1e7691566e28fd5cf02083cfe1ff1",
+    "tools/m8e_historical.py": "0d4c2ef1a7a07c5b28aa44b5dc3b71e658ea2ee279542f2f225688f4732b13dc",
+    "tools/m8e_official_sources.py": "0abe03b07367ec6276953fae30193bc8310c7dc880bc5d26e181be0cf4bdfc9c",
+    "tools/m8e_report.py": "b4f58db97174900c16d8456ebf99cfea8e94f9efc465d6aaa105e0421d08c195",
+    "tools/m8e_smoke_probe.py": "424a0df373ebb222f1919152f40590f687028756fc3202d0654e8c9e28de669f",
+    "tools/m8e_supplement.py": "7d25e0f9e946ce568f6a93fa041848a75fe67bb1ca053f00f8c452a0866d1e12"
+  },
+  "training_steps": 0,
+  "visual_control": false,
+  "raw_unknown_regions": [
+    {
+      "group": "m8e_development_00",
+      "phase": "empty",
+      "regions": 180,
+      "pixels": 1052990,
+      "semantic_ids": {
+        "1": 22,
+        "3": 20,
+        "4": 4,
+        "9": 52,
+        "11": 6,
+        "23": 18,
+        "24": 15,
+        "28": 13,
+        "6": 28,
+        "7": 1,
+        "20": 1
+      }
+    },
+    {
+      "group": "m8e_development_00",
+      "phase": "present",
+      "regions": 182,
+      "pixels": 1019879,
+      "semantic_ids": {
+        "1": 22,
+        "3": 20,
+        "4": 4,
+        "9": 52,
+        "11": 6,
+        "23": 18,
+        "24": 15,
+        "28": 13,
+        "6": 28,
+        "7": 1,
+        "14": 1,
+        "15": 1,
+        "20": 1
+      }
+    },
+    {
+      "group": "m8e_development_00",
+      "phase": "shifted",
+      "regions": 186,
+      "pixels": 1037139,
+      "semantic_ids": {
+        "1": 22,
+        "3": 20,
+        "4": 4,
+        "9": 52,
+        "11": 6,
+        "15": 2,
+        "23": 18,
+        "24": 15,
+        "28": 13,
+        "6": 28,
+        "7": 1,
+        "14": 2,
+        "20": 1,
+        "21": 2
+      }
+    },
+    {
+      "group": "m8e_development_00",
+      "phase": "removed",
+      "regions": 180,
+      "pixels": 1052880,
+      "semantic_ids": {
+        "1": 22,
+        "3": 20,
+        "4": 4,
+        "9": 52,
+        "11": 6,
+        "23": 18,
+        "24": 15,
+        "28": 13,
+        "6": 28,
+        "7": 1,
+        "20": 1
+      }
+    },
+    {
+      "group": "m8e_development_01",
+      "phase": "empty",
+      "regions": 178,
+      "pixels": 1119786,
+      "semantic_ids": {
+        "1": 30,
+        "6": 18,
+        "9": 8,
+        "10": 55,
+        "11": 6,
+        "23": 13,
+        "24": 14,
+        "28": 19,
+        "4": 5,
+        "26": 2,
+        "3": 8
+      }
+    },
+    {
+      "group": "m8e_development_01",
+      "phase": "present",
+      "regions": 179,
+      "pixels": 1096656,
+      "semantic_ids": {
+        "1": 30,
+        "6": 17,
+        "9": 8,
+        "10": 55,
+        "11": 6,
+        "23": 13,
+        "24": 13,
+        "28": 19,
+        "4": 5,
+        "15": 1,
+        "26": 2,
+        "21": 2,
+        "3": 8
+      }
+    },
+    {
+      "group": "m8e_development_01",
+      "phase": "shifted",
+      "regions": 180,
+      "pixels": 1104749,
+      "semantic_ids": {
+        "1": 29,
+        "6": 18,
+        "9": 8,
+        "10": 54,
+        "11": 6,
+        "23": 13,
+        "24": 14,
+        "28": 19,
+        "4": 5,
+        "15": 1,
+        "26": 2,
+        "21": 1,
+        "3": 8,
+        "14": 2
+      }
+    },
+    {
+      "group": "m8e_development_01",
+      "phase": "removed",
+      "regions": 178,
+      "pixels": 1119831,
+      "semantic_ids": {
+        "1": 30,
+        "6": 18,
+        "9": 8,
+        "10": 55,
+        "11": 6,
+        "23": 13,
+        "24": 14,
+        "28": 19,
+        "4": 5,
+        "26": 2,
+        "3": 8
+      }
+    },
+    {
+      "group": "m8e_development_02",
+      "phase": "empty",
+      "regions": 104,
+      "pixels": 1095803,
+      "semantic_ids": {
+        "1": 20,
+        "3": 7,
+        "6": 2,
+        "9": 6,
+        "10": 21,
+        "11": 6,
+        "23": 15,
+        "24": 12,
+        "28": 15
+      }
+    },
+    {
+      "group": "m8e_development_02",
+      "phase": "present",
+      "regions": 102,
+      "pixels": 1062271,
+      "semantic_ids": {
+        "1": 20,
+        "3": 7,
+        "6": 2,
+        "9": 6,
+        "10": 21,
+        "11": 6,
+        "23": 14,
+        "24": 11,
+        "28": 15
+      }
+    },
+    {
+      "group": "m8e_development_02",
+      "phase": "shifted",
+      "regions": 110,
+      "pixels": 1083230,
+      "semantic_ids": {
+        "1": 20,
+        "3": 8,
+        "6": 2,
+        "9": 6,
+        "10": 21,
+        "11": 6,
+        "23": 16,
+        "24": 12,
+        "28": 15,
+        "12": 1,
+        "21": 2,
+        "14": 1
+      }
+    },
+    {
+      "group": "m8e_development_02",
+      "phase": "removed",
+      "regions": 105,
+      "pixels": 1096273,
+      "semantic_ids": {
+        "1": 20,
+        "3": 8,
+        "6": 2,
+        "9": 6,
+        "10": 21,
+        "11": 6,
+        "23": 15,
+        "24": 12,
+        "28": 15
+      }
+    },
+    {
+      "group": "m8e_validation_00",
+      "phase": "empty",
+      "regions": 100,
+      "pixels": 1441678,
+      "semantic_ids": {
+        "1": 17,
+        "2": 27,
+        "3": 16,
+        "4": 17,
+        "24": 11,
+        "26": 12
+      }
+    },
+    {
+      "group": "m8e_validation_00",
+      "phase": "present",
+      "regions": 98,
+      "pixels": 1408593,
+      "semantic_ids": {
+        "1": 17,
+        "2": 25,
+        "3": 16,
+        "4": 17,
+        "24": 11,
+        "26": 12
+      }
+    },
+    {
+      "group": "m8e_validation_00",
+      "phase": "shifted",
+      "regions": 100,
+      "pixels": 1426889,
+      "semantic_ids": {
+        "1": 17,
+        "2": 27,
+        "3": 16,
+        "4": 17,
+        "24": 11,
+        "26": 12
+      }
+    },
+    {
+      "group": "m8e_validation_00",
+      "phase": "removed",
+      "regions": 100,
+      "pixels": 1441678,
+      "semantic_ids": {
+        "1": 17,
+        "2": 27,
+        "3": 16,
+        "4": 17,
+        "24": 11,
+        "26": 12
+      }
+    },
+    {
+      "group": "m8e_validation_01",
+      "phase": "empty",
+      "regions": 273,
+      "pixels": 906222,
+      "semantic_ids": {
+        "1": 11,
+        "2": 23,
+        "3": 16,
+        "4": 17,
+        "5": 23,
+        "6": 13,
+        "9": 69,
+        "10": 36,
+        "20": 10,
+        "21": 27,
+        "24": 8,
+        "25": 13,
+        "27": 2,
+        "7": 4,
+        "11": 1
+      }
+    },
+    {
+      "group": "m8e_validation_01",
+      "phase": "present",
+      "regions": 259,
+      "pixels": 863644,
+      "semantic_ids": {
+        "1": 11,
+        "2": 23,
+        "3": 16,
+        "4": 17,
+        "5": 21,
+        "6": 13,
+        "9": 67,
+        "10": 36,
+        "20": 8,
+        "21": 19,
+        "24": 9,
+        "25": 13,
+        "27": 2,
+        "7": 4
+      }
+    },
+    {
+      "group": "m8e_validation_01",
+      "phase": "shifted",
+      "regions": 259,
+      "pixels": 887273,
+      "semantic_ids": {
+        "1": 11,
+        "2": 23,
+        "3": 16,
+        "4": 17,
+        "5": 21,
+        "6": 13,
+        "9": 68,
+        "10": 36,
+        "20": 10,
+        "21": 12,
+        "24": 9,
+        "25": 13,
+        "11": 4,
+        "27": 2,
+        "7": 4
+      }
+    },
+    {
+      "group": "m8e_validation_01",
+      "phase": "removed",
+      "regions": 273,
+      "pixels": 903722,
+      "semantic_ids": {
+        "1": 11,
+        "2": 23,
+        "3": 16,
+        "4": 17,
+        "5": 23,
+        "6": 13,
+        "9": 67,
+        "10": 36,
+        "11": 3,
+        "20": 10,
+        "21": 27,
+        "24": 8,
+        "25": 13,
+        "27": 2,
+        "7": 4
+      }
+    },
+    {
+      "group": "m8e_calibration_00",
+      "phase": "empty",
+      "regions": 141,
+      "pixels": 981522,
+      "semantic_ids": {
+        "1": 20,
+        "2": 29,
+        "5": 17,
+        "6": 3,
+        "9": 6,
+        "10": 14,
+        "11": 6,
+        "24": 15,
+        "27": 3,
+        "28": 13,
+        "3": 11,
+        "4": 1,
+        "7": 1,
+        "26": 2
+      }
+    },
+    {
+      "group": "m8e_calibration_00",
+      "phase": "present",
+      "regions": 139,
+      "pixels": 947570,
+      "semantic_ids": {
+        "1": 20,
+        "2": 29,
+        "5": 17,
+        "6": 3,
+        "9": 6,
+        "10": 14,
+        "11": 6,
+        "24": 14,
+        "27": 3,
+        "28": 13,
+        "3": 10,
+        "4": 1,
+        "7": 1,
+        "26": 2
+      }
+    },
+    {
+      "group": "m8e_calibration_00",
+      "phase": "shifted",
+      "regions": 142,
+      "pixels": 960906,
+      "semantic_ids": {
+        "1": 20,
+        "2": 29,
+        "5": 17,
+        "6": 4,
+        "9": 6,
+        "10": 14,
+        "11": 6,
+        "24": 15,
+        "27": 3,
+        "28": 13,
+        "3": 11,
+        "4": 1,
+        "7": 1,
+        "26": 2
+      }
+    },
+    {
+      "group": "m8e_calibration_00",
+      "phase": "removed",
+      "regions": 141,
+      "pixels": 981571,
+      "semantic_ids": {
+        "1": 20,
+        "2": 29,
+        "5": 17,
+        "6": 4,
+        "9": 6,
+        "10": 14,
+        "11": 6,
+        "24": 15,
+        "27": 3,
+        "28": 13,
+        "3": 10,
+        "4": 1,
+        "7": 1,
+        "26": 2
+      }
+    },
+    {
+      "group": "m8e_calibration_01",
+      "phase": "empty",
+      "regions": 123,
+      "pixels": 910572,
+      "semantic_ids": {
+        "1": 20,
+        "2": 26,
+        "5": 20,
+        "9": 7,
+        "24": 11,
+        "27": 9,
+        "28": 4,
+        "3": 21,
+        "11": 3,
+        "10": 2
+      }
+    },
+    {
+      "group": "m8e_calibration_01",
+      "phase": "present",
+      "regions": 122,
+      "pixels": 878406,
+      "semantic_ids": {
+        "1": 19,
+        "2": 26,
+        "5": 20,
+        "9": 7,
+        "11": 5,
+        "24": 11,
+        "27": 9,
+        "28": 4,
+        "3": 18,
+        "14": 1,
+        "10": 2
+      }
+    },
+    {
+      "group": "m8e_calibration_01",
+      "phase": "shifted",
+      "regions": 119,
+      "pixels": 890400,
+      "semantic_ids": {
+        "1": 20,
+        "2": 22,
+        "5": 20,
+        "9": 7,
+        "11": 4,
+        "24": 11,
+        "27": 9,
+        "28": 4,
+        "3": 20,
+        "10": 2
+      }
+    },
+    {
+      "group": "m8e_calibration_01",
+      "phase": "removed",
+      "regions": 123,
+      "pixels": 910541,
+      "semantic_ids": {
+        "1": 20,
+        "2": 26,
+        "5": 20,
+        "9": 7,
+        "11": 5,
+        "24": 11,
+        "27": 9,
+        "28": 4,
+        "3": 19,
+        "10": 2
+      }
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "phase": "empty",
+      "regions": 224,
+      "pixels": 409831,
+      "semantic_ids": {
+        "1": 19,
+        "2": 55,
+        "3": 8,
+        "4": 9,
+        "5": 7,
+        "6": 11,
+        "8": 4,
+        "9": 69,
+        "11": 2,
+        "24": 29,
+        "28": 5,
+        "23": 2,
+        "26": 4
+      }
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "phase": "present",
+      "regions": 216,
+      "pixels": 401206,
+      "semantic_ids": {
+        "1": 17,
+        "2": 51,
+        "3": 8,
+        "4": 9,
+        "5": 7,
+        "6": 10,
+        "8": 4,
+        "9": 68,
+        "11": 2,
+        "24": 26,
+        "28": 5,
+        "15": 2,
+        "23": 2,
+        "21": 1,
+        "26": 4
+      }
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "phase": "shifted",
+      "regions": 209,
+      "pixels": 401898,
+      "semantic_ids": {
+        "1": 15,
+        "2": 48,
+        "3": 8,
+        "4": 9,
+        "5": 7,
+        "6": 10,
+        "8": 3,
+        "9": 67,
+        "24": 26,
+        "28": 5,
+        "15": 2,
+        "23": 2,
+        "11": 2,
+        "21": 1,
+        "26": 4
+      }
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "phase": "removed",
+      "regions": 225,
+      "pixels": 409855,
+      "semantic_ids": {
+        "1": 19,
+        "2": 55,
+        "3": 8,
+        "4": 9,
+        "5": 7,
+        "6": 11,
+        "8": 4,
+        "9": 69,
+        "11": 3,
+        "24": 29,
+        "28": 5,
+        "23": 2,
+        "26": 4
+      }
+    }
+  ],
+  "present_class_grades": {
+    "barrier/RenderLinkedMultiView": 8,
+    "traffic_cone/UnlabeledOrUnknown": 8,
+    "pedestrian/RenderLinkedMultiView": 7,
+    "car/RenderLinkedSingleView": 7,
+    "barrier/RenderLinkedSingleView": 4,
+    "pedestrian/RenderLinkedSingleView": 6,
+    "truck/UnlabeledOrUnknown": 5,
+    "car/UnlabeledOrUnknown": 14,
+    "traffic_cone/RenderLinkedSingleView": 8,
+    "barrier/UnlabeledOrUnknown": 4,
+    "pedestrian/UnlabeledOrUnknown": 3,
+    "truck/RenderLinkedSingleView": 3,
+    "car/RenderLinkedMultiView": 3
+  },
+  "historical_target_separation": [
+    {
+      "group": "m8e_development_00",
+      "nearest_historical_target_m": 58.35007605359105,
+      "entity": "Actor:644",
+      "historical_group": "Town04_m5o_train_01"
+    },
+    {
+      "group": "m8e_development_01",
+      "nearest_historical_target_m": 65.13345404075501,
+      "entity": "Actor:679",
+      "historical_group": "Town04_m5o_train_00"
+    },
+    {
+      "group": "m8e_development_02",
+      "nearest_historical_target_m": 38.820791527399294,
+      "entity": "Actor:713",
+      "historical_group": "Town04_m5o_train_04"
+    },
+    {
+      "group": "m8e_validation_00",
+      "nearest_historical_target_m": 38.15666284028648,
+      "entity": "Actor:833",
+      "historical_group": "Town03_m5o_train_03"
+    },
+    {
+      "group": "m8e_validation_01",
+      "nearest_historical_target_m": 33.294598290883705,
+      "entity": "Actor:873",
+      "historical_group": "Town03_m5o_train_04"
+    },
+    {
+      "group": "m8e_calibration_00",
+      "nearest_historical_target_m": 107.03078617485534,
+      "entity": "Actor:1022",
+      "historical_group": "Town05_m5o_val_01"
+    },
+    {
+      "group": "m8e_calibration_01",
+      "nearest_historical_target_m": 39.50621881202226,
+      "entity": "Actor:1053",
+      "historical_group": "Town05_m5o_val_04"
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "nearest_historical_target_m": 9.9007064456022,
+      "entity": "Actor:1260",
+      "historical_group": "Town01_m5o_train_03"
+    }
+  ],
+  "distinct_camera_grade_changes": [],
+  "identity_namespace_examples": [
+    {
+      "group": "m8e_development_00",
+      "source": "Actor",
+      "entity_id": 652,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 46480,
+      "UE_unique_low16": 37045
+    },
+    {
+      "group": "m8e_development_00",
+      "source": "Actor",
+      "entity_id": 652,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 46480,
+      "UE_unique_low16": 37045
+    },
+    {
+      "group": "m8e_development_00",
+      "source": "Actor",
+      "entity_id": 650,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 50832,
+      "UE_unique_low16": 37062
+    },
+    {
+      "group": "m8e_development_00",
+      "source": "Actor",
+      "entity_id": 650,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 50832,
+      "UE_unique_low16": 37062
+    },
+    {
+      "group": "m8e_development_00",
+      "source": "Actor",
+      "entity_id": 649,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 18577,
+      "UE_unique_low16": 37192
+    },
+    {
+      "group": "m8e_development_00",
+      "source": "Actor",
+      "entity_id": 648,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 19601,
+      "UE_unique_low16": 37196
+    },
+    {
+      "group": "m8e_development_00",
+      "source": "Actor",
+      "entity_id": 646,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 24721,
+      "UE_unique_low16": 37216
+    },
+    {
+      "group": "m8e_development_00",
+      "source": "EnvironmentObject",
+      "entity_id": 9355249561643257870,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 33726,
+      "UE_unique_low16": 48771
+    },
+    {
+      "group": "m8e_development_00",
+      "source": "EnvironmentObject",
+      "entity_id": 9355249561643257870,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 33726,
+      "UE_unique_low16": 48771
+    },
+    {
+      "group": "m8e_development_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16726063627576900502,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 33470,
+      "UE_unique_low16": 48770
+    },
+    {
+      "group": "m8e_development_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16726063627576900502,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 33470,
+      "UE_unique_low16": 48770
+    },
+    {
+      "group": "m8e_development_00",
+      "source": "EnvironmentObject",
+      "entity_id": 4806969356856711697,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 33214,
+      "UE_unique_low16": 48769
+    },
+    {
+      "group": "m8e_development_00",
+      "source": "EnvironmentObject",
+      "entity_id": 4806969356856711697,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 33214,
+      "UE_unique_low16": 48769
+    },
+    {
+      "group": "m8e_development_00",
+      "source": "EnvironmentObject",
+      "entity_id": 5021572850284639338,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 32958,
+      "UE_unique_low16": 48768
+    },
+    {
+      "group": "m8e_development_00",
+      "source": "EnvironmentObject",
+      "entity_id": 5021572850284639338,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 32958,
+      "UE_unique_low16": 48768
+    },
+    {
+      "group": "m8e_development_00",
+      "source": "EnvironmentObject",
+      "entity_id": 3513845996201059755,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 32702,
+      "UE_unique_low16": 48767
+    },
+    {
+      "group": "m8e_development_00",
+      "source": "EnvironmentObject",
+      "entity_id": 3513845996201059755,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 32702,
+      "UE_unique_low16": 48767
+    },
+    {
+      "group": "m8e_development_01",
+      "source": "Actor",
+      "entity_id": 685,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 50832,
+      "UE_unique_low16": 37062
+    },
+    {
+      "group": "m8e_development_01",
+      "source": "Actor",
+      "entity_id": 685,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 50832,
+      "UE_unique_low16": 37062
+    },
+    {
+      "group": "m8e_development_01",
+      "source": "Actor",
+      "entity_id": 684,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 18577,
+      "UE_unique_low16": 37192
+    },
+    {
+      "group": "m8e_development_01",
+      "source": "Actor",
+      "entity_id": 683,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 32913,
+      "UE_unique_low16": 37248
+    },
+    {
+      "group": "m8e_development_01",
+      "source": "Actor",
+      "entity_id": 682,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 33937,
+      "UE_unique_low16": 37252
+    },
+    {
+      "group": "m8e_development_01",
+      "source": "Actor",
+      "entity_id": 680,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 38289,
+      "UE_unique_low16": 37269
+    },
+    {
+      "group": "m8e_development_01",
+      "source": "Actor",
+      "entity_id": 687,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 46480,
+      "UE_unique_low16": 37045
+    },
+    {
+      "group": "m8e_development_01",
+      "source": "Actor",
+      "entity_id": 687,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 46480,
+      "UE_unique_low16": 37045
+    },
+    {
+      "group": "m8e_development_01",
+      "source": "EnvironmentObject",
+      "entity_id": 11242528672581717886,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 18144,
+      "UE_unique_low16": 57414
+    },
+    {
+      "group": "m8e_development_02",
+      "source": "Actor",
+      "entity_id": 722,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 52817,
+      "UE_unique_low16": 20942
+    },
+    {
+      "group": "m8e_development_02",
+      "source": "Actor",
+      "entity_id": 722,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 52817,
+      "UE_unique_low16": 20942
+    },
+    {
+      "group": "m8e_development_02",
+      "source": "Actor",
+      "entity_id": 721,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 53841,
+      "UE_unique_low16": 20946
+    },
+    {
+      "group": "m8e_development_02",
+      "source": "Actor",
+      "entity_id": 720,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 56913,
+      "UE_unique_low16": 20958
+    },
+    {
+      "group": "m8e_development_02",
+      "source": "Actor",
+      "entity_id": 720,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 56913,
+      "UE_unique_low16": 20958
+    },
+    {
+      "group": "m8e_development_02",
+      "source": "Actor",
+      "entity_id": 718,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 625,
+      "UE_unique_low16": 28930
+    },
+    {
+      "group": "m8e_development_02",
+      "source": "Actor",
+      "entity_id": 717,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 59283,
+      "UE_unique_low16": 37863
+    },
+    {
+      "group": "m8e_development_02",
+      "source": "Actor",
+      "entity_id": 715,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 18828,
+      "UE_unique_low16": 35913
+    },
+    {
+      "group": "m8e_development_02",
+      "source": "Actor",
+      "entity_id": 713,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 54415,
+      "UE_unique_low16": 36820
+    },
+    {
+      "group": "m8e_development_02",
+      "source": "EnvironmentObject",
+      "entity_id": 11855037205358237029,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 61151,
+      "UE_unique_low16": 57326
+    },
+    {
+      "group": "m8e_development_02",
+      "source": "EnvironmentObject",
+      "entity_id": 11855037205358237029,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 61151,
+      "UE_unique_low16": 57326
+    },
+    {
+      "group": "m8e_development_02",
+      "source": "EnvironmentObject",
+      "entity_id": 9173991287728006535,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 53133,
+      "UE_unique_low16": 36303
+    },
+    {
+      "group": "m8e_validation_00",
+      "source": "Actor",
+      "entity_id": 842,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 9961,
+      "UE_unique_low16": 59686
+    },
+    {
+      "group": "m8e_validation_00",
+      "source": "Actor",
+      "entity_id": 842,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 9961,
+      "UE_unique_low16": 59686
+    },
+    {
+      "group": "m8e_validation_00",
+      "source": "Actor",
+      "entity_id": 838,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 10984,
+      "UE_unique_low16": 59434
+    },
+    {
+      "group": "m8e_validation_00",
+      "source": "Actor",
+      "entity_id": 833,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 44775,
+      "UE_unique_low16": 59310
+    },
+    {
+      "group": "m8e_validation_00",
+      "source": "EnvironmentObject",
+      "entity_id": 1439315046048147990,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 18350,
+      "UE_unique_low16": 44615
+    },
+    {
+      "group": "m8e_validation_00",
+      "source": "EnvironmentObject",
+      "entity_id": 12426340742888458388,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 34017,
+      "UE_unique_low16": 57732
+    },
+    {
+      "group": "m8e_validation_00",
+      "source": "EnvironmentObject",
+      "entity_id": 9176557827962554407,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 33505,
+      "UE_unique_low16": 57730
+    },
+    {
+      "group": "m8e_validation_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16448639051389062574,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 32993,
+      "UE_unique_low16": 57728
+    },
+    {
+      "group": "m8e_validation_00",
+      "source": "EnvironmentObject",
+      "entity_id": 7486961360918074602,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 48318,
+      "UE_unique_low16": 48828
+    },
+    {
+      "group": "m8e_validation_00",
+      "source": "EnvironmentObject",
+      "entity_id": 7486961360918074602,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 48318,
+      "UE_unique_low16": 48828
+    },
+    {
+      "group": "m8e_validation_00",
+      "source": "EnvironmentObject",
+      "entity_id": 13485747201830550071,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 30153,
+      "UE_unique_low16": 51573
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "Actor",
+      "entity_id": 873,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 56554,
+      "UE_unique_low16": 60124
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "Actor",
+      "entity_id": 868,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 1770,
+      "UE_unique_low16": 59910
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "Actor",
+      "entity_id": 877,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 31211,
+      "UE_unique_low16": 60281
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "Actor",
+      "entity_id": 877,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 31211,
+      "UE_unique_low16": 60281
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "Actor",
+      "entity_id": 876,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 30187,
+      "UE_unique_low16": 60277
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "Actor",
+      "entity_id": 875,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 27115,
+      "UE_unique_low16": 60265
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "Actor",
+      "entity_id": 875,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 27115,
+      "UE_unique_low16": 60265
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "Actor",
+      "entity_id": 874,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 59626,
+      "UE_unique_low16": 60136
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 15401686731158852923,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 5834,
+      "UE_unique_low16": 51734
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 15401686731158852923,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 18866,
+      "UE_unique_low16": 45641
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 15401686731158852923,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 18866,
+      "UE_unique_low16": 45641
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 15253418652289769263,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 18354,
+      "UE_unique_low16": 45639
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 15253418652289769263,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 18354,
+      "UE_unique_low16": 45639
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 3300703663391534701,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 56241,
+      "UE_unique_low16": 45531
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 3300703663391534701,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 56241,
+      "UE_unique_low16": 45531
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 15465512132425080695,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 63177,
+      "UE_unique_low16": 51702
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 15465512132425080695,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 63177,
+      "UE_unique_low16": 51702
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 2826276718325460338,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 35249,
+      "UE_unique_low16": 45449
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 2826276718325460338,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 35249,
+      "UE_unique_low16": 45449
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 8466075894961030865,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 2993,
+      "UE_unique_low16": 45323
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 13225157680246732869,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 2481,
+      "UE_unique_low16": 45321
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 277874989042115304,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 21421,
+      "UE_unique_low16": 44371
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 277874989042115304,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 21421,
+      "UE_unique_low16": 44371
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 7670989939265795422,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 20397,
+      "UE_unique_low16": 44367
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 4656410278586399681,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 21222,
+      "UE_unique_low16": 58962
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 1673218434353959763,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 16614,
+      "UE_unique_low16": 58944
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 8611684520781972753,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 5862,
+      "UE_unique_low16": 58902
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 13909668743514026265,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 2276,
+      "UE_unique_low16": 58376
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 13909668743514026265,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 2276,
+      "UE_unique_low16": 58376
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 6978725100252716089,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 64227,
+      "UE_unique_low16": 58362
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 6978725100252716089,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 64227,
+      "UE_unique_low16": 58362
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 6716755288609574311,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 34530,
+      "UE_unique_low16": 57990
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 6716755288609574311,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 34530,
+      "UE_unique_low16": 57990
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 10421387944164758107,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 63689,
+      "UE_unique_low16": 51704
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 10421387944164758107,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 3298,
+      "UE_unique_low16": 57868
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 250875844390989026,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 15818,
+      "UE_unique_low16": 51773
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 250875844390989026,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 65249,
+      "UE_unique_low16": 57854
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 7220231087660726463,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 45793,
+      "UE_unique_low16": 57778
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 7220231087660726463,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 45793,
+      "UE_unique_low16": 57778
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 14573575950588717232,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 43745,
+      "UE_unique_low16": 57770
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 14573575950588717232,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 43745,
+      "UE_unique_low16": 57770
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 5175665784122582190,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 10977,
+      "UE_unique_low16": 57642
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 5175665784122582190,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 10977,
+      "UE_unique_low16": 57642
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 14566573676634471963,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 8929,
+      "UE_unique_low16": 57634
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 5734750066345108679,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 8417,
+      "UE_unique_low16": 57632
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 5734750066345108679,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 8417,
+      "UE_unique_low16": 57632
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 2811976814646993778,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 7393,
+      "UE_unique_low16": 57628
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 4058254706571577734,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 28547,
+      "UE_unique_low16": 33647
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 4058254706571577734,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 28547,
+      "UE_unique_low16": 33647
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 4913406031036975244,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 28035,
+      "UE_unique_low16": 33645
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 4913406031036975244,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 28035,
+      "UE_unique_low16": 33645
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 17854229224009330986,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 18051,
+      "UE_unique_low16": 33606
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 17854229224009330986,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 18051,
+      "UE_unique_low16": 33606
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 17386923762403510266,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 51074,
+      "UE_unique_low16": 33479
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 11302909976803386694,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 36482,
+      "UE_unique_low16": 33422
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 11302909976803386694,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 36482,
+      "UE_unique_low16": 33422
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 10563118936336381776,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 15490,
+      "UE_unique_low16": 33340
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 10563118936336381776,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 15490,
+      "UE_unique_low16": 33340
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 14889240681914610477,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 14978,
+      "UE_unique_low16": 33338
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 14889240681914610477,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 14978,
+      "UE_unique_low16": 33338
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 12369494720536877932,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 14466,
+      "UE_unique_low16": 33336
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 12369494720536877932,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 14466,
+      "UE_unique_low16": 33336
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 4381834069712836275,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 38785,
+      "UE_unique_low16": 33175
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 4381834069712836275,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 38785,
+      "UE_unique_low16": 33175
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 9849218409286538485,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 31105,
+      "UE_unique_low16": 33145
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 9849218409286538485,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 31105,
+      "UE_unique_low16": 33145
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 3813578529387131979,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 26497,
+      "UE_unique_low16": 33127
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 3813578529387131979,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 26497,
+      "UE_unique_low16": 33127
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 8709273517821267406,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 22401,
+      "UE_unique_low16": 33111
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 8709273517821267406,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 22401,
+      "UE_unique_low16": 33111
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 1365990679737686689,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 14977,
+      "UE_unique_low16": 33082
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 1365990679737686689,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 14977,
+      "UE_unique_low16": 33082
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 4305330034159420446,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 5761,
+      "UE_unique_low16": 33046
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 4305330034159420446,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 5761,
+      "UE_unique_low16": 33046
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 304179142725746907,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 4737,
+      "UE_unique_low16": 33042
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 304179142725746907,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 4737,
+      "UE_unique_low16": 33042
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 4461543142584750118,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 2945,
+      "UE_unique_low16": 33035
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 7002291686885671442,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 1921,
+      "UE_unique_low16": 33031
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 15686506712287101313,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 1409,
+      "UE_unique_low16": 33029
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 13664583346164986360,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 23424,
+      "UE_unique_low16": 32859
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 13664583346164986360,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 23424,
+      "UE_unique_low16": 32859
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 14245938570993436001,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 15744,
+      "UE_unique_low16": 32829
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 10028444582140951766,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 15232,
+      "UE_unique_low16": 32827
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 10028444582140951766,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 15232,
+      "UE_unique_low16": 32827
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 8184663425794504087,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 14464,
+      "UE_unique_low16": 32824
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 8184663425794504087,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 14464,
+      "UE_unique_low16": 32824
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 13179596478572121830,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 13952,
+      "UE_unique_low16": 32822
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 13179596478572121830,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 13952,
+      "UE_unique_low16": 32822
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 8247659254524002048,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 13184,
+      "UE_unique_low16": 32819
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 8247659254524002048,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 13184,
+      "UE_unique_low16": 32819
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 17263459279693482573,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 12160,
+      "UE_unique_low16": 32815
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 17263459279693482573,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 12160,
+      "UE_unique_low16": 32815
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 14646635828897531672,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 8832,
+      "UE_unique_low16": 32802
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 14646635828897531672,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 8832,
+      "UE_unique_low16": 32802
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 8504214137809505136,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 8320,
+      "UE_unique_low16": 32800
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 17459230037157305425,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 40575,
+      "UE_unique_low16": 32670
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 17459230037157305425,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 40575,
+      "UE_unique_low16": 32670
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 40809134991971180,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 37503,
+      "UE_unique_low16": 32658
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 40809134991971180,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 37503,
+      "UE_unique_low16": 32658
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 10236420800808858912,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 12992,
+      "UE_unique_low16": 49202
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 10236420800808858912,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 12992,
+      "UE_unique_low16": 49202
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 974561705507328053,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 61631,
+      "UE_unique_low16": 49136
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 974561705507328053,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 61631,
+      "UE_unique_low16": 49136
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 18263023036909651393,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 60095,
+      "UE_unique_low16": 49130
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 18263023036909651393,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 60095,
+      "UE_unique_low16": 49130
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 577706355345145253,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 46783,
+      "UE_unique_low16": 49078
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 577706355345145253,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 46783,
+      "UE_unique_low16": 49078
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 9139498569684560357,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 23231,
+      "UE_unique_low16": 48986
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 16943486471406586735,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 18111,
+      "UE_unique_low16": 48966
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 16943486471406586735,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 18111,
+      "UE_unique_low16": 48966
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 8570778607751524823,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 6335,
+      "UE_unique_low16": 48920
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 15985628025099077385,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 5823,
+      "UE_unique_low16": 48918
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 14804826106029795633,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 65214,
+      "UE_unique_low16": 48894
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 854514445705815217,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 64702,
+      "UE_unique_low16": 48892
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 854514445705815217,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 64702,
+      "UE_unique_low16": 48892
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 4118781018962763148,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 56510,
+      "UE_unique_low16": 48860
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 4118781018962763148,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 56510,
+      "UE_unique_low16": 48860
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 13539347224428013012,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 55486,
+      "UE_unique_low16": 48856
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 13539347224428013012,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 55486,
+      "UE_unique_low16": 48856
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 11136854577158369878,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 53950,
+      "UE_unique_low16": 48850
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 5407473495791182912,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 53438,
+      "UE_unique_low16": 48848
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 13605261265758013164,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 51902,
+      "UE_unique_low16": 48842
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 13605261265758013164,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 51902,
+      "UE_unique_low16": 48842
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 2634730624280200527,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 49854,
+      "UE_unique_low16": 48834
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 2634730624280200527,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 49854,
+      "UE_unique_low16": 48834
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 10588866417418395798,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 32446,
+      "UE_unique_low16": 48766
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 12113144211076528495,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 31934,
+      "UE_unique_low16": 48764
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 2640068708756015662,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 31422,
+      "UE_unique_low16": 48762
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 7640472030504218322,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 37064,
+      "UE_unique_low16": 51344
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 7640472030504218322,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 37064,
+      "UE_unique_low16": 51344
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 9174930575241021010,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 64716,
+      "UE_unique_low16": 52476
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 15310645164861229363,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 62668,
+      "UE_unique_low16": 52468
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 9626505802058236744,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 55756,
+      "UE_unique_low16": 52441
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 16689787857482270143,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 53196,
+      "UE_unique_low16": 52431
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 13737950686155764386,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 51148,
+      "UE_unique_low16": 52423
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 7854258651075093955,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 49356,
+      "UE_unique_low16": 52416
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 4020872863646564954,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 48844,
+      "UE_unique_low16": 52414
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 9670590967587648220,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 48332,
+      "UE_unique_low16": 52412
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 9670590967587648220,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 48332,
+      "UE_unique_low16": 52412
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 3217179979892488524,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 27834,
+      "UE_unique_low16": 47724
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 2070902077997051596,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 11469,
+      "UE_unique_low16": 52524
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 2070902077997051596,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 11469,
+      "UE_unique_low16": 52524
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 12447397366035010651,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 11981,
+      "UE_unique_low16": 52526
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 12447397366035010651,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 11981,
+      "UE_unique_low16": 52526
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 18063719369967133583,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 33482,
+      "UE_unique_low16": 51842
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 4166362953956427698,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 31946,
+      "UE_unique_low16": 51836
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 4166362953956427698,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 31946,
+      "UE_unique_low16": 51836
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 18183596796148335782,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 23242,
+      "UE_unique_low16": 51802
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 12702058763368091792,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 20682,
+      "UE_unique_low16": 51792
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 12702058763368091792,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 20682,
+      "UE_unique_low16": 51792
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 3312216254017402040,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 15306,
+      "UE_unique_low16": 51771
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 3312216254017402040,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 15306,
+      "UE_unique_low16": 51771
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 15901146039068972150,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 6602,
+      "UE_unique_low16": 51737
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 17902350135962575389,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 5066,
+      "UE_unique_low16": 51731
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 1501918298457959467,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 3786,
+      "UE_unique_low16": 51726
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 12585710923866806623,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 63945,
+      "UE_unique_low16": 51705
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 3299924925510826257,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 62409,
+      "UE_unique_low16": 51699
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 3299924925510826257,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 62409,
+      "UE_unique_low16": 51699
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 17877995809178033298,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 61641,
+      "UE_unique_low16": 51696
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 12506083141589079046,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 60617,
+      "UE_unique_low16": 51692
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 11439451558594832840,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 55497,
+      "UE_unique_low16": 51672
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 11439451558594832840,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 55497,
+      "UE_unique_low16": 51672
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 15430419967952574648,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 39625,
+      "UE_unique_low16": 51610
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 15430419967952574648,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 39625,
+      "UE_unique_low16": 51610
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 1460623536209673759,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 22729,
+      "UE_unique_low16": 51544
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 1460623536209673759,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 22729,
+      "UE_unique_low16": 51544
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 9429501277848376441,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 52641,
+      "UE_unique_low16": 41421
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 9429501277848376441,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 52641,
+      "UE_unique_low16": 41421
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 3046477620472477014,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 43195,
+      "UE_unique_low16": 48040
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 3046477620472477014,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 43195,
+      "UE_unique_low16": 48040
+    },
+    {
+      "group": "m8e_validation_01",
+      "source": "EnvironmentObject",
+      "entity_id": 15859748524804633918,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 41659,
+      "UE_unique_low16": 48034
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "Actor",
+      "entity_id": 1026,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 18243,
+      "UE_unique_low16": 17223
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "Actor",
+      "entity_id": 1026,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 18243,
+      "UE_unique_low16": 17223
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "Actor",
+      "entity_id": 1025,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 19267,
+      "UE_unique_low16": 17227
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "Actor",
+      "entity_id": 1024,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 22595,
+      "UE_unique_low16": 17240
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "Actor",
+      "entity_id": 1024,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 22595,
+      "UE_unique_low16": 17240
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "Actor",
+      "entity_id": 1023,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 55875,
+      "UE_unique_low16": 17370
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "Actor",
+      "entity_id": 1023,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 55875,
+      "UE_unique_low16": 17370
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "Actor",
+      "entity_id": 1022,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 56899,
+      "UE_unique_low16": 17374
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "Actor",
+      "entity_id": 1020,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 21572,
+      "UE_unique_low16": 17492
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "Actor",
+      "entity_id": 1017,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 29515,
+      "UE_unique_low16": 19315
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 1485641012083324195,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 20059,
+      "UE_unique_low16": 23374
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 1485641012083324195,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 20059,
+      "UE_unique_low16": 23374
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 17450334365819387383,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 90,
+      "UE_unique_low16": 23040
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 1734891895903619718,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 11372,
+      "UE_unique_low16": 27692
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6407609397823570735,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 45163,
+      "UE_unique_low16": 27568
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 5013206398664052566,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 29802,
+      "UE_unique_low16": 27252
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 5013206398664052566,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 29802,
+      "UE_unique_low16": 27252
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 7927001157348065004,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 50790,
+      "UE_unique_low16": 26310
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 3656780762010599547,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 20886,
+      "UE_unique_low16": 38481
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 3656780762010599547,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 20886,
+      "UE_unique_low16": 38481
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 106262535238149038,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 38610,
+      "UE_unique_low16": 53910
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 106262535238149038,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 53654,
+      "UE_unique_low16": 38609
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 106262535238149038,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 38610,
+      "UE_unique_low16": 53910
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 106262535238149038,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 53654,
+      "UE_unique_low16": 38609
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 15908795335278328303,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 30930,
+      "UE_unique_low16": 53880
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 15908795335278328303,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 30930,
+      "UE_unique_low16": 53880
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 7380295770905420173,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 30162,
+      "UE_unique_low16": 53877
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 7380295770905420173,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 30162,
+      "UE_unique_low16": 53877
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 1802793298767138250,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 29906,
+      "UE_unique_low16": 53876
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 1802793298767138250,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 29906,
+      "UE_unique_low16": 53876
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 535177830405027236,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 47058,
+      "UE_unique_low16": 53943
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 535177830405027236,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 47058,
+      "UE_unique_low16": 53943
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 1850163054219295037,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 51947,
+      "UE_unique_low16": 60362
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16724011519047499946,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 45035,
+      "UE_unique_low16": 60335
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 11452489815872696951,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 62415,
+      "UE_unique_low16": 53235
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 11452489815872696951,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 62415,
+      "UE_unique_low16": 53235
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 8397331885643790319,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 62415,
+      "UE_unique_low16": 53235
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 8397331885643790319,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 62415,
+      "UE_unique_low16": 53235
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 1289927003478753326,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 21483,
+      "UE_unique_low16": 60243
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 3345210632909861805,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 21483,
+      "UE_unique_low16": 60243
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 1865954916603161746,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 63183,
+      "UE_unique_low16": 53238
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 18367755421049869331,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 63183,
+      "UE_unique_low16": 53238
+    },
+    {
+      "group": "m8e_calibration_00",
+      "source": "EnvironmentObject",
+      "entity_id": 5053135847279780123,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 60111,
+      "UE_unique_low16": 53226
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "Actor",
+      "entity_id": 1061,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 62528,
+      "UE_unique_low16": 16628
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "Actor",
+      "entity_id": 1061,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 62528,
+      "UE_unique_low16": 16628
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "Actor",
+      "entity_id": 1060,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 63552,
+      "UE_unique_low16": 16632
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "Actor",
+      "entity_id": 1059,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 1089,
+      "UE_unique_low16": 16644
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "Actor",
+      "entity_id": 1059,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 1089,
+      "UE_unique_low16": 16644
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "Actor",
+      "entity_id": 1058,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 34113,
+      "UE_unique_low16": 16773
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "Actor",
+      "entity_id": 1058,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 34113,
+      "UE_unique_low16": 16773
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "Actor",
+      "entity_id": 1057,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 35137,
+      "UE_unique_low16": 16777
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "Actor",
+      "entity_id": 1055,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 39233,
+      "UE_unique_low16": 16793
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "EnvironmentObject",
+      "entity_id": 9784359303158967283,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 45146,
+      "UE_unique_low16": 23216
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "EnvironmentObject",
+      "entity_id": 9784359303158967283,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 45146,
+      "UE_unique_low16": 23216
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "EnvironmentObject",
+      "entity_id": 6241791771384230474,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 44122,
+      "UE_unique_low16": 23212
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "EnvironmentObject",
+      "entity_id": 5930419481211274249,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 10348,
+      "UE_unique_low16": 27688
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "EnvironmentObject",
+      "entity_id": 5930419481211274249,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 10348,
+      "UE_unique_low16": 27688
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "EnvironmentObject",
+      "entity_id": 15870777759710955602,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 22634,
+      "UE_unique_low16": 27224
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "EnvironmentObject",
+      "entity_id": 15870777759710955602,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 22634,
+      "UE_unique_low16": 27224
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "EnvironmentObject",
+      "entity_id": 14452123281483752923,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 59801,
+      "UE_unique_low16": 39401
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "EnvironmentObject",
+      "entity_id": 14452123281483752923,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 59801,
+      "UE_unique_low16": 39401
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "EnvironmentObject",
+      "entity_id": 15296373290002346080,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 58265,
+      "UE_unique_low16": 39395
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "EnvironmentObject",
+      "entity_id": 15296373290002346080,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 58265,
+      "UE_unique_low16": 39395
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "EnvironmentObject",
+      "entity_id": 11833989151096721272,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 34002,
+      "UE_unique_low16": 53892
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "EnvironmentObject",
+      "entity_id": 11833989151096721272,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 34002,
+      "UE_unique_low16": 53892
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "EnvironmentObject",
+      "entity_id": 15180106336882834225,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 33746,
+      "UE_unique_low16": 53891
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "EnvironmentObject",
+      "entity_id": 15180106336882834225,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 33746,
+      "UE_unique_low16": 53891
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "EnvironmentObject",
+      "entity_id": 11165126127278109155,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 33490,
+      "UE_unique_low16": 53890
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "EnvironmentObject",
+      "entity_id": 11165126127278109155,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 33490,
+      "UE_unique_low16": 53890
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "EnvironmentObject",
+      "entity_id": 18038651056895951680,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 33234,
+      "UE_unique_low16": 53889
+    },
+    {
+      "group": "m8e_calibration_01",
+      "source": "EnvironmentObject",
+      "entity_id": 18038651056895951680,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 33234,
+      "UE_unique_low16": 53889
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "Actor",
+      "entity_id": 1269,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 29353,
+      "UE_unique_low16": 43378
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "Actor",
+      "entity_id": 1269,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 29353,
+      "UE_unique_low16": 43378
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "Actor",
+      "entity_id": 1268,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 20819,
+      "UE_unique_low16": 21329
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "Actor",
+      "entity_id": 1267,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 38569,
+      "UE_unique_low16": 43414
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "Actor",
+      "entity_id": 1267,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 38569,
+      "UE_unique_low16": 43414
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "Actor",
+      "entity_id": 1265,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 54186,
+      "UE_unique_low16": 43731
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "Actor",
+      "entity_id": 1265,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 54186,
+      "UE_unique_low16": 43731
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "Actor",
+      "entity_id": 1262,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 58282,
+      "UE_unique_low16": 43747
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "Actor",
+      "entity_id": 1260,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 43947,
+      "UE_unique_low16": 43947
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 8880564188486057520,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 18651,
+      "UE_unique_low16": 56136
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 13236483378327445988,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 58090,
+      "UE_unique_low16": 60130
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16636282462154717587,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 57066,
+      "UE_unique_low16": 60126
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 517471406851991798,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 56554,
+      "UE_unique_low16": 60124
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 517471406851991798,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 56554,
+      "UE_unique_low16": 60124
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16454799636962717651,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 56042,
+      "UE_unique_low16": 60122
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16454799636962717651,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 56042,
+      "UE_unique_low16": 60122
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 15220879248442125022,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 55530,
+      "UE_unique_low16": 60120
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 17015194600494109885,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 55018,
+      "UE_unique_low16": 60118
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16251025664687523586,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 54506,
+      "UE_unique_low16": 60116
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16251025664687523586,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 54506,
+      "UE_unique_low16": 60116
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 2826485388146656890,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 53994,
+      "UE_unique_low16": 60114
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 2826485388146656890,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 53994,
+      "UE_unique_low16": 60114
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16240855387858910657,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 52458,
+      "UE_unique_low16": 60108
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16240855387858910657,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 52458,
+      "UE_unique_low16": 60108
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 14611243308027620006,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 51946,
+      "UE_unique_low16": 60106
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 14611243308027620006,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 51946,
+      "UE_unique_low16": 60106
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 14469534768370776158,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 49386,
+      "UE_unique_low16": 60096
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16763228411957552641,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 23272,
+      "UE_unique_low16": 59482
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16763228411957552641,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 23272,
+      "UE_unique_low16": 59482
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 11837976410759476482,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 59623,
+      "UE_unique_low16": 59368
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 8228881127468312729,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 41703,
+      "UE_unique_low16": 59298
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 15112936094986435022,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 37095,
+      "UE_unique_low16": 59280
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 15112936094986435022,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 37095,
+      "UE_unique_low16": 59280
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 1348401163430701382,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 36071,
+      "UE_unique_low16": 59276
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 1348401163430701382,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 36071,
+      "UE_unique_low16": 59276
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 12283160814645731575,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 35559,
+      "UE_unique_low16": 59274
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 5718329852456518952,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 35047,
+      "UE_unique_low16": 59272
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 12700446990190300951,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 34535,
+      "UE_unique_low16": 59270
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 18087041003820815069,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 56550,
+      "UE_unique_low16": 59100
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 1833976561366926371,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 29414,
+      "UE_unique_low16": 58994
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 1833976561366926371,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 29414,
+      "UE_unique_low16": 58994
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6289930123076046234,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 38615,
+      "UE_unique_low16": 55190
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16295426707141567519,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 42710,
+      "UE_unique_low16": 54950
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16295426707141567519,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 42710,
+      "UE_unique_low16": 54950
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6987240670980648079,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 40150,
+      "UE_unique_low16": 54940
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6987240670980648079,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 40150,
+      "UE_unique_low16": 54940
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 9176708239794298521,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 38102,
+      "UE_unique_low16": 54932
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 9176708239794298521,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 38102,
+      "UE_unique_low16": 54932
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 4326838020103132616,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 9430,
+      "UE_unique_low16": 54820
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 4326838020103132616,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 9430,
+      "UE_unique_low16": 54820
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 7044553968436203574,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 8918,
+      "UE_unique_low16": 54818
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 656830051959624816,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 4310,
+      "UE_unique_low16": 54800
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 656830051959624816,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 4310,
+      "UE_unique_low16": 54800
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 7018490781907864867,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 57557,
+      "UE_unique_low16": 54752
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 7018490781907864867,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 57557,
+      "UE_unique_low16": 54752
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6060541404158556773,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 57045,
+      "UE_unique_low16": 54750
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6060541404158556773,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 57045,
+      "UE_unique_low16": 54750
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16540440437281431304,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 51925,
+      "UE_unique_low16": 54730
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16540440437281431304,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 51925,
+      "UE_unique_low16": 54730
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 11850255985635870017,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 8405,
+      "UE_unique_low16": 54560
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 9510669791472684604,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 7893,
+      "UE_unique_low16": 54558
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 8021805522874923751,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 34516,
+      "UE_unique_low16": 54406
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 8021805522874923751,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 34516,
+      "UE_unique_low16": 54406
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 14061386902360311023,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 32980,
+      "UE_unique_low16": 54400
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 17404046677475497459,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 32468,
+      "UE_unique_low16": 54398
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 17592565984607989242,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 28884,
+      "UE_unique_low16": 54384
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 17592565984607989242,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 28884,
+      "UE_unique_low16": 54384
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 3460131407956701670,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 23252,
+      "UE_unique_low16": 54362
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 3460131407956701670,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 23252,
+      "UE_unique_low16": 54362
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 3460131407956701670,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 23252,
+      "UE_unique_low16": 54362
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 3460131407956701670,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 23252,
+      "UE_unique_low16": 54362
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16111078381017297349,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 17620,
+      "UE_unique_low16": 54340
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16111078381017297349,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 17620,
+      "UE_unique_low16": 54340
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 12857026654411021915,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 15060,
+      "UE_unique_low16": 54330
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 12857026654411021915,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 15060,
+      "UE_unique_low16": 54330
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6709408038456952552,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 14548,
+      "UE_unique_low16": 54328
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6709408038456952552,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 14548,
+      "UE_unique_low16": 54328
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 11408046971407519050,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 3794,
+      "UE_unique_low16": 53774
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 163398851343036551,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 2258,
+      "UE_unique_low16": 53768
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 3560998179737335860,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 62673,
+      "UE_unique_low16": 53748
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 2488358099279936356,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 55505,
+      "UE_unique_low16": 53720
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 11463950237349554249,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 47313,
+      "UE_unique_low16": 53688
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 15484541500336955550,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 16309,
+      "UE_unique_low16": 46399
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 18376569212249567067,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 2997,
+      "UE_unique_low16": 46347
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 8863849873158341877,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 2485,
+      "UE_unique_low16": 46345
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 418767509811460546,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 1973,
+      "UE_unique_low16": 46343
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 12671680739296141684,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 1461,
+      "UE_unique_low16": 46341
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 12671680739296141684,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 1461,
+      "UE_unique_low16": 46341
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 12671680739296141684,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 1461,
+      "UE_unique_low16": 46341
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 12909569004213372416,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 949,
+      "UE_unique_low16": 46339
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 12909569004213372416,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 949,
+      "UE_unique_low16": 46339
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 12909569004213372416,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 949,
+      "UE_unique_low16": 46339
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6638480408600925315,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 437,
+      "UE_unique_low16": 46337
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6638480408600925315,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 437,
+      "UE_unique_low16": 46337
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6638480408600925315,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 437,
+      "UE_unique_low16": 46337
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 9196317699585544880,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 65460,
+      "UE_unique_low16": 46335
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 9196317699585544880,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 65460,
+      "UE_unique_low16": 46335
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 9196317699585544880,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 65460,
+      "UE_unique_low16": 46335
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 13510696797497930942,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 64948,
+      "UE_unique_low16": 46333
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 8666983528890834119,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 64436,
+      "UE_unique_low16": 46331
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 14298887726360447804,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 63924,
+      "UE_unique_low16": 46329
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 8885660484397365247,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 62388,
+      "UE_unique_low16": 46323
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 10097649126821113294,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 53681,
+      "UE_unique_low16": 45521
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 10097649126821113294,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 53681,
+      "UE_unique_low16": 45521
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6595879478512839544,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 53169,
+      "UE_unique_low16": 45519
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6595879478512839544,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 53169,
+      "UE_unique_low16": 45519
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 12677035917679512486,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 52657,
+      "UE_unique_low16": 45517
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 12677035917679512486,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 52657,
+      "UE_unique_low16": 45517
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 15259741795150988833,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 52145,
+      "UE_unique_low16": 45515
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 15259741795150988833,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 52145,
+      "UE_unique_low16": 45515
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 15259741795150988833,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 52145,
+      "UE_unique_low16": 45515
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 12622472212353892906,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 51633,
+      "UE_unique_low16": 45513
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 12622472212353892906,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 51633,
+      "UE_unique_low16": 45513
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 12622472212353892906,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 51633,
+      "UE_unique_low16": 45513
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6797737313722786540,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 51121,
+      "UE_unique_low16": 45511
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6797737313722786540,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 51121,
+      "UE_unique_low16": 45511
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 5875937800130755819,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 50097,
+      "UE_unique_low16": 45507
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 5875937800130755819,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 50097,
+      "UE_unique_low16": 45507
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 14064814087864829746,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 49585,
+      "UE_unique_low16": 45505
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 14064814087864829746,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 49585,
+      "UE_unique_low16": 45505
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 10683508668029044278,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 49073,
+      "UE_unique_low16": 45503
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 15592315358211466418,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 48561,
+      "UE_unique_low16": 45501
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 4061723475836911675,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 22449,
+      "UE_unique_low16": 45399
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 8190491517442222669,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 45488,
+      "UE_unique_low16": 45233
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 12170896695237204731,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 43952,
+      "UE_unique_low16": 45227
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 5572714395836821402,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 38832,
+      "UE_unique_low16": 45207
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 14598328536010238802,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 37296,
+      "UE_unique_low16": 45201
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6951931100309192725,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 19618,
+      "UE_unique_low16": 41548
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6951931100309192725,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 19618,
+      "UE_unique_low16": 41548
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 4218675512041013159,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 54689,
+      "UE_unique_low16": 41429
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16635023809005628256,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 54177,
+      "UE_unique_low16": 41427
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16635023809005628256,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 54177,
+      "UE_unique_low16": 41427
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 5041903463946454065,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 53665,
+      "UE_unique_low16": 41425
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 5041903463946454065,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 53665,
+      "UE_unique_low16": 41425
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 8965094066430092702,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 53153,
+      "UE_unique_low16": 41423
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 8965094066430092702,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 53153,
+      "UE_unique_low16": 41423
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 17491704426920599702,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 52641,
+      "UE_unique_low16": 41421
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 17491704426920599702,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 52641,
+      "UE_unique_low16": 41421
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 10394026417062495935,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 51617,
+      "UE_unique_low16": 41417
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 10394026417062495935,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 51617,
+      "UE_unique_low16": 41417
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 14639961051381324913,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 51105,
+      "UE_unique_low16": 41415
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 14639961051381324913,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 51105,
+      "UE_unique_low16": 41415
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 7786210329381799903,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 50593,
+      "UE_unique_low16": 41413
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 7786210329381799903,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 50593,
+      "UE_unique_low16": 41413
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 13407300904146308248,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 50081,
+      "UE_unique_low16": 41411
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 13407300904146308248,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 50081,
+      "UE_unique_low16": 41411
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 13407300904146308248,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 50081,
+      "UE_unique_low16": 41411
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 9811868376322435815,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 49569,
+      "UE_unique_low16": 41409
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 9811868376322435815,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 49569,
+      "UE_unique_low16": 41409
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 9811868376322435815,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 49569,
+      "UE_unique_low16": 41409
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 17379582555680491501,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 49057,
+      "UE_unique_low16": 41407
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 17379582555680491501,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 49057,
+      "UE_unique_low16": 41407
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 17379582555680491501,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 49057,
+      "UE_unique_low16": 41407
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 7788988557077019063,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 48545,
+      "UE_unique_low16": 41405
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 7788988557077019063,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 48545,
+      "UE_unique_low16": 41405
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 8631932992555133626,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 48033,
+      "UE_unique_low16": 41403
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 8631932992555133626,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 48033,
+      "UE_unique_low16": 41403
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 4786544428022122309,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 47521,
+      "UE_unique_low16": 41401
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 4786544428022122309,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 47521,
+      "UE_unique_low16": 41401
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 3693118447964433327,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 47009,
+      "UE_unique_low16": 41399
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 3693118447964433327,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 47009,
+      "UE_unique_low16": 41399
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 8157637739443490264,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 45985,
+      "UE_unique_low16": 41395
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 8157637739443490264,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 45985,
+      "UE_unique_low16": 41395
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 12474940794548139263,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 45473,
+      "UE_unique_low16": 41393
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 12474940794548139263,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 45473,
+      "UE_unique_low16": 41393
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 1446508510376506952,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 44449,
+      "UE_unique_low16": 41389
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 14233638336728957841,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 43937,
+      "UE_unique_low16": 41387
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 14233638336728957841,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 43937,
+      "UE_unique_low16": 41387
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16832069218291029692,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 43425,
+      "UE_unique_low16": 41385
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 4933094382238783509,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 42913,
+      "UE_unique_low16": 41383
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 4933094382238783509,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 42913,
+      "UE_unique_low16": 41383
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 4112840618970671017,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 39071,
+      "UE_unique_low16": 40856
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 3695969965547419257,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 37535,
+      "UE_unique_low16": 40850
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 3695969965547419257,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 37535,
+      "UE_unique_low16": 40850
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 8270044332451064203,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 32415,
+      "UE_unique_low16": 40830
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 8270044332451064203,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 32415,
+      "UE_unique_low16": 40830
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 13673504175241498283,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 31903,
+      "UE_unique_low16": 40828
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 13673504175241498283,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 31903,
+      "UE_unique_low16": 40828
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6748942203519339948,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 30879,
+      "UE_unique_low16": 40824
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6748942203519339948,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 30879,
+      "UE_unique_low16": 40824
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 10705875969098572039,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 34974,
+      "UE_unique_low16": 40584
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 10705875969098572039,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 34974,
+      "UE_unique_low16": 40584
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 9223420157815659948,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 24732,
+      "UE_unique_low16": 40032
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 9223420157815659948,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 24732,
+      "UE_unique_low16": 40032
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 9417777600819475522,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 3996,
+      "UE_unique_low16": 39951
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 15389715642456591951,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 21457,
+      "UE_unique_low16": 53587
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6057372585301191441,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 19409,
+      "UE_unique_low16": 53579
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6057372585301191441,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 19409,
+      "UE_unique_low16": 53579
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 7116870575205463401,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 14801,
+      "UE_unique_low16": 53561
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 8296906673253179564,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 7633,
+      "UE_unique_low16": 53533
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6571224885048840424,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 56522,
+      "UE_unique_low16": 51932
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6571224885048840424,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 56522,
+      "UE_unique_low16": 51932
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 5181041407225309603,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 56010,
+      "UE_unique_low16": 51930
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 14737692708496649530,
+      "camera": "rear_left",
+      "opaque_byte_swapped_encoding": 55498,
+      "UE_unique_low16": 51928
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 14737692708496649530,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 55498,
+      "UE_unique_low16": 51928
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 13551409574052916401,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 54986,
+      "UE_unique_low16": 51926
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 13551409574052916401,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 54986,
+      "UE_unique_low16": 51926
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 3865053278250452178,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 54474,
+      "UE_unique_low16": 51924
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 1128001773204627980,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 53962,
+      "UE_unique_low16": 51922
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 11195845501510872243,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 40643,
+      "UE_unique_low16": 50078
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16870006633821176678,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 40131,
+      "UE_unique_low16": 50076
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16870006633821176678,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 40131,
+      "UE_unique_low16": 50076
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 7693302030919868385,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 36547,
+      "UE_unique_low16": 50062
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 810277543485888630,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 28877,
+      "UE_unique_low16": 52592
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 810277543485888630,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 28877,
+      "UE_unique_low16": 52592
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 14683208459896463125,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 19917,
+      "UE_unique_low16": 52557
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 14683208459896463125,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 19917,
+      "UE_unique_low16": 52557
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 14954141635441945673,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 14796,
+      "UE_unique_low16": 52281
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 10046111680190245739,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 27331,
+      "UE_unique_low16": 50026
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 10046111680190245739,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 27331,
+      "UE_unique_low16": 50026
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16679341707707694393,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 9155,
+      "UE_unique_low16": 49955
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 16679341707707694393,
+      "camera": "front_left",
+      "opaque_byte_swapped_encoding": 9155,
+      "UE_unique_low16": 49955
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 6181576306399658147,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 9155,
+      "UE_unique_low16": 49955
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 13061272527384681534,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 8131,
+      "UE_unique_low16": 49951
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 9619468021441236533,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 7107,
+      "UE_unique_low16": 49947
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 1893499709177189320,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 7107,
+      "UE_unique_low16": 49947
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 17931042808778281709,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 60354,
+      "UE_unique_low16": 49899
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 1560545743164066073,
+      "camera": "rear_right",
+      "opaque_byte_swapped_encoding": 59330,
+      "UE_unique_low16": 49895
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 17287138430791308721,
+      "camera": "rear",
+      "opaque_byte_swapped_encoding": 58306,
+      "UE_unique_low16": 49891
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 15837389534936299117,
+      "camera": "front",
+      "opaque_byte_swapped_encoding": 35533,
+      "UE_unique_low16": 52618
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "source": "EnvironmentObject",
+      "entity_id": 7908153170361826992,
+      "camera": "front_right",
+      "opaque_byte_swapped_encoding": 35021,
+      "UE_unique_low16": 52616
+    }
+  ],
+  "actual_instance_equal_actorID": 0,
+  "all_environment_sources_not_mesh": true,
+  "budget_stop": "Stopped at frozen8positions/32frames: source incompleteness and far support gaps persist; do not repeat adjacent frames or choose new successful scenes to satisfy quota.",
+  "rule_changes_after_validation": "Only distinct-camera count implementation correction; no grade changed, no thresholds changed.",
+  "caveat": "Same road IDs recur within split; maps shared with historical project. New heldout only1location, not sufficient independent final model evaluation."
+}

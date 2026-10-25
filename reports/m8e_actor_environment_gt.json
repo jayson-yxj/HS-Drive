@@ -1,0 +1,718 @@
+{
+  "kind": "ActualCARLACapture_OfflineEvaluatorAggregation",
+  "base": "037ddba29d6eaaa292e8ad74db58bd94e5f42b50",
+  "execution_commit": "037ddba29d6eaaa292e8ad74db58bd94e5f42b50",
+  "sources": {
+    "configs/m8e/development_amendment.json": "3518f13bb9f67bf9198c8101ca2697b446dc8a4a5b9317a1ed9c0111d5576098",
+    "configs/m8e/protocol.json": "0da014be555f7427f976324dec8b536aee54bf91467edc3a8668476f8b07f285",
+    "datasets/m8e_reference.py": "7ff6c451e8f9284446b2ab1a609619df4f25f3e9ed19100733ced62ba64e05b1",
+    "tests/test_m8e_reference.py": "844e0baee91c35242525bc42b492c51c36af8587efe3a291f4dbe501a2600392",
+    "tools/m8e_allocate.py": "74114e27b677f8b57413944432933a8139900f5f12074f425f660502c948dde9",
+    "tools/m8e_audit.py": "f0c0badc2440936d0ed8c8de2413b015f27ba3b48715a3ea20e28d262acf715a",
+    "tools/m8e_capture.py": "acecbfa7a88eec50249be5d65a305ead2d16043f7bc155803c5768200f620a64",
+    "tools/m8e_common.py": "8162ab46902b4377e507c213f11170c3b0a1e7691566e28fd5cf02083cfe1ff1",
+    "tools/m8e_historical.py": "0d4c2ef1a7a07c5b28aa44b5dc3b71e658ea2ee279542f2f225688f4732b13dc",
+    "tools/m8e_official_sources.py": "0abe03b07367ec6276953fae30193bc8310c7dc880bc5d26e181be0cf4bdfc9c",
+    "tools/m8e_report.py": "b4f58db97174900c16d8456ebf99cfea8e94f9efc465d6aaa105e0421d08c195",
+    "tools/m8e_smoke_probe.py": "424a0df373ebb222f1919152f40590f687028756fc3202d0654e8c9e28de669f"
+  },
+  "training_steps": 0,
+  "visual_control": false,
+  "frames": 32,
+  "groups": 8,
+  "all24sensor_payloads_verified": true,
+  "sensor_records": 768,
+  "manifests": [
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_development_00/manifest.json",
+      "bytes": 4667,
+      "sha256": "993c224a07f09c55b91a539226740f23d7608ff9ac24c038ada0e4fe49460fa6"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_development_01/manifest.json",
+      "bytes": 5074,
+      "sha256": "437faef3aa604023b4c463ae0a681af2db1fbb1ac099a1cb84d568730a18c9d8"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_development_02/manifest.json",
+      "bytes": 5071,
+      "sha256": "f83a7664592268e5826e45f037851ed5727f747d6a4bd332e5f1c40e9b98f298"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_validation_00/manifest.json",
+      "bytes": 5166,
+      "sha256": "82a6ee192cf9e86eb0c553132e647ccea69a3d1b34c299d7003d4b895a87e4b4"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_validation_01/manifest.json",
+      "bytes": 5193,
+      "sha256": "968796c42de61982caf7791c9993dca095a7ab005de6d67161497508b081786b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_calibration_00/manifest.json",
+      "bytes": 5307,
+      "sha256": "d74bc77a57bb1062969f49d326fca863afde5b8b6fdaf821b26b6f2ffdebf8ed"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_calibration_01/manifest.json",
+      "bytes": 5312,
+      "sha256": "ae188e515e73a6c8cb6a166398de22941c459bfce6d7e60120856b6f5eab8b3e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_held_out_final_00/manifest.json",
+      "bytes": 5288,
+      "sha256": "110d3cbb6dfce87fb02e4e10a796b8aa3b0c6d412691b478d55b70832a136878"
+    }
+  ],
+  "RGB_only_packets": [
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_development_00/rgb/empty_packet.json",
+      "bytes": 6705,
+      "sha256": "206c68af9b5a05fbb2c9ab42f32023c6921c0eb7cd5acae5bff6cc1fba102d49"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_development_00/rgb/present_packet.json",
+      "bytes": 6726,
+      "sha256": "e0d600d1b1b5dc756e095c037cd2da458076c09ee19928b036ea307f4d54ff40"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_development_00/rgb/shifted_packet.json",
+      "bytes": 6733,
+      "sha256": "57245c6b5bf7ec76de54bb94340fef48d328f59327cc1b6b98a1d87dc45b3040"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_development_00/rgb/removed_packet.json",
+      "bytes": 6733,
+      "sha256": "99a82b47673baf084cf9e9043daa5ee6f050cc89815c0dd54306793b6c883538"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_development_01/rgb/empty_packet.json",
+      "bytes": 6733,
+      "sha256": "68d3ef3241c080537991f85a7ad34e4cdf07b2ef0f4e89a4f3d5eabe2ae872ce"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_development_01/rgb/present_packet.json",
+      "bytes": 6747,
+      "sha256": "7a759ff2f0c1d7d256cecb0d1e7f4ba052c0fd1688f5749c8299b25a919d3c7e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_development_01/rgb/shifted_packet.json",
+      "bytes": 6747,
+      "sha256": "1815c36e6d4b530a9e67c965ffd54abe2e6a6c88112e7c7c2bbe04f6194e2141"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_development_01/rgb/removed_packet.json",
+      "bytes": 6747,
+      "sha256": "2a58b64fce6526187e3de647ac0b0c7fdf7158d1d1847c5d599ab1d3e1ae3a53"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_development_02/rgb/empty_packet.json",
+      "bytes": 6733,
+      "sha256": "ad21a2d925d06606cecf3f83caa575e1540d06513398ad6dcea58638057b4f34"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_development_02/rgb/present_packet.json",
+      "bytes": 6740,
+      "sha256": "a5c7f51c25f0caa07daa7dfe0b5fafbdb9e3e4e3cb091ebce8a9648af8f5ed0d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_development_02/rgb/shifted_packet.json",
+      "bytes": 6740,
+      "sha256": "ae9b22696e603f2e25b20eda4ff2253344b0fac7dc4ee9461ac7c46a88c57bb1"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_development_02/rgb/removed_packet.json",
+      "bytes": 6740,
+      "sha256": "770267d3f29bf0d08a1f8e44ab193222b0adf957698750a01ab6013b772c58da"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_validation_00/rgb/empty_packet.json",
+      "bytes": 6726,
+      "sha256": "902de80d953ac8b5f38c599a2383a663ce3bfeb190f968f8fd66f92d08b4b5fd"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_validation_00/rgb/present_packet.json",
+      "bytes": 6733,
+      "sha256": "9c8dd44c3d85c0b8d1f4673def939b299fbb2a05145631bb382dfe937e36609c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_validation_00/rgb/shifted_packet.json",
+      "bytes": 6733,
+      "sha256": "6fcb87e1851c207759d01e050faea7d064499ebb256debee84be63cc3f962339"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_validation_00/rgb/removed_packet.json",
+      "bytes": 6733,
+      "sha256": "759580bb1283c5393981d0bb78528bb98dad12e9ab438444888ac13e30307ab3"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_validation_01/rgb/empty_packet.json",
+      "bytes": 6719,
+      "sha256": "a303c149cf7dccd0cc3242ad0c21484ee48351deae55023d9ec4c665aa559044"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_validation_01/rgb/present_packet.json",
+      "bytes": 6740,
+      "sha256": "9b18e4e0d0fcb14981ade89faa162abc87596991405c27184519ce81b7185ec2"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_validation_01/rgb/shifted_packet.json",
+      "bytes": 6740,
+      "sha256": "5593132f802799df15ac6fb2f3b3af7993b064d292d363f222b9dd2781a553fd"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_validation_01/rgb/removed_packet.json",
+      "bytes": 6740,
+      "sha256": "68e2b6ee06fe1735ee8f3f86446b0a6607be98a3e373dc1cd9aeefb02eca3d36"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_calibration_00/rgb/empty_packet.json",
+      "bytes": 6726,
+      "sha256": "f96b6831a251b15fdd3494ace3765a2a22ed45515bbf03ba71e46c9fb05e7194"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_calibration_00/rgb/present_packet.json",
+      "bytes": 6733,
+      "sha256": "0fbe3e225a181516f75114548b2f545a9c41b42dc8ca644d8a4d4b06241b3d02"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_calibration_00/rgb/shifted_packet.json",
+      "bytes": 6733,
+      "sha256": "22e6fffdb6977bf371cc4e00bd28d0c393404c9849c55513cf50ee7d8ce13179"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_calibration_00/rgb/removed_packet.json",
+      "bytes": 6733,
+      "sha256": "8318c88c97f7936c5c4d2c65d002b13e81e31d11d4b0c970caf3a757a7ec4f6f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_calibration_01/rgb/empty_packet.json",
+      "bytes": 6726,
+      "sha256": "f78e28df99c300bde7420f4924a4c1decda53bcb4cad03b3969653885cb744b1"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_calibration_01/rgb/present_packet.json",
+      "bytes": 6747,
+      "sha256": "842742d38f988c56eb3bab7b30971a6695b295ebba61b3075d4564a4ad466638"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_calibration_01/rgb/shifted_packet.json",
+      "bytes": 6747,
+      "sha256": "e2dcd774ae2a4dccebbb41a3730c39270228f659f3157b000fb6fe632305fe9e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_calibration_01/rgb/removed_packet.json",
+      "bytes": 6747,
+      "sha256": "e5331e7e690dd210db0ba66a26e5b2619af9e08a237a13f17bf2c45b005bffaa"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_held_out_final_00/rgb/empty_packet.json",
+      "bytes": 6747,
+      "sha256": "70648095ab38daf0522ee41e262c1104d402e5570b3b3112c6b11150bae0aa00"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_held_out_final_00/rgb/present_packet.json",
+      "bytes": 6761,
+      "sha256": "6d7d3dac9d64f7385876bd5c60c4d5d83e31bcd8a1b06e354c64223394b87f47"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_held_out_final_00/rgb/shifted_packet.json",
+      "bytes": 6761,
+      "sha256": "c8fe4776a5baa4affd7abae5a49d92911a4f8d64a8af14fb0ae36ae03aae8f56"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_held_out_final_00/rgb/removed_packet.json",
+      "bytes": 6761,
+      "sha256": "7e75b56e6b151dac1c943eb1893291039a120bd483c5ebf27b66dec3dddc3f77"
+    }
+  ],
+  "source_objects_by_frame": [
+    {
+      "group": "m8e_development_00",
+      "phase": "empty",
+      "actor_total": 133,
+      "environment_total": 18531,
+      "nearby_candidates": 307,
+      "source_linked_counts": {
+        "EnvironmentObject/UnlabeledOrUnknown": 1,
+        "EnvironmentObject/RenderLinkedMultiView": 5
+      }
+    },
+    {
+      "group": "m8e_development_00",
+      "phase": "present",
+      "actor_total": 133,
+      "environment_total": 18531,
+      "nearby_candidates": 317,
+      "source_linked_counts": {
+        "Actor/RenderLinkedMultiView": 2,
+        "Actor/UnlabeledOrUnknown": 5,
+        "Actor/RenderLinkedSingleView": 3,
+        "EnvironmentObject/UnlabeledOrUnknown": 1,
+        "EnvironmentObject/RenderLinkedMultiView": 5
+      }
+    },
+    {
+      "group": "m8e_development_00",
+      "phase": "shifted",
+      "actor_total": 133,
+      "environment_total": 18531,
+      "nearby_candidates": 317,
+      "source_linked_counts": {
+        "Actor/RenderLinkedMultiView": 2,
+        "Actor/RenderLinkedSingleView": 3,
+        "Actor/UnlabeledOrUnknown": 5,
+        "EnvironmentObject/UnlabeledOrUnknown": 1,
+        "EnvironmentObject/RenderLinkedMultiView": 5
+      }
+    },
+    {
+      "group": "m8e_development_00",
+      "phase": "removed",
+      "actor_total": 133,
+      "environment_total": 18531,
+      "nearby_candidates": 307,
+      "source_linked_counts": {
+        "EnvironmentObject/UnlabeledOrUnknown": 1,
+        "EnvironmentObject/RenderLinkedMultiView": 5
+      }
+    },
+    {
+      "group": "m8e_development_01",
+      "phase": "empty",
+      "actor_total": 133,
+      "environment_total": 18531,
+      "nearby_candidates": 348,
+      "source_linked_counts": {
+        "EnvironmentObject/UnlabeledOrUnknown": 1,
+        "EnvironmentObject/RenderLinkedSingleView": 1
+      }
+    },
+    {
+      "group": "m8e_development_01",
+      "phase": "present",
+      "actor_total": 133,
+      "environment_total": 18531,
+      "nearby_candidates": 358,
+      "source_linked_counts": {
+        "Actor/RenderLinkedMultiView": 2,
+        "Actor/RenderLinkedSingleView": 4,
+        "Actor/UnlabeledOrUnknown": 4,
+        "EnvironmentObject/UnlabeledOrUnknown": 1,
+        "EnvironmentObject/RenderLinkedSingleView": 1
+      }
+    },
+    {
+      "group": "m8e_development_01",
+      "phase": "shifted",
+      "actor_total": 133,
+      "environment_total": 18531,
+      "nearby_candidates": 358,
+      "source_linked_counts": {
+        "Actor/RenderLinkedMultiView": 2,
+        "Actor/UnlabeledOrUnknown": 7,
+        "Actor/RenderLinkedSingleView": 1,
+        "EnvironmentObject/UnlabeledOrUnknown": 1,
+        "EnvironmentObject/RenderLinkedSingleView": 1
+      }
+    },
+    {
+      "group": "m8e_development_01",
+      "phase": "removed",
+      "actor_total": 133,
+      "environment_total": 18531,
+      "nearby_candidates": 348,
+      "source_linked_counts": {
+        "EnvironmentObject/UnlabeledOrUnknown": 1,
+        "EnvironmentObject/RenderLinkedSingleView": 1
+      }
+    },
+    {
+      "group": "m8e_development_02",
+      "phase": "empty",
+      "actor_total": 133,
+      "environment_total": 18531,
+      "nearby_candidates": 339,
+      "source_linked_counts": {
+        "EnvironmentObject/UnlabeledOrUnknown": 2,
+        "EnvironmentObject/RenderLinkedMultiView": 1,
+        "EnvironmentObject/RenderLinkedSingleView": 1
+      }
+    },
+    {
+      "group": "m8e_development_02",
+      "phase": "present",
+      "actor_total": 133,
+      "environment_total": 18531,
+      "nearby_candidates": 349,
+      "source_linked_counts": {
+        "Actor/RenderLinkedMultiView": 2,
+        "Actor/RenderLinkedSingleView": 5,
+        "Actor/UnlabeledOrUnknown": 3,
+        "EnvironmentObject/UnlabeledOrUnknown": 2,
+        "EnvironmentObject/RenderLinkedMultiView": 1,
+        "EnvironmentObject/RenderLinkedSingleView": 1
+      }
+    },
+    {
+      "group": "m8e_development_02",
+      "phase": "shifted",
+      "actor_total": 133,
+      "environment_total": 18531,
+      "nearby_candidates": 349,
+      "source_linked_counts": {
+        "Actor/RenderLinkedMultiView": 4,
+        "Actor/UnlabeledOrUnknown": 5,
+        "Actor/RenderLinkedSingleView": 1,
+        "EnvironmentObject/UnlabeledOrUnknown": 1,
+        "EnvironmentObject/RenderLinkedMultiView": 1,
+        "EnvironmentObject/RenderLinkedSingleView": 1
+      }
+    },
+    {
+      "group": "m8e_development_02",
+      "phase": "removed",
+      "actor_total": 133,
+      "environment_total": 18531,
+      "nearby_candidates": 339,
+      "source_linked_counts": {
+        "EnvironmentObject/UnlabeledOrUnknown": 1,
+        "EnvironmentObject/RenderLinkedMultiView": 1,
+        "EnvironmentObject/RenderLinkedSingleView": 1
+      }
+    },
+    {
+      "group": "m8e_validation_00",
+      "phase": "empty",
+      "actor_total": 95,
+      "environment_total": 7506,
+      "nearby_candidates": 245,
+      "source_linked_counts": {
+        "EnvironmentObject/RenderLinkedSingleView": 5,
+        "EnvironmentObject/UnlabeledOrUnknown": 11,
+        "EnvironmentObject/AmbiguousIdentity": 2
+      }
+    },
+    {
+      "group": "m8e_validation_00",
+      "phase": "present",
+      "actor_total": 95,
+      "environment_total": 7506,
+      "nearby_candidates": 255,
+      "source_linked_counts": {
+        "Actor/RenderLinkedMultiView": 1,
+        "Actor/UnlabeledOrUnknown": 7,
+        "Actor/RenderLinkedSingleView": 2,
+        "EnvironmentObject/RenderLinkedSingleView": 5,
+        "EnvironmentObject/UnlabeledOrUnknown": 11,
+        "EnvironmentObject/AmbiguousIdentity": 2
+      }
+    },
+    {
+      "group": "m8e_validation_00",
+      "phase": "shifted",
+      "actor_total": 95,
+      "environment_total": 7506,
+      "nearby_candidates": 255,
+      "source_linked_counts": {
+        "Actor/RenderLinkedMultiView": 3,
+        "Actor/UnlabeledOrUnknown": 6,
+        "Actor/RenderLinkedSingleView": 1,
+        "EnvironmentObject/RenderLinkedSingleView": 5,
+        "EnvironmentObject/UnlabeledOrUnknown": 11,
+        "EnvironmentObject/AmbiguousIdentity": 2
+      }
+    },
+    {
+      "group": "m8e_validation_00",
+      "phase": "removed",
+      "actor_total": 95,
+      "environment_total": 7506,
+      "nearby_candidates": 245,
+      "source_linked_counts": {
+        "EnvironmentObject/RenderLinkedSingleView": 5,
+        "EnvironmentObject/UnlabeledOrUnknown": 11,
+        "EnvironmentObject/AmbiguousIdentity": 2
+      }
+    },
+    {
+      "group": "m8e_validation_01",
+      "phase": "empty",
+      "actor_total": 95,
+      "environment_total": 7506,
+      "nearby_candidates": 1570,
+      "source_linked_counts": {
+        "EnvironmentObject/UnlabeledOrUnknown": 25,
+        "EnvironmentObject/RenderLinkedMultiView": 64,
+        "EnvironmentObject/RenderLinkedSingleView": 30,
+        "EnvironmentObject/AmbiguousIdentity": 21
+      }
+    },
+    {
+      "group": "m8e_validation_01",
+      "phase": "present",
+      "actor_total": 95,
+      "environment_total": 7506,
+      "nearby_candidates": 1580,
+      "source_linked_counts": {
+        "Actor/RenderLinkedSingleView": 4,
+        "Actor/UnlabeledOrUnknown": 4,
+        "Actor/RenderLinkedMultiView": 2,
+        "EnvironmentObject/UnlabeledOrUnknown": 27,
+        "EnvironmentObject/RenderLinkedMultiView": 57,
+        "EnvironmentObject/RenderLinkedSingleView": 38,
+        "EnvironmentObject/AmbiguousIdentity": 21
+      }
+    },
+    {
+      "group": "m8e_validation_01",
+      "phase": "shifted",
+      "actor_total": 95,
+      "environment_total": 7506,
+      "nearby_candidates": 1580,
+      "source_linked_counts": {
+        "Actor/RenderLinkedSingleView": 2,
+        "Actor/RenderLinkedMultiView": 5,
+        "Actor/UnlabeledOrUnknown": 3,
+        "EnvironmentObject/UnlabeledOrUnknown": 26,
+        "EnvironmentObject/RenderLinkedMultiView": 61,
+        "EnvironmentObject/RenderLinkedSingleView": 32,
+        "EnvironmentObject/AmbiguousIdentity": 21
+      }
+    },
+    {
+      "group": "m8e_validation_01",
+      "phase": "removed",
+      "actor_total": 95,
+      "environment_total": 7506,
+      "nearby_candidates": 1570,
+      "source_linked_counts": {
+        "EnvironmentObject/UnlabeledOrUnknown": 26,
+        "EnvironmentObject/RenderLinkedMultiView": 62,
+        "EnvironmentObject/RenderLinkedSingleView": 34,
+        "EnvironmentObject/AmbiguousIdentity": 21
+      }
+    },
+    {
+      "group": "m8e_calibration_00",
+      "phase": "empty",
+      "actor_total": 124,
+      "environment_total": 11390,
+      "nearby_candidates": 501,
+      "source_linked_counts": {
+        "EnvironmentObject/RenderLinkedMultiView": 9,
+        "EnvironmentObject/RenderLinkedSingleView": 11,
+        "EnvironmentObject/AmbiguousIdentity": 2,
+        "EnvironmentObject/UnlabeledOrUnknown": 4
+      }
+    },
+    {
+      "group": "m8e_calibration_00",
+      "phase": "present",
+      "actor_total": 124,
+      "environment_total": 11390,
+      "nearby_candidates": 511,
+      "source_linked_counts": {
+        "Actor/RenderLinkedMultiView": 3,
+        "Actor/RenderLinkedSingleView": 4,
+        "Actor/UnlabeledOrUnknown": 3,
+        "EnvironmentObject/RenderLinkedMultiView": 9,
+        "EnvironmentObject/RenderLinkedSingleView": 11,
+        "EnvironmentObject/AmbiguousIdentity": 2,
+        "EnvironmentObject/UnlabeledOrUnknown": 4
+      }
+    },
+    {
+      "group": "m8e_calibration_00",
+      "phase": "shifted",
+      "actor_total": 124,
+      "environment_total": 11390,
+      "nearby_candidates": 511,
+      "source_linked_counts": {
+        "Actor/RenderLinkedMultiView": 4,
+        "Actor/RenderLinkedSingleView": 3,
+        "Actor/UnlabeledOrUnknown": 3,
+        "EnvironmentObject/RenderLinkedMultiView": 9,
+        "EnvironmentObject/RenderLinkedSingleView": 11,
+        "EnvironmentObject/AmbiguousIdentity": 2,
+        "EnvironmentObject/UnlabeledOrUnknown": 3
+      }
+    },
+    {
+      "group": "m8e_calibration_00",
+      "phase": "removed",
+      "actor_total": 124,
+      "environment_total": 11390,
+      "nearby_candidates": 501,
+      "source_linked_counts": {
+        "EnvironmentObject/RenderLinkedMultiView": 9,
+        "EnvironmentObject/RenderLinkedSingleView": 11,
+        "EnvironmentObject/AmbiguousIdentity": 2,
+        "EnvironmentObject/UnlabeledOrUnknown": 3
+      }
+    },
+    {
+      "group": "m8e_calibration_01",
+      "phase": "empty",
+      "actor_total": 124,
+      "environment_total": 11390,
+      "nearby_candidates": 571,
+      "source_linked_counts": {
+        "EnvironmentObject/RenderLinkedMultiView": 9,
+        "EnvironmentObject/AmbiguousIdentity": 4,
+        "EnvironmentObject/UnlabeledOrUnknown": 1
+      }
+    },
+    {
+      "group": "m8e_calibration_01",
+      "phase": "present",
+      "actor_total": 124,
+      "environment_total": 11390,
+      "nearby_candidates": 581,
+      "source_linked_counts": {
+        "Actor/RenderLinkedMultiView": 3,
+        "Actor/RenderLinkedSingleView": 3,
+        "Actor/UnlabeledOrUnknown": 4,
+        "EnvironmentObject/RenderLinkedMultiView": 9,
+        "EnvironmentObject/AmbiguousIdentity": 4,
+        "EnvironmentObject/UnlabeledOrUnknown": 1
+      }
+    },
+    {
+      "group": "m8e_calibration_01",
+      "phase": "shifted",
+      "actor_total": 124,
+      "environment_total": 11390,
+      "nearby_candidates": 581,
+      "source_linked_counts": {
+        "Actor/RenderLinkedMultiView": 2,
+        "Actor/RenderLinkedSingleView": 3,
+        "Actor/UnlabeledOrUnknown": 5,
+        "EnvironmentObject/RenderLinkedSingleView": 1,
+        "EnvironmentObject/AmbiguousIdentity": 4,
+        "EnvironmentObject/RenderLinkedMultiView": 7,
+        "EnvironmentObject/UnlabeledOrUnknown": 1
+      }
+    },
+    {
+      "group": "m8e_calibration_01",
+      "phase": "removed",
+      "actor_total": 124,
+      "environment_total": 11390,
+      "nearby_candidates": 571,
+      "source_linked_counts": {
+        "EnvironmentObject/RenderLinkedMultiView": 9,
+        "EnvironmentObject/AmbiguousIdentity": 4,
+        "EnvironmentObject/UnlabeledOrUnknown": 1
+      }
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "phase": "empty",
+      "actor_total": 183,
+      "environment_total": 14670,
+      "nearby_candidates": 898,
+      "source_linked_counts": {
+        "EnvironmentObject/AmbiguousIdentity": 23,
+        "EnvironmentObject/UnlabeledOrUnknown": 8,
+        "EnvironmentObject/RenderLinkedSingleView": 69,
+        "EnvironmentObject/RenderLinkedMultiView": 69
+      }
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "phase": "present",
+      "actor_total": 183,
+      "environment_total": 14670,
+      "nearby_candidates": 908,
+      "source_linked_counts": {
+        "Actor/RenderLinkedMultiView": 3,
+        "Actor/RenderLinkedSingleView": 3,
+        "Actor/UnlabeledOrUnknown": 4,
+        "EnvironmentObject/AmbiguousIdentity": 25,
+        "EnvironmentObject/UnlabeledOrUnknown": 8,
+        "EnvironmentObject/RenderLinkedSingleView": 60,
+        "EnvironmentObject/RenderLinkedMultiView": 67
+      }
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "phase": "shifted",
+      "actor_total": 183,
+      "environment_total": 14670,
+      "nearby_candidates": 908,
+      "source_linked_counts": {
+        "Actor/RenderLinkedMultiView": 5,
+        "Actor/UnlabeledOrUnknown": 4,
+        "Actor/RenderLinkedSingleView": 1,
+        "EnvironmentObject/AmbiguousIdentity": 20,
+        "EnvironmentObject/UnlabeledOrUnknown": 11,
+        "EnvironmentObject/RenderLinkedSingleView": 68,
+        "EnvironmentObject/RenderLinkedMultiView": 67
+      }
+    },
+    {
+      "group": "m8e_held_out_final_00",
+      "phase": "removed",
+      "actor_total": 183,
+      "environment_total": 14670,
+      "nearby_candidates": 898,
+      "source_linked_counts": {
+        "EnvironmentObject/AmbiguousIdentity": 23,
+        "EnvironmentObject/UnlabeledOrUnknown": 8,
+        "EnvironmentObject/RenderLinkedSingleView": 69,
+        "EnvironmentObject/RenderLinkedMultiView": 69
+      }
+    }
+  ],
+  "ObjectReference_contract": "World/Map/frame/time, source/entity namespace, class, full box matrix/dimensions, yaw approximation, dynamic flag, per-camera raw instance evidence and depth/semantic checks in audit files.",
+  "audit_assets": [
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/audit/m8e_development_00.json",
+      "bytes": 813392,
+      "sha256": "ee876302fbe3e1f27c167651f9401cf416a266fe82bfafb42417e6f4b8d03012"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/audit/m8e_development_01.json",
+      "bytes": 709214,
+      "sha256": "b4a3a591c41ef86b88b4eff4d8dc79414400cbe24cb8e9804b895e2e3ced46f4"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/audit/m8e_development_02.json",
+      "bytes": 527028,
+      "sha256": "34ed5a09bb2573b8c53d7b72c9273867aeda406a5311c5a7e01a869e97090ea3"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/audit/m8e_validation_00.json",
+      "bytes": 816543,
+      "sha256": "593b86f3b43cb92f40a862ef1e88c41aa9ed1feae169f8040f8dfe72f2aa3ed9"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/audit/m8e_validation_01.json",
+      "bytes": 4463421,
+      "sha256": "d5bfd968094ef17fa78e8733e74a93d7293883d2fa5312ab1366b477cfc45e82"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/audit/m8e_calibration_00.json",
+      "bytes": 1155828,
+      "sha256": "23bc536ceafb368eea771448b0285c8bc9ad798a504186e50e3329547c0c8a41"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/audit/m8e_calibration_01.json",
+      "bytes": 837080,
+      "sha256": "c1f3980e09fc24366243e345d29899c2a987b3556385c5cc3bfaf9827103790d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/audit/m8e_held_out_final_00.json",
+      "bytes": 4684397,
+      "sha256": "58275a620dead7ff436f70936fa26c448a3f1704e516c0a2ea4349090631987a"
+    }
+  ],
+  "bbox_limit": "EnvironmentObject and Actor boxes are geometric envelopes, not exact render mesh. Anonymous get_level_bbs lacks entity identity.",
+  "semantic_sensor_disagreement": {
+    "n": 192,
+    "mean": 0.07501193152533638,
+    "p95": 0.20229878743489582,
+    "max": 0.23857421875
+  }
+}

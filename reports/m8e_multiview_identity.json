@@ -1,0 +1,162 @@
+{
+  "kind": "ActualCARLACapture_OfflineEvaluatorAggregation",
+  "base": "037ddba29d6eaaa292e8ad74db58bd94e5f42b50",
+  "execution_commit": "037ddba29d6eaaa292e8ad74db58bd94e5f42b50",
+  "sources": {
+    "configs/m8e/development_amendment.json": "3518f13bb9f67bf9198c8101ca2697b446dc8a4a5b9317a1ed9c0111d5576098",
+    "configs/m8e/protocol.json": "0da014be555f7427f976324dec8b536aee54bf91467edc3a8668476f8b07f285",
+    "datasets/m8e_reference.py": "7ff6c451e8f9284446b2ab1a609619df4f25f3e9ed19100733ced62ba64e05b1",
+    "tests/test_m8e_reference.py": "844e0baee91c35242525bc42b492c51c36af8587efe3a291f4dbe501a2600392",
+    "tools/m8e_allocate.py": "74114e27b677f8b57413944432933a8139900f5f12074f425f660502c948dde9",
+    "tools/m8e_audit.py": "f0c0badc2440936d0ed8c8de2413b015f27ba3b48715a3ea20e28d262acf715a",
+    "tools/m8e_capture.py": "acecbfa7a88eec50249be5d65a305ead2d16043f7bc155803c5768200f620a64",
+    "tools/m8e_common.py": "8162ab46902b4377e507c213f11170c3b0a1e7691566e28fd5cf02083cfe1ff1",
+    "tools/m8e_historical.py": "0d4c2ef1a7a07c5b28aa44b5dc3b71e658ea2ee279542f2f225688f4732b13dc",
+    "tools/m8e_official_sources.py": "0abe03b07367ec6276953fae30193bc8310c7dc880bc5d26e181be0cf4bdfc9c",
+    "tools/m8e_report.py": "b4f58db97174900c16d8456ebf99cfea8e94f9efc465d6aaa105e0421d08c195",
+    "tools/m8e_smoke_probe.py": "424a0df373ebb222f1919152f40590f687028756fc3202d0654e8c9e28de669f"
+  },
+  "training_steps": 0,
+  "visual_control": false,
+  "strata": {
+    "all": {
+      "targets": 80,
+      "grades": {
+        "RenderLinkedMultiView": 18,
+        "UnlabeledOrUnknown": 34,
+        "RenderLinkedSingleView": 28
+      },
+      "accepted_views": {
+        "rear_left": 12,
+        "rear": 16,
+        "front": 16,
+        "front_right": 10,
+        "front_left": 3,
+        "rear_right": 7
+      }
+    },
+    "development": {
+      "targets": 30,
+      "grades": {
+        "RenderLinkedMultiView": 6,
+        "UnlabeledOrUnknown": 12,
+        "RenderLinkedSingleView": 12
+      },
+      "accepted_views": {
+        "rear_left": 4,
+        "rear": 6,
+        "front": 5,
+        "front_right": 5,
+        "front_left": 1,
+        "rear_right": 3
+      }
+    },
+    "validation": {
+      "targets": 20,
+      "grades": {
+        "RenderLinkedMultiView": 3,
+        "UnlabeledOrUnknown": 11,
+        "RenderLinkedSingleView": 6
+      },
+      "accepted_views": {
+        "rear_left": 2,
+        "rear": 4,
+        "front": 4,
+        "rear_right": 1,
+        "front_right": 1
+      }
+    },
+    "calibration": {
+      "targets": 20,
+      "grades": {
+        "RenderLinkedMultiView": 6,
+        "RenderLinkedSingleView": 7,
+        "UnlabeledOrUnknown": 7
+      },
+      "accepted_views": {
+        "rear_left": 4,
+        "rear": 4,
+        "rear_right": 2,
+        "front": 5,
+        "front_right": 2,
+        "front_left": 2
+      }
+    },
+    "held_out_final": {
+      "targets": 10,
+      "grades": {
+        "RenderLinkedMultiView": 3,
+        "RenderLinkedSingleView": 3,
+        "UnlabeledOrUnknown": 4
+      },
+      "accepted_views": {
+        "rear_left": 2,
+        "rear": 2,
+        "rear_right": 1,
+        "front": 2,
+        "front_right": 2
+      }
+    },
+    "vehicle": {
+      "targets": 32,
+      "grades": {
+        "RenderLinkedSingleView": 10,
+        "UnlabeledOrUnknown": 19,
+        "RenderLinkedMultiView": 3
+      },
+      "accepted_views": {
+        "front_left": 3,
+        "front": 6,
+        "rear": 4,
+        "rear_right": 1,
+        "rear_left": 2
+      }
+    },
+    "person": {
+      "targets": 16,
+      "grades": {
+        "RenderLinkedMultiView": 7,
+        "RenderLinkedSingleView": 6,
+        "UnlabeledOrUnknown": 3
+      },
+      "accepted_views": {
+        "front": 8,
+        "front_right": 9,
+        "rear_left": 2,
+        "rear": 1
+      }
+    },
+    "cone": {
+      "targets": 16,
+      "grades": {
+        "UnlabeledOrUnknown": 8,
+        "RenderLinkedSingleView": 8
+      },
+      "accepted_views": {
+        "rear_right": 5,
+        "front_right": 1,
+        "front": 1,
+        "rear": 1
+      }
+    },
+    "barrier": {
+      "targets": 16,
+      "grades": {
+        "RenderLinkedMultiView": 8,
+        "RenderLinkedSingleView": 4,
+        "UnlabeledOrUnknown": 4
+      },
+      "accepted_views": {
+        "rear_left": 8,
+        "rear": 10,
+        "rear_right": 1,
+        "front": 1
+      }
+    }
+  },
+  "single_and_multi_are_separate": true,
+  "merge_key": "episode + group + source namespace + entity_id",
+  "views_not_independent_objects": true,
+  "contradictions": "Any competing source link in a view yields AmbiguousIdentity; no cross-camera ID coincidence matching",
+  "source_only_no_detector_recall": true
+}
