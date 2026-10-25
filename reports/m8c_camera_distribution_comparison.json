@@ -1,0 +1,540 @@
+{
+  "kind": "OfflineOfficialSourceAndActualCalibrationReview",
+  "base": "af4266be5859e55db51e77e4b1b15ef122fce61f",
+  "commit": "af4266be5859e55db51e77e4b1b15ef122fce61f",
+  "sources": {
+    "configs/m8c/protocol.json": "4be73db489edba45d0f21a089c3df380ffd939cc50c3ab0029cdd5b8089766f3",
+    "tools/m8c_association.py": "248b4f961c00f605e2b29fb9954c7d48bcc021699e5b38b747882b7f52789b32",
+    "tools/m8c_common.py": "329e90ad731fabbb2389ab297fcbe984d0a13bcf3993cf58edbdb92f3cda2aa6",
+    "tools/m8c_gpu_hook.py": "9f5c8d378d788250d76f18d41488155209b3d1d9df4a1585fdafdde48f48710a",
+    "tools/m8c_reference.py": "e0f658b3a62ac53dde3620e7a6fc355559211aa375c39e3818f5f79d28f51495",
+    "diagnostics/m8c_geometry.py": "398e1056cb5c32d67a2214b1ccff5295ebe2de43864e2cbf2d13f976ded00fe3",
+    "tests/test_m8c_geometry.py": "2cbce1cd9bb0bdb53b523bfa4e9fc2fbed4b272b00ebed102694d50c3898bf65"
+  },
+  "checkpoint_sha256": "16d8a4875c36e7d1cba75b357901ff031b18d9d9374f12780b9b72cc621cefad",
+  "training_steps": 0,
+  "visual_control": false,
+  "PETRTrainingReferenceDistribution": {
+    "frame": "nuScenes reference sample LIDAR_TOP; camera sensor2top composes calibration and ego motion/time",
+    "metadata_status": "NotAvailable_FullCalibratedSensorTables",
+    "lidar_to_ego": null,
+    "camera_to_ego": null,
+    "camera_to_lidar": null,
+    "heights": null,
+    "intrinsics": null,
+    "FOV": null,
+    "baseline_matrix": null,
+    "empirical_target_reference_distribution": null,
+    "source_image_size": [
+      900,
+      1600
+    ],
+    "official_converter_order": [
+      "front",
+      "front_right",
+      "front_left",
+      "rear",
+      "rear_left",
+      "rear_right"
+    ],
+    "model_position_range": [
+      -61.2,
+      -61.2,
+      -10,
+      61.2,
+      61.2,
+      10
+    ],
+    "model_pc_range": [
+      -51.2,
+      -51.2,
+      -5,
+      51.2,
+      51.2,
+      3
+    ],
+    "depth_samples": 64,
+    "depth_start": 1.0,
+    "depth_end": 59.34769058227539,
+    "public_tutorial_calibration": {
+      "sensor": "RADAR_FRONT",
+      "translation": [
+        3.412,
+        0,
+        0.5
+      ],
+      "sensor_token": "47fcd48f71d75e0da5c8c1704a9bfe0a",
+      "not_lidar_height": true
+    }
+  },
+  "HSCARLACameraDistribution": {
+    "frame": "HS ego actororigin",
+    "cameras": [
+      {
+        "name": "front",
+        "K": [
+          [
+            268.51188197672957,
+            0.0,
+            319.5
+          ],
+          [
+            0.0,
+            268.51188197672957,
+            191.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "T_E_C": [
+          [
+            0.0,
+            -0.08715573698282242,
+            0.9961947202682495,
+            1.649999976158142
+          ],
+          [
+            -1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            -0.9961947202682495,
+            -0.08715573698282242,
+            1.649999976158142
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "height_m": 1.649999976158142,
+        "heading_deg": 0.0,
+        "horizontal_fov_deg": 99.99991916076696,
+        "vertical_fov_deg": 71.13336628974422,
+        "cropped_vertical_fov_deg": 44.233587488609885,
+        "augmented_focal_px": 590.7261403488051
+      },
+      {
+        "name": "front_left",
+        "K": [
+          [
+            268.51188197672957,
+            0.0,
+            319.5
+          ],
+          [
+            0.0,
+            268.51188197672957,
+            191.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "T_E_C": [
+          [
+            0.866025447845459,
+            -0.06093467026948929,
+            0.4962730407714844,
+            1.100000023841858
+          ],
+          [
+            -0.4999999701976776,
+            -0.10554195940494537,
+            0.8595702052116394,
+            0.6000000238418579
+          ],
+          [
+            0.0,
+            -0.9925461411476135,
+            -0.12186934798955917,
+            1.600000023841858
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "height_m": 1.600000023841858,
+        "heading_deg": 60.00000242936454,
+        "horizontal_fov_deg": 99.99991916076696,
+        "vertical_fov_deg": 71.13336628974422,
+        "cropped_vertical_fov_deg": 44.233587488609885,
+        "augmented_focal_px": 590.7261403488051
+      },
+      {
+        "name": "front_right",
+        "K": [
+          [
+            268.51188197672957,
+            0.0,
+            319.5
+          ],
+          [
+            0.0,
+            268.51188197672957,
+            191.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "T_E_C": [
+          [
+            -0.866025447845459,
+            -0.06093467026948929,
+            0.4962730407714844,
+            1.100000023841858
+          ],
+          [
+            -0.4999999701976776,
+            0.10554195940494537,
+            -0.8595702052116394,
+            -0.6000000238418579
+          ],
+          [
+            0.0,
+            -0.9925461411476135,
+            -0.12186934798955917,
+            1.600000023841858
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "height_m": 1.600000023841858,
+        "heading_deg": -60.00000242936454,
+        "horizontal_fov_deg": 99.99991916076696,
+        "vertical_fov_deg": 71.13336628974422,
+        "cropped_vertical_fov_deg": 44.233587488609885,
+        "augmented_focal_px": 590.7261403488051
+      },
+      {
+        "name": "rear_left",
+        "K": [
+          [
+            268.51188197672957,
+            0.0,
+            319.5
+          ],
+          [
+            0.0,
+            268.51188197672957,
+            191.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "T_E_C": [
+          [
+            0.8660253882408142,
+            0.060934681445360184,
+            -0.49627313017845154,
+            -1.2999999523162842
+          ],
+          [
+            0.5000000596046448,
+            -0.10554195195436478,
+            0.8595701456069946,
+            0.6000000238418579
+          ],
+          [
+            0.0,
+            -0.9925461411476135,
+            -0.12186934798955917,
+            1.600000023841858
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "height_m": 1.600000023841858,
+        "heading_deg": 120.00000376066026,
+        "horizontal_fov_deg": 99.99991916076696,
+        "vertical_fov_deg": 71.13336628974422,
+        "cropped_vertical_fov_deg": 44.233587488609885,
+        "augmented_focal_px": 590.7261403488051
+      },
+      {
+        "name": "rear_right",
+        "K": [
+          [
+            268.51188197672957,
+            0.0,
+            319.5
+          ],
+          [
+            0.0,
+            268.51188197672957,
+            191.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "T_E_C": [
+          [
+            -0.8660253882408142,
+            0.060934681445360184,
+            -0.49627313017845154,
+            -1.2999999523162842
+          ],
+          [
+            0.5000000596046448,
+            0.10554195195436478,
+            -0.8595701456069946,
+            -0.6000000238418579
+          ],
+          [
+            0.0,
+            -0.9925461411476135,
+            -0.12186934798955917,
+            1.600000023841858
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "height_m": 1.600000023841858,
+        "heading_deg": -120.00000376066026,
+        "horizontal_fov_deg": 99.99991916076696,
+        "vertical_fov_deg": 71.13336628974422,
+        "cropped_vertical_fov_deg": 44.233587488609885,
+        "augmented_focal_px": 590.7261403488051
+      },
+      {
+        "name": "rear",
+        "K": [
+          [
+            268.51188197672957,
+            0.0,
+            319.5
+          ],
+          [
+            0.0,
+            268.51188197672957,
+            191.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "T_E_C": [
+          [
+            8.742277657347586e-08,
+            0.12186934798955917,
+            -0.9925461411476135,
+            -1.600000023841858
+          ],
+          [
+            1.0,
+            -1.0654156668010728e-08,
+            8.677113783051027e-08,
+            0.0
+          ],
+          [
+            0.0,
+            -0.9925461411476135,
+            -0.12186934798955917,
+            1.600000023841858
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "height_m": 1.600000023841858,
+        "heading_deg": 179.99999499104396,
+        "horizontal_fov_deg": 99.99991916076696,
+        "vertical_fov_deg": 71.13336628974422,
+        "cropped_vertical_fov_deg": 44.233587488609885,
+        "augmented_focal_px": 590.7261403488051
+      }
+    ],
+    "baseline_matrix_m": [
+      [
+        0.0,
+        0.8154753039729502,
+        0.8154753039729502,
+        3.0108137773434245,
+        3.0108137773434245,
+        3.250384591895493
+      ],
+      [
+        0.8154753039729502,
+        0.0,
+        1.2000000476837158,
+        2.399999976158142,
+        2.683281572999748,
+        2.7658633889081177
+      ],
+      [
+        0.8154753039729502,
+        1.2000000476837158,
+        0.0,
+        2.683281572999748,
+        2.399999976158142,
+        2.7658633889081177
+      ],
+      [
+        3.0108137773434245,
+        2.399999976158142,
+        2.683281572999748,
+        0.0,
+        1.2000000476837158,
+        0.670820446561954
+      ],
+      [
+        3.0108137773434245,
+        2.683281572999748,
+        2.399999976158142,
+        1.2000000476837158,
+        0.0,
+        0.670820446561954
+      ],
+      [
+        3.250384591895493,
+        2.7658633889081177,
+        2.7658633889081177,
+        0.670820446561954,
+        0.670820446561954,
+        0.0
+      ]
+    ],
+    "rig_max_variation": 0.0,
+    "source_image_size": [
+      384,
+      640
+    ],
+    "order": [
+      "front",
+      "front_left",
+      "front_right",
+      "rear_left",
+      "rear_right",
+      "rear"
+    ],
+    "target_center_z": {
+      "n": 155,
+      "min": -0.4378768296473154,
+      "p50": 0.743544795550406,
+      "p90": 1.267548823961988,
+      "p95": 1.267861204512883,
+      "max": 1.9651088162775703,
+      "mean": 0.8638393298824439
+    },
+    "target_dims_lwh": [
+      {
+        "n": 155,
+        "min": 0.2643733589361088,
+        "p50": 4.791777840458672,
+        "p90": 5.9151900260358765,
+        "p95": 5.915193431519832,
+        "max": 5.915200800081813,
+        "mean": 3.5665988046196015
+      },
+      {
+        "n": 155,
+        "min": 0.17654887539465236,
+        "p50": 1.8367155306216612,
+        "p90": 2.163449825796273,
+        "p95": 2.163452598387132,
+        "max": 2.16346714352751,
+        "mean": 1.5251099837920594
+      },
+      {
+        "n": 155,
+        "min": 1.133281296119094,
+        "p50": 1.490277647972107,
+        "p90": 2.560655178502202,
+        "p95": 2.560655285604298,
+        "max": 2.5606554374098778,
+        "mean": 1.6894416612241974
+      }
+    ]
+  },
+  "source_evidence": [
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/models/dense_heads/petr_head.py",
+      "bytes": 35579,
+      "sha256": "18780ee24601a6d0068e341cfaa36081820f83b08fb3f4c47793c59ff0d0fde5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/models/utils/positional_encoding.py",
+      "bytes": 7336,
+      "sha256": "cf72ae920146d571a355ec0bbae247f65388cc31b29ebf33cf65df008ef00b0d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/configs/petr/petr_r50dcn_gridmask_c5.py",
+      "bytes": 8876,
+      "sha256": "435db70e9e8bf6dd0ccf1f9e6a49c865ae0b6daff28152d228ffdd0a98a23e30"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/datasets/nuscenes_dataset.py",
+      "bytes": 3783,
+      "sha256": "ce6ffaf17b85dc6c1e01f2063dd4e8bdc38adef10df79337cf0480e975f9c16b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/tools/data_converter/nuscenes_converter.py",
+      "bytes": 24598,
+      "sha256": "4dcde163dd810ec4e902632b0a0e54514804d7fe668d65fb279790cf090e6881"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/core/bbox/coders/nms_free_coder.py",
+      "bytes": 8990,
+      "sha256": "c7ebec0684a7842fe0003ef5105d307faaf2159b53bbb474966d836f72ef4a0c"
+    }
+  ],
+  "camera_order_confounds": {
+    "status": "ReferenceDistributionMismatchSupported_CameraIndexEncoding",
+    "geometry_pairing_correct": true,
+    "indices_mismatch": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "evidence": "SinePositionalEncoding3D normalizes cumsum along camera dimension and embeds it; pairingK/T correctly does not erase learned camera-index semantic difference.",
+    "candidate_reordering": "NotRun_NoUndeclaredAblation",
+    "checkpoint_actual_training_info_order": "InferredFromFixedOfficialConverter_NotVerifiedFromOriginalTrainingPKL"
+  },
+  "limitations": [
+    "nuScenes fullsensor calibration not locally present; officialtutorial contains RADAR_FRONT example not LIDAR_TOP",
+    "Officialdatasetrequiresaccount/terms; no accountassets available, no fabricatedheight or thirdpartydataset",
+    "Empiricaltrainingtarget Z and cameracolor distributions NotAvailable",
+    "No claim that cameraorder causes measured errors until onefactorcontrolledtest"
+  ]
+}

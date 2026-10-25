@@ -1,0 +1,39 @@
+{
+  "kind": "ConditionalGateDecision_NotRun",
+  "base": "af4266be5859e55db51e77e4b1b15ef122fce61f",
+  "commit": "af4266be5859e55db51e77e4b1b15ef122fce61f",
+  "sources": {
+    "configs/m8c/protocol.json": "4be73db489edba45d0f21a089c3df380ffd939cc50c3ab0029cdd5b8089766f3",
+    "tools/m8c_association.py": "248b4f961c00f605e2b29fb9954c7d48bcc021699e5b38b747882b7f52789b32",
+    "tools/m8c_common.py": "329e90ad731fabbb2389ab297fcbe984d0a13bcf3993cf58edbdb92f3cda2aa6",
+    "tools/m8c_gpu_hook.py": "9f5c8d378d788250d76f18d41488155209b3d1d9df4a1585fdafdde48f48710a",
+    "tools/m8c_reference.py": "012b20cd2caf48b0ae97b4cfe77a2cf9529392cf1c14fa68597d9e8f67276e9d",
+    "diagnostics/m8c_geometry.py": "398e1056cb5c32d67a2214b1ccff5295ebe2de43864e2cbf2d13f976ded00fe3",
+    "tests/test_m8c_geometry.py": "2cbce1cd9bb0bdb53b523bfa4e9fc2fbed4b272b00ebed102694d50c3898bf65"
+  },
+  "checkpoint_sha256": "16d8a4875c36e7d1cba75b357901ff031b18d9d9374f12780b9b72cc621cefad",
+  "training_steps": 0,
+  "visual_control": false,
+  "A": "FrozenM8B192frames/57600topK;12hookrerunsbitwiseequal",
+  "B": "ReferenceVariantNotRun",
+  "B_runs": 0,
+  "reason": "Physicalbasis gate not satisfied: nuScenes LIDAR_TOP calibration and sourceegoalignment unavailable",
+  "camera_index_reordering": "NotRun_SeparateSingleFactorProposal",
+  "threshold_selection": false,
+  "raw_A_reference": {
+    "path": "reports/m8b_candidate_burden.json",
+    "bytes": 49114,
+    "sha256": "06715773122060e18d8d53842b5ef12597297c5afb2d99096efdcfd52cdef0da"
+  },
+  "A_natural_reference": {
+    "path": "reports/m8b_detection_metrics.json",
+    "bytes": 37476,
+    "sha256": "015428a0b35e4799c64999d87d59fb68033aa1517333e737e2452e280bf2c9d8"
+  },
+  "A_trusted_association": {
+    "path": "reports/m8c_2d_3d_association_audit.json",
+    "bytes": 234583,
+    "sha256": "5b75704e7df3a7795e30462301205bb9ab3b402fd999fb0245bca2917d2207bf"
+  },
+  "improvement_claim": false
+}

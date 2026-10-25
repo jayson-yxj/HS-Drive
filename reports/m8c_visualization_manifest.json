@@ -1,0 +1,785 @@
+{
+  "kind": "OfflineDiagnosticSheets",
+  "base": "af4266be5859e55db51e77e4b1b15ef122fce61f",
+  "commit": "af4266be5859e55db51e77e4b1b15ef122fce61f",
+  "sources": {
+    "configs/m8c/protocol.json": "4be73db489edba45d0f21a089c3df380ffd939cc50c3ab0029cdd5b8089766f3",
+    "tools/m8c_association.py": "248b4f961c00f605e2b29fb9954c7d48bcc021699e5b38b747882b7f52789b32",
+    "tools/m8c_common.py": "329e90ad731fabbb2389ab297fcbe984d0a13bcf3993cf58edbdb92f3cda2aa6",
+    "tools/m8c_figures.py": "9187288f171a0dfda24286bea4216468faee997502e7c3aab6f1f7b9b1627c37",
+    "tools/m8c_gpu_hook.py": "9f5c8d378d788250d76f18d41488155209b3d1d9df4a1585fdafdde48f48710a",
+    "tools/m8c_reference.py": "012b20cd2caf48b0ae97b4cfe77a2cf9529392cf1c14fa68597d9e8f67276e9d",
+    "diagnostics/m8c_geometry.py": "398e1056cb5c32d67a2214b1ccff5295ebe2de43864e2cbf2d13f976ded00fe3",
+    "tests/test_m8c_geometry.py": "2cbce1cd9bb0bdb53b523bfa4e9fc2fbed4b272b00ebed102694d50c3898bf65"
+  },
+  "checkpoint_sha256": "16d8a4875c36e7d1cba75b357901ff031b18d9d9374f12780b9b72cc621cefad",
+  "training_steps": 0,
+  "visual_control": false,
+  "files": [
+    {
+      "path": "reports/m8c_figures/background_00.png",
+      "bytes": 493904,
+      "sha256": "b4b662e96e79d9cbc706159a4499b3bdfe318f057575ef79fc1a5c1177f09864"
+    },
+    {
+      "path": "reports/m8c_figures/background_01.png",
+      "bytes": 264144,
+      "sha256": "07e4088cbae27e3d90ad19f4dfe8d13026af293936a2c0fa93aeb6c7e6e90e7a"
+    },
+    {
+      "path": "reports/m8c_figures/background_02.png",
+      "bytes": 611801,
+      "sha256": "ca351865b0866bb9638d9333a2835347a4ed8f4af1e1e2875fe77de668b39213"
+    },
+    {
+      "path": "reports/m8c_figures/background_03.png",
+      "bytes": 317311,
+      "sha256": "d92abbdb54ed70ae3835a1dde2862c9af56784752a3e880904491fefffd4af8a"
+    },
+    {
+      "path": "reports/m8c_figures/background_04.png",
+      "bytes": 227709,
+      "sha256": "6e89663be48923480391a99071eacc2c8892684192c95cef058c573217ce4e13"
+    },
+    {
+      "path": "reports/m8c_figures/background_05.png",
+      "bytes": 235009,
+      "sha256": "1446ff87f085e70f36d22cd8b793766c7b186792bb011d3a49a781a6f9367ffa"
+    },
+    {
+      "path": "reports/m8c_figures/background_06.png",
+      "bytes": 269510,
+      "sha256": "fcc381cd102a444bac09ccc44afab8fcf770475f8ae5748ff70f7266457acacf"
+    },
+    {
+      "path": "reports/m8c_figures/background_07.png",
+      "bytes": 293285,
+      "sha256": "7c1837009312479ddeb6f115e7a6d08cf295f202e5b3e32425d8d4893927e00b"
+    },
+    {
+      "path": "reports/m8c_figures/background_08.png",
+      "bytes": 238512,
+      "sha256": "3562f8e59641f1ddca7bf81888c23e4c98454442bb8666ecba3f1f2500e91dd5"
+    },
+    {
+      "path": "reports/m8c_figures/background_09.png",
+      "bytes": 415963,
+      "sha256": "f28f491150fdaaa3f1467715cdffcd9c9f256a31f445e7855fc04719cfe683d3"
+    },
+    {
+      "path": "reports/m8c_figures/background_10.png",
+      "bytes": 302067,
+      "sha256": "bb8da5f13304fb946422907b5e2b9e96f84b3f4f513e7dab5d2cdbca30fe4cad"
+    },
+    {
+      "path": "reports/m8c_figures/background_11.png",
+      "bytes": 251533,
+      "sha256": "00700a4fea018dea18ab7e8d9c09d000056f1391d069b194f28f65d90d3fc8ca"
+    },
+    {
+      "path": "reports/m8c_figures/background_12.png",
+      "bytes": 228538,
+      "sha256": "fa3356a1f4d801071991284f8be52b70bef03c5da616a3e2c7c0fe2e1d9a47d6"
+    },
+    {
+      "path": "reports/m8c_figures/far_proxy.png",
+      "bytes": 684299,
+      "sha256": "d750feaa03f239a3360e70309acb4b5adfa4598523a55d1d170dea45d3c95752"
+    },
+    {
+      "path": "reports/m8c_figures/identity_supported.png",
+      "bytes": 850823,
+      "sha256": "7eee8dd0abc0bed635f2ea02bef990bdbd8f8a4a7f97094a13666e145c15bd54"
+    },
+    {
+      "path": "reports/m8c_figures/support_position_grades.png",
+      "bytes": 143058,
+      "sha256": "a22d8c978f4bb8d2e2701bffd87652640a1c3f35eb9ef58976d0468bfd8b9097"
+    }
+  ],
+  "background_pages": [
+    {
+      "file": "reports/m8c_figures/background_00.png",
+      "candidates": [
+        {
+          "token": "s000",
+          "prediction_index": 16
+        },
+        {
+          "token": "s000",
+          "prediction_index": 20
+        },
+        {
+          "token": "s000",
+          "prediction_index": 0
+        },
+        {
+          "token": "s000",
+          "prediction_index": 1
+        },
+        {
+          "token": "s000",
+          "prediction_index": 2
+        },
+        {
+          "token": "s001",
+          "prediction_index": 17
+        },
+        {
+          "token": "s001",
+          "prediction_index": 18
+        },
+        {
+          "token": "s001",
+          "prediction_index": 22
+        },
+        {
+          "token": "s001",
+          "prediction_index": 0
+        },
+        {
+          "token": "s001",
+          "prediction_index": 1
+        },
+        {
+          "token": "s001",
+          "prediction_index": 2
+        },
+        {
+          "token": "s001",
+          "prediction_index": 19
+        }
+      ]
+    },
+    {
+      "file": "reports/m8c_figures/background_01.png",
+      "candidates": [
+        {
+          "token": "s001",
+          "prediction_index": 20
+        },
+        {
+          "token": "s001",
+          "prediction_index": 10
+        },
+        {
+          "token": "s001",
+          "prediction_index": 21
+        },
+        {
+          "token": "s020",
+          "prediction_index": 60
+        },
+        {
+          "token": "s020",
+          "prediction_index": 0
+        },
+        {
+          "token": "s020",
+          "prediction_index": 1
+        },
+        {
+          "token": "s020",
+          "prediction_index": 2
+        },
+        {
+          "token": "s021",
+          "prediction_index": 0
+        },
+        {
+          "token": "s021",
+          "prediction_index": 1
+        },
+        {
+          "token": "s021",
+          "prediction_index": 2
+        },
+        {
+          "token": "s038",
+          "prediction_index": 0
+        },
+        {
+          "token": "s038",
+          "prediction_index": 1
+        }
+      ]
+    },
+    {
+      "file": "reports/m8c_figures/background_02.png",
+      "candidates": [
+        {
+          "token": "s038",
+          "prediction_index": 15
+        },
+        {
+          "token": "s038",
+          "prediction_index": 2
+        },
+        {
+          "token": "s038",
+          "prediction_index": 3
+        },
+        {
+          "token": "s038",
+          "prediction_index": 4
+        },
+        {
+          "token": "s040",
+          "prediction_index": 13
+        },
+        {
+          "token": "s040",
+          "prediction_index": 18
+        },
+        {
+          "token": "s040",
+          "prediction_index": 1
+        },
+        {
+          "token": "s040",
+          "prediction_index": 2
+        },
+        {
+          "token": "s040",
+          "prediction_index": 3
+        },
+        {
+          "token": "s042",
+          "prediction_index": 1
+        },
+        {
+          "token": "s042",
+          "prediction_index": 11
+        },
+        {
+          "token": "s042",
+          "prediction_index": 15
+        }
+      ]
+    },
+    {
+      "file": "reports/m8c_figures/background_03.png",
+      "candidates": [
+        {
+          "token": "s042",
+          "prediction_index": 2
+        },
+        {
+          "token": "s042",
+          "prediction_index": 3
+        },
+        {
+          "token": "s042",
+          "prediction_index": 4
+        },
+        {
+          "token": "s044",
+          "prediction_index": 0
+        },
+        {
+          "token": "s044",
+          "prediction_index": 1
+        },
+        {
+          "token": "s044",
+          "prediction_index": 3
+        },
+        {
+          "token": "s044",
+          "prediction_index": 16
+        },
+        {
+          "token": "s044",
+          "prediction_index": 2
+        },
+        {
+          "token": "s044",
+          "prediction_index": 12
+        },
+        {
+          "token": "s045",
+          "prediction_index": 20
+        },
+        {
+          "token": "s045",
+          "prediction_index": 21
+        },
+        {
+          "token": "s045",
+          "prediction_index": 1
+        }
+      ]
+    },
+    {
+      "file": "reports/m8c_figures/background_04.png",
+      "candidates": [
+        {
+          "token": "s045",
+          "prediction_index": 2
+        },
+        {
+          "token": "s045",
+          "prediction_index": 3
+        },
+        {
+          "token": "s045",
+          "prediction_index": 17
+        },
+        {
+          "token": "s046",
+          "prediction_index": 24
+        },
+        {
+          "token": "s046",
+          "prediction_index": 0
+        },
+        {
+          "token": "s046",
+          "prediction_index": 1
+        },
+        {
+          "token": "s046",
+          "prediction_index": 2
+        },
+        {
+          "token": "s046",
+          "prediction_index": 14
+        },
+        {
+          "token": "s046",
+          "prediction_index": 23
+        },
+        {
+          "token": "s047",
+          "prediction_index": 1
+        },
+        {
+          "token": "s047",
+          "prediction_index": 3
+        },
+        {
+          "token": "s047",
+          "prediction_index": 4
+        }
+      ]
+    },
+    {
+      "file": "reports/m8c_figures/background_05.png",
+      "candidates": [
+        {
+          "token": "s047",
+          "prediction_index": 0
+        },
+        {
+          "token": "s047",
+          "prediction_index": 2
+        },
+        {
+          "token": "s047",
+          "prediction_index": 5
+        },
+        {
+          "token": "s047",
+          "prediction_index": 55
+        },
+        {
+          "token": "s047",
+          "prediction_index": 36
+        },
+        {
+          "token": "s047",
+          "prediction_index": 47
+        },
+        {
+          "token": "s047",
+          "prediction_index": 50
+        },
+        {
+          "token": "s052",
+          "prediction_index": 24
+        },
+        {
+          "token": "s052",
+          "prediction_index": 25
+        },
+        {
+          "token": "s052",
+          "prediction_index": 26
+        },
+        {
+          "token": "s052",
+          "prediction_index": 0
+        },
+        {
+          "token": "s052",
+          "prediction_index": 1
+        }
+      ]
+    },
+    {
+      "file": "reports/m8c_figures/background_06.png",
+      "candidates": [
+        {
+          "token": "s052",
+          "prediction_index": 2
+        },
+        {
+          "token": "s075",
+          "prediction_index": 0
+        },
+        {
+          "token": "s075",
+          "prediction_index": 1
+        },
+        {
+          "token": "s075",
+          "prediction_index": 2
+        },
+        {
+          "token": "s075",
+          "prediction_index": 13
+        },
+        {
+          "token": "s075",
+          "prediction_index": 14
+        },
+        {
+          "token": "s075",
+          "prediction_index": 18
+        },
+        {
+          "token": "s075",
+          "prediction_index": 44
+        },
+        {
+          "token": "s075",
+          "prediction_index": 48
+        },
+        {
+          "token": "s097",
+          "prediction_index": 1
+        },
+        {
+          "token": "s097",
+          "prediction_index": 2
+        },
+        {
+          "token": "s097",
+          "prediction_index": 3
+        }
+      ]
+    },
+    {
+      "file": "reports/m8c_figures/background_07.png",
+      "candidates": [
+        {
+          "token": "s097",
+          "prediction_index": 11
+        },
+        {
+          "token": "s097",
+          "prediction_index": 13
+        },
+        {
+          "token": "s097",
+          "prediction_index": 14
+        },
+        {
+          "token": "s097",
+          "prediction_index": 9
+        },
+        {
+          "token": "s098",
+          "prediction_index": 1
+        },
+        {
+          "token": "s098",
+          "prediction_index": 2
+        },
+        {
+          "token": "s098",
+          "prediction_index": 3
+        },
+        {
+          "token": "s098",
+          "prediction_index": 17
+        },
+        {
+          "token": "s098",
+          "prediction_index": 22
+        },
+        {
+          "token": "s098",
+          "prediction_index": 33
+        },
+        {
+          "token": "s098",
+          "prediction_index": 13
+        },
+        {
+          "token": "s098",
+          "prediction_index": 27
+        }
+      ]
+    },
+    {
+      "file": "reports/m8c_figures/background_08.png",
+      "candidates": [
+        {
+          "token": "s098",
+          "prediction_index": 31
+        },
+        {
+          "token": "s119",
+          "prediction_index": 0
+        },
+        {
+          "token": "s119",
+          "prediction_index": 1
+        },
+        {
+          "token": "s119",
+          "prediction_index": 2
+        },
+        {
+          "token": "s144",
+          "prediction_index": 58
+        },
+        {
+          "token": "s144",
+          "prediction_index": 0
+        },
+        {
+          "token": "s144",
+          "prediction_index": 1
+        },
+        {
+          "token": "s144",
+          "prediction_index": 2
+        },
+        {
+          "token": "s145",
+          "prediction_index": 50
+        },
+        {
+          "token": "s145",
+          "prediction_index": 0
+        },
+        {
+          "token": "s145",
+          "prediction_index": 1
+        },
+        {
+          "token": "s145",
+          "prediction_index": 2
+        }
+      ]
+    },
+    {
+      "file": "reports/m8c_figures/background_09.png",
+      "candidates": [
+        {
+          "token": "s146",
+          "prediction_index": 0
+        },
+        {
+          "token": "s146",
+          "prediction_index": 1
+        },
+        {
+          "token": "s146",
+          "prediction_index": 2
+        },
+        {
+          "token": "s146",
+          "prediction_index": 3
+        },
+        {
+          "token": "s147",
+          "prediction_index": 51
+        },
+        {
+          "token": "s147",
+          "prediction_index": 0
+        },
+        {
+          "token": "s147",
+          "prediction_index": 1
+        },
+        {
+          "token": "s147",
+          "prediction_index": 2
+        },
+        {
+          "token": "s147",
+          "prediction_index": 69
+        },
+        {
+          "token": "s149",
+          "prediction_index": 5
+        },
+        {
+          "token": "s149",
+          "prediction_index": 6
+        },
+        {
+          "token": "s149",
+          "prediction_index": 9
+        }
+      ]
+    },
+    {
+      "file": "reports/m8c_figures/background_10.png",
+      "candidates": [
+        {
+          "token": "s149",
+          "prediction_index": 0
+        },
+        {
+          "token": "s149",
+          "prediction_index": 1
+        },
+        {
+          "token": "s149",
+          "prediction_index": 2
+        },
+        {
+          "token": "s151",
+          "prediction_index": 0
+        },
+        {
+          "token": "s151",
+          "prediction_index": 1
+        },
+        {
+          "token": "s151",
+          "prediction_index": 2
+        },
+        {
+          "token": "s155",
+          "prediction_index": 31
+        },
+        {
+          "token": "s155",
+          "prediction_index": 7
+        },
+        {
+          "token": "s155",
+          "prediction_index": 26
+        },
+        {
+          "token": "s155",
+          "prediction_index": 0
+        },
+        {
+          "token": "s155",
+          "prediction_index": 1
+        },
+        {
+          "token": "s155",
+          "prediction_index": 2
+        }
+      ]
+    },
+    {
+      "file": "reports/m8c_figures/background_11.png",
+      "candidates": [
+        {
+          "token": "s159",
+          "prediction_index": 47
+        },
+        {
+          "token": "s159",
+          "prediction_index": 48
+        },
+        {
+          "token": "s159",
+          "prediction_index": 65
+        },
+        {
+          "token": "s159",
+          "prediction_index": 39
+        },
+        {
+          "token": "s159",
+          "prediction_index": 40
+        },
+        {
+          "token": "s159",
+          "prediction_index": 69
+        },
+        {
+          "token": "s159",
+          "prediction_index": 0
+        },
+        {
+          "token": "s159",
+          "prediction_index": 1
+        },
+        {
+          "token": "s159",
+          "prediction_index": 2
+        },
+        {
+          "token": "s165",
+          "prediction_index": 1
+        },
+        {
+          "token": "s165",
+          "prediction_index": 2
+        },
+        {
+          "token": "s165",
+          "prediction_index": 3
+        }
+      ]
+    },
+    {
+      "file": "reports/m8c_figures/background_12.png",
+      "candidates": [
+        {
+          "token": "s165",
+          "prediction_index": 4
+        },
+        {
+          "token": "s165",
+          "prediction_index": 5
+        },
+        {
+          "token": "s165",
+          "prediction_index": 11
+        },
+        {
+          "token": "s166",
+          "prediction_index": 1
+        },
+        {
+          "token": "s166",
+          "prediction_index": 4
+        },
+        {
+          "token": "s166",
+          "prediction_index": 5
+        },
+        {
+          "token": "s166",
+          "prediction_index": 2
+        },
+        {
+          "token": "s166",
+          "prediction_index": 3
+        },
+        {
+          "token": "s166",
+          "prediction_index": 6
+        },
+        {
+          "token": "s166",
+          "prediction_index": 8
+        }
+      ]
+    }
+  ],
+  "identity_selection": "All6automaticallysupported; first8farproxies in frozen order. Notmodelselection.",
+  "human_certified": false
+}

@@ -1,0 +1,164 @@
+{
+  "kind": "AssistantVisualInspection_NotCertifiedHumanAnnotation",
+  "base": "af4266be5859e55db51e77e4b1b15ef122fce61f",
+  "commit": "af4266be5859e55db51e77e4b1b15ef122fce61f",
+  "sources": {
+    "configs/m8c/protocol.json": "4be73db489edba45d0f21a089c3df380ffd939cc50c3ab0029cdd5b8089766f3",
+    "tools/m8c_association.py": "248b4f961c00f605e2b29fb9954c7d48bcc021699e5b38b747882b7f52789b32",
+    "tools/m8c_common.py": "329e90ad731fabbb2389ab297fcbe984d0a13bcf3993cf58edbdb92f3cda2aa6",
+    "tools/m8c_figures.py": "9187288f171a0dfda24286bea4216468faee997502e7c3aab6f1f7b9b1627c37",
+    "tools/m8c_gpu_hook.py": "9f5c8d378d788250d76f18d41488155209b3d1d9df4a1585fdafdde48f48710a",
+    "tools/m8c_reference.py": "012b20cd2caf48b0ae97b4cfe77a2cf9529392cf1c14fa68597d9e8f67276e9d",
+    "tools/m8c_supplement.py": "5bb9d1151aff8111986a81f4eb26260e771663c95a8d6dca28dd3729a8fa6a0e",
+    "diagnostics/m8c_geometry.py": "398e1056cb5c32d67a2214b1ccff5295ebe2de43864e2cbf2d13f976ded00fe3",
+    "tests/test_m8c_geometry.py": "2cbce1cd9bb0bdb53b523bfa4e9fc2fbed4b272b00ebed102694d50c3898bf65"
+  },
+  "checkpoint_sha256": "16d8a4875c36e7d1cba75b357901ff031b18d9d9374f12780b9b72cc621cefad",
+  "training_steps": 0,
+  "visual_control": false,
+  "reviewer": "AI assistant visual inspection of saved actual RGB sheets",
+  "sheets": [
+    {
+      "sheet": "identity_supported",
+      "observation": "All six depict visible vehicle body in both views; s102 partially occluded by foregroundpole. Agreement supports identity association, but does not validate metriccenter. Do not upgrade beyond automatedgrade.",
+      "file": {
+        "path": "reports/m8c_figures/identity_supported.png",
+        "bytes": 850823,
+        "sha256": "7eee8dd0abc0bed635f2ea02bef990bdbd8f8a4a7f97094a13666e145c15bd54"
+      }
+    },
+    {
+      "sheet": "far_proxy",
+      "observation": "Red boxes often offset vertically or cover only a part of car/person or broad background; s049 includes pottedplant and only smallvisiblemask. No image-only identity upgrade.",
+      "file": {
+        "path": "reports/m8c_figures/far_proxy.png",
+        "bytes": 684299,
+        "sha256": "d750feaa03f239a3360e70309acb4b5adfa4598523a55d1d170dea45d3c95752"
+      }
+    },
+    {
+      "sheet": "background_00",
+      "observation": "Predictions on road, railing, wall, pole and plant; exact semantic/instance evidence retained. No hiddenobjectabsence certificate.",
+      "file": {
+        "path": "reports/m8c_figures/background_00.png",
+        "bytes": 493904,
+        "sha256": "b4b662e96e79d9cbc706159a4499b3bdfe318f057575ef79fc1a5c1177f09864"
+      }
+    },
+    {
+      "sheet": "background_01",
+      "observation": "s038q0/q1 visibly overlap a car despite failing natural3D match. Shows unmatcheddoesnotmeanabsence; no new3D errors.",
+      "file": {
+        "path": "reports/m8c_figures/background_01.png",
+        "bytes": 264144,
+        "sha256": "07e4088cbae27e3d90ad19f4dfe8d13026af293936a2c0fa93aeb6c7e6e90e7a"
+      }
+    },
+    {
+      "sheet": "background_02",
+      "observation": "s040q13/q18 and s042q1 overlap visiblevehicles; several person hypotheses overlapvehicleparts or wall edges.",
+      "file": {
+        "path": "reports/m8c_figures/background_02.png",
+        "bytes": 611801,
+        "sha256": "ca351865b0866bb9638d9333a2835347a4ed8f4af1e1e2875fe77de668b39213"
+      }
+    },
+    {
+      "sheet": "background_03",
+      "observation": "Many road/pole/planter-associated hypotheses; barrier isunannotatedclass, cannot identifyphysicalboundaryfromboxalone.",
+      "file": {
+        "path": "reports/m8c_figures/background_03.png",
+        "bytes": 317311,
+        "sha256": "d92abbdb54ed70ae3835a1dde2862c9af56784752a3e880904491fefffd4af8a"
+      }
+    },
+    {
+      "sheet": "background_04",
+      "observation": "s046 person box offset above visibleperson, cars/background nearby; recognition vs location cannot be conflated.",
+      "file": {
+        "path": "reports/m8c_figures/background_04.png",
+        "bytes": 227709,
+        "sha256": "6e89663be48923480391a99071eacc2c8892684192c95cef058c573217ce4e13"
+      }
+    },
+    {
+      "sheet": "background_05",
+      "observation": "Vehicleparts and storefronts, repeated centers; no controlledphysicalFP proof.",
+      "file": {
+        "path": "reports/m8c_figures/background_05.png",
+        "bytes": 235009,
+        "sha256": "1446ff87f085e70f36d22cd8b793766c7b186792bb011d3a49a781a6f9367ffa"
+      }
+    },
+    {
+      "sheet": "background_06",
+      "observation": "s075 boxes overlap vehicleback; s097 wideboxes on planter/storefront background.",
+      "file": {
+        "path": "reports/m8c_figures/background_06.png",
+        "bytes": 269510,
+        "sha256": "fcc381cd102a444bac09ccc44afab8fcf770475f8ae5748ff70f7266457acacf"
+      }
+    },
+    {
+      "sheet": "background_07",
+      "observation": "s098q17 includes visibleperson partly; otherboxes on facade/planter. No trustworthy3D identity from these rectangles.",
+      "file": {
+        "path": "reports/m8c_figures/background_07.png",
+        "bytes": 293285,
+        "sha256": "7c1837009312479ddeb6f115e7a6d08cf295f202e5b3e32425d8d4893927e00b"
+      }
+    },
+    {
+      "sheet": "background_08",
+      "observation": "Window/facade/hedge and road surfaces dominate shown hypotheses; physicalabsence unverified.",
+      "file": {
+        "path": "reports/m8c_figures/background_08.png",
+        "bytes": 238512,
+        "sha256": "3562f8e59641f1ddca7bf81888c23e4c98454442bb8666ecba3f1f2500e91dd5"
+      }
+    },
+    {
+      "sheet": "background_09",
+      "observation": "s146q0 nearcamera projection clipped by ego/body; s149 candidate shifted above car. Edgeclippingambiguity.",
+      "file": {
+        "path": "reports/m8c_figures/background_09.png",
+        "bytes": 415963,
+        "sha256": "f28f491150fdaaa3f1467715cdffcd9c9f256a31f445e7855fc04719cfe683d3"
+      }
+    },
+    {
+      "sheet": "background_10",
+      "observation": "s151q0/q1/q2 cover visiblevan, s155cone boxes shifted off cone; barrier predictions on roadside surfaces.",
+      "file": {
+        "path": "reports/m8c_figures/background_10.png",
+        "bytes": 302067,
+        "sha256": "bb8da5f13304fb946422907b5e2b9e96f84b3f4f513e7dab5d2cdbca30fe4cad"
+      }
+    },
+    {
+      "sheet": "background_11",
+      "observation": "s159van behind wall; s165 boxes include stationarybus/van-likeobjects absentfromrecorded insertedActor inventory. Backgroundtruthincomplete.",
+      "file": {
+        "path": "reports/m8c_figures/background_11.png",
+        "bytes": 251533,
+        "sha256": "00700a4fea018dea18ab7e8d9c09d000056f1391d069b194f28f65d90d3fc8ca"
+      }
+    },
+    {
+      "sheet": "background_12",
+      "observation": "Hedge/planter vs parkedvehicle ambiguity; image evidencenot sufficient to validate metricboxes.",
+      "file": {
+        "path": "reports/m8c_figures/background_12.png",
+        "bytes": 228538,
+        "sha256": "fa3356a1f4d801071991284f8be52b70bef03c5da616a3e2c7c0fe2e1d9a47d6"
+      }
+    }
+  ],
+  "background_candidates_viewed": 154,
+  "identity_examples_viewed": 6,
+  "far_proxy_examples_viewed": 8,
+  "grade_changes": 0,
+  "ConfirmedFalsePositive": 0,
+  "unreviewed": "No human double annotation; onlybestprojectionperbackgroundcandidate displayed, other viewstats available",
+  "decision": "RetainUnknownForUnresolvedIdentity; requestfuturefullannotation review beforetraining"
+}

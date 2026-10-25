@@ -1,0 +1,31 @@
+test_box_corners_velocity (test_m8c_geometry.Geometry) ... FAIL
+test_identity_no_error_dependency (test_m8c_geometry.Geometry) ... ok
+test_low_iou_not_identity (test_m8c_geometry.Geometry) ... ok
+test_pixel_support (test_m8c_geometry.Geometry) ... ok
+test_projection_yaw_translation (test_m8c_geometry.Geometry) ... ok
+test_reflection_rejected (test_m8c_geometry.Geometry) ... ok
+test_tilt_no_silent_yaw (test_m8c_geometry.Geometry) ... ok
+
+======================================================================
+FAIL: test_box_corners_velocity (test_m8c_geometry.Geometry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tests/test_m8c_geometry.py", line 17, in test_box_corners_velocity
+    np.testing.assert_allclose(result[7:9],(T[:3,:3]@[4,-2,0])[:2])
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/numpy/testing/_private/utils.py", line 1527, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/numpy/testing/_private/utils.py", line 840, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-07, atol=0
+
+Mismatched elements: 2 / 2 (100%)
+Max absolute difference: 3.11534674
+Max relative difference: 10.95223015
+ x: array([ 2.905407, -3.399795])
+ y: array([ 4.463081, -0.284449])
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.094s
+
+FAILED (failures=1)

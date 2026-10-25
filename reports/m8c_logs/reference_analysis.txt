@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.8.20-linux-x86_64-gnu/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/root/.local/share/uv/python/cpython-3.8.20-linux-x86_64-gnu/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8c_reference.py", line 58, in <module>
+    if __name__=='__main__':main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8c_reference.py", line 48, in main
+    write('reports/m8c_frozen_ablation.json',dict(**provenance('ConditionalGateDecision_NotRun'),A='FrozenM8B192frames/57600topK;12hookrerunsbitwiseequal',B='ReferenceVariantNotRun',B_runs=0,reason='Physicalbasis gate not satisfied: nuScenes LIDAR_TOP calibration and sourceegoalignment unavailable',camera_index_reordering='NotRun_SeparateSingleFactorProposal',training_steps=0,threshold_selection=False,raw_A_reference=asset('reports/m8b_candidate_burden.json'),A_natural_reference=asset('reports/m8b_detection_metrics.json'),A_trusted_association=asset('reports/m8c_2d_3d_association_audit.json'),improvement_claim=False))
+TypeError: type object got multiple values for keyword argument 'training_steps'

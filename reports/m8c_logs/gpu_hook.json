@@ -1,0 +1,27 @@
+{
+  "kind": "ActualServerProcess",
+  "base": "af4266be5859e55db51e77e4b1b15ef122fce61f",
+  "commit": "af4266be5859e55db51e77e4b1b15ef122fce61f",
+  "sources": {
+    "configs/m8c/protocol.json": "4be73db489edba45d0f21a089c3df380ffd939cc50c3ab0029cdd5b8089766f3",
+    "tools/m8c_common.py": "329e90ad731fabbb2389ab297fcbe984d0a13bcf3993cf58edbdb92f3cda2aa6",
+    "tools/m8c_gpu_hook.py": "9f5c8d378d788250d76f18d41488155209b3d1d9df4a1585fdafdde48f48710a"
+  },
+  "checkpoint_sha256": "16d8a4875c36e7d1cba75b357901ff031b18d9d9374f12780b9b72cc621cefad",
+  "training_steps": 0,
+  "visual_control": false,
+  "command": [
+    "unshare",
+    "--net",
+    "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/bin/python",
+    "-m",
+    "tools.m8c_gpu_hook"
+  ],
+  "returncode": 0,
+  "elapsed_s": 38.33670090138912,
+  "log": {
+    "path": "reports/m8c_logs/gpu_hook.txt",
+    "bytes": 2081,
+    "sha256": "6320ce57afdc31a4bf9e3684f527aa162a011f8aaee7ad0b7a88e68562ee6d43"
+  }
+}

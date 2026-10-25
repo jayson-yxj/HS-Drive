@@ -1,0 +1,170 @@
+{
+  "kind": "ActualGPUObservation_OfflineGTDiagnostic_SyntheticTests",
+  "base": "af4266be5859e55db51e77e4b1b15ef122fce61f",
+  "commit": "af4266be5859e55db51e77e4b1b15ef122fce61f",
+  "sources": {
+    "configs/m8c/protocol.json": "4be73db489edba45d0f21a089c3df380ffd939cc50c3ab0029cdd5b8089766f3",
+    "tools/m8c_association.py": "248b4f961c00f605e2b29fb9954c7d48bcc021699e5b38b747882b7f52789b32",
+    "tools/m8c_common.py": "329e90ad731fabbb2389ab297fcbe984d0a13bcf3993cf58edbdb92f3cda2aa6",
+    "tools/m8c_figures.py": "9187288f171a0dfda24286bea4216468faee997502e7c3aab6f1f7b9b1627c37",
+    "tools/m8c_finalize.py": "8a5fa7b76a4abea229dcc3f22921c3ea60184bd7aca8702a85b7468ecb11e988",
+    "tools/m8c_gpu_hook.py": "9f5c8d378d788250d76f18d41488155209b3d1d9df4a1585fdafdde48f48710a",
+    "tools/m8c_reference.py": "012b20cd2caf48b0ae97b4cfe77a2cf9529392cf1c14fa68597d9e8f67276e9d",
+    "tools/m8c_supplement.py": "5bb9d1151aff8111986a81f4eb26260e771663c95a8d6dca28dd3729a8fa6a0e",
+    "diagnostics/m8c_geometry.py": "398e1056cb5c32d67a2214b1ccff5295ebe2de43864e2cbf2d13f976ded00fe3",
+    "tests/test_m8c_evidence.py": "f1a49ad1bb14a5b54b2d6c01882131426bed8292ee0fb2e71baca7501de3aeba",
+    "tests/test_m8c_geometry.py": "2cbce1cd9bb0bdb53b523bfa4e9fc2fbed4b272b00ebed102694d50c3898bf65"
+  },
+  "checkpoint_sha256": "16d8a4875c36e7d1cba75b357901ff031b18d9d9374f12780b9b72cc621cefad",
+  "training_steps": 0,
+  "visual_control": false,
+  "stage": "M8-C",
+  "overall": "DiagnosticCompleted_QualityPartial",
+  "decisions": {
+    "ReferenceGeometry": "ReferenceDistributionMismatchSupported_CameraIndexEncoding_HeightIssueNotEstablished",
+    "ProjectionCorrectness": "SyntheticContractPassed_PhysicalVariantNotRun",
+    "DepthFailure": "MidrangeRadialBiasSupported_FarIdentityInsufficient",
+    "AppearanceSupport": "PixelDensitySupported_AppearanceDomainGapUnresolved",
+    "AnnotationQuality": "AnnotationSupportInsufficient",
+    "FrozenReferenceAblation": "ReferenceVariantNotRun",
+    "TrainingReadiness": "TrainingReadinessNoGo",
+    "Perception": "NotValidated",
+    "Safety": "NotValidated",
+    "Runtime": "HistoricalPartial_Unchanged"
+  },
+  "execution": {
+    "frozen_frames": 192,
+    "positions": 38,
+    "raw_historical_candidates": 57600,
+    "actual_GPU_hook_samples": 12,
+    "hook_first_sample_extra_forward_calls": 7,
+    "hook_ablation_calls": "1warmup+3pairedon/off thennormalrecord; notreferencevariant",
+    "physical_B_calls": 0,
+    "background_audit_frames": 26,
+    "background_audit_candidates": 154,
+    "new_CARLA_collection": 0,
+    "new_closed_loop": 0,
+    "weight_updates": 0
+  },
+  "tests": {
+    "new": 13,
+    "M8B": 18,
+    "historical": 42,
+    "logs": [
+      {
+        "path": "reports/m8c_logs/new_tests_final.txt",
+        "bytes": 940,
+        "sha256": "605b8918fdeb924f45bfaeaad9c5129ffd490b712cd308e7996c9d74b586d418"
+      },
+      {
+        "path": "reports/m8c_logs/m8b_contract_regression.txt",
+        "bytes": 1162,
+        "sha256": "4a7f9d77d78c87d0a889d43fd67546293c3b8d4463453d5f4846ec759b6fb43c"
+      },
+      {
+        "path": "reports/m8c_logs/historical_regression.txt",
+        "bytes": 99,
+        "sha256": "85964dae35257f1f3bc79543a5437a85a74a74a348f0fddb59fb42123c1b6fc5"
+      }
+    ]
+  },
+  "baseline_verified": [
+    {
+      "manifest": {
+        "path": "reports/m8b_release_manifest.json",
+        "bytes": 363426,
+        "sha256": "6fa9cfd16d1e17e27fe9c2c86f4812e5f335e6e66ab43ac44a783b8ed1ca2c15"
+      },
+      "files": 1620,
+      "unchanged": true
+    },
+    {
+      "manifest": {
+        "path": "reports/m8b_evaluation_reference_audit.json",
+        "bytes": 433182,
+        "sha256": "fe7014a63621ffe34b3a255d19ca00d9d3d52ee07215aae9840d29b548dfcc4a"
+      },
+      "files": 1735,
+      "unchanged": true
+    }
+  ],
+  "not_run": [
+    "PhysicalReferenceB",
+    "camera_order_full_network_ablation",
+    "training",
+    "nuScenes_full_calibration_and_RGB_dataset",
+    "human_double_annotation",
+    "new_blind_generalization",
+    "visualcontrol",
+    "sharedGPU_runtime"
+  ],
+  "references": {
+    "camera_distribution_comparison": {
+      "path": "reports/m8c_camera_distribution_comparison.json",
+      "bytes": 14094,
+      "sha256": "86c84099c126c91c1d4729351c8b21ff385c9245ec367335755f29630618fab7"
+    },
+    "position_embedding_analysis": {
+      "path": "reports/m8c_position_embedding_analysis.json",
+      "bytes": 685360,
+      "sha256": "83f26e5576bb50a01b7a120184a49f352cd8997ac3b84a34acfe204e9516f407"
+    },
+    "2d_3d_association_audit": {
+      "path": "reports/m8c_2d_3d_association_audit.json",
+      "bytes": 234583,
+      "sha256": "5b75704e7df3a7795e30462301205bb9ab3b402fd999fb0245bca2917d2207bf"
+    },
+    "depth_lateral_error": {
+      "path": "reports/m8c_depth_lateral_error.json",
+      "bytes": 38394,
+      "sha256": "0e48baa87aca0e301b54f0ea0392a7d24e7d266fa698be91b0b14ffc0fa89fdd"
+    },
+    "annotation_completeness": {
+      "path": "reports/m8c_annotation_completeness.json",
+      "bytes": 257741,
+      "sha256": "41c8fdbc8c0e69a20f9a25f15b8c2a4da2db3ea77e06414caa0c9b895335cf31"
+    },
+    "annotation_semantic_correction": {
+      "path": "reports/m8c_annotation_semantic_correction.json",
+      "bytes": 7634,
+      "sha256": "3aa1cefaed11c1513a6b6ec0747f73c525e2253d5c7a8bdc0d79bbbc32a9dc4f"
+    },
+    "crop_and_fov_analysis": {
+      "path": "reports/m8c_crop_and_fov_analysis.json",
+      "bytes": 619956,
+      "sha256": "596faa16cc5c1c1ae9dd603c98d5f7939c26d30b01c9d1643bd25fa8f28c0e80"
+    },
+    "reference_transform_contract": {
+      "path": "reports/m8c_reference_transform_contract.json",
+      "bytes": 1750,
+      "sha256": "c5117bb9f4c0351b225855ceb877e0274750ab6cb4200ea1734b3b076afa6057"
+    },
+    "frozen_ablation": {
+      "path": "reports/m8c_frozen_ablation.json",
+      "bytes": 1923,
+      "sha256": "5c13d7ba7163a0c891285bca77e40ec2ebccdbc3c9e64fb993995802169eefc7"
+    },
+    "dataset_support_decision": {
+      "path": "reports/m8c_dataset_support_decision.json",
+      "bytes": 2430,
+      "sha256": "6499cbf3b1dd69a37536872ffe9912162cac0360cf1f2a201af393d3cf6cac07"
+    },
+    "visual_review": {
+      "path": "reports/m8c_visual_review.json",
+      "bytes": 7407,
+      "sha256": "027d5a7ed197cd72ee74d9465403a3a4368ede058f65a0012d4e23b6c9be351f"
+    },
+    "association_strata": {
+      "path": "reports/m8c_association_strata.json",
+      "bytes": 41711,
+      "sha256": "4770b8b31d039ffa9e9b64db69757789821be8d945bc2809a41180fae9a76b78"
+    },
+    "camera_index_encoding_test": {
+      "path": "reports/m8c_camera_index_encoding_test.json",
+      "bytes": 2005,
+      "sha256": "4f3f7e350a46b7cd6d6c7300ebdb3bd11692b7c442f81d5105ff47eaf22f3b0e"
+    }
+  },
+  "next_priority": "Verify pretrainedcameraindex convention + acquire actual calibration + complete identity/background annotations; separate singlefactor diagnostics beforetraining",
+  "source_scope": "Onlym8cfilesadded; historical/defaultfilesunchanged"
+}

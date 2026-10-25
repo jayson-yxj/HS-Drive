@@ -1,0 +1,1351 @@
+{
+  "kind": "OfflineActualRecordedCARLA_EvaluatorOnly",
+  "base": "af4266be5859e55db51e77e4b1b15ef122fce61f",
+  "commit": "af4266be5859e55db51e77e4b1b15ef122fce61f",
+  "sources": {
+    "configs/m8c/protocol.json": "4be73db489edba45d0f21a089c3df380ffd939cc50c3ab0029cdd5b8089766f3",
+    "tools/m8c_association.py": "f3681d99e47cede5ec81169f242e2bfaccaca4bf8b1813438e47e76f3424595b",
+    "tools/m8c_common.py": "329e90ad731fabbb2389ab297fcbe984d0a13bcf3993cf58edbdb92f3cda2aa6",
+    "tools/m8c_gpu_hook.py": "9f5c8d378d788250d76f18d41488155209b3d1d9df4a1585fdafdde48f48710a",
+    "diagnostics/m8c_geometry.py": "7de868faaaa6eda2800bd37b30c16cefc0f8adaf20e51700f0be8c441cb2f6e0"
+  },
+  "checkpoint_sha256": "16d8a4875c36e7d1cba75b357901ff031b18d9d9374f12780b9b72cc621cefad",
+  "training_steps": 0,
+  "visual_control": false,
+  "groups": {
+    "all": {
+      "total_known": 155,
+      "identity_supported": 6,
+      "excluded": 149,
+      "groups": 6,
+      "statistics": {
+        "XY_m": {
+          "n": 6,
+          "min": 4.317121766430062,
+          "p50": 4.666340648830264,
+          "p90": 7.0038886075538045,
+          "p95": 7.930556834488696,
+          "max": 8.857225061423586,
+          "mean": 5.33532152210742
+        },
+        "XYZ_m": {
+          "n": 6,
+          "min": 4.324093278032063,
+          "p50": 4.678929050327914,
+          "p90": 7.015601253671493,
+          "p95": 7.936775143865477,
+          "max": 8.85794903405946,
+          "mean": 5.346657402587669
+        },
+        "optical_depth_signed_m": {
+          "n": 6,
+          "min": 3.2162455843817317,
+          "p50": 3.4120742427447537,
+          "p90": 5.597093957881755,
+          "p95": 6.582052696051107,
+          "max": 7.567011434220459,
+          "mean": 4.075366077258319
+        },
+        "optical_lateral_signed_m": {
+          "n": 6,
+          "min": -4.538928501935857,
+          "p50": -3.3419875417040616,
+          "p90": 2.726375301239456,
+          "p95": 2.8064266791420502,
+          "max": 2.886478057044645,
+          "mean": -1.575824515882319
+        },
+        "radial_signed_m": {
+          "n": 6,
+          "min": 4.285232296920572,
+          "p50": 4.6658461502967725,
+          "p90": 6.985035187782376,
+          "p95": 7.905404772817603,
+          "max": 8.82577435785283,
+          "mean": 5.315698242377537
+        },
+        "center_Z_signed_m": {
+          "n": 6,
+          "min": -0.48411156877409667,
+          "p50": -0.28742250014583015,
+          "p90": 0.06053790533042047,
+          "p95": 0.08689337602845626,
+          "max": 0.11324884672649205,
+          "mean": -0.23594703620733193
+        },
+        "upright_3d_iou": {
+          "n": 6,
+          "min": 0.0,
+          "p50": 0.0,
+          "p90": 1.1625082097512236e-05,
+          "p95": 1.7437623146268353e-05,
+          "max": 2.3250164195024472e-05,
+          "mean": 3.875027365837412e-06
+        },
+        "yaw_absolute_deg": {
+          "n": 6,
+          "min": 14.411875088330953,
+          "p50": 36.05962892426148,
+          "p90": 99.07147038159914,
+          "p95": 99.55057752484407,
+          "max": 100.029684668089,
+          "mean": 51.18975311985423
+        },
+        "yaw_axis_deg": {
+          "n": 6,
+          "min": 14.411875088330953,
+          "p50": 36.05962892426148,
+          "p90": 80.92852961840086,
+          "p95": 81.40763676164579,
+          "max": 81.88674390489072,
+          "mean": 45.142106198788134
+        }
+      },
+      "over5_rate": 0.3333333333333333,
+      "depth_abs": {
+        "n": 6,
+        "min": 3.2162455843817317,
+        "p50": 3.4120742427447537,
+        "p90": 5.597093957881755,
+        "p95": 6.582052696051107,
+        "max": 7.567011434220459,
+        "mean": 4.075366077258319
+      },
+      "lateral_abs": {
+        "n": 6,
+        "min": 2.566272545434267,
+        "p50": 3.3419875417040616,
+        "p90": 4.111861307182352,
+        "p95": 4.325394904559104,
+        "max": 4.538928501935857,
+        "mean": 3.393408050041957
+      },
+      "depth_dominates_count": 4,
+      "dimension_abs_lwh": [
+        {
+          "n": 6,
+          "min": 0.20765257080588917,
+          "p50": 0.43710344004363577,
+          "p90": 1.687242275075262,
+          "p95": 1.6926115778403406,
+          "max": 1.697980880605419,
+          "mean": 0.777886775210474
+        },
+        {
+          "n": 6,
+          "min": 0.030911602774042368,
+          "p50": 0.2863049270785809,
+          "p90": 0.7543432142709596,
+          "p95": 0.8489977067901548,
+          "max": 0.9436521993093498,
+          "mean": 0.3608956190925614
+        },
+        {
+          "n": 6,
+          "min": 0.09326406332601112,
+          "p50": 0.31111214340320403,
+          "p90": 0.6550605279056232,
+          "p95": 0.7475982556079329,
+          "max": 0.8401359833102426,
+          "mean": 0.36737932811949214
+        }
+      ]
+    },
+    "far20to40": {
+      "total_known": 83,
+      "identity_supported": 0,
+      "excluded": 83,
+      "groups": 0,
+      "statistics": {
+        "XY_m": {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        },
+        "XYZ_m": {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        },
+        "optical_depth_signed_m": {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        },
+        "optical_lateral_signed_m": {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        },
+        "radial_signed_m": {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        },
+        "center_Z_signed_m": {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        },
+        "upright_3d_iou": {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        },
+        "yaw_absolute_deg": {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        },
+        "yaw_axis_deg": {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        }
+      },
+      "over5_rate": null,
+      "depth_abs": {
+        "n": 0,
+        "min": null,
+        "p50": null,
+        "p90": null,
+        "p95": null,
+        "max": null,
+        "mean": null
+      },
+      "lateral_abs": {
+        "n": 0,
+        "min": null,
+        "p50": null,
+        "p90": null,
+        "p95": null,
+        "max": null,
+        "mean": null
+      },
+      "depth_dominates_count": 0,
+      "dimension_abs_lwh": [
+        {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        },
+        {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        },
+        {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        }
+      ]
+    },
+    "train": {
+      "total_known": 82,
+      "identity_supported": 3,
+      "excluded": 79,
+      "groups": 3,
+      "statistics": {
+        "XY_m": {
+          "n": 3,
+          "min": 4.317121766430062,
+          "p50": 4.354348853446319,
+          "p90": 4.719108629305631,
+          "p95": 4.764703601288045,
+          "max": 4.810298573270459,
+          "mean": 4.49392306438228
+        },
+        "XYZ_m": {
+          "n": 3,
+          "min": 4.324093278032063,
+          "p50": 4.366790529495137,
+          "p90": 4.72160205869597,
+          "p95": 4.7659534998460735,
+          "max": 4.810304940996178,
+          "mean": 4.500396249507793
+        },
+        "optical_depth_signed_m": {
+          "n": 3,
+          "min": 3.2162455843817317,
+          "p50": 3.2176144779151614,
+          "p90": 3.4688652595388496,
+          "p95": 3.5002716072418103,
+          "max": 3.5316779549447714,
+          "mean": 3.3218460057472217
+        },
+        "optical_lateral_signed_m": {
+          "n": 3,
+          "min": -3.552972535218089,
+          "p50": 2.566272545434267,
+          "p90": 2.8224369547225696,
+          "p95": 2.854457505883607,
+          "max": 2.886478057044645,
+          "mean": 0.6332593557536077
+        },
+        "radial_signed_m": {
+          "n": 3,
+          "min": 4.285232296920572,
+          "p50": 4.307194481186352,
+          "p90": 4.709571673447512,
+          "p95": 4.759868822480157,
+          "max": 4.810165971512802,
+          "mean": 4.467530916539909
+        },
+        "center_Z_signed_m": {
+          "n": 3,
+          "min": -0.32940186851192266,
+          "p50": -0.24544313177973764,
+          "p90": -0.0428270552084684,
+          "p95": -0.01750004563705978,
+          "max": 0.007826963934348896,
+          "mean": -0.1890060121191038
+        },
+        "upright_3d_iou": {
+          "n": 3,
+          "min": 0.0,
+          "p50": 0.0,
+          "p90": 1.860013135601958e-05,
+          "p95": 2.0925147775522024e-05,
+          "max": 2.3250164195024472e-05,
+          "mean": 7.750054731674823e-06
+        },
+        "yaw_absolute_deg": {
+          "n": 3,
+          "min": 22.46444501907322,
+          "p50": 33.77794927046281,
+          "p90": 85.24619473018,
+          "p95": 91.67972541264463,
+          "max": 98.11325609510928,
+          "mean": 51.45188346154844
+        },
+        "yaw_axis_deg": {
+          "n": 3,
+          "min": 22.46444501907322,
+          "p50": 33.77794927046281,
+          "p90": 72.26498497800515,
+          "p95": 77.07586444144792,
+          "max": 81.88674390489072,
+          "mean": 46.04304606480892
+        }
+      },
+      "over5_rate": 0.0,
+      "depth_abs": {
+        "n": 3,
+        "min": 3.2162455843817317,
+        "p50": 3.2176144779151614,
+        "p90": 3.4688652595388496,
+        "p95": 3.5002716072418103,
+        "max": 3.5316779549447714,
+        "mean": 3.3218460057472217
+      },
+      "lateral_abs": {
+        "n": 3,
+        "min": 2.566272545434267,
+        "p50": 2.886478057044645,
+        "p90": 3.4196736395834,
+        "p95": 3.4863230874007445,
+        "max": 3.552972535218089,
+        "mean": 3.0019077125656666
+      },
+      "depth_dominates_count": 2,
+      "dimension_abs_lwh": [
+        {
+          "n": 3,
+          "min": 0.42219788822018245,
+          "p50": 0.4520089918670891,
+          "p90": 1.431604734009502,
+          "p95": 1.5540542017773034,
+          "max": 1.676503669545105,
+          "mean": 0.8502368498774588
+        },
+        {
+          "n": 3,
+          "min": 0.030911602774042368,
+          "p50": 0.053165829082244986,
+          "p90": 0.765554925263929,
+          "p95": 0.8546035622866393,
+          "max": 0.9436521993093498,
+          "mean": 0.34257654372187907
+        },
+        {
+          "n": 3,
+          "min": 0.31064659045321097,
+          "p50": 0.46998507250100374,
+          "p90": 0.7661058011483949,
+          "p95": 0.8031208922293188,
+          "max": 0.8401359833102426,
+          "mean": 0.5402558820881525
+        }
+      ]
+    },
+    "val": {
+      "total_known": 25,
+      "identity_supported": 0,
+      "excluded": 25,
+      "groups": 0,
+      "statistics": {
+        "XY_m": {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        },
+        "XYZ_m": {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        },
+        "optical_depth_signed_m": {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        },
+        "optical_lateral_signed_m": {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        },
+        "radial_signed_m": {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        },
+        "center_Z_signed_m": {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        },
+        "upright_3d_iou": {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        },
+        "yaw_absolute_deg": {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        },
+        "yaw_axis_deg": {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        }
+      },
+      "over5_rate": null,
+      "depth_abs": {
+        "n": 0,
+        "min": null,
+        "p50": null,
+        "p90": null,
+        "p95": null,
+        "max": null,
+        "mean": null
+      },
+      "lateral_abs": {
+        "n": 0,
+        "min": null,
+        "p50": null,
+        "p90": null,
+        "p95": null,
+        "max": null,
+        "mean": null
+      },
+      "depth_dominates_count": 0,
+      "dimension_abs_lwh": [
+        {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        },
+        {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        },
+        {
+          "n": 0,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "max": null,
+          "mean": null
+        }
+      ]
+    },
+    "calibration": {
+      "total_known": 24,
+      "identity_supported": 2,
+      "excluded": 22,
+      "groups": 2,
+      "statistics": {
+        "XY_m": {
+          "n": 2,
+          "min": 4.522382724390068,
+          "p50": 6.689803892906827,
+          "p90": 8.423740827720234,
+          "p95": 8.640482944571911,
+          "max": 8.857225061423586,
+          "mean": 6.689803892906827
+        },
+        "XYZ_m": {
+          "n": 2,
+          "min": 4.5475531596596515,
+          "p50": 6.702751096859556,
+          "p90": 8.42690944661948,
+          "p95": 8.64242924033947,
+          "max": 8.85794903405946,
+          "mean": 6.702751096859556
+        },
+        "optical_depth_signed_m": {
+          "n": 2,
+          "min": 3.2924705305447364,
+          "p50": 5.429740982382597,
+          "p90": 7.1395573438528865,
+          "p95": 7.353284389036672,
+          "max": 7.567011434220459,
+          "mean": 5.429740982382597
+        },
+        "optical_lateral_signed_m": {
+          "n": 2,
+          "min": -4.538928501935857,
+          "p50": -3.8349655250629455,
+          "p90": -3.2717951435646166,
+          "p95": -3.2013988458773257,
+          "max": -3.1310025481900343,
+          "mean": -3.8349655250629455
+        },
+        "radial_signed_m": {
+          "n": 2,
+          "min": 4.521526329080743,
+          "p50": 6.673650343466786,
+          "p90": 8.39534955497562,
+          "p95": 8.610561956414225,
+          "max": 8.82577435785283,
+          "mean": 6.673650343466786
+        },
+        "center_Z_signed_m": {
+          "n": 2,
+          "min": -0.47780145883907554,
+          "p50": -0.18227630605629175,
+          "p90": 0.0541438161699353,
+          "p95": 0.08369633144821365,
+          "max": 0.11324884672649205,
+          "mean": -0.18227630605629175
+        },
+        "upright_3d_iou": {
+          "n": 2,
+          "min": 0.0,
+          "p50": 0.0,
+          "p90": 0.0,
+          "p95": 0.0,
+          "max": 0.0,
+          "mean": 0.0
+        },
+        "yaw_absolute_deg": {
+          "n": 2,
+          "min": 38.34130857806015,
+          "p50": 69.18549662307458,
+          "p90": 93.86084705908613,
+          "p95": 96.94526586358757,
+          "max": 100.029684668089,
+          "mean": 69.18549662307458
+        },
+        "yaw_axis_deg": {
+          "n": 2,
+          "min": 38.34130857806015,
+          "p50": 59.15581195498557,
+          "p90": 75.80741465652592,
+          "p95": 77.88886499421845,
+          "max": 79.970315331911,
+          "mean": 59.15581195498557
+        }
+      },
+      "over5_rate": 0.5,
+      "depth_abs": {
+        "n": 2,
+        "min": 3.2924705305447364,
+        "p50": 5.429740982382597,
+        "p90": 7.1395573438528865,
+        "p95": 7.353284389036672,
+        "max": 7.567011434220459,
+        "mean": 5.429740982382597
+      },
+      "lateral_abs": {
+        "n": 2,
+        "min": 3.1310025481900343,
+        "p50": 3.8349655250629455,
+        "p90": 4.398135906561275,
+        "p95": 4.468532204248565,
+        "max": 4.538928501935857,
+        "mean": 3.8349655250629455
+      },
+      "depth_dominates_count": 2,
+      "dimension_abs_lwh": [
+        {
+          "n": 2,
+          "min": 0.210976650219159,
+          "p50": 0.954478765412289,
+          "p90": 1.5492804575667931,
+          "p95": 1.623630669086106,
+          "max": 1.697980880605419,
+          "mean": 0.954478765412289
+        },
+        {
+          "n": 2,
+          "min": 0.3159348845255865,
+          "p50": 0.44048455687907795,
+          "p90": 0.5401242947618711,
+          "p95": 0.5525792619972202,
+          "max": 0.5650342292325694,
+          "mean": 0.44048455687907795
+        },
+        {
+          "n": 2,
+          "min": 0.09326406332601112,
+          "p50": 0.2024208798396041,
+          "p90": 0.28974633305047853,
+          "p95": 0.3006620147018378,
+          "max": 0.3115776963531971,
+          "mean": 0.2024208798396041
+        }
+      ]
+    },
+    "sealed": {
+      "total_known": 24,
+      "identity_supported": 1,
+      "excluded": 23,
+      "groups": 1,
+      "statistics": {
+        "XY_m": {
+          "n": 1,
+          "min": 5.150552153684023,
+          "p50": 5.150552153684023,
+          "p90": 5.150552153684023,
+          "p95": 5.150552153684023,
+          "max": 5.150552153684023,
+          "mean": 5.150552153684023
+        },
+        "XYZ_m": {
+          "n": 1,
+          "min": 5.173253473283524,
+          "p50": 5.173253473283524,
+          "p90": 5.173253473283524,
+          "p95": 5.173253473283524,
+          "max": 5.173253473283524,
+          "mean": 5.173253473283524
+        },
+        "optical_depth_signed_m": {
+          "n": 1,
+          "min": 3.627176481543051,
+          "p50": 3.627176481543051,
+          "p90": 3.627176481543051,
+          "p95": 3.627176481543051,
+          "max": 3.627176481543051,
+          "mean": 3.627176481543051
+        },
+        "optical_lateral_signed_m": {
+          "n": 1,
+          "min": -3.684794112428847,
+          "p50": -3.684794112428847,
+          "p90": -3.684794112428847,
+          "p95": -3.684794112428847,
+          "max": -3.684794112428847,
+          "mean": -3.684794112428847
+        },
+        "radial_signed_m": {
+          "n": 1,
+          "min": 5.144296017711923,
+          "p50": 5.144296017711923,
+          "p90": 5.144296017711923,
+          "p95": 5.144296017711923,
+          "max": 5.144296017711923,
+          "mean": 5.144296017711923
+        },
+        "center_Z_signed_m": {
+          "n": 1,
+          "min": -0.48411156877409667,
+          "p50": -0.48411156877409667,
+          "p90": -0.48411156877409667,
+          "p95": -0.48411156877409667,
+          "max": -0.48411156877409667,
+          "mean": -0.48411156877409667
+        },
+        "upright_3d_iou": {
+          "n": 1,
+          "min": 0.0,
+          "p50": 0.0,
+          "p90": 0.0,
+          "p95": 0.0,
+          "max": 0.0,
+          "mean": 0.0
+        },
+        "yaw_absolute_deg": {
+          "n": 1,
+          "min": 14.411875088330953,
+          "p50": 14.411875088330953,
+          "p90": 14.411875088330953,
+          "p95": 14.411875088330953,
+          "max": 14.411875088330953,
+          "mean": 14.411875088330953
+        },
+        "yaw_axis_deg": {
+          "n": 1,
+          "min": 14.411875088330953,
+          "p50": 14.411875088330953,
+          "p90": 14.411875088330953,
+          "p95": 14.411875088330953,
+          "max": 14.411875088330953,
+          "mean": 14.411875088330953
+        }
+      },
+      "over5_rate": 1.0,
+      "depth_abs": {
+        "n": 1,
+        "min": 3.627176481543051,
+        "p50": 3.627176481543051,
+        "p90": 3.627176481543051,
+        "p95": 3.627176481543051,
+        "max": 3.627176481543051,
+        "mean": 3.627176481543051
+      },
+      "lateral_abs": {
+        "n": 1,
+        "min": 3.684794112428847,
+        "p50": 3.684794112428847,
+        "p90": 3.684794112428847,
+        "p95": 3.684794112428847,
+        "max": 3.684794112428847,
+        "mean": 3.684794112428847
+      },
+      "depth_dominates_count": 0,
+      "dimension_abs_lwh": [
+        {
+          "n": 1,
+          "min": 0.20765257080588917,
+          "p50": 0.20765257080588917,
+          "p90": 0.20765257080588917,
+          "p95": 0.20765257080588917,
+          "max": 0.20765257080588917,
+          "mean": 0.20765257080588917
+        },
+        {
+          "n": 1,
+          "min": 0.2566749696315753,
+          "p50": 0.2566749696315753,
+          "p90": 0.2566749696315753,
+          "p95": 0.2566749696315753,
+          "max": 0.2566749696315753,
+          "mean": 0.2566749696315753
+        },
+        {
+          "n": 1,
+          "min": 0.1786665627732873,
+          "p50": 0.1786665627732873,
+          "p90": 0.1786665627732873,
+          "p95": 0.1786665627732873,
+          "max": 0.1786665627732873,
+          "mean": 0.1786665627732873
+        }
+      ]
+    }
+  },
+  "association_scope": "OnlyIdentitySupported; inferred identity support not absoluteproof. No errors for99other/ambiguous hypotheses unless evidenced; actual denominator computed in groups.",
+  "rows": [
+    {
+      "token": "s041",
+      "sample_id": "Town01_m5o_train_00/00074446",
+      "split": "train",
+      "group": "Town01_m5o_train_00",
+      "frame_id": 74446,
+      "timestamp_s": 32.246552200987935,
+      "gt_index": 0,
+      "actor_id": 1855,
+      "type": "vehicle",
+      "range_m": 18.439479521619724,
+      "grade": "IdentitySupported",
+      "prediction_index": 22,
+      "score": 0.15195265412330627,
+      "views": [
+        {
+          "camera": "front",
+          "camera_index": 0,
+          "retained_pixels": 954,
+          "mask_recall": 1.0,
+          "instance_bbox_iou": 0.6774844520281038,
+          "GT_association_purity": 0.9412997903563941,
+          "competing_bbox_iou": 0.0,
+          "projected_bbox": [
+            208.56491683330765,
+            172.5871652093477,
+            277.0762835061659,
+            199.76052549381959
+          ],
+          "instance_bbox": [
+            226.0,
+            173.0,
+            278.0,
+            198.0
+          ]
+        },
+        {
+          "camera": "front_left",
+          "camera_index": 1,
+          "retained_pixels": 1796,
+          "mask_recall": 1.0,
+          "instance_bbox_iou": 0.6187272165198436,
+          "GT_association_purity": 0.9203786191536748,
+          "competing_bbox_iou": 0.0,
+          "projected_bbox": [
+            539.7732598663247,
+            163.55088649987752,
+            640.0,
+            205.21956084749942
+          ],
+          "instance_bbox": [
+            572.0,
+            164.0,
+            640.0,
+            202.0
+          ]
+        }
+      ],
+      "visible_cameras": 2,
+      "metric_error": {
+        "XY_m": 4.354348853446319,
+        "XYZ_m": 4.366790529495137,
+        "optical_depth_signed_m": 3.5316779549447714,
+        "optical_lateral_signed_m": 2.566272545434267,
+        "radial_signed_m": 4.285232296920572,
+        "center_Z_signed_m": -0.32940186851192266,
+        "dimensions_abs_lwh_m": [
+          0.42219788822018245,
+          0.030911602774042368,
+          0.46998507250100374
+        ],
+        "yaw_absolute_deg": 98.11325609510928,
+        "yaw_axis_deg": 81.88674390489072,
+        "upright_3d_iou": 0.0,
+        "best_view": "front_left"
+      },
+      "identity_evidence": "Automated2DMultiviewSupport_NotHumanCertified",
+      "source_GT": {
+        "path": "/root/gpufree-data/hs-drive-data/raw/m5o_train_indexroot/Town01_m5o_train_00/frames/00074446.json",
+        "bytes": 29390,
+        "sha256": "057014031ae73502efd505edce1df9b1b43fb040c6b92f2650bcb2589923f1c8"
+      }
+    },
+    {
+      "token": "s080",
+      "sample_id": "Town03_m5o_train_02/00113279",
+      "split": "train",
+      "group": "Town03_m5o_train_02",
+      "frame_id": 113279,
+      "timestamp_s": 167.27430118061602,
+      "gt_index": 0,
+      "actor_id": 2142,
+      "type": "vehicle",
+      "range_m": 14.143444437532876,
+      "grade": "IdentitySupported",
+      "prediction_index": 2,
+      "score": 0.19138699769973755,
+      "views": [
+        {
+          "camera": "front_left",
+          "camera_index": 1,
+          "retained_pixels": 5688,
+          "mask_recall": 0.9794303797468354,
+          "instance_bbox_iou": 0.7558494842869845,
+          "GT_association_purity": 0.9780033840947546,
+          "competing_bbox_iou": 0.0,
+          "projected_bbox": [
+            109.14502438327492,
+            150.9090909090909,
+            264.1493011586217,
+            207.94304560857745
+          ],
+          "instance_bbox": [
+            103.0,
+            151.0,
+            253.0,
+            199.0
+          ]
+        },
+        {
+          "camera": "rear_left",
+          "camera_index": 3,
+          "retained_pixels": 6902,
+          "mask_recall": 1.0,
+          "instance_bbox_iou": 0.9141885083704211,
+          "GT_association_purity": 0.9755988359077681,
+          "competing_bbox_iou": 0.0,
+          "projected_bbox": [
+            472.80671799002124,
+            150.9090909090909,
+            640.0,
+            214.36504502348535
+          ],
+          "instance_bbox": [
+            481.0,
+            151.0,
+            640.0,
+            212.0
+          ]
+        }
+      ],
+      "visible_cameras": 2,
+      "metric_error": {
+        "XY_m": 4.317121766430062,
+        "XYZ_m": 4.324093278032063,
+        "optical_depth_signed_m": 3.2162455843817317,
+        "optical_lateral_signed_m": 2.886478057044645,
+        "radial_signed_m": 4.307194481186352,
+        "center_Z_signed_m": -0.24544313177973764,
+        "dimensions_abs_lwh_m": [
+          1.676503669545105,
+          0.9436521993093498,
+          0.8401359833102426
+        ],
+        "yaw_absolute_deg": 33.77794927046281,
+        "yaw_axis_deg": 33.77794927046281,
+        "upright_3d_iou": 2.3250164195024472e-05,
+        "best_view": "rear_left"
+      },
+      "identity_evidence": "Automated2DMultiviewSupport_NotHumanCertified",
+      "source_GT": {
+        "path": "/root/gpufree-data/hs-drive-data/raw/m5o_train_indexroot/Town03_m5o_train_02/frames/00113279.json",
+        "bytes": 30227,
+        "sha256": "193bfbc20e5fa89437d78323f99d7934dcd2376ac813f215fe924daf1d3ebd97"
+      }
+    },
+    {
+      "token": "s102",
+      "sample_id": "Town04_m5o_calibration_00/00141872",
+      "split": "calibration",
+      "group": "Town04_m5o_calibration_00",
+      "frame_id": 141872,
+      "timestamp_s": 44.25549206696451,
+      "gt_index": 0,
+      "actor_id": 3114,
+      "type": "vehicle",
+      "range_m": 19.772612755844964,
+      "grade": "IdentitySupported",
+      "prediction_index": 25,
+      "score": 0.211505725979805,
+      "views": [
+        {
+          "camera": "front",
+          "camera_index": 0,
+          "retained_pixels": 1653,
+          "mask_recall": 0.8021778584392014,
+          "instance_bbox_iou": 0.5723236797636261,
+          "GT_association_purity": 0.9340592861464004,
+          "competing_bbox_iou": 0.0,
+          "projected_bbox": [
+            0.0,
+            177.07730283820436,
+            82.9544702581434,
+            209.53901692293545
+          ],
+          "instance_bbox": [
+            0.0,
+            172.0,
+            70.0,
+            202.0
+          ]
+        },
+        {
+          "camera": "front_left",
+          "camera_index": 1,
+          "retained_pixels": 979,
+          "mask_recall": 0.8365679264555669,
+          "instance_bbox_iou": 0.6121725888503906,
+          "GT_association_purity": 0.9325842696629213,
+          "competing_bbox_iou": 0.0,
+          "projected_bbox": [
+            358.24778271563747,
+            164.41046659291678,
+            420.010122908579,
+            186.63123908291743
+          ],
+          "instance_bbox": [
+            355.0,
+            160.0,
+            414.0,
+            183.0
+          ]
+        }
+      ],
+      "visible_cameras": 2,
+      "metric_error": {
+        "XY_m": 4.522382724390068,
+        "XYZ_m": 4.5475531596596515,
+        "optical_depth_signed_m": 3.2924705305447364,
+        "optical_lateral_signed_m": -3.1310025481900343,
+        "radial_signed_m": 4.521526329080743,
+        "center_Z_signed_m": -0.47780145883907554,
+        "dimensions_abs_lwh_m": [
+          0.210976650219159,
+          0.3159348845255865,
+          0.09326406332601112
+        ],
+        "yaw_absolute_deg": 100.029684668089,
+        "yaw_axis_deg": 79.970315331911,
+        "upright_3d_iou": 0.0,
+        "best_view": "front"
+      },
+      "identity_evidence": "Automated2DMultiviewSupport_NotHumanCertified",
+      "source_GT": {
+        "path": "/root/gpufree-data/hs-drive-data/raw/m5o_calibration_indexroot/Town04_m5o_calibration_00/frames/00141872.json",
+        "bytes": 30244,
+        "sha256": "f6503814869c21e817ee76aa4eb23767afc0ac3220aa61a6fd9a454aeca17de8"
+      }
+    },
+    {
+      "token": "s111",
+      "sample_id": "Town04_m5o_calibration_02/00144792",
+      "split": "calibration",
+      "group": "Town04_m5o_calibration_02",
+      "frame_id": 144792,
+      "timestamp_s": 185.26589669287205,
+      "gt_index": 0,
+      "actor_id": 3163,
+      "type": "vehicle",
+      "range_m": 18.570237887843376,
+      "grade": "IdentitySupported",
+      "prediction_index": 73,
+      "score": 0.1211259514093399,
+      "views": [
+        {
+          "camera": "front",
+          "camera_index": 0,
+          "retained_pixels": 3043,
+          "mask_recall": 0.8287873808741374,
+          "instance_bbox_iou": 0.7495648033083947,
+          "GT_association_purity": 0.9971061093247588,
+          "competing_bbox_iou": 0.0,
+          "projected_bbox": [
+            141.2551861781383,
+            151.55658055644668,
+            209.76653405837473,
+            191.73097564439408
+          ],
+          "instance_bbox": [
+            138.0,
+            151.0,
+            210.0,
+            202.0
+          ]
+        },
+        {
+          "camera": "front_left",
+          "camera_index": 1,
+          "retained_pixels": 2724,
+          "mask_recall": 0.881424375917768,
+          "instance_bbox_iou": 0.7052068701561263,
+          "GT_association_purity": 0.9994251221615407,
+          "competing_bbox_iou": 0.0,
+          "projected_bbox": [
+            463.4453199017039,
+            150.9090909090909,
+            545.135775554081,
+            183.4770292389253
+          ],
+          "instance_bbox": [
+            468.0,
+            151.0,
+            547.0,
+            194.0
+          ]
+        }
+      ],
+      "visible_cameras": 2,
+      "metric_error": {
+        "XY_m": 8.857225061423586,
+        "XYZ_m": 8.85794903405946,
+        "optical_depth_signed_m": 7.567011434220459,
+        "optical_lateral_signed_m": -4.538928501935857,
+        "radial_signed_m": 8.82577435785283,
+        "center_Z_signed_m": 0.11324884672649205,
+        "dimensions_abs_lwh_m": [
+          1.697980880605419,
+          0.5650342292325694,
+          0.3115776963531971
+        ],
+        "yaw_absolute_deg": 38.34130857806015,
+        "yaw_axis_deg": 38.34130857806015,
+        "upright_3d_iou": 0.0,
+        "best_view": "front"
+      },
+      "identity_evidence": "Automated2DMultiviewSupport_NotHumanCertified",
+      "source_GT": {
+        "path": "/root/gpufree-data/hs-drive-data/raw/m5o_calibration_indexroot/Town04_m5o_calibration_02/frames/00144792.json",
+        "bytes": 30582,
+        "sha256": "8c1de8fec5ebf37f81ef7625e3fb763aecf12dc58e4df8055438feceedae8af9"
+      }
+    },
+    {
+      "token": "s134",
+      "sample_id": "Town04_m5o_train_04/00125447",
+      "split": "train",
+      "group": "Town04_m5o_train_04",
+      "frame_id": 125447,
+      "timestamp_s": 275.76192771829665,
+      "gt_index": 0,
+      "actor_id": 2489,
+      "type": "vehicle",
+      "range_m": 16.3853284181054,
+      "grade": "IdentitySupported",
+      "prediction_index": 4,
+      "score": 0.1689988374710083,
+      "views": [
+        {
+          "camera": "front",
+          "camera_index": 0,
+          "retained_pixels": 1476,
+          "mask_recall": 0.9112466124661247,
+          "instance_bbox_iou": 0.6813397503336531,
+          "GT_association_purity": 0.9491869918699187,
+          "competing_bbox_iou": 0.0,
+          "projected_bbox": [
+            351.06262319702927,
+            167.94909099947017,
+            416.96083896332567,
+            196.84797852410506
+          ],
+          "instance_bbox": [
+            356.0,
+            171.0,
+            418.0,
+            203.0
+          ]
+        },
+        {
+          "camera": "front_right",
+          "camera_index": 2,
+          "retained_pixels": 2377,
+          "mask_recall": 0.9368952461085401,
+          "instance_bbox_iou": 0.649876255310356,
+          "GT_association_purity": 0.9533024821203198,
+          "competing_bbox_iou": 0.0,
+          "projected_bbox": [
+            0.0,
+            157.31751359206584,
+            76.4511881624701,
+            197.33403331552515
+          ],
+          "instance_bbox": [
+            0.0,
+            162.0,
+            70.0,
+            208.0
+          ]
+        }
+      ],
+      "visible_cameras": 2,
+      "metric_error": {
+        "XY_m": 4.810298573270459,
+        "XYZ_m": 4.810304940996178,
+        "optical_depth_signed_m": 3.2176144779151614,
+        "optical_lateral_signed_m": -3.552972535218089,
+        "radial_signed_m": 4.810165971512802,
+        "center_Z_signed_m": 0.007826963934348896,
+        "dimensions_abs_lwh_m": [
+          0.4520089918670891,
+          0.053165829082244986,
+          0.31064659045321097
+        ],
+        "yaw_absolute_deg": 22.46444501907322,
+        "yaw_axis_deg": 22.46444501907322,
+        "upright_3d_iou": 0.0,
+        "best_view": "front_right"
+      },
+      "identity_evidence": "Automated2DMultiviewSupport_NotHumanCertified",
+      "source_GT": {
+        "path": "/root/gpufree-data/hs-drive-data/raw/m5o_train_indexroot/Town04_m5o_train_04/frames/00125447.json",
+        "bytes": 30838,
+        "sha256": "f247434dcba27680459cdd0972a70397554682cce7c6d5586df658f5d8bc5c99"
+      }
+    },
+    {
+      "token": "s174",
+      "sample_id": "Town10HD_m5o_sealed_01/00230277",
+      "split": "sealed",
+      "group": "Town10HD_m5o_sealed_01",
+      "frame_id": 230277,
+      "timestamp_s": 124.30615774914622,
+      "gt_index": 0,
+      "actor_id": 3285,
+      "type": "vehicle",
+      "range_m": 17.790605979307394,
+      "grade": "IdentitySupported",
+      "prediction_index": 140,
+      "score": 0.10474010556936264,
+      "views": [
+        {
+          "camera": "front",
+          "camera_index": 0,
+          "retained_pixels": 3051,
+          "mask_recall": 0.8997050147492626,
+          "instance_bbox_iou": 0.8384126639718543,
+          "GT_association_purity": 0.9154375614552606,
+          "competing_bbox_iou": 0.0,
+          "projected_bbox": [
+            0.0,
+            176.69526514287787,
+            97.91209506992013,
+            215.16990326532394
+          ],
+          "instance_bbox": [
+            0.0,
+            172.0,
+            101.0,
+            214.0
+          ]
+        },
+        {
+          "camera": "front_left",
+          "camera_index": 1,
+          "retained_pixels": 1489,
+          "mask_recall": 0.854936198791135,
+          "instance_bbox_iou": 0.7698360790345535,
+          "GT_association_purity": 0.9308260577568838,
+          "competing_bbox_iou": 0.0,
+          "projected_bbox": [
+            363.80905161266475,
+            164.78822370661607,
+            430.42229968954354,
+            188.7339162198933
+          ],
+          "instance_bbox": [
+            362.0,
+            161.0,
+            436.0,
+            189.0
+          ]
+        }
+      ],
+      "visible_cameras": 2,
+      "metric_error": {
+        "XY_m": 5.150552153684023,
+        "XYZ_m": 5.173253473283524,
+        "optical_depth_signed_m": 3.627176481543051,
+        "optical_lateral_signed_m": -3.684794112428847,
+        "radial_signed_m": 5.144296017711923,
+        "center_Z_signed_m": -0.48411156877409667,
+        "dimensions_abs_lwh_m": [
+          0.20765257080588917,
+          0.2566749696315753,
+          0.1786665627732873
+        ],
+        "yaw_absolute_deg": 14.411875088330953,
+        "yaw_axis_deg": 14.411875088330953,
+        "upright_3d_iou": 0.0,
+        "best_view": "front"
+      },
+      "identity_evidence": "Automated2DMultiviewSupport_NotHumanCertified",
+      "source_GT": {
+        "path": "/root/gpufree-data/hs-drive-data/raw/m5o_sealed_indexroot/Town10HD_m5o_sealed_01/frames/00230277.json",
+        "bytes": 29631,
+        "sha256": "b4e4140c8973a54629bed063dbe2b030beef0981c4d4bfd613cd03eda4a6132e"
+      }
+    }
+  ],
+  "historical_untrusted_proxy_metrics": {
+    "path": "reports/m8b_localization_metrics.json",
+    "bytes": 39619,
+    "sha256": "589d6fd990190906ff95cb480de7e288d9eb1dedc15b7bddaf003c44e3862565"
+  }
+}
