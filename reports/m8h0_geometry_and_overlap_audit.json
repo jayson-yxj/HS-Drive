@@ -1,0 +1,412 @@
+{
+  "kind": "ActualQueriesAndOfflineProxyReview",
+  "base": "410d60b3449e3de3070ed0050f96ca998963e0fa",
+  "execution_commit": "410d60b3449e3de3070ed0050f96ca998963e0fa",
+  "sources": {
+    "configs/m8h0/protocol.json": "d6c2c678e1a2c03fc1a5ed65348f10d4c4f40fc31d2a67ad717e49351afdf921",
+    "datasets/m8h0_geometry.py": "4e69bd8cae68f8eb2e1b573089cf9f502d84cff6064c19c9805e516b7b52348b",
+    "tools/m8h0_common.py": "92c974ef8dbd10dde22822372a55131f5ecddf9929f716529bbc48f3c555a155",
+    "tools/m8h0_freeze.py": "7fb2cdcdb8b9736031feb920bff358cda1cc236061997c4ae84c000f763170d1",
+    "tools/m8h0_inventory.py": "fb053a6ea1e6a0de085eff634c714574294ef267c7854a02c42bb672ea40cd85",
+    "tools/m8h0_templates.py": "78ac83b9657b48c8d40cfccd1bafcac5b459efc91c7725026dcfe496d79a8cc4"
+  },
+  "new_actors": 0,
+  "new_sensors": 0,
+  "new_RGB": 0,
+  "new_GT_dataset": 0,
+  "new_model_forwards": 0,
+  "training_steps": 0,
+  "vehicle_raw": {
+    "path": "/root/gpufree-data/hs-drive-experiments/m8h0-native-source-review/vehicle_inventory_full.json",
+    "bytes": 5170548,
+    "sha256": "5ab34807c56032415712933781ddb8c9047460b3c15aaf8f4c4e7ed285dabd58"
+  },
+  "navigation_raw": {
+    "path": "/root/gpufree-data/hs-drive-experiments/m8h0-native-source-review/navigation_inventory_full.json",
+    "bytes": 3041914,
+    "sha256": "5a7a8c934ab6f80a6e4042e6a407f303610dda9d9dff581ee4c919dbb5d753d8"
+  },
+  "static_inventory": {
+    "path": "/root/gpufree-data/hs-drive-experiments/m8h0-native-source-review/environment_inventory.json",
+    "bytes": 6172456,
+    "sha256": "f5e3e3bf33d3c7eb7855599da41291c4644e4e63425cf8f3e26d8510d6c5606b"
+  },
+  "template_pairs": [
+    {
+      "template": "m8h0_template_00",
+      "pairs": {
+        "spawn_044__spawn_049": {
+          "xy_polygon_distance_m": 25.26821041017536,
+          "z_interval_gap_m": 0,
+          "conservative_3d_overlap": false,
+          "pair_clearance_pass": true,
+          "contract": "Full OBB XY envelope + Z interval, conservative separation; not exact mesh collision"
+        },
+        "spawn_044__nav_07": {
+          "xy_polygon_distance_m": 27.418147552817924,
+          "z_interval_gap_m": 0,
+          "conservative_3d_overlap": false,
+          "pair_clearance_pass": true,
+          "contract": "Full OBB XY envelope + Z interval, conservative separation; not exact mesh collision"
+        },
+        "spawn_049__nav_07": {
+          "xy_polygon_distance_m": 45.627110333513244,
+          "z_interval_gap_m": 0,
+          "conservative_3d_overlap": false,
+          "pair_clearance_pass": true,
+          "contract": "Full OBB XY envelope + Z interval, conservative separation; not exact mesh collision"
+        }
+      }
+    },
+    {
+      "template": "m8h0_template_01",
+      "pairs": {
+        "spawn_037__spawn_040": {
+          "xy_polygon_distance_m": 24.437751873971216,
+          "z_interval_gap_m": 0,
+          "conservative_3d_overlap": false,
+          "pair_clearance_pass": true,
+          "contract": "Full OBB XY envelope + Z interval, conservative separation; not exact mesh collision"
+        },
+        "spawn_037__nav_10": {
+          "xy_polygon_distance_m": 28.23919775328675,
+          "z_interval_gap_m": 0,
+          "conservative_3d_overlap": false,
+          "pair_clearance_pass": true,
+          "contract": "Full OBB XY envelope + Z interval, conservative separation; not exact mesh collision"
+        },
+        "spawn_040__nav_10": {
+          "xy_polygon_distance_m": 57.651598775558284,
+          "z_interval_gap_m": 0,
+          "conservative_3d_overlap": false,
+          "pair_clearance_pass": true,
+          "contract": "Full OBB XY envelope + Z interval, conservative separation; not exact mesh collision"
+        }
+      }
+    },
+    {
+      "template": "m8h0_template_02",
+      "pairs": {
+        "spawn_100__spawn_045": {
+          "xy_polygon_distance_m": 27.158232688718613,
+          "z_interval_gap_m": 0,
+          "conservative_3d_overlap": false,
+          "pair_clearance_pass": true,
+          "contract": "Full OBB XY envelope + Z interval, conservative separation; not exact mesh collision"
+        },
+        "spawn_100__nav_33": {
+          "xy_polygon_distance_m": 27.02896509463121,
+          "z_interval_gap_m": 0,
+          "conservative_3d_overlap": false,
+          "pair_clearance_pass": true,
+          "contract": "Full OBB XY envelope + Z interval, conservative separation; not exact mesh collision"
+        },
+        "spawn_045__nav_33": {
+          "xy_polygon_distance_m": 58.43306097140953,
+          "z_interval_gap_m": 0,
+          "conservative_3d_overlap": false,
+          "pair_clearance_pass": true,
+          "contract": "Full OBB XY envelope + Z interval, conservative separation; not exact mesh collision"
+        }
+      }
+    },
+    {
+      "template": "m8h0_template_03",
+      "pairs": {
+        "spawn_077__spawn_051": {
+          "xy_polygon_distance_m": 23.820202476768642,
+          "z_interval_gap_m": 0,
+          "conservative_3d_overlap": false,
+          "pair_clearance_pass": true,
+          "contract": "Full OBB XY envelope + Z interval, conservative separation; not exact mesh collision"
+        },
+        "spawn_077__nav_02": {
+          "xy_polygon_distance_m": 28.056821064456976,
+          "z_interval_gap_m": 0,
+          "conservative_3d_overlap": false,
+          "pair_clearance_pass": true,
+          "contract": "Full OBB XY envelope + Z interval, conservative separation; not exact mesh collision"
+        },
+        "spawn_051__nav_02": {
+          "xy_polygon_distance_m": 7.033087241248157,
+          "z_interval_gap_m": 0,
+          "conservative_3d_overlap": false,
+          "pair_clearance_pass": true,
+          "contract": "Full OBB XY envelope + Z interval, conservative separation; not exact mesh collision"
+        }
+      }
+    }
+  ],
+  "visibility_proxy": [
+    {
+      "template": "m8h0_template_00",
+      "vehicle": [
+        {
+          "camera": "front",
+          "origin_world_m": [
+            117.12003479003906,
+            237.42995168090323,
+            1.907970689535141
+          ],
+          "target_world_m": [
+            88.6806698609144,
+            237.42999248925355,
+            0.9938300240039826
+          ],
+          "possible_static_occluders": [
+            {
+              "entity_id": 16013851668161070480,
+              "name": "Prop_CityLamp_BP33_SM_2",
+              "semantic_tags": [
+                6
+              ],
+              "segment_interval": [
+                0.26338259221872684,
+                0.2788262584748953
+              ],
+              "interpretation": "OBBLineOfSightWarning_NotMeshOcclusion"
+            }
+          ],
+          "actual_visibility": "Unknown_NoRenderedImages"
+        }
+      ],
+      "person": [
+        {
+          "camera": "rear_right",
+          "origin_world_m": [
+            120.0700385999663,
+            236.8299704130455,
+            1.857970689535141
+          ],
+          "target_world_m": [
+            128.41813659667974,
+            209.67616271972653,
+            1.2831561255455017
+          ],
+          "possible_static_occluders": [],
+          "actual_visibility": "Unknown_NoRenderedImages"
+        }
+      ],
+      "replacement_after_review": false
+    },
+    {
+      "template": "m8h0_template_01",
+      "vehicle": [
+        {
+          "camera": "front",
+          "origin_world_m": [
+            87.18004760742187,
+            302.56999684691885,
+            1.907970689535141
+          ],
+          "target_world_m": [
+            59.629403991624656,
+            306.4199828162798,
+            0.9938300240039826
+          ],
+          "possible_static_occluders": [],
+          "actual_visibility": "Unknown_NoRenderedImages"
+        }
+      ],
+      "person": [
+        {
+          "camera": "rear",
+          "origin_world_m": [
+            90.43004760742187,
+            302.57001748402473,
+            1.857970689535141
+          ],
+          "target_world_m": [
+            119.50746154785158,
+            298.7431945800782,
+            1.2843389797210694
+          ],
+          "possible_static_occluders": [
+            {
+              "entity_id": 15541111127219256482,
+              "name": "Prop_CityLamp_BP82_SM_2",
+              "semantic_tags": [
+                6
+              ],
+              "segment_interval": [
+                0.5870721216695928,
+                0.6021769042233263
+              ],
+              "interpretation": "OBBLineOfSightWarning_NotMeshOcclusion"
+            },
+            {
+              "entity_id": 5849249392764772751,
+              "name": "prop_bus_stop3_81_SM_0",
+              "semantic_tags": [
+                20
+              ],
+              "segment_interval": [
+                0.8394391345605677,
+                0.842058450944822
+              ],
+              "interpretation": "OBBLineOfSightWarning_NotMeshOcclusion"
+            }
+          ],
+          "actual_visibility": "Unknown_NoRenderedImages"
+        }
+      ],
+      "replacement_after_review": false
+    },
+    {
+      "template": "m8h0_template_02",
+      "vehicle": [
+        {
+          "camera": "front",
+          "origin_world_m": [
+            -3.6799945896886697,
+            249.71000061035156,
+            1.907970689535141
+          ],
+          "target_world_m": [
+            -3.6799997350747793,
+            219.38061340339488,
+            0.9938300240039826
+          ],
+          "possible_static_occluders": [
+            {
+              "entity_id": 13622683009745935083,
+              "name": "Prop_CityLamp_BP109_SM_2",
+              "semantic_tags": [
+                6
+              ],
+              "segment_interval": [
+                0.293205435261349,
+                0.30768670576992885
+              ],
+              "interpretation": "OBBLineOfSightWarning_NotMeshOcclusion"
+            }
+          ],
+          "actual_visibility": "Unknown_NoRenderedImages"
+        }
+      ],
+      "person": [
+        {
+          "camera": "rear_left",
+          "origin_world_m": [
+            -4.280003955759798,
+            252.65999870538795,
+            1.857970689535141
+          ],
+          "target_world_m": [
+            -12.244215011596623,
+            279.94036865234375,
+            1.2840649473667145
+          ],
+          "possible_static_occluders": [],
+          "actual_visibility": "Unknown_NoRenderedImages"
+        },
+        {
+          "camera": "rear",
+          "origin_world_m": [
+            -3.680004908241608,
+            252.96000061035156,
+            1.857970689535141
+          ],
+          "target_world_m": [
+            -12.244215011596623,
+            279.94036865234375,
+            1.2840649473667145
+          ],
+          "possible_static_occluders": [],
+          "actual_visibility": "Unknown_NoRenderedImages"
+        }
+      ],
+      "replacement_after_review": false
+    },
+    {
+      "template": "m8h0_template_03",
+      "vehicle": [
+        {
+          "camera": "rear_right",
+          "origin_world_m": [
+            45.839993736348355,
+            226.88999824285426,
+            1.857970689535141
+          ],
+          "target_world_m": [
+            71.01066406257456,
+            237.42999248925355,
+            0.9938300240039826
+          ],
+          "possible_static_occluders": [
+            {
+              "entity_id": 11858251996027274598,
+              "name": "Prop_CityLamp_BP27_SM_2",
+              "semantic_tags": [
+                6
+              ],
+              "segment_interval": [
+                0.8692814605321562,
+                0.8867306663038728
+              ],
+              "interpretation": "OBBLineOfSightWarning_NotMeshOcclusion"
+            }
+          ],
+          "actual_visibility": "Unknown_NoRenderedImages"
+        }
+      ],
+      "person": [
+        {
+          "camera": "rear_right",
+          "origin_world_m": [
+            45.839993736348355,
+            226.88999824285426,
+            1.857970689535141
+          ],
+          "target_world_m": [
+            68.36915588378905,
+            245.7321166992187,
+            1.2840704309940338
+          ],
+          "possible_static_occluders": [],
+          "actual_visibility": "Unknown_NoRenderedImages"
+        }
+      ],
+      "replacement_after_review": false
+    }
+  ],
+  "near_M8FG_strata": [
+    {
+      "historical_group": "m8f_development_00",
+      "native_within_35m": 5,
+      "native_geometry_supported": 0,
+      "ids": [
+        "spawn_026",
+        "spawn_027",
+        "spawn_028",
+        "spawn_029",
+        "spawn_087"
+      ],
+      "comparison": "Native single-pose vs M8G both-phase different locations; descriptive only"
+    },
+    {
+      "historical_group": "m8f_development_01",
+      "native_within_35m": 7,
+      "native_geometry_supported": 5,
+      "ids": [
+        "spawn_037",
+        "spawn_038",
+        "spawn_039",
+        "spawn_040",
+        "spawn_092",
+        "spawn_093",
+        "spawn_094"
+      ],
+      "comparison": "Native single-pose vs M8G both-phase different locations; descriptive only"
+    }
+  ],
+  "original_validator_thresholds": {
+    "path": "configs/m8f/contract.json",
+    "bytes": 2143,
+    "sha256": "72c8f7b40c56a1cef83273d28a91cd4ee3caf2ff4cf6810560acdbffb5cb17d8"
+  },
+  "no_rule_relaxation": true,
+  "initial_z_and_final_z_distinct": true,
+  "actual_final_actor_state": "NotRun",
+  "background_annotation": "Static inventory and approximate OBBs available; render identity/whole-scene annotation NotRun"
+}

@@ -1,0 +1,91 @@
+{
+  "kind": "ActualServerUnitAndEvidenceTests",
+  "base": "410d60b3449e3de3070ed0050f96ca998963e0fa",
+  "execution_commit": "410d60b3449e3de3070ed0050f96ca998963e0fa",
+  "sources": {
+    "configs/m8h0/protocol.json": "d6c2c678e1a2c03fc1a5ed65348f10d4c4f40fc31d2a67ad717e49351afdf921",
+    "datasets/m8h0_geometry.py": "4e69bd8cae68f8eb2e1b573089cf9f502d84cff6064c19c9805e516b7b52348b",
+    "tests/test_m8h0_evidence.py": "88a89b9bafa76d543c48e2ff51820836288da8ce02037f2aec6ea53a86cdc506",
+    "tests/test_m8h0_geometry.py": "23d5f6691cb40d8690ce1460572b38633cc8d8cd54e82029d51e96bfe479e799",
+    "tools/m8h0_common.py": "92c974ef8dbd10dde22822372a55131f5ecddf9929f716529bbc48f3c555a155",
+    "tools/m8h0_curation_review.py": "c517ffe229216ec502cf8df705bcfc7f7bbe48e060465c8ef0a0f7a6b4f4ca8a",
+    "tools/m8h0_figures.py": "b0da4b274ddfe85c80d45c93d2456b8dbdf899e7357b85f70fe46c0d65a5a486",
+    "tools/m8h0_freeze.py": "7fb2cdcdb8b9736031feb920bff358cda1cc236061997c4ae84c000f763170d1",
+    "tools/m8h0_inventory.py": "d9dcf1ce91fc786c5fa160b1c642ebb35d1652e7bb74fed67a610c14a79fa9c0",
+    "tools/m8h0_map_identity.py": "1ed5681dd2238fd9c00e93745fc976591a8debabc1be4ab7463cdab8553c41e7",
+    "tools/m8h0_reports.py": "bf209bcb18dc45c0224a4885ec2238c660ae95f46881f5bbf30305dfd3b76523",
+    "tools/m8h0_templates.py": "78ac83b9657b48c8d40cfccd1bafcac5b459efc91c7725026dcfe496d79a8cc4",
+    "tools/m8h0_validator_replay.py": "539ace015a971933ffc494ffe5574be61627c3f4f4ae068c02bd85f64caa858e",
+    "tools/m8h0_verify.py": "2700d76c1b255a47555eed2cbfc2a36b4a38fb8dc46482d9cabe48bea27341d4"
+  },
+  "new_actors": 0,
+  "new_sensors": 0,
+  "new_RGB": 0,
+  "new_GT_dataset": 0,
+  "new_model_forwards": 0,
+  "training_steps": 0,
+  "suites": [
+    {
+      "name": "final_m8h0_tests",
+      "kind": "12 synthetic geometry + 11 actual evidence/scope tests",
+      "count": 23,
+      "log": {
+        "path": "reports/m8h0_logs/final_m8h0_tests.txt",
+        "bytes": 1646,
+        "sha256": "8666d6173ed0c492e599f5909da8bb2f6876e3b15a94536aaef75dc6cf1d111a"
+      },
+      "run": {
+        "path": "reports/m8h0_logs/final_m8h0_tests.json",
+        "bytes": 1973,
+        "sha256": "5ed82482edc577baf1bc0fe3054302a9e564f66c064bdd2b614a6ccc0146e05f"
+      },
+      "status": "Passed"
+    },
+    {
+      "name": "m8g_regression",
+      "kind": "30 frozen M8G regression tests",
+      "count": 30,
+      "log": {
+        "path": "reports/m8h0_logs/m8g_regression.txt",
+        "bytes": 2130,
+        "sha256": "c6c585df1e6d1b23dc11b43a12c305fe74aeeac0ff7981f55b4e892118ba9dd7"
+      },
+      "run": {
+        "path": "reports/m8h0_logs/m8g_regression.json",
+        "bytes": 1777,
+        "sha256": "f2cb9ef935b7bcb71284eb18b4b6d82fb13b73a599ee749ae67e0c9502140048"
+      },
+      "status": "Passed"
+    },
+    {
+      "name": "m8f_regression",
+      "kind": "17 frozen M8F regression tests",
+      "count": 17,
+      "log": {
+        "path": "reports/m8h0_logs/m8f_regression.txt",
+        "bytes": 1243,
+        "sha256": "f5cdaf0cefd05cfdf06596321df3f024fd95b3fc708a52c8dc784f9f3cbfad0f"
+      },
+      "run": {
+        "path": "reports/m8h0_logs/m8f_regression.json",
+        "bytes": 1971,
+        "sha256": "295325f680f3964ac3002a12d666194d1027a41f3919e48756d95a23234ced61"
+      },
+      "status": "Passed"
+    }
+  ],
+  "total": 70,
+  "frozen_validator_replay": {
+    "path": "reports/m8h0_frozen_validator_replay.json",
+    "bytes": 71068,
+    "sha256": "3b80d7a7cedce48b0db289c9f9cdecc354613965a95a48c8f477621ffd4d1fb9"
+  },
+  "new_CARLA_actor_tests": "NotRun_ForbiddenThisStage",
+  "failed_run_retained": {
+    "path": "reports/m8h0_logs/validator_replay.json",
+    "bytes": 1718,
+    "sha256": "77951baa97a95eba6f0180c3db307c3cd426e21c8645982e8502cf2bddb91cd5"
+  },
+  "failure_resolution": "Replay assertion initially rejected supplemental static diagnostics after Covered; broadened supplemental diagnostic list only, no acceptance override, all161decisions match",
+  "source_changes_after_tests": "Removed one dead conditional expression in historical-preflight argument, same evaluated list; curation review only adds immutable links"
+}
