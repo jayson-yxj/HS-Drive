@@ -1,0 +1,23 @@
+{
+ "stage":"M8-H1",
+ "base":"5e4701c0cdb81792d696c37157cf23d544843fb0",
+ "templates":["m8h0_template_00","m8h0_template_02"],
+ "map":"Town02","server_version":"0.9.15","port":2100,
+ "weather":"ClearNoon","fixed_delta_seconds":0.05,
+ "rig":"configs/cameras.yaml","image_size":[384,640],"FOV":100,
+ "shifted":{"one_candidate_per_target":true,"distance_along_declared_lane_m":3.0,"method":"Use exactly wp.next(3.0) on original recorded road/lane, require one result and unchanged road/lane/section. Preserve source lateral offset via waypoint translation, yaw changes only by road tangent delta. Vehicle retains native +0.5m spawn-above-map offset. Walker new ground-source point retains navigation height residual. No fallback or other distance.","no_render_selection":true},
+ "settling":{"max_ticks":200,"min_ticks":40,"window_ticks":20,"max_speed_mps":0.02,"max_window_position_span_m":0.01,"max_window_angle_span_deg":0.10,"max_native_xy_drift_m":0.02,"max_final_rotation_delta_deg":0.5,"abort_xy_drift_m":0.25,"abort_tilt_deg":10,"max_spawn_attempts_per_actor_pose":1},
+ "vehicle_controls":{"throttle":0,"brake":1,"hand_brake":true},
+ "walker_spawn":"Ground from all15approved sidewalk rays + measured local bounding-box bottom offset + frozen0.03m clearance. No random nav, no actor-center misuse. Verify actual local bbox matches frozen dimensions before qualifying.",
+ "physics":"Never disable or modify physics. Native vehicles fall naturally; stationary walker zero control only. No planner, autopilot or driving.",
+ "actual_geometry":"Original M8F actual_check unchanged. Re-anchor only request pose to recorded settled observation to separate allowed natural vertical settling from static-request transport; independently enforce original0.02m XY and0.5degree drift. Full original result against hypothetical request is also retained, never hidden.",
+ "support_thresholds":"Unchanged configs/m8f/contract.json, including below-OBB ray origin and complete15pointsupport; unknown means reject",
+ "failure":"Stop failed template, continue other frozen template only. No retry, extra candidate, threshold or source replacement.",
+ "max_groups":2,"max_keyframes":8,"max_RGB":48,"max_payloads":192,
+ "phase_order":["empty","present","shifted","removed"],
+ "preflight_before_RGB":"Ego/vehicle/walker Present stability+geometry and fixed Shifted geometry all required; Shifted actual stability+geometry independently re-evaluated at phase",
+ "phase_mechanics":"Preflight Present targets may be moved to a fixed remote holding location only after passing stability+geometry. Preserve same Actor IDs, restore frozen Present pose and settle again before Present keyframe; Shifted uses fixed pose and natural settling; Removed destroys targets and verifies pixel absence. No held actor qualifies for natural placement.",
+ "remote_holding":[10000,10000,500],
+ "sensor_warmup_ticks":12,"phase_settle_sensor_ticks":4,"frame_timeout_s":45,
+ "training":false,"PETR_forward":false,"new_Final":0,"FinalEligible":false
+}

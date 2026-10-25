@@ -1,0 +1,3033 @@
+{
+  "kind": "SeparatedActualOfflineSyntheticControls",
+  "base": "5e4701c0cdb81792d696c37157cf23d544843fb0",
+  "execution_commit": "5e4701c0cdb81792d696c37157cf23d544843fb0",
+  "sources": {
+    "configs/m8h1/protocol.json": "a88349a98f83bb50a35ca9e0a6b8bd4f1acb1cc825661b1b54964d9aa7ac6e7d",
+    "datasets/m8h1_settling.py": "2997db4212c3e5e967ecce5bbf1a7351679c224a88ed5a6e965b3d65297539a6",
+    "tests/test_m8h1_settling.py": "59559c702d08d6fa4b50ab224ac93e94b7ce5becfca91afb9e3af95d0adb2110",
+    "tools/m8h1_actor_smoke.py": "cbc67a8d51fae14f4770cd8dafab9bf6119e4dfd9c7b7f6517939c92eabd1fac",
+    "tools/m8h1_capture.py": "08add0142267164650e894c6bc669d359c3f682e3396b4f1949442f1bc2a83dd",
+    "tools/m8h1_common.py": "d773011fd079893c5347f5fbd6cca53b618a9f567e60d647e6d9835e7df756c1",
+    "tools/m8h1_controls.py": "b1a38dca34ba1ec0ae5559957163570b7752f1c54c443d1217f6da666f5fe8f3",
+    "tools/m8h1_diagnose.py": "35771f1ad4ae6a5bfaf5f6adafb1f00b0447156d16a3d5312c7ebb7aae51e4e9",
+    "tools/m8h1_freeze.py": "adce79ed2ca9cd2a397ad2629a0683812b268c301044e72317e61b6dbb1e0aca",
+    "tools/m8h1_preflight.py": "da35d0570e33d81355fc2e80ca60274a7d1f4349a56607b20c3d780a774ed83f"
+  },
+  "new_model_forwards": 0,
+  "training_steps": 0,
+  "visual_control": false,
+  "records": [
+    {
+      "name": "FullBodyRoadBoundarySpill",
+      "kind": "ActualCARLAQuery_NoActorSpawn",
+      "map": "Town02",
+      "result": {
+        "status": "Rejected",
+        "reasons": [
+          "CoveredOrWrongTopSurface",
+          "FootprintOutsideAllowedRegion",
+          "NoCompatibleSurfaceAtDeclaredRoadLayer"
+        ],
+        "rays": [
+          {
+            "start": [
+              64.13160468245535,
+              110.21849209819378,
+              8.0
+            ],
+            "end": [
+              64.13160468245535,
+              110.21849209819378,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  64.13160705566406,
+                  110.2184829711914,
+                  0.9461425542831421
+                ],
+                "semantic": 0,
+                "semantic_name": "NONE"
+              },
+              {
+                "xyz": [
+                  64.13160705566406,
+                  110.2184829711914,
+                  0.2199999988079071
+                ],
+                "semantic": 1,
+                "semantic_name": "Roads"
+              }
+            ],
+            "frame": 106390,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "CoveredOrWrongTopSurface"
+              ],
+              "selected": {
+                "xyz": [
+                  64.13160705566406,
+                  110.2184829711914,
+                  0.2199999988079071
+                ],
+                "semantic": 1,
+                "semantic_name": "Roads"
+              },
+              "ground_levels": [
+                0.2199999988079071
+              ],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              64.13086892415222,
+              111.30021684162558,
+              8.0
+            ],
+            "end": [
+              64.13086892415222,
+              111.30021684162558,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  64.13086700439453,
+                  111.30020904541016,
+                  0.2199999988079071
+                ],
+                "semantic": 1,
+                "semantic_name": "Roads"
+              }
+            ],
+            "frame": 106391,
+            "decision": {
+              "status": "GroundedByGeometryProxy",
+              "reasons": [],
+              "selected": {
+                "xyz": [
+                  64.13086700439453,
+                  111.30020904541016,
+                  0.2199999988079071
+                ],
+                "semantic": 1,
+                "semantic_name": "Roads"
+              },
+              "ground_levels": [
+                0.2199999988079071
+              ],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              64.1301331658491,
+              112.38194158505739,
+              8.0
+            ],
+            "end": [
+              64.1301331658491,
+              112.38194158505739,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  64.13013458251953,
+                  112.38194274902344,
+                  0.32376769185066223
+                ],
+                "semantic": 2,
+                "semantic_name": "Sidewalks"
+              }
+            ],
+            "frame": 106392,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "NoCompatibleSurfaceAtDeclaredRoadLayer"
+              ],
+              "selected": null,
+              "ground_levels": [],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              65.32954927637489,
+              110.21930690592283,
+              8.0
+            ],
+            "end": [
+              65.32954927637489,
+              110.21930690592283,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  65.32955169677734,
+                  110.21930694580078,
+                  0.9461425542831421
+                ],
+                "semantic": 0,
+                "semantic_name": "NONE"
+              },
+              {
+                "xyz": [
+                  65.32955169677734,
+                  110.21930694580078,
+                  0.2199999988079071
+                ],
+                "semantic": 1,
+                "semantic_name": "Roads"
+              }
+            ],
+            "frame": 106393,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "CoveredOrWrongTopSurface"
+              ],
+              "selected": {
+                "xyz": [
+                  65.32955169677734,
+                  110.21930694580078,
+                  0.2199999988079071
+                ],
+                "semantic": 1,
+                "semantic_name": "Roads"
+              },
+              "ground_levels": [
+                0.2199999988079071
+              ],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              65.32881351807177,
+              111.30103164935464,
+              8.0
+            ],
+            "end": [
+              65.32881351807177,
+              111.30103164935464,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  65.32881164550781,
+                  111.30103302001953,
+                  0.220001220703125
+                ],
+                "semantic": 1,
+                "semantic_name": "Roads"
+              }
+            ],
+            "frame": 106394,
+            "decision": {
+              "status": "GroundedByGeometryProxy",
+              "reasons": [],
+              "selected": {
+                "xyz": [
+                  65.32881164550781,
+                  111.30103302001953,
+                  0.220001220703125
+                ],
+                "semantic": 1,
+                "semantic_name": "Roads"
+              },
+              "ground_levels": [
+                0.220001220703125
+              ],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              65.32807775976865,
+              112.38275639278645,
+              8.0
+            ],
+            "end": [
+              65.32807775976865,
+              112.38275639278645,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  65.32807922363281,
+                  112.38275909423828,
+                  0.32430174946784973
+                ],
+                "semantic": 2,
+                "semantic_name": "Sidewalks"
+              }
+            ],
+            "frame": 106395,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "NoCompatibleSurfaceAtDeclaredRoadLayer"
+              ],
+              "selected": null,
+              "ground_levels": [],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              66.52749387029444,
+              110.22012171365189,
+              8.0
+            ],
+            "end": [
+              66.52749387029444,
+              110.22012171365189,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  66.52749633789062,
+                  110.22012329101562,
+                  0.9461425542831421
+                ],
+                "semantic": 0,
+                "semantic_name": "NONE"
+              },
+              {
+                "xyz": [
+                  66.52749633789062,
+                  110.22012329101562,
+                  0.220001220703125
+                ],
+                "semantic": 1,
+                "semantic_name": "Roads"
+              }
+            ],
+            "frame": 106396,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "CoveredOrWrongTopSurface"
+              ],
+              "selected": {
+                "xyz": [
+                  66.52749633789062,
+                  110.22012329101562,
+                  0.220001220703125
+                ],
+                "semantic": 1,
+                "semantic_name": "Roads"
+              },
+              "ground_levels": [
+                0.220001220703125
+              ],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              66.52675811199131,
+              111.3018464570837,
+              8.0
+            ],
+            "end": [
+              66.52675811199131,
+              111.3018464570837,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  66.5267562866211,
+                  111.30184173583984,
+                  0.2199999988079071
+                ],
+                "semantic": 1,
+                "semantic_name": "Roads"
+              }
+            ],
+            "frame": 106397,
+            "decision": {
+              "status": "GroundedByGeometryProxy",
+              "reasons": [],
+              "selected": {
+                "xyz": [
+                  66.5267562866211,
+                  111.30184173583984,
+                  0.2199999988079071
+                ],
+                "semantic": 1,
+                "semantic_name": "Roads"
+              },
+              "ground_levels": [
+                0.2199999988079071
+              ],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              66.52602235368819,
+              112.3835712005155,
+              8.0
+            ],
+            "end": [
+              66.52602235368819,
+              112.3835712005155,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  66.5260238647461,
+                  112.38356018066406,
+                  0.32421019673347473
+                ],
+                "semantic": 2,
+                "semantic_name": "Sidewalks"
+              }
+            ],
+            "frame": 106398,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "NoCompatibleSurfaceAtDeclaredRoadLayer"
+              ],
+              "selected": null,
+              "ground_levels": [],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              67.72543846421398,
+              110.22093652138095,
+              8.0
+            ],
+            "end": [
+              67.72543846421398,
+              110.22093652138095,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  67.7254409790039,
+                  110.22093200683594,
+                  0.9461425542831421
+                ],
+                "semantic": 0,
+                "semantic_name": "NONE"
+              },
+              {
+                "xyz": [
+                  67.7254409790039,
+                  110.22093200683594,
+                  0.2199999988079071
+                ],
+                "semantic": 1,
+                "semantic_name": "Roads"
+              }
+            ],
+            "frame": 106399,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "CoveredOrWrongTopSurface"
+              ],
+              "selected": {
+                "xyz": [
+                  67.7254409790039,
+                  110.22093200683594,
+                  0.2199999988079071
+                ],
+                "semantic": 1,
+                "semantic_name": "Roads"
+              },
+              "ground_levels": [
+                0.2199999988079071
+              ],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              67.72470270591086,
+              111.30266126481276,
+              8.0
+            ],
+            "end": [
+              67.72470270591086,
+              111.30266126481276,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  67.72470092773438,
+                  111.30265045166016,
+                  0.2199999988079071
+                ],
+                "semantic": 1,
+                "semantic_name": "Roads"
+              }
+            ],
+            "frame": 106400,
+            "decision": {
+              "status": "GroundedByGeometryProxy",
+              "reasons": [],
+              "selected": {
+                "xyz": [
+                  67.72470092773438,
+                  111.30265045166016,
+                  0.2199999988079071
+                ],
+                "semantic": 1,
+                "semantic_name": "Roads"
+              },
+              "ground_levels": [
+                0.2199999988079071
+              ],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              67.72396694760774,
+              112.38438600824456,
+              8.0
+            ],
+            "end": [
+              67.72396694760774,
+              112.38438600824456,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  67.72396850585938,
+                  112.38438415527344,
+                  0.3241192698478699
+                ],
+                "semantic": 2,
+                "semantic_name": "Sidewalks"
+              }
+            ],
+            "frame": 106401,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "NoCompatibleSurfaceAtDeclaredRoadLayer"
+              ],
+              "selected": null,
+              "ground_levels": [],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              68.92338305813352,
+              110.22175132911,
+              8.0
+            ],
+            "end": [
+              68.92338305813352,
+              110.22175132911,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  68.92338562011719,
+                  110.22174835205078,
+                  0.9461425542831421
+                ],
+                "semantic": 0,
+                "semantic_name": "NONE"
+              },
+              {
+                "xyz": [
+                  68.92338562011719,
+                  110.22174835205078,
+                  0.2199999988079071
+                ],
+                "semantic": 1,
+                "semantic_name": "Roads"
+              }
+            ],
+            "frame": 106402,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "CoveredOrWrongTopSurface"
+              ],
+              "selected": {
+                "xyz": [
+                  68.92338562011719,
+                  110.22174835205078,
+                  0.2199999988079071
+                ],
+                "semantic": 1,
+                "semantic_name": "Roads"
+              },
+              "ground_levels": [
+                0.2199999988079071
+              ],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              68.9226472998304,
+              111.30347607254181,
+              8.0
+            ],
+            "end": [
+              68.9226472998304,
+              111.30347607254181,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  68.92264556884766,
+                  111.30347442626953,
+                  0.2199999988079071
+                ],
+                "semantic": 1,
+                "semantic_name": "Roads"
+              }
+            ],
+            "frame": 106403,
+            "decision": {
+              "status": "GroundedByGeometryProxy",
+              "reasons": [],
+              "selected": {
+                "xyz": [
+                  68.92264556884766,
+                  111.30347442626953,
+                  0.2199999988079071
+                ],
+                "semantic": 1,
+                "semantic_name": "Roads"
+              },
+              "ground_levels": [
+                0.2199999988079071
+              ],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              68.92191154152728,
+              112.38520081597362,
+              8.0
+            ],
+            "end": [
+              68.92191154152728,
+              112.38520081597362,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  68.92191314697266,
+                  112.38520050048828,
+                  5.994011878967285
+                ],
+                "semantic": 9,
+                "semantic_name": "Vegetation"
+              },
+              {
+                "xyz": [
+                  68.92191314697266,
+                  112.38520050048828,
+                  0.3240283131599426
+                ],
+                "semantic": 2,
+                "semantic_name": "Sidewalks"
+              }
+            ],
+            "frame": 106404,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "NoCompatibleSurfaceAtDeclaredRoadLayer"
+              ],
+              "selected": null,
+              "ground_levels": [],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          }
+        ],
+        "lane_checks": [
+          {
+            "ok": true,
+            "point": [
+              64.13160468245535,
+              110.21849209819378,
+              0.0
+            ],
+            "lane_type": "Driving",
+            "road_id": 12,
+            "lane_id": 1,
+            "s": 117.37677607850702,
+            "lane_width": 4.0,
+            "lateral": 0.8182777792096602,
+            "waypoint": {
+              "xyz": [
+                64.12189483642578,
+                109.40020751953125,
+                0.0
+              ],
+              "rotation": [
+                360.0,
+                0.038970947265625,
+                0.0
+              ],
+              "matrix": [
+                [
+                  0.9999997615814209,
+                  -0.0006801713025197387,
+                  -1.7484551051438757e-07,
+                  64.12189483642578
+                ],
+                [
+                  0.0006801713025197387,
+                  0.9999997615814209,
+                  -1.1892492546294875e-10,
+                  109.40020751953125
+                ],
+                [
+                  1.7484555314695172e-07,
+                  -0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            }
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              64.13086892415222,
+              111.30021684162558,
+              0.0
+            ]
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              64.1301331658491,
+              112.38194158505739,
+              0.0
+            ]
+          },
+          {
+            "ok": true,
+            "point": [
+              65.32954927637489,
+              110.21930690592283,
+              0.0
+            ],
+            "lane_type": "Driving",
+            "road_id": 12,
+            "lane_id": 1,
+            "s": 116.17883143739374,
+            "lane_width": 4.0,
+            "lateral": 0.81827624175634,
+            "waypoint": {
+              "xyz": [
+                65.31983947753906,
+                109.4010238647461,
+                0.0
+              ],
+              "rotation": [
+                360.0,
+                0.038970947265625,
+                0.0
+              ],
+              "matrix": [
+                [
+                  0.9999997615814209,
+                  -0.0006801713025197387,
+                  -1.7484551051438757e-07,
+                  65.31983947753906
+                ],
+                [
+                  0.0006801713025197387,
+                  0.9999997615814209,
+                  -1.1892492546294875e-10,
+                  109.4010238647461
+                ],
+                [
+                  1.7484555314695172e-07,
+                  -0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            }
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              65.32881351807177,
+              111.30103164935464,
+              0.0
+            ]
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              65.32807775976865,
+              112.38275639278645,
+              0.0
+            ]
+          },
+          {
+            "ok": true,
+            "point": [
+              66.52749387029444,
+              110.22012171365189,
+              0.0
+            ],
+            "lane_type": "Driving",
+            "road_id": 12,
+            "lane_id": 1,
+            "s": 114.98089442567499,
+            "lane_width": 4.0,
+            "lateral": 0.8182823285064366,
+            "waypoint": {
+              "xyz": [
+                66.51777648925781,
+                109.4018325805664,
+                0.0
+              ],
+              "rotation": [
+                360.0,
+                0.038970947265625,
+                0.0
+              ],
+              "matrix": [
+                [
+                  0.9999997615814209,
+                  -0.0006801713025197387,
+                  -1.7484551051438757e-07,
+                  66.51777648925781
+                ],
+                [
+                  0.0006801713025197387,
+                  0.9999997615814209,
+                  -1.1892492546294875e-10,
+                  109.4018325805664
+                ],
+                [
+                  1.7484555314695172e-07,
+                  -0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            }
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              66.52675811199131,
+              111.3018464570837,
+              0.0
+            ]
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              66.52602235368819,
+              112.3835712005155,
+              0.0
+            ]
+          },
+          {
+            "ok": true,
+            "point": [
+              67.72543846421398,
+              110.22093652138095,
+              0.0
+            ],
+            "lane_type": "Driving",
+            "road_id": 12,
+            "lane_id": 1,
+            "s": 113.78294215516718,
+            "lane_width": 4.0,
+            "lateral": 0.8182807962424116,
+            "waypoint": {
+              "xyz": [
+                67.71572875976562,
+                109.40264892578125,
+                0.0
+              ],
+              "rotation": [
+                360.0,
+                0.038970947265625,
+                0.0
+              ],
+              "matrix": [
+                [
+                  0.9999997615814209,
+                  -0.0006801713025197387,
+                  -1.7484551051438757e-07,
+                  67.71572875976562
+                ],
+                [
+                  0.0006801713025197387,
+                  0.9999997615814209,
+                  -1.1892492546294875e-10,
+                  109.40264892578125
+                ],
+                [
+                  1.7484555314695172e-07,
+                  -0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            }
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              67.72470270591086,
+              111.30266126481276,
+              0.0
+            ]
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              67.72396694760774,
+              112.38438600824456,
+              0.0
+            ]
+          },
+          {
+            "ok": true,
+            "point": [
+              68.92338305813352,
+              110.22175132911,
+              0.0
+            ],
+            "lane_type": "Driving",
+            "road_id": 12,
+            "lane_id": 1,
+            "s": 112.58500514344843,
+            "lane_width": 4.0,
+            "lateral": 0.818279253599796,
+            "waypoint": {
+              "xyz": [
+                68.91366577148438,
+                109.4034652709961,
+                0.0
+              ],
+              "rotation": [
+                360.0,
+                0.038970947265625,
+                0.0
+              ],
+              "matrix": [
+                [
+                  0.9999997615814209,
+                  -0.0006801713025197387,
+                  -1.7484551051438757e-07,
+                  68.91366577148438
+                ],
+                [
+                  0.0006801713025197387,
+                  0.9999997615814209,
+                  -1.1892492546294875e-10,
+                  109.4034652709961
+                ],
+                [
+                  1.7484555314695172e-07,
+                  -0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ]
+            }
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              68.9226472998304,
+              111.30347607254181,
+              0.0
+            ]
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              68.92191154152728,
+              112.38520081597362,
+              0.0
+            ]
+          }
+        ],
+        "request": null,
+        "requested_obb": null,
+        "static_competitors": [],
+        "asset": {
+          "blueprint": "vehicle.tesla.model3",
+          "category": "vehicle",
+          "extent": [
+            2.3958897590637207,
+            1.081725001335144,
+            0.7438300251960754
+          ],
+          "local_box_matrix": [
+            [
+              0.9999999999999999,
+              -9.437005823596974e-19,
+              0.0,
+              0.02937499992543735
+            ],
+            [
+              9.100608012083908e-18,
+              0.9999999999999999,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.7358593344688416
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "dimension_source": {
+            "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_development_00/evaluator/present_sidecar.json",
+            "bytes": 380415,
+            "sha256": "f6f748ab89c7cfe8e87c1358f87138a6ff5ff5e06d39a917fc73cf779ab4f620"
+          }
+        },
+        "waypoint": {
+          "xyz": [
+            66.49867248535156,
+            109.40182495117188,
+            0.0
+          ],
+          "rotation": [
+            360.0,
+            0.038970947265625,
+            0.0
+          ],
+          "matrix": [
+            [
+              0.9999997615814209,
+              -0.0006801713025197387,
+              -1.7484551051438757e-07,
+              66.49867248535156
+            ],
+            [
+              0.0006801713025197387,
+              0.9999997615814209,
+              -1.1892492546294875e-10,
+              109.40182495117188
+            ],
+            [
+              1.7484555314695172e-07,
+              -0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "declared_region": {
+          "lanes": [
+            "Driving",
+            "Parking"
+          ],
+          "semantics": [
+            1,
+            24
+          ],
+          "scenario": "lane-aligned stopped vehicle"
+        },
+        "no_fallback": true
+      },
+      "passed": true
+    },
+    {
+      "name": "NoValidRayHit",
+      "kind": "ActualCARLAQuery_NoActorSpawn",
+      "map": "Town02",
+      "result": {
+        "status": "GroundSupportUnknown",
+        "reasons": [
+          "NoRayHit"
+        ],
+        "selected": null,
+        "raw": {
+          "start": [
+            10000,
+            10000,
+            10
+          ],
+          "end": [
+            10000,
+            10000,
+            -20
+          ],
+          "hits": [],
+          "frame": 106405
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "StaticBuildingOverlap",
+      "kind": "ActualCARLAQuery_NoActorSpawn",
+      "map": "Town02",
+      "result": {
+        "status": "Rejected",
+        "reasons": [
+          "FootprintOutsideAllowedRegion",
+          "NoCompatibleSurfaceAtDeclaredRoadLayer"
+        ],
+        "rays": [
+          {
+            "start": [
+              21.764838706503202,
+              157.57496029887736,
+              8.0
+            ],
+            "end": [
+              21.764838706503202,
+              157.57496029887736,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  21.76483917236328,
+                  157.57496643066406,
+                  8.0
+                ],
+                "semantic": 3,
+                "semantic_name": "Buildings"
+              },
+              {
+                "xyz": [
+                  21.76483917236328,
+                  157.57496643066406,
+                  0.29999998211860657
+                ],
+                "semantic": 0,
+                "semantic_name": "NONE"
+              }
+            ],
+            "frame": 106406,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "NoCompatibleSurfaceAtDeclaredRoadLayer"
+              ],
+              "selected": null,
+              "ground_levels": [],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              21.764102948200076,
+              158.65668504230916,
+              8.0
+            ],
+            "end": [
+              21.764102948200076,
+              158.65668504230916,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  21.764102935791016,
+                  158.6566925048828,
+                  8.0
+                ],
+                "semantic": 3,
+                "semantic_name": "Buildings"
+              },
+              {
+                "xyz": [
+                  21.764102935791016,
+                  158.6566925048828,
+                  0.29999998211860657
+                ],
+                "semantic": 0,
+                "semantic_name": "NONE"
+              }
+            ],
+            "frame": 106407,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "NoCompatibleSurfaceAtDeclaredRoadLayer"
+              ],
+              "selected": null,
+              "ground_levels": [],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              21.76336718989695,
+              159.73840978574097,
+              8.0
+            ],
+            "end": [
+              21.76336718989695,
+              159.73840978574097,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  21.76336669921875,
+                  159.73838806152344,
+                  8.0
+                ],
+                "semantic": 3,
+                "semantic_name": "Buildings"
+              },
+              {
+                "xyz": [
+                  21.76336669921875,
+                  159.73838806152344,
+                  0.29999998211860657
+                ],
+                "semantic": 0,
+                "semantic_name": "NONE"
+              }
+            ],
+            "frame": 106408,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "NoCompatibleSurfaceAtDeclaredRoadLayer"
+              ],
+              "selected": null,
+              "ground_levels": [],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              22.962783300422746,
+              157.57577510660641,
+              8.0
+            ],
+            "end": [
+              22.962783300422746,
+              157.57577510660641,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  22.96278190612793,
+                  157.57577514648438,
+                  8.0
+                ],
+                "semantic": 3,
+                "semantic_name": "Buildings"
+              },
+              {
+                "xyz": [
+                  22.96278190612793,
+                  157.57577514648438,
+                  0.2999951243400574
+                ],
+                "semantic": 0,
+                "semantic_name": "NONE"
+              }
+            ],
+            "frame": 106409,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "NoCompatibleSurfaceAtDeclaredRoadLayer"
+              ],
+              "selected": null,
+              "ground_levels": [],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              22.96204754211962,
+              158.65749985003822,
+              8.0
+            ],
+            "end": [
+              22.96204754211962,
+              158.65749985003822,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  22.962047576904297,
+                  158.65750122070312,
+                  8.0
+                ],
+                "semantic": 3,
+                "semantic_name": "Buildings"
+              },
+              {
+                "xyz": [
+                  22.962047576904297,
+                  158.65750122070312,
+                  0.29999998211860657
+                ],
+                "semantic": 0,
+                "semantic_name": "NONE"
+              }
+            ],
+            "frame": 106410,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "NoCompatibleSurfaceAtDeclaredRoadLayer"
+              ],
+              "selected": null,
+              "ground_levels": [],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              22.961311783816495,
+              159.73922459347003,
+              8.0
+            ],
+            "end": [
+              22.961311783816495,
+              159.73922459347003,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  22.96131134033203,
+                  159.73922729492188,
+                  8.0
+                ],
+                "semantic": 3,
+                "semantic_name": "Buildings"
+              },
+              {
+                "xyz": [
+                  22.96131134033203,
+                  159.73922729492188,
+                  0.29999998211860657
+                ],
+                "semantic": 0,
+                "semantic_name": "NONE"
+              }
+            ],
+            "frame": 106411,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "NoCompatibleSurfaceAtDeclaredRoadLayer"
+              ],
+              "selected": null,
+              "ground_levels": [],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              24.16072789434229,
+              157.57658991433547,
+              8.0
+            ],
+            "end": [
+              24.16072789434229,
+              157.57658991433547,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  24.16072654724121,
+                  157.5765838623047,
+                  8.0
+                ],
+                "semantic": 3,
+                "semantic_name": "Buildings"
+              },
+              {
+                "xyz": [
+                  24.16072654724121,
+                  157.5765838623047,
+                  0.29999998211860657
+                ],
+                "semantic": 0,
+                "semantic_name": "NONE"
+              }
+            ],
+            "frame": 106412,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "NoCompatibleSurfaceAtDeclaredRoadLayer"
+              ],
+              "selected": null,
+              "ground_levels": [],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              24.159992136039165,
+              158.65831465776728,
+              8.0
+            ],
+            "end": [
+              24.159992136039165,
+              158.65831465776728,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  24.159992218017578,
+                  158.65830993652344,
+                  8.0
+                ],
+                "semantic": 3,
+                "semantic_name": "Buildings"
+              },
+              {
+                "xyz": [
+                  24.159992218017578,
+                  158.65830993652344,
+                  0.2999951243400574
+                ],
+                "semantic": 0,
+                "semantic_name": "NONE"
+              }
+            ],
+            "frame": 106413,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "NoCompatibleSurfaceAtDeclaredRoadLayer"
+              ],
+              "selected": null,
+              "ground_levels": [],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              24.15925637773604,
+              159.74003940119908,
+              8.0
+            ],
+            "end": [
+              24.15925637773604,
+              159.74003940119908,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  24.15925407409668,
+                  159.7400360107422,
+                  8.0
+                ],
+                "semantic": 3,
+                "semantic_name": "Buildings"
+              },
+              {
+                "xyz": [
+                  24.15925407409668,
+                  159.7400360107422,
+                  0.30000486969947815
+                ],
+                "semantic": 0,
+                "semantic_name": "NONE"
+              }
+            ],
+            "frame": 106414,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "NoCompatibleSurfaceAtDeclaredRoadLayer"
+              ],
+              "selected": null,
+              "ground_levels": [],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              25.358672488261835,
+              157.57740472206453,
+              8.0
+            ],
+            "end": [
+              25.358672488261835,
+              157.57740472206453,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  25.358671188354492,
+                  157.57740783691406,
+                  8.0
+                ],
+                "semantic": 3,
+                "semantic_name": "Buildings"
+              },
+              {
+                "xyz": [
+                  25.358671188354492,
+                  157.57740783691406,
+                  0.29999998211860657
+                ],
+                "semantic": 0,
+                "semantic_name": "NONE"
+              }
+            ],
+            "frame": 106415,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "NoCompatibleSurfaceAtDeclaredRoadLayer"
+              ],
+              "selected": null,
+              "ground_levels": [],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              25.35793672995871,
+              158.65912946549633,
+              8.0
+            ],
+            "end": [
+              25.35793672995871,
+              158.65912946549633,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  25.35793685913086,
+                  158.6591339111328,
+                  8.0
+                ],
+                "semantic": 3,
+                "semantic_name": "Buildings"
+              },
+              {
+                "xyz": [
+                  25.35793685913086,
+                  158.6591339111328,
+                  0.29999998211860657
+                ],
+                "semantic": 0,
+                "semantic_name": "NONE"
+              }
+            ],
+            "frame": 106416,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "NoCompatibleSurfaceAtDeclaredRoadLayer"
+              ],
+              "selected": null,
+              "ground_levels": [],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              25.357200971655583,
+              159.74085420892814,
+              8.0
+            ],
+            "end": [
+              25.357200971655583,
+              159.74085420892814,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  25.35719871520996,
+                  159.74085998535156,
+                  8.0
+                ],
+                "semantic": 3,
+                "semantic_name": "Buildings"
+              },
+              {
+                "xyz": [
+                  25.35719871520996,
+                  159.74085998535156,
+                  0.30000486969947815
+                ],
+                "semantic": 0,
+                "semantic_name": "NONE"
+              }
+            ],
+            "frame": 106417,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "NoCompatibleSurfaceAtDeclaredRoadLayer"
+              ],
+              "selected": null,
+              "ground_levels": [],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              26.55661708218138,
+              157.57821952979359,
+              8.0
+            ],
+            "end": [
+              26.55661708218138,
+              157.57821952979359,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  26.556617736816406,
+                  157.57821655273438,
+                  8.0
+                ],
+                "semantic": 3,
+                "semantic_name": "Buildings"
+              },
+              {
+                "xyz": [
+                  26.556617736816406,
+                  157.57821655273438,
+                  0.29998961091041565
+                ],
+                "semantic": 0,
+                "semantic_name": "NONE"
+              }
+            ],
+            "frame": 106418,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "NoCompatibleSurfaceAtDeclaredRoadLayer"
+              ],
+              "selected": null,
+              "ground_levels": [],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              26.555881323878253,
+              158.6599442732254,
+              8.0
+            ],
+            "end": [
+              26.555881323878253,
+              158.6599442732254,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  26.55588150024414,
+                  158.65994262695312,
+                  8.0
+                ],
+                "semantic": 3,
+                "semantic_name": "Buildings"
+              },
+              {
+                "xyz": [
+                  26.55588150024414,
+                  158.65994262695312,
+                  0.29999998211860657
+                ],
+                "semantic": 0,
+                "semantic_name": "NONE"
+              }
+            ],
+            "frame": 106419,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "NoCompatibleSurfaceAtDeclaredRoadLayer"
+              ],
+              "selected": null,
+              "ground_levels": [],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          },
+          {
+            "start": [
+              26.555145565575128,
+              159.7416690166572,
+              8.0
+            ],
+            "end": [
+              26.555145565575128,
+              159.7416690166572,
+              -15.0
+            ],
+            "hits": [
+              {
+                "xyz": [
+                  26.555145263671875,
+                  159.74166870117188,
+                  8.0
+                ],
+                "semantic": 3,
+                "semantic_name": "Buildings"
+              },
+              {
+                "xyz": [
+                  26.555145263671875,
+                  159.74166870117188,
+                  0.30000486969947815
+                ],
+                "semantic": 0,
+                "semantic_name": "NONE"
+              }
+            ],
+            "frame": 106420,
+            "decision": {
+              "status": "Rejected",
+              "reasons": [
+                "NoCompatibleSurfaceAtDeclaredRoadLayer"
+              ],
+              "selected": null,
+              "ground_levels": [],
+              "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+            }
+          }
+        ],
+        "lane_checks": [
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              21.764838706503202,
+              157.57496029887736,
+              0.0
+            ]
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              21.764102948200076,
+              158.65668504230916,
+              0.0
+            ]
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              21.76336718989695,
+              159.73840978574097,
+              0.0
+            ]
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              22.962783300422746,
+              157.57577510660641,
+              0.0
+            ]
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              22.96204754211962,
+              158.65749985003822,
+              0.0
+            ]
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              22.961311783816495,
+              159.73922459347003,
+              0.0
+            ]
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              24.16072789434229,
+              157.57658991433547,
+              0.0
+            ]
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              24.159992136039165,
+              158.65831465776728,
+              0.0
+            ]
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              24.15925637773604,
+              159.74003940119908,
+              0.0
+            ]
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              25.358672488261835,
+              157.57740472206453,
+              0.0
+            ]
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              25.35793672995871,
+              158.65912946549633,
+              0.0
+            ]
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              25.357200971655583,
+              159.74085420892814,
+              0.0
+            ]
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              26.55661708218138,
+              157.57821952979359,
+              0.0
+            ]
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              26.555881323878253,
+              158.6599442732254,
+              0.0
+            ]
+          },
+          {
+            "ok": false,
+            "reason": "NoLaneAtFootprint",
+            "point": [
+              26.555145565575128,
+              159.7416690166572,
+              0.0
+            ]
+          }
+        ],
+        "request": null,
+        "requested_obb": null,
+        "static_competitors": [],
+        "asset": {
+          "blueprint": "vehicle.tesla.model3",
+          "category": "vehicle",
+          "extent": [
+            2.3958897590637207,
+            1.081725001335144,
+            0.7438300251960754
+          ],
+          "local_box_matrix": [
+            [
+              0.9999999999999999,
+              -9.437005823596974e-19,
+              0.0,
+              0.02937499992543735
+            ],
+            [
+              9.100608012083908e-18,
+              0.9999999999999999,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.7358593344688416
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "dimension_source": {
+            "path": "/root/gpufree-data/hs-drive-experiments/m8e-groundtruth/capture/m8e_development_00/evaluator/present_sidecar.json",
+            "bytes": 380415,
+            "sha256": "f6f748ab89c7cfe8e87c1358f87138a6ff5ff5e06d39a917fc73cf779ab4f620"
+          }
+        },
+        "waypoint": {
+          "xyz": [
+            66.49867248535156,
+            109.40182495117188,
+            0.0
+          ],
+          "rotation": [
+            360.0,
+            0.038970947265625,
+            0.0
+          ],
+          "matrix": [
+            [
+              0.9999997615814209,
+              -0.0006801713025197387,
+              -1.7484551051438757e-07,
+              66.49867248535156
+            ],
+            [
+              0.0006801713025197387,
+              0.9999997615814209,
+              -1.1892492546294875e-10,
+              109.40182495117188
+            ],
+            [
+              1.7484555314695172e-07,
+              -0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "declared_region": {
+          "lanes": [
+            "Driving",
+            "Parking"
+          ],
+          "semantics": [
+            1,
+            24
+          ],
+          "scenario": "lane-aligned stopped vehicle"
+        },
+        "no_fallback": true
+      },
+      "passed": true
+    },
+    {
+      "name": "Frozen_target_0",
+      "kind": "OfflineHistoricalEvidence_NotNewCARLA",
+      "source": {
+        "path": "reports/m8f_ray_hit_and_contact_audit.json",
+        "bytes": 588211,
+        "sha256": "b2870e812e4428abba55147a332e3b47deb101bbe0757f64647e920685e4a5f9"
+      },
+      "decisions": [
+        {
+          "status": "GroundedByGeometryProxy",
+          "reasons": [],
+          "selected": {
+            "xyz": [
+              64.13289642333984,
+              108.3184814453125,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              64.13215637207031,
+              109.40021514892578,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              64.13142395019531,
+              110.48194122314453,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "GroundedByGeometryProxy",
+          "reasons": [],
+          "selected": {
+            "xyz": [
+              65.33084106445312,
+              108.31930541992188,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              65.3301010131836,
+              109.40103149414062,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              65.3293685913086,
+              110.48274993896484,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "GroundedByGeometryProxy",
+          "reasons": [],
+          "selected": {
+            "xyz": [
+              66.5287857055664,
+              108.32011413574219,
+              0.220001220703125
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.220001220703125
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              66.52804565429688,
+              109.40184020996094,
+              0.220001220703125
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.220001220703125
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              66.52731323242188,
+              110.48355865478516,
+              0.220001220703125
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.220001220703125
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "GroundedByGeometryProxy",
+          "reasons": [],
+          "selected": {
+            "xyz": [
+              67.72673034667969,
+              108.32093811035156,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              67.72599029541016,
+              109.40265655517578,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              67.72525787353516,
+              110.48438262939453,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "GroundedByGeometryProxy",
+          "reasons": [],
+          "selected": {
+            "xyz": [
+              68.92467498779297,
+              108.32174682617188,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              68.92393493652344,
+              109.40347290039062,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              68.92320251464844,
+              110.48519134521484,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        }
+      ],
+      "static_competitors": [],
+      "passed": true
+    },
+    {
+      "name": "Frozen_target_1",
+      "kind": "OfflineHistoricalEvidence_NotNewCARLA",
+      "source": {
+        "path": "reports/m8f_ray_hit_and_contact_audit.json",
+        "bytes": 588211,
+        "sha256": "b2870e812e4428abba55147a332e3b47deb101bbe0757f64647e920685e4a5f9"
+      },
+      "decisions": [
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              69.30818939208984,
+              113.51605224609375,
+              0.3239990174770355
+            ],
+            "semantic": 2,
+            "semantic_name": "Sidewalks"
+          },
+          "ground_levels": [
+            0.3239990174770355
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              69.30806732177734,
+              113.70372772216797,
+              0.3239990174770355
+            ],
+            "semantic": 2,
+            "semantic_name": "Sidewalks"
+          },
+          "ground_levels": [
+            0.3239990174770355
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              69.30793762207031,
+              113.89140319824219,
+              0.3239990174770355
+            ],
+            "semantic": 2,
+            "semantic_name": "Sidewalks"
+          },
+          "ground_levels": [
+            0.3239990174770355
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              69.40203094482422,
+              113.51611328125,
+              0.32399168610572815
+            ],
+            "semantic": 2,
+            "semantic_name": "Sidewalks"
+          },
+          "ground_levels": [
+            0.32399168610572815
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              69.40190124511719,
+              113.70379638671875,
+              0.32399168610572815
+            ],
+            "semantic": 2,
+            "semantic_name": "Sidewalks"
+          },
+          "ground_levels": [
+            0.32399168610572815
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              69.40177917480469,
+              113.89147186279297,
+              0.32399168610572815
+            ],
+            "semantic": 2,
+            "semantic_name": "Sidewalks"
+          },
+          "ground_levels": [
+            0.32399168610572815
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              69.4958724975586,
+              113.51618194580078,
+              0.3239843547344208
+            ],
+            "semantic": 2,
+            "semantic_name": "Sidewalks"
+          },
+          "ground_levels": [
+            0.3239843547344208
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              69.49574279785156,
+              113.703857421875,
+              0.3239843547344208
+            ],
+            "semantic": 2,
+            "semantic_name": "Sidewalks"
+          },
+          "ground_levels": [
+            0.3239843547344208
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              69.49561309814453,
+              113.89153289794922,
+              0.3239843547344208
+            ],
+            "semantic": 2,
+            "semantic_name": "Sidewalks"
+          },
+          "ground_levels": [
+            0.3239843547344208
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              69.58970642089844,
+              113.5162353515625,
+              0.3239770531654358
+            ],
+            "semantic": 2,
+            "semantic_name": "Sidewalks"
+          },
+          "ground_levels": [
+            0.3239770531654358
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              69.58958435058594,
+              113.70391082763672,
+              0.3239770531654358
+            ],
+            "semantic": 2,
+            "semantic_name": "Sidewalks"
+          },
+          "ground_levels": [
+            0.3239770531654358
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              69.5894546508789,
+              113.8916015625,
+              0.3239770531654358
+            ],
+            "semantic": 2,
+            "semantic_name": "Sidewalks"
+          },
+          "ground_levels": [
+            0.3239770531654358
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              69.68354797363281,
+              113.51630401611328,
+              0.32397031784057617
+            ],
+            "semantic": 2,
+            "semantic_name": "Sidewalks"
+          },
+          "ground_levels": [
+            0.32397031784057617
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              69.68341827392578,
+              113.7039794921875,
+              0.32397031784057617
+            ],
+            "semantic": 2,
+            "semantic_name": "Sidewalks"
+          },
+          "ground_levels": [
+            0.32397031784057617
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "Rejected",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "selected": {
+            "xyz": [
+              69.68329620361328,
+              113.89165496826172,
+              0.32397031784057617
+            ],
+            "semantic": 2,
+            "semantic_name": "Sidewalks"
+          },
+          "ground_levels": [
+            0.32397031784057617
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        }
+      ],
+      "static_competitors": [],
+      "passed": true
+    },
+    {
+      "name": "Frozen_target_2",
+      "kind": "OfflineHistoricalEvidence_NotNewCARLA",
+      "source": {
+        "path": "reports/m8f_ray_hit_and_contact_audit.json",
+        "bytes": 588211,
+        "sha256": "b2870e812e4428abba55147a332e3b47deb101bbe0757f64647e920685e4a5f9"
+      },
+      "decisions": [
+        {
+          "status": "GroundedByGeometryProxy",
+          "reasons": [],
+          "selected": {
+            "xyz": [
+              17.340656280517578,
+              110.91098022460938,
+              0.220001220703125
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.220001220703125
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "GroundedByGeometryProxy",
+          "reasons": [],
+          "selected": {
+            "xyz": [
+              17.341278076171875,
+              111.08285522460938,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "GroundedByGeometryProxy",
+          "reasons": [],
+          "selected": {
+            "xyz": [
+              17.34189796447754,
+              111.25473022460938,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "GroundedByGeometryProxy",
+          "reasons": [],
+          "selected": {
+            "xyz": [
+              17.426593780517578,
+              110.91068267822266,
+              0.220001220703125
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.220001220703125
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "GroundedByGeometryProxy",
+          "reasons": [],
+          "selected": {
+            "xyz": [
+              17.427213668823242,
+              111.08255767822266,
+              0.220001220703125
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.220001220703125
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "GroundedByGeometryProxy",
+          "reasons": [],
+          "selected": {
+            "xyz": [
+              17.42783546447754,
+              111.25443267822266,
+              0.220001220703125
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.220001220703125
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "GroundedByGeometryProxy",
+          "reasons": [],
+          "selected": {
+            "xyz": [
+              17.512531280517578,
+              110.91036987304688,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "GroundedByGeometryProxy",
+          "reasons": [],
+          "selected": {
+            "xyz": [
+              17.513151168823242,
+              111.08224487304688,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "GroundedByGeometryProxy",
+          "reasons": [],
+          "selected": {
+            "xyz": [
+              17.513771057128906,
+              111.25411987304688,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "GroundedByGeometryProxy",
+          "reasons": [],
+          "selected": {
+            "xyz": [
+              17.598466873168945,
+              110.9100570678711,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "GroundedByGeometryProxy",
+          "reasons": [],
+          "selected": {
+            "xyz": [
+              17.599088668823242,
+              111.0819320678711,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "GroundedByGeometryProxy",
+          "reasons": [],
+          "selected": {
+            "xyz": [
+              17.599708557128906,
+              111.2538070678711,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "GroundedByGeometryProxy",
+          "reasons": [],
+          "selected": {
+            "xyz": [
+              17.684404373168945,
+              110.90975189208984,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "GroundedByGeometryProxy",
+          "reasons": [],
+          "selected": {
+            "xyz": [
+              17.68502426147461,
+              111.08162689208984,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        },
+        {
+          "status": "GroundedByGeometryProxy",
+          "reasons": [],
+          "selected": {
+            "xyz": [
+              17.685646057128906,
+              111.25350189208984,
+              0.2199999988079071
+            ],
+            "semantic": 1,
+            "semantic_name": "Roads"
+          },
+          "ground_levels": [
+            0.2199999988079071
+          ],
+          "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+        }
+      ],
+      "static_competitors": [
+        {
+          "entity_id": 17832375485195025676,
+          "name": "InstancedFoliageActor_0_Inst_185_70",
+          "semantic": [
+            9
+          ],
+          "distance_m": 0,
+          "geometry": "EnvironmentOBBConservative_NotMesh"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "Water_Actor:717",
+      "kind": "ActualCARLAQuery_NoActorSpawn",
+      "map": "Town04",
+      "raw": {
+        "start": [
+          353.6449981413889,
+          157.363918808959,
+          8.375351518392563
+        ],
+        "end": [
+          353.6449981413889,
+          157.363918808959,
+          -19.624648481607437
+        ],
+        "hits": [
+          {
+            "xyz": [
+              353.6449890136719,
+              157.36392211914062,
+              -3.596621513366699
+            ],
+            "semantic": 0,
+            "semantic_name": "NONE"
+          },
+          {
+            "xyz": [
+              353.6449890136719,
+              157.36392211914062,
+              -7.999998092651367
+            ],
+            "semantic": 23,
+            "semantic_name": "Water"
+          }
+        ],
+        "frame": 106425
+      },
+      "result": {
+        "status": "Rejected",
+        "reasons": [
+          "WaterSurface",
+          "NoCompatibleSurfaceAtDeclaredRoadLayer"
+        ],
+        "selected": null,
+        "ground_levels": [],
+        "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+      },
+      "passed": true
+    },
+    {
+      "name": "Water_Actor:715",
+      "kind": "ActualCARLAQuery_NoActorSpawn",
+      "map": "Town04",
+      "raw": {
+        "start": [
+          381.5843811035156,
+          136.56312561035156,
+          8.198164075613022
+        ],
+        "end": [
+          381.5843811035156,
+          136.56312561035156,
+          -19.801835924386978
+        ],
+        "hits": [
+          {
+            "xyz": [
+              381.5843811035156,
+              136.56312561035156,
+              7.844966888427734
+            ],
+            "semantic": 9,
+            "semantic_name": "Vegetation"
+          },
+          {
+            "xyz": [
+              381.5843811035156,
+              136.56312561035156,
+              -2.6602745056152344
+            ],
+            "semantic": 0,
+            "semantic_name": "NONE"
+          },
+          {
+            "xyz": [
+              381.5843811035156,
+              136.56312561035156,
+              -7.999998569488525
+            ],
+            "semantic": 23,
+            "semantic_name": "Water"
+          }
+        ],
+        "frame": 106426
+      },
+      "result": {
+        "status": "Rejected",
+        "reasons": [
+          "WaterSurface",
+          "NoCompatibleSurfaceAtDeclaredRoadLayer"
+        ],
+        "selected": null,
+        "ground_levels": [],
+        "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+      },
+      "passed": true
+    },
+    {
+      "name": "MultipleGroundLayers",
+      "kind": "SyntheticGeometry",
+      "result": {
+        "status": "Rejected",
+        "reasons": [
+          "MultipleGroundLayers"
+        ],
+        "selected": {
+          "xyz": [
+            0,
+            0,
+            0
+          ],
+          "semantic": 1
+        },
+        "ground_levels": [
+          0,
+          4
+        ],
+        "selection_reason": "Unique permitted semantic layer within frozen waypoint-Z tolerance; no fallback"
+      },
+      "passed": true
+    }
+  ],
+  "all_pass": true,
+  "timestamp_controls": "tests/test_m8e_source_time.py, actualM8H1sensor capture NotRun",
+  "unchanged_validator": [
+    {
+      "path": "simulator/m8f_placement.py",
+      "bytes": 7101,
+      "sha256": "5601192d9ada875e78549929e5dfc1a93796abeaddbe14ef3ab32a9bb023abae"
+    },
+    {
+      "path": "datasets/m8f_quality.py",
+      "bytes": 2546,
+      "sha256": "4371b46bc984b07388af574c75e51208aab5d17e9f4538e1196f61ecf3bf684f"
+    }
+  ]
+}
