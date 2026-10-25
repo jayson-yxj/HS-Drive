@@ -1,0 +1,2573 @@
+{
+  "kind": "FinalSourceAndEvidenceManifest",
+  "base": "9af1cb20f1d4fe81b25b80d37001a04a18ae985d",
+  "execution_commit": "9af1cb20f1d4fe81b25b80d37001a04a18ae985d",
+  "sources": {
+    "configs/m8d/protocol.json": "e5b5634171ddf354b32c697c870935263d411db3301bbd215c309f4dc5c19759",
+    "tools/m8d_common.py": "ddba8464d33e6730d2bb4eb99850a5e919ee92b55a7f346b8ec03c9527bc3854",
+    "tools/m8d_evaluate.py": "99218a2dbfcafe2730542bf87e192cffb94a840d06fb983ba0ecb8cb54c9c301",
+    "tools/m8d_figures.py": "26f29fe331616ac8c3c86101538b226435afc4976f31503dbc2b44bec820c961",
+    "tools/m8d_finalize.py": "680ca45efb51716cb320147a0a643f5b80dd58e56df41badfcc22da81856f714",
+    "tools/m8d_gpu.py": "7994a0d94d328ead770f10c923feea5430fdea6d730e069229c1059f3d1ec001",
+    "tools/m8d_output_audit.py": "61dad312c67c7bf3315a508e7f6d3737660d206c2ff9c8c258e25b70bde3f8a5",
+    "tools/m8d_source_audit.py": "cf04cf1c892fe59e3d422bd34452e2f309667e1dc6c424b0c5788b0ddfdabc31",
+    "tools/m8d_supplement.py": "54d1ffdce553be21d76dde71aa8cc21c57dae3bb07515ab48444dd8c497fe2d4",
+    "datasets/m8d_camera_order.py": "1d4150128f30928b68a0c43baa9465b8e767fc59057fafb47d20a5d0158815ba",
+    "diagnostics/m8d_evaluation.py": "b7e43b5b54c5c98907a26e6c9cf2bb66138179956c5e7e88dfa75e415a9be0de",
+    "tests/test_m8d_evaluation.py": "1b699057ea9e30b5724812dbee0ed624c4994dcfdd2c136caefe7d32dc4b40a6",
+    "tests/test_m8d_evidence.py": "d743225d983f94ea343e928be87c9e97a934761f98ab9f23f3f835869e2be7a1",
+    "tests/test_m8d_order.py": "d5323292e0c087d6ce6351a0e3322bbc8e5f12aeeb22e6b96d07c556badee7d1"
+  },
+  "checkpoint_sha256": "16d8a4875c36e7d1cba75b357901ff031b18d9d9374f12780b9b72cc621cefad",
+  "petr_commit": "f7525f93467a33707ef401c587a52d5e7b34de74",
+  "training_steps": 0,
+  "visual_control": false,
+  "files": [
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/contract/run.json",
+      "bytes": 2886837,
+      "sha256": "069540ea554fd124d00dd8e2bdcfa37fcddc7f88edca67298587af1f297f98f3"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/evaluation.json",
+      "bytes": 6417323,
+      "sha256": "9d0b9ef6e0b81e92b8cc77c9342dba022be65463b980a05a5fe3ae678ace04c6"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/run.json",
+      "bytes": 439417,
+      "sha256": "2312029502c7eed3074b02c5dc68f9dfa7464a28f5747ba13808040a6fb1cadb"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s000_A.json",
+      "bytes": 175223,
+      "sha256": "65a7de06959147e02f9a5b734a078077df58dc6262d741841dd91857f37fadf1"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s000_B.json",
+      "bytes": 175216,
+      "sha256": "69d9dc59017909b0521129aa5c3849ec12130a9ae7df6f5495edc1eeeb7d5470"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s001_A.json",
+      "bytes": 174941,
+      "sha256": "c7af1d3997e9958d4939f91b33561c109d878a9735454723388327b644764254"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s001_B.json",
+      "bytes": 175103,
+      "sha256": "b1ced589ce4d600dd7bcba89a137d8675fa93c15dd5f6727972c750c486855c1"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s002_A.json",
+      "bytes": 175766,
+      "sha256": "da1b07e4c405e9547ff44717f8697c9a43f7397a033a076e522a873de981e602"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s002_B.json",
+      "bytes": 175839,
+      "sha256": "0ad3d1ea0a1ab3db0cc797cae80f1047db8089b84c0cfb6322601129f21a9e8d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s003_A.json",
+      "bytes": 176647,
+      "sha256": "393e95dc86136a3cb9c48c5a8f89f7e186b3a790e22af33bc2a0ebff57139a5b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s003_B.json",
+      "bytes": 176759,
+      "sha256": "e7437b74196195e3587bf77df127ec09cb4b02f637b34ed2fead4cbe1cceb021"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s004_A.json",
+      "bytes": 176353,
+      "sha256": "2df20c1e0f578aee18b67fb06c2ce255badf233b48c569d229dfef358a8379e0"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s004_B.json",
+      "bytes": 176496,
+      "sha256": "d1a7f634be500c9ea833e099a587440c5e6813d376db5e88d278bb94163b703a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s005_A.json",
+      "bytes": 175652,
+      "sha256": "5f7870d23473c915bae678a6fef4152785d94b2e33bcdee99144aa1deece6359"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s005_B.json",
+      "bytes": 175584,
+      "sha256": "f9173555d4a3c3a7d0c87ac82da42463d60439fb55066038d600053f2d43e9f5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s006_A.json",
+      "bytes": 175461,
+      "sha256": "46dab24315d56d1ae10c3de32d48f348eb0efbb17c9e2d03865538c0ccccae42"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s006_B.json",
+      "bytes": 175611,
+      "sha256": "f6b6c415ad22d525895af2dd2ac82b359348556f46f237a00dd5588b5c53c2bb"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s007_A.json",
+      "bytes": 176423,
+      "sha256": "937459bdc0c1c14973b65e064e52ddfffdcb7f7e5b4cee64e45ece137c448c45"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s007_B.json",
+      "bytes": 176699,
+      "sha256": "dffabbe9f164d51dc5d6c9c566052a244782a9834aab0843a3a7975aaa14a1eb"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s008_A.json",
+      "bytes": 174574,
+      "sha256": "5c5150e7792109baa45bf5e0d8409b238b7944e50cd3aba45fc9450a3fbefa72"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s008_B.json",
+      "bytes": 174699,
+      "sha256": "177b8a5e138e00bed95a9935a6012127860400a1d678306f3a2925bb9a2e3526"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s009_A.json",
+      "bytes": 174900,
+      "sha256": "023a16a2f3d25e625df487d9fad287b19a72856869603af4a901a6025b5bca39"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s009_B.json",
+      "bytes": 175008,
+      "sha256": "6c566297c2a947868dd6caa7a1bb802b05d82109baeeed1092cd9fa3e6ea9bbb"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s010_A.json",
+      "bytes": 176316,
+      "sha256": "643fe690baf4bdbab0c743d26721d03cf2e95a5dd1895a3614e15c059d5c9759"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s010_B.json",
+      "bytes": 176145,
+      "sha256": "a385aed3b73c21fe26987490caf87ff08ea9cabe9650b9495a6fb0701933912e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s011_A.json",
+      "bytes": 175697,
+      "sha256": "bba55c2e311d6d2e9de9b1ad31eb7345057ae9a5e55498bb56482e12dfb4b76a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s011_B.json",
+      "bytes": 175657,
+      "sha256": "9c4b63257be74558663dfaec4f7d59683d96198add78e7708363cf2c6127df66"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s012_A.json",
+      "bytes": 174976,
+      "sha256": "dd2796687fe108a8d5473c5ea26ed5c5c4e9fd8fcf093a45fa289299677669fe"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s012_B.json",
+      "bytes": 175228,
+      "sha256": "00f1d4e5e5b2b8fe3099f4a6fad575b2861f786f5689bacf9d4f8316af486c77"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s013_A.json",
+      "bytes": 174639,
+      "sha256": "f6da9438a994a779ef83347429a73a35d44ec93da74065ae37c1d35e1e4a127a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s013_B.json",
+      "bytes": 174444,
+      "sha256": "dae6aa979b258aedb4a3b74c1dd516c9d3d36dab67210058c865dc0fb083ffce"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s014_A.json",
+      "bytes": 176065,
+      "sha256": "bf784e1c0050770f1c5caa61e5d73364007e5c7213e3f0e94482057ee772fbfb"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s014_B.json",
+      "bytes": 176083,
+      "sha256": "91eb4c497463d2ae1bdfc69885c40797d31271afa5e4e0ccccf5dc5ef11c7560"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s015_A.json",
+      "bytes": 176226,
+      "sha256": "1d88aa4c54b21d9cd0cd9087ea1e7d98cbd61cc76116323e34dbca4c62774297"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s015_B.json",
+      "bytes": 176313,
+      "sha256": "de1e8fe2cf1b4f91c09d7e7d97b415e76057202406b0becd790059e2b3eeb62c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s016_A.json",
+      "bytes": 176537,
+      "sha256": "30940aa6a1b265d2968f848ebe0e8a0794464288a760ec76f6354774dcd84f3c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s016_B.json",
+      "bytes": 176455,
+      "sha256": "991e8933737db7231a5995d8710196179ac7aecd487d6ba4c60cd1461317be04"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s017_A.json",
+      "bytes": 176388,
+      "sha256": "3f4e138b282672733d13dd24b30fd582ce7eb38c4e338af135a88383d07426aa"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s017_B.json",
+      "bytes": 176250,
+      "sha256": "d66130718af93ba5aa692248de3d2f81e5f0c540f7c03e79e77475be36d53741"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s018_A.json",
+      "bytes": 175812,
+      "sha256": "c8d6d5c551f753fd65230bd62fd4e7843015cc054a4fb5a1d2751643a0a0a0be"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s018_B.json",
+      "bytes": 175864,
+      "sha256": "42873d3d794e83e884bb735dfb097d4c23df03a34f25c9c9537f66f9062e8c1c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s019_A.json",
+      "bytes": 176883,
+      "sha256": "0699ef2ce67e94db95c47078a95ee8f461bbae191119881c27176031be48904c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s019_B.json",
+      "bytes": 177108,
+      "sha256": "5c343d3bb12c90ab2eb03fe9f8806ea42f5dbeafedd280276845b6abec1476a7"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s020_A.json",
+      "bytes": 175661,
+      "sha256": "382802a1ed7c726abadf6765187ecc0b57f3fa290dab7220a384a89783fff72b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s020_B.json",
+      "bytes": 175705,
+      "sha256": "12569d0bf7e7fe6f5537caee1e1783186a9a1cfc5a61b0bac024bb0d8bf80df0"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s021_A.json",
+      "bytes": 173504,
+      "sha256": "abc80ec4b8e8a75af7786194d34b3b97abc1bf7a69e8ea3cedaf552bbd4b4ee2"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s021_B.json",
+      "bytes": 173493,
+      "sha256": "e8467ee0e91263ca1993c577e675bc9e8a41b6faf97d3304a4b49e6e86648ffd"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s022_A.json",
+      "bytes": 175341,
+      "sha256": "93e77e4a9b444ba75a004087ad16bae33cb5de7d9f7ed5cbfee8624ff5adaa30"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s022_B.json",
+      "bytes": 175306,
+      "sha256": "54e8a3ebbe9280f1d149b1a89f348402600ce2c176a74c5a70272ec04fefd21a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s023_A.json",
+      "bytes": 176074,
+      "sha256": "776df55ca59652e924a2335a444fc575cce525424037e54acad0e41955a8009e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s023_B.json",
+      "bytes": 175933,
+      "sha256": "acebafcd4ac2889a2904fbbeca587f3c81e79e6689db08c0c923d6ce232fb51a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s024_A.json",
+      "bytes": 173698,
+      "sha256": "e6c01b704645a9458e485fbe6b1e84ca1e726c0937a13780f68fe9fdc86ec78c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s024_B.json",
+      "bytes": 173985,
+      "sha256": "95395d09e6ccf1a119b99b74d1a1379223310d5a5eea8e8976f7c8d0be720675"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s025_A.json",
+      "bytes": 175308,
+      "sha256": "e4152db46521433352a21906cf79a2c92d7ba76b95094e9ea1cc2d7f1ac477cf"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s025_B.json",
+      "bytes": 175276,
+      "sha256": "b717b45e79b81e21b51aa5ae3d8df9bccd32aa2aada2a65126744b03b70757f3"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s026_A.json",
+      "bytes": 176344,
+      "sha256": "2b47d4a478a2ac9fbcec2db11b97607bc118c4d4dbd95316a5c464b046d0e20d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s026_B.json",
+      "bytes": 176333,
+      "sha256": "b3d3bd36096f05e9ce415fb592e865d814a484fde42ab10f35ba41e6afdb687b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s027_A.json",
+      "bytes": 176996,
+      "sha256": "277c8b1987b8e8c6ea286f8557c29c30ba17e7fe05473753e9afde61f870e623"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s027_B.json",
+      "bytes": 176872,
+      "sha256": "3d1be632411649cd83cb5288ddbdfa040b1af001fd1e6b596715600835590c14"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s028_A.json",
+      "bytes": 176251,
+      "sha256": "3af8fb72788df8b31644d9b4773b5548f6100ba77197583bb4db67dd360d587d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s028_B.json",
+      "bytes": 176015,
+      "sha256": "b8af6d4e88aaa6d2c9fec5fd4a83568a21ffa5d0c703833149ada2f8e4dde8bb"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s029_A.json",
+      "bytes": 174180,
+      "sha256": "a47a8f3b1b0555594ddf4f4ab2a71a212f5e5d77e3af18454fabf16ce2f6ebf5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s029_B.json",
+      "bytes": 174252,
+      "sha256": "249bdea5f672ca4abac5dd211869ac91682a22f6a46b771a7beda0a67fb4fe98"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s030_A.json",
+      "bytes": 175893,
+      "sha256": "159078b04e3d7fd7df3e1ff70645d6754eb0db000e2672a862aa5b0c582b6977"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s030_B.json",
+      "bytes": 175767,
+      "sha256": "0e68a1d47c88fef7bb9e3037d6c7f30d47748e4570b487f5fb15399ef8b81d75"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s031_A.json",
+      "bytes": 175299,
+      "sha256": "f42d82717289ca8e8ed7650cae0b8b0434d42a449eba4ba8669ffad4a0884347"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s031_B.json",
+      "bytes": 175126,
+      "sha256": "06298473d17b5a6c839680ca27200770ab860cf2e6d9dd89d3529b8eb4453da9"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s032_A.json",
+      "bytes": 175580,
+      "sha256": "41ac43da2a863603256d59dc7415130efde10c343064a2bc8fd4c44be53c76c1"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s032_B.json",
+      "bytes": 175634,
+      "sha256": "ad61aed14a24f2d7bccdece6f0ce03755037082a128a3aa732ce97dcf09a2549"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s033_A.json",
+      "bytes": 176890,
+      "sha256": "e7ad3317037b7af43b658423dcf48125be83800d5d3464e97e8bc78c7a57e091"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s033_B.json",
+      "bytes": 177100,
+      "sha256": "cc6e1f9e9221c6ce9577a495b1feb6fbbaf630631bba476407028769aab8e5dd"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s034_A.json",
+      "bytes": 174373,
+      "sha256": "098c0c2c9549d3bb3b4cd1e649de7b15207689679ed972e06c1db939e08528b8"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s034_B.json",
+      "bytes": 174700,
+      "sha256": "ec887bea57309bdeac56dad847bbd68ba70ee9f17b952a111af40cc4e549dd77"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s035_A.json",
+      "bytes": 175651,
+      "sha256": "fac1d106d1a19b25617c0f54c9fd31712a974e0429a11dd152fcb1fb8391b6fd"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s035_B.json",
+      "bytes": 175683,
+      "sha256": "c45c42c58865b8a411456a5d770e9a921fd7093fd8fe5427733af7536fd3f260"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s036_A.json",
+      "bytes": 176061,
+      "sha256": "f05254a2018b724d41c843a7e1c011147087f94aff9d945d8aa48ef831e48cb9"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s036_B.json",
+      "bytes": 176037,
+      "sha256": "0015b5fb39d7c69c8346d3fa6aea06a76ac3524446f215f8c9f1970a21bb7cb0"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s037_A.json",
+      "bytes": 175563,
+      "sha256": "6f413db2037abc8926fea7868ed8878aabfc16b716dd05d3aa3850823f3c3441"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s037_B.json",
+      "bytes": 175368,
+      "sha256": "4e3ba582386fd55af0b805284b4e69871c06da586306f2f420b2afe8ba5dc5bb"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s038_A.json",
+      "bytes": 174604,
+      "sha256": "57b78d19de2746f0e24bed10d01f9bc5b22c0bb0e9a0c2d1ec1273a9a0d294a6"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s038_B.json",
+      "bytes": 174604,
+      "sha256": "753b47c98cb6aa906c0f8c33d6da014840f9bfa19a3c01f77160b0afd75e07b9"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s039_A.json",
+      "bytes": 174934,
+      "sha256": "ad60f8130dd48d7871c748d91a44e582b30e2df30bbe010d4926477cd10032a2"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s039_B.json",
+      "bytes": 174992,
+      "sha256": "60e654de09affd892d7e3c0c935a683c179b2a9ff24362af136e71a6ce164eb0"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s040_A.json",
+      "bytes": 175200,
+      "sha256": "fdc75c4fd65b55831d797343626b9b00fcad3d1054f387abbdcbbc73f06f68a2"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s040_B.json",
+      "bytes": 175157,
+      "sha256": "d736074a962e5ff4ae61600919ea3258f6a2771a05ea4b55526793d8d5e37c45"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s041_A.json",
+      "bytes": 175298,
+      "sha256": "eb37620547c392cfcf014fc74ade0ad320a45974d2ede055aca47034168c6b67"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s041_B.json",
+      "bytes": 175439,
+      "sha256": "a34b8e30cd110c8f3c4e33678a620072f0dedf2b1e40d291ddf76c3365e16965"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s042_A.json",
+      "bytes": 174851,
+      "sha256": "55d314724efecf220a9b5e3f0ea7b5ab5d0234355eea4b16fd783c9f9fdcb2a6"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s042_B.json",
+      "bytes": 174562,
+      "sha256": "043c7d385559684612dd3eeb39ba130b382a1fe276d526a183922d9dd68cedd4"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s043_A.json",
+      "bytes": 174860,
+      "sha256": "3dd1a0f227d872761b493acd6a3b2fb633d70d783562657c30d75f992565e77f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s043_B.json",
+      "bytes": 175012,
+      "sha256": "b293d6d233b29c6c1f5284a52d543ff605fe28c5155e982693b96dcb78c439c9"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s044_A.json",
+      "bytes": 175019,
+      "sha256": "bf1f4c28e4f0f18650938bb368075ca5e3070fb28f0fcd0c67fd4dfbe0482ac1"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s044_B.json",
+      "bytes": 175247,
+      "sha256": "a1e2590c7d0088ddf9c7339083e30bf9f8b61b153fe53b4ec50b5dcfe64cf5fc"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s045_A.json",
+      "bytes": 175139,
+      "sha256": "cc08a9cbb723d2d9bb7a9982903dffdd214595f78c210d03b4b4b0ec78a4e0a7"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s045_B.json",
+      "bytes": 175273,
+      "sha256": "b433625472601291ef289b7e572a6d8caa4d5e7acfa50af470944caa88d7555a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s046_A.json",
+      "bytes": 174606,
+      "sha256": "dad77b677ec68f5d4d8e0d861e20db606b01ee28b0bb7406307f0bb391da3d7a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s046_B.json",
+      "bytes": 175066,
+      "sha256": "fd4341595f2778e3231046339fd7c48584ad7d633349252fd7df374ad3e726be"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s047_A.json",
+      "bytes": 174984,
+      "sha256": "233d932cb0883dcb5c508722b1db01ddd9042f18a46db7b495bf16a4d93d43b3"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s047_B.json",
+      "bytes": 175264,
+      "sha256": "e239d438bb1cf5abe5cbc2e80a3175d29a2cfc696f5fa6873148c266e8611fc1"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s048_A.json",
+      "bytes": 175445,
+      "sha256": "fddfa5058f1e4760ccd2a002732151d71b4956e44e487a259cab2ecd5dd1922e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s048_B.json",
+      "bytes": 175411,
+      "sha256": "7c2d1255700e8a09b36883ceaf1547495b3b6ef9c6b164b0c75af5516d4facc1"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s049_A.json",
+      "bytes": 175667,
+      "sha256": "080c8b9bfea4ccc0617945fedae473822a82af8d2367cae18f4d4c61cb35d506"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s049_B.json",
+      "bytes": 175613,
+      "sha256": "ec44581db904dba4afac1786628e10eafe2827e63264a1831594f0d66a2c7949"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s050_A.json",
+      "bytes": 175541,
+      "sha256": "4578b8699b266e40fc77362c79e0b836de2afbf0e3c8a89c3bede06ba0eb6446"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s050_B.json",
+      "bytes": 175578,
+      "sha256": "0b56302f902e776746a543bbdf87112e14e46fd1f2af6dba09536c31fda38663"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s051_A.json",
+      "bytes": 175919,
+      "sha256": "67bc9df579befbefc89cc34cd99fb8af1ae22f4ecf8edae2f69d51953af04eb0"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s051_B.json",
+      "bytes": 176099,
+      "sha256": "07d16fcb3aaf37c15cf39c437148497bc0d30f24bd16b76124d20c13e1c78fa8"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s052_A.json",
+      "bytes": 176997,
+      "sha256": "5daf837fd672db085dd38eefb21dc5d996b545fb7e33701e697306c36d96e439"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s052_B.json",
+      "bytes": 177082,
+      "sha256": "61e29e5ed99d057c26f26ec7001bcafa695beeab2252bc6b84ee7a075cf8c324"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s053_A.json",
+      "bytes": 176565,
+      "sha256": "e38e90d2172ea16380627b30f0747cbef8fa05160bb2b5b0a01ec7c30bdbb5b9"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s053_B.json",
+      "bytes": 176609,
+      "sha256": "f89493087df951894f026adcc2cf71a8fab7a5d1ce36350fceaf4d6089d29fd4"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s054_A.json",
+      "bytes": 176016,
+      "sha256": "8e752be9dd6335197df73270741eaa45d427bc6c080387a7ae6d24f92a9b69a1"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s054_B.json",
+      "bytes": 176142,
+      "sha256": "28c6cd8b73756f5aeb1a262e0e6da4aea824e2802b44c3a479bb6ceea2e1b3ca"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s055_A.json",
+      "bytes": 176453,
+      "sha256": "5b39ad332a407f2a49a5f3124a126115b20af03dfce0d4c51546f86bf1097f6b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s055_B.json",
+      "bytes": 176438,
+      "sha256": "8b19daffcbd41429cdd1fafdfca94d53efb24feffe5d72dd7f05c0b04d6d14df"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s056_A.json",
+      "bytes": 175902,
+      "sha256": "1f0eb861e8f65a6266878db7a2fde5f51ad4fddc1d5a5f0a56d702edd5509c67"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s056_B.json",
+      "bytes": 176061,
+      "sha256": "b634b1f4af034a72b3991c66950bbe5fe5fbc3a755987e040a5639c1f297b5bf"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s057_A.json",
+      "bytes": 176447,
+      "sha256": "e8ac4be7b2ccc5d0619e75ee79f72b34c85c6a12991f46550f531a839e8f21c4"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s057_B.json",
+      "bytes": 176641,
+      "sha256": "47f0f36505064a734f1834996f7dbe196f46c669a0158f35dc22914e5f76fe95"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s058_A.json",
+      "bytes": 176472,
+      "sha256": "d8c3b9a47de912ef3005e2a000304035301456737a32245ca183fd14989af75c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s058_B.json",
+      "bytes": 176546,
+      "sha256": "9493eaa6e7074b2bc7e06ac1668ac9c52369a5bc950f84d9783902504f0328e3"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s059_A.json",
+      "bytes": 176460,
+      "sha256": "aafa5d3d39039d91ffaf6ad6a48c98a66184924ae8999f145c188d8f6d88c908"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s059_B.json",
+      "bytes": 176708,
+      "sha256": "8f7810b144c1ad0d1fab2469b5a11ef766880240c777d6ea62683c041f666925"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s060_A.json",
+      "bytes": 175873,
+      "sha256": "27704da71337f51be88f1f7cdfbd88efd1b54833ddbad559db32ba64bbc6fc25"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s060_B.json",
+      "bytes": 175946,
+      "sha256": "c067d668e7b8d128bfddbd1a2d3ecccb8014581d8851b99c01511ddd032d95dd"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s061_A.json",
+      "bytes": 175822,
+      "sha256": "e31b85f7ab4d133b86908309991365b9bf4c03000e9261dbebed418206ed1779"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s061_B.json",
+      "bytes": 175588,
+      "sha256": "a61845af4a2dce62c778a4ef2058924ed0fb55766af243c12c8756af8a8fd46c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s062_A.json",
+      "bytes": 176087,
+      "sha256": "bd0ec2d8012f108fd812d2a55ee62822a2e67814237974d3b92ff0bf1aad751f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s062_B.json",
+      "bytes": 175829,
+      "sha256": "0fe30214db8f53a136819acd39e90c0b41a94eced246a7fa2d64550320976c78"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s063_A.json",
+      "bytes": 175873,
+      "sha256": "0d8bf61e6ad2f16ec194160ea8e3f3af70149981622e430ffc3e29dc0e978b70"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s063_B.json",
+      "bytes": 175743,
+      "sha256": "875656ecf575228388c604b400ceda0656e427fa22deb7b9168f1ad4957a693f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s064_A.json",
+      "bytes": 176278,
+      "sha256": "99260f1cb196d9fa9bddee2ec05d922d5e583b392dc8efe6ece649bec6e9ab0b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s064_B.json",
+      "bytes": 176211,
+      "sha256": "333a32a1c66edd7470914a5265199dc5302c6af4e5442f3b1cbef691c1d52d2d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s065_A.json",
+      "bytes": 176231,
+      "sha256": "1d3f23da47bdd4da6b909ad30979708d6392cf054bc235b0a03f43a1e012b886"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s065_B.json",
+      "bytes": 176218,
+      "sha256": "c988a3286308b5109ffbe735533f90385456c586428680e607375f4e4171a2b1"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s066_A.json",
+      "bytes": 175801,
+      "sha256": "b1be7b2e542f059561e118684401afc543519dc904672982c8fa3052e2f1a335"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s066_B.json",
+      "bytes": 175642,
+      "sha256": "1f7644f69bb1ea16910ccbda04f4cec651b61ef45848db3854ece01c7edc0bd6"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s067_A.json",
+      "bytes": 176456,
+      "sha256": "68dc83e27787a075998a724fa61fa9c3de6035b6ec30231793e5aeaabcc59c58"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s067_B.json",
+      "bytes": 176311,
+      "sha256": "9443e78307f3aa0969d84a414f69baac8b07d6919153114a751ae80e06a23427"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s068_A.json",
+      "bytes": 176702,
+      "sha256": "7d9c2fdebf845adefa4b8161ce6130e371abe26e7db429c476142ec43dba3ddc"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s068_B.json",
+      "bytes": 176762,
+      "sha256": "59b70ea759c5cdc7b8b3f62d4a019fe8003e7e27e75480efbca07f515036c8de"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s069_A.json",
+      "bytes": 176869,
+      "sha256": "107b82eb1f8e4c8c708e5cb312b2281a2b3ba26cfc750696a5fb0daf5c5fc33e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s069_B.json",
+      "bytes": 176825,
+      "sha256": "06e02d0f090dcebbe2ee03d728470faf0920cd1ef075a7c97ef1a57168498b7d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s070_A.json",
+      "bytes": 176933,
+      "sha256": "08e8ea6ff2f2f506f9d7cf939841f0e3f69ff23908091d1f873c04fcad4d77c8"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s070_B.json",
+      "bytes": 177027,
+      "sha256": "348478ffa608c8d186f863b66455cd5934d300fba98d99245ad2a1146199f8bd"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s071_A.json",
+      "bytes": 176661,
+      "sha256": "890a3651f3aa19402ccd2b8fdb41a02dfd178854cc33d9ebf0a3380615eb73aa"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s071_B.json",
+      "bytes": 176755,
+      "sha256": "8aea8b6a0148cf60ed9ffd4322ae53c0832e0617e70bdf1483bcf4ec46e6ae51"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s072_A.json",
+      "bytes": 175111,
+      "sha256": "bf72f97b6f50499995534072e4cd573f6b77af1fda822d54688e3d52174c8406"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s072_B.json",
+      "bytes": 175091,
+      "sha256": "2395e9b48205130e72249d19d817f8df38aa90b8c195560fca3f17d723fc50c9"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s073_A.json",
+      "bytes": 175872,
+      "sha256": "102d777dde0e02f6312dffb007653ddf6552b8597fbbb1a00246868089a63084"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s073_B.json",
+      "bytes": 175853,
+      "sha256": "05093a2aa9654d98a96679f9c88b44054ed6ef0fad74df3c9c2ab12249eb2feb"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s074_A.json",
+      "bytes": 175597,
+      "sha256": "c4e164cee5b2a7f07a57210391324c054824604d61c44aaccb204b494a8c7ceb"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s074_B.json",
+      "bytes": 175517,
+      "sha256": "ff4a20e19ba85338d17ea32777d6869aee74a98462a38b53305841ef442447d2"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s075_A.json",
+      "bytes": 175145,
+      "sha256": "c733b68a4cceb905bdf886f73feb5d8626f2425ff6d4b8d40bfcd9b3e359b27b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s075_B.json",
+      "bytes": 175431,
+      "sha256": "0710e1c6bd2d4b162365aa7d010080bdd242404288af5dff305ac2d3bc163add"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s076_A.json",
+      "bytes": 175819,
+      "sha256": "b71a5a0c753bc6ee0238e110bfd1669cbbb9df6ee4edf01aa8196e5145f1b2ca"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s076_B.json",
+      "bytes": 175950,
+      "sha256": "76051873d355e8ca54160464f276a9b3a44926fe4511c08c74ff9cbc4fbb7297"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s077_A.json",
+      "bytes": 176150,
+      "sha256": "f130313800ee07f64cbf18278762b9ed602daa76443ada1735c02002c1f472c9"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s077_B.json",
+      "bytes": 176265,
+      "sha256": "b5e301830c4162be81b88eac714a0440cf75d340ee0142d6a39fa10076be51dc"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s078_A.json",
+      "bytes": 175922,
+      "sha256": "4cd48c133a0ad4881fc18f2d4c79461d1b0e53295fb253163e6aff8e9c067d10"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s078_B.json",
+      "bytes": 176185,
+      "sha256": "5e2d254e41ea77ef9324942321cdf3ccd679e0385f564d0129feb629a6a66234"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s079_A.json",
+      "bytes": 176318,
+      "sha256": "bb0d851d3aa75ad6602b5ddab88381da63c87da1d574e1939fd17bc151f93c07"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s079_B.json",
+      "bytes": 176292,
+      "sha256": "956f8e90d7d7258e874a8b0a356133653aa89b2e3032e62f14c853acc42fa686"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s080_A.json",
+      "bytes": 174772,
+      "sha256": "10714599d7a39aee91edfc7fc17d1f83d06c1639f3178853a15881c4396aa831"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s080_B.json",
+      "bytes": 174639,
+      "sha256": "ec728cc6fc4dc96bb2ef9b809efb3fe3f57e06e632308e4a3dd4d2cb39f52024"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s081_A.json",
+      "bytes": 174564,
+      "sha256": "91ad0b52ab3a8e79c3875cd90b682b5635d4e11533af0075774a7faabf65defa"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s081_B.json",
+      "bytes": 174661,
+      "sha256": "e7fd32c00e7b62962ca73044d428c2257b06f9d32dba57e2035be216cf18456b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s082_A.json",
+      "bytes": 174768,
+      "sha256": "ddb0833af218e1b41914bab54f69642f52c387c6d4ae72b8e0a0bb2849e00b50"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s082_B.json",
+      "bytes": 174937,
+      "sha256": "c7072364f4f20f89bb1d2886e2cfbfc2d8b741f451c17a9c71ee815bbfd20432"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s083_A.json",
+      "bytes": 174715,
+      "sha256": "036c0b8eea7dfeaea97dc6025acadd757f74421ff95ef88e8ebf8939c2a18981"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s083_B.json",
+      "bytes": 174819,
+      "sha256": "19080e508219b9d60550243a2aae2524f1cca22466732ec287849162d69c036f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s084_A.json",
+      "bytes": 175638,
+      "sha256": "89863d5483a2e48d20698de6cb32252b1d5ae4b69f7dd17c2a3e04dd8f75594c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s084_B.json",
+      "bytes": 175430,
+      "sha256": "ea94d498b745a74294cf46d601e692ca767d51807efe890daf26e9b34aacea9b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s085_A.json",
+      "bytes": 174761,
+      "sha256": "d082668d678a66688fb1cdcbee84f06462c5838dfc3fe94a832a03827be632c7"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s085_B.json",
+      "bytes": 174673,
+      "sha256": "5ff003369bea2cac75fb72f8578e81c577a3857f31f199ec2e4478f6b008c755"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s086_A.json",
+      "bytes": 174984,
+      "sha256": "60f9c3b7e8d6ed67b4d1e103876a78929504f12256013d82308cf95d97713616"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s086_B.json",
+      "bytes": 174818,
+      "sha256": "7942316838f7f823514f2c290c9b73c2e0660937c9f378960fa8c01f909be5e9"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s087_A.json",
+      "bytes": 174719,
+      "sha256": "92c8ecb0d03db316763177a3623fa10edbd6096d1378954e8c228505c2c72474"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s087_B.json",
+      "bytes": 174651,
+      "sha256": "e11c9be82ef1c19747dd5ac94c0950a3a6829445a741d111398499d07be017ef"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s088_A.json",
+      "bytes": 176029,
+      "sha256": "1cb862919ced2d8182040e2a20d4bf700711c0812e97cfae73ea18b73e88d047"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s088_B.json",
+      "bytes": 176100,
+      "sha256": "86977b209becc40b91eb143e82feb4dc81d7a5095223b28ef35412206bd9d465"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s089_A.json",
+      "bytes": 176424,
+      "sha256": "0ac041d2876356224fd83f347415fd875443e066e041fd109139033e192ad15e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s089_B.json",
+      "bytes": 176240,
+      "sha256": "5d5e9f8bd56228ed894b86bab1ab99d22ae33406a9c9a5cfad7acb2421b20222"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s090_A.json",
+      "bytes": 176256,
+      "sha256": "0eff334c709574912cc7a85c8324839aa23b5168d7810b30b5231ad2d19c61c1"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s090_B.json",
+      "bytes": 176362,
+      "sha256": "963b983858d8eac306d216630dd0ed2628d73302f83cbe91c49a794f461ff22a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s091_A.json",
+      "bytes": 176112,
+      "sha256": "313e4ed0636745464ad67df4ebaed2486e978376239bb0c2229cdc5ccf93c338"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s091_B.json",
+      "bytes": 176110,
+      "sha256": "a1d72af14f7ee0e5a626f37cfe1c335545bc616bce99a483b67687778deefd70"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s092_A.json",
+      "bytes": 175767,
+      "sha256": "b6e62d72908a565b1724ac936d000e1b6812410c63f5b4ac76361082700a54af"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s092_B.json",
+      "bytes": 175789,
+      "sha256": "548c4d2cd9b9a5a45fe449a6e1cb1b40350371d8910b3f4e8229f88ac66cf093"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s093_A.json",
+      "bytes": 175734,
+      "sha256": "1b3ab8a79d5975cb8b86aba5fda042ffa78c97a5ec73bf15faa5c6ad4c7078c3"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s093_B.json",
+      "bytes": 175641,
+      "sha256": "45eab88fefaddb267013fa45268607a7176b45dca4edef820b1031b5b51cb374"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s094_A.json",
+      "bytes": 175530,
+      "sha256": "b6f8d5722936d8779a66466937e13a2170a48c5d29652973d0fb44d2fae5b29f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s094_B.json",
+      "bytes": 175725,
+      "sha256": "294dca72487bef899b2ae72c2a29660dab15deb319d78889fa71e84ff4ee954a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s095_A.json",
+      "bytes": 175539,
+      "sha256": "4746907f312070c2af6f1aac2d4f66f9d7765c02cd761b29c0bcfdbc157fcb8a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s095_B.json",
+      "bytes": 175720,
+      "sha256": "45af006a99a58d30d1117bc5caa0b4d8a13d9594fb0b0a95e566eefd899b8b2c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s096_A.json",
+      "bytes": 175389,
+      "sha256": "f44c28c343469d7b2cdd006c5f65522850cdac63c80424a3293b7b2d122ea238"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s096_B.json",
+      "bytes": 175448,
+      "sha256": "4459a376f74d50a5fd5e244aef717e5fc77c82ab4dae74cc05749fc5dab523b3"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s097_A.json",
+      "bytes": 174834,
+      "sha256": "4327c829cc217716285c5eb22405eb22efd884ccd5121884e0745f17187db1f3"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s097_B.json",
+      "bytes": 174826,
+      "sha256": "c789cd09b3a67d7c55457e39b2ea43cbed0d77dacc4c6b57b550e443260d46ec"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s098_A.json",
+      "bytes": 174219,
+      "sha256": "be53c1a9664961b41a904651c4a1a285a73be06cf2f5d0abfe722c52a46e02fa"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s098_B.json",
+      "bytes": 174419,
+      "sha256": "d2125dcf806932a68e22613ade389730ac6d99caf6a382b350e797385733ba63"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s099_A.json",
+      "bytes": 175105,
+      "sha256": "7eee1a3021cea517d48c3bc7b7defe31247ad600165aef84d3382db37fc11951"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s099_B.json",
+      "bytes": 175086,
+      "sha256": "587a3fca895107b23085462a343c208730ed6aac19d7143f9c26abf6bc51d485"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s100_A.json",
+      "bytes": 176273,
+      "sha256": "80199765f35e7b8a725ad5fe7c83c7a4b6c645967dfcb1e46886cff3122a1e2c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s100_B.json",
+      "bytes": 176310,
+      "sha256": "237a4e58d40a20d4d0d175b8a84c44e58f6d78bd28a16e4bc2ee8b387fab9f71"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s101_A.json",
+      "bytes": 176061,
+      "sha256": "9543f35a6fa460a63293160495d664bc7efd2de7c63303afe6bef3dcf739c7ff"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s101_B.json",
+      "bytes": 176082,
+      "sha256": "89734109b0fc9e373ce4396f673ccd146bed73e91e38fb263d72d006cea7f1ee"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s102_A.json",
+      "bytes": 176181,
+      "sha256": "cc5bed609568c158e1e1f53f8c3ebb8c23ea4cb16cd4184ccd2a6b941f23269a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s102_B.json",
+      "bytes": 176175,
+      "sha256": "c38530a7c7b5e6e7fc7ec45a2006b37e9ae0ebd6907fd9a540314c717a5a1c6e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s103_A.json",
+      "bytes": 176490,
+      "sha256": "18735e96314f827de51b8a54edb73a0f0538e7598eb8443ac3d9744bb39b3bdc"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s103_B.json",
+      "bytes": 176366,
+      "sha256": "8cdf04cb4eb9474e49b6a9b2a37346b426245fd61442e38cb394809c82c00d89"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s104_A.json",
+      "bytes": 174157,
+      "sha256": "e10e970816dc35ad8a0daa9e4ce2c4cba47e4434b36fc95a227bb3c2274e5c63"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s104_B.json",
+      "bytes": 174232,
+      "sha256": "69b6d00586e5fe4685d26244795dbc687c45c9665ef2dcfca7e0f10a9198d74e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s105_A.json",
+      "bytes": 174249,
+      "sha256": "28ea74889145bbbfa5f3f6a84cf6dfa9f5255e5aff341cced14482eb186c7d8d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s105_B.json",
+      "bytes": 174433,
+      "sha256": "19b3e95bfeb951ea6749a91537cffc352c1222bb678b6abbd4d4d11230041edf"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s106_A.json",
+      "bytes": 174355,
+      "sha256": "ffdd45638c0fe7f57e1f44cd455f068cf0cdc592b4b5d0ccb0b16ad7c2cec1cf"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s106_B.json",
+      "bytes": 174178,
+      "sha256": "1d5300f4ae66ca26ee4039504de7e3f5dbb20c664b5a075ec0f439eab6c0d748"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s107_A.json",
+      "bytes": 174215,
+      "sha256": "3d1e2ab66374ef23cc37beb5b44957dd078ba18038cb7a55c3ce3e58590bd6b8"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s107_B.json",
+      "bytes": 174158,
+      "sha256": "c4e23fb0ed4750c45b24d9f5efcf4417e2ef0533cc2f1848be8ab2fe3b182198"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s108_A.json",
+      "bytes": 175764,
+      "sha256": "d0fe23c013071b6ba0e2bbf15e73995e6183c4a1a880fc1ddabde6fe3d979ccb"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s108_B.json",
+      "bytes": 175630,
+      "sha256": "2e1dd714f6565787cd3693e290b4fc250a4484ae328ce043689e7c83e218ad2d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s109_A.json",
+      "bytes": 175787,
+      "sha256": "d1f46fdcd9b8d560a785beae8acce950b3ecc3d82b55a881e7621d021dc8be2b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s109_B.json",
+      "bytes": 175703,
+      "sha256": "f5c77ad914f2973e9f3a6f03d479b90ed6026cb26089e6e9350410640fa88f52"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s110_A.json",
+      "bytes": 175857,
+      "sha256": "2c8f4a591bce15d1786c89c3475a1cbac3d65581089ca7cd59f6a96dd4f6e00b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s110_B.json",
+      "bytes": 175833,
+      "sha256": "414a69d3c6e13c8cfd05271817db30462b35bf2dd4d5cf10cfe90430903d5d42"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s111_A.json",
+      "bytes": 175747,
+      "sha256": "9f2a7891e951c913167c19113e11ce56f254ac53a74c506413a56a0638bfb1dc"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s111_B.json",
+      "bytes": 175667,
+      "sha256": "f66c1f41a392b83b2e92c4fcdcbacca2e6bc47411742a9d4f7a14ed8780974c1"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s112_A.json",
+      "bytes": 175066,
+      "sha256": "ea66b264508d078d6a0d4e05cedd2dbfa51d53ad00244aaddebe3eceb23a288a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s112_B.json",
+      "bytes": 174827,
+      "sha256": "824b371644dca7d22988dbd102c4857be3e78a891363fe0cd9dd7d9724b42460"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s113_A.json",
+      "bytes": 174687,
+      "sha256": "2809fa85f0d16d2fc1f55b10389f9ef1e84eb1ed66ade399b6672bdf42b9f32e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s113_B.json",
+      "bytes": 174647,
+      "sha256": "e268cf1dcb09dc03addabcd28884b1900959f0e58269297ad88ca96bcb4e5e19"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s114_A.json",
+      "bytes": 175246,
+      "sha256": "e270f9d61332717d81869c12c239d1a6c05bd25c9218a01fbf56ee2aaf2eadc8"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s114_B.json",
+      "bytes": 175251,
+      "sha256": "2a984a574d7344190f8bd8e0046de773369faf04d44837c658827596fe7c3878"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s115_A.json",
+      "bytes": 175083,
+      "sha256": "07b5896b53df5ae48f7f2127bfe0a75bd48e0444f4b5bd76e94a81688489365e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s115_B.json",
+      "bytes": 175041,
+      "sha256": "d10feb0cea96f29176f4d35d7b7a31a9fb285e8c014100bc9fd741f70ebd6948"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s116_A.json",
+      "bytes": 174505,
+      "sha256": "c6de3f996c24a28e3b90e059f0a6f23eb43fdf7e4b424ad8034b6412b5506719"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s116_B.json",
+      "bytes": 174566,
+      "sha256": "ef72fe1322d623b269fe5f7f7d8c5de1914188a4a7647c39c02a73a02cf59720"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s117_A.json",
+      "bytes": 174774,
+      "sha256": "69d2b391c0d51115a1f8e5d64c6b9d22e93e126607b87351868d35e4d49c5a02"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s117_B.json",
+      "bytes": 174675,
+      "sha256": "d8b44a5fb240a18c42c56428ef6e3d0338cb0322992cc4e40ec0f65b6e5f510d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s118_A.json",
+      "bytes": 174455,
+      "sha256": "71fbcbb8c84bba9d3752c708a58e178a938fe7012cb9fb0b4bde2efe52d2eaff"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s118_B.json",
+      "bytes": 174512,
+      "sha256": "6972b916711316fa7d6005093c44e7602460e887a569bddea5c5634bc0538850"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s119_A.json",
+      "bytes": 174788,
+      "sha256": "b881d40e6b6c9e265b38f8f46aab99b48b2ae8e3adbd4ac2454c62171a01763f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s119_B.json",
+      "bytes": 174659,
+      "sha256": "b76477a416e5bef72bfd48e9e49347ce2bcf4be626fa491aeac8e8aabd69ebc6"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s120_A.json",
+      "bytes": 176047,
+      "sha256": "46db4fe6acca578763b08ac02c680d25ce392e0de1acd3569817ce0f8968eff0"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s120_B.json",
+      "bytes": 176216,
+      "sha256": "fcb511adc0bef4bf878c548de5eb592da7f4d622ff3d17b0b9048a12fd92f5fd"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s121_A.json",
+      "bytes": 175906,
+      "sha256": "45a2500a432e92bee52c4583799f1d044fc657219efa3643556eb952a043918b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s121_B.json",
+      "bytes": 175724,
+      "sha256": "b4a1c6d183cccebc40e6441fa58dda54f1be31b4a8166509c8c2e1081fed9c12"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s122_A.json",
+      "bytes": 176015,
+      "sha256": "cabe26c51e9faf399502ecf59b93f276f6e33ee03a0f32632e86d1c82456b87e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s122_B.json",
+      "bytes": 175854,
+      "sha256": "57daa35257cfed332d128d616ff8cff38f80ccf6ad44d1bb09c407a311c437b7"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s123_A.json",
+      "bytes": 176224,
+      "sha256": "a2b2c011e4386209307bc6eae891898273cc3b407288a10f50cdd42d17cc6f83"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s123_B.json",
+      "bytes": 176291,
+      "sha256": "25e9fe3e53c60ea58690ebece66b835a2ca15271451cbbd437989c1864f51b71"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s124_A.json",
+      "bytes": 176143,
+      "sha256": "9bebc8d7a2173c3b090c5cb28e9b37bf67d966e56baa9248d128aa5a8d1b4cc5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s124_B.json",
+      "bytes": 176210,
+      "sha256": "b94a574ee7591169989c4b0119f1482cea9c3d1bc30ba8f07be2d6ed43b549a8"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s125_A.json",
+      "bytes": 175528,
+      "sha256": "d68892e8822466830538bbfcab16099e783940920af99b473dc5af99935026f4"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s125_B.json",
+      "bytes": 175727,
+      "sha256": "d004f49d31d74fccb0aab80a661b71fe28fe6e9494b3c3eed73a061b1d7dba63"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s126_A.json",
+      "bytes": 175504,
+      "sha256": "4053f9c1bbf6e7786d3d536f1d0a639a32fe0edb762f85e4ca963829ff8e27f3"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s126_B.json",
+      "bytes": 175632,
+      "sha256": "855ef0704ceae74041b0ac5741497fe737f63232dc13f41a736c7e2d544e0dd6"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s127_A.json",
+      "bytes": 176594,
+      "sha256": "954599784d1b171035e4e0d8c9432f61f5bd4f33bed13e43f321bcc23f139e84"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s127_B.json",
+      "bytes": 176732,
+      "sha256": "4b662c4da1f111630a07ff77192a424bab8cfe57bb832d4c2562f808616f2f07"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s128_A.json",
+      "bytes": 176368,
+      "sha256": "69b86e776ff8c9fed7e216931a628818d30e11a37007e7002a6ace075680691c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s128_B.json",
+      "bytes": 176546,
+      "sha256": "d0c160c237b90b54c7fb970d5d44a70c3825a774b40aebe6e2d90df96cd03f5b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s129_A.json",
+      "bytes": 176407,
+      "sha256": "8a13b6766b8db2cc382ab5473e71e2aa68ad448759582700cedc407a618abd4f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s129_B.json",
+      "bytes": 176632,
+      "sha256": "07d498468e057f84eb657478f05984dc1ed25d66b0e515ec3ea24109416be889"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s130_A.json",
+      "bytes": 176438,
+      "sha256": "2fa00ebfea1be8cb8f3ab31b32b874db0037b1cb60eeb5f9de4bcbcb556b20a2"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s130_B.json",
+      "bytes": 176340,
+      "sha256": "5ea032114c73012753800f1967466febc1264285ac39dc7e8f26d67bdc844d4e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s131_A.json",
+      "bytes": 176089,
+      "sha256": "69df323a5071f32a4a4d9d5f7624e9c39a8839330f8ef2a0b001119959e9a9d4"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s131_B.json",
+      "bytes": 176230,
+      "sha256": "3b59d3b48bd1598cf912daf556a3ce971525b73bd5de6ad1290ec4dde0814417"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s132_A.json",
+      "bytes": 176340,
+      "sha256": "82b1aa7b8d5e16bfed718a3cbe04671120ac739a2389332d110a6d13f1661014"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s132_B.json",
+      "bytes": 176191,
+      "sha256": "5865ca38e2fa7c00218dfd9e14440860626918b47378257c7249a1158491884a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s133_A.json",
+      "bytes": 176496,
+      "sha256": "b5e6ad3a10869557153d655aaaa064333cc288b3cf0f60fcae64cabd617ac2da"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s133_B.json",
+      "bytes": 176196,
+      "sha256": "76a4a599faf37c0a48df620141d2c4e21177f4acd7c0a4b3a5b144b6cea61b25"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s134_A.json",
+      "bytes": 176555,
+      "sha256": "41c3f397dbb1bb9802d0a0a90c8ecafb6d8c697d939ac279d9319f2a82770da3"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s134_B.json",
+      "bytes": 176523,
+      "sha256": "cbd5d9f5eb84a8c2ff350d0efb2aa5f5aef9e609b45a283df897902f7872309a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s135_A.json",
+      "bytes": 176686,
+      "sha256": "431a83332955b287a5593f94cd2eb68073b03e3c23ff159adde99a1f041b11b6"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s135_B.json",
+      "bytes": 176663,
+      "sha256": "b00262459804ab53d1c05671dbb959cd409d8d75e578e485665727d733ea8d28"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s136_A.json",
+      "bytes": 176175,
+      "sha256": "f780d7fd6768e005d893fc515807ae7397de18cdbf2a06ba1f766e9c394776f7"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s136_B.json",
+      "bytes": 176042,
+      "sha256": "0e1837351d152695ee86bde30f53b22e4ad19400452dbf3619981a3d5460287f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s137_A.json",
+      "bytes": 175910,
+      "sha256": "e841e9cebfe377c35f4a954a95e304c8d8a80dcc11f21d042cf4200173a6f055"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s137_B.json",
+      "bytes": 175786,
+      "sha256": "fe0926809d41c9be5d8c75d17ad4a5aec06929ac13386ce51b62ee6d3a0bb5ba"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s138_A.json",
+      "bytes": 175796,
+      "sha256": "80f67a8c47d52e664609b81dcd07298ab090956cea03ded62d8de8269d5a1e87"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s138_B.json",
+      "bytes": 175962,
+      "sha256": "804ce2a414509c364daabcead0165eb127d0c74358ed93614b6b0c956db1570d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s139_A.json",
+      "bytes": 175620,
+      "sha256": "22bc9c20533e833bda3b39deabdda48d6715137c63c6fd0c289c84440770302d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s139_B.json",
+      "bytes": 175728,
+      "sha256": "b17f1ed364f8fbc293db0edc73eb2533a01a3819c8a884daaf758d00e0d2ba96"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s140_A.json",
+      "bytes": 176971,
+      "sha256": "b7db4be868dcf0ce8d36fc18f2fb858e1e4df55b35bdea4ea96dd81520d49c95"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s140_B.json",
+      "bytes": 177209,
+      "sha256": "b07a9a35e7d21de1ecd1848b2305338bec3d2e81f463809bbaf0c94adbdacaf5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s141_A.json",
+      "bytes": 177014,
+      "sha256": "40e8a1e4471cca313466642508f32ee1cd93d4482d7dc66d9df4e232b6f00f53"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s141_B.json",
+      "bytes": 177158,
+      "sha256": "d230515922309d0c290359de8791bbf1c883c6af950613a82b791b153a386679"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s142_A.json",
+      "bytes": 176914,
+      "sha256": "cded29c946cad922431b377d7fce83955c649e6a9102268b72d5378c6651cbb0"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s142_B.json",
+      "bytes": 177057,
+      "sha256": "a0610c6436caede1fc6ec2919b87e78fde9279b978d395ed9ca9c6433f306004"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s143_A.json",
+      "bytes": 176732,
+      "sha256": "96bbef7d55a5616033fc2da171f0374d3eb2963b21cb8abe35d1e71e0670cf81"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s143_B.json",
+      "bytes": 177077,
+      "sha256": "04eb514606de1b73a840fe70e5b967cf3ec5f62a80b230393c2b5ac33af55b7b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s144_A.json",
+      "bytes": 175752,
+      "sha256": "178319248ad1f16ce76148e26b2c46ea8611967bebc92d93c0a643ffd0ff7330"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s144_B.json",
+      "bytes": 175786,
+      "sha256": "57d01f37ba7ba4ce95988c8fa5f94d81fd11c5149d8ae6eb7ed2e4ddb6ecf123"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s145_A.json",
+      "bytes": 175361,
+      "sha256": "b6b4ae20f856178bd44dcc0c49ad5cc0ad90cec59df468b178c703acd6cafca0"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s145_B.json",
+      "bytes": 175222,
+      "sha256": "29b881e2f8199461914c0716af80da00193f935ef863dfd72f620836a3d5d7bf"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s146_A.json",
+      "bytes": 175219,
+      "sha256": "b61dad3df397605c67529fe37732de2372f6f9c497080f2c05c59c21a9ee65b6"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s146_B.json",
+      "bytes": 175166,
+      "sha256": "e9820f86609b0c4fb7092a412b7dd621386b8aaff4d09d7914ea5dd640bca229"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s147_A.json",
+      "bytes": 175195,
+      "sha256": "ac94dbf18b025d8f46cabef5a6afa8da7ca5593c031f313045554179ef01d078"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s147_B.json",
+      "bytes": 174895,
+      "sha256": "7c97c1077ac6230586096b6911d27dcccdc88cbf905e8c5998adefd3ec82eb53"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s148_A.json",
+      "bytes": 173735,
+      "sha256": "a200633aed87fcb4142b67234c94eb342765e1d0909e7129806fa7517bbe7e87"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s148_B.json",
+      "bytes": 173695,
+      "sha256": "1bac1edb3b87680d0763260aa6cb701ace293d176643b488ff30f3bb5b1865e4"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s149_A.json",
+      "bytes": 173206,
+      "sha256": "8fed594ab6bccce9ac015fc1a600b3284380722861a88d5bdca0208d9d495543"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s149_B.json",
+      "bytes": 173425,
+      "sha256": "5d75aa6bd1ec968ec80e9781d7ff4a3e62a53e1088d61fd41ba5d300468b9f2b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s150_A.json",
+      "bytes": 173270,
+      "sha256": "a984c174e012f0229872bcd3492dea3e0a1851f509a66b2666dd3968a068d9dd"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s150_B.json",
+      "bytes": 173270,
+      "sha256": "b38c7e5ee81433c005ebd1582e4a7f399a8f12b82796eae3721f306c285c0cc4"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s151_A.json",
+      "bytes": 173349,
+      "sha256": "1bd7c1d0d3e0a63f46e7ae206f8bdbe26d169f4c9179109e9bf359facde00c77"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s151_B.json",
+      "bytes": 173374,
+      "sha256": "4fa71439abf443983ee930bbeb9fa64eefd570115f22f4f0a3b0bc398ff7cf8c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s152_A.json",
+      "bytes": 175119,
+      "sha256": "1f99acba4e9247f290204190eb9b5bdb1e28b7eaccce92255b7db653c97bc3cf"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s152_B.json",
+      "bytes": 175002,
+      "sha256": "dbac87d9024511685d4a41328acf836b9d1ad63b37997e64de2307f132dbac76"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s153_A.json",
+      "bytes": 174789,
+      "sha256": "ab2b17fa09812a1be44598ceb2f554174e2112ab91cfaba9e77ce7049d26ea52"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s153_B.json",
+      "bytes": 174782,
+      "sha256": "b539fcf606ab7197770c2677fd47804b301f11105b4c63e25147c8501a88198d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s154_A.json",
+      "bytes": 175018,
+      "sha256": "5bb79c7d370374d9ab7a1bbd1196119f6a711da22464719944f79641fc50e5d4"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s154_B.json",
+      "bytes": 175012,
+      "sha256": "95152f9a889c1ba3288f35dcf2ebf9f1c402bfd8a6879f80929afec40e35cc20"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s155_A.json",
+      "bytes": 174957,
+      "sha256": "59581c95f444600eefa136633f2cc6a5a8c6915dbe5b14ac3f68895d9f67d42e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s155_B.json",
+      "bytes": 174906,
+      "sha256": "8bcd2171800b75e90260e5f7eb6e7701c9586ce9873e7c842abe8f0bfdeb86ed"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s156_A.json",
+      "bytes": 176049,
+      "sha256": "8459496507d3daa2dac78319b70b8ec6d8d6569f8f5e2589b38e85c02eba19b3"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s156_B.json",
+      "bytes": 175655,
+      "sha256": "202dd17229d111042001d6f425e54427811dbf6501e8670026d53ad2309262de"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s157_A.json",
+      "bytes": 175906,
+      "sha256": "7fe04e70dd9779813fe6b0346c29abb3f4e3e79c7fcb73bac52b62ccc26c8fa0"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s157_B.json",
+      "bytes": 175747,
+      "sha256": "5575b2b37afca5c8a85efecfbf40b856e7335c48d104f2d1fbef07018d4d8e85"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s158_A.json",
+      "bytes": 176061,
+      "sha256": "245cc76aba1ac4cf3c7b303c8bfa1699e4a71585c4970c9a07f197471800156d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s158_B.json",
+      "bytes": 175860,
+      "sha256": "a545c14c170fa92eb62c07cfd33fc007166dba8b747a931f3bf48d21361ecf78"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s159_A.json",
+      "bytes": 176144,
+      "sha256": "1f89042f8c1dc938261e3579897b857a842ba0a6b0b466ac2a1d7476fc4f73ed"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s159_B.json",
+      "bytes": 175887,
+      "sha256": "79ce69f7041bea83b031135c267e27e718e32e16aff7f8ee29abcec9098cf310"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s160_A.json",
+      "bytes": 174522,
+      "sha256": "6c03e910c88987f0247d20bbd58f0536ba0cadee24058ae3c85f44956bc82b0c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s160_B.json",
+      "bytes": 174551,
+      "sha256": "2764ac40a7979d6e7a26b0a2426ae98df287b9e0648d257f383c091f35ffadd7"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s161_A.json",
+      "bytes": 173998,
+      "sha256": "88ffb1eba2120ce5b895abf07ba62a850e32d4f4260fcbdc259f721b6047c937"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s161_B.json",
+      "bytes": 174023,
+      "sha256": "f2715139ff32ea4263ae96b0c57e334014625b9ef06dd850a64a74fd357b5658"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s162_A.json",
+      "bytes": 173808,
+      "sha256": "76f2ae260ecd41ba73290aea5c105b0aeb11baea31bdbd62c2116a785047b38f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s162_B.json",
+      "bytes": 173716,
+      "sha256": "011cb42e83b48edc13073417e429fc8c54be0896a1c936c1445d5dae334c033e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s163_A.json",
+      "bytes": 173980,
+      "sha256": "87782697ac5f32beeebf936f79ebfed2c6e701a3abed04189ae2fc53857a9e4d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s163_B.json",
+      "bytes": 174137,
+      "sha256": "a517d45fe0949e6ec56b134174a0bb3779b68933fe925d7fa0ca45d11784241f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s164_A.json",
+      "bytes": 175313,
+      "sha256": "3ec2c3a1db72dd7160cc961e018102ffce57a249eca0aaf75ef98af19781b264"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s164_B.json",
+      "bytes": 175208,
+      "sha256": "50d09f178a58f4d981d4000e4041648754517e00964d9076aee60a15b08e4c77"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s165_A.json",
+      "bytes": 174786,
+      "sha256": "f8b04525d6e7b0d46a907e2be77f85bcee2b6073420cd4104b7dd0b990c0930d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s165_B.json",
+      "bytes": 174943,
+      "sha256": "45a8e33f67b1b552c926db2451eec2311a67251b33325be15a23144f0aef6b40"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s166_A.json",
+      "bytes": 174980,
+      "sha256": "f8f7dc16ed677491adeb1e3f8ad48dc2040bf161b5bf6c517083624fa2f381b7"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s166_B.json",
+      "bytes": 175099,
+      "sha256": "029a79d398d3bf1f4e7805ead2ceba493de1c910c1ad77b6849239319e7a25c4"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s167_A.json",
+      "bytes": 174548,
+      "sha256": "b6d8f44a390ea0c90bde59063c3d1114ca9c9d79996295a7b001a00aaba60a9e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s167_B.json",
+      "bytes": 174583,
+      "sha256": "505f9a2684da12611b893a8b64bbe4fc91867be6c1e44f04aefb6b083a9788fc"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s168_A.json",
+      "bytes": 175481,
+      "sha256": "3f9ec0f160c74b32eb85ba33ec6cc40f236fe2810024d628a2b6f48aec6b4098"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s168_B.json",
+      "bytes": 175603,
+      "sha256": "7477176442c3526a8e8de922b41abae4e4f9efbe92462d1f5dd3687f765983d8"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s169_A.json",
+      "bytes": 175237,
+      "sha256": "ce90e412c8ef36c2b41afb5545d044cda29e0db51ff5b54992cb41448f39b8ce"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s169_B.json",
+      "bytes": 175172,
+      "sha256": "61b0f439753bd0e78c47ed7ae16a2d438888f295bc3363def06ef3b81f19275e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s170_A.json",
+      "bytes": 174631,
+      "sha256": "5562ac4e79bf5ba383b90c62f2475a5c049318dd1101fbd85193a498a51d59d9"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s170_B.json",
+      "bytes": 174556,
+      "sha256": "bbab7fa46a11b58bf83f176e4a366b9a836bcbcf4e2eb6c741f328b19bdb3516"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s171_A.json",
+      "bytes": 174650,
+      "sha256": "dd909955dcf04a8bca0a93a6c552d578922994423e906e65e6b198108572941c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s171_B.json",
+      "bytes": 174904,
+      "sha256": "166c515f5a972d6690e999283ebdfe5057bd37d4d7d394e74e53ece2f0044913"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s172_A.json",
+      "bytes": 176892,
+      "sha256": "8438672c2fc1fc7ebcf2a683e7a7df5bdc8f2fcc4327e1aa69092ad398aceac3"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s172_B.json",
+      "bytes": 176803,
+      "sha256": "93e4667e173c64de2b73cde7c2a93f26b3944f88493df8d22f8cf60ced9a908a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s173_A.json",
+      "bytes": 176905,
+      "sha256": "09003d31132826ccb680f6d5659a91537c6d4475faace347e9279c4a2207df84"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s173_B.json",
+      "bytes": 176843,
+      "sha256": "d6013b81fa0ee41c86e63b1dba65d8be701c9955a8e766cb325bf5b49aa81e0e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s174_A.json",
+      "bytes": 176696,
+      "sha256": "24ae8585238b399fbbcf8a7b0e2d3589f444cda738cf3c62dcc35094cfd2eeb1"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s174_B.json",
+      "bytes": 176889,
+      "sha256": "19ff90be4781df5fcdc8ea4e26483c0ab8d9bd8b07745ec6add24c8a701ca4ed"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s175_A.json",
+      "bytes": 176704,
+      "sha256": "d3b0bb22511dd5530000ccc47c8ef1ce190411a36f2957656ac6801d0ede0f16"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s175_B.json",
+      "bytes": 177027,
+      "sha256": "fe36c913b88fed76c7b138ab69f0c9a19d37c1687ace59e2e3f31b31dfc96715"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s176_A.json",
+      "bytes": 174243,
+      "sha256": "b4a8af220c79ab68010272357d06ddd53a1d8609ef5ccb4a3522877176d0eb4c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s176_B.json",
+      "bytes": 174266,
+      "sha256": "045ee740f53084eb980212ae842b7ee07964726b2549b547333e2e5e6c0aef47"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s177_A.json",
+      "bytes": 174592,
+      "sha256": "bfdd5ad088c29558a9c31e30d6a790304181e6413cb67eaef35f45f521723615"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s177_B.json",
+      "bytes": 174689,
+      "sha256": "69deef2c015b804432c37d9d119ddcd6b0345abfc1734e8a59fb7d41e762df7d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s178_A.json",
+      "bytes": 174302,
+      "sha256": "bfa4b7db723a37c5ffd1a1cf68a3c57f216f1d5ffb6e03e5c5fad7cec2698570"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s178_B.json",
+      "bytes": 174233,
+      "sha256": "cb1c17858ec0fc7849802ee7cbbaa8e4393889b7f5af057578fa6322f11a8cbc"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s179_A.json",
+      "bytes": 174363,
+      "sha256": "3dcd7bab95d976ba44fd241a16538c3dbb9976bb17c165b0452ba4f884dede7f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s179_B.json",
+      "bytes": 174267,
+      "sha256": "d9b49ab75c07468f21e7605dc8398c60445e493e342656015094fb5869fde1ec"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s180_A.json",
+      "bytes": 175734,
+      "sha256": "43b1c34db2f33d0c90a75f3d5b68ab6b840d362a53990c2c025554291810f17d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s180_B.json",
+      "bytes": 175821,
+      "sha256": "f6b9709b88f22461930b0f4527efbb304a8675eca4db65063f7935263bf74e48"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s181_A.json",
+      "bytes": 175591,
+      "sha256": "f003972df3467d3bf3769f85d8e6376bd413b13451c57c1f34c7281b42ecb931"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s181_B.json",
+      "bytes": 175744,
+      "sha256": "33a0d3a0eaa39727786beb3df1570c3788a6218befd08f4de5f8f6f9909027d8"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s182_A.json",
+      "bytes": 175055,
+      "sha256": "011d98bac678359d95f551868f0a83c05c62d90adf65fb4e6c0ff6c3f7052dbf"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s182_B.json",
+      "bytes": 174849,
+      "sha256": "abad17fcb368bfed4550a4b4bcb64a6bc604ea008660d481829461c41f07937e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s183_A.json",
+      "bytes": 175452,
+      "sha256": "9e24a01684a8133463207d4a1cc87fe28d11e50679ecf3ae4d2db46ad3bb0073"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s183_B.json",
+      "bytes": 175716,
+      "sha256": "ca95f563bcfc618ef6c86b7c1c8722c5973e861da4009e97d418efc9b13c4368"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s184_A.json",
+      "bytes": 176145,
+      "sha256": "ef492ede35ad56a34c94acea163100e5ecf97a0f158a6a02b06bfe484c8ff2f1"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s184_B.json",
+      "bytes": 176176,
+      "sha256": "3a7164bf323ed852518f48bda3b767d0ccbd79aca88df8321ce99cf81eefbc31"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s185_A.json",
+      "bytes": 176258,
+      "sha256": "cde10f4be561a791d5fe71848bea846109c3e2fe7dd916feb11b92e1315240eb"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s185_B.json",
+      "bytes": 176325,
+      "sha256": "362c011d2c1966c7fbc0cae73c8034f160a91c5aba70864d1faf7805654fe329"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s186_A.json",
+      "bytes": 176201,
+      "sha256": "ec25fc9fd3d75c38cf156f14b7be9b5195ba08176cc825cfaf461292e08fc74a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s186_B.json",
+      "bytes": 176073,
+      "sha256": "ac5d07ab82327e9bb0e38827224f9b52e691f25b2f36dc4ac6ca59dec4df0111"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s187_A.json",
+      "bytes": 176373,
+      "sha256": "017493a245d5f081799504f8c4d76daee294d8b1d2e31cbc26ba06fc105f2798"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s187_B.json",
+      "bytes": 176282,
+      "sha256": "3e37b956312fceaefb9c59d79922dd3df617e77be848ff16f641126342349f6e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s188_A.json",
+      "bytes": 175331,
+      "sha256": "847b3e8a9887ace8bf0b7ddea72a05ca54bed58a425debbddbceae4b05ed67a0"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s188_B.json",
+      "bytes": 175266,
+      "sha256": "8233025f18456f1d7b554ceb6ceac1dad96f6c1f4650532044d706ef5a4ed475"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s189_A.json",
+      "bytes": 174725,
+      "sha256": "f4ec3122de1fcede9723ca439e1416fdeed23becab08ad9c7f6bd03ad9ecd904"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s189_B.json",
+      "bytes": 174550,
+      "sha256": "ecdca0d2884b2ee03c18ee0d71945eca610f998bd208f94bdd7897660e9ceb7f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s190_A.json",
+      "bytes": 175059,
+      "sha256": "dab14e6f2a7a1861aec423bbd10997a281c6e3fdcb638fd52a2cf6e8a468f40e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s190_B.json",
+      "bytes": 175229,
+      "sha256": "011a57123c6835db1c8fa049eb3e9a44c150da3cf08dcd8b0ced4d30c87c1eac"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s191_A.json",
+      "bytes": 175668,
+      "sha256": "99ed8aa64af418ca8ebaf088b1b43d2ae885a8d400fb9faaac778f04bc5a7779"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/full/s191_B.json",
+      "bytes": 175404,
+      "sha256": "a98599e7647d38b24f512e3e598d4f22b5241a46c694999302d0427f1aa1950a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/home/.cache/matplotlib/fontlist-v330.json",
+      "bytes": 145188,
+      "sha256": "a8c0e34e818955ae839478026f302f2f1b23dbca4a1a776c9b6d01d4733a2a65"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/run.json",
+      "bytes": 29408,
+      "sha256": "7deba1e7b5e52f64ad22141f95602503d7b94aa82943d983359ea47de2508c4c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s000_A.json",
+      "bytes": 175226,
+      "sha256": "69b65f4d902709bb00a419f065ee9c2bb50f43eac4d3d899e58e74cb37658723"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s000_A_tensors.npz",
+      "bytes": 12288929,
+      "sha256": "7de3824c8cde1f335d2abf55a66539d67a13b7c4dc19123a0ea9d2302fd270ef"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s000_B.json",
+      "bytes": 175218,
+      "sha256": "80b4413a5a089edf4d1db51dfec6040c5be51c941b884bd24236f4ecacf4bc33"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s000_B_tensors.npz",
+      "bytes": 12288364,
+      "sha256": "f852f4ef611b75b3999f2a2407be71cc7fbea19c584e62697182fd494b5c8ca8"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s001_A.json",
+      "bytes": 174940,
+      "sha256": "d3dfe1ed8d667a12eb904eb5de4a43485904b75bf6d79a0116acc051830232d6"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s001_A_tensors.npz",
+      "bytes": 12289119,
+      "sha256": "6518f6270a8d62a081a920d709df318b0e09af4b0420d1deac0d78f532c501de"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s001_B.json",
+      "bytes": 175105,
+      "sha256": "6bed9aab7272d38bf7b04724684acba05c2401e76dd962717218e793150c2498"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s001_B_tensors.npz",
+      "bytes": 12288606,
+      "sha256": "6df038183edb2d64cb392f7d07f5dc04ff50761e895d010c5b2c4a2f15399cc8"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s040_A.json",
+      "bytes": 175199,
+      "sha256": "3519fcb1d60a9f45114c93cc27f7fac5f0ff05d07d667ce3a24d5e3923a19e97"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s040_A_tensors.npz",
+      "bytes": 12288584,
+      "sha256": "fb4e2276177f5acff640986fcd977bc478e06d3aba64f7e350136675729a5502"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s040_B.json",
+      "bytes": 175155,
+      "sha256": "9b12b286cc142ce17e2868e215d242d8f1e7cc73ddee3de74483f81f2cfe748f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s040_B_tensors.npz",
+      "bytes": 12287980,
+      "sha256": "a24a97e039b087e64e9ded15ae89fb4147185f7782c5aae8b96772d0018b68fa"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s041_A.json",
+      "bytes": 175297,
+      "sha256": "3e4a2b3651c13186371f1432e25b996b9db06402f062d1df8a232b371df61613"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s041_A_tensors.npz",
+      "bytes": 12288943,
+      "sha256": "3435cc189035b4adc0926183f0a232654112bed9edc0df4d318020ad4c46556e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s041_B.json",
+      "bytes": 175437,
+      "sha256": "9178f190ea0b176dc58b06fa63a7b495e369705893df00feb500129f6b452cc0"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s041_B_tensors.npz",
+      "bytes": 12288266,
+      "sha256": "bb253e59441163bea11f5b03814a941b71f78abccdbec86b3039692d82411832"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s042_A.json",
+      "bytes": 174852,
+      "sha256": "6d6cedb0d900d083f08bf58f0c954508747ed12e1876e26091ef8bc0dfb88bcc"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s042_A_tensors.npz",
+      "bytes": 12288636,
+      "sha256": "604689c153a6f67d664b7e7299cdb7f9bf6d3e918dd71f25330ee61c4d61e89b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s042_B.json",
+      "bytes": 174558,
+      "sha256": "d595dfd40ba064d89d6ecd37fb79722d73ebc5f35d5ed9d990b9ff11aad492f5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s042_B_tensors.npz",
+      "bytes": 12288024,
+      "sha256": "8cbe06634316adb68aca5c42020e9b23818eede03d81dcd769bc516acd5e176f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s043_A.json",
+      "bytes": 174863,
+      "sha256": "4201d1773e0fb8d50154c1b44675eb86997fb0815e2f5468268256e36ae117c9"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s043_A_tensors.npz",
+      "bytes": 12288773,
+      "sha256": "1c5d4965fcdc781ea225a81078743b4b60034f5a9e539a15a850c21ee9de1f23"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s043_B.json",
+      "bytes": 175008,
+      "sha256": "9a14dbcaacab4f442f30788e3b04b4dbc16e7360bb0a2326c8ff1bb8ad5676ed"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s043_B_tensors.npz",
+      "bytes": 12288151,
+      "sha256": "3cd2114be6e2168f0c40ae688081a7a8408bbf252c339b67669058f222b05abe"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s044_A.json",
+      "bytes": 175018,
+      "sha256": "c3717068b9b6a99c4e125a991f3a5fd6a09ace12fb8ce04036a1208dc02beab6"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s044_A_tensors.npz",
+      "bytes": 12289184,
+      "sha256": "a4ca7fb36e0fa4b16e6848a36b227e45eb4abdc127c7749f9e743a27d425ee77"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s044_B.json",
+      "bytes": 175248,
+      "sha256": "daafcfbecf515a5da94dce2884526aeab01591cdbae5a972a6d6644df606abf7"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s044_B_tensors.npz",
+      "bytes": 12288655,
+      "sha256": "6d72d439c33b3ab4956c96c540c8d9bbbb39291d061900f6fef1adee23ab9be3"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s045_A.json",
+      "bytes": 175136,
+      "sha256": "d39a1b3424a9b940ea28a61849ca8c4b80e69b4d609c1fe4a57fc2368c840da5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s045_A_tensors.npz",
+      "bytes": 12289154,
+      "sha256": "5e5798e8b7ba38d605d6e0af2ea85c6d22f5228ce3a024993daa13ba17630de9"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s045_B.json",
+      "bytes": 175278,
+      "sha256": "07b78fc43e6d5ef5272f69769d24fb854ec8e2eea21091538200a3887da13e72"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s045_B_tensors.npz",
+      "bytes": 12288648,
+      "sha256": "88096ffd705bd50453925f1b1805ed8e8339cd11fccdc3ae0c7e8e1ef76ef60c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s144_A.json",
+      "bytes": 175759,
+      "sha256": "cc37b79c06c18957b8bee54287f776eba107692b3a6a546f220b996d5bfc5666"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s144_A_tensors.npz",
+      "bytes": 12289606,
+      "sha256": "c7be3ab5c4f000f4aad014ab276924af520e7b3ef823636a2653302803b197bc"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s144_B.json",
+      "bytes": 175785,
+      "sha256": "291a17af039640dd9e3d92ec215dd1ae084c51171dd4b18b8ecb0af2692b99ae"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s144_B_tensors.npz",
+      "bytes": 12288874,
+      "sha256": "55141d4eb2042475b01fb8aaf91018a30bc94551a88a8c581e70fdd2ca4d335e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s145_A.json",
+      "bytes": 175359,
+      "sha256": "fb3a6cdb87f66b9fb14698c97f87c2fa497e6a47067feb9c13b3890f87d79509"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s145_A_tensors.npz",
+      "bytes": 12289590,
+      "sha256": "68ff8fdfca497024385a0e0c71c85e62a84dbd3339a65e621b07984dfabdeb37"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s145_B.json",
+      "bytes": 175226,
+      "sha256": "5cbf5ed5be61186dd9822700eade161363cf69a7338178792dedac708f072511"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s145_B_tensors.npz",
+      "bytes": 12288967,
+      "sha256": "81d0ed8357fac13727cd17bc5435f9aa2cef71d1f519cf9d29003ceee87625ed"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s146_A.json",
+      "bytes": 175218,
+      "sha256": "c3abd1c1872f71dd5836b961fe2b3a20b336c7ab715f6bcb658cd20e8716a444"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s146_A_tensors.npz",
+      "bytes": 12289531,
+      "sha256": "52d772e66fb1b31eedfe49c043bc9768120762598dca1e89a0faace724482f59"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s146_B.json",
+      "bytes": 175166,
+      "sha256": "b3d7a986cb16e20287bcd436c35fcc3ecf529b3f6ddda0c2a4f28204aa992fcd"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s146_B_tensors.npz",
+      "bytes": 12288903,
+      "sha256": "a8f362263cdf1793ddab18f560c80df822d2c15bb5278a09086126524f9241f2"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s147_A.json",
+      "bytes": 175191,
+      "sha256": "3bff728aef46a5d8c130f753558674ae59b15d28b7dfd44f622bdd935199b9ef"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s147_A_tensors.npz",
+      "bytes": 12289688,
+      "sha256": "8ce31937250b98a820eb3633fa94d6cd90990088d42673e439f2add993d4df45"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s147_B.json",
+      "bytes": 174895,
+      "sha256": "24ea707ada791f8e1a364a1c50f7ae469d952a66ab37f19bc2b01723b5e5b133"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8d-camera-order/small/s147_B_tensors.npz",
+      "bytes": 12288972,
+      "sha256": "b7abdd3ae5446a4a1942b9860800880ead51bab98c604860f0efd43e26d5982b"
+    },
+    {
+      "path": "configs/m8d/protocol.json",
+      "bytes": 4886,
+      "sha256": "e5b5634171ddf354b32c697c870935263d411db3301bbd215c309f4dc5c19759"
+    },
+    {
+      "path": "datasets/m8d_camera_order.py",
+      "bytes": 4537,
+      "sha256": "1d4150128f30928b68a0c43baa9465b8e767fc59057fafb47d20a5d0158815ba"
+    },
+    {
+      "path": "diagnostics/m8d_evaluation.py",
+      "bytes": 6160,
+      "sha256": "b7e43b5b54c5c98907a26e6c9cf2bb66138179956c5e7e88dfa75e415a9be0de"
+    },
+    {
+      "path": "docs/M8D_ARCHITECTURE_DECISION.md",
+      "bytes": 1834,
+      "sha256": "9f8cf0455d85531d49647fe65f4a1f63ee09c7ed1ee8f81ee87c48a3539275a9"
+    },
+    {
+      "path": "docs/M8D_IMPLEMENTATION.md",
+      "bytes": 4901,
+      "sha256": "22182ded7272dcbf5c9ea2c2434410aacc1aa948b2e69a20048632173218f2b2"
+    },
+    {
+      "path": "reports/m8d_ablation_protocol.json",
+      "bytes": 6419,
+      "sha256": "1a4072694bd85347c25869b5a8282e93037f8e0af40dfe9caeceb26d4c263187"
+    },
+    {
+      "path": "reports/m8d_acceptance.json",
+      "bytes": 7646,
+      "sha256": "eb607e5302f6b04b1c86f4815ada8912d82a0b5de4bf94fb727a141d69547c18"
+    },
+    {
+      "path": "reports/m8d_failure_ledger.json",
+      "bytes": 4966,
+      "sha256": "a2fd17584c1090a26fd0eb933b2dbb5a5b04c87b99768967f92c0df5ee8a2f5c"
+    },
+    {
+      "path": "reports/m8d_figures/common_identity.png",
+      "bytes": 1086343,
+      "sha256": "5b5e5291158b38da594735056aab9e1eff205516d475d57dac1562ca78c8f220"
+    },
+    {
+      "path": "reports/m8d_figures/group_and_strata.png",
+      "bytes": 75326,
+      "sha256": "44b857ca72b0716a20977dc13d4f712db46505628e5b5c6eeb0caa0662ea3aed"
+    },
+    {
+      "path": "reports/m8d_figures/physical_camera_encoding.png",
+      "bytes": 79222,
+      "sha256": "04c2295b84886d7845fe5b9f4e9012eb1af8f2b9eae044479bea9e198ba2ee49"
+    },
+    {
+      "path": "reports/m8d_figures/s111_identity_threshold.png",
+      "bytes": 529686,
+      "sha256": "a5f3a755606d61024c6207ffa99870a2993307404fd09df453eb4266805fc2c3"
+    },
+    {
+      "path": "reports/m8d_gpu_output_difference.json",
+      "bytes": 407434,
+      "sha256": "c5fbb7c1b7a96c21c73bef74890509f282b2f2049b85ba2a185d26adf3173a9e"
+    },
+    {
+      "path": "reports/m8d_latency_resource.json",
+      "bytes": 50862,
+      "sha256": "b92e46b8488eafa9e18cd5b64ad1bc433f787f7660f222588d81d860f62c4eae"
+    },
+    {
+      "path": "reports/m8d_logs/all_new_tests.json",
+      "bytes": 1799,
+      "sha256": "3e7cd3edf1ff9a02d5e10853ee1e3cb265b9355eb298d7043a7782930edbb337"
+    },
+    {
+      "path": "reports/m8d_logs/all_new_tests.txt",
+      "bytes": 910,
+      "sha256": "310df624a606a0608660ddb9c19ad437573fb9b2d4d4d685ff162b56760ff479"
+    },
+    {
+      "path": "reports/m8d_logs/contract192.json",
+      "bytes": 1374,
+      "sha256": "386638e3ed061e33124715cf8d9e5a192f617448a7ad963227bcfc49b6410039"
+    },
+    {
+      "path": "reports/m8d_logs/contract192.txt",
+      "bytes": 472,
+      "sha256": "6339f34c8cd558f2b2861e7c483c7383abbb14b8d7ae098e57244ec57f77797a"
+    },
+    {
+      "path": "reports/m8d_logs/evaluate.json",
+      "bytes": 1821,
+      "sha256": "09a25543f6979d776cecb8b718ef0608a1dc0d9e01a4efd7f423d51090ae84e1"
+    },
+    {
+      "path": "reports/m8d_logs/evaluate.txt",
+      "bytes": 3622,
+      "sha256": "1e37143fa7c07b61b0df1ae8fb3d2e532dad2660c9f9777387588a1af57b940c"
+    },
+    {
+      "path": "reports/m8d_logs/figures.json",
+      "bytes": 1815,
+      "sha256": "a5dbed47228c98f875f3d855bf8025fd9233498ffb3e197a0c426bc8d741a02b"
+    },
+    {
+      "path": "reports/m8d_logs/figures.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/m8d_logs/final_new_tests.json",
+      "bytes": 2098,
+      "sha256": "8b3bb47bacf40ec6caaf62e986e9a7faa1428096afc24e258620a10bc213061d"
+    },
+    {
+      "path": "reports/m8d_logs/final_new_tests.txt",
+      "bytes": 1372,
+      "sha256": "106b66a8f821cfeb14cbe1e64a16eb4802475b916dccee0048c5556655a84036"
+    },
+    {
+      "path": "reports/m8d_logs/full192.json",
+      "bytes": 1870,
+      "sha256": "a2d145f4c17376570763f6144e4500831c19b28ecfacdeb48c4f8dd5e37bcce1"
+    },
+    {
+      "path": "reports/m8d_logs/full192.txt",
+      "bytes": 4512,
+      "sha256": "b2dadec1e55cd7f52472a2443668e1dcf63684b7a8736c051e69fab67826bfbf"
+    },
+    {
+      "path": "reports/m8d_logs/gpu_failed_v1.py.txt",
+      "bytes": 10084,
+      "sha256": "80c1eccb8053964feb9b10c46cd00c0f2f84dd1531782b8886f779c13cf3237e"
+    },
+    {
+      "path": "reports/m8d_logs/m8b_regression.json",
+      "bytes": 1800,
+      "sha256": "c016514e934fc94a21a2a3f7d814bd5a3b90d45c8f9b0a4aa4a1d07a23eab28b"
+    },
+    {
+      "path": "reports/m8d_logs/m8b_regression.txt",
+      "bytes": 1162,
+      "sha256": "4359095d40c1e511b154d0294d5e7b1af245d1b89fe7d1cefd2f1252a6fa8548"
+    },
+    {
+      "path": "reports/m8d_logs/m8c_regression.json",
+      "bytes": 1799,
+      "sha256": "381be539d1f172b32925eec75280de3cee22550624a1ac2c827d4dbe2397985d"
+    },
+    {
+      "path": "reports/m8d_logs/m8c_regression.txt",
+      "bytes": 940,
+      "sha256": "c9f35141ae96dbfb5519ff6f6eaa917c3547c8e6e5a52051e66542477dd205dd"
+    },
+    {
+      "path": "reports/m8d_logs/order_tests.json",
+      "bytes": 1294,
+      "sha256": "e010cee5432118e0bd770fd6f1279590683590343ee6bdf93ad4af6220bafc3d"
+    },
+    {
+      "path": "reports/m8d_logs/order_tests.txt",
+      "bytes": 618,
+      "sha256": "55786fc9c7e6c9b07575fbc7782bf4df2e5543c1ac99b5c6be695145e3b66d20"
+    },
+    {
+      "path": "reports/m8d_logs/output_audit.json",
+      "bytes": 1825,
+      "sha256": "27292d6b2cb2c9b8479c388cb5f8e18440a8f92dce579a3a4c49e24614f715e1"
+    },
+    {
+      "path": "reports/m8d_logs/output_audit.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/m8d_logs/small12.json",
+      "bytes": 1673,
+      "sha256": "be5454b3063999a2e1b9a5b6d90e326c27ee7c4548faacd9bbbfccd88761c6fd"
+    },
+    {
+      "path": "reports/m8d_logs/small12.txt",
+      "bytes": 1890,
+      "sha256": "01f1271346af191413e4645414ed1bfb328c990e438fcc85a35151025034c3e3"
+    },
+    {
+      "path": "reports/m8d_logs/small12_v2.json",
+      "bytes": 1777,
+      "sha256": "ee4eab7d65961535604cebea24b6f1ff296b88c819ac828ce460731154b5baf1"
+    },
+    {
+      "path": "reports/m8d_logs/small12_v2.txt",
+      "bytes": 1464,
+      "sha256": "6ce097a6206147fadd491f3cea9354719230c3d8b5fe5f25b2df5bc599118b90"
+    },
+    {
+      "path": "reports/m8d_logs/source_audit.json",
+      "bytes": 1323,
+      "sha256": "f4ba2b7b5504bbaafad0e144c5c439690cc8057de024dfcbdf85ce85f278ddc2"
+    },
+    {
+      "path": "reports/m8d_logs/source_audit.txt",
+      "bytes": 536,
+      "sha256": "1346a97bfd59bda33d19a655a837a6a42ecdab81ba3e20b550508e2c4d743f39"
+    },
+    {
+      "path": "reports/m8d_logs/supplement.json",
+      "bytes": 1921,
+      "sha256": "476d5a160d03289bbd317bd640423335a1fcb9070ed9a4fb2778bd2f945ae9b7"
+    },
+    {
+      "path": "reports/m8d_logs/supplement.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/m8d_paired_detection_quality.json",
+      "bytes": 119427,
+      "sha256": "69c2ce4f477548ea17778125ca69dc2bbc442e2245af934fbb86cd3168b9ec7a"
+    },
+    {
+      "path": "reports/m8d_paired_identity_support.json",
+      "bytes": 388635,
+      "sha256": "981e0d93b53df4cbdd7d38e2a202e57e20f7269742f9e7f13f6e5727fa81c2ab"
+    },
+    {
+      "path": "reports/m8d_paired_localization.json",
+      "bytes": 232418,
+      "sha256": "5000fa8b7c09abb9a2dab51db7ee3ae34ea4235233d6a1a10b2aa6a3104e8252"
+    },
+    {
+      "path": "reports/m8d_paired_supplement.json",
+      "bytes": 141091,
+      "sha256": "8ed0558009b098f46acbdab1748b7d02e4f9ac2cca50351d445dd96392189e10"
+    },
+    {
+      "path": "reports/m8d_permutation_contract.json",
+      "bytes": 2887547,
+      "sha256": "93a71aa91fed2b561cc59846e4cbba86d80f20ff14df6636afe378bb6e3eedc9"
+    },
+    {
+      "path": "reports/m8d_score_candidate_burden.json",
+      "bytes": 16948,
+      "sha256": "e12d66ffb47ebf1d7fa6f6639356d53df205022f2c81f6e5c92f319c9de4357b"
+    },
+    {
+      "path": "reports/m8d_source_evidence.json",
+      "bytes": 5889,
+      "sha256": "0b95e023f339394d2ebbddf7f28b32e3b2a910c20577064650d674d9c9d2e228"
+    },
+    {
+      "path": "reports/m8d_summary.md",
+      "bytes": 4987,
+      "sha256": "6fd52b7bd081f0f8df19912ab4c7712a24405bec4e4171a1a5381e2068b4452c"
+    },
+    {
+      "path": "reports/m8d_training_camera_order_evidence.md",
+      "bytes": 3506,
+      "sha256": "36a0b893f37838d8d1bcadf4106bef94cf7f85f65e7988f5bd0e0e2d12787078"
+    },
+    {
+      "path": "reports/m8d_visual_review.json",
+      "bytes": 3089,
+      "sha256": "4ead864650efab6b0c514f9c4f463039b9730ff1eb41d324e5265bd39d114374"
+    },
+    {
+      "path": "reports/m8d_visualization_manifest.json",
+      "bytes": 2342,
+      "sha256": "24bf54d0459b26b8a0f84fc04278789a1b6bf3beb6b879d2d52f0a6a2e1d3aab"
+    },
+    {
+      "path": "tests/test_m8d_evaluation.py",
+      "bytes": 1131,
+      "sha256": "1b699057ea9e30b5724812dbee0ed624c4994dcfdd2c136caefe7d32dc4b40a6"
+    },
+    {
+      "path": "tests/test_m8d_evidence.py",
+      "bytes": 2488,
+      "sha256": "d743225d983f94ea343e928be87c9e97a934761f98ab9f23f3f835869e2be7a1"
+    },
+    {
+      "path": "tests/test_m8d_order.py",
+      "bytes": 2267,
+      "sha256": "d5323292e0c087d6ce6351a0e3322bbc8e5f12aeeb22e6b96d07c556badee7d1"
+    },
+    {
+      "path": "tools/m8d_common.py",
+      "bytes": 2382,
+      "sha256": "ddba8464d33e6730d2bb4eb99850a5e919ee92b55a7f346b8ec03c9527bc3854"
+    },
+    {
+      "path": "tools/m8d_evaluate.py",
+      "bytes": 8449,
+      "sha256": "99218a2dbfcafe2730542bf87e192cffb94a840d06fb983ba0ecb8cb54c9c301"
+    },
+    {
+      "path": "tools/m8d_figures.py",
+      "bytes": 6621,
+      "sha256": "26f29fe331616ac8c3c86101538b226435afc4976f31503dbc2b44bec820c961"
+    },
+    {
+      "path": "tools/m8d_finalize.py",
+      "bytes": 5979,
+      "sha256": "680ca45efb51716cb320147a0a643f5b80dd58e56df41badfcc22da81856f714"
+    },
+    {
+      "path": "tools/m8d_gpu.py",
+      "bytes": 10134,
+      "sha256": "7994a0d94d328ead770f10c923feea5430fdea6d730e069229c1059f3d1ec001"
+    },
+    {
+      "path": "tools/m8d_output_audit.py",
+      "bytes": 4739,
+      "sha256": "61dad312c67c7bf3315a508e7f6d3737660d206c2ff9c8c258e25b70bde3f8a5"
+    },
+    {
+      "path": "tools/m8d_source_audit.py",
+      "bytes": 3666,
+      "sha256": "cf04cf1c892fe59e3d422bd34452e2f309667e1dc6c424b0c5788b0ddfdabc31"
+    },
+    {
+      "path": "tools/m8d_supplement.py",
+      "bytes": 4527,
+      "sha256": "54d1ffdce553be21d76dde71aa8cc21c57dae3bb07515ab48444dd8c497fe2d4"
+    }
+  ],
+  "historical_manifests": [
+    {
+      "manifest": {
+        "path": "reports/m8b_release_manifest.json",
+        "bytes": 363426,
+        "sha256": "6fa9cfd16d1e17e27fe9c2c86f4812e5f335e6e66ab43ac44a783b8ed1ca2c15"
+      },
+      "files": 1620,
+      "unchanged": true
+    },
+    {
+      "manifest": {
+        "path": "reports/m8b_evaluation_reference_audit.json",
+        "bytes": 433182,
+        "sha256": "fe7014a63621ffe34b3a255d19ca00d9d3d52ee07215aae9840d29b548dfcc4a"
+      },
+      "files": 1735,
+      "unchanged": true
+    },
+    {
+      "manifest": {
+        "path": "reports/m8c_release_manifest.json",
+        "bytes": 22448,
+        "sha256": "c883e1f9d7cfa63543607057297148661a07d00ee1d22b6d38f133ed5df60cba"
+      },
+      "files": 107,
+      "unchanged": true
+    }
+  ],
+  "weights": {
+    "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/artifacts/safe_extract/model_tensors.npz",
+    "bytes": 148997988,
+    "sha256": "cf33dccb1d549c425a89cf346d6f05401c49f6cccbd5a579cb7d8937b5a6d591"
+  },
+  "checkpoint_sha256_original": "16d8a4875c36e7d1cba75b357901ff031b18d9d9374f12780b9b72cc621cefad",
+  "commit_contract": "Final Git commit seals this manifest; execution parent plus exact source SHA recorded in each run. Manifest excludes own hash."
+}

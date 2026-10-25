@@ -1,0 +1,197 @@
+{
+  "kind": "ActualGPU_OfflineCARLARecordedEvaluation_SyntheticContracts",
+  "base": "9af1cb20f1d4fe81b25b80d37001a04a18ae985d",
+  "execution_commit": "9af1cb20f1d4fe81b25b80d37001a04a18ae985d",
+  "sources": {
+    "configs/m8d/protocol.json": "e5b5634171ddf354b32c697c870935263d411db3301bbd215c309f4dc5c19759",
+    "tools/m8d_common.py": "ddba8464d33e6730d2bb4eb99850a5e919ee92b55a7f346b8ec03c9527bc3854",
+    "tools/m8d_evaluate.py": "99218a2dbfcafe2730542bf87e192cffb94a840d06fb983ba0ecb8cb54c9c301",
+    "tools/m8d_figures.py": "26f29fe331616ac8c3c86101538b226435afc4976f31503dbc2b44bec820c961",
+    "tools/m8d_finalize.py": "680ca45efb51716cb320147a0a643f5b80dd58e56df41badfcc22da81856f714",
+    "tools/m8d_gpu.py": "7994a0d94d328ead770f10c923feea5430fdea6d730e069229c1059f3d1ec001",
+    "tools/m8d_output_audit.py": "61dad312c67c7bf3315a508e7f6d3737660d206c2ff9c8c258e25b70bde3f8a5",
+    "tools/m8d_source_audit.py": "cf04cf1c892fe59e3d422bd34452e2f309667e1dc6c424b0c5788b0ddfdabc31",
+    "tools/m8d_supplement.py": "54d1ffdce553be21d76dde71aa8cc21c57dae3bb07515ab48444dd8c497fe2d4",
+    "datasets/m8d_camera_order.py": "1d4150128f30928b68a0c43baa9465b8e767fc59057fafb47d20a5d0158815ba",
+    "diagnostics/m8d_evaluation.py": "b7e43b5b54c5c98907a26e6c9cf2bb66138179956c5e7e88dfa75e415a9be0de",
+    "tests/test_m8d_evaluation.py": "1b699057ea9e30b5724812dbee0ed624c4994dcfdd2c136caefe7d32dc4b40a6",
+    "tests/test_m8d_evidence.py": "d743225d983f94ea343e928be87c9e97a934761f98ab9f23f3f835869e2be7a1",
+    "tests/test_m8d_order.py": "d5323292e0c087d6ce6351a0e3322bbc8e5f12aeeb22e6b96d07c556badee7d1"
+  },
+  "checkpoint_sha256": "16d8a4875c36e7d1cba75b357901ff031b18d9d9374f12780b9b72cc621cefad",
+  "petr_commit": "f7525f93467a33707ef401c587a52d5e7b34de74",
+  "training_steps": 0,
+  "visual_control": false,
+  "overall": "DiagnosticCompleted_QualityPartial",
+  "decisions": {
+    "A_TrainingInputOrder": "TrainingPKLOrderNotVerified",
+    "B_Permutation": "PermutationContractPassed",
+    "C_Encoding": "OrderEncodingChanged",
+    "C_ModelResponse": "OrderEffectOnPredictionsSupported",
+    "D_Quality": "OrderChangeNoQualityGain",
+    "E_Consistency": "NoPositiveDetectionTrendAcross38Positions",
+    "F_Identity": "FarFieldIdentityInsufficient",
+    "F_Annotations": "AnnotationSupportInsufficient",
+    "G_Training": "TrainingReadinessNoGo",
+    "ModelAdoption": "NotApproved_DefaultAUnchanged",
+    "Runtime": "OnlineNoGo_HistoricalPartialUnchanged",
+    "Occupancy": "NotValidated",
+    "Perception": "NotValidated",
+    "Safety": "NotValidated"
+  },
+  "execution": {
+    "actual_GPU": "RTX4090",
+    "contract_frames": 192,
+    "contract_cameras": 1152,
+    "hook_pairs": 12,
+    "full_pairs": 192,
+    "successful_forward_calls": 412,
+    "full_raw_candidates_per_variant": 57600,
+    "all_A_replay_bitwise": true,
+    "weights_unchanged": true,
+    "training_steps_executed": 0,
+    "new_CARLA_closed_loops": 0,
+    "failed_trial": "Retained separately; not counted as successful"
+  },
+  "quality": {
+    "natural2m_A": 45,
+    "natural2m_B": 45,
+    "GT": 155,
+    "groups": 38,
+    "transitions": {
+      "A_success__B_success": 45,
+      "A_success__B_failure": 0,
+      "A_failure__B_success": 0,
+      "A_failure__B_failure": 110
+    },
+    "far_A": 1,
+    "far_B": 1,
+    "far_GT": 83,
+    "strict_identity_A": 6,
+    "strict_identity_B": 5,
+    "common_identity": 5,
+    "common_XY_P95_A": 5.08250143760131,
+    "common_XY_P95_B": 6.034157372830014,
+    "new_independent_final_groups": 0
+  },
+  "tests": {
+    "final_new_tests": {
+      "count": 16,
+      "log": {
+        "path": "reports/m8d_logs/final_new_tests.txt",
+        "bytes": 1372,
+        "sha256": "106b66a8f821cfeb14cbe1e64a16eb4802475b916dccee0048c5556655a84036"
+      }
+    },
+    "m8b_regression": {
+      "count": 18,
+      "log": {
+        "path": "reports/m8d_logs/m8b_regression.txt",
+        "bytes": 1162,
+        "sha256": "4359095d40c1e511b154d0294d5e7b1af245d1b89fe7d1cefd2f1252a6fa8548"
+      }
+    },
+    "m8c_regression": {
+      "count": 13,
+      "log": {
+        "path": "reports/m8d_logs/m8c_regression.txt",
+        "bytes": 940,
+        "sha256": "c9f35141ae96dbfb5519ff6f6eaa917c3547c8e6e5a52051e66542477dd205dd"
+      }
+    }
+  },
+  "total_unit_and_regression_tests": 47,
+  "baseline_verified": [
+    {
+      "manifest": {
+        "path": "reports/m8b_release_manifest.json",
+        "bytes": 363426,
+        "sha256": "6fa9cfd16d1e17e27fe9c2c86f4812e5f335e6e66ab43ac44a783b8ed1ca2c15"
+      },
+      "files": 1620,
+      "unchanged": true
+    },
+    {
+      "manifest": {
+        "path": "reports/m8b_evaluation_reference_audit.json",
+        "bytes": 433182,
+        "sha256": "fe7014a63621ffe34b3a255d19ca00d9d3d52ee07215aae9840d29b548dfcc4a"
+      },
+      "files": 1735,
+      "unchanged": true
+    },
+    {
+      "manifest": {
+        "path": "reports/m8c_release_manifest.json",
+        "bytes": 22448,
+        "sha256": "c883e1f9d7cfa63543607057297148661a07d00ee1d22b6d38f133ed5df60cba"
+      },
+      "files": 107,
+      "unchanged": true
+    }
+  ],
+  "reports": {
+    "ablation_protocol": {
+      "path": "reports/m8d_ablation_protocol.json",
+      "bytes": 6419,
+      "sha256": "1a4072694bd85347c25869b5a8282e93037f8e0af40dfe9caeceb26d4c263187"
+    },
+    "source_evidence": {
+      "path": "reports/m8d_source_evidence.json",
+      "bytes": 5889,
+      "sha256": "0b95e023f339394d2ebbddf7f28b32e3b2a910c20577064650d674d9c9d2e228"
+    },
+    "permutation_contract": {
+      "path": "reports/m8d_permutation_contract.json",
+      "bytes": 2887547,
+      "sha256": "93a71aa91fed2b561cc59846e4cbba86d80f20ff14df6636afe378bb6e3eedc9"
+    },
+    "gpu_output_difference": {
+      "path": "reports/m8d_gpu_output_difference.json",
+      "bytes": 407434,
+      "sha256": "c5fbb7c1b7a96c21c73bef74890509f282b2f2049b85ba2a185d26adf3173a9e"
+    },
+    "paired_detection_quality": {
+      "path": "reports/m8d_paired_detection_quality.json",
+      "bytes": 119427,
+      "sha256": "69c2ce4f477548ea17778125ca69dc2bbc442e2245af934fbb86cd3168b9ec7a"
+    },
+    "paired_identity_support": {
+      "path": "reports/m8d_paired_identity_support.json",
+      "bytes": 388635,
+      "sha256": "981e0d93b53df4cbdd7d38e2a202e57e20f7269742f9e7f13f6e5727fa81c2ab"
+    },
+    "paired_localization": {
+      "path": "reports/m8d_paired_localization.json",
+      "bytes": 232418,
+      "sha256": "5000fa8b7c09abb9a2dab51db7ee3ae34ea4235233d6a1a10b2aa6a3104e8252"
+    },
+    "score_candidate_burden": {
+      "path": "reports/m8d_score_candidate_burden.json",
+      "bytes": 16948,
+      "sha256": "e12d66ffb47ebf1d7fa6f6639356d53df205022f2c81f6e5c92f319c9de4357b"
+    },
+    "latency_resource": {
+      "path": "reports/m8d_latency_resource.json",
+      "bytes": 50862,
+      "sha256": "b92e46b8488eafa9e18cd5b64ad1bc433f787f7660f222588d81d860f62c4eae"
+    },
+    "paired_supplement": {
+      "path": "reports/m8d_paired_supplement.json",
+      "bytes": 141091,
+      "sha256": "8ed0558009b098f46acbdab1748b7d02e4f9ac2cca50351d445dd96392189e10"
+    },
+    "visualization_manifest": {
+      "path": "reports/m8d_visualization_manifest.json",
+      "bytes": 2342,
+      "sha256": "24bf54d0459b26b8a0f84fc04278789a1b6bf3beb6b879d2d52f0a6a2e1d3aab"
+    },
+    "failure_ledger": {
+      "path": "reports/m8d_failure_ledger.json",
+      "bytes": 4966,
+      "sha256": "a2fd17584c1090a26fd0eb933b2dbb5a5b04c87b99768967f92c0df5ee8a2f5c"
+    }
+  },
+  "inference_source": "OfficialPETR_Frozen_OfflineShadow; GT only in separate evaluator",
+  "next_priority": "Propose bounded identity/background/data support improvement; no order search or training authorization"
+}

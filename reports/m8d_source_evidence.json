@@ -1,0 +1,157 @@
+{
+  "kind": "OfficialSourceAuditAndSyntheticDatasetTest",
+  "base": "9af1cb20f1d4fe81b25b80d37001a04a18ae985d",
+  "execution_commit": "9af1cb20f1d4fe81b25b80d37001a04a18ae985d",
+  "sources": {
+    "configs/m8d/protocol.json": "e5b5634171ddf354b32c697c870935263d411db3301bbd215c309f4dc5c19759",
+    "tools/m8d_common.py": "ddba8464d33e6730d2bb4eb99850a5e919ee92b55a7f346b8ec03c9527bc3854",
+    "tools/m8d_gpu.py": "80c1eccb8053964feb9b10c46cd00c0f2f84dd1531782b8886f779c13cf3237e",
+    "tools/m8d_source_audit.py": "cf04cf1c892fe59e3d422bd34452e2f309667e1dc6c424b0c5788b0ddfdabc31",
+    "datasets/m8d_camera_order.py": "1d4150128f30928b68a0c43baa9465b8e767fc59057fafb47d20a5d0158815ba",
+    "tests/test_m8d_order.py": "d5323292e0c087d6ce6351a0e3322bbc8e5f12aeeb22e6b96d07c556badee7d1"
+  },
+  "checkpoint_sha256": "16d8a4875c36e7d1cba75b357901ff031b18d9d9374f12780b9b72cc621cefad",
+  "petr_commit": "f7525f93467a33707ef401c587a52d5e7b34de74",
+  "training_steps": 0,
+  "visual_control": false,
+  "official_sources": [
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/tools/data_converter/nuscenes_converter.py",
+      "bytes": 24598,
+      "sha256": "4dcde163dd810ec4e902632b0a0e54514804d7fe668d65fb279790cf090e6881"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/tools/data_converter/nuscenes_converter_seg.py",
+      "bytes": 29226,
+      "sha256": "aa04c9b53d6c3d580f1407b5cbc70bf2605b6e0291889393539bfd9376d5f9e9"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/tools/generate_sweep_pkl.py",
+      "bytes": 8297,
+      "sha256": "2cf27c0c7b78c211650f7379670963f09d8100ddad3650975241a7c54db9a330"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/datasets/nuscenes_dataset.py",
+      "bytes": 3783,
+      "sha256": "ce6ffaf17b85dc6c1e01f2063dd4e8bdc38adef10df79337cf0480e975f9c16b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/datasets/pipelines/transform_3d.py",
+      "bytes": 35382,
+      "sha256": "e4f5075877453074b4a833bbfb86a452674010ccb75b91ec1a3bc6f8fe5cec6f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/datasets/pipelines/loading.py",
+      "bytes": 7306,
+      "sha256": "a38d4ec4f23b589fbcfbad2e475115eb6e1a630c648e4320f56a9851e6dbb6c4"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/models/utils/positional_encoding.py",
+      "bytes": 7336,
+      "sha256": "cf72ae920146d571a355ec0bbae247f65388cc31b29ebf33cf65df008ef00b0d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/models/dense_heads/petr_head.py",
+      "bytes": 35579,
+      "sha256": "18780ee24601a6d0068e341cfaa36081820f83b08fb3f4c47793c59ff0d0fde5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/configs/petr/petr_r50dcn_gridmask_c5.py",
+      "bytes": 8876,
+      "sha256": "435db70e9e8bf6dd0ccf1f9e6a49c865ae0b6daff28152d228ffdd0a98a23e30"
+    }
+  ],
+  "framework_sources": [
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/datasets/pipelines/loading.py",
+      "bytes": 25417,
+      "sha256": "df05495388d4c764c9174587e2e46bcd74ca130c3151b4b04e213dad516067c9"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/datasets/pipelines/formating.py",
+      "bytes": 11506,
+      "sha256": "6ecd1ea78e4de8dac5fe0d7055c2f63bf3b6c7d1d989382c266ecc0387ac17f7"
+    }
+  ],
+  "assignments": {
+    "tools/data_converter/nuscenes_converter.py": [
+      {
+        "line": 351,
+        "name": "camera_types",
+        "value": [
+          "CAM_FRONT",
+          "CAM_FRONT_RIGHT",
+          "CAM_FRONT_LEFT",
+          "CAM_BACK",
+          "CAM_BACK_LEFT",
+          "CAM_BACK_RIGHT"
+        ]
+      },
+      {
+        "line": 197,
+        "name": "camera_types",
+        "value": [
+          "CAM_FRONT",
+          "CAM_FRONT_RIGHT",
+          "CAM_FRONT_LEFT",
+          "CAM_BACK",
+          "CAM_BACK_LEFT",
+          "CAM_BACK_RIGHT"
+        ]
+      }
+    ],
+    "tools/data_converter/nuscenes_converter_seg.py": [
+      {
+        "line": 381,
+        "name": "camera_types",
+        "value": [
+          "CAM_FRONT",
+          "CAM_FRONT_RIGHT",
+          "CAM_FRONT_LEFT",
+          "CAM_BACK",
+          "CAM_BACK_LEFT",
+          "CAM_BACK_RIGHT"
+        ]
+      },
+      {
+        "line": 230,
+        "name": "camera_types",
+        "value": [
+          "CAM_FRONT",
+          "CAM_FRONT_RIGHT",
+          "CAM_FRONT_LEFT",
+          "CAM_BACK",
+          "CAM_BACK_LEFT",
+          "CAM_BACK_RIGHT"
+        ]
+      }
+    ],
+    "tools/generate_sweep_pkl.py": [
+      {
+        "line": 13,
+        "name": "sensors",
+        "value": [
+          "CAM_FRONT",
+          "CAM_FRONT_RIGHT",
+          "CAM_BACK_RIGHT",
+          "CAM_BACK",
+          "CAM_BACK_LEFT",
+          "CAM_FRONT_LEFT"
+        ]
+      }
+    ]
+  },
+  "synthetic_pickle_order_preserved": true,
+  "actual_dataset_get_data_info_order": [
+    "CAM_FRONT",
+    "CAM_FRONT_RIGHT",
+    "CAM_FRONT_LEFT",
+    "CAM_BACK",
+    "CAM_BACK_LEFT",
+    "CAM_BACK_RIGHT"
+  ],
+  "training_PKL_candidates": [],
+  "training_order": "TrainingPKLOrderNotVerified",
+  "B_name": "OfficialConverterOrderCandidate",
+  "limit": "Synthetic trusted local pickle proves mechanism only. No actual checkpoint-training PKL obtained. Sweep generator replaces sweeps, not keyframe cams; sweep loader explicitly selects sensors. C5 singleframe config has no sweep loader."
+}

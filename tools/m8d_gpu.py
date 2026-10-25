@@ -1,0 +1,187 @@
+"""Frozen RGB-only paired inference, isolated from all GT evaluation."""
+import argparse
+import json
+import os
+import sys
+import time
+from pathlib import Path
+
+import numpy as np
+import torch
+from datasets.m8b_petr_adapter import PETRCarlaOfflineAdapter, old_boxes_to_hs
+from datasets.m8d_camera_order import prepare, check_pair
+from tools.m8d_common import CFG, ROOT, BASELINE, RUNTIME, provenance, asset, write, sha
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--phase', choices=['contract', 'small', 'full'], required=True)
+    args = parser.parse_args()
+    out = ROOT / args.phase
+    out.mkdir(exist_ok=False)
+    blocked = []
+
+    def guard(event, arguments):
+        if event == 'open' and isinstance(arguments[0], (str, bytes)):
+            path = Path(os.fsdecode(arguments[0])).resolve()
+            if (str(path).startswith('/root/gpufree-data/hs-drive-data') or
+                Path.cwd()/'runs' in path.parents or Path.cwd()/'reports' in path.parents or
+                path.name in ['evaluation_index.json', 'evaluation_ledger.json', 'association_ledger.json']):
+                blocked.append(str(path))
+                raise PermissionError('GT/evaluator forbidden in inference')
+    sys.addaudithook(guard)
+    try:
+        (BASELINE/'evaluation_index.json').read_bytes()
+        raise AssertionError('Isolation canary failed')
+    except PermissionError:
+        pass
+    torch.manual_seed(CFG['seed'])
+    torch.set_num_threads(2)
+    torch.backends.cuda.matmul.allow_tf32 = False
+    torch.backends.cudnn.allow_tf32 = False
+    torch.backends.cudnn.benchmark = False
+    import mmcv
+    import projects.mmdet3d_plugin
+    from mmdet3d.models import build_model
+    adapter = PETRCarlaOfflineAdapter(BASELINE/'rgb_bundle')
+    if args.phase == 'contract':
+        records = []
+        for token in CFG['full_tokens']:
+            packet = json.loads((BASELINE/'rgb_bundle'/token/'packet.json').read_text())
+            a, ma, _, _ = prepare(adapter, packet, 'A')
+            b, mb, _, _ = prepare(adapter, packet, 'B')
+            records.append(check_pair(a, ma, b, mb))
+            del a, b
+        write(out/'run.json', dict(**provenance('ActualRGBTensorAndGeometryContract_NoModelForward'),
+              status='PermutationContractPassed', records=records, frames=len(records), blocked_canaries=blocked))
+        return
+    gate = json.loads((ROOT/'contract/run.json').read_text())
+    assert gate['status'] == 'PermutationContractPassed' and gate['frames'] == 192
+    if args.phase == 'full':
+        small = json.loads((ROOT/'small/run.json').read_text())
+        assert small['frames'] == 12 and small['finite_outputs'] and small['weights_unchanged']
+    cfg = mmcv.Config.fromfile(str(RUNTIME/'sources/PETR/projects/configs/petr/petr_r50dcn_gridmask_c5.py'))
+    cfg.model.img_backbone.pretrained = None
+    model = build_model(cfg.model, train_cfg=cfg.get('train_cfg'), test_cfg=cfg.get('test_cfg'))
+    safe = RUNTIME/'artifacts/safe_extract/model_tensors.npz'
+    assert sha(safe) == CFG['numeric_weights_sha256']
+    with np.load(safe, allow_pickle=False) as arrays:
+        state = {k: torch.from_numpy(arrays[k].copy()) for k in arrays.files}
+    model.load_state_dict(state, strict=True)
+    model.cuda().eval().requires_grad_(False)
+    head = model.pts_bbox_head
+    assert len(state) == 558 and head.num_query == 900 and head.num_classes == 10
+    assert len(head.transformer.decoder.layers) == 6
+    tokens = CFG['hook_tokens'] if args.phase == 'small' else CFG['full_tokens']
+    observed = {}
+    handles = []
+
+    def capture(name):
+        def hook(module, inputs, output):
+            observed[name] = output.detach().cpu().numpy().copy()
+        return hook
+
+    def capture_position(module, inputs):
+        observed['final_position_embedding'] = inputs[3].detach().cpu().numpy().copy()
+
+    if args.phase == 'small':
+        handles = [head.position_encoder.register_forward_hook(capture('geometry_encoding')),
+                   head.positional_encoding.register_forward_hook(capture('sine_encoding')),
+                   head.adapt_pos3d.register_forward_hook(capture('adapted_sine_encoding')),
+                   head.transformer.register_forward_pre_hook(capture_position)]
+    records, replay = [], []
+    for index, token in enumerate(tokens):
+        packet_path = BASELINE/'rgb_bundle'/token/'packet.json'
+        packet = json.loads(packet_path.read_text())
+        order = ['A', 'B'] if index % 2 == 0 else ['B', 'A']
+        for variant in order:
+            observed.clear()
+            torch.cuda.synchronize()
+            torch.cuda.reset_peak_memory_stats()
+            start = time.perf_counter()
+            cpu, meta, audit, times = prepare(adapter, packet, variant)
+            t = time.perf_counter()
+            inp = torch.from_numpy(cpu).cuda()
+            torch.cuda.synchronize()
+            times['h2d_ms'] = 1000*(time.perf_counter()-t)
+            if index == 0:
+                with torch.no_grad():
+                    warm = head(model.extract_feat(inp.view(1, 6, 3, 512, 1408), [dict(meta)]), [dict(meta)])
+                    head.get_bboxes(warm, [dict(meta)], rescale=True)
+                torch.cuda.synchronize()
+                del warm
+                start = time.perf_counter()-sum(times[k] for k in ['preprocess_ms', 'h2d_ms'])/1000
+                observed.clear()
+            with torch.no_grad():
+                t = time.perf_counter()
+                features = model.extract_feat(inp.view(1, 6, 3, 512, 1408), [dict(meta)])
+                raw = head(features, [dict(meta)])
+                torch.cuda.synchronize()
+                times['model_forward_ms'] = 1000*(time.perf_counter()-t)
+                t = time.perf_counter()
+                obj = head.get_bboxes(raw, [dict(meta)], rescale=True)[0]
+                torch.cuda.synchronize()
+                times['box_decode_ms'] = 1000*(time.perf_counter()-t)
+                t = time.perf_counter()
+                boxes = obj[0].tensor.cpu().numpy()
+                scores = obj[1].cpu().numpy()
+                labels = obj[2].cpu().numpy()
+                torch.cuda.synchronize()
+                times['to_cpu_ms'] = 1000*(time.perf_counter()-t)
+            assert boxes.shape == (300, 9) and np.isfinite(boxes).all() and np.isfinite(scores).all()
+            names = meta['camera_names']
+            record = dict(token=token, variant=variant,
+                variant_name='HSOrder' if variant == 'A' else CFG['B_name'],
+                frame_id=packet['frame_id'], timestamp_s=packet['timestamp_s'],
+                source='OfficialPETR_Frozen_OfflineShadow', control_authorized=False,
+                coordinate_frame='HS_ego_x_forward_y_left_z_up',
+                checkpoint_sha256=CFG['checkpoint_sha256'], packet=asset(packet_path),
+                camera_names=names, rgb_sha256=meta['rgb_sha256'],
+                calibration=[dict(name=n, K=meta['K'][i], T_cam_to_ego=meta['T_cam_to_ego'][i],
+                    intrinsic_aug=meta['intrinsics'][i].tolist(), extrinsic=meta['extrinsics'][i].tolist(),
+                    lidar2img=meta['lidar2img'][i].tolist()) for i, n in enumerate(names)],
+                raw_old_framework_boxes=boxes.tolist(), boxes=old_boxes_to_hs(boxes).tolist(),
+                scores=scores.tolist(), labels=labels.tolist(),
+                peak_allocated_bytes=torch.cuda.max_memory_allocated(),
+                peak_reserved_bytes=torch.cuda.max_memory_reserved())
+            t = time.perf_counter()
+            json.dumps(record, allow_nan=False)
+            times['serialization_ms'] = 1000*(time.perf_counter()-t)
+            times['e2e_before_artifact_write_ms'] = 1000*(time.perf_counter()-start)
+            record['latency_ms'] = times
+            t = time.perf_counter()
+            write(out/(token+'_'+variant+'.json'), record)
+            times['artifact_write_ms'] = 1000*(time.perf_counter()-t)
+            if args.phase == 'small':
+                tensors = dict(**observed, all_bbox_preds=raw['all_bbox_preds'].detach().cpu().numpy(),
+                               all_cls_scores=raw['all_cls_scores'].detach().cpu().numpy())
+                with (out/(token+'_'+variant+'_tensors.npz')).open('xb') as stream:
+                    np.savez_compressed(stream, **tensors)
+            if variant == 'A':
+                old = json.loads((BASELINE/'forward'/(token+'.json')).read_text())
+                replay.append(dict(token=token,
+                    box_exact=np.array_equal(boxes, old['raw_old_framework_boxes']),
+                    score_exact=np.array_equal(scores, old['scores']),
+                    labels_exact=np.array_equal(labels, old['labels']),
+                    box_max_abs=float(np.max(abs(boxes-np.array(old['raw_old_framework_boxes'])))),
+                    score_max_abs=float(np.max(abs(scores-np.array(old['scores']))))))
+            records.append(dict(token=token, variant=variant, latency_ms=times,
+                peak_allocated_bytes=record['peak_allocated_bytes'],
+                peak_reserved_bytes=record['peak_reserved_bytes'],
+                output=asset(out/(token+'_'+variant+'.json'))))
+            del cpu, inp, features, raw, obj
+        print(args.phase, token, 'paired', flush=True)
+    for handle in handles:
+        handle.remove()
+    model.cpu()
+    assert all(torch.equal(model.state_dict()[k], v) for k, v in state.items())
+    write(out/'run.json', dict(**provenance('ActualRTX4090FrozenPairedInference'),
+        frames=len(tokens), records=records, replay_A=replay, finite_outputs=True, weights_unchanged=True,
+        device=torch.cuda.get_device_name(), torch=torch.__version__, cuda=torch.version.cuda,
+        blocked_canaries=blocked, precision='FP32_no_TF32', warmup_forward_calls=2,
+        timing='Small includes observation; full has no hooks. E2E excludes artifact persistence and replay verification. First pair excludes warmup; also report steady frames.',
+        isolation='Network namespace + Python open guard + sanitized RGB bundle; not a hostile native-code filesystem sandbox'))
+
+
+if __name__ == '__main__':
+    main()
