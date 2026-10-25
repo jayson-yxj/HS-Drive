@@ -1,0 +1,151 @@
+{
+  "kind": "ActualCARLA8Frames_OfflineSourceAndQualityAudit",
+  "base": "12bd124b443cc01c60ee4251fd1be20d868928c1",
+  "execution_commit": "12bd124b443cc01c60ee4251fd1be20d868928c1",
+  "sources": {
+    "configs/m8f/contract.json": "72c8f7b40c56a1cef83273d28a91cd4ee3caf2ff4cf6810560acdbffb5cb17d8",
+    "configs/m8f/protocol.json": "f4beebbe95f38d537141bf23a7f46a115cfd003df2c37bcaba29c83302b6afa2",
+    "datasets/m8f_quality.py": "4371b46bc984b07388af574c75e51208aab5d17e9f4538e1196f61ecf3bf684f",
+    "simulator/m8f_placement.py": "5601192d9ada875e78549929e5dfc1a93796abeaddbe14ef3ab32a9bb023abae",
+    "tests/test_m8f_quality.py": "e963f3016891970c85c3d836cae3f7a40ec8fdc9d77e5fbe83398b8487ab53bd",
+    "tools/m8f_allocate.py": "5d31651ab91dd66c65ad99155c24eb61336e64a3295339c9913e8cad3f71eca1",
+    "tools/m8f_audit.py": "1d6c133e27d7c721b1028e597da45ee2f76abef56e68276aeefedda289868fd2",
+    "tools/m8f_capture.py": "0bd13cafd39813aefbd18a72af9023ad0ed33d4e12489b19ca414281d5657d43",
+    "tools/m8f_common.py": "4aba02f25a4e31299c09b6247b6d311f9f1d6a6ee45a60ff0649a2f2c3bbbd1d",
+    "tools/m8f_counterfactual.py": "2a67311b4ad14c4de7831dd01f4ac95212eb004eca807e23ed433a0bf77d8a0a",
+    "tools/m8f_history.py": "0502b2cf56a9824b029497d3ab80ccc6be4834f798041a8588f2d1fe077cf9bb",
+    "tools/m8f_negative_controls.py": "9e486f4873b3f5cd6815739836e5969e172a056fe834ff6681b953866780d18a",
+    "tools/m8f_reports.py": "f2c00a8a1bb94ac622cf20750a70c934f26c3a87b454021afc09dc80fac96140",
+    "tools/m8f_water_probe.py": "6e621744a44ae3ff5cfcbc62a5469e278059f9f65d2487e101f9086e471e2853"
+  },
+  "training_steps": 0,
+  "new_model_forwards": 0,
+  "visual_control": false,
+  "contract": {
+    "path": "configs/m8f/contract.json",
+    "bytes": 2143,
+    "sha256": "72c8f7b40c56a1cef83273d28a91cd4ee3caf2ff4cf6810560acdbffb5cb17d8"
+  },
+  "rules": {
+    "stage": "M8-F",
+    "base": "12bd124b443cc01c60ee4251fd1be20d868928c1",
+    "frozen_before_smoke": true,
+    "max_groups": 8,
+    "max_frames": 32,
+    "smoke_groups": 2,
+    "smoke_frames": 8,
+    "phases": [
+      "empty",
+      "present",
+      "shifted",
+      "removed"
+    ],
+    "ground": {
+      "ray_above_m": 8.0,
+      "ray_below_m": 15.0,
+      "layer_window_m": 8.0,
+      "distinct_layer_m": 0.5,
+      "waypoint_z_tolerance_m": 0.5,
+      "support_height_spread_m": 0.12,
+      "bottom_gap_min_m": -0.03,
+      "bottom_gap_max_m": 0.12,
+      "requested_clearance_m": 0.03,
+      "footprint_grid": [
+        5,
+        3
+      ],
+      "lane_inset_m": 0.1,
+      "yaw_to_lane_max_deg": 5.0,
+      "actual_request_position_max_m": 0.02,
+      "actual_request_rotation_max_deg": 0.5,
+      "no_z_fallback": true,
+      "grade": "GroundedByGeometryProxy",
+      "physical_contact_certified": false
+    },
+    "class_regions": {
+      "vehicle": {
+        "lanes": [
+          "Driving",
+          "Parking"
+        ],
+        "semantics": [
+          1,
+          24
+        ],
+        "scenario": "lane-aligned stopped vehicle"
+      },
+      "person": {
+        "lanes": [
+          "Sidewalk"
+        ],
+        "semantics": [
+          2
+        ],
+        "scenario": "pedestrian on sidewalk"
+      },
+      "cone": {
+        "lanes": [
+          "Driving",
+          "Shoulder"
+        ],
+        "semantics": [
+          1,
+          24
+        ],
+        "scenario": "declared temporary road-edge work zone"
+      },
+      "barrier": {
+        "lanes": [
+          "Driving",
+          "Shoulder"
+        ],
+        "semantics": [
+          1,
+          24
+        ],
+        "scenario": "declared temporary road-edge work zone"
+      }
+    },
+    "identity": {
+      "min_pixels": 3,
+      "min_retained_pixels": 3,
+      "depth_range_m": [
+        1.5,
+        80
+      ],
+      "box_tolerance_m": 0.25,
+      "min_geometry_purity": 0.9,
+      "min_semantic_agreement": 0.95
+    },
+    "independence": {
+      "ego_distance_m": 100.0,
+      "target_footprint_distance_m": 20.0,
+      "target_uncertainty_margin_m": 2.0,
+      "historical_scene_envelope_m": 80.0,
+      "new_group_distance_m": 150.0,
+      "incomplete_history_final": "HeldoutIndependenceNoGo",
+      "repeated_family": "RepeatedLayoutFamily_NotIndependentDistribution"
+    },
+    "smoke_gate": {
+      "both_groups_have_grounded_visible_vehicle_and_person": true,
+      "all_accepted_targets_final_support_pass": true,
+      "no_unexplained_missing_target": true,
+      "invalid_controls_rejected": true,
+      "no_threshold_relaxation": true
+    },
+    "inference": {
+      "new_forward": false,
+      "training": false,
+      "visual_control": false,
+      "default_order": "A",
+      "score": 0.1
+    }
+  },
+  "source_docs": "https://carla.readthedocs.io/en/0.9.15/python_api/",
+  "implementation": {
+    "path": "simulator/m8f_placement.py",
+    "bytes": 7101,
+    "sha256": "5601192d9ada875e78549929e5dfc1a93796abeaddbe14ef3ab32a9bb023abae"
+  },
+  "qualification": "15-point support geometry proxy; not exact mesh/continuous support; strict no-fallback"
+}

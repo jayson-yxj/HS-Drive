@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8f_capture.py", line 162, in <module>
+    if __name__=='__main__':main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8f_capture.py", line 64, in main
+    req[phase]=validate_request(world,mp,wp,spec['asset'],contract,inventory,where['offset_m'])
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m8f_placement.py", line 66, in validate_request
+    box=dict(corners_world_m=corners.tolist());overlap=static_overlap(box,environment)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m8f_placement.py", line 39, in static_overlap
+    if np.linalg.norm(c.mean(0)[:2]-b.mean(0)[:2])>np.linalg.norm(c[:,:2].ptp(0))+np.linalg.norm(b[:,:2].ptp(0)):continue
+AttributeError: `ptp` was removed from the ndarray class in NumPy 2.0. Use np.ptp(arr, ...) instead.

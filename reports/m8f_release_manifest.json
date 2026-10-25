@@ -1,0 +1,1846 @@
+{
+  "kind": "FinalSourceAndEvidenceManifest",
+  "base": "12bd124b443cc01c60ee4251fd1be20d868928c1",
+  "execution_commit": "12bd124b443cc01c60ee4251fd1be20d868928c1",
+  "sources": {
+    "configs/m8f/contract.json": "72c8f7b40c56a1cef83273d28a91cd4ee3caf2ff4cf6810560acdbffb5cb17d8",
+    "configs/m8f/protocol.json": "f4beebbe95f38d537141bf23a7f46a115cfd003df2c37bcaba29c83302b6afa2",
+    "datasets/m8f_quality.py": "4371b46bc984b07388af574c75e51208aab5d17e9f4538e1196f61ecf3bf684f",
+    "simulator/m8f_placement.py": "5601192d9ada875e78549929e5dfc1a93796abeaddbe14ef3ab32a9bb023abae",
+    "tests/test_m8f_evidence.py": "052ebf5b579b215496a14fe93fabe4acb5e15cc89483474621abfa0131084a31",
+    "tests/test_m8f_quality.py": "e963f3016891970c85c3d836cae3f7a40ec8fdc9d77e5fbe83398b8487ab53bd",
+    "tools/m8f_allocate.py": "5d31651ab91dd66c65ad99155c24eb61336e64a3295339c9913e8cad3f71eca1",
+    "tools/m8f_audit.py": "1d6c133e27d7c721b1028e597da45ee2f76abef56e68276aeefedda289868fd2",
+    "tools/m8f_capture.py": "0bd13cafd39813aefbd18a72af9023ad0ed33d4e12489b19ca414281d5657d43",
+    "tools/m8f_certificates.py": "a41ae4e1e5153c95b3db681275bdfdaf5a72eea49691f92c66faaa263261f077",
+    "tools/m8f_closeout.py": "00f96cb7b4756c374bcec6834b4a88966ea275db73f4e7a36dd614eb1f425a06",
+    "tools/m8f_common.py": "4aba02f25a4e31299c09b6247b6d311f9f1d6a6ee45a60ff0649a2f2c3bbbd1d",
+    "tools/m8f_counterfactual.py": "2a67311b4ad14c4de7831dd01f4ac95212eb004eca807e23ed433a0bf77d8a0a",
+    "tools/m8f_figures.py": "c92a30ccd75441800d2b4b8f7ad5ed09688e02870c82e431b552566d5cf661ce",
+    "tools/m8f_finalize.py": "6cd10a1ea7f87da8f8a561e1e0efe3324a9a0031a665d5e107b5ac3422a245fc",
+    "tools/m8f_geometry_figures.py": "bc450254dd9cfcb271a2529cec1f6fa0771cbdf424711a49582f956933c46773",
+    "tools/m8f_history.py": "0502b2cf56a9824b029497d3ab80ccc6be4834f798041a8588f2d1fe077cf9bb",
+    "tools/m8f_history_supplement.py": "4aa5caf7b4eed5171c4b25ede1c290bba391f56dff3c9eb9b429fedb2f69b3db",
+    "tools/m8f_negative_controls.py": "9e486f4873b3f5cd6815739836e5969e172a056fe834ff6681b953866780d18a",
+    "tools/m8f_region_review.py": "9c194af7478564305e73e808afaaef3c66a3c00b1c14b792fa2c3b03887b7e5f",
+    "tools/m8f_reports.py": "f2c00a8a1bb94ac622cf20750a70c934f26c3a87b454021afc09dc80fac96140",
+    "tools/m8f_verify.py": "8151152261a1e0d8ef8020f620e5b72e0c8032bcf04a24b2b223da1be4553cef",
+    "tools/m8f_water_probe.py": "6e621744a44ae3ff5cfcbc62a5469e278059f9f65d2487e101f9086e471e2853"
+  },
+  "training_steps": 0,
+  "new_model_forwards": 0,
+  "visual_control": false,
+  "files": [
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/audit/m8f_development_00.json",
+      "bytes": 4007954,
+      "sha256": "aa8f94bf1e10ca4ea89e3159cc9dfa31f67c311b93e47c7d40c09560da338777"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/audit/m8f_development_01.json",
+      "bytes": 4260056,
+      "sha256": "b5bbc5f48e8adb48d2f7130019795270e9357c0e3413805fd16e1d6014815a43"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/failed_preflight_development_00_numpy2/evaluator/environment_inventory.json",
+      "bytes": 7709172,
+      "sha256": "72ebbad734969a31f4903873741341a42a2eb7547616415763286c933112a459"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/failed_preflight_development_00_numpy2/evaluator/level_bbs.json",
+      "bytes": 5570566,
+      "sha256": "34960f5bc6ac2b6b806d442e4ad68c84e51f9d5ce31e3e6a2243e40b3e5bdc21"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/empty_front_depth.npz",
+      "bytes": 703752,
+      "sha256": "3f1ba646ae39e91878307a35bafcc48b41d2f3008a820acc860f89abde8d9b55"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/empty_front_instance.npz",
+      "bytes": 22074,
+      "sha256": "4d92ae1fa6ffdf32e70833b2447a52328e480126d68d896e256ccca51dc65b6f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/empty_front_left_depth.npz",
+      "bytes": 786522,
+      "sha256": "4fc7086644e72da8faf79e1877d1892fa8c45c0695817cf4f8ed0d32bd911cfe"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/empty_front_left_instance.npz",
+      "bytes": 16918,
+      "sha256": "9844faf5dd04711898e91ba5dfe600e21db560b8f8f92f92ebd9c206ecefc038"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/empty_front_left_semantic.npz",
+      "bytes": 8546,
+      "sha256": "8435af53ff020dfa11ecc7d2f0de8a323907ba28361978d2d29864825161986f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/empty_front_right_depth.npz",
+      "bytes": 964561,
+      "sha256": "7a74c5ca585a8b3c082c2eb6e9c0243fff6ced0b4787f9d7b33392fa241c983f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/empty_front_right_instance.npz",
+      "bytes": 18472,
+      "sha256": "b61349856c88d50f77ce96ac18de49d9c72bb9773d779b18a9bf0d0898ac69ee"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/empty_front_right_semantic.npz",
+      "bytes": 13658,
+      "sha256": "1cccafb38ef359b273317674f64c9012caface0927c37bfbfd43bd41f7c085aa"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/empty_front_semantic.npz",
+      "bytes": 13985,
+      "sha256": "d44ea3e3ff54f741253cbafea99183444baee216ddcb70b2013e2c4bd45b432f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/empty_rear_depth.npz",
+      "bytes": 779882,
+      "sha256": "bf912ee587b19ff2955a3089df7e300b3a4d9ed86149c1904114bd106a7c361b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/empty_rear_instance.npz",
+      "bytes": 23661,
+      "sha256": "1379ecce3aa9cc6d5f9b1bb18312562f0deff85df58642ca330c4a922f5bf9b5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/empty_rear_left_depth.npz",
+      "bytes": 838935,
+      "sha256": "1a1511b4ca90f2a534c788b4c0be661da2ec33e9f67681104234cf35c7b3811c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/empty_rear_left_instance.npz",
+      "bytes": 18251,
+      "sha256": "a19a30ba3325b26031736345441582279bf7c356d056a63d26e58fc341a1acfd"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/empty_rear_left_semantic.npz",
+      "bytes": 9238,
+      "sha256": "a5a54584493e00079b79908b7c35a470cc84d232af9e50ed55847a1044eb8ed6"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/empty_rear_right_depth.npz",
+      "bytes": 968836,
+      "sha256": "cc159d513e1a8449737231f663d331474f49a45c3e50554d37ef0c64eb95dbe3"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/empty_rear_right_instance.npz",
+      "bytes": 19997,
+      "sha256": "7d1cf8146e3e37f84b38114eaebb9d5ca32f4ab6410e8533abd78a42bcd8fd17"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/empty_rear_right_semantic.npz",
+      "bytes": 16756,
+      "sha256": "8067cfae5b6ca987639dec72d1c2dce4a6089a5e38cdb1f9d8eaebb018730f5a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/empty_rear_semantic.npz",
+      "bytes": 15454,
+      "sha256": "bb4313da6ccb00386bd2a925741afe40bf6961032f0fe241d83b508e2bd3a8e7"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/empty_sidecar.json",
+      "bytes": 335581,
+      "sha256": "e3bb1430b17473eba0fed39fc56fdbb99d31639efb738c6f920d240642c5255e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/empty_support.json",
+      "bytes": 94,
+      "sha256": "8d4dd76f00f37b24913b1fd5a62fb6fc253267cf90502590dcb7d2f692ab9629"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/environment_inventory.json",
+      "bytes": 7709172,
+      "sha256": "c7772c284db064856503e70c96bd08cdb487323cb60232998893704ba219b857"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/grounded_requests.json",
+      "bytes": 304839,
+      "sha256": "e6b1aaa059f0a9b8fcce3229d10107189a8b1c0c208c6df0c778a3b8ccc39e26"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/level_bbs.json",
+      "bytes": 5570566,
+      "sha256": "34960f5bc6ac2b6b806d442e4ad68c84e51f9d5ce31e3e6a2243e40b3e5bdc21"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/present_front_depth.npz",
+      "bytes": 703874,
+      "sha256": "a5261067b851850d1c5a8ab2a2e2220a6142cf6c843042b7b53744db9ed6457e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/present_front_instance.npz",
+      "bytes": 22074,
+      "sha256": "4d92ae1fa6ffdf32e70833b2447a52328e480126d68d896e256ccca51dc65b6f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/present_front_left_depth.npz",
+      "bytes": 788675,
+      "sha256": "d5e37c8df0e0c2e33eddf883354d98282f579fc700f502a35c0ad757164b475b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/present_front_left_instance.npz",
+      "bytes": 16918,
+      "sha256": "9844faf5dd04711898e91ba5dfe600e21db560b8f8f92f92ebd9c206ecefc038"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/present_front_left_semantic.npz",
+      "bytes": 8522,
+      "sha256": "15f690bcb9f50aa2629bbe70f4c467f5680cb56ecdec8c406f9292748d46dd91"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/present_front_right_depth.npz",
+      "bytes": 964696,
+      "sha256": "3068ec617ce39c07b0e8ab80f0cec251a1a405241a0f203db18e5ae450d6893e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/present_front_right_instance.npz",
+      "bytes": 18472,
+      "sha256": "b61349856c88d50f77ce96ac18de49d9c72bb9773d779b18a9bf0d0898ac69ee"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/present_front_right_semantic.npz",
+      "bytes": 13597,
+      "sha256": "146b50f515919e42b794e44eec57edb144333250fb1ee5c49fa23a3e4a88a857"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/present_front_semantic.npz",
+      "bytes": 13982,
+      "sha256": "2dc4b7790ff264536c705b9a79f5a8f95fc919eacc3ad5a7d6c3e536d5f5142d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/present_rear_depth.npz",
+      "bytes": 780137,
+      "sha256": "96d8fc077cdbb05e8918dfaeaa14fdbd3d33c4772a5b05beb11c476ebf1d2fdd"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/present_rear_instance.npz",
+      "bytes": 23661,
+      "sha256": "1379ecce3aa9cc6d5f9b1bb18312562f0deff85df58642ca330c4a922f5bf9b5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/present_rear_left_depth.npz",
+      "bytes": 838886,
+      "sha256": "2d65965a380656295bbafcc96baf307bdb9178c6a5b9399406fa2a681818729c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/present_rear_left_instance.npz",
+      "bytes": 18251,
+      "sha256": "a19a30ba3325b26031736345441582279bf7c356d056a63d26e58fc341a1acfd"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/present_rear_left_semantic.npz",
+      "bytes": 9199,
+      "sha256": "261caa41e9b7f74ef331744a5db954cd756a8294db3e121d03e88160da50bb60"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/present_rear_right_depth.npz",
+      "bytes": 968983,
+      "sha256": "83fbbd60d3bc8309047086ad38ed54bf841a8640227d6c36ff8fe394c49db571"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/present_rear_right_instance.npz",
+      "bytes": 19997,
+      "sha256": "7d1cf8146e3e37f84b38114eaebb9d5ca32f4ab6410e8533abd78a42bcd8fd17"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/present_rear_right_semantic.npz",
+      "bytes": 16599,
+      "sha256": "c1feef760700a3ea716d6d292f4d2bc7ff6c8eb275f5325985ff13c0de0fd082"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/present_rear_semantic.npz",
+      "bytes": 15426,
+      "sha256": "72340bb9cea5cd1775c03ae0648b3e336811c31bf742128c10cd24e95a95d044"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/present_sidecar.json",
+      "bytes": 335635,
+      "sha256": "87180319308fd332e397dd2beef49e980452aef338e46e2a1276728cb1392205"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/present_support.json",
+      "bytes": 96,
+      "sha256": "605182ef47f5396202ddc157013aa24322aeb788740a0d11d8e6c741bde81a93"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/removed_front_depth.npz",
+      "bytes": 704032,
+      "sha256": "ca366efe4761faf413b8c1d500ea065de3af72c974c218563c26a3d24ed42671"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/removed_front_instance.npz",
+      "bytes": 22074,
+      "sha256": "4d92ae1fa6ffdf32e70833b2447a52328e480126d68d896e256ccca51dc65b6f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/removed_front_left_depth.npz",
+      "bytes": 788754,
+      "sha256": "25405bc1323e01b4bf534b142a3164ba7a241f829a86f8cc659d6d7f817b752f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/removed_front_left_instance.npz",
+      "bytes": 16918,
+      "sha256": "9844faf5dd04711898e91ba5dfe600e21db560b8f8f92f92ebd9c206ecefc038"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/removed_front_left_semantic.npz",
+      "bytes": 8497,
+      "sha256": "f0f866db29ca5be3fd65a6ae0cd93892bf6a26efeebadadb10616940e92fd103"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/removed_front_right_depth.npz",
+      "bytes": 963420,
+      "sha256": "889223da56df26692ab3af537cbbb7d4c0e399a8dfdb1abebe2736b2c4dabc76"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/removed_front_right_instance.npz",
+      "bytes": 18472,
+      "sha256": "b61349856c88d50f77ce96ac18de49d9c72bb9773d779b18a9bf0d0898ac69ee"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/removed_front_right_semantic.npz",
+      "bytes": 13602,
+      "sha256": "4bfa51491537fb510f00b8110556b3addc7244670bad5c4b7614629a860f9ba9"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/removed_front_semantic.npz",
+      "bytes": 13978,
+      "sha256": "9d7fe33de28a95ec1064c4a514c4b0a8242423089663cffabe4bc97d9156e54f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/removed_rear_depth.npz",
+      "bytes": 779443,
+      "sha256": "90a92c066824da6f980b6ba93992d189f66754e7fa98e4da3826130eff73caea"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/removed_rear_instance.npz",
+      "bytes": 23661,
+      "sha256": "1379ecce3aa9cc6d5f9b1bb18312562f0deff85df58642ca330c4a922f5bf9b5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/removed_rear_left_depth.npz",
+      "bytes": 842032,
+      "sha256": "9230a16fa2d1d8dcebc4eb8e7db7dfd261c4f3164de573aac3f4db4771290494"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/removed_rear_left_instance.npz",
+      "bytes": 18251,
+      "sha256": "a19a30ba3325b26031736345441582279bf7c356d056a63d26e58fc341a1acfd"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/removed_rear_left_semantic.npz",
+      "bytes": 9206,
+      "sha256": "11e9271eecea77be03c2614d5947b70bd8e8e15211d4882d635ebc408d5996fc"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/removed_rear_right_depth.npz",
+      "bytes": 968486,
+      "sha256": "43ee6484d2c7d229ea8a44686335b34000ec3a0bdaa7b8e2e557e66cc6927468"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/removed_rear_right_instance.npz",
+      "bytes": 19997,
+      "sha256": "7d1cf8146e3e37f84b38114eaebb9d5ca32f4ab6410e8533abd78a42bcd8fd17"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/removed_rear_right_semantic.npz",
+      "bytes": 16707,
+      "sha256": "55b2a3060a6399bc45939e82c24c44ab3245aef32fd6d073155a81b9c422beed"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/removed_rear_semantic.npz",
+      "bytes": 15411,
+      "sha256": "0c5d2da5689b09aba35c3f54a7a8d3a5d197d81413f2192905a7e128d917c138"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/removed_sidecar.json",
+      "bytes": 335635,
+      "sha256": "222607e6c1f14912e3c772be6b4043f280b291d83fa02a71cc210685da7cce35"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/removed_support.json",
+      "bytes": 96,
+      "sha256": "8f2a8ef255868e6217a4898c9fe33cd987d4faf9d383594b7346b06200155a57"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/shifted_front_depth.npz",
+      "bytes": 703998,
+      "sha256": "8a7c29df0e9aad4c3ce174bd2ec9809b0ec8c1f98b83398a209cb655a59d8f7c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/shifted_front_instance.npz",
+      "bytes": 22074,
+      "sha256": "4d92ae1fa6ffdf32e70833b2447a52328e480126d68d896e256ccca51dc65b6f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/shifted_front_left_depth.npz",
+      "bytes": 788441,
+      "sha256": "f2f88f422e3cfc5052f01544f6072b35eba76a1b451d4ae0ed1040020eb424e9"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/shifted_front_left_instance.npz",
+      "bytes": 16918,
+      "sha256": "9844faf5dd04711898e91ba5dfe600e21db560b8f8f92f92ebd9c206ecefc038"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/shifted_front_left_semantic.npz",
+      "bytes": 8504,
+      "sha256": "52e665100a9ed8288783c23fc3fc978531669c4ec5e2cf3c116c3d510ae7346a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/shifted_front_right_depth.npz",
+      "bytes": 964128,
+      "sha256": "cc465d2c3ddd66d57777d60399105fae9e75324a1993510bba1c46fb4a431c15"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/shifted_front_right_instance.npz",
+      "bytes": 18472,
+      "sha256": "b61349856c88d50f77ce96ac18de49d9c72bb9773d779b18a9bf0d0898ac69ee"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/shifted_front_right_semantic.npz",
+      "bytes": 13664,
+      "sha256": "82e90eeaa7d17c42f13faafb72508c7cfc28f43a33be2018b0c5a27696b17d14"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/shifted_front_semantic.npz",
+      "bytes": 13940,
+      "sha256": "c58b32d4b7f6cb1825e15465521cad8416b103a041a1bc12440b3f12ee4380af"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/shifted_rear_depth.npz",
+      "bytes": 779938,
+      "sha256": "1bd10313881e5ec514dbf6b9a43a755468ca22fae0880ecd4ad1e92c2d923c86"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/shifted_rear_instance.npz",
+      "bytes": 23661,
+      "sha256": "1379ecce3aa9cc6d5f9b1bb18312562f0deff85df58642ca330c4a922f5bf9b5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/shifted_rear_left_depth.npz",
+      "bytes": 841852,
+      "sha256": "4167cd2c37cc06fcfd32d2c62431bbb24c4648e48110a825d1abaec7d3fb4c4e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/shifted_rear_left_instance.npz",
+      "bytes": 18251,
+      "sha256": "a19a30ba3325b26031736345441582279bf7c356d056a63d26e58fc341a1acfd"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/shifted_rear_left_semantic.npz",
+      "bytes": 9249,
+      "sha256": "989f4ee6d7faaa6a368490e071bd1177e09174c33f4bc933a2653ab20166c00c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/shifted_rear_right_depth.npz",
+      "bytes": 967936,
+      "sha256": "afd0898169a7525df586bb9fedaf1627ff66ccee0b3faee2b4d0932ccefa1256"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/shifted_rear_right_instance.npz",
+      "bytes": 19997,
+      "sha256": "7d1cf8146e3e37f84b38114eaebb9d5ca32f4ab6410e8533abd78a42bcd8fd17"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/shifted_rear_right_semantic.npz",
+      "bytes": 16689,
+      "sha256": "fad355560323fc68fcc76b7a6a6e735f0e6302123fa0d74e7f88ce6cc63875e6"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/shifted_rear_semantic.npz",
+      "bytes": 15410,
+      "sha256": "dc1cb1f18e4e934af3bc75e33756595b059db991273e10cdfe2646770523fce2"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/shifted_sidecar.json",
+      "bytes": 335499,
+      "sha256": "edc53920ab2dd322d6b3e06bb70a525d2d8ed3043b74010cb286fa84968c1173"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/evaluator/shifted_support.json",
+      "bytes": 96,
+      "sha256": "7206d04b3bf1aed3a8869bdaece20f535b0392f05f098a2d7cd3f7e619af85dd"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/manifest.json",
+      "bytes": 17310,
+      "sha256": "eccfb79c80960364ae46e65690457400e4fd31954f8db0c63a168f148192ab24"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/empty_front.png",
+      "bytes": 340769,
+      "sha256": "4f9a0e3f76b4cf272acc45d8aefe8f6674136901eb5b7df9c2a068d4ada4f132"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/empty_front_left.png",
+      "bytes": 305215,
+      "sha256": "b7406e9a3ece5219bd9be2571ad1dfd649188cbdbb0c082a4f6231fbc6a0791f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/empty_front_right.png",
+      "bytes": 334717,
+      "sha256": "bc1a603fecb3d91ebe804a86fcc20a50e6ba65b79592a0475c6f0355e8e88cf1"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/empty_packet.json",
+      "bytes": 6756,
+      "sha256": "3a8ea50d4915596680798c1ad5b1fa457d48f28f80eb1d1f02d9fc49fb574bff"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/empty_rear.png",
+      "bytes": 328321,
+      "sha256": "f31798a8deaef5ba80ae448480f0c2adea7e751ac8022661f397657ef76de22a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/empty_rear_left.png",
+      "bytes": 296077,
+      "sha256": "009a279585c349e743d00a3865aa268a8c66827faee621a0300575bac027651c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/empty_rear_right.png",
+      "bytes": 361641,
+      "sha256": "22dcdfd56d918db11c037a9122222d7a77aa3d9dfc8600fcf042e510c3e95fb9"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/present_front.png",
+      "bytes": 342317,
+      "sha256": "df76458585cd63c48f993fdf0c738ce3179412ddc2712e2e8e41ed491ceaae4b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/present_front_left.png",
+      "bytes": 308152,
+      "sha256": "0226b64c3c472459677d0dccddaa1c4127afc3caa9c6d57a605ad6d381daf67a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/present_front_right.png",
+      "bytes": 336283,
+      "sha256": "3565bac49e2657770740ca7d4e6544acf3c5ea3836e3d10045c7ba6857e4386b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/present_packet.json",
+      "bytes": 6770,
+      "sha256": "9e77e110355f9e850f50e1379cdcab0900acefe453d0c3f4cd2d3f4f80627e1d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/present_rear.png",
+      "bytes": 330025,
+      "sha256": "d6fc2fd4f744007fdb28e218c2f24c7ddca889ee86c0847d02399bf8d9d4d6a6"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/present_rear_left.png",
+      "bytes": 300870,
+      "sha256": "6a0d351b31eee0ab12f4f9cb229c9eb0f9bddd7145ebc4cd23e7b4757bfd4664"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/present_rear_right.png",
+      "bytes": 363164,
+      "sha256": "c64fd69517e30093b7f39a03514438d6993510b4097dfdbff496dfe9137af636"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/removed_front.png",
+      "bytes": 341306,
+      "sha256": "d067b3d281079a3fa7db452f73bf8ac6659686da5b5670ff6e4e32bd4a539ef2"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/removed_front_left.png",
+      "bytes": 307270,
+      "sha256": "9da4ac2c0f220378effc72412597d6610fe46f03e55e3561c2d8a88cd303aee3"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/removed_front_right.png",
+      "bytes": 335289,
+      "sha256": "d8e4c6dd84a5c3a10cc8ade7ab06c6d688783c04344d6cc2f19423a6af896f46"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/removed_packet.json",
+      "bytes": 6770,
+      "sha256": "06f5a6c999e72bd99ceba55cec795ba68743431604bab0599a4c54e19c9698e8"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/removed_rear.png",
+      "bytes": 330541,
+      "sha256": "de7e790f8e2b4e184a0cd2d5e9352f16ff11b2279c2c8fc57d3b9f09ab627c05"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/removed_rear_left.png",
+      "bytes": 299315,
+      "sha256": "bd652604f60338e9685fa52795d796d0bcfbc9e6cc20987ab26d2730af4d7e42"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/removed_rear_right.png",
+      "bytes": 363095,
+      "sha256": "be990f1f1e47bdceca62b11d55c5a366e76ec3cb4c204cdc2e473d9f5d833e3c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/shifted_front.png",
+      "bytes": 343818,
+      "sha256": "2da644913255453d6d93026aa6c2536096c535c42870700d9aaa699b7413c015"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/shifted_front_left.png",
+      "bytes": 310511,
+      "sha256": "7b0c62b2a4373f1cfea7f128e40fb7b4982e0e1251bf2a33b621d3058b4d5566"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/shifted_front_right.png",
+      "bytes": 338073,
+      "sha256": "b1fe98dfd93c1b42094020918ce0786c12863d6b9a632094097d96118b6454ea"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/shifted_packet.json",
+      "bytes": 6763,
+      "sha256": "a1b2cee4d2cf0f11aa40882ede27023b50980a88e64109d096f137981be952b5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/shifted_rear.png",
+      "bytes": 332545,
+      "sha256": "14872e4e64e70c41d1a7207aaf37553b5fd9f8f1d9d38882bc11ae61cf878b83"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/shifted_rear_left.png",
+      "bytes": 303415,
+      "sha256": "d37c0183425646dada55014d1119f19518fb6e5f6e968f97833741166012908f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_00/rgb/shifted_rear_right.png",
+      "bytes": 365296,
+      "sha256": "5d87eb5cf999daeef0da9154c0832fec114c1ca8672ff850d058416b13cc906e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/empty_front_depth.npz",
+      "bytes": 315620,
+      "sha256": "73eb6bb2684cf71bd15ef0a4288520a342da9b37abeeb2394abf1b7f10bf8e72"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/empty_front_instance.npz",
+      "bytes": 17448,
+      "sha256": "de2b4be419dacaa11f9c8fed1e567686fa6886a8283cc73f830edc2e89235fcb"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/empty_front_left_depth.npz",
+      "bytes": 628265,
+      "sha256": "fd83844e14131a58595b09a6e014a89a9e7edf921b9e970afa4c87bd3063b9b5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/empty_front_left_instance.npz",
+      "bytes": 15389,
+      "sha256": "50c8eed079f4307055cf6cb36e5a85c79b855b7c8ada0b42546e1dea86f1a4ed"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/empty_front_left_semantic.npz",
+      "bytes": 6944,
+      "sha256": "27d6a8b7413fb6175401b022f9ba7128c7bfa58511216a82d8e07cfd12dfb943"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/empty_front_right_depth.npz",
+      "bytes": 710943,
+      "sha256": "c3701fde62ce23ec14e77009da2e552cc0230045aa3dfbbc5101d3798e9761a4"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/empty_front_right_instance.npz",
+      "bytes": 14436,
+      "sha256": "27d2afc7fa22d047688988afa76ef39b4c174ce5c40e3a06c2a67bb5797bf95e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/empty_front_right_semantic.npz",
+      "bytes": 6671,
+      "sha256": "ab9b7fe2dc1eebfb878b1e378205c40e2ca17f27a1dc5f0a461ce69c1b755671"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/empty_front_semantic.npz",
+      "bytes": 8775,
+      "sha256": "ef632d032ed7bbf7f0fb374956ec8508d6b3269c6692e11a1e8ba64dd9393d14"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/empty_rear_depth.npz",
+      "bytes": 544533,
+      "sha256": "54543778cec7ce5f1723e13dbd49baee914541dd38cdeff7ecfa6da277261f1e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/empty_rear_instance.npz",
+      "bytes": 20316,
+      "sha256": "89243cf8180fb4c3dd01c59f9c868d21121979db49fcd81fdaa4016ebad624e9"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/empty_rear_left_depth.npz",
+      "bytes": 631975,
+      "sha256": "4e0512e29fe0819a271943830381732d842558c9b5816e57a83b071875c8ffeb"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/empty_rear_left_instance.npz",
+      "bytes": 16018,
+      "sha256": "bee35445648b86051ec03e58baf08bb18bb34a63cf288c91b55bdd2868a49473"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/empty_rear_left_semantic.npz",
+      "bytes": 7093,
+      "sha256": "f8fbd792b7875fca573e9f72603d4fe90b1c86112c4587fbca5d0203ff919df0"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/empty_rear_right_depth.npz",
+      "bytes": 719061,
+      "sha256": "c9ccbfc03d35761c167f6d57488fd3ff6ba027304ff3e33f758f4a655d5f0ea5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/empty_rear_right_instance.npz",
+      "bytes": 14630,
+      "sha256": "49f43135956b26b83adf85e87314b35c37ffa0c3e21fdd0d0341ca64d6b91566"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/empty_rear_right_semantic.npz",
+      "bytes": 6603,
+      "sha256": "442823e21fe71d4e54b19eba2e49f4d39252857d278eca091aa7048a6bc27bf3"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/empty_rear_semantic.npz",
+      "bytes": 10414,
+      "sha256": "95501d8c2d2e6ed6fe3664af683c5cd34b2b172f09dc9621925d9cce10fcfb36"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/empty_sidecar.json",
+      "bytes": 337991,
+      "sha256": "ab783e901c8579501371929925538a6b6b9eb23a03f194787789dc76afb12071"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/empty_support.json",
+      "bytes": 94,
+      "sha256": "6d5c2e1e42bdb4aaf81824665a087dae450308cb97fe519a97b0d9d7a950fbbc"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/environment_inventory.json",
+      "bytes": 7709172,
+      "sha256": "c25dfd0f9fe6c31625f69d3342d2e4fa794d80466aaf7301bea504f509653b56"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/grounded_requests.json",
+      "bytes": 281441,
+      "sha256": "67b9cabfc386c30950cef33d50e751070cf90fa304f87f7d4d89402a5f951a6b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/level_bbs.json",
+      "bytes": 5570558,
+      "sha256": "0d43035106ae602f2e851cb7aba908243a57ca47b1e87b9707eb8056ea7e13d0"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/present_front_depth.npz",
+      "bytes": 315716,
+      "sha256": "eb605f8f957079e29e1e8d8a71005d4a473e09d8263d3c6b5388820e625b4b29"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/present_front_instance.npz",
+      "bytes": 17531,
+      "sha256": "b0db252228b60182462fb992771e483addd9c7524aa0de88983a031b4d0c9e4b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/present_front_left_depth.npz",
+      "bytes": 628265,
+      "sha256": "fd83844e14131a58595b09a6e014a89a9e7edf921b9e970afa4c87bd3063b9b5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/present_front_left_instance.npz",
+      "bytes": 15389,
+      "sha256": "50c8eed079f4307055cf6cb36e5a85c79b855b7c8ada0b42546e1dea86f1a4ed"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/present_front_left_semantic.npz",
+      "bytes": 6944,
+      "sha256": "27d6a8b7413fb6175401b022f9ba7128c7bfa58511216a82d8e07cfd12dfb943"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/present_front_right_depth.npz",
+      "bytes": 710943,
+      "sha256": "c3701fde62ce23ec14e77009da2e552cc0230045aa3dfbbc5101d3798e9761a4"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/present_front_right_instance.npz",
+      "bytes": 14436,
+      "sha256": "27d2afc7fa22d047688988afa76ef39b4c174ce5c40e3a06c2a67bb5797bf95e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/present_front_right_semantic.npz",
+      "bytes": 6671,
+      "sha256": "ab9b7fe2dc1eebfb878b1e378205c40e2ca17f27a1dc5f0a461ce69c1b755671"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/present_front_semantic.npz",
+      "bytes": 8832,
+      "sha256": "5a0df9ed926243cbd264b067f94db2dedb308f3623b944d8f79fa2f8bfd4b714"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/present_rear_depth.npz",
+      "bytes": 544529,
+      "sha256": "aceaa6d26086298412f75988e624db5f335f784b23e05e537a7ce455f99a4d75"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/present_rear_instance.npz",
+      "bytes": 20316,
+      "sha256": "89243cf8180fb4c3dd01c59f9c868d21121979db49fcd81fdaa4016ebad624e9"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/present_rear_left_depth.npz",
+      "bytes": 631975,
+      "sha256": "4e0512e29fe0819a271943830381732d842558c9b5816e57a83b071875c8ffeb"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/present_rear_left_instance.npz",
+      "bytes": 16018,
+      "sha256": "bee35445648b86051ec03e58baf08bb18bb34a63cf288c91b55bdd2868a49473"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/present_rear_left_semantic.npz",
+      "bytes": 7093,
+      "sha256": "f8fbd792b7875fca573e9f72603d4fe90b1c86112c4587fbca5d0203ff919df0"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/present_rear_right_depth.npz",
+      "bytes": 719061,
+      "sha256": "c9ccbfc03d35761c167f6d57488fd3ff6ba027304ff3e33f758f4a655d5f0ea5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/present_rear_right_instance.npz",
+      "bytes": 14630,
+      "sha256": "49f43135956b26b83adf85e87314b35c37ffa0c3e21fdd0d0341ca64d6b91566"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/present_rear_right_semantic.npz",
+      "bytes": 6603,
+      "sha256": "442823e21fe71d4e54b19eba2e49f4d39252857d278eca091aa7048a6bc27bf3"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/present_rear_semantic.npz",
+      "bytes": 10425,
+      "sha256": "166851aba1dc16c2dc046c11e18066f1dc2604a745826bcfdc402b0074409deb"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/present_sidecar.json",
+      "bytes": 338406,
+      "sha256": "0b58340f614033c269fa4cc5f93395d6b87ff62e31b6065d0d0ee6372d6b959a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/present_support.json",
+      "bytes": 94548,
+      "sha256": "782ca2a203cd92a422c6b78e0d069ffb8854778a8e366aebc2d5d6c4f36d21a5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/removed_front_depth.npz",
+      "bytes": 315615,
+      "sha256": "dcc7eea18e4cf32291a0893ab5a7d36adcf109978e548e34e712a764d12a3861"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/removed_front_instance.npz",
+      "bytes": 17448,
+      "sha256": "de2b4be419dacaa11f9c8fed1e567686fa6886a8283cc73f830edc2e89235fcb"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/removed_front_left_depth.npz",
+      "bytes": 628265,
+      "sha256": "fd83844e14131a58595b09a6e014a89a9e7edf921b9e970afa4c87bd3063b9b5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/removed_front_left_instance.npz",
+      "bytes": 15389,
+      "sha256": "50c8eed079f4307055cf6cb36e5a85c79b855b7c8ada0b42546e1dea86f1a4ed"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/removed_front_left_semantic.npz",
+      "bytes": 6944,
+      "sha256": "27d6a8b7413fb6175401b022f9ba7128c7bfa58511216a82d8e07cfd12dfb943"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/removed_front_right_depth.npz",
+      "bytes": 710943,
+      "sha256": "c3701fde62ce23ec14e77009da2e552cc0230045aa3dfbbc5101d3798e9761a4"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/removed_front_right_instance.npz",
+      "bytes": 14436,
+      "sha256": "27d2afc7fa22d047688988afa76ef39b4c174ce5c40e3a06c2a67bb5797bf95e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/removed_front_right_semantic.npz",
+      "bytes": 6671,
+      "sha256": "ab9b7fe2dc1eebfb878b1e378205c40e2ca17f27a1dc5f0a461ce69c1b755671"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/removed_front_semantic.npz",
+      "bytes": 8766,
+      "sha256": "8f99687cede97563728cc3c9e7422a253af19e1c0479485fe12d9fe362982c32"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/removed_rear_depth.npz",
+      "bytes": 544529,
+      "sha256": "aee39bea126ddd9aa757e927e2e3f8eccf2129378398df29b693fc95003f97b3"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/removed_rear_instance.npz",
+      "bytes": 20316,
+      "sha256": "89243cf8180fb4c3dd01c59f9c868d21121979db49fcd81fdaa4016ebad624e9"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/removed_rear_left_depth.npz",
+      "bytes": 631975,
+      "sha256": "4e0512e29fe0819a271943830381732d842558c9b5816e57a83b071875c8ffeb"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/removed_rear_left_instance.npz",
+      "bytes": 16018,
+      "sha256": "bee35445648b86051ec03e58baf08bb18bb34a63cf288c91b55bdd2868a49473"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/removed_rear_left_semantic.npz",
+      "bytes": 7093,
+      "sha256": "f8fbd792b7875fca573e9f72603d4fe90b1c86112c4587fbca5d0203ff919df0"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/removed_rear_right_depth.npz",
+      "bytes": 719061,
+      "sha256": "c9ccbfc03d35761c167f6d57488fd3ff6ba027304ff3e33f758f4a655d5f0ea5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/removed_rear_right_instance.npz",
+      "bytes": 14630,
+      "sha256": "49f43135956b26b83adf85e87314b35c37ffa0c3e21fdd0d0341ca64d6b91566"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/removed_rear_right_semantic.npz",
+      "bytes": 6603,
+      "sha256": "442823e21fe71d4e54b19eba2e49f4d39252857d278eca091aa7048a6bc27bf3"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/removed_rear_semantic.npz",
+      "bytes": 10422,
+      "sha256": "ac73f08aafebfe5ad3d6974aff5e79f56d6ee97cf7dd59f526f6d90090bd1074"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/removed_sidecar.json",
+      "bytes": 338045,
+      "sha256": "fb8e9b13d6a1c404ebfb7f931745255726d794ca8456e204ce133f21f5322060"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/removed_support.json",
+      "bytes": 96,
+      "sha256": "001068d9f4fab0627ba6c363c1e5299b49c3df2f6b93f3565a36e6aeb3d90aeb"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/shifted_front_depth.npz",
+      "bytes": 315683,
+      "sha256": "e15befb48b92599d5a4dcb674d9c1f85d6be13aa53056047f562b1009538c504"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/shifted_front_instance.npz",
+      "bytes": 17467,
+      "sha256": "58068f9639d859d7159bf43af081971c5389c7e37bf851b166c558b8f77b7025"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/shifted_front_left_depth.npz",
+      "bytes": 628265,
+      "sha256": "fd83844e14131a58595b09a6e014a89a9e7edf921b9e970afa4c87bd3063b9b5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/shifted_front_left_instance.npz",
+      "bytes": 15389,
+      "sha256": "50c8eed079f4307055cf6cb36e5a85c79b855b7c8ada0b42546e1dea86f1a4ed"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/shifted_front_left_semantic.npz",
+      "bytes": 6944,
+      "sha256": "27d6a8b7413fb6175401b022f9ba7128c7bfa58511216a82d8e07cfd12dfb943"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/shifted_front_right_depth.npz",
+      "bytes": 710943,
+      "sha256": "c3701fde62ce23ec14e77009da2e552cc0230045aa3dfbbc5101d3798e9761a4"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/shifted_front_right_instance.npz",
+      "bytes": 14436,
+      "sha256": "27d2afc7fa22d047688988afa76ef39b4c174ce5c40e3a06c2a67bb5797bf95e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/shifted_front_right_semantic.npz",
+      "bytes": 6671,
+      "sha256": "ab9b7fe2dc1eebfb878b1e378205c40e2ca17f27a1dc5f0a461ce69c1b755671"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/shifted_front_semantic.npz",
+      "bytes": 8810,
+      "sha256": "d8f9276351745392354b78e7557ff3ee627dccb4c802fc9318ba5b0b0c85a06c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/shifted_rear_depth.npz",
+      "bytes": 544536,
+      "sha256": "43e594f012c72d6d97b76766bf607c9934916c566117d699f72bc493c3cc8b4c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/shifted_rear_instance.npz",
+      "bytes": 20316,
+      "sha256": "89243cf8180fb4c3dd01c59f9c868d21121979db49fcd81fdaa4016ebad624e9"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/shifted_rear_left_depth.npz",
+      "bytes": 631975,
+      "sha256": "4e0512e29fe0819a271943830381732d842558c9b5816e57a83b071875c8ffeb"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/shifted_rear_left_instance.npz",
+      "bytes": 16018,
+      "sha256": "bee35445648b86051ec03e58baf08bb18bb34a63cf288c91b55bdd2868a49473"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/shifted_rear_left_semantic.npz",
+      "bytes": 7093,
+      "sha256": "f8fbd792b7875fca573e9f72603d4fe90b1c86112c4587fbca5d0203ff919df0"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/shifted_rear_right_depth.npz",
+      "bytes": 719061,
+      "sha256": "c9ccbfc03d35761c167f6d57488fd3ff6ba027304ff3e33f758f4a655d5f0ea5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/shifted_rear_right_instance.npz",
+      "bytes": 14630,
+      "sha256": "49f43135956b26b83adf85e87314b35c37ffa0c3e21fdd0d0341ca64d6b91566"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/shifted_rear_right_semantic.npz",
+      "bytes": 6603,
+      "sha256": "442823e21fe71d4e54b19eba2e49f4d39252857d278eca091aa7048a6bc27bf3"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/shifted_rear_semantic.npz",
+      "bytes": 10407,
+      "sha256": "ccf4d9527bc1f4ae97666407e2f6f60f1a37d05f81ac425e3e73b02639ee1f66"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/shifted_sidecar.json",
+      "bytes": 338410,
+      "sha256": "e2cddac0cacdce3fce3f59411f64216c745b08e29fea2ee765b4947ce137bd46"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/evaluator/shifted_support.json",
+      "bytes": 89865,
+      "sha256": "0842d9ef197fe6b455200a4d13f930a94a2992bef4dea6500f831b083182ef13"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/manifest.json",
+      "bytes": 17362,
+      "sha256": "329abd7f271842b61f6c23b165ab62af07577fbc2e9dbb24c65a940988570f15"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/empty_front.png",
+      "bytes": 281663,
+      "sha256": "72041c68d711c06738fbcfbaff1fcf89fe53078b2ded9dc33d173832dda88889"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/empty_front_left.png",
+      "bytes": 326090,
+      "sha256": "c6b4ecb42a7229e2ca7e09a98020d11a93409abda246d781a7e1d15231081e06"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/empty_front_right.png",
+      "bytes": 364474,
+      "sha256": "6c84d2dbc620bb8c4a8a74584117e391357b387d519aaab57e914f4569bd1db6"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/empty_packet.json",
+      "bytes": 6756,
+      "sha256": "6046b59dd882777e0b32b89a0bf5efc4908f4d26b90d6e784b519780a5f35537"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/empty_rear.png",
+      "bytes": 333420,
+      "sha256": "ea738ee3ca21ce6c83e2e4e2e2b4d301db830563efd16e195cabeb7d7db2f87a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/empty_rear_left.png",
+      "bytes": 341339,
+      "sha256": "5dd344d3474989c7c510dfb34927675eff505d686fd6800e4d34722c85fef25d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/empty_rear_right.png",
+      "bytes": 387640,
+      "sha256": "68291dbf5165ce600b6dbc8e3ce021fa1046ae2e3249cbb35f7652118eac100a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/present_front.png",
+      "bytes": 284447,
+      "sha256": "e80691bd44f13ec3a80b42860e49f8a653872ffb29484a5266f69bd5b9336d56"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/present_front_left.png",
+      "bytes": 328316,
+      "sha256": "68897819cb3d1c73d134b0985253797caf681f39302387ab16b62091fe1cb3a6"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/present_front_right.png",
+      "bytes": 367306,
+      "sha256": "b2941fbf7819b500c59f646069caa36a3ee9af734092853d906c306ca4c91399"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/present_packet.json",
+      "bytes": 6770,
+      "sha256": "ad08d14148214086bb956f6c9f1275ec76d87cc4d5e70468796189be5298690a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/present_rear.png",
+      "bytes": 334303,
+      "sha256": "2588723987fa23968f52092a9d6a13a70887c0e08dfc2f5aabb86cf058501abb"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/present_rear_left.png",
+      "bytes": 343532,
+      "sha256": "6b448c02fdb031d27495b363453a4d458cf794273e90b53a73d778edc38741a6"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/present_rear_right.png",
+      "bytes": 389784,
+      "sha256": "5e38bdcb0fc2013d641fc863439cf10731ea7fa44a496edcdac5e63edfe23063"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/removed_front.png",
+      "bytes": 283294,
+      "sha256": "1e7b2eadb6a20cbac05155292e442f427fbd6b075b57f0dbac464549d9eb9ec9"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/removed_front_left.png",
+      "bytes": 325848,
+      "sha256": "620018ed1fb24243e2210a707f60619b188bc4147d4aa78c1384c70d51bafd3b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/removed_front_right.png",
+      "bytes": 365333,
+      "sha256": "e68b33305702c88c2a6b06c27b575688db809ab2228d5a99fc273b67ba97af34"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/removed_packet.json",
+      "bytes": 6770,
+      "sha256": "fb6470426464b8e9e0fb269834bff2d92a3d6683f54430f5378d693c95fa9434"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/removed_rear.png",
+      "bytes": 333119,
+      "sha256": "dfa471b80bdc0862f0e555b4e2e55d43f6c99bca554db329e840bfe5cfa71d87"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/removed_rear_left.png",
+      "bytes": 341259,
+      "sha256": "433be9ff3412e1b1920ea5ddd0639d0c07d82befb9b7c6a4480f4e6ddcd2886c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/removed_rear_right.png",
+      "bytes": 387447,
+      "sha256": "73122796030ae484ffc460977b9d489649b3f3bdeb0db810cd1b11391ca15a78"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/shifted_front.png",
+      "bytes": 286649,
+      "sha256": "b87d0534917d1fd7a7387a9bc3e69f5df275c80c63602e956c3c84f44165d831"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/shifted_front_left.png",
+      "bytes": 330046,
+      "sha256": "8757aaaa16a4f6bd94d04caa7efcdcf0791d51bb6212b8c52867fa3f136291d4"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/shifted_front_right.png",
+      "bytes": 369597,
+      "sha256": "4672bbd60823b6b5454b72a9c8ea2d6a13c683f6a725578256e6da06be0579d8"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/shifted_packet.json",
+      "bytes": 6770,
+      "sha256": "4360ff0c5189050583d20c7a8fddcebcb799e70e5f7846f7356ef6421717fc7f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/shifted_rear.png",
+      "bytes": 335996,
+      "sha256": "20e8c1fc6b0aae9f8fbaa5d460f679831602274553127c862328e0cf762dfbab"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/shifted_rear_left.png",
+      "bytes": 345318,
+      "sha256": "6d4d28a9e4754974d69056504a9e382ed19845300e28c1b7d6e4d356fb3e210b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/capture/m8f_development_01/rgb/shifted_rear_right.png",
+      "bytes": 391389,
+      "sha256": "a29a24d2a690ce6f60e4cb69aa96ef0160682ec7d0036ab386360d69cfc0063b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/certified_references/m8f_development_00.json",
+      "bytes": 3490185,
+      "sha256": "4f608787758ca355d7e3904a187fc6cdfccd74aa3a5d9ac2d94043059ce957f0"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/certified_references/m8f_development_01.json",
+      "bytes": 3989072,
+      "sha256": "a529d0ad6b643e79ac9536c9ef09120965f499a85f6d9bc7a483f9f1f8cbff91"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/failed_closeout/m8f_annotation_review.json",
+      "bytes": 4749,
+      "sha256": "b7ef7f7cb7d4155a9dfb6ddb97822d5fff85aa6c3fdf7b107621a8ee45104b80"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/historical_index.json",
+      "bytes": 5404018,
+      "sha256": "d68d04e71999ac2a79ae46fb58fa206f7b7a7ef790040168ef634a52f358922c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/historical_raw_frame_supplement.json",
+      "bytes": 3477354,
+      "sha256": "d1da2e23cd208c7f3fe16cc96635a8bb72924f23b6226bc321f6de49ec0b4d86"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/reviewed_regions/m8f_development_00_front.npz",
+      "bytes": 3608,
+      "sha256": "2bc003a04c095cb25c1589992b9878552c67a07c3a79286f246042cb45fc2d12"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/reviewed_regions/m8f_development_00_front_left.npz",
+      "bytes": 3947,
+      "sha256": "3f893ac0fc84d397c13a6af8cf55f0004dce082422288173015471c83bb87fe0"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/reviewed_regions/m8f_development_00_front_right.npz",
+      "bytes": 3353,
+      "sha256": "453962122d43e72cc325380f480b5314a889c34533236c39e77239bb8b112b8d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/reviewed_regions/m8f_development_00_rear.npz",
+      "bytes": 4672,
+      "sha256": "94494ba9e46b326d86a87f3b4bfdaa44017b622f3a5087dc1e4cd23b1f8ec8e6"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/reviewed_regions/m8f_development_00_rear_left.npz",
+      "bytes": 3821,
+      "sha256": "bc860b5970c222963451214137f8c61d805457ccc368d5575f08a7661e2fb7f2"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/reviewed_regions/m8f_development_00_rear_right.npz",
+      "bytes": 3951,
+      "sha256": "fd789aa0a2e1b294dd39dc0e6d1a714ec7c17b7773a72d4c52492f909d2fbd92"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/reviewed_regions/m8f_development_01_front.npz",
+      "bytes": 3405,
+      "sha256": "d177f0c654c672c15e7281895be4f3f188ade36a8f8bd361cbbb13a68c02fba5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/reviewed_regions/m8f_development_01_front_left.npz",
+      "bytes": 3326,
+      "sha256": "3543caaa01458a82d9dca2478599c021ffdc20c7e630f336b788bfee81abd5f6"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/reviewed_regions/m8f_development_01_front_right.npz",
+      "bytes": 2512,
+      "sha256": "7d3f71ff1257b7a1ec071d791704b22c3ab976157619cf97455363ebcdd948c3"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/reviewed_regions/m8f_development_01_rear.npz",
+      "bytes": 2955,
+      "sha256": "aa0e998cf99a4f6fca1e3e8d250854e93b9d11abb131f6dcae73a7b01cb249b8"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/reviewed_regions/m8f_development_01_rear_left.npz",
+      "bytes": 2913,
+      "sha256": "b2051465388acd857bace84c165c584c83bbf88860d637b91d4b5d466359665e"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality/reviewed_regions/m8f_development_01_rear_right.npz",
+      "bytes": 2260,
+      "sha256": "d002e515d1f210efaa8e0f9b16ce135200f92b38e3e6e260301c66654afa5486"
+    },
+    {
+      "path": "configs/m8f/contract.json",
+      "bytes": 2143,
+      "sha256": "72c8f7b40c56a1cef83273d28a91cd4ee3caf2ff4cf6810560acdbffb5cb17d8"
+    },
+    {
+      "path": "configs/m8f/protocol.json",
+      "bytes": 33186,
+      "sha256": "f4beebbe95f38d537141bf23a7f46a115cfd003df2c37bcaba29c83302b6afa2"
+    },
+    {
+      "path": "datasets/m8f_quality.py",
+      "bytes": 2546,
+      "sha256": "4371b46bc984b07388af574c75e51208aab5d17e9f4538e1196f61ecf3bf684f"
+    },
+    {
+      "path": "docs/M8F_ARCHITECTURE_DECISION.md",
+      "bytes": 1978,
+      "sha256": "7d371ca18772de3ac0bb5a7b2b619216a0968d5d75f6b466cbad1176ec2ef291"
+    },
+    {
+      "path": "docs/M8F_IMPLEMENTATION.md",
+      "bytes": 6065,
+      "sha256": "e1517ab03a6b08ae2da341841cd29000d4a4f5a09986b43db68ead886faa3e56"
+    },
+    {
+      "path": "reports/m8f_acceptance.json",
+      "bytes": 5276,
+      "sha256": "b719abd713dc97bd8f7e4cb4044aafe18f090fa8e1d7d2dd4ff06d044762fe5c"
+    },
+    {
+      "path": "reports/m8f_annotation_review.json",
+      "bytes": 4749,
+      "sha256": "f0f9093d9fa6779e35c824ae64c6e16a1e96ef2679779c9992f1d5c82420e45d"
+    },
+    {
+      "path": "reports/m8f_background_review_regions.json",
+      "bytes": 104878,
+      "sha256": "8acf72f69c3d8a9413909b0e994d00969682d86dddab45d10dad54916ef5fa42"
+    },
+    {
+      "path": "reports/m8f_counterfactual_regression.json",
+      "bytes": 2426,
+      "sha256": "f889e9d62ef87d3ece22725f50897c27ac21b24a1e92ccdb99353871308f0b10"
+    },
+    {
+      "path": "reports/m8f_failure_ledger.json",
+      "bytes": 7880,
+      "sha256": "9418f263715c92405df9b643007e89a552d9d1d325b13088c1fe00128960145f"
+    },
+    {
+      "path": "reports/m8f_far_field_support.json",
+      "bytes": 4027,
+      "sha256": "d3e2685ecae7a92cd6538b294fc21667d6a313456b517fc446c3ec31c3ea1c26"
+    },
+    {
+      "path": "reports/m8f_figures/far_controls_00.png",
+      "bytes": 212793,
+      "sha256": "2efdc4586aaa8f388f85a6313037f706e1d277a3faf693bc5b15b5e89326b00c"
+    },
+    {
+      "path": "reports/m8f_figures/final_support_gaps.png",
+      "bytes": 36989,
+      "sha256": "64b7e5f7ce68fb7cb34617973c8b346491ee3e6fa5c0e264c03833b22f555420"
+    },
+    {
+      "path": "reports/m8f_figures/m8f_development_00.png",
+      "bytes": 1202396,
+      "sha256": "ab0e6e58f80dd4daad76d7d03c2d08eb72bc3ff08ae0352f57ab2dcdb999aa9e"
+    },
+    {
+      "path": "reports/m8f_figures/m8f_development_00_geometry.png",
+      "bytes": 208606,
+      "sha256": "b499bc0eb65c60452157555d9c4d3ae04dd70196a00ae3935a6c8020771494e3"
+    },
+    {
+      "path": "reports/m8f_figures/m8f_development_01.png",
+      "bytes": 1079913,
+      "sha256": "f21a33e8d51f9539ede47ad824d4c2fec96ee93ec103129bbe278a238bd015c8"
+    },
+    {
+      "path": "reports/m8f_figures/m8f_development_01_geometry.png",
+      "bytes": 217637,
+      "sha256": "fe6cd397a575806e52811b64a6e3246902686a49a2d7f8609439debe4619b8ce"
+    },
+    {
+      "path": "reports/m8f_final_validation.json",
+      "bytes": 4477,
+      "sha256": "724a4ce1544388df109a3fa4a7bc9418e91944350e0b970efd258bf4fbf6bb51"
+    },
+    {
+      "path": "reports/m8f_geometry_visualization.json",
+      "bytes": 2421,
+      "sha256": "88c7135377f3af0a0dc07eb0e5fa9779dda30f49f39b7af4a83128c6ce837b4b"
+    },
+    {
+      "path": "reports/m8f_ground_surface_contract.json",
+      "bytes": 4996,
+      "sha256": "06709318c2fa79b040b7ac15dbe140226e18809f888c51dc79b26ba79f6a2770"
+    },
+    {
+      "path": "reports/m8f_historical_target_footprints.json",
+      "bytes": 1492,
+      "sha256": "694f26df461a73a52c655eceb90d9e1adb8eea611d4677cecd24465a1c5c34c1"
+    },
+    {
+      "path": "reports/m8f_history_recovery_supplement.json",
+      "bytes": 4357,
+      "sha256": "6d825e1e223fae276a47e63a1a49bd87772d6c940012a6893ca9346e8fbd6927"
+    },
+    {
+      "path": "reports/m8f_identity_and_background_audit.json",
+      "bytes": 786404,
+      "sha256": "32ea1abb6e07f920af53e34d62cb4410591e445a6342479ca5e580cecda54021"
+    },
+    {
+      "path": "reports/m8f_independence_exceptions.json",
+      "bytes": 7097,
+      "sha256": "70542eae76206ebbb1ddb7b74d848f52e309be1b6a676426eb43854ec492ea56"
+    },
+    {
+      "path": "reports/m8f_input_isolation.json",
+      "bytes": 3056,
+      "sha256": "e488cd562dd1a00baaed5f3d97ab598650fd6a6da74202252ec6ad78a9c29b5c"
+    },
+    {
+      "path": "reports/m8f_legacy_failure_attribution.json",
+      "bytes": 47744,
+      "sha256": "9edaddef73d32750ddcebc942f9f33852f91d635efe1e6ee4b03a29c4173d1e0"
+    },
+    {
+      "path": "reports/m8f_logs/allocate.json",
+      "bytes": 1134,
+      "sha256": "1dea67c8c3d6a9a2da23a1c6915b873fb320d9f2323e38c1be3805267780789e"
+    },
+    {
+      "path": "reports/m8f_logs/allocate.txt",
+      "bytes": 181,
+      "sha256": "2552db83b4d389daf0166ae203ffee7f22671f035fa9e837b10c562430160e8d"
+    },
+    {
+      "path": "reports/m8f_logs/background_regions.json",
+      "bytes": 2462,
+      "sha256": "c1ac8291eaf56d9e8ac5a98f4f59c320018036a85843a92633e5ecc2b2c81e24"
+    },
+    {
+      "path": "reports/m8f_logs/background_regions.txt",
+      "bytes": 49,
+      "sha256": "03a618e49dacc20eeea64808fe6983b2866c485ec80d1890719b6670c3f197c0"
+    },
+    {
+      "path": "reports/m8f_logs/baseline_verify.txt",
+      "bytes": 202,
+      "sha256": "0e98597eb5148d6666164d1326350554a81bf3921e2dd394e0dde88e53d7c8f5"
+    },
+    {
+      "path": "reports/m8f_logs/capture_smoke.json",
+      "bytes": 1396,
+      "sha256": "e8ff72e246de158534062ece5a08e5865cbce38ddd7a502d1a7b61f12c9121cb"
+    },
+    {
+      "path": "reports/m8f_logs/capture_smoke.txt",
+      "bytes": 1143,
+      "sha256": "afdb2ba20d3630d068881a9887bdec6bca0266bb718cb027dafe179bdafd20ad"
+    },
+    {
+      "path": "reports/m8f_logs/capture_smoke_v2.json",
+      "bytes": 1607,
+      "sha256": "ef64b528d9271bb659321319b6bfe01db1afdb1ecfc9e29e76f81385ea959c3c"
+    },
+    {
+      "path": "reports/m8f_logs/capture_smoke_v2.txt",
+      "bytes": 1339,
+      "sha256": "a89727c56e3c2eeb97303aa83c91ce8ebc03a886a4246dffefdd7ad47c462330"
+    },
+    {
+      "path": "reports/m8f_logs/carla_server.log",
+      "bytes": 4436,
+      "sha256": "84b7ea7f842acaa5a97947d319363923857d54f4ced31f0a49196fe5dc41dc2e"
+    },
+    {
+      "path": "reports/m8f_logs/closeout.json",
+      "bytes": 2546,
+      "sha256": "d6d69a38d497a7a1a6c1c0325b4907e66893906b738e895671adb04fb361e289"
+    },
+    {
+      "path": "reports/m8f_logs/closeout.txt",
+      "bytes": 650,
+      "sha256": "f112c663980fa84a05085a9168f04ed253787633c79c2221b1360f603abdfae8"
+    },
+    {
+      "path": "reports/m8f_logs/closeout_initial.py.txt",
+      "bytes": 5512,
+      "sha256": "c397e6a7834049bd7d38cffc4ede7486cc36a7dc573774ba0dae43b8cc03264e"
+    },
+    {
+      "path": "reports/m8f_logs/closeout_v2.json",
+      "bytes": 2548,
+      "sha256": "1ac0889eeada6cc0770f3ad8441bef244797a9c78fa183c72b46d486f95a92b0"
+    },
+    {
+      "path": "reports/m8f_logs/closeout_v2.txt",
+      "bytes": 40,
+      "sha256": "4c54e71ff5e16203806376582c26aece561f0fae44490f0a186ee3ea3d797fef"
+    },
+    {
+      "path": "reports/m8f_logs/common_initial.py.txt",
+      "bytes": 1188,
+      "sha256": "e15dddde12951107105561ad16aaab59360d25d400a1b86f9d72e09bf1c9230d"
+    },
+    {
+      "path": "reports/m8f_logs/counterfactual.json",
+      "bytes": 1851,
+      "sha256": "c507c2feb7f71d1e64b742726563016b1fd88033866754019fd435be7b916705"
+    },
+    {
+      "path": "reports/m8f_logs/counterfactual.txt",
+      "bytes": 36,
+      "sha256": "276689444ca173030653b433597fdd13b5ab01f6870801d39f6e9caf27a5d8c7"
+    },
+    {
+      "path": "reports/m8f_logs/figures.json",
+      "bytes": 2028,
+      "sha256": "049dbe166869dc1368b227ffea96e32d2a7d83ca507336242198196389386ae5"
+    },
+    {
+      "path": "reports/m8f_logs/figures.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/m8f_logs/final_new_tests.json",
+      "bytes": 2424,
+      "sha256": "85e83c9fbc0bcdc42b9a786442519dd46c69b0d8ce6f99eed37990f8af34617c"
+    },
+    {
+      "path": "reports/m8f_logs/final_new_tests.txt",
+      "bytes": 1243,
+      "sha256": "b2186060d22f22450626d8e4c31aeeb56090637ea20b0c1527c3ac4b633847ef"
+    },
+    {
+      "path": "reports/m8f_logs/geometry_figures.json",
+      "bytes": 2151,
+      "sha256": "0b0cab80e481c3579ceefef6b0d7af661c378eb8f57110776bdd67a1b793182a"
+    },
+    {
+      "path": "reports/m8f_logs/geometry_figures.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/m8f_logs/history.json",
+      "bytes": 836,
+      "sha256": "172a84f028efb4ed05aaebcd5c6881dfd50d28450f70c835c4a387eaf0e0f611"
+    },
+    {
+      "path": "reports/m8f_logs/history.txt",
+      "bytes": 51,
+      "sha256": "72e099872e552d31aa23b25db395b23ca6d5e8756f6fb38fa80b1b027cc40857"
+    },
+    {
+      "path": "reports/m8f_logs/history_supplement.json",
+      "bytes": 2364,
+      "sha256": "89502fe28fbbd4b4904a5893b20eb6e492b52b8ee67e9cf64fabd889af23da43"
+    },
+    {
+      "path": "reports/m8f_logs/history_supplement.txt",
+      "bytes": 52,
+      "sha256": "8595dba282bcf3aa0337b48748a9e10fab6adb1947a03e80fc8ca2126e3120ca"
+    },
+    {
+      "path": "reports/m8f_logs/identity_audit.json",
+      "bytes": 1706,
+      "sha256": "76fa497aa806523c9a623f2b592f1d7c2b10d7cc82649c8c53cd2b2fc32bd4a4"
+    },
+    {
+      "path": "reports/m8f_logs/identity_audit.txt",
+      "bytes": 99,
+      "sha256": "12fc826a8756becca9bfb3812b6b5ca0c02b4a29e261ecd3d7bf2f1046a3ad25"
+    },
+    {
+      "path": "reports/m8f_logs/input_isolation.json",
+      "bytes": 1955,
+      "sha256": "df2dd4ed8524974f2d546ff349738a0c63926c039b64e97dd4b9608334dbd9b0"
+    },
+    {
+      "path": "reports/m8f_logs/input_isolation.txt",
+      "bytes": 541,
+      "sha256": "b1acae12012f87040b3dd231d3123764cb39d278d139c921a552328dd515b571"
+    },
+    {
+      "path": "reports/m8f_logs/m8b_regression.json",
+      "bytes": 1764,
+      "sha256": "da43162b85bfb9f46fa6b6387bc22f50866f1b27a0025631826dcedeba1bb9a4"
+    },
+    {
+      "path": "reports/m8f_logs/m8b_regression.txt",
+      "bytes": 1162,
+      "sha256": "104f4c989c2de3a3c1e49ad4adfd1ddd5014f71702c6c92241db8c1ef699b39b"
+    },
+    {
+      "path": "reports/m8f_logs/m8d_regression.json",
+      "bytes": 1764,
+      "sha256": "8508f5d9375c44b22b8017527d171e6c96e068eb2d4b3818758d8ced1d759783"
+    },
+    {
+      "path": "reports/m8f_logs/m8d_regression.txt",
+      "bytes": 1372,
+      "sha256": "a91fac236d35980835483a83a77c7d296cafa9f04db75ebed72000bb333951cc"
+    },
+    {
+      "path": "reports/m8f_logs/m8e_regression.json",
+      "bytes": 1712,
+      "sha256": "7940a3d0d71aee87fae9dd28ff45d623bf2c8ab23541da4ff29c5f8dd1610534"
+    },
+    {
+      "path": "reports/m8f_logs/m8e_regression.txt",
+      "bytes": 1532,
+      "sha256": "884dea3648db2f9b2db01dc11c95de71e128cb99d1c0ad001cc005958fc4fdb8"
+    },
+    {
+      "path": "reports/m8f_logs/negative_controls.json",
+      "bytes": 1651,
+      "sha256": "2e3ef632753509bad1e635f64ad0a177518c05cdac6988e2df61870f4795681e"
+    },
+    {
+      "path": "reports/m8f_logs/negative_controls.txt",
+      "bytes": 166,
+      "sha256": "1c750e1a92e6fca3b19803e6ef504587760fa50de85f7bb343d4760ad6e01fdd"
+    },
+    {
+      "path": "reports/m8f_logs/placement_executed_v2.py.txt",
+      "bytes": 7101,
+      "sha256": "5601192d9ada875e78549929e5dfc1a93796abeaddbe14ef3ab32a9bb023abae"
+    },
+    {
+      "path": "reports/m8f_logs/placement_initial.py.txt",
+      "bytes": 7085,
+      "sha256": "eb4112d526ba23ff0c7326aab53401b521793b50ea20d650aa5391d0fb1c640c"
+    },
+    {
+      "path": "reports/m8f_logs/quality_unit.json",
+      "bytes": 1510,
+      "sha256": "fa6003aed585c5dc7dbdee11cd5156d6db6b3293c63dad804970aca9168a58d8"
+    },
+    {
+      "path": "reports/m8f_logs/quality_unit.txt",
+      "bytes": 681,
+      "sha256": "4781c32bfa07823bc0cb190d822ec73078eefeed8e76fddc877a3bacfacc4d93"
+    },
+    {
+      "path": "reports/m8f_logs/reference_certificates.json",
+      "bytes": 2663,
+      "sha256": "1713a944d1c8902d67b7c96d912c298a23804c9519b8621a200aa9e4736e9dc4"
+    },
+    {
+      "path": "reports/m8f_logs/reference_certificates.txt",
+      "bytes": 22,
+      "sha256": "46c55090f7f103a12c6e41b80150546cc7dadd602ba74a2838bb2ddcc2f4a37e"
+    },
+    {
+      "path": "reports/m8f_logs/reports.json",
+      "bytes": 1934,
+      "sha256": "c078a55435db9d2682d17c08329f9997f74486acfe9b605f4b6cd916e280186f"
+    },
+    {
+      "path": "reports/m8f_logs/reports.txt",
+      "bytes": 489,
+      "sha256": "79bb4d3efcf08e84ef2554c8ddf051d99e9d099199b4adb24a1388368d186f78"
+    },
+    {
+      "path": "reports/m8f_logs/water_probe.json",
+      "bytes": 1841,
+      "sha256": "e22bfbd883098d7a581ed632b4671697bdfb47a17c50cc2f4dc3f19dc7d9c1ad"
+    },
+    {
+      "path": "reports/m8f_logs/water_probe.txt",
+      "bytes": 996,
+      "sha256": "00e20e4faa976027e3a5ce078f216824823f229bc4d46e90c3bb16876ae28482"
+    },
+    {
+      "path": "reports/m8f_natural_scene_quality.json",
+      "bytes": 32669,
+      "sha256": "a7d3bc65a98a8efa6df94d927e9d8eba4e949a076a1184f521137e0bc36370fc"
+    },
+    {
+      "path": "reports/m8f_negative_controls.json",
+      "bytes": 58595,
+      "sha256": "6ef7b8b60670931b760799b88cc8086034731c2b960099dc90f827d83f3085cb"
+    },
+    {
+      "path": "reports/m8f_object_eligibility.json",
+      "bytes": 13862,
+      "sha256": "c833098112de0553c22f7a2951e4920a3fc1e83ed58cd702831b5f5df9d2e8c4"
+    },
+    {
+      "path": "reports/m8f_ray_hit_and_contact_audit.json",
+      "bytes": 588211,
+      "sha256": "b2870e812e4428abba55147a332e3b47deb101bbe0757f64647e920685e4a5f9"
+    },
+    {
+      "path": "reports/m8f_reference_certificates.json",
+      "bytes": 2959,
+      "sha256": "d23a824fefeb4740ca165af8a18fbd3354ec49568cadb9e54ba259b77fa7fee6"
+    },
+    {
+      "path": "reports/m8f_runtime_cleanup.json",
+      "bytes": 1952,
+      "sha256": "0fe7c47f73e2cb7a22c07370968b2859ea253f7dd82739f38d496dbe1b7204f9"
+    },
+    {
+      "path": "reports/m8f_split_preflight.json",
+      "bytes": 33316,
+      "sha256": "82aca2a409d12805b3c8956af7c447064878a9e74ffde9214ed654e001e91101"
+    },
+    {
+      "path": "reports/m8f_summary.md",
+      "bytes": 7568,
+      "sha256": "bb333c429e08eb4e564af126d94961780587f0abb1e2a0de6eaca831a77ba3c3"
+    },
+    {
+      "path": "reports/m8f_training_readiness.json",
+      "bytes": 2064,
+      "sha256": "ed73315b8dabce60cc29642777df5ee177047fa4c6fc662c075519c8f6918157"
+    },
+    {
+      "path": "reports/m8f_visualization_manifest.json",
+      "bytes": 2631,
+      "sha256": "d4a40a897106b5bb3cdab504eac1ac7363fa27e64c7f24359ba517cc28d1ea28"
+    },
+    {
+      "path": "reports/m8f_water_multilayer_probe.json",
+      "bytes": 6215,
+      "sha256": "f73442e067123633959b72c6f299765ea8c5155c9ec2f12d009dba277284534b"
+    },
+    {
+      "path": "simulator/m8f_placement.py",
+      "bytes": 7101,
+      "sha256": "5601192d9ada875e78549929e5dfc1a93796abeaddbe14ef3ab32a9bb023abae"
+    },
+    {
+      "path": "tests/test_m8f_evidence.py",
+      "bytes": 2303,
+      "sha256": "052ebf5b579b215496a14fe93fabe4acb5e15cc89483474621abfa0131084a31"
+    },
+    {
+      "path": "tests/test_m8f_quality.py",
+      "bytes": 1825,
+      "sha256": "e963f3016891970c85c3d836cae3f7a40ec8fdc9d77e5fbe83398b8487ab53bd"
+    },
+    {
+      "path": "tools/m8f_allocate.py",
+      "bytes": 4047,
+      "sha256": "5d31651ab91dd66c65ad99155c24eb61336e64a3295339c9913e8cad3f71eca1"
+    },
+    {
+      "path": "tools/m8f_audit.py",
+      "bytes": 8622,
+      "sha256": "1d6c133e27d7c721b1028e597da45ee2f76abef56e68276aeefedda289868fd2"
+    },
+    {
+      "path": "tools/m8f_capture.py",
+      "bytes": 12505,
+      "sha256": "0bd13cafd39813aefbd18a72af9023ad0ed33d4e12489b19ca414281d5657d43"
+    },
+    {
+      "path": "tools/m8f_certificates.py",
+      "bytes": 1788,
+      "sha256": "a41ae4e1e5153c95b3db681275bdfdaf5a72eea49691f92c66faaa263261f077"
+    },
+    {
+      "path": "tools/m8f_closeout.py",
+      "bytes": 5491,
+      "sha256": "00f96cb7b4756c374bcec6834b4a88966ea275db73f4e7a36dd614eb1f425a06"
+    },
+    {
+      "path": "tools/m8f_common.py",
+      "bytes": 1224,
+      "sha256": "4aba02f25a4e31299c09b6247b6d311f9f1d6a6ee45a60ff0649a2f2c3bbbd1d"
+    },
+    {
+      "path": "tools/m8f_counterfactual.py",
+      "bytes": 2607,
+      "sha256": "2a67311b4ad14c4de7831dd01f4ac95212eb004eca807e23ed433a0bf77d8a0a"
+    },
+    {
+      "path": "tools/m8f_figures.py",
+      "bytes": 3710,
+      "sha256": "c92a30ccd75441800d2b4b8f7ad5ed09688e02870c82e431b552566d5cf661ce"
+    },
+    {
+      "path": "tools/m8f_finalize.py",
+      "bytes": 3160,
+      "sha256": "6cd10a1ea7f87da8f8a561e1e0efe3324a9a0031a665d5e107b5ac3422a245fc"
+    },
+    {
+      "path": "tools/m8f_geometry_figures.py",
+      "bytes": 2520,
+      "sha256": "bc450254dd9cfcb271a2529cec1f6fa0771cbdf424711a49582f956933c46773"
+    },
+    {
+      "path": "tools/m8f_history.py",
+      "bytes": 5531,
+      "sha256": "0502b2cf56a9824b029497d3ab80ccc6be4834f798041a8588f2d1fe077cf9bb"
+    },
+    {
+      "path": "tools/m8f_history_supplement.py",
+      "bytes": 3182,
+      "sha256": "4aa5caf7b4eed5171c4b25ede1c290bba391f56dff3c9eb9b429fedb2f69b3db"
+    },
+    {
+      "path": "tools/m8f_negative_controls.py",
+      "bytes": 2936,
+      "sha256": "9e486f4873b3f5cd6815739836e5969e172a056fe834ff6681b953866780d18a"
+    },
+    {
+      "path": "tools/m8f_region_review.py",
+      "bytes": 2406,
+      "sha256": "9c194af7478564305e73e808afaaef3c66a3c00b1c14b792fa2c3b03887b7e5f"
+    },
+    {
+      "path": "tools/m8f_reports.py",
+      "bytes": 9343,
+      "sha256": "f2c00a8a1bb94ac622cf20750a70c934f26c3a87b454021afc09dc80fac96140"
+    },
+    {
+      "path": "tools/m8f_verify.py",
+      "bytes": 413,
+      "sha256": "8151152261a1e0d8ef8020f620e5b72e0c8032bcf04a24b2b223da1be4553cef"
+    },
+    {
+      "path": "tools/m8f_water_probe.py",
+      "bytes": 1368,
+      "sha256": "6e621744a44ae3ff5cfcbc62a5469e278059f9f65d2487e101f9086e471e2853"
+    }
+  ],
+  "historical_manifests": [
+    {
+      "manifest": {
+        "path": "reports/m8b_release_manifest.json",
+        "bytes": 363426,
+        "sha256": "6fa9cfd16d1e17e27fe9c2c86f4812e5f335e6e66ab43ac44a783b8ed1ca2c15"
+      },
+      "files": 1620,
+      "unchanged": true
+    },
+    {
+      "manifest": {
+        "path": "reports/m8b_evaluation_reference_audit.json",
+        "bytes": 433182,
+        "sha256": "fe7014a63621ffe34b3a255d19ca00d9d3d52ee07215aae9840d29b548dfcc4a"
+      },
+      "files": 1735,
+      "unchanged": true
+    },
+    {
+      "manifest": {
+        "path": "reports/m8c_release_manifest.json",
+        "bytes": 22448,
+        "sha256": "c883e1f9d7cfa63543607057297148661a07d00ee1d22b6d38f133ed5df60cba"
+      },
+      "files": 107,
+      "unchanged": true
+    },
+    {
+      "manifest": {
+        "path": "reports/m8d_release_manifest.json",
+        "bytes": 105978,
+        "sha256": "3639a3d1ab69ffbb81976da7377112ccf5aba30bd1ec5797df4930090994216f"
+      },
+      "files": 502,
+      "unchanged": true
+    },
+    {
+      "manifest": {
+        "path": "reports/m8e_release_manifest.json",
+        "bytes": 243618,
+        "sha256": "47fd82abb003c1365c549c48ce52cc88d78f2742868dce7663da1c59b6c6b823"
+      },
+      "files": 988,
+      "unchanged": true
+    }
+  ],
+  "total_bytes": 124819478,
+  "source_contract": "Final Git commit seals manifest. Execution parent+exact per-file source SHA in logs. Initial sources retained; no uncommitted historical changes.",
+  "raw_assets": "External experiment root, not bulk Git data",
+  "checkpoints": "None loaded or changed; historical SHA reverified."
+}

@@ -1,0 +1,92 @@
+"""CARLA source-qualified placement checks; static evidence, not physics contact."""
+import math
+import numpy as np
+from datasets.m8f_quality import choose_surface,polygon,polygon_distance
+
+def xyz(v):return [v.x,v.y,v.z]
+def pose(t):return dict(xyz=xyz(t.location),rotation=[t.rotation.pitch,t.rotation.yaw,t.rotation.roll],matrix=t.get_matrix())
+def box_record(bb,transform=None):
+ import carla
+ matrix=np.asarray(carla.Transform(bb.location,bb.rotation).get_matrix())
+ if transform is not None:matrix=np.asarray(transform.get_matrix())@matrix
+ ext=np.array(xyz(bb.extent));offset=np.array([[x,y,z] for x in [-ext[0],ext[0]] for y in [-ext[1],ext[1]] for z in [-ext[2],ext[2]]])
+ return dict(T_world_from_box=matrix.tolist(),center_world_m=matrix[:3,3].tolist(),dimensions_lwh_m=(2*ext).tolist(),extent_m=ext.tolist(),rotation_original_deg=[bb.rotation.pitch,bb.rotation.yaw,bb.rotation.roll],corners_world_m=(offset@matrix[:3,:3].T+matrix[:3,3]).tolist())
+def ray(world,start,end):
+ import carla
+ hits=world.cast_ray(carla.Location(*start),carla.Location(*end))
+ return dict(start=list(start),end=list(end),hits=[dict(xyz=xyz(h.location),semantic=int(h.label),semantic_name=str(h.label)) for h in hits],frame=world.get_snapshot().frame)
+
+def lane_check(mp,point,allowed,inset):
+ import carla
+ wp=mp.get_waypoint(carla.Location(*point),project_to_road=False,lane_type=carla.LaneType.Any)
+ if wp is None:return dict(ok=False,reason='NoLaneAtFootprint',point=point)
+ t=wp.transform;right=t.get_right_vector();lateral=abs((point[0]-t.location.x)*right.x+(point[1]-t.location.y)*right.y)
+ ok=str(wp.lane_type) in allowed and lateral<=wp.lane_width/2-inset and abs(point[2]-t.location.z)<=.6
+ return dict(ok=bool(ok),point=point,lane_type=str(wp.lane_type),road_id=wp.road_id,lane_id=wp.lane_id,s=wp.s,lane_width=wp.lane_width,lateral=lateral,waypoint=pose(t))
+
+def footprint(transform,local_matrix,extent,grid=(5,3)):
+ m=np.asarray(transform.get_matrix())@np.asarray(local_matrix);e=np.asarray(extent)
+ local=np.array([[x,y,-e[2]] for x in np.linspace(-e[0],e[0],grid[0]) for y in np.linspace(-e[1],e[1],grid[1])])
+ return local@m[:3,:3].T+m[:3,3]
+
+def static_overlap(world_box,environment):
+ c=np.asarray(world_box['corners_world_m']);a=c[[0,4,6,2],:2];zmin=c[:,2].min()+.1;zmax=c[:,2].max()
+ result=[]
+ for o in environment:
+  if int(o['semantic_tags'][0]) in [1,2,10,11,23,24,25,26,27]:continue
+  b=np.asarray(o['corners_world_m'])
+  if b[:,2].max()<=zmin or b[:,2].min()>=zmax:continue
+  if np.linalg.norm(c.mean(0)[:2]-b.mean(0)[:2])>np.linalg.norm(np.ptp(c[:,:2],axis=0))+np.linalg.norm(np.ptp(b[:,:2],axis=0)):continue
+  if polygon_distance(a,b[[0,4,6,2],:2])<=.02:result.append(dict(entity_id=o['entity_id'],name=o['name'],semantic=o['semantic_tags'],distance_m=0,geometry='EnvironmentOBBConservative_NotMesh'))
+ return result
+
+def validate_request(world,mp,wp,asset,contract,environment,offset=0,xy_override=None):
+ import carla
+ g=contract['ground'];region=contract['class_regions'][asset['category']]
+ t=wp.transform;right=t.get_right_vector();loc=t.location
+ x,y=(loc.x+offset*right.x,loc.y+offset*right.y) if xy_override is None else xy_override
+ tr=carla.Transform(carla.Location(x,y,loc.z),t.rotation)
+ points=footprint(tr,asset['local_box_matrix'],asset['extent'],g['footprint_grid'])
+ rays=[];lanes=[];reasons=[];heights=[]
+ for q in points:
+  r=ray(world,[q[0],q[1],loc.z+g['ray_above_m']],[q[0],q[1],loc.z-g['ray_below_m']])
+  choice=choose_surface(r['hits'],loc.z,region['semantics'],g);r['decision']=choice;rays.append(r)
+  lane=lane_check(mp,[float(q[0]),float(q[1]),loc.z],region['lanes'],g['lane_inset_m']);lanes.append(lane)
+  if not lane['ok']:reasons.append('FootprintOutsideAllowedRegion')
+  if choice['status']!='GroundedByGeometryProxy':reasons.extend(choice['reasons'])
+  else:heights.append(choice['selected']['xyz'][2])
+ request=None;box=None;overlap=[]
+ if len(heights)==len(points):
+  if max(heights)-min(heights)>g['support_height_spread_m']:reasons.append('SupportHeightDisagreement')
+  # Derive translation solely from recorded surface support and known asset bottom.
+  zshift=float(np.median(np.array(heights)-points[:,2])+g['requested_clearance_m'])
+  tr.location.z+=zshift
+  request=pose(tr);m=np.asarray(tr.get_matrix())@asset['local_box_matrix'];e=np.asarray(asset['extent'])
+  corners=np.array([[x,y,z] for x in [-e[0],e[0]] for y in [-e[1],e[1]] for z in [-e[2],e[2]]])@m[:3,:3].T+m[:3,3]
+  box=dict(corners_world_m=corners.tolist());overlap=static_overlap(box,environment)
+  if overlap:reasons.append('StaticGeometryOverlap')
+  gaps=footprint(tr,asset['local_box_matrix'],asset['extent'],g['footprint_grid'])[:,2]-heights
+  if min(gaps)<g['bottom_gap_min_m'] or max(gaps)>g['bottom_gap_max_m']:reasons.append('BottomSupportGap')
+ return dict(status='Rejected' if reasons else 'GroundedByGeometryProxy',reasons=sorted(set(reasons)),rays=rays,lane_checks=lanes,request=request,requested_obb=box,static_competitors=overlap,asset=asset,waypoint=pose(t),declared_region=region,no_fallback=True)
+
+def actual_check(world,mp,actor,request,contract,environment):
+ g=contract['ground'];actual=actor.get_transform();box=box_record(actor.bounding_box,actual);r=request['asset'];points=footprint(actual,np.asarray(actual.get_inverse_matrix())@np.asarray(box['T_world_from_box']),box['extent_m'],g['footprint_grid'])
+ reasons=[];rays=[];gaps=[];lanes=[]
+ region=contract['class_regions'][r['category']]
+ expected_z=request['waypoint']['xyz'][2]
+ for p in points:
+  # Start below the actual OBB floor to avoid casting through the subject itself.
+  rr=ray(world,[p[0],p[1],p[2]-.005],[p[0],p[1],p[2]-1.0]);rr['query']='BelowActualOBBFloor';rays.append(rr)
+  choice=choose_surface(rr['hits'],expected_z,region['semantics'],g);rr['decision']=choice
+  if choice['status']!='GroundedByGeometryProxy':reasons.extend(choice['reasons'])
+  else:gaps.append(float(p[2]-choice['selected']['xyz'][2]))
+  ln=lane_check(mp,[float(p[0]),float(p[1]),expected_z],region['lanes'],g['lane_inset_m']);lanes.append(ln)
+  if not ln['ok']:reasons.append('ActualFootprintOutsideAllowedRegion')
+ if gaps and (min(gaps)<g['bottom_gap_min_m'] or max(gaps)>g['bottom_gap_max_m']):reasons.append('ActualFloatingOrPenetrating')
+ delta=float(np.linalg.norm(np.array(xyz(actual.location))-request['request']['xyz']))
+ if delta>g['actual_request_position_max_m']:reasons.append('ActualRequestTransformMismatch')
+ rot=np.array([actual.rotation.pitch,actual.rotation.yaw,actual.rotation.roll]);rd=float(np.max(np.abs((rot-request['request']['rotation']+180)%360-180)))
+ if rd>g['actual_request_rotation_max_deg']:reasons.append('ActualRotationMismatch')
+ overlap=static_overlap(box,environment)
+ if overlap:reasons.append('ActualStaticGeometryOverlap')
+ return dict(status='Rejected' if reasons else 'GroundedByGeometryProxy',reasons=sorted(set(reasons)),actual=pose(actual),requested=request['request'],position_delta_m=delta,rotation_delta_deg=rd,full_actual_obb=box,bottom_samples=points.tolist(),support_gaps_m=gaps,rays=rays,lane_checks=lanes,static_competitors=overlap,PhysicalContactCertified=False)

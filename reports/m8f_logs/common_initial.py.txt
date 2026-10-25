@@ -1,0 +1,18 @@
+"""M8-F append-only experiment support."""
+import json,os,subprocess,time
+from pathlib import Path
+from tools.m8a_common import asset,sha,write
+ROOT=Path('/root/gpufree-data/hs-drive-experiments/m8f-grounded-quality')
+BASE='12bd124b443cc01c60ee4251fd1be20d868928c1'
+LOG=Path('reports/m8f_logs')
+def provenance(kind):
+ p=[*Path('tools').glob('m8f_*.py'),*Path('datasets').glob('m8f_*.py'),*Path('tests').glob('test_m8f*.py'),*Path('configs/m8f').glob('*.json')]
+ return dict(kind=kind,base=BASE,execution_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),sources={str(x):sha(x) for x in sorted(p)},training_steps=0,new_model_forwards=0,visual_control=False)
+def run(name,cmd,env=None,timeout=1800):
+ t=time.monotonic()
+ with (LOG/(name+'.txt')).open('x') as f:
+  try:r=subprocess.run(cmd,stdout=f,stderr=subprocess.STDOUT,env=env,timeout=timeout);code=r.returncode
+  except subprocess.TimeoutExpired:code=124
+ write(LOG/(name+'.json'),dict(**provenance('ActualServerProcess'),command=cmd,returncode=code,elapsed_s=time.monotonic()-t,log=asset(LOG/(name+'.txt'))))
+ if code:raise RuntimeError('Failed process retained: '+name)
+ print(name,'completed',flush=True)
