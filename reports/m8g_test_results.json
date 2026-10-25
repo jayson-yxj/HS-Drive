@@ -1,0 +1,119 @@
+{
+  "kind": "ActualServerTestExecution",
+  "base": "8cde984ee606cc546c9d6c83962a7aaa95a08af8",
+  "execution_commit": "8cde984ee606cc546c9d6c83962a7aaa95a08af8",
+  "sources": {
+    "configs/m8g/capture_contract.json": "ce8fa6072e36e63d5be46b99ef54208de11790d221efa1f7426ed6f87ea99dc4",
+    "configs/m8g/protocol.json": "881a2ddb4cd08b3e216f2ac3592012a8360b82f46d95ae6f926cd1d6ac61369c",
+    "configs/m8g/smoke_protocol.json": "a9c4f61d9f1c0afe65a3698183f0c770b0140dab4fcde676da063ce7dceecd74",
+    "datasets/m8g_geometry.py": "85968a2280261fcc243fb5e80b7eb112d1a6dfc9d8002928ff6b3c783b50dc7b",
+    "tests/test_m8g_evidence.py": "1fdeea48457dc915ef540e7abd45e26119bf7cb07d327a8604c7ad28ed1f66e1",
+    "tests/test_m8g_geometry.py": "c0d0cd0d91ee428ac978840e4520362ec257c08eb79b8d3a00c6066c140466dc",
+    "tools/m8g_common.py": "f1215d0f03458a6393c1063cc6e76018d1b5582cc25bd926e358225d5b721b12",
+    "tools/m8g_controls.py": "d82fa8f2b2551d7e5dc9d4fb1133bd3cd7f5aa5e08c8cefcb5bcc1be54b286c9",
+    "tools/m8g_diagnose.py": "7e656f62c6caf135f0f832c11375dca34972cf2537b168f9c7517a7fd9a25f06",
+    "tools/m8g_figures.py": "104d8197e6c4ac0d0c4c7a783b0e5af8bc49093be2750339821dee1e098a6995",
+    "tools/m8g_history.py": "8960e67ab431deb5820669bed2c67bea2eddb5700a27782ed2edbe2860ebcf2f",
+    "tools/m8g_reports.py": "98261be57a51135813f7c8f096e1fea4fc881bbab2007c5cedc4efd0521e326b",
+    "tools/m8g_scan.py": "333e3f0568fea2dd1e4a6ed9205e7f54b5c094ff2e343e77bbb33d0f808e85d2",
+    "tools/m8g_scan_diagnostics.py": "f43a5188ab8213684e10bfb1d5830ed712224818c4debccc66e75b754dc8c5d7",
+    "tools/m8g_source_followup.py": "cefd2cd23e8c02bb027d95087b799d5a011de74b7ad0198924ff40ab5df3dc5b"
+  },
+  "training_steps": 0,
+  "new_model_forwards": 0,
+  "visual_control": false,
+  "suites": [
+    {
+      "name": "final_m8g_tests",
+      "kind": "17 synthetic geometry + 13 actual evidence assertions",
+      "tests": 30,
+      "status": "Passed",
+      "log": {
+        "path": "reports/m8g_logs/final_m8g_tests.txt",
+        "bytes": 2130,
+        "sha256": "c7be3ca91e1f4782e4f5d4dc0a641e1060d19c49e60568cac99710b58282a12e"
+      },
+      "run": {
+        "path": "reports/m8g_logs/final_m8g_tests.json",
+        "bytes": 2121,
+        "sha256": "59cfe2645ff373f8baba730c4409eb71be69a29d9a4b0c9338995b19575e7e67"
+      }
+    },
+    {
+      "name": "historical_m8ef_tests",
+      "kind": "Historical M8E/F regression",
+      "tests": 35,
+      "status": "Passed",
+      "log": {
+        "path": "reports/m8g_logs/historical_m8ef_tests.txt",
+        "bytes": 2886,
+        "sha256": "cf9209f8040d6022a52430debdb800d9e2cedb6101135635bf149c3676e90fa3"
+      },
+      "run": {
+        "path": "reports/m8g_logs/historical_m8ef_tests.json",
+        "bytes": 1818,
+        "sha256": "0e0b99893d3be9c7a10e8bb1ef34168d777eacfabbd18e1ecd0897214f04fac6"
+      }
+    },
+    {
+      "name": "historical_m8b_discover_retry",
+      "kind": "Historical M8B geometry/metrics regression; no forward",
+      "tests": 18,
+      "status": "Passed",
+      "log": {
+        "path": "reports/m8g_logs/historical_m8b_discover_retry.txt",
+        "bytes": 1162,
+        "sha256": "93899eced411389d6e6bd2ff837e0e1ed8cd4c2884c2bcd3914f4a054074b0cb"
+      },
+      "run": {
+        "path": "reports/m8g_logs/historical_m8b_discover_retry.json",
+        "bytes": 1897,
+        "sha256": "eaadae69d7813f9d62d144a73b16ed0f2fc097ad5613782338fd5df2bd87c1ae"
+      }
+    },
+    {
+      "name": "historical_m8d_discover_retry",
+      "kind": "Historical M8D order/evidence regression; no forward",
+      "tests": 16,
+      "status": "Passed",
+      "log": {
+        "path": "reports/m8g_logs/historical_m8d_discover_retry.txt",
+        "bytes": 1372,
+        "sha256": "ce3f5d7c7fa8b1b1b3bb0c8d488f93c555a1a4f3f9922531251ce442dbddb1fe"
+      },
+      "run": {
+        "path": "reports/m8g_logs/historical_m8d_discover_retry.json",
+        "bytes": 1898,
+        "sha256": "1683bb8869ea4834263200668d48c18ce6c6a40b0baf08d9aa22b5d0cccf982b"
+      }
+    }
+  ],
+  "tests": 99,
+  "new_tests": 30,
+  "historical_tests": 69,
+  "actual_CARLA_controls": 10,
+  "CARLA_controls": {
+    "path": "reports/m8g_positive_negative_controls.json",
+    "bytes": 461702,
+    "sha256": "7f394c84b98759e8cfd0ba278cf02c925fed8f397aa5d1a1246aae0375c1e9fc"
+  },
+  "model_forwards": 0,
+  "failed_runs_retained": [
+    {
+      "path": "reports/m8g_logs/unified_history.json",
+      "bytes": 847,
+      "sha256": "392de07b4d05f9ba8ac44497bb4760b362db372c04bc75714a8a70288608ad03"
+    },
+    {
+      "path": "reports/m8g_logs/source_followup.json",
+      "bytes": 1660,
+      "sha256": "630e1b798db923762eb3db7902f7e4ff4c109de5605c373de1315f4ca7a7622e"
+    },
+    {
+      "path": "reports/m8g_logs/historical_m8bd_tests.json",
+      "bytes": 1973,
+      "sha256": "a17618a1849cc7dae4b7a9e2613ec2be60945e58bd8e3f9bcd6bb64c57bfceba"
+    }
+  ],
+  "retries": "Index duplicate argument fixed, network source download bounded timeout, unittest package collision fixed with discover; original failed logs retained"
+}

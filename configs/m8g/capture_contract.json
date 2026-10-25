@@ -1,0 +1,115 @@
+{
+  "stage": "M8-F",
+  "base": "12bd124b443cc01c60ee4251fd1be20d868928c1",
+  "frozen_before_smoke": true,
+  "max_groups": 8,
+  "max_frames": 32,
+  "smoke_groups": 2,
+  "smoke_frames": 8,
+  "phases": [
+    "empty",
+    "present",
+    "shifted",
+    "removed"
+  ],
+  "ground": {
+    "ray_above_m": 8.0,
+    "ray_below_m": 15.0,
+    "layer_window_m": 8.0,
+    "distinct_layer_m": 0.5,
+    "waypoint_z_tolerance_m": 0.5,
+    "support_height_spread_m": 0.12,
+    "bottom_gap_min_m": -0.03,
+    "bottom_gap_max_m": 0.12,
+    "requested_clearance_m": 0.03,
+    "footprint_grid": [
+      5,
+      3
+    ],
+    "lane_inset_m": 0.1,
+    "yaw_to_lane_max_deg": 5.0,
+    "actual_request_position_max_m": 0.02,
+    "actual_request_rotation_max_deg": 0.5,
+    "no_z_fallback": true,
+    "grade": "GroundedByGeometryProxy",
+    "physical_contact_certified": false
+  },
+  "class_regions": {
+    "vehicle": {
+      "lanes": [
+        "Driving",
+        "Parking"
+      ],
+      "semantics": [
+        1,
+        24
+      ],
+      "scenario": "lane-aligned stopped vehicle"
+    },
+    "person": {
+      "lanes": [
+        "Sidewalk"
+      ],
+      "semantics": [
+        2
+      ],
+      "scenario": "pedestrian on sidewalk"
+    },
+    "cone": {
+      "lanes": [
+        "Driving",
+        "Shoulder"
+      ],
+      "semantics": [
+        1,
+        24
+      ],
+      "scenario": "declared temporary lane-center work-zone closure"
+    },
+    "barrier": {
+      "lanes": [
+        "Driving",
+        "Shoulder"
+      ],
+      "semantics": [
+        1,
+        24
+      ],
+      "scenario": "declared temporary lane-center work-zone closure"
+    }
+  },
+  "identity": {
+    "min_pixels": 3,
+    "min_retained_pixels": 3,
+    "depth_range_m": [
+      1.5,
+      80
+    ],
+    "box_tolerance_m": 0.25,
+    "min_geometry_purity": 0.9,
+    "min_semantic_agreement": 0.95
+  },
+  "independence": {
+    "ego_distance_m": 100.0,
+    "target_footprint_distance_m": 20.0,
+    "target_uncertainty_margin_m": 2.0,
+    "historical_scene_envelope_m": 80.0,
+    "new_group_distance_m": 150.0,
+    "incomplete_history_final": "HeldoutIndependenceNoGo",
+    "repeated_family": "RepeatedLayoutFamily_NotIndependentDistribution"
+  },
+  "smoke_gate": {
+    "both_groups_have_grounded_visible_vehicle_and_person": true,
+    "all_accepted_targets_final_support_pass": true,
+    "no_unexplained_missing_target": true,
+    "invalid_controls_rejected": true,
+    "no_threshold_relaxation": true
+  },
+  "inference": {
+    "new_forward": false,
+    "training": false,
+    "visual_control": false,
+    "default_order": "A",
+    "score": 0.1
+  }
+}

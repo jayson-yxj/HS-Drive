@@ -1,0 +1,277 @@
+{
+  "kind": "OfflineHistoricalEvidenceAndActualCARLAReplay",
+  "base": "8cde984ee606cc546c9d6c83962a7aaa95a08af8",
+  "execution_commit": "8cde984ee606cc546c9d6c83962a7aaa95a08af8",
+  "sources": {
+    "configs/m8g/protocol.json": "881a2ddb4cd08b3e216f2ac3592012a8360b82f46d95ae6f926cd1d6ac61369c",
+    "datasets/m8g_geometry.py": "0ac04bf865f266d7d75d1b2a0ad1a650307c520e72e759f6fdc99ff7fd8bd0ab",
+    "tools/m8g_common.py": "f1215d0f03458a6393c1063cc6e76018d1b5582cc25bd926e358225d5b721b12",
+    "tools/m8g_diagnose.py": "6d24611898703d8c1092a7210aac9b92f2f078c9b1a4e13755bfe1f270b8ae45",
+    "tools/m8g_history.py": "ea546d748f54b244b4fb22bb284c68909c5c6ea451d3bad418a6862e880a57a1"
+  },
+  "training_steps": 0,
+  "new_model_forwards": 0,
+  "visual_control": false,
+  "requests": [
+    {
+      "group": "m8f_development_00",
+      "key": "target_0",
+      "category": "vehicle",
+      "historical_accepted": false,
+      "classification": [
+        "UnknownCollisionSource"
+      ],
+      "exclusive": "Unresolved",
+      "phases": [
+        {
+          "phase": "present",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "lane_counts": {
+            "ValidWithinConservativeLaneProof": 15
+          }
+        },
+        {
+          "phase": "shifted",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "lane_counts": {
+            "ValidWithinConservativeLaneProof": 15
+          }
+        }
+      ]
+    },
+    {
+      "group": "m8f_development_00",
+      "key": "target_1",
+      "category": "person",
+      "historical_accepted": false,
+      "classification": [
+        "UnknownCollisionSource"
+      ],
+      "exclusive": "Unresolved",
+      "phases": [
+        {
+          "phase": "present",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "lane_counts": {
+            "ValidWithinConservativeLaneProof": 15
+          }
+        },
+        {
+          "phase": "shifted",
+          "reasons": [
+            "CoveredOrWrongTopSurface"
+          ],
+          "lane_counts": {
+            "ValidWithinConservativeLaneProof": 15
+          }
+        }
+      ]
+    },
+    {
+      "group": "m8f_development_00",
+      "key": "target_2",
+      "category": "cone",
+      "historical_accepted": false,
+      "classification": [
+        "ConservativeRejectionUnresolved",
+        "MapQueryAmbiguity"
+      ],
+      "exclusive": "Unresolved",
+      "phases": [
+        {
+          "phase": "present",
+          "reasons": [
+            "FootprintOutsideAllowedRegion",
+            "StaticGeometryOverlap"
+          ],
+          "lane_counts": {
+            "OpenDRIVEBoundaryDisagreement": 15
+          }
+        },
+        {
+          "phase": "shifted",
+          "reasons": [
+            "FootprintOutsideAllowedRegion"
+          ],
+          "lane_counts": {
+            "OpenDRIVEBoundaryDisagreement": 15
+          }
+        }
+      ]
+    },
+    {
+      "group": "m8f_development_00",
+      "key": "target_3",
+      "category": "barrier",
+      "historical_accepted": false,
+      "classification": [
+        "ConservativeRejectionUnresolved",
+        "MapQueryAmbiguity"
+      ],
+      "exclusive": "Unresolved",
+      "phases": [
+        {
+          "phase": "present",
+          "reasons": [
+            "FootprintOutsideAllowedRegion"
+          ],
+          "lane_counts": {
+            "OpenDRIVEBoundaryDisagreement": 15
+          }
+        },
+        {
+          "phase": "shifted",
+          "reasons": [
+            "FootprintOutsideAllowedRegion",
+            "StaticGeometryOverlap"
+          ],
+          "lane_counts": {
+            "OpenDRIVEBoundaryDisagreement": 15
+          }
+        }
+      ]
+    },
+    {
+      "group": "m8f_development_01",
+      "key": "target_0",
+      "category": "vehicle",
+      "historical_accepted": false,
+      "classification": [
+        "MapQueryAmbiguity",
+        "UnknownCollisionSource"
+      ],
+      "exclusive": "Unresolved",
+      "phases": [
+        {
+          "phase": "present",
+          "reasons": [
+            "CoveredOrWrongTopSurface",
+            "FootprintOutsideAllowedRegion"
+          ],
+          "lane_counts": {
+            "ValidWithinConservativeLaneProof": 10,
+            "OpenDRIVEBoundaryDisagreement": 5
+          }
+        },
+        {
+          "phase": "shifted",
+          "reasons": [
+            "FootprintOutsideAllowedRegion"
+          ],
+          "lane_counts": {
+            "ValidWithinConservativeLaneProof": 10,
+            "OpenDRIVEBoundaryDisagreement": 5
+          }
+        }
+      ]
+    },
+    {
+      "group": "m8f_development_01",
+      "key": "target_1",
+      "category": "person",
+      "historical_accepted": true,
+      "classification": [
+        "GeometryProxySupported"
+      ],
+      "exclusive": "AcceptedHistoricalProxy",
+      "phases": [
+        {
+          "phase": "present",
+          "reasons": [],
+          "lane_counts": {
+            "ValidWithinConservativeLaneProof": 15
+          }
+        },
+        {
+          "phase": "shifted",
+          "reasons": [],
+          "lane_counts": {
+            "ValidWithinConservativeLaneProof": 15
+          }
+        }
+      ]
+    },
+    {
+      "group": "m8f_development_01",
+      "key": "target_2",
+      "category": "cone",
+      "historical_accepted": false,
+      "classification": [
+        "MapQueryAmbiguity"
+      ],
+      "exclusive": "Unresolved",
+      "phases": [
+        {
+          "phase": "present",
+          "reasons": [
+            "FootprintOutsideAllowedRegion"
+          ],
+          "lane_counts": {
+            "OpenDRIVEBoundaryDisagreement": 15
+          }
+        },
+        {
+          "phase": "shifted",
+          "reasons": [
+            "FootprintOutsideAllowedRegion"
+          ],
+          "lane_counts": {
+            "OpenDRIVEBoundaryDisagreement": 15
+          }
+        }
+      ]
+    },
+    {
+      "group": "m8f_development_01",
+      "key": "target_3",
+      "category": "barrier",
+      "historical_accepted": false,
+      "classification": [
+        "MapQueryAmbiguity"
+      ],
+      "exclusive": "Unresolved",
+      "phases": [
+        {
+          "phase": "present",
+          "reasons": [
+            "FootprintOutsideAllowedRegion"
+          ],
+          "lane_counts": {
+            "OpenDRIVEBoundaryDisagreement": 15
+          }
+        },
+        {
+          "phase": "shifted",
+          "reasons": [
+            "FootprintOutsideAllowedRegion"
+          ],
+          "lane_counts": {
+            "OpenDRIVEBoundaryDisagreement": 15
+          }
+        }
+      ]
+    }
+  ],
+  "exclusive_counts": {
+    "Unresolved": 7,
+    "AcceptedHistoricalProxy": 1
+  },
+  "multi_label_counts": {
+    "UnknownCollisionSource": 3,
+    "ConservativeRejectionUnresolved": 2,
+    "MapQueryAmbiguity": 5,
+    "GeometryProxySupported": 1
+  },
+  "frozen": {
+    "path": "/root/gpufree-data/hs-drive-experiments/m8g-placement-feasibility/frozen_m8f_inputs.json",
+    "bytes": 586630,
+    "sha256": "373cd938a78966b4df92ddeab0eae7f691a0d101ab7479366d2689290fd65a74"
+  },
+  "no_physical_contact_certification": true
+}

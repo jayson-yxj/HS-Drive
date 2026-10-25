@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8g_finalize.py", line 30, in <module>
+    if __name__=='__main__':main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8g_finalize.py", line 25, in main
+    write('reports/m8g_final_validation.json',dict(**provenance('ActualFinalValidation'),tests=99,synthetic_new_geometry_tests=17,new_actual_evidence_tests=13,historical_tests=69,actual_CARLA_controls=10,history=history,old_sources_preserved=snapshots,all_required_deliverables=True,no_historical_tracked_mutations=True,no_default_code_changes=True,new_model_forwards=0,new_RGB_frames=0,new_actors=0,own_server_shutdown='PID112872 SIGTERM after verified asynchronous empty world; process exited',figures_reviewed=5,training='NoGo',smoke='NotRun_PreconditionFailed'))
+TypeError: dict() got multiple values for keyword argument 'new_model_forwards'
