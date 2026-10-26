@@ -1,0 +1,802 @@
+{
+  "kind": "ActualPythonSubprocessTests_MockCARLAOnly",
+  "base_commit": "916ba75072259f17da725ddbc9c76f2f5fbeea13",
+  "git_head": "916ba75072259f17da725ddbc9c76f2f5fbeea13",
+  "source_sha256": {
+    "configs/m8i1a/protocol.json": "81a5c932cf488612c68ded08b47456490a2a4537c0ff13e8cbdab7fa79992418",
+    "tests/test_m8i1a_startup.py": "c53504740bff76cf471e8e17553a1c00f1932dc201004b4c982fae3efc343289",
+    "tools/m8i1a_audit.py": "ef3c576996bd2c8663dfd19d0bb1e788c80043ecdb06d8f6cad26d34e7dd4d57",
+    "tools/m8i1a_common.py": "e8e14eed1435749a73963c74df31b19cde957081c5b40f49cc03a1dad3554165",
+    "tools/m8i1a_identity.py": "b7e9b724fc7ed670e1da5bee1eef34b8dd4bb2d05fb41122a4751b38cf03850c",
+    "tools/m8i1a_launch.py": "b261dc42a259d9d882766aa4d19d8f296a5c2e40f9a498a2ca9ea03b99a3a2f0",
+    "tools/m8i1a_run_session.py": "16c1bf83cade25103f6c37233c9b464b46f3603bd3805022dcf1b427b8b26dfc"
+  },
+  "actor_creations": 0,
+  "sensor_creations": 0,
+  "TM_instances": 0,
+  "owner_ticks": 0,
+  "model_forwards": 0,
+  "training_steps": 0,
+  "visual_control": false,
+  "new_Final": 0,
+  "status": "OfflineInstrumentationPassed",
+  "command": [
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv/bin/python",
+    "-m",
+    "pytest",
+    "tests/test_m8i1a_startup.py",
+    "-q",
+    "--junitxml=/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/tests.xml"
+  ],
+  "returncode": 0,
+  "test_count": 25,
+  "tests": [
+    {
+      "name": "test_real_runner_exit_and_durable_identity[success-0-None]",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.068,
+      "passed": true
+    },
+    {
+      "name": "test_real_runner_exit_and_durable_identity[map_mismatch-12-MapMismatch]",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.067,
+      "passed": true
+    },
+    {
+      "name": "test_real_runner_exit_and_durable_identity[xodr_mismatch-13-XODRMismatch]",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.068,
+      "passed": true
+    },
+    {
+      "name": "test_real_runner_exit_and_durable_identity[map_unavailable-14-MapIdentityUnavailable]",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.068,
+      "passed": true
+    },
+    {
+      "name": "test_real_runner_exit_and_durable_identity[unexpected_exception-20-RunnerException]",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.068,
+      "passed": true
+    },
+    {
+      "name": "test_real_runner_exit_and_durable_identity[cleanup_failure-23-None]",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.068,
+      "passed": true
+    },
+    {
+      "name": "test_real_runner_exit_and_durable_identity[signal_termination-21-RunnerTerminated]",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.06,
+      "passed": true
+    },
+    {
+      "name": "test_real_runner_exit_and_durable_identity[hard_signal--9-None]",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.045,
+      "passed": true
+    },
+    {
+      "name": "test_real_runner_exit_and_durable_identity[connection_failure-10-ClientConnectionFailed]",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.067,
+      "passed": true
+    },
+    {
+      "name": "test_real_runner_exit_and_durable_identity[version_mismatch-11-VersionMismatch]",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.067,
+      "passed": true
+    },
+    {
+      "name": "test_propagation_contradictions_fail_closed[zero_failure]",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.001,
+      "passed": true
+    },
+    {
+      "name": "test_propagation_contradictions_fail_closed[nonzero_success]",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.001,
+      "passed": true
+    },
+    {
+      "name": "test_propagation_contradictions_fail_closed[cleanup_mismatch]",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.001,
+      "passed": true
+    },
+    {
+      "name": "test_propagation_contradictions_fail_closed[wrong_run]",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_propagation_contradictions_fail_closed[missing_result]",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_propagation_contradictions_fail_closed[declared_wrong_code]",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_supervisor_failure_never_success[ServerLaunchFailed]",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_supervisor_failure_never_success[ServerExited]",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_supervisor_failure_never_success[ResourceBudgetExceeded]",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_supervisor_failure_never_success[ClientConnectionFailed]",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_server_cleanup_failure_overrides_success",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.0,
+      "passed": true
+    },
+    {
+      "name": "test_identity_write_error_does_not_reach_validation",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.002,
+      "passed": true
+    },
+    {
+      "name": "test_atomic_history_protection_and_authorization",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.003,
+      "passed": true
+    },
+    {
+      "name": "test_no_mutating_simulator_calls",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.013,
+      "passed": true
+    },
+    {
+      "name": "test_process_group_cleanup_keeps_intermediate_failures",
+      "classname": "tests.test_m8i1a_startup",
+      "seconds": 0.102,
+      "passed": true
+    }
+  ],
+  "subprocess_cases": [
+    {
+      "kind": "ActualPythonSubprocess_MockCARLA",
+      "case": "cleanup_failure",
+      "command": [
+        "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv/bin/python",
+        "-m",
+        "tests.m8i1a_fakes",
+        "--case",
+        "cleanup_failure",
+        "--output",
+        "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/cleanup_failure"
+      ],
+      "actual_returncode": 23,
+      "passed": true,
+      "supervisor": {
+        "run_id": "cleanup_failure",
+        "runner_returncode": 23,
+        "propagation": "StatusPropagationGo",
+        "contradictions": [],
+        "failures": [
+          "RunnerCleanupFailed",
+          "RunnerNonzeroExit",
+          "RunnerCleanupMissingOrFailed"
+        ],
+        "status": "StartupDiagnosticNoGo",
+        "supervisor_returncode": 1
+      },
+      "real_server_launches": 0,
+      "identity_files": 2
+    },
+    {
+      "kind": "ActualPythonSubprocess_MockCARLA",
+      "case": "connection_failure",
+      "command": [
+        "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv/bin/python",
+        "-m",
+        "tests.m8i1a_fakes",
+        "--case",
+        "connection_failure",
+        "--output",
+        "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/connection_failure"
+      ],
+      "actual_returncode": 10,
+      "passed": true,
+      "supervisor": {
+        "run_id": "connection_failure",
+        "runner_returncode": 10,
+        "propagation": "StatusPropagationGo",
+        "contradictions": [],
+        "failures": [
+          "ClientConnectionFailed",
+          "RunnerNonzeroExit"
+        ],
+        "status": "StartupDiagnosticNoGo",
+        "supervisor_returncode": 1
+      },
+      "real_server_launches": 0,
+      "identity_files": 0
+    },
+    {
+      "kind": "ActualPythonSubprocess_MockCARLA",
+      "case": "hard_signal",
+      "command": [
+        "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv/bin/python",
+        "-m",
+        "tests.m8i1a_fakes",
+        "--case",
+        "hard_signal",
+        "--output",
+        "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/hard_signal"
+      ],
+      "actual_returncode": -9,
+      "passed": true,
+      "supervisor": {
+        "run_id": "hard_signal",
+        "runner_returncode": -9,
+        "propagation": "StatusPropagationGo",
+        "contradictions": [],
+        "failures": [
+          "RunnerTerminated",
+          "RunnerNonzeroExit",
+          "RunnerCleanupMissingOrFailed"
+        ],
+        "status": "StartupDiagnosticNoGo",
+        "supervisor_returncode": 1
+      },
+      "real_server_launches": 0,
+      "identity_files": 1
+    },
+    {
+      "kind": "ActualPythonSubprocess_MockCARLA",
+      "case": "map_mismatch",
+      "command": [
+        "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv/bin/python",
+        "-m",
+        "tests.m8i1a_fakes",
+        "--case",
+        "map_mismatch",
+        "--output",
+        "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/map_mismatch"
+      ],
+      "actual_returncode": 12,
+      "passed": true,
+      "supervisor": {
+        "run_id": "map_mismatch",
+        "runner_returncode": 12,
+        "propagation": "StatusPropagationGo",
+        "contradictions": [],
+        "failures": [
+          "MapMismatch",
+          "RunnerNonzeroExit"
+        ],
+        "status": "StartupDiagnosticNoGo",
+        "supervisor_returncode": 1
+      },
+      "real_server_launches": 0,
+      "identity_files": 1
+    },
+    {
+      "kind": "ActualPythonSubprocess_MockCARLA",
+      "case": "map_unavailable",
+      "command": [
+        "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv/bin/python",
+        "-m",
+        "tests.m8i1a_fakes",
+        "--case",
+        "map_unavailable",
+        "--output",
+        "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/map_unavailable"
+      ],
+      "actual_returncode": 14,
+      "passed": true,
+      "supervisor": {
+        "run_id": "map_unavailable",
+        "runner_returncode": 14,
+        "propagation": "StatusPropagationGo",
+        "contradictions": [],
+        "failures": [
+          "MapIdentityUnavailable",
+          "RunnerNonzeroExit"
+        ],
+        "status": "StartupDiagnosticNoGo",
+        "supervisor_returncode": 1
+      },
+      "real_server_launches": 0,
+      "identity_files": 1
+    },
+    {
+      "kind": "ActualPythonSubprocess_MockCARLA",
+      "case": "signal_termination",
+      "command": [
+        "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv/bin/python",
+        "-m",
+        "tests.m8i1a_fakes",
+        "--case",
+        "signal_termination",
+        "--output",
+        "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/signal_termination"
+      ],
+      "actual_returncode": 21,
+      "passed": true,
+      "supervisor": {
+        "run_id": "signal_termination",
+        "runner_returncode": 21,
+        "propagation": "StatusPropagationGo",
+        "contradictions": [],
+        "failures": [
+          "RunnerTerminated",
+          "RunnerNonzeroExit"
+        ],
+        "status": "StartupDiagnosticNoGo",
+        "supervisor_returncode": 1
+      },
+      "real_server_launches": 0,
+      "identity_files": 1
+    },
+    {
+      "kind": "ActualPythonSubprocess_MockCARLA",
+      "case": "success",
+      "command": [
+        "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv/bin/python",
+        "-m",
+        "tests.m8i1a_fakes",
+        "--case",
+        "success",
+        "--output",
+        "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/success"
+      ],
+      "actual_returncode": 0,
+      "passed": true,
+      "supervisor": {
+        "run_id": "success",
+        "runner_returncode": 0,
+        "propagation": "StatusPropagationGo",
+        "contradictions": [],
+        "failures": [],
+        "status": "StartupIdentityGo_NoTraffic",
+        "supervisor_returncode": 0
+      },
+      "real_server_launches": 0,
+      "identity_files": 2
+    },
+    {
+      "kind": "ActualPythonSubprocess_MockCARLA",
+      "case": "unexpected_exception",
+      "command": [
+        "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv/bin/python",
+        "-m",
+        "tests.m8i1a_fakes",
+        "--case",
+        "unexpected_exception",
+        "--output",
+        "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/unexpected_exception"
+      ],
+      "actual_returncode": 20,
+      "passed": true,
+      "supervisor": {
+        "run_id": "unexpected_exception",
+        "runner_returncode": 20,
+        "propagation": "StatusPropagationGo",
+        "contradictions": [],
+        "failures": [
+          "RunnerException",
+          "RunnerNonzeroExit"
+        ],
+        "status": "StartupDiagnosticNoGo",
+        "supervisor_returncode": 1
+      },
+      "real_server_launches": 0,
+      "identity_files": 1
+    },
+    {
+      "kind": "ActualPythonSubprocess_MockCARLA",
+      "case": "version_mismatch",
+      "command": [
+        "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv/bin/python",
+        "-m",
+        "tests.m8i1a_fakes",
+        "--case",
+        "version_mismatch",
+        "--output",
+        "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/version_mismatch"
+      ],
+      "actual_returncode": 11,
+      "passed": true,
+      "supervisor": {
+        "run_id": "version_mismatch",
+        "runner_returncode": 11,
+        "propagation": "StatusPropagationGo",
+        "contradictions": [],
+        "failures": [
+          "VersionMismatch",
+          "RunnerNonzeroExit"
+        ],
+        "status": "StartupDiagnosticNoGo",
+        "supervisor_returncode": 1
+      },
+      "real_server_launches": 0,
+      "identity_files": 1
+    },
+    {
+      "kind": "ActualPythonSubprocess_MockCARLA",
+      "case": "xodr_mismatch",
+      "command": [
+        "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv/bin/python",
+        "-m",
+        "tests.m8i1a_fakes",
+        "--case",
+        "xodr_mismatch",
+        "--output",
+        "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/xodr_mismatch"
+      ],
+      "actual_returncode": 13,
+      "passed": true,
+      "supervisor": {
+        "run_id": "xodr_mismatch",
+        "runner_returncode": 13,
+        "propagation": "StatusPropagationGo",
+        "contradictions": [],
+        "failures": [
+          "XODRMismatch",
+          "RunnerNonzeroExit"
+        ],
+        "status": "StartupDiagnosticNoGo",
+        "supervisor_returncode": 1
+      },
+      "real_server_launches": 0,
+      "identity_files": 1
+    }
+  ],
+  "files": [
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/historical_verification.json",
+      "bytes": 697,
+      "sha256": "985ec84a1ec08a3991e0f53fb3928449e15c33d998a0306900b086913603b4b6"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/pytest.txt",
+      "bytes": 99,
+      "sha256": "c830d14516c8fe116d815c71b0634139b4802728125cf513c878e4b4055872df"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/cleanup_failure/case_assertions.json",
+      "bytes": 806,
+      "sha256": "d8e1ac51e31c005b68cd21527d5ad161932a00f9bbd3806964f3079ac24c7da6"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/cleanup_failure/identity_000.json",
+      "bytes": 1147,
+      "sha256": "c8fa5ac4e5f9ab276a7ce061b6ccc8e4831e85d52e376b6fd413fb75935f51c1"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/cleanup_failure/identity_001.json",
+      "bytes": 1147,
+      "sha256": "fad6891cdb75e4109e4dfbfb5c54d0cd70da853b81fa35b5371f2c52f806a85a"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/cleanup_failure/runner_cleanup.json",
+      "bytes": 147,
+      "sha256": "82446b3b74627404bf0634ba172f2e6a4f21291ff061b656069f3edfe35c792b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/cleanup_failure/session_result.json",
+      "bytes": 834,
+      "sha256": "adbdb0adb9459532d579d99e14633a3ebacf98bad0b5f6a6eed09da612fa869c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/cleanup_failure/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/cleanup_failure/synthetic_call_trace.json",
+      "bytes": 758,
+      "sha256": "fadad24ae455bc744fd9fe3079127fc7657c949e243bc66ef651e5e01a317573"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/connection_failure/case_assertions.json",
+      "bytes": 783,
+      "sha256": "8ea75040e0377abe287591b11a1710feeff70ef5214cbf5554e6685fea166e01"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/connection_failure/connection_001.json",
+      "bytes": 135,
+      "sha256": "78e67c1fd5f59fdc821cc6c02ef1506896d9e0aebf6615b48824de4ef045b3ad"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/connection_failure/runner_cleanup.json",
+      "bytes": 72,
+      "sha256": "f326be8890d64550fd244e51b62395a7c6a354e345b6d0b7141cb72f210beb3d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/connection_failure/session_result.json",
+      "bytes": 421,
+      "sha256": "22ee0d11a690cca496613e8821f7c48bc5616a63479a5da931d6e4a4327b4107"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/connection_failure/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/connection_failure/synthetic_call_trace.json",
+      "bytes": 128,
+      "sha256": "f56355febcc6fe629afaf467092e78c43aba31412e39678fa67933bd60b602c4"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/hard_signal/case_assertions.json",
+      "bytes": 787,
+      "sha256": "06f3a4c661d3a4efba26e2eaeacdf6d102cee949093d326040210d39642a5a78"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/hard_signal/identity_000.json",
+      "bytes": 1139,
+      "sha256": "8bbd9030789d16e2854042082f27f8e94bce0116a31947d7ff76c405d4a27ec0"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/hard_signal/ready_for_signal.json",
+      "bytes": 41,
+      "sha256": "4b0f14feb4ce80906f621d01251632a1351a12a48e29940562747293f9bac7b5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/hard_signal/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/map_mismatch/case_assertions.json",
+      "bytes": 748,
+      "sha256": "d05b1acd5b3aae9ea0f33d3f698512a0d138dc55ec8224a42de4124c4db3311b"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/map_mismatch/identity_000.json",
+      "bytes": 1157,
+      "sha256": "eaf1551df220961d714332188ee709e8c4dea5ea254a8172a02ca5b638ac19a4"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/map_mismatch/runner_cleanup.json",
+      "bytes": 66,
+      "sha256": "598b3690d14a6ef671a777d56ec902a70c87d837aff4e3f8ee3d2d329f1dc5b1"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/map_mismatch/session_result.json",
+      "bytes": 618,
+      "sha256": "40e9e7bef942a669508bbd0ba9701ab9ade3870839523cc9dac275b21f40eac5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/map_mismatch/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/map_mismatch/synthetic_call_trace.json",
+      "bytes": 444,
+      "sha256": "d2c53e65f8930ffac0eac0540c52ebf62919893513709c82441c5baa9298e2ea"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/map_unavailable/case_assertions.json",
+      "bytes": 771,
+      "sha256": "4c5e391ac4869c6be255cead69aa3c5e8d1a3aaff916c9cd2bd8a3ebdd5b468f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/map_unavailable/identity_000.json",
+      "bytes": 1133,
+      "sha256": "9f613cd54fb0ba8e284dd973ff7c3b329b9d2b7f1cb1c83b360f0c20f30d6b8f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/map_unavailable/runner_cleanup.json",
+      "bytes": 69,
+      "sha256": "60b368d33a3cd052cb6a1e1c6da1673b1b6cfb4104d55cce93590af90fe42368"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/map_unavailable/session_result.json",
+      "bytes": 646,
+      "sha256": "9b499f2a95447507dcaaafc4c35ef6e8f48cf4cac4a2bd5295fa67bf3ce262a6"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/map_unavailable/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/map_unavailable/synthetic_call_trace.json",
+      "bytes": 420,
+      "sha256": "97b469bde192d076183ffed5f5f95efbd67037a03ae425e9117ecc3b46eef87c"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/signal_termination/case_assertions.json",
+      "bytes": 777,
+      "sha256": "b6bfa355ddd273af539485bbff121f6f0676db7ba8142b0ef31e78c9cebf358d"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/signal_termination/identity_000.json",
+      "bytes": 1153,
+      "sha256": "e046e65de930cd6eb0ab36a269c0b31322b38a4eb5318bd942067df7c695c178"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/signal_termination/ready_for_signal.json",
+      "bytes": 41,
+      "sha256": "4b0f14feb4ce80906f621d01251632a1351a12a48e29940562747293f9bac7b5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/signal_termination/runner_cleanup.json",
+      "bytes": 72,
+      "sha256": "90163a5126eaa445690d65d0d2e008828cdc22be45fdf5f70046c8105be8c209"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/signal_termination/session_result.json",
+      "bytes": 640,
+      "sha256": "b88f5d86fc12e3a99381e6ad42bf4b6208f8bcf15b71b6d420165dc8d2176485"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/signal_termination/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/signal_termination/synthetic_call_trace.json",
+      "bytes": 444,
+      "sha256": "d2c53e65f8930ffac0eac0540c52ebf62919893513709c82441c5baa9298e2ea"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/success/case_assertions.json",
+      "bytes": 680,
+      "sha256": "1ec4c26d515b2a044eb8b47bc25a22f7e4a8f6d25f4bd04603b1900c84079b92"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/success/identity_000.json",
+      "bytes": 1131,
+      "sha256": "a47d78d2589f00c11e2c7564a2f0ffbdee7e17f283e09ec927116f54c22060ea"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/success/identity_001.json",
+      "bytes": 1131,
+      "sha256": "cbd86a55438d9501f3d9f5f3977e5bcb1ee3dd8ea4b7788939eef18731365c96"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/success/runner_cleanup.json",
+      "bytes": 61,
+      "sha256": "aa374ec19dec1e1394c37b53009aa1a9c8113df7560445f9b0f51ae3ed889f34"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/success/session_result.json",
+      "bytes": 814,
+      "sha256": "517cfde24e877eddcc55f7e92e66292b151f8723626fd6834d05c5cc581e5983"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/success/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/success/synthetic_call_trace.json",
+      "bytes": 758,
+      "sha256": "fadad24ae455bc744fd9fe3079127fc7657c949e243bc66ef651e5e01a317573"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/unexpected_exception/case_assertions.json",
+      "bytes": 784,
+      "sha256": "141fa2793a5d9a73d02a1492a9e72ea6873abd21e3fb437e3bea88b3569f6f81"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/unexpected_exception/identity_000.json",
+      "bytes": 1157,
+      "sha256": "08d7f163611e0ed1b9c098c587424b40df775c4a5cc7b95eb041bb8e0c033c14"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/unexpected_exception/runner_cleanup.json",
+      "bytes": 74,
+      "sha256": "2758761c05575dc6e30093665c727b442d80d8d73de0396f72ce64aeef227311"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/unexpected_exception/session_result.json",
+      "bytes": 691,
+      "sha256": "bb22a745ff34f6afa55a7569b502d54b76b4a63aa2b48b0273b2d151b96c0d79"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/unexpected_exception/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/unexpected_exception/synthetic_call_trace.json",
+      "bytes": 444,
+      "sha256": "d2c53e65f8930ffac0eac0540c52ebf62919893513709c82441c5baa9298e2ea"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/version_mismatch/case_assertions.json",
+      "bytes": 768,
+      "sha256": "21170cfdd3f7a7ef7226198e7110bddefb2b42897469e6be08f833be42e6585f"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/version_mismatch/identity_000.json",
+      "bytes": 1156,
+      "sha256": "f372635c84d2ce0f0e4798a6e9f6e2df248ac0cab9b96afb075108b58ea32740"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/version_mismatch/runner_cleanup.json",
+      "bytes": 70,
+      "sha256": "850e292cbaf7a3a0a71094bf41cfbdc421422a870c660e9933c2a886293cf2dd"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/version_mismatch/session_result.json",
+      "bytes": 634,
+      "sha256": "023299d6d7db4507fef06ca2afb302a4639873bb3bc5665a87c6817eab7cc6ec"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/version_mismatch/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/version_mismatch/synthetic_call_trace.json",
+      "bytes": 444,
+      "sha256": "d2c53e65f8930ffac0eac0540c52ebf62919893513709c82441c5baa9298e2ea"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/xodr_mismatch/case_assertions.json",
+      "bytes": 753,
+      "sha256": "1dbb0859fc1fd2c797ecfd6334a0e9a43cbcb3a129ab8f5061fd71512779d3cf"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/xodr_mismatch/identity_000.json",
+      "bytes": 1143,
+      "sha256": "2fe865f96bdf8d73bf03429050fbe7a6d6a4a73afd27358fbaef4068477b56e2"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/xodr_mismatch/runner_cleanup.json",
+      "bytes": 67,
+      "sha256": "ded4e875667481c6fc26f6838cbf0d10b448905770354ed9b99ff9fe453349a5"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/xodr_mismatch/session_result.json",
+      "bytes": 622,
+      "sha256": "84ae9da1fe38a83ca40f9bd109b352d972f210e41a46991343d796108aa0c9cb"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/xodr_mismatch/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/synthetic_cases/xodr_mismatch/synthetic_call_trace.json",
+      "bytes": 444,
+      "sha256": "d2c53e65f8930ffac0eac0540c52ebf62919893513709c82441c5baa9298e2ea"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-offline-evidence/tests.xml",
+      "bytes": 3568,
+      "sha256": "abbc588e281dc8fd7e4c615a4c173acb979498a7f62a0de2d048594dbd1fc700"
+    }
+  ],
+  "mocked_identity": "All fake map/frame/episode values are synthetic; not actual server evidence",
+  "first_development_test_run": "25 passed; final logged suite includes latest launcher source",
+  "actual_server_launches": 0,
+  "actual_CARLA_connections": 0
+}
