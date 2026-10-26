@@ -1,0 +1,257 @@
+{
+  "checked_date": "2026-10-26",
+  "base_commit": "69ce3158ab692387e615a781deb41aae0fb61499",
+  "evidence_type": "PinnedOfficialSourceReview_NotRuntimeValidation",
+  "fields": [
+    {
+      "field": "rgb_six_camera",
+      "traffic_manager": "APIAvailable_RequiresCapture",
+      "scenario_runner": "APIAvailable_RequiresIndependentCapture",
+      "bench2drive": "DocumentedSixRGB_UnverifiedPayload",
+      "payload_verified": false,
+      "notes": "字段潜力不是本轮取得或运行通过。"
+    },
+    {
+      "field": "K_T",
+      "traffic_manager": "APIAvailable_SaveActualPerFrame",
+      "scenario_runner": "APIAvailable_SaveActualPerFrame",
+      "bench2drive": "Documented_intrinsic_cam2ego_world2cam_UnverifiedPayload",
+      "payload_verified": false,
+      "notes": "字段潜力不是本轮取得或运行通过。"
+    },
+    {
+      "field": "source_frame",
+      "traffic_manager": "APIAvailable_SnapshotAndImage",
+      "scenario_runner": "APIAvailable_DefaultSensorInterfaceDoesNotEnforceSameFrame",
+      "bench2drive": "NotAvailable_InReviewedSaveSchema",
+      "payload_verified": false,
+      "notes": "文件计数不是CARLA frame；不补造。"
+    },
+    {
+      "field": "source_timestamp",
+      "traffic_manager": "APIAvailable_ImageAndSnapshot",
+      "scenario_runner": "APIAvailable_NotRetainedByDefaultImageCallback",
+      "bench2drive": "NotAvailable_InReviewedSaveSchema",
+      "payload_verified": false,
+      "notes": "缺失时间不从10Hz假定。"
+    },
+    {
+      "field": "object_source",
+      "traffic_manager": "APIAvailable_BlueprintSessionSpawnLog",
+      "scenario_runner": "APIAvailable_ProviderAndBehaviorEvents",
+      "bench2drive": "Documented_route_id_type_id_state_UnverifiedPayload",
+      "payload_verified": false,
+      "notes": "字段潜力不是本轮取得或运行通过。"
+    },
+    {
+      "field": "class",
+      "traffic_manager": "APIAvailable_BlueprintAndSemanticTags",
+      "scenario_runner": "APIAvailable_BlueprintAndSemanticTags",
+      "bench2drive": "Documented_vehicle_walker_lights_signs_UnverifiedPayload",
+      "payload_verified": false,
+      "notes": "字段潜力不是本轮取得或运行通过。"
+    },
+    {
+      "field": "center_dimensions",
+      "traffic_manager": "APIAvailable_ActualLocalBoxAndSnapshotPose",
+      "scenario_runner": "APIAvailable_ActualBox_NotXMLBox",
+      "bench2drive": "Documented_center_extent_world_cord_StaticAmbiguity",
+      "payload_verified": false,
+      "notes": "全尺寸=2*extent；world actor与local box变换组合；不是Mesh。"
+    },
+    {
+      "field": "pose_yaw",
+      "traffic_manager": "APIAvailable_ActorAndLocalBoxRotations",
+      "scenario_runner": "APIAvailable_ActorAndLocalBoxRotations",
+      "bench2drive": "Documented_WorldAndLocalFramesRequireAudit",
+      "payload_verified": false,
+      "notes": "字段潜力不是本轮取得或运行通过。"
+    },
+    {
+      "field": "per_camera_instance_support",
+      "traffic_manager": "RequiresSixInstanceCaptureAndIdentityJoin",
+      "scenario_runner": "RequiresIndependentCaptureAndIdentityJoin",
+      "bench2drive": "DocumentedInstancePNG_IdentityJoinNotVerified",
+      "payload_verified": false,
+      "notes": "字段潜力不是本轮取得或运行通过。"
+    },
+    {
+      "field": "occlusion_distance",
+      "traffic_manager": "RequiresEvaluator_NotTMOutput",
+      "scenario_runner": "RequiresEvaluator_NotScenarioSuccess",
+      "bench2drive": "Partial_distance_num_points_NotRGBVisibility",
+      "payload_verified": false,
+      "notes": "字段潜力不是本轮取得或运行通过。"
+    },
+    {
+      "field": "background_categories",
+      "traffic_manager": "Partial_SemanticEnvironmentInventory_IdentityNotGuaranteed",
+      "scenario_runner": "Partial_SemanticEnvironmentInventory_IdentityNotGuaranteed",
+      "bench2drive": "Partial_SemanticPNG_StaticVehiclesLightsSigns_NotAllObjects",
+      "payload_verified": false,
+      "notes": "字段潜力不是本轮取得或运行通过。"
+    },
+    {
+      "field": "static_object_unique_association",
+      "traffic_manager": "NotAvailable_WithoutIndependentAudit",
+      "scenario_runner": "NotAvailable_WithoutIndependentAudit",
+      "bench2drive": "NotAvailable_ProvenanceUsesNearestXYProxy",
+      "payload_verified": false,
+      "notes": "B2D static actor与level box最近XY关联，最大20m，不是唯一身份真值。"
+    },
+    {
+      "field": "dynamic_time_consistency",
+      "traffic_manager": "RequiresFrameMatchedSnapshots",
+      "scenario_runner": "RequiresFrameJoinAndSpawnTeleportDestroyEvents",
+      "bench2drive": "NotAvailable_WithoutOriginalTimeRecords",
+      "payload_verified": false,
+      "notes": "替代Walker不沿用旧Actor ID；旧walker speed=0不能解释为静止。"
+    },
+    {
+      "field": "unknown_target_mask",
+      "traffic_manager": "RequiresEvaluator_UnknownNeverFree",
+      "scenario_runner": "RequiresEvaluator_UnknownNeverFree",
+      "bench2drive": "NotAvailable_AsHSContract_MustDeriveAndAudit",
+      "payload_verified": false,
+      "notes": "未观测、实例歧义、匿名背景分别计数，Unknown不转负例或Free。"
+    },
+    {
+      "field": "actor_trajectory",
+      "traffic_manager": "APIAvailable_MustRecordUnfiltered",
+      "scenario_runner": "APIAvailable_MustRecordInterventions",
+      "bench2drive": "Partial_SequencePoses_OriginalTimeMissing",
+      "payload_verified": false,
+      "notes": "字段潜力不是本轮取得或运行通过。"
+    },
+    {
+      "field": "stable_natural_state",
+      "traffic_manager": "NotAvailable_UntilActualObservation",
+      "scenario_runner": "NotAvailable_HiddenActorsPhysicsToggles",
+      "bench2drive": "NotAvailable_FromSingleAnnotatedFrame",
+      "payload_verified": false,
+      "notes": "字段潜力不是本轮取得或运行通过。"
+    },
+    {
+      "field": "ground_source_legal_region",
+      "traffic_manager": "Partial_MapNavigationAndRenderedSemantics",
+      "scenario_runner": "Partial_WaypointsAndMap_NotContact",
+      "bench2drive": "Partial_MapRoadLaneSemantic_NotContact",
+      "payload_verified": false,
+      "notes": "字段潜力不是本轮取得或运行通过。"
+    },
+    {
+      "field": "static_spatial_relation",
+      "traffic_manager": "Partial_EnvironmentOBB_NotMesh",
+      "scenario_runner": "Partial_EnvironmentOBB_NotMesh",
+      "bench2drive": "Partial_BackgroundBoxesAndSemantic_NotMesh",
+      "payload_verified": false,
+      "notes": "字段潜力不是本轮取得或运行通过。"
+    },
+    {
+      "field": "box_render_instance_relation",
+      "traffic_manager": "NotAvailable_UntilImageIdentityAudit",
+      "scenario_runner": "NotAvailable_UntilImageIdentityAudit",
+      "bench2drive": "NotAvailable_UntilPayloadAndIdentityAudit",
+      "payload_verified": false,
+      "notes": "字段潜力不是本轮取得或运行通过。"
+    },
+    {
+      "field": "exact_mesh_contact",
+      "traffic_manager": "NotAvailable",
+      "scenario_runner": "NotAvailable",
+      "bench2drive": "NotAvailable",
+      "payload_verified": false,
+      "notes": "旧15点射线适用性缺陷保留；新多证据合同也不是精确接触认证。"
+    },
+    {
+      "field": "depth",
+      "traffic_manager": "APIAvailable_SupervisionOnly",
+      "scenario_runner": "APIAvailable_IndependentCaptureRequired",
+      "bench2drive": "VersionDependent_PNG_Legacy_NPZ_004Separate_NotDownloaded",
+      "payload_verified": false,
+      "notes": "字段潜力不是本轮取得或运行通过。"
+    },
+    {
+      "field": "occupancy",
+      "traffic_manager": "NotAvailable_TMDoesNotExportOccupancy",
+      "scenario_runner": "NotAvailable_DefaultScenariosDoNotExportOccupancy",
+      "bench2drive": "DocumentedNew004_UnverifiedDefinitionAndMasks",
+      "payload_verified": false,
+      "notes": "字段潜力不是本轮取得或运行通过。"
+    },
+    {
+      "field": "vehicle_person_cone_support",
+      "traffic_manager": "VehiclePersonPossible_ConeNotGuaranteed",
+      "scenario_runner": "VehiclePersonScenarioDependent_ConeNotGuaranteed",
+      "bench2drive": "VehiclePersonDocumented_ConeIdentityNotEstablished",
+      "payload_verified": false,
+      "notes": "字段潜力不是本轮取得或运行通过。"
+    },
+    {
+      "field": "split_independence",
+      "traffic_manager": "NotAvailable_NewPilotDevelopmentOnly",
+      "scenario_runner": "NotAvailable_StandardRouteNotNewFinal",
+      "bench2drive": "NotAvailable_ForHSFinal_OfficialTrainNotBlindTest",
+      "payload_verified": false,
+      "notes": "字段潜力不是本轮取得或运行通过。"
+    },
+    {
+      "field": "map_version",
+      "traffic_manager": "RequiresServerAssetXODRHash",
+      "scenario_runner": "RequiresXMLAndServerAssetXODRHash",
+      "bench2drive": "Partial_TownRouteInName_ExactMapAssetHashNotAvailable",
+      "payload_verified": false,
+      "notes": "字段潜力不是本轮取得或运行通过。"
+    },
+    {
+      "field": "source_history_footprint_overlap",
+      "traffic_manager": "RequiresHistoricalIndex_HistoricalCoverageIncomplete",
+      "scenario_runner": "RequiresHistoricalIndex_HistoricalCoverageIncomplete",
+      "bench2drive": "RequiresHistoricalIndex_RouteNearDuplicatesUnknown",
+      "payload_verified": false,
+      "notes": "字段潜力不是本轮取得或运行通过。"
+    },
+    {
+      "field": "runtime_installation",
+      "traffic_manager": "ExistingExampleByteVerified_NotRun",
+      "scenario_runner": "NotInstalled_NotRun",
+      "bench2drive": "NoRuntimeNeeded_PayloadNotDownloaded",
+      "payload_verified": false,
+      "notes": "字段潜力不是本轮取得或运行通过。"
+    },
+    {
+      "field": "license_scope",
+      "traffic_manager": "MITOfficialExample_MapRedistributionSeparate",
+      "scenario_runner": "MITPinnedCode",
+      "bench2drive": "Partial_GitHubCC_BY_NC_ND_vs_HFApache2",
+      "payload_verified": false,
+      "notes": "字段潜力不是本轮取得或运行通过。"
+    }
+  ],
+  "model_input_allowlist": [
+    "RGB",
+    "K",
+    "T",
+    "source_frame",
+    "source_timestamp",
+    "deterministic_image_transform"
+  ],
+  "sidecar_only": [
+    "ActorState",
+    "Depth",
+    "Instance",
+    "Semantic",
+    "GTBox",
+    "MapGroundTruth",
+    "EnvironmentObject",
+    "OcclusionGT"
+  ],
+  "state_implications": {
+    "TrafficGenerated_implies_ActorIdentityAvailable": false,
+    "ActorIdentityAvailable_implies_GeometryEvaluable": false,
+    "GeometryEvaluable_implies_NaturalSceneQualified": false,
+    "NaturalSceneQualified_implies_TrainingReadinessGo": false
+  },
+  "missing_field_policy": "NotAvailable never synthesized; inference whitelist rejects missing required time/calibration",
+  "new_final_groups": 0
+}

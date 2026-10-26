@@ -1,0 +1,103 @@
+{
+  "checked_date": "2026-10-26",
+  "base_commit": "69ce3158ab692387e615a781deb41aae0fb61499",
+  "evidence_type": "PinnedOfficialSourceReview_NotRuntimeValidation",
+  "stage": "M8-I0",
+  "branch": "feat/m8i0-existing-scenario-data-review",
+  "status": "SourceReviewCompleted",
+  "primary": "CARLA_0.9.15_TrafficManager_DevelopmentPilotProposalOnly",
+  "backup": "Bench2Drive_SingleClipSchemaReview_ConditionalOnLicenseAndAccess",
+  "not_selected": "ScenarioRunner_0.9.15",
+  "review_decision": "DevelopmentPilotProposalEligible",
+  "qualified_data_source_status": "NoSourceReady",
+  "pilot_authorized": false,
+  "pilot_execution": "NotRun",
+  "evidence_levels": {
+    "offline_source_review": "Completed",
+    "historical_sha_verification": "Passed",
+    "CARLA_simulation": "NotRun",
+    "real_six_camera_capture": "NotRun",
+    "external_dataset_payload": "NotRun",
+    "natural_scene_quality": "NotValidated",
+    "exact_physical_contact": "NotValidated",
+    "training_readiness": "TrainingReadinessNoGo",
+    "perception_quality": "NoGo_Unchanged",
+    "online_realtime": "NoGo_Unchanged",
+    "shared_GPU_runtime": "Partial_Unchanged",
+    "visual_driving_safety": "NotValidated_Unchanged"
+  },
+  "history": {
+    "m8h1_status": "DevelopmentSmokeNoGo",
+    "valid_ego_spawned": 2,
+    "stationary_ego": 2,
+    "invalid_measurement_attempt_ego": 2,
+    "support_hits_per_valid_ego": [
+      0,
+      0
+    ],
+    "support_samples_per_valid_ego": [
+      15,
+      15
+    ],
+    "targets_spawned": 0,
+    "sensors_spawned": 0,
+    "new_rgb": 0,
+    "floating_proven": false,
+    "physical_spawn_impossibility_proven": false,
+    "custom_placer_expansion": "Stopped",
+    "M8H2_ray_threshold_patch": "NotProposed",
+    "historical_coverage": "HistoricalCoverageIncomplete",
+    "verified_manifest_entries": 260
+  },
+  "execution": {
+    "new_carla_connections": 0,
+    "new_actors": 0,
+    "new_sensors": 0,
+    "new_RGB": 0,
+    "new_GT_dataset": 0,
+    "new_framework_installs": 0,
+    "dataset_payload_downloads": 0,
+    "PETR_forwards": 0,
+    "training_steps": 0,
+    "visual_control": false,
+    "main_merged": false,
+    "default_system_changed": false
+  },
+  "public_source_check": {
+    "fetched_text_files": 43,
+    "fetched_bytes": 1426212,
+    "failed_requests_retained": 18,
+    "official_installed_example_byte_match": true,
+    "scenario_types_reviewed": 3,
+    "scenario_XML_instances": 26,
+    "server_HF_access": "Failed_MetadataOnly",
+    "web_HF_card_access": "Readable_NotPayloadProof",
+    "license_discrepancy": "Unresolved_GitHubCC_BY_NC_ND_vs_HFApache2"
+  },
+  "new_independent_final": 0,
+  "verification": "reports/m8i0_logs/verification.json",
+  "requirements_completed": [
+    "M8H1Frozen",
+    "ThreeRoutesReviewed",
+    "PinnedScenarioRunnerTag",
+    "AtMostThreeScenarioTypes",
+    "DatasetVersionAndLicenseReviewed",
+    "GTFieldMatrix",
+    "SinglePrimaryAndBackup",
+    "BoundedPilotProposalOnly"
+  ],
+  "blockers_for_data_qualification": [
+    "ActualTMSceneNotRun",
+    "VehicleWalker20To40mSupportNotObserved",
+    "FrameAndInstanceClosureNotRun",
+    "NaturalStateEvidenceNotValidated",
+    "CompleteBackgroundMeshUnavailable",
+    "HistoricalCoverageIncomplete",
+    "NoIndependentFinal"
+  ],
+  "source_code_hashes": {
+    "tools/m8i0_audit.py": "de8f5315a602b35f5b1062e3c3ceddd8b939efa80f96339894338eb2ee54c772",
+    "tools/m8i0_fetch_sources.py": "9c46d519bc095cce84d07638dd23a24ae15010670a09fefd8be54c28b3a57042",
+    "tools/m8i0_verify.py": "7322c2c37265efcf816e5d2a677894b85b93948b1eb0f2dd6ce03a73569533d1"
+  }
+}
