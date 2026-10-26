@@ -1,0 +1,912 @@
+FFFFFFFFFF.F.................                                            [100%]
+=================================== FAILURES ===================================
+_____________ test_complete_loss_and_all_gradients_equal_official ______________
+
+head = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+
+    def test_complete_loss_and_all_gradients_equal_official(head):
+        c,b,s=fixture(True);c0=c.detach().clone().requires_grad_();b0=b.detach().clone().requires_grad_()
+        original=head.loss_single(c0[None],b0[None],[s.boxes],[s.labels]);sum(original).backward()
+>       lc,lb,a=run(head,'complete_parity',c,b,s)
+
+tests/test_m8j5b_petr_loss.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_m8j5b_petr_loss.py:49: in run
+    lc,lb,a=CoverageAwarePETRLoss(head).layer_loss(c[None],b[None],[s]);(lc+lb).backward()
+training/m8j5b_coverage_loss.py:108: in layer_loss
+    image_veto,detail=projected_ignore(p,spec,self.margin)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pred = tensor([[ 0.2500,  0.0000,  0.6931,  1.3863, 20.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000],
+        [...,  1.3863, 20.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000]], device='cuda:0', grad_fn=<UnbindBackward0>)
+spec = CoverageSupervision(boxes=tensor([[ 0.,  0., 20.,  2.,  4.,  2.,  0.,  0.,  0.]], device='cuda:0'), labels=tensor([0],...
+         [0, 0, 0,  ..., 0, 0, 0]]], device='cuda:0'), frame_negative_enabled=True, coverage_ref='SYNTHETIC_COVERAGE')
+margin = 0.5
+
+    def projected_ignore(pred, spec, margin=.5):
+        """Conservative rectangle of projected full AABB, with any-pixel veto.
+    
+        No score gate, 2D-to-3D invention, or predicted-depth occupancy certificate.
+        Near-plane intersections and boxes with no in-crop projection are unknown.
+        """
+        bounds, valid=query_envelopes(pred,margin)
+        device=pred.device
+        bits=torch.tensor([[x,y,z] for x in (0,1) for y in (0,1) for z in (0,1)],device=device,dtype=torch.bool)
+        corners=torch.where(bits[None],bounds[:,None,3:],bounds[:,None,:3])
+        points=torch.cat([corners,torch.ones_like(corners[:,:,:1])],-1)
+        matrix=spec.image_projection.to(pred)
+        q=torch.einsum('vij,nkj->vnki',matrix,points)
+        z=q[:,:,:,2];front=z>.1
+        crossing=(front.any(-1)&~front.all(-1)).any(0)
+        uv=q[:,:,:,:2]/z.clamp(min=.1)[...,None]
+        ii=spec.ignore_integral.to(device);height,width=ii.shape[1]-1,ii.shape[2]-1
+        low=uv.min(2).values;high=uv.max(2).values
+        visible=front.all(-1)&(high[:,:,0]>=0)&(high[:,:,1]>=0)&(low[:,:,0]<width)&(low[:,:,1]<height)
+        # Huge/nonfinite extents are never background; clamp before integer cast.
+        safe_low=torch.nan_to_num(low,nan=-1e8,posinf=1e8,neginf=-1e8)
+        safe_high=torch.nan_to_num(high,nan=1e8,posinf=1e8,neginf=-1e8)
+        x0=safe_low[:,:,0].floor().clamp(0,width).long();y0=safe_low[:,:,1].floor().clamp(0,height).long()
+        x1=(safe_high[:,:,0].ceil()+1).clamp(0,width).long();y1=(safe_high[:,:,1].ceil()+1).clamp(0,height).long()
+        views=torch.arange(len(ii),device=device)[:,None]
+        area=ii[views,y1,x1]-ii[views,y0,x1]-ii[views,y1,x0]+ii[views,y0,x0]
+        hit=((area>0)&visible).any(0)
+        no_view=~visible.any(0)
+>       invalid=~valid | ~torch.isfinite(q).all(dim=(0,2,3))
+E       TypeError: all() received an invalid combination of arguments - got (dim=tuple, ), but expected one of:
+E        * ()
+E             didn't match because some of the keywords were incorrect: dim
+E        * (int dim, bool keepdim)
+E        * (name dim, bool keepdim)
+
+training/m8j5b_coverage_loss.py:77: TypeError
+------------------------------ Captured log setup ------------------------------
+WARNING  trimesh:collision.py:11 No FCL -- collision checking will not work
+______________ test_image_unknown_negative_and_positive_gradient _______________
+
+head = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+
+    def test_image_unknown_negative_and_positive_gradient(head):
+        c,b,s=fixture();s.safe_aabbs=torch.tensor([[-5.,-5,15,35,5,25]],device='cuda')
+>       lc,lb,a=run(head,'image_unknown_veto_safe_negative_positive',c,b,s)
+
+tests/test_m8j5b_petr_loss.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_m8j5b_petr_loss.py:49: in run
+    lc,lb,a=CoverageAwarePETRLoss(head).layer_loss(c[None],b[None],[s]);(lc+lb).backward()
+training/m8j5b_coverage_loss.py:108: in layer_loss
+    image_veto,detail=projected_ignore(p,spec,self.margin)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pred = tensor([[ 0.2500,  0.0000,  0.6931,  1.3863, 20.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000],
+        [...,  1.3863, 20.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000]], device='cuda:0', grad_fn=<UnbindBackward0>)
+spec = CoverageSupervision(boxes=tensor([[ 0.,  0., 20.,  2.,  4.,  2.,  0.,  0.,  0.]], device='cuda:0'), labels=tensor([0],... 0,   0,   0,  ..., 187, 187, 187]]], device='cuda:0'), frame_negative_enabled=True, coverage_ref='SYNTHETIC_COVERAGE')
+margin = 0.5
+
+    def projected_ignore(pred, spec, margin=.5):
+        """Conservative rectangle of projected full AABB, with any-pixel veto.
+    
+        No score gate, 2D-to-3D invention, or predicted-depth occupancy certificate.
+        Near-plane intersections and boxes with no in-crop projection are unknown.
+        """
+        bounds, valid=query_envelopes(pred,margin)
+        device=pred.device
+        bits=torch.tensor([[x,y,z] for x in (0,1) for y in (0,1) for z in (0,1)],device=device,dtype=torch.bool)
+        corners=torch.where(bits[None],bounds[:,None,3:],bounds[:,None,:3])
+        points=torch.cat([corners,torch.ones_like(corners[:,:,:1])],-1)
+        matrix=spec.image_projection.to(pred)
+        q=torch.einsum('vij,nkj->vnki',matrix,points)
+        z=q[:,:,:,2];front=z>.1
+        crossing=(front.any(-1)&~front.all(-1)).any(0)
+        uv=q[:,:,:,:2]/z.clamp(min=.1)[...,None]
+        ii=spec.ignore_integral.to(device);height,width=ii.shape[1]-1,ii.shape[2]-1
+        low=uv.min(2).values;high=uv.max(2).values
+        visible=front.all(-1)&(high[:,:,0]>=0)&(high[:,:,1]>=0)&(low[:,:,0]<width)&(low[:,:,1]<height)
+        # Huge/nonfinite extents are never background; clamp before integer cast.
+        safe_low=torch.nan_to_num(low,nan=-1e8,posinf=1e8,neginf=-1e8)
+        safe_high=torch.nan_to_num(high,nan=1e8,posinf=1e8,neginf=-1e8)
+        x0=safe_low[:,:,0].floor().clamp(0,width).long();y0=safe_low[:,:,1].floor().clamp(0,height).long()
+        x1=(safe_high[:,:,0].ceil()+1).clamp(0,width).long();y1=(safe_high[:,:,1].ceil()+1).clamp(0,height).long()
+        views=torch.arange(len(ii),device=device)[:,None]
+        area=ii[views,y1,x1]-ii[views,y0,x1]-ii[views,y1,x0]+ii[views,y0,x0]
+        hit=((area>0)&visible).any(0)
+        no_view=~visible.any(0)
+>       invalid=~valid | ~torch.isfinite(q).all(dim=(0,2,3))
+E       TypeError: all() received an invalid combination of arguments - got (dim=tuple, ), but expected one of:
+E        * ()
+E             didn't match because some of the keywords were incorrect: dim
+E        * (int dim, bool keepdim)
+E        * (name dim, bool keepdim)
+
+training/m8j5b_coverage_loss.py:77: TypeError
+________________ test_positive_overlapping_ignore_is_preserved _________________
+
+head = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+
+    def test_positive_overlapping_ignore_is_preserved(head):
+        c,b,s=fixture();mask=torch.ones((1,128,128),device='cuda',dtype=torch.bool);s.ignore_integral=integral_mask(mask)
+>       with pytest.warns(RuntimeWarning):lc,lb,a=run(head,'positive_precedence',c,b,s)
+
+tests/test_m8j5b_petr_loss.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_m8j5b_petr_loss.py:49: in run
+    lc,lb,a=CoverageAwarePETRLoss(head).layer_loss(c[None],b[None],[s]);(lc+lb).backward()
+training/m8j5b_coverage_loss.py:108: in layer_loss
+    image_veto,detail=projected_ignore(p,spec,self.margin)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pred = tensor([[ 0.2500,  0.0000,  0.6931,  1.3863, 20.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000],
+        [...,  1.3863, 20.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000]], device='cuda:0', grad_fn=<UnbindBackward0>)
+spec = CoverageSupervision(boxes=tensor([[ 0.,  0., 20.,  2.,  4.,  2.,  0.,  0.,  0.]], device='cuda:0'), labels=tensor([0],...   256,  ..., 16128, 16256, 16384]]], device='cuda:0'), frame_negative_enabled=True, coverage_ref='SYNTHETIC_COVERAGE')
+margin = 0.5
+
+    def projected_ignore(pred, spec, margin=.5):
+        """Conservative rectangle of projected full AABB, with any-pixel veto.
+    
+        No score gate, 2D-to-3D invention, or predicted-depth occupancy certificate.
+        Near-plane intersections and boxes with no in-crop projection are unknown.
+        """
+        bounds, valid=query_envelopes(pred,margin)
+        device=pred.device
+        bits=torch.tensor([[x,y,z] for x in (0,1) for y in (0,1) for z in (0,1)],device=device,dtype=torch.bool)
+        corners=torch.where(bits[None],bounds[:,None,3:],bounds[:,None,:3])
+        points=torch.cat([corners,torch.ones_like(corners[:,:,:1])],-1)
+        matrix=spec.image_projection.to(pred)
+        q=torch.einsum('vij,nkj->vnki',matrix,points)
+        z=q[:,:,:,2];front=z>.1
+        crossing=(front.any(-1)&~front.all(-1)).any(0)
+        uv=q[:,:,:,:2]/z.clamp(min=.1)[...,None]
+        ii=spec.ignore_integral.to(device);height,width=ii.shape[1]-1,ii.shape[2]-1
+        low=uv.min(2).values;high=uv.max(2).values
+        visible=front.all(-1)&(high[:,:,0]>=0)&(high[:,:,1]>=0)&(low[:,:,0]<width)&(low[:,:,1]<height)
+        # Huge/nonfinite extents are never background; clamp before integer cast.
+        safe_low=torch.nan_to_num(low,nan=-1e8,posinf=1e8,neginf=-1e8)
+        safe_high=torch.nan_to_num(high,nan=1e8,posinf=1e8,neginf=-1e8)
+        x0=safe_low[:,:,0].floor().clamp(0,width).long();y0=safe_low[:,:,1].floor().clamp(0,height).long()
+        x1=(safe_high[:,:,0].ceil()+1).clamp(0,width).long();y1=(safe_high[:,:,1].ceil()+1).clamp(0,height).long()
+        views=torch.arange(len(ii),device=device)[:,None]
+        area=ii[views,y1,x1]-ii[views,y0,x1]-ii[views,y1,x0]+ii[views,y0,x0]
+        hit=((area>0)&visible).any(0)
+        no_view=~visible.any(0)
+>       invalid=~valid | ~torch.isfinite(q).all(dim=(0,2,3))
+E       TypeError: all() received an invalid combination of arguments - got (dim=tuple, ), but expected one of:
+E        * ()
+E             didn't match because some of the keywords were incorrect: dim
+E        * (int dim, bool keepdim)
+E        * (name dim, bool keepdim)
+
+training/m8j5b_coverage_loss.py:77: TypeError
+
+During handling of the above exception, another exception occurred:
+
+head = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+
+    def test_positive_overlapping_ignore_is_preserved(head):
+        c,b,s=fixture();mask=torch.ones((1,128,128),device='cuda',dtype=torch.bool);s.ignore_integral=integral_mask(mask)
+>       with pytest.warns(RuntimeWarning):lc,lb,a=run(head,'positive_precedence',c,b,s)
+E       Failed: DID NOT WARN. No warnings of type (<class 'RuntimeWarning'>,) were emitted.
+E        Emitted warnings: [].
+
+tests/test_m8j5b_petr_loss.py:76: Failed
+________________ test_all_ignore_zero_finite_gradients_warning _________________
+
+head = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+
+    def test_all_ignore_zero_finite_gradients_warning(head):
+        c,b,s=fixture(zero=True);s.frame_negative_enabled=False
+        with pytest.warns(RuntimeWarning,match='HighIgnoreFraction.*NoNegative'):
+>           lc,lb,a=run(head,'all_ignore',c,b,s)
+
+tests/test_m8j5b_petr_loss.py:84: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_m8j5b_petr_loss.py:49: in run
+    lc,lb,a=CoverageAwarePETRLoss(head).layer_loss(c[None],b[None],[s]);(lc+lb).backward()
+training/m8j5b_coverage_loss.py:108: in layer_loss
+    image_veto,detail=projected_ignore(p,spec,self.margin)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pred = tensor([[ 0.2500,  0.0000,  0.6931,  1.3863, 20.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000],
+        [...,  1.3863, 20.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000]], device='cuda:0', grad_fn=<UnbindBackward0>)
+spec = CoverageSupervision(boxes=tensor([], device='cuda:0', size=(0, 9)), labels=tensor([], device='cuda:0', dtype=torch.int...0,   0,   0,  ..., 187, 187, 187]]], device='cuda:0'), frame_negative_enabled=False, coverage_ref='SYNTHETIC_COVERAGE')
+margin = 0.5
+
+    def projected_ignore(pred, spec, margin=.5):
+        """Conservative rectangle of projected full AABB, with any-pixel veto.
+    
+        No score gate, 2D-to-3D invention, or predicted-depth occupancy certificate.
+        Near-plane intersections and boxes with no in-crop projection are unknown.
+        """
+        bounds, valid=query_envelopes(pred,margin)
+        device=pred.device
+        bits=torch.tensor([[x,y,z] for x in (0,1) for y in (0,1) for z in (0,1)],device=device,dtype=torch.bool)
+        corners=torch.where(bits[None],bounds[:,None,3:],bounds[:,None,:3])
+        points=torch.cat([corners,torch.ones_like(corners[:,:,:1])],-1)
+        matrix=spec.image_projection.to(pred)
+        q=torch.einsum('vij,nkj->vnki',matrix,points)
+        z=q[:,:,:,2];front=z>.1
+        crossing=(front.any(-1)&~front.all(-1)).any(0)
+        uv=q[:,:,:,:2]/z.clamp(min=.1)[...,None]
+        ii=spec.ignore_integral.to(device);height,width=ii.shape[1]-1,ii.shape[2]-1
+        low=uv.min(2).values;high=uv.max(2).values
+        visible=front.all(-1)&(high[:,:,0]>=0)&(high[:,:,1]>=0)&(low[:,:,0]<width)&(low[:,:,1]<height)
+        # Huge/nonfinite extents are never background; clamp before integer cast.
+        safe_low=torch.nan_to_num(low,nan=-1e8,posinf=1e8,neginf=-1e8)
+        safe_high=torch.nan_to_num(high,nan=1e8,posinf=1e8,neginf=-1e8)
+        x0=safe_low[:,:,0].floor().clamp(0,width).long();y0=safe_low[:,:,1].floor().clamp(0,height).long()
+        x1=(safe_high[:,:,0].ceil()+1).clamp(0,width).long();y1=(safe_high[:,:,1].ceil()+1).clamp(0,height).long()
+        views=torch.arange(len(ii),device=device)[:,None]
+        area=ii[views,y1,x1]-ii[views,y0,x1]-ii[views,y1,x0]+ii[views,y0,x0]
+        hit=((area>0)&visible).any(0)
+        no_view=~visible.any(0)
+>       invalid=~valid | ~torch.isfinite(q).all(dim=(0,2,3))
+E       TypeError: all() received an invalid combination of arguments - got (dim=tuple, ), but expected one of:
+E        * ()
+E             didn't match because some of the keywords were incorrect: dim
+E        * (int dim, bool keepdim)
+E        * (name dim, bool keepdim)
+
+training/m8j5b_coverage_loss.py:77: TypeError
+
+During handling of the above exception, another exception occurred:
+
+head = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+
+    def test_all_ignore_zero_finite_gradients_warning(head):
+        c,b,s=fixture(zero=True);s.frame_negative_enabled=False
+        with pytest.warns(RuntimeWarning,match='HighIgnoreFraction.*NoNegative'):
+>           lc,lb,a=run(head,'all_ignore',c,b,s)
+E           Failed: DID NOT WARN. No warnings of type (<class 'RuntimeWarning'>,) were emitted.
+E            Emitted warnings: [].
+
+tests/test_m8j5b_petr_loss.py:84: Failed
+____________ test_zero_positive_keeps_certified_negative_gradients _____________
+
+head = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+
+    def test_zero_positive_keeps_certified_negative_gradients(head):
+>       c,b,s=fixture(zero=True);lc,lb,a=run(head,'zero_positive_safe_negative',c,b,s)
+
+tests/test_m8j5b_petr_loss.py:91: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_m8j5b_petr_loss.py:49: in run
+    lc,lb,a=CoverageAwarePETRLoss(head).layer_loss(c[None],b[None],[s]);(lc+lb).backward()
+training/m8j5b_coverage_loss.py:108: in layer_loss
+    image_veto,detail=projected_ignore(p,spec,self.margin)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pred = tensor([[ 0.2500,  0.0000,  0.6931,  1.3863, 20.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000],
+        [...,  1.3863, 20.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000]], device='cuda:0', grad_fn=<UnbindBackward0>)
+spec = CoverageSupervision(boxes=tensor([], device='cuda:0', size=(0, 9)), labels=tensor([], device='cuda:0', dtype=torch.int... 0,   0,   0,  ..., 187, 187, 187]]], device='cuda:0'), frame_negative_enabled=True, coverage_ref='SYNTHETIC_COVERAGE')
+margin = 0.5
+
+    def projected_ignore(pred, spec, margin=.5):
+        """Conservative rectangle of projected full AABB, with any-pixel veto.
+    
+        No score gate, 2D-to-3D invention, or predicted-depth occupancy certificate.
+        Near-plane intersections and boxes with no in-crop projection are unknown.
+        """
+        bounds, valid=query_envelopes(pred,margin)
+        device=pred.device
+        bits=torch.tensor([[x,y,z] for x in (0,1) for y in (0,1) for z in (0,1)],device=device,dtype=torch.bool)
+        corners=torch.where(bits[None],bounds[:,None,3:],bounds[:,None,:3])
+        points=torch.cat([corners,torch.ones_like(corners[:,:,:1])],-1)
+        matrix=spec.image_projection.to(pred)
+        q=torch.einsum('vij,nkj->vnki',matrix,points)
+        z=q[:,:,:,2];front=z>.1
+        crossing=(front.any(-1)&~front.all(-1)).any(0)
+        uv=q[:,:,:,:2]/z.clamp(min=.1)[...,None]
+        ii=spec.ignore_integral.to(device);height,width=ii.shape[1]-1,ii.shape[2]-1
+        low=uv.min(2).values;high=uv.max(2).values
+        visible=front.all(-1)&(high[:,:,0]>=0)&(high[:,:,1]>=0)&(low[:,:,0]<width)&(low[:,:,1]<height)
+        # Huge/nonfinite extents are never background; clamp before integer cast.
+        safe_low=torch.nan_to_num(low,nan=-1e8,posinf=1e8,neginf=-1e8)
+        safe_high=torch.nan_to_num(high,nan=1e8,posinf=1e8,neginf=-1e8)
+        x0=safe_low[:,:,0].floor().clamp(0,width).long();y0=safe_low[:,:,1].floor().clamp(0,height).long()
+        x1=(safe_high[:,:,0].ceil()+1).clamp(0,width).long();y1=(safe_high[:,:,1].ceil()+1).clamp(0,height).long()
+        views=torch.arange(len(ii),device=device)[:,None]
+        area=ii[views,y1,x1]-ii[views,y0,x1]-ii[views,y1,x0]+ii[views,y0,x0]
+        hit=((area>0)&visible).any(0)
+        no_view=~visible.any(0)
+>       invalid=~valid | ~torch.isfinite(q).all(dim=(0,2,3))
+E       TypeError: all() received an invalid combination of arguments - got (dim=tuple, ), but expected one of:
+E        * ()
+E             didn't match because some of the keywords were incorrect: dim
+E        * (int dim, bool keepdim)
+E        * (name dim, bool keepdim)
+
+training/m8j5b_coverage_loss.py:77: TypeError
+_______________ test_six_layers_ignore_and_official_full_parity ________________
+
+head = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+
+    def test_six_layers_ignore_and_official_full_parity(head):
+        for complete in (True,False):
+            c,b,s=fixture(complete);cs=c.detach()[None,None].repeat(6,1,1,1).requires_grad_();bs=b.detach()[None,None].repeat(6,1,1,1).requires_grad_()
+>           loss,a=CoverageAwarePETRLoss(head)(dict(all_cls_scores=cs,all_bbox_preds=bs),[s]);sum(loss.values()).backward()
+
+tests/test_m8j5b_petr_loss.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+training/m8j5_ignore_loss.py:160: in __call__
+    lc,lb,record=self.layer_loss(c,p,supervision)
+training/m8j5b_coverage_loss.py:108: in layer_loss
+    image_veto,detail=projected_ignore(p,spec,self.margin)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pred = tensor([[ 0.2500,  0.0000,  0.6931,  1.3863, 20.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000],
+        [...,  1.3863, 20.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000]], device='cuda:0', grad_fn=<UnbindBackward0>)
+spec = CoverageSupervision(boxes=tensor([[ 0.,  0., 20.,  2.,  4.,  2.,  0.,  0.,  0.]], device='cuda:0'), labels=tensor([0],...
+         [0, 0, 0,  ..., 0, 0, 0]]], device='cuda:0'), frame_negative_enabled=True, coverage_ref='SYNTHETIC_COVERAGE')
+margin = 0.5
+
+    def projected_ignore(pred, spec, margin=.5):
+        """Conservative rectangle of projected full AABB, with any-pixel veto.
+    
+        No score gate, 2D-to-3D invention, or predicted-depth occupancy certificate.
+        Near-plane intersections and boxes with no in-crop projection are unknown.
+        """
+        bounds, valid=query_envelopes(pred,margin)
+        device=pred.device
+        bits=torch.tensor([[x,y,z] for x in (0,1) for y in (0,1) for z in (0,1)],device=device,dtype=torch.bool)
+        corners=torch.where(bits[None],bounds[:,None,3:],bounds[:,None,:3])
+        points=torch.cat([corners,torch.ones_like(corners[:,:,:1])],-1)
+        matrix=spec.image_projection.to(pred)
+        q=torch.einsum('vij,nkj->vnki',matrix,points)
+        z=q[:,:,:,2];front=z>.1
+        crossing=(front.any(-1)&~front.all(-1)).any(0)
+        uv=q[:,:,:,:2]/z.clamp(min=.1)[...,None]
+        ii=spec.ignore_integral.to(device);height,width=ii.shape[1]-1,ii.shape[2]-1
+        low=uv.min(2).values;high=uv.max(2).values
+        visible=front.all(-1)&(high[:,:,0]>=0)&(high[:,:,1]>=0)&(low[:,:,0]<width)&(low[:,:,1]<height)
+        # Huge/nonfinite extents are never background; clamp before integer cast.
+        safe_low=torch.nan_to_num(low,nan=-1e8,posinf=1e8,neginf=-1e8)
+        safe_high=torch.nan_to_num(high,nan=1e8,posinf=1e8,neginf=-1e8)
+        x0=safe_low[:,:,0].floor().clamp(0,width).long();y0=safe_low[:,:,1].floor().clamp(0,height).long()
+        x1=(safe_high[:,:,0].ceil()+1).clamp(0,width).long();y1=(safe_high[:,:,1].ceil()+1).clamp(0,height).long()
+        views=torch.arange(len(ii),device=device)[:,None]
+        area=ii[views,y1,x1]-ii[views,y0,x1]-ii[views,y1,x0]+ii[views,y0,x0]
+        hit=((area>0)&visible).any(0)
+        no_view=~visible.any(0)
+>       invalid=~valid | ~torch.isfinite(q).all(dim=(0,2,3))
+E       TypeError: all() received an invalid combination of arguments - got (dim=tuple, ), but expected one of:
+E        * ()
+E             didn't match because some of the keywords were incorrect: dim
+E        * (int dim, bool keepdim)
+E        * (name dim, bool keepdim)
+
+training/m8j5b_coverage_loss.py:77: TypeError
+__________ test_frame_fallback_no_certificate_and_high_ignore_warning __________
+
+head = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+
+    def test_frame_fallback_no_certificate_and_high_ignore_warning(head):
+        c,b,s=fixture();s.safe_aabbs=s.safe_aabbs[:0];s.negative_certificate={};s.frame_negative_enabled=False
+        with pytest.warns(RuntimeWarning,match='NoNegative'):
+>           _,_,a=run(head,'actual_policy_frame_fallback',c,b,s)
+
+tests/test_m8j5b_petr_loss.py:121: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_m8j5b_petr_loss.py:49: in run
+    lc,lb,a=CoverageAwarePETRLoss(head).layer_loss(c[None],b[None],[s]);(lc+lb).backward()
+training/m8j5b_coverage_loss.py:108: in layer_loss
+    image_veto,detail=projected_ignore(p,spec,self.margin)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pred = tensor([[ 0.2500,  0.0000,  0.6931,  1.3863, 20.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000],
+        [...,  1.3863, 20.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000]], device='cuda:0', grad_fn=<UnbindBackward0>)
+spec = CoverageSupervision(boxes=tensor([[ 0.,  0., 20.,  2.,  4.,  2.,  0.,  0.,  0.]], device='cuda:0'), labels=tensor([0],...0,   0,   0,  ..., 187, 187, 187]]], device='cuda:0'), frame_negative_enabled=False, coverage_ref='SYNTHETIC_COVERAGE')
+margin = 0.5
+
+    def projected_ignore(pred, spec, margin=.5):
+        """Conservative rectangle of projected full AABB, with any-pixel veto.
+    
+        No score gate, 2D-to-3D invention, or predicted-depth occupancy certificate.
+        Near-plane intersections and boxes with no in-crop projection are unknown.
+        """
+        bounds, valid=query_envelopes(pred,margin)
+        device=pred.device
+        bits=torch.tensor([[x,y,z] for x in (0,1) for y in (0,1) for z in (0,1)],device=device,dtype=torch.bool)
+        corners=torch.where(bits[None],bounds[:,None,3:],bounds[:,None,:3])
+        points=torch.cat([corners,torch.ones_like(corners[:,:,:1])],-1)
+        matrix=spec.image_projection.to(pred)
+        q=torch.einsum('vij,nkj->vnki',matrix,points)
+        z=q[:,:,:,2];front=z>.1
+        crossing=(front.any(-1)&~front.all(-1)).any(0)
+        uv=q[:,:,:,:2]/z.clamp(min=.1)[...,None]
+        ii=spec.ignore_integral.to(device);height,width=ii.shape[1]-1,ii.shape[2]-1
+        low=uv.min(2).values;high=uv.max(2).values
+        visible=front.all(-1)&(high[:,:,0]>=0)&(high[:,:,1]>=0)&(low[:,:,0]<width)&(low[:,:,1]<height)
+        # Huge/nonfinite extents are never background; clamp before integer cast.
+        safe_low=torch.nan_to_num(low,nan=-1e8,posinf=1e8,neginf=-1e8)
+        safe_high=torch.nan_to_num(high,nan=1e8,posinf=1e8,neginf=-1e8)
+        x0=safe_low[:,:,0].floor().clamp(0,width).long();y0=safe_low[:,:,1].floor().clamp(0,height).long()
+        x1=(safe_high[:,:,0].ceil()+1).clamp(0,width).long();y1=(safe_high[:,:,1].ceil()+1).clamp(0,height).long()
+        views=torch.arange(len(ii),device=device)[:,None]
+        area=ii[views,y1,x1]-ii[views,y0,x1]-ii[views,y1,x0]+ii[views,y0,x0]
+        hit=((area>0)&visible).any(0)
+        no_view=~visible.any(0)
+>       invalid=~valid | ~torch.isfinite(q).all(dim=(0,2,3))
+E       TypeError: all() received an invalid combination of arguments - got (dim=tuple, ), but expected one of:
+E        * ()
+E             didn't match because some of the keywords were incorrect: dim
+E        * (int dim, bool keepdim)
+E        * (name dim, bool keepdim)
+
+training/m8j5b_coverage_loss.py:77: TypeError
+
+During handling of the above exception, another exception occurred:
+
+head = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+
+    def test_frame_fallback_no_certificate_and_high_ignore_warning(head):
+        c,b,s=fixture();s.safe_aabbs=s.safe_aabbs[:0];s.negative_certificate={};s.frame_negative_enabled=False
+        with pytest.warns(RuntimeWarning,match='NoNegative'):
+>           _,_,a=run(head,'actual_policy_frame_fallback',c,b,s)
+E           Failed: DID NOT WARN. No warnings of type (<class 'RuntimeWarning'>,) were emitted.
+E            Emitted warnings: [].
+
+tests/test_m8j5b_petr_loss.py:121: Failed
+__________ test_no_projection_near_plane_and_bad_geometry_fail_closed __________
+
+head = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+
+    def test_no_projection_near_plane_and_bad_geometry_fail_closed(head):
+        c,b,s=fixture(zero=True);p=b.detach().clone()
+        p[0,4]=-20;p[1,4]=0;p[2,2]=1000
+>       veto,reason=projected_ignore(p,s)
+
+tests/test_m8j5b_petr_loss.py:128: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pred = tensor([[ 2.5000e-01,  0.0000e+00,  6.9315e-01,  1.3863e+00, -2.0000e+01,
+          6.9315e-01,  0.0000e+00,  1.0000e+...3e+00,  2.0000e+01,
+          6.9315e-01,  0.0000e+00,  1.0000e+00,  0.0000e+00,  0.0000e+00]],
+       device='cuda:0')
+spec = CoverageSupervision(boxes=tensor([], device='cuda:0', size=(0, 9)), labels=tensor([], device='cuda:0', dtype=torch.int... 0,   0,   0,  ..., 187, 187, 187]]], device='cuda:0'), frame_negative_enabled=True, coverage_ref='SYNTHETIC_COVERAGE')
+margin = 0.5
+
+    def projected_ignore(pred, spec, margin=.5):
+        """Conservative rectangle of projected full AABB, with any-pixel veto.
+    
+        No score gate, 2D-to-3D invention, or predicted-depth occupancy certificate.
+        Near-plane intersections and boxes with no in-crop projection are unknown.
+        """
+        bounds, valid=query_envelopes(pred,margin)
+        device=pred.device
+        bits=torch.tensor([[x,y,z] for x in (0,1) for y in (0,1) for z in (0,1)],device=device,dtype=torch.bool)
+        corners=torch.where(bits[None],bounds[:,None,3:],bounds[:,None,:3])
+        points=torch.cat([corners,torch.ones_like(corners[:,:,:1])],-1)
+        matrix=spec.image_projection.to(pred)
+        q=torch.einsum('vij,nkj->vnki',matrix,points)
+        z=q[:,:,:,2];front=z>.1
+        crossing=(front.any(-1)&~front.all(-1)).any(0)
+        uv=q[:,:,:,:2]/z.clamp(min=.1)[...,None]
+        ii=spec.ignore_integral.to(device);height,width=ii.shape[1]-1,ii.shape[2]-1
+        low=uv.min(2).values;high=uv.max(2).values
+        visible=front.all(-1)&(high[:,:,0]>=0)&(high[:,:,1]>=0)&(low[:,:,0]<width)&(low[:,:,1]<height)
+        # Huge/nonfinite extents are never background; clamp before integer cast.
+        safe_low=torch.nan_to_num(low,nan=-1e8,posinf=1e8,neginf=-1e8)
+        safe_high=torch.nan_to_num(high,nan=1e8,posinf=1e8,neginf=-1e8)
+        x0=safe_low[:,:,0].floor().clamp(0,width).long();y0=safe_low[:,:,1].floor().clamp(0,height).long()
+        x1=(safe_high[:,:,0].ceil()+1).clamp(0,width).long();y1=(safe_high[:,:,1].ceil()+1).clamp(0,height).long()
+        views=torch.arange(len(ii),device=device)[:,None]
+        area=ii[views,y1,x1]-ii[views,y0,x1]-ii[views,y1,x0]+ii[views,y0,x0]
+        hit=((area>0)&visible).any(0)
+        no_view=~visible.any(0)
+>       invalid=~valid | ~torch.isfinite(q).all(dim=(0,2,3))
+E       TypeError: all() received an invalid combination of arguments - got (dim=tuple, ), but expected one of:
+E        * ()
+E             didn't match because some of the keywords were incorrect: dim
+E        * (int dim, bool keepdim)
+E        * (name dim, bool keepdim)
+
+training/m8j5b_coverage_loss.py:77: TypeError
+___________ test_ignore_no_confidence_or_geometry_gradient_shortcut ____________
+
+head = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+
+    def test_ignore_no_confidence_or_geometry_gradient_shortcut(head):
+>       c,b,s=fixture(zero=True);v,_=projected_ignore(b,s)
+
+tests/test_m8j5b_petr_loss.py:133: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pred = tensor([[ 0.2500,  0.0000,  0.6931,  1.3863, 20.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000],
+        [... 0.6931,  1.3863, 20.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000]], device='cuda:0', requires_grad=True)
+spec = CoverageSupervision(boxes=tensor([], device='cuda:0', size=(0, 9)), labels=tensor([], device='cuda:0', dtype=torch.int... 0,   0,   0,  ..., 187, 187, 187]]], device='cuda:0'), frame_negative_enabled=True, coverage_ref='SYNTHETIC_COVERAGE')
+margin = 0.5
+
+    def projected_ignore(pred, spec, margin=.5):
+        """Conservative rectangle of projected full AABB, with any-pixel veto.
+    
+        No score gate, 2D-to-3D invention, or predicted-depth occupancy certificate.
+        Near-plane intersections and boxes with no in-crop projection are unknown.
+        """
+        bounds, valid=query_envelopes(pred,margin)
+        device=pred.device
+        bits=torch.tensor([[x,y,z] for x in (0,1) for y in (0,1) for z in (0,1)],device=device,dtype=torch.bool)
+        corners=torch.where(bits[None],bounds[:,None,3:],bounds[:,None,:3])
+        points=torch.cat([corners,torch.ones_like(corners[:,:,:1])],-1)
+        matrix=spec.image_projection.to(pred)
+        q=torch.einsum('vij,nkj->vnki',matrix,points)
+        z=q[:,:,:,2];front=z>.1
+        crossing=(front.any(-1)&~front.all(-1)).any(0)
+        uv=q[:,:,:,:2]/z.clamp(min=.1)[...,None]
+        ii=spec.ignore_integral.to(device);height,width=ii.shape[1]-1,ii.shape[2]-1
+        low=uv.min(2).values;high=uv.max(2).values
+        visible=front.all(-1)&(high[:,:,0]>=0)&(high[:,:,1]>=0)&(low[:,:,0]<width)&(low[:,:,1]<height)
+        # Huge/nonfinite extents are never background; clamp before integer cast.
+        safe_low=torch.nan_to_num(low,nan=-1e8,posinf=1e8,neginf=-1e8)
+        safe_high=torch.nan_to_num(high,nan=1e8,posinf=1e8,neginf=-1e8)
+        x0=safe_low[:,:,0].floor().clamp(0,width).long();y0=safe_low[:,:,1].floor().clamp(0,height).long()
+        x1=(safe_high[:,:,0].ceil()+1).clamp(0,width).long();y1=(safe_high[:,:,1].ceil()+1).clamp(0,height).long()
+        views=torch.arange(len(ii),device=device)[:,None]
+        area=ii[views,y1,x1]-ii[views,y0,x1]-ii[views,y1,x0]+ii[views,y0,x0]
+        hit=((area>0)&visible).any(0)
+        no_view=~visible.any(0)
+>       invalid=~valid | ~torch.isfinite(q).all(dim=(0,2,3))
+E       TypeError: all() received an invalid combination of arguments - got (dim=tuple, ), but expected one of:
+E        * ()
+E             didn't match because some of the keywords were incorrect: dim
+E        * (int dim, bool keepdim)
+E        * (name dim, bool keepdim)
+
+training/m8j5b_coverage_loss.py:77: TypeError
+_______________________ test_multiview_any_unknown_veto ________________________
+
+head = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+
+    def test_multiview_any_unknown_veto(head):
+        c,b,s=fixture(zero=True);s.image_projection=s.image_projection.repeat(2,1,1)
+        masks=torch.zeros((2,128,128),device='cuda',dtype=torch.bool);masks[1,56:73,66:80]=True
+        s.ignore_integral=integral_mask(masks)
+>       with pytest.warns(RuntimeWarning):_,_,a=run(head,'second_camera_veto',c,b,s)
+
+tests/test_m8j5b_petr_loss.py:144: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_m8j5b_petr_loss.py:49: in run
+    lc,lb,a=CoverageAwarePETRLoss(head).layer_loss(c[None],b[None],[s]);(lc+lb).backward()
+training/m8j5b_coverage_loss.py:108: in layer_loss
+    image_veto,detail=projected_ignore(p,spec,self.margin)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pred = tensor([[ 0.2500,  0.0000,  0.6931,  1.3863, 20.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000],
+        [...,  1.3863, 20.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000]], device='cuda:0', grad_fn=<UnbindBackward0>)
+spec = CoverageSupervision(boxes=tensor([], device='cuda:0', size=(0, 9)), labels=tensor([], device='cuda:0', dtype=torch.int... 0,   0,   0,  ..., 238, 238, 238]]], device='cuda:0'), frame_negative_enabled=True, coverage_ref='SYNTHETIC_COVERAGE')
+margin = 0.5
+
+    def projected_ignore(pred, spec, margin=.5):
+        """Conservative rectangle of projected full AABB, with any-pixel veto.
+    
+        No score gate, 2D-to-3D invention, or predicted-depth occupancy certificate.
+        Near-plane intersections and boxes with no in-crop projection are unknown.
+        """
+        bounds, valid=query_envelopes(pred,margin)
+        device=pred.device
+        bits=torch.tensor([[x,y,z] for x in (0,1) for y in (0,1) for z in (0,1)],device=device,dtype=torch.bool)
+        corners=torch.where(bits[None],bounds[:,None,3:],bounds[:,None,:3])
+        points=torch.cat([corners,torch.ones_like(corners[:,:,:1])],-1)
+        matrix=spec.image_projection.to(pred)
+        q=torch.einsum('vij,nkj->vnki',matrix,points)
+        z=q[:,:,:,2];front=z>.1
+        crossing=(front.any(-1)&~front.all(-1)).any(0)
+        uv=q[:,:,:,:2]/z.clamp(min=.1)[...,None]
+        ii=spec.ignore_integral.to(device);height,width=ii.shape[1]-1,ii.shape[2]-1
+        low=uv.min(2).values;high=uv.max(2).values
+        visible=front.all(-1)&(high[:,:,0]>=0)&(high[:,:,1]>=0)&(low[:,:,0]<width)&(low[:,:,1]<height)
+        # Huge/nonfinite extents are never background; clamp before integer cast.
+        safe_low=torch.nan_to_num(low,nan=-1e8,posinf=1e8,neginf=-1e8)
+        safe_high=torch.nan_to_num(high,nan=1e8,posinf=1e8,neginf=-1e8)
+        x0=safe_low[:,:,0].floor().clamp(0,width).long();y0=safe_low[:,:,1].floor().clamp(0,height).long()
+        x1=(safe_high[:,:,0].ceil()+1).clamp(0,width).long();y1=(safe_high[:,:,1].ceil()+1).clamp(0,height).long()
+        views=torch.arange(len(ii),device=device)[:,None]
+        area=ii[views,y1,x1]-ii[views,y0,x1]-ii[views,y1,x0]+ii[views,y0,x0]
+        hit=((area>0)&visible).any(0)
+        no_view=~visible.any(0)
+>       invalid=~valid | ~torch.isfinite(q).all(dim=(0,2,3))
+E       TypeError: all() received an invalid combination of arguments - got (dim=tuple, ), but expected one of:
+E        * ()
+E             didn't match because some of the keywords were incorrect: dim
+E        * (int dim, bool keepdim)
+E        * (name dim, bool keepdim)
+
+training/m8j5b_coverage_loss.py:77: TypeError
+
+During handling of the above exception, another exception occurred:
+
+head = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+
+    def test_multiview_any_unknown_veto(head):
+        c,b,s=fixture(zero=True);s.image_projection=s.image_projection.repeat(2,1,1)
+        masks=torch.zeros((2,128,128),device='cuda',dtype=torch.bool);masks[1,56:73,66:80]=True
+        s.ignore_integral=integral_mask(masks)
+>       with pytest.warns(RuntimeWarning):_,_,a=run(head,'second_camera_veto',c,b,s)
+E       Failed: DID NOT WARN. No warnings of type (<class 'RuntimeWarning'>,) were emitted.
+E        Emitted warnings: [].
+
+tests/test_m8j5b_petr_loss.py:144: Failed
+______ test_unknown_velocity_grad_zero_and_normalization_ignores_unknown _______
+
+head = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+
+    def test_unknown_velocity_grad_zero_and_normalization_ignores_unknown(head):
+        c,b,s=fixture();s.velocity_valid[:]=False
+        with torch.no_grad():b[0,8:]=4
+        original=head.bg_cls_weight;head.bg_cls_weight=.5
+        try:
+>           _,_,a=run(head,'normalization_and_velocity',c,b,s)
+
+tests/test_m8j5b_petr_loss.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_m8j5b_petr_loss.py:49: in run
+    lc,lb,a=CoverageAwarePETRLoss(head).layer_loss(c[None],b[None],[s]);(lc+lb).backward()
+training/m8j5b_coverage_loss.py:108: in layer_loss
+    image_veto,detail=projected_ignore(p,spec,self.margin)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pred = tensor([[ 0.2500,  0.0000,  0.6931,  1.3863, 20.0000,  0.6931,  0.0000,  1.0000,
+          4.0000,  4.0000],
+        [...,  1.3863, 20.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000]], device='cuda:0', grad_fn=<UnbindBackward0>)
+spec = CoverageSupervision(boxes=tensor([[ 0.,  0., 20.,  2.,  4.,  2.,  0.,  0.,  0.]], device='cuda:0'), labels=tensor([0],... 0,   0,   0,  ..., 187, 187, 187]]], device='cuda:0'), frame_negative_enabled=True, coverage_ref='SYNTHETIC_COVERAGE')
+margin = 0.5
+
+    def projected_ignore(pred, spec, margin=.5):
+        """Conservative rectangle of projected full AABB, with any-pixel veto.
+    
+        No score gate, 2D-to-3D invention, or predicted-depth occupancy certificate.
+        Near-plane intersections and boxes with no in-crop projection are unknown.
+        """
+        bounds, valid=query_envelopes(pred,margin)
+        device=pred.device
+        bits=torch.tensor([[x,y,z] for x in (0,1) for y in (0,1) for z in (0,1)],device=device,dtype=torch.bool)
+        corners=torch.where(bits[None],bounds[:,None,3:],bounds[:,None,:3])
+        points=torch.cat([corners,torch.ones_like(corners[:,:,:1])],-1)
+        matrix=spec.image_projection.to(pred)
+        q=torch.einsum('vij,nkj->vnki',matrix,points)
+        z=q[:,:,:,2];front=z>.1
+        crossing=(front.any(-1)&~front.all(-1)).any(0)
+        uv=q[:,:,:,:2]/z.clamp(min=.1)[...,None]
+        ii=spec.ignore_integral.to(device);height,width=ii.shape[1]-1,ii.shape[2]-1
+        low=uv.min(2).values;high=uv.max(2).values
+        visible=front.all(-1)&(high[:,:,0]>=0)&(high[:,:,1]>=0)&(low[:,:,0]<width)&(low[:,:,1]<height)
+        # Huge/nonfinite extents are never background; clamp before integer cast.
+        safe_low=torch.nan_to_num(low,nan=-1e8,posinf=1e8,neginf=-1e8)
+        safe_high=torch.nan_to_num(high,nan=1e8,posinf=1e8,neginf=-1e8)
+        x0=safe_low[:,:,0].floor().clamp(0,width).long();y0=safe_low[:,:,1].floor().clamp(0,height).long()
+        x1=(safe_high[:,:,0].ceil()+1).clamp(0,width).long();y1=(safe_high[:,:,1].ceil()+1).clamp(0,height).long()
+        views=torch.arange(len(ii),device=device)[:,None]
+        area=ii[views,y1,x1]-ii[views,y0,x1]-ii[views,y1,x0]+ii[views,y0,x0]
+        hit=((area>0)&visible).any(0)
+        no_view=~visible.any(0)
+>       invalid=~valid | ~torch.isfinite(q).all(dim=(0,2,3))
+E       TypeError: all() received an invalid combination of arguments - got (dim=tuple, ), but expected one of:
+E        * ()
+E             didn't match because some of the keywords were incorrect: dim
+E        * (int dim, bool keepdim)
+E        * (name dim, bool keepdim)
+
+training/m8j5b_coverage_loss.py:77: TypeError
+=============================== warnings summary ===============================
+tests/test_m8j5b_petr_loss.py::test_complete_loss_and_all_gradients_equal_official
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+    warnings.warn(
+
+tests/test_m8j5b_petr_loss.py::test_complete_loss_and_all_gradients_equal_official
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/networkx/classes/graph.py:23: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import Mapping
+
+tests/test_m8j5b_petr_loss.py::test_complete_loss_and_all_gradients_equal_official
+tests/test_m8j5b_petr_loss.py::test_complete_loss_and_all_gradients_equal_official
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/networkx/classes/reportviews.py:95: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import Mapping, Set, Iterable
+
+tests/test_m8j5b_petr_loss.py::test_complete_loss_and_all_gradients_equal_official
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/trimesh/curvature.py:12: DeprecationWarning: Please use `coo_matrix` from the `scipy.sparse` namespace, the `scipy.sparse.coo` namespace is deprecated.
+    from scipy.sparse.coo import coo_matrix
+
+tests/test_m8j5b_petr_loss.py: 6 warnings
+tests/test_m8j5_petr_loss.py: 6 warnings
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/cnn/bricks/transformer.py:690: DeprecationWarning: The arguments `feedforward_channels` in BaseTransformerLayer has been deprecated, now you should set `feedforward_channels` and other FFN related arguments to a dict named `ffn_cfgs`. 
+    warnings.warn(
+
+tests/test_m8j5b_petr_loss.py: 6 warnings
+tests/test_m8j5_petr_loss.py: 6 warnings
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/cnn/bricks/transformer.py:690: DeprecationWarning: The arguments `ffn_dropout` in BaseTransformerLayer has been deprecated, now you should set `ffn_drop` and other FFN related arguments to a dict named `ffn_cfgs`. 
+    warnings.warn(
+
+tests/test_m8j5b_petr_loss.py: 6 warnings
+tests/test_m8j5_petr_loss.py: 6 warnings
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/cnn/bricks/transformer.py:690: DeprecationWarning: The arguments `ffn_num_fcs` in BaseTransformerLayer has been deprecated, now you should set `num_fcs` and other FFN related arguments to a dict named `ffn_cfgs`. 
+    warnings.warn(
+
+tests/test_m8j5b_petr_loss.py: 6 warnings
+tests/test_m8j5_petr_loss.py: 6 warnings
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/cnn/bricks/transformer.py:440: DeprecationWarning: The arguments `dropout` in MultiheadAttention has been deprecated, now you can separately set `attn_drop`(float), proj_drop(float), and `dropout_layer`(dict) 
+    warnings.warn(
+
+tests/test_m8j5b_petr_loss.py: 6 warnings
+tests/test_m8j5_petr_loss.py: 6 warnings
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/models/utils/petr_transformer.py:336: DeprecationWarning: The arguments `dropout` in MultiheadAttention has been deprecated, now you can separately set `attn_drop`(float), proj_drop(float), and `dropout_layer`(dict) 
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_m8j5b_petr_loss.py::test_complete_loss_and_all_gradients_equal_official
+FAILED tests/test_m8j5b_petr_loss.py::test_image_unknown_negative_and_positive_gradient
+FAILED tests/test_m8j5b_petr_loss.py::test_positive_overlapping_ignore_is_preserved
+FAILED tests/test_m8j5b_petr_loss.py::test_all_ignore_zero_finite_gradients_warning
+FAILED tests/test_m8j5b_petr_loss.py::test_zero_positive_keeps_certified_negative_gradients
+FAILED tests/test_m8j5b_petr_loss.py::test_six_layers_ignore_and_official_full_parity
+FAILED tests/test_m8j5b_petr_loss.py::test_frame_fallback_no_certificate_and_high_ignore_warning
+FAILED tests/test_m8j5b_petr_loss.py::test_no_projection_near_plane_and_bad_geometry_fail_closed
+FAILED tests/test_m8j5b_petr_loss.py::test_ignore_no_confidence_or_geometry_gradient_shortcut
+FAILED tests/test_m8j5b_petr_loss.py::test_multiview_any_unknown_veto - Faile...
+FAILED tests/test_m8j5b_petr_loss.py::test_unknown_velocity_grad_zero_and_normalization_ignores_unknown
+11 failed, 18 passed, 65 warnings in 6.62s

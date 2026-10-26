@@ -1,0 +1,880 @@
+{
+  "evidence": "SyntheticCUDA_ActualOfficialPETRHead",
+  "GPU": "NVIDIA GeForce RTX 4090",
+  "torch": "2.0.0+cu118",
+  "records": [
+    {
+      "name": "complete_parity",
+      "loss_cls": 10.223919868469238,
+      "loss_bbox": 0.0624999925494194,
+      "audit": {
+        "samples": [
+          {
+            "positive": 1,
+            "negative": 3,
+            "ignore": 0,
+            "query_count": 4,
+            "ignore_fraction": 0.0,
+            "warnings": [],
+            "frame_negative_enabled": true,
+            "state": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "positive_in_image_veto": 0,
+            "image_ignore_overlap": 0,
+            "near_plane_ambiguous": 0,
+            "no_in_crop_projection": 0,
+            "invalid_envelope": 0,
+            "image_veto_count": 0
+          }
+        ],
+        "positive": 1,
+        "negative": 3,
+        "ignore": 0,
+        "cls_avg_factor": 1.0,
+        "reg_avg_factor": 1.0
+      },
+      "class0_gradient": [
+        -0.14914338290691376,
+        0.4474301338195801,
+        0.4474301338195801,
+        0.4474301338195801
+      ],
+      "classification_gradient_abs": [
+        4.1760149002075195,
+        4.474301338195801,
+        4.474301338195801,
+        4.474301338195801
+      ],
+      "regression_gradient_abs": [
+        0.2499999701976776,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "image_unknown_veto_safe_negative_positive",
+      "loss_cls": 7.624617576599121,
+      "loss_bbox": 0.0624999925494194,
+      "audit": {
+        "samples": [
+          {
+            "positive": 1,
+            "negative": 2,
+            "ignore": 1,
+            "query_count": 4,
+            "ignore_fraction": 0.25,
+            "warnings": [],
+            "frame_negative_enabled": true,
+            "state": [
+              1,
+              -1,
+              0,
+              0
+            ],
+            "positive_in_image_veto": 0,
+            "image_ignore_overlap": 1,
+            "near_plane_ambiguous": 0,
+            "no_in_crop_projection": 0,
+            "invalid_envelope": 0,
+            "image_veto_count": 1
+          }
+        ],
+        "positive": 1,
+        "negative": 2,
+        "ignore": 1,
+        "cls_avg_factor": 1.0,
+        "reg_avg_factor": 1.0
+      },
+      "class0_gradient": [
+        -0.14914338290691376,
+        0.0,
+        0.4474301338195801,
+        0.4474301338195801
+      ],
+      "classification_gradient_abs": [
+        4.1760149002075195,
+        0.0,
+        4.474301338195801,
+        4.474301338195801
+      ],
+      "regression_gradient_abs": [
+        0.2499999701976776,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "positive_precedence",
+      "loss_cls": 2.4260149002075195,
+      "loss_bbox": 0.0624999925494194,
+      "audit": {
+        "samples": [
+          {
+            "positive": 1,
+            "negative": 0,
+            "ignore": 3,
+            "query_count": 4,
+            "ignore_fraction": 0.75,
+            "warnings": [
+              "NoNegativeSupervision"
+            ],
+            "frame_negative_enabled": true,
+            "state": [
+              1,
+              -1,
+              -1,
+              -1
+            ],
+            "positive_in_image_veto": 1,
+            "image_ignore_overlap": 4,
+            "near_plane_ambiguous": 0,
+            "no_in_crop_projection": 0,
+            "invalid_envelope": 0,
+            "image_veto_count": 4
+          }
+        ],
+        "positive": 1,
+        "negative": 0,
+        "ignore": 3,
+        "cls_avg_factor": 1.0,
+        "reg_avg_factor": 1.0
+      },
+      "class0_gradient": [
+        -0.14914338290691376,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "classification_gradient_abs": [
+        4.1760149002075195,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "regression_gradient_abs": [
+        0.2499999701976776,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "all_ignore",
+      "loss_cls": 0.0,
+      "loss_bbox": 0.0,
+      "audit": {
+        "samples": [
+          {
+            "positive": 0,
+            "negative": 0,
+            "ignore": 4,
+            "query_count": 4,
+            "ignore_fraction": 1.0,
+            "warnings": [
+              "HighIgnoreFraction",
+              "NoNegativeSupervision"
+            ],
+            "frame_negative_enabled": false,
+            "state": [
+              -1,
+              -1,
+              -1,
+              -1
+            ],
+            "positive_in_image_veto": 0,
+            "image_ignore_overlap": 1,
+            "near_plane_ambiguous": 0,
+            "no_in_crop_projection": 0,
+            "invalid_envelope": 0,
+            "image_veto_count": 1
+          }
+        ],
+        "positive": 0,
+        "negative": 0,
+        "ignore": 4,
+        "cls_avg_factor": 1.0,
+        "reg_avg_factor": 1.0
+      },
+      "class0_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "classification_gradient_abs": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "regression_gradient_abs": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "zero_positive_safe_negative",
+      "loss_cls": 2.59930157661438,
+      "loss_bbox": 0.0,
+      "audit": {
+        "samples": [
+          {
+            "positive": 0,
+            "negative": 1,
+            "ignore": 3,
+            "query_count": 4,
+            "ignore_fraction": 0.75,
+            "warnings": [],
+            "frame_negative_enabled": true,
+            "state": [
+              -1,
+              -1,
+              0,
+              -1
+            ],
+            "positive_in_image_veto": 0,
+            "image_ignore_overlap": 1,
+            "near_plane_ambiguous": 0,
+            "no_in_crop_projection": 0,
+            "invalid_envelope": 0,
+            "image_veto_count": 1
+          }
+        ],
+        "positive": 0,
+        "negative": 1,
+        "ignore": 3,
+        "cls_avg_factor": 1.0,
+        "reg_avg_factor": 1.0
+      },
+      "class0_gradient": [
+        0.0,
+        0.0,
+        0.4474301338195801,
+        0.0
+      ],
+      "classification_gradient_abs": [
+        0.0,
+        0.0,
+        4.474301338195801,
+        0.0
+      ],
+      "regression_gradient_abs": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "six_layers_complete",
+      "audit": [
+        {
+          "layer": 0,
+          "samples": [
+            {
+              "positive": 1,
+              "negative": 3,
+              "ignore": 0,
+              "query_count": 4,
+              "ignore_fraction": 0.0,
+              "warnings": [],
+              "frame_negative_enabled": true,
+              "state": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "positive_in_image_veto": 0,
+              "image_ignore_overlap": 0,
+              "near_plane_ambiguous": 0,
+              "no_in_crop_projection": 0,
+              "invalid_envelope": 0,
+              "image_veto_count": 0
+            }
+          ],
+          "positive": 1,
+          "negative": 3,
+          "ignore": 0,
+          "cls_avg_factor": 1.0,
+          "reg_avg_factor": 1.0
+        },
+        {
+          "layer": 1,
+          "samples": [
+            {
+              "positive": 1,
+              "negative": 3,
+              "ignore": 0,
+              "query_count": 4,
+              "ignore_fraction": 0.0,
+              "warnings": [],
+              "frame_negative_enabled": true,
+              "state": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "positive_in_image_veto": 0,
+              "image_ignore_overlap": 0,
+              "near_plane_ambiguous": 0,
+              "no_in_crop_projection": 0,
+              "invalid_envelope": 0,
+              "image_veto_count": 0
+            }
+          ],
+          "positive": 1,
+          "negative": 3,
+          "ignore": 0,
+          "cls_avg_factor": 1.0,
+          "reg_avg_factor": 1.0
+        },
+        {
+          "layer": 2,
+          "samples": [
+            {
+              "positive": 1,
+              "negative": 3,
+              "ignore": 0,
+              "query_count": 4,
+              "ignore_fraction": 0.0,
+              "warnings": [],
+              "frame_negative_enabled": true,
+              "state": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "positive_in_image_veto": 0,
+              "image_ignore_overlap": 0,
+              "near_plane_ambiguous": 0,
+              "no_in_crop_projection": 0,
+              "invalid_envelope": 0,
+              "image_veto_count": 0
+            }
+          ],
+          "positive": 1,
+          "negative": 3,
+          "ignore": 0,
+          "cls_avg_factor": 1.0,
+          "reg_avg_factor": 1.0
+        },
+        {
+          "layer": 3,
+          "samples": [
+            {
+              "positive": 1,
+              "negative": 3,
+              "ignore": 0,
+              "query_count": 4,
+              "ignore_fraction": 0.0,
+              "warnings": [],
+              "frame_negative_enabled": true,
+              "state": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "positive_in_image_veto": 0,
+              "image_ignore_overlap": 0,
+              "near_plane_ambiguous": 0,
+              "no_in_crop_projection": 0,
+              "invalid_envelope": 0,
+              "image_veto_count": 0
+            }
+          ],
+          "positive": 1,
+          "negative": 3,
+          "ignore": 0,
+          "cls_avg_factor": 1.0,
+          "reg_avg_factor": 1.0
+        },
+        {
+          "layer": 4,
+          "samples": [
+            {
+              "positive": 1,
+              "negative": 3,
+              "ignore": 0,
+              "query_count": 4,
+              "ignore_fraction": 0.0,
+              "warnings": [],
+              "frame_negative_enabled": true,
+              "state": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "positive_in_image_veto": 0,
+              "image_ignore_overlap": 0,
+              "near_plane_ambiguous": 0,
+              "no_in_crop_projection": 0,
+              "invalid_envelope": 0,
+              "image_veto_count": 0
+            }
+          ],
+          "positive": 1,
+          "negative": 3,
+          "ignore": 0,
+          "cls_avg_factor": 1.0,
+          "reg_avg_factor": 1.0
+        },
+        {
+          "layer": 5,
+          "samples": [
+            {
+              "positive": 1,
+              "negative": 3,
+              "ignore": 0,
+              "query_count": 4,
+              "ignore_fraction": 0.0,
+              "warnings": [],
+              "frame_negative_enabled": true,
+              "state": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "positive_in_image_veto": 0,
+              "image_ignore_overlap": 0,
+              "near_plane_ambiguous": 0,
+              "no_in_crop_projection": 0,
+              "invalid_envelope": 0,
+              "image_veto_count": 0
+            }
+          ],
+          "positive": 1,
+          "negative": 3,
+          "ignore": 0,
+          "cls_avg_factor": 1.0,
+          "reg_avg_factor": 1.0
+        }
+      ],
+      "masked_gradient_abs": 0.0
+    },
+    {
+      "name": "six_layers_partial",
+      "audit": [
+        {
+          "layer": 0,
+          "samples": [
+            {
+              "positive": 1,
+              "negative": 1,
+              "ignore": 2,
+              "query_count": 4,
+              "ignore_fraction": 0.5,
+              "warnings": [],
+              "frame_negative_enabled": true,
+              "state": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "positive_in_image_veto": 0,
+              "image_ignore_overlap": 1,
+              "near_plane_ambiguous": 0,
+              "no_in_crop_projection": 0,
+              "invalid_envelope": 0,
+              "image_veto_count": 1
+            }
+          ],
+          "positive": 1,
+          "negative": 1,
+          "ignore": 2,
+          "cls_avg_factor": 1.0,
+          "reg_avg_factor": 1.0
+        },
+        {
+          "layer": 1,
+          "samples": [
+            {
+              "positive": 1,
+              "negative": 1,
+              "ignore": 2,
+              "query_count": 4,
+              "ignore_fraction": 0.5,
+              "warnings": [],
+              "frame_negative_enabled": true,
+              "state": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "positive_in_image_veto": 0,
+              "image_ignore_overlap": 1,
+              "near_plane_ambiguous": 0,
+              "no_in_crop_projection": 0,
+              "invalid_envelope": 0,
+              "image_veto_count": 1
+            }
+          ],
+          "positive": 1,
+          "negative": 1,
+          "ignore": 2,
+          "cls_avg_factor": 1.0,
+          "reg_avg_factor": 1.0
+        },
+        {
+          "layer": 2,
+          "samples": [
+            {
+              "positive": 1,
+              "negative": 1,
+              "ignore": 2,
+              "query_count": 4,
+              "ignore_fraction": 0.5,
+              "warnings": [],
+              "frame_negative_enabled": true,
+              "state": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "positive_in_image_veto": 0,
+              "image_ignore_overlap": 1,
+              "near_plane_ambiguous": 0,
+              "no_in_crop_projection": 0,
+              "invalid_envelope": 0,
+              "image_veto_count": 1
+            }
+          ],
+          "positive": 1,
+          "negative": 1,
+          "ignore": 2,
+          "cls_avg_factor": 1.0,
+          "reg_avg_factor": 1.0
+        },
+        {
+          "layer": 3,
+          "samples": [
+            {
+              "positive": 1,
+              "negative": 1,
+              "ignore": 2,
+              "query_count": 4,
+              "ignore_fraction": 0.5,
+              "warnings": [],
+              "frame_negative_enabled": true,
+              "state": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "positive_in_image_veto": 0,
+              "image_ignore_overlap": 1,
+              "near_plane_ambiguous": 0,
+              "no_in_crop_projection": 0,
+              "invalid_envelope": 0,
+              "image_veto_count": 1
+            }
+          ],
+          "positive": 1,
+          "negative": 1,
+          "ignore": 2,
+          "cls_avg_factor": 1.0,
+          "reg_avg_factor": 1.0
+        },
+        {
+          "layer": 4,
+          "samples": [
+            {
+              "positive": 1,
+              "negative": 1,
+              "ignore": 2,
+              "query_count": 4,
+              "ignore_fraction": 0.5,
+              "warnings": [],
+              "frame_negative_enabled": true,
+              "state": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "positive_in_image_veto": 0,
+              "image_ignore_overlap": 1,
+              "near_plane_ambiguous": 0,
+              "no_in_crop_projection": 0,
+              "invalid_envelope": 0,
+              "image_veto_count": 1
+            }
+          ],
+          "positive": 1,
+          "negative": 1,
+          "ignore": 2,
+          "cls_avg_factor": 1.0,
+          "reg_avg_factor": 1.0
+        },
+        {
+          "layer": 5,
+          "samples": [
+            {
+              "positive": 1,
+              "negative": 1,
+              "ignore": 2,
+              "query_count": 4,
+              "ignore_fraction": 0.5,
+              "warnings": [],
+              "frame_negative_enabled": true,
+              "state": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "positive_in_image_veto": 0,
+              "image_ignore_overlap": 1,
+              "near_plane_ambiguous": 0,
+              "no_in_crop_projection": 0,
+              "invalid_envelope": 0,
+              "image_veto_count": 1
+            }
+          ],
+          "positive": 1,
+          "negative": 1,
+          "ignore": 2,
+          "cls_avg_factor": 1.0,
+          "reg_avg_factor": 1.0
+        }
+      ],
+      "masked_gradient_abs": 0.0
+    },
+    {
+      "name": "actual_policy_frame_fallback",
+      "loss_cls": 2.4260149002075195,
+      "loss_bbox": 0.0624999925494194,
+      "audit": {
+        "samples": [
+          {
+            "positive": 1,
+            "negative": 0,
+            "ignore": 3,
+            "query_count": 4,
+            "ignore_fraction": 0.75,
+            "warnings": [
+              "NoNegativeSupervision"
+            ],
+            "frame_negative_enabled": false,
+            "state": [
+              1,
+              -1,
+              -1,
+              -1
+            ],
+            "positive_in_image_veto": 0,
+            "image_ignore_overlap": 1,
+            "near_plane_ambiguous": 0,
+            "no_in_crop_projection": 0,
+            "invalid_envelope": 0,
+            "image_veto_count": 1
+          }
+        ],
+        "positive": 1,
+        "negative": 0,
+        "ignore": 3,
+        "cls_avg_factor": 1.0,
+        "reg_avg_factor": 1.0
+      },
+      "class0_gradient": [
+        -0.14914338290691376,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "classification_gradient_abs": [
+        4.1760149002075195,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "regression_gradient_abs": [
+        0.2499999701976776,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "high_score_unknown_still_zero_gradient",
+      "loss_cls": 2.59930157661438,
+      "loss_bbox": 0.0,
+      "audit": {
+        "samples": [
+          {
+            "positive": 0,
+            "negative": 1,
+            "ignore": 3,
+            "query_count": 4,
+            "ignore_fraction": 0.75,
+            "warnings": [],
+            "frame_negative_enabled": true,
+            "state": [
+              -1,
+              -1,
+              0,
+              -1
+            ],
+            "positive_in_image_veto": 0,
+            "image_ignore_overlap": 1,
+            "near_plane_ambiguous": 0,
+            "no_in_crop_projection": 0,
+            "invalid_envelope": 0,
+            "image_veto_count": 1
+          }
+        ],
+        "positive": 0,
+        "negative": 1,
+        "ignore": 3,
+        "cls_avg_factor": 1.0,
+        "reg_avg_factor": 1.0
+      },
+      "class0_gradient": [
+        0.0,
+        0.0,
+        0.4474301338195801,
+        0.0
+      ],
+      "classification_gradient_abs": [
+        0.0,
+        0.0,
+        4.474301338195801,
+        0.0
+      ],
+      "regression_gradient_abs": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "second_camera_veto",
+      "loss_cls": 0.0,
+      "loss_bbox": 0.0,
+      "audit": {
+        "samples": [
+          {
+            "positive": 0,
+            "negative": 0,
+            "ignore": 4,
+            "query_count": 4,
+            "ignore_fraction": 1.0,
+            "warnings": [
+              "HighIgnoreFraction",
+              "NoNegativeSupervision"
+            ],
+            "frame_negative_enabled": true,
+            "state": [
+              -1,
+              -1,
+              -1,
+              -1
+            ],
+            "positive_in_image_veto": 0,
+            "image_ignore_overlap": 1,
+            "near_plane_ambiguous": 0,
+            "no_in_crop_projection": 0,
+            "invalid_envelope": 0,
+            "image_veto_count": 1
+          }
+        ],
+        "positive": 0,
+        "negative": 0,
+        "ignore": 4,
+        "cls_avg_factor": 1.0,
+        "reg_avg_factor": 1.0
+      },
+      "class0_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "classification_gradient_abs": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "regression_gradient_abs": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "normalization_and_velocity",
+      "loss_cls": 3.3502111434936523,
+      "loss_bbox": 0.0624999925494194,
+      "audit": {
+        "samples": [
+          {
+            "positive": 1,
+            "negative": 1,
+            "ignore": 2,
+            "query_count": 4,
+            "ignore_fraction": 0.5,
+            "warnings": [],
+            "frame_negative_enabled": true,
+            "state": [
+              1,
+              -1,
+              0,
+              -1
+            ],
+            "positive_in_image_veto": 0,
+            "image_ignore_overlap": 1,
+            "near_plane_ambiguous": 0,
+            "no_in_crop_projection": 0,
+            "invalid_envelope": 0,
+            "image_veto_count": 1
+          }
+        ],
+        "positive": 1,
+        "negative": 1,
+        "ignore": 2,
+        "cls_avg_factor": 1.5,
+        "reg_avg_factor": 1.0
+      },
+      "class0_gradient": [
+        -0.0994289293885231,
+        0.0,
+        0.2982867658138275,
+        0.0
+      ],
+      "classification_gradient_abs": [
+        2.7840099334716797,
+        0.0,
+        2.98286771774292,
+        0.0
+      ],
+      "regression_gradient_abs": [
+        0.2499999701976776,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "optimizer_steps": 0,
+  "peak_allocated_bytes": 130879488
+}

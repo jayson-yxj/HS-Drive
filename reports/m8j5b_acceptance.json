@@ -1,0 +1,71 @@
+{
+  "stage": "M8-J5B Coverage-Aware Supervision",
+  "checked_at_utc": "2026-10-26T13:10:32.620160+00:00",
+  "base_commit": "6ee9bf7af7b28910def0efb9693c75790a357356",
+  "branch": "feat/m8j5b-coverage-aware-supervision",
+  "status": "Partial",
+  "engineering": "CoverageAwareLossEngineeringGo",
+  "synthetic_gradient": "SyntheticGradientGo",
+  "real_supervision": "Partial_NoSafeNegativeCertificate",
+  "real_gradient_smoke": "NoGo",
+  "formal_training": "TrainingReadinessNoGo",
+  "human_signoff": "Pending_Suspended",
+  "human_signoffs_created": 0,
+  "model_optimizer_steps": 0,
+  "model_backward_calls": 0,
+  "frames_audited": 214,
+  "missing_cases_reproduced": 4,
+  "new_missing_object_3d_boxes": 0,
+  "positive_source_box_loss_candidates": {
+    "car": 499,
+    "pedestrian": 71
+  },
+  "actual_query_layer_counts": {
+    "positive": 66,
+    "ignore": 21534,
+    "negative": 0
+  },
+  "real_frames_background_disabled": 214,
+  "real_negative_certificates": 0,
+  "local_ignore_pixel_fraction_original": 0.0014331754067151263,
+  "local_ignore_pixel_fraction_model_crop": 0.002385786861915556,
+  "tests": {
+    "CPU": {
+      "passed": 32,
+      "skipped": 0
+    },
+    "isolated_PETR_CUDA": {
+      "passed": 31,
+      "new_tests": 15,
+      "historical_tests": 16
+    },
+    "browser": {
+      "passed": 9,
+      "network": "Disabled"
+    }
+  },
+  "frozen_forward": {
+    "total_calls": 4,
+    "batch": 1,
+    "weights_unchanged": true,
+    "GT_isolated": true
+  },
+  "risks": [
+    "All real frames still lack certified negatives; do not train with this policy as a general recipe",
+    "Local mask cannot certify empty space or compensate for erroneous query geometry",
+    "Semantic/Instance mismatch, hidden surfaces and missing sensor timestamps prevent exhaustive labels",
+    "25 extra automatic source-Box candidates retain uncertain render identity and are not Golden",
+    "Only car/person observed; all ten-class negative coverage not established",
+    "Historical official head.loss remains unsafe for partial labels unless caller explicitly uses wrapper"
+  ],
+  "next_step_requirements": [
+    "Freeze a verifiable real safe-negative or explicit class-level supervision contract",
+    "Verify meaningful real P/I/N with no-weight-update diagnostic",
+    "Separate approval before limited real optimizer smoke; no formal training"
+  ],
+  "historical_files_unchanged": true,
+  "raw_annotations_unchanged": true,
+  "carla": "NotRun",
+  "new_data_download": "NotRun",
+  "main_merge": false
+}

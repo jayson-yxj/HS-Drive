@@ -1,0 +1,53 @@
+{
+  "stage": "M8-J5B Coverage-Aware Supervision",
+  "base_commit": "6ee9bf7af7b28910def0efb9693c75790a357356",
+  "private_root": "/root/gpufree-data/hs-drive-private/m8j5b-coverage-supervision",
+  "source_audit": "/root/gpufree-data/hs-drive-private/m8j5a-raw-audit",
+  "semantic_ids": {"pedestrian":12,"rider":13,"car":14,"truck":15,"bus":16,"train":17,"motorcycle":18,"bicycle":19},
+  "coverage": {
+    "missing_region_fraction_threshold": 0.5,
+    "ignore_dilation_original_pixels": 4,
+    "minimum_ignore_component_pixels": 1,
+    "safe_negatives_from_segmentation": false,
+    "negative_certificate_scope": "All10PETRClasses_Complete3DSupport_NotVisiblePixelBackground",
+    "real_frame_negative_enabled": false
+  },
+  "positive": {
+    "reference": "ReliableRecordedActorBox_NotInferredMissingObjectBox",
+    "source_classes": ["car","pedestrian"],
+    "max_tilt_degrees": 2,
+    "range": [-51.2,-51.2,-5,51.2,51.2,3],
+    "visible_support": "Existing projection+semantic thresholds in actual PETR crop; no Actor-ID/render-token equality or manual approval",
+    "min_pixels":12,
+    "min_region_containment":0.8,
+    "min_bbox_iou":0.25,
+    "min_semantic_agreement":0.9,
+    "velocity_supervision":false,
+    "human_signoff":"Pending_Suspended",
+    "authorization":"LossDiagnosticOnly_NoOptimizer"
+  },
+  "query_policy": {
+    "envelope_margin_m":0.5,
+    "image_veto":"Any projected full-envelope rectangle touching Ignore mask in any camera; no confidence threshold",
+    "no_valid_projection":"Ignore",
+    "ambiguous_projection":"Ignore",
+    "positive_precedence":true,
+    "high_ignore_warning_fraction":0.95,
+    "zero_negative_warning":true
+  },
+  "bounded_diagnostics": {
+    "frozen_forward_ordinals":["00107","00124","00196","00213"],
+    "model_calls":4,
+    "batch_size":1,
+    "model_backward_calls":0,
+    "optimizer_steps":0,
+    "synthetic_gradient_tests":true,
+    "network_during_model_execution":false,
+    "max_runtime_seconds":300,
+    "max_GPU_allocated_bytes":8589934592
+  },
+  "limitations":["Unknown depth cannot certify 3D empty space","Semantic/Instance agreement is not independent physical truth","Original timestamps absent","Single correlated clip","No actual safe-negative certificates"],
+  "CARLA":false,
+  "formal_training":false,
+  "private_data_publish":false
+}
