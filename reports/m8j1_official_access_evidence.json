@@ -1,0 +1,401 @@
+{
+  "stage": "M8-J1",
+  "base_commit": "307f4fb34b501c6400f20e4e437963429527a333",
+  "checked_at_utc": "2026-10-26T07:01:16.830030+00:00",
+  "checked_at_local": "2026-10-26T08:01:16.830030+01:00",
+  "timezone": "Europe/Berlin",
+  "evidence_kind": "ActualServerBoundedMetadataAndOfflineReview",
+  "generator_sha256": "25b9a5add229434ecf410b72b9e0fcd0622b4c2823f7a1c33711701326f1c708",
+  "payload_downloads": 0,
+  "payload_get_requests": 0,
+  "range_requests": 0,
+  "archive_extractions": 0,
+  "CARLA_connections": 0,
+  "server_launches": 0,
+  "GPU_tasks": 0,
+  "training_steps": 0,
+  "external_messages_sent": 0,
+  "old_files_modified": 0,
+  "status": "OfficialMetadataUnavailable",
+  "scope": "HF target on workspace GPU server",
+  "diagnostic_batches": 1,
+  "batch_closed": true,
+  "no_additional_batch_authorized": true,
+  "limits": {
+    "stage": "M8-J1",
+    "base_commit": "307f4fb34b501c6400f20e4e437963429527a333",
+    "official_manifest_commit": "7ec25d1c9f7522d923ce5f3420986cef1cb2d956",
+    "target": "DynamicObjectCrossing_Town02_Route13_Weather6.tar.gz",
+    "expected_bytes": 280176944,
+    "expected_sha256": "b040f5993726dfb3a1dc1aaf5e2e4f93404a0124272d6f47f2469fca53ca25f2",
+    "diagnostic_batches": 1,
+    "server_http_request_cap": 8,
+    "per_http_timeout_seconds": 20,
+    "metadata_body_cap_per_request": 2097152,
+    "total_metadata_body_cap": 8388608,
+    "dns_hosts": [
+      "huggingface.co",
+      "api.github.com"
+    ],
+    "dns_timeout_seconds": 8,
+    "direct_tcp_attempts_per_host": 1,
+    "direct_tcp_timeout_seconds": 5,
+    "tls_attempts_per_connected_host": 1,
+    "tls_timeout_seconds": 5,
+    "browser_tool_calls_cap": 2,
+    "browser_document_operations_cap": 6,
+    "retries": 0,
+    "redirect_following": false,
+    "range_requests": false,
+    "payload_get_requests": false,
+    "maintainer_messages_authorized": false,
+    "batch_failure_policy": "Persist actual stage/error; no repeat batch, no proxy/DNS changes, no alternate mirror",
+    "decision_A_requires": [
+      "Asset-level permitted uses established",
+      "Exact hosted identity linked to official size/hash",
+      "Executable lawful access path evidenced"
+    ],
+    "decision_B": "One bounded clarification review completed but material conditions unresolved; halt tool building and automatic download requests",
+    "decision_C_requires": "Positive evidence that target cannot meet intended use or lawful acquisition, not silence or connectivity failure",
+    "future_schema_application": "Only refine after material progress in license and access; otherwise retain J0 plan unexecuted"
+  },
+  "network_layers": {
+    "huggingface.co": {
+      "host": "huggingface.co",
+      "started_at_utc": "2026-10-26T06:51:55.532866+00:00",
+      "mode": "Direct DNS/TCP/TLS; separate from curl environment routing",
+      "dns": "Resolved",
+      "addresses": [
+        {
+          "family": 2,
+          "address": "202.160.130.66",
+          "scope": "public"
+        },
+        {
+          "family": 10,
+          "address": "2a03:2880:f10f:83:face:b00c:0:25de",
+          "scope": "public"
+        }
+      ],
+      "tcp_target": "202.160.130.66",
+      "tcp": "Failed",
+      "tcp_errno": null,
+      "tcp_error": "timed out",
+      "tcp_ms": 5001.7322693020105,
+      "tls": "NotReached",
+      "finished_at_utc": "2026-10-26T06:52:00.572355+00:00"
+    },
+    "api.github.com": {
+      "host": "api.github.com",
+      "started_at_utc": "2026-10-26T06:52:00.572837+00:00",
+      "mode": "Direct DNS/TCP/TLS; separate from curl environment routing",
+      "dns": "Resolved",
+      "addresses": [
+        {
+          "family": 2,
+          "address": "20.205.243.168",
+          "scope": "public"
+        }
+      ],
+      "tcp_target": "20.205.243.168",
+      "tcp": "Connected",
+      "tcp_ms": 1111.9282748550177,
+      "tls": "Verified",
+      "tls_version": "TLSv1.3",
+      "peer_certificate_sha256": "06e6a4a004329905d4a4e7c0d2c6ec7a632c56443f256424a43cc786951b3149",
+      "finished_at_utc": "2026-10-26T06:52:02.324032+00:00"
+    }
+  },
+  "requests": [
+    {
+      "name": "github_fixed_license",
+      "method": "GET",
+      "url": "https://api.github.com/repos/Thinklab-SJTU/Bench2Drive/contents/LICENSE?ref=7ec25d1c9f7522d923ce5f3420986cef1cb2d956",
+      "started_at_utc": "2026-10-26T06:52:10.758623+00:00",
+      "tls_verify": true,
+      "retries": 0,
+      "range_request": false,
+      "follow_redirects": false,
+      "source_sha256": "e403111d48b39f4dce23b87c5aac6f53a44fad6851f7e4781c2c5aa7de1751d2",
+      "body_bytes": 27419,
+      "curl_exit_code": 0,
+      "http_status": 200,
+      "error": "",
+      "metrics": {
+        "time_namelookup": 0.012368,
+        "time_connect": 0.101476,
+        "time_appconnect": 0.239434,
+        "time_starttransfer": 0.581218,
+        "time_total": 0.789202,
+        "ssl_verify_result": 0,
+        "size_download": 27419,
+        "num_connects": 1
+      },
+      "category": "Success",
+      "headers": {
+        "content-length": "27419",
+        "content-type": "application/json; charset=utf-8",
+        "etag": "\"3811ab9a1eb86022f72d9c871edb3c05907a158f\"",
+        "last-modified": "Tue, 11 Aug 2026 02:52:13 GMT"
+      },
+      "body_path": "reports/m8j1_sources/github_fixed_license.body",
+      "body_sha256": "2a8818e324925c69f5c68c1046cfcee228f6b14b3dcc63fe91714a4fcf49ab99",
+      "finished_at_utc": "2026-10-26T06:52:11.560253+00:00"
+    },
+    {
+      "name": "github_fixed_readme",
+      "method": "GET",
+      "url": "https://api.github.com/repos/Thinklab-SJTU/Bench2Drive/contents/README.md?ref=7ec25d1c9f7522d923ce5f3420986cef1cb2d956",
+      "started_at_utc": "2026-10-26T06:52:11.561013+00:00",
+      "tls_verify": true,
+      "retries": 0,
+      "range_request": false,
+      "follow_redirects": false,
+      "source_sha256": "e403111d48b39f4dce23b87c5aac6f53a44fad6851f7e4781c2c5aa7de1751d2",
+      "body_bytes": 35613,
+      "curl_exit_code": 0,
+      "http_status": 200,
+      "error": "",
+      "metrics": {
+        "time_namelookup": 0.009816,
+        "time_connect": 0.123647,
+        "time_appconnect": 1.207198,
+        "time_starttransfer": 1.694496,
+        "time_total": 3.979681,
+        "ssl_verify_result": 0,
+        "size_download": 35613,
+        "num_connects": 1
+      },
+      "category": "Success",
+      "headers": {
+        "content-length": "35613",
+        "content-type": "application/json; charset=utf-8",
+        "etag": "\"92a296ae827879d608d90c24a892f48323d0ff75\"",
+        "last-modified": "Tue, 11 Aug 2026 02:52:13 GMT"
+      },
+      "body_path": "reports/m8j1_sources/github_fixed_readme.body",
+      "body_sha256": "fcd783190498dc35f7bd5de2bd5fb935652bc8dfe5239810177d12f8abd02eb6",
+      "finished_at_utc": "2026-10-26T06:52:15.559457+00:00"
+    },
+    {
+      "name": "github_license_discussion_search",
+      "method": "GET",
+      "url": "https://api.github.com/search/issues?q=repo%3AThinklab-SJTU%2FBench2Drive+license+OR+licensing+OR+permission+OR+Apache&per_page=30",
+      "started_at_utc": "2026-10-26T06:52:15.560187+00:00",
+      "tls_verify": true,
+      "retries": 0,
+      "range_request": false,
+      "follow_redirects": false,
+      "source_sha256": "e403111d48b39f4dce23b87c5aac6f53a44fad6851f7e4781c2c5aa7de1751d2",
+      "body_bytes": 11144,
+      "curl_exit_code": 0,
+      "http_status": 200,
+      "error": "",
+      "metrics": {
+        "time_namelookup": 0.011339,
+        "time_connect": 1.123543,
+        "time_appconnect": 2.165671,
+        "time_starttransfer": 2.690303,
+        "time_total": 3.046971,
+        "ssl_verify_result": 0,
+        "size_download": 11144,
+        "num_connects": 1
+      },
+      "category": "Success",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "11144"
+      },
+      "body_path": "reports/m8j1_sources/github_license_discussion_search.body",
+      "body_sha256": "b2ba7ad4c9a2158c506315141da201ce35a514aff1c1c279ef6b5ff46ec4dbed",
+      "finished_at_utc": "2026-10-26T06:52:18.619399+00:00"
+    },
+    {
+      "name": "hf_repo",
+      "method": "GET",
+      "url": "https://huggingface.co/api/datasets/rethinklab/Bench2Drive?blobs=true",
+      "started_at_utc": "2026-10-26T06:52:02.324812+00:00",
+      "tls_verify": true,
+      "retries": 0,
+      "range_request": false,
+      "follow_redirects": false,
+      "source_sha256": "e403111d48b39f4dce23b87c5aac6f53a44fad6851f7e4781c2c5aa7de1751d2",
+      "body_bytes": 0,
+      "curl_exit_code": 28,
+      "http_status": null,
+      "error": "curl: (28) Failed to connect to huggingface.co port 443 after 4208 ms: Connection timed out",
+      "metrics": {
+        "time_namelookup": 0.010829,
+        "time_connect": 0.0,
+        "time_appconnect": 0.0,
+        "time_starttransfer": 0.0,
+        "time_total": 4.208367,
+        "ssl_verify_result": 0,
+        "size_download": 0,
+        "num_connects": 0
+      },
+      "category": "Timeout",
+      "headers": {},
+      "finished_at_utc": "2026-10-26T06:52:06.542203+00:00"
+    },
+    {
+      "name": "hf_target_head",
+      "method": "HEAD",
+      "url": "https://huggingface.co/datasets/rethinklab/Bench2Drive/resolve/ce56cfbc26edf7796586e26fd44644f0ac2f6bcc/DynamicObjectCrossing_Town02_Route13_Weather6.tar.gz",
+      "started_at_utc": "2026-10-26T06:52:06.542666+00:00",
+      "tls_verify": true,
+      "retries": 0,
+      "range_request": false,
+      "follow_redirects": false,
+      "source_sha256": "e403111d48b39f4dce23b87c5aac6f53a44fad6851f7e4781c2c5aa7de1751d2",
+      "body_bytes": 0,
+      "curl_exit_code": 28,
+      "http_status": null,
+      "error": "curl: (28) Failed to connect to huggingface.co port 443 after 4206 ms: Connection timed out",
+      "metrics": {
+        "time_namelookup": 0.008892,
+        "time_connect": 0.0,
+        "time_appconnect": 0.0,
+        "time_starttransfer": 0.0,
+        "time_total": 4.20689,
+        "ssl_verify_result": 0,
+        "size_download": 0,
+        "num_connects": 0
+      },
+      "category": "Timeout",
+      "headers": {},
+      "finished_at_utc": "2026-10-26T06:52:10.758043+00:00"
+    }
+  ],
+  "http_request_count": 5,
+  "metadata_body_bytes": 74176,
+  "github_fixed_sources": [
+    {
+      "name": "github_fixed_license",
+      "bytes": 19133,
+      "git_blob_sha": "3811ab9a1eb86022f72d9c871edb3c05907a158f",
+      "sha256": "0bb835f5ed7272947a23d92d0e74bbdadcbf0beb9235c0735c32d1310a4bceda",
+      "frozen_path": "reports/m8i0_sources/b2dapi__LICENSE.txt",
+      "url": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/LICENSE",
+      "matched": true
+    },
+    {
+      "name": "github_fixed_readme",
+      "bytes": 25070,
+      "git_blob_sha": "92a296ae827879d608d90c24a892f48323d0ff75",
+      "sha256": "09e725b10cf17ee1736a28ca1a0ba8ba0344594d7064e5ca47906f62044bc368",
+      "frozen_path": "reports/m8i0_sources/b2dapi__README.md.txt",
+      "url": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/README.md",
+      "matched": true
+    }
+  ],
+  "proxy_observation": {
+    "HTTP_PROXY": false,
+    "HTTPS_PROXY": false,
+    "ALL_PROXY": false,
+    "http_proxy": false,
+    "https_proxy": false,
+    "all_proxy": false
+  },
+  "routing_limitations": "Direct socket sample and curl are separate probes. No explicit proxy environment observed; no claim about transparent routing or authoritative DNS correctness. No resolver, route, proxy or timeout configuration changed.",
+  "tls_interpretation": "HF TLS never reached. Curl ssl_verify_result=0 without time_appconnect/connection is not certificate verification success. GitHub separate TLSv1.3 and successful HTTPS support TLS only there.",
+  "failure_comparison": {
+    "M8_J0": "curl7 connection refused before HTTP",
+    "M8_J1": "curl28 connection timeout before HTTP",
+    "not_supported": [
+      "Authentication failure",
+      "404/object missing",
+      "TLS certificate rejection",
+      "Permanent access prohibition",
+      "Proven DNS poisoning"
+    ]
+  },
+  "target": {
+    "filename": "DynamicObjectCrossing_Town02_Route13_Weather6.tar.gz",
+    "expected_bytes": 280176944,
+    "expected_sha256": "b040f5993726dfb3a1dc1aaf5e2e4f93404a0124272d6f47f2469fca53ca25f2",
+    "official_manifest_commit": "7ec25d1c9f7522d923ce5f3420986cef1cb2d956",
+    "official_manifest_url": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/docs/bench2drive_mini_10.json",
+    "official_manifest_sha256": "710cf3efa982172976e892ef702d33d550456039d5d4e82fdddbb56dc0fc2c6f",
+    "manifest_verification": "FrozenJ0BytesReverifiedOffline",
+    "source_repo": "rethinklab/Bench2Drive",
+    "expected_path": "DynamicObjectCrossing_Town02_Route13_Weather6.tar.gz",
+    "attempted_revision": "ce56cfbc26edf7796586e26fd44644f0ac2f6bcc",
+    "revision_status": "CandidateFromPriorBrowserMetadata_NotTargetMapping",
+    "current_repo_revision": null,
+    "file_revision": null,
+    "lfs_sha256": null,
+    "xet_hash": null,
+    "storage_endpoint": null,
+    "hosted_size": null,
+    "content_length": null,
+    "etag": null,
+    "official_object_to_manifest_binding": "Unresolved",
+    "anonymous_access": "NotEstablished",
+    "login_required": "NotDetermined",
+    "additional_terms": "NotDetermined",
+    "redirect_chain": [],
+    "payload_status": "PayloadNotVerified"
+  },
+  "api_locate_target": "NotReached: repository metadata request failed; no claim file absent",
+  "skipped_conditional_requests": [
+    "Pinned HF metadata API",
+    "Pinned HF README"
+  ],
+  "skip_reason": "HF repository metadata failed at transport stage; no redundant follow-up requests",
+  "separate_environment": {
+    "kind": "BrowserResearchService",
+    "document_requests": 3,
+    "browser_calls": 1,
+    "checked_date_utc": "2026-10-26",
+    "timestamp_precision": "DateOnly; exact browser backend request time not available",
+    "hf_card": "Readable cached official page: Apache-2.0 metadata and prose",
+    "hf_target_blob_metadata_page": "ToolInternalError_HTTPStatusUnknown",
+    "hf_discussions": "Cached official page: no posts shown",
+    "payload_read": false,
+    "capture": "reports/m8j1_sources/browser_batch_1.json",
+    "not_evidence_of_gpu_server_recovery": true
+  },
+  "official_alternative_routes": [
+    {
+      "route": "Hugging Face official CLI/direct resolver",
+      "source": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/tools/download_mini.sh",
+      "status": "SourceDocumented_NotExecutableVerified",
+      "reason": "Same official host; no CLI installation or file transfer; repository access unresolved"
+    },
+    {
+      "route": "Official README Base Baidu share",
+      "source": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/README.md",
+      "domain": "pan.baidu.com",
+      "share_path": "/s/1ZIL-MPhLbgdBYmHkHncn8Q",
+      "status": "SourceDocumented_TargetNotLocated_NotProbed",
+      "reason": "Base-level link does not prove target file identity, revision, current availability or license; no login/link probing or download"
+    },
+    {
+      "route": "Official mirror suggestion",
+      "status": "NotUsed",
+      "reason": "Recommendation alone not enough to establish a trusted official storage endpoint; no mirror used"
+    }
+  ],
+  "bounded_maintainer_statement_search": {
+    "url": "https://api.github.com/search/issues?q=repo%3AThinklab-SJTU%2FBench2Drive+license+OR+licensing+OR+permission+OR+Apache&per_page=30",
+    "result_count": 2,
+    "incomplete_results": false,
+    "hits": [
+      {
+        "number": 215,
+        "title": "Unable to start Carla on a cloud server",
+        "url": "https://github.com/Thinklab-SJTU/Bench2Drive/issues/215",
+        "disposition": "UnrelatedOSPermissionError_NotAssetLicense"
+      },
+      {
+        "number": 184,
+        "title": "Problem reading checkpoint. Found no data",
+        "url": "https://github.com/Thinklab-SJTU/Bench2Drive/issues/184",
+        "disposition": "UnrelatedOSPermissionError_NotAssetLicense"
+      }
+    ],
+    "asset_specific_resolution_found": false,
+    "scope": "Search results and issue body text; no new issue/comment posted"
+  }
+}
