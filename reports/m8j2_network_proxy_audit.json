@@ -1,0 +1,429 @@
+{
+  "stage": "M8-J2",
+  "base_commit": "5d6252a6f5a536d29cce5d2fb756134dec4057fe",
+  "checked_at_utc": "2026-10-26T07:46:14.490710+00:00",
+  "local_timezone": "Europe/Berlin",
+  "checked_at_local": "2026-10-26T08:46:14.490710+01:00",
+  "source_sha256": "9c37af7f2ec955fa663854312c282061aa93b9c15b1d67d356ac59279d66d5ec",
+  "kind": "ActualServerMetadataReview_OfflineSynthesis",
+  "payload_get_requests": 0,
+  "range_requests": 0,
+  "dataset_downloads": 0,
+  "extractions": 0,
+  "CARLA_connections": 0,
+  "server_launches": 0,
+  "GPU_tasks": 0,
+  "inference_calls": 0,
+  "training_steps": 0,
+  "maintainer_messages_sent": 0,
+  "main_merge": false,
+  "old_assets_modified": 0,
+  "access_status": "MetadataAccessResolved_WithExplicitProxyOnly",
+  "discovery": {
+    "proxy_environment": {},
+    "proxy_processes": [
+      {
+        "pid": 144506,
+        "name": "clash-verge"
+      },
+      {
+        "pid": 144919,
+        "name": "verge-mihomo"
+      }
+    ],
+    "listeners": [
+      {
+        "port": 7897,
+        "loopback": true,
+        "process": [
+          "verge-mihomo"
+        ]
+      },
+      {
+        "port": 35775,
+        "loopback": true,
+        "process": [
+          "clash-verge"
+        ]
+      }
+    ],
+    "proxy_config_selected_fields": [
+      {
+        "process": "verge-mihomo",
+        "mixed-port": "7897",
+        "mode": "rule",
+        "allow-lan": "false",
+        "tun_enabled": false
+      }
+    ],
+    "interface_types": [
+      {
+        "name": "lo",
+        "kind": null,
+        "type": "loopback"
+      },
+      {
+        "name": "tunl0",
+        "kind": "ipip",
+        "type": "ipip"
+      },
+      {
+        "name": "eth0",
+        "kind": "veth",
+        "type": "ether"
+      }
+    ],
+    "external_egress_probe": "NotRun_private_exit_not_collected",
+    "all_proxy_vars": {
+      "HTTP_PROXY": false,
+      "HTTPS_PROXY": false,
+      "ALL_PROXY": false,
+      "NO_PROXY": false,
+      "http_proxy": false,
+      "https_proxy": false,
+      "all_proxy": false,
+      "no_proxy": false
+    },
+    "git_proxy_config": [],
+    "runtime_versions": {
+      "requests": "2.32.5",
+      "huggingface_hub": "0.26.5",
+      "urllib3": "2.6.3"
+    },
+    "source_sha256": "76870039783b7e9e6375f7941d3042559fcf69a3f182605d78a5b3112b70ca1b",
+    "checked_at_utc": "2026-10-26T07:36:35.572630+00:00"
+  },
+  "dns": {
+    "time_utc": "2026-10-26T07:36:35.614199+00:00",
+    "returncode": 0,
+    "answers": [
+      [
+        2,
+        "31.13.75.5"
+      ],
+      [
+        10,
+        "2a03:2880:f131:83:face:b00c:0:25de"
+      ]
+    ],
+    "error": "",
+    "interpretation": "Local resolver only. HTTP CONNECT resolves the target at proxy; no inferred upstream DNS/exit identity."
+  },
+  "inherited_shell": {
+    "proxy_env": "All eight uppercase/lowercase proxy/NO_PROXY entries unset",
+    "tun_config": false,
+    "requests_result": "ConnectionError: network unreachable; no HTTP response",
+    "git_proxy_config_entries": 0,
+    "git_default_network_probe": "NotRun",
+    "hub_default_network_probe": "NotRun",
+    "conclusion": "Proxy process active does not mean all shell programs inherit it"
+  },
+  "explicit_process_scope": {
+    "proxy": "http://127.0.0.1:7897",
+    "type": "HTTP CONNECT via discovered mixed port",
+    "requests": "Session trust_env=False with explicit http/https proxies; successful loopback peer andTLSv1.3",
+    "huggingface_hub": "0.26.5 configure_http_backend with same audited session; pinned API200 and targetHEAD302",
+    "git": "Per-process HTTP(S)_PROXY and NO_PROXY empty; trace confirms loopback7897, CONNECT, certificate verification and200; ls-remote only",
+    "git_no_clone": true,
+    "global_shell_or_git_config_modified": false,
+    "same_public_exit": "NotMeasured; rule-mode proxy may route each host differently"
+  },
+  "requests": [
+    {
+      "index": 0,
+      "started_at_utc": "2026-10-26T07:36:35.709561+00:00",
+      "client": "requests",
+      "mode": "inherited",
+      "method": "GET",
+      "url": "https://huggingface.co/api/datasets/rethinklab/Bench2Drive?blobs=true",
+      "proxy_effective": false,
+      "proxy_endpoint_kind": "none",
+      "tls_verify": true,
+      "range_request": false,
+      "retries": 0,
+      "body_bytes": 0,
+      "source_sha256": "76870039783b7e9e6375f7941d3042559fcf69a3f182605d78a5b3112b70ca1b",
+      "category": "ConnectionError",
+      "error": "HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /api/datasets/rethinklab/Bench2Drive?blobs=true (Caused by NewConnectionError(\"HTTPSConnection(host='huggingface.co', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable\"))",
+      "http_status": null,
+      "finished_at_utc": "2026-10-26T07:36:43.729125+00:00"
+    },
+    {
+      "index": 1,
+      "started_at_utc": "2026-10-26T07:36:43.729858+00:00",
+      "client": "requests",
+      "mode": "explicit_http_proxy",
+      "method": "GET",
+      "url": "https://huggingface.co/api/datasets/rethinklab/Bench2Drive?blobs=true",
+      "proxy_effective": true,
+      "proxy_endpoint_kind": "configured_loopback",
+      "tls_verify": true,
+      "range_request": false,
+      "retries": 0,
+      "body_bytes": 260119,
+      "source_sha256": "76870039783b7e9e6375f7941d3042559fcf69a3f182605d78a5b3112b70ca1b",
+      "http_status": 200,
+      "category": "Success",
+      "connected_to_loopback": true,
+      "connected_to_configured_port": true,
+      "tls_version": "TLSv1.3",
+      "peer_certificate_sha256": "0eca454b46a3617cd2e8c234dcb9e9e215c71c3e161424cae505c876250c38f1",
+      "tls_completed": true,
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"3f817-XuiCtWXLSR5lDwSzaPSVuB1FVwE\""
+      },
+      "body_sha256": "7397d3069b36fdbc159a35811e25c2712d1dbf23a47b496822c46dc5e9e17925",
+      "body_path": "reports/m8j2_sources/http_01.body",
+      "finished_at_utc": "2026-10-26T07:36:44.653473+00:00"
+    },
+    {
+      "index": 2,
+      "started_at_utc": "2026-10-26T07:36:44.788651+00:00",
+      "client": "huggingface_hub",
+      "mode": "explicit_http_proxy",
+      "method": "GET",
+      "url": "https://huggingface.co/api/datasets/rethinklab/Bench2Drive/revision/ce56cfbc26edf7796586e26fd44644f0ac2f6bcc?blobs=True",
+      "proxy_effective": true,
+      "proxy_endpoint_kind": "configured_loopback",
+      "tls_verify": true,
+      "range_request": false,
+      "retries": 0,
+      "body_bytes": 260119,
+      "source_sha256": "76870039783b7e9e6375f7941d3042559fcf69a3f182605d78a5b3112b70ca1b",
+      "http_status": 200,
+      "category": "Success",
+      "connected_to_loopback": true,
+      "connected_to_configured_port": true,
+      "tls_version": "TLSv1.3",
+      "peer_certificate_sha256": "0eca454b46a3617cd2e8c234dcb9e9e215c71c3e161424cae505c876250c38f1",
+      "tls_completed": true,
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"3f817-XuiCtWXLSR5lDwSzaPSVuB1FVwE\""
+      },
+      "body_sha256": "7397d3069b36fdbc159a35811e25c2712d1dbf23a47b496822c46dc5e9e17925",
+      "body_path": "reports/m8j2_sources/http_02.body",
+      "finished_at_utc": "2026-10-26T07:36:45.942487+00:00"
+    },
+    {
+      "index": 3,
+      "started_at_utc": "2026-10-26T07:36:45.954685+00:00",
+      "client": "huggingface_hub",
+      "mode": "explicit_http_proxy",
+      "method": "HEAD",
+      "url": "https://huggingface.co/datasets/rethinklab/Bench2Drive/resolve/ce56cfbc26edf7796586e26fd44644f0ac2f6bcc/DynamicObjectCrossing_Town02_Route13_Weather6.tar.gz",
+      "proxy_effective": true,
+      "proxy_endpoint_kind": "configured_loopback",
+      "tls_verify": true,
+      "range_request": false,
+      "retries": 0,
+      "body_bytes": 0,
+      "source_sha256": "76870039783b7e9e6375f7941d3042559fcf69a3f182605d78a5b3112b70ca1b",
+      "http_status": 302,
+      "category": "Redirect",
+      "tls_completed": true,
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "content-length": "1303",
+        "location": "https://us.aws.cdn.hf.co/xet-bridge-us/663256634458bc18eb31f1e0/0415f4b9744680509bd5020372502a034b5992923fb0b704bd2daca072446f70?REDACTED",
+        "x-repo-commit": "ce56cfbc26edf7796586e26fd44644f0ac2f6bcc",
+        "x-linked-size": "280176944",
+        "x-linked-etag": "\"b040f5993726dfb3a1dc1aaf5e2e4f93404a0124272d6f47f2469fca53ca25f2\"",
+        "x-xet-hash": "0415f4b9744680509bd5020372502a034b5992923fb0b704bd2daca072446f70"
+      },
+      "finished_at_utc": "2026-10-26T07:36:46.223115+00:00"
+    },
+    {
+      "index": 4,
+      "started_at_utc": "2026-10-26T07:36:46.965409+00:00",
+      "client": "requests",
+      "mode": "explicit_http_proxy",
+      "method": "GET",
+      "url": "https://api.github.com/repos/Thinklab-SJTU/Bench2Drive/contents/LICENSE?ref=7ec25d1c9f7522d923ce5f3420986cef1cb2d956",
+      "proxy_effective": true,
+      "proxy_endpoint_kind": "configured_loopback",
+      "tls_verify": true,
+      "range_request": false,
+      "retries": 0,
+      "body_bytes": 280,
+      "source_sha256": "76870039783b7e9e6375f7941d3042559fcf69a3f182605d78a5b3112b70ca1b",
+      "http_status": 403,
+      "category": "HTTPError",
+      "connected_to_loopback": true,
+      "connected_to_configured_port": true,
+      "tls_version": "TLSv1.3",
+      "peer_certificate_sha256": "06e6a4a004329905d4a4e7c0d2c6ec7a632c56443f256424a43cc786951b3149",
+      "tls_completed": true,
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "280"
+      },
+      "body_sha256": "ee61acde3496a24e82d5753219f015959abe3ac0162d7ede683bd08b7833dc43",
+      "body_path": "reports/m8j2_sources/http_04.body",
+      "finished_at_utc": "2026-10-26T07:36:48.064848+00:00",
+      "raw_response_sha256": "4f2d3dec7ce53891c7a3674a8138af38adadb9f9ca7cc0297af46b2d5f2e2dac",
+      "saved_body_bytes": 286,
+      "body_sanitization": "GitHub rate-limit message contained egress IP; redacted before release; raw bytes not retained"
+    },
+    {
+      "index": 5,
+      "started_at_utc": "2026-10-26T07:36:48.065422+00:00",
+      "client": "requests",
+      "mode": "explicit_http_proxy",
+      "method": "GET",
+      "url": "https://api.github.com/repos/Thinklab-SJTU/Bench2Drive/contents/README.md?ref=7ec25d1c9f7522d923ce5f3420986cef1cb2d956",
+      "proxy_effective": true,
+      "proxy_endpoint_kind": "configured_loopback",
+      "tls_verify": true,
+      "range_request": false,
+      "retries": 0,
+      "body_bytes": 280,
+      "source_sha256": "76870039783b7e9e6375f7941d3042559fcf69a3f182605d78a5b3112b70ca1b",
+      "http_status": 403,
+      "category": "HTTPError",
+      "connected_to_loopback": true,
+      "connected_to_configured_port": true,
+      "tls_version": "TLSv1.3",
+      "peer_certificate_sha256": "06e6a4a004329905d4a4e7c0d2c6ec7a632c56443f256424a43cc786951b3149",
+      "tls_completed": true,
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "280"
+      },
+      "body_sha256": "ee61acde3496a24e82d5753219f015959abe3ac0162d7ede683bd08b7833dc43",
+      "body_path": "reports/m8j2_sources/http_05.body",
+      "finished_at_utc": "2026-10-26T07:36:48.297531+00:00",
+      "raw_response_sha256": "4f2d3dec7ce53891c7a3674a8138af38adadb9f9ca7cc0297af46b2d5f2e2dac",
+      "saved_body_bytes": 286,
+      "body_sanitization": "GitHub rate-limit message contained egress IP; redacted before release; raw bytes not retained"
+    },
+    {
+      "index": 6,
+      "started_at_utc": "2026-10-26T07:39:57.755329+00:00",
+      "client": "requests",
+      "mode": "explicit_http_proxy",
+      "method": "GET",
+      "url": "https://huggingface.co/datasets/rethinklab/Bench2Drive/raw/ce56cfbc26edf7796586e26fd44644f0ac2f6bcc/README.md",
+      "proxy_effective": true,
+      "proxy_endpoint_kind": "configured_loopback",
+      "tls_verify": true,
+      "range_request": false,
+      "retries": 0,
+      "body_bytes": 2096,
+      "source_sha256": "01f0c483eff575fea41a7c4bdd7946716277a1ff8ecef91a5501d98607e37252",
+      "http_status": 200,
+      "category": "Success",
+      "connected_to_loopback": true,
+      "connected_to_configured_port": true,
+      "tls_version": "TLSv1.3",
+      "peer_certificate_sha256": "0eca454b46a3617cd2e8c234dcb9e9e215c71c3e161424cae505c876250c38f1",
+      "tls_completed": true,
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "etag": "W/\"6c9687e61a8fca867391daf077771825f71c30e0\"",
+        "x-repo-commit": "ce56cfbc26edf7796586e26fd44644f0ac2f6bcc"
+      },
+      "saved_body_bytes": 2096,
+      "raw_response_sha256": "50b6d7dc1d8efa76b813b0b32b2cedccbf25461b363ce3b3312b019787de412f",
+      "body_sha256": "50b6d7dc1d8efa76b813b0b32b2cedccbf25461b363ce3b3312b019787de412f",
+      "body_path": "reports/m8j2_sources/http_06.body",
+      "finished_at_utc": "2026-10-26T07:39:58.689730+00:00"
+    },
+    {
+      "index": 7,
+      "started_at_utc": "2026-10-26T07:39:58.690428+00:00",
+      "client": "requests",
+      "mode": "explicit_http_proxy",
+      "method": "HEAD",
+      "url": "https://huggingface.co/datasets/rethinklab/Bench2Drive/resolve/ce56cfbc26edf7796586e26fd44644f0ac2f6bcc/DynamicObjectCrossing_Town02_Route13_Weather6.tar.gz",
+      "proxy_effective": true,
+      "proxy_endpoint_kind": "configured_loopback",
+      "tls_verify": true,
+      "range_request": false,
+      "retries": 0,
+      "body_bytes": 0,
+      "source_sha256": "01f0c483eff575fea41a7c4bdd7946716277a1ff8ecef91a5501d98607e37252",
+      "http_status": 302,
+      "category": "Redirect",
+      "tls_completed": true,
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "content-length": "1299",
+        "location": "https://us.aws.cdn.hf.co/xet-bridge-us/663256634458bc18eb31f1e0/0415f4b9744680509bd5020372502a034b5992923fb0b704bd2daca072446f70?REDACTED",
+        "x-repo-commit": "ce56cfbc26edf7796586e26fd44644f0ac2f6bcc",
+        "x-linked-size": "280176944",
+        "x-linked-etag": "\"b040f5993726dfb3a1dc1aaf5e2e4f93404a0124272d6f47f2469fca53ca25f2\"",
+        "x-xet-hash": "0415f4b9744680509bd5020372502a034b5992923fb0b704bd2daca072446f70"
+      },
+      "finished_at_utc": "2026-10-26T07:39:58.931411+00:00"
+    },
+    {
+      "index": 8,
+      "started_at_utc": "2026-10-26T07:39:58.932649+00:00",
+      "client": "requests",
+      "mode": "explicit_http_proxy",
+      "method": "HEAD",
+      "url": "https://us.aws.cdn.hf.co/xet-bridge-us/663256634458bc18eb31f1e0/0415f4b9744680509bd5020372502a034b5992923fb0b704bd2daca072446f70?REDACTED",
+      "proxy_effective": true,
+      "proxy_endpoint_kind": "configured_loopback",
+      "tls_verify": true,
+      "range_request": false,
+      "retries": 0,
+      "body_bytes": 0,
+      "source_sha256": "01f0c483eff575fea41a7c4bdd7946716277a1ff8ecef91a5501d98607e37252",
+      "http_status": 200,
+      "category": "Success",
+      "connected_to_loopback": true,
+      "connected_to_configured_port": true,
+      "tls_version": "TLSv1.3",
+      "peer_certificate_sha256": "6ad36c8de8405403687b9bf994de491675acec7bdb9ce9cefa9cb40fa37c5cf9",
+      "tls_completed": true,
+      "headers": {
+        "content-type": "application/gzip",
+        "etag": "\"0415f4b9744680509bd5020372502a034b5992923fb0b704bd2daca072446f70\"",
+        "content-length": "280176944"
+      },
+      "finished_at_utc": "2026-10-26T07:40:00.326894+00:00"
+    }
+  ],
+  "python_http_transactions": 9,
+  "python_metadata_wire_body_bytes": 522894,
+  "git_proxy": {
+    "started_at_utc": "2026-10-26T07:36:46.224402+00:00",
+    "finished_at_utc": "2026-10-26T07:36:46.964123+00:00",
+    "returncode": 0,
+    "remote_head": "ce56cfbc26edf7796586e26fd44644f0ac2f6bcc\tHEAD",
+    "proxy_connected": true,
+    "connect_tunnel": true,
+    "certificate_verified": true,
+    "http_status_lines": [
+      "HTTP/1.1 200 Connection established",
+      "HTTP/2 200"
+    ],
+    "trace_sha256": "6646613e075f4643d7284a8239b4187cbfebf861d1a2912463d84315aa170aac",
+    "raw_trace_persisted": false,
+    "repository_config_unchanged": true,
+    "clone_or_lfs": false,
+    "http_methods_observed": [
+      "GET /datasets/rethinklab/Bench2Drive/info/refs?service=git-upload-pack HTTP/2"
+    ]
+  },
+  "git_http_transactions_observed": 1,
+  "total_application_http_transactions": 10,
+  "target_or_storage_head_count": 3,
+  "github_result": "HTTP403 anonymous API rate limit, not TLS/authentication failure or data license refusal; no retry/change of identity to bypass",
+  "failure_records": {
+    "initial_local_assertion": "Preserved hf_pipeline_failure.json: URL canonicalization mismatched exact signed redirect whitelist before storage send",
+    "completion": "One bounded completion of unfinished checks; same target HEAD reissued once to obtain ephemeral URL, then one storage HEAD; automatic retries0",
+    "no_remaining_network_actions": true
+  },
+  "credential_redaction": {
+    "proxy_credentials_logged": false,
+    "signed_storage_query": "REDACTED",
+    "git_full_trace_not_retained": true,
+    "github_error_body": "Egress IP redacted; original response SHA retained; no raw body retained"
+  },
+  "historical_causality": "Current paired default-vs-explicit result supports missing effective proxy configuration as present access difference. It does not retroactively prove every M8-J0/J1 failure had only that cause.",
+  "dependencies": "reports/m8j2_environment.json; four small packages installed only in isolated metadata venv, official PyPI, distinct from target dataset payload"
+}

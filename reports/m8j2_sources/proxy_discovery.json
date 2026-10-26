@@ -1,0 +1,74 @@
+{
+  "proxy_environment": {},
+  "proxy_processes": [
+    {
+      "pid": 144506,
+      "name": "clash-verge"
+    },
+    {
+      "pid": 144919,
+      "name": "verge-mihomo"
+    }
+  ],
+  "listeners": [
+    {
+      "port": 7897,
+      "loopback": true,
+      "process": [
+        "verge-mihomo"
+      ]
+    },
+    {
+      "port": 35775,
+      "loopback": true,
+      "process": [
+        "clash-verge"
+      ]
+    }
+  ],
+  "proxy_config_selected_fields": [
+    {
+      "process": "verge-mihomo",
+      "mixed-port": "7897",
+      "mode": "rule",
+      "allow-lan": "false",
+      "tun_enabled": false
+    }
+  ],
+  "interface_types": [
+    {
+      "name": "lo",
+      "kind": null,
+      "type": "loopback"
+    },
+    {
+      "name": "tunl0",
+      "kind": "ipip",
+      "type": "ipip"
+    },
+    {
+      "name": "eth0",
+      "kind": "veth",
+      "type": "ether"
+    }
+  ],
+  "external_egress_probe": "NotRun_private_exit_not_collected",
+  "all_proxy_vars": {
+    "HTTP_PROXY": false,
+    "HTTPS_PROXY": false,
+    "ALL_PROXY": false,
+    "NO_PROXY": false,
+    "http_proxy": false,
+    "https_proxy": false,
+    "all_proxy": false,
+    "no_proxy": false
+  },
+  "git_proxy_config": [],
+  "runtime_versions": {
+    "requests": "2.32.5",
+    "huggingface_hub": "0.26.5",
+    "urllib3": "2.6.3"
+  },
+  "source_sha256": "76870039783b7e9e6375f7941d3042559fcf69a3f182605d78a5b3112b70ca1b",
+  "checked_at_utc": "2026-10-26T07:36:35.572630+00:00"
+}
