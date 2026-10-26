@@ -1,0 +1,90 @@
+00000 {'object_Invalid': 1, 'projection_Invalid': 6, 'object_Unknown': 11}
+00040 {'object_Invalid': 23, 'projection_Invalid': 698, 'object_Unknown': 474, 'projection_Valid': 112, 'eligible_view_Unknown': 28, 'object_Valid': 84, 'eligible_view_Valid': 84, 'positive_candidates': 83, 'frames_with_positive_candidates': 39}
+00080 {'object_Invalid': 23, 'projection_Invalid': 1907, 'object_Unknown': 1044, 'projection_Valid': 373, 'eligible_view_Unknown': 120, 'object_Valid': 242, 'eligible_view_Valid': 253, 'positive_candidates': 241, 'frames_with_positive_candidates': 79, 'truncated_views': 28}
+00120 {'object_Invalid': 23, 'projection_Invalid': 3467, 'object_Unknown': 1587, 'projection_Valid': 703, 'eligible_view_Unknown': 227, 'object_Valid': 455, 'eligible_view_Valid': 476, 'positive_candidates': 454, 'frames_with_positive_candidates': 119, 'truncated_views': 82}
+00160 {'object_Invalid': 23, 'projection_Invalid': 4823, 'object_Unknown': 2167, 'projection_Valid': 985, 'eligible_view_Unknown': 354, 'object_Valid': 603, 'eligible_view_Valid': 631, 'positive_candidates': 602, 'frames_with_positive_candidates': 159, 'truncated_views': 98}
+00200 {'object_Invalid': 23, 'projection_Invalid': 5979, 'object_Unknown': 2785, 'projection_Valid': 1239, 'eligible_view_Unknown': 483, 'object_Valid': 716, 'eligible_view_Valid': 756, 'positive_candidates': 715, 'frames_with_positive_candidates': 199, 'truncated_views': 127}
+{
+  "status": "SidecarContractGo_QualityPartial",
+  "frames": 214,
+  "stats": {
+    "object_Invalid": 23,
+    "projection_Invalid": 6334,
+    "object_Unknown": 2967,
+    "projection_Valid": 1322,
+    "eligible_view_Unknown": 525,
+    "object_Valid": 751,
+    "eligible_view_Valid": 797,
+    "positive_candidates": 750,
+    "frames_with_positive_candidates": 212,
+    "truncated_views": 147
+  },
+  "object_class_status": {
+    "pedestrian": {
+      "Invalid": 23,
+      "Unknown": 30,
+      "Valid": 71
+    },
+    "traffic_light": {
+      "Unknown": 933
+    },
+    "traffic_sign": {
+      "Unknown": 1532
+    },
+    "car": {
+      "Unknown": 472,
+      "Valid": 680
+    }
+  },
+  "actor_view_status": {
+    "Invalid": 6334,
+    "Unknown": 525,
+    "Valid": 797
+  },
+  "distance_status": {
+    "0-10": {
+      "Invalid": 23,
+      "Valid": 96
+    },
+    "40+": {
+      "Unknown": 350,
+      "Valid": 262
+    },
+    "20-40": {
+      "Unknown": 152,
+      "Valid": 210
+    },
+    "10-20": {
+      "Valid": 183
+    }
+  },
+  "anomalies": 23,
+  "review_frames": 53,
+  "uniform_review_frames": 24,
+  "render_token_cross_actor_conflicts": {
+    "14:30564": [
+      "396",
+      "398",
+      "400"
+    ]
+  },
+  "runtime_s": 80.31034074537456,
+  "policy": {
+    "min_region_pixels": 12,
+    "min_region_containment": 0.8,
+    "min_bbox_iou": 0.25,
+    "min_semantic_agreement": 0.9,
+    "min_score_margin": 0.15,
+    "occlusion_proxy_fraction": 0.5,
+    "near_plane_m": 0.1,
+    "below_ego_diagnostic_m": -20,
+    "rule": "Projection plus semantic instance region, mutual uniqueness, no numeric actor-ID equality, conservative Unknown on ambiguity",
+    "quality_scope": "Evidence-supported positive association, not certified pixel ground truth; no background negatives"
+  },
+  "source_sha256": "061ce51a9243703df8cae41b5e70646118ffc791f96902c4f4955c032e07bcd5",
+  "semantics": "Valid=evidence-supported candidate, Invalid=explicit rejection, Unknown=unresolved; no negative labels",
+  "source_frame": null,
+  "timestamp_s": null,
+  "training": false,
+  "human_certified": false
+}

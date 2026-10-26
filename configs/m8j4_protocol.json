@@ -1,0 +1,53 @@
+{
+  "stage": "M8-J4",
+  "base_commit": "86984a6843a0ebbc49f1e90a97afac6c509515fd",
+  "private_root": "/root/gpufree-data/hs-drive-private/m8j4-single-frame",
+  "source_root": "/root/gpufree-data/hs-drive-private/m8j3-bench2drive-single-clip",
+  "association": {
+    "min_region_pixels": 12,
+    "min_region_containment": 0.8,
+    "min_bbox_iou": 0.25,
+    "min_semantic_agreement": 0.9,
+    "min_score_margin": 0.15,
+    "occlusion_proxy_fraction": 0.5,
+    "near_plane_m": 0.1,
+    "below_ego_diagnostic_m": -20,
+    "rule": "Projection plus semantic instance region, mutual uniqueness, no numeric actor-ID equality, conservative Unknown on ambiguity",
+    "quality_scope": "Evidence-supported positive association, not certified pixel ground truth; no background negatives"
+  },
+  "review": {
+    "uniform_frames": 24,
+    "add_all_below_ground_frames": true,
+    "add_distance_and_visibility_representatives": true,
+    "human_signoff_initial": "Pending",
+    "assistant_visual_review_not_human_certification": true
+  },
+  "model": {
+    "name": "Existing frozen official PETR-R50-DCNv2-C5 research candidate",
+    "runtime": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime",
+    "petr_commit": "f7525f93467a33707ef401c587a52d5e7b34de74",
+    "weights_sha256": "cf33dccb1d549c425a89cf346d6f05401c49f6cccbd5a579cb7d8937b5a6d591",
+    "original_checkpoint_sha256": "16d8a4875c36e7d1cba75b357901ff031b18d9d9374f12780b9b72cc621cefad",
+    "ordinals": ["00000", "00107", "00213"],
+    "camera_order": ["front","front_left","front_right","rear_left","rear_right","rear"],
+    "preprocessing": "Official test transform at actual H900/W1600; final512x1408; resize0.88 crop_y280; original normalize; no flips",
+    "precision": "FP32_TF32Disabled",
+    "batch_size": 1,
+    "warmup_calls": 0,
+    "timed_calls": 3,
+    "no_accuracy_gate_on_three_correlated_frames": true,
+    "training_steps": 0,
+    "new_dependencies": false,
+    "default_changes": false
+  },
+  "limits": {
+    "CARLA_launches": 0,
+    "additional_data_downloads": 0,
+    "GT_in_inference": false,
+    "depth_supervision": false,
+    "occupancy_free": false,
+    "fake_time": false,
+    "expert_assessment_use": false,
+    "images_or_labels_in_git": false
+  }
+}

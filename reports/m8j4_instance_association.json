@@ -1,0 +1,83 @@
+{
+  "stage": "M8-J4",
+  "checked_at_utc": "2026-10-26T09:32:50.466358+00:00",
+  "base_commit": "86984a6843a0ebbc49f1e90a97afac6c509515fd",
+  "branch": "feat/m8j4-single-frame-gt-forward",
+  "evidence_type": "OfficialSourcePlusActualPayload_OfflineCPU",
+  "encoding": "Raw BGRA: R semantic; G low byte and B high byte of UE GetUniqueID; truncated render token, not CARLA registry Actor ID",
+  "source_evidence": [
+    {
+      "url": "https://raw.githubusercontent.com/carla-simulator/carla/d7b45c1e159e6d13296f7a3a4e8b13e6c2d62c18/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Game/Tagger.cpp",
+      "checked_at_utc": "2026-10-26T08:59:48.289098+00:00",
+      "status": 200,
+      "bytes": 11771,
+      "sha256": "fb71f676e987506e41edcbc6309323d1e2dbb5408fb8ee20addeb0b5708b372b",
+      "purpose": "Instance encoding source only; no data download"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carla-simulator/carla/d7b45c1e159e6d13296f7a3a4e8b13e6c2d62c18/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Actor/ActorRegistry.cpp",
+      "checked_at_utc": "2026-10-26T08:59:48.574063+00:00",
+      "status": 200,
+      "bytes": 7115,
+      "sha256": "d4db81bbb635cf37d3a018c5b2cc8f85df21de15254b86c5d7d89014945bd288",
+      "purpose": "Instance encoding source only; no data download"
+    }
+  ],
+  "captured_executable_identity": "Unavailable_OfficialVersionSourceIsNotExactCaptureBinaryProof",
+  "association_method": {
+    "min_region_pixels": 12,
+    "min_region_containment": 0.8,
+    "min_bbox_iou": 0.25,
+    "min_semantic_agreement": 0.9,
+    "min_score_margin": 0.15,
+    "occlusion_proxy_fraction": 0.5,
+    "near_plane_m": 0.1,
+    "below_ego_diagnostic_m": -20,
+    "rule": "Projection plus semantic instance region, mutual uniqueness, no numeric actor-ID equality, conservative Unknown on ambiguity",
+    "quality_scope": "Evidence-supported positive association, not certified pixel ground truth; no background negatives"
+  },
+  "thresholds_unchanged": true,
+  "supported_actor_frame_denominator": 1276,
+  "status_counts": {
+    "Valid": 712,
+    "Unknown": 541,
+    "Invalid": 23
+  },
+  "status_fractions": {
+    "Valid": 0.5579937304075235,
+    "Unknown": 0.42398119122257055,
+    "Invalid": 0.018025078369905956
+  },
+  "eligible_projected_actor_view_denominator": 1322,
+  "eligible_view_status_counts": {
+    "Valid": 758,
+    "Unknown": 564,
+    "Invalid": 0
+  },
+  "eligible_view_valid_fraction": 0.573373676248109,
+  "eligible_view_unknown_fraction": 0.4266263237518911,
+  "all_actor_views": {
+    "Valid": 758,
+    "Unknown": 564,
+    "Invalid": 6334,
+    "denominator": 7656
+  },
+  "ambiguous_render_token_groups": 1,
+  "withdrawn_view_associations": 39,
+  "active_ambiguous_associations": 0,
+  "quarantine_is_not_root_cause_resolution": true,
+  "actual_association_precision": "NotMeasured_NoIndependentPixelIdentityTruth",
+  "failed_identity_proof": "No proof of absence for unmatched projection; use Unknown, not false negative/background",
+  "camera_support": {
+    "CAM_BACK": 384,
+    "CAM_FRONT": 281,
+    "CAM_FRONT_LEFT": 65,
+    "CAM_BACK_LEFT": 28
+  },
+  "no_positive_support_cameras": [
+    "CAM_FRONT_RIGHT",
+    "CAM_BACK_RIGHT"
+  ],
+  "confidence_calibrated": false,
+  "human_certification": "Pending"
+}
