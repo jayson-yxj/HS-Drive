@@ -1,0 +1,50 @@
+{
+  "stage": "M8-J5C",
+  "checked_at_utc": "2026-10-26T16:01:20.343414+00:00",
+  "base_commit": "41430113f3897fc68260e4ce986eafbf9e2e0154",
+  "branch": "feat/m8j5c-numerical-supervision-closure",
+  "historical": {
+    "A": "Partial",
+    "B": "NoGo",
+    "C": "NotRun"
+  },
+  "numeric": {
+    "fixed_decoder_loss_output_gradients": "Passed_FP32AndActualAMPFP32HeadOutput",
+    "full_model_FP32": "Passed_BoundedSyntheticEvalTrain",
+    "full_model_AMP": "Failed_NoToleranceRelaxation",
+    "torch_strict_determinism": "Failed_OriginalPETRIndexAssignment",
+    "identified_minimal_range": "OfficialDCNv2_InputGradientHalfAtomicAccumulation"
+  },
+  "supervision": {
+    "decision": "B",
+    "selected_frames": 8,
+    "additional_frames": 0,
+    "task_positive_diagnostic_boxes": 17,
+    "task_negative_qualified_frames": 0,
+    "unexplained_region_observations_selected": 27,
+    "human_review": "Pending",
+    "normal_detection_training": "NoGo",
+    "role": "IgnoreRegressionOnly",
+    "verified_ignore_plan_can_coexist_with_gaps": true,
+    "actual_verified_ignore_plans": 0
+  },
+  "smoke": {
+    "status": "NotRun_NoGo",
+    "configuration": "configs/m8j5c_smoke_proposal.json",
+    "preflight_exit_code": 2,
+    "real_optimizer_steps": 0
+  },
+  "tests": {
+    "scope_and_reused_cpu_passed": 30,
+    "offline_browser_assertions_passed": 17,
+    "frozen_decoder_comparison_groups_passed": 6,
+    "whole_model_FP32_comparison_groups_passed": 6,
+    "whole_model_AMP_comparison_groups_failed": 6
+  },
+  "no_CARLA": true,
+  "no_real_model_forward": true,
+  "no_download": true,
+  "no_history_modification": true,
+  "no_private_assets_committed": true,
+  "no_main_merge": true
+}

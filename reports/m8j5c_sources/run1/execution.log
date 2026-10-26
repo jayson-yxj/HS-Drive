@@ -1,0 +1,32 @@
+/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.8.20-linux-x86_64-gnu/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/root/.local/share/uv/python/cpython-3.8.20-linux-x86_64-gnu/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8j5c_numeric.py", line 231, in <module>
+    if __name__=='__main__':main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8j5c_numeric.py", line 205, in main
+    frozen_decoder=frozen_outputs(model,s,base,rstate),full_model={},isolated_operator={})
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8j5c_numeric.py", line 94, in frozen_outputs
+    loss=calculate(model.pts_bbox_head,p,s,method)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8j5c_numeric.py", line 79, in calculate
+    return official_loss(head,p,[s]) if method=='original' else ValidatedCoveragePETRLoss(head)(p,[s])[0]
+  File "tests/test_m8j5bv_loss.py", line 74, in official_loss
+    return head.loss(gt,[s.labels for s in specs],pred)
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/runner/fp16_utils.py", line 208, in new_func
+    return old_func(*args, **kwargs)
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/models/dense_heads/petr_head.py", line 682, in loss
+    losses_cls, losses_bbox = multi_apply(
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmdet/core/utils/misc.py", line 30, in multi_apply
+    return tuple(map(list, zip(*map_results)))
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/models/dense_heads/petr_head.py", line 588, in loss_single
+    cls_reg_targets = self.get_targets(cls_scores_list, bbox_preds_list,
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/models/dense_heads/petr_head.py", line 553, in get_targets
+    bbox_weights_list, pos_inds_list, neg_inds_list) = multi_apply(
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmdet/core/utils/misc.py", line 30, in multi_apply
+    return tuple(map(list, zip(*map_results)))
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/models/dense_heads/petr_head.py", line 503, in _get_target_single
+    bbox_weights[pos_inds] = 1.0
+RuntimeError: linearIndex.numel()*sliceSize*nElemBefore == expandedValue.numel() INTERNAL ASSERT FAILED at "../aten/src/ATen/native/cuda/Indexing.cu":389, please report a bug to PyTorch. number of flattened indices did not match number of elements in the value tensor: 10 vs 1

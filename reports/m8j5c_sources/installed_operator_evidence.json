@@ -1,0 +1,40 @@
+[
+  {
+    "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/ops/csrc/common/cuda/modulated_deform_conv_cuda_kernel.cuh",
+    "sha256": "f3bb4781a795a2c5aa1dbef90cd8befa3ef898b28030129cf408d414e4e3055d",
+    "relevant_lines": [
+      {
+        "line": 303,
+        "text": "          atomicAdd(grad_im + cur_bottom_grad_pos, weight * cur_top_grad);"
+      }
+    ]
+  },
+  {
+    "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/ops/modulated_deform_conv.py",
+    "sha256": "080b61a80878d2fb55c69c0df5967ae53083c15b12a5c12186373c7eb9ae6f7c",
+    "relevant_lines": [
+      {
+        "line": 132,
+        "text": "        input = input.type_as(offset)"
+      },
+      {
+        "line": 173,
+        "text": "        grad_input = torch.zeros_like(input)"
+      },
+      {
+        "line": 412,
+        "text": "            x = x.type_as(offset)"
+      }
+    ]
+  },
+  {
+    "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/models/dense_heads/petr_head.py",
+    "sha256": "18780ee24601a6d0068e341cfaa36081820f83b08fb3f4c47793c59ff0d0fde5",
+    "relevant_lines": [
+      {
+        "line": 503,
+        "text": "        bbox_weights[pos_inds] = 1.0"
+      }
+    ]
+  }
+]

@@ -1,0 +1,283 @@
+{
+  "checked_at_utc": "2026-10-26T16:07:01.595610+00:00",
+  "protocol_sha256": "0b5f79894d40afc2e6c4c0bb8747c48ca6bd7925b741cae5925cc15e2e1e80b5",
+  "selection_rule": {
+    "size": 8,
+    "hard_cap": 16,
+    "ordinals": [
+      "00017",
+      "00045",
+      "00076",
+      "00107",
+      "00124",
+      "00155",
+      "00196",
+      "00213"
+    ],
+    "method": "FixedTemporalSpreadAndExistingKnownGaps_BeforeCandidateScoring_NoReplacement",
+    "independence": "OneCorrelatedClip_NotGeneralizationSplit",
+    "all214": "ReuseFrozenSidecarAndAuditSummaries_NoFullPixelRescan",
+    "image_reads": "EightFramesSixCamerasOnly"
+  },
+  "task_definition": {
+    "name": "VisibleCarPedestrianSingleFrameDetection_DevelopmentOnly",
+    "classes": {
+      "car": 0,
+      "pedestrian": 8
+    },
+    "other_class_logits": "NoSupervision_ProposalOnly_NoHeadReplacement",
+    "center_range_hs_m": [
+      -40,
+      -40,
+      -3,
+      40,
+      40,
+      3
+    ],
+    "visibility": "AtLeastOneActualModelCropView_SourceBoxWithSemanticSupport_ExistingJ5BThresholds",
+    "exclude": [
+      "ego",
+      "unreliable_geometry",
+      "unsupported_class",
+      "outside_range",
+      "underground",
+      "unconfirmed_visibility",
+      "yaw_only_incompatible"
+    ],
+    "excluded_objects": "KeepSourceAndIgnoreEvidence_NeverDeleteThenDeclareBackground",
+    "unexplained_foreground": "Unknown_NoInvented3DBox_EvenIfTiny",
+    "negative_semantics": "NoUnmatchedInScopeVisibleTaskObject_AfterTaskAnnotationCoverageReview_NotOccupancyFree",
+    "coverage_requires": "AllSixViewsAndAllTaskObjectsReviewed_ExplicitUnexplainedAndExcludedRegionHandling",
+    "query_rules": "PositivesOverrideIgnore; OutsideTaskRangeOrNoCropProjectionOrUnknownOverlapIgnore; UnmatchedTaskClassNegativeOnlyAfterTaskCoverageQualification",
+    "physical_empty_volume_required": false,
+    "certification": "NoAutomaticPromotionFromMissingRecord_Or2DSemanticBackground",
+    "human_review": "Pending_NoSignoffInvented"
+  },
+  "candidates": [
+    {
+      "ordinal": "00017",
+      "statistics": {
+        "source_task_class_records": 3,
+        "positive_candidates": 1,
+        "class_car_positive": 1,
+        "excluded_OutsideModelRange": 2,
+        "excluded_YawOnlyRepresentationUnsupported": 1,
+        "excluded_OutsidePredeclaredVisibleDetectionRange": 2,
+        "class_pedestrian_positive": 0,
+        "excluded_UndergroundSourceRecord": 1,
+        "excluded_VisibleSemanticSupportUnconfirmedInCrop": 1
+      },
+      "unexplained_regions": 1,
+      "confirmed_gap_cases": 0,
+      "qualification": {
+        "qualified": false,
+        "reasons": [
+          "UnexplainedForegroundTaskMembershipOrIgnoreUnresolved",
+          "AllSixViewTaskCoverageReviewPending"
+        ],
+        "semantics": "ExhaustiveInScopeVisibleObjectAnnotations_NotPhysicalFree",
+        "ignore_plan_verified": false,
+        "negative_enabled": false
+      },
+      "six_camera_review": "Pending",
+      "normal_detection_training": "NotEligible",
+      "private_page": "/root/gpufree-data/hs-drive-private/m8j5c-numerical-supervision/candidates_reproduction/web/index.html#00017"
+    },
+    {
+      "ordinal": "00045",
+      "statistics": {
+        "source_task_class_records": 5,
+        "positive_candidates": 2,
+        "class_car_positive": 2,
+        "excluded_OutsideModelRange": 1,
+        "excluded_OutsidePredeclaredVisibleDetectionRange": 2,
+        "excluded_VisibleSemanticSupportUnconfirmedInCrop": 2,
+        "class_pedestrian_positive": 0
+      },
+      "unexplained_regions": 2,
+      "confirmed_gap_cases": 0,
+      "qualification": {
+        "qualified": false,
+        "reasons": [
+          "UnexplainedForegroundTaskMembershipOrIgnoreUnresolved",
+          "AllSixViewTaskCoverageReviewPending"
+        ],
+        "semantics": "ExhaustiveInScopeVisibleObjectAnnotations_NotPhysicalFree",
+        "ignore_plan_verified": false,
+        "negative_enabled": false
+      },
+      "six_camera_review": "Pending",
+      "normal_detection_training": "NotEligible",
+      "private_page": "/root/gpufree-data/hs-drive-private/m8j5c-numerical-supervision/candidates_reproduction/web/index.html#00045"
+    },
+    {
+      "ordinal": "00076",
+      "statistics": {
+        "source_task_class_records": 7,
+        "positive_candidates": 3,
+        "class_car_positive": 2,
+        "excluded_OutsidePredeclaredVisibleDetectionRange": 4,
+        "excluded_OutsideModelRange": 2,
+        "excluded_VisibleSemanticSupportUnconfirmedInCrop": 3,
+        "class_pedestrian_positive": 1
+      },
+      "unexplained_regions": 3,
+      "confirmed_gap_cases": 0,
+      "qualification": {
+        "qualified": false,
+        "reasons": [
+          "UnexplainedForegroundTaskMembershipOrIgnoreUnresolved",
+          "AllSixViewTaskCoverageReviewPending"
+        ],
+        "semantics": "ExhaustiveInScopeVisibleObjectAnnotations_NotPhysicalFree",
+        "ignore_plan_verified": false,
+        "negative_enabled": false
+      },
+      "six_camera_review": "Pending",
+      "normal_detection_training": "NotEligible",
+      "private_page": "/root/gpufree-data/hs-drive-private/m8j5c-numerical-supervision/candidates_reproduction/web/index.html#00076"
+    },
+    {
+      "ordinal": "00107",
+      "statistics": {
+        "source_task_class_records": 8,
+        "positive_candidates": 3,
+        "class_car_positive": 2,
+        "excluded_OutsidePredeclaredVisibleDetectionRange": 4,
+        "excluded_OutsideModelRange": 3,
+        "excluded_VisibleSemanticSupportUnconfirmedInCrop": 2,
+        "class_pedestrian_positive": 1
+      },
+      "unexplained_regions": 3,
+      "confirmed_gap_cases": 0,
+      "qualification": {
+        "qualified": false,
+        "reasons": [
+          "UnexplainedForegroundTaskMembershipOrIgnoreUnresolved",
+          "AllSixViewTaskCoverageReviewPending"
+        ],
+        "semantics": "ExhaustiveInScopeVisibleObjectAnnotations_NotPhysicalFree",
+        "ignore_plan_verified": false,
+        "negative_enabled": false
+      },
+      "six_camera_review": "Pending",
+      "normal_detection_training": "NotEligible",
+      "private_page": "/root/gpufree-data/hs-drive-private/m8j5c-numerical-supervision/candidates_reproduction/web/index.html#00107"
+    },
+    {
+      "ordinal": "00124",
+      "statistics": {
+        "source_task_class_records": 7,
+        "positive_candidates": 2,
+        "class_car_positive": 2,
+        "excluded_VisibleSemanticSupportUnconfirmedInCrop": 4,
+        "excluded_OutsideModelRange": 2,
+        "excluded_OutsidePredeclaredVisibleDetectionRange": 3
+      },
+      "unexplained_regions": 5,
+      "confirmed_gap_cases": 1,
+      "qualification": {
+        "qualified": false,
+        "reasons": [
+          "ConfirmedSourceBoxGapRequiresVerifiedIgnore",
+          "UnexplainedForegroundTaskMembershipOrIgnoreUnresolved",
+          "AllSixViewTaskCoverageReviewPending"
+        ],
+        "semantics": "ExhaustiveInScopeVisibleObjectAnnotations_NotPhysicalFree",
+        "ignore_plan_verified": false,
+        "negative_enabled": false
+      },
+      "six_camera_review": "Pending",
+      "normal_detection_training": "NotEligible",
+      "private_page": "/root/gpufree-data/hs-drive-private/m8j5c-numerical-supervision/candidates_reproduction/web/index.html#00124"
+    },
+    {
+      "ordinal": "00155",
+      "statistics": {
+        "source_task_class_records": 6,
+        "positive_candidates": 2,
+        "class_car_positive": 2,
+        "excluded_VisibleSemanticSupportUnconfirmedInCrop": 3,
+        "excluded_OutsidePredeclaredVisibleDetectionRange": 3,
+        "excluded_OutsideModelRange": 1
+      },
+      "unexplained_regions": 4,
+      "confirmed_gap_cases": 0,
+      "qualification": {
+        "qualified": false,
+        "reasons": [
+          "UnexplainedForegroundTaskMembershipOrIgnoreUnresolved",
+          "AllSixViewTaskCoverageReviewPending"
+        ],
+        "semantics": "ExhaustiveInScopeVisibleObjectAnnotations_NotPhysicalFree",
+        "ignore_plan_verified": false,
+        "negative_enabled": false
+      },
+      "six_camera_review": "Pending",
+      "normal_detection_training": "NotEligible",
+      "private_page": "/root/gpufree-data/hs-drive-private/m8j5c-numerical-supervision/candidates_reproduction/web/index.html#00155"
+    },
+    {
+      "ordinal": "00196",
+      "statistics": {
+        "source_task_class_records": 6,
+        "positive_candidates": 2,
+        "class_car_positive": 2,
+        "excluded_OutsideModelRange": 3,
+        "excluded_VisibleSemanticSupportUnconfirmedInCrop": 3,
+        "excluded_OutsidePredeclaredVisibleDetectionRange": 3
+      },
+      "unexplained_regions": 5,
+      "confirmed_gap_cases": 1,
+      "qualification": {
+        "qualified": false,
+        "reasons": [
+          "ConfirmedSourceBoxGapRequiresVerifiedIgnore",
+          "UnexplainedForegroundTaskMembershipOrIgnoreUnresolved",
+          "AllSixViewTaskCoverageReviewPending"
+        ],
+        "semantics": "ExhaustiveInScopeVisibleObjectAnnotations_NotPhysicalFree",
+        "ignore_plan_verified": false,
+        "negative_enabled": false
+      },
+      "six_camera_review": "Pending",
+      "normal_detection_training": "NotEligible",
+      "private_page": "/root/gpufree-data/hs-drive-private/m8j5c-numerical-supervision/candidates_reproduction/web/index.html#00196"
+    },
+    {
+      "ordinal": "00213",
+      "statistics": {
+        "source_task_class_records": 5,
+        "positive_candidates": 2,
+        "class_car_positive": 2,
+        "excluded_OutsideModelRange": 2,
+        "excluded_VisibleSemanticSupportUnconfirmedInCrop": 3,
+        "excluded_OutsidePredeclaredVisibleDetectionRange": 2
+      },
+      "unexplained_regions": 4,
+      "confirmed_gap_cases": 2,
+      "qualification": {
+        "qualified": false,
+        "reasons": [
+          "ConfirmedSourceBoxGapRequiresVerifiedIgnore",
+          "UnexplainedForegroundTaskMembershipOrIgnoreUnresolved",
+          "AllSixViewTaskCoverageReviewPending"
+        ],
+        "semantics": "ExhaustiveInScopeVisibleObjectAnnotations_NotPhysicalFree",
+        "ignore_plan_verified": false,
+        "negative_enabled": false
+      },
+      "six_camera_review": "Pending",
+      "normal_detection_training": "NotEligible",
+      "private_page": "/root/gpufree-data/hs-drive-private/m8j5c-numerical-supervision/candidates_reproduction/web/index.html#00213"
+    }
+  ],
+  "selected_frames": 8,
+  "extra_frames": 0,
+  "pixel_rescanned_frames": 8,
+  "automatic_signoffs": 0,
+  "decision": "B_CurrentSetNotEligible_KeepIgnoreRegression",
+  "negative_qualified_frames": 0,
+  "private_page": "/root/gpufree-data/hs-drive-private/m8j5c-numerical-supervision/candidates_reproduction/web/index.html",
+  "targeted_question_count": 27
+}
