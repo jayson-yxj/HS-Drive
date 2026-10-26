@@ -1,0 +1,123 @@
+{
+  "kind": "ActualAuthorizedReadOnlyStartup_Closeout",
+  "executed_commit": "2cc22439587976d87550bf411e22f625d30508d0",
+  "run_id": "b1d40dfe-3691-46e5-9377-96090a8d0cce",
+  "closeout_source": {
+    "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8i1a_runtime_closeout.py",
+    "bytes": 8634,
+    "sha256": "708309847a2112683d2f1b1905349ffa0efd49efb7b9187d2e3d89e312e4005c"
+  },
+  "actor_creations": 0,
+  "sensor_creations": 0,
+  "TM_instances": 0,
+  "owner_ticks": 0,
+  "model_forwards": 0,
+  "training_steps": 0,
+  "visual_control": false,
+  "new_Final": 0,
+  "status": "Passed_BeforeSingleAuthorizedAttempt",
+  "authorization": {
+    "approved": true,
+    "scope": "M8-I1a_OneReadOnlyStartup",
+    "max_launches": 1,
+    "user_approval_reference": "Current conversation: the user reply immediately following the assistant request to approve one M8-I1a read-only startup at commit 2cc2243; begins 批准了 and lists execution requirements 1–5. Message ID is not exposed to this agent.",
+    "user_message_id": null,
+    "user_message_text": "批准了\n\n执行要求：\n\n1. 启动前核对当前分支提交、冻结SHA、离线测试结果及端口状态。授权记录必须真实引用本次对话，不得编造批准消息ID。\n2. 启动后先持久化实际地图完整名称、World Episode、Frame/Timestamp、Client/Server版本、XODR SHA，以及实际进程参数和工作目录，再进行地图判断。\n3. 如果地图不符、身份读取失败或XODR不符，立即保留证据，以非零状态结束。不修改参数继续试。\n4. 如果地图身份连续检查通过，只输出 `StartupIdentityGo_NoTraffic`，随后关闭服务器。不能自动进入M8-I1的Traffic Manager Pilot。\n5. 结束后核查自有进程组、端口和日志，保存Runner退出码、Session状态、Supervisor状态及清理证据。清理不完整则保持NoGo。",
+    "record_created_utc": "2026-10-26T04:38:06.336366+00:00",
+    "protocol_sha256": "81a5c932cf488612c68ded08b47456490a2a4537c0ff13e8cbdab7fa79992418",
+    "execution_commit": "2cc22439587976d87550bf411e22f625d30508d0",
+    "execution_branch": "feat/m8i1a-startup-identity-diagnostic",
+    "authorization_does_not_cover_TM_or_retry": true
+  },
+  "authorization_file": {
+    "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-approved-execution-evidence/authorization.json",
+    "bytes": 1571,
+    "sha256": "6abee8f1a7ab7fbec4f9134eba616aea133d63b2556d1eda735642bc1bb39023"
+  },
+  "no_message_id_invented": true,
+  "recorded_user_message_is_current_conversation": true,
+  "prelaunch": {
+    "head": "2cc22439587976d87550bf411e22f625d30508d0",
+    "branch": "feat/m8i1a-startup-identity-diagnostic",
+    "worktree_clean_before_receipt": true,
+    "verification": {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-approved-execution-evidence/prelaunch_verification.json",
+      "bytes": 453,
+      "sha256": "f55c3d32b8dbe3cf4061318e4bdce3ce5c9a2e30ec30bcabd7052e823ab20ea5"
+    },
+    "approval": {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-approved-execution-evidence/authorization.json",
+      "bytes": 1571,
+      "sha256": "6abee8f1a7ab7fbec4f9134eba616aea133d63b2556d1eda735642bc1bb39023"
+    },
+    "frozen_manifest": {
+      "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/reports/m8i1a_prelaunch_freeze.json",
+      "bytes": 10550,
+      "sha256": "a4b55b7b21678008d93eca30eea8d5ee61d872c283da0943b641d278838065bc"
+    },
+    "offline_test_report": {
+      "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/reports/m8i1a_failure_injection_tests.json",
+      "bytes": 30867,
+      "sha256": "4a989da4d50edc09a9eeb87739ddeefbc8d512d1b0f3b7c44305b995e1ec5049"
+    },
+    "ports": {
+      "group_alive": {},
+      "listening_ports": {
+        "2100": false,
+        "2101": false,
+        "2102": false,
+        "8100": false
+      },
+      "ok": true
+    },
+    "actual_cwd": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0",
+    "runtime_root_preexisting": false,
+    "frozen_execution_source_unchanged": true,
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "tools.m8i1a_launch",
+      "--authorization",
+      "/root/gpufree-data/hs-drive-experiments/m8i1a-approved-execution-evidence/authorization.json"
+    ]
+  },
+  "sealed_input_checks": [
+    {
+      "manifest": {
+        "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/reports/m8i1_release_manifest.json",
+        "bytes": 9078,
+        "sha256": "72e78ecf9409a09cb01c3b2e0f0ae8db9faaf2adfeececdbd2ef412c8ec40508"
+      },
+      "verified_files": 46
+    },
+    {
+      "manifest": {
+        "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/reports/m8i1a_release_manifest.json",
+        "bytes": 22257,
+        "sha256": "60b784ebcf8735f8bcead217b78ef30f2e864a950474c51bdcb956a8a58236f7"
+      },
+      "verified_files": 87
+    },
+    {
+      "manifest": {
+        "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/reports/m8i1a_prelaunch_freeze.json",
+        "bytes": 10550,
+        "sha256": "a4b55b7b21678008d93eca30eea8d5ee61d872c283da0943b641d278838065bc"
+      },
+      "verified_files": 43
+    }
+  ],
+  "executed_source_sha_verified": {
+    "configs/m8i1a/protocol.json": true,
+    "tests/test_m8i1a_startup.py": true,
+    "tools/m8i1a_audit.py": true,
+    "tools/m8i1a_common.py": true,
+    "tools/m8i1a_identity.py": true,
+    "tools/m8i1a_launch.py": true,
+    "tools/m8i1a_run_session.py": true,
+    "tools/m8i1a_seal.py": true,
+    "tools/m8i1a_verify.py": true
+  },
+  "offline_test_count": 25,
+  "no_parameter_or_source_changes_during_attempt": true
+}

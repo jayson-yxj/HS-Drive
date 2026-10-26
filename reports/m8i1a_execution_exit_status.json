@@ -1,0 +1,99 @@
+{
+  "kind": "ActualAuthorizedReadOnlyStartup_Closeout",
+  "executed_commit": "2cc22439587976d87550bf411e22f625d30508d0",
+  "run_id": "b1d40dfe-3691-46e5-9377-96090a8d0cce",
+  "closeout_source": {
+    "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8i1a_runtime_closeout.py",
+    "bytes": 8634,
+    "sha256": "708309847a2112683d2f1b1905349ffa0efd49efb7b9187d2e3d89e312e4005c"
+  },
+  "actor_creations": 0,
+  "sensor_creations": 0,
+  "TM_instances": 0,
+  "owner_ticks": 0,
+  "model_forwards": 0,
+  "training_steps": 0,
+  "visual_control": false,
+  "new_Final": 0,
+  "status": "StatusPropagationGo",
+  "actual_runner_returncode": 10,
+  "session": {
+    "kind": "ActualReadOnlyCARLAStartup",
+    "run_id": "b1d40dfe-3691-46e5-9377-96090a8d0cce",
+    "business_status": "Failed",
+    "failure": "ClientConnectionFailed",
+    "error": "ClientConnectionFailed",
+    "expected_runner_returncode": 10,
+    "cleanup_ok": true,
+    "identity_records": [],
+    "actor_creations": 0,
+    "sensor_creations": 0,
+    "TM_instances": 0,
+    "owner_ticks": 0,
+    "world_mutations": 0,
+    "outcome": "StartupDiagnosticNoGo"
+  },
+  "supervisor": {
+    "run_id": "b1d40dfe-3691-46e5-9377-96090a8d0cce",
+    "runner_returncode": 10,
+    "propagation": "StatusPropagationGo",
+    "contradictions": [],
+    "failures": [
+      "ClientConnectionFailed",
+      "RunnerNonzeroExit"
+    ],
+    "status": "StartupDiagnosticNoGo",
+    "supervisor_returncode": 1,
+    "wall_elapsed_s": 94.15404961816967,
+    "authorization": {
+      "approved": true,
+      "scope": "M8-I1a_OneReadOnlyStartup",
+      "max_launches": 1,
+      "user_approval_reference": "Current conversation: the user reply immediately following the assistant request to approve one M8-I1a read-only startup at commit 2cc2243; begins 批准了 and lists execution requirements 1–5. Message ID is not exposed to this agent.",
+      "user_message_id": null,
+      "user_message_text": "批准了\n\n执行要求：\n\n1. 启动前核对当前分支提交、冻结SHA、离线测试结果及端口状态。授权记录必须真实引用本次对话，不得编造批准消息ID。\n2. 启动后先持久化实际地图完整名称、World Episode、Frame/Timestamp、Client/Server版本、XODR SHA，以及实际进程参数和工作目录，再进行地图判断。\n3. 如果地图不符、身份读取失败或XODR不符，立即保留证据，以非零状态结束。不修改参数继续试。\n4. 如果地图身份连续检查通过，只输出 `StartupIdentityGo_NoTraffic`，随后关闭服务器。不能自动进入M8-I1的Traffic Manager Pilot。\n5. 结束后核查自有进程组、端口和日志，保存Runner退出码、Session状态、Supervisor状态及清理证据。清理不完整则保持NoGo。",
+      "record_created_utc": "2026-10-26T04:38:06.336366+00:00",
+      "protocol_sha256": "81a5c932cf488612c68ded08b47456490a2a4537c0ff13e8cbdab7fa79992418",
+      "execution_commit": "2cc22439587976d87550bf411e22f625d30508d0",
+      "execution_branch": "feat/m8i1a-startup-identity-diagnostic",
+      "authorization_does_not_cover_TM_or_retry": true
+    },
+    "kind": "ActualReadOnlyStartupSupervisor",
+    "server_launches": 1,
+    "server_returncode": -15
+  },
+  "actual_supervisor_returncode": 1,
+  "shell_exit_evidence": {
+    "kind": "ObservedExecToolExitStatus",
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "tools.m8i1a_launch",
+      "--authorization",
+      "/root/gpufree-data/hs-drive-experiments/m8i1a-approved-execution-evidence/authorization.json"
+    ],
+    "observation_source": "functions.exec -> tools.exec_command session_id 33197, completed write_stdin exit_code=1",
+    "actual_supervisor_process_returncode": 1,
+    "supervisor_result": {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/supervisor_result.json",
+      "bytes": 2039,
+      "sha256": "74de6be7f393884fbb653134265c9e4acb35a28d185dfb4e53b8071ac89d11dd"
+    },
+    "runner_returncode": 10,
+    "business_failure": "ClientConnectionFailed",
+    "no_second_launch": true
+  },
+  "cleanup": {
+    "run_id": "b1d40dfe-3691-46e5-9377-96090a8d0cce",
+    "ok": true,
+    "owned_actor_ids": [],
+    "created_actors": 0,
+    "created_sensors": 0,
+    "world_mutations": 0,
+    "scope": "Runner owns no simulator resources; supervisor must stop owned server"
+  },
+  "business_process_supervisor_consistent": true,
+  "tested_runtime_path": "Actual ClientConnectionFailed -> runner10 -> supervisor1",
+  "map_mismatch_path": "OfflineTestsOnly_NotReachedInThisRuntime",
+  "successful_identity_path": "OfflineTestsOnly_NotReachedInThisRuntime"
+}
