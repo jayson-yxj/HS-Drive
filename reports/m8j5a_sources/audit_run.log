@@ -1,0 +1,306 @@
+00000 done
+00040 done
+00080 done
+00120 done
+00160 done
+00200 done
+{
+  "status": "RawLineageAudited_TrainingDisabled",
+  "frames": 214,
+  "source_counts": {
+    "raw_ego_vehicle": 214,
+    "raw_walker": 124,
+    "raw_traffic_light": 933,
+    "raw_traffic_sign": 1532,
+    "raw_vehicle": 1152,
+    "unexplained_regions_ge100px": 320
+  },
+  "source_state_counts": {
+    "ego_vehicle:NotRecorded": 214,
+    "walker:NotRecorded": 124,
+    "traffic_light:2": 226,
+    "traffic_light:0": 674,
+    "traffic_sign:NotRecorded": 1532,
+    "vehicle:dynamic": 1152,
+    "traffic_light:1": 33
+  },
+  "unique_actor_ids_per_class": {
+    "ego_vehicle": 1,
+    "walker": 1,
+    "traffic_light": 12,
+    "traffic_sign": 11,
+    "vehicle": 10
+  },
+  "record_loss_to_legacy_sidecar": 0,
+  "lost_records": [],
+  "per_class_lineage": {
+    "walker": {
+      "raw": 124,
+      "legacy_sidecar": 124,
+      "legacy_geometry_valid": 124,
+      "all_converted_geometry": 124,
+      "legacy_positive_candidate": 71,
+      "final_training_gt": 0
+    },
+    "traffic_light": {
+      "raw": 933,
+      "legacy_sidecar": 933,
+      "legacy_geometry_valid": 0,
+      "all_converted_geometry": 933,
+      "legacy_positive_candidate": 0,
+      "final_training_gt": 0
+    },
+    "traffic_sign": {
+      "raw": 1532,
+      "legacy_sidecar": 1532,
+      "legacy_geometry_valid": 0,
+      "all_converted_geometry": 1532,
+      "legacy_positive_candidate": 0,
+      "final_training_gt": 0
+    },
+    "vehicle": {
+      "raw": 1152,
+      "legacy_sidecar": 1152,
+      "legacy_geometry_valid": 1152,
+      "all_converted_geometry": 1152,
+      "legacy_positive_candidate": 640,
+      "final_training_gt": 0
+    }
+  },
+  "per_camera_class": {
+    "CAM_FRONT:walker": {
+      "actor_views": 124,
+      "raw_projectable": 77,
+      "converted_projectable": 77,
+      "legacy_projectable": 77,
+      "legacy_association_supported": 47
+    },
+    "CAM_FRONT_LEFT:walker": {
+      "actor_views": 124,
+      "raw_projectable": 25,
+      "converted_projectable": 25,
+      "legacy_projectable": 25,
+      "legacy_association_supported": 25
+    },
+    "CAM_FRONT_RIGHT:walker": {
+      "actor_views": 124,
+      "raw_projectable": 0,
+      "converted_projectable": 0,
+      "legacy_projectable": 0,
+      "legacy_association_supported": 0
+    },
+    "CAM_BACK_LEFT:walker": {
+      "actor_views": 124,
+      "raw_projectable": 0,
+      "converted_projectable": 0,
+      "legacy_projectable": 0,
+      "legacy_association_supported": 0
+    },
+    "CAM_BACK_RIGHT:walker": {
+      "actor_views": 124,
+      "raw_projectable": 0,
+      "converted_projectable": 0,
+      "legacy_projectable": 0,
+      "legacy_association_supported": 0
+    },
+    "CAM_BACK:walker": {
+      "actor_views": 124,
+      "raw_projectable": 0,
+      "converted_projectable": 0,
+      "legacy_projectable": 0,
+      "legacy_association_supported": 0
+    },
+    "CAM_FRONT:traffic_light": {
+      "actor_views": 933,
+      "raw_projectable": 0,
+      "converted_projectable": 0,
+      "legacy_projectable": 0,
+      "legacy_association_supported": 0
+    },
+    "CAM_FRONT_LEFT:traffic_light": {
+      "actor_views": 933,
+      "raw_projectable": 0,
+      "converted_projectable": 0,
+      "legacy_projectable": 0,
+      "legacy_association_supported": 0
+    },
+    "CAM_FRONT_RIGHT:traffic_light": {
+      "actor_views": 933,
+      "raw_projectable": 467,
+      "converted_projectable": 467,
+      "legacy_projectable": 0,
+      "legacy_association_supported": 0
+    },
+    "CAM_BACK_LEFT:traffic_light": {
+      "actor_views": 933,
+      "raw_projectable": 0,
+      "converted_projectable": 0,
+      "legacy_projectable": 0,
+      "legacy_association_supported": 0
+    },
+    "CAM_BACK_RIGHT:traffic_light": {
+      "actor_views": 933,
+      "raw_projectable": 627,
+      "converted_projectable": 627,
+      "legacy_projectable": 0,
+      "legacy_association_supported": 0
+    },
+    "CAM_BACK:traffic_light": {
+      "actor_views": 933,
+      "raw_projectable": 57,
+      "converted_projectable": 57,
+      "legacy_projectable": 0,
+      "legacy_association_supported": 0
+    },
+    "CAM_FRONT:traffic_sign": {
+      "actor_views": 1532,
+      "raw_projectable": 716,
+      "converted_projectable": 716,
+      "legacy_projectable": 0,
+      "legacy_association_supported": 0
+    },
+    "CAM_FRONT_LEFT:traffic_sign": {
+      "actor_views": 1532,
+      "raw_projectable": 51,
+      "converted_projectable": 51,
+      "legacy_projectable": 0,
+      "legacy_association_supported": 0
+    },
+    "CAM_FRONT_RIGHT:traffic_sign": {
+      "actor_views": 1532,
+      "raw_projectable": 101,
+      "converted_projectable": 101,
+      "legacy_projectable": 0,
+      "legacy_association_supported": 0
+    },
+    "CAM_BACK_LEFT:traffic_sign": {
+      "actor_views": 1532,
+      "raw_projectable": 43,
+      "converted_projectable": 43,
+      "legacy_projectable": 0,
+      "legacy_association_supported": 0
+    },
+    "CAM_BACK_RIGHT:traffic_sign": {
+      "actor_views": 1532,
+      "raw_projectable": 81,
+      "converted_projectable": 81,
+      "legacy_projectable": 0,
+      "legacy_association_supported": 0
+    },
+    "CAM_BACK:traffic_sign": {
+      "actor_views": 1532,
+      "raw_projectable": 645,
+      "converted_projectable": 645,
+      "legacy_projectable": 0,
+      "legacy_association_supported": 0
+    },
+    "CAM_FRONT:render_semantic_14": {
+      "render_region_observations": 846,
+      "UnexplainedVisibleRegion_UnknownNotBackground": 592,
+      "RawBoxSpatialSupport": 254,
+      "region_ge100px_RawBoxSpatialSupport": 248,
+      "region_ge100px_UnexplainedVisibleRegion_UnknownNotBackground": 278
+    },
+    "CAM_FRONT:vehicle": {
+      "actor_views": 1152,
+      "raw_projectable": 248,
+      "converted_projectable": 248,
+      "legacy_projectable": 248,
+      "legacy_association_supported": 234
+    },
+    "CAM_FRONT_LEFT:vehicle": {
+      "actor_views": 1152,
+      "raw_projectable": 48,
+      "converted_projectable": 48,
+      "legacy_projectable": 48,
+      "legacy_association_supported": 40
+    },
+    "CAM_FRONT_RIGHT:vehicle": {
+      "actor_views": 1152,
+      "raw_projectable": 0,
+      "converted_projectable": 0,
+      "legacy_projectable": 0,
+      "legacy_association_supported": 0
+    },
+    "CAM_BACK_LEFT:vehicle": {
+      "actor_views": 1152,
+      "raw_projectable": 32,
+      "converted_projectable": 32,
+      "legacy_projectable": 32,
+      "legacy_association_supported": 28
+    },
+    "CAM_BACK_RIGHT:vehicle": {
+      "actor_views": 1152,
+      "raw_projectable": 0,
+      "converted_projectable": 0,
+      "legacy_projectable": 0,
+      "legacy_association_supported": 0
+    },
+    "CAM_BACK:vehicle": {
+      "actor_views": 1152,
+      "raw_projectable": 892,
+      "converted_projectable": 892,
+      "legacy_projectable": 892,
+      "legacy_association_supported": 384
+    },
+    "CAM_BACK:render_semantic_14": {
+      "render_region_observations": 618,
+      "RawBoxSpatialSupport": 618,
+      "region_ge100px_RawBoxSpatialSupport": 446
+    },
+    "CAM_FRONT:render_semantic_12": {
+      "render_region_observations": 59,
+      "RawBoxSpatialSupport": 59,
+      "region_ge100px_RawBoxSpatialSupport": 48
+    },
+    "CAM_FRONT_LEFT:render_semantic_14": {
+      "render_region_observations": 95,
+      "RawBoxSpatialSupport": 55,
+      "region_ge100px_RawBoxSpatialSupport": 55,
+      "UnexplainedVisibleRegion_UnknownNotBackground": 40,
+      "region_ge100px_UnexplainedVisibleRegion_UnknownNotBackground": 40
+    },
+    "CAM_BACK_LEFT:render_semantic_14": {
+      "render_region_observations": 30,
+      "RawBoxSpatialSupport": 30,
+      "region_ge100px_RawBoxSpatialSupport": 30
+    },
+    "CAM_FRONT_LEFT:render_semantic_12": {
+      "render_region_observations": 27,
+      "EgoPossible": 1,
+      "region_ge100px_EgoPossible": 1,
+      "RawBoxSpatialSupport": 25,
+      "region_ge100px_RawBoxSpatialSupport": 25,
+      "UnexplainedVisibleRegion_UnknownNotBackground": 1,
+      "region_ge100px_UnexplainedVisibleRegion_UnknownNotBackground": 1
+    },
+    "CAM_BACK_LEFT:render_semantic_12": {
+      "render_region_observations": 1,
+      "UnexplainedVisibleRegion_UnknownNotBackground": 1,
+      "region_ge100px_UnexplainedVisibleRegion_UnknownNotBackground": 1
+    }
+  },
+  "nonexclusive_filter_reasons": {
+    "UndergroundExplicitExclusion": 23,
+    "AssociationEvidenceNotSupported_NotGeometryFailure": 3029,
+    "OutsidePETRRange": 2322,
+    "NoSupportedViewInPETRCrop": 3029,
+    "LegacyGeometryUnsupported_Unknown": 2465,
+    "LegacyClassUnsupported": 2465,
+    "YawOnlyTiltUnsupported": 2466,
+    "RenderTokenConflictQuarantine": 39
+  },
+  "max_numeric_residuals": {
+    "reconstructed_corners_max_m": 2.442308044692254e-05,
+    "reconstructed_center_max_m": 2.4211706829646573e-05,
+    "centroid_center_max_m": 7.62939453125e-06,
+    "extent_halfsize_max_m": 1.4633368642158473e-05,
+    "projection_bbox_error_px": 0.0
+  },
+  "runtime_s": 77.09451393596828,
+  "counting": "Actor-frame records; per-view/region counts are correlated observations, not independent objects. Unique IDs valid within one clip only.",
+  "final_training_gt": 0,
+  "training": false,
+  "golden_signoff": "SuspendedByLatestUserRequest",
+  "caveat": "RawBoxSpatialSupport is projection consistency, not proof of visibility/identity or dataset completeness."
+}

@@ -1,0 +1,63 @@
+{
+  "stage": "M8-J5 Raw Annotation Completeness and Conversion Audit",
+  "base_commit": "4042794aa6b1103482041bb17f81409d9a9e2775",
+  "branch": "feat/m8j5-raw-annotation-audit",
+  "checked_at_utc": "2026-10-26T12:15:16.541931+00:00",
+  "status": "Partial",
+  "states": [
+    "RawAnnotationRetentionGo",
+    "DisplayFixGo",
+    "DatasetCompletenessPartial",
+    "TrainingReadinessNoGo"
+  ],
+  "evidence_types": [
+    "ActualServerCPUOfflinePayloadAudit",
+    "ActualPrivateImageAssistantInspection_NotHumanGolden",
+    "SyntheticGeometryTests",
+    "Actual214FrameRegression",
+    "ActualHeadlessBrowser_NoNetwork"
+  ],
+  "frames": 214,
+  "non_ego_record_retention": {
+    "total": 3741,
+    "retained": 3741
+  },
+  "vehicle_walker_geometry_retention": {
+    "total": 1276,
+    "retained": 1276
+  },
+  "test_results": {
+    "python_passed": 24,
+    "python_skipped": 0,
+    "browser_assertions_passed": 12,
+    "independent_directory_reproduction_passed": true
+  },
+  "cases_reviewed": 12,
+  "candidate_only_display_cases": 8,
+  "visible_source_gap_cases": 4,
+  "limitations": [
+    "Single correlated clip, 10 vehicle and 1 walker source IDs",
+    "No actual static vehicle GT record; static fallback synthetic only",
+    "Four unexplained render groups are not verified physical Actor identities",
+    "Raw timestamps unavailable; render/annotation mismatch root cause unresolved",
+    "Projection consistency is not annotation completeness or safe negative certification",
+    "No new model performance evidence"
+  ],
+  "golden_signoff_requirement": "SuspendedByUser",
+  "human_signoffs_created": 0,
+  "training": "NotRun_ExplicitlyExcluded",
+  "model_inference": "NotRun",
+  "carla": "NotRun",
+  "new_dataset_download": "NotRun",
+  "unknown_as_background": false,
+  "default_model_or_control_changed": false,
+  "original_annotations_sha_verified": true,
+  "historical_tracked_files_modified": false,
+  "next_step": "DefineAutomaticGeometryPositiveAndIncompleteRegionIgnoreContractBeforeAnyTraining_NoAutomaticPermission",
+  "reports": {
+    "summary": "reports/m8j5a_summary.md",
+    "lineage_private": "/root/gpufree-data/hs-drive-private/m8j5a-raw-audit/lineage_all_records.json",
+    "coverage": "reports/m8j5a_frame_camera_coverage.json",
+    "page_private": "/root/gpufree-data/hs-drive-private/m8j5a-raw-audit/web/index.html"
+  }
+}

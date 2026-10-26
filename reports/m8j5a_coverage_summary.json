@@ -1,0 +1,92 @@
+{
+  "frames": 214,
+  "actor_frame_stage_counts": {
+    "walker": {
+      "raw_records": 124,
+      "legacy_record_retained": 124,
+      "legacy_geometry_retained": 124,
+      "raw_view_projectable": 101,
+      "legacy_association_supported": 71,
+      "legacy_positive": 71,
+      "old_model_technical_candidate": 71,
+      "geometry_only_model_domain_diagnostic": 94
+    },
+    "traffic_light": {
+      "raw_records": 933,
+      "legacy_record_retained": 933
+    },
+    "traffic_sign": {
+      "raw_records": 1532,
+      "legacy_record_retained": 1532
+    },
+    "vehicle": {
+      "raw_records": 1152,
+      "legacy_record_retained": 1152,
+      "legacy_geometry_retained": 1152,
+      "raw_view_projectable": 1152,
+      "legacy_association_supported": 641,
+      "legacy_positive": 640,
+      "old_model_technical_candidate": 474,
+      "geometry_only_model_domain_diagnostic": 722
+    }
+  },
+  "unique_actor_ids_in_one_clip": {
+    "walker": 1,
+    "traffic_light": 12,
+    "traffic_sign": 11,
+    "vehicle": 10
+  },
+  "vehicle_source_state": {
+    "dynamic": 1152,
+    "static": 0
+  },
+  "instantaneous_vehicle_motion": {
+    "instant_speed_abs_lt0_1": 205,
+    "instant_speed_abs_ge0_1": 947
+  },
+  "instantaneous_motion_not_source_state": true,
+  "vehicle_walker_filters_nonexclusive": {
+    "walker": {
+      "UndergroundExplicitExclusion": 23,
+      "AssociationEvidenceNotSupported_NotGeometryFailure": 53,
+      "OutsidePETRRange": 30,
+      "NoSupportedViewInPETRCrop": 53
+    },
+    "vehicle": {
+      "AssociationEvidenceNotSupported_NotGeometryFailure": 511,
+      "OutsidePETRRange": 430,
+      "NoSupportedViewInPETRCrop": 511,
+      "YawOnlyTiltUnsupported": 1,
+      "RenderTokenConflictQuarantine": 39
+    }
+  },
+  "projected_view_association_reasons": {
+    "vehicle": {
+      "AmbiguousOrWeakEvidence": 477,
+      "NoCompatibleVisibleRegion_OccludedOrMissingUnknown": 5,
+      "EvidenceSupportedCandidate": 686,
+      "RenderIdentityConflict_ReviewRequired": 39,
+      "NearPlaneIntersectionRequiresReview": 13
+    },
+    "walker": {
+      "NoCompatibleVisibleRegion_OccludedOrMissingUnknown": 23,
+      "AmbiguousOrWeakEvidence": 7,
+      "EvidenceSupportedCandidate": 72
+    }
+  },
+  "region_ge100px_counts": {
+    "RawBoxSpatialSupport": 852,
+    "UnexplainedVisibleRegion_UnknownNotBackground": 320,
+    "EgoPossible": 1
+  },
+  "unexplained_region_observations": 320,
+  "unexplained_distinct_frames": 164,
+  "unexplained_render_token_groups": 4,
+  "region_spatial_support_fraction": 0.7263427109974424,
+  "fraction_scope": "Only >=100px renderer-region observations, correlated; not physical object recall or detection AP",
+  "per_frame_camera_class_private": "/root/gpufree-data/hs-drive-private/m8j5a-raw-audit/per_frame_camera_class.json",
+  "per_frame_private": "/root/gpufree-data/hs-drive-private/m8j5a-raw-audit/per_frame_counts.json",
+  "lineage_private": "/root/gpufree-data/hs-drive-private/m8j5a-raw-audit/lineage_all_records.json",
+  "no_negative_labels": true,
+  "golden_requirement": "Suspended"
+}
