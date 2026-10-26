@@ -1,0 +1,902 @@
+{
+  "kind": "ActualReadOnlyOfflineForensics",
+  "base_commit": "5c14c347de2b183d59d7bd3f604ec45d0b602da6",
+  "collector": {
+    "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8i1b_forensics.py",
+    "bytes": 10915,
+    "sha256": "091306d9368d289e8e11875ebe31b0aeb0e7df859b248560e80a58ddadee514d",
+    "mtime_ns": 1792992949981893715,
+    "mtime_utc": "2026-10-26T05:35:49.981894+00:00",
+    "ctime_utc": "2026-10-26T05:35:49.981894+00:00",
+    "uid": 0,
+    "gid": 0,
+    "mode": "0o644"
+  },
+  "server_launches": 0,
+  "CARLA_connections": 0,
+  "actor_creations": 0,
+  "sensor_creations": 0,
+  "TM_instances": 0,
+  "owner_ticks": 0,
+  "model_forwards": 0,
+  "training_steps": 0,
+  "visual_control": false,
+  "comparison": {
+    "full_argv": {
+      "M8-H1": {
+        "value": {
+          "documented_start": [
+            "runuser",
+            "-u",
+            "ubuntu",
+            "--",
+            "bash",
+            "scripts/start_carla.sh",
+            "/root/gpufree-data/simulators/CARLA_0.9.15",
+            "2100",
+            "Epic"
+          ],
+          "reconstructed_binary": [
+            "/root/gpufree-data/simulators/CARLA_0.9.15/CarlaUE4/Binaries/Linux/CarlaUE4-Linux-Shipping",
+            "CarlaUE4",
+            "-RenderOffScreen",
+            "-quality-level=Epic",
+            "-nosound",
+            "-carla-rpc-port=2100",
+            "-stdout",
+            "-FullStdOutLogOutput"
+          ],
+          "actual_proc_argv": null
+        },
+        "evidence_tier": "DocumentedCommandPlusSourceReconstruction",
+        "sources": [
+          "tools/m8h1_preflight.py",
+          "scripts/start_carla.sh",
+          "docs/M8H1_IMPLEMENTATION.md"
+        ],
+        "limitation": "No per-process argv snapshot; not a recorded exact command execution"
+      },
+      "M8-I1": {
+        "value": {
+          "server": [
+            "runuser",
+            "-u",
+            "ubuntu",
+            "--",
+            "env",
+            "-u",
+            "DISPLAY",
+            "VK_ICD_FILENAMES=/etc/vulkan/icd.d/nvidia_icd.json",
+            "/root/gpufree-data/simulators/CARLA_0.9.15/CarlaUE4.sh",
+            "/Game/Carla/Maps/Town02",
+            "-RenderOffScreen",
+            "-quality-level=Epic",
+            "-nosound",
+            "-carla-rpc-port=2100",
+            "-stdout",
+            "-FullStdOutLogOutput"
+          ],
+          "runner": [
+            "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv/bin/python",
+            "-m",
+            "tools.m8i1_run_session",
+            "--start",
+            "15776984.048191313"
+          ]
+        },
+        "evidence_tier": "ActualRecordedInvocation",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1-traffic-development/execution_commands.json"
+        ],
+        "limitation": "Shipping /proc argv not captured"
+      },
+      "M8-I1a": {
+        "value": {
+          "invocations": {
+            "server": [
+              "runuser",
+              "-u",
+              "ubuntu",
+              "--",
+              "env",
+              "-u",
+              "DISPLAY",
+              "VK_ICD_FILENAMES=/etc/vulkan/icd.d/nvidia_icd.json",
+              "/root/gpufree-data/simulators/CARLA_0.9.15/CarlaUE4.sh",
+              "/Game/Carla/Maps/Town02",
+              "-RenderOffScreen",
+              "-quality-level=Epic",
+              "-nosound",
+              "-carla-rpc-port=2100",
+              "-stdout",
+              "-FullStdOutLogOutput"
+            ],
+            "server_cwd": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0",
+            "runner": [
+              "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv/bin/python",
+              "-m",
+              "tools.m8i1a_run_session",
+              "--context",
+              "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/context.json",
+              "--output",
+              "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity"
+            ],
+            "runner_cwd": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0"
+          },
+          "actual_processes": [
+            {
+              "pid": 73956,
+              "pgid": 73956,
+              "cmdline": "runuser -u ubuntu -- env -u DISPLAY VK_ICD_FILENAMES=/etc/vulkan/icd.d/nvidia_icd.json /root/gpufree-data/simulators/CARLA_0.9.15/CarlaUE4.sh /Game/Carla/Maps/Town02 -RenderOffScreen -quality-level=Epic -nosound -carla-rpc-port=2100 -stdout -FullStdOutLogOutput "
+            },
+            {
+              "pid": 73958,
+              "pgid": 73956,
+              "cmdline": "/bin/sh /root/gpufree-data/simulators/CARLA_0.9.15/CarlaUE4.sh /Game/Carla/Maps/Town02 -RenderOffScreen -quality-level=Epic -nosound -carla-rpc-port=2100 -stdout -FullStdOutLogOutput "
+            },
+            {
+              "pid": 73965,
+              "pgid": 73956,
+              "cmdline": "/root/gpufree-data/simulators/CARLA_0.9.15/CarlaUE4/Binaries/Linux/CarlaUE4-Linux-Shipping CarlaUE4 /Game/Carla/Maps/Town02 -RenderOffScreen -quality-level=Epic -nosound -carla-rpc-port=2100 -stdout -FullStdOutLogOutput "
+            }
+          ]
+        },
+        "evidence_tier": "ActualRecordedInvocationAndProc",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/execution_commands.json",
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/server_process_binary.json"
+        ],
+        "limitation": null
+      }
+    },
+    "cwd": {
+      "M8-H1": {
+        "value": {
+          "script_cwd": "/root/gpufree-data/simulators/CARLA_0.9.15",
+          "actual_binary_cwd": null
+        },
+        "evidence_tier": "SourceInference",
+        "sources": [
+          "scripts/start_carla.sh"
+        ],
+        "limitation": "Documented launch cd; historical binary cwd unavailable"
+      },
+      "M8-I1": {
+        "value": null,
+        "evidence_tier": "NotRecorded",
+        "sources": [
+          "tools/m8i1_launch.py"
+        ],
+        "limitation": "Popen inherited caller cwd; current cwd cannot fill historical actual"
+      },
+      "M8-I1a": {
+        "value": [
+          {
+            "pid": 73956,
+            "cwd": "/"
+          },
+          {
+            "pid": 73958,
+            "cwd": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0"
+          },
+          {
+            "pid": 73965,
+            "cwd": "/root/gpufree-data/simulators/CARLA_0.9.15/CarlaUE4/Binaries/Linux"
+          }
+        ],
+        "evidence_tier": "ActualProcReadback",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/server_process_binary.json"
+        ],
+        "limitation": null
+      }
+    },
+    "execution_user": {
+      "M8-H1": {
+        "value": "ubuntu",
+        "evidence_tier": "DocumentedCommand",
+        "sources": [
+          "docs/M8H1_IMPLEMENTATION.md"
+        ],
+        "limitation": "No per-process UID snapshot"
+      },
+      "M8-I1": {
+        "value": "runuser -u ubuntu",
+        "evidence_tier": "ActualRecordedInvocation",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1-traffic-development/execution_commands.json"
+        ],
+        "limitation": "No actual process UID snapshot"
+      },
+      "M8-I1a": {
+        "value": "runuser -u ubuntu",
+        "evidence_tier": "ActualRecordedInvocationAndProc",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/execution_commands.json"
+        ],
+        "limitation": "Process UID not captured; do not claim full credentials evidence"
+      }
+    },
+    "environment": {
+      "M8-H1": {
+        "value": {
+          "DISPLAY": "unset",
+          "VK_ICD_FILENAMES": "/etc/vulkan/icd.d/nvidia_icd.json"
+        },
+        "evidence_tier": "SourceInference",
+        "sources": [
+          "scripts/start_carla.sh"
+        ],
+        "limitation": "VK export conditional on file existence; full original environ absent"
+      },
+      "M8-I1": {
+        "value": {
+          "DISPLAY": "unset",
+          "VK_ICD_FILENAMES": "/etc/vulkan/icd.d/nvidia_icd.json"
+        },
+        "evidence_tier": "ActualExplicitARGVEnvironment",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1-traffic-development/execution_commands.json"
+        ],
+        "limitation": "Inherited environment not snapshotted"
+      },
+      "M8-I1a": {
+        "value": {
+          "DISPLAY": "unset",
+          "VK_ICD_FILENAMES": "/etc/vulkan/icd.d/nvidia_icd.json"
+        },
+        "evidence_tier": "ActualExplicitARGVEnvironment",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/execution_commands.json"
+        ],
+        "limitation": "Inherited environment not snapshotted"
+      }
+    },
+    "map_parameter_and_loading": {
+      "M8-H1": {
+        "value": {
+          "cli_map": null,
+          "conditional_load_world": "Town02",
+          "final_observed_map": "Carla/Maps/Town02",
+          "initial_map": null,
+          "actual_load_world_branch_taken": null
+        },
+        "evidence_tier": "SourcePolicyPlusActualFinalReadback",
+        "sources": [
+          "tools/m8h1_preflight.py",
+          "/root/gpufree-data/hs-drive-experiments/m8h1-native-template-smoke/environment_inventory.json"
+        ],
+        "limitation": "H1 is not a no-reload startup control; final Town02 cannot prove initial Town02"
+      },
+      "M8-I1": {
+        "value": {
+          "cli_map": "/Game/Carla/Maps/Town02",
+          "reload_forbidden": true,
+          "actual_map": null,
+          "map_check": "Rejected"
+        },
+        "evidence_tier": "ActualFailureAndExecutedSource",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1-traffic-development/session_result.json",
+          "simulator/m8i1_session.py"
+        ],
+        "limitation": null
+      },
+      "M8-I1a": {
+        "value": {
+          "cli_map": "/Game/Carla/Maps/Town02",
+          "reload_forbidden": true,
+          "actual_map": null,
+          "map_check": "NotReached"
+        },
+        "evidence_tier": "ActualFailureAndExecutedSource",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/session_result.json",
+          "tools/m8i1a_identity.py"
+        ],
+        "limitation": null
+      }
+    },
+    "server_start_complete_criterion": {
+      "M8-H1": {
+        "value": "Preflight reads world, optionally loads Town02, asserts versions and XODR before downstream work",
+        "evidence_tier": "SourcePolicyAndSuccessfulPreflight",
+        "sources": [
+          "tools/m8h1_preflight.py",
+          "reports/m8h1_logs/preflight.json"
+        ],
+        "limitation": "Initial server-ready wait not recorded"
+      },
+      "M8-I1": {
+        "value": "Supervisor first successful version RPC, then new Runner checks versions/world/map",
+        "evidence_tier": "SourcePolicyWithActualVersionCheckReached",
+        "sources": [
+          "tools/m8i1_launch.py",
+          "simulator/m8i1_session.py",
+          "/root/gpufree-data/hs-drive-experiments/m8i1-traffic-development/session_result.json"
+        ],
+        "limitation": null
+      },
+      "M8-I1a": {
+        "value": "One persistent Client attempts version RPC; only then capture/validate identity twice",
+        "evidence_tier": "SourcePolicyWithActualVersionFailure",
+        "sources": [
+          "tools/m8i1a_identity.py",
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/session_result.json"
+        ],
+        "limitation": null
+      }
+    },
+    "python_client_and_server_version": {
+      "M8-H1": {
+        "value": {
+          "executable": ".venv/bin/python",
+          "client": "0.9.15",
+          "server": "0.9.15"
+        },
+        "evidence_tier": "ActualPreflightSuccessThroughVersionAssertion",
+        "sources": [
+          "reports/m8h1_logs/preflight.json",
+          "tools/m8h1_preflight.py",
+          "reports/m8h1_shifted_contract.json"
+        ],
+        "limitation": null
+      },
+      "M8-I1": {
+        "value": {
+          "executable": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv/bin/python",
+          "client": "0.9.15",
+          "server": "0.9.15"
+        },
+        "evidence_tier": "VersionAssertionReachedBeforeActualMapRejection",
+        "sources": [
+          "simulator/m8i1_session.py",
+          "/root/gpufree-data/hs-drive-experiments/m8i1-traffic-development/session_result.json"
+        ],
+        "limitation": null
+      },
+      "M8-I1a": {
+        "value": {
+          "executable": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv/bin/python",
+          "expected": "0.9.15",
+          "actual_client_rpc_record": null,
+          "actual_server_rpc_record": null
+        },
+        "evidence_tier": "ActualTimeout_NoRecordedVersion",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/session_result.json"
+        ],
+        "limitation": "Installed version or shared path cannot substitute for missing per-run RPC result"
+      }
+    },
+    "RPC_port": {
+      "M8-H1": {
+        "value": 2100,
+        "evidence_tier": "DocumentedCommandAndExecutedSource",
+        "sources": [
+          "tools/m8h1_preflight.py",
+          "scripts/start_carla.sh",
+          "docs/M8H1_IMPLEMENTATION.md"
+        ],
+        "limitation": null
+      },
+      "M8-I1": {
+        "value": 2100,
+        "evidence_tier": "ActualARGVAndExecutedSource",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1-traffic-development/execution_commands.json"
+        ],
+        "limitation": null
+      },
+      "M8-I1a": {
+        "value": 2100,
+        "evidence_tier": "ActualARGVProcAndTCPProbe",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/execution_commands.json",
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-approved-execution-evidence/during_startup_OS_probe.json"
+        ],
+        "limitation": null
+      }
+    },
+    "single_RPC_timeout_seconds": {
+      "M8-H1": {
+        "value": 60,
+        "evidence_tier": "ExecutedSource",
+        "sources": [
+          "tools/m8h1_preflight.py"
+        ],
+        "limitation": "Source setting, not measured latency"
+      },
+      "M8-I1": {
+        "value": {
+          "supervisor": 2,
+          "runner": 30
+        },
+        "evidence_tier": "ExecutedSource",
+        "sources": [
+          "tools/m8i1_launch.py",
+          "simulator/m8i1_session.py"
+        ],
+        "limitation": null
+      },
+      "M8-I1a": {
+        "value": 2,
+        "evidence_tier": "ExecutedSourceAnd31TimeoutErrors",
+        "sources": [
+          "tools/m8i1a_identity.py",
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/connection_001.json",
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/connection_031.json"
+        ],
+        "limitation": "31 failures do not prove timeout length is the cause"
+      }
+    },
+    "client_retry_object_lifecycle": {
+      "M8-H1": {
+        "value": "One Client per preflight; no readiness retry loop in preflight",
+        "evidence_tier": "ExecutedSource",
+        "sources": [
+          "tools/m8h1_preflight.py"
+        ],
+        "limitation": null
+      },
+      "M8-I1": {
+        "value": "New Client inside each supervisor connection iteration; independent Runner Client",
+        "evidence_tier": "ExecutedSource",
+        "sources": [
+          "tools/m8i1_launch.py"
+        ],
+        "limitation": null
+      },
+      "M8-I1a": {
+        "value": "One Client reused across all31 attempts",
+        "evidence_tier": "ExecutedSourceWithActualAttemptCount",
+        "sources": [
+          "tools/m8i1a_identity.py"
+        ],
+        "limitation": "No client internal connection state trace; cannot infer poisoned retries"
+      }
+    },
+    "total_readiness_wait_and_actual_elapsed": {
+      "M8-H1": {
+        "value": {
+          "startup_wait": null,
+          "preflight_elapsed_s": 6.282888764515519
+        },
+        "evidence_tier": "UnknownStartupWait_ActualPreflightDuration",
+        "sources": [
+          "reports/m8h1_logs/preflight.json"
+        ],
+        "limitation": "6.28s preflight is not server boot time"
+      },
+      "M8-I1": {
+        "value": {
+          "startup_cap_s": 180,
+          "total_cap_s": 1800,
+          "actual_supervised_wall_s": 23.745426880195737
+        },
+        "evidence_tier": "SourceCapsAndActualSupervisorTimer",
+        "sources": [
+          "tools/m8i1_launch.py",
+          "/root/gpufree-data/hs-drive-experiments/m8i1-traffic-development/supervisor_result.json"
+        ],
+        "limitation": null
+      },
+      "M8-I1a": {
+        "value": {
+          "connect_cap_s": 90,
+          "identity_cap_s": 30,
+          "total_cap_s": 180,
+          "actual_supervised_wall_s": 94.15404961816967
+        },
+        "evidence_tier": "SourceCapsAndActualSupervisorTimer",
+        "sources": [
+          "configs/m8i1a/protocol.json",
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/supervisor_result.json"
+        ],
+        "limitation": "Identity window never reached; connection deadline checked after RPC returns"
+      }
+    },
+    "GPU_and_process_resource_evidence": {
+      "M8-H1": {
+        "value": {
+          "own_pid": 157737,
+          "per_run_gpu": null
+        },
+        "evidence_tier": "ActualCleanupReport_NoResourceTrace",
+        "sources": [
+          "reports/m8h1_runtime_cleanup.json"
+        ],
+        "limitation": null
+      },
+      "M8-I1": {
+        "value": {
+          "server_pid": 35544,
+          "runner_pid": 36560,
+          "sampled_gpu_max_MiB": 5840
+        },
+        "evidence_tier": "ActualSupervisorAndSampledGPU",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1-traffic-development/supervisor_result.json",
+          "/root/gpufree-data/hs-drive-experiments/m8i1-traffic-development/resource_samples.jsonl"
+        ],
+        "limitation": "Not complete GPU peak; no CPU trace"
+      },
+      "M8-I1a": {
+        "value": {
+          "processes": [
+            {
+              "pid": 73956,
+              "pgid": 73956
+            },
+            {
+              "pid": 73958,
+              "pgid": 73956
+            },
+            {
+              "pid": 73965,
+              "pgid": 73956
+            }
+          ],
+          "gpu_sample": "NVIDIA GeForce RTX 4090, 6004 MiB, 99 %",
+          "tcp": {
+            "2100": true,
+            "2101": true,
+            "2102": true,
+            "8100": false
+          }
+        },
+        "evidence_tier": "ActualProcAndOSProbe",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-approved-execution-evidence/during_startup_OS_probe.json"
+        ],
+        "limitation": "GPU99% does not prove deadlock, OOM or render error"
+      }
+    },
+    "shutdown": {
+      "M8-H1": {
+        "value": "Cleanup readback then own PID157737 SIGTERM",
+        "evidence_tier": "HistoricalRecordedClaim",
+        "sources": [
+          "reports/m8h1_final_validation.json",
+          "reports/m8h1_runtime_cleanup.json"
+        ],
+        "limitation": "No raw post-exit process-group trace; final map Town04 is negative-control map, not startup map"
+      },
+      "M8-I1": {
+        "value": {
+          "supervisor": {
+            "pid": 35544,
+            "returncode": -15,
+            "process_group_absent": false
+          },
+          "post": "groups absent, ports closed"
+        },
+        "evidence_tier": "ActualSupervisorAndLaterOSProbe",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1-traffic-development/supervisor_result.json",
+          "/root/gpufree-data/hs-drive-experiments/m8i1-traffic-development/post_shutdown_process_probe.json"
+        ],
+        "limitation": null
+      },
+      "M8-I1a": {
+        "value": {
+          "server_rc": -15,
+          "runner_rc": 10,
+          "supervisor_rc": 1,
+          "cleanup": "21 probes, final group/port absence"
+        },
+        "evidence_tier": "ActualSupervisorAndIndependentOSProbe",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/supervisor_result.json",
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/cleanup.json",
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-approved-execution-evidence/post_shutdown_OS_probe.json"
+        ],
+        "limitation": null
+      }
+    }
+  },
+  "evidence_legend": [
+    "ActualRecorded",
+    "ExecutedSource",
+    "DocumentedCommand",
+    "SourceInference",
+    "NotRecorded"
+  ],
+  "I1_I1a_server_argv_identical": true,
+  "I1_I1a_have_different_failure_stages": true,
+  "observed_differences_are_not_causal_isolation": true,
+  "evidence_files": [
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8h1-native-template-smoke/environment_inventory.json",
+      "bytes": 6073566,
+      "sha256": "2e14654586dc887db6252df68736cebf76ee7d866e9fd268bec1bbce3e435f9c",
+      "mtime_ns": 1792944000511065552,
+      "mtime_utc": "2026-10-25T16:00:00.511065+00:00",
+      "ctime_utc": "2026-10-25T16:00:00.511065+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1-traffic-development/execution_commands.json",
+      "bytes": 575,
+      "sha256": "4101de1ec18083d728ee663bcd62959f4b4896822ae10f9899952b29b2e93624",
+      "mtime_ns": 1792984904150725534,
+      "mtime_utc": "2026-10-26T03:21:44.150726+00:00",
+      "ctime_utc": "2026-10-26T03:21:44.150726+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1-traffic-development/post_shutdown_process_probe.json",
+      "bytes": 1557,
+      "sha256": "60dffe0c48ef39290314f7e986b2a70a0faf03f7378548a4e634d95800e9d9b5",
+      "mtime_ns": 1792985022055480724,
+      "mtime_utc": "2026-10-26T03:23:42.055481+00:00",
+      "ctime_utc": "2026-10-26T03:23:42.055481+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1-traffic-development/resource_samples.jsonl",
+      "bytes": 717,
+      "sha256": "3691764660a37a0784d588faa86a669e0d437e9cf28ae3e2b616bfade6a2b338",
+      "mtime_ns": 1792984923722187822,
+      "mtime_utc": "2026-10-26T03:22:03.722188+00:00",
+      "ctime_utc": "2026-10-26T03:22:03.722188+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1-traffic-development/session_result.json",
+      "bytes": 1408,
+      "sha256": "0600dbb3ea27f4e818121a2076a42fb53ce4fd36dd74452ac651dff86ee8f764",
+      "mtime_ns": 1792984924114177048,
+      "mtime_utc": "2026-10-26T03:22:04.114177+00:00",
+      "ctime_utc": "2026-10-26T03:22:04.114177+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1-traffic-development/supervisor_result.json",
+      "bytes": 1533,
+      "sha256": "c9621bba006d4d0de0099257631bbd361dc3307bfc63730ea6360bcb3b1824f7",
+      "mtime_ns": 1792984927746077221,
+      "mtime_utc": "2026-10-26T03:22:07.746077+00:00",
+      "ctime_utc": "2026-10-26T03:22:07.746077+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-approved-execution-evidence/during_startup_OS_probe.json",
+      "bytes": 2493,
+      "sha256": "23e88638cd4bc963fef1f407658dcafd625554b0669f828ee539e613dad01638",
+      "mtime_ns": 1792989586864280267,
+      "mtime_utc": "2026-10-26T04:39:46.864280+00:00",
+      "ctime_utc": "2026-10-26T04:39:46.864280+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-approved-execution-evidence/post_shutdown_OS_probe.json",
+      "bytes": 551,
+      "sha256": "88eadba489c9e3567f0191d3dcb34c90e110366db448bd3d33d801ae5969ab51",
+      "mtime_ns": 1792989628611492773,
+      "mtime_utc": "2026-10-26T04:40:28.611493+00:00",
+      "ctime_utc": "2026-10-26T04:40:28.611493+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/cleanup.json",
+      "bytes": 6538,
+      "sha256": "2462b7b1cf3c9d46a8943125505c13d743e8ee2afdf0c9ad66be64f3b0959892",
+      "mtime_ns": 1792989593412158633,
+      "mtime_utc": "2026-10-26T04:39:53.412159+00:00",
+      "ctime_utc": "2026-10-26T04:39:53.412159+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/connection_001.json",
+      "bytes": 240,
+      "sha256": "8fdd7e0c029af38ba0924c60da4f20c67a2dba56c57170f4c45b22784d6b5809",
+      "mtime_ns": 1792989501318545747,
+      "mtime_utc": "2026-10-26T04:38:21.318546+00:00",
+      "ctime_utc": "2026-10-26T04:38:21.318546+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/connection_031.json",
+      "bytes": 240,
+      "sha256": "8fdd7e0c029af38ba0924c60da4f20c67a2dba56c57170f4c45b22784d6b5809",
+      "mtime_ns": 1792989591384196383,
+      "mtime_utc": "2026-10-26T04:39:51.384196+00:00",
+      "ctime_utc": "2026-10-26T04:39:51.384196+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/execution_commands.json",
+      "bytes": 873,
+      "sha256": "7a91675b199c07120eb92c9bb5e1f87a553cf309902d3c314c3201bbf6d587cf",
+      "mtime_ns": 1792989499266603900,
+      "mtime_utc": "2026-10-26T04:38:19.266604+00:00",
+      "ctime_utc": "2026-10-26T04:38:19.266604+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/server_process_binary.json",
+      "bytes": 2083,
+      "sha256": "6709a119582fe0a846229838bc640c67ab9fabc3fc82269c56ad1c522e3324e9",
+      "mtime_ns": 1792989499370600952,
+      "mtime_utc": "2026-10-26T04:38:19.370601+00:00",
+      "ctime_utc": "2026-10-26T04:38:19.370601+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/session_result.json",
+      "bytes": 438,
+      "sha256": "24a75403db760caef07cd173f0e8738310342d2deb3129ab266e6c5b1f67099f",
+      "mtime_ns": 1792989591384196383,
+      "mtime_utc": "2026-10-26T04:39:51.384196+00:00",
+      "ctime_utc": "2026-10-26T04:39:51.384196+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/supervisor_result.json",
+      "bytes": 2039,
+      "sha256": "74de6be7f393884fbb653134265c9e4acb35a28d185dfb4e53b8071ac89d11dd",
+      "mtime_ns": 1792989593412158633,
+      "mtime_utc": "2026-10-26T04:39:53.412159+00:00",
+      "ctime_utc": "2026-10-26T04:39:53.412159+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/configs/m8i1a/protocol.json",
+      "bytes": 1439,
+      "sha256": "81a5c932cf488612c68ded08b47456490a2a4537c0ff13e8cbdab7fa79992418",
+      "mtime_ns": 1792987201481221392,
+      "mtime_utc": "2026-10-26T04:00:01.481221+00:00",
+      "ctime_utc": "2026-10-26T04:00:01.481221+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/docs/M8H1_IMPLEMENTATION.md",
+      "bytes": 6550,
+      "sha256": "ea12cc50f8a98931948a2835266250be3792ee8e7de8d63161eb8273d1a6ff0a",
+      "mtime_ns": 1792944698859255520,
+      "mtime_utc": "2026-10-25T16:11:38.859256+00:00",
+      "ctime_utc": "2026-10-25T16:11:38.859256+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/reports/m8h1_final_validation.json",
+      "bytes": 2793,
+      "sha256": "9d4838761384550384224796e72ab14fb378a03746d539dc5f7414cc1c6e8298",
+      "mtime_ns": 1792944752748692749,
+      "mtime_utc": "2026-10-25T16:12:32.748693+00:00",
+      "ctime_utc": "2026-10-25T16:12:32.748693+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/reports/m8h1_logs/preflight.json",
+      "bytes": 940,
+      "sha256": "325a3c5067a1f73b1afaf48dd1f82a86b59b1dc3a7db50372e97528e50f40dec",
+      "mtime_ns": 1792944002215019201,
+      "mtime_utc": "2026-10-25T16:00:02.215019+00:00",
+      "ctime_utc": "2026-10-25T16:00:02.215019+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/reports/m8h1_runtime_cleanup.json",
+      "bytes": 2109,
+      "sha256": "7cc6d9b8470ab382acc4f9ddc2a5bd5fa66d4d0a589ad4f80999d8086b5fd2e8",
+      "mtime_ns": 1792944699091244297,
+      "mtime_utc": "2026-10-25T16:11:39.091244+00:00",
+      "ctime_utc": "2026-10-25T16:11:39.091244+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/reports/m8h1_shifted_contract.json",
+      "bytes": 637655,
+      "sha256": "c10b68987d07398ee872050da321e21d66cae28c8de08ada02508d8cf9c9b505",
+      "mtime_ns": 1792944002155020833,
+      "mtime_utc": "2026-10-25T16:00:02.155021+00:00",
+      "ctime_utc": "2026-10-25T16:00:02.155021+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/scripts/start_carla.sh",
+      "bytes": 771,
+      "sha256": "52839f0da681559038a882d0580587bec20900f6a815d177607b874014595c5e",
+      "mtime_ns": 1792407062585009297,
+      "mtime_utc": "2026-10-19T10:51:02.585009+00:00",
+      "ctime_utc": "2026-10-19T10:51:02.585009+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/simulator/m8i1_session.py",
+      "bytes": 23353,
+      "sha256": "faf5c12597337bce86630a31ea9298a21b7666afb6d63f84be0a44979f132337",
+      "mtime_ns": 1792984902814762224,
+      "mtime_utc": "2026-10-26T03:21:42.814762+00:00",
+      "ctime_utc": "2026-10-26T03:21:42.814762+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8h1_preflight.py",
+      "bytes": 5954,
+      "sha256": "da35d0570e33d81355fc2e80ca60274a7d1f4349a56607b20c3d780a774ed83f",
+      "mtime_ns": 1792943995903190881,
+      "mtime_utc": "2026-10-25T15:59:55.903191+00:00",
+      "ctime_utc": "2026-10-25T15:59:55.903191+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8i1_launch.py",
+      "bytes": 4684,
+      "sha256": "f59a4d6bbbfedb94d83ed4039ff0807500788f05b7ceaa6e173123c83b64fa40",
+      "mtime_ns": 1792984771722352734,
+      "mtime_utc": "2026-10-26T03:19:31.722353+00:00",
+      "ctime_utc": "2026-10-26T03:19:31.722353+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8i1a_identity.py",
+      "bytes": 11011,
+      "sha256": "b7e9b724fc7ed670e1da5bee1eef34b8dd4bb2d05fb41122a4751b38cf03850c",
+      "mtime_ns": 1792987201481221392,
+      "mtime_utc": "2026-10-26T04:00:01.481221+00:00",
+      "ctime_utc": "2026-10-26T04:00:01.481221+00:00",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644"
+    }
+  ],
+  "unsupported_claims": [
+    "H1 booted directly into Town02",
+    "I1 actually loaded Town10HD_Opt",
+    "I1a failed because timeout2s is too short",
+    "I1 and I1a share a proven map-load root cause"
+  ]
+}

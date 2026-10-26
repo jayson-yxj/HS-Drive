@@ -1,0 +1,87 @@
+{
+  "kind": "ActualReadOnlyOfflineForensics",
+  "base_commit": "5c14c347de2b183d59d7bd3f604ec45d0b602da6",
+  "collector": {
+    "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8i1b_forensics.py",
+    "bytes": 10915,
+    "sha256": "091306d9368d289e8e11875ebe31b0aeb0e7df859b248560e80a58ddadee514d",
+    "mtime_ns": 1792992949981893715,
+    "mtime_utc": "2026-10-26T05:35:49.981894+00:00",
+    "ctime_utc": "2026-10-26T05:35:49.981894+00:00",
+    "uid": 0,
+    "gid": 0,
+    "mode": "0o644"
+  },
+  "server_launches": 0,
+  "CARLA_connections": 0,
+  "actor_creations": 0,
+  "sensor_creations": 0,
+  "TM_instances": 0,
+  "owner_ticks": 0,
+  "model_forwards": 0,
+  "training_steps": 0,
+  "visual_control": false,
+  "status": "AppendOnlySourceClarification",
+  "original_receipt": {
+    "path": "/root/gpufree-data/hs-drive-experiments/m8i1a-approved-execution-evidence/authorization.json",
+    "bytes": 1571,
+    "sha256": "6abee8f1a7ab7fbec4f9134eba616aea133d63b2556d1eda735642bc1bb39023",
+    "mtime_ns": 1792989486334970402,
+    "mtime_utc": "2026-10-26T04:38:06.334970+00:00",
+    "ctime_utc": "2026-10-26T04:38:06.334970+00:00",
+    "uid": 0,
+    "gid": 0,
+    "mode": "0o644"
+  },
+  "original_receipt_verbatim": {
+    "approved": true,
+    "scope": "M8-I1a_OneReadOnlyStartup",
+    "max_launches": 1,
+    "user_approval_reference": "Current conversation: the user reply immediately following the assistant request to approve one M8-I1a read-only startup at commit 2cc2243; begins 批准了 and lists execution requirements 1–5. Message ID is not exposed to this agent.",
+    "user_message_id": null,
+    "user_message_text": "批准了\n\n执行要求：\n\n1. 启动前核对当前分支提交、冻结SHA、离线测试结果及端口状态。授权记录必须真实引用本次对话，不得编造批准消息ID。\n2. 启动后先持久化实际地图完整名称、World Episode、Frame/Timestamp、Client/Server版本、XODR SHA，以及实际进程参数和工作目录，再进行地图判断。\n3. 如果地图不符、身份读取失败或XODR不符，立即保留证据，以非零状态结束。不修改参数继续试。\n4. 如果地图身份连续检查通过，只输出 `StartupIdentityGo_NoTraffic`，随后关闭服务器。不能自动进入M8-I1的Traffic Manager Pilot。\n5. 结束后核查自有进程组、端口和日志，保存Runner退出码、Session状态、Supervisor状态及清理证据。清理不完整则保持NoGo。",
+    "record_created_utc": "2026-10-26T04:38:06.336366+00:00",
+    "protocol_sha256": "81a5c932cf488612c68ded08b47456490a2a4537c0ff13e8cbdab7fa79992418",
+    "execution_commit": "2cc22439587976d87550bf411e22f625d30508d0",
+    "execution_branch": "feat/m8i1a-startup-identity-diagnostic",
+    "authorization_does_not_cover_TM_or_retry": true
+  },
+  "user_provided_external_transcript": {
+    "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/reports/m8i1b_authorization_source_transcript.md",
+    "bytes": 6420,
+    "sha256": "e5ac046dd5f175ef279db3f6582f1bfc98955d6a35a7df2b94a336fda92e02a1",
+    "mtime_ns": 1792993329748066114,
+    "mtime_utc": "2026-10-26T05:42:09.748066+00:00",
+    "ctime_utc": "2026-10-26T05:42:09.748066+00:00",
+    "uid": 0,
+    "gid": 0,
+    "mode": "0o644"
+  },
+  "source_chain": [
+    {
+      "context": "ExternalChatGPT",
+      "role": "user",
+      "action": "AuthorizationRequest"
+    },
+    {
+      "context": "ExternalChatGPT",
+      "role": "assistant",
+      "action": "ApprovalReply"
+    },
+    {
+      "context": "CurrentCodexConversation",
+      "role": "user",
+      "action": "RelayAndExecutionInstruction"
+    }
+  ],
+  "external_roles_evidence": "UserProvidedTranscript_NotIndependentlyVerifiedPlatformExport",
+  "external_message_id": null,
+  "external_exact_message_timestamp": null,
+  "external_platform_export": null,
+  "external_conversation_share_link": null,
+  "transcript_claimed_date": "2026-10-26 UTC+8",
+  "local_receipt_creation_not_external_message_time": "2026-10-26T04:38:06.336366+00:00",
+  "original_receipt_unchanged": true,
+  "already_consumed_attempts": 1,
+  "additional_launch_authorized": false
+}

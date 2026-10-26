@@ -1,0 +1,203 @@
+{
+  "kind": "ActualReadOnlyOfflineForensics",
+  "base_commit": "5c14c347de2b183d59d7bd3f604ec45d0b602da6",
+  "collector": {
+    "path": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8i1b_forensics.py",
+    "bytes": 10915,
+    "sha256": "091306d9368d289e8e11875ebe31b0aeb0e7df859b248560e80a58ddadee514d",
+    "mtime_ns": 1792992949981893715,
+    "mtime_utc": "2026-10-26T05:35:49.981894+00:00",
+    "ctime_utc": "2026-10-26T05:35:49.981894+00:00",
+    "uid": 0,
+    "gid": 0,
+    "mode": "0o644"
+  },
+  "server_launches": 0,
+  "CARLA_connections": 0,
+  "actor_creations": 0,
+  "sensor_creations": 0,
+  "TM_instances": 0,
+  "owner_ticks": 0,
+  "model_forwards": 0,
+  "training_steps": 0,
+  "visual_control": false,
+  "states": [
+    "ServerProcessCreated",
+    "ShippingProcessAlive",
+    "TCPListening",
+    "CARLAVersionRPCReady",
+    "WorldMapIdentityAvailable",
+    "MapXODRVerified"
+  ],
+  "chains": {
+    "M8-H1": {
+      "ServerProcessCreated": {
+        "value": "Supported",
+        "evidence_tier": "HistoricalActualPID",
+        "sources": [
+          "reports/m8h1_runtime_cleanup.json"
+        ],
+        "limitation": null
+      },
+      "ShippingProcessAlive": {
+        "value": "InferredFromActualCARLAWorldOperations",
+        "evidence_tier": "FunctionalEvidence_NoProcSnapshot",
+        "sources": [
+          "reports/m8h1_shifted_contract.json"
+        ],
+        "limitation": null
+      },
+      "TCPListening": {
+        "value": "InferredFromSuccessfulRPC",
+        "evidence_tier": "FunctionalEvidence_NoTCPProbe",
+        "sources": [
+          "reports/m8h1_shifted_contract.json"
+        ],
+        "limitation": null
+      },
+      "CARLAVersionRPCReady": {
+        "value": "Supported",
+        "evidence_tier": "ActualPreflightSuccessThroughVersionAssertion",
+        "sources": [
+          "tools/m8h1_preflight.py",
+          "reports/m8h1_logs/preflight.json"
+        ],
+        "limitation": null
+      },
+      "WorldMapIdentityAvailable": {
+        "value": {
+          "status": "SupportedAfterOptionalMapLoad",
+          "map": "Carla/Maps/Town02",
+          "episode": 14453700987391864308,
+          "frame": 3161
+        },
+        "evidence_tier": "ActualInventory",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8h1-native-template-smoke/environment_inventory.json"
+        ],
+        "limitation": null
+      },
+      "MapXODRVerified": {
+        "value": {
+          "status": "SupportedAfterOptionalMapLoad",
+          "sha256": "953c05f17def231239ffcadba3307628a82d0d335b67b4e29c3098f7aed1dd7d"
+        },
+        "evidence_tier": "ActualAPIXODR",
+        "sources": [
+          "reports/m8h1_shifted_contract.json",
+          "/root/gpufree-data/hs-drive-experiments/m8h1-native-template-smoke/Town02.xodr"
+        ],
+        "limitation": null
+      }
+    },
+    "M8-I1": {
+      "ServerProcessCreated": {
+        "value": "Supported",
+        "evidence_tier": "ActualSupervisor",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1-traffic-development/supervisor_result.json"
+        ],
+        "limitation": null
+      },
+      "ShippingProcessAlive": {
+        "value": "InferredFromSuccessfulVersionAndWorldRPC",
+        "evidence_tier": "FunctionalEvidence_NoProcSnapshot",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1-traffic-development/session_result.json"
+        ],
+        "limitation": null
+      },
+      "TCPListening": {
+        "value": "InferredFromSuccessfulRPC",
+        "evidence_tier": "FunctionalEvidence_NoTCPReadyProbe",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1-traffic-development/session_result.json"
+        ],
+        "limitation": null
+      },
+      "CARLAVersionRPCReady": {
+        "value": "Supported",
+        "evidence_tier": "ActualCodePathBeforeMapRejection",
+        "sources": [
+          "simulator/m8i1_session.py",
+          "/root/gpufree-data/hs-drive-experiments/m8i1-traffic-development/session_result.json"
+        ],
+        "limitation": null
+      },
+      "WorldMapIdentityAvailable": {
+        "value": "RPCReadReached_ButActualNameNotPersisted",
+        "evidence_tier": "ActualMapRejectWithObservabilityGap",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1-traffic-development/session_result.json"
+        ],
+        "limitation": null
+      },
+      "MapXODRVerified": {
+        "value": "NotReached",
+        "evidence_tier": "ExecutedSourceAfterMapCheck",
+        "sources": [
+          "simulator/m8i1_session.py"
+        ],
+        "limitation": null
+      }
+    },
+    "M8-I1a": {
+      "ServerProcessCreated": {
+        "value": "Supported",
+        "evidence_tier": "ActualProc",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/server_process_initial.json"
+        ],
+        "limitation": null
+      },
+      "ShippingProcessAlive": {
+        "value": "Supported",
+        "evidence_tier": "ActualProc",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/server_process_binary.json"
+        ],
+        "limitation": null
+      },
+      "TCPListening": {
+        "value": "Supported",
+        "evidence_tier": "ActualTCPProbe",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-approved-execution-evidence/during_startup_OS_probe.json"
+        ],
+        "limitation": null
+      },
+      "CARLAVersionRPCReady": {
+        "value": "NotAchieved_31Timeouts",
+        "evidence_tier": "ActualRPCErrors",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/session_result.json"
+        ],
+        "limitation": null
+      },
+      "WorldMapIdentityAvailable": {
+        "value": "NotReached",
+        "evidence_tier": "ActualBusinessFailure",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/session_result.json"
+        ],
+        "limitation": null
+      },
+      "MapXODRVerified": {
+        "value": "NotReached",
+        "evidence_tier": "ActualBusinessFailure",
+        "sources": [
+          "/root/gpufree-data/hs-drive-experiments/m8i1a-startup-identity/session_result.json"
+        ],
+        "limitation": null
+      }
+    }
+  },
+  "I1a_highest_supported_state": "TCPListening",
+  "no_TCP_to_RPC_promotion": true,
+  "two_failure_conclusions": {
+    "M8_I1": "VersionRPCSucceeded_MapRejected_ActualNameMissing",
+    "M8_I1a": "31VersionRPCTimeouts_NoWorldMapRead"
+  },
+  "no_new_runtime_evidence": true,
+  "forbidden_unification": "Both failures are map-load failures"
+}
