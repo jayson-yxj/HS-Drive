@@ -1,0 +1,22 @@
+{
+  "stage":"M8-I1", "base":"502f0701025f2de5a8f2cc1ecbdcd4b3cacd2b6a",
+  "map":"Town02", "server_version":"0.9.15", "port":2100, "tm_port":8100,
+  "weather":"ClearNoon", "seed":71, "walker_seed":71,
+  "vehicle_blueprint":"vehicle.tesla.model3", "walker_blueprint":"walker.pedestrian.0002",
+  "vehicle_attempts":8, "walker_attempts":12, "spawn_order":"random.Random(71).sample(native indices, 8); freeze full actual order before first spawn",
+  "ego_selection":"first successful vehicle matching exact blueprint, positive finite local Box and physics mass; no image-based selection or replacement",
+  "rig":"configs/cameras.yaml", "width":640, "height":384, "hfov":100, "sensor_tick":0.1,
+  "fixed_delta_seconds":0.05, "settle_ticks":40, "init_ticks":80, "observation_ticks":600, "max_ticks":700,
+  "save_offsets_sensor_periods":[10,35,60,85,110,135,160,185,210,235,260,285],
+  "schedule":"first due camera frame strictly after initialization, using first observed sensor phase during initialization; plus 2*offsets; freeze before TM observation; never fill nearest",
+  "max_payloads":288, "max_bytes":1073741824, "wall_seconds":1800, "tick_wall_delay":0.15,
+  "sensor_drain_wall_s":0.15, "sensor_timeout_ticks":12,
+  "initial_stationarity":{"min_ticks":40,"window_ticks":20,"max_speed_mps":0.02,"max_window_position_span_m":0.01,"max_window_angle_span_deg":0.1},
+  "severe_state":{"max_abs_tilt_deg":45,"max_abs_z_change_per_tick_m":2,"max_speed_mps":60},
+  "camera_closure_matrix_atol":0.0001, "timestamp_atol_s":0.00001,
+  "identity":{"min_pixels":3,"box_tolerance_m":0.25,"min_geometry_purity":0.9,"min_semantic_agreement":0.95,"max_distance_m":80,"min_depth_m":1.5,"rule":"unique semantic + depth-inside-source-OBB claim across all local Actor and Environment sources; no ActorID/renderID equality assumption; whole native image, no PETR crop"},
+  "natural_review":"independent raw trajectory/physics, authored map region, source OBB, rendered ground/depth, static OBB competition; missing proof Unknown; no new ray placement rules; exact contact not certified",
+  "safety_authorization":"TrafficManager autonomous scene source only, no HS visual/Planner control",
+  "PETR_forwards":0, "training_steps":0, "new_Final":0, "split":"DevelopmentOnly",
+  "stop":"one run only; no scene/seed/density/placement/sensor-rate retries after failure; preserve all partial artifacts"
+}
