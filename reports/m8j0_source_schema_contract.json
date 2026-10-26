@@ -1,0 +1,600 @@
+{
+  "stage": "M8-J0",
+  "base_commit": "fe8db837d18f033e446475d0bf48534eb54bc0f3",
+  "checked_at_utc": "2026-10-26T06:23:26.478538+00:00",
+  "checked_at_local": "2026-10-26T07:23:26.478538+01:00",
+  "timezone": "Europe/Berlin",
+  "official_code_commit": "7ec25d1c9f7522d923ce5f3420986cef1cb2d956",
+  "evidence_kind": "OfflineSourceReviewPlusBoundedPublicMetadata",
+  "generator_sha256": "c77c144c6a4335ca8ed4e9edb7d9748fa713d7b2ca8b826c003ce57eaa6497bb",
+  "payload_status": "PayloadNotVerified",
+  "payload_downloads": 0,
+  "payload_get_requests": 0,
+  "range_requests": 0,
+  "archive_extractions": 0,
+  "CARLA_connections": 0,
+  "server_launches": 0,
+  "GPU_tasks": 0,
+  "training_steps": 0,
+  "default_model_changes": 0,
+  "vehicle_control_changes": 0,
+  "messages_sent_to_maintainers": 0,
+  "status": "SourceSchemaReviewCompleted_PayloadNotVerified",
+  "cameras": [
+    {
+      "type": "sensor.camera.rgb",
+      "x": 0.8,
+      "y": 0.0,
+      "z": 1.6,
+      "roll": 0.0,
+      "pitch": 0.0,
+      "yaw": 0.0,
+      "width": 1600,
+      "height": 900,
+      "fov": 70,
+      "id": "CAM_FRONT",
+      "source_line": 433,
+      "evidence_level": "SourceCodeDerived",
+      "payload_verification": "PayloadNotVerified",
+      "expected_K": [
+        [
+          1142.5184053936916,
+          0,
+          800.0
+        ],
+        [
+          0,
+          1142.5184053936916,
+          450.0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "K_note": "Derived pinhole expectation from fixed utils.py; actual saved K not read"
+    },
+    {
+      "type": "sensor.camera.rgb",
+      "x": 0.27,
+      "y": -0.55,
+      "z": 1.6,
+      "roll": 0.0,
+      "pitch": 0.0,
+      "yaw": -55.0,
+      "width": 1600,
+      "height": 900,
+      "fov": 70,
+      "id": "CAM_FRONT_LEFT",
+      "source_line": 440,
+      "evidence_level": "SourceCodeDerived",
+      "payload_verification": "PayloadNotVerified",
+      "expected_K": [
+        [
+          1142.5184053936916,
+          0,
+          800.0
+        ],
+        [
+          0,
+          1142.5184053936916,
+          450.0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "K_note": "Derived pinhole expectation from fixed utils.py; actual saved K not read"
+    },
+    {
+      "type": "sensor.camera.rgb",
+      "x": 0.27,
+      "y": 0.55,
+      "z": 1.6,
+      "roll": 0.0,
+      "pitch": 0.0,
+      "yaw": 55.0,
+      "width": 1600,
+      "height": 900,
+      "fov": 70,
+      "id": "CAM_FRONT_RIGHT",
+      "source_line": 447,
+      "evidence_level": "SourceCodeDerived",
+      "payload_verification": "PayloadNotVerified",
+      "expected_K": [
+        [
+          1142.5184053936916,
+          0,
+          800.0
+        ],
+        [
+          0,
+          1142.5184053936916,
+          450.0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "K_note": "Derived pinhole expectation from fixed utils.py; actual saved K not read"
+    },
+    {
+      "type": "sensor.camera.rgb",
+      "x": -2.0,
+      "y": 0.0,
+      "z": 1.6,
+      "roll": 0.0,
+      "pitch": 0.0,
+      "yaw": 180.0,
+      "width": 1600,
+      "height": 900,
+      "fov": 110,
+      "id": "CAM_BACK",
+      "source_line": 454,
+      "evidence_level": "SourceCodeDerived",
+      "payload_verification": "PayloadNotVerified",
+      "expected_K": [
+        [
+          560.1660305677678,
+          0,
+          800.0
+        ],
+        [
+          0,
+          560.1660305677678,
+          450.0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "K_note": "Derived pinhole expectation from fixed utils.py; actual saved K not read"
+    },
+    {
+      "type": "sensor.camera.rgb",
+      "x": -0.32,
+      "y": -0.55,
+      "z": 1.6,
+      "roll": 0.0,
+      "pitch": 0.0,
+      "yaw": -110.0,
+      "width": 1600,
+      "height": 900,
+      "fov": 70,
+      "id": "CAM_BACK_LEFT",
+      "source_line": 461,
+      "evidence_level": "SourceCodeDerived",
+      "payload_verification": "PayloadNotVerified",
+      "expected_K": [
+        [
+          1142.5184053936916,
+          0,
+          800.0
+        ],
+        [
+          0,
+          1142.5184053936916,
+          450.0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "K_note": "Derived pinhole expectation from fixed utils.py; actual saved K not read"
+    },
+    {
+      "type": "sensor.camera.rgb",
+      "x": -0.32,
+      "y": 0.55,
+      "z": 1.6,
+      "roll": 0.0,
+      "pitch": 0.0,
+      "yaw": 110.0,
+      "width": 1600,
+      "height": 900,
+      "fov": 70,
+      "id": "CAM_BACK_RIGHT",
+      "source_line": 468,
+      "evidence_level": "SourceCodeDerived",
+      "payload_verification": "PayloadNotVerified",
+      "expected_K": [
+        [
+          1142.5184053936916,
+          0,
+          800.0
+        ],
+        [
+          0,
+          1142.5184053936916,
+          450.0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "K_note": "Derived pinhole expectation from fixed utils.py; actual saved K not read"
+    }
+  ],
+  "field_evidence": [
+    {
+      "field": "six_camera_names_resolution_fov",
+      "evidence_level": "SourceCodeDerived",
+      "expected": [
+        {
+          "type": "sensor.camera.rgb",
+          "x": 0.8,
+          "y": 0.0,
+          "z": 1.6,
+          "roll": 0.0,
+          "pitch": 0.0,
+          "yaw": 0.0,
+          "width": 1600,
+          "height": 900,
+          "fov": 70,
+          "id": "CAM_FRONT",
+          "source_line": 433,
+          "evidence_level": "SourceCodeDerived",
+          "payload_verification": "PayloadNotVerified",
+          "expected_K": [
+            [
+              1142.5184053936916,
+              0,
+              800.0
+            ],
+            [
+              0,
+              1142.5184053936916,
+              450.0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "K_note": "Derived pinhole expectation from fixed utils.py; actual saved K not read"
+        },
+        {
+          "type": "sensor.camera.rgb",
+          "x": 0.27,
+          "y": -0.55,
+          "z": 1.6,
+          "roll": 0.0,
+          "pitch": 0.0,
+          "yaw": -55.0,
+          "width": 1600,
+          "height": 900,
+          "fov": 70,
+          "id": "CAM_FRONT_LEFT",
+          "source_line": 440,
+          "evidence_level": "SourceCodeDerived",
+          "payload_verification": "PayloadNotVerified",
+          "expected_K": [
+            [
+              1142.5184053936916,
+              0,
+              800.0
+            ],
+            [
+              0,
+              1142.5184053936916,
+              450.0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "K_note": "Derived pinhole expectation from fixed utils.py; actual saved K not read"
+        },
+        {
+          "type": "sensor.camera.rgb",
+          "x": 0.27,
+          "y": 0.55,
+          "z": 1.6,
+          "roll": 0.0,
+          "pitch": 0.0,
+          "yaw": 55.0,
+          "width": 1600,
+          "height": 900,
+          "fov": 70,
+          "id": "CAM_FRONT_RIGHT",
+          "source_line": 447,
+          "evidence_level": "SourceCodeDerived",
+          "payload_verification": "PayloadNotVerified",
+          "expected_K": [
+            [
+              1142.5184053936916,
+              0,
+              800.0
+            ],
+            [
+              0,
+              1142.5184053936916,
+              450.0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "K_note": "Derived pinhole expectation from fixed utils.py; actual saved K not read"
+        },
+        {
+          "type": "sensor.camera.rgb",
+          "x": -2.0,
+          "y": 0.0,
+          "z": 1.6,
+          "roll": 0.0,
+          "pitch": 0.0,
+          "yaw": 180.0,
+          "width": 1600,
+          "height": 900,
+          "fov": 110,
+          "id": "CAM_BACK",
+          "source_line": 454,
+          "evidence_level": "SourceCodeDerived",
+          "payload_verification": "PayloadNotVerified",
+          "expected_K": [
+            [
+              560.1660305677678,
+              0,
+              800.0
+            ],
+            [
+              0,
+              560.1660305677678,
+              450.0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "K_note": "Derived pinhole expectation from fixed utils.py; actual saved K not read"
+        },
+        {
+          "type": "sensor.camera.rgb",
+          "x": -0.32,
+          "y": -0.55,
+          "z": 1.6,
+          "roll": 0.0,
+          "pitch": 0.0,
+          "yaw": -110.0,
+          "width": 1600,
+          "height": 900,
+          "fov": 70,
+          "id": "CAM_BACK_LEFT",
+          "source_line": 461,
+          "evidence_level": "SourceCodeDerived",
+          "payload_verification": "PayloadNotVerified",
+          "expected_K": [
+            [
+              1142.5184053936916,
+              0,
+              800.0
+            ],
+            [
+              0,
+              1142.5184053936916,
+              450.0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "K_note": "Derived pinhole expectation from fixed utils.py; actual saved K not read"
+        },
+        {
+          "type": "sensor.camera.rgb",
+          "x": -0.32,
+          "y": 0.55,
+          "z": 1.6,
+          "roll": 0.0,
+          "pitch": 0.0,
+          "yaw": 110.0,
+          "width": 1600,
+          "height": 900,
+          "fov": 70,
+          "id": "CAM_BACK_RIGHT",
+          "source_line": 468,
+          "evidence_level": "SourceCodeDerived",
+          "payload_verification": "PayloadNotVerified",
+          "expected_K": [
+            [
+              1142.5184053936916,
+              0,
+              800.0
+            ],
+            [
+              0,
+              1142.5184053936916,
+              450.0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "K_note": "Derived pinhole expectation from fixed utils.py; actual saved K not read"
+        }
+      ],
+      "source": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/tools/data_collect.py#L430",
+      "payload_verification": "PayloadNotVerified",
+      "limitations": "TOP_DOWN excluded; no payload verification; differs from HS rig"
+    },
+    {
+      "field": "intrinsic",
+      "evidence_level": "SourceCodeDerived",
+      "expected": "sensors.CAM_*.intrinsic; 3x3 pinhole K",
+      "source": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/tools/data_collect.py#L1065",
+      "payload_verification": "PayloadNotVerified",
+      "limitations": "Verify original image size, principal point, crop/resize; source formula is not a calibration measurement"
+    },
+    {
+      "field": "camera_to_ego",
+      "evidence_level": "SourceCodeDerived",
+      "expected": "sensors.CAM_*.cam2ego; 4x4 CARLA sensor basis",
+      "source": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/tools/data_collect.py#L1074",
+      "payload_verification": "PayloadNotVerified",
+      "limitations": "Optical camera axes require explicit mapping (x,y,z) CARLA -> (y,-z,x); no existing adapter change"
+    },
+    {
+      "field": "world_to_camera",
+      "evidence_level": "SourceCodeDerived",
+      "expected": "sensors.CAM_*.world2cam; inverse actor transform",
+      "source": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/tools/data_collect.py#L1069",
+      "payload_verification": "PayloadNotVerified",
+      "limitations": "Not automatically OpenCV optical basis; compare inverse closure and projected corners"
+    },
+    {
+      "field": "objects_and_boxes",
+      "evidence_level": "SourceDocumented",
+      "expected": "bounding_boxes: ego/vehicles/walkers/traffic_light/traffic_sign; id,type_id,center,extent,world_cord,rotation and transforms",
+      "source": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/docs/anno.md",
+      "payload_verification": "PayloadNotVerified",
+      "limitations": "extent is half-size. Trigger volumes are not physical obstacles. Static location/rotation known unreliable; full cone/barrier/background identity not assured"
+    },
+    {
+      "field": "dynamic_actor_identity",
+      "evidence_level": "SourceCodeDerived",
+      "expected": "CARLA Actor id/type_id in annotation",
+      "source": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/tools/data_collect.py#L1190",
+      "payload_verification": "PayloadNotVerified",
+      "limitations": "Scope to clip/session; not global ID; instance pixel association and lifetime must be audited; do not equate namespaces"
+    },
+    {
+      "field": "instance",
+      "evidence_level": "SourceDocumented",
+      "expected": "camera/instance_{view}/{ordinal}.png",
+      "source": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/docs/anno.md",
+      "payload_verification": "PayloadNotVerified",
+      "limitations": "Same mounts as RGB per docs; actual encoding and aliasing not tested; no unique identity guarantee"
+    },
+    {
+      "field": "semantic",
+      "evidence_level": "SourceDocumented",
+      "expected": "camera/semantic_{view}/{ordinal}.png",
+      "source": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/docs/anno.md",
+      "payload_verification": "PayloadNotVerified",
+      "limitations": "Semantics not full object-instance identity or complete occupancy; payload not seen"
+    },
+    {
+      "field": "depth",
+      "evidence_level": "SourceCodeDerived",
+      "expected": "Legacy save: convert_depth(BGR) then PNG; v0.0.4 separate NPZ must not be substituted",
+      "source": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/tools/data_collect.py#L765",
+      "payload_verification": "PayloadNotVerified",
+      "limitations": "Fixed utils decodes to metric scalar; exact dtype/quantization on archive unknown. Do not apply raw RGB24 decoder to saved scalar PNG"
+    },
+    {
+      "field": "rgb_encoding",
+      "evidence_level": "SourceDocumented",
+      "expected": "JPEG quality20, 1600x900 source rig",
+      "source": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/docs/anno.md",
+      "payload_verification": "PayloadNotVerified",
+      "limitations": "Lossy far-field small-object support; pixel size is not measured information quality"
+    },
+    {
+      "field": "source_world_frame",
+      "evidence_level": "NotAvailable",
+      "expected": "Not present in reviewed anno save dictionary",
+      "source": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/tools/data_collect.py#L740",
+      "payload_verification": "PayloadNotVerified",
+      "limitations": "Filename uses self.count, not proven source frame. No fabricated world frame"
+    },
+    {
+      "field": "per_sensor_timestamp",
+      "evidence_level": "NotAvailable",
+      "expected": "Not present in reviewed save schema",
+      "source": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/tools/data_collect.py#L792",
+      "payload_verification": "PayloadNotVerified",
+      "limitations": "No payload evidence; source synchronization does not preserve timestamps. No dynamic-time certification"
+    },
+    {
+      "field": "source_sensor_frame",
+      "evidence_level": "NotAvailable",
+      "expected": "Source callback sees image.frame; saved anno does not retain it",
+      "source": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/leaderboard/leaderboard/envs/sensor_interface.py#L161",
+      "payload_verification": "PayloadNotVerified",
+      "limitations": "get_data(frame) filters intended source frame; actual archive raw sensor frame not verified"
+    },
+    {
+      "field": "file_sequence_ordinal",
+      "evidence_level": "SourceCodeDerived",
+      "expected": "self.count -> five-digit save names",
+      "source": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/tools/data_collect.py#L740",
+      "payload_verification": "PayloadNotVerified",
+      "limitations": "Ordinal alone cannot recover elapsed time, dropped frames or original timestamp"
+    },
+    {
+      "field": "route_and_scenario",
+      "evidence_level": "SourceDocumented",
+      "expected": "archive name: DynamicObjectCrossing/Town02/Route13/Weather6; docs describe directory layout",
+      "source": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/docs/anno.md",
+      "payload_verification": "PayloadNotVerified",
+      "limitations": "Internal route/session/episode manifest unverified; filename is not runtime provenance"
+    },
+    {
+      "field": "synchronization_intent",
+      "evidence_level": "SourceCodeDerived",
+      "expected": "get_data(frame) discards nonmatching frame buffers",
+      "source": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/leaderboard/leaderboard/envs/sensor_interface.py#L222",
+      "payload_verification": "PayloadNotVerified",
+      "limitations": "Only code intent; not proof this legacy archive was collected by the current fixed source"
+    },
+    {
+      "field": "static_vehicle_association",
+      "evidence_level": "SourceCodeDerived",
+      "expected": "Greedy nearest XY level-bbox association up to20m, then remove box",
+      "source": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/tools/data_collect.py#L1254",
+      "payload_verification": "PayloadNotVerified",
+      "limitations": "Not a rendered identity proof. center/local/world wording ambiguity and possible mismatches remain"
+    },
+    {
+      "field": "physical_contact_mesh_full_background",
+      "evidence_level": "NotAvailable",
+      "expected": "No complete verified per-asset physical mesh/contact/identity contract",
+      "source": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/docs/anno.md",
+      "payload_verification": "PayloadNotVerified",
+      "limitations": "Unknown must remain Unknown; no inferred safe Free"
+    }
+  ],
+  "source_inventory": "reports/m8j0_source_inventory.json",
+  "hs_rig_reference": "configs/cameras.yaml",
+  "hs_rig_sha256": "ceda7659ecdda891e94c8552383fd5695e0e1fcc790f72ff143eb4b0fe40685c",
+  "calibration_reuse_forbidden": true,
+  "top_down_is_inference_input": false,
+  "gt_fields_are_supervision_only": [
+    "depth",
+    "instance",
+    "semantic",
+    "bounding_boxes",
+    "actor_state",
+    "world_transform"
+  ],
+  "rgb_inference_contract": [
+    "six_rgb_images",
+    "audited_calibration_only"
+  ],
+  "temporal_use": "NotReady: raw time not established; offline one-frame schema study only",
+  "split": "DevelopmentOnly; official Train not independent HS Final; no split reassignment",
+  "source_release_caveat": "Pinned source establishes expected fields, not exact collector version or actual fields of the legacy target archive"
+}

@@ -1,0 +1,126 @@
+"""Bounded public metadata audit. Never GETs an archive or follows redirects implicitly."""
+import argparse
+import datetime as dt
+import hashlib
+import json
+import os
+from pathlib import Path
+import subprocess
+import tempfile
+import urllib.parse
+from zoneinfo import ZoneInfo
+
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / 'reports/m8j0_sources'
+CLIP = 'DynamicObjectCrossing_Town02_Route13_Weather6.tar.gz'
+CODE = '7ec25d1c9f7522d923ce5f3420986cef1cb2d956'
+MAX_REQUESTS = 18
+MAX_BODY = 2 * 1024 * 1024
+TOTAL_BODY = 6 * 1024 * 1024
+PUBLIC_HEADERS = {'content-type', 'content-length', 'etag', 'last-modified',
+                  'x-linked-etag', 'x-linked-size', 'x-repo-commit', 'location',
+                  'allow', 'retry-after', 'x-error-code', 'x-error-message'}
+
+
+def dump(path, value):
+    with Path(path).open('x') as f:
+        json.dump(value, f, indent=2, ensure_ascii=False); f.write('\n')
+
+
+def sha(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def public_url(url):
+    p = urllib.parse.urlsplit(url)
+    # Signed storage redirect parameters may contain credentials; never archive them.
+    query = '&'.join(f'{k}={v}' if k in {'ref', 'blobs', 'recursive', 'limit', 'per_page', 'q', 'path', 'sha'}
+                     else f'{k}=REDACTED' for k, v in urllib.parse.parse_qsl(p.query))
+    return urllib.parse.urlunsplit((p.scheme, p.hostname or '', p.path, query, ''))
+
+
+def validate(method, url, redirect_source=None):
+    p = urllib.parse.urlsplit(url)
+    assert p.scheme == 'https' and not p.username and not p.password
+    assert p.path == urllib.parse.unquote(p.path), 'encoded paths are not approved'
+    assert method in {'GET', 'HEAD'}
+    if method == 'GET':
+        assert p.hostname in {'api.github.com', 'huggingface.co'}
+        assert not any(x in p.path.lower() for x in ('.tar', '.zip', '.pth', '.bin', '.safetensors'))
+        if p.hostname == 'huggingface.co':
+            assert p.path == '/api/datasets/rethinklab/Bench2Drive' or (
+                p.path.startswith('/datasets/rethinklab/Bench2Drive/raw/') and
+                p.path.rsplit('/', 1)[-1] in {'README.md', 'LICENSE'})
+        else:
+            base = '/repos/Thinklab-SJTU/Bench2Drive/'
+            assert p.path in {base + 'commits', '/search/issues',
+                '/repos/carla-simulator/carla/contents/README.md'} or p.path in {
+                base + 'contents/' + x for x in ('README.md', 'LICENSE', 'tools/utils.py', 'docs/bench2drive_mini_10.json')}
+    elif p.hostname == 'huggingface.co':
+        assert p.path.endswith('/' + CLIP)
+    else:
+        assert redirect_source and (p.hostname.endswith('.hf.co') or p.hostname.endswith('.huggingface.co'))
+        assert redirect_source.startswith('https://huggingface.co/datasets/rethinklab/Bench2Drive/resolve/')
+
+
+def probe(name, method, url, redirect_source=None):
+    validate(method, url, redirect_source)
+    OUT.mkdir(exist_ok=True)
+    logs = sorted(OUT.glob('*.request.json'))
+    assert len(logs) < MAX_REQUESTS, 'request cap'
+    used = sum(json.loads(p.read_text()).get('saved_body_bytes', 0) for p in logs)
+    assert used + MAX_BODY <= TOTAL_BODY, 'metadata byte cap'
+    assert not (OUT / f'{name}.request.json').exists(), 'no automatic retries/overwrite'
+    now = dt.datetime.now(dt.timezone.utc)
+    row = dict(name=name, method=method, url=public_url(url),
+               checked_at_utc=now.isoformat(), checked_at_local=now.astimezone(ZoneInfo('Europe/Berlin')).isoformat(),
+               local_timezone='Europe/Berlin',
+               execution='ActualWorkspaceServerMetadataProbe', tls_verification=True,
+               range_request=False, auth_header=False, cookies=False, automatic_redirects=False,
+               automatic_retries=0, timeout_seconds=25, connect_timeout_seconds=10,
+               source_sha256=sha(__file__), redirect_source=public_url(redirect_source) if redirect_source else None,
+               proxy_env_present={k: bool(os.getenv(k)) for k in ('HTTPS_PROXY', 'https_proxy', 'ALL_PROXY', 'all_proxy')})
+    with tempfile.TemporaryDirectory(prefix='m8j0_metadata_') as tmp:
+        body = Path(tmp) / 'body'
+        cmd = ['curl', '-q', '--silent', '--show-error', '--proto', '=https', '--connect-timeout', '10',
+               '--max-time', '25', '--dump-header', '-',
+               '--output', '/dev/null' if method == 'HEAD' else str(body)]
+        if method == 'HEAD': cmd.append('--head')
+        else: cmd.extend(['--max-filesize', str(MAX_BODY)])
+        cmd.append(url)
+        r = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+        headers = {}; status = None
+        for line in r.stdout.splitlines():
+            if line.startswith('HTTP/'):
+                status = int(line.split()[1]); headers = {}
+            elif ':' in line:
+                k, v = line.split(':', 1); k = k.lower(); v = v.strip()
+                if k in PUBLIC_HEADERS: headers[k] = public_url(v) if k == 'location' else v
+        categories = {5:'ProxyDNSFailure', 6:'DNSFailure', 7:'ConnectionFailure', 28:'Timeout',
+                      35:'TLSHandshakeFailure', 60:'TLSCertificateFailure', 63:'MetadataSizeCap'}
+        cat = categories.get(r.returncode, 'TransportFailure') if r.returncode else (
+            'Success' if status and 200 <= status < 300 else
+            'Redirect' if status and 300 <= status < 400 else
+            'AuthenticationOrAuthorizationResponse' if status in (401, 403) else
+            'NotFound' if status == 404 else 'MethodUnsupported' if status in (405, 501) else
+            'RateLimited' if status == 429 else 'ServerError' if status and status >= 500 else 'OtherHTTP')
+        row.update(curl_exit_code=r.returncode, http_status=status, category=cat, headers=headers,
+                   # Curl failure diagnostic retained after stripping URL query material.
+                   error_detail=r.stderr.strip()[:2000], saved_body_bytes=0)
+        if body.exists() and body.stat().st_size and method == 'GET':
+            payload = body.read_bytes()
+            assert len(payload) <= MAX_BODY
+            with (OUT / f'{name}.body').open('xb') as f: f.write(payload)
+            row.update(saved_body_bytes=len(payload), body_path=f'reports/m8j0_sources/{name}.body',
+                       body_sha256=hashlib.sha256(payload).hexdigest())
+    row['finished_at_utc'] = dt.datetime.now(dt.timezone.utc).isoformat()
+    dump(OUT / f'{name}.request.json', row)
+    print(json.dumps({k: row[k] for k in ('name', 'http_status', 'category', 'saved_body_bytes')}))
+    return row
+
+
+if __name__ == '__main__':
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument('name'); p.add_argument('method', choices=['GET', 'HEAD']); p.add_argument('url')
+    p.add_argument('--redirect-source')
+    a = p.parse_args(); probe(a.name, a.method, a.url, a.redirect_source)

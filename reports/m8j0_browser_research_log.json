@@ -1,0 +1,70 @@
+{
+  "stage": "M8-J0",
+  "checked_date_utc": "2026-10-26",
+  "execution": "BrowserResearchService_NotWorkspaceServerConnectivity",
+  "timestamp_precision": "DayOnly; per-operation wall timestamp not independently recorded by browser tool",
+  "calls": 7,
+  "requested_operations": 17,
+  "call_cap": 10,
+  "http_request_count": "NotAvailable; browser backend fetches/search operations are not raw server HTTP transactions",
+  "payload_link_clicked": false,
+  "payload_download_requested": false,
+  "range_request_requested": false,
+  "operation_groups": [
+    {
+      "call": 1,
+      "operations": [
+        {"action": "open", "url": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/7ec25d1c9f7522d923ce5f3420986cef1cb2d956/LICENSE", "result": "OfficialLicensePageReadable"},
+        {"action": "open", "url": "https://huggingface.co/datasets/rethinklab/Bench2Drive/blob/main/README.md", "result": "OfficialDataCardReadable_Cached"}
+      ]
+    },
+    {
+      "call": 2,
+      "operations": [
+        {"action": "search", "query": "repo:Thinklab-SJTU/Bench2Drive license Apache CC BY NC ND dataset", "domains": ["github.com"], "result": "OfficialRepositoryHistoryFound_NoAssetReconciliationFound"},
+        {"action": "search", "query": "site:huggingface.co/datasets/rethinklab/Bench2Drive/discussions license", "result": "OfficialDiscussionsPage_NoResolutionFound"}
+      ]
+    },
+    {
+      "call": 3,
+      "operations": [
+        {"action": "open", "url": "https://huggingface.co/api/datasets/rethinklab/Bench2Drive", "result": "ToolInternalError_HTTPStatusUnknown"},
+        {"action": "open", "url": "https://huggingface.co/datasets/rethinklab/Bench2Drive/blob/main/DynamicObjectCrossing_Town02_Route13_Weather6.tar.gz", "result": "ToolInternalError_HTTPStatusUnknown", "note": "HTML blob metadata page only, not resolve/download endpoint"},
+        {"action": "open", "url": "https://huggingface.co/datasets/rethinklab/Bench2Drive/commits/main/README.md", "result": "ToolInternalError_HTTPStatusUnknown"}
+      ]
+    },
+    {
+      "call": 4,
+      "operations": [
+        {"action": "open", "url": "https://huggingface.co/datasets/rethinklab/Bench2Drive/blob/main/README.md", "result": "OfficialDataCardReadable_Cached"},
+        {"action": "open", "url": "https://huggingface.co/datasets/rethinklab/Bench2Drive/discussions", "result": "PublicPage_NoThreadsVisible_Cached"}
+      ]
+    },
+    {
+      "call": 5,
+      "operations": [
+        {"action": "click_document_link", "url": "https://huggingface.co/datasets/rethinklab/Bench2Drive/commit/ce56cfbc26edf7796586e26fd44644f0ac2f6bcc", "result": "OfficialCommitMetadataReadable"},
+        {"action": "click_document_link", "url": "https://huggingface.co/datasets/rethinklab/Bench2Drive/tree/main", "result": "PartialPublicFileListingReadable"},
+        {"action": "open", "url": "https://creativecommons.org/licenses/by-nc-nd/4.0/", "result": "OfficialLicensorExplanationReadable"},
+        {"action": "open", "url": "https://www.apache.org/licenses/LICENSE-2.0", "result": "OfficialLicenseTermsReadable"}
+      ]
+    },
+    {
+      "call": 6,
+      "operations": [
+        {"action": "open", "url": "https://huggingface.co/datasets/rethinklab/Bench2Drive/commit/ce56cfbc26edf7796586e26fd44644f0ac2f6bcc", "result": "OfficialCommitMetadataReadable"},
+        {"action": "open", "url": "https://huggingface.co/datasets/rethinklab/Bench2Drive/blob/ce56cfbc26edf7796586e26fd44644f0ac2f6bcc/README.md", "result": "ToolInternalError_HTTPStatusUnknown"},
+        {"action": "open", "url": "https://huggingface.co/datasets/rethinklab/Bench2Drive/tree/main", "result": "PartialPublicFileListingReadable"}
+      ],
+      "capture": "reports/m8j0_sources/browser_official_metadata_capture.json"
+    },
+    {
+      "call": 7,
+      "operations": [
+        {"action": "open", "url": "https://huggingface.co/datasets/rethinklab/Bench2Drive/blob/main/README.md", "result": "OfficialDataCardReadable_Cached"}
+      ],
+      "capture": "reports/m8j0_sources/browser_hf_license_capture.json"
+    }
+  ],
+  "limits": "Browser pages may be cached; neither cache age nor a browser tool error proves current server accessibility, target asset existence or authentication status. No mirror or alternative asset used."
+}
