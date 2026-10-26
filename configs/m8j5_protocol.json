@@ -1,0 +1,19 @@
+{
+  "stage": "M8-J5",
+  "base_commit": "f8e9f9ca5f57976cac77ae3477efc224dcfdd281",
+  "private_root": "/root/gpufree-data/hs-drive-private/m8j5-supervision",
+  "source_sidecar_root": "/root/gpufree-data/hs-drive-private/m8j4-single-frame",
+  "golden_candidate_budget": 36,
+  "human_signoff_required": true,
+  "negative_certification_scope": "All ten PETR classes; only reviewed full 3D AABB containment, Unknown envelope intersection veto; no safe regions certified yet",
+  "query_envelope": "Detached prediction, yaw-independent XY circumcircle AABB and full height, 0.5m margin. Conservative overlap test; no confidence threshold.",
+  "real_velocity_loss": false,
+  "synthetic_gradient_tests": true,
+  "real_update_smoke_limits": {"max_frames": 2, "max_steps": 3, "max_allocated_GiB": 8, "max_seconds": 180},
+  "real_update_smoke_gate": "HumanSignoff AND geometry roundtrip AND all loss tests AND approved supervision contract",
+  "model_inference_regression_calls": 1,
+  "default_code_changes": false,
+  "CARLA_launches": 0,
+  "downloads": 0,
+  "formal_training": false
+}

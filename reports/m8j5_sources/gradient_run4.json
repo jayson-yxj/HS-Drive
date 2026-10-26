@@ -1,0 +1,576 @@
+{
+  "evidence_type": "SyntheticCUDA_OfficialPETRHeadLoss",
+  "device": "NVIDIA GeForce RTX 4090",
+  "torch": "2.0.0+cu118",
+  "cuda": "11.8",
+  "records": [
+    {
+      "name": "complete_annotation_parity",
+      "loss_cls": 10.223919868469238,
+      "loss_bbox": 0.0624999925494194,
+      "audit": {
+        "samples": [
+          {
+            "positive": 1,
+            "negative": 3,
+            "ignore": 0,
+            "state": [
+              1,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "positive": 1,
+        "negative": 3,
+        "ignore": 0,
+        "cls_avg_factor": 1.0,
+        "reg_avg_factor": 1.0
+      },
+      "class0_gradient": [
+        -0.14914338290691376,
+        0.4474301338195801,
+        0.4474301338195801,
+        0.4474301338195801
+      ],
+      "class_gradient_abs_by_query": [
+        4.1760149002075195,
+        4.474301338195801,
+        4.474301338195801,
+        4.474301338195801
+      ],
+      "regression_gradient_abs_by_query": [
+        0.2499999701976776,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "partial_labels",
+      "loss_cls": 5.0253167152404785,
+      "loss_bbox": 0.0624999925494194,
+      "audit": {
+        "samples": [
+          {
+            "positive": 1,
+            "negative": 1,
+            "ignore": 2,
+            "state": [
+              1,
+              -1,
+              0,
+              -1
+            ]
+          }
+        ],
+        "positive": 1,
+        "negative": 1,
+        "ignore": 2,
+        "cls_avg_factor": 1.0,
+        "reg_avg_factor": 1.0
+      },
+      "class0_gradient": [
+        -0.14914338290691376,
+        0.0,
+        0.4474301338195801,
+        0.0
+      ],
+      "class_gradient_abs_by_query": [
+        4.1760149002075195,
+        0.0,
+        4.474301338195801,
+        0.0
+      ],
+      "regression_gradient_abs_by_query": [
+        0.2499999701976776,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "unknown_overrides_safe_background",
+      "loss_cls": 7.624617576599121,
+      "loss_bbox": 0.0624999925494194,
+      "audit": {
+        "samples": [
+          {
+            "positive": 1,
+            "negative": 2,
+            "ignore": 1,
+            "state": [
+              1,
+              -1,
+              0,
+              0
+            ]
+          }
+        ],
+        "positive": 1,
+        "negative": 2,
+        "ignore": 1,
+        "cls_avg_factor": 1.0,
+        "reg_avg_factor": 1.0
+      },
+      "class0_gradient": [
+        -0.14914338290691376,
+        0.0,
+        0.4474301338195801,
+        0.4474301338195801
+      ],
+      "class_gradient_abs_by_query": [
+        4.1760149002075195,
+        0.0,
+        4.474301338195801,
+        4.474301338195801
+      ],
+      "regression_gradient_abs_by_query": [
+        0.2499999701976776,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "positive_precedence",
+      "loss_cls": 5.0253167152404785,
+      "loss_bbox": 0.0624999925494194,
+      "audit": {
+        "samples": [
+          {
+            "positive": 1,
+            "negative": 1,
+            "ignore": 2,
+            "state": [
+              1,
+              -1,
+              0,
+              -1
+            ]
+          }
+        ],
+        "positive": 1,
+        "negative": 1,
+        "ignore": 2,
+        "cls_avg_factor": 1.0,
+        "reg_avg_factor": 1.0
+      },
+      "class0_gradient": [
+        -0.14914338290691376,
+        0.0,
+        0.4474301338195801,
+        0.0
+      ],
+      "class_gradient_abs_by_query": [
+        4.1760149002075195,
+        0.0,
+        4.474301338195801,
+        0.0
+      ],
+      "regression_gradient_abs_by_query": [
+        0.2499999701976776,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "all_ignore",
+      "loss_cls": 0.0,
+      "loss_bbox": 0.0,
+      "audit": {
+        "samples": [
+          {
+            "positive": 0,
+            "negative": 0,
+            "ignore": 4,
+            "state": [
+              -1,
+              -1,
+              -1,
+              -1
+            ]
+          }
+        ],
+        "positive": 0,
+        "negative": 0,
+        "ignore": 4,
+        "cls_avg_factor": 1.0,
+        "reg_avg_factor": 1.0
+      },
+      "class0_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "class_gradient_abs_by_query": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "regression_gradient_abs_by_query": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "zero_positive_safe_background",
+      "loss_cls": 2.59930157661438,
+      "loss_bbox": 0.0,
+      "audit": {
+        "samples": [
+          {
+            "positive": 0,
+            "negative": 1,
+            "ignore": 3,
+            "state": [
+              -1,
+              -1,
+              0,
+              -1
+            ]
+          }
+        ],
+        "positive": 0,
+        "negative": 1,
+        "ignore": 3,
+        "cls_avg_factor": 1.0,
+        "reg_avg_factor": 1.0
+      },
+      "class0_gradient": [
+        0.0,
+        0.0,
+        0.4474301338195801,
+        0.0
+      ],
+      "class_gradient_abs_by_query": [
+        0.0,
+        0.0,
+        4.474301338195801,
+        0.0
+      ],
+      "regression_gradient_abs_by_query": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "velocity_unknown",
+      "loss_cls": 5.0253167152404785,
+      "loss_bbox": 0.0624999925494194,
+      "audit": {
+        "samples": [
+          {
+            "positive": 1,
+            "negative": 1,
+            "ignore": 2,
+            "state": [
+              1,
+              -1,
+              0,
+              -1
+            ]
+          }
+        ],
+        "positive": 1,
+        "negative": 1,
+        "ignore": 2,
+        "cls_avg_factor": 1.0,
+        "reg_avg_factor": 1.0
+      },
+      "class0_gradient": [
+        -0.14914338290691376,
+        0.0,
+        0.4474301338195801,
+        0.0
+      ],
+      "class_gradient_abs_by_query": [
+        4.1760149002075195,
+        0.0,
+        4.474301338195801,
+        0.0
+      ],
+      "regression_gradient_abs_by_query": [
+        0.2499999701976776,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "six_layers_partial_and_full_parity",
+      "layers": 6,
+      "loss_terms": 12,
+      "audit": [
+        {
+          "layer": 0,
+          "samples": [
+            {
+              "positive": 1,
+              "negative": 1,
+              "ignore": 2,
+              "state": [
+                1,
+                -1,
+                0,
+                -1
+              ]
+            }
+          ],
+          "positive": 1,
+          "negative": 1,
+          "ignore": 2,
+          "cls_avg_factor": 1.0,
+          "reg_avg_factor": 1.0
+        },
+        {
+          "layer": 1,
+          "samples": [
+            {
+              "positive": 1,
+              "negative": 1,
+              "ignore": 2,
+              "state": [
+                1,
+                -1,
+                0,
+                -1
+              ]
+            }
+          ],
+          "positive": 1,
+          "negative": 1,
+          "ignore": 2,
+          "cls_avg_factor": 1.0,
+          "reg_avg_factor": 1.0
+        },
+        {
+          "layer": 2,
+          "samples": [
+            {
+              "positive": 1,
+              "negative": 1,
+              "ignore": 2,
+              "state": [
+                1,
+                -1,
+                0,
+                -1
+              ]
+            }
+          ],
+          "positive": 1,
+          "negative": 1,
+          "ignore": 2,
+          "cls_avg_factor": 1.0,
+          "reg_avg_factor": 1.0
+        },
+        {
+          "layer": 3,
+          "samples": [
+            {
+              "positive": 1,
+              "negative": 1,
+              "ignore": 2,
+              "state": [
+                1,
+                -1,
+                0,
+                -1
+              ]
+            }
+          ],
+          "positive": 1,
+          "negative": 1,
+          "ignore": 2,
+          "cls_avg_factor": 1.0,
+          "reg_avg_factor": 1.0
+        },
+        {
+          "layer": 4,
+          "samples": [
+            {
+              "positive": 1,
+              "negative": 1,
+              "ignore": 2,
+              "state": [
+                1,
+                -1,
+                0,
+                -1
+              ]
+            }
+          ],
+          "positive": 1,
+          "negative": 1,
+          "ignore": 2,
+          "cls_avg_factor": 1.0,
+          "reg_avg_factor": 1.0
+        },
+        {
+          "layer": 5,
+          "samples": [
+            {
+              "positive": 1,
+              "negative": 1,
+              "ignore": 2,
+              "state": [
+                1,
+                -1,
+                0,
+                -1
+              ]
+            }
+          ],
+          "positive": 1,
+          "negative": 1,
+          "ignore": 2,
+          "cls_avg_factor": 1.0,
+          "reg_avg_factor": 1.0
+        }
+      ],
+      "unknown_gradient_abs": 0.0,
+      "negative_gradient_abs": 26.845808029174805
+    },
+    {
+      "name": "center_inside_but_footprint_outside",
+      "loss_cls": 0.0,
+      "loss_bbox": 0.0,
+      "audit": {
+        "samples": [
+          {
+            "positive": 0,
+            "negative": 0,
+            "ignore": 4,
+            "state": [
+              -1,
+              -1,
+              -1,
+              -1
+            ]
+          }
+        ],
+        "positive": 0,
+        "negative": 0,
+        "ignore": 4,
+        "cls_avg_factor": 1.0,
+        "reg_avg_factor": 1.0
+      },
+      "class0_gradient": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "class_gradient_abs_by_query": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "regression_gradient_abs_by_query": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "unknown_boundary_contact",
+      "loss_cls": 2.4260149002075195,
+      "loss_bbox": 0.0624999925494194,
+      "audit": {
+        "samples": [
+          {
+            "positive": 1,
+            "negative": 0,
+            "ignore": 3,
+            "state": [
+              1,
+              -1,
+              -1,
+              -1
+            ]
+          }
+        ],
+        "positive": 1,
+        "negative": 0,
+        "ignore": 3,
+        "cls_avg_factor": 1.0,
+        "reg_avg_factor": 1.0
+      },
+      "class0_gradient": [
+        -0.14914338290691376,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "class_gradient_abs_by_query": [
+        4.1760149002075195,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "regression_gradient_abs_by_query": [
+        0.2499999701976776,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "no_certified_real_negatives_policy",
+      "loss_cls": 2.4260149002075195,
+      "loss_bbox": 0.0624999925494194,
+      "audit": {
+        "samples": [
+          {
+            "positive": 1,
+            "negative": 0,
+            "ignore": 3,
+            "state": [
+              1,
+              -1,
+              -1,
+              -1
+            ]
+          }
+        ],
+        "positive": 1,
+        "negative": 0,
+        "ignore": 3,
+        "cls_avg_factor": 1.0,
+        "reg_avg_factor": 1.0
+      },
+      "class0_gradient": [
+        -0.14914338290691376,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "class_gradient_abs_by_query": [
+        4.1760149002075195,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "regression_gradient_abs_by_query": [
+        0.2499999701976776,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "model_optimizer_steps": 0,
+  "peak_allocated_bytes": 46793216,
+  "negative_regions": "SyntheticOnly_NotRealDataCertification"
+}

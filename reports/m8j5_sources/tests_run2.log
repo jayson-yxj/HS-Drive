@@ -1,0 +1,410 @@
+....FF..F..F..                                                           [100%]
+=================================== FAILURES ===================================
+____________________ test_all_ignore_zero_finite_gradients _____________________
+
+head = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+
+    def test_all_ignore_zero_finite_gradients(head):
+        c,b,s=fixture(zero_positive=True);s.safe_aabbs=s.safe_aabbs[:0]
+>       lc,lb,a=run(head,'all_ignore',c,b,s)
+
+tests/test_m8j5_petr_loss.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_m8j5_petr_loss.py:50: in run
+    lc,lb,audit=IgnoreAwarePETRLoss(head).layer_loss(cls[None],box[None],[spec])
+training/m8j5_ignore_loss.py:113: in layer_loss
+    labels,lw,target,bw,pos,unmatched=h._get_target_single(c,p,spec.labels,spec.boxes,None)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+cls_score = tensor([[0., 0., 0., 0., 0., 0., 0., 0., 0., 0.],
+        [0., 0., 0., 0., 0., 0., 0., 0., 0., 0.],
+        [0., 0., 0... 0., 0., 0., 0.],
+        [0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]], device='cuda:0',
+       grad_fn=<UnbindBackward0>)
+bbox_pred = tensor([[ 0.2500,  0.0000,  0.6931,  1.3863,  0.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000],
+        [...,  1.3863,  0.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000]], device='cuda:0', grad_fn=<UnbindBackward0>)
+gt_labels = tensor([], device='cuda:0', dtype=torch.int64)
+gt_bboxes = tensor([], device='cuda:0', size=(0, 9)), gt_bboxes_ignore = None
+
+    def _get_target_single(self,
+                           cls_score,
+                           bbox_pred,
+                           gt_labels,
+                           gt_bboxes,
+                           gt_bboxes_ignore=None):
+        """"Compute regression and classification targets for one image.
+        Outputs from a single decoder layer of a single feature level are used.
+        Args:
+            cls_score (Tensor): Box score logits from a single decoder layer
+                for one image. Shape [num_query, cls_out_channels].
+            bbox_pred (Tensor): Sigmoid outputs from a single decoder layer
+                for one image, with normalized coordinate (cx, cy, w, h) and
+                shape [num_query, 4].
+            gt_bboxes (Tensor): Ground truth bboxes for one image with
+                shape (num_gts, 4) in [tl_x, tl_y, br_x, br_y] format.
+            gt_labels (Tensor): Ground truth class indices for one image
+                with shape (num_gts, ).
+            gt_bboxes_ignore (Tensor, optional): Bounding boxes
+                which can be ignored. Default None.
+        Returns:
+            tuple[Tensor]: a tuple containing the following for one image.
+                - labels (Tensor): Labels of each image.
+                - label_weights (Tensor]): Label weights of each image.
+                - bbox_targets (Tensor): BBox targets of each image.
+                - bbox_weights (Tensor): BBox weights of each image.
+                - pos_inds (Tensor): Sampled positive indices for each image.
+                - neg_inds (Tensor): Sampled negative indices for each image.
+        """
+    
+        num_bboxes = bbox_pred.size(0)
+        # assigner and sampler
+        assign_result = self.assigner.assign(bbox_pred, cls_score, gt_bboxes,
+                                             gt_labels, gt_bboxes_ignore)
+        sampling_result = self.sampler.sample(assign_result, bbox_pred,
+                                              gt_bboxes)
+        pos_inds = sampling_result.pos_inds
+        neg_inds = sampling_result.neg_inds
+    
+        # label targets
+        labels = gt_bboxes.new_full((num_bboxes, ),
+                                    self.num_classes,
+                                    dtype=torch.long)
+        labels[pos_inds] = gt_labels[sampling_result.pos_assigned_gt_inds]
+        label_weights = gt_bboxes.new_ones(num_bboxes)
+    
+        # bbox targets
+        code_size = gt_bboxes.size(1)
+        bbox_targets = torch.zeros_like(bbox_pred)[..., :code_size]
+        bbox_weights = torch.zeros_like(bbox_pred)
+        bbox_weights[pos_inds] = 1.0
+        # print(gt_bboxes.size(), bbox_pred.size())
+        # DETR
+>       bbox_targets[pos_inds] = sampling_result.pos_gt_bboxes
+E       RuntimeError: shape mismatch: value tensor of shape [0, 4] cannot be broadcast to indexing result of shape [0, 9]
+
+../../hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/models/dense_heads/petr_head.py:506: RuntimeError
+_____________ test_zero_positive_certified_background_still_learns _____________
+
+head = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+
+    def test_zero_positive_certified_background_still_learns(head):
+>       c,b,s=fixture(zero_positive=True);lc,lb,a=run(head,'zero_positive_safe_background',c,b,s)
+
+tests/test_m8j5_petr_loss.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_m8j5_petr_loss.py:50: in run
+    lc,lb,audit=IgnoreAwarePETRLoss(head).layer_loss(cls[None],box[None],[spec])
+training/m8j5_ignore_loss.py:113: in layer_loss
+    labels,lw,target,bw,pos,unmatched=h._get_target_single(c,p,spec.labels,spec.boxes,None)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+cls_score = tensor([[0., 0., 0., 0., 0., 0., 0., 0., 0., 0.],
+        [0., 0., 0., 0., 0., 0., 0., 0., 0., 0.],
+        [0., 0., 0... 0., 0., 0., 0.],
+        [0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]], device='cuda:0',
+       grad_fn=<UnbindBackward0>)
+bbox_pred = tensor([[ 0.2500,  0.0000,  0.6931,  1.3863,  0.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000],
+        [...,  1.3863,  0.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000]], device='cuda:0', grad_fn=<UnbindBackward0>)
+gt_labels = tensor([], device='cuda:0', dtype=torch.int64)
+gt_bboxes = tensor([], device='cuda:0', size=(0, 9)), gt_bboxes_ignore = None
+
+    def _get_target_single(self,
+                           cls_score,
+                           bbox_pred,
+                           gt_labels,
+                           gt_bboxes,
+                           gt_bboxes_ignore=None):
+        """"Compute regression and classification targets for one image.
+        Outputs from a single decoder layer of a single feature level are used.
+        Args:
+            cls_score (Tensor): Box score logits from a single decoder layer
+                for one image. Shape [num_query, cls_out_channels].
+            bbox_pred (Tensor): Sigmoid outputs from a single decoder layer
+                for one image, with normalized coordinate (cx, cy, w, h) and
+                shape [num_query, 4].
+            gt_bboxes (Tensor): Ground truth bboxes for one image with
+                shape (num_gts, 4) in [tl_x, tl_y, br_x, br_y] format.
+            gt_labels (Tensor): Ground truth class indices for one image
+                with shape (num_gts, ).
+            gt_bboxes_ignore (Tensor, optional): Bounding boxes
+                which can be ignored. Default None.
+        Returns:
+            tuple[Tensor]: a tuple containing the following for one image.
+                - labels (Tensor): Labels of each image.
+                - label_weights (Tensor]): Label weights of each image.
+                - bbox_targets (Tensor): BBox targets of each image.
+                - bbox_weights (Tensor): BBox weights of each image.
+                - pos_inds (Tensor): Sampled positive indices for each image.
+                - neg_inds (Tensor): Sampled negative indices for each image.
+        """
+    
+        num_bboxes = bbox_pred.size(0)
+        # assigner and sampler
+        assign_result = self.assigner.assign(bbox_pred, cls_score, gt_bboxes,
+                                             gt_labels, gt_bboxes_ignore)
+        sampling_result = self.sampler.sample(assign_result, bbox_pred,
+                                              gt_bboxes)
+        pos_inds = sampling_result.pos_inds
+        neg_inds = sampling_result.neg_inds
+    
+        # label targets
+        labels = gt_bboxes.new_full((num_bboxes, ),
+                                    self.num_classes,
+                                    dtype=torch.long)
+        labels[pos_inds] = gt_labels[sampling_result.pos_assigned_gt_inds]
+        label_weights = gt_bboxes.new_ones(num_bboxes)
+    
+        # bbox targets
+        code_size = gt_bboxes.size(1)
+        bbox_targets = torch.zeros_like(bbox_pred)[..., :code_size]
+        bbox_weights = torch.zeros_like(bbox_pred)
+        bbox_weights[pos_inds] = 1.0
+        # print(gt_bboxes.size(), bbox_pred.size())
+        # DETR
+>       bbox_targets[pos_inds] = sampling_result.pos_gt_bboxes
+E       RuntimeError: shape mismatch: value tensor of shape [0, 4] cannot be broadcast to indexing result of shape [0, 9]
+
+../../hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/models/dense_heads/petr_head.py:506: RuntimeError
+_______________ test_whole_envelope_required_confidence_not_used _______________
+
+head = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+
+    def test_whole_envelope_required_confidence_not_used(head):
+        c,b,s=fixture()
+        s.safe_aabbs=torch.tensor([[19.,-1,-1,21,1,1]],device='cuda')
+        with torch.no_grad():c[2]=100
+        _,_,a=run(head,'center_inside_but_footprint_outside',c,b,s)
+>       assert a['samples'][0]['state'][2]==-1 and c.grad[2].abs().sum()==0
+E       assert (1 == -1)
+
+tests/test_m8j5_petr_loss.py:141: AssertionError
+_________ test_batch_mixed_supervision_and_large_dimension_no_negative _________
+
+head = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+
+    def test_batch_mixed_supervision_and_large_dimension_no_negative(head):
+        c,b,s=fixture();c0,b0,s0=fixture(zero_positive=True);s0.safe_aabbs=s0.safe_aabbs[:0]
+>       _,_,audit=IgnoreAwarePETRLoss(head).layer_loss(torch.stack([c,c0]),torch.stack([b,b0]),[s,s0])
+
+tests/test_m8j5_petr_loss.py:168: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+training/m8j5_ignore_loss.py:113: in layer_loss
+    labels,lw,target,bw,pos,unmatched=h._get_target_single(c,p,spec.labels,spec.boxes,None)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+cls_score = tensor([[0., 0., 0., 0., 0., 0., 0., 0., 0., 0.],
+        [0., 0., 0., 0., 0., 0., 0., 0., 0., 0.],
+        [0., 0., 0... 0., 0., 0., 0.],
+        [0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]], device='cuda:0',
+       grad_fn=<UnbindBackward0>)
+bbox_pred = tensor([[ 0.2500,  0.0000,  0.6931,  1.3863,  0.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000],
+        [...,  1.3863,  0.0000,  0.6931,  0.0000,  1.0000,
+          0.0000,  0.0000]], device='cuda:0', grad_fn=<UnbindBackward0>)
+gt_labels = tensor([], device='cuda:0', dtype=torch.int64)
+gt_bboxes = tensor([], device='cuda:0', size=(0, 9)), gt_bboxes_ignore = None
+
+    def _get_target_single(self,
+                           cls_score,
+                           bbox_pred,
+                           gt_labels,
+                           gt_bboxes,
+                           gt_bboxes_ignore=None):
+        """"Compute regression and classification targets for one image.
+        Outputs from a single decoder layer of a single feature level are used.
+        Args:
+            cls_score (Tensor): Box score logits from a single decoder layer
+                for one image. Shape [num_query, cls_out_channels].
+            bbox_pred (Tensor): Sigmoid outputs from a single decoder layer
+                for one image, with normalized coordinate (cx, cy, w, h) and
+                shape [num_query, 4].
+            gt_bboxes (Tensor): Ground truth bboxes for one image with
+                shape (num_gts, 4) in [tl_x, tl_y, br_x, br_y] format.
+            gt_labels (Tensor): Ground truth class indices for one image
+                with shape (num_gts, ).
+            gt_bboxes_ignore (Tensor, optional): Bounding boxes
+                which can be ignored. Default None.
+        Returns:
+            tuple[Tensor]: a tuple containing the following for one image.
+                - labels (Tensor): Labels of each image.
+                - label_weights (Tensor]): Label weights of each image.
+                - bbox_targets (Tensor): BBox targets of each image.
+                - bbox_weights (Tensor): BBox weights of each image.
+                - pos_inds (Tensor): Sampled positive indices for each image.
+                - neg_inds (Tensor): Sampled negative indices for each image.
+        """
+    
+        num_bboxes = bbox_pred.size(0)
+        # assigner and sampler
+        assign_result = self.assigner.assign(bbox_pred, cls_score, gt_bboxes,
+                                             gt_labels, gt_bboxes_ignore)
+        sampling_result = self.sampler.sample(assign_result, bbox_pred,
+                                              gt_bboxes)
+        pos_inds = sampling_result.pos_inds
+        neg_inds = sampling_result.neg_inds
+    
+        # label targets
+        labels = gt_bboxes.new_full((num_bboxes, ),
+                                    self.num_classes,
+                                    dtype=torch.long)
+        labels[pos_inds] = gt_labels[sampling_result.pos_assigned_gt_inds]
+        label_weights = gt_bboxes.new_ones(num_bboxes)
+    
+        # bbox targets
+        code_size = gt_bboxes.size(1)
+        bbox_targets = torch.zeros_like(bbox_pred)[..., :code_size]
+        bbox_weights = torch.zeros_like(bbox_pred)
+        bbox_weights[pos_inds] = 1.0
+        # print(gt_bboxes.size(), bbox_pred.size())
+        # DETR
+>       bbox_targets[pos_inds] = sampling_result.pos_gt_bboxes
+E       RuntimeError: shape mismatch: value tensor of shape [0, 4] cannot be broadcast to indexing result of shape [0, 9]
+
+../../hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/models/dense_heads/petr_head.py:506: RuntimeError
+=============================== warnings summary ===============================
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+    warnings.warn(
+
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/networkx/classes/graph.py:23: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import Mapping
+
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/networkx/classes/reportviews.py:95: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import Mapping, Set, Iterable
+
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/trimesh/curvature.py:12: DeprecationWarning: Please use `coo_matrix` from the `scipy.sparse` namespace, the `scipy.sparse.coo` namespace is deprecated.
+    from scipy.sparse.coo import coo_matrix
+
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/cnn/bricks/transformer.py:690: DeprecationWarning: The arguments `feedforward_channels` in BaseTransformerLayer has been deprecated, now you should set `feedforward_channels` and other FFN related arguments to a dict named `ffn_cfgs`. 
+    warnings.warn(
+
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/cnn/bricks/transformer.py:690: DeprecationWarning: The arguments `ffn_dropout` in BaseTransformerLayer has been deprecated, now you should set `ffn_drop` and other FFN related arguments to a dict named `ffn_cfgs`. 
+    warnings.warn(
+
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/cnn/bricks/transformer.py:690: DeprecationWarning: The arguments `ffn_num_fcs` in BaseTransformerLayer has been deprecated, now you should set `num_fcs` and other FFN related arguments to a dict named `ffn_cfgs`. 
+    warnings.warn(
+
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/cnn/bricks/transformer.py:440: DeprecationWarning: The arguments `dropout` in MultiheadAttention has been deprecated, now you can separately set `attn_drop`(float), proj_drop(float), and `dropout_layer`(dict) 
+    warnings.warn(
+
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+tests/test_m8j5_petr_loss.py::test_complete_annotations_match_original_loss_and_gradients
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/models/utils/petr_transformer.py:336: DeprecationWarning: The arguments `dropout` in MultiheadAttention has been deprecated, now you can separately set `attn_drop`(float), proj_drop(float), and `dropout_layer`(dict) 
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_m8j5_petr_loss.py::test_all_ignore_zero_finite_gradients - ...
+FAILED tests/test_m8j5_petr_loss.py::test_zero_positive_certified_background_still_learns
+FAILED tests/test_m8j5_petr_loss.py::test_whole_envelope_required_confidence_not_used
+FAILED tests/test_m8j5_petr_loss.py::test_batch_mixed_supervision_and_large_dimension_no_negative
+4 failed, 10 passed, 35 warnings in 6.40s

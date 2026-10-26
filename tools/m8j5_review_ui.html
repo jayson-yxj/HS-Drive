@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<title>M8-J5 · 私有 GT 人工审核</title>
+<style>
+:root{color-scheme:light;--ink:#163047;--muted:#5d6e7e;--accent:#17685d}*{box-sizing:border-box}body{margin:0;background:#f2f5f7;color:var(--ink);font:16px/1.6 system-ui,sans-serif}main{max-width:1480px;margin:auto;padding:24px}h1{font-size:27px;margin:0}h2{font-size:21px}p{margin:8px 0}.muted{color:var(--muted)}.banner{border-left:4px solid #d29a25;background:#fff6df;padding:14px;margin:18px 0}.card{background:white;border:1px solid #dce3e8;border-radius:12px;padding:20px;margin:18px 0}.fields{display:grid;grid-template-columns:1fr 2fr;gap:18px}label{display:block;font-weight:600}input,textarea,select{font:inherit;padding:9px;border:1px solid #a8b7c4;border-radius:6px;width:100%;background:white;color:var(--ink)}textarea{min-height:72px}.nav,.actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}button{font:inherit;border:1px solid #aab9c6;background:#fff;padding:10px 16px;border-radius:7px;cursor:pointer;color:var(--ink)}button:hover{background:#eef4f4}button:disabled{opacity:.45;cursor:not-allowed}.good{background:#e4f4eb;border-color:#2c8058}.bad{background:#fff0ef;border-color:#b95a53}.unknown{background:#fff6df;border-color:#b28a32}.selected{outline:3px solid #244b70;outline-offset:2px}progress{width:100%;height:12px;accent-color:var(--accent)}.counter{font-size:24px;font-weight:700}.checks{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.checks label{font-weight:400}.checks input{width:auto;margin-right:8px}.scene{width:100%;height:auto;border:1px solid #dce3e8;cursor:zoom-in}.imagewrap{overflow:auto;max-height:800px}.scene.zoom{width:2880px;max-width:none;cursor:zoom-out}table{width:100%;border-collapse:collapse;font-size:14px}td,th{border-bottom:1px solid #dde4ea;text-align:left;padding:7px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px}#message{min-height:1.7em;font-weight:600;color:#9c342e}.pill{display:inline-block;padding:2px 9px;border-radius:16px;background:#e7edf2;margin:3px}.destination{font-family:monospace;overflow-wrap:anywhere}details{margin-top:12px}#exportPanel{border-top:4px solid var(--accent)}@media(max-width:700px){main{padding:12px}.fields,.checks{grid-template-columns:1fr}button{padding:10px}table{display:block;overflow:auto}}
+</style></head><body><main>
+<h1>M8-J5 · GT 人工审核</h1><p class="muted">36 个候选 · 单片段监督审核 · 不构成训练或安全认证</p>
+<div class="banner"><strong>本页离线运行，不连接服务器，也不会自动保存实际审核结果。</strong><br>选择只保留在当前页面内存中，刷新或关闭会丢失。只有全部候选完成后，你才能主动导出审核 JSON。自动流程不会替你签核。</div>
+<section class="card fields"><label>真实审核者姓名或可追溯署名<input id="reviewer" autocomplete="off" placeholder="请本人填写"></label><label>审核证据来源<input id="source" autocomplete="off" placeholder="例如：本人于本机查看本页六摄图像、逐对象 Box 及实例证据"></label></section>
+<section class="card"><div class="nav"><button id="prev">← 上一个</button><span id="counter" class="counter"></span><button id="next">下一个 →</button><select id="jump" aria-label="跳转候选" style="width:auto;max-width:400px"></select><span id="completed" class="muted"></span></div><progress id="progress" value="0" max="36"></progress></section>
+<section class="card"><h2 id="heading"></h2><div id="tags"></div><p id="status"></p><div id="eligibility" class="banner"></div><pre id="box"></pre>
+<h3>六摄 RGB 与该候选的投影边界</h3><p class="muted">只绘制当前候选。绿框是自动关联证据，黄框仍不确定；颜色不代表人工批准。点击图片放大，再次点击还原。地下或视野外目标可能没有投影框，不能据此认定背景为空。</p><div class="imagewrap"><img id="rgb" class="scene" alt="当前候选六摄 RGB 投影"></div>
+<details><summary>Instance 对照与逐摄投影、关联证据</summary><div class="imagewrap"><img id="instance" class="scene" alt="当前候选六摄 Instance 对照"></div><table><thead><tr><th>相机</th><th>投影 / 关联</th><th>裁剪</th><th>区域 token / 证据</th></tr></thead><tbody id="views"></tbody></table></details>
+<details><summary>完整 3D 八角点、可信状态与候选内容 SHA</summary><pre id="details"></pre></details></section>
+<section class="card"><h2>人工审核操作</h2><p>“审核通过”须由本人逐项确认；不能确认时请选择“无法确定”。不能被当前 yaw-only / 范围合同接受的候选仍可拒绝或暂不使用。</p>
+<div class="checks"><label><input type="checkbox" id="geometry">已核对 Box 几何与坐标</label><label><input type="checkbox" id="class">已核对类别</label><label><input type="checkbox" id="identity">已核对 Actor / Instance 身份</label><label><input type="checkbox" id="visible">已确认目标可见且投影对应</label></div>
+<label style="margin-top:14px">审核备注<textarea id="notes" placeholder="记录遮挡、冲突、异常及无法确认的原因"></textarea></label>
+<div class="actions" style="margin-top:14px"><button id="approve" class="good">标注正确，审核通过</button><button id="reject" class="bad">标注错误，拒绝</button><button id="uncertain" class="unknown">无法确定，暂不使用</button></div><p id="message" role="status" aria-live="polite"></p><p id="savedState" class="muted"></p></section>
+<section class="card" id="exportPanel"><h2>完成审核后导出</h2><p id="exportState"></p><p>点击导出会下载 <code>m8j5_review_responses.json</code>，浏览器不能写入远程服务器。请将文件保存或复制到：</p><p class="destination">__DESTINATION__</p><p class="muted">导出保留实际操作时间（浏览器时钟，未经平台校验）、审核者、本人填写的证据来源及候选 SHA。它只是一份待校验记录，不会自动启用训练。全部选择“无法确定”也可以导出，但 Golden GT 仍为零。</p><button id="export" disabled>导出审核 JSON</button><details><summary>导出 JSON 预览</summary><pre id="preview">尚未完成</pre></details></section>
+</main>
+<script id="review-data" type="application/json">__REVIEW_DATA__</script>
+<script>
+'use strict';
+const packet=JSON.parse(document.getElementById('review-data').textContent);
+const candidates=packet.candidates, responses=new Map();let current=0;
+const $=id=>document.getElementById(id), checkIds=['geometry','class','identity','visible'];
+const names={ApprovePositive:'审核通过',Reject:'拒绝',NeedsReview:'无法确定'};
+function approveAllowed(c){const o=c.object,t=c.trust;return t.geometry_validity==='Valid'&&t.class_validity==='Valid'&&o.yaw_only_comparable&&t.PETR_common_region&&o.reason!=='HiddenBelowGround_NoTrainingTarget';}
+function progress(){const done=responses.size;$('completed').textContent=`已审核 ${done} / ${candidates.length}`;$('progress').max=candidates.length;$('progress').value=done;
+ const ready=done===candidates.length&&$('reviewer').value.trim()&&$('source').value.trim();$('export').disabled=!ready;
+ $('exportState').textContent=done===candidates.length?'全部候选已有决定。请核对署名、来源及预览后主动导出。':'完成所有候选后才能导出；无法确认也需要明确选择。';
+ $('preview').textContent=ready?JSON.stringify(buildExport(),null,2):'尚未完成';}
+function buildExport(){if(responses.size!==candidates.length)throw Error('审核未完成');if(!$('reviewer').value.trim()||!$('source').value.trim())throw Error('缺少真实审核者或来源');
+ return candidates.map(c=>{const r=responses.get(c.candidate_id);return {candidate_id:c.candidate_id,candidate_sha256:c.candidate_sha256,decision:r.decision,reviewer:$('reviewer').value.trim(),reviewed_at:r.reviewed_at,review_source:$('source').value.trim()+' | offline_review_ui; candidate_sha256='+c.candidate_sha256+'; client_clock_not_platform_verified',geometry_confirmed:r.geometry_confirmed,class_confirmed:r.class_confirmed,identity_confirmed:r.identity_confirmed,visible_confirmed:r.visible_confirmed,notes:r.notes};});}
+function render(){const c=candidates[current],o=c.object,r=responses.get(c.candidate_id);$('counter').textContent=`候选 ${current+1} / ${candidates.length}`;$('heading').textContent=`${c.candidate_id} · ${o.model_class||o.source_class}`;
+ $('tags').replaceChildren(...c.selection_tags.map(t=>{const e=document.createElement('span');e.className='pill';e.textContent=t;return e;}));
+ $('status').textContent=`几何：${c.trust.geometry_validity}；类别：${c.trust.class_validity}；身份：${c.trust.identity_validity}；可见性：${c.trust.visibility}`;
+ $('eligibility').textContent=approveAllowed(c)?'允许提交人工正样本审核决定；通过需四项确认。当前仍是候选。':'当前模型合同不接受此目标作为 Positive：'+c.trust.supervision_eligibility.reasons.join(' / ')+ '。请保留拒绝或无法确定记录。';
+ $('approve').disabled=!approveAllowed(c);$('box').textContent=JSON.stringify({coordinate:'HS Ego: x前/y左/z上；中心不是底中心',center_m:o.center_hs_m,full_lwh_m:o.dimensions_lwh_m,yaw_ccw_rad:o.yaw_ccw_rad,distance_xy_m:o.distance_xy_m,tilt_deg:o.tilt_deg},null,2);
+ $('rgb').src=c.rgb_image;$('instance').src=c.instance_image;$('rgb').classList.remove('zoom');$('instance').classList.remove('zoom');
+ $('details').textContent=JSON.stringify({corners_hs_m:o.corners_hs_m,trust:c.trust,candidate_sha256:c.candidate_sha256},null,2);
+ $('views').replaceChildren();for(const [cam,v] of Object.entries(o.views)){const tr=document.createElement('tr');for(const value of [cam,(v.projection?.status||'Unknown')+' / '+v.status,String(v.projection?.truncated??'Unknown'),JSON.stringify({reason:v.reason,match:v.match,withdrawn_match:v.withdrawn_match})]){const td=document.createElement('td');td.textContent=value;tr.append(td);}$('views').append(tr);}
+ for(const [i,k] of checkIds.entries())$(k).checked=r? r[['geometry_confirmed','class_confirmed','identity_confirmed','visible_confirmed'][i]]:false;
+ $('notes').value=r?r.notes:'';$('message').textContent='';$('savedState').textContent=r?`当前页面内存中的决定：${names[r.decision]} · ${r.reviewed_at}`:'尚未审核；未保存任何决定。';
+ for(const [id,d] of [['approve','ApprovePositive'],['reject','Reject'],['uncertain','NeedsReview']])$(id).classList.toggle('selected',!!r&&r.decision===d);
+ $('prev').disabled=current===0;$('next').disabled=current===candidates.length-1;$('jump').value=String(current);progress();}
+function choose(decision){const c=candidates[current];if(!$('reviewer').value.trim()||!$('source').value.trim()){$('message').textContent='请先由本人填写真实审核者及证据来源。';return;}
+ if(decision==='ApprovePositive'&&(!approveAllowed(c)||!checkIds.every(k=>$(k).checked))){$('message').textContent='通过前必须逐项确认四项证据，且目标满足模型合同。';return;}
+ responses.set(c.candidate_id,{decision,reviewed_at:new Date().toISOString(),geometry_confirmed:$('geometry').checked,class_confirmed:$('class').checked,identity_confirmed:$('identity').checked,visible_confirmed:$('visible').checked,notes:$('notes').value});render();$('message').textContent='决定已暂存在页面内存中；未写入服务器。';}
+candidates.forEach((c,i)=>{const option=document.createElement('option');option.value=i;option.textContent=`${i+1}. ${c.candidate_id}`;$('jump').append(option);});
+$('prev').onclick=()=>{current--;render();};$('next').onclick=()=>{current++;render();};$('jump').onchange=()=>{current=Number($('jump').value);render();};
+$('approve').onclick=()=>choose('ApprovePositive');$('reject').onclick=()=>choose('Reject');$('uncertain').onclick=()=>choose('NeedsReview');
+for(const id of ['reviewer','source'])$(id).oninput=progress;
+for(const id of ['rgb','instance'])$(id).onclick=()=>$(id).classList.toggle('zoom');
+function markEdited(){if(responses.delete(candidates[current].candidate_id)){$('savedState').textContent='内容已修改，请重新选择审核决定以记录实际时间。';for(const id of ['approve','reject','uncertain'])$(id).classList.remove('selected');progress();}}
+for(const id of checkIds)$(id).onchange=markEdited;$('notes').oninput=markEdited;
+$('export').onclick=()=>{const data=buildExport(),blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='m8j5_review_responses.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+window.addEventListener('beforeunload',event=>{if(responses.size){event.preventDefault();event.returnValue='';}});
+render();
+</script></body></html>

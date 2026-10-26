@@ -1,0 +1,56 @@
+/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.8.20-linux-x86_64-gnu/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/root/.local/share/uv/python/cpython-3.8.20-linux-x86_64-gnu/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8j5_forward_regression.py", line 72, in <module>
+    if __name__=='__main__':main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8j5_forward_regression.py", line 30, in main
+    import projects.mmdet3d_plugin
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/__init__.py", line 10, in <module>
+    from .core.bbox.assigners.hungarian_assigner_3d import HungarianAssigner3D
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/core/bbox/assigners/__init__.py", line 1, in <module>
+    from .hungarian_assigner_3d import HungarianAssigner3D
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/core/bbox/assigners/hungarian_assigner_3d.py", line 16, in <module>
+    from mmdet.models.utils.transformer import inverse_sigmoid
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmdet/models/__init__.py", line 8, in <module>
+    from .detectors import *  # noqa: F401,F403
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmdet/models/detectors/__init__.py", line 2, in <module>
+    from .atss import ATSS
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmdet/models/detectors/atss.py", line 3, in <module>
+    from .single_stage import SingleStageDetector
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmdet/models/detectors/single_stage.py", line 8, in <module>
+    from .base import BaseDetector
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmdet/models/detectors/base.py", line 11, in <module>
+    from mmdet.core.visualization import imshow_det_bboxes
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmdet/core/visualization/__init__.py", line 2, in <module>
+    from .image import (color_val_matplotlib, imshow_det_bboxes,
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmdet/core/visualization/image.py", line 3, in <module>
+    import matplotlib.pyplot as plt
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/matplotlib/pyplot.py", line 49, in <module>
+    import matplotlib.colorbar
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/matplotlib/colorbar.py", line 21, in <module>
+    from matplotlib import _api, collections, cm, colors, contour, ticker
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/matplotlib/contour.py", line 13, in <module>
+    from matplotlib.backend_bases import MouseButton
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/matplotlib/backend_bases.py", line 46, in <module>
+    from matplotlib import (
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/matplotlib/textpath.py", line 8, in <module>
+    from matplotlib import _text_helpers, dviread, font_manager
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/matplotlib/font_manager.py", line 1447, in <module>
+    fontManager = _load_fontmanager()
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/matplotlib/font_manager.py", line 1442, in _load_fontmanager
+    json_dump(fm, fm_path)
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/matplotlib/font_manager.py", line 1003, in json_dump
+    with cbook._lock_path(filename), open(filename, 'w') as fh:
+  File "/root/.local/share/uv/python/cpython-3.8.20-linux-x86_64-gnu/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/matplotlib/cbook/__init__.py", line 1736, in _lock_path
+    with lock_path.open("xb"):
+  File "/root/.local/share/uv/python/cpython-3.8.20-linux-x86_64-gnu/lib/python3.8/pathlib.py", line 1222, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8j5_forward_regression.py", line 21, in guard
+    raise PermissionError('GT/review data forbidden during inference')
+PermissionError: GT/review data forbidden during inference
