@@ -1,0 +1,203 @@
+{
+  "checked_at_utc": "2026-10-26T15:11:52.815286+00:00",
+  "evidence": "ActualCPU_PrivatePayloadAndFrozenSidecars_ReadOnly",
+  "frames": 214,
+  "counts": {
+    "non_ego_records": 3741,
+    "target_records_preserved": 1276,
+    "target_geometry_valid": 1276,
+    "positive_diagnostic": 570,
+    "positive_with_multiple_supported_cameras": 46,
+    "positive_not_legacy_candidate": 25,
+    "original_pixels": 1848960000,
+    "original_ignore_pixels": 2649884,
+    "cropped_pixels": 925630464,
+    "cropped_ignore_pixels": 2208357,
+    "positive_box_values_exact": 570
+  },
+  "per_class": {
+    "walker_records": 124,
+    "walker_positive": 71,
+    "vehicle_records": 1152,
+    "vehicle_positive": 499
+  },
+  "per_source_state": {
+    "null": 124,
+    "dynamic": 1152
+  },
+  "distinct_recorded_actor_ids": {
+    "walker": 1,
+    "vehicle": 10
+  },
+  "independence": "Repeated object-frame observations in one correlated clip; six views never count as six objects. IDs do not identify unboxed render regions.",
+  "distance_bins_m": {
+    "0-10": {
+      "source_object_frames": 119,
+      "positive": 96
+    },
+    "60+": {
+      "source_object_frames": 289,
+      "positive": 0
+    },
+    "20-40": {
+      "source_object_frames": 362,
+      "positive": 210
+    },
+    "40-60": {
+      "source_object_frames": 323,
+      "positive": 81
+    },
+    "10-20": {
+      "source_object_frames": 183,
+      "positive": 183
+    }
+  },
+  "per_camera_view_observations": {
+    "CAM_FRONT": {
+      "source_object_view_observations": 1276,
+      "projected_geometry": 325,
+      "positive_supported": 189,
+      "near_plane_clipped": 1,
+      "occlusion_Unresolved_NotPhysicalOcclusionTruth": 977,
+      "occlusion_PartialOcclusionProxy_UnknownTrueFraction": 65,
+      "occlusion_VisibleSupported_NoFullVisibilityClaim": 234
+    },
+    "CAM_FRONT_LEFT": {
+      "source_object_view_observations": 1276,
+      "projected_geometry": 73,
+      "positive_supported": 65,
+      "near_plane_clipped": 3,
+      "occlusion_Unresolved_NotPhysicalOcclusionTruth": 1207,
+      "occlusion_PartialOcclusionProxy_UnknownTrueFraction": 27,
+      "occlusion_VisibleSupported_NoFullVisibilityClaim": 42
+    },
+    "CAM_FRONT_RIGHT": {
+      "source_object_view_observations": 1276,
+      "projected_geometry": 0,
+      "positive_supported": 0,
+      "near_plane_clipped": 0,
+      "occlusion_Unresolved_NotPhysicalOcclusionTruth": 1276
+    },
+    "CAM_BACK_LEFT": {
+      "source_object_view_observations": 1276,
+      "projected_geometry": 32,
+      "positive_supported": 28,
+      "near_plane_clipped": 0,
+      "occlusion_Unresolved_NotPhysicalOcclusionTruth": 1246,
+      "occlusion_PartialOcclusionProxy_UnknownTrueFraction": 8,
+      "occlusion_VisibleSupported_NoFullVisibilityClaim": 22
+    },
+    "CAM_BACK_RIGHT": {
+      "source_object_view_observations": 1276,
+      "projected_geometry": 0,
+      "positive_supported": 0,
+      "near_plane_clipped": 0,
+      "occlusion_Unresolved_NotPhysicalOcclusionTruth": 1276
+    },
+    "CAM_BACK": {
+      "source_object_view_observations": 1276,
+      "projected_geometry": 892,
+      "positive_supported": 334,
+      "near_plane_clipped": 9,
+      "occlusion_Unresolved_NotPhysicalOcclusionTruth": 393,
+      "occlusion_PartialOcclusionProxy_UnknownTrueFraction": 488,
+      "occlusion_VisibleSupported_NoFullVisibilityClaim": 395
+    }
+  },
+  "exclusion_reasons_nonexclusive": {
+    "OutsideModelRange": 460,
+    "UndergroundSourceRecord": 23,
+    "VisibleSemanticSupportUnconfirmedInCrop": 525,
+    "YawOnlyRepresentationUnsupported": 1
+  },
+  "original_image_ignore_fraction": 0.0014331754067151263,
+  "cropped_image_ignore_fraction": 0.002385786861915556,
+  "four_known_gaps": [
+    {
+      "ordinal": "00124",
+      "camera": "CAM_FRONT_LEFT",
+      "semantic": 12,
+      "pixels": 26766,
+      "ignored_pixels": 26766,
+      "semantic_agreement": 0.9996637525218561,
+      "raw_box_support_fraction": 0.0,
+      "status": "MissingSourceSupportCandidate_Unknown_NotNewBox",
+      "full_mask_recomputed_equal": true,
+      "actor_identity": "Unknown_NotRenderToken",
+      "frame_negative_enabled": false,
+      "invented_boxes": 0
+    },
+    {
+      "ordinal": "00196",
+      "camera": "CAM_FRONT",
+      "semantic": 14,
+      "pixels": 2974,
+      "ignored_pixels": 2974,
+      "semantic_agreement": 0.9219905850706119,
+      "raw_box_support_fraction": 0.0,
+      "status": "MissingSourceSupportCandidate_Unknown_NotNewBox",
+      "full_mask_recomputed_equal": true,
+      "actor_identity": "Unknown_NotRenderToken",
+      "frame_negative_enabled": false,
+      "invented_boxes": 0
+    },
+    {
+      "ordinal": "00213",
+      "camera": "CAM_FRONT",
+      "semantic": 14,
+      "pixels": 1076,
+      "ignored_pixels": 1076,
+      "semantic_agreement": 0.8819702602230484,
+      "raw_box_support_fraction": 0.0,
+      "status": "MissingSourceSupportCandidate_Unknown_NotNewBox",
+      "full_mask_recomputed_equal": true,
+      "actor_identity": "Unknown_NotRenderToken",
+      "frame_negative_enabled": false,
+      "invented_boxes": 0
+    },
+    {
+      "ordinal": "00213",
+      "camera": "CAM_FRONT",
+      "semantic": 14,
+      "pixels": 675,
+      "ignored_pixels": 675,
+      "semantic_agreement": 0.8844444444444445,
+      "raw_box_support_fraction": 0.0,
+      "status": "MissingSourceSupportCandidate_Unknown_NotNewBox",
+      "full_mask_recomputed_equal": true,
+      "actor_identity": "Unknown_NotRenderToken",
+      "frame_negative_enabled": false,
+      "invented_boxes": 0
+    }
+  ],
+  "negative_certificate_count": 0,
+  "negative_enabled_frames": 0,
+  "safe_negative_status": "NotAvailable_2DSemanticBackgroundNot3DCertificate",
+  "static_vehicle_actual_support": "NotAvailable_NoSourceStaticVehicleRecords",
+  "original_annotation_hashes_verified": 214,
+  "frozen_manifests_verified": [
+    {
+      "manifest": "reports/m8j5a_release_manifest.json",
+      "sha256": "f09a71c689e18e661d12a9b0790535a4f2fbd1dd5dea82a4148f1547dc03e6c9",
+      "files_verified": 31
+    },
+    {
+      "manifest": "reports/m8j5b_release_manifest.json",
+      "sha256": "dd41bfe6ab1098a38862454de29d49e4217a265ae8c8476e97408e9af638ceed",
+      "files_verified": 51
+    },
+    {
+      "manifest": "/root/gpufree-data/hs-drive-private/m8j5b-coverage-supervision/artifact_manifest.json",
+      "sha256": "b7e1d400914cd7a62d1007a4326d352ad2a1277acc48a51cd521372f58efcde0",
+      "files_verified": 759
+    },
+    {
+      "manifest": "/root/gpufree-data/hs-drive-private/m8j5a-raw-audit/artifact_manifest.json",
+      "sha256": "a4159921ec1ca18b3f4753d84c1b7abe8eb42c5a6b5a5f6011bb3119e7f5de5c",
+      "files_verified": 289
+    }
+  ],
+  "manual_review": "Pending_Suspended",
+  "real_backward_calls": 0,
+  "optimizer_steps": 0
+}

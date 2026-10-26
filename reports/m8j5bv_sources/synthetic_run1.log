@@ -1,0 +1,156 @@
+.........................F                                               [100%]
+=================================== FAILURES ===================================
+_ test_official_head_synthetic_six_camera_forward_and_backward_parity[dtype1] __
+
+head = PETRHead(
+  (loss_cls): FocalLoss()
+  (loss_bbox): L1Loss()
+  (input_proj): Conv2d(2048, 256, kernel_size=(1, 1), stri...rue)
+          )
+        )
+      )
+      (post_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+dtype = torch.float16
+
+    @pytest.mark.parametrize('dtype',[torch.float32,torch.float16])
+    def test_official_head_synthetic_six_camera_forward_and_backward_parity(head,dtype):
+        # Real official six-layer, 900-query head; synthetic features only, no image
+        # backbone or real GT. Same parameters/forward graph used for both losses.
+        torch.manual_seed(SEED);head.zero_grad(set_to_none=True)
+        features=torch.randn((1,6,2048,2,3),device='cuda',requires_grad=True)*.03
+        features.retain_grad()
+        mat=np.array([[48.,-50,0,0],[32,0,-50,0],[1,0,0,0],[0,0,0,1]],dtype=np.float32)
+        meta=dict(pad_shape=[(64,96,3)]*6,img_shape=[(64,96,3)]*6,lidar2img=[mat.copy() for _ in range(6)])
+        with torch.autocast('cuda',dtype=torch.float16,enabled=dtype==torch.float16):pred=head([features],[meta])
+        _,_,s=fixture(True);s.boxes[0,:3]=torch.tensor([10.,0,0],device='cuda')
+        # Official source force_fp32 is conditional on fp16_enabled. Pass explicit
+        # same float outputs to reference, matching the new precision contract.
+        floatpred={k:v.float() if isinstance(v,torch.Tensor) else v for k,v in pred.items()}
+        original=official_loss(head,floatpred,[s])
+        losses,a=ValidatedCoveragePETRLoss(head)(pred,[s])
+        for k in original:assert_close(losses[k],original[k])
+        parameters=[features,head.reference_points.weight,head.cls_branches[-1][-1].weight]
+        g0=torch.autograd.grad(sum(original.values()),parameters,retain_graph=True)
+        g1=torch.autograd.grad(sum(losses.values()),parameters,retain_graph=True)
+>       for x,y in zip(g0,g1):assert_close(x,y);assert torch.isfinite(x).all()
+
+tests/test_m8j5bv_loss.py:225: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = tensor([[[[[nan, nan, nan],
+           [nan, nan, nan]],
+
+          [[nan, nan, nan],
+           [nan, nan, nan]],
+
+  ..., nan, nan],
+           [nan, nan, nan]],
+
+          [[nan, nan, nan],
+           [nan, nan, nan]]]]], device='cuda:0')
+b = tensor([[[[[nan, nan, nan],
+           [nan, nan, nan]],
+
+          [[nan, nan, nan],
+           [nan, nan, nan]],
+
+  ..., nan, nan],
+           [nan, nan, nan]],
+
+          [[nan, nan, nan],
+           [nan, nan, nan]]]]], device='cuda:0')
+
+    def assert_close(a,b):
+>       assert torch.allclose(a,b,atol=1e-6,rtol=1e-5),float((a-b).abs().max())
+E       AssertionError: nan
+E       assert False
+E        +  where False = <built-in method allclose of type object at 0x7fc7d3ce8820>(tensor([[[[[nan, nan, nan],\n           [nan, nan, nan]],\n\n          [[nan, nan, nan],\n           [nan, nan, nan]],\n\n  ..., nan, nan],\n           [nan, nan, nan]],\n\n          [[nan, nan, nan],\n           [nan, nan, nan]]]]], device='cuda:0'), tensor([[[[[nan, nan, nan],\n           [nan, nan, nan]],\n\n          [[nan, nan, nan],\n           [nan, nan, nan]],\n\n  ..., nan, nan],\n           [nan, nan, nan]],\n\n          [[nan, nan, nan],\n           [nan, nan, nan]]]]], device='cuda:0'), atol=1e-06, rtol=1e-05)
+E        +    where <built-in method allclose of type object at 0x7fc7d3ce8820> = torch.allclose
+
+tests/test_m8j5bv_loss.py:78: AssertionError
+=============================== warnings summary ===============================
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+    warnings.warn(
+
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/networkx/classes/graph.py:23: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import Mapping
+
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/networkx/classes/reportviews.py:95: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import Mapping, Set, Iterable
+
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/trimesh/curvature.py:12: DeprecationWarning: Please use `coo_matrix` from the `scipy.sparse` namespace, the `scipy.sparse.coo` namespace is deprecated.
+    from scipy.sparse.coo import coo_matrix
+
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/cnn/bricks/transformer.py:690: DeprecationWarning: The arguments `feedforward_channels` in BaseTransformerLayer has been deprecated, now you should set `feedforward_channels` and other FFN related arguments to a dict named `ffn_cfgs`. 
+    warnings.warn(
+
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/cnn/bricks/transformer.py:690: DeprecationWarning: The arguments `ffn_dropout` in BaseTransformerLayer has been deprecated, now you should set `ffn_drop` and other FFN related arguments to a dict named `ffn_cfgs`. 
+    warnings.warn(
+
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/cnn/bricks/transformer.py:690: DeprecationWarning: The arguments `ffn_num_fcs` in BaseTransformerLayer has been deprecated, now you should set `num_fcs` and other FFN related arguments to a dict named `ffn_cfgs`. 
+    warnings.warn(
+
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/cnn/bricks/transformer.py:440: DeprecationWarning: The arguments `dropout` in MultiheadAttention has been deprecated, now you can separately set `attn_drop`(float), proj_drop(float), and `dropout_layer`(dict) 
+    warnings.warn(
+
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+tests/test_m8j5bv_loss.py::test_seeded_full_matching_losses_gradients_and_disabled_mode[1]
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/models/utils/petr_transformer.py:336: DeprecationWarning: The arguments `dropout` in MultiheadAttention has been deprecated, now you can separately set `attn_drop`(float), proj_drop(float), and `dropout_layer`(dict) 
+    warnings.warn(
+
+tests/test_m8j5bv_loss.py: 10 warnings
+  /root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/training/m8j5bv_validated_loss.py:29: RuntimeWarning: Coverage supervision: NoNegativeSupervision
+    lc,lb,audit=super().layer_loss(c,b,specs)
+
+tests/test_m8j5bv_loss.py::test_edge_loss_gradient_counts_every_layer[all_ignore]
+tests/test_m8j5bv_loss.py::test_edge_loss_gradient_counts_every_layer[empty_unknown]
+tests/test_m8j5bv_loss.py::test_edge_loss_gradient_counts_every_layer[out_of_view]
+tests/test_m8j5bv_loss.py::test_edge_loss_gradient_counts_every_layer[fully_occluded]
+tests/test_m8j5bv_loss.py::test_edge_loss_gradient_counts_every_layer[two_camera_overlap]
+  /root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/training/m8j5bv_validated_loss.py:29: RuntimeWarning: Coverage supervision: HighIgnoreFraction,NoNegativeSupervision
+    lc,lb,audit=super().layer_loss(c,b,specs)
+
+tests/test_m8j5bv_loss.py::test_official_head_synthetic_six_camera_forward_and_backward_parity[dtype0]
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3483.)
+    return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_m8j5bv_loss.py::test_official_head_synthetic_six_camera_forward_and_backward_parity[dtype1]
+1 failed, 25 passed, 51 warnings in 6.85s

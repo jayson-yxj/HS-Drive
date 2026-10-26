@@ -1,0 +1,92 @@
+{
+  "4.1": {
+    "status": "Partial",
+    "passed": "SameMatching_All12Losses_DirectOutputGradients_DisabledCompleteParity_FP32HeadParameters",
+    "open": "FullModelMixedPrecisionSharedGradientsStrictTolerance"
+  },
+  "4.2": {
+    "status": "Passed_SyntheticAndSourceEligibilityAudit",
+    "notes": "TwoClassesFourDistances_AllSixLayers_PositiveOverridesIgnore_IdentityUnknownSeparate"
+  },
+  "4.3": {
+    "status": "Passed_SyntheticDirectGradientIsolation",
+    "notes": "ExactlyZeroIgnoredLogitsAndNonpositiveBox_RealFrameNegativeDisabled_SharedParametersNotRequiredZero"
+  },
+  "4.4": {
+    "status": "SyntheticPassed_RealNegativeNotAvailable",
+    "real_certificates": 0,
+    "notes": "FullClass3DCertificateRequired_NotSemanticBackground"
+  },
+  "4.5": {
+    "status": "LossBoundaryPassed_FullModelMixedPrecisionPartial",
+    "boundary_cases": 9,
+    "batches": [
+      1,
+      2
+    ],
+    "precision": [
+      "FP32",
+      "FP16"
+    ],
+    "boundary_tests": 36,
+    "notes": "BF16AdditionalBoundaryTest"
+  },
+  "4.6": {
+    "status": "CoverageAuditPassed_NotCompleteAnnotation",
+    "frames": 214,
+    "gaps": 4,
+    "source_records": 3741,
+    "target_geometry": 1276,
+    "static_vehicle": "ActualSourceNotAvailable",
+    "human_review": "Pending"
+  },
+  "4.7": {
+    "status": "Passed_FrozenPredictionReplay",
+    "layers": 6,
+    "frames": 4,
+    "query_count": 900,
+    "counts_per_layer": [
+      [
+        4,
+        896,
+        0
+      ],
+      [
+        3,
+        897,
+        0
+      ],
+      [
+        2,
+        898,
+        0
+      ],
+      [
+        2,
+        898,
+        0
+      ]
+    ]
+  },
+  "4.8": {
+    "status": "NoGo",
+    "reason": "RealNZero_NoCertifiedNegative_NoHumanSpotCheck_FullMixedGradientOpen",
+    "real_updates": 0
+  },
+  "4.9": {
+    "status": "Partial",
+    "historical_cpu": 32,
+    "historical_cuda": 31,
+    "historical_browser": 9,
+    "new_cpu": 15,
+    "new_cuda_passed": 52,
+    "new_cuda_failed": 1,
+    "display_mask_checks": 30
+  },
+  "4.10": {
+    "status": "SeparatelyDecided",
+    "A": "Partial_NoGo",
+    "B": "NoGo",
+    "C": "NoGo_NotRun"
+  }
+}

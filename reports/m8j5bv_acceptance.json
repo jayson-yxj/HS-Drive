@@ -1,0 +1,82 @@
+{
+  "stage": "M8-J5B_Task4_FullValidation",
+  "checked_at_utc": "2026-10-26T15:26:06.912302+00:00",
+  "branch": "feat/m8j5b-loss-validation",
+  "base_commit": "92ee99ab68d33f3839fe29e7cf85d581ae6b4ec1",
+  "status": "Partial",
+  "decisions": {
+    "A_LossImplementationReady": {
+      "status": "Partial_NoGo",
+      "core_loss": "Passed",
+      "blocker": "OneFullModelMixedPrecisionSharedGradientStrictParityFailure_NoToleranceRelaxation"
+    },
+    "B_RealSupervisionReady": {
+      "status": "NoGo",
+      "positive_diagnostic": 570,
+      "real_negative_certificates": 0,
+      "human_review": "Pending_Suspended"
+    },
+    "C_GradientSmokeReady": {
+      "status": "NoGo",
+      "execution": "NotRun",
+      "reason": "AAndBNotComplete_RealNZero"
+    }
+  },
+  "tests": {
+    "historical_cpu": {
+      "passed": 32,
+      "failed": 0
+    },
+    "historical_PETR_CUDA": {
+      "passed": 31,
+      "failed": 0
+    },
+    "historical_browser": {
+      "passed": 9,
+      "failed": 0
+    },
+    "new_cpu": {
+      "passed": 15,
+      "failed": 0
+    },
+    "new_CUDA": {
+      "passed": 52,
+      "failed": 1,
+      "skipped": 0,
+      "exit_code": 1
+    },
+    "actual_mask_views": 30,
+    "actual_frame_audit": 214,
+    "actual_cached_prediction_layers": 24
+  },
+  "training_readiness": "NoGo",
+  "real_new_forward_calls": 0,
+  "real_backward_calls": 0,
+  "optimizer_steps": 0,
+  "CARLA": "NotRun",
+  "data_download": "NotRun",
+  "synthetic_GPU": "ActualServerExecution",
+  "actual_data": "ReadOnlyCPUAuditAndFrozenPredictionReplay",
+  "human_signoffs_created": 0,
+  "private_assets_committed": false,
+  "default_model_changed": false,
+  "historical_files_changed": false,
+  "main_merged": false,
+  "failure_logs": [
+    "reports/m8j5bv_sources/synthetic_run1.log",
+    "reports/m8j5bv_sources/synthetic_run2.log",
+    "reports/m8j5bv_sources/synthetic_run3.log",
+    "reports/m8j5bv_sources/synthetic_run4.log",
+    "reports/m8j5bv_sources/synthetic_run5.log",
+    "reports/m8j5bv_sources/synthetic_final.log",
+    "reports/m8j5bv_sources/synthetic_repeat.log",
+    "reports/m8j5bv_sources/synthetic_recorded.log",
+    "reports/m8j5bv_sources/synthetic_recorded_repeat.log"
+  ],
+  "next_minimal_plan": [
+    "IsolateUpstreamMixedPrecisionBackwardNondeterminismWithSyntheticInputs_NoToleranceChange",
+    "AssessSmallRealSubsetForIndependentAllClass3DNegativeCertificate",
+    "IfCertificateUnavailableKeepRealNZero_NoOptimizer",
+    "RequireActualHumanTargetedReviewAndBalancedWeightsBeforeSeparateSmokeConfig"
+  ]
+}

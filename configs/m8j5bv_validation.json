@@ -1,0 +1,33 @@
+{
+  "stage": "M8-J5B Task4 Full Validation",
+  "base_commit": "92ee99ab68d33f3839fe29e7cf85d581ae6b4ec1",
+  "seed": 850541,
+  "parity": {
+    "atol": 1e-06,
+    "rtol": 1e-05,
+    "matching": "ExactIntegerEquality",
+    "masked_gradient": "ExactlyZero"
+  },
+  "precision": {
+    "baseline": "FP32_TF32Disabled",
+    "official_optimizer_hook": "Fp16OptimizerHook_loss_scale512",
+    "candidate_contract": "Official feature decorator FP16 Backbone -> FP32 returned features -> FP32 Head; FP32 geometry/matching/loss; static scale512; strict shared gradient tolerance unchanged",
+    "BF16": "SupplementaryLossBoundaryTest_NotSelectedTrainingConfig"
+  },
+  "real_forward_calls": 0,
+  "real_backward_calls": 0,
+  "optimizer_steps": 0,
+  "private_root": "/root/gpufree-data/hs-drive-private/m8j5bv-full-validation",
+  "historical_inputs": "ReadOnly_M8J5B",
+  "synthetic_head_forward": "OfficialPETRHead_SixCameraSyntheticFeatureMaps_900Queries_NoBackbone_NoRealImages",
+  "real_prediction_replay": [
+    "00107",
+    "00124",
+    "00196",
+    "00213"
+  ],
+  "human_signoff": "Pending",
+  "new_data_download": false,
+  "CARLA": false,
+  "synthetic_full_model": "OfficialResNetDCNv2_PETR_6x3x64x96_RandomWeights_NoCheckpoint_NoOptimizer"
+}
