@@ -4,6 +4,8 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch, Mock
+from types import SimpleNamespace
 import numpy as np
 import cv2
 from datasets.schema import SensorSample
@@ -89,6 +91,21 @@ class ContractTests(unittest.TestCase):
         self.assertEqual((p['vehicle_attempts'],p['walker_attempts']),(8,12))
         self.assertLessEqual(p['init_ticks']+p['observation_ticks'],700)
         self.assertEqual(len(p['save_offsets_sensor_periods']),12)
+
+    def test_map_mismatch_stops_before_world_mutation_or_spawn(self):
+        from simulator.m8i1_session import TrafficDevelopmentSessionOwner
+        with tempfile.TemporaryDirectory() as d:
+            fake=Mock();client=fake.Client.return_value
+            client.get_client_version.return_value='0.9.15'
+            client.get_server_version.return_value='0.9.15'
+            world=client.get_world.return_value
+            world.get_map.return_value.name='/Game/Carla/Maps/UnexpectedMap'
+            with patch('simulator.m8i1_session.ROOT',Path(d)),patch.dict('sys.modules',{'carla':fake}):
+                owner=TrafficDevelopmentSessionOwner(0)
+                with self.assertRaisesRegex(RuntimeError,'MapMismatch_NoReload'):owner.connect()
+                world.apply_settings.assert_not_called();world.try_spawn_actor.assert_not_called()
+                world.tick.assert_not_called();client.get_trafficmanager.assert_not_called()
+                self.assertEqual(owner.tick_count,0)
 
 
 if __name__=='__main__':unittest.main()
