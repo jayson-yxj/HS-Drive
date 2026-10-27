@@ -1,0 +1,32 @@
+{
+  "pretraining_evidence_reused": "reports/m8j8_pretraining_provenance.json",
+  "sha256": "68725ad12de9019e568c0b0a12bd4a6a8634444335f5eeb7e58aab81fd728226",
+  "C_scenes_all_in_full_train": true,
+  "mini_train_scenes_excluded_by_full_train": [
+    "scene-0553",
+    "scene-0796"
+  ],
+  "C_finetune_vs_mini_val_scene_sample_overlap": 0,
+  "pretraining_overlap": "Training scenes are from official full train, matching documented original checkpoint training domain; not newly unseen pretraining data",
+  "mini_val_status": "PreviouslyUsedDevelopmentSet_NotSealedTest",
+  "limits": [
+    "No full raw training sample ledger in checkpoint",
+    "Cannot independently exclude model selection exposure to official val",
+    "Backbone pretraining asset data history not independently reconstructed"
+  ],
+  "planned_training_label_exposures_C": 13668,
+  "planned_training_label_exposures_B": 16750,
+  "planned_C_exposure_classes": {
+    "pedestrian": 4055,
+    "car": 4611,
+    "traffic_cone": 1307,
+    "bicycle": 207,
+    "motorcycle": 252,
+    "barrier": 2223,
+    "truck": 503,
+    "construction_vehicle": 233,
+    "bus": 257,
+    "trailer": 20
+  },
+  "comparability": "Equal optimizer steps/algorithm/LR/freeze; expanded pool necessarily changes object density, class mix and per-sample repetition. Cannot attribute gains solely to number of scenes."
+}

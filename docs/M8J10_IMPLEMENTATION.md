@@ -22,3 +22,33 @@
 ```
 
 GPU阶段禁网，不读取原始传感器载荷，输入白名单与监督隔离沿用既有实现。每个步骤持久化真实optimizer.step返回凭据，保护失败时保留失败checkpoint。预算400步到达即停。不因验证集结果修改学习率、过滤、类别或预算。
+
+## 已执行准备与支持量
+
+242帧，原始标注11317条，官方既有任务过滤后8200条，558个独立保留instance（连续关键帧记录不是独立目标）。零点数、范围、非任务类过滤可同时命中，原因计数不直接相加当唯一删除数。原八帧包含且转换数组精确一致，没有新增人工签核门禁。scene-0553、scene-0796虽属mini_train但不在完整版train交集，因此按固定官方规则排除。
+
+固定顺序使每个场景获得66或67步；242个样本均至少出现一次，多数第二次。C计划目标记录曝光13668，B为335×50=16750；相同步数不等于相同GT数量、类别混合或样本重复率。此对照测试扩展样本池整体影响，不能隔离“独立场景数”这一单一因素。预训练原配置记录full train，C训练场景与其训练域已知重叠；mini_val既有开发集，不宣称新盲测。
+
+准备阶段提交fb4fddf；完成准备后仅向配置补充已冻结原十类列表供导出使用，未改变任何训练、样本或评价规则（配置差异经preflight核验）。真正训练冻结于b6627ba，后续只增加离线汇总工具/测试，不改已运行训练源码或配置。
+
+## 测试
+
+```bash
+.venv/bin/python -m pytest -q tests/test_m8j10_selection.py tests/test_m8j6_selection.py tests/test_m8j7_metrics.py
+M8J10_RT=/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime
+env M8J6_RUNTIME="$M8J10_RT" PYTHONDONTWRITEBYTECODE=1 CUDA_VISIBLE_DEVICES='' \
+ LD_LIBRARY_PATH="$M8J10_RT/env/lib/python3.8/site-packages/torch/lib:$M8J10_RT/cuda-11.8/lib" \
+ PYTHONPATH="$PWD:$M8J10_RT/sources/PETR:$M8J10_RT/sources/mmdetection3d" \
+ "$M8J10_RT/env/bin/python" -m pytest --noconftest -q \
+ tests/test_m8j6_retry_state.py tests/test_m8j9_official_export.py tests/test_m8j10_selection.py
+```
+
+测试覆盖split交集、完整关键帧、验证隔离、场景轮换、不重复抽完前循环、独立随机状态、固定预算、原配置一致、参数别名/优化器唯一性、冻结检测及官方导出。初次runtime测试缺M8J6_RUNTIME导致一项官方模型合成检查skip；补明既有环境变量后38项全通过，无新环境安装或权重读取。随后增加两项配置/实际采样顺序检查，另保存最终测试记录，不覆盖初次日志。
+
+## 可复用结果及退出
+
+训练日志的逐步Loss对应不同样本，不作为整体拟合曲线；C200/C400固定mini_val eval Loss可比较，A基线本轮不追加Loss前向。官方A复用J9，B/C使用同一个原导出接口，官方TP不适用项原NaN保留。聚合JSON为易读将N/A映射null时明确注明，不改原devkit汇总。
+
+项目诊断保留相同匹配、重复计数、垂直中心与框高分布、共同GT配对XY误差，整体/类别/两个场景分别报告。z/h超过1m和2m仅额外描述性计数，不作为训练选择或新增门禁；历史异常案例不重新开展逐对象调查。
+
+私有根目录：/root/gpufree-data/hs-drive-private/m8j10_20261027_multiscene。公开报告只包含聚合数据、token级manifest、曝光计数和源码日志，不包含逐对象预测/标签或权重。全部阶段拒绝已存在的输出目录；复现不得原地覆盖或自动追加第401步。

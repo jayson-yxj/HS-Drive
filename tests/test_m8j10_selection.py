@@ -38,3 +38,29 @@ def test_different_seed_changes_sample_order_only():
     f=select_all(*fixtures());a=schedule(f,1);b=schedule(f,2)
     assert [r['scene_name'] for r in a]==[r['scene_name'] for r in b]
     assert [r['index'] for r in a]!=[r['index'] for r in b]
+
+
+def test_frozen_training_settings_equal_j7_and_smoke_clip():
+    import json
+    from pathlib import Path
+    c=json.loads(Path('configs/m8j10_protocol.json').read_text())
+    j7=json.loads(Path('configs/m8j7_protocol.json').read_text())
+    j6=json.loads(Path('configs/m8j6_protocol.json').read_text())
+    for key,value in j7['training'].items():
+        if key!='order':assert c['training'][key]==value,key
+    assert c['training']['gradient_clip_norm']==j6['smoke']['gradient_clip_norm']
+    assert c['training']['maximum_optimizer_steps']==400 and c['training']['scheduler'] is None
+    assert c['A']['sha256']!=c['B']['sha256']
+
+
+def test_actual_fixed_schedule_matches_declared_generator():
+    import json
+    from pathlib import Path
+    m=json.loads(Path('reports/m8j10_training_manifest.json').read_text())
+    assert m['order']==schedule(m['frames'],875606,400)
+    assert len({r['index'] for r in m['order']})==len(m['frames'])==242
+    counts={s:sum(r['scene_name']==s for r in m['order']) for s in {f['scene_name'] for f in m['frames']}}
+    assert max(counts.values())-min(counts.values())==1
+    for name in counts:
+        first=[r['index'] for r in m['order'] if r['scene_name']==name and r['scene_cycle']==0]
+        assert len(first)==len(set(first))==sum(f['scene_name']==name for f in m['frames'])
