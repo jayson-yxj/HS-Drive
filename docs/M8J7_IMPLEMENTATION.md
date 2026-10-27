@@ -37,4 +37,16 @@ Loss使用同一eval模式的八帧算术平均，同时保留各帧六层分类
 .venv/bin/python -m tools.m8j7_run
 ```
 
-run_id固定m8j7_20261027_131635；已有目录时不会重复更新。私有目录 /root/gpufree-data/hs-drive-private/m8j7_20261027_131635，公开统计 reports/m8j7_sources/m8j7_20261027_131635。checkpoint完整保留，不仅保留中间最优。
+初始run_id m8j7_20261027_131635在绘图阶段、任何更新之前失败（PETR原地squeeze后绘图误按五维索引），完整记录保留。仅修复绘图4D/5D处理并增加测试后，实际训练run_id为m8j7_20261027_132740；已有目录不会重复更新。私有目录 /root/gpufree-data/hs-drive-private/m8j7_20261027_132740，公开统计 reports/m8j7_sources/m8j7_20261027_132740。checkpoint完整保留，不仅保留中间最优。
+
+## 离线汇总与图表
+
+工具tools/m8j7_report.py在训练期间新增，用于训练全部完成后读取已保存的固定评估输出/日志，不被GPU训练进程导入，也不改实验协议。使用现有隔离环境的NumPy/matplotlib生成聚合曲线和共同匹配子集误差；不增加模型前向或更新：
+
+```bash
+env PYTHONDONTWRITEBYTECODE=1 PYTHONPATH="$PWD" \
+  /root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/bin/python \
+  -m tools.m8j7_report
+```
+
+已有交付文件时拒绝覆盖；结果JSON和图表可公开，原始/预测逐对象数据和RGB对照仍留私有目录。该汇总脚本不是实际训练提交的一部分，执行源码SHA由supervisor单独固定。
