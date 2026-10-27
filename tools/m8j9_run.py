@@ -1,5 +1,6 @@
 """Sequential bounded CPU export and two independent official evaluator runs."""
 from datetime import datetime,timezone
+import argparse
 import hashlib
 import json
 import os
@@ -13,17 +14,18 @@ def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 
 
 def main():
-    repo=Path.cwd();cfg=json.loads(Path('configs/m8j9_protocol.json').read_text());rt=Path(cfg['runtime'])
+    parser=argparse.ArgumentParser();parser.add_argument('--protocol',default='configs/m8j9_protocol.json');parser.add_argument('--report-root',default='reports/m8j9_sources')
+    args=parser.parse_args();repo=Path.cwd();cfg=json.loads(Path(args.protocol).read_text());rt=Path(cfg['runtime'])
     assert not subprocess.check_output(['git','status','--porcelain'],text=True).strip(),'Commit frozen scope/code first'
     private=Path(cfg['private_output']);private.mkdir(mode=0o700,exist_ok=False)
-    report=repo/'reports/m8j9_sources'
+    report=repo/args.report_root;report.mkdir(parents=True,exist_ok=True)
     commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
     env=dict(PATH=str(rt/'env/bin')+':/usr/bin:/bin',HOME=str(private),LANG='C.UTF-8',
         CUDA_VISIBLE_DEVICES='',PYTHONDONTWRITEBYTECODE='1',PYTHONNOUSERSITE='1',
         OMP_NUM_THREADS='1',MKL_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1',
         LD_LIBRARY_PATH=str(rt/'env/lib/python3.8/site-packages/torch/lib')+':'+str(rt/'cuda-11.8/lib'),
         PYTHONPATH=os.pathsep.join(map(str,[repo,rt/'sources/PETR',rt/'sources/mmdetection3d'])),
-        M8J9_COMMIT=commit)
+        M8J9_COMMIT=commit,M8J9_PROTOCOL=str(repo/args.protocol),M8J9_REPORT_ROOT=str(report))
     summary=dict(started_at_utc=datetime.now(timezone.utc).isoformat(),execution_commit=commit,phases=[],
         model_forward_calls=0,optimizer_steps=0,network=False,GPU=False,automatic_retry=False,
         source_sha256={str(p):sha(p) for pattern in ('tools/m8j9*.py','datasets/m8j9*.py','configs/m8j9*','tests/test_m8j9*') for p in repo.glob(pattern)})

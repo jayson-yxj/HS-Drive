@@ -91,3 +91,21 @@ def test_sample_manifest_catches_missing_duplicate_and_wrong_timestamp():
     assert check_manifest(dict(frames=[row]),tables,['val'])==['s']
     for rows in ([],[row,row],[dict(row,timestamp_us=101)]):
         with pytest.raises(AssertionError):check_manifest(dict(frames=rows),tables,['val'])
+
+
+def test_raw_json_sensor_join_uses_only_keyframes_and_no_annotations(tmp_path):
+    from datasets.m8j9_official_export import read_metadata_only
+    root=tmp_path/'v1.0-mini';root.mkdir()
+    pose=dict(token='pose',translation=[1.,2.,3.],rotation=[1.,0.,0.,0.])
+    cs=dict(token='cs',sensor_token='sensor',translation=[.1,.2,.3],rotation=[1.,0.,0.,0.])
+    key=dict(token='key',sample_token='sample',calibrated_sensor_token='cs',ego_pose_token='pose',timestamp=99,is_key_frame=True)
+    data=dict(sample=[dict(token='sample',scene_token='scene',timestamp=100)],
+        sample_data=[key,dict(key,token='sweep',is_key_frame=False)],calibrated_sensor=[cs],
+        ego_pose=[pose],scene=[dict(token='scene',name='mini_val')],
+        sensor=[dict(token='sensor',channel='LIDAR_TOP',modality='lidar')])
+    for name,rows in data.items():(root/(name+'.json')).write_text(json.dumps(rows))
+    tables=read_metadata_only(tmp_path,'v1.0-mini')
+    assert tables['sample']['sample']['data']==dict(LIDAR_TOP='key')
+    result=pose_info('sample',tables)
+    assert result['reference_timestamp_us']==99
+    assert result['ego2global_translation']==[1.,2.,3.]

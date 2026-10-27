@@ -178,7 +178,7 @@ def eval_stage(cfg,rep,phase):
         if p.endswith(('.pth','.pt','.jpg','.jpeg','.png','.bin')) or '/B/' in p or '/rgb_input/' in p:
             raise PermissionError('M8J9_Evaluation_MetadataOnly_NoSensorPayloadsWeightsOrB')
     sys.addaudithook(guard)
-    private=Path(cfg['private_output']);export=read('reports/m8j9_sources/export/result.json')
+    private=Path(cfg['private_output']);export=read(Path(os.environ['M8J9_REPORT_ROOT'])/'export/result.json')
     result_path=export['result_path'];assert sha(result_path)==export['result_sha256']
     for p,h in cfg['sources_sha256'].items():assert sha(p)==h,p
     # Actual NuScenes loads original GT metadata; does not read map/sensor raster payloads.
@@ -206,7 +206,7 @@ def eval_stage(cfg,rep,phase):
 
 
 def main():
-    cfg=read('configs/m8j9_protocol.json');phase=os.environ['M8J9_PHASE'];rep=Path(os.environ['M8J9_REPORT'])
+    cfg=read(os.environ.get('M8J9_PROTOCOL','configs/m8j9_protocol.json'));phase=os.environ['M8J9_PHASE'];rep=Path(os.environ['M8J9_REPORT'])
     start=time.monotonic();os.umask(0o077)
     result=dict(phase=phase,started_at_utc=datetime.now(timezone.utc).isoformat(),code_commit=os.environ['M8J9_COMMIT'],
         software={p:version(p) for p in ('nuscenes-devkit','numpy','torch','mmcv-full','mmdet','mmdet3d')},

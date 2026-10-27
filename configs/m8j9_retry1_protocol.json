@@ -1,0 +1,107 @@
+{
+  "stage": "M8-J9 frozen A official devkit alignment",
+  "created_at_utc": "2026-10-27T15:32:27.039625+00:00",
+  "base_commit": "136023d7cda9c7ee279b5a5cfdd0189dce274ac5",
+  "branch": "feat/m8j9-frozen-a-official-eval",
+  "runtime": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime",
+  "dataset_root": "/root/gpufree-data/hs-drive-private/m8j6-nuscenes-mini/data",
+  "version": "v1.0-mini",
+  "eval_set": "mini_val",
+  "nuscenes_devkit": "1.1.9",
+  "official_detection_config": "detection_cvpr_2019",
+  "A": {
+    "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/artifacts/safe_extract/model_tensors.npz",
+    "sha256": "cf33dccb1d549c425a89cf346d6f05401c49f6cccbd5a579cb7d8937b5a6d591",
+    "source": "SameOriginalBaselineAsM8J7",
+    "original_pth_sha256": "16d8a4875c36e7d1cba75b357901ff031b18d9d9374f12780b9b72cc621cefad"
+  },
+  "cache_root": "/root/gpufree-data/hs-drive-private/m8j8_20261027_ab/A/mini_val",
+  "private_output": "/root/gpufree-data/hs-drive-private/m8j9-frozen-a-official-eval-retry1",
+  "manifest": "reports/m8j8_evaluation_manifest.json",
+  "classes": [
+    "car",
+    "truck",
+    "construction_vehicle",
+    "bus",
+    "trailer",
+    "barrier",
+    "motorcycle",
+    "bicycle",
+    "pedestrian",
+    "traffic_cone"
+  ],
+  "output_policy": {
+    "cache": "OriginalNMSFreeTop300QueryClassPairs_AOnly",
+    "decoder_post_center_range": [
+      -61.2,
+      -61.2,
+      -10,
+      61.2,
+      61.2,
+      10
+    ],
+    "project_score_threshold": 0.2,
+    "project_xy": "strict abs(x),abs(y)<51.2",
+    "threshold_rationale": "Preserve M8-J8 formal output; do not switch to all low-score cached boxes to improve official AP. AP is conditional on this preexisting truncation.",
+    "official_exporter": "Inherited CustomNuScenesDataset._format_bbox from frozen MMDetection3D0.17.1 NuScenesDataset",
+    "exporter_range": "Original class-specific ego XY radii <= range; official evaluator then applies strict radius < range",
+    "NMS": false,
+    "new_topk": false,
+    "max_official_boxes_per_sample": 500,
+    "overflow": "Stop; existing top300 necessarily <=500. No truncation needed.",
+    "velocity": "Predicted cache columns7:9, verify raw final decoder columns8:10; zero vertical component is original exporter planar convention, rotate with calibration and ego pose.",
+    "attribute": "Frozen exporter deterministic class + predicted global XY speed threshold0.2m/s and original DefaultAttribute; not a learned attribute head or GT.",
+    "coordinate": "Frozen MMDetection3D reference LIDAR_TOP bottom center; exporter gravity center, full wlh, quaternion yaw=-yaw_second-pi/2; then lidar2ego and ego2global at source lidar timestamp.",
+    "meta": {
+      "use_camera": true,
+      "use_lidar": false,
+      "use_radar": false,
+      "use_map": false,
+      "use_external": false
+    }
+  },
+  "checks": {
+    "tokens": "All local official mini_val samples exactly equal fixed81 manifest, no duplicates/missing",
+    "source": "Cache hashes and original class order match",
+    "numerical_atol": 1e-05,
+    "numerical_rtol": 1e-06,
+    "serialization": "Official DetectionBox JSON roundtrip",
+    "GT_isolation": "Export reads only prediction arrays + sample/sample_data/calibrated_sensor/ego_pose/scene metadata; no annotation access; evaluator separately reads native GT.",
+    "repeat": "Two separate processes, identical result file, exact numeric metrics/details equality excluding eval_time; NaN treated as equal official non-applicable fields."
+  },
+  "limits": {
+    "model_forward": 0,
+    "optimizer_step": 0,
+    "backward": 0,
+    "B_read": false,
+    "network": false,
+    "CARLA": false,
+    "download": false,
+    "environment_upgrade": false,
+    "private_prediction_upload": false,
+    "external_evaluation_submission": false,
+    "main_merge": false
+  },
+  "sources_sha256": {
+    "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/datasets/nuscenes_dataset.py": "ce6ffaf17b85dc6c1e01f2063dd4e8bdc38adef10df79337cf0480e975f9c16b",
+    "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/datasets/nuscenes_dataset.py": "4d93801d0a79d61f633c6837236e15209c0d84a34f51b3d708ee5242aab48cc8",
+    "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/core/bbox/structures/lidar_box3d.py": "8badeb5b932fd162768e25d3a94467cc0dd0aef9c11caac043cae7eca8cc00c3",
+    "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/core/bbox/util.py": "3ab3eeb8f774c638f3e4502eccb3f7d4ab352b56f0843069c2e3de47f31724c9",
+    "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/nuscenes/eval/common/loaders.py": "8b80a9bfcae2dea70d81d52ab7663db879bc7feb296895e75f6a116c80c0055c",
+    "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/nuscenes/eval/detection/evaluate.py": "7546974e223fcd1a2e44b290634ee472eb29668307530fa1a727f94508188aab",
+    "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/nuscenes/eval/detection/algo.py": "460e1691c1391e01fe7c6f4576add6054b29cc280687513a9f9737b7363f4f38",
+    "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/nuscenes/eval/detection/data_classes.py": "0b5cb2d6614913c9f02a4fdcc3991eb3845b246f92b1eadba6047443a1cb5b72",
+    "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/nuscenes/eval/detection/configs/detection_cvpr_2019.json": "217f96cca4e80f790c4674ef72257a6863ee9a85b0ce185bc56488afc32c7a0b",
+    "configs/m8j8_protocol.json": "1edf72ce0149d3016ffc7348a14f80303159844e9f08a8a6ccd03b595a2bc715",
+    "reports/m8j8_evaluation_manifest.json": "4d4cfffd48bc803da16a7b15738bc42a4e7954f11c1a5f291ee0c3cefa2532fe",
+    "reports/m8j8_sources/m8j8_20261027_ab/A/result.json": "c52dd86c65d8b518a2890ad5012381043301cf1d69653d4fc20e4172fc098f51",
+    "training/m8j7_metrics.py": "732ea559e0605cc6041b9576eaf37e3c0233274810683600468dd5462160d3dd"
+  },
+  "retry_provenance": {
+    "original_protocol_sha256": "d41ee41edddeb0bea97decb010b74e60697daf01faac7d33170a40342bc797a7",
+    "original_private_output": "/root/gpufree-data/hs-drive-private/m8j9-frozen-a-official-eval",
+    "reason": "Raw sample metadata sensor reverse index missing; implement official keyframe join only. Original exporter/model/config/threshold unchanged.",
+    "failed_execution_commit": "a65452f86ea4f79eed63551d88d22499572860f5",
+    "automatic_retry": false
+  }
+}

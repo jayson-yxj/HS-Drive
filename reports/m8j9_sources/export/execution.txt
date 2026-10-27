@@ -1,0 +1,17 @@
+No CUDA runtime is found, using CUDA_HOME='/usr/local/cuda'
+/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.8.20-linux-x86_64-gnu/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/root/.local/share/uv/python/cpython-3.8.20-linux-x86_64-gnu/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8j9_stage.py", line 224, in <module>
+    if __name__=='__main__':main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8j9_stage.py", line 216, in main
+    result.update(export_stage(cfg,rep) if phase=='export' else eval_stage(cfg,rep,phase))
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8j9_stage.py", line 73, in export_stage
+    det,keep=prediction_to_export_input(pred,cfg['classes']);info=pose_info(f['sample_token'],tables)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/m8j9_official_export.py", line 42, in pose_info
+    sd=tables['sample_data'][sample['data']['LIDAR_TOP']]
+KeyError: 'data'

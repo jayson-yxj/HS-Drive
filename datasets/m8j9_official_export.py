@@ -20,6 +20,18 @@ def read_metadata_only(root, version):
         rows=json.loads((Path(root)/version/(name+'.json')).read_text())
         tables[name]={r['token']:r for r in rows}
         assert len(tables[name])==len(rows)
+    # Raw sample.json lacks the runtime `data` shortcut. Reproduce only the
+    # official key-frame sensor reverse index; do not build annotation joins.
+    for sample in tables['sample'].values():
+        sample['data']={}
+    for sd in tables['sample_data'].values():
+        if not sd['is_key_frame']:
+            continue
+        cs=tables['calibrated_sensor'][sd['calibrated_sensor_token']]
+        channel=tables['sensor'][cs['sensor_token']]['channel']
+        target=tables['sample'][sd['sample_token']]['data']
+        assert channel not in target, 'Duplicate key-frame sensor channel'
+        target[channel]=sd['token']
     return tables
 
 
