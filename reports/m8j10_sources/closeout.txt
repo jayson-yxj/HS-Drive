@@ -1,0 +1,53 @@
+{
+  "stage": "M8-J10",
+  "base_commit": "eb6124603140bedd042802f20acd4d3be2d31e39",
+  "engineering": "Passed",
+  "training_steps": 400,
+  "A_baseline_reused": true,
+  "B_forwards": 0,
+  "B_updates": 0,
+  "C_initialization": "A_EmptyAdamW",
+  "same_J7_training_configuration": true,
+  "freeze_restore": "Passed",
+  "precision": "FP32",
+  "official_interface": "PassedSameJ9Protocol",
+  "quality": "MitigatedRelativeToB_AReferenceRetained",
+  "deltas": {
+    "A": {
+      "mAP": -0.01179025674711659,
+      "NDS": -0.013713815295946397,
+      "tp_error_deltas": {
+        "trans_err": 0.012622490579766055,
+        "scale_err": 0.013380296828463867,
+        "orient_err": 0.022742053092110193,
+        "vel_err": 0.01663649053336458,
+        "attr_err": 0.012805538190176935
+      },
+      "project_precision": 0.014773733051362259,
+      "project_recall": -0.012082045518403972
+    },
+    "B": {
+      "mAP": 0.028615330002191575,
+      "NDS": 0.03076438262197806,
+      "tp_error_deltas": {
+        "trans_err": 0.0065302259598133405,
+        "scale_err": -0.054186543060787795,
+        "orient_err": 0.030401900800171022,
+        "vel_err": -0.08357786879845197,
+        "attr_err": -0.06373489110956687
+      },
+      "project_precision": -0.049839295279754614,
+      "project_recall": 0.09553245293621804
+    }
+  },
+  "final_candidate": "C400",
+  "C200": "RecordedOnly_NotSelected",
+  "reference": "A",
+  "widespread_generalization": "NotValidated",
+  "visual_driving_safety": "NotValidated",
+  "next_training_authorized": false,
+  "budget_extended": false,
+  "main_merged": false,
+  "private_assets_uploaded": false,
+  "completed_at_utc": "2026-10-27T16:45:44.077065+00:00"
+}

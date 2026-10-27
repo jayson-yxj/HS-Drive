@@ -1,0 +1,82 @@
+{
+  "checked_at_utc": "2026-10-27T16:45:43.989866+00:00",
+  "status": "EngineeringRunVerified",
+  "actual_optimizer_steps": 400,
+  "final_reload": "Passed",
+  "frozen_parameters_and_buffers": "ExactUnchanged",
+  "A_B_original_weights_unchanged": true,
+  "original_model_and_official_sources_unchanged": true,
+  "history": [
+    {
+      "stage": "m8j7",
+      "files": 52,
+      "unchanged": true
+    },
+    {
+      "stage": "m8j8",
+      "files": 41,
+      "unchanged": true
+    },
+    {
+      "stage": "m8j8a",
+      "files": 23,
+      "unchanged": true
+    },
+    {
+      "stage": "m8j9",
+      "files": 43,
+      "unchanged": true
+    }
+  ],
+  "caches_verified": {
+    "A": 89,
+    "B": 89,
+    "C200": 81,
+    "C400": 81
+  },
+  "phases": [
+    {
+      "phase": "prepare",
+      "PID": 872775,
+      "exit_code": 0,
+      "ended": true,
+      "execution_commit": "fb4fddf5088af757cc5f474d9c0e71084c1cef66"
+    },
+    {
+      "phase": "train",
+      "PID": 884995,
+      "exit_code": 0,
+      "ended": true,
+      "execution_commit": "b6627ba1d0dac8ee57b1aa6d1ec774ac96b437e8"
+    },
+    {
+      "phase": "verify",
+      "PID": 940179,
+      "exit_code": 0,
+      "ended": true,
+      "execution_commit": "89f2d5265e4a20cc924ca540637f0df6f9c20670"
+    },
+    {
+      "phase": "official",
+      "PID": 941294,
+      "exit_code": 0,
+      "ended": true,
+      "execution_commit": "9989bcbf1b2a757a2cc560fcfcc9628e1257a0e2"
+    },
+    {
+      "phase": "report",
+      "PID": 943131,
+      "exit_code": 0,
+      "ended": true,
+      "execution_commit": "84239c76ec489074ff21d44813c5f2407ba38e98"
+    }
+  ],
+  "official_denominator": 3393,
+  "project_denominator": 3559,
+  "A_baseline_exact": true,
+  "B_new_forwards": 0,
+  "C_forward_scope": "400 training + 162 mini_val + 2 save probes + 1 independent reload probe",
+  "main_merged": false,
+  "private_assets_published": false,
+  "model_quality": "SeparateDecision_NotImpliedByEngineeringPass"
+}

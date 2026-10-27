@@ -52,3 +52,16 @@ env M8J6_RUNTIME="$M8J10_RT" PYTHONDONTWRITEBYTECODE=1 CUDA_VISIBLE_DEVICES='' \
 项目诊断保留相同匹配、重复计数、垂直中心与框高分布、共同GT配对XY误差，整体/类别/两个场景分别报告。z/h超过1m和2m仅额外描述性计数，不作为训练选择或新增门禁；历史异常案例不重新开展逐对象调查。
 
 私有根目录：/root/gpufree-data/hs-drive-private/m8j10_20261027_multiscene。公开报告只包含聚合数据、token级manifest、曝光计数和源码日志，不包含逐对象预测/标签或权重。全部阶段拒绝已存在的输出目录；复现不得原地覆盖或自动追加第401步。
+
+## 实际结束状态
+
+400步与保存恢复完成，训练源码提交b6627ba；恢复89f2d52、官方缓存评测9989bcb、离线汇总84239c7。全部阶段exit0。C400输出恢复逐位一致，optimizer141条状态的step均400。没有失败训练重跑或第401步。C验证162帧前向，保存probe2次、恢复probe1次，训练400次；A/B新增前向0。数据准备和官方/汇总均CPU禁网。
+
+汇总命令（输出已存在时拒绝覆盖）：
+
+```bash
+.venv/bin/python -m tools.m8j10_verify
+.venv/bin/python -m tools.m8j10_closeout
+```
+
+m8j10_closeout生成基础表格，m8j10_decision.md及验收补充字段为对真实结果的人工编写研究解释，不是新的自动门禁或统计显著性判断。所有官方原始metrics文件均原样保留。最终runtime43项、主环境33项测试通过，不把重复执行相同测试相加当独立测试数量。
