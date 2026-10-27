@@ -1,0 +1,112 @@
+{
+  "run_id": "m8j10_20261027_multiscene",
+  "phase": "verify",
+  "code_commit": "89f2d5265e4a20cc924ca540637f0df6f9c20670",
+  "started_at_utc": "2026-10-27T16:37:26.829628+00:00",
+  "status": "FinalReloadPassed",
+  "optimizer_steps": 0,
+  "FP32": true,
+  "AMP": false,
+  "TF32": false,
+  "GradScaler": "NotUsed",
+  "seed": 875606,
+  "scheduler": null,
+  "GPU": "NVIDIA GeForce RTX 4090",
+  "torch": "2.0.0+cu118",
+  "CUDA": "11.8",
+  "mmcv": "1.7.2",
+  "mmdet": "2.24.1",
+  "mmdet3d": "0.17.1",
+  "initial_weight_sha256": "cf33dccb1d549c425a89cf346d6f05401c49f6cccbd5a579cb7d8937b5a6d591",
+  "original_state_sha256": "8cf53fb29a812bc7962b264042021460fa71093b2d7c530a0cbcdec191a5208a",
+  "fresh_optimizer_initial_entries": 0,
+  "input_canaries_rejected": 2,
+  "dropout_modules": {
+    "transformer.decoder.layers.0.attentions.0.proj_drop": 0.0,
+    "transformer.decoder.layers.0.attentions.0.dropout_layer": 0.1,
+    "transformer.decoder.layers.0.attentions.1.proj_drop": 0.0,
+    "transformer.decoder.layers.0.attentions.1.dropout_layer": 0.1,
+    "transformer.decoder.layers.0.ffns.0.layers.0.2": 0.1,
+    "transformer.decoder.layers.0.ffns.0.layers.2": 0.1,
+    "transformer.decoder.layers.1.attentions.0.proj_drop": 0.0,
+    "transformer.decoder.layers.1.attentions.0.dropout_layer": 0.1,
+    "transformer.decoder.layers.1.attentions.1.proj_drop": 0.0,
+    "transformer.decoder.layers.1.attentions.1.dropout_layer": 0.1,
+    "transformer.decoder.layers.1.ffns.0.layers.0.2": 0.1,
+    "transformer.decoder.layers.1.ffns.0.layers.2": 0.1,
+    "transformer.decoder.layers.2.attentions.0.proj_drop": 0.0,
+    "transformer.decoder.layers.2.attentions.0.dropout_layer": 0.1,
+    "transformer.decoder.layers.2.attentions.1.proj_drop": 0.0,
+    "transformer.decoder.layers.2.attentions.1.dropout_layer": 0.1,
+    "transformer.decoder.layers.2.ffns.0.layers.0.2": 0.1,
+    "transformer.decoder.layers.2.ffns.0.layers.2": 0.1,
+    "transformer.decoder.layers.3.attentions.0.proj_drop": 0.0,
+    "transformer.decoder.layers.3.attentions.0.dropout_layer": 0.1,
+    "transformer.decoder.layers.3.attentions.1.proj_drop": 0.0,
+    "transformer.decoder.layers.3.attentions.1.dropout_layer": 0.1,
+    "transformer.decoder.layers.3.ffns.0.layers.0.2": 0.1,
+    "transformer.decoder.layers.3.ffns.0.layers.2": 0.1,
+    "transformer.decoder.layers.4.attentions.0.proj_drop": 0.0,
+    "transformer.decoder.layers.4.attentions.0.dropout_layer": 0.1,
+    "transformer.decoder.layers.4.attentions.1.proj_drop": 0.0,
+    "transformer.decoder.layers.4.attentions.1.dropout_layer": 0.1,
+    "transformer.decoder.layers.4.ffns.0.layers.0.2": 0.1,
+    "transformer.decoder.layers.4.ffns.0.layers.2": 0.1,
+    "transformer.decoder.layers.5.attentions.0.proj_drop": 0.0,
+    "transformer.decoder.layers.5.attentions.0.dropout_layer": 0.1,
+    "transformer.decoder.layers.5.attentions.1.proj_drop": 0.0,
+    "transformer.decoder.layers.5.attentions.1.dropout_layer": 0.1,
+    "transformer.decoder.layers.5.ffns.0.layers.0.2": 0.1,
+    "transformer.decoder.layers.5.ffns.0.layers.2": 0.1
+  },
+  "attention_dropout": {
+    "transformer.decoder.layers.0.attentions.0.attn": 0.1,
+    "transformer.decoder.layers.0.attentions.1.attn": 0.1,
+    "transformer.decoder.layers.1.attentions.0.attn": 0.1,
+    "transformer.decoder.layers.1.attentions.1.attn": 0.1,
+    "transformer.decoder.layers.2.attentions.0.attn": 0.1,
+    "transformer.decoder.layers.2.attentions.1.attn": 0.1,
+    "transformer.decoder.layers.3.attentions.0.attn": 0.1,
+    "transformer.decoder.layers.3.attentions.1.attn": 0.1,
+    "transformer.decoder.layers.4.attentions.0.attn": 0.1,
+    "transformer.decoder.layers.4.attentions.1.attn": 0.1,
+    "transformer.decoder.layers.5.attentions.0.attn": 0.1,
+    "transformer.decoder.layers.5.attentions.1.attn": 0.1
+  },
+  "checkpoint_sha256": "ac16503f1928c157453e9001b91ad6dcf299f5e8f33861953de75041ec4a82d0",
+  "model_buffers_optimizer_exact": true,
+  "shared_mapping_preserved": true,
+  "RNG_exact": true,
+  "fixed_eval_output_comparison": {
+    "all_cls_scores": {
+      "max_abs_error": 0.0,
+      "relative_l2": 0.0,
+      "bitwise_equal": true,
+      "passed": true
+    },
+    "all_bbox_preds": {
+      "max_abs_error": 0.0,
+      "relative_l2": 0.0,
+      "bitwise_equal": true,
+      "passed": true
+    }
+  },
+  "new_process": true,
+  "optimizer_state": {
+    "sha256": "4e51e8b677e69bbdec0d84a2da2fa820b9df9b6154def21711deec79c6d9ead1",
+    "entries": 141,
+    "step_values": [
+      400
+    ],
+    "first_moment_l2": 7.731445117541727,
+    "lr": [
+      1e-05
+    ],
+    "weight_decay": [
+      0.0
+    ]
+  },
+  "frozen_final_unchanged": true,
+  "elapsed_s": 4.035857077687979,
+  "finished_at_utc": "2026-10-27T16:37:30.865488+00:00"
+}
