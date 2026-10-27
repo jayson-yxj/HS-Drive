@@ -2,6 +2,15 @@
 import numpy as np
 
 
+def image_panels(array):
+    """PETR may squeeze batch=1 in place; visualize either shape unchanged."""
+    if array.ndim == 5:
+        assert array.shape[0] == 1
+        array = array[0]
+    assert array.ndim == 4 and array.shape[:2] == (6, 3)
+    return array.transpose(0, 2, 3, 1) + np.array([103.530,116.280,123.675])
+
+
 def prediction_mask(boxes, scores, threshold):
     return (np.abs(boxes[:, 0]) < 51.2) & (np.abs(boxes[:, 1]) < 51.2) & (scores >= threshold)
 

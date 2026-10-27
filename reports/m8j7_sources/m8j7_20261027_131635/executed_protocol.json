@@ -1,0 +1,232 @@
+{
+  "stage": "M8-J7 Fixed Eight-Frame FP32 Overfit",
+  "base_commit": "f4e44f9",
+  "branch": "feat/m8j7-eight-frame-fp32-overfit",
+  "run_id": "m8j7_20261027_131635",
+  "declared_at_utc": "2026-10-27T13:18:11.768410+00:00",
+  "original_protocol": "configs/m8j6_protocol.json",
+  "original_protocol_sha256": "a65a7f19ba86570e9c15cf7df12f34f3a0caa35bc48bac0c4270ff0c5674c2d3",
+  "prepared_manifest_sha256": "db718f556db3c2403e263d990afddbc281a87b03cbf9bca31a5f5b311333b4c7",
+  "training_gt_total": 335,
+  "frames": [
+    {
+      "index": 0,
+      "sample_token": "ca9a282c9e77460f8360f564131a8af5",
+      "scene_name": "scene-0061",
+      "input_sha256": "44f87d12a0d3452621e60bb53ba6f9d08c1dc89a1da1e3a978eccf1ddce2aedc",
+      "supervision_sha256": "0c399b9ce3d7c433350817463db92d6a9176bbe9df39140be149087bb2bc3a3a",
+      "retained_gt": 50,
+      "retained_classes": {
+        "pedestrian": 19,
+        "traffic_cone": 3,
+        "car": 4,
+        "barrier": 22,
+        "truck": 2
+      }
+    },
+    {
+      "index": 1,
+      "sample_token": "39586f9d59004284a7114a68825e8eec",
+      "scene_name": "scene-0061",
+      "input_sha256": "2f0a044d0e039b8a78b6fdc0aa55d696a88eded2120c03d154d6f9060767580c",
+      "supervision_sha256": "8a6b1bc42699a3c75e680b5d373a65286d0bdc7727e7a4cbaeffb9253ee77133",
+      "retained_gt": 51,
+      "retained_classes": {
+        "pedestrian": 20,
+        "car": 3,
+        "barrier": 24,
+        "truck": 2,
+        "traffic_cone": 1,
+        "motorcycle": 1
+      }
+    },
+    {
+      "index": 2,
+      "sample_token": "356d81f38dd9473ba590f39e266f54e5",
+      "scene_name": "scene-0061",
+      "input_sha256": "bc877f282149a36f3a2436aa001ab9143ef9f86c0da627c5fd6d96f841988203",
+      "supervision_sha256": "5c7e40af80e53c6aff189134697b7f6d7505c0eef900960eada3b7fd95424b7f",
+      "retained_gt": 56,
+      "retained_classes": {
+        "pedestrian": 23,
+        "traffic_cone": 2,
+        "car": 4,
+        "barrier": 25,
+        "truck": 2
+      }
+    },
+    {
+      "index": 3,
+      "sample_token": "e0845f5322254dafadbbed75aaa07969",
+      "scene_name": "scene-0061",
+      "input_sha256": "be0711386e7b2d5f2b058c77a1b378978a1519eabbb8ee970e8064f89a194b66",
+      "supervision_sha256": "4b98c27f7070e280e6fe415f1c8ec918012f76c7b3855c29bed57f596c983268",
+      "retained_gt": 61,
+      "retained_classes": {
+        "pedestrian": 24,
+        "car": 5,
+        "bicycle": 1,
+        "barrier": 26,
+        "truck": 2,
+        "traffic_cone": 3
+      }
+    },
+    {
+      "index": 4,
+      "sample_token": "5991fad3280c4f84b331536c32001a04",
+      "scene_name": "scene-0655",
+      "input_sha256": "f86f83136b7d5ecaee0eb0da7221d7d84b69cdc8f59d5681026d93c489f26f89",
+      "supervision_sha256": "5847e258aef1bbad5873a1bb18b999bd9f97bfc27ffc3510a011c1ed0a338319",
+      "retained_gt": 28,
+      "retained_classes": {
+        "car": 22,
+        "truck": 5,
+        "pedestrian": 1
+      }
+    },
+    {
+      "index": 5,
+      "sample_token": "2578329fc3ae484bb23ef766808f4be5",
+      "scene_name": "scene-0655",
+      "input_sha256": "e025197754a642cd3a81f7c923437ef387071986522598ae4679cd9d49d0607c",
+      "supervision_sha256": "a75dc2a678a213746bce42faddc5376f19ec62389eb6ddde3c2012f54968ddac",
+      "retained_gt": 28,
+      "retained_classes": {
+        "car": 23,
+        "truck": 5
+      }
+    },
+    {
+      "index": 6,
+      "sample_token": "8057958576034e51bac9bdc5740128d5",
+      "scene_name": "scene-0655",
+      "input_sha256": "1132d54acc96dc00ee2f971ee544bcc2a21a9ab49b1010115655274a5e1af00a",
+      "supervision_sha256": "fa8499c28cee788a3c581ba4eab126fed579d2596b86b6d5d4dc0480ddedd44c",
+      "retained_gt": 29,
+      "retained_classes": {
+        "car": 24,
+        "truck": 5
+      }
+    },
+    {
+      "index": 7,
+      "sample_token": "23799328f65843fc9e0c71f2bfbe90ef",
+      "scene_name": "scene-0655",
+      "input_sha256": "e203cba6cd500c577aa073b564fca571b96305d9f576c367ca09493306249f40",
+      "supervision_sha256": "fffc162896cb3605a2d5d97dafadda07171209de0094985c5b133739385efaf6",
+      "retained_gt": 32,
+      "retained_classes": {
+        "car": 27,
+        "truck": 5
+      }
+    }
+  ],
+  "initialization": "OriginalFrozenWeights_FreshEmptyAdamW_NotJ6Step3",
+  "training": {
+    "maximum_optimizer_steps": 400,
+    "order": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "seed": 875606,
+    "batch_size": 1,
+    "dtype": "FP32",
+    "AMP": false,
+    "TF32": false,
+    "GradScaler": "NotUsed",
+    "optimizer": "AdamW",
+    "lr": 1e-05,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "weight_decay": 0.0,
+    "gradient_clip_norm": 35.0,
+    "scheduler": null,
+    "trainable": "SameJ6HeadPolicy_141CanonicalParameters",
+    "frozen": "178ParametersAnd159Buffers_Exact",
+    "backbone_neck_mode": "eval",
+    "head_mode": "train",
+    "head_dropout": "Official0.1Unchanged",
+    "image_augmentations": false,
+    "preprocess": "FrozenJ6ResizeCropNormalize_512x1408",
+    "reason": "Preserve successful smoke dynamics; 400 constant-lr steps, no long-schedule warmup/decay or search"
+  },
+  "evaluation": {
+    "steps": [
+      0,
+      80,
+      160,
+      240,
+      320,
+      400
+    ],
+    "mode": "eval",
+    "score_threshold": 0.2,
+    "decoder": "Official head.get_bboxes; NMSFree top300 query-class pairs; no GT-dependent prediction selection",
+    "max_num": 300,
+    "decoder_score_threshold": null,
+    "decoder_post_center_range": [
+      -61.2,
+      -61.2,
+      -10.0,
+      61.2,
+      61.2,
+      10.0
+    ],
+    "task_prediction_region": "Strict abs(x)<51.2 and abs(y)<51.2, independent of GT; decoded outside-region predictions reported separately",
+    "gt": "Exactly335FilteredTrainingGT_NoNewFilters",
+    "matching": "Per-frame same-class descending-score nearest unmatched GT, XY distance strictly less than threshold; stable prediction index tie-break",
+    "distance_m": [
+      2.0,
+      1.0,
+      0.5
+    ],
+    "primary_distance_m": 2.0,
+    "PR_score_thresholds": [
+      0.0,
+      0.05,
+      0.1,
+      0.2,
+      0.3,
+      0.5,
+      0.7,
+      0.9
+    ],
+    "AP": "101-point interpolated class AP at2m on all in-range decoded scores; no nuScenes official mAP claim; no-GT class AP=null and FP still reported",
+    "yaw": "wrapped 2pi for directed classes; barrier pi; traffic_cone NA",
+    "error_scope": "Matched pairs only; jointly report TP/FP/FN and all-candidate burden",
+    "best_checkpoint": "None_Final400Mandatory_NoSelection",
+    "loss_aggregation": "Arithmetic mean of eight fixed eval per-frame losses; six-layer components retained",
+    "scope": "TrainingSetDiagnostic_NotNuScenesValidation"
+  },
+  "checks": {
+    "maximum_allocated_GiB": 22,
+    "checkpoint_output_atol": 1e-06,
+    "checkpoint_output_rtol": 1e-05,
+    "stop_on": [
+      "Nonfinite",
+      "FrozenMutation",
+      "DataHashOrGTCountMismatch",
+      "AliasOrOptimizerPolicyConflict",
+      "CheckpointRestoreFailure",
+      "OOM"
+    ],
+    "no_loss_monotonic_stop": true
+  },
+  "limits": {
+    "automatic_extension": false,
+    "new_data": false,
+    "CARLA": false,
+    "private_assets_published": false,
+    "AMP_repair": false,
+    "main_merge": false,
+    "timeout_seconds": 2400
+  }
+}

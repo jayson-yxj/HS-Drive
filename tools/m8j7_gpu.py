@@ -15,7 +15,7 @@ from tools import m8j6_gpu_actual as old
 from tools.m8j6_retry_gpu import training_mode, optimizer_step, evaluation_probe, tensor_output_compare
 from training.m8j6_retry_state import (parameter_mapping, head_policy, snapshot, fingerprint,
     assert_exact, rng_state, restore_rng, optimizer_summary, assert_frozen_unchanged)
-from training.m8j7_metrics import summarize, average_precision, prediction_mask
+from training.m8j7_metrics import summarize, average_precision, prediction_mask, image_panels
 from datasets.m8j6_selection import sha256
 
 
@@ -36,7 +36,7 @@ def draw_corners(image, corners, projection, color):
 
 
 def visualize(directory,index,img,meta,gt,decoded,scores,threshold,cameras,step):
-    images=img[0].detach().cpu().numpy().transpose(0,2,3,1)+np.array([103.530,116.280,123.675])
+    images=image_panels(img.detach().cpu().numpy())
     gc=gt.corners.detach().cpu().numpy()
     boxes=decoded.tensor.detach().cpu().numpy()
     selected=prediction_mask(boxes,scores,threshold)

@@ -3,6 +3,13 @@ import pytest
 from training.m8j7_metrics import match, summarize, average_precision, errors
 
 
+def test_visualization_original_and_petr_inplace_squeezed_batch_identical():
+    from training.m8j7_metrics import image_panels
+    a=np.arange(6*3*4*5).reshape(1,6,3,4,5)
+    assert np.array_equal(image_panels(a),image_panels(a[0]))
+    assert image_panels(a).shape==(6,4,5,3)
+
+
 def record(x=(0.,),scores=(.8,),labels=(0,),gx=(0.,),gl=(0,)):
     def boxes(xs):
         a=np.zeros((len(xs),9));a[:,0]=xs;a[:,3:6]=[2,4,2];return a
