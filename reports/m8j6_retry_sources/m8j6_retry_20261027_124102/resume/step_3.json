@@ -1,0 +1,1338 @@
+{
+  "global_step_about_to_execute": 3,
+  "frame_index": 1,
+  "sample_token": "39586f9d59004284a7114a68825e8eec",
+  "losses": {
+    "loss_cls": 0.2573237717151642,
+    "loss_bbox": 0.5282959938049316,
+    "d0.loss_cls": 0.301312655210495,
+    "d0.loss_bbox": 0.7327302098274231,
+    "d1.loss_cls": 0.27049702405929565,
+    "d1.loss_bbox": 0.6958813071250916,
+    "d2.loss_cls": 0.2730869948863983,
+    "d2.loss_bbox": 0.6017727255821228,
+    "d3.loss_cls": 0.29476577043533325,
+    "d3.loss_bbox": 0.5613665580749512,
+    "d4.loss_cls": 0.2654852569103241,
+    "d4.loss_bbox": 0.538412868976593
+  },
+  "total_loss": 5.320931434631348,
+  "classification_loss": 1.6624714732170105,
+  "regression_loss": 3.6584596633911133,
+  "gradients": {
+    "direct_output_gradients": [
+      {
+        "decoder_layer": 0,
+        "positive_class_gradient_norm": 0.03923524543642998,
+        "negative_class_gradient_norm": 0.025610635057091713,
+        "positive_box_gradient_norm": 0.09950859844684601,
+        "negative_box_gradient_max": 0.0
+      },
+      {
+        "decoder_layer": 1,
+        "positive_class_gradient_norm": 0.03859403356909752,
+        "negative_class_gradient_norm": 0.0168622899800539,
+        "positive_box_gradient_norm": 0.09950859844684601,
+        "negative_box_gradient_max": 0.0
+      },
+      {
+        "decoder_layer": 2,
+        "positive_class_gradient_norm": 0.03782857581973076,
+        "negative_class_gradient_norm": 0.020491525530815125,
+        "positive_box_gradient_norm": 0.09950859844684601,
+        "negative_box_gradient_max": 0.0
+      },
+      {
+        "decoder_layer": 3,
+        "positive_class_gradient_norm": 0.03822805732488632,
+        "negative_class_gradient_norm": 0.0229018721729517,
+        "positive_box_gradient_norm": 0.09950859844684601,
+        "negative_box_gradient_max": 0.0
+      },
+      {
+        "decoder_layer": 4,
+        "positive_class_gradient_norm": 0.03512408956885338,
+        "negative_class_gradient_norm": 0.024494165554642677,
+        "positive_box_gradient_norm": 0.09950859844684601,
+        "negative_box_gradient_max": 0.0
+      },
+      {
+        "decoder_layer": 5,
+        "positive_class_gradient_norm": 0.0351082943379879,
+        "negative_class_gradient_norm": 0.020693382248282433,
+        "positive_box_gradient_norm": 0.09950859844684601,
+        "negative_box_gradient_max": 0.0
+      }
+    ],
+    "parameter_group_norms": {
+      "pts_bbox_head.cls_branches": 2.0470101833343506,
+      "pts_bbox_head.reg_branches": 21.026586532592773,
+      "pts_bbox_head.transformer": 11.503422737121582
+    },
+    "all_finite": true
+  },
+  "parameter_gradient_norms": {
+    "pts_bbox_head.input_proj.weight": 8.679901123046875,
+    "pts_bbox_head.input_proj.bias": 0.7649009823799133,
+    "pts_bbox_head.cls_branches.0.0.weight": 0.8379614949226379,
+    "pts_bbox_head.cls_branches.0.0.bias": 0.05996554344892502,
+    "pts_bbox_head.cls_branches.0.1.weight": 0.06220027059316635,
+    "pts_bbox_head.cls_branches.0.1.bias": 0.058436907827854156,
+    "pts_bbox_head.cls_branches.0.3.weight": 0.7153266072273254,
+    "pts_bbox_head.cls_branches.0.3.bias": 0.06913194060325623,
+    "pts_bbox_head.cls_branches.0.4.weight": 0.07258632034063339,
+    "pts_bbox_head.cls_branches.0.4.bias": 0.07734180986881256,
+    "pts_bbox_head.cls_branches.0.6.weight": 1.710658073425293,
+    "pts_bbox_head.cls_branches.0.6.bias": 0.15204942226409912,
+    "pts_bbox_head.reg_branches.0.0.weight": 4.242981433868408,
+    "pts_bbox_head.reg_branches.0.0.bias": 0.3775032162666321,
+    "pts_bbox_head.reg_branches.0.2.weight": 6.037315368652344,
+    "pts_bbox_head.reg_branches.0.2.bias": 0.9161618947982788,
+    "pts_bbox_head.reg_branches.0.4.weight": 19.139705657958984,
+    "pts_bbox_head.reg_branches.0.4.bias": 4.511660099029541,
+    "pts_bbox_head.adapt_pos3d.0.weight": 0.4707987904548645,
+    "pts_bbox_head.adapt_pos3d.0.bias": 0.007030394393950701,
+    "pts_bbox_head.adapt_pos3d.2.weight": 0.4774966537952423,
+    "pts_bbox_head.adapt_pos3d.2.bias": 1.2802016158275364e-07,
+    "pts_bbox_head.position_encoder.0.weight": 5.248806476593018,
+    "pts_bbox_head.position_encoder.0.bias": 0.3718514144420624,
+    "pts_bbox_head.position_encoder.2.weight": 2.4050893783569336,
+    "pts_bbox_head.position_encoder.2.bias": 1.2802016158275364e-07,
+    "pts_bbox_head.reference_points.weight": 28.97979164123535,
+    "pts_bbox_head.query_embedding.0.weight": 11.563504219055176,
+    "pts_bbox_head.query_embedding.0.bias": 0.8380975127220154,
+    "pts_bbox_head.query_embedding.2.weight": 4.2645978927612305,
+    "pts_bbox_head.query_embedding.2.bias": 0.5118218660354614,
+    "pts_bbox_head.transformer.decoder.layers.0.attentions.0.attn.in_proj_weight": 0.027574114501476288,
+    "pts_bbox_head.transformer.decoder.layers.0.attentions.0.attn.in_proj_bias": 0.5677306056022644,
+    "pts_bbox_head.transformer.decoder.layers.0.attentions.0.attn.out_proj.weight": 0.4638301432132721,
+    "pts_bbox_head.transformer.decoder.layers.0.attentions.0.attn.out_proj.bias": 1.0372971296310425,
+    "pts_bbox_head.transformer.decoder.layers.0.attentions.1.attn.in_proj_weight": 7.415756702423096,
+    "pts_bbox_head.transformer.decoder.layers.0.attentions.1.attn.in_proj_bias": 0.44731029868125916,
+    "pts_bbox_head.transformer.decoder.layers.0.attentions.1.attn.out_proj.weight": 1.4733812808990479,
+    "pts_bbox_head.transformer.decoder.layers.0.attentions.1.attn.out_proj.bias": 0.21257123351097107,
+    "pts_bbox_head.transformer.decoder.layers.0.ffns.0.layers.0.0.weight": 1.9741941690444946,
+    "pts_bbox_head.transformer.decoder.layers.0.ffns.0.layers.0.0.bias": 0.14160530269145966,
+    "pts_bbox_head.transformer.decoder.layers.0.ffns.0.layers.1.weight": 1.1730583906173706,
+    "pts_bbox_head.transformer.decoder.layers.0.ffns.0.layers.1.bias": 0.16921931505203247,
+    "pts_bbox_head.transformer.decoder.layers.0.norms.0.weight": 0.1863354593515396,
+    "pts_bbox_head.transformer.decoder.layers.0.norms.0.bias": 0.3487650454044342,
+    "pts_bbox_head.transformer.decoder.layers.0.norms.1.weight": 0.15649010241031647,
+    "pts_bbox_head.transformer.decoder.layers.0.norms.1.bias": 0.26104867458343506,
+    "pts_bbox_head.transformer.decoder.layers.0.norms.2.weight": 0.2360152304172516,
+    "pts_bbox_head.transformer.decoder.layers.0.norms.2.bias": 0.2781641483306885,
+    "pts_bbox_head.transformer.decoder.layers.1.attentions.0.attn.in_proj_weight": 2.6004602909088135,
+    "pts_bbox_head.transformer.decoder.layers.1.attentions.0.attn.in_proj_bias": 0.2003408670425415,
+    "pts_bbox_head.transformer.decoder.layers.1.attentions.0.attn.out_proj.weight": 1.0904312133789062,
+    "pts_bbox_head.transformer.decoder.layers.1.attentions.0.attn.out_proj.bias": 0.20774869620800018,
+    "pts_bbox_head.transformer.decoder.layers.1.attentions.1.attn.in_proj_weight": 4.461348533630371,
+    "pts_bbox_head.transformer.decoder.layers.1.attentions.1.attn.in_proj_bias": 0.36945244669914246,
+    "pts_bbox_head.transformer.decoder.layers.1.attentions.1.attn.out_proj.weight": 1.1062320470809937,
+    "pts_bbox_head.transformer.decoder.layers.1.attentions.1.attn.out_proj.bias": 0.24122196435928345,
+    "pts_bbox_head.transformer.decoder.layers.1.ffns.0.layers.0.0.weight": 2.0535128116607666,
+    "pts_bbox_head.transformer.decoder.layers.1.ffns.0.layers.0.0.bias": 0.14506953954696655,
+    "pts_bbox_head.transformer.decoder.layers.1.ffns.0.layers.1.weight": 1.0049338340759277,
+    "pts_bbox_head.transformer.decoder.layers.1.ffns.0.layers.1.bias": 0.20167061686515808,
+    "pts_bbox_head.transformer.decoder.layers.1.norms.0.weight": 0.19911988079547882,
+    "pts_bbox_head.transformer.decoder.layers.1.norms.0.bias": 0.31942665576934814,
+    "pts_bbox_head.transformer.decoder.layers.1.norms.1.weight": 0.208945170044899,
+    "pts_bbox_head.transformer.decoder.layers.1.norms.1.bias": 0.2477465122938156,
+    "pts_bbox_head.transformer.decoder.layers.1.norms.2.weight": 0.2433815449476242,
+    "pts_bbox_head.transformer.decoder.layers.1.norms.2.bias": 0.2504280209541321,
+    "pts_bbox_head.transformer.decoder.layers.2.attentions.0.attn.in_proj_weight": 2.2210986614227295,
+    "pts_bbox_head.transformer.decoder.layers.2.attentions.0.attn.in_proj_bias": 0.16905717551708221,
+    "pts_bbox_head.transformer.decoder.layers.2.attentions.0.attn.out_proj.weight": 0.8319277167320251,
+    "pts_bbox_head.transformer.decoder.layers.2.attentions.0.attn.out_proj.bias": 0.17600117623806,
+    "pts_bbox_head.transformer.decoder.layers.2.attentions.1.attn.in_proj_weight": 3.211946725845337,
+    "pts_bbox_head.transformer.decoder.layers.2.attentions.1.attn.in_proj_bias": 0.2613188624382019,
+    "pts_bbox_head.transformer.decoder.layers.2.attentions.1.attn.out_proj.weight": 0.7980214357376099,
+    "pts_bbox_head.transformer.decoder.layers.2.attentions.1.attn.out_proj.bias": 0.19934135675430298,
+    "pts_bbox_head.transformer.decoder.layers.2.ffns.0.layers.0.0.weight": 1.637477159500122,
+    "pts_bbox_head.transformer.decoder.layers.2.ffns.0.layers.0.0.bias": 0.1102348119020462,
+    "pts_bbox_head.transformer.decoder.layers.2.ffns.0.layers.1.weight": 0.7383067011833191,
+    "pts_bbox_head.transformer.decoder.layers.2.ffns.0.layers.1.bias": 0.17203640937805176,
+    "pts_bbox_head.transformer.decoder.layers.2.norms.0.weight": 0.23241570591926575,
+    "pts_bbox_head.transformer.decoder.layers.2.norms.0.bias": 0.21655608713626862,
+    "pts_bbox_head.transformer.decoder.layers.2.norms.1.weight": 0.1814279407262802,
+    "pts_bbox_head.transformer.decoder.layers.2.norms.1.bias": 0.211904838681221,
+    "pts_bbox_head.transformer.decoder.layers.2.norms.2.weight": 0.15375347435474396,
+    "pts_bbox_head.transformer.decoder.layers.2.norms.2.bias": 0.19734357297420502,
+    "pts_bbox_head.transformer.decoder.layers.3.attentions.0.attn.in_proj_weight": 1.6201437711715698,
+    "pts_bbox_head.transformer.decoder.layers.3.attentions.0.attn.in_proj_bias": 0.12627266347408295,
+    "pts_bbox_head.transformer.decoder.layers.3.attentions.0.attn.out_proj.weight": 0.7104273438453674,
+    "pts_bbox_head.transformer.decoder.layers.3.attentions.0.attn.out_proj.bias": 0.13872742652893066,
+    "pts_bbox_head.transformer.decoder.layers.3.attentions.1.attn.in_proj_weight": 1.7286500930786133,
+    "pts_bbox_head.transformer.decoder.layers.3.attentions.1.attn.in_proj_bias": 0.16608057916164398,
+    "pts_bbox_head.transformer.decoder.layers.3.attentions.1.attn.out_proj.weight": 0.47657790780067444,
+    "pts_bbox_head.transformer.decoder.layers.3.attentions.1.attn.out_proj.bias": 0.15533345937728882,
+    "pts_bbox_head.transformer.decoder.layers.3.ffns.0.layers.0.0.weight": 1.3967304229736328,
+    "pts_bbox_head.transformer.decoder.layers.3.ffns.0.layers.0.0.bias": 0.09336942434310913,
+    "pts_bbox_head.transformer.decoder.layers.3.ffns.0.layers.1.weight": 0.5169459581375122,
+    "pts_bbox_head.transformer.decoder.layers.3.ffns.0.layers.1.bias": 0.13276389241218567,
+    "pts_bbox_head.transformer.decoder.layers.3.norms.0.weight": 0.132154643535614,
+    "pts_bbox_head.transformer.decoder.layers.3.norms.0.bias": 0.15188273787498474,
+    "pts_bbox_head.transformer.decoder.layers.3.norms.1.weight": 0.13847655057907104,
+    "pts_bbox_head.transformer.decoder.layers.3.norms.1.bias": 0.16602793335914612,
+    "pts_bbox_head.transformer.decoder.layers.3.norms.2.weight": 0.1217021644115448,
+    "pts_bbox_head.transformer.decoder.layers.3.norms.2.bias": 0.15429829061031342,
+    "pts_bbox_head.transformer.decoder.layers.4.attentions.0.attn.in_proj_weight": 0.9607235193252563,
+    "pts_bbox_head.transformer.decoder.layers.4.attentions.0.attn.in_proj_bias": 0.07768946886062622,
+    "pts_bbox_head.transformer.decoder.layers.4.attentions.0.attn.out_proj.weight": 0.37971147894859314,
+    "pts_bbox_head.transformer.decoder.layers.4.attentions.0.attn.out_proj.bias": 0.09340063482522964,
+    "pts_bbox_head.transformer.decoder.layers.4.attentions.1.attn.in_proj_weight": 0.9575380682945251,
+    "pts_bbox_head.transformer.decoder.layers.4.attentions.1.attn.in_proj_bias": 0.1130320206284523,
+    "pts_bbox_head.transformer.decoder.layers.4.attentions.1.attn.out_proj.weight": 0.293037474155426,
+    "pts_bbox_head.transformer.decoder.layers.4.attentions.1.attn.out_proj.bias": 0.11232472956180573,
+    "pts_bbox_head.transformer.decoder.layers.4.ffns.0.layers.0.0.weight": 0.7930712699890137,
+    "pts_bbox_head.transformer.decoder.layers.4.ffns.0.layers.0.0.bias": 0.053562749177217484,
+    "pts_bbox_head.transformer.decoder.layers.4.ffns.0.layers.1.weight": 0.29502004384994507,
+    "pts_bbox_head.transformer.decoder.layers.4.ffns.0.layers.1.bias": 0.10705429315567017,
+    "pts_bbox_head.transformer.decoder.layers.4.norms.0.weight": 0.078227199614048,
+    "pts_bbox_head.transformer.decoder.layers.4.norms.0.bias": 0.10244915634393692,
+    "pts_bbox_head.transformer.decoder.layers.4.norms.1.weight": 0.08651222288608551,
+    "pts_bbox_head.transformer.decoder.layers.4.norms.1.bias": 0.11324671655893326,
+    "pts_bbox_head.transformer.decoder.layers.4.norms.2.weight": 0.08941859751939774,
+    "pts_bbox_head.transformer.decoder.layers.4.norms.2.bias": 0.1150968074798584,
+    "pts_bbox_head.transformer.decoder.layers.5.attentions.0.attn.in_proj_weight": 0.4232048988342285,
+    "pts_bbox_head.transformer.decoder.layers.5.attentions.0.attn.in_proj_bias": 0.03557697683572769,
+    "pts_bbox_head.transformer.decoder.layers.5.attentions.0.attn.out_proj.weight": 0.18176235258579254,
+    "pts_bbox_head.transformer.decoder.layers.5.attentions.0.attn.out_proj.bias": 0.05645870789885521,
+    "pts_bbox_head.transformer.decoder.layers.5.attentions.1.attn.in_proj_weight": 0.2887367904186249,
+    "pts_bbox_head.transformer.decoder.layers.5.attentions.1.attn.in_proj_bias": 0.04208610579371452,
+    "pts_bbox_head.transformer.decoder.layers.5.attentions.1.attn.out_proj.weight": 0.10575918853282928,
+    "pts_bbox_head.transformer.decoder.layers.5.attentions.1.attn.out_proj.bias": 0.05982541665434837,
+    "pts_bbox_head.transformer.decoder.layers.5.ffns.0.layers.0.0.weight": 0.29135996103286743,
+    "pts_bbox_head.transformer.decoder.layers.5.ffns.0.layers.0.0.bias": 0.019743366166949272,
+    "pts_bbox_head.transformer.decoder.layers.5.ffns.0.layers.1.weight": 0.11100133508443832,
+    "pts_bbox_head.transformer.decoder.layers.5.ffns.0.layers.1.bias": 0.060706838965415955,
+    "pts_bbox_head.transformer.decoder.layers.5.norms.0.weight": 0.04511037841439247,
+    "pts_bbox_head.transformer.decoder.layers.5.norms.0.bias": 0.05651286616921425,
+    "pts_bbox_head.transformer.decoder.layers.5.norms.1.weight": 0.04766441881656647,
+    "pts_bbox_head.transformer.decoder.layers.5.norms.1.bias": 0.0621967539191246,
+    "pts_bbox_head.transformer.decoder.layers.5.norms.2.weight": 0.046128638088703156,
+    "pts_bbox_head.transformer.decoder.layers.5.norms.2.bias": 0.062440525740385056,
+    "pts_bbox_head.transformer.decoder.post_norm.weight": 0.2572830319404602,
+    "pts_bbox_head.transformer.decoder.post_norm.bias": 0.3587607145309448
+  },
+  "gradient_norm_before_clip": 41.00217819213867,
+  "gradient_norm_after_clip": 35.00000122658637,
+  "layers": [
+    {
+      "decoder_layer": 0,
+      "P": 51,
+      "I": 0,
+      "N": 849,
+      "classification_weight_sum": 900.0,
+      "classification_positive": 0.20137439668178558,
+      "classification_negative": 0.09993824362754822,
+      "classification_loss": 0.301312655210495,
+      "regression_loss": 0.7327302098274231,
+      "classification_normalizer": 51.0,
+      "regression_normalizer": 51,
+      "effective_query_fraction": 1.0
+    },
+    {
+      "decoder_layer": 1,
+      "P": 51,
+      "I": 0,
+      "N": 849,
+      "classification_weight_sum": 900.0,
+      "classification_positive": 0.19515176117420197,
+      "classification_negative": 0.07534527778625488,
+      "classification_loss": 0.27049702405929565,
+      "regression_loss": 0.6958813071250916,
+      "classification_normalizer": 51.0,
+      "regression_normalizer": 51,
+      "effective_query_fraction": 1.0
+    },
+    {
+      "decoder_layer": 2,
+      "P": 51,
+      "I": 0,
+      "N": 849,
+      "classification_weight_sum": 900.0,
+      "classification_positive": 0.1857835352420807,
+      "classification_negative": 0.08730344474315643,
+      "classification_loss": 0.2730869948863983,
+      "regression_loss": 0.6017727255821228,
+      "classification_normalizer": 51.0,
+      "regression_normalizer": 51,
+      "effective_query_fraction": 1.0
+    },
+    {
+      "decoder_layer": 3,
+      "P": 51,
+      "I": 0,
+      "N": 849,
+      "classification_weight_sum": 900.0,
+      "classification_positive": 0.19901040196418762,
+      "classification_negative": 0.09575537592172623,
+      "classification_loss": 0.29476577043533325,
+      "regression_loss": 0.5613665580749512,
+      "classification_normalizer": 51.0,
+      "regression_normalizer": 51,
+      "effective_query_fraction": 1.0
+    },
+    {
+      "decoder_layer": 4,
+      "P": 51,
+      "I": 0,
+      "N": 849,
+      "classification_weight_sum": 900.0,
+      "classification_positive": 0.16237489879131317,
+      "classification_negative": 0.10311037302017212,
+      "classification_loss": 0.2654852569103241,
+      "regression_loss": 0.538412868976593,
+      "classification_normalizer": 51.0,
+      "regression_normalizer": 51,
+      "effective_query_fraction": 1.0
+    },
+    {
+      "decoder_layer": 5,
+      "P": 51,
+      "I": 0,
+      "N": 849,
+      "classification_weight_sum": 900.0,
+      "classification_positive": 0.16101562976837158,
+      "classification_negative": 0.0963081419467926,
+      "classification_loss": 0.2573237717151642,
+      "regression_loss": 0.5282959938049316,
+      "classification_normalizer": 51.0,
+      "regression_normalizer": 51,
+      "effective_query_fraction": 1.0
+    }
+  ],
+  "before_state_sha256": "80b6d243cdaabda066f2929822176d30c730f861c0ab2bd6fe502dbdb8c25872",
+  "optimizer_before": {
+    "sha256": "8979d12642a1fefdbfe041643aaacf6dfcc9767c39876f8a519fb4391415b3de",
+    "entries": 141,
+    "step_values": [
+      2
+    ],
+    "first_moment_l2": 4.693983473606352,
+    "lr": [
+      1e-05
+    ],
+    "weight_decay": [
+      0.0
+    ]
+  },
+  "peak_allocated_before_step_bytes": 1224691712,
+  "global_step": 3,
+  "trainable_parameter_changes": [
+    {
+      "name": "pts_bbox_head.input_proj.weight",
+      "changed": true,
+      "delta_l2": 0.0043210556124997235,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 8.679901123046875
+    },
+    {
+      "name": "pts_bbox_head.input_proj.bias",
+      "changed": true,
+      "delta_l2": 0.00011364173308439552,
+      "delta_max_abs": 1.0021030902862549e-05,
+      "effective_gradient_norm": 0.7649009823799133
+    },
+    {
+      "name": "pts_bbox_head.cls_branches.0.0.weight",
+      "changed": true,
+      "delta_l2": 0.0015441305618883387,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.8379614949226379
+    },
+    {
+      "name": "pts_bbox_head.cls_branches.0.0.bias",
+      "changed": true,
+      "delta_l2": 9.241124830967783e-05,
+      "delta_max_abs": 1.0017305612564087e-05,
+      "effective_gradient_norm": 0.05996554344892502
+    },
+    {
+      "name": "pts_bbox_head.cls_branches.0.1.weight",
+      "changed": true,
+      "delta_l2": 9.354906748171627e-05,
+      "delta_max_abs": 9.834766387939453e-06,
+      "effective_gradient_norm": 0.06220027059316635
+    },
+    {
+      "name": "pts_bbox_head.cls_branches.0.1.bias",
+      "changed": true,
+      "delta_l2": 9.120319535793339e-05,
+      "delta_max_abs": 1.0006129741668701e-05,
+      "effective_gradient_norm": 0.058436907827854156
+    },
+    {
+      "name": "pts_bbox_head.cls_branches.0.3.weight",
+      "changed": true,
+      "delta_l2": 0.0015699930817184118,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.7153266072273254
+    },
+    {
+      "name": "pts_bbox_head.cls_branches.0.3.bias",
+      "changed": true,
+      "delta_l2": 9.493046145007893e-05,
+      "delta_max_abs": 9.953975677490234e-06,
+      "effective_gradient_norm": 0.06913194060325623
+    },
+    {
+      "name": "pts_bbox_head.cls_branches.0.4.weight",
+      "changed": true,
+      "delta_l2": 9.240654004603287e-05,
+      "delta_max_abs": 1.0013580322265625e-05,
+      "effective_gradient_norm": 0.07258632034063339
+    },
+    {
+      "name": "pts_bbox_head.cls_branches.0.4.bias",
+      "changed": true,
+      "delta_l2": 9.256786281498748e-05,
+      "delta_max_abs": 9.998679161071777e-06,
+      "effective_gradient_norm": 0.07734180986881256
+    },
+    {
+      "name": "pts_bbox_head.cls_branches.0.6.weight",
+      "changed": true,
+      "delta_l2": 0.00036792399602353305,
+      "delta_max_abs": 1.0032206773757935e-05,
+      "effective_gradient_norm": 1.710658073425293
+    },
+    {
+      "name": "pts_bbox_head.cls_branches.0.6.bias",
+      "changed": true,
+      "delta_l2": 2.202244422675226e-05,
+      "delta_max_abs": 1.0013580322265625e-05,
+      "effective_gradient_norm": 0.15204942226409912
+    },
+    {
+      "name": "pts_bbox_head.reg_branches.0.0.weight",
+      "changed": true,
+      "delta_l2": 0.001526138675373019,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 4.242981433868408
+    },
+    {
+      "name": "pts_bbox_head.reg_branches.0.0.bias",
+      "changed": true,
+      "delta_l2": 9.784024508604179e-05,
+      "delta_max_abs": 9.976327419281006e-06,
+      "effective_gradient_norm": 0.3775032162666321
+    },
+    {
+      "name": "pts_bbox_head.reg_branches.0.2.weight",
+      "changed": true,
+      "delta_l2": 0.0012089340789391673,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 6.037315368652344
+    },
+    {
+      "name": "pts_bbox_head.reg_branches.0.2.bias",
+      "changed": true,
+      "delta_l2": 9.102207151135997e-05,
+      "delta_max_abs": 1.0013580322265625e-05,
+      "effective_gradient_norm": 0.9161618947982788
+    },
+    {
+      "name": "pts_bbox_head.reg_branches.0.4.weight",
+      "changed": true,
+      "delta_l2": 0.00028488680406210616,
+      "delta_max_abs": 1.0021962225437164e-05,
+      "effective_gradient_norm": 19.139705657958984
+    },
+    {
+      "name": "pts_bbox_head.reg_branches.0.4.bias",
+      "changed": true,
+      "delta_l2": 1.939830982030479e-05,
+      "delta_max_abs": 8.791685104370117e-06,
+      "effective_gradient_norm": 4.511660099029541
+    },
+    {
+      "name": "pts_bbox_head.adapt_pos3d.0.weight",
+      "changed": true,
+      "delta_l2": 0.0021821828661877513,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.4707987904548645
+    },
+    {
+      "name": "pts_bbox_head.adapt_pos3d.0.bias",
+      "changed": true,
+      "delta_l2": 3.4344814370914517e-05,
+      "delta_max_abs": 8.296221494674683e-06,
+      "effective_gradient_norm": 0.007030394393950701
+    },
+    {
+      "name": "pts_bbox_head.adapt_pos3d.2.weight",
+      "changed": true,
+      "delta_l2": 0.002066863373042462,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.4774966537952423
+    },
+    {
+      "name": "pts_bbox_head.adapt_pos3d.2.bias",
+      "changed": true,
+      "delta_l2": 2.8959816300406497e-05,
+      "delta_max_abs": 4.947185516357422e-06,
+      "effective_gradient_norm": 1.2802016158275364e-07
+    },
+    {
+      "name": "pts_bbox_head.position_encoder.0.weight",
+      "changed": true,
+      "delta_l2": 0.00274333412775246,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 5.248806476593018
+    },
+    {
+      "name": "pts_bbox_head.position_encoder.0.bias",
+      "changed": true,
+      "delta_l2": 0.00020274928995013902,
+      "delta_max_abs": 1.0032206773757935e-05,
+      "effective_gradient_norm": 0.3718514144420624
+    },
+    {
+      "name": "pts_bbox_head.position_encoder.2.weight",
+      "changed": true,
+      "delta_l2": 0.003079832644369868,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 2.4050893783569336
+    },
+    {
+      "name": "pts_bbox_head.position_encoder.2.bias",
+      "changed": true,
+      "delta_l2": 2.895911409267982e-05,
+      "delta_max_abs": 4.947185516357422e-06,
+      "effective_gradient_norm": 1.2802016158275364e-07
+    },
+    {
+      "name": "pts_bbox_head.reference_points.weight",
+      "changed": true,
+      "delta_l2": 0.0003144831664507955,
+      "delta_max_abs": 1.0013580322265625e-05,
+      "effective_gradient_norm": 28.97979164123535
+    },
+    {
+      "name": "pts_bbox_head.query_embedding.0.weight",
+      "changed": true,
+      "delta_l2": 0.0013911347249738382,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 11.563504219055176
+    },
+    {
+      "name": "pts_bbox_head.query_embedding.0.bias",
+      "changed": true,
+      "delta_l2": 7.182649952351127e-05,
+      "delta_max_abs": 9.94652509689331e-06,
+      "effective_gradient_norm": 0.8380975127220154
+    },
+    {
+      "name": "pts_bbox_head.query_embedding.2.weight",
+      "changed": true,
+      "delta_l2": 0.0011058980006246795,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 4.2645978927612305
+    },
+    {
+      "name": "pts_bbox_head.query_embedding.2.bias",
+      "changed": true,
+      "delta_l2": 9.722909257242362e-05,
+      "delta_max_abs": 9.939074516296387e-06,
+      "effective_gradient_norm": 0.5118218660354614
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.0.attentions.0.attn.in_proj_weight",
+      "changed": true,
+      "delta_l2": 0.0021324189306952323,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.027574114501476288
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.0.attentions.0.attn.in_proj_bias",
+      "changed": true,
+      "delta_l2": 0.00013630576198745605,
+      "delta_max_abs": 1.002475619316101e-05,
+      "effective_gradient_norm": 0.5677306056022644
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.0.attentions.0.attn.out_proj.weight",
+      "changed": true,
+      "delta_l2": 0.001406517731557241,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.4638301432132721
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.0.attentions.0.attn.out_proj.bias",
+      "changed": true,
+      "delta_l2": 8.883034154836704e-05,
+      "delta_max_abs": 1.001870259642601e-05,
+      "effective_gradient_norm": 1.0372971296310425
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.0.attentions.1.attn.in_proj_weight",
+      "changed": true,
+      "delta_l2": 0.002705882303023322,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 7.415756702423096
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.0.attentions.1.attn.in_proj_bias",
+      "changed": true,
+      "delta_l2": 0.00015172815516768673,
+      "delta_max_abs": 1.0034069418907166e-05,
+      "effective_gradient_norm": 0.44731029868125916
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.0.attentions.1.attn.out_proj.weight",
+      "changed": true,
+      "delta_l2": 0.0015892603072981974,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 1.4733812808990479
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.0.attentions.1.attn.out_proj.bias",
+      "changed": true,
+      "delta_l2": 0.00011140818956483467,
+      "delta_max_abs": 1.0026618838310242e-05,
+      "effective_gradient_norm": 0.21257123351097107
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.0.ffns.0.layers.0.0.weight",
+      "changed": true,
+      "delta_l2": 0.004362052242549502,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 1.9741941690444946
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.0.ffns.0.layers.0.0.bias",
+      "changed": true,
+      "delta_l2": 0.00027840230628382547,
+      "delta_max_abs": 1.0032206773757935e-05,
+      "effective_gradient_norm": 0.14160530269145966
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.0.ffns.0.layers.1.weight",
+      "changed": true,
+      "delta_l2": 0.004398235844860388,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 1.1730583906173706
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.0.ffns.0.layers.1.bias",
+      "changed": true,
+      "delta_l2": 0.00010842508267128217,
+      "delta_max_abs": 1.0006129741668701e-05,
+      "effective_gradient_norm": 0.16921931505203247
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.0.norms.0.weight",
+      "changed": true,
+      "delta_l2": 9.328599162228217e-05,
+      "delta_max_abs": 9.953975677490234e-06,
+      "effective_gradient_norm": 0.1863354593515396
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.0.norms.0.bias",
+      "changed": true,
+      "delta_l2": 8.534103117196434e-05,
+      "delta_max_abs": 9.992829291149974e-06,
+      "effective_gradient_norm": 0.3487650454044342
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.0.norms.1.weight",
+      "changed": true,
+      "delta_l2": 9.696867876338802e-05,
+      "delta_max_abs": 9.953975677490234e-06,
+      "effective_gradient_norm": 0.15649010241031647
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.0.norms.1.bias",
+      "changed": true,
+      "delta_l2": 0.00011299040603847705,
+      "delta_max_abs": 1.0030809789896011e-05,
+      "effective_gradient_norm": 0.26104867458343506
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.0.norms.2.weight",
+      "changed": true,
+      "delta_l2": 0.00010103180694979416,
+      "delta_max_abs": 1.0013580322265625e-05,
+      "effective_gradient_norm": 0.2360152304172516
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.0.norms.2.bias",
+      "changed": true,
+      "delta_l2": 0.00011091180624121056,
+      "delta_max_abs": 1.0015442967414856e-05,
+      "effective_gradient_norm": 0.2781641483306885
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.1.attentions.0.attn.in_proj_weight",
+      "changed": true,
+      "delta_l2": 0.002704323143291236,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 2.6004602909088135
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.1.attentions.0.attn.in_proj_bias",
+      "changed": true,
+      "delta_l2": 0.00014615090579041146,
+      "delta_max_abs": 1.003197394311428e-05,
+      "effective_gradient_norm": 0.2003408670425415
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.1.attentions.0.attn.out_proj.weight",
+      "changed": true,
+      "delta_l2": 0.001549737745059645,
+      "delta_max_abs": 1.003616489470005e-05,
+      "effective_gradient_norm": 1.0904312133789062
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.1.attentions.0.attn.out_proj.bias",
+      "changed": true,
+      "delta_l2": 0.00010348312833826636,
+      "delta_max_abs": 1.0017305612564087e-05,
+      "effective_gradient_norm": 0.20774869620800018
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.1.attentions.1.attn.in_proj_weight",
+      "changed": true,
+      "delta_l2": 0.0027469546221779765,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 4.461348533630371
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.1.attentions.1.attn.in_proj_bias",
+      "changed": true,
+      "delta_l2": 0.0001473287298270366,
+      "delta_max_abs": 1.0024989023804665e-05,
+      "effective_gradient_norm": 0.36945244669914246
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.1.attentions.1.attn.out_proj.weight",
+      "changed": true,
+      "delta_l2": 0.0015664501512341507,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 1.1062320470809937
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.1.attentions.1.attn.out_proj.bias",
+      "changed": true,
+      "delta_l2": 0.00010808990749522621,
+      "delta_max_abs": 9.973329724743962e-06,
+      "effective_gradient_norm": 0.24122196435928345
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.1.ffns.0.layers.0.0.weight",
+      "changed": true,
+      "delta_l2": 0.004306862207476885,
+      "delta_max_abs": 1.0036048479378223e-05,
+      "effective_gradient_norm": 2.0535128116607666
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.1.ffns.0.layers.0.0.bias",
+      "changed": true,
+      "delta_l2": 0.00027604491981243805,
+      "delta_max_abs": 1.0024989023804665e-05,
+      "effective_gradient_norm": 0.14506953954696655
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.1.ffns.0.layers.1.weight",
+      "changed": true,
+      "delta_l2": 0.004351955875265861,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 1.0049338340759277
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.1.ffns.0.layers.1.bias",
+      "changed": true,
+      "delta_l2": 0.00011001932784047741,
+      "delta_max_abs": 1.0028481483459473e-05,
+      "effective_gradient_norm": 0.20167061686515808
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.1.norms.0.weight",
+      "changed": true,
+      "delta_l2": 9.302049129306165e-05,
+      "delta_max_abs": 1.0013580322265625e-05,
+      "effective_gradient_norm": 0.19911988079547882
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.1.norms.0.bias",
+      "changed": true,
+      "delta_l2": 0.00010534412058363893,
+      "delta_max_abs": 1.0000541806221008e-05,
+      "effective_gradient_norm": 0.31942665576934814
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.1.norms.1.weight",
+      "changed": true,
+      "delta_l2": 9.902995584793005e-05,
+      "delta_max_abs": 1.0013580322265625e-05,
+      "effective_gradient_norm": 0.208945170044899
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.1.norms.1.bias",
+      "changed": true,
+      "delta_l2": 0.00010544898053554578,
+      "delta_max_abs": 9.973999112844467e-06,
+      "effective_gradient_norm": 0.2477465122938156
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.1.norms.2.weight",
+      "changed": true,
+      "delta_l2": 0.00010040511660464151,
+      "delta_max_abs": 1.0013580322265625e-05,
+      "effective_gradient_norm": 0.2433815449476242
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.1.norms.2.bias",
+      "changed": true,
+      "delta_l2": 0.0001123121067686452,
+      "delta_max_abs": 1.0028481483459473e-05,
+      "effective_gradient_norm": 0.2504280209541321
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.2.attentions.0.attn.in_proj_weight",
+      "changed": true,
+      "delta_l2": 0.0027067503175806956,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 2.2210986614227295
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.2.attentions.0.attn.in_proj_bias",
+      "changed": true,
+      "delta_l2": 0.00014660748666642338,
+      "delta_max_abs": 1.0033836588263512e-05,
+      "effective_gradient_norm": 0.16905717551708221
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.2.attentions.0.attn.out_proj.weight",
+      "changed": true,
+      "delta_l2": 0.0015736430482609222,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.8319277167320251
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.2.attentions.0.attn.out_proj.bias",
+      "changed": true,
+      "delta_l2": 0.00010643097768200364,
+      "delta_max_abs": 1.0028481483459473e-05,
+      "effective_gradient_norm": 0.17600117623806
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.2.attentions.1.attn.in_proj_weight",
+      "changed": true,
+      "delta_l2": 0.002749136022165262,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 3.211946725845337
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.2.attentions.1.attn.in_proj_bias",
+      "changed": true,
+      "delta_l2": 0.00014919273488895837,
+      "delta_max_abs": 1.0009855031967163e-05,
+      "effective_gradient_norm": 0.2613188624382019
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.2.attentions.1.attn.out_proj.weight",
+      "changed": true,
+      "delta_l2": 0.001571715574624783,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.7980214357376099
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.2.attentions.1.attn.out_proj.bias",
+      "changed": true,
+      "delta_l2": 0.0001087097754337173,
+      "delta_max_abs": 9.991228580474854e-06,
+      "effective_gradient_norm": 0.19934135675430298
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.2.ffns.0.layers.0.0.weight",
+      "changed": true,
+      "delta_l2": 0.00426866896521056,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 1.637477159500122
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.2.ffns.0.layers.0.0.bias",
+      "changed": true,
+      "delta_l2": 0.0002726547557126698,
+      "delta_max_abs": 1.0021030902862549e-05,
+      "effective_gradient_norm": 0.1102348119020462
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.2.ffns.0.layers.1.weight",
+      "changed": true,
+      "delta_l2": 0.004283080813226104,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.7383067011833191
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.2.ffns.0.layers.1.bias",
+      "changed": true,
+      "delta_l2": 0.00010669741156747506,
+      "delta_max_abs": 9.892508387565613e-06,
+      "effective_gradient_norm": 0.17203640937805176
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.2.norms.0.weight",
+      "changed": true,
+      "delta_l2": 9.677276201583189e-05,
+      "delta_max_abs": 1.0013580322265625e-05,
+      "effective_gradient_norm": 0.23241570591926575
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.2.norms.0.bias",
+      "changed": true,
+      "delta_l2": 0.00010993724436613298,
+      "delta_max_abs": 1.0017305612564087e-05,
+      "effective_gradient_norm": 0.21655608713626862
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.2.norms.1.weight",
+      "changed": true,
+      "delta_l2": 9.834612859625774e-05,
+      "delta_max_abs": 9.953975677490234e-06,
+      "effective_gradient_norm": 0.1814279407262802
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.2.norms.1.bias",
+      "changed": true,
+      "delta_l2": 0.00011384795639522519,
+      "delta_max_abs": 1.000240445137024e-05,
+      "effective_gradient_norm": 0.211904838681221
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.2.norms.2.weight",
+      "changed": true,
+      "delta_l2": 9.848076310225179e-05,
+      "delta_max_abs": 9.894371032714844e-06,
+      "effective_gradient_norm": 0.15375347435474396
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.2.norms.2.bias",
+      "changed": true,
+      "delta_l2": 0.00011027127423431369,
+      "delta_max_abs": 1.0034069418907166e-05,
+      "effective_gradient_norm": 0.19734357297420502
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.3.attentions.0.attn.in_proj_weight",
+      "changed": true,
+      "delta_l2": 0.0026709897301197085,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 1.6201437711715698
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.3.attentions.0.attn.in_proj_bias",
+      "changed": true,
+      "delta_l2": 0.0001368760381961802,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.12627266347408295
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.3.attentions.0.attn.out_proj.weight",
+      "changed": true,
+      "delta_l2": 0.001562736363001182,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.7104273438453674
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.3.attentions.0.attn.out_proj.bias",
+      "changed": true,
+      "delta_l2": 0.00010256472418745403,
+      "delta_max_abs": 1.0016374289989471e-05,
+      "effective_gradient_norm": 0.13872742652893066
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.3.attentions.1.attn.in_proj_weight",
+      "changed": true,
+      "delta_l2": 0.002683713176499475,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 1.7286500930786133
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.3.attentions.1.attn.in_proj_bias",
+      "changed": true,
+      "delta_l2": 0.00014226889795730546,
+      "delta_max_abs": 1.0013580322265625e-05,
+      "effective_gradient_norm": 0.16608057916164398
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.3.attentions.1.attn.out_proj.weight",
+      "changed": true,
+      "delta_l2": 0.0015532414208445932,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.47657790780067444
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.3.attentions.1.attn.out_proj.bias",
+      "changed": true,
+      "delta_l2": 0.00010207537848684117,
+      "delta_max_abs": 1.0034069418907166e-05,
+      "effective_gradient_norm": 0.15533345937728882
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.3.ffns.0.layers.0.0.weight",
+      "changed": true,
+      "delta_l2": 0.004197443537415704,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 1.3967304229736328
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.3.ffns.0.layers.0.0.bias",
+      "changed": true,
+      "delta_l2": 0.0002653867144428311,
+      "delta_max_abs": 1.002475619316101e-05,
+      "effective_gradient_norm": 0.09336942434310913
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.3.ffns.0.layers.1.weight",
+      "changed": true,
+      "delta_l2": 0.004223824610800729,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.5169459581375122
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.3.ffns.0.layers.1.bias",
+      "changed": true,
+      "delta_l2": 0.00010666174551243052,
+      "delta_max_abs": 1.002894714474678e-05,
+      "effective_gradient_norm": 0.13276389241218567
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.3.norms.0.weight",
+      "changed": true,
+      "delta_l2": 9.25913025158563e-05,
+      "delta_max_abs": 1.0013580322265625e-05,
+      "effective_gradient_norm": 0.132154643535614
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.3.norms.0.bias",
+      "changed": true,
+      "delta_l2": 0.0001031732490782262,
+      "delta_max_abs": 9.953044354915619e-06,
+      "effective_gradient_norm": 0.15188273787498474
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.3.norms.1.weight",
+      "changed": true,
+      "delta_l2": 9.801577429582673e-05,
+      "delta_max_abs": 9.953975677490234e-06,
+      "effective_gradient_norm": 0.13847655057907104
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.3.norms.1.bias",
+      "changed": true,
+      "delta_l2": 0.00010290201649753116,
+      "delta_max_abs": 1.0006129741668701e-05,
+      "effective_gradient_norm": 0.16602793335914612
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.3.norms.2.weight",
+      "changed": true,
+      "delta_l2": 9.803721166522674e-05,
+      "delta_max_abs": 1.0013580322265625e-05,
+      "effective_gradient_norm": 0.1217021644115448
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.3.norms.2.bias",
+      "changed": true,
+      "delta_l2": 0.00010686088374356699,
+      "delta_max_abs": 1.0021030902862549e-05,
+      "effective_gradient_norm": 0.15429829061031342
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.4.attentions.0.attn.in_proj_weight",
+      "changed": true,
+      "delta_l2": 0.002675198700373241,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.9607235193252563
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.4.attentions.0.attn.in_proj_bias",
+      "changed": true,
+      "delta_l2": 0.0001398726809414862,
+      "delta_max_abs": 9.980052709579468e-06,
+      "effective_gradient_norm": 0.07768946886062622
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.4.attentions.0.attn.out_proj.weight",
+      "changed": true,
+      "delta_l2": 0.001552193629410984,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.37971147894859314
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.4.attentions.0.attn.out_proj.bias",
+      "changed": true,
+      "delta_l2": 9.961957619694633e-05,
+      "delta_max_abs": 1.002475619316101e-05,
+      "effective_gradient_norm": 0.09340063482522964
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.4.attentions.1.attn.in_proj_weight",
+      "changed": true,
+      "delta_l2": 0.0026525922540748498,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.9575380682945251
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.4.attentions.1.attn.in_proj_bias",
+      "changed": true,
+      "delta_l2": 0.00013933715082526939,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.1130320206284523
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.4.attentions.1.attn.out_proj.weight",
+      "changed": true,
+      "delta_l2": 0.0015335692291600731,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.293037474155426
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.4.attentions.1.attn.out_proj.bias",
+      "changed": true,
+      "delta_l2": 0.00010309082256516194,
+      "delta_max_abs": 9.94652509689331e-06,
+      "effective_gradient_norm": 0.11232472956180573
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.4.ffns.0.layers.0.0.weight",
+      "changed": true,
+      "delta_l2": 0.003898239399660756,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.7930712699890137
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.4.ffns.0.layers.0.0.bias",
+      "changed": true,
+      "delta_l2": 0.0002527907546534643,
+      "delta_max_abs": 1.000426709651947e-05,
+      "effective_gradient_norm": 0.053562749177217484
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.4.ffns.0.layers.1.weight",
+      "changed": true,
+      "delta_l2": 0.003837049246937591,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.29502004384994507
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.4.ffns.0.layers.1.bias",
+      "changed": true,
+      "delta_l2": 9.977089774415288e-05,
+      "delta_max_abs": 9.98680479824543e-06,
+      "effective_gradient_norm": 0.10705429315567017
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.4.norms.0.weight",
+      "changed": true,
+      "delta_l2": 9.451050885459193e-05,
+      "delta_max_abs": 9.894371032714844e-06,
+      "effective_gradient_norm": 0.078227199614048
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.4.norms.0.bias",
+      "changed": true,
+      "delta_l2": 0.00010017472392166065,
+      "delta_max_abs": 1.0013580322265625e-05,
+      "effective_gradient_norm": 0.10244915634393692
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.4.norms.1.weight",
+      "changed": true,
+      "delta_l2": 9.674265355953187e-05,
+      "delta_max_abs": 1.0013580322265625e-05,
+      "effective_gradient_norm": 0.08651222288608551
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.4.norms.1.bias",
+      "changed": true,
+      "delta_l2": 0.0001020264516498026,
+      "delta_max_abs": 9.9940225481987e-06,
+      "effective_gradient_norm": 0.11324671655893326
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.4.norms.2.weight",
+      "changed": true,
+      "delta_l2": 9.951944629387888e-05,
+      "delta_max_abs": 9.953975677490234e-06,
+      "effective_gradient_norm": 0.08941859751939774
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.4.norms.2.bias",
+      "changed": true,
+      "delta_l2": 0.00010151414725139556,
+      "delta_max_abs": 9.953975677490234e-06,
+      "effective_gradient_norm": 0.1150968074798584
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.5.attentions.0.attn.in_proj_weight",
+      "changed": true,
+      "delta_l2": 0.002745916279971828,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.4232048988342285
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.5.attentions.0.attn.in_proj_bias",
+      "changed": true,
+      "delta_l2": 0.0001496778221336627,
+      "delta_max_abs": 9.987503290176392e-06,
+      "effective_gradient_norm": 0.03557697683572769
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.5.attentions.0.attn.out_proj.weight",
+      "changed": true,
+      "delta_l2": 0.0015887577714166297,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.18176235258579254
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.5.attentions.0.attn.out_proj.bias",
+      "changed": true,
+      "delta_l2": 0.00010474647069702609,
+      "delta_max_abs": 1.0006129741668701e-05,
+      "effective_gradient_norm": 0.05645870789885521
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.5.attentions.1.attn.in_proj_weight",
+      "changed": true,
+      "delta_l2": 0.0027082850551020847,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.2887367904186249
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.5.attentions.1.attn.in_proj_bias",
+      "changed": true,
+      "delta_l2": 0.00015012299914569078,
+      "delta_max_abs": 1.0028481483459473e-05,
+      "effective_gradient_norm": 0.04208610579371452
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.5.attentions.1.attn.out_proj.weight",
+      "changed": true,
+      "delta_l2": 0.0015628527980027518,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.10575918853282928
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.5.attentions.1.attn.out_proj.bias",
+      "changed": true,
+      "delta_l2": 0.00010527087456087049,
+      "delta_max_abs": 1.0013580322265625e-05,
+      "effective_gradient_norm": 0.05982541665434837
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.5.ffns.0.layers.0.0.weight",
+      "changed": true,
+      "delta_l2": 0.0035724806696172556,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.29135996103286743
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.5.ffns.0.layers.0.0.bias",
+      "changed": true,
+      "delta_l2": 0.00023815643227886768,
+      "delta_max_abs": 9.961426258087158e-06,
+      "effective_gradient_norm": 0.019743366166949272
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.5.ffns.0.layers.1.weight",
+      "changed": true,
+      "delta_l2": 0.003484807263151499,
+      "delta_max_abs": 1.0035932064056396e-05,
+      "effective_gradient_norm": 0.11100133508443832
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.5.ffns.0.layers.1.bias",
+      "changed": true,
+      "delta_l2": 0.00010412866843030225,
+      "delta_max_abs": 9.953044354915619e-06,
+      "effective_gradient_norm": 0.060706838965415955
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.5.norms.0.weight",
+      "changed": true,
+      "delta_l2": 9.98227264670345e-05,
+      "delta_max_abs": 1.0013580322265625e-05,
+      "effective_gradient_norm": 0.04511037841439247
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.5.norms.0.bias",
+      "changed": true,
+      "delta_l2": 0.0001042814133113359,
+      "delta_max_abs": 1.0026618838310242e-05,
+      "effective_gradient_norm": 0.05651286616921425
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.5.norms.1.weight",
+      "changed": true,
+      "delta_l2": 0.00010046677162264127,
+      "delta_max_abs": 1.0013580322265625e-05,
+      "effective_gradient_norm": 0.04766441881656647
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.5.norms.1.bias",
+      "changed": true,
+      "delta_l2": 0.00010536417716244577,
+      "delta_max_abs": 1.0017305612564087e-05,
+      "effective_gradient_norm": 0.0621967539191246
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.5.norms.2.weight",
+      "changed": true,
+      "delta_l2": 0.0001004986454786274,
+      "delta_max_abs": 1.0013580322265625e-05,
+      "effective_gradient_norm": 0.046128638088703156
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.layers.5.norms.2.bias",
+      "changed": true,
+      "delta_l2": 0.00010674935337368352,
+      "delta_max_abs": 1.0019168257713318e-05,
+      "effective_gradient_norm": 0.062440525740385056
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.post_norm.weight",
+      "changed": true,
+      "delta_l2": 9.728122627297706e-05,
+      "delta_max_abs": 9.894371032714844e-06,
+      "effective_gradient_norm": 0.2572830319404602
+    },
+    {
+      "name": "pts_bbox_head.transformer.decoder.post_norm.bias",
+      "changed": true,
+      "delta_l2": 0.00010783440436466318,
+      "delta_max_abs": 1.0028481483459473e-05,
+      "effective_gradient_norm": 0.3587607145309448
+    }
+  ],
+  "gradient_driven_changed_parameters": 141,
+  "frozen_state_checked": 337,
+  "frozen_parameter_and_buffer_max_abs_change": 0.0,
+  "all_buffers_max_abs_change": 0.0,
+  "after_state_sha256": "395b35534664ae5ffd93ed6e3c035becb8c25a44672a94fea74bf22be5055836",
+  "optimizer_after": {
+    "sha256": "bb5e619c0f008b12ccc7bc4270bb9396a2c3f832a6bedbfa019ea538c09a456c",
+    "entries": 141,
+    "step_values": [
+      3
+    ],
+    "first_moment_l2": 5.715067951687227,
+    "lr": [
+      1e-05
+    ],
+    "weight_decay": [
+      0.0
+    ]
+  },
+  "peak_allocated_bytes": 1224691712,
+  "peak_reserved_bytes": 1556086784,
+  "elapsed_s": 2.3041374050080776,
+  "memory_scope": "torch CUDA allocator; excludes other processes/driver; reset per step",
+  "actual_amp": false,
+  "GradScaler": "NotUsed",
+  "backbone_mode": "eval",
+  "head_mode": "train"
+}

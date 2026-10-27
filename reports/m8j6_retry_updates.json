@@ -1,0 +1,651 @@
+{
+  "run_id": "m8j6_retry_20261027_124102",
+  "evidence_type": "ActualRTX4090_FP32_RealNuScenesMini",
+  "code_commit": "20c9906356287b0e78c97c364057889c9dcd7449",
+  "old_attempt_optimizer_steps": 1,
+  "new_attempt_optimizer_steps": 3,
+  "total_across_separate_attempts": 4,
+  "fresh_optimizer_initial_entries": 0,
+  "sample_order": [
+    0,
+    4,
+    1
+  ],
+  "original_weight_sha256": "16d8a4875c36e7d1cba75b357901ff031b18d9d9374f12780b9b72cc621cefad",
+  "initial_safe_archive_sha256": "cf33dccb1d549c425a89cf346d6f05401c49f6cccbd5a579cb7d8937b5a6d591",
+  "parameter_mapping_path": "reports/m8j6_retry_sources/m8j6_retry_20261027_124102/first/parameter_mapping.json",
+  "unique_parameters": 319,
+  "unique_trainable_parameters": 141,
+  "trainable_state_aliases": 221,
+  "frozen_state_tensors": 337,
+  "frozen_unique_parameters": 178,
+  "buffers": 159,
+  "optimizer_duplicates": 0,
+  "alias_policy_conflicts": 0,
+  "trainable_numel": 11550624,
+  "frozen_numel": 24254781,
+  "parameter_gradient_norm_scope": "Per-parameter and module norms are before clipping; global norms report before and after clipping.",
+  "steps": [
+    {
+      "global_step_about_to_execute": 1,
+      "frame_index": 0,
+      "sample_token": "ca9a282c9e77460f8360f564131a8af5",
+      "losses": {
+        "loss_cls": 0.2372209131717682,
+        "loss_bbox": 0.558373212814331,
+        "d0.loss_cls": 0.25045010447502136,
+        "d0.loss_bbox": 0.690803050994873,
+        "d1.loss_cls": 0.2676953971385956,
+        "d1.loss_bbox": 0.6282476782798767,
+        "d2.loss_cls": 0.2368791550397873,
+        "d2.loss_bbox": 0.6069889664649963,
+        "d3.loss_cls": 0.2524380385875702,
+        "d3.loss_bbox": 0.5723275542259216,
+        "d4.loss_cls": 0.23487582802772522,
+        "d4.loss_bbox": 0.5652860999107361
+      },
+      "total_loss": 5.101585865020752,
+      "classification_loss": 1.4795594364404678,
+      "regression_loss": 3.622026562690735,
+      "gradients": {
+        "direct_output_gradients": [
+          {
+            "decoder_layer": 0,
+            "positive_class_gradient_norm": 0.03878733888268471,
+            "negative_class_gradient_norm": 0.015303698368370533,
+            "positive_box_gradient_norm": 0.1004987508058548,
+            "negative_box_gradient_max": 0.0
+          },
+          {
+            "decoder_layer": 1,
+            "positive_class_gradient_norm": 0.0399174690246582,
+            "negative_class_gradient_norm": 0.019062085077166557,
+            "positive_box_gradient_norm": 0.1004987508058548,
+            "negative_box_gradient_max": 0.0
+          },
+          {
+            "decoder_layer": 2,
+            "positive_class_gradient_norm": 0.036452699452638626,
+            "negative_class_gradient_norm": 0.01625020243227482,
+            "positive_box_gradient_norm": 0.1004987508058548,
+            "negative_box_gradient_max": 0.0
+          },
+          {
+            "decoder_layer": 3,
+            "positive_class_gradient_norm": 0.03653682395815849,
+            "negative_class_gradient_norm": 0.017316043376922607,
+            "positive_box_gradient_norm": 0.1004987508058548,
+            "negative_box_gradient_max": 0.0
+          },
+          {
+            "decoder_layer": 4,
+            "positive_class_gradient_norm": 0.03530632704496384,
+            "negative_class_gradient_norm": 0.01582307741045952,
+            "positive_box_gradient_norm": 0.1004987508058548,
+            "negative_box_gradient_max": 0.0
+          },
+          {
+            "decoder_layer": 5,
+            "positive_class_gradient_norm": 0.03512394428253174,
+            "negative_class_gradient_norm": 0.017039719969034195,
+            "positive_box_gradient_norm": 0.1004987508058548,
+            "negative_box_gradient_max": 0.0
+          }
+        ],
+        "parameter_group_norms": {
+          "pts_bbox_head.cls_branches": 2.439133882522583,
+          "pts_bbox_head.reg_branches": 15.491835594177246,
+          "pts_bbox_head.transformer": 26.378150939941406
+        },
+        "all_finite": true
+      },
+      "gradient_norm_before_clip": 101.03242492675781,
+      "gradient_norm_after_clip": 34.99999672254638,
+      "layers": [
+        {
+          "decoder_layer": 0,
+          "P": 50,
+          "I": 0,
+          "N": 850,
+          "classification_weight_sum": 900.0,
+          "classification_positive": 0.1905251145362854,
+          "classification_negative": 0.059925004839897156,
+          "classification_loss": 0.25045010447502136,
+          "regression_loss": 0.690803050994873,
+          "classification_normalizer": 50.0,
+          "regression_normalizer": 50,
+          "effective_query_fraction": 1.0
+        },
+        {
+          "decoder_layer": 1,
+          "P": 50,
+          "I": 0,
+          "N": 850,
+          "classification_weight_sum": 900.0,
+          "classification_positive": 0.20279580354690552,
+          "classification_negative": 0.06489957123994827,
+          "classification_loss": 0.2676953971385956,
+          "regression_loss": 0.6282476782798767,
+          "classification_normalizer": 50.0,
+          "regression_normalizer": 50,
+          "effective_query_fraction": 1.0
+        },
+        {
+          "decoder_layer": 2,
+          "P": 50,
+          "I": 0,
+          "N": 850,
+          "classification_weight_sum": 900.0,
+          "classification_positive": 0.1738915741443634,
+          "classification_negative": 0.06298758834600449,
+          "classification_loss": 0.2368791550397873,
+          "regression_loss": 0.6069889664649963,
+          "classification_normalizer": 50.0,
+          "regression_normalizer": 50,
+          "effective_query_fraction": 1.0
+        },
+        {
+          "decoder_layer": 3,
+          "P": 50,
+          "I": 0,
+          "N": 850,
+          "classification_weight_sum": 900.0,
+          "classification_positive": 0.18124447762966156,
+          "classification_negative": 0.07119355350732803,
+          "classification_loss": 0.2524380385875702,
+          "regression_loss": 0.5723275542259216,
+          "classification_normalizer": 50.0,
+          "regression_normalizer": 50,
+          "effective_query_fraction": 1.0
+        },
+        {
+          "decoder_layer": 4,
+          "P": 50,
+          "I": 0,
+          "N": 850,
+          "classification_weight_sum": 900.0,
+          "classification_positive": 0.16959796845912933,
+          "classification_negative": 0.06527785956859589,
+          "classification_loss": 0.23487582802772522,
+          "regression_loss": 0.5652860999107361,
+          "classification_normalizer": 50.0,
+          "regression_normalizer": 50,
+          "effective_query_fraction": 1.0
+        },
+        {
+          "decoder_layer": 5,
+          "P": 50,
+          "I": 0,
+          "N": 850,
+          "classification_weight_sum": 900.0,
+          "classification_positive": 0.1676214635372162,
+          "classification_negative": 0.06959942728281021,
+          "classification_loss": 0.2372209131717682,
+          "regression_loss": 0.558373212814331,
+          "classification_normalizer": 50.0,
+          "regression_normalizer": 50,
+          "effective_query_fraction": 1.0
+        }
+      ],
+      "before_state_sha256": "8cf53fb29a812bc7962b264042021460fa71093b2d7c530a0cbcdec191a5208a",
+      "optimizer_before": {
+        "sha256": "bfc3d57f2939c4e0b250d1055316830fbba2b0979eddaf2fc9af674bec502124",
+        "entries": 0,
+        "step_values": [],
+        "first_moment_l2": 0.0,
+        "lr": [
+          1e-05
+        ],
+        "weight_decay": [
+          0.0
+        ]
+      },
+      "peak_allocated_before_step_bytes": 1097680896,
+      "global_step": 1,
+      "gradient_driven_changed_parameters": 141,
+      "frozen_state_checked": 337,
+      "frozen_parameter_and_buffer_max_abs_change": 0.0,
+      "all_buffers_max_abs_change": 0.0,
+      "after_state_sha256": "6ad4d589308b1c25b9540d190128382dfdddf1966a50665edad6193ecba2c19e",
+      "optimizer_after": {
+        "sha256": "22d34d8820b391819e8bdcc0baf71db27314ee8bfeb46aa831d4180be552393c",
+        "entries": 141,
+        "step_values": [
+          1
+        ],
+        "first_moment_l2": 3.4999997197802517,
+        "lr": [
+          1e-05
+        ],
+        "weight_decay": [
+          0.0
+        ]
+      },
+      "peak_allocated_bytes": 1097680896,
+      "peak_reserved_bytes": 1497366528,
+      "elapsed_s": 2.5651137605309486,
+      "memory_scope": "torch CUDA allocator; excludes other processes/driver; reset per step",
+      "actual_amp": false,
+      "GradScaler": "NotUsed",
+      "backbone_mode": "eval",
+      "head_mode": "train"
+    },
+    {
+      "global_step_about_to_execute": 2,
+      "frame_index": 4,
+      "sample_token": "5991fad3280c4f84b331536c32001a04",
+      "losses": {
+        "loss_cls": 0.20791909098625183,
+        "loss_bbox": 0.45882725715637207,
+        "d0.loss_cls": 0.31581544876098633,
+        "d0.loss_bbox": 0.48173701763153076,
+        "d1.loss_cls": 0.26588213443756104,
+        "d1.loss_bbox": 0.4584013521671295,
+        "d2.loss_cls": 0.21098652482032776,
+        "d2.loss_bbox": 0.4485127925872803,
+        "d3.loss_cls": 0.21255235373973846,
+        "d3.loss_bbox": 0.4492762088775635,
+        "d4.loss_cls": 0.20882193744182587,
+        "d4.loss_bbox": 0.4695814251899719
+      },
+      "total_loss": 4.188313961029053,
+      "classification_loss": 1.4219774901866913,
+      "regression_loss": 2.766336053609848,
+      "gradients": {
+        "direct_output_gradients": [
+          {
+            "decoder_layer": 0,
+            "positive_class_gradient_norm": 0.05451972410082817,
+            "negative_class_gradient_norm": 0.026052193716168404,
+            "positive_box_gradient_norm": 0.13429711759090424,
+            "negative_box_gradient_max": 0.0
+          },
+          {
+            "decoder_layer": 1,
+            "positive_class_gradient_norm": 0.0449320524930954,
+            "negative_class_gradient_norm": 0.03109828010201454,
+            "positive_box_gradient_norm": 0.13429711759090424,
+            "negative_box_gradient_max": 0.0
+          },
+          {
+            "decoder_layer": 2,
+            "positive_class_gradient_norm": 0.042601753026247025,
+            "negative_class_gradient_norm": 0.022761868312954903,
+            "positive_box_gradient_norm": 0.13429711759090424,
+            "negative_box_gradient_max": 0.0
+          },
+          {
+            "decoder_layer": 3,
+            "positive_class_gradient_norm": 0.044039253145456314,
+            "negative_class_gradient_norm": 0.023088406771421432,
+            "positive_box_gradient_norm": 0.13429711759090424,
+            "negative_box_gradient_max": 0.0
+          },
+          {
+            "decoder_layer": 4,
+            "positive_class_gradient_norm": 0.04332618787884712,
+            "negative_class_gradient_norm": 0.025438781827688217,
+            "positive_box_gradient_norm": 0.13429711759090424,
+            "negative_box_gradient_max": 0.0
+          },
+          {
+            "decoder_layer": 5,
+            "positive_class_gradient_norm": 0.04303790256381035,
+            "negative_class_gradient_norm": 0.027849944308400154,
+            "positive_box_gradient_norm": 0.13429711759090424,
+            "negative_box_gradient_max": 0.0
+          }
+        ],
+        "parameter_group_norms": {
+          "pts_bbox_head.cls_branches": 2.204200029373169,
+          "pts_bbox_head.reg_branches": 19.325000762939453,
+          "pts_bbox_head.transformer": 14.267814636230469
+        },
+        "all_finite": true
+      },
+      "gradient_norm_before_clip": 49.77095413208008,
+      "gradient_norm_after_clip": 35.00000132446964,
+      "layers": [
+        {
+          "decoder_layer": 0,
+          "P": 28,
+          "I": 0,
+          "N": 872,
+          "classification_weight_sum": 900.0,
+          "classification_positive": 0.2358807474374771,
+          "classification_negative": 0.0799347385764122,
+          "classification_loss": 0.31581544876098633,
+          "regression_loss": 0.48173701763153076,
+          "classification_normalizer": 28.0,
+          "regression_normalizer": 28,
+          "effective_query_fraction": 1.0
+        },
+        {
+          "decoder_layer": 1,
+          "P": 28,
+          "I": 0,
+          "N": 872,
+          "classification_weight_sum": 900.0,
+          "classification_positive": 0.1762351095676422,
+          "classification_negative": 0.0896470844745636,
+          "classification_loss": 0.26588213443756104,
+          "regression_loss": 0.4584013521671295,
+          "classification_normalizer": 28.0,
+          "regression_normalizer": 28,
+          "effective_query_fraction": 1.0
+        },
+        {
+          "decoder_layer": 2,
+          "P": 28,
+          "I": 0,
+          "N": 872,
+          "classification_weight_sum": 900.0,
+          "classification_positive": 0.14530235528945923,
+          "classification_negative": 0.06568416208028793,
+          "classification_loss": 0.21098652482032776,
+          "regression_loss": 0.4485127925872803,
+          "classification_normalizer": 28.0,
+          "regression_normalizer": 28,
+          "effective_query_fraction": 1.0
+        },
+        {
+          "decoder_layer": 3,
+          "P": 28,
+          "I": 0,
+          "N": 872,
+          "classification_weight_sum": 900.0,
+          "classification_positive": 0.1514146775007248,
+          "classification_negative": 0.06113768741488457,
+          "classification_loss": 0.21255235373973846,
+          "regression_loss": 0.4492762088775635,
+          "classification_normalizer": 28.0,
+          "regression_normalizer": 28,
+          "effective_query_fraction": 1.0
+        },
+        {
+          "decoder_layer": 4,
+          "P": 28,
+          "I": 0,
+          "N": 872,
+          "classification_weight_sum": 900.0,
+          "classification_positive": 0.14321334660053253,
+          "classification_negative": 0.06560859829187393,
+          "classification_loss": 0.20882193744182587,
+          "regression_loss": 0.4695814251899719,
+          "classification_normalizer": 28.0,
+          "regression_normalizer": 28,
+          "effective_query_fraction": 1.0
+        },
+        {
+          "decoder_layer": 5,
+          "P": 28,
+          "I": 0,
+          "N": 872,
+          "classification_weight_sum": 900.0,
+          "classification_positive": 0.14049069583415985,
+          "classification_negative": 0.06742840260267258,
+          "classification_loss": 0.20791909098625183,
+          "regression_loss": 0.45882725715637207,
+          "classification_normalizer": 28.0,
+          "regression_normalizer": 28,
+          "effective_query_fraction": 1.0
+        }
+      ],
+      "before_state_sha256": "6ad4d589308b1c25b9540d190128382dfdddf1966a50665edad6193ecba2c19e",
+      "optimizer_before": {
+        "sha256": "22d34d8820b391819e8bdcc0baf71db27314ee8bfeb46aa831d4180be552393c",
+        "entries": 141,
+        "step_values": [
+          1
+        ],
+        "first_moment_l2": 3.4999997197802517,
+        "lr": [
+          1e-05
+        ],
+        "weight_decay": [
+          0.0
+        ]
+      },
+      "peak_allocated_before_step_bytes": 1258114048,
+      "global_step": 2,
+      "gradient_driven_changed_parameters": 141,
+      "frozen_state_checked": 337,
+      "frozen_parameter_and_buffer_max_abs_change": 0.0,
+      "all_buffers_max_abs_change": 0.0,
+      "after_state_sha256": "80b6d243cdaabda066f2929822176d30c730f861c0ab2bd6fe502dbdb8c25872",
+      "optimizer_after": {
+        "sha256": "8979d12642a1fefdbfe041643aaacf6dfcc9767c39876f8a519fb4391415b3de",
+        "entries": 141,
+        "step_values": [
+          2
+        ],
+        "first_moment_l2": 4.693983473606352,
+        "lr": [
+          1e-05
+        ],
+        "weight_decay": [
+          0.0
+        ]
+      },
+      "peak_allocated_bytes": 1258114048,
+      "peak_reserved_bytes": 1776287744,
+      "elapsed_s": 2.028965527191758,
+      "memory_scope": "torch CUDA allocator; excludes other processes/driver; reset per step",
+      "actual_amp": false,
+      "GradScaler": "NotUsed",
+      "backbone_mode": "eval",
+      "head_mode": "train"
+    },
+    {
+      "global_step_about_to_execute": 3,
+      "frame_index": 1,
+      "sample_token": "39586f9d59004284a7114a68825e8eec",
+      "losses": {
+        "loss_cls": 0.2573237717151642,
+        "loss_bbox": 0.5282959938049316,
+        "d0.loss_cls": 0.301312655210495,
+        "d0.loss_bbox": 0.7327302098274231,
+        "d1.loss_cls": 0.27049702405929565,
+        "d1.loss_bbox": 0.6958813071250916,
+        "d2.loss_cls": 0.2730869948863983,
+        "d2.loss_bbox": 0.6017727255821228,
+        "d3.loss_cls": 0.29476577043533325,
+        "d3.loss_bbox": 0.5613665580749512,
+        "d4.loss_cls": 0.2654852569103241,
+        "d4.loss_bbox": 0.538412868976593
+      },
+      "total_loss": 5.320931434631348,
+      "classification_loss": 1.6624714732170105,
+      "regression_loss": 3.6584596633911133,
+      "gradients": {
+        "direct_output_gradients": [
+          {
+            "decoder_layer": 0,
+            "positive_class_gradient_norm": 0.03923524543642998,
+            "negative_class_gradient_norm": 0.025610635057091713,
+            "positive_box_gradient_norm": 0.09950859844684601,
+            "negative_box_gradient_max": 0.0
+          },
+          {
+            "decoder_layer": 1,
+            "positive_class_gradient_norm": 0.03859403356909752,
+            "negative_class_gradient_norm": 0.0168622899800539,
+            "positive_box_gradient_norm": 0.09950859844684601,
+            "negative_box_gradient_max": 0.0
+          },
+          {
+            "decoder_layer": 2,
+            "positive_class_gradient_norm": 0.03782857581973076,
+            "negative_class_gradient_norm": 0.020491525530815125,
+            "positive_box_gradient_norm": 0.09950859844684601,
+            "negative_box_gradient_max": 0.0
+          },
+          {
+            "decoder_layer": 3,
+            "positive_class_gradient_norm": 0.03822805732488632,
+            "negative_class_gradient_norm": 0.0229018721729517,
+            "positive_box_gradient_norm": 0.09950859844684601,
+            "negative_box_gradient_max": 0.0
+          },
+          {
+            "decoder_layer": 4,
+            "positive_class_gradient_norm": 0.03512408956885338,
+            "negative_class_gradient_norm": 0.024494165554642677,
+            "positive_box_gradient_norm": 0.09950859844684601,
+            "negative_box_gradient_max": 0.0
+          },
+          {
+            "decoder_layer": 5,
+            "positive_class_gradient_norm": 0.0351082943379879,
+            "negative_class_gradient_norm": 0.020693382248282433,
+            "positive_box_gradient_norm": 0.09950859844684601,
+            "negative_box_gradient_max": 0.0
+          }
+        ],
+        "parameter_group_norms": {
+          "pts_bbox_head.cls_branches": 2.0470101833343506,
+          "pts_bbox_head.reg_branches": 21.026586532592773,
+          "pts_bbox_head.transformer": 11.503422737121582
+        },
+        "all_finite": true
+      },
+      "gradient_norm_before_clip": 41.00217819213867,
+      "gradient_norm_after_clip": 35.00000122658637,
+      "layers": [
+        {
+          "decoder_layer": 0,
+          "P": 51,
+          "I": 0,
+          "N": 849,
+          "classification_weight_sum": 900.0,
+          "classification_positive": 0.20137439668178558,
+          "classification_negative": 0.09993824362754822,
+          "classification_loss": 0.301312655210495,
+          "regression_loss": 0.7327302098274231,
+          "classification_normalizer": 51.0,
+          "regression_normalizer": 51,
+          "effective_query_fraction": 1.0
+        },
+        {
+          "decoder_layer": 1,
+          "P": 51,
+          "I": 0,
+          "N": 849,
+          "classification_weight_sum": 900.0,
+          "classification_positive": 0.19515176117420197,
+          "classification_negative": 0.07534527778625488,
+          "classification_loss": 0.27049702405929565,
+          "regression_loss": 0.6958813071250916,
+          "classification_normalizer": 51.0,
+          "regression_normalizer": 51,
+          "effective_query_fraction": 1.0
+        },
+        {
+          "decoder_layer": 2,
+          "P": 51,
+          "I": 0,
+          "N": 849,
+          "classification_weight_sum": 900.0,
+          "classification_positive": 0.1857835352420807,
+          "classification_negative": 0.08730344474315643,
+          "classification_loss": 0.2730869948863983,
+          "regression_loss": 0.6017727255821228,
+          "classification_normalizer": 51.0,
+          "regression_normalizer": 51,
+          "effective_query_fraction": 1.0
+        },
+        {
+          "decoder_layer": 3,
+          "P": 51,
+          "I": 0,
+          "N": 849,
+          "classification_weight_sum": 900.0,
+          "classification_positive": 0.19901040196418762,
+          "classification_negative": 0.09575537592172623,
+          "classification_loss": 0.29476577043533325,
+          "regression_loss": 0.5613665580749512,
+          "classification_normalizer": 51.0,
+          "regression_normalizer": 51,
+          "effective_query_fraction": 1.0
+        },
+        {
+          "decoder_layer": 4,
+          "P": 51,
+          "I": 0,
+          "N": 849,
+          "classification_weight_sum": 900.0,
+          "classification_positive": 0.16237489879131317,
+          "classification_negative": 0.10311037302017212,
+          "classification_loss": 0.2654852569103241,
+          "regression_loss": 0.538412868976593,
+          "classification_normalizer": 51.0,
+          "regression_normalizer": 51,
+          "effective_query_fraction": 1.0
+        },
+        {
+          "decoder_layer": 5,
+          "P": 51,
+          "I": 0,
+          "N": 849,
+          "classification_weight_sum": 900.0,
+          "classification_positive": 0.16101562976837158,
+          "classification_negative": 0.0963081419467926,
+          "classification_loss": 0.2573237717151642,
+          "regression_loss": 0.5282959938049316,
+          "classification_normalizer": 51.0,
+          "regression_normalizer": 51,
+          "effective_query_fraction": 1.0
+        }
+      ],
+      "before_state_sha256": "80b6d243cdaabda066f2929822176d30c730f861c0ab2bd6fe502dbdb8c25872",
+      "optimizer_before": {
+        "sha256": "8979d12642a1fefdbfe041643aaacf6dfcc9767c39876f8a519fb4391415b3de",
+        "entries": 141,
+        "step_values": [
+          2
+        ],
+        "first_moment_l2": 4.693983473606352,
+        "lr": [
+          1e-05
+        ],
+        "weight_decay": [
+          0.0
+        ]
+      },
+      "peak_allocated_before_step_bytes": 1224691712,
+      "global_step": 3,
+      "gradient_driven_changed_parameters": 141,
+      "frozen_state_checked": 337,
+      "frozen_parameter_and_buffer_max_abs_change": 0.0,
+      "all_buffers_max_abs_change": 0.0,
+      "after_state_sha256": "395b35534664ae5ffd93ed6e3c035becb8c25a44672a94fea74bf22be5055836",
+      "optimizer_after": {
+        "sha256": "bb5e619c0f008b12ccc7bc4270bb9396a2c3f832a6bedbfa019ea538c09a456c",
+        "entries": 141,
+        "step_values": [
+          3
+        ],
+        "first_moment_l2": 5.715067951687227,
+        "lr": [
+          1e-05
+        ],
+        "weight_decay": [
+          0.0
+        ]
+      },
+      "peak_allocated_bytes": 1224691712,
+      "peak_reserved_bytes": 1556086784,
+      "elapsed_s": 2.3041374050080776,
+      "memory_scope": "torch CUDA allocator; excludes other processes/driver; reset per step",
+      "actual_amp": false,
+      "GradScaler": "NotUsed",
+      "backbone_mode": "eval",
+      "head_mode": "train"
+    }
+  ],
+  "detailed_changes": [
+    "reports/m8j6_retry_sources/m8j6_retry_20261027_124102/first/step_1.json",
+    "reports/m8j6_retry_sources/m8j6_retry_20261027_124102/first/step_2.json",
+    "reports/m8j6_retry_sources/m8j6_retry_20261027_124102/resume/step_3.json"
+  ]
+}

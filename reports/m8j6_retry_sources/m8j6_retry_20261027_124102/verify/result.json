@@ -1,0 +1,98 @@
+{
+  "run_id": "m8j6_retry_20261027_124102",
+  "phase": "verify",
+  "code_commit": "20c9906356287b0e78c97c364057889c9dcd7449",
+  "process_pid": 337012,
+  "started_at_utc": "2026-10-27T12:52:06.624079+00:00",
+  "status": "PhasePassed",
+  "steps": [],
+  "optimizer_calls_this_process": 0,
+  "old_attempt_optimizer_steps": 1,
+  "precision": "FP32",
+  "torch": "2.0.0+cu118",
+  "cuda": "11.8",
+  "mmcv": "1.7.2",
+  "mmdet": "2.24.1",
+  "mmdet3d": "0.17.1",
+  "GPU": "NVIDIA GeForce RTX 4090",
+  "scheduler": {
+    "type": "None",
+    "state": null,
+    "reason": "Original smoke has constant lr=1e-5; no scheduler instantiated"
+  },
+  "seed": 875606,
+  "sample_order": [
+    0,
+    4,
+    1
+  ],
+  "optimizer": {
+    "type": "AdamW",
+    "lr": 1e-05,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "weight_decay": 0.0,
+    "gradient_clip": 35.0
+  },
+  "TF32": false,
+  "autocast": false,
+  "GradScaler": "NotUsed",
+  "cudnn_deterministic": true,
+  "cudnn_benchmark": false,
+  "deterministic_algorithms": false,
+  "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+  "initial_weight_sha256": "16d8a4875c36e7d1cba75b357901ff031b18d9d9374f12780b9b72cc621cefad",
+  "safe_archive_sha256": "cf33dccb1d549c425a89cf346d6f05401c49f6cccbd5a579cb7d8937b5a6d591",
+  "original_state_sha256": "8cf53fb29a812bc7962b264042021460fa71093b2d7c530a0cbcdec191a5208a",
+  "fresh_optimizer_initial_entries": 0,
+  "input_canaries_rejected": 2,
+  "initial_snapshot_is_independent_CPU_clone": true,
+  "mapping_fingerprint": "1c29421ab57cdb1997e3299896c683dd9b2a508ed829ac81197d5b4d7d09d58f",
+  "trainable_numel": 11550624,
+  "frozen_numel": 24254781,
+  "restore": {
+    "passed": true,
+    "checkpoint_sha256": "7eaa5d3420965dbd6c81756a7a5ca554fab68352eee830bfb638932b7931cdf9",
+    "saving_process_pid": 336165,
+    "restoring_process_pid": 337012,
+    "new_process": true,
+    "model_parameters_and_buffers_exact": true,
+    "optimizer_exact": true,
+    "parameter_sharing_preserved": true,
+    "optimizer_mapping_exact": true,
+    "freeze_policy_exact": true,
+    "RNG_exact": true,
+    "module_modes_exact": true,
+    "scheduler": {
+      "type": "None",
+      "state": null,
+      "reason": "Original smoke has constant lr=1e-5; no scheduler instantiated"
+    },
+    "restored_global_step": 3,
+    "next_sample_position": 3,
+    "next_sample_index": null,
+    "fixed_eval_output_comparison": {
+      "all_cls_scores": {
+        "max_abs_error": 0.0,
+        "relative_l2": 0.0,
+        "bitwise_equal": true,
+        "passed": true
+      },
+      "all_bbox_preds": {
+        "max_abs_error": 0.0,
+        "relative_l2": 0.0,
+        "bitwise_equal": true,
+        "passed": true
+      }
+    },
+    "atol": 1e-06,
+    "rtol": 1e-05,
+    "scope": "SavedStateRestoreEvalAndContinue_NotAllUninterruptedTrainingBitwiseEquivalence"
+  },
+  "global_step": 3,
+  "frozen_final_check": true,
+  "elapsed_s": 4.181899519637227,
+  "finished_at_utc": "2026-10-27T12:52:10.844826+00:00"
+}

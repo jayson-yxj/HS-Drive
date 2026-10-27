@@ -64,3 +64,15 @@ env CUDA_VISIBLE_DEVICES='' PYTHONDONTWRITEBYTECODE=1 \
 私有 checkpoint 保存在 `/root/gpufree-data/hs-drive-private/m8j6-nuscenes-mini/<run_id>/`。只保存本次自生成checkpoint，验证哈希后在隔离环境加载。公开报告不含图像、逐对象标签或模型/优化器tensor。
 
 新结果写 `reports/m8j6_retry_sources/<run_id>/`，旧失败报告不改写。最终验收必须同时满足新运行实际step=3、first/resume/verify调用数=2/1/0、step2跨进程恢复通过及step3独立重载通过。没有满足则Partial/Failed，不自动进入过拟合或长训练。
+
+## 2026-10-27 实际结果
+
+源码 `20c9906356287b0e78c97c364057889c9dcd7449` 已完成唯一一次run，三个进程2/1/0次更新，两次保存恢复通过，旧失败1次更新独立保留。总结见 `reports/m8j6_retry_summary.md`，判定见 `reports/m8j6_retry_acceptance.json`。
+
+`tools/m8j6_retry_report.py` 是执行完成后新增的离线汇总器，不属于GPU执行源码；核对日志、每步ledger、状态连续性和资产SHA后生成汇总。它不导入模型、不更新参数，已有报告存在时拒绝覆盖。空报告目标环境的复现命令为：
+
+```bash
+.venv/bin/python -m tools.m8j6_retry_report
+```
+
+当前run及报告均已存在，不再执行GPU重试。任何下一轮更新应使用独立协议/run_id及预先固定预算，不修改本次证据。

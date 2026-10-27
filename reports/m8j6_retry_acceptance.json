@@ -1,0 +1,61 @@
+{
+  "stage": "M8-J6 Independent Three-Step FP32 Retry",
+  "checked_at_utc": "2026-10-27T12:57:28.625003+00:00",
+  "base_commit": "2d75f38cd64804af4ea681bb547712ac2be6cfef",
+  "code_commit": "20c9906356287b0e78c97c364057889c9dcd7449",
+  "run_id": "m8j6_retry_20261027_124102",
+  "status": "SmokePassed",
+  "checker_regression": {
+    "status": "Passed",
+    "reused_tests": 36,
+    "new_tests": 14,
+    "total": 50,
+    "evidence": [
+      "reports/m8j6_retry_sources/reused20.txt",
+      "reports/m8j6_retry_sources/reused16",
+      "reports/m8j6_retry_sources/new_state_tests_final.txt"
+    ]
+  },
+  "old_attempt": {
+    "status": "FailedStopped_Preserved",
+    "actual_optimizer_steps": 1,
+    "checkpoint": "NotSaved_HistoricalEvidenceGap",
+    "parameter_difference": "NotPersisted_HistoricalEvidenceGap",
+    "source": "reports/m8j6_sources/actual_smoke/result.json"
+  },
+  "new_attempt": {
+    "status": "Passed",
+    "actual_optimizer_steps": 3,
+    "process_steps": [
+      2,
+      1,
+      0
+    ],
+    "fresh_baseline": true,
+    "fresh_optimizer": true,
+    "fixed_sample_order": [
+      0,
+      4,
+      1
+    ]
+  },
+  "frozen_parameters_buffers": "Passed_ExactUnchanged",
+  "shared_parameters_and_optimizer_mapping": "Passed",
+  "step2_cross_process_restore": "Passed",
+  "resumed_step3": "Passed",
+  "step3_independent_reload": "Passed",
+  "fixed_eval_max_abs_error": 0.0,
+  "peak_step_allocated_bytes": 1258114048,
+  "peak_step_reserved_bytes": 1776287744,
+  "memory_scope": "Per-step PyTorch CUDA allocator; head-only backward, excludes driver and other processes.",
+  "FP32": "Passed_ThisFixedSmokeOnly",
+  "AMP": "NotRetested_NotPassed",
+  "overfit": "NotRun_SeparateBoundedExperimentRecommended",
+  "generalization": "NotEvaluated",
+  "visual_driving_safety": "NotValidated",
+  "all_uninterrupted_training_bitwise_equivalence": "NotClaimed",
+  "historical_assets": "Unchanged",
+  "private_assets_published": false,
+  "CARLA": "NotRun",
+  "main_merge": false
+}
