@@ -32,6 +32,14 @@ def write(p,d):
     with Path(p).open('x') as f:json.dump(d,f,indent=2,ensure_ascii=False,allow_nan=False)
 
 
+def canonical(value):
+    def convert(x):
+        if isinstance(x,np.ndarray):return x.tolist()
+        if isinstance(x,np.generic):return x.item()
+        raise TypeError(type(x).__name__)
+    return json.dumps(value,sort_keys=True,default=convert)
+
+
 def counts(boxes,names):
     raw=Counter(b.detection_name for b in boxes.all)
     return dict(total=len(boxes.all),classes={n:raw[n] for n in names},samples=len(boxes.sample_tokens))
@@ -137,7 +145,7 @@ def audit_official_filters(nusc,cfg,engine):
             if box.num_pts!=0:row['after_points']+=1
     captured=io.StringIO()
     with redirect_stdout(captured):final_gt=filter_eval_boxes(nusc,raw_gt,config.class_range,verbose=True)
-    assert json.dumps(final_gt.serialize(),sort_keys=True)==json.dumps(engine.gt_boxes.serialize(),sort_keys=True)
+    assert canonical(final_gt.serialize())==canonical(engine.gt_boxes.serialize())
     kept={object_to_annotation[id(box)] for box in final_gt.all}
     for box in final_gt.all:per_class_stage[box.detection_name]['after_official_filter']+=1
     retained_instances={name:set() for name in names}
@@ -157,7 +165,7 @@ def audit_official_filters(nusc,cfg,engine):
     pred_counts=counts(raw_pred,names);add_center_dist(nusc,raw_pred)
     pred_log=io.StringIO()
     with redirect_stdout(pred_log):final_pred=filter_eval_boxes(nusc,raw_pred,config.class_range,verbose=True)
-    assert json.dumps(final_pred.serialize(),sort_keys=True)==json.dumps(engine.pred_boxes.serialize(),sort_keys=True)
+    assert canonical(final_pred.serialize())==canonical(engine.pred_boxes.serialize())
     return dict(raw_all_annotations=total_raw,unsupported_taxonomy=unsupported,official_GT_loaded=raw_counts,
         official_GT_filtered=counts(final_gt,names),GT_stages_by_class=per_class_stage,
         GT_instances_by_class={n:len(v) for n,v in retained_instances.items()},
@@ -178,7 +186,7 @@ def eval_stage(cfg,rep,phase):
         if p.endswith(('.pth','.pt','.jpg','.jpeg','.png','.bin')) or '/B/' in p or '/rgb_input/' in p:
             raise PermissionError('M8J9_Evaluation_MetadataOnly_NoSensorPayloadsWeightsOrB')
     sys.addaudithook(guard)
-    private=Path(cfg['private_output']);export=read(Path(os.environ['M8J9_REPORT_ROOT'])/'export/result.json')
+    private=Path(cfg['private_output']);export=read(os.environ.get('M8J9_EXPORT_RECORD',str(Path(os.environ['M8J9_REPORT_ROOT'])/'export/result.json')))
     result_path=export['result_path'];assert sha(result_path)==export['result_sha256']
     for p,h in cfg['sources_sha256'].items():assert sha(p)==h,p
     # Actual NuScenes loads original GT metadata; does not read map/sensor raster payloads.
@@ -186,6 +194,12 @@ def eval_stage(cfg,rep,phase):
     config=config_factory(cfg['official_detection_config'])
     out=private/phase;assert not out.exists()
     engine=DetectionEval(nusc,config,result_path,cfg['eval_set'],str(out),verbose=True)
+    if phase=='audit':
+        audit,private_reasons=audit_official_filters(nusc,cfg,engine)
+        write('reports/m8j9_GT_filter_audit.json',audit)
+        write(private/'GT_membership_comparison.json',private_reasons)
+        return dict(status='OfficialFilteringAuditCompleted',result_sha256=sha(result_path),
+            official_metric_evaluations=0,evaluator_not_modified=True,source_hashes_unchanged=True)
     metrics=engine.main(plot_examples=0,render_curves=False)
     # Preserve verbatim official summaries/details; these contain aggregate curves only.
     for name in ('metrics_summary.json','metrics_details.json'):

@@ -109,3 +109,11 @@ def test_raw_json_sensor_join_uses_only_keyframes_and_no_annotations(tmp_path):
     result=pose_info('sample',tables)
     assert result['reference_timestamp_us']==99
     assert result['ego2global_translation']==[1.,2.,3.]
+
+
+def test_diagnostic_canonical_handles_official_numpy_velocity_and_nan():
+    from tools.m8j9_stage import canonical
+    x=dict(v=np.array([1.,float('nan')]),n=np.int64(2),t=(3.,4.))
+    y=dict(t=[3.,4.],n=2,v=[1.,float('nan')])
+    assert canonical(x)==canonical(y)
+    assert canonical(x)!=canonical(dict(y,n=3))

@@ -15,9 +15,17 @@ def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--protocol',default='configs/m8j9_protocol.json');parser.add_argument('--report-root',default='reports/m8j9_sources')
+    parser.add_argument('--resume-export');parser.add_argument('--phases',nargs='+',choices=['export','audit','eval1','eval2'],default=['export','eval1','eval2'])
     args=parser.parse_args();repo=Path.cwd();cfg=json.loads(Path(args.protocol).read_text());rt=Path(cfg['runtime'])
     assert not subprocess.check_output(['git','status','--porcelain'],text=True).strip(),'Commit frozen scope/code first'
-    private=Path(cfg['private_output']);private.mkdir(mode=0o700,exist_ok=False)
+    private=Path(cfg['private_output'])
+    if args.resume_export:
+        existing=json.loads(Path(args.resume_export).read_text())
+        assert existing['status']=='ExportInterfacePassed'
+        assert sha(existing['result_path'])==existing['result_sha256']
+        assert 'export' not in args.phases and private.exists()
+    else:
+        private.mkdir(mode=0o700,exist_ok=False)
     report=repo/args.report_root;report.mkdir(parents=True,exist_ok=True)
     commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
     env=dict(PATH=str(rt/'env/bin')+':/usr/bin:/bin',HOME=str(private),LANG='C.UTF-8',
@@ -26,11 +34,12 @@ def main():
         LD_LIBRARY_PATH=str(rt/'env/lib/python3.8/site-packages/torch/lib')+':'+str(rt/'cuda-11.8/lib'),
         PYTHONPATH=os.pathsep.join(map(str,[repo,rt/'sources/PETR',rt/'sources/mmdetection3d'])),
         M8J9_COMMIT=commit,M8J9_PROTOCOL=str(repo/args.protocol),M8J9_REPORT_ROOT=str(report))
+    if args.resume_export:env['M8J9_EXPORT_RECORD']=str(repo/args.resume_export)
     summary=dict(started_at_utc=datetime.now(timezone.utc).isoformat(),execution_commit=commit,phases=[],
-        model_forward_calls=0,optimizer_steps=0,network=False,GPU=False,automatic_retry=False,
+        model_forward_calls=0,optimizer_steps=0,network=False,GPU=False,automatic_retry=False,requested_phases=args.phases,resumed_existing_export=args.resume_export,
         source_sha256={str(p):sha(p) for pattern in ('tools/m8j9*.py','datasets/m8j9*.py','configs/m8j9*','tests/test_m8j9*') for p in repo.glob(pattern)})
     rc=0
-    for phase in ('export','eval1','eval2'):
+    for phase in args.phases:
         out=report/phase;out.mkdir(exist_ok=False)
         command=['unshare','--net',str(rt/'env/bin/python'),'-m','tools.m8j9_stage']
         e=dict(env,M8J9_PHASE=phase,M8J9_REPORT=str(out));start=time.monotonic()
@@ -42,7 +51,7 @@ def main():
                    command=command,timeout_s=600,log_sha256=sha(out/'execution.txt'))
         summary['phases'].append(entry);print(json.dumps(entry),flush=True)
         if rc:break
-    summary.update(status='ExportAndTwoOfficialEvaluationsCompleted' if len(summary['phases'])==3 and rc==0 else 'FailedStopped',
+    summary.update(status='RequestedPhasesCompleted' if len(summary['phases'])==len(args.phases) and rc==0 else 'FailedStopped',
         finished_at_utc=datetime.now(timezone.utc).isoformat())
     with (report/'supervisor.json').open('x') as f:json.dump(summary,f,indent=2)
     return rc

@@ -1,0 +1,51 @@
+{
+  "started_at_utc": "2026-10-27T15:44:53.101750+00:00",
+  "execution_commit": "0df0a1e6874d6dc864fd97686e6831f82748b2cb",
+  "phases": [
+    {
+      "phase": "export",
+      "PID": 791988,
+      "exit_code": 0,
+      "elapsed_s": 10.784984501078725,
+      "command": [
+        "unshare",
+        "--net",
+        "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/bin/python",
+        "-m",
+        "tools.m8j9_stage"
+      ],
+      "timeout_s": 600,
+      "log_sha256": "f707c8b007f83a53704d316bc9c2c51421155461f4a410a1ab2625ac8cbddb1e"
+    },
+    {
+      "phase": "eval1",
+      "PID": 792591,
+      "exit_code": 1,
+      "elapsed_s": 10.029223673045635,
+      "command": [
+        "unshare",
+        "--net",
+        "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/bin/python",
+        "-m",
+        "tools.m8j9_stage"
+      ],
+      "timeout_s": 600,
+      "log_sha256": "15855041238ae60f3538f33c5d144611af93e187711232f6c1bf71b4d914fe35"
+    }
+  ],
+  "model_forward_calls": 0,
+  "optimizer_steps": 0,
+  "network": false,
+  "GPU": false,
+  "automatic_retry": false,
+  "source_sha256": {
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8j9_stage.py": "38f2c6f7d6ba29594cf82e3bbeb77e579c72e0a49a5fb8a15eb73ea6d054ba48",
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8j9_run.py": "4739ed843b8892fdb683e100aee42e10aaf7825391f5baa52032153812602639",
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/m8j9_official_export.py": "80f4e38afe98a9a7daf049cff9f11875dde14377cc731ff968c0c526d7b05cbf",
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/configs/m8j9_protocol.json": "d41ee41edddeb0bea97decb010b74e60697daf01faac7d33170a40342bc797a7",
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/configs/m8j9_retry1_protocol.json": "36efc042120cf37e9ef73399e83333f58f1d31413b0f8dc382f622b122109c04",
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tests/test_m8j9_official_export.py": "fd1c679ed99e19703f3b5c6c5778897c4034079b771f7ea754a39275df91fbee"
+  },
+  "status": "FailedStopped",
+  "finished_at_utc": "2026-10-27T15:45:13.918439+00:00"
+}
