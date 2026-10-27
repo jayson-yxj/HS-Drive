@@ -1,0 +1,112 @@
+{
+  "stage": "M8-J8 Limited Residual Attribution and Independent Scenes",
+  "base_commit": "f50aead",
+  "branch": "feat/m8j8-residual-independent-eval",
+  "run_id": "m8j8_20261027_ab",
+  "dataset_root": "/root/gpufree-data/hs-drive-private/m8j6-nuscenes-mini/data",
+  "prepared_root": "/root/gpufree-data/hs-drive-private/m8j8_20261027_ab/prepared",
+  "A": {
+    "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/artifacts/safe_extract/model_tensors.npz",
+    "sha256": "cf33dccb1d549c425a89cf346d6f05401c49f6cccbd5a579cb7d8937b5a6d591",
+    "source": "SameOriginalBaselineAsM8J7",
+    "original_pth_sha256": "16d8a4875c36e7d1cba75b357901ff031b18d9d9374f12780b9b72cc621cefad"
+  },
+  "B": {
+    "path": "/root/gpufree-data/hs-drive-private/m8j7_20261027_132740/checkpoint_400.pth",
+    "bytes": 242080844,
+    "sha256": "3351116c5c4d4dd5b75cc2a45a73f21d12ee3f40ef7fac43c836712b06c7ed78",
+    "step": 400,
+    "model_fingerprint": "18753268ec8aad436ddb270bc7125231a93e6f79dcfa2fb5eea40362d92c54af",
+    "optimizer_fingerprint": "bfaf6716278c4d8121ea3f3d424d6d179c1f41644aa99e450e5f750c07c1e2e3",
+    "mapping_fingerprint": "1c29421ab57cdb1997e3299896c683dd9b2a508ed829ac81197d5b4d7d09d58f",
+    "rng_fingerprint": "89fd2d6757e872d74cfcf3abe2d5e3cbfd609d0d9118008a71f3c1f8c48d64a5"
+  },
+  "manifest": "reports/m8j8_evaluation_manifest.json",
+  "manifest_sha256": "4d4cfffd48bc803da16a7b15738bc42a4e7954f11c1a5f291ee0c3cefa2532fe",
+  "frozen_J6_protocol_sha256": "a65a7f19ba86570e9c15cf7df12f34f3a0caa35bc48bac0c4270ff0c5674c2d3",
+  "frozen_J7_protocol_sha256": "7b9c9cf6bde03b3452f6c9d23f3ec37032c794596e1ddaa686e479144c28fbd8",
+  "evaluation": {
+    "steps": [
+      0,
+      80,
+      160,
+      240,
+      320,
+      400
+    ],
+    "mode": "eval",
+    "score_threshold": 0.2,
+    "decoder": "Official head.get_bboxes; NMSFree top300 query-class pairs; no GT-dependent prediction selection",
+    "max_num": 300,
+    "decoder_score_threshold": null,
+    "decoder_post_center_range": [
+      -61.2,
+      -61.2,
+      -10.0,
+      61.2,
+      61.2,
+      10.0
+    ],
+    "task_prediction_region": "Strict abs(x)<51.2 and abs(y)<51.2, independent of GT; decoded outside-region predictions reported separately",
+    "gt": "Exactly335FilteredTrainingGT_NoNewFilters",
+    "matching": "Per-frame same-class descending-score nearest unmatched GT, XY distance strictly less than threshold; stable prediction index tie-break",
+    "distance_m": [
+      2.0,
+      1.0,
+      0.5
+    ],
+    "primary_distance_m": 2.0,
+    "PR_score_thresholds": [
+      0.0,
+      0.05,
+      0.1,
+      0.2,
+      0.3,
+      0.5,
+      0.7,
+      0.9
+    ],
+    "AP": "101-point interpolated class AP at2m on all in-range decoded scores; no nuScenes official mAP claim; no-GT class AP=null and FP still reported",
+    "yaw": "wrapped 2pi for directed classes; barrier pi; traffic_cone NA",
+    "error_scope": "Matched pairs only; jointly report TP/FP/FN and all-candidate burden",
+    "best_checkpoint": "None_Final400Mandatory_NoSelection",
+    "loss_aggregation": "Arithmetic mean of eight fixed eval per-frame losses; six-layer components retained",
+    "scope": "TrainingSetDiagnostic_NotNuScenesValidation"
+  },
+  "residual_samples": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "residual_forward_reason": "J7 caches lack raw final decoder output and decoded query/class indices; read-only reconstruction for 56 duplicates and 3 height/4 FN cases",
+  "precision": "FP32",
+  "AMP": false,
+  "TF32": false,
+  "optimizer_steps": 0,
+  "seed": 875606,
+  "matching_unchanged": true,
+  "added_metrics": [
+    "signed_center_dz",
+    "signed_height_dh",
+    "abs_height",
+    "per_dimension_error",
+    "common_GT_paired_errors",
+    "A_only_B_only"
+  ],
+  "visualization_rule": "mini_val first/middle/last sample of each scene; all residual eight frames; no case selection by best output",
+  "limits": {
+    "network": false,
+    "CARLA": false,
+    "downloads": false,
+    "training": false,
+    "new_datasets": false,
+    "merge_main": false,
+    "private_assets_published": false
+  },
+  "official_metrics": "ExistingEntryOptional_NotNeededForFixedProjectDiagnostic_NoNewFramework"
+}
