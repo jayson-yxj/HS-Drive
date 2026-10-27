@@ -1,0 +1,21 @@
+{
+  "project_only_GT_count": 166,
+  "all_project_only_fail_official_class_radius": true,
+  "all_have_nonzero_point_support": true,
+  "project_only_by_class": {
+    "motorcycle": 13,
+    "car": 25,
+    "pedestrian": 116,
+    "truck": 5,
+    "bus": 3,
+    "bicycle": 2,
+    "traffic_cone": 2
+  },
+  "minimum_GT_distance_beyond_radius_m": 0.1426424698838744,
+  "prediction_radius_exclusions": 1,
+  "maximum_prediction_global_xy_over_radius_m": 0.0028991223598531235,
+  "minimum_prediction_ego_xy_inside_radius_m": 0.0005028250517646882,
+  "explanation": "Exporter ego XY and evaluator global XY relative to ego differ with roll/pitch; both official rules retained",
+  "no_prediction_modification": true,
+  "command": "python -m tools.m8j9_radius_audit --check-only"
+}

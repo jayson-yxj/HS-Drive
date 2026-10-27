@@ -1,0 +1,62 @@
+No CUDA runtime is found, using CUDA_HOME='/usr/local/cuda'
+/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+======
+Loading NuScenes tables for version v1.0-mini...
+23 category,
+8 attribute,
+4 visibility,
+911 instance,
+12 sensor,
+120 calibrated_sensor,
+31206 ego_pose,
+8 log,
+10 scene,
+404 sample,
+31206 sample_data,
+18538 sample_annotation,
+4 map,
+Done loading in 0.608 seconds.
+======
+Reverse indexing ...
+Done reverse indexing in 0.1 seconds.
+======
+Initializing nuScenes detection evaluation
+Loaded results from /root/gpufree-data/hs-drive-private/m8j9-frozen-a-official-eval-retry1/export/results_nusc.json. Found detections for 81 samples.
+Loading annotations for mini_val split from nuScenes version: v1.0-mini
+  0%|          | 0/81 [00:00<?, ?it/s] 56%|█████▌    | 45/81 [00:00<00:00, 449.73it/s]100%|██████████| 81/81 [00:00<00:00, 424.20it/s]
+Loaded ground truth annotations for 81 samples.
+Filtering predictions
+=> Original number of boxes: 7794
+=> After distance based filtering: 7793
+=> After LIDAR and RADAR points based filtering: 7793
+=> After bike rack filtering: 7783
+Filtering ground truth annotations
+=> Original number of boxes: 4441
+=> After distance based filtering: 3785
+=> After LIDAR and RADAR points based filtering: 3393
+=> After bike rack filtering: 3393
+Accumulating metric data...
+Calculating metrics...
+Saving metrics to: /root/gpufree-data/hs-drive-private/m8j9-frozen-a-official-eval-retry1/eval2
+mAP: 0.2767
+mATE: 0.8209
+mASE: 0.4587
+mAOE: 0.7584
+mAVE: 0.7874
+mAAE: 0.3026
+NDS: 0.3256
+Eval time: 3.7s
+
+Per-class results:
+Object Class	AP	ATE	ASE	AOE	AVE	AAE
+car	0.492	0.631	0.165	0.201	0.254	0.084
+truck	0.332	0.823	0.250	0.169	0.123	0.014
+bus	0.399	0.850	0.128	0.385	1.592	0.000
+trailer	0.000	1.000	1.000	1.000	1.000	1.000
+construction_vehicle	0.000	1.000	1.000	1.000	1.000	1.000
+pedestrian	0.485	0.714	0.252	0.863	0.624	0.223
+motorcycle	0.385	0.777	0.309	1.551	0.071	0.000
+bicycle	0.097	0.856	0.183	0.657	1.636	0.100
+traffic_cone	0.577	0.558	0.301	nan	nan	nan
+barrier	0.000	1.000	1.000	1.000	nan	nan

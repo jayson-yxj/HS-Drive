@@ -1,0 +1,21 @@
+{
+  "initial_exact_comparison_exit_code": 1,
+  "reason": "Supplemental audit initially used manual rotation matrix; exact comparison to pyquaternion shows rounding-only difference, not metric or membership difference",
+  "differences": {
+    "maximum_prediction_global_xy_over_radius_m": {
+      "initial_manual_matrix": 0.0028991223598531235,
+      "official_quaternion": 0.002899122359849571
+    },
+    "minimum_prediction_ego_xy_inside_radius_m": {
+      "initial_manual_matrix": 0.0005028250517646882,
+      "official_quaternion": 0.0005028250517966626
+    },
+    "explanation": {
+      "initial_manual_matrix": "Exporter ego XY and evaluator global XY relative to ego differ with roll/pitch; both official rules retained",
+      "official_quaternion": "Exporter ego XY versus evaluator global XY relative to ego differ with roll/pitch; both official rules retained"
+    }
+  },
+  "report_source": "tools.m8j9_radius_audit using existing official quaternion implementation",
+  "official_scores_changed": false,
+  "model_forward": 0
+}

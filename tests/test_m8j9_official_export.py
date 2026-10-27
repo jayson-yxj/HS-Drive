@@ -117,3 +117,14 @@ def test_diagnostic_canonical_handles_official_numpy_velocity_and_nan():
     y=dict(t=[3.,4.],n=2,v=[1.,float('nan')])
     assert canonical(x)==canonical(y)
     assert canonical(x)!=canonical(dict(y,n=3))
+
+
+def test_repeated_official_metric_comparison_ignores_only_runtime():
+    from tools.m8j9_verify import canonical_metrics
+    a=dict(eval_time=1.,mean_ap=.2,label_tp_errors={'cone':float('nan')})
+    b=dict(eval_time=2.,mean_ap=.2,label_tp_errors={'cone':float('nan')})
+    assert canonical_metrics(a,True)==canonical_metrics(b,True)
+    assert canonical_metrics(a,False)!=canonical_metrics(b,False)
+    b['mean_ap']=.3
+    assert canonical_metrics(a,True)!=canonical_metrics(b,True)
+    assert canonical_metrics(a,True)!=canonical_metrics(dict(a,label_tp_errors={'cone':0.}),True)

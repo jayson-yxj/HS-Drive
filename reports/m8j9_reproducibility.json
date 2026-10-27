@@ -1,0 +1,114 @@
+{
+  "checked_at_utc": "2026-10-27T15:49:59.193633+00:00",
+  "evaluation_name": "冻结A在mini_val上的本地官方devkit评测，使用指定缓存与输出策略",
+  "interface_status": "Passed",
+  "comparison": {
+    "metrics_summary.json": {
+      "first_sha256": "976ba08a87a8b3631492bebfdb810d7287d610784a338af1f0263c7095e27dd6",
+      "second_sha256": "8325b51ea41df793452305e606ed93190052b656c16ce7a0c5971b18afadca43",
+      "exact_values_equal": true,
+      "byte_equal": false,
+      "ignored_fields": [
+        "eval_time"
+      ]
+    },
+    "metrics_details.json": {
+      "first_sha256": "efcfad1805723c376f153ab12ef389f0c36672af84a38519bf88af9e270737d9",
+      "second_sha256": "efcfad1805723c376f153ab12ef389f0c36672af84a38519bf88af9e270737d9",
+      "exact_values_equal": true,
+      "byte_equal": true,
+      "ignored_fields": []
+    }
+  },
+  "result_sha256": "7298432cf47d19694ad15ed09eb94f19ac9204596ce1d97ddb83b352322eb9d7",
+  "two_official_metric_computations": true,
+  "extra_filter_only_audit": true,
+  "failure_preservation": {
+    "first_export_keyframe_index_failure": true,
+    "post_eval_numpy_diagnostic_failure": true,
+    "failed_phase_not_relabelled_success": true,
+    "same_result_file_reused": true
+  },
+  "scalar_scores": {
+    "mAP": 0.2767151284292793,
+    "NDS": 0.32555351128088195,
+    "trans_err": 0.8209011912774173,
+    "scale_err": 0.458737965580614,
+    "orient_err": 0.7584464344570342,
+    "vel_err": 0.7873880029203322,
+    "attr_err": 0.3025669351021789
+  },
+  "cache_limitations": [
+    "FP32 fixed checkpoint A Top300",
+    "Formal preexisting score>=0.2 limits low-score PR support",
+    "Original XY source range and official class ranges",
+    "Planar predicted velocity; deterministic attribute rule",
+    "81 samples from two related scenes, not full validation; three unsupported GT classes retained in official averaging"
+  ],
+  "model_forward_calls": 0,
+  "optimizer_steps": 0,
+  "backward_calls": 0,
+  "B_loaded": false,
+  "original_exporter_and_devkit_sources_unchanged": true,
+  "caches_and_export_metadata_unchanged": true,
+  "historical": [
+    {
+      "manifest": "reports/m8j8_release_manifest.json",
+      "files": 41,
+      "unchanged": true
+    },
+    {
+      "manifest": "reports/m8j8a_release_manifest.json",
+      "files": 23,
+      "unchanged": true
+    }
+  ],
+  "owned_processes": [
+    {
+      "pid": 776208,
+      "phase": "export",
+      "exit_code": 1,
+      "still_present": false
+    },
+    {
+      "pid": 791988,
+      "phase": "export",
+      "exit_code": 0,
+      "still_present": false
+    },
+    {
+      "pid": 792591,
+      "phase": "eval1",
+      "exit_code": 1,
+      "still_present": false
+    },
+    {
+      "pid": 799073,
+      "phase": "audit",
+      "exit_code": 0,
+      "still_present": false
+    },
+    {
+      "pid": 799523,
+      "phase": "eval2",
+      "exit_code": 0,
+      "still_present": false
+    }
+  ],
+  "metadata_SHA256": {
+    "/root/gpufree-data/hs-drive-private/m8j6-nuscenes-mini/data/v1.0-mini/map.json": "6b1d504987d0630e7e32affb7ae0d99fe9b427c757a315ec2f56fb09ebd1bfce",
+    "/root/gpufree-data/hs-drive-private/m8j6-nuscenes-mini/data/v1.0-mini/sample.json": "3c47794e2e6c09af4be7907b83f50750351180008d059899f42a9d405ed68586",
+    "/root/gpufree-data/hs-drive-private/m8j6-nuscenes-mini/data/v1.0-mini/category.json": "30f64fb175e5bd7db99892d90f9034481bca491f26600c5c0d1a56106b198dfe",
+    "/root/gpufree-data/hs-drive-private/m8j6-nuscenes-mini/data/v1.0-mini/scene.json": "cc4dfeac83ac4f5d3e7fc899f90156891a21fa08bc0f8a1ac0e0a27cc1a0bfa6",
+    "/root/gpufree-data/hs-drive-private/m8j6-nuscenes-mini/data/v1.0-mini/calibrated_sensor.json": "13d35eeb08bfbc4d0c9eaede7824ff65efe16f8bf345aa7ba9fd75f9866a8d0f",
+    "/root/gpufree-data/hs-drive-private/m8j6-nuscenes-mini/data/v1.0-mini/log.json": "d543b6fd127a6496ab9fa8de5c96a0887e0996e56f7a6c606de6d8b34827df58",
+    "/root/gpufree-data/hs-drive-private/m8j6-nuscenes-mini/data/v1.0-mini/instance.json": "38bbfcf53fb78469ec2c5b07fdafc9a44e9fbf9ab858d35a007dd8347428a14a",
+    "/root/gpufree-data/hs-drive-private/m8j6-nuscenes-mini/data/v1.0-mini/sample_annotation.json": "49703705e98ddea281ca321aae3b7352a8b6495840fe654cf0717c5b7b721080",
+    "/root/gpufree-data/hs-drive-private/m8j6-nuscenes-mini/data/v1.0-mini/attribute.json": "dc01438363e29188f25785884bb2431a7aa27ba0debbc359cb21cf1f00652210",
+    "/root/gpufree-data/hs-drive-private/m8j6-nuscenes-mini/data/v1.0-mini/visibility.json": "87088bf2c78d070e1e215ff108f9c5c0958d124a14cce8f72bfb5d9651295749",
+    "/root/gpufree-data/hs-drive-private/m8j6-nuscenes-mini/data/v1.0-mini/sample_data.json": "db18a189bd73648013d3e77ce6f5236d7c5997c0bdbf71166ddd8a6cb5c2c288",
+    "/root/gpufree-data/hs-drive-private/m8j6-nuscenes-mini/data/v1.0-mini/ego_pose.json": "62817fd8b1633ed7925db46a29ec4c70f77116b866f248f0dc1bac4774459d70",
+    "/root/gpufree-data/hs-drive-private/m8j6-nuscenes-mini/data/v1.0-mini/sensor.json": "4d5c96570e2d8b09b88ce4c605e40ee43c4909f97bea5741185f18f92eb491ae"
+  },
+  "commands_file": "docs/M8J9_IMPLEMENTATION.md"
+}

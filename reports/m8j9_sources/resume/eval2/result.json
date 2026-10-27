@@ -1,0 +1,86 @@
+{
+  "phase": "eval2",
+  "started_at_utc": "2026-10-27T15:47:40.479418+00:00",
+  "code_commit": "7af366b33e8adb7f84517cf342492b07d8ea2b66",
+  "software": {
+    "nuscenes-devkit": "1.1.9",
+    "numpy": "1.19.5",
+    "torch": "2.0.0+cu118",
+    "mmcv-full": "1.7.2",
+    "mmdet": "2.24.1",
+    "mmdet3d": "0.17.1"
+  },
+  "model_forward_calls": 0,
+  "optimizer_steps": 0,
+  "backward_calls": 0,
+  "GPU_used": false,
+  "status": "OfficialEvaluationCompleted",
+  "result_sha256": "7298432cf47d19694ad15ed09eb94f19ac9204596ce1d97ddb83b352322eb9d7",
+  "evaluation_name": "冻结A在mini_val上的本地官方devkit评测，使用指定缓存与输出策略",
+  "config": {
+    "class_range": {
+      "car": 50,
+      "truck": 50,
+      "bus": 50,
+      "trailer": 50,
+      "construction_vehicle": 50,
+      "pedestrian": 40,
+      "motorcycle": 40,
+      "bicycle": 40,
+      "traffic_cone": 30,
+      "barrier": 30
+    },
+    "dist_fcn": "center_distance",
+    "dist_ths": [
+      0.5,
+      1.0,
+      2.0,
+      4.0
+    ],
+    "dist_th_tp": 2.0,
+    "min_recall": 0.1,
+    "min_precision": 0.1,
+    "max_boxes_per_sample": 500,
+    "mean_ap_weight": 5
+  },
+  "GT_filtered": {
+    "total": 3393,
+    "classes": {
+      "car": 1913,
+      "truck": 95,
+      "bus": 33,
+      "trailer": 0,
+      "construction_vehicle": 0,
+      "pedestrian": 1067,
+      "motorcycle": 214,
+      "bicycle": 36,
+      "traffic_cone": 35,
+      "barrier": 0
+    },
+    "samples": 81
+  },
+  "predictions_filtered": {
+    "total": 7783,
+    "classes": {
+      "car": 4211,
+      "truck": 154,
+      "bus": 43,
+      "trailer": 0,
+      "construction_vehicle": 0,
+      "pedestrian": 2916,
+      "motorcycle": 285,
+      "bicycle": 78,
+      "traffic_cone": 96,
+      "barrier": 0
+    },
+    "samples": 81
+  },
+  "summary_sha256": "8325b51ea41df793452305e606ed93190052b656c16ce7a0c5971b18afadca43",
+  "details_sha256": "efcfad1805723c376f153ab12ef389f0c36672af84a38519bf88af9e270737d9",
+  "prediction_result_unchanged": true,
+  "output_dir": "/root/gpufree-data/hs-drive-private/m8j9-frozen-a-official-eval-retry1/eval2",
+  "model_forward": 0,
+  "optimizer_step": 0,
+  "elapsed_s": 5.090699719265103,
+  "finished_at_utc": "2026-10-27T15:47:45.570118+00:00"
+}

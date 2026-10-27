@@ -1,0 +1,56 @@
+{
+  "started_at_utc": "2026-10-27T15:47:28.738191+00:00",
+  "execution_commit": "7af366b33e8adb7f84517cf342492b07d8ea2b66",
+  "phases": [
+    {
+      "phase": "audit",
+      "PID": 799073,
+      "exit_code": 0,
+      "elapsed_s": 7.6776855532079935,
+      "command": [
+        "unshare",
+        "--net",
+        "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/bin/python",
+        "-m",
+        "tools.m8j9_stage"
+      ],
+      "timeout_s": 600,
+      "log_sha256": "370a9179a4708785a8af53bec2d4d155f40c8ad68dbe9aba9a47db2861b21de7"
+    },
+    {
+      "phase": "eval2",
+      "PID": 799523,
+      "exit_code": 0,
+      "elapsed_s": 10.031681567430496,
+      "command": [
+        "unshare",
+        "--net",
+        "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/bin/python",
+        "-m",
+        "tools.m8j9_stage"
+      ],
+      "timeout_s": 600,
+      "log_sha256": "b451324e58df32d8081bc15c854cd452e52a9ce9016d10c8b9d8c3ec66ffbf78"
+    }
+  ],
+  "model_forward_calls": 0,
+  "optimizer_steps": 0,
+  "network": false,
+  "GPU": false,
+  "automatic_retry": false,
+  "requested_phases": [
+    "audit",
+    "eval2"
+  ],
+  "resumed_existing_export": "reports/m8j9_sources/retry1/export/result.json",
+  "source_sha256": {
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8j9_stage.py": "834a10f346f50e5dcdc2ef731ade0f1ccdc7328c75286ff44953d05a387005e8",
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8j9_run.py": "8656daf1099c72b8e9b787b729a3d5b649dff9ba6dd12cd433e758061b2dd791",
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/datasets/m8j9_official_export.py": "80f4e38afe98a9a7daf049cff9f11875dde14377cc731ff968c0c526d7b05cbf",
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/configs/m8j9_protocol.json": "d41ee41edddeb0bea97decb010b74e60697daf01faac7d33170a40342bc797a7",
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/configs/m8j9_retry1_protocol.json": "36efc042120cf37e9ef73399e83333f58f1d31413b0f8dc382f622b122109c04",
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tests/test_m8j9_official_export.py": "fef10ecd2e189df566beecc29bde7a2fe7d6c44a4a5b0d855837102e8a5da611"
+  },
+  "status": "RequestedPhasesCompleted",
+  "finished_at_utc": "2026-10-27T15:47:46.450090+00:00"
+}
