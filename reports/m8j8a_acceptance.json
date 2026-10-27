@@ -1,0 +1,82 @@
+{
+  "stage": "M8-J8A",
+  "base_commit": "93807325a7614f038f3d658ff608e0a284c73763",
+  "execution_commit": "963ed1bfaf168cd188998eeb60966dda1d0e455c",
+  "date_utc": "2026-10-27T15:13:29.387222+00:00",
+  "status": "CacheAttributionCompleted_EightFrameOverfitLineClosed",
+  "preserved_states": {
+    "FP32TrainingAndRestore": "PassedWithinExistingScope",
+    "EightFrameLearning": "Supported",
+    "BIndependentSceneImprovement": "NotSupported",
+    "reference": "A",
+    "B": "EightFrameFitResearchArtifact",
+    "safety": "NotValidated"
+  },
+  "execution": {
+    "model_forward": 0,
+    "optimizer_step": 0,
+    "backward": 0,
+    "new_data": 0,
+    "new_images_rendered": 0,
+    "raw_weights_loaded": 0,
+    "GPU_used": false,
+    "network_during_analysis": false
+  },
+  "transitions": {
+    "common": 2483,
+    "A_only": 464,
+    "B_only": 81,
+    "neither": 531,
+    "total": 3559,
+    "net_TP_loss": 383,
+    "unique_instances": 213
+  },
+  "diagnostics": {
+    "original_PR_grid_reproduced": true,
+    "formal_score_threshold": 0.2,
+    "formal_score_changed": false,
+    "cases": 12,
+    "unique_case_instances": 12,
+    "case_budgets": [
+      6,
+      3,
+      3
+    ],
+    "mechanism_population_extrapolation": false
+  },
+  "verification": {
+    "synthetic_and_old_metric_tests_passed": 24,
+    "failures": 0,
+    "historical_evidence_preserved": true,
+    "human_signoffs": 0
+  },
+  "conclusion": {
+    "direct_evidence": [
+      "Mixed score ordering and geometric displacement",
+      "One-to-one association changes",
+      "Equal recall has higher FP burden",
+      "Common match can move to worse scored box"
+    ],
+    "unsupported_claims": [
+      "Catastrophic forgetting proven",
+      "PETR architecture invalid",
+      "Lower threshold alone solves transfer"
+    ],
+    "unknown": [
+      "Internal module causal attribution",
+      "Full81-frame mechanism prevalence",
+      "SameQuery physical identity",
+      "Other-distribution transfer"
+    ]
+  },
+  "next_step": {
+    "status": "ProposalOnly_NotRun",
+    "name": "FrozenAOfficialNuScenesEvaluationContractPilot",
+    "scope": "Existing81AOutputCaches; first fixed frame schema/global/yaw/dimension/velocity/attribute checks, then official mini_val metrics only if required fields supported; no training or checkpoint selection."
+  },
+  "boundaries": {
+    "main_merged": false,
+    "private_images_labels_predictions_weights_uploaded": false,
+    "training_auto_continued": false
+  }
+}

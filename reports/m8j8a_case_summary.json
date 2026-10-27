@@ -1,0 +1,583 @@
+{
+  "selection_protocol": {
+    "maximum_unique_instances": 12,
+    "budgets": {
+      "A_only": 6,
+      "B_only": 3,
+      "common_xy_worse": 3
+    },
+    "bucket_order": [
+      "A_only",
+      "B_only",
+      "common_xy_worse"
+    ],
+    "common_xy_worse_min_delta_m": 0.5,
+    "scenes": [
+      "scene-0103",
+      "scene-0916"
+    ],
+    "selection": "Global instance dedup. For each bucket alternate sorted scene names; within scene prefer an unused class in that bucket, then an existing M8-J8 visual frame, then class name, instance token, timestamp, sample token. One representative timestamp per instance/status. Only candidates satisfying bucket condition. If scene exhausted use the other; do not fabricate cases.",
+    "existing_visual_frames": [
+      0,
+      20,
+      39,
+      40,
+      60,
+      80
+    ],
+    "representative": "Per instance/status prefer existing-visual frame, then earliest timestamp/sample. No mechanism-based selection.",
+    "visual_policy": "Link existing six-camera and BEV images only. Nonvisual frames are numeric-only and explicitly NotViewed. No new image rendering or annotations.",
+    "population_inference": false
+  },
+  "count": 12,
+  "unique_instances": 12,
+  "population_attribution_allowed": false,
+  "cases": [
+    {
+      "case_id": "C01",
+      "bucket": "A_only",
+      "frame": 39,
+      "scene": "scene-0103",
+      "class_name": "car",
+      "models": {
+        "A": {
+          "matched": true,
+          "flags": [],
+          "match_metrics": {
+            "score": 0.35962656140327454,
+            "xy_error_m": 1.2992947101593018,
+            "center_z_error_m": 0.04365193843841553,
+            "height_error_m": -0.17341578006744385,
+            "dimension_abs_mean_m": 0.18650662899017334
+          },
+          "nearest_raw_distance_m": 1.2992947101593018,
+          "nearest_raw_correct_class_score": 0.3596265570701045,
+          "best_nearby_correct_class_score": 0.3596265570701045,
+          "best_nearby_argmax_class": "car",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 2,
+          "nearby_above_threshold_count": 1
+        },
+        "B": {
+          "matched": false,
+          "flags": [
+            "NearbyCorrectClassDecodedScoresBelow0.2",
+            "AllNearbyValidCorrectClassRawScoresBelow0.2"
+          ],
+          "match_metrics": null,
+          "nearest_raw_distance_m": 1.4122511148452759,
+          "nearest_raw_correct_class_score": 0.021898214390810505,
+          "best_nearby_correct_class_score": 0.1716838778179564,
+          "best_nearby_argmax_class": "car",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 1,
+          "nearby_above_threshold_count": 0
+        }
+      },
+      "existing_visualization_available": true,
+      "human_confirmed": false,
+      "private_evidence": "/root/gpufree-data/hs-drive-private/m8j8a-cache-closeout/case_details.json"
+    },
+    {
+      "case_id": "C02",
+      "bucket": "A_only",
+      "frame": 40,
+      "scene": "scene-0916",
+      "class_name": "bicycle",
+      "models": {
+        "A": {
+          "matched": true,
+          "flags": [],
+          "match_metrics": {
+            "score": 0.43405887484550476,
+            "xy_error_m": 1.7423286437988281,
+            "center_z_error_m": -0.005987107753753662,
+            "height_error_m": -0.016168594360351562,
+            "dimension_abs_mean_m": 0.06411620229482651
+          },
+          "nearest_raw_distance_m": 0.5872908234596252,
+          "nearest_raw_correct_class_score": 0.025517712081990492,
+          "best_nearby_correct_class_score": 0.4340588900186168,
+          "best_nearby_argmax_class": "bicycle",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 2,
+          "nearby_above_threshold_count": 1
+        },
+        "B": {
+          "matched": false,
+          "flags": [
+            "NearbyCorrectClassDecodedScoresBelow0.2",
+            "AllNearbyValidCorrectClassRawScoresBelow0.2"
+          ],
+          "match_metrics": null,
+          "nearest_raw_distance_m": 0.6842052936553955,
+          "nearest_raw_correct_class_score": 0.006020838790011538,
+          "best_nearby_correct_class_score": 0.03773618658168901,
+          "best_nearby_argmax_class": "bicycle",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 2,
+          "nearby_above_threshold_count": 0
+        }
+      },
+      "existing_visualization_available": true,
+      "human_confirmed": false,
+      "private_evidence": "/root/gpufree-data/hs-drive-private/m8j8a-cache-closeout/case_details.json"
+    },
+    {
+      "case_id": "C03",
+      "bucket": "A_only",
+      "frame": 20,
+      "scene": "scene-0103",
+      "class_name": "pedestrian",
+      "models": {
+        "A": {
+          "matched": true,
+          "flags": [],
+          "match_metrics": {
+            "score": 0.5799999833106995,
+            "xy_error_m": 0.977201521396637,
+            "center_z_error_m": -0.16022783517837524,
+            "height_error_m": -0.047014713287353516,
+            "dimension_abs_mean_m": 0.0465635247528553
+          },
+          "nearest_raw_distance_m": 0.3383488059043884,
+          "nearest_raw_correct_class_score": 0.0008619640103193873,
+          "best_nearby_correct_class_score": 0.580000015666022,
+          "best_nearby_argmax_class": "pedestrian",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 3,
+          "nearby_above_threshold_count": 2
+        },
+        "B": {
+          "matched": false,
+          "flags": [
+            "NearbyCorrectClassDecodedScoresBelow0.2",
+            "AllNearbyValidCorrectClassRawScoresBelow0.2"
+          ],
+          "match_metrics": null,
+          "nearest_raw_distance_m": 0.7111667394638062,
+          "nearest_raw_correct_class_score": 0.1354757846661048,
+          "best_nearby_correct_class_score": 0.1354757846661048,
+          "best_nearby_argmax_class": "pedestrian",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 2,
+          "nearby_above_threshold_count": 0
+        }
+      },
+      "existing_visualization_available": true,
+      "human_confirmed": false,
+      "private_evidence": "/root/gpufree-data/hs-drive-private/m8j8a-cache-closeout/case_details.json"
+    },
+    {
+      "case_id": "C04",
+      "bucket": "A_only",
+      "frame": 60,
+      "scene": "scene-0916",
+      "class_name": "bus",
+      "models": {
+        "A": {
+          "matched": true,
+          "flags": [],
+          "match_metrics": {
+            "score": 0.8967009782791138,
+            "xy_error_m": 1.9082791805267334,
+            "center_z_error_m": -0.0955038070678711,
+            "height_error_m": -0.08166170120239258,
+            "dimension_abs_mean_m": 0.1578223705291748
+          },
+          "nearest_raw_distance_m": 0.6145464181900024,
+          "nearest_raw_correct_class_score": 0.00018317435353454827,
+          "best_nearby_correct_class_score": 0.8967009896169591,
+          "best_nearby_argmax_class": "bus",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 1,
+          "nearby_above_threshold_count": 1
+        },
+        "B": {
+          "matched": false,
+          "flags": [
+            "AllNearbyValidCorrectClassRawScoresBelow0.2",
+            "BestNearbyCorrectClassSlotHasDifferentArgmaxClass_NotExclusiveClassifier"
+          ],
+          "match_metrics": null,
+          "nearest_raw_distance_m": 0.9013501405715942,
+          "nearest_raw_correct_class_score": 0.00015265985428029004,
+          "best_nearby_correct_class_score": 0.00015265985428029004,
+          "best_nearby_argmax_class": "pedestrian",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 0,
+          "nearby_above_threshold_count": 0
+        }
+      },
+      "existing_visualization_available": true,
+      "human_confirmed": false,
+      "private_evidence": "/root/gpufree-data/hs-drive-private/m8j8a-cache-closeout/case_details.json"
+    },
+    {
+      "case_id": "C05",
+      "bucket": "A_only",
+      "frame": 39,
+      "scene": "scene-0103",
+      "class_name": "traffic_cone",
+      "models": {
+        "A": {
+          "matched": true,
+          "flags": [],
+          "match_metrics": {
+            "score": 0.21129357814788818,
+            "xy_error_m": 1.7828516960144043,
+            "center_z_error_m": 0.35611316561698914,
+            "height_error_m": 0.6236504912376404,
+            "dimension_abs_mean_m": 0.2745627164840698
+          },
+          "nearest_raw_distance_m": 1.1056652069091797,
+          "nearest_raw_correct_class_score": 0.18614775612936638,
+          "best_nearby_correct_class_score": 0.21129358558522673,
+          "best_nearby_argmax_class": "traffic_cone",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 2,
+          "nearby_above_threshold_count": 1
+        },
+        "B": {
+          "matched": false,
+          "flags": [
+            "NearbyCorrectClassDecodedScoresBelow0.2",
+            "AllNearbyValidCorrectClassRawScoresBelow0.2"
+          ],
+          "match_metrics": null,
+          "nearest_raw_distance_m": 0.8467893004417419,
+          "nearest_raw_correct_class_score": 0.13878684942040379,
+          "best_nearby_correct_class_score": 0.13878684942040379,
+          "best_nearby_argmax_class": "traffic_cone",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 1,
+          "nearby_above_threshold_count": 0
+        }
+      },
+      "existing_visualization_available": true,
+      "human_confirmed": false,
+      "private_evidence": "/root/gpufree-data/hs-drive-private/m8j8a-cache-closeout/case_details.json"
+    },
+    {
+      "case_id": "C06",
+      "bucket": "A_only",
+      "frame": 60,
+      "scene": "scene-0916",
+      "class_name": "motorcycle",
+      "models": {
+        "A": {
+          "matched": true,
+          "flags": [],
+          "match_metrics": {
+            "score": 0.21788811683654785,
+            "xy_error_m": 0.9400060772895813,
+            "center_z_error_m": -0.25317203998565674,
+            "height_error_m": -0.0865621566772461,
+            "dimension_abs_mean_m": 0.174264594912529
+          },
+          "nearest_raw_distance_m": 0.9400060772895813,
+          "nearest_raw_correct_class_score": 0.21788811811361153,
+          "best_nearby_correct_class_score": 0.6104278418418623,
+          "best_nearby_argmax_class": "motorcycle",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 2,
+          "nearby_above_threshold_count": 2
+        },
+        "B": {
+          "matched": false,
+          "flags": [
+            "QualifiedDecodedCandidateConsumedByOneToOneCompetition"
+          ],
+          "match_metrics": null,
+          "nearest_raw_distance_m": 0.3064785599708557,
+          "nearest_raw_correct_class_score": 0.06264826918990568,
+          "best_nearby_correct_class_score": 0.6087463692987528,
+          "best_nearby_argmax_class": "motorcycle",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 3,
+          "nearby_above_threshold_count": 1
+        }
+      },
+      "existing_visualization_available": true,
+      "human_confirmed": false,
+      "private_evidence": "/root/gpufree-data/hs-drive-private/m8j8a-cache-closeout/case_details.json"
+    },
+    {
+      "case_id": "C07",
+      "bucket": "B_only",
+      "frame": 39,
+      "scene": "scene-0103",
+      "class_name": "car",
+      "models": {
+        "A": {
+          "matched": false,
+          "flags": [
+            "QualifiedDecodedCandidateConsumedByOneToOneCompetition"
+          ],
+          "match_metrics": null,
+          "nearest_raw_distance_m": 1.8467806577682495,
+          "nearest_raw_correct_class_score": 0.3596265570701045,
+          "best_nearby_correct_class_score": 0.3596265570701045,
+          "best_nearby_argmax_class": "car",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 1,
+          "nearby_above_threshold_count": 1
+        },
+        "B": {
+          "matched": true,
+          "flags": [],
+          "match_metrics": {
+            "score": 0.3807869255542755,
+            "xy_error_m": 0.9600512385368347,
+            "center_z_error_m": -0.08111929893493652,
+            "height_error_m": -0.2632606029510498,
+            "dimension_abs_mean_m": 0.2309705764055252
+          },
+          "nearest_raw_distance_m": 0.9600512385368347,
+          "nearest_raw_correct_class_score": 0.38078694356656945,
+          "best_nearby_correct_class_score": 0.38078694356656945,
+          "best_nearby_argmax_class": "car",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 1,
+          "nearby_above_threshold_count": 1
+        }
+      },
+      "existing_visualization_available": true,
+      "human_confirmed": false,
+      "private_evidence": "/root/gpufree-data/hs-drive-private/m8j8a-cache-closeout/case_details.json"
+    },
+    {
+      "case_id": "C08",
+      "bucket": "B_only",
+      "frame": 40,
+      "scene": "scene-0916",
+      "class_name": "pedestrian",
+      "models": {
+        "A": {
+          "matched": false,
+          "flags": [
+            "QualifiedDecodedCandidateConsumedByOneToOneCompetition"
+          ],
+          "match_metrics": null,
+          "nearest_raw_distance_m": 0.4197100102901459,
+          "nearest_raw_correct_class_score": 0.17349094537934534,
+          "best_nearby_correct_class_score": 0.7561218126797158,
+          "best_nearby_argmax_class": "pedestrian",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 2,
+          "nearby_above_threshold_count": 1
+        },
+        "B": {
+          "matched": true,
+          "flags": [],
+          "match_metrics": {
+            "score": 0.604846715927124,
+            "xy_error_m": 1.9993187189102173,
+            "center_z_error_m": -0.40355169773101807,
+            "height_error_m": -0.16662371158599854,
+            "dimension_abs_mean_m": 0.13115309178829193
+          },
+          "nearest_raw_distance_m": 1.4138144254684448,
+          "nearest_raw_correct_class_score": 0.04444526155407027,
+          "best_nearby_correct_class_score": 0.8765999754558937,
+          "best_nearby_argmax_class": "pedestrian",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 3,
+          "nearby_above_threshold_count": 2
+        }
+      },
+      "existing_visualization_available": true,
+      "human_confirmed": false,
+      "private_evidence": "/root/gpufree-data/hs-drive-private/m8j8a-cache-closeout/case_details.json"
+    },
+    {
+      "case_id": "C09",
+      "bucket": "B_only",
+      "frame": 36,
+      "scene": "scene-0103",
+      "class_name": "bicycle",
+      "models": {
+        "A": {
+          "matched": false,
+          "flags": [
+            "NearbyCorrectClassDecodedScoresBelow0.2",
+            "AllNearbyValidCorrectClassRawScoresBelow0.2"
+          ],
+          "match_metrics": null,
+          "nearest_raw_distance_m": 0.5901066064834595,
+          "nearest_raw_correct_class_score": 0.16073431070136587,
+          "best_nearby_correct_class_score": 0.16073431070136587,
+          "best_nearby_argmax_class": "bicycle",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 1,
+          "nearby_above_threshold_count": 0
+        },
+        "B": {
+          "matched": true,
+          "flags": [],
+          "match_metrics": {
+            "score": 0.22652839124202728,
+            "xy_error_m": 1.7339274883270264,
+            "center_z_error_m": -0.24603241682052612,
+            "height_error_m": -0.29598987102508545,
+            "dimension_abs_mean_m": 0.17231148481369019
+          },
+          "nearest_raw_distance_m": 0.7078354358673096,
+          "nearest_raw_correct_class_score": 0.01790350556668207,
+          "best_nearby_correct_class_score": 0.22652837705697978,
+          "best_nearby_argmax_class": "bicycle",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 1,
+          "nearby_above_threshold_count": 1
+        }
+      },
+      "existing_visualization_available": false,
+      "human_confirmed": false,
+      "private_evidence": "/root/gpufree-data/hs-drive-private/m8j8a-cache-closeout/case_details.json"
+    },
+    {
+      "case_id": "C10",
+      "bucket": "common_xy_worse",
+      "frame": 39,
+      "scene": "scene-0103",
+      "class_name": "bicycle",
+      "models": {
+        "A": {
+          "matched": true,
+          "flags": [],
+          "match_metrics": {
+            "score": 0.2046327143907547,
+            "xy_error_m": 0.5876925587654114,
+            "center_z_error_m": 0.07948291301727295,
+            "height_error_m": -0.021544933319091797,
+            "dimension_abs_mean_m": 0.023084184154868126
+          },
+          "nearest_raw_distance_m": 0.5876925587654114,
+          "nearest_raw_correct_class_score": 0.204632702970362,
+          "best_nearby_correct_class_score": 0.204632702970362,
+          "best_nearby_argmax_class": "bicycle",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 2,
+          "nearby_above_threshold_count": 1
+        },
+        "B": {
+          "matched": true,
+          "flags": [],
+          "match_metrics": {
+            "score": 0.3605424761772156,
+            "xy_error_m": 1.6807599067687988,
+            "center_z_error_m": 0.13212215900421143,
+            "height_error_m": -0.021128416061401367,
+            "dimension_abs_mean_m": 0.03274766728281975
+          },
+          "nearest_raw_distance_m": 0.8584802746772766,
+          "nearest_raw_correct_class_score": 0.15985126715981166,
+          "best_nearby_correct_class_score": 0.36054247104402515,
+          "best_nearby_argmax_class": "bicycle",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 4,
+          "nearby_above_threshold_count": 1
+        }
+      },
+      "existing_visualization_available": true,
+      "human_confirmed": false,
+      "private_evidence": "/root/gpufree-data/hs-drive-private/m8j8a-cache-closeout/case_details.json"
+    },
+    {
+      "case_id": "C11",
+      "bucket": "common_xy_worse",
+      "frame": 40,
+      "scene": "scene-0916",
+      "class_name": "car",
+      "models": {
+        "A": {
+          "matched": true,
+          "flags": [],
+          "match_metrics": {
+            "score": 0.9238816499710083,
+            "xy_error_m": 0.5189511179924011,
+            "center_z_error_m": -0.1041976809501648,
+            "height_error_m": 0.024407505989074707,
+            "dimension_abs_mean_m": 0.197762131690979
+          },
+          "nearest_raw_distance_m": 0.10655345767736435,
+          "nearest_raw_correct_class_score": 0.09125074109111779,
+          "best_nearby_correct_class_score": 0.9238816419347429,
+          "best_nearby_argmax_class": "car",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 2,
+          "nearby_above_threshold_count": 1
+        },
+        "B": {
+          "matched": true,
+          "flags": [],
+          "match_metrics": {
+            "score": 0.5188385248184204,
+            "xy_error_m": 1.0602978467941284,
+            "center_z_error_m": -0.1342574954032898,
+            "height_error_m": 0.011403679847717285,
+            "dimension_abs_mean_m": 0.20038504898548126
+          },
+          "nearest_raw_distance_m": 0.9750239253044128,
+          "nearest_raw_correct_class_score": 0.005653589263712355,
+          "best_nearby_correct_class_score": 0.5188385437488258,
+          "best_nearby_argmax_class": "car",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 1,
+          "nearby_above_threshold_count": 1
+        }
+      },
+      "existing_visualization_available": true,
+      "human_confirmed": false,
+      "private_evidence": "/root/gpufree-data/hs-drive-private/m8j8a-cache-closeout/case_details.json"
+    },
+    {
+      "case_id": "C12",
+      "bucket": "common_xy_worse",
+      "frame": 20,
+      "scene": "scene-0103",
+      "class_name": "pedestrian",
+      "models": {
+        "A": {
+          "matched": true,
+          "flags": [],
+          "match_metrics": {
+            "score": 0.26130422949790955,
+            "xy_error_m": 0.78121018409729,
+            "center_z_error_m": -0.41256844997406006,
+            "height_error_m": -0.22737348079681396,
+            "dimension_abs_mean_m": 0.1282813996076584
+          },
+          "nearest_raw_distance_m": 0.78121018409729,
+          "nearest_raw_correct_class_score": 0.2613042328532214,
+          "best_nearby_correct_class_score": 0.26184349294131665,
+          "best_nearby_argmax_class": "pedestrian",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 2,
+          "nearby_above_threshold_count": 2
+        },
+        "B": {
+          "matched": true,
+          "flags": [],
+          "match_metrics": {
+            "score": 0.23428206145763397,
+            "xy_error_m": 1.8357536792755127,
+            "center_z_error_m": -0.47474968433380127,
+            "height_error_m": -0.19553661346435547,
+            "dimension_abs_mean_m": 0.10191520303487778
+          },
+          "nearest_raw_distance_m": 1.5410466194152832,
+          "nearest_raw_correct_class_score": 0.15283888952792413,
+          "best_nearby_correct_class_score": 0.234282074065125,
+          "best_nearby_argmax_class": "pedestrian",
+          "strong_nearby_top300_exclusion_count": 0,
+          "nearby_decoded_count": 2,
+          "nearby_above_threshold_count": 1
+        }
+      },
+      "existing_visualization_available": true,
+      "human_confirmed": false,
+      "private_evidence": "/root/gpufree-data/hs-drive-private/m8j8a-cache-closeout/case_details.json"
+    }
+  ]
+}
