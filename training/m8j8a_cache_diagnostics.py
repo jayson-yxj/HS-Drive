@@ -117,7 +117,7 @@ def evidence(record, gt_index, matching):
         and np.linalg.norm(record['boxes'][i,:2]-g[:2])<2.
         and prediction_mask(record['boxes'][i:i+1],record['scores'][i:i+1],0.)[0]]
     above=[i for i in nearby_decoded if record['scores'][i]>=.2]
-    by_gt={gi:pi for pi,gi in matching['pairs']};by_pred={pi:gi for pi,gi in matching['pairs']}
+    by_gt={gi:pi for pi,gi in matching['pairs']};by_pred={int(pi):int(gi) for pi,gi in matching['pairs']}
     pi=by_gt.get(j)
     raw_flat=np.arange(len(raw))*probs.shape[1]+ci
     kept=np.isin(raw_flat,record['flat_indices'])
