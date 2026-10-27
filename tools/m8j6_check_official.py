@@ -20,6 +20,7 @@ def main():
     env.update(PYTHONPATH=os.pathsep.join(map(str, [repo, rt / 'sources/PETR', rt / 'sources/mmdetection3d'])),
                M8J6_RUNTIME=str(rt), PYTHONDONTWRITEBYTECODE='1',
                OMP_NUM_THREADS='2', OPENBLAS_NUM_THREADS='2', CUDA_VISIBLE_DEVICES='')
+    env['M8J6_ALIAS_REPORT']=str(args.output.resolve()/'alias_diagnostic.json')
     command = ['unshare', '--net', str(rt / 'env/bin/python'), '-m', 'pytest', '--noconftest',
                '-q', 'tests/test_m8j6_official_contract.py']
     stamp = datetime.now(timezone.utc).isoformat()
@@ -32,7 +33,8 @@ def main():
             rc = 124
     record = dict(command=command, started_at_utc=stamp, exit_code=rc,
                   elapsed_s=time.monotonic() - start, scope='SyntheticCPU_OfficialFrozenImplementations',
-                  network='Disabled', CUDA_VISIBLE_DEVICES='', model_loaded=False, optimizer_steps=0,
+                  network='Disabled', CUDA_VISIBLE_DEVICES='', pretrained_checkpoint_loaded=False,
+                  model_scope='SyntheticCPUArchitectureConstructionForAliasRegression',optimizer_steps=0,
                   conftest='Disabled: main project conftest uses Python3.10 syntax; frozen PETR uses Python3.8',
                   log_sha256=hashlib.sha256((args.output / 'tests.txt').read_bytes()).hexdigest())
     (args.output / 'execution.json').write_text(json.dumps(record, indent=2))

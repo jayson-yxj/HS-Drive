@@ -1,0 +1,294 @@
+"""Frozen RGB-only FP32 baseline / exactly three isolated head optimizer steps."""
+import copy
+from datetime import datetime, timezone
+import hashlib
+import json
+import os
+from pathlib import Path
+import random
+import sys
+import time
+
+import numpy as np
+import torch
+import mmcv
+import mmdet
+import mmdet3d
+import projects.mmdet3d_plugin
+from mmdet3d.models import build_model
+from mmdet3d.core.bbox import LiDARInstance3DBoxes
+
+from datasets.m8j6_selection import sha256
+from training.m8j6_frozen_state import partition_state, assert_frozen_unchanged
+
+PERCEPTION_ACTIVE = False
+
+
+def input_guard(event, args):
+    if event != 'open' or not isinstance(args[0], (str, bytes)):
+        return
+    path = os.fsdecode(args[0])
+    if '/m8j6-nuscenes-mini/data/' in path:
+        raise PermissionError('RawDatasetUnavailableInGPUProcess')
+    if PERCEPTION_ACTIVE and ('/supervision/' in path or 'manifest.json' in path):
+        raise PermissionError('GTUnavailableDuringPerception')
+
+
+def save(path, value):
+    with Path(path).open('x') as f:
+        json.dump(value, f, indent=2, allow_nan=False)
+
+
+def state_sha(state):
+    h=hashlib.sha256()
+    for n,t in sorted(state.items()):
+        h.update(n.encode()); h.update(t.detach().cpu().contiguous().numpy().tobytes())
+    return h.hexdigest()
+
+
+def finite(x, name):
+    if not torch.isfinite(x).all():
+        raise RuntimeError('Nonfinite:' + name)
+
+
+def build(rt, cfg, archive):
+    conf=mmcv.Config.fromfile(str(rt/'sources/PETR'/cfg['official']['config']))
+    conf.model.img_backbone.pretrained=None
+    model=build_model(conf.model,train_cfg=conf.get('train_cfg'),test_cfg=conf.get('test_cfg'))
+    with np.load(archive,allow_pickle=False) as a:
+        model.load_state_dict({k:torch.from_numpy(a[k].copy()) for k in a.files},strict=True)
+    model.float().cuda().eval()
+    model.use_grid_mask=False
+    for n,p in model.named_parameters():
+        p.requires_grad_(p.requires_grad and n.startswith('pts_bbox_head.'))
+    assert all(not getattr(m,'fp16_enabled',False) for m in model.modules())
+    assert all(p.dtype==torch.float32 for p in model.parameters())
+    assert model.pts_bbox_head.num_classes==10 and model.pts_bbox_head.num_query==900
+    return model
+
+
+def load_frame(prepared, frame):
+    i=frame['index']; ip=prepared/'rgb_input'/f'{i:02}.npz'; sp=prepared/'supervision'/f'{i:02}.npz'
+    assert sha256(ip)==frame['input_sha256'] and sha256(sp)==frame['supervision_sha256']
+    with np.load(ip,allow_pickle=False) as a:
+        assert set(a.files)=={'images','lidar2img','camera_timestamp_us'}
+        img=torch.from_numpy(a['images'].copy()).cuda()
+        meta=dict(lidar2img=a['lidar2img'].copy(),img_timestamp=(a['camera_timestamp_us']/1e6).tolist(),
+            img_shape=[(512,1408,3)]*6,pad_shape=[(512,1408,3)]*6,ori_shape=[(900,1600,3)]*6,
+            box_type_3d=LiDARInstance3DBoxes,scale_factor=1.,flip=False)
+    with np.load(sp,allow_pickle=False) as a:
+        boxes=LiDARInstance3DBoxes(torch.from_numpy(a['boxes'].copy()).cuda(),box_dim=9)
+        labels=torch.from_numpy(a['labels'].copy()).long().cuda()
+    assert img.shape==(1,6,3,512,1408) and img.dtype==torch.float32
+    finite(img,'input');finite(boxes.tensor,'gt_boxes')
+    assert len(labels)>0 and (labels>=0).all() and (labels<10).all()
+    return img,[meta],boxes,labels
+
+
+def forward(model,img,meta):
+    global PERCEPTION_ACTIVE
+    # Perception is called before handing any labels to head.loss.
+    assert set(meta[0]) <= {'lidar2img','img_timestamp','img_shape','pad_shape','ori_shape','box_type_3d','scale_factor','flip'}
+    PERCEPTION_ACTIVE=True
+    try:
+        with torch.autocast('cuda',enabled=False):
+            with torch.no_grad():
+                features=model.extract_feat(img,meta)
+            assert all(x.dtype==torch.float32 for x in features)
+            raw=model.pts_bbox_head(features,meta)
+    finally:
+        PERCEPTION_ACTIVE=False
+    for k in ('all_cls_scores','all_bbox_preds'):
+        assert raw[k].dtype==torch.float32 and raw[k].shape==(6,1,900,10)
+        finite(raw[k],k)
+    return raw
+
+
+def layer_stats(head, raw, boxes, labels):
+    gt=torch.cat([boxes.gravity_center,boxes.tensor[:,3:]],dim=1)
+    result=[]
+    with torch.no_grad():
+        for layer in range(6):
+            c=raw['all_cls_scores'][layer,0]; b=raw['all_bbox_preds'][layer,0]
+            y,w,bt,bw,pos,neg=head._get_target_single(c,b,labels,gt,None)
+            P,N=len(pos),len(neg);assert P>0 and N>0 and P+N==900
+            factor=max(P+N*head.bg_cls_weight,1)
+            pw=torch.zeros_like(w);nw=torch.zeros_like(w);pw[pos]=w[pos];nw[neg]=w[neg]
+            lc,lb=head.loss_single(c[None],b[None],[gt],[labels],None)
+            cp=head.loss_cls(c,y,pw,avg_factor=factor);cn=head.loss_cls(c,y,nw,avg_factor=factor)
+            assert torch.allclose(cp+cn,lc,atol=1e-6,rtol=1e-5)
+            result.append(dict(decoder_layer=layer,P=P,I=0,N=N,classification_weight_sum=float(w.sum()),
+                classification_positive=float(cp),classification_negative=float(cn),classification_loss=float(lc),
+                regression_loss=float(lb),classification_normalizer=float(factor),regression_normalizer=max(P,1),
+                effective_query_fraction=1.,positive_indices=pos.cpu().tolist(),negative_indices=neg.cpu().tolist()))
+    return result
+
+
+def gradient_stats(model,raw,stats):
+    for p in model.parameters():
+        if p.grad is not None:finite(p.grad,'parameter_gradient')
+    out=[]
+    for s in stats:
+        i=s['decoder_layer'];cg=raw['all_cls_scores'].grad[i,0];bg=raw['all_bbox_preds'].grad[i,0]
+        finite(cg,'logit_gradient');finite(bg,'box_gradient')
+        p=s['positive_indices'];n=s['negative_indices']
+        assert cg[p].norm()>0 and cg[n].norm()>0 and bg[p].norm()>0 and (bg[n]==0).all()
+        out.append(dict(decoder_layer=i,positive_class_gradient_norm=float(cg[p].norm()),
+            negative_class_gradient_norm=float(cg[n].norm()),positive_box_gradient_norm=float(bg[p].norm()),
+            negative_box_gradient_max=float(bg[n].abs().max())))
+    groups={}
+    for prefix in ['pts_bbox_head.cls_branches','pts_bbox_head.reg_branches','pts_bbox_head.transformer']:
+        ps=[p.grad for n,p in model.named_parameters() if n.startswith(prefix) and p.grad is not None]
+        groups[prefix]=float(torch.stack([g.square().sum() for g in ps]).sum().sqrt())
+        assert groups[prefix]>0
+    return dict(direct_output_gradients=out,parameter_group_norms=groups,all_finite=True)
+
+
+def main():
+    global PERCEPTION_ACTIVE
+    root=Path(os.environ['M8J6_ROOT']);rt=Path(os.environ['M8J6_RUNTIME']);rep=Path(os.environ['M8J6_REPORT'])
+    phase=os.environ['M8J6_PHASE'];prepared=root/'prepared';cfg=json.loads(Path('configs/m8j6_protocol.json').read_text())
+    manifest=json.loads((prepared/'manifest.json').read_text());frames=manifest['frames']
+    sys.addaudithook(input_guard)
+    rejected=0
+    PERCEPTION_ACTIVE=True
+    for canary in [root/'data/samples/LIDAR_TOP/forbidden.bin',prepared/'supervision/00.npz']:
+        try:canary.read_bytes()
+        except PermissionError:rejected+=1
+    PERCEPTION_ACTIVE=False
+    assert rejected==2
+    review=json.loads((prepared/'visual_review.json').read_text())
+    assert review['unresolved_specific_supervision_anomalies']==[] and review['viewed_frame_indices']==list(range(8))
+    assert manifest['protocol_sha256']==sha256('configs/m8j6_protocol.json')
+    if phase=='smoke':
+        baseline=json.loads(Path('reports/m8j6_sources/actual_baseline/result.json').read_text())
+        assert baseline['status']=='FrozenFP32BaselineAndGradientsPassed' and len(baseline['frames'])==8
+    out=root/phase;out.mkdir(exist_ok=False)
+    seed=cfg['smoke']['seed'];random.seed(seed);np.random.seed(seed);torch.manual_seed(seed);torch.cuda.manual_seed_all(seed)
+    torch.set_num_threads(2);torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cudnn.allow_tf32=False
+    torch.backends.cudnn.benchmark=False;torch.backends.cudnn.deterministic=True;torch.use_deterministic_algorithms(False)
+    limit=22*1024**3;torch.cuda.set_per_process_memory_fraction(limit/torch.cuda.get_device_properties(0).total_memory)
+    archive=rt/'artifacts/safe_extract/model_tensors.npz'
+    assert sha256(archive)==cfg['official']['safe_tensor_archive_sha256']
+    report=dict(phase=phase,started_at_utc=datetime.now(timezone.utc).isoformat(),status='Running',optimizer_steps=0,
+        frames=[],GPU=torch.cuda.get_device_name(),torch=torch.__version__,CUDA=torch.version.cuda,
+        mmcv=mmcv.__version__,mmdet=mmdet.__version__,mmdet3d=mmdet3d.__version__,dtype='FP32',
+        GradScaler='NotUsed',autocast=False,TF32=False,seed=seed,gridmask=False,
+        raw_GT_input_to_perception=False,point_cloud_payload_reads=0,input_guard_canaries_rejected=rejected,
+        isolation_scope='PythonFileAccessGuardAndSeparateNumericBundles_NotHostileNativeSandbox',RGB_bundle_fields=manifest['model_input_fields'],
+        protocol_sha256=sha256('configs/m8j6_protocol.json'),source_checkpoint_sha256=cfg['official']['weights_sha256'])
+    start=time.perf_counter()
+    original_nan_to_num=torch.nan_to_num
+    def checked_nan_to_num(x,*args,**kwargs):
+        finite(x,'BeforeOfficialNanToNum');return original_nan_to_num(x,*args,**kwargs)
+    torch.nan_to_num=checked_nan_to_num
+    try:
+        model=build(rt,cfg,archive);head=model.pts_bbox_head
+        original={n:v.detach().cpu().clone() for n,v in model.state_dict().items()}
+        train_names={n for n,p in model.named_parameters() if p.requires_grad}
+        train_aliases,frozen_names=partition_state(model)
+        report.update(trainable_parameters=sum(p.numel() for p in model.parameters() if p.requires_grad),
+                      frozen_parameters=sum(p.numel() for p in model.parameters() if not p.requires_grad),
+                      trainable_parameter_names=sorted(train_names),initial_state_sha256=state_sha(original),
+                      trainable_state_alias_names=sorted(train_aliases),frozen_state_names=sorted(frozen_names))
+        save(out/'trainable_parameters.json',[dict(name=n,shape=list(p.shape),numel=p.numel()) for n,p in model.named_parameters() if p.requires_grad])
+        optimizer=None
+        order=list(range(8)) if phase=='baseline' else cfg['smoke']['sample_manifest_indices']
+        if phase=='smoke':
+            model.pts_bbox_head.train();model.img_backbone.eval()
+            if model.with_img_neck:model.img_neck.eval()
+            optimizer=torch.optim.AdamW([p for p in model.parameters() if p.requires_grad],lr=1e-5,betas=(.9,.999),weight_decay=0.)
+        for step,index in enumerate(order):
+            model.zero_grad(set_to_none=True);torch.cuda.reset_peak_memory_stats();t=time.perf_counter()
+            img,meta,boxes,labels=load_frame(prepared,frames[index]);raw=forward(model,img,meta)
+            for key in ('all_cls_scores','all_bbox_preds'):raw[key].retain_grad()
+            with torch.autocast('cuda',enabled=False):loss=head.loss([boxes],[labels],raw)
+            for k,v in loss.items():finite(v,'loss_'+k)
+            stats=layer_stats(head,raw,boxes,labels)
+            total=sum(loss.values());total.backward();torch.cuda.synchronize()
+            gs=gradient_stats(model,raw,stats)
+            # Persist successful backward evidence before any optimizer or
+            # post-update assertion can fail. The first attempt lacked this.
+            save(rep/f'pre_step_{step:02}.json',dict(index=index,sample_token=frames[index]['sample_token'],
+                losses={k:float(v.detach()) for k,v in loss.items()},gradients=gs,
+                peak_allocated_bytes=torch.cuda.max_memory_allocated(),
+                layers=[{k:v for k,v in s.items() if k not in ('positive_indices','negative_indices')} for s in stats]))
+            assert torch.cuda.max_memory_allocated()<=limit
+            assert all(p.grad is None for n,p in model.named_parameters() if n not in train_names)
+            changed=[];delta_norm=0.
+            if optimizer:
+                before={n:p.detach().cpu().clone() for n,p in model.named_parameters() if p.requires_grad}
+                norm=torch.nn.utils.clip_grad_norm_([p for p in model.parameters() if p.requires_grad],35.)
+                finite(norm,'clip_norm');optimizer.step();report['optimizer_steps']+=1
+                for n,p in model.named_parameters():
+                    finite(p,'post_step_parameter')
+                    if n in train_names:
+                        d=p.detach().cpu()-before[n]
+                        if torch.count_nonzero(d):changed.append(n);delta_norm+=float(d.square().sum())
+                assert any(n.startswith('pts_bbox_head.cls_branches') for n in changed)
+                assert any(n.startswith('pts_bbox_head.reg_branches') for n in changed)
+                assert_frozen_unchanged(model,original,frozen_names)
+            record=dict(index=index,sample_token=frames[index]['sample_token'],scene=frames[index]['scene_name'],
+                loop_index=step,losses={k:float(v.detach()) for k,v in loss.items()},total_loss=float(total.detach()),
+                layers=[{k:v for k,v in s.items() if k not in ('positive_indices','negative_indices')} for s in stats],
+                gradients=gs,changed_parameters=changed,parameter_delta_l2=delta_norm**.5,
+                elapsed_forward_loss_backward_step_s=time.perf_counter()-t,
+                peak_allocated_bytes=torch.cuda.max_memory_allocated(),peak_reserved_bytes=torch.cuda.max_memory_reserved(),
+                feature_and_head_dtype='float32',backbone_mode='eval',head_mode='train' if optimizer else 'eval')
+            report['frames'].append(record);save(rep/f'frame_{step:02}.json',record)
+            print(phase,step,index,float(total.detach()),record['peak_allocated_bytes'],flush=True)
+            del raw,loss,total,img,meta,boxes,labels
+        if phase=='baseline':
+            assert all(torch.equal(v.detach().cpu(),original[n]) for n,v in model.state_dict().items())
+            report.update(status='FrozenFP32BaselineAndGradientsPassed',state_unchanged=True,optimizer_steps=0)
+        else:
+            assert report['optimizer_steps']==3
+            model.eval();model.zero_grad(set_to_none=True)
+            img,meta,_,_=load_frame(prepared,frames[0])
+            with torch.no_grad():reference={k:v.detach().cpu() for k,v in forward(model,img,meta).items() if isinstance(v,torch.Tensor)}
+            checkpoint=out/'head_smoke_step3.pth'
+            torch.save(dict(state_dict=model.state_dict(),optimizer=optimizer.state_dict(),optimizer_steps=3,
+                torch_rng=torch.get_rng_state(),cuda_rng=torch.cuda.get_rng_state_all(),numpy_rng=np.random.get_state(),
+                python_rng=random.getstate(),protocol=cfg,manifest_sha256=sha256(prepared/'manifest.json')),checkpoint)
+            optstate=optimizer.state_dict()
+            steps=sorted({int(v['step']) for v in optstate['state'].values()})
+            assert steps==[3] and any(float(v['exp_avg'].abs().sum())>0 for v in optstate['state'].values())
+            report['optimizer_state']=dict(entries=len(optstate['state']),steps=steps,nonzero_first_moment=True)
+            final_sha=state_sha(model.state_dict());del model,head,optimizer,img,meta;torch.cuda.empty_cache()
+            restored=build(rt,cfg,archive)
+            saved=torch.load(checkpoint,map_location='cpu') # Own isolated experiment checkpoint only.
+            restored.load_state_dict(saved['state_dict'],strict=True);restored.eval()
+            assert state_sha(restored.state_dict())==final_sha
+            restored_opt=torch.optim.AdamW([p for p in restored.parameters() if p.requires_grad],lr=1e-5,weight_decay=0.)
+            restored_opt.load_state_dict(saved['optimizer'])
+            for key,a in optstate['state'].items():
+                b=restored_opt.state_dict()['state'][key]
+                for n,v in a.items():
+                    if isinstance(v,torch.Tensor):assert torch.equal(v.cpu(),b[n].cpu())
+            img,meta,_,_=load_frame(prepared,frames[0])
+            with torch.no_grad():after=forward(restored,img,meta)
+            errors={k:float((after[k].cpu()-v).abs().max()) for k,v in reference.items()}
+            assert all(torch.allclose(after[k].cpu(),v,atol=1e-6,rtol=1e-5) for k,v in reference.items())
+            frozen_count=len(frozen_names)
+            report.update(status='ThreeStepFP32SmokePassed_NotConvergence',checkpoint_sha256=sha256(checkpoint),
+                final_state_sha256=final_sha,frozen_parameters_and_buffers_exact=True,frozen_state_tensors=frozen_count,
+                checkpoint_reload_max_abs_error=errors,reload_atol=1e-6,reload_rtol=1e-5,optimizer_restore_exact=True)
+        assert sha256(archive)==cfg['official']['safe_tensor_archive_sha256']
+    except Exception as exc:
+        report.update(status='Failed_Stopped_NoFallback',error_type=type(exc).__name__,error=str(exc))
+        if phase=='smoke' and 'model' in locals():
+            # Private failure evidence only; never automatically resume it.
+            failure=out/'failure_state.pth'
+            torch.save(dict(state_dict=model.state_dict(),optimizer_steps=report['optimizer_steps'],
+                optimizer=optimizer.state_dict() if optimizer else None),failure)
+            report['failure_checkpoint_sha256']=sha256(failure)
+        raise
+    finally:
+        torch.nan_to_num=original_nan_to_num
+        report['elapsed_s']=time.perf_counter()-start
+        report['finished_at_utc']=datetime.now(timezone.utc).isoformat()
+        save(rep/'result.json',report)
+
+
+if __name__=='__main__':
+    main()

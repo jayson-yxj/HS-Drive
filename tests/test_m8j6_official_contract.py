@@ -164,3 +164,74 @@ def test_converter_old_second_yaw_and_extent_match_nuscenes_corners(yaw):
     distances = np.linalg.norm(points[:, None] - source[None], axis=-1)
     assert distances.min(axis=0).max() < 2e-6
     assert distances.min(axis=1).max() < 2e-6
+
+
+def test_selected_metadata_view_retains_source_get_indexes():
+    from tools.m8j6_prepare_actual import SelectedMetadataView
+    class Source:
+        sample = ['zero', 'one', 'two', 'three']
+        def get(self, table, index):
+            return getattr(self, table)[index]
+    source = Source()
+    selected = SelectedMetadataView(source, ['three'])
+    assert list(selected.sample) == ['three']
+    assert selected.get('sample', 3) == 'three'
+    assert source.sample == ['zero', 'one', 'two', 'three']
+
+
+def test_gpu_input_guard_blocks_raw_payload_and_active_gt():
+    from tools import m8j6_gpu_actual as gpu
+    gpu.PERCEPTION_ACTIVE = False
+    with pytest.raises(PermissionError):
+        gpu.input_guard('open', ('/private/m8j6-nuscenes-mini/data/samples/LIDAR_TOP/a.bin',))
+    gpu.input_guard('open', ('/private/prepared/supervision/00.npz',))
+    gpu.PERCEPTION_ACTIVE = True
+    try:
+        with pytest.raises(PermissionError):
+            gpu.input_guard('open', ('/private/prepared/supervision/00.npz',))
+        gpu.input_guard('open', ('/environment/torch/implementation.py',))
+    finally:
+        gpu.PERCEPTION_ACTIVE = False
+
+
+def test_shared_parameter_alias_is_not_frozen_but_buffers_are():
+    from training.m8j6_frozen_state import partition_state, assert_frozen_unchanged
+    shared=torch.nn.Linear(2,2)
+    model=torch.nn.Module()
+    model.head=torch.nn.ModuleList([shared,shared])
+    model.backbone=torch.nn.BatchNorm1d(2).eval().requires_grad_(False)
+    before={n:v.clone() for n,v in model.state_dict().items()}
+    aliases,frozen=partition_state(model)
+    assert 'head.1.weight' in aliases and 'head.1.weight' not in frozen
+    assert 'backbone.running_mean' in frozen
+    with torch.no_grad():shared.weight.add_(1.)
+    assert_frozen_unchanged(model,before,frozen)
+    model.backbone.running_mean.add_(1.)
+    with pytest.raises(AssertionError,match='backbone.running_mean'):
+        assert_frozen_unchanged(model,before,frozen)
+
+
+def test_official_petr_shared_branch_identity_cpu_no_optimizer():
+    import mmcv
+    from mmdet3d.models import build_model
+    from training.m8j6_frozen_state import partition_state, assert_frozen_unchanged
+    cfg=mmcv.Config.fromfile(str(Path(RT)/'sources/PETR'/PROTOCOL['official']['config']))
+    cfg.model.img_backbone.pretrained=None
+    model=build_model(cfg.model,train_cfg=cfg.get('train_cfg'),test_cfg=cfg.get('test_cfg')).eval()
+    for n,p in model.named_parameters():p.requires_grad_(p.requires_grad and n.startswith('pts_bbox_head.'))
+    aliases,frozen=partition_state(model)
+    canonical={n for n,p in model.named_parameters() if p.requires_grad}
+    n='pts_bbox_head.cls_branches.1.0.weight'
+    assert n in aliases and n not in canonical and n not in frozen
+    assert model.pts_bbox_head.cls_branches[0][0].weight is model.pts_bbox_head.cls_branches[1][0].weight
+    before={n:v.detach().clone() for n,v in model.state_dict().items()}
+    with torch.no_grad():model.pts_bbox_head.cls_branches[0][0].weight.add_(.01)
+    checked=assert_frozen_unchanged(model,before,frozen)
+    diagnostic=dict(scope='SyntheticCPU_ActualArchitecture_NoDataset_NoCheckpoint_NoOptimizer',
+        cause='named_parameters_deduplicates_shared_objects_state_dict_keeps_aliases',
+        failing_state_name=n,same_parameter_identity_confirmed=True,
+        trainable_canonical_parameters=len(canonical),trainable_state_aliases=len(aliases),
+        false_frozen_aliases=sorted(aliases-canonical),true_frozen_state_tensors=checked,
+        synthetic_mutation_detected_as_trainable=True,real_failed_run_state_recovered=False)
+    path=os.environ.get('M8J6_ALIAS_REPORT')
+    if path:Path(path).write_text(json.dumps(diagnostic,indent=2))

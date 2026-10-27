@@ -1,0 +1,20 @@
+[W interface.cpp:47] Warning: Loading nvfuser library failed with: Error in dlopen: libnvfuser_codegen.so: cannot open shared object file: No such file or directory (function LoadingNvfuserLibrary)
+No CUDA runtime is found, using CUDA_HOME='/usr/local/cuda'
+/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.8.20-linux-x86_64-gnu/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/root/.local/share/uv/python/cpython-3.8.20-linux-x86_64-gnu/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8j6_render_actual_gt.py", line 41, in <module>
+    if __name__=='__main__':main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8j6_render_actual_gt.py", line 30, in main
+    draw_box(image,box.corners().T,projections[ci],(255,220,0))
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8j6_prepare_actual.py", line 61, in draw_box
+    cv2.line(image, u, v, color, 2, cv2.LINE_AA); visible = True
+cv2.error: OpenCV(4.5.5) :-1: error: (-5:Bad argument) in function 'line'
+> Overload resolution failed:
+>  - Layout of the output array img is incompatible with cv::Mat
+>  - Expected Ptr<cv::UMat> for argument 'img'
+

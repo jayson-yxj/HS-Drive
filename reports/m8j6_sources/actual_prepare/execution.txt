@@ -1,0 +1,21 @@
+[                                                  ] 0/8, elapsed: 0s, ETA:[>>>>                               ] 1/8, 8.6 task/s, elapsed: 0s, ETA:     1s[>>>>>>>>                           ] 2/8, 8.0 task/s, elapsed: 0s, ETA:     1s[>>>>>>>>>>>>>                      ] 3/8, 7.7 task/s, elapsed: 0s, ETA:     1s[>>>>>>>>>>>>>>>>>                  ] 4/8, 7.3 task/s, elapsed: 1s, ETA:     1sNo CUDA runtime is found, using CUDA_HOME='/usr/local/cuda'
+/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.8.20-linux-x86_64-gnu/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/root/.local/share/uv/python/cpython-3.8.20-linux-x86_64-gnu/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8j6_prepare_actual.py", line 191, in <module>
+    main()
+  File "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8j6_prepare_actual.py", line 69, in main
+    train, val = conv._fill_trainval_infos(subset, {s['scene_token'] for s in selected}, set(), False, max_sweeps=0)
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/tools/data_converter/nuscenes_converter.py", line 172, in _fill_trainval_infos
+    lidar_path, boxes, _ = nusc.get_sample_data(lidar_token)
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/nuscenes/nuscenes.py", line 283, in get_sample_data
+    boxes = self.get_boxes(sample_data_token)
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/nuscenes/nuscenes.py", line 330, in get_boxes
+    curr_sample_record = self.get('sample', sd_record['sample_token'])
+  File "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/nuscenes/nuscenes.py", line 216, in get
+    return getattr(self, table_name)[self.getind(table_name, token)]
+IndexError: list index out of range

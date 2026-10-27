@@ -1,0 +1,22 @@
+{
+  "status": "StoppedAfterOneStep_KnownHarnessBug",
+  "checked_at_utc": "2026-10-27T12:12:37.727070+00:00",
+  "actual_optimizer_steps": 1,
+  "required_steps": 3,
+  "remaining_steps_run": 0,
+  "original_failure": "m8j6_sources/actual_smoke/result.json",
+  "cause": "named_parameters_deduplicates_shared_objects_state_dict_keeps_aliases",
+  "failing_key": "pts_bbox_head.cls_branches.1.0.weight",
+  "shared_alias_evidence": "m8j6_sources/alias_regression/alias_diagnostic.json",
+  "correction": "Partition state by Parameter identity, preserving all buffer checks",
+  "synthetic_alias_regression": "Passed",
+  "real_corrected_run": "NotRun",
+  "before_step_runtime_assertions": "ReachedAndPassed_FiniteClsRegAndParameterGradients_PositiveNegativePresent",
+  "real_step_gradient_values": "NotPersistedBeforeFailure_CannotRecover",
+  "failed_experiment_checkpoint": "NotSaved_InMemoryStateLost",
+  "frozen_backbone_state": "CheckedBeforeHeadAliasFailureInSequentialStateLoop_NotIndependentlyArchived",
+  "full_frozen_state_certification": "Incomplete_DoNotInferFromSyntheticRepair",
+  "correction_also_saves_pre_step_diagnostics_and_failure_checkpoint": true,
+  "next_action": "SeparatelyConfirmFreshThreeStepRetry; failed state cannot resume two remaining steps",
+  "original_weight_unchanged": "VerifiedByFinalHash"
+}
