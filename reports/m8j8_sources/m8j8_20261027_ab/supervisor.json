@@ -1,0 +1,62 @@
+{
+  "run_id": "m8j8_20261027_ab",
+  "code_commit": "38fd0dfb248801df038292293dcdca0b61bd0d06",
+  "started_at_utc": "2026-10-27T14:05:06.625077+00:00",
+  "phases": [
+    {
+      "phase": "prepare",
+      "PID": 535859,
+      "exit_code": 0,
+      "elapsed_s": 68.32203442975879,
+      "command": [
+        "unshare",
+        "--net",
+        "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/bin/python",
+        "-m",
+        "tools.m8j8_prepare"
+      ],
+      "log_sha256": "04c55c2f81205e2cd2e26f7c8f5d979b5242eadf292d54b834dfdf20e4269493"
+    },
+    {
+      "phase": "A",
+      "PID": 539780,
+      "exit_code": 0,
+      "elapsed_s": 82.89821719191968,
+      "command": [
+        "unshare",
+        "--net",
+        "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/bin/python",
+        "-m",
+        "tools.m8j8_gpu"
+      ],
+      "log_sha256": "c174162261f2b7b9c9e9cb73df5ad2d902668add362990c06200fcc09ae1f220"
+    },
+    {
+      "phase": "B",
+      "PID": 544664,
+      "exit_code": 0,
+      "elapsed_s": 82.52354064397514,
+      "command": [
+        "unshare",
+        "--net",
+        "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/bin/python",
+        "-m",
+        "tools.m8j8_gpu"
+      ],
+      "log_sha256": "12a0eda6805a396311c1da019e1544c15996d6330c7b0415941f969982e0fb56"
+    }
+  ],
+  "optimizer_steps": 0,
+  "no_network": true,
+  "automatic_retry": false,
+  "source_sha256": {
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8j8_gpu.py": "f1a697b70b1a79806ad91459198e050120fa6d19747744c9adc6a2eb46df206d",
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8j8_run.py": "2782caf4e52c496799dcfed4a258cc1581506a65e520a903197871cdf030094f",
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tools/m8j8_prepare.py": "3d7df8b384e472a87d613c973d42c06eea2f089b7e4dec701a12693dd543af84",
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/training/m8j8_diagnostics.py": "8ca64b3a61ae6abd8f2dd21138c09d08b83f9de62d1952b67b1870bd0f943104",
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/configs/m8j8_protocol.json": "1edf72ce0149d3016ffc7348a14f80303159844e9f08a8a6ccd03b595a2bc715",
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/tests/test_m8j8_diagnostics.py": "e3d0ba5b1e3ddb11ef9d425e6d994c1ff036e3c1fbcf06ddd8be0d9c813ad354"
+  },
+  "status": "ReadOnlyABCompleted",
+  "finished_at_utc": "2026-10-27T14:09:00.373735+00:00"
+}

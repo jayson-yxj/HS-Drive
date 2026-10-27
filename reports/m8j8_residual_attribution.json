@@ -1,0 +1,86 @@
+{
+  "height_observations": 3,
+  "height_unique_physical_instances": 1,
+  "height_values": [
+    {
+      "frame": 2,
+      "delta_z": -1.2019004821777344,
+      "delta_h": 0.22460198402404785,
+      "xy_error": 0.3892919421195984
+    },
+    {
+      "frame": 1,
+      "delta_z": -1.0802378058433533,
+      "delta_h": 0.3761972188949585,
+      "xy_error": 0.15960754454135895
+    },
+    {
+      "frame": 3,
+      "delta_z": -1.0088750720024109,
+      "delta_h": 0.30234503746032715,
+      "xy_error": 0.04933919385075569
+    }
+  ],
+  "height_source": "ThreeConsecutiveObservationsOfSameAnnotatedPerson",
+  "unique_case_annotation_records": 7,
+  "unique_case_instances": 5,
+  "missed": 4,
+  "miss_reasons": {
+    "OneToOneAssociationCompetition": 1,
+    "DecodedWithin2mBelowFixedScore": 1,
+    "NoRawQueryCenterWithin2m_LocalizationLimitation": 2
+  },
+  "miss_summary": [
+    {
+      "frame": 0,
+      "class_name": "barrier",
+      "reason": "OneToOneAssociationCompetition",
+      "nearest_raw_xy_distance": 0.6247423887252808,
+      "nearest_raw_GT_class_score": 0.17936380207538605,
+      "nearest_raw_argmax_class": "barrier"
+    },
+    {
+      "frame": 2,
+      "class_name": "car",
+      "reason": "DecodedWithin2mBelowFixedScore",
+      "nearest_raw_xy_distance": 0.55451500415802,
+      "nearest_raw_GT_class_score": 0.14338496327400208,
+      "nearest_raw_argmax_class": "car"
+    },
+    {
+      "frame": 2,
+      "class_name": "pedestrian",
+      "reason": "NoRawQueryCenterWithin2m_LocalizationLimitation",
+      "nearest_raw_xy_distance": 2.5571489334106445,
+      "nearest_raw_GT_class_score": 0.012823405675590038,
+      "nearest_raw_argmax_class": "barrier"
+    },
+    {
+      "frame": 3,
+      "class_name": "car",
+      "reason": "NoRawQueryCenterWithin2m_LocalizationLimitation",
+      "nearest_raw_xy_distance": 2.0051984786987305,
+      "nearest_raw_GT_class_score": 0.4550281763076782,
+      "nearest_raw_argmax_class": "car"
+    }
+  ],
+  "duplicate_predictions": 56,
+  "duplicate_groups": 55,
+  "duplicate_target_instances": 41,
+  "duplicate_by_class": {
+    "barrier": 17,
+    "traffic_cone": 3,
+    "pedestrian": 27,
+    "car": 7,
+    "truck": 2
+  },
+  "same_class_duplicate_same_query": 0,
+  "ambiguous_duplicate_predictions": 20,
+  "multi_class_same_query_groups": 10,
+  "query_identity": "OnlyWithinForward_NotStableObjectIdentity",
+  "private_audit_sha256": "d3e63228a4e50cf5afa823fe7a90e9cf96ece7b9fabf1fdc7390caf7b776424d",
+  "cause": "ZOutputErrorsWithConsistentConversion;DetectionAndAssignmentResiduals",
+  "historical_J7_predictions_match": true,
+  "GT_or_metric_change_applied": false,
+  "full_numeric_chain_private_path": "/root/gpufree-data/hs-drive-private/m8j8_20261027_ab/residual_object_audit.json"
+}

@@ -1,0 +1,78 @@
+{
+  "stage": "M8-J8",
+  "base_commit": "f50aead",
+  "execution_commit": "38fd0dfb248801df038292293dcdca0b61bd0d06",
+  "run_id": "m8j8_20261027_ab",
+  "completed_at_utc": "2026-10-27T14:44:14.595378+00:00",
+  "statuses": {
+    "readonly_execution": "Passed_81MiniValPlus8ResidualFramesPerModel",
+    "fixed_protocol_and_split": "PassedWithinDocumentedScope",
+    "residual_attribution": "SupportedWithinScope_NotFullCausalModelAttribution",
+    "eight_frame_learning": "PreviousM8J7Supported_Preserved",
+    "independent_transfer": "TransferBenefitNotSupported_MixedPrecisionRecallAndGeometricRegression",
+    "reference_checkpoint": "A_OriginalBaseline",
+    "official_nuScenes_metrics": "NotRun",
+    "AMP": "HistoricalNotPassed_Unchanged",
+    "OCC_and_visual_driving": "SafetyNotValidated"
+  },
+  "execution": {
+    "optimizer_steps": 0,
+    "backward_calls": 0,
+    "model_forward_frames": 178,
+    "parameter_changes": 0,
+    "buffer_changes": 0,
+    "precision": "FP32",
+    "CARLA_started": false,
+    "new_data_downloaded": false
+  },
+  "evaluation": {
+    "scenes": 2,
+    "keyframes": 81,
+    "raw_annotation_records": 4514,
+    "retained_GT_records": 3559,
+    "unique_retained_instances": 213,
+    "training_scene_and_sample_overlap": 0,
+    "pretraining_exclusion": "SupportedByCheckpointConfig_NotIndependentCompleteHistory",
+    "dataset_role": "DevelopmentComparison_NotSealedFinal",
+    "prediction_selection": "FixedScore0.2_NormalTop300_NoNMS_NoGTSelection",
+    "metrics": "ProjectDiagnostics_NotOfficialMAP_NDS_MATE"
+  },
+  "tests": {
+    "pre_forward": 19,
+    "final": 22,
+    "final_failures": 0,
+    "initial_reporting_collection_failure": "MainConftestRequiresPython39_SeparatePython38PETRTestsRunWithNoConftest",
+    "aggregation_failure": "NumpyInt64JSONSerialization_RepairedOffline_OriginalPartialRetained",
+    "actual_residual_official_decode_checks": 3
+  },
+  "residual": {
+    "height_observations": 3,
+    "height_unique_instances": 1,
+    "missed_records": 4,
+    "duplicate_predictions": 56,
+    "union_unique_instances": 45,
+    "systematic_conversion_error_found": false,
+    "GT_changes": 0
+  },
+  "decisions": {
+    "training_extended": false,
+    "reference_B_retained": true,
+    "next_experiment": "ProposedOnly_ReadOnlyAOnlyBOnlyScoreClassGeometryDecomposition_Max12DistinctInstances_ExistingCaches",
+    "formal_training_or_safety_gate_upgraded": false
+  },
+  "disclosure": {
+    "private_images_published": false,
+    "per_object_labels_or_predictions_published": false,
+    "weights_published": false,
+    "main_merged": false
+  },
+  "evidence": [
+    "reports/m8j8_summary.md",
+    "reports/m8j8_ab_statistics.json",
+    "reports/m8j8_per_frame.json",
+    "reports/m8j8_residual_attribution.json",
+    "reports/m8j8_diagnostic_supplement.json",
+    "reports/m8j8_preservation.json",
+    "reports/m8j8_sources/m8j8_20261027_ab/supervisor.json"
+  ]
+}

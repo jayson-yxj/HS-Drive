@@ -35,3 +35,35 @@ J7缓存缺少query provenance和decoder前输出，因此对旧八帧补A/B固�
 ```
 
 顺序为prepare（CPU）、A、B。各进程禁网，1200秒上限；目录存在拒绝覆盖，异常立即停止保留记录，不自动重试。训练与更新次数固定0。私有输出在/root/gpufree-data/hs-drive-private/m8j8_20261027_ab；公开仅聚合指标、manifest标识、源码和SHA，不含逐对象GT/预测、原图或权重。
+
+实际运行已经完成；不要在同一目录重复执行runner。离线聚合和补充命令如下，只读取缓存，无模型前向或参数更新：
+
+```bash
+M8J8_RT=/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime
+env PYTHONDONTWRITEBYTECODE=1 CUDA_VISIBLE_DEVICES='' \
+  PYTHONPATH="$PWD:$M8J8_RT/sources/PETR:$M8J8_RT/sources/mmdetection3d" \
+  "$M8J8_RT/env/bin/python" -m tools.m8j8_report
+env PYTHONDONTWRITEBYTECODE=1 CUDA_VISIBLE_DEVICES='' \
+  PYTHONPATH="$PWD:$M8J8_RT/sources/PETR:$M8J8_RT/sources/mmdetection3d" \
+  "$M8J8_RT/env/bin/python" -m tools.m8j8_finalize
+```
+
+聚合输出采用exclusive-create，已有结果拒绝覆盖。复现需要独立checkout/输出副本，并先将run_id和私有路径改为新的目的地、记录配置差异；不删除既有证据。聚合第一次只发生NumPy标量序列化错误，失败片段与SHA保留；修复只转换JSON scalar。完整数值链保留私有，公开报告仅含误差；不会改变指标或匹配。
+
+合成及报告回归（无需私有数据/模型，官方依赖需已安装）：
+
+```bash
+M8J8_RT=/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime
+env PYTHONDONTWRITEBYTECODE=1 CUDA_VISIBLE_DEVICES='' \
+  PYTHONPATH="$PWD:$M8J8_RT/sources/PETR:$M8J8_RT/sources/mmdetection3d" \
+  "$M8J8_RT/env/bin/python" -m pytest --noconftest -q \
+  tests/test_m8j7_metrics.py tests/test_m8j8_diagnostics.py tests/test_m8j8_reporting.py
+```
+
+`--noconftest`只隔离主项目Python≥3.9的通用CARLA/dataset fixture；三个测试文件均自含数据，官方PETR测试在其冻结Python3.8环境运行。未加此参数的失败收集日志亦保留。推理前19项通过，后处理新增3项后22项通过。
+
+`configs/m8j8_protocol.json.evaluation`原样复用J7，其中旧steps/335GT/TrainingSetDiagnostic文字是八帧残差部分的历史描述，不能当作mini_val清单。独立场景范围以提交于前向前的m8j8_evaluation_manifest、prepare结果和m8j8_ab_statistics的81帧/3559GT为准。未变更预处理/类别/匹配/阈值；本轮不修写执行时协议。
+
+结束后只读核验命令为 `python3 -m tools.m8j8_verify`，同样拒绝覆盖已有preservation报告。已完成52项J7、43项J6 retry、55项J6 actual发布记录SHA校验，原始和全部六个J7 checkpoint不变；178个输入/监督包、534张来源图像及178个结果缓存校验通过。模型前后snapshot及所有实际进程退出见m8j8_preservation.json。
+
+完整私有数值链和原图仅保存在私有目录。发布前将残差公开JSON收窄为误差字段，完整链未丢弃，其SHA与私有可视化索引可追溯。这是隐私发布范围调整，不是改写观测结果。
