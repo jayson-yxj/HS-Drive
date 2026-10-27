@@ -1,0 +1,198 @@
+{
+  "stage": "M8-J10 Equal400StepMultiSceneControl",
+  "base_commit": "eb6124603140bedd042802f20acd4d3be2d31e39",
+  "branch": "feat/m8j10-multiscene-400step-control",
+  "declared_at_utc": "2026-10-27T16:15:09.245616+00:00",
+  "run_id": "m8j10_20261027_multiscene",
+  "runtime": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime",
+  "dataset_root": "/root/gpufree-data/hs-drive-private/m8j6-nuscenes-mini/data",
+  "prepared_root": "/root/gpufree-data/hs-drive-private/m8j10_20261027_multiscene/prepared",
+  "private_root": "/root/gpufree-data/hs-drive-private/m8j10_20261027_multiscene",
+  "manifest": "reports/m8j10_training_manifest.json",
+  "manifest_sha256": "40164da456659b6467e0c24bd8b76b5b1725631ac6fcfd7a2f353f1648eda540",
+  "evaluation_manifest": "reports/m8j8_evaluation_manifest.json",
+  "evaluation_manifest_sha256": "4d4cfffd48bc803da16a7b15738bc42a4e7954f11c1a5f291ee0c3cefa2532fe",
+  "evaluation_prepared": "/root/gpufree-data/hs-drive-private/m8j8_20261027_ab/prepared",
+  "A": {
+    "path": "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/artifacts/safe_extract/model_tensors.npz",
+    "sha256": "cf33dccb1d549c425a89cf346d6f05401c49f6cccbd5a579cb7d8937b5a6d591",
+    "source": "SameOriginalBaselineAsM8J7",
+    "original_pth_sha256": "16d8a4875c36e7d1cba75b357901ff031b18d9d9374f12780b9b72cc621cefad"
+  },
+  "B": {
+    "path": "/root/gpufree-data/hs-drive-private/m8j7_20261027_132740/checkpoint_400.pth",
+    "bytes": 242080844,
+    "sha256": "3351116c5c4d4dd5b75cc2a45a73f21d12ee3f40ef7fac43c836712b06c7ed78",
+    "step": 400,
+    "model_fingerprint": "18753268ec8aad436ddb270bc7125231a93e6f79dcfa2fb5eea40362d92c54af",
+    "optimizer_fingerprint": "bfaf6716278c4d8121ea3f3d424d6d179c1f41644aa99e450e5f750c07c1e2e3",
+    "mapping_fingerprint": "1c29421ab57cdb1997e3299896c683dd9b2a508ed829ac81197d5b4d7d09d58f",
+    "rng_fingerprint": "89fd2d6757e872d74cfcf3abe2d5e3cbfd609d0d9118008a71f3c1f8c48d64a5"
+  },
+  "C": {
+    "initialization": "A_FreshEmptyOptimizer_NeverB",
+    "final_step": 400
+  },
+  "training": {
+    "maximum_optimizer_steps": 400,
+    "order": "FixedManifestSceneRoundRobinSeededShuffle",
+    "seed": 875606,
+    "batch_size": 1,
+    "dtype": "FP32",
+    "AMP": false,
+    "TF32": false,
+    "GradScaler": "NotUsed",
+    "optimizer": "AdamW",
+    "lr": 1e-05,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "weight_decay": 0.0,
+    "gradient_clip_norm": 35.0,
+    "scheduler": null,
+    "trainable": "SameJ6HeadPolicy_141CanonicalParameters",
+    "frozen": "178ParametersAnd159Buffers_Exact",
+    "backbone_neck_mode": "eval",
+    "head_mode": "train",
+    "head_dropout": "Official0.1Unchanged",
+    "image_augmentations": false,
+    "preprocess": "FrozenJ6ResizeCropNormalize_512x1408",
+    "reason": "Preserve successful smoke dynamics; 400 constant-lr steps, no long-schedule warmup/decay or search",
+    "sample_pool_frames": 242,
+    "sample_pool_scenes": 6
+  },
+  "evaluation": {
+    "steps": [
+      0,
+      200,
+      400
+    ],
+    "mode": "eval",
+    "score_threshold": 0.2,
+    "decoder": "Official head.get_bboxes; NMSFree top300 query-class pairs; no GT-dependent prediction selection",
+    "max_num": 300,
+    "decoder_score_threshold": null,
+    "decoder_post_center_range": [
+      -61.2,
+      -61.2,
+      -10.0,
+      61.2,
+      61.2,
+      10.0
+    ],
+    "task_prediction_region": "Strict abs(x)<51.2 and abs(y)<51.2, independent of GT; decoded outside-region predictions reported separately",
+    "gt": "Official3393_Project3559_SeparateDenominators",
+    "matching": "Per-frame same-class descending-score nearest unmatched GT, XY distance strictly less than threshold; stable prediction index tie-break",
+    "distance_m": [
+      2.0,
+      1.0,
+      0.5
+    ],
+    "primary_distance_m": 2.0,
+    "PR_score_thresholds": [
+      0.0,
+      0.05,
+      0.1,
+      0.2,
+      0.3,
+      0.5,
+      0.7,
+      0.9
+    ],
+    "AP": "101-point interpolated class AP at2m on all in-range decoded scores; no nuScenes official mAP claim; no-GT class AP=null and FP still reported",
+    "yaw": "wrapped 2pi for directed classes; barrier pi; traffic_cone NA",
+    "error_scope": "Matched pairs only; jointly report TP/FP/FN and all-candidate burden",
+    "best_checkpoint": "None_Final400Mandatory",
+    "loss_aggregation": "Mean81MiniValFixedEvalLoss_C200C400",
+    "scope": "MiniValDevelopmentComparison_NotGeneralizationCertification",
+    "step0": "ReuseFrozenA_J9Official_J8Project"
+  },
+  "official_output": {
+    "cache": "OriginalNMSFreeTop300QueryClassPairs_AOnly",
+    "decoder_post_center_range": [
+      -61.2,
+      -61.2,
+      -10,
+      61.2,
+      61.2,
+      10
+    ],
+    "project_score_threshold": 0.2,
+    "project_xy": "strict abs(x),abs(y)<51.2",
+    "threshold_rationale": "Preserve M8-J8 formal output; do not switch to all low-score cached boxes to improve official AP. AP is conditional on this preexisting truncation.",
+    "official_exporter": "Inherited CustomNuScenesDataset._format_bbox from frozen MMDetection3D0.17.1 NuScenesDataset",
+    "exporter_range": "Original class-specific ego XY radii <= range; official evaluator then applies strict radius < range",
+    "NMS": false,
+    "new_topk": false,
+    "max_official_boxes_per_sample": 500,
+    "overflow": "Stop; existing top300 necessarily <=500. No truncation needed.",
+    "velocity": "Predicted cache columns7:9, verify raw final decoder columns8:10; zero vertical component is original exporter planar convention, rotate with calibration and ego pose.",
+    "attribute": "Frozen exporter deterministic class + predicted global XY speed threshold0.2m/s and original DefaultAttribute; not a learned attribute head or GT.",
+    "coordinate": "Frozen MMDetection3D reference LIDAR_TOP bottom center; exporter gravity center, full wlh, quaternion yaw=-yaw_second-pi/2; then lidar2ego and ego2global at source lidar timestamp.",
+    "meta": {
+      "use_camera": true,
+      "use_lidar": false,
+      "use_radar": false,
+      "use_map": false,
+      "use_external": false
+    }
+  },
+  "official_config": "detection_cvpr_2019",
+  "devkit": "1.1.9",
+  "checks": {
+    "maximum_allocated_GiB": 22,
+    "checkpoint_output_atol": 1e-06,
+    "checkpoint_output_rtol": 1e-05,
+    "stop_on": [
+      "Nonfinite",
+      "FrozenMutation",
+      "DataHashOrGTCountMismatch",
+      "AliasOrOptimizerPolicyConflict",
+      "CheckpointRestoreFailure",
+      "OOM"
+    ],
+    "no_loss_monotonic_stop": true
+  },
+  "limits": {
+    "maximum_steps": 400,
+    "automatic_extension": false,
+    "network": false,
+    "CARLA": false,
+    "AMP_repair": false,
+    "timeout_train_s": 2400,
+    "timeout_prepare_s": 1800,
+    "timeout_evaluation_s": 600,
+    "private_data_upload": false,
+    "main_merge": false
+  },
+  "source_sha256": {
+    "configs/m8j6_protocol.json": "a65a7f19ba86570e9c15cf7df12f34f3a0caa35bc48bac0c4270ff0c5674c2d3",
+    "configs/m8j7_protocol.json": "7b9c9cf6bde03b3452f6c9d23f3ec37032c794596e1ddaa686e479144c28fbd8",
+    "configs/m8j8_protocol.json": "1edf72ce0149d3016ffc7348a14f80303159844e9f08a8a6ccd03b595a2bc715",
+    "configs/m8j9_retry1_protocol.json": "36efc042120cf37e9ef73399e83333f58f1d31413b0f8dc382f622b122109c04",
+    "tools/m8j6_gpu_actual.py": "40f412ed2d1e8ef2a05067df4592eb07be6366c28bcaffa12bf9442af0fe48a0",
+    "tools/m8j6_retry_gpu.py": "09d5874af8d727f2687b837d4e3ba96d25e8a8254f7370c05dadd93ccf4ec63c",
+    "training/m8j6_retry_state.py": "db9a56d002ecf0888ff55f7f5197bffe7c00367d01ca6485dfd82baa7665a586",
+    "tools/m8j8_prepare.py": "3d7df8b384e472a87d613c973d42c06eea2f089b7e4dec701a12693dd543af84",
+    "tools/m8j8_gpu.py": "f1a697b70b1a79806ad91459198e050120fa6d19747744c9adc6a2eb46df206d",
+    "tools/m8j8_report.py": "141d96799164f225d5c1244db106f921132d58ffcbd7c6003d7977d956dcfabb",
+    "datasets/m8j9_official_export.py": "80f4e38afe98a9a7daf049cff9f11875dde14377cc731ff968c0c526d7b05cbf",
+    "training/m8j7_metrics.py": "732ea559e0605cc6041b9576eaf37e3c0233274810683600468dd5462160d3dd"
+  },
+  "official_sources_sha256": {
+    "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/datasets/nuscenes_dataset.py": "ce6ffaf17b85dc6c1e01f2063dd4e8bdc38adef10df79337cf0480e975f9c16b",
+    "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/datasets/nuscenes_dataset.py": "4d93801d0a79d61f633c6837236e15209c0d84a34f51b3d708ee5242aab48cc8",
+    "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/mmdetection3d/mmdet3d/core/bbox/structures/lidar_box3d.py": "8badeb5b932fd162768e25d3a94467cc0dd0aef9c11caac043cae7eca8cc00c3",
+    "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/sources/PETR/projects/mmdet3d_plugin/core/bbox/util.py": "3ab3eeb8f774c638f3e4502eccb3f7d4ab352b56f0843069c2e3de47f31724c9",
+    "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/nuscenes/eval/common/loaders.py": "8b80a9bfcae2dea70d81d52ab7663db879bc7feb296895e75f6a116c80c0055c",
+    "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/nuscenes/eval/detection/evaluate.py": "7546974e223fcd1a2e44b290634ee472eb29668307530fa1a727f94508188aab",
+    "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/nuscenes/eval/detection/algo.py": "460e1691c1391e01fe7c6f4576add6054b29cc280687513a9f9737b7363f4f38",
+    "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/nuscenes/eval/detection/data_classes.py": "0b5cb2d6614913c9f02a4fdcc3991eb3845b246f92b1eadba6047443a1cb5b72",
+    "/root/gpufree-data/hs-drive-experiments/m8a-petr-runtime/env/lib/python3.8/site-packages/nuscenes/eval/detection/configs/detection_cvpr_2019.json": "217f96cca4e80f790c4674ef72257a6863ee9a85b0ce185bc56488afc32c7a0b",
+    "configs/m8j8_protocol.json": "1edf72ce0149d3016ffc7348a14f80303159844e9f08a8a6ccd03b595a2bc715",
+    "reports/m8j8_evaluation_manifest.json": "4d4cfffd48bc803da16a7b15738bc42a4e7954f11c1a5f291ee0c3cefa2532fe",
+    "reports/m8j8_sources/m8j8_20261027_ab/A/result.json": "c52dd86c65d8b518a2890ad5012381043301cf1d69653d4fc20e4172fc098f51",
+    "training/m8j7_metrics.py": "732ea559e0605cc6041b9576eaf37e3c0233274810683600468dd5462160d3dd"
+  }
+}
