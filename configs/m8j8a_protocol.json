@@ -1,0 +1,76 @@
+{
+  "stage": "M8-J8A cache-only closeout",
+  "created_at_utc": "2026-10-27T14:58:33.492679+00:00",
+  "base_commit": "93807325a7614f038f3d658ff608e0a284c73763",
+  "branch": "feat/m8j8a-cache-transfer-closeout",
+  "private_cache_root": "/root/gpufree-data/hs-drive-private/m8j8_20261027_ab",
+  "private_output": "/root/gpufree-data/hs-drive-private/m8j8a-cache-closeout",
+  "fixed_formal_score": 0.2,
+  "fixed_distance_m": 2.0,
+  "GT_records": 3559,
+  "expected_transitions": {
+    "common": 2483,
+    "A_only": 464,
+    "B_only": 81,
+    "neither": 531
+  },
+  "PR": {
+    "reuse_grid": true,
+    "supplement": "Exact discrete score breakpoints from existing decoded Top300, grouped equal scores. Reuse original descending-score greedy assignments at threshold0; validate all prior grid counts.",
+    "target_reference": "A at fixed score0.2",
+    "recall_comparison": "First B breakpoint reaching A TP; also immediate lower-recall bracket. No interpolation.",
+    "precision_comparison": "Closest absolute precision to A at0.2 among nonempty breakpoints; ties choose higher score. Diagnostic, not model or threshold selection.",
+    "excluded": "No raw900-query expansion; no new NMS; no extrapolation"
+  },
+  "cases": {
+    "maximum_unique_instances": 12,
+    "budgets": {
+      "A_only": 6,
+      "B_only": 3,
+      "common_xy_worse": 3
+    },
+    "bucket_order": [
+      "A_only",
+      "B_only",
+      "common_xy_worse"
+    ],
+    "common_xy_worse_min_delta_m": 0.5,
+    "scenes": [
+      "scene-0103",
+      "scene-0916"
+    ],
+    "selection": "Global instance dedup. For each bucket alternate sorted scene names; within scene prefer an unused class in that bucket, then an existing M8-J8 visual frame, then class name, instance token, timestamp, sample token. One representative timestamp per instance/status. Only candidates satisfying bucket condition. If scene exhausted use the other; do not fabricate cases.",
+    "existing_visual_frames": [
+      0,
+      20,
+      39,
+      40,
+      60,
+      80
+    ],
+    "representative": "Per instance/status prefer existing-visual frame, then earliest timestamp/sample. No mechanism-based selection.",
+    "visual_policy": "Link existing six-camera and BEV images only. Nonvisual frames are numeric-only and explicitly NotViewed. No new image rendering or annotations.",
+    "population_inference": false
+  },
+  "scope": {
+    "optimizer_step": 0,
+    "model_forward": 0,
+    "backward": 0,
+    "network_access": false,
+    "download": false,
+    "CARLA": false,
+    "new_training": false,
+    "raw_checkpoint_loading": false,
+    "reference": "A",
+    "B_role": "EightFrameFitResearchArtifact",
+    "private_assets_publication": false
+  },
+  "source_sha256": {
+    "configs/m8j8_protocol.json": "1edf72ce0149d3016ffc7348a14f80303159844e9f08a8a6ccd03b595a2bc715",
+    "reports/m8j8_evaluation_manifest.json": "4d4cfffd48bc803da16a7b15738bc42a4e7954f11c1a5f291ee0c3cefa2532fe",
+    "reports/m8j8_ab_statistics.json": "eb2d1012fc2ca8ed9df05fc504c4f8cdb0c2a5c6baa68c87dbee01ca7e31ca62",
+    "reports/m8j8_per_frame.json": "9c9eeacd46dbe96d701f7c915f08dd74ec3e9a84a2aa7fd7d58f5c5bdc59f40e",
+    "reports/m8j8_release_manifest.json": "0b77a4cc59b409b0d14d0d4a2a24a09f97a25ccf58ac85b7cbff1787df14eb33",
+    "training/m8j7_metrics.py": "732ea559e0605cc6041b9576eaf37e3c0233274810683600468dd5462160d3dd"
+  }
+}
