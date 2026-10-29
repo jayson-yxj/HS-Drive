@@ -1,5 +1,5 @@
 """Candidate's official test transforms, metadata-only pose adapter; no GT read."""
-import copy,hashlib,json,os,time
+import copy,hashlib,json,os,time,sys
 from pathlib import Path
 import cv2,mmcv,numpy as np
 from datasets.m8j11_contract import *
@@ -8,6 +8,12 @@ from projects.mmdet3d_plugin.datasets.pipelines.transform_3d import ResizeCropFl
 
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def main():
+    def guard(event,args):
+        if event=='open' and isinstance(args[0],(str,bytes)):
+            path=os.fsdecode(args[0])
+            if Path(path).name in ('sample_annotation.json','instance.json','visibility.json','category.json') or path.endswith(('.pcd','.bin')):
+                raise PermissionError('PreparationMetadataRGBOnly_NoGTOrPointPayload')
+    sys.addaudithook(guard)
     os.umask(0o077);c=json.loads(Path('configs/m8j11_protocol.json').read_text());base=json.loads(Path('configs/m8j9_retry1_protocol.json').read_text())
     root=Path(c['private_root'])/'prepared';root.mkdir(parents=True,exist_ok=False)
     fixed=json.loads(Path(c['eval_manifest']).read_text());t=read_metadata(base['dataset_root']);check_sequence(fixed['frames'],t)
