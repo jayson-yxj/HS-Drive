@@ -1,0 +1,23 @@
+{
+  "name": "sdk_math_no_server",
+  "command": [
+    "env",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "unshare",
+    "--net",
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "-ra",
+    "tests/test_geometry_extended.py::test_six_mounts_against_carla_math",
+    "tests/test_imaging_rig.py",
+    "tests/test_session.py::test_settings_restored_after_exception",
+    "tests/test_snapshot.py"
+  ],
+  "started_utc": "2026-10-29T16:52:33.138314+00:00",
+  "finished_utc": "2026-10-29T16:52:33.856765+00:00",
+  "exit_code": 0,
+  "log": "reports/branch_consolidation_logs/sdk_math_no_server.txt",
+  "scope": "CARLA SDK math and fake client/sensors only; no server connection"
+}

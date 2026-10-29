@@ -1,6 +1,10 @@
-# HS-Drive · 数据与单帧 Depth/BEV 基线
+# HS-Drive · 可复现自动驾驶研究
 
-六摄纯视觉端到端自动驾驶项目。架构沿用 [HS-Drive V1.3 技术基线](docs/HS-Drive_Technical_Plan_v1.0.md)，当前实现覆盖 CARLA 采集、Oracle 几何、标准化数据接口与单帧学习型 Depth/BEV 基线。
+六摄纯视觉端到端自动驾驶项目。架构沿用 [HS-Drive V1.3 技术基线](docs/HS-Drive_Technical_Plan_v1.0.md)，代码覆盖 CARLA 采集、几何与数据接口、空间证据研究、Oracle 规划研究，以及隔离环境中的 PETR/StreamPETR 评测工具。
+
+开发遵循 [短期功能分支与复现约定](CONTRIBUTING.md)。`main` 作为研究代码主线，合并代码不等于模型质量或驾驶安全通过。当前 [冻结感知对照](reports/m8j11_summary.md) 保留 PETR-A 为参考，StreamPETR 为候选，不改变默认运行模式。历史分支的 [一次性整合清单](reports/branch_consolidation_plan.md) 待用户确认后执行。
+
+以下保留早期基线文档入口；后续研究环境和测试入口见 CONTRIBUTING，历史全量 bootstrap 测试不适用于所有隔离环境。
 
 - [M4 远距离深度、跨地图 Drivable 与路口规则监督](reports/m4_far_rules.md)
 - [远场与规则监督接口、实验协议和命令](docs/M4_FAR_ROAD_RULES.md)
