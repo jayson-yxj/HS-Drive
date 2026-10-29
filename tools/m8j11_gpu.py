@@ -81,6 +81,11 @@ def main():
             assert all(getattr(model.pts_bbox_head,n) is None for n in memory_names)
         schedule=[('first',[0,1,2,40,41]),('repeat',[0,1,2,40,41]),('fresh_second_scene',[40,41])] if a.phase=='probe' else [('formal',list(range(81)))]
         reference={};repeat_error=0.
+        original_nan_to_num=torch.nan_to_num
+        def checked_nan_to_num(x,*args,**kwargs):
+            assert torch.isfinite(x).all(),'Nonfinite before official nan_to_num'
+            return original_nan_to_num(x,*args,**kwargs)
+        torch.nan_to_num=checked_nan_to_num
         for run,ids in schedule:
             reset();last_scene=None
             for i in ids:
@@ -104,7 +109,7 @@ def main():
                 record=dict(boxes=legacy,native_boxes=boxes,scores=scores,labels=labels,query_indices=(idx//10)[keep].cpu().numpy(),
                     raw_cls=raw['all_cls_scores'][-1,0].cpu().numpy(),raw_bbox=raw['all_bbox_preds'][-1,0].cpu().numpy())
                 if run in ('first','formal'):
-                    reference[i]=record
+                    if a.phase=='probe':reference[i]=record
                     np.savez_compressed(out/f'{i:02}.npz',**record)
                 else:
                     for k in record:

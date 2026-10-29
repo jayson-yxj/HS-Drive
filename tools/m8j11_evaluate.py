@@ -58,7 +58,8 @@ def main():
         with np.load(pre/'supervision'/f'{i:02}.npz',allow_pickle=False) as z:r.update(gt=z['boxes'].copy(),gt_labels=z['labels'].copy())
         S.append(r);aa=load(Path(old['cache_root'])/f'{i:02}.npz');A.append(aa)
     pp=read('configs/m8j7_protocol.json');classes=old['classes']
-    quality=dict(A=metrics(A,classes,pp),StreamPETR=metrics(S,classes,pp),paired=paired(A,S,classes),scenes={})
+    from tools.m8j10_report import anomalies
+    quality=dict(A=metrics(A,classes,pp),StreamPETR=metrics(S,classes,pp),paired=paired(A,S,classes),scenes={},vertical_anomalies=dict(A=anomalies(A,classes),StreamPETR=anomalies(S,classes)))
     for scene in sorted({f['scene_name'] for f in mf['frames']}):
         idx=[f['index'] for f in mf['frames'] if f['scene_name']==scene]
         quality['scenes'][scene]=dict(A=metrics([A[i] for i in idx],classes,pp),StreamPETR=metrics([S[i] for i in idx],classes,pp))
