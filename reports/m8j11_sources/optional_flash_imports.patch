@@ -1,0 +1,23 @@
+--- official/projects/mmdet3d_plugin/models/utils/petr_transformer.py
++++ isolated/projects/mmdet3d_plugin/models/utils/petr_transformer.py
+@@ -26,7 +26,10 @@
+ from mmcv.utils import deprecated_api_warning, ConfigDict
+ import copy
+ from torch.nn import ModuleList
+-from .attention import FlashMHA
++try:
++    from .attention import FlashMHA
++except ImportError:
++    FlashMHA = None  # Official optional backend; FP32 uses PETRMultiheadAttention.
+ import torch.utils.checkpoint as cp
+ 
+ from mmcv.runner import auto_fp16
+--- official/projects/mmdet3d_plugin/models/backbones/__init__.py
++++ isolated/projects/mmdet3d_plugin/models/backbones/__init__.py
+@@ -6,5 +6,5 @@
+ # ------------------------------------------------------------------------
+ from .vovnet import VoVNet
+ from .vovnetcp import VoVNetCP
+-from .eva_vit import EVAViT
++# Optional unrelated EVA/Flash backbone is not imported for fixed ResNet50.
+ 

@@ -1,0 +1,42 @@
+{
+  "engineering": "FrozenCandidateLocalComparisonPassed",
+  "quality": "CandidateResearchGo_AReferenceRetained",
+  "pure_visual_driving_safety": "NotValidated",
+  "default_model_replaced": false,
+  "temporal_causal_gain": "NotEstablished",
+  "broad_generalization": "NotEstablished",
+  "runtime": "MeasuredOfflineOnly_NotRealtimePassed",
+  "optimizer_steps": 0,
+  "backward_calls": 0,
+  "CARLA": false,
+  "training": false,
+  "source_commit": "95f64702306ccdb7a78889578b2a55b5deb35b2a",
+  "checkpoint_sha256": "e6323ae5c31adf1eedd46d6dd4fd3c73d95aa26f18cc8aa23c196494b7de3451",
+  "execution_commit": "b74f243dc8490c4b1766fd89539cd664d3ab4b0b",
+  "base_commit": "68ee3e80397ad5a28d4e895497c55f2e3998023d",
+  "actual_date_UTC": "2026-10-29T15:45:25.135275+00:00",
+  "evidence_classes": {
+    "quality": "ActualRTX4090Forward_OfflineOfficialAndProjectEvaluation",
+    "tests": "SyntheticCPUAndCUDA",
+    "temporal": "ActualShortSequenceAndFullRun",
+    "safety": "NotRun"
+  },
+  "tests": {
+    "isolated": 11,
+    "passed": 11,
+    "failed_final": 0,
+    "initial_failures_preserved": true
+  },
+  "state_integrity": true,
+  "scene_resets": true,
+  "independent_repeat_equal": true,
+  "GT_and_pointcloud_input": false,
+  "next_step": "One separately authorized frozen-weight temporal robustness pilot on already-local sequences: dropped/delayed/reordered timestamp and reset handling, with A as reference. No training or default replacement now.",
+  "residual_risks": [
+    "424 project FN,3277 FP,793 duplicate predictions remain",
+    "Three official classes have no support; bus only one instance",
+    "Public config supports full-train origin but checkpoint has no per-sample ledger",
+    "Different resolution/backbone/training schedule/backend/ego-motion inputs confound temporal attribution",
+    "Raw RGB wallclock P95 exceeds200ms; no runtime gate closure"
+  ]
+}

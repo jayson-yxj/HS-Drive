@@ -1,0 +1,50 @@
+{
+  "status": "CandidateInputPrepared",
+  "input_fields": [
+    "ego_pose",
+    "ego_pose_inv",
+    "extrinsics",
+    "images",
+    "img_timestamp",
+    "intrinsics",
+    "lidar2img",
+    "timestamp"
+  ],
+  "cameras": [
+    "CAM_FRONT",
+    "CAM_FRONT_RIGHT",
+    "CAM_FRONT_LEFT",
+    "CAM_BACK",
+    "CAM_BACK_LEFT",
+    "CAM_BACK_RIGHT"
+  ],
+  "image_shape": [
+    1,
+    6,
+    3,
+    256,
+    704
+  ],
+  "normalize": {
+    "mean": [
+      123.675,
+      116.28,
+      103.53
+    ],
+    "std": [
+      58.395,
+      57.12,
+      57.375
+    ],
+    "to_rgb": true
+  },
+  "timestamp_dtype": "float64_seconds_from_real_microseconds",
+  "ego_pose": "LIDAR_TOP reference to global, from calibrated_sensor and ego_pose, no pointcloud payload",
+  "max_extrinsic_error": 0.00010812085997713439,
+  "max_pose_inverse_error": 2.384185791015625e-07,
+  "FP32_rounding_bound_max": 0.00693981908261776,
+  "first_checker_failure": "Preserved; 1e-8 double tolerance incorrectly applied to official FP32 pose matrices",
+  "GT_accessed": false,
+  "pointcloud_payload_reads": 0,
+  "source_manifest_sha256": "4d4cfffd48bc803da16a7b15738bc42a4e7954f11c1a5f291ee0c3cefa2532fe"
+}

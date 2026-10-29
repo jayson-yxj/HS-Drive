@@ -36,3 +36,23 @@ All output directories are exclusive-create; reruns require a new private run di
 Short test: first3frames scene1 then first2scene2, repeat from reset, then fresh scene2 alone. Formal run starts a new process and scene memory; all81frames including cold frames retained. `state_dict` parameters/buffers must remain exact; temporal memory is separately logged. Timestamps are FP64 while image/attention computations must be FP32. No AMP wrapper/scaler/hook constructed.
 
 Speed boundary explicitly covers cached-input read, transfer, compute and CPU predictions; it is not camera capture/JPEG preprocessing, control cycle or safety timing. GPU events and wallclock are separate. Same boundary applies to A. Official/project metrics reuse J9/J8; GT3393 versus3559 stay separate. The set is previously used development data, not a new blind test. Public pretrained provenance is not an independently verified per-sample training ledger.
+
+## Actual completion and final timing
+
+Short sequence and full81 run executed at `b74f243`; raw-input timing at `e18974f`; per-phase JSON records exact source hashes. Final official repeat and history/cache verification passed. Eleven isolated tests passed. Initial preparation float64 tolerance failure is retained under `prepared_failed_float64_tolerance`; fixed checks use FP32 scale-aware rounding, and all648 numeric arrays are identical between preparations.
+
+Primary resource results use full raw-image processing, not prepared-cache timing. Both paths were compared against every fixed cache prediction; RGB preprocessed arrays were also exactly equal to prepared inputs. Run separately with no competing GPU process:
+
+```bash
+bash tools/m8j11_env.sh -m tools.m8j11_raw_timing --model StreamPETR
+bash tools/m8j11_baseline_env.sh -m tools.m8j11_raw_timing --model A
+bash tools/m8j11_baseline_env.sh -m tools.m8j11_verify
+bash tools/m8j11_baseline_env.sh -m tools.m8j11_visualize
+bash tools/m8j11_baseline_env.sh -m tools.m8j11_report
+```
+
+These exclusive-create commands describe the recorded run; to repeat, first choose a new private run path/protocol and output names, preserving existing evidence. `tools/m8j11_phase.py NAME bash ...` provides bounded600s phase supervision, command, PID, exit status, source SHA and log SHA. No training process exists.
+
+Environment provisioning used copied torch2.0.0+cu118/Python3.8 and independently installed mmdet2.28.2/mmseg0.30/einops0.6.1/MMDet3Drc6. MMCV1.7.0 was compiled from the officially hash-verified release with CUDA11.8/GCC11/sm89; the initial serial build timed out. During the one bounded continuation, PATH was corrected to find ninja and MAX_JOBS=4. All128objects linked before timeout during wheel ZIP packaging; `python -m wheel pack` completed packaging of the existing staging tree without recompiling. Built wheel hash `a2c9b54decf18d5b01cc3012ca0ef1179b4f316b068f01239041c2ef041e0ed3`. The incomplete476byte wheel was not installed. All failures and their resolution are recorded.
+
+The candidate uses public train-set weights and two previously used development scenes. Broad generalization, temporal causal benefit, online deadlines and driving safety remain unvalidated. No automatic follow-on experiment.
