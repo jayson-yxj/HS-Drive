@@ -31,10 +31,10 @@ def load(frame):
     return data,meta
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--phase',choices=['probe','full'],required=True);a=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--phase',choices=['probe','full','timing'],required=True);a=ap.parse_args()
     os.umask(0o077);c=json.loads(Path('configs/m8j11_protocol.json').read_text());rt=Path(c['runtime_root']);root=Path(c['private_root'])
     out=root/a.phase;out.mkdir(exist_ok=False);rep=Path('reports/m8j11_sources')/a.phase;rep.mkdir(exist_ok=False)
-    if a.phase=='full':assert json.loads(Path('reports/m8j11_sources/probe_export.json').read_text())['status']=='ShortSequenceExportPassed'
+    if a.phase in ('full','timing'):assert json.loads(Path('reports/m8j11_sources/probe_export.json').read_text())['status']=='ShortSequenceExportPassed'
     mf=json.loads((root/'prepared/manifest.json').read_text());frames=mf['frames']
     result=dict(status='Running',phase=a.phase,started_utc=datetime.now(timezone.utc).isoformat(),
         code_commit=os.popen('git rev-parse HEAD').read().strip(),checkpoint_sha256=c['initial_asset_sha256'],
@@ -67,14 +67,14 @@ def main():
         raw_holder={};dtype_seen=set()
         def headhook(mod,inp,output):
             raw_holder['raw']=output
-            for k in ('all_cls_scores','all_bbox_preds'):
+            for k in (() if a.phase=='timing' else ('all_cls_scores','all_bbox_preds')):
                 assert output[k].shape==(6,1,900,10);assert output[k].dtype==torch.float32 and torch.isfinite(output[k]).all()
-        model.pts_bbox_head.register_forward_hook(headhook)
+        head_handle=model.pts_bbox_head.register_forward_hook(headhook)
         def dtypehook(mod,inp,output):
             for x in inp:
                 if torch.is_tensor(x) and x.is_floating_point():dtype_seen.add(str(x.dtype));assert x.dtype==torch.float32
         for mod in model.modules():
-            if isinstance(mod,(torch.nn.Conv2d,torch.nn.Linear,torch.nn.MultiheadAttention)):mod.register_forward_hook(dtypehook)
+            if a.phase!='timing' and isinstance(mod,(torch.nn.Conv2d,torch.nn.Linear,torch.nn.MultiheadAttention)):mod.register_forward_hook(dtypehook)
         memory_names=['memory_embedding','memory_reference_point','memory_timestamp','memory_egopose','memory_velo']
         def reset():
             model.prev_scene_token=None;model.pts_bbox_head.reset_memory()
@@ -85,7 +85,7 @@ def main():
         def checked_nan_to_num(x,*args,**kwargs):
             assert torch.isfinite(x).all(),'Nonfinite before official nan_to_num'
             return original_nan_to_num(x,*args,**kwargs)
-        torch.nan_to_num=checked_nan_to_num
+        if a.phase!='timing':torch.nan_to_num=checked_nan_to_num
         for run,ids in schedule:
             reset();last_scene=None
             for i in ids:
@@ -108,7 +108,10 @@ def main():
                 np.testing.assert_array_equal(rr[keep,8:10].cpu().numpy(),boxes[:,7:9])
                 record=dict(boxes=legacy,native_boxes=boxes,scores=scores,labels=labels,query_indices=(idx//10)[keep].cpu().numpy(),
                     raw_cls=raw['all_cls_scores'][-1,0].cpu().numpy(),raw_bbox=raw['all_bbox_preds'][-1,0].cpu().numpy())
-                if run in ('first','formal'):
+                if a.phase=='timing':
+                    with np.load(root/'full'/f'{i:02}.npz',allow_pickle=False) as old:
+                        for k in record:np.testing.assert_allclose(record[k],old[k],atol=1e-5,rtol=1e-5)
+                elif run in ('first','formal'):
                     if a.phase=='probe':reference[i]=record
                     np.savez_compressed(out/f'{i:02}.npz',**record)
                 else:
@@ -126,7 +129,7 @@ def main():
                     memory=memory,parameters_buffers_unchanged=True)
                 result['frames'].append(row);last_scene=frame['scene_token'];print(run,i,len(scores),row['gpu_ms'],flush=True)
                 del data,meta,answer,raw,rr,ss,ev0,ev1
-        result.update(status='ReadOnlySequencePassed',repeat_max_abs_error=repeat_error,compute_input_dtypes=sorted(dtype_seen),
+        result.update(status='ReadOnlySequencePassed',repeat_max_abs_error=repeat_error,compute_input_dtypes=sorted(dtype_seen),timing_only_cache_equivalence=(a.phase=='timing'),
             final_state_sha256=fingerprint(model.state_dict()),parameters_buffers_unchanged=True,reset_verified=True)
     except Exception as e:result.update(status='FailedStopped',error_type=type(e).__name__,error=str(e));raise
     finally:

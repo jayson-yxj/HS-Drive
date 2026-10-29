@@ -22,7 +22,7 @@ def main():
             img=torch.from_numpy(z['images'].copy()).cuda();meta=[dict(lidar2img=z['lidar2img'].copy(),img_timestamp=(z['camera_timestamp_us']/1e6).tolist(),img_shape=[(512,1408,3)]*6,pad_shape=[(512,1408,3)]*6,ori_shape=[(900,1600,3)]*6,box_type_3d=old.LiDARInstance3DBoxes,scale_factor=1.,flip=False)]
         torch.cuda.synchronize();loaded=time.perf_counter();s=torch.cuda.Event(enable_timing=True);e=torch.cuda.Event(enable_timing=True);s.record()
         with torch.no_grad(),torch.autocast('cuda',enabled=False):
-            raw=old.forward(model,img,meta);boxes,scores,labels=model.pts_bbox_head.get_bboxes(raw,meta)[0]
+            features=model.extract_feat(img,meta);raw=model.pts_bbox_head(features,meta);boxes,scores,labels=model.pts_bbox_head.get_bboxes(raw,meta)[0]
         e.record();e.synchronize();arrays=(boxes.tensor.cpu().numpy(),scores.cpu().numpy(),labels.cpu().numpy());wall=time.perf_counter()-t
         # Verify timing run reproduces the exact frozen quality asset (not new selection).
         with np.load(Path(j['cache_root'])/f'{f["index"]:02}.npz',allow_pickle=False) as z:
