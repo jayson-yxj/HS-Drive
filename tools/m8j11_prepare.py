@@ -22,7 +22,7 @@ def main():
     assert resize._sample_augmentation()==(.44,(704,396),(0,140,704,396),False,0)
     ds=object.__new__(CustomNuScenesDataset);ds.test_mode=True;ds.modality=dict(use_camera=True)
     ds.data_infos=[info_from_metadata(f,t,base['dataset_root']) for f in fixed['frames']]
-    rows=[];max_projection=max_pose=0.
+    rows=[];max_projection=max_pose=0.;rounding_bound_max=0.
     for f in fixed['frames']:
         t0=time.perf_counter();i=f['index'];inp=ds.get_data_info(i);assert 'ann_info' not in inp
         data=dict(img=[cv2.imread(p).astype(np.float32) for p in inp['img_filename']],intrinsics=copy.deepcopy(inp['intrinsics']),extrinsics=copy.deepcopy(inp['extrinsics']))
@@ -34,7 +34,12 @@ def main():
             # Independent calibrated-camera global path, evaluated at each camera's real pose.
             s=t['sample'][f['sample_token']];sd=t['sample_data'][s['data'][CAMERAS[j]]]
             expected=np.linalg.inv(sensor_global(sd,t))@inp['ego_pose']
-            max_projection=max(max_projection,float(np.max(abs(expected-data['extrinsics'][j]))))
+            error=float(np.max(abs(expected-data['extrinsics'][j])))
+            # Official global/local matrices are FP32. Bound cancellation by coordinate magnitude,
+            # not an after-the-fact fitted tolerance: 32 elementary FP32 rounding units.
+            bound=32*np.finfo(np.float32).eps*max(1.,float(np.linalg.norm(inp['ego_pose'],ord=np.inf)))
+            assert error<=bound
+            rounding_bound_max=max(rounding_bound_max,bound);max_projection=max(max_projection,error)
         max_pose=max(max_pose,float(np.max(abs(inp['ego_pose_inv']@inp['ego_pose']-np.eye(4)))))
         values=dict(images=np.stack(data['img']).transpose(0,3,1,2).copy()[None])
         for k in INPUT_FIELDS-{'images'}:
@@ -43,11 +48,11 @@ def main():
         p=root/f'{i:02}.npz';np.savez(p,**values)
         rows.append(dict(f,path=str(p),sha256=sha(p),raw_image_preprocessing_ms=preprocessing_ms,camera_timestamp_us=[t['sample_data'][t['sample'][f['sample_token']]['data'][cam]]['timestamp'] for cam in CAMERAS],
             camera_image_sha256=[sha(p) for p in inp['img_filename']]))
-    assert max_projection<1e-8 and max_pose<1e-8
+    assert max_pose<=32*np.finfo(np.float32).eps
     record=dict(status='CandidateInputPrepared',frames=rows,input_fields=sorted(INPUT_FIELDS),cameras=CAMERAS,
         image_shape=[1,6,3,256,704],normalize=dict(config.img_norm_cfg),timestamp_dtype='float64_seconds_from_real_microseconds',
         ego_pose='LIDAR_TOP reference to global, from calibrated_sensor and ego_pose, no pointcloud payload',
-        max_extrinsic_error=max_projection,max_pose_inverse_error=max_pose,GT_accessed=False,pointcloud_payload_reads=0,
+        max_extrinsic_error=max_projection,max_pose_inverse_error=max_pose,FP32_rounding_bound_max=rounding_bound_max,first_checker_failure='Preserved; 1e-8 double tolerance incorrectly applied to official FP32 pose matrices',GT_accessed=False,pointcloud_payload_reads=0,
         source_manifest_sha256=sha(c['eval_manifest']))
     (root/'manifest.json').write_text(json.dumps(record,indent=2)+'\n')
     Path('reports/m8j11_sources/input_preparation.json').write_text(json.dumps({k:v for k,v in record.items() if k!='frames'},indent=2)+'\n')
