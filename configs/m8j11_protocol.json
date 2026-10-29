@@ -1,0 +1,111 @@
+{
+  "stage": "M8-J11",
+  "base_commit": "68ee3e80397ad5a28d4e895497c55f2e3998023d",
+  "branch": "feat/m8j11-streampetr-r50-frozen-candidate",
+  "declared_at_utc": "2026-10-29T14:51:59.424971+00:00",
+  "candidate": "OfficialStreamPETR_R50_ImageNet_90e_900q",
+  "source_repo": "https://github.com/exiawsh/StreamPETR",
+  "source_commit": "95f64702306ccdb7a78889578b2a55b5deb35b2a",
+  "config": "projects/configs/StreamPETR/stream_petr_r50_flash_704_bs2_seq_90e.py",
+  "checkpoint_source": "https://github.com/exiawsh/storage/releases/download/v1.0/stream_petr_r50_flash_704_bs2_seq_90e.pth",
+  "checkpoint_asset_id": 102542853,
+  "checkpoint_expected_bytes": 154852451,
+  "checkpoint_official_digest": null,
+  "candidate_selection_reason": "Official R50 ImageNet 900q row; no NuImages alternative; selected before evaluation",
+  "initial_asset_sha256": "e6323ae5c31adf1eedd46d6dd4fd3c73d95aa26f18cc8aa23c196494b7de3451",
+  "precision_plan": "Official supported nonflash PyTorch FP32 implementation; inspect code and state key equivalence before use",
+  "limits": {
+    "optimizer_steps": 0,
+    "backward_calls": 0,
+    "CARLA": false,
+    "dataset_download": false,
+    "alternate_candidate": false,
+    "automatic_training": false,
+    "main_merge": false
+  },
+  "runtime_root": "/root/gpufree-data/hs-drive-experiments/m8j11-streampetr",
+  "private_root": "/root/gpufree-data/hs-drive-private/m8j11-streampetr",
+  "eval_manifest": "reports/m8j8_evaluation_manifest.json",
+  "output_policy_source": "configs/m8j9_retry1_protocol.json",
+  "camera_order": [
+    "CAM_FRONT",
+    "CAM_FRONT_RIGHT",
+    "CAM_FRONT_LEFT",
+    "CAM_BACK",
+    "CAM_BACK_LEFT",
+    "CAM_BACK_RIGHT"
+  ],
+  "input_shape": [
+    1,
+    6,
+    3,
+    256,
+    704
+  ],
+  "classes": [
+    "car",
+    "truck",
+    "construction_vehicle",
+    "bus",
+    "trailer",
+    "barrier",
+    "motorcycle",
+    "bicycle",
+    "pedestrian",
+    "traffic_cone"
+  ],
+  "evaluation": {
+    "manifest_sha256": "4d4cfffd48bc803da16a7b15738bc42a4e7954f11c1a5f291ee0c3cefa2532fe",
+    "TopK": 300,
+    "score_threshold": 0.2,
+    "source_xy": "strict absxy<51.2",
+    "post_center_range": [
+      -61.2,
+      -61.2,
+      -10,
+      61.2,
+      61.2,
+      10
+    ],
+    "NMS": false,
+    "devkit": "1.1.9",
+    "config": "detection_cvpr_2019",
+    "probe_indices": [
+      0,
+      1,
+      2,
+      40,
+      41
+    ],
+    "probe_repetitions": 2,
+    "independent_scene_reset_indices": [
+      40,
+      41
+    ],
+    "formal_frames": 81,
+    "repeat_atol": 1e-05,
+    "repeat_rtol": 1e-05
+  },
+  "backend": {
+    "attention": "Official PETRMultiheadAttention fp16=False",
+    "source_model_architecture_unchanged": true,
+    "optional_flash_import_patch": "reports/m8j11_sources/optional_flash_imports.patch",
+    "torch": "2.0.0+cu118",
+    "mmcv_target": "1.7.0",
+    "mmdet": "2.28.2",
+    "mmdet3d": "1.0.0rc6",
+    "mmseg": "0.30.0",
+    "env_isolated": true
+  },
+  "timing": {
+    "boundary": "Prepared numeric cache disk read + H2D + model including temporal update and native decode + output D2H; diagnostics/serialization excluded",
+    "same_boundary_A_measurement_allowed": true
+  },
+  "official_source_files_sha256": {
+    "README.md": "7ecd123f4abda017c364340b38aa526e06f4a5606aa4a281f7cbee5dc9dd8fe5",
+    "LICENSE": "f5fb38effbc51a9bc457626dfaadea5c243a864a03f3d53a3ba679de2ee80d38",
+    "projects/configs/StreamPETR/stream_petr_r50_flash_704_bs2_seq_90e.py": "391745f495546f21db2a91431dac52f2cb74caf39551abb28c730fd86357e40d",
+    "docs/setup.md": "1ea654e6eb0a033ec194932cae628cac0a4ef4d12e937a71c581db06647410b3",
+    "docs/training_inference.md": "c838ea4ea5d8ff2c30494199aba55abf4e6c68ed5460f3249ece6dd9c4e6b17d"
+  }
+}
