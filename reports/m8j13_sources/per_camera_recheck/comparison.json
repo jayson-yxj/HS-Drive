@@ -1,0 +1,139 @@
+{
+  "scope": "Cross-run descriptive comparison; different candidate/gap/load mix; no causal attribution of all delta to preprocessing",
+  "previous32_subsequent31_input_to_forward_ms": {
+    "n": 31,
+    "min": 251.07400119304657,
+    "p50": 268.6739042401314,
+    "p95": 279.9131078645587,
+    "p99": 287.6471992582083,
+    "max": 289.44150544703007
+  },
+  "current_input_to_forward_ms": {
+    "n": 23,
+    "min": 194.86946612596512,
+    "p50": 249.95834194123745,
+    "p95": 270.4067971557379,
+    "p99": 275.02866692841053,
+    "max": 276.21630020439625
+  },
+  "current_input_to_CPU_assembly_ms": {
+    "n": 23,
+    "min": 170.74531503021717,
+    "p50": 179.77981455624104,
+    "p95": 212.36763074994087,
+    "p99": 213.48664324730635,
+    "max": 213.6190179735422
+  },
+  "current_CPU_tail_ms": {
+    "n": 23,
+    "min": 11.279091238975525,
+    "p50": 11.76457479596138,
+    "p95": 17.936209216713905,
+    "p99": 21.11194964498282,
+    "max": 21.97914943099022
+  },
+  "current_per_camera_CPU_work_ms": {
+    "n": 138,
+    "min": 13.48853800000005,
+    "p50": 14.490369000000003,
+    "p95": 15.467796800000022,
+    "p99": 16.42425475000003,
+    "max": 20.220673000000076
+  },
+  "old_arrival": {
+    "first_camera_copy_ms": {
+      "n": 31,
+      "min": 89.50155414640903,
+      "p50": 113.36739547550678,
+      "p95": 123.62392246723175,
+      "p99": 129.37534619122744,
+      "max": 130.95303997397423
+    },
+    "all_camera_copy_ms": {
+      "n": 31,
+      "min": 130.48426434397697,
+      "p50": 148.4618205577135,
+      "p95": 160.88067647069693,
+      "p99": 164.71896935254335,
+      "max": 165.25950096547604
+    },
+    "first_last_camera_ms": {
+      "n": 31,
+      "min": 30.425095930695534,
+      "p50": 34.977082163095474,
+      "p95": 38.286213763058186,
+      "p99": 40.63664171844721,
+      "max": 41.41952656209469
+    }
+  },
+  "current_arrival": {
+    "first_camera_copy_ms": {
+      "n": 23,
+      "min": 101.64215229451656,
+      "p50": 107.32423327863216,
+      "p95": 116.29357524216175,
+      "p99": 117.74360585957766,
+      "max": 118.07158589363098
+    },
+    "all_camera_copy_ms": {
+      "n": 23,
+      "min": 133.48019681870937,
+      "p50": 139.18252289295197,
+      "p95": 149.96625445783138,
+      "p99": 150.0735991075635,
+      "max": 150.1025129109621
+    },
+    "first_last_camera_ms": {
+      "n": 23,
+      "min": 31.400172039866447,
+      "p50": 32.58403390645981,
+      "p95": 36.82097364217043,
+      "p99": 37.24129341542721,
+      "max": 37.32416033744812
+    }
+  },
+  "old_model_decode_ms": {
+    "n": 31,
+    "min": 95.56991048157215,
+    "p50": 110.72010360658169,
+    "p95": 118.2008283212781,
+    "p99": 119.98582500964403,
+    "max": 120.53309567272663
+  },
+  "current_model_decode_ms": {
+    "n": 23,
+    "min": 107.96325281262398,
+    "p50": 140.85245691239834,
+    "p95": 159.55410320311785,
+    "p99": 170.10284230113032,
+    "max": 173.0120424181223
+  },
+  "offline_hypothesis": "Historical same-input preparation saved paired median70.9ms; candidate batch ready median194.6ms then hypothetical checks complete305.4ms. No renderer/model contention and no actual Snapshot-confirmation wait.",
+  "online_result": "CPU assembly still finishes early, but serial preforward confirmation waits and longer measured model/decode eliminate end-to-end gain. Confirmation waits are included, never subtracted from measured deadlines.",
+  "counterfactual_input_to_forward_if_waits_removed_ms": {
+    "n": 23,
+    "min": 175.97133852541447,
+    "p50": 185.44169515371323,
+    "p95": 217.8425520658493,
+    "p99": 219.65387146919966,
+    "max": 219.9845388531685
+  },
+  "counterfactual_warning": "Algebraic diagnostic only, NOT a permissible change, actual elapsed result, or guaranteed speedup. Every Snapshot confirmation remains required.",
+  "old_HS_PID_ms": {
+    "n": 31,
+    "min": 354.379128664732,
+    "p50": 380.26993721723557,
+    "p95": 393.6245311051607,
+    "p99": 401.0836424306035,
+    "max": 404.2241610586643
+  },
+  "current_HS_PID_ms": {
+    "n": 23,
+    "min": 309.1363236308098,
+    "p50": 398.7304922193289,
+    "p95": 432.2029599919915,
+    "p99": 436.15873642265797,
+    "max": 437.0027519762516
+  },
+  "no_GPU_RPC_engine_causal_claim": true
+}

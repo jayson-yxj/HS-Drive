@@ -126,6 +126,9 @@ def worker(root):
                 row=request_rows.get(path.name);extra={}
                 if row is not None:
                     extra=consumed_completion(value,row,last['frame'],last['sim_s'],received,time.monotonic())
+                    # Capture actual pure-consumer return, not its argument-evaluation instant.
+                    extra['owner_consume_check_reference_wall_s']=extra['owner_consume_check_done_wall_s']
+                    extra['owner_consume_check_done_wall_s']=time.monotonic()
                 append(root/'completion_received.jsonl',dict(request=path.name,wall_s=received,response=value,**extra))
                 if relay is not None:relay.release(path.name)
                 elif slots is not None:slots.release(path.name)

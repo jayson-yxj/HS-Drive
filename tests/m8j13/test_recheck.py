@@ -65,3 +65,19 @@ def test_report_empty_run_does_not_invent_denominator(tmp_path):
     assert s['timings']['all']['end_to_HS_PID_ms'] is None
     result=ages([dict(reason=None,wall_expired=False,simulation_expired=False,snapshot_confirmed=True),dict(reason='SimulationSnapshotUnconfirmed',wall_expired=False,simulation_expired=None,snapshot_confirmed=False),dict(reason='PlanWallExpired',wall_expired=True,simulation_expired=False,snapshot_confirmed=True)])
     assert result['fresh']==1 and result['wall_expired']==1 and result['simulation_unconfirmed']==1 and result['simulation_expired']==0
+
+
+def test_snapshot_wait_is_summed_per_input_across_checkpoints(tmp_path):
+    row=dict(sequence_id='r',frame_id=10,timestamp_s=1.,input_capture_wall_s=10.)
+    atomic(tmp_path/'current_snapshot.json',dict(frame=10,sim_s=1.))
+    current=[10.1];confirm_at=[10.11]
+    def sleep(dt):
+        current[0]+=dt
+        if current[0]>=confirm_at[0]:atomic(tmp_path/'tick_pending.json',dict(frame=10,pending=False))
+    age=SnapshotAge(tmp_path,clock=lambda:current[0],sleep=sleep)
+    waits=[]
+    for i in range(3):
+        atomic(tmp_path/'tick_pending.json',dict(frame=11,pending=True))
+        confirm_at[0]=current[0]+.01
+        waits.append(age(row,10.,wait_for_snapshot=True,phase=str(i))['snapshot_wait_ms'])
+    assert sum(waits)>29 and abs(age.cumulative_wait_ms(10)-sum(waits))<1e-9
