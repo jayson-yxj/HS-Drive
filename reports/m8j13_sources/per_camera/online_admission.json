@@ -1,0 +1,24 @@
+{
+  "admitted": true,
+  "scope": "One parked experiment hypothesis, not real-time pass",
+  "per_input_path_measurements": 3,
+  "input_count": 8,
+  "regression_passed": 88,
+  "counterfactual_subsequent_checked_ms": {
+    "p50": 305.4485749453306,
+    "p95": 323.0502549558878,
+    "p99": 325.79451240599155,
+    "max": 326.4805767685175
+  },
+  "counterfactual_cross300_count": 7,
+  "counterfactual_samples": 21,
+  "limitations": "Historical arrival replay, no simultaneous renderer/model during CPU profiling. Candidate increases CPU work and may contend with inference. Some samples close to300ms but no stable margin. Existing successful model durations and preforward/required checks retained per observation. Actual online run may fail.",
+  "budgets": {
+    "starts": 1,
+    "ticks": 800,
+    "offline": 8,
+    "live": 24,
+    "total": 32
+  },
+  "snapshot_confirmation": "Refuse in-flight unconfirmed simulation state; pending wait capped60ms and never extends original300ms wall deadline"
+}

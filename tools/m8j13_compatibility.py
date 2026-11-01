@@ -90,10 +90,12 @@ class Owner:
     def tick(self,ego,phase,folder):
         if self.tick_count>=self.cfg['run_tick_cap']:raise RuntimeError('ActiveTickBudgetExhausted')
         time.sleep(max(0.,self.next_cycle-time.monotonic()));self.next_cycle=time.monotonic()+.05
-        start=time.monotonic();append(self.root/'tick_requests.jsonl',dict(index=self.tick_count,phase=phase,wall_s=start));self.tick_count+=1
-        frame=self.world.tick(5.);snap=self.world.get_snapshot()
+        start=time.monotonic()
+        if getattr(self,'before_tick',None) is not None:self.before_tick(self.last+1,start,phase)
+        append(self.root/'tick_requests.jsonl',dict(index=self.tick_count,phase=phase,wall_s=start));self.tick_count+=1
+        frame=self.world.tick(5.);tick_rpc_return=time.monotonic();snap=self.world.get_snapshot();snapshot_ready=time.monotonic()
         if frame!=snap.frame or frame!=self.last+1:raise RuntimeError('CompetingTickOwner')
-        self.last=frame;m=measurement(snap,ego);m.update(input_wall_s=start,tick_end_wall_s=time.monotonic(),delta_s=snap.timestamp.delta_seconds)
+        self.last=frame;m=measurement(snap,ego);m.update(input_wall_s=start,tick_end_wall_s=time.monotonic(),delta_s=snap.timestamp.delta_seconds,tick_rpc_return_wall_s=tick_rpc_return,snapshot_available_wall_s=snapshot_ready)
         u=ego.get_control();m['applied']=dict(steer=u.steer,throttle=u.throttle,brake=u.brake)
         append(folder/'snapshots.jsonl',m);return snap,m
     def destroy_owned(self):

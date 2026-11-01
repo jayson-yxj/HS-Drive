@@ -45,6 +45,7 @@ class ParkedOwner(Owner):
         state['ack']=dict(confirmed_wall_s=time.monotonic(),matched=matched)
         atomic(self.root/'execution_state.json',state)
         inputs.snapshot(snap,m);atomic(self.root/'current_snapshot.json',dict(frame=m['frame'],sim_s=m['sim_s']))
+        if self.cfg.get('per_camera'):atomic(self.root/'tick_pending.json',dict(pending=False,frame=m['frame'],wall_s=time.monotonic()))
         begin=time.monotonic();inputs.drain();end=time.monotonic()
         append(self.root/'owner_timing.jsonl',dict(frame=m['frame'],phase=phase,drain_and_metadata_write_ms=(end-begin)*1000,
             tick_wall_ms=(m['tick_end_wall_s']-m['input_wall_s'])*1000))
@@ -55,7 +56,7 @@ class ParkedOwner(Owner):
 def worker(root):
     cfg=json.loads(CFG.read_text());cfg['run_tick_cap']=cfg['max_active_ticks']-cfg['settings_tick_charge']
     owner=None;inputs=None;ego=None;model=None;watchdog=None;result=dict(status='Partial',model_controls=0,training=0)
-    slots=None;request_rows={}
+    slots=None;request_rows={};relay=None;early_responses=set();camera_schedule={}
     state=dict(armed=False,require_planner=False,issued=None,ack=None);maximum=0.;measured=[];pending=[];decided=set();responses=set();requests=0;last=None;exit_ticks=0
     try:
         owner=ParkedOwner.__new__(ParkedOwner);owner.__init__(root,cfg)
@@ -67,8 +68,19 @@ def worker(root):
         write(root/'navigation_wiring.json',dict(mode=mode,consumer='Inputs.row -> original RoutePlanner.run_step -> measured_navigation_target',source_sha256=digest(source)))
         for name in ('requests','responses','native','diagnostics','input_rows'):(root/name).mkdir()
         if cfg.get('pipeline_service'):
-            slots=Slots(Path('/dev/shm')/('hs-j13-'+str(os.getpid())),create=True)
+            if cfg.get('per_camera'):
+                from simulator.m8j13_partial_transport import PartialSlots
+                slots=PartialSlots(Path('/dev/shm')/('hs-j13-'+str(os.getpid())),create=True)
+            else:slots=Slots(Path('/dev/shm')/('hs-j13-'+str(os.getpid())),create=True)
             atomic(root/'transport.json',dict(root=str(slots.root),capacity=2,shape=[6,396,704,4],dtype='uint8'))
+        if cfg.get('per_camera'):
+            from tools.m8j13_camera_live import EarlyRelay
+            identity=dict(run=inputs.identity[0],episode=inputs.identity[1],generation=inputs.identity[2],sensors={n:a.id for n,a in inputs.sensor_map.items()})
+            relay=EarlyRelay(inputs.inbox,slots,identity,root);inputs.inbox=relay
+            def before_tick(frame,wall,phase):
+                if frame in camera_schedule:relay.reserve_frame(frame,wall,camera_schedule[frame])
+                atomic(root/'tick_pending.json',dict(pending=True,frame=frame,wall_s=wall))
+            owner.before_tick=before_tick
         atomic(root/'execution_state.json',state)
         with (root/'watchdog.log').open('x') as f:
             watchdog=subprocess.Popen(['taskset','-c',owner.c['process_cpus']['watchdog'],sys.executable,'-m','tools.m8j13_watchdog','--root',str(root),'--ego',str(ego.id),'--expected-version',cfg['version'],'--execution-contract'],stdout=f,stderr=subprocess.STDOUT)
@@ -99,17 +111,25 @@ def worker(root):
             moving_faults_required_for_model_driving=True,model_execution_channel=False,old_ready_false_preserved=True))
         state['armed']=True;atomic(root/'execution_state.json',state);origin=last['frame']+1
         schedule={origin+candidate_offset(i,count=cfg['candidate_count']):i for i in range(cfg['candidate_count'])}
+        camera_schedule.update(schedule)
+        if relay is not None:
+            write(root/'first_camera_schedule.json',dict(first_frame=origin,count=cfg['candidate_count'],interval=4))
         def consume_responses():
             for path in sorted((root/'responses').glob('*.json')):
                 if path.name in responses:continue
-                value=load(path);require_completion_only(value);responses.add(path.name)
+                value=load(path);require_completion_only(value)
+                if value['status']=='PartialCancelled':
+                    if path.name not in early_responses:relay.release(path.name);early_responses.add(path.name)
+                    continue
+                responses.add(path.name)
                 received=time.monotonic();row=request_rows.get(path.name);extra={}
                 if row is not None:
                     stamp=PlanStamp(row['sequence_id'],row['frame_id'],row['timestamp_s'],row['input_capture_wall_s'],row['input_capture_wall_s'],received,'frozen')
                     extra=dict(wall_age_s=received-row['input_capture_wall_s'],sim_age_s=last['sim_s']-row['timestamp_s'],
                         age_reason=freshness(stamp,row['sequence_id'],last['frame'],last['sim_s'],received))
-                append(root/'completion_received.jsonl',dict(request=path.name,wall_s=received,response=value,**extra))
-                if slots is not None:slots.release(path.name)
+                append(root/'completion_received.jsonl',dict(request=path.name,wall_s=received,owner_consume_check_done_wall_s=time.monotonic(),response=value,**extra))
+                if relay is not None:relay.release(path.name)
+                elif slots is not None:slots.release(path.name)
         def candidates():
             nonlocal requests
             consume_responses()
@@ -125,11 +145,18 @@ def worker(root):
                     decision_wall_s=now,sim_age_s=last['sim_s']-observation['sim_s'],camera_arrival_wall_s={x['camera']:x['receive_monotonic_s'] for x in inputs.groups[frame]},
                     camera_copy_done_wall_s={x['camera']:x['copied_monotonic_s'] for x in inputs.groups[frame]})
                 if reason:
+                    if relay is not None:relay.reject(frame)
                     record.update(status='Rejected',reason=reason,group_checks_ms=(time.monotonic()-begin)*1000);append(root/'candidates.jsonl',record);continue
-                if requests-len(responses)>=(2 if slots is not None else 1):
+                if (relay is not None and relay.frames[frame]['status']=='QueueCapacity') or (relay is None and requests-len(responses)>=(2 if slots is not None else 1)):
                     record.update(status='Skipped',reason='QueueCapacity' if slots is not None else 'WorkerBusy',group_checks_ms=(time.monotonic()-begin)*1000);append(root/'candidates.jsonl',record);continue
                 group_done=time.monotonic()
                 name='%06d.json'%schedule[frame]
+                if relay is not None:
+                    saved=time.monotonic();name=relay.commit(frame,row,observation,saved,last['sim_s'])
+                    request_rows[name]=row;requests+=1
+                    record.update(status='Submitted',request=name,submitted_wall_s=saved,group_checks_ms=(saved-begin)*1000,
+                        image_copy_ms=0.,ipc_save_ms=0.,queue_occupied=len(slots.leases)-1)
+                    append(root/'candidates.jsonl',record);continue
                 if slots is not None:
                     identity=dict(run=inputs.identity[0],episode=inputs.identity[1],generation=inputs.identity[2],
                         sensors={n:a.id for n,a in inputs.sensor_map.items()})
@@ -158,7 +185,11 @@ def worker(root):
             attempts=sum(x['kind']=='live_pipeline' for x in entries) if slots is not None else len(entries)
             if m['frame'] in schedule:pending.append(m['frame'])
             if attempts>=cfg['max_forward_attempts']:
-                if requests==len(responses):break
+                if requests==len(responses):
+                    if relay is not None:
+                        for f,item in list(relay.frames.items()):
+                            if item['status']=='Partial':relay.reject(f)
+                    break
                 # Wait within bounded ticks without admitting more observations.
             else:
                 candidates()
@@ -168,6 +199,7 @@ def worker(root):
         consume_responses()
         for frame in pending:
             if frame not in decided:
+                if relay is not None:relay.reject(frame)
                 append(root/'candidates.jsonl',dict(candidate_index=schedule[frame],frame=frame,status='NotSubmitted',reason='RunOrForwardBudgetEnded'));decided.add(frame)
         (root/'model_stop').touch()
         until=time.monotonic()+cfg['model_exit_wall_s']
@@ -212,6 +244,7 @@ def supervise():
     if cfg.get('pipeline_service'):
         if load(base/'equivalence_result.json',{}).get('status')!='Passed':raise RuntimeError('InputEquivalenceRequired')
         if len((base/'forward_budget.jsonl').read_text().splitlines())!=cfg['offline_forward_cap']:raise RuntimeError('OfflineBudgetMismatch')
+        if cfg.get('per_camera') and load(base/'online_admission.json',{}).get('admitted') is not True:raise RuntimeError('OfflineReachabilityEvidenceRequired')
     with (base/'budget.lock').open('a') as lock:
         fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB);ledger=load(base/'budget.json',dict(runs=[]))
         if ledger['runs']:raise RuntimeError('SingleStartBudgetConsumed')
@@ -236,7 +269,7 @@ def supervise():
                 except RuntimeError:time.sleep(1.)
             else:raise TimeoutError('ServerReadiness')
             with (root/'worker.log').open('x') as f:
-                child=subprocess.Popen(['taskset','-c',c['process_cpus']['capture'],cfg['python'],'-m','tools.m8j13_parked_shadow','--worker-root',str(root),'--run-config',str(CFG)],stdout=f,stderr=subprocess.STDOUT,env=env,start_new_session=True)
+                child=subprocess.Popen(['taskset','-c',c['process_cpus']['capture'],cfg['python'],'-m',cfg.get('owner_module','tools.m8j13_parked_shadow'),'--worker-root',str(root),'--run-config',str(CFG)],stdout=f,stderr=subprocess.STDOUT,env=env,start_new_session=True)
                 until=time.monotonic()+cfg['worker_wall_s']
                 while child.poll() is None:
                     if server.poll() is not None:raise RuntimeError('ServerExited')

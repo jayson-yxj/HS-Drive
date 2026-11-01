@@ -34,11 +34,20 @@ def main():
     root=a.root;cfg=json.loads(a.run_config.read_text());c=config();os.umask(0o077)
     stop=threading.Event();pending=PreparedSlot();thread=None;model=None;baseline=None
     completed=0;rejected=0;attempt=None;previous=None;ledger=root.parent/'forward_budget.jsonl'
-    def age(row,start):
-        state=json.loads((root/'current_snapshot.json').read_text());now=time.monotonic()
-        stamp=PlanStamp(row['sequence_id'],row['frame_id'],row['timestamp_s'],row['input_capture_wall_s'],start,now,'frozen')
-        return dict(reason=freshness(stamp,row['sequence_id'],state['frame'],state['sim_s'],now),wall_age_s=now-row['input_capture_wall_s'],
-                    sim_age_s=state['sim_s']-row['timestamp_s'],checked_wall_s=now)
+    def age(row,start,wait_for_snapshot=False):
+        until=min(time.monotonic()+.06,row['input_capture_wall_s']+.3)
+        while True:
+            pending_path=root/'tick_pending.json'
+            first=json.loads(pending_path.read_text()) if cfg.get('per_camera') and pending_path.exists() else None
+            state=json.loads((root/'current_snapshot.json').read_text());now=time.monotonic()
+            second=json.loads(pending_path.read_text()) if first is not None else None
+            confirmed=first is None or (first==second and not second['pending'] and state['frame']==second['frame'])
+            stamp=PlanStamp(row['sequence_id'],row['frame_id'],row['timestamp_s'],row['input_capture_wall_s'],start,now,'frozen')
+            reason=freshness(stamp,row['sequence_id'],state['frame'],state['sim_s'],now)
+            if not confirmed and not reason:reason='SimulationSnapshotUnconfirmed'
+            if reason=='SimulationSnapshotUnconfirmed' and wait_for_snapshot and now<until:time.sleep(.001);continue
+            return dict(reason=reason,wall_age_s=now-row['input_capture_wall_s'],sim_age_s=state['sim_s']-row['timestamp_s'],
+                checked_wall_s=now,snapshot_confirmed=confirmed,sim_age_scope='Latest confirmed owner snapshot; unconfirmed in-flight tick never qualifies as fresh')
     def respond(name,status,**flags):atomic(root/'responses'/name,dict(status=status,**flags))
     def prepare_loop(model_cfg,camera):
         # This thread owns this stateless official Compose instance exclusively.
@@ -81,18 +90,25 @@ def main():
             network_namespace=os.readlink('/proc/self/ns/net'),load_and_digest_wall_s=time.monotonic()-loading,initial_memory=memory(model),
             pid_source_sha256=digest(Path(c['runtime_root'])/'official-source/leaderboard/team_code/pid_controller.py'),
             threads=dict(torch=torch.get_num_threads(),interop=torch.get_num_interop_threads(),affinity=sorted(os.sched_getaffinity(0)))))
-        thread=threading.Thread(target=prepare_loop,args=(model_cfg,camera),name='single-official-preprocessor',daemon=True);thread.start()
+        if cfg.get('per_camera'):
+            from tools.m8j13_camera_live import camera_prepare_loop
+            target=lambda:camera_prepare_loop(root,model_cfg,camera,pending,stop,age)
+        else:target=lambda:prepare_loop(model_cfg,camera)
+        thread=threading.Thread(target=target,name='single-official-preprocessor',daemon=True);thread.start()
         while not (root/'model_stop').exists() or not pending.empty():
             try:item=pending.take(timeout=.02)
             except Empty:continue
             if 'error' in item:raise RuntimeError(item)
+            if item.get('cancelled'):
+                rejected+=1;append(root/'worker_timing.jsonl',dict(request=item['name'],status='PartialCancelled',start_wall_s=item['start']))
+                respond(item['name'],'PartialCancelled',model_forward=False,reason='OwnerInputRejected');continue
             attempt=None;row=item['row'];start=item['start'];name=item['name'];wait_done=time.monotonic()
-            checked=age(row,start);rejection=item.get('rejection')
+            checked=age(row,start,wait_for_snapshot=True);rejection=item.get('rejection')
             if not rejection and checked['reason']:rejection='InputRejectedAfterWait'
             if completed>=cfg['planned_forwards']:rejection='ForwardBudgetEnded'
             transfer=0.
             if not rejection:
-                batch,transfer=OfficialPreprocessor.gpu(item.pop('cpu_batch'));checked=age(row,start)
+                batch,transfer=OfficialPreprocessor.gpu(item.pop('cpu_batch'));checked=age(row,start,wait_for_snapshot=True)
                 if checked['reason']:rejection='InputRejectedBeforeForward'
             before=None
             if not rejection:
@@ -103,7 +119,7 @@ def main():
                     fcntl.flock(lock,fcntl.LOCK_EX);entries=[json.loads(x) for x in ledger.read_text().splitlines()]
                     live=sum(x['kind']=='live_pipeline' for x in entries)
                     if len(entries)>=cfg['total_forward_cap'] or live>=cfg['max_forward_attempts']:rejection='ForwardBudgetEnded'
-                    checked=age(row,start)
+                    checked=age(row,start,wait_for_snapshot=True)
                     if not rejection and checked['reason']:rejection='InputRejectedBeforeForward'
                     if not rejection:
                         attempt=len(entries)+1;append(ledger,dict(attempt=attempt,kind='live_pipeline',request=name,input_frame=row['frame_id'],wall_s=time.monotonic()))

@@ -1,0 +1,41 @@
+{
+  "status": "Passed_24ExactInputPairs",
+  "fixed_inputs": 8,
+  "repeats_each_path": 3,
+  "old_end_to_batch_ms": {
+    "p50": 266.0971935838461,
+    "p95": 285.2780914865434,
+    "p99": 480.52806789055455,
+    "max": 538.7954916805029
+  },
+  "candidate_end_to_batch_ms": {
+    "p50": 195.29479555785656,
+    "p95": 210.66339071840048,
+    "p99": 215.55872935801744,
+    "max": 217.01279282569885
+  },
+  "paired_critical_path_saved_ms": {
+    "p50": 71.77159376442432,
+    "p95": 79.3071998283267,
+    "p99": 266.0261517576872,
+    "max": 321.78269885480404
+  },
+  "old_process_cpu_ms": {
+    "p50": 114.9416000000003,
+    "p95": 135.95204770000026,
+    "p99": 300.7576760900001,
+    "max": 349.92694200000017
+  },
+  "candidate_process_cpu_ms": {
+    "p50": 127.03637150000046,
+    "p95": 147.76323394999997,
+    "p99": 163.28160713,
+    "max": 167.42838500000002
+  },
+  "first_old_ms": 538.7954916805029,
+  "first_candidate_ms": 217.01279282569885,
+  "scope": "Historical copy-completion pacing; final row timestamps not changed. GPU cold transfer included; no renderer/model running concurrently. Tensor values, shapes, dtype, strides, all metadata exact. Reconstructed alpha bytes ignored in both BGR paths.",
+  "thread_policy": "Two compute units share prior model11-12 affinity; Torch2/OpenCV2/interop64 unchanged",
+  "independence_audit": "Original JPEG20 cv2, ResizeCropFlipImage and NormalizeMultiviewImage independently process one camera and fresh calibration copies; each worker owns transforms. Original Adaptor/Collect/collate after full observation; no model state touched.",
+  "normalization_mutable_config": "Mean/std only read; per-thread instances; fresh result dict and images per camera"
+}
