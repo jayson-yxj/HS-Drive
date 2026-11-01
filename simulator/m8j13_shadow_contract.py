@@ -18,3 +18,8 @@ def candidate_offset(index,interval=4,count=80):
 
 
 def parked_measurement_valid(speed):return math.isfinite(speed) and speed<=.1
+
+
+def snapshot_is_current(first,second,state):
+    """No claim of current simulation age while the sole owner advances a tick."""
+    return first is not None and first==second and not second['pending'] and state['frame']==second['frame']

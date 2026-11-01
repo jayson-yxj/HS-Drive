@@ -82,3 +82,30 @@ def test_frozen_camera_budget_and_original_deadlines():
     assert c['candidate_count']==120 and c['candidate_interval_ticks']==4 and c['cpu_camera_units']==2
     assert c['input_wait_wall_s']==.25 and c['max_plan_age_wall_s']==c['max_plan_age_sim_s']==.3
     assert not c['model_actuation_allowed'] and not c['training']
+
+
+def test_live_tuple_transform_matches_json_list_without_tolerance(tmp_path):
+    s,i,t,st,r,snap=fixture(tmp_path)
+    for n in CAMERAS:
+        st[n]['transform']=tuple(tuple(v for v in row) for row in st[n]['transform'])
+        r['camera_world_matrices'][n]=st[n]['transform']
+        s.publish_camera(t,st[n],bytes(SIZE//6))
+    assert isinstance(r['camera_world_matrices'][CAMERAS[0]],tuple)
+    serialized=json.loads((s.root/('0.%s.json'%CAMERAS[0])).read_text())
+    assert isinstance(serialized['stamp']['transform'],list)
+    changed=dict(r);changed['camera_world_matrices']=dict(r['camera_world_matrices'])
+    m=np.asarray(r['camera_world_matrices'][CAMERAS[0]]).copy();m[0,3]=1e-12;changed['camera_world_matrices'][CAMERAS[0]]=m.tolist()
+    with pytest.raises(ValueError,match='RowCameraBinding'):s.commit(t,changed,snap,10.2,1.2)
+    s.commit(t,r,snap,10.2,1.2)
+    assert s.committed_row(t)['camera_world_matrices'][CAMERAS[0]]==np.eye(4).tolist()
+    s.close()
+
+
+def test_pending_or_missing_snapshot_never_qualifies_for_current_age():
+    from simulator.m8j13_shadow_contract import snapshot_is_current
+    a=dict(pending=False,frame=10,wall_s=1.)
+    assert snapshot_is_current(a,dict(a),dict(frame=10))
+    assert not snapshot_is_current(None,None,dict(frame=10))
+    assert not snapshot_is_current(dict(a,pending=True),dict(a,pending=True),dict(frame=10))
+    assert not snapshot_is_current(a,dict(a,frame=11),dict(frame=11))
+    assert not snapshot_is_current(a,a,dict(frame=9))

@@ -24,6 +24,7 @@ from datasets.m8j12_contract import official_camera_contract,planning_to_hs,DryR
 from simulator.m8j13_safety import PlanStamp,freshness,validate_trajectory
 from simulator.m8j13_transport import Slots
 from simulator.m8j13_prepared_slot import PreparedSlot
+from simulator.m8j13_shadow_contract import snapshot_is_current
 
 ALLOWED={'frame_id','timestamp_s','sequence_id','ego_world_matrix','speed_mps','imu','imu_frame','imu_timestamp_s',
     'navigation_command','target_world_xy','ego_state_source','input_capture_wall_s','camera_frames','camera_timestamps_s','camera_world_matrices'}
@@ -41,7 +42,7 @@ def main():
             first=json.loads(pending_path.read_text()) if cfg.get('per_camera') and pending_path.exists() else None
             state=json.loads((root/'current_snapshot.json').read_text());now=time.monotonic()
             second=json.loads(pending_path.read_text()) if first is not None else None
-            confirmed=first is None or (first==second and not second['pending'] and state['frame']==second['frame'])
+            confirmed=not cfg.get('per_camera') or snapshot_is_current(first,second,state)
             stamp=PlanStamp(row['sequence_id'],row['frame_id'],row['timestamp_s'],row['input_capture_wall_s'],start,now,'frozen')
             reason=freshness(stamp,row['sequence_id'],state['frame'],state['sim_s'],now)
             if not confirmed and not reason:reason='SimulationSnapshotUnconfirmed'

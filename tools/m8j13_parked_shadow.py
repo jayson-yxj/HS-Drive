@@ -152,7 +152,10 @@ def worker(root):
                 group_done=time.monotonic()
                 name='%06d.json'%schedule[frame]
                 if relay is not None:
-                    saved=time.monotonic();name=relay.commit(frame,row,observation,saved,last['sim_s'])
+                    saved=time.monotonic()
+                    try:name=relay.commit(frame,row,observation,saved,last['sim_s'])
+                    except Exception as exc:
+                        record.update(status='Rejected',reason='PartialCommitError:'+repr(exc));append(root/'candidates.jsonl',record);raise
                     request_rows[name]=row;requests+=1
                     record.update(status='Submitted',request=name,submitted_wall_s=saved,group_checks_ms=(saved-begin)*1000,
                         image_copy_ms=0.,ipc_save_ms=0.,queue_occupied=len(slots.leases)-1)

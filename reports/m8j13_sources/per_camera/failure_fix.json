@@ -1,0 +1,24 @@
+{
+  "failure": "In-memory tuple-of-tuples compared directly with JSON-deserialized list-of-lists",
+  "evidence": "RawImageStamp.transform is tuple; record/asdict retains tuple. Inputs.row reuses it. PartialSlots writes same transform to JSON then compares list to original tuple; Python!= is true despite identical numbers. Historical offline rows were already JSON lists so earlier equivalence missed this representation boundary.",
+  "source": "simulator/m8j13_partial_transport.py: commit",
+  "fix": "Compare np.asarray transforms with np.array_equal; no tolerance change. A1e-12 element perturbation must still fail.",
+  "regression_before_live": 88,
+  "regression_delivery": 90,
+  "cross_python": {
+    "status": "Passed",
+    "creator_python": "3.10",
+    "reader": "3.8.20 (default, Oct  2 2024, 16:34:12) \n[Clang 18.1.8 ]",
+    "reader_forced_exit": 17,
+    "tuple_json_exact_match": true,
+    "resource_removed": true
+  },
+  "post_fix_live_test": "NotRun_StartBudgetConsumed",
+  "post_fix_model_replay": "NotRun_8OfflineAttemptsConsumed; comparison-only fix does not change preprocessing math",
+  "other_bounded_fixes": [
+    "Log failed commit disposition before rethrow",
+    "Reject-before-first-camera stays terminal",
+    "Missing or pending snapshot is explicitly unconfirmed, never a fresh simulation-age claim"
+  ],
+  "raw_failure_preserved": true
+}

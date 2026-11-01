@@ -50,6 +50,7 @@ class EarlyRelay:
         with self.lock:
             item=self.frames[frame]
             if item['status']=='Partial':self.slots.cancel(item['token']);item['status']='Cancelled'
+            elif item['status']=='AwaitingFirstCamera':item['status']='RejectedBeforeAnyCamera'
     def release(self,name):
         with self.lock:
             frame=self.names[name];item=self.frames[frame];self.slots.release(name);self.tokens.pop(frame,None);item['status']='Released'

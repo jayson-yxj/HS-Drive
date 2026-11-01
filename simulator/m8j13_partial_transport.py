@@ -60,7 +60,7 @@ class PartialSlots(Slots):
         if snapshot['frame']!=h['frame'] or abs(snapshot['sim_s']-h['timestamp'])>1e-5 or snapshot['pose']!=row['ego_world_matrix'] or snapshot['speed']!=row['speed_mps']:raise ValueError('SnapshotBindingMismatch')
         for name in CAMERAS:
             rec=json.loads((self.root/('%d.%s.json'%(token['slot'],name))).read_text());s=rec['stamp']
-            if rec['token']!=token or row['camera_frames'][name]!=s['frame'] or row['camera_timestamps_s'][name]!=s['timestamp_s'] or row['camera_world_matrices'][name]!=s['transform']:raise ValueError('RowCameraBindingMismatch')
+            if rec['token']!=token or row['camera_frames'][name]!=s['frame'] or row['camera_timestamps_s'][name]!=s['timestamp_s'] or not np.array_equal(np.asarray(row['camera_world_matrices'][name]),np.asarray(s['transform'])):raise ValueError('RowCameraBindingMismatch')
         h.update(complete=True,row=row,row_binding=binding(row,h['identity']));atomic(self.root/('%d.partial.json'%token['slot']),h)
     def committed_row(self,token):
         h=self.header(token)
