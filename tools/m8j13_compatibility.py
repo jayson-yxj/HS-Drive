@@ -49,9 +49,14 @@ def nav_geometry(world,ego_tf,target):
             row=dict(ego_world_matrix=tf.get_matrix(),target_world_xy=[p.x,p.y],imu=[0]*6+[compass])
             via_imu=measured_navigation_target(row);assert np.allclose(via_imu,expected,atol=1e-4)
             gps=world.get_map().transform_to_geolocation(p);world_xy=scope['gps_to_location'](reference,[gps.latitude,gps.longitude])
-            assert np.allclose(world_xy,[p.x,p.y],atol=.01)
-            checks.append(dict(yaw=yaw,direction=label,distance_m=float(np.linalg.norm(mapped)),world_gps_error_m=float(np.linalg.norm(world_xy-[p.x,p.y]))))
-    return dict(status='Passed',cases=len(checks),checks=checks,source_sha256=digest(source),oracle_scope='Geometry checks only; no actor truth passed to model')
+            back=world.get_map().geolocation_to_transform(gps)
+            checks.append(dict(yaw=yaw,direction=label,distance_m=float(np.linalg.norm(mapped)),
+                world_gps_error_m=float(np.linalg.norm(world_xy-[p.x,p.y])),
+                official_gps_inverse_xy=world_xy.tolist(),measured_world_xy=[p.x,p.y],
+                candidate_native_roundtrip_error_m=float(np.linalg.norm([back.x-p.x,back.y-p.y]))))
+    compatible=all(r['world_gps_error_m']<=.01 for r in checks)
+    return dict(status='Passed' if compatible else 'GPSProjectionIncompatible',world_ego_directions='Passed',
+        cases=len(checks),checks=checks,source_sha256=digest(source),oracle_scope='Geometry checks only; no actor truth passed to model')
 
 
 class Owner:
@@ -188,6 +193,7 @@ class Inputs:
 
 
 def shadow(owner,root):
+    if json.load(open(root/'geometry.json'))['status']!='Passed':raise RuntimeError('ShadowBlockedByGPSCompatibility')
     cfg=owner.cfg;ego=owner.ego();inputs=Inputs(owner,ego,root);proc=None
     for d in ['requests','responses','native','diagnostics']:(root/d).mkdir()
     try:
@@ -323,11 +329,14 @@ def worker(root,phase):
     cfg=json.loads(CFG.read_text());cfg['run_tick_cap']=cfg['shadow_max_ticks'] if phase=='shadow' else cfg['round_max_ticks']*4
     owner=None;result=dict(phase=phase,status='Partial',model_controls=0)
     try:
-        owner=Owner(root,cfg);result['work']=shadow(owner,root) if phase=='shadow' else stopping(owner,root);result['status']='Recorded'
+        # Keep a reference even if initialization raises, so settings restoration
+        # can run after a geometry or interface failure.
+        owner=Owner.__new__(Owner);owner.__init__(root,cfg)
+        result['work']=shadow(owner,root) if phase=='shadow' else stopping(owner,root);result['status']='Recorded'
     except BaseException as exc:result.update(error=repr(exc),traceback=traceback.format_exc())
     finally:
         if owner is not None:
-            result['explicit_ticks']=owner.tick_count;result['charged_ticks']=owner.tick_count+30
+            result['explicit_ticks']=getattr(owner,'tick_count',0);result['charged_ticks']=result['explicit_ticks']+30
             try:result['cleanup']=owner.close()
             except Exception as exc:result['cleanup_error']=repr(exc)
         write(root/'result.json',result);print(json.dumps(result,indent=2),flush=True)
@@ -373,6 +382,9 @@ def supervise(phase):
         except BaseException as exc:report['error']=repr(exc)
         finally:
             terminate(child);terminate(server)
+            until=time.monotonic()+5.
+            while time.monotonic()<until and (any(listening(p) for p in range(c['port'],c['port']+3)) or (server is not None and group_members(server.pid))):
+                time.sleep(.1)
             report['ports_after']={str(p):listening(p) for p in range(c['port'],c['port']+3)};report['groups_after']=[group_members(p.pid) for p in [server,child] if p is not None]
             ledger['runs'][-1]['charged_ticks']=report.get('result',{}).get('charged_ticks',reserve);atomic(ledger_path,ledger)
             write(root/'supervisor.json',report);print(json.dumps(report,indent=2),flush=True)
