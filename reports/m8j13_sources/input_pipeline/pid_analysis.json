@@ -1,0 +1,48 @@
+{
+  "target": "First native lon_reg_final entry, not last or mean; window-average planned speed sample",
+  "speed_feedback": "Signed forward speed m/s;0 for accepted parked inputs",
+  "gains": {
+    "Kp": 5,
+    "Ki": 0.5,
+    "Kd": 1,
+    "window": 10,
+    "error_clip": [
+      0,
+      1
+    ],
+    "throttle_clip": [
+      0,
+      1
+    ]
+  },
+  "first_sample_explanation": "Target0.33375287 minus speed0; proportional term alone1.668764>1, final PID saturated. All saved longitudinal outputs reproduced without new forward.",
+  "records": {
+    "previous16": {
+      "samples": 16,
+      "desired_speed_min_mps": 0.3337528705596924,
+      "desired_speed_max_mps": 0.8187344074249268,
+      "error_min_mps": 0.3337528705596924,
+      "error_max_mps": 0.8187344074249268,
+      "reconstructed_unclipped_throttle_min": 1.5689009428024292,
+      "reconstructed_unclipped_throttle_max": 4.677303087711334,
+      "full_throttle": 16,
+      "max_future_speed_mps": 8.116279602050781,
+      "planned_future_above_5mps": 16,
+      "trajectory_check_failures": 0
+    },
+    "current32": {
+      "samples": 32,
+      "desired_speed_min_mps": 0.3337528705596924,
+      "desired_speed_max_mps": 2.67218017578125,
+      "error_min_mps": 0.3337528705596924,
+      "error_max_mps": 2.67218017578125,
+      "reconstructed_unclipped_throttle_min": 1.1697289586067199,
+      "reconstructed_unclipped_throttle_max": 5.766771221160889,
+      "full_throttle": 32,
+      "max_future_speed_mps": 8.250483512878418,
+      "planned_future_above_5mps": 32,
+      "trajectory_check_failures": 0
+    }
+  },
+  "interpretation": "Acceleration recommendation in parked empty-road scene and saturation are observed; neither proves moving controller failure. Future native speed exceeds5m/s driving limit. No PID/trajectory change, no driving admission. Different live memory gaps prevent attributing planning differences to algorithm changes."
+}
