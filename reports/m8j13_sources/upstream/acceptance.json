@@ -1,0 +1,41 @@
+{
+  "status": "CandidateSupportedForCompatibilityChecks",
+  "J13_A": "Partial",
+  "SensorSynchronizationPassed": false,
+  "official_baseline_promoted": false,
+  "MetadataConsistency": "SupportedForTestedCandidate",
+  "CaptureAssociation": "SupportedFiniteFrontCameraMarkerTest",
+  "DeadlineAndProtection": "ExpiryRejectionObserved_NoVehicleStoppingTest",
+  "R1": {
+    "measurement_groups": 80,
+    "marker_matches": 80,
+    "expired_rejected": 6
+  },
+  "R2": {
+    "measurement_groups": 500,
+    "metadata_consistent": 500,
+    "expired_rejected": 12,
+    "accepted": 488
+  },
+  "starts": 2,
+  "explicit_ticks": 652,
+  "charged_ticks": 712,
+  "tick_budget": 900,
+  "previous_round": {
+    "starts": 3,
+    "charged_ticks": 892,
+    "preserved": true
+  },
+  "model_forwards": 0,
+  "model_controls": 0,
+  "training": 0,
+  "driving_runs": 0,
+  "moving_fault_injections": "NotRun",
+  "vehicle_stopping_protection": "NotRun",
+  "limits": [
+    "Candidate package/client evaluated together; no isolated-patch causal claim",
+    "0.3s rule unchanged; R2 12/500 rejected; not sustained realtime pass",
+    "Only finite CAM_FRONT marker association checked; no per-pixel absolute time claim",
+    "0.9.16 not promoted to formal Bench2Drive baseline"
+  ]
+}

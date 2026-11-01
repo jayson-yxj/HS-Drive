@@ -1,0 +1,87 @@
+{
+  "result": {
+    "status": "Measured",
+    "MetadataConsistency": "Supported",
+    "CaptureAssociation": "ConsistentWithR1LimitedEvidence",
+    "DeadlineAndProtection": {
+      "expired_groups": 12,
+      "accepted_groups": 488,
+      "rejected_groups": 12,
+      "reasons": {
+        "PlanWallExpired": 12
+      },
+      "stop_outputs": 12,
+      "actuated": 0,
+      "wall_age_s": {
+        "p50": 0.157683159224689,
+        "p95": 0.18894316144287582,
+        "p99": 0.47782426327466965,
+        "max": 1.310639115050435
+      }
+    },
+    "model_forwards": 0,
+    "model_controls": 0,
+    "training": 0,
+    "apply_settings_frame_delta": 4,
+    "cleanup": {
+      "settings": {
+        "synchronous_mode": false,
+        "fixed_delta_seconds": null,
+        "no_rendering_mode": false,
+        "substepping": true,
+        "max_substep_delta_time": 0.01,
+        "max_substeps": 10
+      },
+      "remaining_owned": []
+    },
+    "measurement_ticks": 500,
+    "expected_groups": 500,
+    "complete_groups": 500,
+    "missing_groups": 0,
+    "metadata_failures": 0,
+    "duplicate_keys": 0,
+    "pixel_checks": 0,
+    "pixel_failures": 0,
+    "first_pixel_failures": [],
+    "raw_count": 3276,
+    "explicit_ticks": 546,
+    "charged_ticks": 576,
+    "all_phase_counts": {
+      "warmup": 40,
+      "measurement": 500,
+      "drain": 6
+    },
+    "callback_overflow": 0,
+    "run2_eligible": true
+  },
+  "all_phase_raw_timestamp_mismatches": 0,
+  "all_phase_unmatched_snapshot_images": 0,
+  "all_phase_pose_max_abs_error": 0.0,
+  "all_phase_group_count": 546,
+  "all_phase_deadline_rejections": 15,
+  "all_phase_raw_image_count": 3276,
+  "callback_bytes_copy": "Independent bytes at native callback entry, BGRA8, before queue; SHA256 later computed only from owned copy",
+  "transitions_count": 0,
+  "transitions_matched": 0,
+  "measurement_transitions": 0,
+  "one_frame_wrong_side_discrimination": "At each snapshot side transition, expected red count exceeds opposite count using fixed thresholds; opposite/previous-side hypothesis fails at these transitions",
+  "pixel_scope": "CAM_FRONT red body position only; 80 measured frames, no proof of all pixels/all cameras/dynamic driving",
+  "raw_metadata_sha256": "deb897ee99cae2c65cf7718ed6506401a26f71eac2bcce4377dfd89a6e2e464c",
+  "snapshots_sha256": "458a1173c175c9bcb0cc995b0d14a37c78b69ac59b78c1bfe4d09b8ee2fa44f0",
+  "decision_log_sha256": "133c4ca757756d7442c10d6126810e84026586adf765df755394f9403c6d2dfa",
+  "ports_after": {
+    "2300": true,
+    "2301": true,
+    "2302": true
+  },
+  "groups_after": [
+    [
+      {
+        "pid": 707117,
+        "argv": "",
+        "cwd": "/root/gpufree-data/simulators/m6f_CARLA_0.9.16/CarlaUE4/Binaries/Linux"
+      }
+    ],
+    []
+  ]
+}
