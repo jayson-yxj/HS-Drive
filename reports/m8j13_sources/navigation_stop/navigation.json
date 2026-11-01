@@ -1,0 +1,49 @@
+{
+  "adapter": "simulator/m8j13_navigation.py",
+  "boundary": "Typed route -> native map inverse for0.9.16 GPS -> original set_route(gps=False) -> original run_step(world ego xy) -> measured_navigation_target",
+  "legacy_0915": "Original planner.set_route(gps=True), original Mercator inverse and map-provided lat/lon reference",
+  "world_routes": "No coordinate conversion; explicit world_carla type",
+  "offline0915": {
+    "status": "Passed",
+    "cases": 120,
+    "max_consumer_error_m": 2.3376838242938902e-09,
+    "version": "0.9.15",
+    "mode": "LegacyGPS0915",
+    "world_route": "Passed",
+    "gps_route_consumer": "Passed",
+    "synthetic_compass": "Passed",
+    "map_reference": "NativeMap",
+    "model_forwards": 0
+  },
+  "offline0916": {
+    "status": "Passed",
+    "cases": 120,
+    "max_consumer_error_m": 6.968292609599303e-10,
+    "version": "0.9.16",
+    "mode": "NativeMapGPS0916",
+    "world_route": "Passed",
+    "gps_route_consumer": "Passed",
+    "synthetic_compass": "Passed",
+    "map_reference": "NativeMap",
+    "model_forwards": 0
+  },
+  "live_geometry": {
+    "status": "Passed",
+    "cases": 120,
+    "max_consumer_error_m": 6.968292609599303e-10,
+    "version": "0.9.16",
+    "mode": "NativeMapGPS0916",
+    "world_route": "Passed",
+    "gps_route_consumer": "Passed",
+    "synthetic_compass": "Passed",
+    "map_reference": "NativeMap",
+    "model_forwards": 0
+  },
+  "live_imu_consumer_checks": 83,
+  "max_live_navigation_difference_m": 0.00492095947265625,
+  "max_live_compass_difference_rad": 5.0009020350572086e-05,
+  "live_scope": "Same-frame measured IMU and snapshot; original consumer selected target. Finite low-speed/parked heading at fixed site, not full-map validation.",
+  "map_reference": "Native map georeference; no hardcoded offsets/scales or sign changes",
+  "model_and_pid_unchanged": true,
+  "other_actor_truth_passed_to_model": false
+}

@@ -40,6 +40,8 @@ def main():
             if a.execution_contract:fcntl.flock(lock,fcntl.LOCK_EX)
             if reason and latched is None:
                 latched=reason;atomic(root/'watchdog_fault.json',dict(reason=reason,wall_s=now))
+                if a.execution_contract:
+                    append(root/'watchdog_decisions.jsonl',dict(reason=reason,decision_wall_s=now,execution_state=state))
             if latched and now-last_brake>=.05:
                 result=dict(reason=latched,wall_s=now)
                 try:

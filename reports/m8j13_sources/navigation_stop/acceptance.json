@@ -1,0 +1,34 @@
+{
+  "J13_A": "Partial",
+  "NavigationAndGeometryCompatibility": "Passed_FiniteOfflineAndLiveNavigationScope",
+  "IndependentStartAndBrake": "Partial_Preplanned1mpsBrakeNotReached",
+  "FaultDetection": "Observed_RealCommandExpiry_FourPlannedInjectionsNotRun",
+  "StopCommandExecution": "Observed_IndependentWatchdogAndLatchedOwner",
+  "PhysicalStopResponse": "Observed_RealExpiryAtBelow1mps_Held1.35s",
+  "WatchdogExecutionCoverage": "Partial_RPCBrakeDuringOwnerTickWait_IndefiniteOwnerStallAndDisconnectNotRun",
+  "DeadlineCompliance": "NotPassed_CommandExpiryAndInputWaitRejections",
+  "ReadyForShadowInference": false,
+  "ReadyForShadowInference_reason": "Navigation blocker removed; preplanned start/brake gate did not pass, so four moving faults remain NotRun and the requested complete protective foundation is not yet validated",
+  "SensorSynchronizationPassed": false,
+  "RuntimeVersionPromoted": false,
+  "S0": "NotRun",
+  "S1": "NotRun",
+  "S2": "NotRun",
+  "model_forwards": 0,
+  "model_controls": 0,
+  "training": 0,
+  "driving_budget_used_this_round": 0,
+  "planned_faults": {
+    "camera_missing": "NotRun_BasicGatePartial",
+    "worker_blocked": "NotRun_BasicGatePartial",
+    "nonfinite_control": "NotRun_BasicGatePartial",
+    "manual_estop": "NotRun_BasicGatePartial"
+  },
+  "remaining": [
+    "Preplanned >=1m/s start followed by deliberate brake and hold within frozen budget",
+    "Four fixed moving fault cases, including a real late planner response rejected after latch",
+    "Live command-interface failure and connection-loss classification; indefinite owner stall cannot produce physics progress",
+    "Joint rendering/model inference and freshness/performance evidence in a later authorized task"
+  ],
+  "no_automatic_S0": true
+}

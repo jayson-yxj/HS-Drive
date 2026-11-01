@@ -81,3 +81,21 @@ def test_new_owner_and_watchdog_never_apply_velocity_or_tick_twice():
     assert not any(isinstance(n,ast.Attribute) and n.attr in banned for n in ast.walk(tree))
     watchdog=ast.parse(Path('tools/m8j13_watchdog.py').read_text())
     assert not any(isinstance(n,ast.Attribute) and n.attr=='tick' for n in ast.walk(watchdog))
+
+
+def test_reconcile_first_watchdog_brake_during_owner_tick_not_later_decision():
+    from simulator.m8j13_execution import reconcile_watchdog_stop
+    def row(t,wall,speed,brake,x):
+        return dict(sim_s=t,tick_end_wall_s=wall,speed_norm=speed,position=[x,0.,0.],full_control=dict(throttle=0. if brake else .5,brake=brake))
+    feedback=[row(1.,10.,.95,0.,0.),row(1.05,10.4,.02,1.,.01),row(2.05,11.4,0.,1.,.011)]
+    events=[dict(submitted=True,call_end_wall_s=10.21)]
+    fault=dict(reason='ControlCommandExpired',wall_s=10.2)
+    commands=[dict(source='IndependentTestControl',issued_wall_s=9.95,valid_until_wall_s=10.19),
+        dict(source='SafetyStop',issued_wall_s=10.41,valid_until_wall_s=10.71)]
+    r=reconcile_watchdog_stop(feedback,events,fault,commands)
+    assert r['status']=='PhysicalStopObserved' and r['speed_before_mps']==.95
+    assert r['first_brake_feedback_speed_mps']==.02 and r['normal_commands_after_latch']==0
+    assert r['previous_to_stop_sim_s']==pytest.approx(.05)
+    assert r['detection_after_deadline_wall_ms']==pytest.approx(10.)
+    assert reconcile_watchdog_stop(feedback,[],fault,commands)['status']=='CommandNotDelivered'
+    assert reconcile_watchdog_stop(feedback[:1],events,fault,commands)['status']=='ResponseUnverified'

@@ -183,6 +183,15 @@ def run_round(owner,root,case,basic=False):
                 if inputs.collisions:raise RuntimeError('CollisionObserved')
             except Exception as exc:
                 errors.append(repr(exc));gate.stop(str(exc),m['sim_s'],time.monotonic())
+            fault=load(folder/'watchdog_fault.json')
+            if fault and decision is None:
+                # The watchdog may have braked while world.tick was blocked.
+                # Keep its first reason/time and this measured observation;
+                # never substitute a later owner-side planner-expiry decision.
+                gate.stop(fault['reason'],m['sim_s'],time.monotonic())
+                decision=dict(reason=fault['reason'],wall_s=fault['wall_s'],sim_s=m['sim_s'],frame=m['frame'],position=m['position'],
+                    simulation_time_semantics='First snapshot observed after independent decision; not exact fault simulation time')
+                append(folder/'fault_chain.jsonl',dict(event='independent_stop_observed',**decision))
             if index>=cfg['settle_ticks']:maxspeed=max(maxspeed,m['speed_norm'])
             if index>=cfg['settle_ticks'] and m['speed_norm']>2.:gate.stop('TestSpeedLimitExceeded',m['sim_s'],time.monotonic())
             if decision and m['full_control']['brake']>0 and m['full_control']['throttle']==0:

@@ -1,0 +1,37 @@
+{
+  "input_wait_wall_s": 0.25,
+  "plan_age_sim_s": 0.3,
+  "plan_age_wall_s": 0.3,
+  "command_age_wall_s": 0.3,
+  "watchdog_wall_s": 0.3,
+  "contract_changes": "No numerical/domain changes. Added distinct planner status, issued-command expiry and acknowledged feedback; ack does not renew validity.",
+  "normal_command_deadline": "min(issue_monotonic+0.3, original_test_plan_capture_monotonic+0.3)",
+  "planner": "Consumes owner requests carrying original snapshot elapsed time and tick-start monotonic; reply heartbeat cannot refresh source capture",
+  "ack": "Next observed Tick control feedback, linked command sequence and matched fields. Automatic gear may change naturally; hand_brake/reverse/manual mode must match.",
+  "first_fault": "ControlCommandExpired",
+  "blocking_call_wall_ms": 321.3062323629856,
+  "watchdog_detection_after_expiry_ms": 18.228886649012566,
+  "watchdog_submit_ms": 0.5583968013525009,
+  "normal_commands_after_latch": 0,
+  "physical_response": "PhysicalStopObserved",
+  "tick_wall_ms": {
+    "p50": 54.434943944215775,
+    "p95": 110.00004708766907,
+    "p99": 327.30051241815113,
+    "max": 371.2585661560297
+  },
+  "observed_tick_frequency_wall_hz": 14.750121432214325,
+  "physics_frequency_sim_hz": 20.0,
+  "incomplete_input_wait_rejections": 2,
+  "previous_candidate_expired_rejected": 12,
+  "previous_candidate_denominator": 500,
+  "all_previous_results_preserved": true,
+  "limits": [
+    "world.tick blocking measured; render/server/RPC/OS contribution not individually isolated",
+    "Planner blocked-injection was not run; independent watchdog did submit brake during a real owner tick wait",
+    "Owner is sole tick source: an indefinitely stalled owner permits brake delivery when RPC works but cannot guarantee physics progress/held stop",
+    "Shared actuation lock prevents a checked normal command racing a published latch; owner stall while holding that lock may delay watchdog actuation",
+    "CommandNotDelivered/ResponseUnverified are implemented and synthetic-tested, not live disconnect evidence",
+    "No model loaded; no joint inference latency or realtime claim"
+  ]
+}
