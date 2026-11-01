@@ -1,0 +1,52 @@
+{
+  "runtime_version": "0.9.16",
+  "server_sha256": "03bcd413615fa1fc61a5b846342dbdc4e6b3541320a40d6bf17ff927039731f9",
+  "client_sha256": "111e8c800ba327ba27ce7d15d406f97577e0eaea44c354144ed3351b74f87389",
+  "matching_clients": [
+    "supervisor",
+    "owner",
+    "watchdog"
+  ],
+  "same_rpc_port": 2300,
+  "owner_tick_only": true,
+  "model_network_namespace_separate": true,
+  "model_carla_module_absent": true,
+  "completion_IPC_has_no_executable_controls": true,
+  "owner_apply_calls": 384,
+  "all_owner_controls": {
+    "steer": 0.0,
+    "throttle": 0.0,
+    "brake": 1.0
+  },
+  "watchdog_brake_submissions": 37,
+  "watchdog_latch_reason": "ControlCommandExpired",
+  "watchdog_event_scope": "During post-model shutdown waiting, independent brake persisted; no normal/model actuation existed",
+  "initialization_max_speed_norm_mps": 2.450000286102295,
+  "initialization_motion": "Spawned above ground; measured falling/settling occurs before parked admission, not hidden as stationary data",
+  "admission_last21_ticks_max_speed_mps": 0.0,
+  "measurement_max_speed_mps": 0.0,
+  "exit_terminal_speed_mps": 0.0,
+  "measurement_control_feedback_all_matches": true,
+  "collision_count": 0,
+  "actual_inference_inputs": 16,
+  "input_identity_groups": 1,
+  "all_accepted_inputs_same_frame_snapshot_and_IMU": true,
+  "max_live_extrinsic_error": 5.534918400940114e-06,
+  "max_live_navigation_difference_m": 0.003261566162109375,
+  "navigation_entry": "GPS -> native current map inverse -> original RoutePlanner -> Inputs.row -> measured IMU target",
+  "model_inputs": "Six camera images, calibration, measured time, Oracle Ego State, navigation only; no other actor GT, depth, point cloud or future trajectory",
+  "preprocessing": "Original BGR bytes from BGRA, JPEG quality20, crop704x384, original to_rgb normalization, FP32",
+  "all_camera_counts": {
+    "CAM_FRONT": 237,
+    "CAM_FRONT_RIGHT": 237,
+    "CAM_FRONT_LEFT": 237,
+    "CAM_BACK": 237,
+    "CAM_BACK_LEFT": 236,
+    "CAM_BACK_RIGHT": 236
+  },
+  "sensor_tail": "Last2 world ticks have incomplete receive tail; retained counts, not a new500tick sensor acceptance",
+  "cleanup_complete": true,
+  "remaining_owned_actors": 0,
+  "settings_restored": true,
+  "traffic_manager": "NotCreated"
+}
