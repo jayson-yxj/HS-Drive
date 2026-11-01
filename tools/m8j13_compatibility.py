@@ -130,6 +130,8 @@ class Inputs:
     def drain(self):
         for payload in self.inbox.drain():
             s=payload.stamp;r=s.record();key=(s.camera,s.frame)
+            if (payload.width,payload.height,len(payload.bgra))!=(704,396,704*396*4):raise RuntimeError('CameraPayloadShapeMismatch')
+            r['copied_monotonic_s']=payload.copied_monotonic_s
             append(self.folder/'camera_metadata.jsonl',r)
             if key in self.seen:raise RuntimeError('DuplicateRawObservation')
             self.seen.add(key);self.groups[s.frame].append(r);self.payloads[key]=payload.bgra
@@ -147,9 +149,13 @@ class Inputs:
         if self.states[max(self.states)]['sim_s']-m['sim_s']>.3+1e-6:return None,'ObservationSimulationExpired'
         imu=self.imu[frame]
         if abs(imu['timestamp']-m['sim_s'])>1e-5:raise RuntimeError('IMUTimestampMismatch')
-        target=self.owner.target
+        target=self.owner.target;command=4
+        if getattr(self,'navigation',None) is not None:
+            xy,cmd=self.navigation.run_step(np.asarray(m['position'][:2]))
+            from types import SimpleNamespace
+            target=SimpleNamespace(x=float(xy[0]),y=float(xy[1]));command=cmd.value
         row=dict(frame_id=frame,timestamp_s=m['sim_s'],sequence_id=self.folder.name,ego_world_matrix=m['pose'],speed_mps=m['speed'],
-            imu=imu['values'],imu_frame=frame,imu_timestamp_s=imu['timestamp'],navigation_command=4,target_world_xy=[target.x,target.y],
+            imu=imu['values'],imu_frame=frame,imu_timestamp_s=imu['timestamp'],navigation_command=command,target_world_xy=[target.x,target.y],
             ego_state_source='Oracle Ego State',input_capture_wall_s=m['input_wall_s'],camera_frames={r['camera']:r['frame'] for r in g},
             camera_timestamps_s={r['camera']:r['timestamp_s'] for r in g},camera_world_matrices={r['camera']:r['transform'] for r in g})
         measured=measured_navigation_target(row);geometry=native_target(m['pose'],row['target_world_xy'])
