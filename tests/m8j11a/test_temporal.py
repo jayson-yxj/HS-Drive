@@ -72,3 +72,45 @@ def test_output_comparison_no_reordering_or_tolerance_relaxation():
     a={'scores':np.array([.5,.6]),'labels':np.array([1,2])}
     assert compare_arrays(a,a)['scores']==0
     with pytest.raises(AssertionError):compare_arrays(a,dict(a,labels=np.array([2,1])))
+
+def test_partial_memory_reset_rejected():
+    m=model();a=HistoryIntervention(m,'cold');r=row(0);a.before(r)
+    m.prev_scene_token=r['scene_token'];m.pts_bbox_head.memory_velo=torch.ones(1,4,1)
+    with pytest.raises(AssertionError,match='PartialReset'):
+        m.pts_bbox_head.pre_update_memory(dict(prev_exists=torch.tensor([0.]),timestamp=torch.tensor([10.],dtype=torch.float64)))
+
+def test_wrong_memory_age_is_detected():
+    m=model();a=HistoryIntervention(m);forward(m,a,row(0));m.pts_bbox_head.memory_timestamp[:,0]+=1
+    with pytest.raises(AssertionError):forward(m,a,row(1))
+
+def test_source_scene_and_time_not_fabricated_and_default_observer_same():
+    reference=model();observed=model();adapter=HistoryIntervention(observed)
+    for r in [row(0),row(1),row(2),row(0,'next')]:
+        saved=dict(r)
+        new=reference.prev_scene_token!=r['scene_token'];reference.prev_scene_token=r['scene_token']
+        if new:reference.pts_bbox_head.reset_memory()
+        t=r['timestamp_us']/1e6
+        reference.pts_bbox_head.pre_update_memory(dict(prev_exists=torch.tensor([float(not new)]),timestamp=torch.tensor([t],dtype=torch.float64)))
+        reference.pts_bbox_head.post(t);forward(observed,adapter,r)
+        assert r==saved
+        for n in MEMORY_NAMES:torch.testing.assert_close(getattr(reference.pts_bbox_head,n),getattr(observed.pts_bbox_head,n),atol=0,rtol=0)
+
+def test_official_cold_initialization_without_full_forward():
+    from projects.mmdet3d_plugin.models.dense_heads.streampetr_head import StreamPETRHead
+    head=Head();head.embed_dims=3;head.pc_range=torch.tensor([-1.,-2.,-3.,1.,2.,3.])
+    head.pseudo_reference_points=S(weight=torch.full((2,3),.75))
+    m=S(prev_scene_token='old',pts_bbox_head=head,test_flag=False,single_test=False)
+    head.pre_update_memory=lambda data:StreamPETRHead.pre_update_memory(head,data)
+    adapter=HistoryIntervention(m,'cold');r=row(0);adapter.before(r)
+    assert m.prev_scene_token is None
+    m.prev_scene_token=r['scene_token']
+    head.pre_update_memory(dict(prev_exists=torch.tensor([0.]),timestamp=torch.tensor([10.],dtype=torch.float64)))
+    assert adapter.audit['actual_head_prev_exists']==0
+    assert head.memory_embedding.count_nonzero()==0
+    assert head.memory_reference_point[:,:2].count_nonzero()>0
+    assert torch.equal(head.memory_egopose[0,0],torch.eye(4))
+
+def test_budget_condition_cap(tmp_path):
+    p=tmp_path/'ledger';reserve(p,'r','T1',0,maximum=243,primary_limit=1)
+    with pytest.raises(RuntimeError,match='ConditionBudget'):reserve(p,'r','T1',1,maximum=243,primary_limit=1)
+    reserve(p,'other','T2',0,maximum=243,primary_limit=1)

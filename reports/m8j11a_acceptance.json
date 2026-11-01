@@ -1,0 +1,262 @@
+{
+  "stage": "M8-J11A",
+  "client_task_date": "2026-11-01",
+  "host_execution_clock": {
+    "T1": "2026-11-01T04:16:10.260641+00:00",
+    "T2": "2026-11-01T04:15:34.233787+00:00",
+    "T3": "2026-11-01T04:18:01.853990+00:00"
+  },
+  "clock_note": "Client task date and recorded execution host UTC date are both 2026-11-01; exact unmodified timestamps are retained in phase logs.",
+  "InterventionImplementation": "Passed_ObservedHeadStateAndExactCrossChecks",
+  "ExperimentCoverage": "Completed_T1_81_T2_81_T3_41",
+  "TemporalSensitivity": "Measured_HistoryRemovalAndSparseHistoryDegradation_ResetEffectsMixed_NoRobustnessCertification",
+  "actual_forwards": 203,
+  "extra_forwards": 0,
+  "warmup": 0,
+  "total_budget": 243,
+  "training_steps": 0,
+  "backward_calls": 0,
+  "CARLA": false,
+  "dependency_changes": false,
+  "official_source_changes": false,
+  "reference": "PETR-A retained; T0 comparison in this experiment is StreamPETR only",
+  "model_default_changed": false,
+  "main_updated": false,
+  "branch_deleted": false,
+  "merge_eligibility": "CodeReady_DefaultUnchanged_RelevantTestsPassed_UserConfirmationPending",
+  "tests": {
+    "passed": 24,
+    "skipped": 1,
+    "skip": "Existing CUDA Attention test not rerun; actual203FP32 forwards separately executed",
+    "full_model_mock_forwards_counted": false
+  },
+  "paired_consistency_checks": 46,
+  "paired_max_abs": 0.0,
+  "atol": 1e-05,
+  "rtol": 1e-05,
+  "parameter_buffer_integrity": true,
+  "GT_input": false,
+  "pose_source": "nuScenes ego_pose plus calibrated_sensor; LIDAR_TOP reference-to-global; NOT visual odometry",
+  "T3_official_eval": "NotRun_Intentional41FrameProjectOnly",
+  "intervals_s": {
+    "T1": {
+      "count": 79,
+      "mean": 0.49748282278481015,
+      "median": 0.499881,
+      "p90": 0.500449,
+      "p95": 0.5010951,
+      "max": 0.599961
+    },
+    "T2": {
+      "count": 79,
+      "mean": 0.49748282278481015,
+      "median": 0.499881,
+      "p90": 0.500449,
+      "p95": 0.5010951,
+      "max": 0.599961
+    },
+    "T3": {
+      "count": 39,
+      "mean": 0.9949187692307692,
+      "median": 0.999768,
+      "p90": 1.0008758,
+      "p95": 1.0062981000000002,
+      "max": 1.052144
+    }
+  },
+  "oldest_observed_age_s": {
+    "T1": {
+      "count": 0,
+      "mean": null,
+      "median": null,
+      "p90": null,
+      "p95": null,
+      "max": null
+    },
+    "T2": {
+      "count": 77,
+      "mean": 1.8344669311077564,
+      "median": 1.9995031356811523,
+      "p90": 2.00138578414917,
+      "p95": 2.0018100261688234,
+      "max": 2.100712776184082
+    },
+    "T3": {
+      "count": 39,
+      "mean": 3.671829871642284,
+      "median": 3.9991750717163086,
+      "p90": 4.00244402885437,
+      "p95": 4.0079813480377195,
+      "max": 4.050999164581299
+    }
+  },
+  "resources": {
+    "T1": {
+      "actual_forwards": 81,
+      "process_elapsed_s": 14.789454337209463,
+      "summary": {
+        "gpu_instrumented_ms": {
+          "count": 81,
+          "mean": 31.85552406311035,
+          "median": 26.92995262145996,
+          "p90": 27.75129508972168,
+          "p95": 29.52854347229004,
+          "max": 403.4352722167969
+        },
+        "cache_load_h2d_ms": {
+          "count": 81,
+          "mean": 40.09254122681824,
+          "median": 40.05357809364796,
+          "p90": 42.10674576461315,
+          "p95": 43.08420605957508,
+          "max": 47.48011939227581
+        },
+        "instrumented_frame_wall_ms": {
+          "count": 81,
+          "mean": 143.6813676752794,
+          "median": 134.26031917333603,
+          "p90": 154.9742203205824,
+          "p95": 170.34405656158924,
+          "max": 517.2681715339422
+        },
+        "peak_allocated_bytes": {
+          "count": 81,
+          "mean": 462343123.75308645,
+          "median": 462343168.0,
+          "p90": 462343168.0,
+          "p95": 462343168.0,
+          "max": 462343168.0
+        },
+        "peak_reserved_bytes": {
+          "count": 81,
+          "mean": 725614592.0,
+          "median": 725614592.0,
+          "p90": 725614592.0,
+          "p95": 725614592.0,
+          "max": 725614592.0
+        }
+      }
+    },
+    "T2": {
+      "actual_forwards": 81,
+      "process_elapsed_s": 18.644480338320136,
+      "summary": {
+        "gpu_instrumented_ms": {
+          "count": 81,
+          "mean": 61.693554748723535,
+          "median": 27.38096046447754,
+          "p90": 28.383487701416016,
+          "p95": 28.80668830871582,
+          "max": 2783.61376953125
+        },
+        "cache_load_h2d_ms": {
+          "count": 81,
+          "mean": 55.73317698306508,
+          "median": 46.759940683841705,
+          "p90": 101.9187904894352,
+          "p95": 108.30815695226192,
+          "max": 121.81966006755829
+        },
+        "instrumented_frame_wall_ms": {
+          "count": 81,
+          "mean": 191.294741920299,
+          "median": 144.30542290210724,
+          "p90": 207.53732323646545,
+          "p95": 216.5477704256773,
+          "max": 2903.1889345496893
+        },
+        "peak_allocated_bytes": {
+          "count": 81,
+          "mean": 462347017.4814815,
+          "median": 462347264.0,
+          "p90": 462347264.0,
+          "p95": 462347264.0,
+          "max": 462347264.0
+        },
+        "peak_reserved_bytes": {
+          "count": 81,
+          "mean": 725614592.0,
+          "median": 725614592.0,
+          "p90": 725614592.0,
+          "p95": 725614592.0,
+          "max": 725614592.0
+        }
+      }
+    },
+    "T3": {
+      "actual_forwards": 41,
+      "process_elapsed_s": 9.041394332423806,
+      "summary": {
+        "gpu_instrumented_ms": {
+          "count": 41,
+          "mean": 38.41115081601026,
+          "median": 27.822111129760742,
+          "p90": 30.808128356933594,
+          "p95": 33.723358154296875,
+          "max": 439.9339294433594
+        },
+        "cache_load_h2d_ms": {
+          "count": 41,
+          "mean": 40.69327499444892,
+          "median": 40.033794939517975,
+          "p90": 43.028026819229126,
+          "p95": 43.71117986738682,
+          "max": 46.418847516179085
+        },
+        "instrumented_frame_wall_ms": {
+          "count": 41,
+          "mean": 143.353702682184,
+          "median": 131.11991994082928,
+          "p90": 138.79517652094364,
+          "p95": 141.82551950216293,
+          "max": 587.4578673392534
+        },
+        "peak_allocated_bytes": {
+          "count": 41,
+          "mean": 462346976.7804878,
+          "median": 462347264.0,
+          "p90": 462347264.0,
+          "p95": 462347264.0,
+          "max": 462347264.0
+        },
+        "peak_reserved_bytes": {
+          "count": 41,
+          "mean": 725614592.0,
+          "median": 725614592.0,
+          "p90": 725614592.0,
+          "p95": 725614592.0,
+          "max": 725614592.0
+        }
+      }
+    }
+  },
+  "private_root": "/root/gpufree-data/hs-drive-private/m8j11a-temporal-20261101",
+  "visual_groups": 6,
+  "actual_visual_inspection": {
+    "reviewer": "Assistant visual tool; not human signoff",
+    "files": [
+      "T2_20_six.jpg",
+      "T3_70_bev.jpg"
+    ],
+    "observations": [
+      "Reset view shows extra predictions around visible traffic; no geometry correction applied",
+      "Sparse-history BEV shows denser overlapping prediction clusters in selected scene"
+    ],
+    "other_four_groups": "Generated_NotClaimedReviewed"
+  },
+  "execution_source_commit": "6e36963b96b76e1cb68b84ff445eabed3a3ee6a6",
+  "configuration_sha256": "b112f82383186dd677ef823e7d8810f2540ee129d41a50224c8ea42645ad7d2f",
+  "limits": [
+    "Only two reused development scenes; no independent safety/generalization inference",
+    "T1 uses temporally trained weights; not fairly retrained single-frame model",
+    "T3 jointly changes observation interval and memory time span",
+    "No evidence of universal four-frame recovery; scene and class effects differ",
+    "Instrumented cache timings are not comparable with J11 raw-image timing"
+  ],
+  "closeout": "Finish this experiment; no training repairs or extension. Next separately scoped direction: SparseDriveV2 Bench2Drive branch integration review; not executed or approved here",
+  "run_ids": {
+    "T1": "m8j11a_20261101_T1",
+    "T2": "m8j11a_20261101_T2",
+    "T3": "m8j11a_20261101_T3"
+  }
+}
