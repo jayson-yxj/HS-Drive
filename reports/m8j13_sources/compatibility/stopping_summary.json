@@ -1,0 +1,44 @@
+{
+  "status": "Partial",
+  "case": "camera_missing",
+  "injection": "NotRun_SpeedThresholdNotReached",
+  "other_cases": {
+    "worker_blocked": "NotRun",
+    "nonfinite_control": "NotRun",
+    "manual_estop": "NotRun"
+  },
+  "test_throttle": 0.25,
+  "required_injection_speed_mps": 1.0,
+  "speed_limit_mps": 2.0,
+  "max_speed_after_settle_mps": 0.6745128851897121,
+  "terminal_speed_mps": 0.4800776194521513,
+  "initial_settle_ticks": 40,
+  "normal_throttle_ticks": 260,
+  "normal_command_source": "IndependentTestControl",
+  "normal_apply_calls": 301,
+  "model_apply_calls": 0,
+  "applied_control_feedback": {
+    "initial_brake_ticks": 40,
+    "throttle_ticks": 260,
+    "all_matched_requests": true
+  },
+  "fault_chain": {
+    "injection": "NotRun",
+    "detection": "NotRun",
+    "normal_command_invalidation": "NotRun",
+    "fault_stop_generation": "NotRun",
+    "fault_stop_apply": "NotRun",
+    "fault_brake_feedback": "NotRun",
+    "deceleration": "NotRun",
+    "stopped_hold": "NotRun",
+    "late_plan_rejection": "NotRun"
+  },
+  "stop_hold_sim_s": 0,
+  "stopping_time_sim_s": null,
+  "stopping_distance_m": null,
+  "collision_count": 0,
+  "speed_cap_respected": true,
+  "termination": "Fixed 300-tick budget reached; actors destroyed during cleanup while last observed vehicle speed was still positive. Destruction is not a braking or stopping success.",
+  "cause_of_low_speed": "Unknown; applied throttle verified but no force/grade/powertrain diagnosis was run",
+  "remaining_harness_gap": "Reserve an explicit braking and response-observation interval for failure to reach the injection condition; no third start or post-hoc threshold reduction"
+}

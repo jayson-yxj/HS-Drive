@@ -1,0 +1,57 @@
+{
+  "no_threshold_changes": true,
+  "no_cross_clock_subtraction": true,
+  "contracts": [
+    {
+      "field": "input_wait_wall_s / max_sensor_wait_wall_s",
+      "seconds": 0.25,
+      "domain": "monotonic wall",
+      "start": "Before world.tick for the source snapshot",
+      "end": "Inputs.row decision after queue handling; camera fault detector decision",
+      "location": "tools/m8j13_compatibility.py Inputs.row and stopping"
+    },
+    {
+      "field": "max_plan_age_sim_s",
+      "seconds": 0.3,
+      "domain": "simulation elapsed_seconds",
+      "start": "Source same-frame snapshot time",
+      "end": "Latest owner snapshot time",
+      "location": "Inputs.row; shadow_service.age_reason -> freshness"
+    },
+    {
+      "field": "max_plan_age_wall_s",
+      "seconds": 0.3,
+      "domain": "monotonic wall",
+      "start": "Original source tick-request monotonic",
+      "end": "Pre/post-preprocess and post-inference checks",
+      "location": "shadow_service.age_reason -> freshness",
+      "rule": "Result completion and retry never reset source time"
+    },
+    {
+      "field": "max_command_age_wall_s",
+      "seconds": 0.3,
+      "domain": "monotonic wall",
+      "start": "Test command issue",
+      "end": "Recorded valid_until; synthetic heartbeat deadline checked by watchdog",
+      "location": "Owner.apply; stop_planner_stub; watchdog_reason",
+      "limitation": "Actuation log stamps and synthetic planner heartbeat are not an acknowledged owner-actuation deadline. Stub remains independent of owner progress; this round does not prove owner-stall protection."
+    },
+    {
+      "field": "watchdog_heartbeat_timeout_s",
+      "seconds": 0.3,
+      "domain": "monotonic wall",
+      "start": "Last synthetic planner heartbeat",
+      "end": "Independent watchdog poll",
+      "location": "m8j13_watchdog -> watchdog_reason",
+      "limitation": "Process initialized; blocked-worker case not reached, so independent physical response remains NotRun"
+    }
+  ],
+  "this_round_deadline_status": "NotEvaluated",
+  "prior_R2_expired_rejected": 12,
+  "prior_R2_denominator": 500,
+  "prior_results_unchanged": true,
+  "model_latency_quantiles_ms": null,
+  "joint_gpu_allocated_reserved_bytes": null,
+  "actual_model_call_frequency_hz": 0,
+  "control_frequency": "20Hz simulation schedule; wall-clock performance not certified"
+}

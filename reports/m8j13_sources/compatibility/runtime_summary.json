@@ -1,0 +1,45 @@
+{
+  "client_version": "0.9.16",
+  "server_version": "0.9.16",
+  "rpc_port": 2300,
+  "client_environment": ".venv-m6f-0916",
+  "all_connected_roles": [
+    "supervisor",
+    "owner",
+    "independent_watchdog"
+  ],
+  "client_library_sha256": "111e8c800ba327ba27ce7d15d406f97577e0eaea44c354144ed3351b74f87389",
+  "server_binary_sha256": "03bcd413615fa1fc61a5b846342dbdc4e6b3541320a40d6bf17ff927039731f9",
+  "actual_paths_and_episode_ids": "Private clients.jsonl, supervisor.json and watchdog_ready.json; matching client environment and RPC instance",
+  "physics_dt_s": 0.05,
+  "synchronous": true,
+  "traffic_manager": "NotCreated",
+  "tick_owner": "Owner.tick only; settings internal ticks charged separately",
+  "watchdog_tick_calls": 0,
+  "rgb_sensors": 6,
+  "rgb_dimensions": [
+    704,
+    396
+  ],
+  "sensor_tick": 0,
+  "rendering": "Epic offscreen",
+  "received_metadata_per_camera": 298,
+  "observed_world_ticks": 300,
+  "tail_groups_not_drained": 2,
+  "tail_scope": "No input accepted or model requested; not a new sensor-stability acceptance window",
+  "listener_stop_checks": 8,
+  "listener_stop_all_true_to_false": true,
+  "actor_destroy_successes": 9,
+  "final_remaining_owned_actors": 0,
+  "second_run_settings_restored": true,
+  "second_run_ports_released": true,
+  "first_run_cleanup": "Constructor exception prevented original restoration; server termination initially incomplete; owned remaining shipping process explicitly killed and ports rechecked released",
+  "compatibility_fixes": [
+    "Retain owner reference before __init__ so failure can restore settings",
+    "Record GPS conflict and block shadow before spawning actors/model",
+    "Wait for process group and ports after termination",
+    "Explicit expected version for independent watchdog; default stays 0.9.15"
+  ],
+  "model_environment_changed": false,
+  "default_runtime_changed": false
+}

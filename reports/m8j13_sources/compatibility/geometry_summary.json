@@ -1,0 +1,113 @@
+{
+  "status": "GPSProjectionIncompatible",
+  "world_ego_and_synthetic_compass_cases": 16,
+  "world_ego_and_synthetic_compass_result": "Passed",
+  "live_measured_compass_to_geometry": "NotRun",
+  "native_0916_map_roundtrip": "Passed for finite geometry examples",
+  "source0915": "https://github.com/carla-simulator/carla/blob/0.9.15/LibCarla/source/carla/geom/GeoLocation.cpp",
+  "source0916": "https://github.com/carla-simulator/carla/blob/0.9.16/LibCarla/source/carla/geom/GeoLocation.cpp",
+  "source_difference": "0.9.15 Transform uses scaled Mercator with -location.y; 0.9.16 uses inverse spherical transverse Mercator with +location.y and k0=0.9996",
+  "official_planner": "Unmodified RoutePlanner.gps_to_location still uses the older Mercator inverse",
+  "synthetic_world_cardinal_examples_0915": [
+    {
+      "world_xy": [
+        10,
+        0
+      ],
+      "official_inverse_xy": [
+        10.0,
+        0.0
+      ]
+    },
+    {
+      "world_xy": [
+        -10,
+        0
+      ],
+      "official_inverse_xy": [
+        -10.0,
+        0.0
+      ]
+    },
+    {
+      "world_xy": [
+        0,
+        10
+      ],
+      "official_inverse_xy": [
+        0.0,
+        10.000000002337684
+      ]
+    },
+    {
+      "world_xy": [
+        0,
+        -10
+      ],
+      "official_inverse_xy": [
+        0.0,
+        -10.00000000145443
+      ]
+    }
+  ],
+  "synthetic_world_cardinal_examples_0916": [
+    {
+      "world_xy": [
+        10,
+        0
+      ],
+      "official_inverse_xy": [
+        10.004001600636155,
+        0.0
+      ],
+      "native_inverse_xy": [
+        10.0,
+        0.0
+      ]
+    },
+    {
+      "world_xy": [
+        -10,
+        0
+      ],
+      "official_inverse_xy": [
+        -10.004001600636155,
+        0.0
+      ],
+      "native_inverse_xy": [
+        -10.0,
+        0.0
+      ]
+    },
+    {
+      "world_xy": [
+        0,
+        10
+      ],
+      "official_inverse_xy": [
+        0.0,
+        -10.004001599519514
+      ],
+      "native_inverse_xy": [
+        0.0,
+        10.0
+      ]
+    },
+    {
+      "world_xy": [
+        0,
+        -10
+      ],
+      "official_inverse_xy": [
+        0.0,
+        10.004001599498944
+      ],
+      "native_inverse_xy": [
+        0.0,
+        -10.0
+      ]
+    }
+  ],
+  "scope": "Mismatch affects GPS-to-world route import. Existing world-target/IMU adapter direction checks pass; no claim that every navigation pathway is inverted. No sign flip, target alteration, PID or model change made.",
+  "map_construction": "Offline carla.Map from each preserved release Town03 OpenDRIVE; no server or active ticks"
+}

@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv-gpu/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/m8j12",
+    "tests/m8j13"
+  ],
+  "exit_code": 0,
+  "result": "65 passed in 1.58s",
+  "previous_regression": {
+    "passed": 59,
+    "preserved": true
+  },
+  "new_tests": 6,
+  "server_starts": 0,
+  "model_forwards": 0,
+  "added_checks": [
+    "World/ego/compass directions",
+    "Expired heartbeat and latched late control rejection",
+    "No actuator in model service; no control in completion IPC",
+    "Two-phase budget bounds",
+    "Initialization exception still calls cleanup",
+    "GPS conflict blocks shadow before actor or model creation"
+  ]
+}

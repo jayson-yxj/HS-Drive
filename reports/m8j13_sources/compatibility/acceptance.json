@@ -1,0 +1,31 @@
+{
+  "J13_A": "Partial",
+  "SensorSynchronizationPassed": false,
+  "RuntimeCompatibility": "Partial_ObservedAPIsWork_InitializationFailurePreserved",
+  "NavigationAndGeometryCompatibility": "Blocked_GPSProjectionIncompatible",
+  "ModelShadowInference": "NotRun_GeometryGate",
+  "FaultDetection": "NotRun_NoMovingFaultInjected",
+  "StopCommandExecution": "NotRun_NoFaultStopCommand",
+  "PhysicalStopResponse": "NotRun_TestInjectionSpeedNotReached",
+  "DeadlineCompliance": "NotEvaluatedThisRound_Previous12TimeoutRejectionsPreserved",
+  "model_forward_attempts": 0,
+  "planned_shadow_forwards": 16,
+  "max_forward_attempts": 32,
+  "model_control_applications": 0,
+  "training_steps": 0,
+  "S0": "NotRun",
+  "S1": "NotRun",
+  "S2": "NotRun",
+  "driving_budget_used_this_round": 0,
+  "eligible_to_request_first_S0": false,
+  "remaining_evidence": [
+    "Version-aware GPS route conversion compatibility without modifying the official PID or model",
+    "Live same-frame IMU/navigation/calibration checks and 16 frozen shadow forwards",
+    "Four representative moving fault injections, brake delivery, physical deceleration and >=1s held stop",
+    "Independent watchdog response while planning is blocked, including late response rejection",
+    "Connection-loss delivery/response classification and remaining J13-A fault paths",
+    "End-to-end latency, memory and deadline measurements with joint rendering/inference"
+  ],
+  "engineering_merge_ready": false,
+  "reason": "Runtime test harness still needs a bounded fallback braking/observation interval when the pre-injection speed condition is not reached; no moving protection evidence"
+}
