@@ -51,3 +51,9 @@ def test_measured_compass_target_matches_native_planar_axes():
     from datasets.m8j12_contract import measured_navigation_target
     row=dict(ego_world_matrix=np.eye(4),target_world_xy=[10.,2.],imu=[0,0,0,0,0,0,np.pi/2])
     np.testing.assert_allclose(measured_navigation_target(row),[2,10],atol=1e-6)
+
+
+def test_capture_python_preserves_virtualenv_symlink():
+    source=Path('tools/m8j12_capture_supervisor.py').read_text()
+    assert "Path('.venv/bin/python').absolute()" in source
+    assert "Path('.venv/bin/python').resolve()" not in source

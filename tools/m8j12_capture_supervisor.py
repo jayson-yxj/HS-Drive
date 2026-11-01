@@ -1,5 +1,5 @@
 """Own one bounded CARLA process group and terminate it before offline inference."""
-import hashlib,json,os,signal,socket,subprocess,time
+import argparse,hashlib,json,os,signal,socket,subprocess,time
 from pathlib import Path
 from datetime import datetime,timezone
 
@@ -23,10 +23,14 @@ def group_members(pgid):
 
 def main():
     import carla
+    parser=argparse.ArgumentParser();parser.add_argument('--attempt',default='first');args=parser.parse_args()
     os.umask(0o077)
     c=json.loads(Path('configs/m8j12_protocol.json').read_text());root=Path(c['private_root']);port=2300
+    if args.attempt!='first':root=root/('capture_'+args.attempt);root.mkdir()
     if any(listening(p) for p in (port,port+1,port+2)):raise RuntimeError('DedicatedPortsOccupied')
     if not Path('reports/m8j12_sources/model_load.json').exists():raise RuntimeError('ModelLoadNotVerified')
+    python=str(Path('.venv/bin/python').absolute())  # retain venv; resolve() follows symlink to system Python
+    subprocess.run([python,'-c','import carla; import tools.m8j12_capture; print(carla.__file__)'],check=True,timeout=20)
     argv=['runuser','-u','ubuntu','--','bash',str(Path('scripts/start_carla.sh').resolve()),'/root/gpufree-data/simulators/CARLA_0.9.15',str(port),'Epic']
     log=root/'carla_stdout.log';report=dict(utc=datetime.now(timezone.utc).isoformat(),argv=argv,cwd=str(Path.cwd()),port=port,authorization='Current user M8-J12 attachment explicitly permits two bounded captures; no fabricated message ID',code_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),ready_attempts=[],startup_identity=None)
     proc=None;worker=None;error=None
@@ -49,7 +53,7 @@ def main():
                     report['ready_attempts'].append(dict(time_utc=datetime.now(timezone.utc).isoformat(),error=str(exc)))
                     time.sleep(1.)
             else:raise RuntimeError('BoundedCARLAReadinessFailed')
-            cmd=[str(Path('.venv/bin/python').resolve()),'-m','tools.m8j12_capture','--port',str(port)]
+            cmd=[python,'-m','tools.m8j12_capture','--port',str(port)]
             with (root/'capture.log').open('x') as capturelog:
                 worker=subprocess.Popen(cmd,stdout=capturelog,stderr=subprocess.STDOUT,start_new_session=True)
                 try:rc=worker.wait(timeout=600)
@@ -82,7 +86,8 @@ def main():
         report['server_log_sha256']=hashlib.sha256(log.read_bytes()).hexdigest() if log.exists() else None
         (root/'capture_supervisor.json').write_text(json.dumps(report,indent=2)+'\n')
         public={k:v for k,v in report.items() if k not in ('startup_identity','owned_before_cleanup')}
-        Path('reports/m8j12_sources/capture_supervisor.json').write_text(json.dumps(public,indent=2)+'\n')
+        public_path=Path('reports/m8j12_sources')/('capture_supervisor'+('' if args.attempt=='first' else '_'+args.attempt)+'.json')
+        with public_path.open('x') as f:json.dump(public,f,indent=2)
     if report['status']!='Passed':raise RuntimeError(str(error or 'CleanupIncomplete'))
 
 
