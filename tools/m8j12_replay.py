@@ -60,6 +60,7 @@ def install_selection_log(model,store):
 def main():
     os.umask(0o077);c=protocol();root=Path(c['private_root']);out=root/'replay';out.mkdir()
     ledger=root/'forward_budget.jsonl'
+    observation_root=Path(json.loads(Path('reports/m8j12_sources/capture_result.json').read_text())['observation_root'])
     count=sum(1 for _ in ledger.open()) if ledger.exists() else 0
     torch.manual_seed(c['seed']);random.seed(c['seed']);np.random.seed(c['seed'])
     torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cudnn.allow_tf32=False;torch.backends.cudnn.benchmark=False
@@ -90,13 +91,13 @@ def main():
         for replay in range(2):
             for sequence in c['sequence_ids']:
                 reset(model);ctrl=DryRunController(Path(c['runtime_root'])/'official-source/leaderboard/team_code/pid_controller.py')
-                manifest=json.loads((root/'observations'/sequence/'manifest.json').read_text())
+                manifest=json.loads((observation_root/sequence/'manifest.json').read_text())
                 assert len(manifest)==32 and not memory(model)['cached']
                 folder=out/(str(replay)+'_'+sequence);folder.mkdir()
                 previous_time=None
                 for index,row in enumerate(manifest):
                     started=time.perf_counter();selection.clear()
-                    images=dict(np.load(root/'observations'/sequence/row['images_file'],allow_pickle=False))
+                    images=dict(np.load(observation_root/sequence/row['images_file'],allow_pickle=False))
                     batch=observation_batch(cfg,row,images,camera);torch.cuda.synchronize();prep=time.perf_counter()-started
                     before=memory(model)
                     if previous_time is not None and abs(row['timestamp_s']-previous_time-.1)>1e-5:raise RuntimeError('TemporalGap')

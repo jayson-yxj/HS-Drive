@@ -29,8 +29,8 @@ def main():
     if args.attempt!='first':root=root/('capture_'+args.attempt);root.mkdir()
     if any(listening(p) for p in (port,port+1,port+2)):raise RuntimeError('DedicatedPortsOccupied')
     if not Path('reports/m8j12_sources/model_load.json').exists():raise RuntimeError('ModelLoadNotVerified')
-    python=str(Path('.venv/bin/python').absolute())  # retain venv; resolve() follows symlink to system Python
-    subprocess.run([python,'-c','import carla; import tools.m8j12_capture; print(carla.__file__)'],check=True,timeout=20)
+    python=str(Path(c['runtime_root'])/'capture-env/bin/python')  # retain venv; do not resolve interpreter symlink
+    subprocess.run([python,'-m','tools.m8j12_capture','--preflight-only'],check=True,timeout=20)
     argv=['runuser','-u','ubuntu','--','bash',str(Path('scripts/start_carla.sh').resolve()),'/root/gpufree-data/simulators/CARLA_0.9.15',str(port),'Epic']
     log=root/'carla_stdout.log';report=dict(utc=datetime.now(timezone.utc).isoformat(),argv=argv,cwd=str(Path.cwd()),port=port,authorization='Current user M8-J12 attachment explicitly permits two bounded captures; no fabricated message ID',code_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),ready_attempts=[],startup_identity=None)
     proc=None;worker=None;error=None
@@ -53,7 +53,7 @@ def main():
                     report['ready_attempts'].append(dict(time_utc=datetime.now(timezone.utc).isoformat(),error=str(exc)))
                     time.sleep(1.)
             else:raise RuntimeError('BoundedCARLAReadinessFailed')
-            cmd=[python,'-m','tools.m8j12_capture','--port',str(port)]
+            cmd=[python,'-m','tools.m8j12_capture','--port',str(port),'--attempt',args.attempt]
             with (root/'capture.log').open('x') as capturelog:
                 worker=subprocess.Popen(cmd,stdout=capturelog,stderr=subprocess.STDOUT,start_new_session=True)
                 try:rc=worker.wait(timeout=600)

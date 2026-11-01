@@ -55,5 +55,6 @@ def test_measured_compass_target_matches_native_planar_axes():
 
 def test_capture_python_preserves_virtualenv_symlink():
     source=Path('tools/m8j12_capture_supervisor.py').read_text()
-    assert "Path('.venv/bin/python').absolute()" in source
-    assert "Path('.venv/bin/python').resolve()" not in source
+    assert "'capture-env/bin/python'" in source
+    assert '.resolve()' not in source.split('python=')[1].split('\n')[0]
+    assert "'--preflight-only'" in source

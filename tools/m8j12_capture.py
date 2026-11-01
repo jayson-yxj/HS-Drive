@@ -28,15 +28,20 @@ def write(path, value):
 
 def main():
     import carla
-    p=argparse.ArgumentParser();p.add_argument('--port',type=int,default=2300);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--port',type=int,default=2300);p.add_argument('--attempt',default='first');p.add_argument('--preflight-only',action='store_true');a=p.parse_args()
     os.umask(0o077)
     c=json.loads(Path('configs/m8j12_protocol.json').read_text())
     plan=json.loads(Path('configs/m8j12_capture.json').read_text())
-    root=Path(c['private_root'])/'observations';root.mkdir()
+    root=Path(c['private_root'])/('observations' if a.attempt=='first' else 'observations_'+a.attempt)
     source=Path(c['runtime_root'])/'official-source'
     camera=official_camera_contract(source/'leaderboard/team_code/sparsedrive_b2d_agent.py')
     spec=importlib.util.spec_from_file_location('native_route',source/'leaderboard/team_code/planner.py')
     mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
+    mod.RoutePlanner(4.,50.)  # preflight includes its actual Pillow-backed constructor
+    assert world_transform_smoke(carla)
+    if a.preflight_only:
+        print('Capture imports, native navigation and CARLA transform preflight passed');return
+    root.mkdir()
     reports=[]
     for seq in plan['sequences']:
         root_seq=root/seq['id'];root_seq.mkdir()
@@ -120,7 +125,12 @@ def main():
                 span_s=rows[-1]['timestamp_s']-rows[0]['timestamp_s'],speed_range=[min(r['speed_mps'] for r in rows),max(r['speed_mps'] for r in rows)],
                 yaw_change_rad=float(yaw[-1]-yaw[0]),simulation_elapsed_s=world.get_snapshot().timestamp.elapsed_seconds-sim_start,
                 sync_stats=dict(sync.stats),manifest_sha256=hashlib.sha256((root_seq/'manifest.json').read_bytes()).hexdigest()))
-    write(Path('reports/m8j12_sources/capture_result.json'),dict(status='Captured',sequences=reports,model_control_applied=0))
+    write(Path('reports/m8j12_sources/capture_result.json'),dict(status='Captured',observation_root=str(root),sequences=reports,model_control_applied=0))
+
+
+def world_transform_smoke(carla):
+    t=carla.Transform(carla.Location(*map(float,[1,2,3])),carla.Rotation(yaw=30.))
+    return np.isfinite(t.get_matrix()).all()
 
 
 if __name__=='__main__':main()
