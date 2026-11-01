@@ -1,0 +1,31 @@
+{
+  "version": "0.9.16",
+  "server_root": "/root/gpufree-data/simulators/m6f_CARLA_0.9.16",
+  "python": "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv-m6f-0916/bin/python",
+  "private_root": "/root/gpufree-data/hs-drive-private/m8j13-upstream-20261101/candidate",
+  "max_starts": 2,
+  "max_active_ticks": 900,
+  "apply_settings_tick_charge": 30,
+  "sensor_tick": 0.0,
+  "timestamp_tolerance_s": 0.00001,
+  "pose_matrix_tolerance": 0.0001,
+  "deadline_sim_s": 0.3,
+  "deadline_wall_s": 0.3,
+  "receive_only_drain_wall_s": 2.0,
+  "R1": {"warmup_ticks": 20, "measurement_ticks": 80, "drain_ticks": 6, "pixel_marker": true},
+  "R2": {"warmup_ticks": 40, "measurement_ticks": 500, "drain_ticks": 6, "pixel_marker": false},
+  "marker": {
+    "blueprint": "vehicle.tesla.model3",
+    "color": "255,0,0",
+    "forward_m": 8.0,
+    "lateral_m": 2.2,
+    "height_m": 0.5,
+    "switch_every_ticks": 10,
+    "roi_halfwidth_px": 65,
+    "roi_halfheight_px": 50,
+    "red_min": 65,
+    "red_channel_ratio": 1.3,
+    "min_red_pixels": 200,
+    "opposite_max_ratio": 0.5
+  }
+}
