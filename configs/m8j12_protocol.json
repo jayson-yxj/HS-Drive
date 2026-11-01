@@ -1,0 +1,67 @@
+{
+  "stage": "M8-J12",
+  "base_commit": "eb69114636ab60cd48fdba3708067b751fd4038c",
+  "branch": "feat/sparsedrivev2-b2d-integration",
+  "official_repo": "https://github.com/swc-17/SparseDriveV2",
+  "official_branch": "bench2drive",
+  "official_commit": "e42ea59dd4946238dc65097495a9aa0708121fae",
+  "runtime_root": "/root/gpufree-data/hs-drive-experiments/m8j12-sparsedrivev2",
+  "private_root": "/root/gpufree-data/hs-drive-private/m8j12-integration-20261101",
+  "config": "projects/configs/sparsedrive_stage2.py",
+  "checkpoint": "sparsedrive_small_b2d_stage2.pth",
+  "max_full_forwards": 160,
+  "planned_primary_forwards": 128,
+  "samples_per_sequence": 32,
+  "sequence_ids": [
+    "S0",
+    "S1"
+  ],
+  "max_simulation_seconds_per_sequence": 20,
+  "atol": 1e-05,
+  "rtol": 1e-05,
+  "seed": 20261101,
+  "precision": "FP32",
+  "batch_size": 1,
+  "optimizer_steps": 0,
+  "model_control_applied": 0,
+  "camera_order": [
+    "CAM_FRONT",
+    "CAM_FRONT_RIGHT",
+    "CAM_FRONT_LEFT",
+    "CAM_BACK",
+    "CAM_BACK_LEFT",
+    "CAM_BACK_RIGHT"
+  ],
+  "camera_capture_wh": [
+    704,
+    396
+  ],
+  "network_wh": [
+    704,
+    384
+  ],
+  "physical_dt_s": 0.1,
+  "camera_dt_s": 0.1,
+  "model_dt_s": 0.1,
+  "trajectory_dt_s": 0.5,
+  "trajectory_points": 6,
+  "source_hashes": {
+    "docs/quick_start.md": "090cffd2c864e22fc0979c3fb16937952c9db29fe0d77f1203cb0157f98b221e",
+    "requirement.txt": "5adcf029425a2948833d5f99ccfa41b9af18af10bb288c42fae2e2dcd620088b",
+    "LICENSE": "a644a835e7e5d966a61f98e2046e0f2593c8fafc35fae96216c34a45034b4c51",
+    "projects/configs/sparsedrive_stage2.py": "96778b61b0c9f93c0b2dfbd7f97f8b04e2fbf76f63d248176270f2117931ab1e",
+    "leaderboard/team_code/sparsedrive_b2d_agent.py": "2fc95b794bc00a9fe396762a133ebb81d9b84e59d5bd52e8b749b08c5e5be612",
+    "leaderboard/team_code/pid_controller.py": "a6eba8de432f3578b26102b75c4198c804cd1bd030f5f9001b2f542e11177ebb",
+    "projects/mmdet3d_plugin/models/motion/decoder.py": "8c404dfba635c0c8a3ec1fd857628a626f12cf3b18a3e71650cf1ec660906840",
+    "projects/mmdet3d_plugin/models/motion/motion_planning_head_v13.py": "78b1c19292e284f8aab60618eb1340e900ff4245e62c8581517ca7f364f4526b",
+    "projects/mmdet3d_plugin/models/instance_bank.py": "31c9e1c7945698075e0e807643a09978147cf3a4c77e1b65c0aa6441797c7663",
+    "projects/mmdet3d_plugin/models/motion/instance_queue.py": "101aefaf8365dec0e6e8136a10ca3035616f3ae3f5f959a131ef7fd45b321615"
+  },
+  "limits": [
+    "No training",
+    "No model control applied",
+    "No default changes",
+    "No dependency changes to existing environments",
+    "No automatic merge or tags"
+  ]
+}

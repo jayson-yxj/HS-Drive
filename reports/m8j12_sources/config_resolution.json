@@ -1,0 +1,51 @@
+{
+  "differences": [
+    [
+      "model.head.motion_plan_head.lat_lon_pred_layer.plan_config.traj.anchor",
+      "'data/kmeans/trajectory_1024_256_b2d.npz'",
+      "'data/kmeans/trajectory_1024_256.npz'"
+    ],
+    [
+      "model.head.motion_plan_head.plan_config.traj.anchor",
+      "'data/kmeans/trajectory_1024_256_b2d.npz'",
+      "'data/kmeans/trajectory_1024_256.npz'"
+    ],
+    [
+      "model.head.motion_plan_head.planning_decoder.rescore_thresh",
+      "MISSING",
+      false,
+      true
+    ],
+    [
+      "model.head.motion_plan_head.planning_decoder.plan_config.traj.anchor",
+      "'data/kmeans/trajectory_1024_256_b2d.npz'",
+      "'data/kmeans/trajectory_1024_256.npz'"
+    ],
+    [
+      "model.head.motion_plan_head.planning_decoder.rescore",
+      "MISSING",
+      false,
+      true
+    ],
+    [
+      "model.head.motion_plan_head.planning_sampler.plan_config.traj.anchor",
+      "'data/kmeans/trajectory_1024_256_b2d.npz'",
+      "'data/kmeans/trajectory_1024_256.npz'"
+    ],
+    [
+      "model.head.motion_plan_head.traj_pred_layer.plan_config.traj.anchor",
+      "'data/kmeans/trajectory_1024_256_b2d.npz'",
+      "'data/kmeans/trajectory_1024_256.npz'"
+    ],
+    [
+      "plan_config.traj.anchor",
+      "'data/kmeans/trajectory_1024_256_b2d.npz'",
+      "'data/kmeans/trajectory_1024_256.npz'"
+    ]
+  ],
+  "resolution": {
+    "trajectory": "Only frozen source b2d path used. Downloaded no-suffix is substantively incompatible. B2D trajectory and mask match checkpoint tensors exactly. Embedded historical filename does not establish artifact identity.",
+    "rescore": "Embedded True and 0.5 equal V13LatLonTrajDecoder defaults in fixed official source; no behavior change.",
+    "motion_anchor": "Official file has10classes/12positions, uses class indices and final position to embed mode queries; predicted future length is separately6. Checkpoint exact match; no slicing/remapping."
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "official_commit": "e42ea59dd4946238dc65097495a9aa0708121fae",
+  "source_evidence": {
+    "leaderboard/team_code/sparsedrive_b2d_agent.py": "2fc95b794bc00a9fe396762a133ebb81d9b84e59d5bd52e8b749b08c5e5be612",
+    "projects/configs/sparsedrive_stage2.py": "96778b61b0c9f93c0b2dfbd7f97f8b04e2fbf76f63d248176270f2117931ab1e",
+    "leaderboard/team_code/pid_controller.py": "a6eba8de432f3578b26102b75c4198c804cd1bd030f5f9001b2f542e11177ebb"
+  },
+  "camera_order": [
+    "CAM_FRONT",
+    "CAM_FRONT_RIGHT",
+    "CAM_FRONT_LEFT",
+    "CAM_BACK",
+    "CAM_BACK_LEFT",
+    "CAM_BACK_RIGHT"
+  ],
+  "sensors": {
+    "CAM_FRONT": {
+      "type": "sensor.camera.rgb",
+      "x": 0.8,
+      "y": 0.0,
+      "z": 1.6,
+      "roll": 0.0,
+      "pitch": 0.0,
+      "yaw": 0.0,
+      "width": 704.0,
+      "height": 396.0,
+      "fov": 70,
+      "id": "CAM_FRONT"
+    },
+    "CAM_FRONT_LEFT": {
+      "type": "sensor.camera.rgb",
+      "x": 0.27,
+      "y": -0.55,
+      "z": 1.6,
+      "roll": 0.0,
+      "pitch": 0.0,
+      "yaw": -55.0,
+      "width": 704.0,
+      "height": 396.0,
+      "fov": 70,
+      "id": "CAM_FRONT_LEFT"
+    },
+    "CAM_FRONT_RIGHT": {
+      "type": "sensor.camera.rgb",
+      "x": 0.27,
+      "y": 0.55,
+      "z": 1.6,
+      "roll": 0.0,
+      "pitch": 0.0,
+      "yaw": 55.0,
+      "width": 704.0,
+      "height": 396.0,
+      "fov": 70,
+      "id": "CAM_FRONT_RIGHT"
+    },
+    "CAM_BACK": {
+      "type": "sensor.camera.rgb",
+      "x": -2.0,
+      "y": 0.0,
+      "z": 1.6,
+      "roll": 0.0,
+      "pitch": 0.0,
+      "yaw": 180.0,
+      "width": 704.0,
+      "height": 396.0,
+      "fov": 110,
+      "id": "CAM_BACK"
+    },
+    "CAM_BACK_LEFT": {
+      "type": "sensor.camera.rgb",
+      "x": -0.32,
+      "y": -0.55,
+      "z": 1.6,
+      "roll": 0.0,
+      "pitch": 0.0,
+      "yaw": -110.0,
+      "width": 704.0,
+      "height": 396.0,
+      "fov": 70,
+      "id": "CAM_BACK_LEFT"
+    },
+    "CAM_BACK_RIGHT": {
+      "type": "sensor.camera.rgb",
+      "x": -0.32,
+      "y": 0.55,
+      "z": 1.6,
+      "roll": 0.0,
+      "pitch": 0.0,
+      "yaw": 110.0,
+      "width": 704.0,
+      "height": 396.0,
+      "fov": 70,
+      "id": "CAM_BACK_RIGHT"
+    }
+  },
+  "capture_wh": [
+    704,
+    396
+  ],
+  "network_wh": [
+    704,
+    384
+  ],
+  "crop": [
+    0,
+    12,
+    704,
+    396
+  ],
+  "JPEG_quality": 20,
+  "normalization": {
+    "mean": [
+      123.675,
+      116.28,
+      103.53
+    ],
+    "std": [
+      58.395,
+      57.12,
+      57.375
+    ],
+    "to_rgb": true
+  },
+  "model_inputs": [
+    "six_camera_RGB",
+    "timestamp_measured_s",
+    "projection_mat",
+    "image_wh",
+    "ego_status",
+    "gt_ego_fut_cmd_navigation_not_future_trajectory",
+    "tp_near",
+    "img_metas_T_global_T_global_inv_timestamp"
+  ],
+  "allowed_oracle_inputs": [
+    "current_ego_pose",
+    "speed",
+    "IMU_acceleration_angular_velocity_heading",
+    "fixed_navigation_route"
+  ],
+  "excluded": [
+    "LiDAR_payload",
+    "Radar",
+    "ActorBoxes",
+    "mapGT",
+    "traffic_target_states",
+    "future_executed_trajectory",
+    "topdown_image"
+  ],
+  "source_findings": [
+    "Agent sensors subscribes LiDAR and BEV. tick queries a LiDAR Actor transform for pose; points are not read by model.",
+    "Offline mapping computes same fixed virtual-sensor pose from recorded ego pose; no fake pointcloud and no world query in replay.",
+    "BEV is used for visualization, not Collect model input. Offline path does not request BEV.",
+    "Agent self.step/frame_rate is replaced by measured simulation timestamp, never relabel file counters.",
+    "gt_ego_fut_cmd name is route command, not a future GT trajectory. cond_config actually enables target_point only.",
+    "ego_status tail is zero reserved slot; no historical model or collection control enters active condition encoder.",
+    "get_metric_info queries benchmark criteria after control and is omitted from standalone replay.",
+    "Native planning coordinates are ego-origin x right/y forward (dataset get_trajs mode ego); detection references virtual LiDAR origin."
+  ],
+  "timing_s": {
+    "physics": 0.1,
+    "camera": 0.1,
+    "inference": 0.1,
+    "planning": 0.5
+  },
+  "input_boundary_status": "SourceReviewed_RealCaptureNotRun",
+  "controls": "Original PID numeric output only; no CARLA handle in inference/controller process",
+  "calibration_math_test_max_abs": {
+    "CAM_FRONT": 2.3841857821338408e-08,
+    "CAM_FRONT_LEFT": 2.3841857821338408e-08,
+    "CAM_FRONT_RIGHT": 2.3841857821338408e-08,
+    "CAM_BACK": 1.4075067048046322e-07,
+    "CAM_BACK_LEFT": 2.3841857821338408e-08,
+    "CAM_BACK_RIGHT": 2.3841857821338408e-08
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "map": "Town03",
+  "blueprint": "vehicle.lincoln.mkz_2020",
+  "weather": "ClearNoon",
+  "sequences": [
+    {
+      "id": "S0",
+      "kind": "straight",
+      "route_file": "reports/m45_oracle_driving_artifacts/straight_route.json",
+      "route_sha256": "9d3cab59dd0478aa06f0321d1a3a53f79e096a6244d7a02619cdef6533a6284e",
+      "start_index": 10
+    },
+    {
+      "id": "S1",
+      "kind": "mild_curve",
+      "route_file": "reports/m45_oracle_driving_artifacts/mild_curve_route.json",
+      "route_sha256": "43ec9613c739bd1983ecbc0b48459771126304e6a4fddcd2badaca7c535f6796",
+      "start_index": 46
+    }
+  ],
+  "settle_ticks": 20,
+  "drive_warmup_ticks": 30,
+  "speed_mps": 2.0,
+  "frames": 32,
+  "physics_dt_s": 0.1,
+  "selection": "Exactly first32 consecutive measured frames after fixed warmup. Fail on gap; no prediction-based reselection.",
+  "no_npcs": true
+}
