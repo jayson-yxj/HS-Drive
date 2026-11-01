@@ -1,0 +1,109 @@
+{
+  "stage": "M8-J12",
+  "date_utc": "2026-11-01",
+  "branch": "feat/sparsedrivev2-b2d-integration",
+  "base_commit": "eb69114636ab60cd48fdba3708067b751fd4038c",
+  "execution_commit": "6e6eee7732b56c15f5b2ee44940968712a93fb50",
+  "statuses": {
+    "AssetAndEnvironment": "Passed_FrozenInferenceScope",
+    "InputBoundary": "Passed_RGB_OracleEgo_Navigation",
+    "PlanningReplay": "Passed_128Forwards",
+    "TrajectoryAndControlAdapter": "Passed_OfflineDryRun",
+    "ClosedLoopDriving": "NotRun",
+    "Training": "NotRun",
+    "ModelControlApplied": 0,
+    "Realtime": "NotValidated",
+    "DrivingSafety": "NotValidated",
+    "PaperMetrics": "NotRun"
+  },
+  "budget": {
+    "full_model_forward_attempts": 128,
+    "successful": 128,
+    "failed": 0,
+    "limit": 160,
+    "unused": 32,
+    "optimizer_steps": 0
+  },
+  "weights": {
+    "official_commit": "e42ea59dd4946238dc65097495a9aa0708121fae",
+    "hf_revision": "42c15531aa6cb18c7360dd0377cfc1c221280597",
+    "sha256": "f15c889b759734894e6ac906403df55a9973d7e60e3101da3ac71e9091f7b130",
+    "strict_missing": 0,
+    "strict_unexpected": 0
+  },
+  "tests": {
+    "hs_cpu": {
+      "passed": 16,
+      "failed": 0,
+      "skipped": 0
+    },
+    "isolated_runtime": {
+      "passed": 16,
+      "failed": 0,
+      "skipped": 0
+    },
+    "gpu_micro_ops": [
+      "MMCV DCN FP32 finite",
+      "Native DAF FP32 constant-field equality"
+    ],
+    "replay_pairs": 64,
+    "max_planning_repeat_abs": 0.0,
+    "max_control_repeat_abs": 0.0,
+    "fixed_state_changes": [],
+    "measured_extrinsic_max_abs": 9.46494744907822e-06
+  },
+  "acquisition": {
+    "successful_sequences": 2,
+    "valid_frames_per_sequence": 32,
+    "simulated_seconds_per_successful_sequence": 8.300000123679638,
+    "server_launches": 4,
+    "earlier_failed_attempts": 3,
+    "all_server_cleanup_complete": true,
+    "failed_attempts_preserved": [
+      "system interpreter after symlink resolution: no carla import",
+      "native RoutePlanner debug constructor: missing Pillow",
+      "pre-spawn WorldSnapshot did not contain newly created ego"
+    ]
+  },
+  "resource": {
+    "peak_allocated_bytes": 1000976384,
+    "peak_reserved_bytes": 1281359872,
+    "subsequent_model_ms": {
+      "p50": 87.61285059154034,
+      "p95": 98.91685489565134,
+      "max": 112.4417632818222
+    },
+    "first_process_frame_ms": 1164.0369407832623,
+    "processing_sum_exceeds_200ms": true
+  },
+  "limitations": [
+    "Only64 unique low-speed observations on two short Town03 routes; replay is not128 independent samples",
+    "Oracle ego pose/speed/IMU and fixed navigation are privileged assumptions; no visual odometry claim",
+    "No object/map/obstacle accuracy or closed-loop behavior evaluation",
+    "Native PID full throttle55/64, full brake9/64; changes up to1.0 retained; not a control-quality pass",
+    "Inference environment intentionally excludes unused training/Jupyter/compiler optional dependencies; pip check is not globally clean",
+    "Official code/LICENSE and HF origin retained; no private assets uploaded",
+    "Six final private figures; machine inspection is not human signoff"
+  ],
+  "defaults": {
+    "PETR_A_reference": "unchanged",
+    "default_model": "unchanged",
+    "runtime": "unchanged",
+    "main": "unchanged"
+  },
+  "merge": {
+    "code_eligible": true,
+    "reason": "Opt-in adapters, isolated environment, preserved failures, relevant regressions passed; performance/safety not prerequisites for merging tool code",
+    "action": "Await explicit confirmation to fast-forward and push main to the final closeout commit, then delete only the local feat/sparsedrivev2-b2d-integration after remote containment verification; remote feature branch absent at handoff.",
+    "remote_feature_branch_present_at_handoff": false
+  },
+  "evidence": [
+    "m8j12_sources/model_load.json",
+    "m8j12_sources/capture_result.json",
+    "m8j12_sources/capture_supervisor_snapshot_fixed.json",
+    "m8j12_sources/planning_replay.json",
+    "m8j12_sources/replay_audit.json",
+    "m8j12_sources/final_integrity.json",
+    "m8j12_sources/handoff_verification.json"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "utc": "2026-11-01T08:06:48.259586+00:00",
+  "scope": "Read-only handoff verification and local report closeout; no new research run",
+  "base_main": "eb69114636ab60cd48fdba3708067b751fd4038c",
+  "execution_commit": "6e6eee7732b56c15f5b2ee44940968712a93fb50",
+  "remote_heads": {
+    "refs/heads/main": "eb69114636ab60cd48fdba3708067b751fd4038c"
+  },
+  "remote_feature_branch_present": false,
+  "worktree_count": 1,
+  "open_pr_check": {
+    "status": "NotVerified",
+    "reason": "gh executable unavailable; no remote feature branch exists. No remote branch deletion is proposed."
+  },
+  "observations": {
+    "files_checked": 68,
+    "bytes_checked": 146708177,
+    "all_size_and_sha256_match": true,
+    "inventory_sha256": "fbea9dea17e2d5d8e1d64f0335a1cf8a411a1f9bddb88de3bb6b377176ff8024"
+  },
+  "forward_ledger": {
+    "entries": 128,
+    "sha256": "fc36705060da4e8a4e4aaee9a415621f48b1dc31c7d4055a9d52b76a85d02b47",
+    "matches_original": true,
+    "new_full_model_forwards": 0,
+    "new_training_steps": 0,
+    "new_carla_launches": 0
+  },
+  "figures": {
+    "count": 6,
+    "all_sha256_match": true
+  },
+  "executions": [
+    {
+      "record": "replay_first_execution.json",
+      "exit_code": 0,
+      "log_sha256_matches": true,
+      "source_hash_differences": []
+    },
+    {
+      "record": "final_cpu_regression_execution.json",
+      "exit_code": 0,
+      "log_sha256_matches": true,
+      "source_hash_differences": [
+        "tools/m8j12_replay_audit.py"
+      ]
+    },
+    {
+      "record": "isolated_regression_execution.json",
+      "exit_code": 0,
+      "log_sha256_matches": true,
+      "source_hash_differences": [
+        "tools/m8j12_replay_audit.py"
+      ]
+    },
+    {
+      "record": "cache_audit_final_figures_execution.json",
+      "exit_code": 0,
+      "log_sha256_matches": true,
+      "source_hash_differences": []
+    }
+  ],
+  "test_evidence": {
+    "hs_cpu": "16 passed / 0 failed / 0 skipped, existing execution",
+    "isolated_runtime": "16 passed / 0 failed / 0 skipped, existing execution",
+    "new_test_runs": 0,
+    "only_post_test_source_change": "Plot x/y limits and legend font size; restoring that single line exactly matches regression source SHA256. Final cache audit ran the current source successfully."
+  },
+  "repository": {
+    "historical_tracked_modifications": 0,
+    "tracked_feature_additions_before_closeout": 67,
+    "inherited_untracked_deliverables": 19,
+    "new_handoff_record": 1,
+    "total_feature_files_after_closeout": 87,
+    "final_candidate_all_text": true,
+    "private_payload_files_added": false,
+    "credential_marker_check_passed": true,
+    "defaults_and_PETR_A_reference_unchanged": true
+  },
+  "simulator_ports_2300_2302_listening": false,
+  "remaining_authorization": "Fast-forward and push main to the final closeout commit, verify remote containment, then normally delete only the local feat/sparsedrivev2-b2d-integration branch. Explicit user confirmation required; no remote feature branch currently exists."
+}
