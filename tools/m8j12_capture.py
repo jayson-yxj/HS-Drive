@@ -68,6 +68,9 @@ def main():
             nav=mod.RoutePlanner(4.,50.)
             nav.set_route([(SimpleNamespace(location=SimpleNamespace(x=float(x[0]),y=float(x[1]))),SimpleNamespace(value=4)) for x in world_route])
             controller=PurePursuitPID();rows=[];pending_bundles={};begin=None;sim_start=world.get_snapshot().timestamp.elapsed_seconds
+            # spawn_actor does not add the actor to the *previous* WorldSnapshot.
+            # Establish one measured synchronous snapshot before querying ego state.
+            world.tick()
             for tick in range(plan['settle_ticks']+plan['drive_warmup_ticks']+32+10):
                 snap=world.get_snapshot();actor=snap.find(ego.id);t=actor.get_transform();v=actor.get_velocity();speed=math.sqrt(v.x*v.x+v.y*v.y+v.z*v.z)
                 state=OracleState(t.location.x,-t.location.y,-math.radians(t.rotation.yaw),speed,snap.timestamp.elapsed_seconds)

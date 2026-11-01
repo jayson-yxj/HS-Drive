@@ -58,3 +58,11 @@ def test_capture_python_preserves_virtualenv_symlink():
     assert "'capture-env/bin/python'" in source
     assert '.resolve()' not in source.split('python=')[1].split('\n')[0]
     assert "'--preflight-only'" in source
+
+
+def test_collection_advances_snapshot_after_spawn_before_lookup():
+    tree=ast.parse(Path('tools/m8j12_capture.py').read_text())
+    body=next(n for n in ast.walk(tree) if isinstance(n,ast.With) and any(isinstance(x.context_expr,ast.Call) and getattr(x.context_expr.func,'id',None)=='CarlaSession' for x in n.items)).body
+    loop=next(i for i,n in enumerate(body) if isinstance(n,ast.For) and getattr(n.target,'id',None)=='tick')
+    previous=body[loop-1]
+    assert isinstance(previous,ast.Expr) and isinstance(previous.value,ast.Call) and previous.value.func.attr=='tick'
