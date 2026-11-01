@@ -101,7 +101,9 @@ class Rig:
         source=Path(c['runtime_root'])/'official-source/leaderboard/team_code/planner.py'
         spec=importlib.util.spec_from_file_location('j13_native_navigation',source);module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
         self.nav=module.RoutePlanner(4.,50.)
-        self.nav.set_route([(SimpleNamespace(location=SimpleNamespace(x=float(p[0]),y=float(p[1]))),SimpleNamespace(value=4)) for p in world_route])
+        from simulator.m8j13_navigation import set_navigation_route
+        set_navigation_route(self.nav,[(SimpleNamespace(location=SimpleNamespace(x=float(p[0]),y=float(p[1]))),SimpleNamespace(value=4)) for p in world_route],
+            coordinate_type='world_carla',client_version=session.client.get_client_version())
         self.last_frame=None
 
     def tick(self):

@@ -30,33 +30,14 @@ STOP=dict(steer=0.,throttle=0.,brake=1.)
 
 
 def nav_geometry(world,ego_tf,target):
-    """Compare the unchanged adapter with CARLA geometry, including GPS."""
+    """Exercise the versioned HS route boundary and actual native consumer."""
     import carla
-    c=config();source=Path(c['runtime_root'])/'official-source/leaderboard/team_code/planner.py'
-    tree=__import__('ast').parse(source.read_text());cls=next(x for x in tree.body if isinstance(x,__import__('ast').ClassDef) and x.name=='RoutePlanner')
-    method=next(x for x in cls.body if isinstance(x,__import__('ast').FunctionDef) and x.name=='gps_to_location')
-    scope=dict(np=np,math=math,EARTH_RADIUS_EQUA=6378137.)
-    exec(compile(__import__('ast').Module(body=[method],type_ignores=[]),str(source),'exec'),scope)
-    origin=world.get_map().transform_to_geolocation(carla.Location());reference=type('Reference',(),dict(lat_ref=origin.latitude,lon_ref=origin.longitude))()
-    checks=[]
-    for yaw in [0.,90.,-90.,180.]:
-        tf=carla.Transform(carla.Location(x=ego_tf.location.x,y=ego_tf.location.y,z=ego_tf.location.z),carla.Rotation(yaw=yaw))
-        for x,y,label in [(10,0,'forward'),(-10,0,'backward'),(0,-10,'left'),(0,10,'right')]:
-            p=tf.transform(carla.Location(x=x,y=y));mapped=native_target(tf.get_matrix(),[p.x,p.y])
-            expected=np.array([y,x]);assert np.allclose(mapped,expected,atol=1e-4),(yaw,label,mapped)
-            # CARLA compass: north=-worldY, east=worldX. No ad-hoc sign fix.
-            compass=(np.radians(yaw)+np.pi/2)%(2*np.pi)
-            row=dict(ego_world_matrix=tf.get_matrix(),target_world_xy=[p.x,p.y],imu=[0]*6+[compass])
-            via_imu=measured_navigation_target(row);assert np.allclose(via_imu,expected,atol=1e-4)
-            gps=world.get_map().transform_to_geolocation(p);world_xy=scope['gps_to_location'](reference,[gps.latitude,gps.longitude])
-            back=world.get_map().geolocation_to_transform(gps)
-            checks.append(dict(yaw=yaw,direction=label,distance_m=float(np.linalg.norm(mapped)),
-                world_gps_error_m=float(np.linalg.norm(world_xy-[p.x,p.y])),
-                official_gps_inverse_xy=world_xy.tolist(),measured_world_xy=[p.x,p.y],
-                candidate_native_roundtrip_error_m=float(np.linalg.norm([back.x-p.x,back.y-p.y]))))
-    compatible=all(r['world_gps_error_m']<=.01 for r in checks)
-    return dict(status='Passed' if compatible else 'GPSProjectionIncompatible',world_ego_directions='Passed',
-        cases=len(checks),checks=checks,source_sha256=digest(source),oracle_scope='Geometry checks only; no actor truth passed to model')
+    from simulator.m8j13_navigation import geometry_checks
+    source=Path(config()['runtime_root'])/'official-source/leaderboard/team_code/planner.py'
+    # This owner explicitly connects only the 0.9.16 candidate. The reusable
+    # route adapter has a separate preserved 0.9.15 path tested offline.
+    return geometry_checks(world.get_map(),source,'0.9.16',
+        anchors=((0.,0.),(ego_tf.location.x,ego_tf.location.y)))
 
 
 class Owner:
