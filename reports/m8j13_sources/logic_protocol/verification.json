@@ -1,0 +1,38 @@
+{
+  "status": "Passed_PureSyntheticAndExistingSafetyMathOnly",
+  "tests": 64,
+  "failures": 0,
+  "by_file": {
+    "tests.m8j13.test_logic_protocol": 46,
+    "tests.m8j13.test_safety": 18
+  },
+  "command": "PYTHONPATH=. /root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv-gpu/bin/python -m pytest -q --confcutdir=tests/m8j13 tests/m8j13/test_logic_protocol.py tests/m8j13/test_safety.py",
+  "historical_regression_reused": 96,
+  "historical_suite_rerun": false,
+  "initial_test_runs": [
+    {
+      "tests": 54,
+      "passed": 54
+    },
+    {
+      "tests": 58,
+      "passed": 58
+    },
+    {
+      "tests": 59,
+      "passed": 59
+    },
+    {
+      "tests": 63,
+      "passed": 63
+    }
+  ],
+  "final_test_stdout_sha256": "6f7ca9ad8d65cb12b29d7822f32a6718fcdf6569ea3832d7a0c7b2ea778a8862",
+  "file_sha256": {
+    "configs/m8j13_synchronous_logic_v1.draft.json": "15c8657e33007dc3b9e17455324e34779bcd6d416f39d3feb81d0beb93d0a2d6",
+    "simulator/m8j13_logic_protocol.py": "ba092f4c33997ce73dd2effa90a39b85e1cd9dcf3c2774c355e544fd08125c3a",
+    "tests/m8j13/test_logic_protocol.py": "a165dd2b7211be19bb0c039a2d7659bcecf18f3a663e54dd9e45d50177bb7081"
+  },
+  "real_vehicle_stop_verified_this_round": false,
+  "synthetic_events_not_driving_evidence": true
+}
