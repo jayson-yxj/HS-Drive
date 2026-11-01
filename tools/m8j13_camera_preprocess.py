@@ -58,7 +58,7 @@ class CameraPreprocessor:
             t=time.monotonic();data=tr(data);stages[type(tr).__name__+'_ms']=(time.monotonic()-t)*1000
         if set(data)!=MODEL_KEYS:raise RuntimeError('UnexpectedModelKeys')
         t=time.monotonic();batch=collate([data],samples_per_gpu=1);stages['collate_ms']=(time.monotonic()-t)*1000
-        stages.update(serial_tail_ms=(time.monotonic()-start)*1000,serial_tail_cpu_ms=(time.thread_time()-cpu)*1000)
+        stages.update(serial_tail_start_wall_s=start,serial_tail_end_wall_s=time.monotonic(),serial_tail_ms=(time.monotonic()-start)*1000,serial_tail_cpu_ms=(time.thread_time()-cpu)*1000)
         return batch,dict(cameras={n:prepared[n]['timing'] for n in CAMERAS},tail=stages)
     def finish(self,token):
         jobs=self.active.pop((token['slot'],token['generation']))

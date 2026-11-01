@@ -45,7 +45,9 @@ class EarlyRelay:
         with self.lock:
             item=self.frames[frame]
             if item['status']!='Partial':raise RuntimeError('NotPublishablePartial:'+item['status'])
-            self.slots.commit(item['token'],row,snapshot,wall,sim);item['status']='Committed';return item['name']
+            begin=time.monotonic();self.slots.commit(item['token'],row,snapshot,wall,sim);item['status']='Committed'
+            append(self.root/'commit_timing.jsonl',dict(request=item['name'],frame=frame,begin_wall_s=begin,end_wall_s=time.monotonic()))
+            return item['name']
     def reject(self,frame):
         with self.lock:
             item=self.frames[frame]
@@ -87,7 +89,7 @@ def camera_prepare_loop(root,model_cfg,camera,pending,stop,age):
             if stop.is_set() or (root/'model_stop').exists():prep.finish(token);pending.cancel();break
             if aborted:
                 prep.finish(token);pending.publish(dict(cancelled=True,name=name,start=start));continue
-            row=slots.committed_row(token);checked=age(row,start)
+            row=slots.committed_row(token);checked=age(row,start,phase='complete_commit_before_assembly')
             # Original input start may predate CPU partial processing. Never renewed.
             item=dict(name=name,row=row,start=start,read_ms=0.,checked=checked,preprocess_start=start)
             write(root/'input_rows'/name,row)
@@ -96,7 +98,7 @@ def camera_prepare_loop(root,model_cfg,camera,pending,stop,age):
                 batch,timing=prep.assemble(slots,token);prepared=time.monotonic();item.update(cpu_batch=batch,prepared=prepared,preprocessing=timing,
                     images={n:prep.active[(token['slot'],token['generation'])][n].result()['original'] for n in CAMERAS},
                     prepare_thread_cpu_ms=timing['tail']['serial_tail_cpu_ms']+sum(x['cpu_ms'] for x in timing['cameras'].values()))
-                item['checked']=age(row,start)
+                item['checked']=age(row,start,phase='after_cpu_assembly')
                 if item['checked']['reason'] not in (None,'SimulationSnapshotUnconfirmed'):item['rejection']='InputRejectedAfterCPUPreprocess'
             prep.finish(token);pending.publish(item)
     except BaseException as exc:pending.publish(dict(error=repr(exc),traceback=traceback.format_exc()))

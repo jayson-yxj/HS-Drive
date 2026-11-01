@@ -18,6 +18,7 @@ from simulator.m8j13_shadow_contract import require_parked_command,require_compl
 from simulator.m8j13_execution import control_record,feedback_matches
 from simulator.m8j13_safety import PlanStamp,freshness
 from simulator.m8j13_transport import Slots
+from simulator.m8j13_snapshot_age import ledger_entries,consumed_completion
 
 CFG=Path('configs/m8j13_parked_shadow.json')
 
@@ -117,17 +118,15 @@ def worker(root):
         def consume_responses():
             for path in sorted((root/'responses').glob('*.json')):
                 if path.name in responses:continue
-                value=load(path);require_completion_only(value)
+                received=time.monotonic();value=load(path);require_completion_only(value)
                 if value['status']=='PartialCancelled':
                     if path.name not in early_responses:relay.release(path.name);early_responses.add(path.name)
                     continue
                 responses.add(path.name)
-                received=time.monotonic();row=request_rows.get(path.name);extra={}
+                row=request_rows.get(path.name);extra={}
                 if row is not None:
-                    stamp=PlanStamp(row['sequence_id'],row['frame_id'],row['timestamp_s'],row['input_capture_wall_s'],row['input_capture_wall_s'],received,'frozen')
-                    extra=dict(wall_age_s=received-row['input_capture_wall_s'],sim_age_s=last['sim_s']-row['timestamp_s'],
-                        age_reason=freshness(stamp,row['sequence_id'],last['frame'],last['sim_s'],received))
-                append(root/'completion_received.jsonl',dict(request=path.name,wall_s=received,owner_consume_check_done_wall_s=time.monotonic(),response=value,**extra))
+                    extra=consumed_completion(value,row,last['frame'],last['sim_s'],received,time.monotonic())
+                append(root/'completion_received.jsonl',dict(request=path.name,wall_s=received,response=value,**extra))
                 if relay is not None:relay.release(path.name)
                 elif slots is not None:slots.release(path.name)
         def candidates():
@@ -245,9 +244,9 @@ def supervise():
     from tools.m8j13_supervisor import terminate
     cfg=json.loads(CFG.read_text());c=config();base=Path(cfg['private_root']);base.mkdir(parents=True,exist_ok=True)
     if cfg.get('pipeline_service'):
-        if load(base/'equivalence_result.json',{}).get('status')!='Passed':raise RuntimeError('InputEquivalenceRequired')
-        if len((base/'forward_budget.jsonl').read_text().splitlines())!=cfg['offline_forward_cap']:raise RuntimeError('OfflineBudgetMismatch')
-        if cfg.get('per_camera') and load(base/'online_admission.json',{}).get('admitted') is not True:raise RuntimeError('OfflineReachabilityEvidenceRequired')
+        if load(Path(cfg.get('equivalence_evidence',str(base/'equivalence_result.json'))),{}).get('status')!='Passed':raise RuntimeError('InputEquivalenceRequired')
+        if len(ledger_entries(base/'forward_budget.jsonl'))!=cfg['offline_forward_cap']:raise RuntimeError('OfflineBudgetMismatch')
+        if cfg.get('per_camera') and load(Path(cfg.get('admission_evidence',str(base/'online_admission.json'))),{}).get('admitted') is not True:raise RuntimeError('OfflineReachabilityEvidenceRequired')
     with (base/'budget.lock').open('a') as lock:
         fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB);ledger=load(base/'budget.json',dict(runs=[]))
         if ledger['runs']:raise RuntimeError('SingleStartBudgetConsumed')

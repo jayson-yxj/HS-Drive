@@ -1,0 +1,75 @@
+{
+  "status": "Passed",
+  "boundary": {
+    "status": "Passed",
+    "creator_python": "3.10",
+    "reader_python": "3.8",
+    "actual_EarlyRelay": true,
+    "actual_prepare_loop": true,
+    "actual_CPU_pipeline": true,
+    "actual_consumer": true,
+    "tuple_JSON_binding": true,
+    "complete_inputs": 1,
+    "partial_cancelled": 1,
+    "slot_reused": true,
+    "full_model_forwards": 0,
+    "carla_starts": 0,
+    "clock_scope": "Historical input unchanged; explicit synthetic clock for engineering age-contract test, no live freshness claim",
+    "child_clean_exit": true,
+    "pending_confirmed_expired_in_actual_reader": true,
+    "relay_thread_stopped": true,
+    "slots_removed": true
+  },
+  "regression_passed": 95,
+  "offline_model_forwards": 0,
+  "new_ledger_absent_before_run": true,
+  "evidence_reused": {
+    "input_equivalence": "reports/m8j13_sources/per_camera/offline_preprocessing.json",
+    "model_equivalence": "reports/m8j13_sources/per_camera/model_equivalence.json",
+    "model_equivalence_sha256": "2452326e60b5507b486e712d1a9d329bde39df21f16905b0d0493ae5c73ebd31"
+  },
+  "parameters_unchanged": [
+    "twoCPUunits",
+    "CPUaffinity",
+    "Torch/OpenCV/interopThreads",
+    "JPEG20",
+    "FP32",
+    "weights",
+    "templates",
+    "PID",
+    "resolution",
+    "Epic",
+    "sensor_tick",
+    "0.05s",
+    "0.25sInputWait",
+    "0.3sDualClock"
+  ],
+  "fixes": [
+    "Empty forward ledger accepted and original offline evidence referenced",
+    "Extract actual Snapshot age and completion consumption for shared integration test",
+    "Record each confirmation wait and cumulative duration; unconfirmed simulation age remains a range, not confirmed expiry"
+  ],
+  "finite_boundary_loads": 2,
+  "finite_boundary_scope": "Two engineering checks each use one existing historical payload and one cancellation. No CARLA or full model; clocks explicitly simulated for contract tests.",
+  "preserved_failure": "per_camera first live tuple/list failure retained; no history rewritten",
+  "budgets": {
+    "starts": 1,
+    "ticks": 800,
+    "live_forwards": 24,
+    "offline_forwards": 0,
+    "total_forwards": 24
+  },
+  "planned_tick_upper_bound": 716,
+  "wall_bounds": {
+    "server_startup_s": 150,
+    "model_load_s": 120,
+    "owner_s": 900,
+    "model_exit_s": 30
+  },
+  "runtime": {
+    "binary_sha256": "03bcd413615fa1fc61a5b846342dbdc4e6b3541320a40d6bf17ff927039731f9",
+    "client_sha256": "111e8c800ba327ba27ce7d15d406f97577e0eaea44c354144ed3351b74f87389",
+    "version": "0.9.16",
+    "default_environment_changed": false
+  }
+}

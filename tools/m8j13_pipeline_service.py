@@ -24,7 +24,7 @@ from datasets.m8j12_contract import official_camera_contract,planning_to_hs,DryR
 from simulator.m8j13_safety import PlanStamp,freshness,validate_trajectory
 from simulator.m8j13_transport import Slots
 from simulator.m8j13_prepared_slot import PreparedSlot
-from simulator.m8j13_shadow_contract import snapshot_is_current
+from simulator.m8j13_snapshot_age import SnapshotAge,ledger_entries
 
 ALLOWED={'frame_id','timestamp_s','sequence_id','ego_world_matrix','speed_mps','imu','imu_frame','imu_timestamp_s',
     'navigation_command','target_world_xy','ego_state_source','input_capture_wall_s','camera_frames','camera_timestamps_s','camera_world_matrices'}
@@ -35,20 +35,7 @@ def main():
     root=a.root;cfg=json.loads(a.run_config.read_text());c=config();os.umask(0o077)
     stop=threading.Event();pending=PreparedSlot();thread=None;model=None;baseline=None
     completed=0;rejected=0;attempt=None;previous=None;ledger=root.parent/'forward_budget.jsonl'
-    def age(row,start,wait_for_snapshot=False):
-        until=min(time.monotonic()+.06,row['input_capture_wall_s']+.3)
-        while True:
-            pending_path=root/'tick_pending.json'
-            first=json.loads(pending_path.read_text()) if cfg.get('per_camera') and pending_path.exists() else None
-            state=json.loads((root/'current_snapshot.json').read_text());now=time.monotonic()
-            second=json.loads(pending_path.read_text()) if first is not None else None
-            confirmed=not cfg.get('per_camera') or snapshot_is_current(first,second,state)
-            stamp=PlanStamp(row['sequence_id'],row['frame_id'],row['timestamp_s'],row['input_capture_wall_s'],start,now,'frozen')
-            reason=freshness(stamp,row['sequence_id'],state['frame'],state['sim_s'],now)
-            if not confirmed and not reason:reason='SimulationSnapshotUnconfirmed'
-            if reason=='SimulationSnapshotUnconfirmed' and wait_for_snapshot and now<until:time.sleep(.001);continue
-            return dict(reason=reason,wall_age_s=now-row['input_capture_wall_s'],sim_age_s=state['sim_s']-row['timestamp_s'],
-                checked_wall_s=now,snapshot_confirmed=confirmed,sim_age_scope='Latest confirmed owner snapshot; unconfirmed in-flight tick never qualifies as fresh')
+    age=SnapshotAge(root,require_confirmation=cfg.get('per_camera',False))
     def respond(name,status,**flags):atomic(root/'responses'/name,dict(status=status,**flags))
     def prepare_loop(model_cfg,camera):
         # This thread owns this stateless official Compose instance exclusively.
@@ -104,12 +91,12 @@ def main():
                 rejected+=1;append(root/'worker_timing.jsonl',dict(request=item['name'],status='PartialCancelled',start_wall_s=item['start']))
                 respond(item['name'],'PartialCancelled',model_forward=False,reason='OwnerInputRejected');continue
             attempt=None;row=item['row'];start=item['start'];name=item['name'];wait_done=time.monotonic()
-            checked=age(row,start,wait_for_snapshot=True);rejection=item.get('rejection')
+            checked=age(row,start,wait_for_snapshot=True,phase='after_prepared_wait');rejection=item.get('rejection')
             if not rejection and checked['reason']:rejection='InputRejectedAfterWait'
             if completed>=cfg['planned_forwards']:rejection='ForwardBudgetEnded'
             transfer=0.
             if not rejection:
-                batch,transfer=OfficialPreprocessor.gpu(item.pop('cpu_batch'));checked=age(row,start,wait_for_snapshot=True)
+                batch,transfer=OfficialPreprocessor.gpu(item.pop('cpu_batch'));checked=age(row,start,wait_for_snapshot=True,phase='after_gpu_transfer')
                 if checked['reason']:rejection='InputRejectedBeforeForward'
             before=None
             if not rejection:
@@ -117,10 +104,10 @@ def main():
                 before=memory(model)
                 if before['history_timestamp'] is not None and any(t>=row['timestamp_s'] for t in before['history_timestamp']):raise RuntimeError('FutureModelMemory')
                 with (root.parent/'forward_budget.lock').open('a') as lock:
-                    fcntl.flock(lock,fcntl.LOCK_EX);entries=[json.loads(x) for x in ledger.read_text().splitlines()]
+                    fcntl.flock(lock,fcntl.LOCK_EX);entries=ledger_entries(ledger)
                     live=sum(x['kind']=='live_pipeline' for x in entries)
                     if len(entries)>=cfg['total_forward_cap'] or live>=cfg['max_forward_attempts']:rejection='ForwardBudgetEnded'
-                    checked=age(row,start,wait_for_snapshot=True)
+                    checked=age(row,start,wait_for_snapshot=True,phase='final_before_forward')
                     if not rejection and checked['reason']:rejection='InputRejectedBeforeForward'
                     if not rejection:
                         attempt=len(entries)+1;append(ledger,dict(attempt=attempt,kind='live_pipeline',request=name,input_frame=row['frame_id'],wall_s=time.monotonic()))
@@ -135,13 +122,13 @@ def main():
             torch.cuda.synchronize();inferred=time.monotonic()
             if not finite(prediction):raise RuntimeError('NonfiniteNativeOutput')
             finite_done=time.monotonic();trajectory,meta=planning_to_hs(prediction,row['timestamp_s']);converted=time.monotonic()
-            control=ctrl.command(prediction,row['speed_mps'],measured_navigation_target(row));finished=time.monotonic();result_age=age(row,start)
+            control=ctrl.command(prediction,row['speed_mps'],measured_navigation_target(row));finished=time.monotonic();result_age=age(row,start,phase='HS_PID_complete')
             reason,diagnostics=validate_trajectory(trajectory.points,row['speed_mps'],c['trajectory_checks'])
             if not finite(control) or not all(math.isfinite(float(x)) for part in ('raw_pid','native_agent_control') for x in control[part].values()):raise RuntimeError('NonfinitePIDOutput')
             if any(p._version!=versions[n] for n,p in model.named_parameters()):raise RuntimeError('ParameterChanged')
-            after=memory(model);checked_age=age(row,start);checked_done=time.monotonic()
+            after=memory(model);checked_age=age(row,start,phase='necessary_checks_complete');checked_done=time.monotonic()
             # No diagnostics/controls on IPC. Safety/finite/trajectory checks completed.
-            respond(name,'ShadowComplete',model_forward=True,finite=True,result_expired=checked_age['reason'] is not None)
+            respond(name,'ShadowComplete',model_forward=True,finite=True,trajectory_valid=reason is None,result_expired=checked_age['reason'] is not None)
             published=time.monotonic()
             record=dict(status='ShadowDiagnostic',source='FrozenModelDryRun',attempt=attempt,frame=row['frame_id'],timestamp_s=row['timestamp_s'],
                 input_wall_s=row['input_capture_wall_s'],forward_start_wall_s=infer,result_wall_s=finished,checked_wall_s=checked_done,published_wall_s=published,
@@ -151,11 +138,13 @@ def main():
                 result_age_reason=result_age['reason'],completion_age=result_age,checked_age=checked_age,pre_forward_age=checked,
                 memory_before=before,memory_after=after,timestamp_gap_s=None if previous is None else row['timestamp_s']-previous,
                 preprocessing=item['preprocessing'],timings_ms=dict(ipc_read=item['read_ms'],cpu_preprocess=(item['prepared']-item['preprocess_start'])*1000,
-                    wait_after_cpu=(wait_done-item['prepared'])*1000,gpu_transfer=transfer,prepare_thread_cpu=item['prepare_thread_cpu_ms'],
+                    wait_after_cpu=(wait_done-item['prepared'])*1000,preforward_total=(infer-wait_done)*1000,gpu_transfer=transfer,prepare_thread_cpu=item['prepare_thread_cpu_ms'],
                     inference_decode_with_selection_audit=(inferred-infer)*1000,finite_check=(finite_done-inferred)*1000,
                     mapping=(converted-finite_done)*1000,pid=(finished-converted)*1000,necessary_checks=(checked_done-finished)*1000,
                     end_to_end_result=(finished-row['input_capture_wall_s'])*1000,end_to_end_checked=(checked_done-row['input_capture_wall_s'])*1000,
                     worker_to_result=(finished-start)*1000,completion_publish=(published-checked_done)*1000),
+                snapshot_wait_cumulative_ms=age.cumulative_wait_ms(row['frame_id']),prepared_wall_s=item['prepared'],
+                preforward_start_wall_s=wait_done,gpu_transfer_ms=transfer,
                 gpu_allocated=torch.cuda.max_memory_allocated(),gpu_reserved=torch.cuda.max_memory_reserved(),finite=True)
             # Synchronous bounded persistence: one immutable copied input and prediction.
             # This delays the next inference, is measured, and fails closed on write errors.

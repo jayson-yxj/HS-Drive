@@ -7,7 +7,7 @@ def require_parked_command(command):
 
 
 def require_completion_only(response):
-    allowed={'status','reason','model_forward','finite','result_expired'}
+    allowed={'status','reason','model_forward','finite','result_expired','trajectory_valid'}
     if not set(response)<=allowed:raise ValueError('ExecutableOrUnexpectedModelIPC')
     if not isinstance(response.get('model_forward'),bool):raise ValueError('InvalidModelCompletion')
 
