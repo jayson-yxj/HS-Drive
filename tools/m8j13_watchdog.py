@@ -7,12 +7,18 @@ from tools.m8j13_common import config,append,atomic
 
 def main():
     import carla
-    p=argparse.ArgumentParser();p.add_argument('--root',required=True);p.add_argument('--ego',type=int,required=True);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--root',required=True);p.add_argument('--ego',type=int,required=True)
+    p.add_argument('--expected-version',default='0.9.15');a=p.parse_args()
     c=config();root=Path(a.root);client=carla.Client('127.0.0.1',c['port']);client.set_timeout(.2)
     # Establish the separate RPC connection before sensors and timed acceptance.
-    client.get_server_version();ego=client.get_world().get_actor(a.ego)
+    versions=(client.get_client_version(),client.get_server_version())
+    if versions!=(a.expected_version,a.expected_version):raise RuntimeError('WatchdogVersionMismatch')
+    world=client.get_world();ego=world.get_actor(a.ego)
     if ego is None:raise RuntimeError('WatchdogEgoMissing')
-    latched=None;last_brake=0;armed=False;atomic(root/'watchdog_ready.json',dict(pid=os.getpid(),wall_s=time.monotonic()))
+    import sys
+    latched=None;last_brake=0;armed=False;atomic(root/'watchdog_ready.json',dict(pid=os.getpid(),wall_s=time.monotonic(),
+        python=sys.executable,carla_path=carla.libcarla.__file__,client_version=versions[0],server_version=versions[1],
+        host='127.0.0.1',port=c['port'],episode=world.id,ego_id=ego.id,tick_calls=0))
     while not (root/'watchdog_stop').exists():
         now=time.monotonic()
         try:
@@ -26,8 +32,9 @@ def main():
             result=dict(reason=latched,wall_s=now)
             try:
                 ego.apply_control(carla.VehicleControl(throttle=0.,brake=1.,steer=0.))
-                result['submitted']=True
-            except Exception as exc:result.update(applied=False,error=repr(exc))
+                result.update(submitted=True,call_end_wall_s=time.monotonic(),source='IndependentWatchdog',
+                    command=dict(throttle=0.,brake=1.,steer=0.))
+            except Exception as exc:result.update(submitted=False,status='CommandNotDelivered',error=repr(exc))
             append(root/'watchdog_events.jsonl',result);last_brake=now
         time.sleep(c['watchdog_poll_wall_s'])
 
