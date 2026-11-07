@@ -76,4 +76,4 @@ def test_audit_full_synthetic_initialization_hold_and_independent_budget(tmp_pat
     rows=[json.loads(x) for x in (root.parent/'budget.jsonl').read_text().splitlines()];rows[-1]['charged_ticks']=102;stream(root.parent/'budget.jsonl',rows)
     r=audit_run(root)
     assert r['status']=='Passed_SingleNoModelInitialization' and r['initialization']['last21_stable']
-    assert r['terminal_hold']['terminal_hold_verified'] and not r['S0_review_ready']
+    assert r['terminal_hold']['normal'] and r['terminal_hold']['terminal_hold_verified'] and not r['S0_review_ready']

@@ -783,3 +783,35 @@ supervisor沿原有退出路径停止owner、模型及服务器组，记录3组�
 如果需要研究模型驻留是否相关，另行申请**第二个独立对照**：最多1次CARLA、1次冻结模型加载、180Tick，前向/PID0，固定同样配置和取证，加载上限120秒、全生命周期360秒；不与第一例合并预算、不因失败追加。同条件各一例仍只能提供有限对照线索，不能做稳定性或因果保证。此次仅提交方案，未授权执行。
 
 交付：[证据摘要](m8j13_sources/server_exit_audit/evidence_summary.json)、[时间线](m8j13_sources/server_exit_audit/timeline.json)、[旧9次复算](m8j13_sources/server_exit_audit/old_nine_reaudit.json)、[零目标复算](m8j13_sources/server_exit_audit/latest_zero_reaudit.json)、[测试](m8j13_sources/server_exit_audit/tests.json)。本轮新增详细审计目录与旧目录分离，公开不包含原始图像、载荷、预测、逐帧控制或权重。J13-A继续Partial，不放行S0。
+
+## 单次无模型初始化诊断：初始化与终止保持通过（2026-11-07）
+
+用户授权后执行了第15节建议的最小无模型方案，**1次CARLA启动，119/180计费Tick；模型加载、完整前向、真实PID、模型控制、训练均0**。本次有限结果为 `Passed_SingleNoModelInitialization`；J13-A仍Partial，不能进入S0，也没有开始模型驻留对照或24目标复验。
+
+运行冻结提交 `dc84447645098fa9cae8798f3dfa5910dcb29a71`，配置 [m8j13_init_diagnostic.json](../configs/m8j13_init_diagnostic.json)，SHA256 `b0f8ead3d64fa7de80abf9f375218c51dde4eb0f288bcc153e64ef432e69d6ee`，run_id `init_diagnostic_20261107`。基线89eccbc，原0.9.16客户端/服务器hash与上一轮一致，Town03、原车/天气/六摄/Epic/0.05秒不改。原位创建180总预算入口，复用生产IO、watchdog、STOP和修复后的收尾；旧800账本不改、不挪用。入口不启动模型/test worker，不调用任何PID，也没有PlannedHoldBrake或模型恢复交接。
+
+启动前98项相关无服务器检查在HS、匹配0.9.16客户端环境各通过，含真实入口顺序、180总限、无模型/无重试和取证检查。开发中新增报告的合成fixture缺少charge字段触发1项失败，修复为缺证据留空后通过；实测后只修正报告中正常终止名称映射，14项诊断测试再通过，不重新运行CARLA。
+
+|项目|本次实测|
+|---|---|
+|初始化|38次尝试、38个确认Snapshot；末21拍速度模长≤0.1m/s|
+|初始化墙钟|21.326秒（含setup18.464秒），符合30秒总限|
+|初始化Tick最长完整操作|378.569ms；超过旧500ms的次数0|
+|初始独立STOP交接|7.427ms，原200ms以内|
+|正常终止独立FaultBrake|2.644ms处理确认，无交接不确定|
+|终止物理观察|21个连续真实Tick，速度0，保持1.000000015秒仿真时间|
+|物理反馈|全部59个Snapshot反馈完整STOP；无碰撞记录，无未消费操作|
+|清理|8/8停止监听、9/9Actor销毁、settings恢复读回一致、残留Actor0|
+|进程与端口|owner返回0；自有服务器按计划TERM，所有自有组空，2300–2302释放|
+|计费|38初始化+21保持+启动settings30+恢复settings30=119/180|
+|生命周期|约29.475秒，小于240秒；没有第二次启动|
+
+初始化落地运动单列，不能把前几拍称为全程静止。终止保持只来自FaultBrake确认后的21个真实Snapshot，冻结等待、之前的21帧准入以及RPC本身不提供保持信用。终态是 `NormalInitializationCompletion`，不是故障注入；未复跑移动故障，未消耗原驾驶额度。
+
+取证记录包含runuser包装进程、启动shell和实际引擎PID、/proc启动标识、引擎路径与UID、实际HOME/XDG/渲染相关环境、原始命令、UTC/monotonic成对锚点、boot ID及二进制hash。实际引擎HOME仍为`/home/ubuntu`，DISPLAY未设置、Vulkan ICD沿原脚本；详细身份留私有目录。启动前后用户/安装Saved及core目录比较没有新崩溃候选，server.log无Signal11。退出日志有143/RequestExit，这是完成资源清理后主动TERM的结果；监督器包装进程返回-15，与引擎SIGSEGV区别记录，不假装取得独立引擎wait状态。
+
+本次owner/result、cleanup_steps、supervisor和预算结束记录均真实保存，finalization_errors为空；新收尾的**正常路径**已获得实测。**真实服务器死亡后的收尾、挂起时TERM/KILL升级、异常时保住终账仍只有无服务器证据**，本次没有为验证它们刻意制造崩溃。旧54b7574的第3Tick Signal11、缺终账和800/800保守扣账全部保留；旧9次影子、第10组200ms hold超时、旧实时0/9和终止保持缺口也没有改变。
+
+结论仅为：固定配置下，不驻留模型的一次初始化和正常终止通过。它不能证明模型驻留导致旧崩溃，不能排除随机故障，也不能代替0.5秒计划交接或24目标模型验证。若继续，建议单独申请已列出的“模型仅加载驻留、前向/PID0”的初始化对照：最多1次CARLA、1次模型加载、180Tick，沿同配置和取证；仍不是24目标复验，也不自动授权。本轮到此结束，不追加实验。
+
+见[结果](m8j13_sources/init_diagnostic/run_summary.json)、[核验与取证哈希](m8j13_sources/init_diagnostic/verification.json)、[启动前测试](m8j13_sources/init_diagnostic/preflight.json)。详细原始证据位于 `/root/gpufree-data/hs-drive-private/m8j13-init-diagnostic-20261107/`，未提交私有传感器数据。

@@ -1,0 +1,77 @@
+{
+  "status": "Passed_SingleNoModelInitialization",
+  "J13_A": "Partial",
+  "run_commit": "dc84447645098fa9cae8798f3dfa5910dcb29a71",
+  "run_id": "init_diagnostic_20261107",
+  "initialization": {
+    "confirmed_ticks": 38,
+    "last21_stable": true
+  },
+  "terminal_hold": {
+    "normal": true,
+    "first_reason": "NormalInitializationCompletion",
+    "post_fault_ticks": 21,
+    "terminal_hold_sim_s": 1.0000000149011612,
+    "terminal_hold_verified": true,
+    "fault_brake_server_processed": true,
+    "fault_brake_timely": true,
+    "ordinary_handoff_confirmed": true,
+    "handoff_uncertain": false,
+    "status": "PhysicalHoldObserved"
+  },
+  "timing": {
+    "tick_operation_ms": {
+      "n": 59,
+      "min": 5.139220505952835,
+      "p50": 41.68560355901718,
+      "p95": 76.44189558923209,
+      "max": 378.5690627992153
+    },
+    "initialization_exceeded_old500ms": 0
+  },
+  "first_fault": "NormalInitializationCompletion",
+  "unconsumed_operations": [],
+  "all_operations_timely": true,
+  "isolation": {
+    "brake_only": true,
+    "model_loads": 0,
+    "forwards": 0,
+    "pid": 0,
+    "model_controls": 0,
+    "training": 0
+  },
+  "cleanup": {
+    "resources_verified": true,
+    "sensor_stops": 8,
+    "actors_destroyed": 9,
+    "settings_restored": true,
+    "remaining": [],
+    "process_groups_ports": true,
+    "owner_final_present": true
+  },
+  "budget": {
+    "starts": 1,
+    "max_starts": 1,
+    "tick_attempts": 59,
+    "confirmed_snapshots": 59,
+    "charged_ticks": 119,
+    "max_ticks": 180,
+    "phase_ticks": {
+      "initialization": 38,
+      "fault_stop": 21
+    },
+    "settings_charges": {
+      "settings_startup": 30,
+      "settings_restore": 30
+    }
+  },
+  "whole_lifecycle_within240s": true,
+  "crash_candidates": 0,
+  "S0_review_ready": false,
+  "limits": [
+    "One run cannot establish crash cause or reliability",
+    "No resident model; cannot isolate model-load causality",
+    "No500ms planned handoff or24target evidence",
+    "No moving driving proof"
+  ]
+}

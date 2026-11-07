@@ -188,6 +188,7 @@ def audit_run(root):
     fault=load(root/'first_fault.json') or load(root/'watchdog_fault.json') or {};brake=load(root/'fault_brake.json') or {}
     uncertain=result.get('server_advance_unknown',False) or result.get('handoff_uncertain',False) or result.get('inflight_operation')
     terminal=termination_evidence(snaps,fault,brake,uncertain)
+    terminal['normal']=fault.get('reason')=='NormalInitializationCompletion'
     known=[s for s in init[-21:] if s['speed_norm']<=.1 and s['feedback_matches'] and canonical(s['full_control'])==canonical(STOP)]
     consumed={o['operation']['sequence'] for o in ops};missing=[q['sequence'] for q in requests if q['sequence'] not in consumed]
     ontime=all(o['reply']['success'] and o['owner_consumed_wall_s']<=o['operation']['deadline'] for o in ops)
