@@ -228,3 +228,23 @@ def test_actual_network_isolated_worker_heartbeat_does_not_deliver_blocked_task(
     finally:
         (tmp_path/'test_worker_stop').touch();proc.wait(timeout=3)
     assert proc.returncode==0
+
+
+def test_late_failed_tick_reply_allows_cleanup_only_never_physical_resumption(tmp_path):
+    from tools.m8j13_common import atomic
+    (tmp_path/'io_responses').mkdir()
+    r=Runtime(tmp_path,CFG);r.pending=dict(sequence=5,kind='tick',deadline=1.)
+    r.guard.latch();r.guard.uncertain=True;r.terminal=dict(reason='IODeadline:tick',wall_s=1.)
+    atomic(tmp_path/'io_responses'/'000005.json',dict(success=False,error='500ms timeout',call_end_wall_s=1.003))
+    assert r.reconcile_for_cleanup()
+    assert r.pending is None and r.terminal['reason']=='IODeadline:tick'
+    assert r.result['late_io_cleanup_reconciliation']['physics_resumption_allowed'] is False
+    with pytest.raises(ValueError,match='HandoffUncertain'):r.guard.before_tick(.1,1.1)
+    assert not r.counts
+
+
+def test_missing_io_reply_remains_inflight_for_cleanup(tmp_path):
+    (tmp_path/'io_responses').mkdir()
+    r=Runtime(tmp_path,CFG);r.pending=dict(sequence=1,kind='tick',deadline=1.)
+    assert not r.reconcile_for_cleanup(timeout=.005)
+    assert r.pending is not None and not r.counts

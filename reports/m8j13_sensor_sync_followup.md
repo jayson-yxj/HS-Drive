@@ -483,3 +483,56 @@ CPU 配额仍为 14 核，server 0–7、owner 8–9、watchdog 10、model 11–
 下一步建议单独授权**无模型协议接线与真实制动验证：最多1次CARLA启动、800主动Tick、模型0**；先验证两拍采集、确认冻结、命令交接/远端顺序及停车响应。其后依次补四类移动故障、新模式静止影子，满足全部门禁后再单独申请S0。本轮不授予任何运行准入、不消耗原9次模型驾驶预算。
 
 详见[采集证据](m8j13_sources/logic_protocol/acquisition_evidence.json)、[针对性验证](m8j13_sources/logic_protocol/verification.json)、[零运行预算](m8j13_sources/logic_protocol/budget.json)、[分项结论](m8j13_sources/logic_protocol/acceptance.json)。逐候选历史重建与完整测试日志私存，公开没有图像、逐帧传感器数据或模型预测。
+
+## synchronous_logic_v1 无模型接线、任务超时与真实制动尝试（2026-11-07）
+
+**结论：Partial，初始化第3次主动Tick超时，尚未进入六个静止周期、低速起步或预定2秒任务超时。** 本轮1/1次CARLA启动，3次显式Tick尝试（2次确认返回、1次超时）+30设置内部保守计费，共33/800；剩余767不补跑。完整模型前向0、模型控制0、训练0、S0/S1/S2为0，原9次驾驶预算未消耗。既有实时失败、DesignOnly草案和默认入口均不改写。
+
+### 代码接线及服务端处理语义
+
+起点 `280181cb86756042420f3191ef25c81db367000f`，运行冻结提交 `e6b75dc753860eebdd042c3310792c41f33cff39`。新入口 `tools.m8j13_logic_runtime` 只读取 [显式无模型配置](../configs/m8j13_logic_runtime_test.json)，不启用原草案，也不调用原PID。测试输出只能标记 `IndependentTestControl`；初始保护、计划hold、故障制动分别有独立来源，模型执行通道未实现。
+
+owner事件循环是唯一Tick授权者；单独I/O进程串行执行其请求，最多一个在途操作。实际阻塞期间owner继续更新自己事件循环的心跳，未由旁路线程代签进展。网络隔离的测试worker模拟0.6秒正常任务或保持心跳但不返回结果；独立phase watchdog使用不可续期阶段/任务截止，不调用Tick、不复用旧实时watchdog后忽略误报。正常调用和独立制动没有跨RPC持有的公共互斥锁。
+
+匹配0.9.16接口采用 `apply_batch_sync([ApplyVehicleControl(...)], False)`，检查响应数量、actor和error。官方客户端等待批量响应；服务端逐项调用车辆控制处理后返回，False不请求Tick。车辆输入被处理与下一物理Tick执行仍为两层证据。[客户端实现](https://github.com/carla-simulator/carla/blob/0.9.16/LibCarla/source/carla/client/detail/Client.cpp#L687)、[批量处理及不推进条件](https://github.com/carla-simulator/carla/blob/0.9.16/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Server/CarlaServer.cpp#L3022)、[实际控制更新](https://github.com/carla-simulator/carla/blob/0.9.16/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Vehicle/CarlaWheeledVehicle.cpp#L308)。这不保证不同客户端请求全局有序；旧正常批次未确认时不得继续Tick，独立制动的单次尝试也不能消除这个不确定性。来源细节见[接口核对](m8j13_sources/logic_runtime/control_interface_review.json)。
+
+新目标F及后续F+4在Tick发出之前登记；原始回调复制后可先于Snapshot有界保存，非目标标NotSelected；重复/旧generation不覆盖。完整观测使用已有六摄身份、时间、同帧IMU、自车、真实导航消费和外参检查，而不是将纯原型的布尔参数当作验收。本次因初始化提前失败，实际尚未走到完整观测检查，因此不授予输入兼容通过。
+
+### 启动前证据与唯一实际运行
+
+启动前91项相关检查通过（原64项纯合同/安全数学+27项新接线），匹配Python3.10客户端环境中的27项通过。还实际启动网络隔离的**测试worker进程**，验证正常0.6秒返回、心跳存活但任务2秒无结果、晚到结果被锁定拒绝；没有CARLA或模型。这是进程接线证据，不能算移动故障通过。历史96项仅复用，未重跑全部历史实验。
+
+二进制及Python客户端SHA与前轮0.9.16候选一致；导航器真实构造通过，未导入torch、未装依赖。沿用Town03、原车型/位置/天气、六摄704×396、Epic、sensor_tick=0、0.05秒物理步长；无Traffic Manager、无额外交通参与者、无物理修改。冻结预算30设置+60初始化+240静止+200起步+120故障观察+30退出+120仅失败清理余量=800。没有重载重试。
+
+真实初始满制动批次收到无错误处理确认，调用前后frame未改变，后续2个Snapshot均反馈零油门、满制动，hand_brake=false、reverse=false、自动挡，符合请求。两拍速度模长约0.49与0.98m/s，**全部来自垂直落地，前向速度0**，不是低速起步、也没达到连续21拍静止准入。
+
+第3次`world.tick(.5)`本身返回500ms超时（I/O操作约500.59ms）。owner先按固定0.5秒I/O期限停止等待，独立watchdog随后锁定，约在owner操作期限后10.37ms记录故障。owner全程心跳最大间隔约36.63ms，未卡住。首故障是初始化Tick超时，**不是本轮预定的2秒worker阻塞**，不能用它替代目标验收。当前只能定位到这一真实调用边界；日志没有足够证据将根因归给GPU、RPC传输或引擎，标Unknown。新运行器前两次Tick紧接推进、处于冷启动/落地阶段，与此前连续稳定测量负载不同，不能跨运行归因。
+
+独立watchdog通过自己的客户端提交一次FaultBrake，约113.11ms收到服务端处理确认；没有再次Tick，因此没有故障制动后控制反馈、减速、停止距离或1秒保持证据。运行记录保留HandoffUncertain/ResponseUnverified；未以暂停、满制动数值或进程销毁冒充停车。
+
+### 清理缺项及交付修复
+
+owner等待截止与I/O响应刚好错开：owner仍持pending操作，但约数毫秒后I/O已记录真实超时返回。冻结运行没有消费该迟到返回用于清理，因此跳过逐Actor销毁和settings恢复。I/O日志的sensor-still-alive警告保留。最终监督器结束服务器及所有子进程组，2300–2302端口全部释放；实例消失，但**不能把进程清理写成传感器逐项销毁/settings恢复已验证**。
+
+交付代码新增有界的“迟到I/O返回仅供清理”处理：确认本地调用已返回后允许执行清理，仍保留第一故障、禁止恢复物理推进、不恢复旧命令有效期；若返回仍缺失，继续报告清理未验证。新增两项针对性回归，交付共93项通过。没有追加CARLA启动，这项修复的真实清理效果仍待下轮验证，原始运行结果不改。
+
+|分项|本轮状态与范围|
+|---|---|
+|RuntimeWiring|Partial；真实启动、独立进程、owner存活已观察，初始化未完成|
+|TwoTickCapture|NotRun；尚未到准入窗口，不能说两拍假设成立或失败|
+|ExpectedComputeWait|CARLA中NotRun；仅独立测试worker进程接线通过|
+|CommandHandoff|初始制动：服务端处理确认+2拍实际反馈；hold/正常起步/故障制动后的物理交接未验证|
+|LowSpeedStart|NotRun；观察到的是落地运动|
+|TaskDeadlineDetection|真实车辆2秒任务超时NotRun；纯/进程测试通过|
+|StopCommandExecution|独立故障制动已被服务端处理；后续物理执行ResponseUnverified|
+|PhysicalStopResponse|未证明，无停车保持成绩|
+|LateResultRejection|CARLA中NotRun；网络隔离测试worker验证通过|
+|CleanupAndBudget|1/1启动、33/800Tick；进程和端口清理确认，逐Actor/settings未确认|
+
+### 下一步有限建议
+
+本轮可复用“owner在真实Tick阻塞期间仍响应、独立制动请求获得服务端处理确认”的有限接线证据；**没有新增可复用的移动worker超时停车通过证据**。缺摄、无效输出、人工急停以及移动任务超时仍未覆盖。J13-A保持Partial，不放行影子或S0。
+
+下一轮应先核对初始化Tick的限时/推进节奏及迟到返回后的清理接线，再申请同一无模型测试的有限复验；本轮不改0.5秒阈值，不预设放宽或另起重复实验。两拍收图、0.6秒冻结、低速任务超时和真实停止仍需按原顺序验收。若希望给冷启动阶段不同RPC限时，须作为显式协议修订，说明与活动阶段deadline的差别并另行授权，不能把本次超时重标通过。
+
+详见[运行汇总](m8j13_sources/logic_runtime/run_summary.json)、[分项结论](m8j13_sources/logic_runtime/acceptance.json)、[预算](m8j13_sources/logic_runtime/budget.json)、[运行来源](m8j13_sources/logic_runtime/provenance.json)、[交付检查](m8j13_sources/logic_runtime/delivery_tests.json)。完整日志、控制请求、少量逐帧状态及失败记录仅私存；公开不含图像、逐帧传感器数据或模型输出。

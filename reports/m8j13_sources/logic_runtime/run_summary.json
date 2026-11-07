@@ -1,0 +1,60 @@
+{
+  "status": "Partial_InitializationTickTimeout",
+  "run_commit": "e6b75dc753860eebdd042c3310792c41f33cff39",
+  "config_sha256": "179a325bd94d8ec9276ade10f7f921a8f5aba55109d86ce764339e57fb9424f7",
+  "carla_starts": 1,
+  "charged_ticks": 33,
+  "explicit_tick_attempts": 3,
+  "successful_tick_returns": 2,
+  "timed_out_tick_attempts": 1,
+  "settings_internal_conservative_charge": 30,
+  "phase_ticks": {
+    "initialization": 3
+  },
+  "fixed_delta_s": 0.05,
+  "stationary_cycles_completed": 0,
+  "moving_cycles_completed": 0,
+  "complete_target_observations": 0,
+  "test_worker_tasks_submitted": 0,
+  "model_forwards": 0,
+  "model_controls": 0,
+  "training": 0,
+  "S0_S1_S2_runs": 0,
+  "first_fault": "Tick IO deadline during initialization; underlying world.tick(.5) returned timeout",
+  "underlying_tick_call_ms": 500.59232860803604,
+  "owner_max_heartbeat_gap_ms": 36.6327166557312,
+  "watchdog_detection_after_owner_io_deadline_ms": 10.373137891292572,
+  "independent_brake_processing_ms": 113.11287805438042,
+  "initial_control_batch_processing_ms": 0.5944296717643738,
+  "initial_batch_did_not_advance_frame": true,
+  "initial_brake_feedback_ticks": 2,
+  "initial_velocity_scope": "Two confirmed falling/landing snapshots only; vertical speed magnitudes approximately0.49 and0.98m/s, signed forward speed0; not low-speed driving or stable admission",
+  "independent_fault_brake_server_processed": true,
+  "fault_brake_physics_feedback_verified": false,
+  "physical_stop_verified": false,
+  "stop_hold_sim_s": null,
+  "stop_distance_m": null,
+  "stop_time_sim_s": null,
+  "late_result_test": "NotRun_NoRuntimeTaskWasSubmitted",
+  "task_2s_test": "NotRun",
+  "two_tick_capture": "NotRun_BlockedBeforeStableAdmission",
+  "wait_0_6s": "NotRun_InCARLA_OnlyWorkerSubprocessTestPassed",
+  "root_cause": "UnknownBeyondWorldTickTimeout_NoEngineOrGPUAttribution",
+  "cleanup": {
+    "processes_and_ports_released": true,
+    "remaining_process_groups": [
+      [],
+      []
+    ],
+    "ports_after": {
+      "2300": false,
+      "2301": false,
+      "2302": false
+    },
+    "sensor_stop_destroy_confirmation": false,
+    "world_settings_restoration_confirmation": false,
+    "scope": "Server shutdown removed the owned episode, but graceful per-actor destruction and settings restoration were not verified. Original IO log retains live-sensor warnings."
+  },
+  "postrun_fix": "Retire a late completed IO response for cleanup only; preserve first fault and forbid further physics. Two added regressions passed; no second CARLA startup or physical retest.",
+  "observed_input_boundary": "No complete target observation reached collection validation; no inference/input compatibility pass claimed"
+}

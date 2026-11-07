@@ -199,6 +199,23 @@ class Runtime:
             except ValueError as exc:
                 self.result['late_result']=dict(rejected=True,reason=str(exc));self.event('late_result_rejected',reason=str(exc));return
             raise RuntimeError('LateResultAccepted')
+    def reconcile_for_cleanup(self, timeout=.2):
+        """Retire a returned IO call after deadline only for teardown, never ticks.
+
+        A late reply cannot restore command validity or prove a timed-out tick
+        did not run. Keep the first fault and guard uncertainty unchanged.
+        """
+        if self.pending is None:return True
+        until=time.monotonic()+timeout
+        while time.monotonic()<until:
+            reply=load(self.root/'io_responses'/('%06d.json'%self.pending['sequence']))
+            if reply is not None:
+                pending=self.pending;self.pending=None
+                self.event('late_io_retired_for_cleanup_only',operation=pending,success=reply.get('success'),error=reply.get('error'),call_end_wall_s=reply.get('call_end_wall_s'))
+                self.result['late_io_cleanup_reconciliation']=dict(kind=pending['kind'],success=reply.get('success'),physics_resumption_allowed=False)
+                return True
+            self.pump();time.sleep(.005)
+        return False
     def run(self):
         try:
             cpus=config()['process_cpus'];self.start('io',cpus['capture']);self.ready(self.root/'io_ready.json')
@@ -239,6 +256,8 @@ class Runtime:
             except BaseException as exc:self.result['stop_error']=repr(exc)
             try:self.check_late()
             except Exception as exc:self.result['late_check_error']=repr(exc)
+            try:self.reconcile_for_cleanup()
+            except Exception as exc:self.result['cleanup_reconcile_error']=repr(exc)
             self.state['armed']=False;atomic(self.root/'owner_state.json',self.state)
             for role,name in [('test','test_worker_stop'),('watchdog','logic_watchdog_stop')]:
                 (self.root/name).touch()
@@ -255,7 +274,7 @@ class Runtime:
                 try:proc.wait(timeout=3)
                 except subprocess.TimeoutExpired:proc.kill();proc.wait(timeout=3)
             self.result.update(fault=self.terminal,phase_ticks=dict(self.counts),charged_ticks=sum(self.counts.values())+30,owner_heartbeat_max_gap_s=max(self.owner_gaps,default=0),remaining_processes=[r for r,p in self.processes.items() if p.poll() is None])
-            if self.result.get('stage_A') and self.result.get('task_timeout') and self.result.get('stop',{}).get('status')=='PhysicalStopObserved' and self.result.get('late_result',{}).get('rejected') and self.result.get('cleanup'):
+            if self.result.get('stage_A') and self.result.get('task_timeout') and self.result.get('stop',{}).get('status')=='PhysicalStopObserved' and self.result.get('late_result',{}).get('rejected') and self.result.get('cleanup') and not self.result['cleanup'].get('remaining') and not self.result.get('cleanup_error'):
                 self.result['status']='Passed_FiniteNoModelTaskTimeoutTestOnly'
             write(self.root/'result.json',self.result)
 
