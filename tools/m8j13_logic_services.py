@@ -10,6 +10,7 @@ from pathlib import Path
 import time
 import traceback
 from tools.m8j13_common import atomic,append,write,config
+from simulator.m8j13_logic_shadow import require_parked_execution,PROTOCOL
 from simulator.m8j13_logic_faults import CameraSuppression,receive_camera,collect_input,synthetic_reply,scenario,validate_manual_request
 from simulator.m8j13_logic_runtime import STOP,TargetCapture,supervision_reason,frozen_equal,OperationDeadline
 
@@ -78,7 +79,7 @@ def io_service(root,cfg):
                     hook.arm(args['injection']);write(root/'camera_injection_armed.json',dict(key=hook.key,wall_s=time.monotonic()))
                 reply['registered']=target.target
             elif kind=='control':
-                cmd=args['command'];fault=load(root/'watchdog_fault.json')
+                cmd=args['command'];require_parked_execution(cfg,cmd,tick=kind=='tick');fault=load(root/'watchdog_fault.json')
                 if fault and cmd['source']!='FaultBrake':raise RuntimeError('FaultLockedBeforeRPC')
                 before=owner.rpc(owner.world.get_snapshot).frame
                 reply['rpc_start_wall_s']=time.monotonic()
@@ -88,7 +89,7 @@ def io_service(root,cfg):
                 if before!=after:raise RuntimeError('BatchUnexpectedWorldAdvance')
                 active=cmd;reply.update(command=cmd,frame_before=before,frame_after=after)
             elif kind=='tick':
-                cmd=args['command'];fault=load(root/'watchdog_fault.json')
+                cmd=args['command'];require_parked_execution(cfg,cmd,tick=kind=='tick');fault=load(root/'watchdog_fault.json')
                 if fault and cmd['source']!='FaultBrake':raise RuntimeError('FaultLockedBeforeTick')
                 if cmd['source']=='PlannedHoldBrake':raise RuntimeError('HoldCannotTick')
                 if cmd['source']=='FaultBrake':
@@ -137,6 +138,8 @@ def io_service(root,cfg):
                 # Off critical contract check, private-only archival; charged in wall flow.
                 for name in target.actors:(folder/(name+'.bgra')).write_bytes(inputs.payloads[(name,target.target)])
                 write(folder/'observation.json',row)
+                if cfg.get('shadow_protocol')==PROTOCOL:
+                    reply['shadow_capture']=dict(row=row,camera_metadata=list(target.groups.values()),archive_done_wall_s=time.monotonic())
                 reply.update(observation=inputs.states[target.target],frozen=last,capture_complete_wall_s=completed,capture_wall_s=completed-target.start,stats=dict(target.stats))
             elif kind=='frozen':
                 drain();current=measurement(owner.rpc(owner.world.get_snapshot),ego)
