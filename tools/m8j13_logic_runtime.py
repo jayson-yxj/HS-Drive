@@ -90,7 +90,7 @@ class Runtime:
         if kind=='cleanup':self.settings_charges['settings_restore']=self.cfg['tick_caps'].get('settings_restore',30)
         if kind=='tick':
             phase=args['phase'];cap=self.cfg['tick_caps'][phase]
-            if self.counts[phase]>=cap or sum(self.counts.values())+sum(self.settings_charges.values())>=800:raise RuntimeError('TickBudgetExhausted')
+            if self.counts[phase]>=cap or sum(self.counts.values())+sum(self.settings_charges.values())>=self.cfg.get('max_active_ticks',800):raise RuntimeError('TickBudgetExhausted')
             self.counts[phase]+=1
         self.pump();name='%06d.json'%self.io_sequence
         atomic(self.root/'io_requests'/name,dict(sequence=self.io_sequence,kind=kind,args=args or {},operation=dict(self.pending),owner_submitted_wall_s=now))

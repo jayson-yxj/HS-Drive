@@ -150,6 +150,8 @@ def finalize_supervisor(root,cfg,processes,report,reserve,group_members,listenin
     summary=attempt('process_finalization',lambda:finish_processes(root,processes,notice,group_members,clock=clock,sleep=sleep,send_group=send_group))
     report['shutdown']=summary;report['shutdown_notice']=notice
     for role,name in (('owner','result.json'),('model','model_final.json')):
+        if role=='model' and cfg.get('max_model_starts')==0 and role not in processes:
+            report['model_status']='NotStarted';continue
         value=attempt('read_'+name,lambda name=name:read(root/name))
         report['result' if role=='owner' else 'model_final']=value
         report[role+'_exit_code']=(summary or {}).get('processes',{}).get(role,{}).get('returncode')
