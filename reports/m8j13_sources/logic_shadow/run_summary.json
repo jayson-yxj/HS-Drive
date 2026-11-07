@@ -1,0 +1,549 @@
+{
+  "status": "Partial",
+  "protocol": "synchronous_logic_v1_parked_shadow",
+  "J13_A": "Partial",
+  "run_commit": "affa0d4c4f94b4dce59eda4ef4557e697d1c7469",
+  "config_sha256": "26b5dfda9e6574437143eeb108472e28126aca37edc8e48de931e0a5c206e006",
+  "run_id": "logic_shadow_20261107",
+  "counts": {
+    "planned_targets": 24,
+    "collected": 10,
+    "not_submitted_after_collection": 1,
+    "unreached_targets": 14,
+    "forward_attempts": 9,
+    "forward_success": 9,
+    "forward_failed": 0,
+    "necessary_output_pid_checks": 9,
+    "owner_complete_timely": 9,
+    "old_realtime_passed": 0,
+    "model_controls": 0,
+    "pid_live": 9,
+    "pid_preflight": 1,
+    "pid_total": 10
+  },
+  "deadline": {
+    "logic_complete_samples": 9,
+    "old_realtime_wall_expired": 9,
+    "sim_age_s": {
+      "n": 9,
+      "min": 0.10000000149011612,
+      "p50": 0.10000000149011612,
+      "p95": 0.10000000149011612,
+      "max": 0.10000000149011612
+    },
+    "whole_run_acceptance": false,
+    "first_fault": "IODeadline:control",
+    "failed_operations": [
+      {
+        "kind": "control",
+        "source": "PlannedHoldBrake",
+        "whole_operation_ms": 200.22396370768547,
+        "io_queue_ms": 2.5146156549453735,
+        "rpc_ms": 196.34663313627243,
+        "owner_after_deadline_ms": 0.6564408540725708,
+        "error": "RuntimeError('time-out of 196ms while waiting for the simulator, make sure the simulator is ready and connected to 127.0.0.1:2300')",
+        "server_processing_confirmed": false
+      }
+    ]
+  },
+  "timings": {
+    "six_camera_arrival_ms": {
+      "first": 82.96561986207962,
+      "following": {
+        "n": 8,
+        "min": 74.04540479183197,
+        "p50": 82.04997144639492,
+        "p95": 85.05986500531435,
+        "max": 85.61757579445839
+      },
+      "all": {
+        "n": 9,
+        "min": 74.04540479183197,
+        "p50": 82.46452361345291,
+        "p95": 84.98019203543663,
+        "max": 85.61757579445839
+      }
+    },
+    "six_camera_copy_ms": {
+      "first": 83.11326056718826,
+      "following": {
+        "n": 8,
+        "min": 74.53631982207298,
+        "p50": 82.19222724437714,
+        "p95": 85.69762669503689,
+        "max": 86.24105900526047
+      },
+      "all": {
+        "n": 9,
+        "min": 74.53631982207298,
+        "p50": 82.6055184006691,
+        "p95": 85.61999350786209,
+        "max": 86.24105900526047
+      }
+    },
+    "archive_before_submit_ms": {
+      "first": 8.496638387441635,
+      "following": {
+        "n": 8,
+        "min": 8.299924433231354,
+        "p50": 10.00942848622799,
+        "p95": 12.408875115215778,
+        "max": 12.516621500253677
+      },
+      "all": {
+        "n": 9,
+        "min": 8.299924433231354,
+        "p50": 9.795907884836197,
+        "p95": 12.393482774496078,
+        "max": 12.516621500253677
+      }
+    },
+    "freeze_confirmation_ms": {
+      "first": 40.432535111904144,
+      "following": {
+        "n": 8,
+        "min": 24.38795194029808,
+        "p50": 34.62641313672066,
+        "p95": 39.02149684727192,
+        "max": 40.68200662732124
+      },
+      "all": {
+        "n": 9,
+        "min": 24.38795194029808,
+        "p50": 35.20653024315834,
+        "p95": 40.582218021154404,
+        "max": 40.68200662732124
+      }
+    },
+    "submission_to_worker_ms": {
+      "first": 3.140389919281006,
+      "following": {
+        "n": 8,
+        "min": 2.798479050397873,
+        "p50": 3.4793857485055923,
+        "p95": 4.469364881515503,
+        "max": 4.610598087310791
+      },
+      "all": {
+        "n": 9,
+        "min": 2.798479050397873,
+        "p50": 3.165885806083679,
+        "p95": 4.449188709259033,
+        "max": 4.610598087310791
+      }
+    },
+    "e2e_pid_ms": {
+      "first": 1617.1492747962475,
+      "following": {
+        "n": 8,
+        "min": 326.91050320863724,
+        "p50": 330.878060311079,
+        "p95": 355.1681624725461,
+        "max": 364.58729207515717
+      },
+      "all": {
+        "n": 9,
+        "min": 326.91050320863724,
+        "p50": 331.9195434451103,
+        "p95": 1116.124481707811,
+        "max": 1617.1492747962475
+      }
+    },
+    "e2e_checks_ms": {
+      "first": 1621.405128389597,
+      "following": {
+        "n": 8,
+        "min": 330.8478705585003,
+        "p50": 334.80286598205566,
+        "p95": 359.2388331890106,
+        "max": 368.658822029829
+      },
+      "all": {
+        "n": 9,
+        "min": 330.8478705585003,
+        "p50": 335.7688598334789,
+        "p95": 1120.3066058456893,
+        "max": 1621.405128389597
+      }
+    },
+    "e2e_owner_ms": {
+      "first": 1630.395483225584,
+      "following": {
+        "n": 8,
+        "min": 338.71689438819885,
+        "p50": 342.33821742236614,
+        "p95": 367.949459888041,
+        "max": 375.7597357034683
+      },
+      "all": {
+        "n": 9,
+        "min": 338.71689438819885,
+        "p50": 342.63327717781067,
+        "p95": 1128.5411842167373,
+        "max": 1630.395483225584
+      }
+    },
+    "capture_ms": {
+      "first": 106.79199546575546,
+      "following": {
+        "n": 8,
+        "min": 102.42658853530884,
+        "p50": 111.1729945987463,
+        "p95": 119.3877937272191,
+        "max": 123.19846823811531
+      },
+      "all": {
+        "n": 9,
+        "min": 102.42658853530884,
+        "p50": 111.01918667554855,
+        "p95": 118.84341165423393,
+        "max": 123.19846823811531
+      }
+    },
+    "worker_read_ms": {
+      "first": 11.546380817890167,
+      "following": {
+        "n": 8,
+        "min": 10.724522173404694,
+        "p50": 11.115247383713722,
+        "p95": 12.1969785541296,
+        "max": 12.525197118520737
+      },
+      "all": {
+        "n": 9,
+        "min": 10.724522173404694,
+        "p50": 11.1568383872509,
+        "p95": 12.15009018778801,
+        "max": 12.525197118520737
+      }
+    },
+    "cpu_preprocess_ms": {
+      "first": 121.76470458507538,
+      "following": {
+        "n": 8,
+        "min": 82.154281437397,
+        "p50": 84.68070439994335,
+        "p95": 87.80952207744122,
+        "max": 88.42654898762703
+      },
+      "all": {
+        "n": 9,
+        "min": 82.154281437397,
+        "p50": 85.49394086003304,
+        "p95": 108.42944234609602,
+        "max": 121.76470458507538
+      }
+    },
+    "gpu_transfer_ms": {
+      "first": 13.439621776342392,
+      "following": {
+        "n": 8,
+        "min": 2.3345239460468292,
+        "p50": 2.408355474472046,
+        "p95": 2.685439959168434,
+        "max": 2.693057060241699
+      },
+      "all": {
+        "n": 9,
+        "min": 2.3345239460468292,
+        "p50": 2.4265050888061523,
+        "p95": 9.140995889902111,
+        "max": 13.439621776342392
+      }
+    },
+    "forward_decode_ms": {
+      "first": 1313.778717070818,
+      "following": {
+        "n": 8,
+        "min": 78.88005301356316,
+        "p50": 80.4270226508379,
+        "p95": 107.31822997331618,
+        "max": 116.92099273204803
+      },
+      "all": {
+        "n": 9,
+        "min": 78.88005301356316,
+        "p50": 81.26310259103775,
+        "p95": 835.0356273353095,
+        "max": 1313.778717070818
+      }
+    },
+    "hs_ms": {
+      "first": 4.361428320407867,
+      "following": {
+        "n": 8,
+        "min": 0.5871355533599854,
+        "p50": 0.6143189966678619,
+        "p95": 0.6513433530926704,
+        "max": 0.653482973575592
+      },
+      "all": {
+        "n": 9,
+        "min": 0.5871355533599854,
+        "p50": 0.619400292634964,
+        "p95": 2.878250181674956,
+        "max": 4.361428320407867
+      }
+    },
+    "transport_ms": {
+      "first": 0.6163492798805237,
+      "following": {
+        "n": 8,
+        "min": 0.4500187933444977,
+        "p50": 0.4572160542011261,
+        "p95": 0.46916473656892776,
+        "max": 0.47064200043678284
+      },
+      "all": {
+        "n": 9,
+        "min": 0.4500187933444977,
+        "p50": 0.4573911428451538,
+        "p95": 0.5580663681030273,
+        "max": 0.6163492798805237
+      }
+    },
+    "pid_ms": {
+      "first": 0.7094666361808777,
+      "following": {
+        "n": 8,
+        "min": 0.46565383672714233,
+        "p50": 0.47863274812698364,
+        "p95": 0.4901161417365074,
+        "max": 0.4906468093395233
+      },
+      "all": {
+        "n": 9,
+        "min": 0.46565383672714233,
+        "p50": 0.48040971159935,
+        "p95": 0.6219387054443358,
+        "max": 0.7094666361808777
+      }
+    },
+    "necessary_checks_ms": {
+      "first": 4.255853593349457,
+      "following": {
+        "n": 8,
+        "min": 3.8493163883686066,
+        "p50": 4.034684970974922,
+        "p95": 4.1938552632927895,
+        "max": 4.25366684794426
+      },
+      "all": {
+        "n": 9,
+        "min": 3.8493163883686066,
+        "p50": 4.069074988365173,
+        "p95": 4.254978895187378,
+        "max": 4.255853593349457
+      }
+    },
+    "publish_ms": {
+      "first": 0.302046537399292,
+      "following": {
+        "n": 8,
+        "min": 0.2811066806316376,
+        "p50": 0.30091963708400726,
+        "p95": 0.32745618373155594,
+        "max": 0.33182278275489807
+      },
+      "all": {
+        "n": 9,
+        "min": 0.2811066806316376,
+        "p50": 0.302046537399292,
+        "p95": 0.3268323838710785,
+        "max": 0.33182278275489807
+      }
+    },
+    "owner_after_publication_ms": {
+      "first": 8.688308298587799,
+      "following": {
+        "n": 8,
+        "min": 5.348231643438339,
+        "p50": 8.031794801354408,
+        "p95": 12.48908955603838,
+        "max": 13.070754706859589
+      },
+      "all": {
+        "n": 9,
+        "min": 5.348231643438339,
+        "p50": 8.486170321702957,
+        "p95": 12.405994534492493,
+        "max": 13.070754706859589
+      }
+    },
+    "task_to_consume_ms": {
+      "first": 1483.1690080463886,
+      "following": {
+        "n": 8,
+        "min": 194.45788487792015,
+        "p50": 198.72150756418705,
+        "p95": 221.6934710741043,
+        "max": 229.2245700955391
+      },
+      "all": {
+        "n": 9,
+        "min": 194.45788487792015,
+        "p50": 199.21841472387314,
+        "p95": 981.5912328660484,
+        "max": 1483.1690080463886
+      }
+    },
+    "validation_to_consume_ms": {
+      "first": 18.933452665805817,
+      "following": {
+        "n": 8,
+        "min": 11.020675301551819,
+        "p50": 13.8571597635746,
+        "p95": 18.472514115273952,
+        "max": 19.066620618104935
+      },
+      "all": {
+        "n": 9,
+        "min": 11.020675301551819,
+        "p50": 14.34008777141571,
+        "p95": 19.013353437185287,
+        "max": 19.066620618104935
+      }
+    },
+    "freeze_wait_ms": {
+      "first": 1483.1709526479244,
+      "following": {
+        "n": 8,
+        "min": 194.45935636758804,
+        "p50": 198.72325100004673,
+        "p95": 221.69517613947392,
+        "max": 229.22640293836594
+      },
+      "all": {
+        "n": 9,
+        "min": 194.45935636758804,
+        "p50": 199.22035560011864,
+        "p95": 981.5931327641006,
+        "max": 1483.1709526479244
+      }
+    },
+    "archive_ms": {
+      "first": 6.0131847858428955,
+      "following": {
+        "n": 8,
+        "min": 1.8687881529331207,
+        "p50": 2.2596362978219986,
+        "p95": 2.7405230328440666,
+        "max": 2.791251987218857
+      },
+      "all": {
+        "n": 9,
+        "min": 1.8687881529331207,
+        "p50": 2.3320019245147705,
+        "p95": 4.724411666393279,
+        "max": 6.0131847858428955
+      }
+    }
+  },
+  "performance": {
+    "measurement_to_last_consume_wall_s": 4.639889378100634,
+    "forward_frequency_over_same_window_hz": 1.9397014166928703,
+    "timely_completion_frequency_hz": 1.9397014166928703,
+    "measurement_tick_span_wall_s": 4.75739761441946,
+    "measurement_physics_advance_s": 1.9500000000000002,
+    "measurement_sim_to_wall_ratio": 0.4098879593519022,
+    "total_lifecycle_wall_s": 42.52694834768772,
+    "model_load_wall_s": 5.437527928501368,
+    "total_confirmed_freeze_wait_s": 3.106891967356205,
+    "partial_final_freeze_wait_s": null,
+    "final_failed_handoff_wall_s": 0.20022396370768547,
+    "wall_tick_frequency_hz": 8.197759187038043,
+    "full_activity_to_fault_wall_s": 4.99309841170907,
+    "forward_frequency_full_activity_hz": 1.8024880060233825,
+    "gpu_peak_allocated": 976475648,
+    "gpu_peak_reserved": 1233125376,
+    "small_sample": true
+  },
+  "output": {
+    "native_speed_range_mps": [
+      0.3337528705596924,
+      8.254473686218262
+    ],
+    "pid_target_speed_range_mps": [
+      0.3337528705596924,
+      2.67218017578125
+    ],
+    "full_throttle_count": 9,
+    "speed_horizon_exceeds_5mps_count": 9,
+    "trajectory_failed": 0,
+    "finite_passed": 9,
+    "current_speed_mps": 0.0,
+    "memory_passed": true,
+    "input_interval_sim_s": 0.2,
+    "params_assets_unchanged": true,
+    "moving_transport_validation": false,
+    "raw_and_agent_equal": true
+  },
+  "isolation": {
+    "model_controls": 0,
+    "all_observed_ticks_independent_brake": true,
+    "measurement_max_speed_mps": 0.0,
+    "initial_fall_separate": true,
+    "hold_physics_ticks": 0,
+    "collisions": 0
+  },
+  "termination": {
+    "normal": false,
+    "status": "HandoffUncertain",
+    "fault_brake_server_processed": true,
+    "post_fault_ticks": 0,
+    "terminal_hold_verified": false,
+    "reason": "Ordinary hold control timed out; no physics continuation allowed while handoff uncertain"
+  },
+  "cleanup": {
+    "sensor_stops": 8,
+    "actor_destructions": 9,
+    "settings_restored": true,
+    "remaining_actors": 0,
+    "subprocesses_and_ports": true,
+    "model_exited": true,
+    "shared_memory": "NotUsed",
+    "late_tick_rpc_cleanup": "NotTriggered_PriorNoServerEvidenceOnly",
+    "ordinary_control_timeout_cleanup": "Actual bounded cleanup after failed control response; no cancellation or stop claim"
+  },
+  "budget": {
+    "starts": 1,
+    "max_starts": 1,
+    "model_starts": 1,
+    "active_ticks": 77,
+    "phase_ticks": {
+      "initialization": 38,
+      "stationary": 39
+    },
+    "settings_charges": {
+      "settings_startup": 30,
+      "settings_restore": 30
+    },
+    "charged_ticks": 137,
+    "max_ticks": 800,
+    "full_forward_attempts": 9,
+    "max_forwards": 24,
+    "pid_calls_total": 10,
+    "max_pid_calls": 24,
+    "training": 0,
+    "optimizer_steps": 0,
+    "model_controls": 0,
+    "driving_budget_consumed": 0
+  },
+  "limitations": [
+    "24 targets not completed",
+    "Unplanned control handoff deadline failure",
+    "No terminal physical hold evidence",
+    "One synthetic preflight PID call consumed total budget; not actual stopping cause",
+    "No real-time or driving admission",
+    "No retries"
+  ],
+  "S0_review_ready": false,
+  "initialization": {
+    "ticks": 38,
+    "last21_stable": true,
+    "total_wall_s": 19.836490377783775,
+    "maximum_operation_ms": 399.6780999004841,
+    "old_500ms_exceedances": 0,
+    "gpu_model_loaded_before_server": true
+  }
+}
