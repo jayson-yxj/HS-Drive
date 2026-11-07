@@ -28,15 +28,15 @@ class Runtime:
         self.root=root;self.cfg=cfg;self.scenario=scenario(cfg);self.injection=None;self.sensor_actors=None;self.processes={};self.io_sequence=0;self.pending=None;self.current=None;self.counts=Counter()
         self.guard=CommandGuard();self.channel=None;self.task=None;self.result=dict(status='Partial',model_forwards=0,model_controls=0,training=0,stationary_cycles=[],moving_cycles=[])
         self.state=dict(armed=False,phase='Initialization',phase_deadline=time.monotonic()+30,owner_wall_s=time.monotonic(),run_deadline=time.monotonic()+240,epoch=0,ego_id=None,operation=None,fault=None,task=None)
-        self.terminal=None;self.last_owner=None;self.owner_gaps=[];self.target=None;self.observation=None;self.started_motion=False;self.last_init_rpc_start=None;self.settings_charges=Counter();self.advance_unknown=False;self.cleanup_deadline=None
+        self.terminal=None;self.last_owner=None;self.owner_gaps=[];self.target=None;self.observation=None;self.started_motion=False;self.last_init_rpc_start=None;self.settings_charges=Counter();self.advance_unknown=False;self.cleanup_deadline=None;self.failed_operation=None
     def event(self,kind,**kw):append(self.root/'owner_events.jsonl',dict(event=kind,wall_s=time.monotonic(),**kw))
     def phase(self,name,deadline):
         if name not in ('Cleanup','FaultLocked'):deadline=min(deadline,self.state['run_deadline'])
-        self.state.update(phase=name,phase_deadline=deadline);self.event('phase',phase=name,deadline=deadline);self.pump()
+        self.state.update(phase=name,phase_started=time.monotonic(),phase_deadline=deadline);self.event('phase',phase=name,deadline=deadline);self.pump()
     def pump(self):
         now=time.monotonic()
         if self.last_owner is not None:self.owner_gaps.append(now-self.last_owner)
-        self.last_owner=now;self.state.update(owner_wall_s=now,operation=self.pending,epoch=self.guard.epoch)
+        self.last_owner=now;self.state.update(owner_wall_s=now,operation=self.pending,epoch=self.guard.epoch,locked=self.guard.locked,handoff_uncertain=self.guard.uncertain,failed_operation=self.failed_operation)
         atomic(self.root/'owner_state.json',self.state)
         fault=load(self.root/'watchdog_fault.json')
         if fault and self.terminal is None:
@@ -69,6 +69,7 @@ class Runtime:
         # Bounded terminal braking has its own10s, following a run deadline.
         if allow_fault and kind=='tick':run_deadline=phase_deadline
         obs=(args or {}).get('command',{}).get('observation')
+        if obs is None:obs=(args or {}).get('observation')
         extra=None if obs is None else obs['input_wall_s']+4.
         self.pending=operation_stamp(self.io_sequence,kind,now,timeout,phase_deadline,run_deadline,extra)
         if kind=='setup':self.settings_charges['settings_startup']=self.cfg['tick_caps'].get('settings_startup',30)
@@ -85,7 +86,12 @@ class Runtime:
                 end=time.monotonic();pending=self.pending
                 if reply['sequence']!=pending['sequence'] or reply['operation']!=pending:raise RuntimeError('IOOperationIdentityMismatch')
                 if kind=='cleanup':(self.root/'io_stop').touch()
+                if kind=='control' and (not reply['success'] or end>pending['deadline']):self.mark_handoff_uncertain(pending)
                 self.pending=None;self.pump()
+                # Include owner identity/state processing in the shared operation,
+                # rather than treating file arrival as complete consumption.
+                end=time.monotonic()
+                if kind=='control' and end>pending['deadline']:self.mark_handoff_uncertain(pending)
                 append(self.root/'io_consumption.jsonl',dict(operation=pending,reply=reply,owner_consumed_wall_s=end))
                 if kind=='tick' and (not reply['success'] or end>pending['deadline']):
                     self.guard.uncertain=True;self.advance_unknown=True
@@ -96,8 +102,14 @@ class Runtime:
             if time.monotonic()>self.pending['deadline']:
                 # No repeated request, no cancellation fiction: keep in-flight identity.
                 if kind=='tick':self.guard.uncertain=True;self.advance_unknown=True
+                if kind=='control':self.mark_handoff_uncertain(self.pending)
                 raise TimeoutError('IODeadline:'+kind)
             time.sleep(.002)
+    def mark_handoff_uncertain(self,operation):
+        self.guard.uncertain=True
+        if self.failed_operation is None:self.failed_operation=dict(operation)
+        self.state.update(handoff_uncertain=True,failed_operation=self.failed_operation)
+        atomic(self.root/'owner_state.json',self.state)
     def issue(self,source,control,observation=None):
         cmd=self.guard.prepare(source,control,time.monotonic(),observation)
         try:r=self.call('control',dict(command=cmd),timeout=.2,allow_fault=source=='FaultBrake')

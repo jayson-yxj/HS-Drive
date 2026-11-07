@@ -10,6 +10,7 @@ from pathlib import Path
 import time
 import traceback
 from tools.m8j13_common import atomic,append,write,config
+from simulator.m8j13_parked_handoff import enabled as parked_handoff_enabled,verify_io_proof,uncertainty
 from simulator.m8j13_logic_shadow import require_parked_execution,PROTOCOL
 from simulator.m8j13_logic_faults import CameraSuppression,receive_camera,collect_input,synthetic_reply,scenario,validate_manual_request
 from simulator.m8j13_logic_runtime import STOP,TargetCapture,supervision_reason,frozen_equal,OperationDeadline
@@ -81,11 +82,19 @@ def io_service(root,cfg):
             elif kind=='control':
                 cmd=args['command'];require_parked_execution(cfg,cmd,tick=kind=='tick');fault=load(root/'watchdog_fault.json')
                 if fault and cmd['source']!='FaultBrake':raise RuntimeError('FaultLockedBeforeRPC')
-                before=owner.rpc(owner.world.get_snapshot).frame
+                before_snapshot=owner.rpc(owner.world.get_snapshot);before=before_snapshot.frame
+                reply['pre_control_snapshot_wall_s']=time.monotonic()
+                if args.get('parked_handoff'):
+                    current=measurement(before_snapshot,ego)
+                    current.update(full_control=control_record(owner.rpc(ego.get_control)),identity=list(inputs.identity),ego_id=ego.id,epoch=cmd['epoch'])
+                    state=load(root/'owner_state.json')
+                    verify_io_proof(cfg,args['parked_handoff'],cmd,current,state,r['operation'],inputs.identity,ego.id,load(root/'io_handoff_uncertain.json') is not None,last=last,active=active)
+                    reply['parked_proof_checked_wall_s']=time.monotonic()
+                elif r['operation']['operation_limit_s']>.2:raise RuntimeError('UncertifiedControlDeadline')
                 reply['rpc_start_wall_s']=time.monotonic()
                 try:reply.update(batch_control(owner.client,ego.id,cmd['control'],budget))
                 finally:reply['rpc_return_wall_s']=time.monotonic()
-                after=owner.rpc(owner.world.get_snapshot).frame
+                after=owner.rpc(owner.world.get_snapshot).frame;reply['post_control_snapshot_wall_s']=time.monotonic()
                 if before!=after:raise RuntimeError('BatchUnexpectedWorldAdvance')
                 active=cmd;reply.update(command=cmd,frame_before=before,frame_after=after)
             elif kind=='tick':
@@ -103,7 +112,9 @@ def io_service(root,cfg):
                 ticks+=1;owner.tick_count=ticks
                 append(root/'tick_requests.jsonl',dict(index=ticks,phase=args['phase'],expected_frame=before+1,wall_s=tick_start,command=cmd))
                 snap,last=measured_tick(owner,ego,budget,reply,before)
-                frame=snap.frame;owner.last=frame;last.update(input_wall_s=tick_start,tick_end_wall_s=time.monotonic(),delta_s=snap.timestamp.delta_seconds,phase=args['phase'],command=cmd)
+                frame=snap.frame;owner.last=frame
+                if parked_handoff_enabled(cfg):last.update(identity=list(inputs.identity),ego_id=ego.id,epoch=cmd['epoch'])
+                last.update(input_wall_s=tick_start,tick_end_wall_s=time.monotonic(),delta_s=snap.timestamp.delta_seconds,phase=args['phase'],command=cmd)
                 if abs(last['delta_s']-.05)>1e-6:raise RuntimeError('FixedDeltaChanged')
                 inputs.snapshot(snap,last);target.confirm(last)
                 if cmd['source']=='FaultBrake':
@@ -144,7 +155,8 @@ def io_service(root,cfg):
             elif kind=='frozen':
                 drain();current=measurement(owner.rpc(owner.world.get_snapshot),ego)
                 if not frozen_equal(args['expected'],current):raise RuntimeError('FrozenWorldChanged')
-                reply['snapshot']=current
+                if parked_handoff_enabled(cfg):current.update(full_control=control_record(owner.rpc(ego.get_control)),identity=list(inputs.identity),ego_id=ego.id,epoch=args['expected']['epoch'])
+                reply['snapshot']=current;reply['frozen_checked_wall_s']=time.monotonic()
             elif kind=='cleanup':
                 if inputs is not None:inputs.close();target.close()
                 reply['cleanup']=cleanup_owner(owner,budget,root,args.get('advance_unknown',False))
@@ -157,7 +169,11 @@ def io_service(root,cfg):
         reply['call_end_wall_s']=time.monotonic()
         if reply['call_end_wall_s']>r['operation']['deadline']:
             reply['success']=False;reply.setdefault('error','OperationDeadlineAtPublication')
+        if r['kind']=='control' and not reply['success'] and not (root/'io_handoff_uncertain.json').exists():
+            write(root/'io_handoff_uncertain.json',dict(operation=r['operation'],command=r['args']['command'],error=reply.get('error'),wall_s=time.monotonic(),remote_order_confirmed=False))
+        reply['publication_started_wall_s']=time.monotonic()
         atomic(root/'io_responses'/request.name,reply)
+        append(root/'io_publications.jsonl',dict(sequence=r['sequence'],publication_done_wall_s=time.monotonic()))
         if r['kind']=='cleanup':break
 
 
@@ -197,11 +213,11 @@ def watchdog(root,cfg):
         if not state:time.sleep(.02);continue
         reason=supervision_reason(state,now,(root/'EMERGENCY_STOP').exists())
         if reason and latched is None:
-            latched=dict(reason=reason,wall_s=now,phase=state['phase'],task=state.get('task'),owner_wall_s=state['owner_wall_s'],epoch=state['epoch']+1)
+            latched=dict(reason=reason,wall_s=now,phase=state['phase'],task=state.get('task'),owner_wall_s=state['owner_wall_s'],epoch=state['epoch']+1,active_target=state.get('active_target'),failed_operation=state.get('failed_operation') or (load(root/'io_handoff_uncertain.json') or {}).get('operation'))
             atomic(root/'watchdog_fault.json',latched)
             # No cross-RPC lock. Wait only for an already submitted normal batch's
             # bounded processing response; never assume a timeout cancels it.
-            operation=state.get('operation');uncertain=False
+            operation=state.get('operation');uncertain,failed_operation=uncertainty(state,load(root/'io_handoff_uncertain.json'))
             if operation and operation['kind']=='control':
                 until=min(now+.2,operation['deadline'])
                 response=None
@@ -209,8 +225,8 @@ def watchdog(root,cfg):
                     response=load(root/'io_responses'/('%06d.json'%operation['sequence']))
                     if response:break
                     time.sleep(.002)
-                uncertain=not response or not response.get('success') or not response.get('server_processed')
-            result=dict(reason=reason,source='FaultBrake',control=STOP,submission_wall_s=time.monotonic(),handoff_uncertain=uncertain)
+                uncertain=uncertain or not response or not response.get('success') or not response.get('server_processed') or response.get('call_end_wall_s',operation['deadline']+1)>operation['deadline']
+            result=dict(reason=reason,source='FaultBrake',control=STOP,submission_wall_s=time.monotonic(),handoff_uncertain=uncertain,ordinary_handoff_confirmed=not uncertain,failed_operation=failed_operation)
             result['operation']=dict(sequence='fault:'+str(latched['epoch']),kind='fault_control',started=result['submission_wall_s'],deadline=result['submission_wall_s']+.2)
             safety_budget=OperationDeadline(result['operation'],time.monotonic)
             try:

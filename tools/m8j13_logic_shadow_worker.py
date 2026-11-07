@@ -14,6 +14,7 @@ from tools.m8j13_preprocess import OfficialPreprocessor
 from tools.m8j13_logic_shadow_diagnostics import transported_pid
 from tools.m8j13_common import config,atomic,write,append
 from datasets.m8j12_contract import CAMERAS,assert_observation,official_camera_contract,planning_to_hs,DryRunController
+from simulator.m8j13_logic_shadow_budget import validate_shadow_budget
 from simulator.m8j13_safety import validate_trajectory
 from simulator.m8j13_logic_shadow import PROTOCOL,CHECKS,task_valid,require_notification,memory_valid
 
@@ -23,6 +24,7 @@ def main():
     cfg=json.loads((root/'frozen_config.json').read_text());c=config();model=None;baseline=None;attempts=success=pid_calls=completed=0;previous=None;identity=None;last_frame=None
     ledger=root/'forward_attempts.jsonl';pid_ledger=root/'pid_attempts.jsonl'
     try:
+        validate_shadow_budget(cfg)
         if cfg['shadow_protocol']!=PROTOCOL:raise ValueError('ExplicitLogicalShadowOnly')
         loading=time.monotonic();torch.manual_seed(c['seed']);np.random.seed(c['seed'])
         torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cudnn.allow_tf32=False;torch.backends.cudnn.benchmark=False

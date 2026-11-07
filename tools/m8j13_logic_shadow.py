@@ -12,6 +12,8 @@ from tools.m8j13_logic_services import load
 from tools.m8j13_common import config,atomic,write,append,digest,assets
 from simulator.m8j13_logic_runtime import STOP
 from simulator.m8j13_logic_shadow import PROTOCOL,ShadowChannel,require_notification
+from simulator.m8j13_logic_shadow_budget import validate_shadow_budget
+from simulator.m8j13_parked_handoff import enabled as parked_handoff_enabled,handoff_proof
 from simulator.m8j13_safety import PlanStamp,freshness
 
 CFG=Path('configs/m8j13_logic_shadow.json')
@@ -21,23 +23,62 @@ class ShadowRuntime(Runtime):
     def __init__(self,root,cfg):
         super().__init__(root,cfg)
         if cfg.get('shadow_protocol')!=PROTOCOL:raise ValueError('ExplicitShadowOnly')
+        validate_shadow_budget(cfg)
         self.result.update(completions=[],model_forwards=None)
+    def phase(self,name,deadline):
+        started=None
+        if parked_handoff_enabled(self.cfg) and name==self.state['phase'] and name in ('ConfirmedFrozenWorld','FiniteExecution'):
+            deadline=min(deadline,self.state['phase_deadline']);started=self.state['phase_started']
+        super().phase(name,deadline)
+        if started is not None:self.state['phase_started']=started;self.pump()
     def pump(self):
         super().pump()
         if self.terminal is None and self.state['armed'] and self.state['phase'] not in ('FaultLocked','Cleanup') and not self.state.get('fault'):
             err=load(self.root/'model_error.json')
             if err:raise RuntimeError('ShadowWorker:'+err['error'])
             if (self.root/'model_exited.json').exists():raise RuntimeError('ShadowWorkerExited')
+    def planned_issue(self,source):
+        proof=handoff_proof(self.cfg,source,STOP,self.current,self.state,pending=self.pending,guard_pending=self.guard.pending,uncertain=self.guard.uncertain,locked=self.guard.locked,active=self.guard.active)
+        cmd=self.guard.prepare(source,STOP,time.monotonic(),self.observation)
+        try:
+            r=self.call('control',dict(command=cmd,parked_handoff=proof),timeout=.5)
+            self.guard.confirm(cmd,r.get('server_processed',False))
+        except BaseException:
+            self.guard.uncertain=True
+            if self.failed_operation is None:
+                self.failed_operation=dict(sequence=self.io_sequence,kind='control',source=source)
+            self.pump();raise
+        self.event('planned_handoff_confirmed',command_sequence=cmd['sequence'],source=source,operation_sequence=self.io_sequence,phase_started=proof['phase_started'],phase_deadline=proof['phase_deadline'])
     def compute_shadow(self,capture):
-        self.phase('ConfirmedFrozenWorld',time.monotonic()+.2)
-        self.issue('PlannedHoldBrake',STOP)
-        current=self.call('frozen',dict(expected=self.current),timeout=.1)['snapshot']
+        revision=parked_handoff_enabled(self.cfg)
+        if revision:
+            self.state['task']=None;self.task=None
+            self.state['active_target']=dict(frame=self.observation['frame'],identity=list(self.channel.identity),next_sequence=self.channel.sequence+1)
+        phase_start=time.monotonic()
+        self.phase('ConfirmedFrozenWorld',phase_start+(.5 if revision else .2))
+        if revision:
+            # collect has checked target+2 world, now establish a fresh frozen proof
+            # before asking for either parked-only exception. Same .5s phase.
+            current=self.call('frozen',dict(expected=self.current,observation=self.observation),timeout=.5)['snapshot']
+            self.current.update(current);self.state['frozen_confirmation']=current
+            self.planned_issue('PlannedHoldBrake')
+        else:self.issue('PlannedHoldBrake',STOP)
+        current=self.call('frozen',dict(expected=self.current,**({'observation':self.observation} if revision else {})),timeout=.5 if revision else .1)['snapshot']
         frozen_confirmed=time.monotonic();self.current.update(current)
+        if revision:
+            if frozen_confirmed>self.state['phase_deadline']:raise TimeoutError('ConfirmedFrozenPhaseDeadline')
+            self.state['frozen_confirmation']=current
         requested=time.monotonic();task=self.channel.request(self.observation,self.current,requested,self.state['run_deadline'])
         self.task=task;self.state['task']={k:task[k] for k in ('sequence','frame','deadline_wall_s','requested_wall_s')}
-        self.phase('ExpectedComputeWait',task['deadline_wall_s'])
+        # Publish within the original ConfirmedFrozenWorld budget on revised path.
+        frozen_phase_deadline=self.state['phase_deadline']
+        if not revision:self.phase('ExpectedComputeWait',task['deadline_wall_s'])
         name='%06d.json'%task['sequence'];atomic(self.root/'shadow_tasks'/name,dict(task=task,row=capture['shadow_capture']['row']))
-        self.event('shadow_task_submitted',task=task,frozen_confirmed_wall_s=frozen_confirmed,submit_end_wall_s=time.monotonic())
+        submit_end=time.monotonic()
+        if revision:
+            if submit_end>frozen_phase_deadline:raise TimeoutError('ConfirmedFrozenPublicationDeadline')
+            self.phase('ExpectedComputeWait',task['deadline_wall_s'])
+        self.event('shadow_task_submitted',task=task,frozen_confirmed_wall_s=frozen_confirmed,submit_end_wall_s=submit_end,confirmed_phase_deadline=frozen_phase_deadline)
         while True:
             self.pump()
             if self.terminal:raise RuntimeError(self.terminal['reason'])
@@ -55,7 +96,10 @@ class ShadowRuntime(Runtime):
                 append(self.root/'shadow_consumed.jsonl',record);self.result['completions'].append(record)
                 self.phase('FiniteExecution',time.monotonic()+1.)
                 # Completion only allows continuing the fixed parked experiment.
-                self.issue('InitialProtectionBrake',STOP,self.observation)
+                if revision:
+                    self.current.update(confirmed);self.state['frozen_confirmation']=confirmed
+                    self.planned_issue('InitialProtectionBrake')
+                else:self.issue('InitialProtectionBrake',STOP,self.observation)
                 return
             if time.monotonic()>task['deadline_wall_s']+.3:raise TimeoutError('IndependentTaskDetectorMissing')
             time.sleep(.002)
@@ -78,6 +122,8 @@ class ShadowRuntime(Runtime):
             write(self.root/'target_schedule.json',dict(first_frame=origin,frames=[origin+4*i for i in range(24)],planned_ticks=95))
             for i in range(24):
                 if i>=self.cfg['live_pid_remaining']:raise RuntimeError('PIDBudgetReservedByPreflight')
+                if parked_handoff_enabled(self.cfg):
+                    self.state['task']=None;self.task=None;self.state['active_target']=dict(frame=origin+4*i,identity=list(self.channel.identity),next_sequence=i+1)
                 capture=self.capture('stationary',first=i==0)
                 if self.observation['frame']!=origin+4*i:raise RuntimeError('FixedTargetMismatch')
                 self.compute_shadow(capture)
@@ -114,11 +160,11 @@ class ShadowRuntime(Runtime):
             write(self.root/'result.json',self.result)
 
 
-def supervise():
+def supervise(config_path=CFG):
     import carla
     from tools.m8j12_capture_supervisor import listening,group_members
     from tools.m8j13_supervisor import terminate
-    cfg=load(CFG);c=config();base=Path(cfg['private_root']);base.mkdir(parents=True,exist_ok=True)
+    cfg=load(config_path);validate_shadow_budget(cfg);c=config();base=Path(cfg['private_root']);base.mkdir(parents=True,exist_ok=True)
     with (base/'budget.lock').open('a') as lock:
         fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
         with (base/'budget.jsonl').open('x',buffering=1) as ledger:
@@ -127,7 +173,7 @@ def supervise():
             if any(listening(p) for p in range(c['port'],c['port']+3)):raise RuntimeError('PortsOccupied')
             root=base/cfg['run_id'];root.mkdir()
             for n in ('io_requests','io_responses','shadow_tasks','shadow_completions','native','diagnostics'):(root/n).mkdir()
-            write(root/'frozen_config.json',cfg);write(root/'request.json',dict(commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),config_sha256=digest(CFG),config=cfg,purpose='24 sequential parked logical model shadow tasks; no model execution'))
+            write(root/'frozen_config.json',cfg);write(root/'request.json',dict(commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),config_sha256=digest(config_path),config=cfg,purpose='24 sequential parked logical model shadow tasks; no model execution'))
             model=server=owner=None;report={};env=dict(os.environ,OMP_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1',MKL_NUM_THREADS='1',PYTHONPATH=cfg['python_deps']+':'+str(Path.cwd()))
             try:
                 write(root/'assets_before.json',assets())
@@ -178,8 +224,8 @@ def supervise():
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--owner-root',type=Path);a=p.parse_args();os.umask(0o077)
+    p=argparse.ArgumentParser();p.add_argument('--owner-root',type=Path);p.add_argument('--config',type=Path,default=CFG);a=p.parse_args();os.umask(0o077)
     if a.owner_root:ShadowRuntime(a.owner_root,load(a.owner_root/'frozen_config.json')).run()
-    else:supervise()
+    else:supervise(a.config)
 
 if __name__=='__main__':main()
