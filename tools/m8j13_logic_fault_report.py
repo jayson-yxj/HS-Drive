@@ -30,6 +30,7 @@ def audit(root):
     check('no_normal_after_latch',not normal_after and not [x for x in events if x['event']=='task_accepted' and x['wall_s']>=fault.get('wall_s',float('inf'))])
     check('brake_processed',brake.get('server_processed') and not brake.get('handoff_uncertain') and brake.get('return_wall_s',float('inf'))<=brake.get('operation',{}).get('deadline',0))
     after=[s for s in snaps if s['phase']=='fault_stop'];ordinary=[s for s in snaps if s['phase']!='fault_stop']
+    check('no_operation_inflight_at_fault',bool(fault) and not any(x['operation']['started']<=fault['wall_s']<x['owner_consumed_wall_s'] for x in consumption))
     check('no_hold_physics',all(s['command']['source']!='PlannedHoldBrake' for s in snaps))
     check('all_feedback',bool(snaps) and all(s['feedback_matches'] for s in snaps))
     check('fault_brake_feedback',bool(after) and all(s['command']['source']=='FaultBrake' and s['full_control']['throttle']==0 and s['full_control']['brake']==1 and s['input_wall_s']>=brake.get('return_wall_s',float('inf')) for s in after))
@@ -53,7 +54,7 @@ def audit(root):
         ends=[x['worker_completed_wall_s'] for x in outputs if x['sequence']==t['sequence']]
         end=min(ends+[fault.get('wall_s',float('inf'))])
         check('task_no_physics_'+str(t['sequence']),not any(t['requested_wall_s']<=s['input_wall_s']<end for s in snaps))
-    injection_time=None;injection_detail={}
+    injection_time=None;injection_detail={};latched_snapshot=ordinary[-1] if ordinary else {};target_forward_speed=None
     if name=='missing_camera':
         armed=load(root/'camera_injection_armed.json');rejection=load(root/'capture_rejection.json')
         rows=lines(root,'camera_metadata.jsonl');suppressed=[r for r in rows if r['disposition']=='TestSuppressed']
@@ -63,7 +64,8 @@ def audit(root):
         check('capture_rejection_path',rejection.get('reason')=='MissingCamera' and len(rejection.get('groups',[]))==5 and rejection.get('imu',{}).get('frame')==key.get('frame') and rejection.get('snapshot',{}).get('frame')==key.get('frame') and rejection.get('current',{}).get('frame')==key.get('frame',0)+2)
         check('return_margin',bool(rejection) and rejection['wall_s']<=rejection['operation']['deadline'] and fault.get('wall_s',float('inf'))<=rejection['original_start_wall_s']+.5)
         if suppressed:injection_time=suppressed[0]['receive_monotonic_s']
-        injection_detail=dict(suppressed=len(suppressed),retained_cameras=len(sel),reserved_return_s=cfg['collect_return_reserve_s'])
+        target_forward_speed=rejection.get('snapshot',{}).get('speed')
+        injection_detail=dict(suppressed=len(suppressed),retained_cameras=len(sel),reserved_return_s=cfg['collect_return_reserve_s'],detection_origin='Raw CAM_FRONT callback arrival; suppression occurs later in receiver drain, exact hook wall time not separately sampled',diagnostic_to_detection_ms=None if not rejection or not fault else (fault['wall_s']-rejection['wall_s'])*1000,original_tick_to_diagnostic_ms=None if not rejection else (rejection['wall_s']-rejection['original_start_wall_s'])*1000)
     elif name=='invalid_output':
         mark=load(root/'worker_injection.json');bad=[x for x in outputs if x['sequence']==mark.get('sequence')]
         check('injection_actual',len(bad)==1 and bad[0]['control']['throttle']==1.1 and bad[0]['control']['brake']==0 and bad[0]['control']['steer']==0)
@@ -71,14 +73,14 @@ def audit(root):
         if bad:
             injection_time=bad[0]['worker_completed_wall_s'];t=next(t for t in tasks if t['sequence']==bad[0]['sequence'])
             check('legal_output_identity_and_time',bad[0]['identity']==t['identity'] and bad[0]['frame']==t['frame'] and bad[0]['source']==t['source'] and injection_time<t['deadline_wall_s'] and injection_time-bad[0]['worker_received_wall_s']>=.6)
-        injection_detail=dict(throttle=1.1,scope='Only finite out-of-range throttle; no general model trajectory claim')
+        injection_detail=dict(throttle=1.1,scope='Only finite out-of-range throttle; no general model trajectory claim',detection_origin='Synthetic worker result completion')
     else:
         mark=load(root/'manual_injection.json');entry=load(root/'EMERGENCY_STOP');t=tasks[-1] if tasks else {}
         injection_time=mark.get('request_wall_s')
         check('injection_actual',bool(mark) and mark==entry and mark.get('source')=='IndependentTestDriverViaManualEntry')
         check('early_live_manual',bool(mark) and mark['request_wall_s']<t.get('requested_wall_s',0)+.5 and mark['request_wall_s']<t.get('deadline_wall_s',0)-1 and mark['request_wall_s']-mark['owner_heartbeat']<.3 and mark['request_wall_s']-mark['worker_heartbeat']['wall_s']<.3)
         check('late_normal_rejected',result.get('late_result')==dict(rejected=True,reason='LateResultLocked') and any(x['sequence']==t.get('sequence') and not x['late'] and x['worker_completed_wall_s']>fault.get('wall_s',float('inf')) for x in outputs))
-        injection_detail=dict(scope='Automated injection via manual emergency entry; not a human keypress',late_normal_rejected=result.get('late_result'))
+        injection_detail=dict(scope='Automated injection via manual emergency entry; not a human keypress',late_normal_rejected=result.get('late_result'),detection_origin='Independent test driver emergency entry request',task_to_manual_request_ms=None if not mark else (mark['request_wall_s']-t['requested_wall_s'])*1000)
     cl=load(root/'cleanup_steps.json')
     check('sensor_stop',len(cl.get('sensor_stops',[]))==8 and all(s.get('passed') for s in cl['sensor_stops']))
     check('actor_destroy',len(cl.get('actor_destruction',[]))==9 and all(s.get('destroyed') for s in cl['actor_destruction']))
@@ -91,7 +93,7 @@ def audit(root):
     before=ordinary[-1] if ordinary else None;stopped=stable[0] if stable else None
     import math
     summary=dict(scenario=name,status='Passed_FiniteInjectedFaultOnly' if all(checks.values()) else 'Partial',commit=request.get('commit'),run_id=root.name,
-        checks=checks,failed_checks=[k for k,v in checks.items() if not v],injection=injection_detail,first_fault=fault.get('reason'),injection_forward_speed_mps=pre.get('speed'),injection_speed_norm_mps=pre.get('speed_norm'),
+        checks=checks,failed_checks=[k for k,v in checks.items() if not v],injection=injection_detail,first_fault=fault.get('reason'),admission_forward_speed_mps=pre.get('speed'),admission_speed_norm_mps=pre.get('speed_norm'),target_forward_speed_mps=target_forward_speed,pre_brake_forward_speed_mps=latched_snapshot.get('speed'),pre_brake_speed_norm_mps=latched_snapshot.get('speed_norm'),
         injection_to_detection_ms=None if injection_time is None or not fault else (fault['wall_s']-injection_time)*1000,
         brake_server_processed=brake.get('server_processed',False),brake_processing_ms=(brake.get('return_wall_s',0)-brake.get('submission_wall_s',0))*1000,
         fault_feedback_ticks=len(after),first_fault_feedback_speed_mps=after[0]['speed_norm'] if after else None,terminal_speed_mps=after[-1]['speed_norm'] if after else None,

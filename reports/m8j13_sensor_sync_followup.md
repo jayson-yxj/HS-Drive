@@ -595,3 +595,48 @@ owner、I/O及watchdog共享同一不可续期的操作身份和绝对monotonic�
 可复用为本协议、同一任务身份/绝对截止/命令交接接口下的**一次低速合成worker阻塞→独立检测→真实车辆停止**证据。后续真实模型worker必须沿用该通道，若执行语义改变需重验；它不证明模型轨迹或PID驾驶。剩余缺摄、无效输出、人工急停三类移动故障未完成；下一步建议按原有限预算先补这些覆盖，再安排新模式静止影子，满足完整门禁后单独申请S0。当前没有新的初始化阻断，也不需要自动安排同类重复运行。J13-A继续Partial，不授予旧实时J13-A、5Hz墙钟规划、官方Bench2Drive成绩或安全认证。
 
 见[动态实测汇总](m8j13_sources/logic_init_recheck/run_summary.json)、[分项验收](m8j13_sources/logic_init_recheck/acceptance.json)、[预算](m8j13_sources/logic_init_recheck/budget.json)、[来源](m8j13_sources/logic_init_recheck/provenance.json)、[核验范围](m8j13_sources/logic_init_recheck/verification.json)。报告生成器仅离线读取既有日志，不执行仿真或模型。
+
+## synchronous_logic_v1 三类移动故障有限实测（2026-11-07）
+
+**结论：缺摄、非法输出、人工急停入口三场景均通过本轮限定验收；J13-A仍Partial。** 复用上一轮TaskDeadline停车证据，没有重跑任务超时，也没有模型前向、模型控制、PID执行、训练、影子或S0/S1/S2。具备**申请**下一阶段新协议静止联机影子的有限故障覆盖条件，本轮不自动开始。
+
+### 实现、冻结与测试
+
+基线 `37d432223a18102001d15ddbe6be9936d51c7c97`；三场景共同运行冻结提交 `42d7d2a05beb4bb6d10cffb63c0c8566f9b51e8b`。环境仍为已核对0.9.16二进制与匹配客户端、Town03、原车/天气/六摄/0.05秒步长/CPU配置。未改物理、PID、模型或旧实时合同。三份显式配置及哈希见[启动前检查](m8j13_sources/logic_faults/preflight.json)，修订语义见[协议第12节](m8j13_synchronous_logic_v1.md)。
+
+本轮新增生产接线覆盖：原始载荷抑制→TargetCapture真实缺摄拒绝；真实隔离worker→TaskChannel公共sanitize_control；独立测试驱动→EMERGENCY_STOP→独立watchdog。旧默认注入关闭，未知场景/错身份/重复注入拒绝，旧TaskDeadline入口保留。总账本独占追加，三场景分别有唯一run/episode/generation、私有目录及独立账本；每次原始日志审计和清理通过才允许下一预声明启动，锁定不跨run解除。
+
+相关无服务器检查**132项通过**（本次独立用例数），匹配客户端环境另执行其中67项通过；历史109项记录单独保留，不冒充本轮新增数量。运行后只改进只读报告中的检测起点标注、速度字段含义及在途操作核验，针对报告另复验1项通过；没有再启动仿真。原始证据审计不是只读取运行器status：逐操作请求/响应/截止、真实快照及反馈、注入载荷/结果/急停入口、独立首故障、制动确认、停车保持及清理均核验。
+
+### 注入和真实停车结果
+
+|场景|来源commit/run_id|注入及首故障|速度证据 m/s|检测延迟|制动确认/后续真实反馈|停止区间/位移/保持|锁定后普通提交|清理|预算|
+|---|---|---|---|---|---|---|---|---|---|
+|任务超时，引用上轮|447642e / m8j13-logic-init-recheck-20261107/run|worker存活不返回；TaskDeadline|注入1.046|2秒截止后19.395ms|已确认；21拍FaultBrake|0.05仿真秒 / 0.02146m / 1.000秒|0|逐项通过|旧1启动170Tick，不计本轮|
+|缺摄|42d7d2a / logic_fault_1_missing_camera_20261107|CAM_FRONT目标载荷实到后抑制1份；MissingCamera|准入前向1.046；目标帧前向1.136；制动前模长1.248|原始回调到锁定370.162ms；诊断到锁定见JSON|2.745ms处理确认；22拍FaultBrake|0.10仿真秒 / 0.03919m / 1.000秒|0|8监听+9Actor+settings+进程端口全通过|1启动175Tick|
+|无效输出|42d7d2a / logic_fault_2_invalid_output_20261107|真实worker候选throttle=1.1；ControlOutOfRange|准入/制动前约1.046|结果完成到锁定20.765ms|2.609ms处理确认；21拍FaultBrake|0.05仿真秒 / 0.02146m / 1.000秒|0|全通过|1启动170Tick|
+|人工急停入口|42d7d2a / logic_fault_3_manual_emergency_stop_20261107|独立测试驱动写入口；ManualEmergencyStop|准入/制动前约1.046|入口请求到watchdog锁定19.922ms|2.632ms处理确认；21拍FaultBrake|0.05仿真秒 / 0.02146m / 1.000秒|0|全通过|1启动170Tick|
+
+表中停止时间/位移是**最后确认制动前Snapshot到首次进入持续停止窗口的Snapshot**的离散观测区间；不虚构更细起效时刻。冻结墙钟不算停车保持。缺摄的注入判定在先前合格边界，随后仍按原目标节奏推进，故准入、目标帧和制动前速度分别报告，不能将准入1.046写成目标帧实际速度。三个场景最后速度均0，故障观察墙钟分别约1.040、1.173、1.194秒；无碰撞，无其他故障抢先，无交接或推进不明。
+
+缺摄组中其余五摄、同帧IMU和Snapshot均保留且身份/时间一致。目标后固定两拍，未加第三拍。内部collect提前预留100ms用于诊断返回，外部0.5秒不变；本次诊断在原目标Tick起点后394.924ms形成，owner消费和watchdog锁定都在0.5秒内。延迟370.162ms以原始CAM_FRONT回调为起点；抑制发生在其后的接收排空，未单独采样钩子执行墙钟，因此不将该数值称精确“抑制到检测”延迟。首故障确为MissingCamera，无PhaseDeadline/IODeadline抢先。
+
+非法值只存在于worker候选，身份、序号、帧、0.6秒正常返回及心跳均合法；公共sanitize_control在SyntheticControlChanged相等性检查前拒绝ControlOutOfRange。核对全部普通控制RPC没有1.1油门，未裁剪修补。NaN、缺字段、油门制动冲突本轮仅无服务器验证，不声称全部模型轨迹异常已实测。
+
+急停测试驱动在任务发出后152.898ms写入入口，owner/worker心跳正常，无在途Tick或普通控制RPC，显著早于2秒期限。独立watchdog以ManualEmergencyStop锁定；这叫**自动化通过人工急停入口注入**，不是人按键实测。约0.6秒时正常worker结果仍真实到达，并被LateResultLocked拒绝。没有解除锁定或追加回合。
+
+三场景PlannedHoldBrake支配物理Tick均为0；实际停车观察由FaultBrake支配，所有反馈匹配。制动处理确认后首次反馈间隔分别约15.106、15.716、11.364ms；完整事件时序留私有目录，公开只有聚合。独立watchdog不tick，owner保持唯一推进授权者。
+
+### 初始化、清理、预算及边界
+
+每场景初始化38Tick、六静止周期23Tick；起步分别32/28/28Tick，停车22/21/21Tick。缺摄与急停初始化最长整体操作分别502.218ms、520.079ms，各有一次超过旧0.5秒；非法输出最长388.901ms。它们只按已授权初始化2秒合同通过，不能追认旧失败或证明实时能力。活动0.5秒等合同不变，全部操作消费在原有效截止内。
+
+每场景8个监听均从true停止到false，9个自有Actor销毁返回成功，恢复settings逐字段读回一致，新的Snapshot确认残留Actor为0。每次恢复观察到2帧变化，但仍保守计30Tick；启动settings同样各计30。子进程和自有服务器进程组回收，2300–2302释放；下一场景仅在前场景全部核验通过后开始。
+
+总计 **3/3次启动，335次显式Tick + 90启动settings + 90恢复settings = 515/2400 Tick**。分场景175/170/170，未用额度不补跑；无失败/未知Tick被漏计。模型前向、模型控制、PID执行、训练与原驾驶额度消耗全部0。
+
+旧实时0.3秒新鲜度失败、旧初始化失败继续保留；迟到RPC清理本轮未触发，仍只有此前无服务器证据。可以复用的是这套身份、期限、冻结/交接、独立保护接口下的四类**单次低速合成故障**证据。模型接入后时序、真实模型输出、轨迹/PID及正常驾驶行为仍待验证，不能把非法控制1.1测试扩成所有异常已覆盖。
+
+建议下一轮单独申请 `synchronous_logic_v1` 静止持续制动、模型输出隔离的联机影子验证，明确沿用本次监督/任务接口并核对真实模型接线。当前只记录申请条件满足，未开启影子，不放行S0，J13-A仍Partial。
+
+交付：[四类结果矩阵](m8j13_sources/logic_faults/matrix.json)、[缺摄](m8j13_sources/logic_faults/missing_camera.json)、[无效输出](m8j13_sources/logic_faults/invalid_output.json)、[急停入口](m8j13_sources/logic_faults/manual_emergency_stop.json)、[预算](m8j13_sources/logic_faults/budget.json)、[原始证据核验摘要](m8j13_sources/logic_faults/verification.json)。详细图像、控制及逐帧记录继续私存。

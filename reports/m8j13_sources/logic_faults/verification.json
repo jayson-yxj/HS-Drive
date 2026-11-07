@@ -1,0 +1,77 @@
+{
+  "scope": "Read-only raw event audit after three fixed runs",
+  "independent_run_episode_generation": true,
+  "runs": [
+    {
+      "run_id": "logic_fault_1_missing_camera_20261107",
+      "operations": 198,
+      "snapshots": 115,
+      "input_identity_checked": true,
+      "cleaned_listeners": 8,
+      "destroyed_actors": 9,
+      "actual_first_fault": "MissingCamera",
+      "source_hashes": {
+        "request.json": "df0c2ef83acfcf359949fedbbdb4c7e54df1435dd75ebdf285cf98059f5c2251",
+        "frozen_config.json": "475568d2481a509b364616c7b443a7040409b740c165bf9fc0d3567f3e39cdbe",
+        "owner_events.jsonl": "655b952597a7466663b3b710c9e810f2959f54138ea27a81b93b020017018d78",
+        "io_consumption.jsonl": "656db4eb744885b9f32eb90eccee568fdc41befc8c345ee283062f60685bf9e4",
+        "snapshots.jsonl": "7ba9d89a454c08117cfa25d8f36ff3e26ef1f5ea0d1009e71f301d12e8418f39",
+        "result.json": "fc2ae8e36f766c9c39e6ebbfa67a9f74cb8af2a0d7a1d1cf932d3fd789737988",
+        "supervisor.json": "27102200a1eda2d744a4e58f584bab93402352c5a910e31e32a6f91d0d6aa0ce",
+        "watchdog_fault.json": "33aa98b54d03a480b04ff604777ac753cf1e8d3fc5941448e7088cd6ce59170b",
+        "fault_brake.json": "480d0be26b78741e35f6c7f6cb5846566c585315185b05075a60c799e6e406fa",
+        "cleanup_steps.json": "ff5f3242e0704640a806e6b8b93df6a7fd4fcee78f2e6263149e0bd807f8f1c7"
+      }
+    },
+    {
+      "run_id": "logic_fault_2_invalid_output_20261107",
+      "operations": 190,
+      "snapshots": 110,
+      "input_identity_checked": true,
+      "cleaned_listeners": 8,
+      "destroyed_actors": 9,
+      "actual_first_fault": "ControlOutOfRange",
+      "source_hashes": {
+        "request.json": "9a38ae34531822e75e717ba55a4a22d10f115a460b28192f1aa137098af69959",
+        "frozen_config.json": "b48d904d3ae5a518aed1166a92b88363ad1c71f58383f33ba437c0191844b3b1",
+        "owner_events.jsonl": "4cc33350345625bd3435e14970c7a1c12d33ab98d906b63a824a412baffc7e8a",
+        "io_consumption.jsonl": "0e19ed4a42f0212bca841f589cd1e70207907af9992f8b48d61fd471fd90e260",
+        "snapshots.jsonl": "33a667395ad322d34f40bb8e288ec719a2d6b91fabeee6afb47275af6a4e1353",
+        "result.json": "ad15ce55a9c60421082bceb03c6479d23d1d2f442688e156e0a3c541ce88a552",
+        "supervisor.json": "3f2169fc480629253ba3600e9582fe2a6255e468198db90e291f4070b00de668",
+        "watchdog_fault.json": "0d480bedbf45eaeb17401ddc7283bdbc371760b493d6f9c16f7ab409a397d579",
+        "fault_brake.json": "c0442e1d7c455ca626c3c03a46bf255d784e8dc42873e61a63d8181923bda095",
+        "cleanup_steps.json": "2553de23fb9100d021a14530d42f4e8d51e45f90d653193535e3152f35c2e5d0"
+      }
+    },
+    {
+      "run_id": "logic_fault_3_manual_emergency_stop_20261107",
+      "operations": 189,
+      "snapshots": 110,
+      "input_identity_checked": true,
+      "cleaned_listeners": 8,
+      "destroyed_actors": 9,
+      "actual_first_fault": "ManualEmergencyStop",
+      "source_hashes": {
+        "request.json": "777e75a649aa47ea4a1a61e0e7ae6159f52eb8cbd045baf133acdd7924efca9b",
+        "frozen_config.json": "423c671a7574ad839899a3825e0ce6234d211b0da78d7570e567c5c8ef84393c",
+        "owner_events.jsonl": "b5e164ddfd50a38ef588617a685c8b55a97f681b19521e8ea591813969261c6c",
+        "io_consumption.jsonl": "4bbaed47c518114781cbecc7ababf3c67d8834bd517d55a76977d423aa837f68",
+        "snapshots.jsonl": "bcdf1b643f8e15154cafdce7bb6184c9ff0f6082ba7140461969db0a232e541a",
+        "result.json": "57f0422047bbe6509026f49499589672e161b4584587371710c3681a058a897d",
+        "supervisor.json": "f00df0f856da72cc07586c6d4a1e57dd12a43519faa2e2c882e6a18961359eaa",
+        "watchdog_fault.json": "2858f413c09008343281a55fd9474d5f113ebbdbbb13c42d2809e76408ede851",
+        "fault_brake.json": "f5940834b346d138168d408dc0755274696a4ec86f8b5b38ccb7cb069b49d87b",
+        "cleanup_steps.json": "da03306b960d7be64a2541de8ba95613dc3d9995107f107ba9809d35f4aa2a9a"
+      }
+    }
+  ],
+  "suite_ledger_sha256": "b0da25204b33345fe9448df50e2d2488575c1025504a40d67728032d855f7e33",
+  "no_extra_simulation": true,
+  "current_unique_regression_passed": 132,
+  "matching_client_subset_passed": 67,
+  "historical_regression_preserved": 109,
+  "postrun_report_regression_passed": 1,
+  "postrun_changes_scope": "Read-only audit/report only; no simulator runtime changes after42d7d2a",
+  "private_data_exported": false
+}
