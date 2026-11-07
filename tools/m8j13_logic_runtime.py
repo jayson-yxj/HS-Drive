@@ -17,6 +17,7 @@ import time
 import traceback
 from tools.m8j13_common import config,atomic,write,append,digest
 from tools.m8j13_logic_services import load
+from simulator.m8j13_logic_faults import scenario
 from simulator.m8j13_logic_runtime import STOP,TaskChannel,CommandGuard,reserve_start,frozen_equal,operation_stamp,initialization_due
 
 CFG=Path('configs/m8j13_logic_runtime_test.json')
@@ -24,7 +25,7 @@ CFG=Path('configs/m8j13_logic_runtime_test.json')
 
 class Runtime:
     def __init__(self,root,cfg):
-        self.root=root;self.cfg=cfg;self.processes={};self.io_sequence=0;self.pending=None;self.current=None;self.counts=Counter()
+        self.root=root;self.cfg=cfg;self.scenario=scenario(cfg);self.injection=None;self.sensor_actors=None;self.processes={};self.io_sequence=0;self.pending=None;self.current=None;self.counts=Counter()
         self.guard=CommandGuard();self.channel=None;self.task=None;self.result=dict(status='Partial',model_forwards=0,model_controls=0,training=0,stationary_cycles=[],moving_cycles=[])
         self.state=dict(armed=False,phase='Initialization',phase_deadline=time.monotonic()+30,owner_wall_s=time.monotonic(),run_deadline=time.monotonic()+240,epoch=0,ego_id=None,operation=None,fault=None,task=None)
         self.terminal=None;self.last_owner=None;self.owner_gaps=[];self.target=None;self.observation=None;self.started_motion=False;self.last_init_rpc_start=None;self.settings_charges=Counter();self.advance_unknown=False;self.cleanup_deadline=None
@@ -45,7 +46,7 @@ class Runtime:
         if (self.root/'server_exited.json').exists():raise RuntimeError('ServerExited')
         for role,proc in self.processes.items():
             if role=='io' and self.pending and self.pending['kind']=='cleanup' and (self.root/'io_responses'/('%06d.json'%self.pending['sequence'])).exists():continue
-            if proc.poll() is not None and not (self.root/{'test':'test_worker_stop','watchdog':'logic_watchdog_stop','io':'io_stop'}[role]).exists():raise RuntimeError('ServiceExited:'+role)
+            if proc.poll() is not None and not (self.root/{'test':'test_worker_stop','watchdog':'logic_watchdog_stop','io':'io_stop','manual':'manual_stop'}[role]).exists():raise RuntimeError('ServiceExited:'+role)
     def start(self,role,cpus,isolated=False):
         argv=['taskset','-c',cpus]+(['unshare','--net'] if isolated else [])+[self.cfg['python'],'-m','tools.m8j13_logic_services','--role',role,'--root',str(self.root)]
         with (self.root/(role+'.log')).open('x') as f:self.processes[role]=subprocess.Popen(argv,stdout=f,stderr=subprocess.STDOUT)
@@ -89,7 +90,7 @@ class Runtime:
                 if kind=='tick' and (not reply['success'] or end>pending['deadline']):
                     self.guard.uncertain=True;self.advance_unknown=True
                 if end>pending['deadline']:raise TimeoutError('IODeadline:'+kind)
-                if not reply['success']:raise RuntimeError(reply['error'])
+                if not reply['success']:raise RuntimeError(reply.get('rejection_reason',reply['error']))
                 if self.terminal and not allow_fault:raise RuntimeError(self.terminal['reason'])
                 return reply
             if time.monotonic()>self.pending['deadline']:
@@ -127,7 +128,12 @@ class Runtime:
         if phase=='start' and (speed>=1.7 or self.current['speed']<-.2):raise RuntimeError('IndependentSpeedGuard')
         return self.current
     def register(self,frame):
-        self.call('register',dict(frame=frame),timeout=.1);self.target=frame
+        args=dict(frame=frame)
+        if self.injection and self.scenario=='missing_camera' and not self.injection.get('armed'):
+            args['injection']=dict(identity=list(self.channel.identity),camera='CAM_FRONT',actor_id=self.sensor_actors['CAM_FRONT'],frame=frame)
+            self.injection['armed']=True;self.injection['key']=args['injection']
+            self.event('injection_registered',injection=self.injection)
+        self.call('register',args,timeout=.1);self.target=frame
     def capture(self,phase,first=False):
         # Target is registered before issuing its tick, including every F+4.
         if first:
@@ -148,16 +154,19 @@ class Runtime:
         self.observation=r['observation'];self.current=r['frozen']
         self.event('input_validated',target=self.target,capture_wall_s=r['capture_wall_s'],sim_age_s=self.current['sim_s']-self.observation['sim_s'])
         return r
-    def compute(self,control,blocked=False):
+    def compute(self,control,blocked=False,inject=False):
         self.phase('ConfirmedFrozenWorld',time.monotonic()+.2)
         self.issue('PlannedHoldBrake',STOP)
         # No tick may run under this source. Real snapshot must remain unchanged.
         self.call('frozen',dict(expected=self.current),timeout=.1)
         requested=time.monotonic();task=self.channel.request(self.observation,self.current,requested,'blocked' if blocked else 'normal',control)
+        if inject and self.scenario=='invalid_output':task['injection']='invalid_output'
         self.task=task;self.state['task']={k:task[k] for k in ('sequence','frame','deadline_wall_s','requested_wall_s','mode')}
         self.phase('ExpectedComputeWait',task['deadline_wall_s'])
         atomic(self.root/'tasks'/('%06d.json'%task['sequence']),task)
         self.event('task_requested',task=self.state['task'],frozen_frame=self.current['frame'],speed=self.current['speed_norm'])
+        if inject and self.scenario=='manual_emergency_stop':
+            atomic(self.root/'manual_request.json',dict(identity=list(self.channel.identity),task=self.state['task'],forward_speed_mps=self.current['speed']))
         while True:
             self.pump()
             if self.terminal:
@@ -220,7 +229,7 @@ class Runtime:
     def check_late(self):
         if self.task is None or self.result.get('late_result'):return
         response=load(self.root/'task_results'/('%06d.json'%self.task['sequence']))
-        if response and response.get('late'):
+        if response and (response.get('late') or (self.scenario=='manual_emergency_stop' and self.terminal)):
             try:self.channel.consume(response,self.current,time.monotonic())
             except ValueError as exc:
                 self.result['late_result']=dict(rejected=True,reason=str(exc));self.event('late_result_rejected',reason=str(exc));return
@@ -249,10 +258,12 @@ class Runtime:
             initialization_deadline=self.state['phase_deadline']
             setup=self.call('setup',timeout=30.)
             if setup['geometry']['status']!='Passed':raise RuntimeError('NavigationGeometryRejected')
-            self.state.update(ego_id=setup['ego_id'])
-            self.channel=TaskChannel(setup['identity']);self.start('watchdog',cpus['watchdog']);self.ready(self.root/'logic_watchdog_ready.json')
+            self.state.update(ego_id=setup['ego_id']);self.sensor_actors=setup['sensor_actors'] if self.scenario else setup.get('sensor_actors')
+            self.channel=TaskChannel(setup['identity']);self.state['identity']=setup['identity'];self.start('watchdog',cpus['watchdog']);self.ready(self.root/'logic_watchdog_ready.json')
             self.start('test',cpus['model'],isolated=True);ready=self.ready(self.root/'test_worker_ready.json')
             if ready['network_namespace']==os.readlink('/proc/self/ns/net'):raise RuntimeError('TestWorkerNotIsolated')
+            if self.scenario=='manual_emergency_stop':
+                self.start('manual',cpus['watchdog']);self.ready(self.root/'manual_ready.json')
             self.state['armed']=True;self.phase('Initialization',initialization_deadline)
             self.issue('InitialProtectionBrake',STOP)
             stable=0
@@ -270,7 +281,20 @@ class Runtime:
                 if 200-self.counts['start']<4:raise RuntimeError('PreconditionsNotMet')
                 self.capture('start');self.started_motion=True
                 control=dict(STOP,**self.cfg['test_control'])
-                if 1.<=self.current['speed_norm']<2.:
+                eligible=1.<=self.current['speed']<1.7 and self.current['speed_norm']<1.7 if self.scenario else 1.<=self.current['speed_norm']<2.
+                if eligible:
+                    if self.scenario:
+                        if self.injection is not None:raise RuntimeError('RepeatedInjection')
+                        self.injection=dict(scenario=self.scenario,boundary=self.current,wall_s=time.monotonic(),armed=False)
+                        self.result['injection']=self.injection
+                        self.event('injection_precondition',scenario=self.scenario,forward_speed_mps=self.current['speed'],speed_norm=self.current['speed_norm'],frame=self.current['frame'])
+                        if self.scenario=='missing_camera':
+                            # Fresh finite command required before next target's two flush ticks.
+                            self.result['moving_cycles'].append(self.compute(control))
+                            self.capture('start')
+                            raise RuntimeError('MissingCameraInjectionNotRejected')
+                        self.compute(control,inject=True)
+                        raise RuntimeError('InjectedOutputNotRejected')
                     self.compute(control,blocked=True);break
                 self.result['moving_cycles'].append(self.compute(control))
             if self.terminal is None:raise RuntimeError('PreconditionsNotMet')
@@ -282,13 +306,17 @@ class Runtime:
             try:
                 if self.state.get('ego_id') and self.terminal:self.stop_observe()
             except BaseException as exc:self.result['stop_error']=repr(exc)
-            try:self.check_late()
+            try:
+                if self.scenario=='manual_emergency_stop' and self.task and self.terminal:
+                    while time.monotonic()<self.task['deadline_wall_s'] and not self.result.get('late_result'):
+                        self.pump();self.check_late();time.sleep(.005)
+                self.check_late()
             except Exception as exc:self.result['late_check_error']=repr(exc)
             self.cleanup_deadline=time.monotonic()+self.cfg['wall_deadlines_s']['cleanup']
             try:self.reconcile_for_cleanup(timeout=min(.2,max(0.,self.cleanup_deadline-time.monotonic())))
             except Exception as exc:self.result['cleanup_reconcile_error']=repr(exc)
             self.state['armed']=False;atomic(self.root/'owner_state.json',self.state)
-            for role,name in [('test','test_worker_stop'),('watchdog','logic_watchdog_stop')]:
+            for role,name in [('test','test_worker_stop'),('watchdog','logic_watchdog_stop'),('manual','manual_stop')]:
                 (self.root/name).touch()
                 proc=self.processes.get(role)
                 if proc:
@@ -305,25 +333,31 @@ class Runtime:
             self.result.update(fault=self.terminal,phase_ticks=dict(self.counts),charged_ticks=sum(self.counts.values())+sum(self.settings_charges.values()),settings_charges=dict(self.settings_charges),server_advance_unknown=self.advance_unknown,owner_heartbeat_max_gap_s=max(self.owner_gaps,default=0),remaining_processes=[r for r,p in self.processes.items() if p.poll() is None])
             if self.result.get('stage_A') and self.result.get('task_timeout') and self.result.get('stop',{}).get('status')=='PhysicalStopObserved' and self.result.get('late_result',{}).get('rejected') and self.result.get('cleanup',{}).get('complete',False) and not self.result['cleanup'].get('remaining') and not self.result.get('cleanup_error'):
                 self.result['status']='Passed_FiniteNoModelTaskTimeoutTestOnly'
+            if self.scenario:
+                self.result['scenario']=self.scenario
+                self.result['status']='Partial_PendingIndependentScenarioAudit'
+                self.result['pid_executions']=0
             write(self.root/'result.json',self.result)
 
 
-def supervise(config_path=CFG):
+def supervise(config_path=CFG,suite_reservation=None):
     import carla
     from tools.m8j12_capture_supervisor import listening,group_members
     from tools.m8j13_supervisor import terminate
-    cfg=json.loads(config_path.read_text());c=config();base=Path(cfg['private_root']);base.mkdir(parents=True,exist_ok=True)
+    cfg=json.loads(config_path.read_text());name=scenario(cfg)
+    if name and (suite_reservation is None or suite_reservation['scenario']!=name or suite_reservation['config_sha256']!=digest(config_path)):raise ValueError('SuiteReservationRequired')
+    c=config();base=Path(cfg['private_root']);base.mkdir(parents=True,exist_ok=True)
     env=dict(os.environ,OMP_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1',MKL_NUM_THREADS='1',PYTHONPATH=cfg['python_deps']+':'+str(Path.cwd()))
     with (base/'budget.lock').open('a') as lock:
         fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
         ledger=reserve_start(load(base/'budget.json'))
         if any(listening(p) for p in range(c['port'],c['port']+3)):raise RuntimeError('PortsOccupied')
         if subprocess.check_output(['git','status','--porcelain'],text=True).strip():raise RuntimeError('FreezeRequiresCleanWorktree')
-        root=base/'run';root.mkdir()
-        for name in ('io_requests','io_responses','tasks','task_results'):(root/name).mkdir()
+        root=base/cfg.get('run_id','run');root.mkdir()
+        for folder_name in ('io_requests','io_responses','tasks','task_results'):(root/folder_name).mkdir()
         write(root/'frozen_config.json',cfg)
         write(root/'request.json',dict(commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),config_sha256=digest(config_path),config_path=str(config_path),config=cfg,
-            purpose='Six fixed no-model parked cycles then one low-speed blocked-task stop',budget=ledger['runs'][0],stop_conditions=['First system fault','TwoTickCaptureFailure','UncertainHandoff','SpeedGuard','TaskDeadline terminal','FixedBudget']))
+            purpose='Six fixed no-model parked cycles then one low-speed '+(name or 'blocked_task')+' stop',budget=ledger['runs'][0],stop_conditions=['First system fault','TwoTickCaptureFailure','UncertainHandoff','SpeedGuard','TaskDeadline terminal','FixedBudget']))
         atomic(base/'budget.json',ledger);server=None;owner=None;report={}
         try:
             argv=['taskset','-c',c['process_cpus']['server'],'runuser','-u','ubuntu','--','bash',str(Path('scripts/start_carla.sh').resolve()),cfg['server_root'],str(c['port']),'Epic']
@@ -355,7 +389,8 @@ def supervise(config_path=CFG):
             report['cleanup_complete']=not any(report['ports_after'].values()) and not any(report['groups_after'])
             ledger['runs'][0]['charged_ticks']=(report.get('result') or {}).get('charged_ticks',800)
             atomic(base/'budget.json',ledger);write(root/'supervisor.json',report)
-            print(json.dumps(report,indent=2),flush=True)
+            print(json.dumps(dict(owner_exit_code=report.get('owner_exit_code'),error=report.get('error'),cleanup_complete=report.get('cleanup_complete'),root=str(root)),indent=2),flush=True)
+        return root
 
 
 def main():

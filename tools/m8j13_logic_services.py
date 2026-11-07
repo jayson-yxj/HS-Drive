@@ -10,6 +10,7 @@ from pathlib import Path
 import time
 import traceback
 from tools.m8j13_common import atomic,append,write,config
+from simulator.m8j13_logic_faults import CameraSuppression,receive_camera,collect_input,synthetic_reply,scenario,validate_manual_request
 from simulator.m8j13_logic_runtime import STOP,TargetCapture,supervision_reason,frozen_equal,OperationDeadline
 
 
@@ -35,17 +36,12 @@ def io_service(root,cfg):
     from simulator.m8j13_execution import control_record,feedback_matches
     from simulator.m8j13_navigation import load_planner,set_navigation_route
     from datasets.m8j12_contract import assert_observation
-    owner=None;ego=None;inputs=None;target=None;last=None;seen=set();stats={};ticks=0;active=None;confirmed=None
+    owner=None;ego=None;inputs=None;target=None;last=None;seen=set();stats={};ticks=0;active=None;confirmed=None;hook=None
     def drain():
         if inputs is None:return
         # Reuse raw callback copies and identity check; only retain selected payloads.
         for payload in inputs.inbox.drain():
-            row=payload.stamp.record();row['copied_monotonic_s']=payload.copied_monotonic_s
-            if (payload.width,payload.height,len(payload.bgra))!=(704,396,704*396*4):raise RuntimeError('CameraPayloadShapeMismatch')
-            outcome=target.camera(row);row['disposition']=outcome
-            append(root/'camera_metadata.jsonl',row)
-            if outcome in ('PendingSnapshot','Selected'):
-                inputs.groups[row['frame']].append(row);inputs.payloads[(row['camera'],row['frame'])]=payload.bgra
+            receive_camera(payload,target,inputs,hook,lambda row:append(root/'camera_metadata.jsonl',row))
         while not inputs.imu_queue.empty():
             x=inputs.imu_queue.get_nowait()
             if x.frame==target.target:
@@ -69,14 +65,17 @@ def io_service(root,cfg):
                 owner=DeadlineOwner(root,cfg,budget);owner.setup()
                 ego=owner.ego();inputs=Inputs(owner,ego,root);budget.remaining()
                 target=TargetCapture(inputs.identity,{n:a.id for n,a in inputs.sensor_map.items()})
+                hook=CameraSuppression(cfg,inputs.identity,target.actors)
                 map_=owner.rpc(owner.world.get_map);planner=load_planner(Path(owner.c['runtime_root'])/'official-source/leaderboard/team_code/planner.py',map_)
                 gps=map_.transform_to_geolocation(owner.target)
                 set_navigation_route(planner,[({'lat':gps.latitude,'lon':gps.longitude,'alt':gps.altitude},SimpleNamespace(value=4))],coordinate_type='gps',client_version='0.9.16',carla_map=map_)
                 inputs.navigation=planner
-                reply.update(ego_id=ego.id,identity=list(inputs.identity),frame=owner.last,clients=owner.clients,geometry=load(root/'geometry.json'))
+                reply.update(ego_id=ego.id,identity=list(inputs.identity),frame=owner.last,clients=owner.clients,geometry=load(root/'geometry.json'),sensor_actors=target.actors)
             elif kind=='register':
                 drain();target.register(args['frame']);inputs.groups.clear();inputs.states.clear();inputs.imu.clear();inputs.payloads.clear()
                 append(root/'events.jsonl',dict(event='target_registered',frame=target.target,wall_s=time.monotonic()))
+                if args.get('injection'):
+                    hook.arm(args['injection']);write(root/'camera_injection_armed.json',dict(key=hook.key,wall_s=time.monotonic()))
                 reply['registered']=target.target
             elif kind=='control':
                 cmd=args['command'];fault=load(root/'watchdog_fault.json')
@@ -116,13 +115,18 @@ def io_service(root,cfg):
                 budget.remaining();reply.update(snapshot=last,explicit_ticks=ticks)
             elif kind=='collect':
                 until=min(target.start+.5,budget.operation['deadline'])
-                while time.monotonic()<until:
-                    budget.remaining();drain()
-                    if len(target.groups)==6 and target.target in inputs.imu:break
-                    time.sleep(.002)
-                current=measurement(owner.rpc(owner.world.get_snapshot),ego)
-                if last is None or not frozen_equal(last,current):raise RuntimeError('UnexpectedWorldBeforeCollect')
-                target.validate(current,time.monotonic())
+                def confirmed_current():
+                    current=measurement(owner.rpc(owner.world.get_snapshot),ego)
+                    if last is None or not frozen_equal(last,current):raise RuntimeError('UnexpectedWorldBeforeCollect')
+                    return current
+                try:
+                    collect_input(target,inputs,confirmed_current,drain,budget,time.monotonic,time.sleep,cfg.get('collect_return_reserve_s',0.))
+                except ValueError as exc:
+                    write(root/'capture_rejection.json',dict(reason=str(exc),wall_s=time.monotonic(),target=target.target,
+                        groups=list(target.groups.values()),snapshot=target.snapshot,current=last,imu=inputs.imu.get(target.target),
+                        suppression=hook.hit,original_start_wall_s=target.start,operation=r['operation']))
+                    if str(exc)=='MissingCamera':reply['rejection_reason']='MissingCamera'
+                    raise
                 row,error=inputs.row(target.target,time.monotonic())
                 if error:raise RuntimeError(error)
                 images={name:np.frombuffer(inputs.payloads[(name,target.target)],np.uint8).reshape(396,704,4)[:,:,:3] for name in target.actors}
@@ -164,12 +168,16 @@ def test_worker(root,cfg):
             p=next((p for p in sorted((root/'tasks').glob('*.json')) if p.name not in seen),None)
             if p:
                 pending=load(p);seen.add(p.name);pending['worker_received_wall_s']=now
+                if pending.get('injection'):
+                    state=load(root/'owner_state.json')
+                    if not state or pending['identity']!=state.get('identity') or pending['sequence']!=state.get('task',{}).get('sequence'):raise ValueError('WorkerInjectionIdentityMismatch')
+                    if (root/'worker_injection.json').exists():raise ValueError('DuplicateWorkerInjection')
+                    write(root/'worker_injection.json',dict(sequence=pending['sequence'],identity=pending['identity'],frame=pending['frame'],wall_s=now,scenario=scenario(cfg)))
         if pending is not None:
             due=now-pending['worker_received_wall_s']>=cfg['normal_task_delay_s']
             late=pending['mode']=='blocked' and (root/'release_late_result').exists()
             if (pending['mode']=='normal' and due) or late:
-                reply={k:pending[k] for k in ('sequence','identity','frame','source','control')}
-                reply.update(worker_received_wall_s=pending['worker_received_wall_s'],worker_completed_wall_s=now,late=late,model_forward=False)
+                reply=synthetic_reply(pending,now,cfg,late)
                 atomic(root/'task_results'/('%06d.json'%pending['sequence']),reply);pending=None
         time.sleep(.02)
 
@@ -212,9 +220,28 @@ def watchdog(root,cfg):
         time.sleep(.02)
 
 
+def manual_driver(root,cfg):
+    if scenario(cfg)!='manual_emergency_stop':raise ValueError('ManualDriverDisabled')
+    atomic(root/'manual_ready.json',dict(pid=os.getpid(),tick_calls=0))
+    while not (root/'manual_stop').exists():
+        request=load(root/'manual_request.json')
+        if request:
+            now=time.monotonic()
+            if now>=request['task']['requested_wall_s']+cfg['fault_injection']['manual_delay_s']:
+                state=load(root/'owner_state.json');hb=load(root/'test_worker_heartbeat.json')
+                validate_manual_request(request,state,hb,now)
+                if (root/'EMERGENCY_STOP').exists():raise ValueError('DuplicateManualInjection')
+                record=dict(request_wall_s=now,identity=request['identity'],task=request['task'],owner_heartbeat=state['owner_wall_s'],worker_heartbeat=hb,source='IndependentTestDriverViaManualEntry')
+                atomic(root/'manual_injection.json',record)
+                atomic(root/'EMERGENCY_STOP',record)
+                while not (root/'manual_stop').exists():time.sleep(.01)
+                return
+        time.sleep(.005)
+
+
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--role',choices=['io','test','watchdog'],required=True);p.add_argument('--root',type=Path,required=True);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--role',choices=['io','test','watchdog','manual'],required=True);p.add_argument('--root',type=Path,required=True);a=p.parse_args()
     cfg=load(a.root/'frozen_config.json');os.umask(0o077)
-    {'io':io_service,'test':test_worker,'watchdog':watchdog}[a.role](a.root,cfg)
+    {'io':io_service,'test':test_worker,'watchdog':watchdog,'manual':manual_driver}[a.role](a.root,cfg)
 
 if __name__=='__main__':main()

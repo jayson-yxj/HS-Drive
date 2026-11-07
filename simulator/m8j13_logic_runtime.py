@@ -3,6 +3,7 @@ import copy
 import math
 from collections import Counter
 from simulator.m8j13_sensor_audit import check_group
+from simulator.m8j13_safety import sanitize_control
 
 SOURCES = {'IndependentTestControl', 'InitialProtectionBrake', 'PlannedHoldBrake', 'FaultBrake'}
 STOP = dict(steer=0., throttle=0., brake=1., hand_brake=False, reverse=False, manual_gear_shift=False, gear=0)
@@ -90,6 +91,8 @@ class TaskChannel:
         if now>task['deadline_wall_s']:raise ValueError('TaskDeadline')
         if pending or not frozen_equal(task['frozen'],current):raise ValueError('UnconfirmedOrChangedFrozenWorld')
         if current['sim_s']-task['input_sim_s']>.3+1e-6 or now>task['input_wall_s']+4.:raise ValueError('OriginalAgeExpired')
+        _,error=sanitize_control(result.get('control'))
+        if error:raise ValueError(error)
         if canonical(result['control'])!=canonical(task['control']):raise ValueError('SyntheticControlChanged')
         control=result['control']
         if not all(math.isfinite(control[k]) for k in ('steer','throttle','brake')):raise ValueError('NonfiniteControl')
