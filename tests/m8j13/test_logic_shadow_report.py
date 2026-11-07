@@ -265,3 +265,20 @@ def test_planned_handoff_exports_endpoints_and_final_return_duration(tmp_path):
     assert record['timing_endpoints']['publication_done_wall_s']==publication
     assert record['timing_endpoints']['effective_deadline_wall_s']==operation['deadline']
     assert r['handoffs']['endpoint_from_submit_ms']['owner_return_wall_s']['p50']==pytest.approx(300)
+
+
+def test_no_ready_or_task_evidence_cannot_invent_model_zero(tmp_path):
+    root=synthetic_run(tmp_path,n=0,hold=0,normal=False)
+    (root/'model_final.json').unlink();(root/'model_ready.json').unlink()
+    r=audit(root)
+    assert r['counts']['forward_success'] is None and r['counts']['model_controls'] is None
+    assert r['shutdown_evidence']['model_normal_exit'] is None
+
+
+def test_ledger_conservative_charge_survives_owner_partial_final(tmp_path):
+    root=synthetic_run(tmp_path,n=0,hold=0,normal=False)
+    rows=[json.loads(x) for x in (root.parent/'budget.jsonl').read_text().splitlines()]
+    rows[-1]['charged_ticks']=800;stream(root.parent/'budget.jsonl',rows)
+    r=audit(root)
+    assert r['budget']['charged_ticks']==800 and r['budget']['conservative_reservation']
+    assert r['budget']['owner_enumerated_charge']<800

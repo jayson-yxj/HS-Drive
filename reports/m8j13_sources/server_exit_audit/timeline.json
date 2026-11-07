@@ -1,0 +1,107 @@
+{
+  "clock": "monotonic; relative to model budget reservation; no conversion to UE wall strings",
+  "events": [
+    {
+      "event": "carla_start",
+      "relative_s": 5.547972094267607,
+      "source": "budget.jsonl"
+    },
+    {
+      "event": "finished",
+      "relative_s": 30.397243700921535,
+      "source": "budget.jsonl"
+    },
+    {
+      "event": "model_ready",
+      "relative_s": null,
+      "source": "model_ready.json",
+      "limitation": "No publication monotonic timestamp; before CARLA reservation by code order, not mtime conversion"
+    },
+    {
+      "event": "settings_applied",
+      "relative_s": 27.77634482458234,
+      "source": "lifecycle.jsonl"
+    },
+    {
+      "event": "setup_submit",
+      "relative_s": 11.990203898400068,
+      "source": "io_consumption.jsonl"
+    },
+    {
+      "event": "setup_owner_confirm",
+      "relative_s": 28.124137349426746,
+      "source": "io_consumption.jsonl"
+    },
+    {
+      "event": "control_submit",
+      "relative_s": 28.254962768405676,
+      "source": "io_consumption.jsonl"
+    },
+    {
+      "event": "control_owner_confirm",
+      "relative_s": 28.262347992509604,
+      "source": "io_consumption.jsonl"
+    },
+    {
+      "event": "tick_submit",
+      "relative_s": 28.262643080204725,
+      "source": "io_consumption.jsonl"
+    },
+    {
+      "event": "tick_owner_confirm",
+      "relative_s": 28.269945330917835,
+      "source": "io_consumption.jsonl"
+    },
+    {
+      "event": "tick_submit",
+      "relative_s": 28.3166611045599,
+      "source": "io_consumption.jsonl"
+    },
+    {
+      "event": "tick_owner_confirm",
+      "relative_s": 28.38408400118351,
+      "source": "io_consumption.jsonl"
+    },
+    {
+      "event": "tick3_submit",
+      "relative_s": 28.384418658912182,
+      "source": "io_requests/000005.json"
+    },
+    {
+      "event": "server_exit_observed",
+      "relative_s": 30.222125496715307,
+      "source": "server_exited.json"
+    },
+    {
+      "event": "owner/model_stop_signals",
+      "relative_s": null,
+      "source": "No timestamped record",
+      "limitation": "Source implies ordered stop attempts; cannot fabricate event time or normal exit"
+    },
+    {
+      "event": "owner/model_exit",
+      "relative_s": null,
+      "source": "No timestamped record",
+      "limitation": "Source implies ordered stop attempts; cannot fabricate event time or normal exit"
+    },
+    {
+      "event": "result/model_final/cleanup_publish",
+      "relative_s": null,
+      "source": "No timestamped record",
+      "limitation": "Source implies ordered stop attempts; cannot fabricate event time or normal exit"
+    }
+  ],
+  "ue_wall_log": {
+    "first_material_warning": "2026.11.07-10.57.09:837",
+    "render_fence": "2026.11.07-10.57.11:789..819",
+    "signal11_timestamp": "Not emitted",
+    "timezone": "Unspecified in original log; not presented as Helsinki time"
+  },
+  "missing": [
+    "engine PID",
+    "wrapper returncode",
+    "signal dispatch times",
+    "child exit times",
+    "reliable monotonic/wall anchor"
+  ]
+}

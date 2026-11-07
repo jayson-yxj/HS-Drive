@@ -17,6 +17,7 @@ import time
 import traceback
 from tools.m8j13_common import config,atomic,write,append,digest
 from tools.m8j13_logic_services import load
+from tools.m8j13_logic_shutdown import first_fault
 from simulator.m8j13_logic_faults import scenario
 from simulator.m8j13_logic_runtime import STOP,TaskChannel,CommandGuard,reserve_start,frozen_equal,operation_stamp,initialization_due
 
@@ -28,13 +29,24 @@ class Runtime:
         self.root=root;self.cfg=cfg;self.scenario=scenario(cfg);self.injection=None;self.sensor_actors=None;self.processes={};self.io_sequence=0;self.pending=None;self.current=None;self.counts=Counter()
         self.guard=CommandGuard();self.channel=None;self.task=None;self.result=dict(status='Partial',model_forwards=0,model_controls=0,training=0,stationary_cycles=[],moving_cycles=[])
         self.state=dict(armed=False,phase='Initialization',phase_deadline=time.monotonic()+30,owner_wall_s=time.monotonic(),run_deadline=time.monotonic()+240,epoch=0,ego_id=None,operation=None,fault=None,task=None)
-        self.terminal=None;self.last_owner=None;self.owner_gaps=[];self.target=None;self.observation=None;self.started_motion=False;self.last_init_rpc_start=None;self.settings_charges=Counter();self.advance_unknown=False;self.cleanup_deadline=None;self.failed_operation=None
+        self.terminal=None;self.last_owner=None;self.owner_gaps=[];self.target=None;self.observation=None;self.started_motion=False;self.last_init_rpc_start=None;self.settings_charges=Counter();self.advance_unknown=False;self.cleanup_deadline=None;self.failed_operation=None;self.server_dead=False;self.finishing=False
     def event(self,kind,**kw):append(self.root/'owner_events.jsonl',dict(event=kind,wall_s=time.monotonic(),**kw))
     def phase(self,name,deadline):
         if name not in ('Cleanup','FaultLocked'):deadline=min(deadline,self.state['run_deadline'])
         self.state.update(phase=name,phase_started=time.monotonic(),phase_deadline=deadline);self.event('phase',phase=name,deadline=deadline);self.pump()
     def pump(self):
         now=time.monotonic()
+        death=load(self.root/'server_exited.json');stop=load(self.root/'shutdown_request.json')
+        if death or stop:
+            self.server_dead=bool(death or stop.get('server_confirmed_exited'))
+            if self.terminal is None:
+                fault=first_fault(self.root,'ServerExited' if death else stop['reason'],'owner',dict(self.state,operation=self.pending),self.current,now)
+                self.terminal=fault;self.guard.latch()
+                if self.channel:self.channel.locked=True
+            if self.pending and self.pending['kind']=='tick':self.advance_unknown=True;self.guard.uncertain=True
+            if self.pending and self.pending['kind']=='control':self.guard.uncertain=True
+            self.state.update(fault=self.terminal['reason'],server_confirmed_exited=self.server_dead,server_advance_unknown=self.advance_unknown)
+            # Stop is latched, not repeatedly thrown: finalization must still run.
         if self.last_owner is not None:self.owner_gaps.append(now-self.last_owner)
         self.last_owner=now;self.state.update(owner_wall_s=now,operation=self.pending,epoch=self.guard.epoch,locked=self.guard.locked,handoff_uncertain=self.guard.uncertain,failed_operation=self.failed_operation)
         atomic(self.root/'owner_state.json',self.state)
@@ -43,7 +55,7 @@ class Runtime:
             self.terminal=fault;self.guard.latch()
             if self.channel:self.channel.locked=True
             self.event('fault_observed',fault=fault)
-        if (self.root/'server_exited.json').exists():raise RuntimeError('ServerExited')
+        if self.finishing or self.server_dead:return
         for role,proc in self.processes.items():
             if role=='io' and self.pending and self.pending['kind']=='cleanup' and (self.root/'io_responses'/('%06d.json'%self.pending['sequence'])).exists():continue
             if proc.poll() is not None and not (self.root/{'test':'test_worker_stop','watchdog':'logic_watchdog_stop','io':'io_stop','manual':'manual_stop'}[role]).exists():raise RuntimeError('ServiceExited:'+role)
@@ -54,12 +66,14 @@ class Runtime:
         until=time.monotonic()+timeout
         while not path.exists():
             self.pump()
+            if self.terminal:raise RuntimeError(self.terminal['reason'])
             if time.monotonic()>until:raise TimeoutError('ServiceReadiness:'+path.name)
             time.sleep(.005)
         return load(path)
     def call(self,kind,args=None,timeout=None,allow_fault=False):
         if self.pending:raise RuntimeError('IOAlreadyInFlight')
         self.pump()
+        if self.server_dead:raise RuntimeError('ServerExited_NoFurtherRPC')
         if self.terminal and not allow_fault:raise RuntimeError(self.terminal['reason'])
         timeout=timeout or (.5 if kind=='tick' else .2)
         self.io_sequence+=1;now=time.monotonic()
@@ -81,7 +95,9 @@ class Runtime:
         self.pump();name='%06d.json'%self.io_sequence
         atomic(self.root/'io_requests'/name,dict(sequence=self.io_sequence,kind=kind,args=args or {},operation=dict(self.pending),owner_submitted_wall_s=now))
         while True:
-            self.pump();reply=load(self.root/'io_responses'/name)
+            self.pump()
+            if self.server_dead:raise RuntimeError('ServerExited_InFlightResultUnverified')
+            reply=load(self.root/'io_responses'/name)
             if reply:
                 end=time.monotonic();pending=self.pending
                 if reply['sequence']!=pending['sequence'] or reply['operation']!=pending:raise RuntimeError('IOOperationIdentityMismatch')
@@ -202,6 +218,7 @@ class Runtime:
             time.sleep(.005)
     def latch(self,reason):
         if self.terminal:return
+        first_fault(self.root,reason,'owner',dict(self.state,operation=self.pending),self.current)
         self.state['fault']=reason;self.event('owner_fault_requested',reason=reason)
         until=time.monotonic()+.3
         while self.terminal is None and time.monotonic()<until:self.pump();time.sleep(.005)
@@ -209,6 +226,10 @@ class Runtime:
             self.guard.latch();self.terminal=dict(reason=reason,wall_s=time.monotonic(),independent_detection=False)
             if self.channel:self.channel.locked=True
     def stop_observe(self):
+        self.pump()
+        if self.server_dead:
+            self.result['stop']=dict(status='ResponseUnverified_ServerExited',ticks=0,hold_sim_s=0.,physical_stop_verified=False)
+            return
         if not self.terminal:return
         self.state['fault']=self.terminal['reason'];self.phase('FaultLocked',self.terminal['wall_s']+10.)
         until=self.terminal['wall_s']+10.;ack=None
@@ -258,6 +279,8 @@ class Runtime:
             reply=load(self.root/'io_responses'/('%06d.json'%self.pending['sequence']))
             if reply is not None:
                 pending=self.pending;self.pending=None
+                if pending['kind']=='tick':self.advance_unknown=True;self.guard.uncertain=True
+                if pending['kind']=='control':self.mark_handoff_uncertain(pending)
                 self.event('late_io_retired_for_cleanup_only',operation=pending,success=reply.get('success'),error=reply.get('error'),call_end_wall_s=reply.get('call_end_wall_s'))
                 self.result['late_io_cleanup_reconciliation']=dict(kind=pending['kind'],success=reply.get('success'),physics_resumption_allowed=False,server_advance_unknown=self.advance_unknown or pending['kind']=='tick')
                 return True

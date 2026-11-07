@@ -8,6 +8,7 @@ import subprocess
 import time
 import traceback
 from tools.m8j13_logic_runtime import Runtime
+from tools.m8j13_logic_shutdown import shutdown_notice,finalize_supervisor,signal_model_stop
 from tools.m8j13_logic_services import load
 from tools.m8j13_common import config,atomic,write,append,digest,assets
 from simulator.m8j13_logic_runtime import STOP
@@ -140,35 +141,61 @@ class ShadowRuntime(Runtime):
                 self.latch(str(exc))
             except Exception as secondary:self.result['latch_error']=repr(secondary)
         finally:
-            try:
-                if self.state.get('ego_id') and self.terminal:self.stop_observe()
-            except BaseException as exc:self.result['stop_error']=repr(exc)
-            (self.root/'model_stop').touch()
-            self.cleanup_deadline=time.monotonic()+15.
-            try:self.reconcile_for_cleanup(timeout=.2)
-            except Exception as exc:self.result['cleanup_reconcile_error']=repr(exc)
-            self.state['armed']=False;atomic(self.root/'owner_state.json',self.state)
-            (self.root/'logic_watchdog_stop').touch()
-            wd=self.processes.get('watchdog')
-            if wd:
-                try:wd.wait(timeout=3)
-                except subprocess.TimeoutExpired:wd.kill();wd.wait(timeout=3)
-            try:
-                if self.pending is None:self.result['cleanup']=self.call('cleanup',dict(advance_unknown=self.advance_unknown),timeout=max(.001,self.cleanup_deadline-time.monotonic()),allow_fault=True).get('cleanup')
-                else:self.result['cleanup_error']='IOStillInFlight_ResourceCleanupUnverified'
-            except BaseException as exc:self.result['cleanup_error']=repr(exc)
-            (self.root/'io_stop').touch()
-            for proc in self.processes.values():
-                try:proc.wait(timeout=3)
-                except subprocess.TimeoutExpired:proc.kill();proc.wait(timeout=3)
-            self.result.update(status='RecordedLogicalShadow_PendingAudit',fault=self.terminal,phase_ticks=dict(self.counts),charged_ticks=sum(self.counts.values())+sum(self.settings_charges.values()),settings_charges=dict(self.settings_charges),server_advance_unknown=self.advance_unknown,owner_heartbeat_max_gap_s=max(self.owner_gaps,default=0),remaining_processes=[r for r,p in self.processes.items() if p.poll() is None],model_controls=0,training=0)
-            write(self.root/'result.json',self.result)
+            self.finish_owner()
+
+    def finish_owner(self):
+        """Always attempt a real owner final record, including a dead-server exit."""
+        self.finishing=True;errors=[]
+        def attempt(step,fn):
+            try:return fn()
+            except BaseException as exc:
+                errors.append(dict(step=step,error=repr(exc),wall_s=time.monotonic()));return None
+        attempt('observe_stop_notice',self.pump)
+        stop=load(self.root/'shutdown_request.json') or {}
+        self.cleanup_deadline=min(time.monotonic()+15.,stop.get('owner_deadline_wall_s',float('inf')))
+        if self.server_dead:
+            self.result['stop']=dict(status='ResponseUnverified_ServerExited',ticks=0,hold_sim_s=0.,physical_stop_verified=False)
+            self.result['cleanup']=dict(status='Unavailable_ServerExited',sensor_stops=None,actor_destruction=None,settings_restored=None,remaining=None)
+        else:
+            if self.state.get('ego_id') and self.terminal:attempt('stop_observe',self.stop_observe)
+            # A normal/live fault has its established10s physics observation;
+            # resource15s begins afterwards. External stop's deadline never moves.
+            self.cleanup_deadline=min(time.monotonic()+15.,stop.get('owner_deadline_wall_s',float('inf')))
+        attempt('model_stop',lambda:signal_model_stop(self.root,time.monotonic()))
+        if self.pending:
+            attempt('late_reply_record',lambda:self.reconcile_for_cleanup(timeout=min(.2,max(0.,self.cleanup_deadline-time.monotonic()))))
+        self.state['armed']=False
+        attempt('owner_state',lambda:atomic(self.root/'owner_state.json',self.state))
+        attempt('watchdog_stop',lambda:atomic(self.root/'logic_watchdog_stop',dict(wall_s=time.monotonic())))
+        def stop_child(role,proc):
+            remaining=max(0.,self.cleanup_deadline-time.monotonic())
+            try:proc.wait(timeout=min(3.,remaining))
+            except subprocess.TimeoutExpired:
+                proc.kill();proc.wait(timeout=max(0.,self.cleanup_deadline-time.monotonic()))
+            self.result.setdefault('child_exits',{})[role]=proc.returncode
+        wd=self.processes.get('watchdog')
+        if wd:attempt('watchdog_exit',lambda:stop_child('watchdog',wd))
+        if not self.server_dead and self.pending is None and time.monotonic()<self.cleanup_deadline:
+            attempt('resource_cleanup',lambda:self.result.update(cleanup=self.call('cleanup',dict(advance_unknown=self.advance_unknown),timeout=self.cleanup_deadline-time.monotonic(),allow_fault=True).get('cleanup')))
+        elif not self.server_dead:self.result['cleanup_error']='IOStillInFlightOrDeadline_ResourceCleanupUnverified'
+        attempt('io_stop',lambda:atomic(self.root/'io_stop',dict(wall_s=time.monotonic())))
+        for role,proc in self.processes.items():attempt(role+'_exit',lambda role=role,proc=proc:stop_child(role,proc))
+        remaining=[]
+        for role,proc in self.processes.items():
+            value=attempt(role+'_final_poll',proc.poll)
+            if value is None:remaining.append(role)
+        self.result.update(status='RecordedLogicalShadow_PendingAudit',fault=self.terminal,first_fault=load(self.root/'first_fault.json'),phase_ticks=dict(self.counts),
+            charged_ticks=sum(self.counts.values())+sum(self.settings_charges.values()),settings_charges=dict(self.settings_charges),server_advance_unknown=self.advance_unknown,
+            server_confirmed_exited=self.server_dead,last_confirmed_snapshot=self.current,inflight_operation=self.pending,handoff_uncertain=self.guard.uncertain,
+            owner_heartbeat_max_gap_s=max(self.owner_gaps,default=0),remaining_processes=remaining,model_controls=0,training=0,finalization_errors=errors,
+            finalization_wall_s=time.monotonic(),cleanup_deadline_wall_s=self.cleanup_deadline)
+        attempt('result_publish',lambda:atomic(self.root/'result.json',self.result))
+        if errors:attempt('owner_finalization_errors',lambda:atomic(self.root/'owner_finalization_errors.json',dict(errors=errors)))
 
 
 def supervise(config_path=CFG):
     import carla
     from tools.m8j12_capture_supervisor import listening,group_members
-    from tools.m8j13_supervisor import terminate
     cfg=load(config_path);validate_shadow_budget(cfg);c=config();base=Path(cfg['private_root']);base.mkdir(parents=True,exist_ok=True)
     with (base/'budget.lock').open('a') as lock:
         fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
@@ -207,24 +234,23 @@ def supervise(config_path=CFG):
                 with (root/'owner.log').open('x') as log:owner=subprocess.Popen(['taskset','-c',c['process_cpus']['capture'],cfg['python'],'-m','tools.m8j13_logic_shadow','--owner-root',str(root)],stdout=log,stderr=subprocess.STDOUT,env=env,start_new_session=True)
                 until=time.monotonic()+360.
                 while owner.poll() is None:
-                    if server.poll() is not None:atomic(root/'server_exited.json',dict(wall_s=time.monotonic()));raise RuntimeError('ServerExited')
+                    if server.poll() is not None:
+                        shutdown_notice(root,'ServerExited',server)
+                        raise RuntimeError('ServerExited')
                     if model.poll() is not None and not (root/'model_stop').exists():atomic(root/'model_exited.json',dict(wall_s=time.monotonic()))
                     if time.monotonic()>until:raise TimeoutError('OwnerLifecycleDeadline')
                     time.sleep(.05)
                 report['owner_exit_code']=owner.returncode;report['result']=load(root/'result.json')
-                (root/'model_stop').touch();model.wait(timeout=30.)
-                report['model_final']=load(root/'model_final.json');report['model_exit_code']=model.returncode
-                write(root/'assets_after.json',assets());report['assets_unchanged']=load(root/'assets_before.json')==load(root/'assets_after.json')
+                signal_model_stop(root,time.monotonic())
             except BaseException as exc:report.update(error=repr(exc),traceback=traceback.format_exc())
             finally:
-                (root/'model_stop').touch()
-                terminate(owner);terminate(model);terminate(server)
-                until=time.monotonic()+8.
-                while time.monotonic()<until and any(listening(p) for p in range(c['port'],c['port']+3)):time.sleep(.1)
-                report['ports_after']={str(p):listening(p) for p in range(c['port'],c['port']+3)};report['groups_after']=[group_members(p.pid) for p in (server,owner,model) if p]
-                report['process_cleanup']=not any(report['ports_after'].values()) and not any(report['groups_after'])
-                report['transport']='Immutable files retained as private evidence; no shared memory or leased slots';write(root/'supervisor.json',report)
-                reserve('finished',charged_ticks=(report.get('result') or {}).get('charged_ticks',800 if server else 0),model_final=load(root/'model_final.json'),process_cleanup=report['process_cleanup'])
+                finalize_supervisor(root,cfg,dict(owner=owner,model=model,server=server),report,reserve,group_members,listening,range(c['port'],c['port']+3))
+                # Read-only disk asset verification is after bounded process exit;
+                # a hash failure cannot prevent process cleanup or final ledger.
+                try:
+                    atomic(root/'assets_after.json',assets());report['assets_unchanged']=load(root/'assets_before.json')==load(root/'assets_after.json')
+                except Exception as exc:report['asset_verification_error']=repr(exc)
+                atomic(root/'supervisor.json',report)
                 print(json.dumps(dict(root=str(root),error=report.get('error'),process_cleanup=report['process_cleanup'])),flush=True)
 
 

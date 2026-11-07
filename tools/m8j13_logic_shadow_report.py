@@ -48,7 +48,7 @@ def audit(root):
     diagnostics={load(p)['task']['sequence']:load(p) for p in (root/'diagnostics').glob('*.json')};timing={x['sequence']:x for x in lines(root,'worker_timing.jsonl')}
     setup=next((x['reply'] for x in ops if x['operation']['kind']=='setup' and x['reply'].get('success')),{});identity=setup.get('identity');actors=setup.get('sensor_actors',{})
     captures=[x for x in ops if x['operation']['kind']=='collect' and x['reply'].get('success')];byframe={x['reply']['observation']['frame']:x for x in captures}
-    fault=load(root/'watchdog_fault.json') or result.get('fault') or {};brake=load(root/'fault_brake.json');errors=[]
+    fault=load(root/'first_fault.json') or load(root/'watchdog_fault.json') or result.get('fault') or {};brake=load(root/'fault_brake.json');errors=[]
     if not fault and (root/'server_exited.json').exists():fault=dict(reason='ServerExited',wall_s=load(root/'server_exited.json')['wall_s'],source='supervisor; no owner/watchdog terminal record')
     def check(name,value):
         if not value:errors.append(name)
@@ -173,7 +173,8 @@ def audit(root):
     for kind,key in (('setup','settings_startup'),('cleanup','settings_restore')):
         if any(q['kind']==kind for q in reqs.values()):charges[key]=cfg.get('tick_caps',{}).get(key,30)
     settings=result.get('settings_charges',charges);phase_ticks=result.get('phase_ticks',phases)
-    charged=result.get('charged_ticks',next((x.get('charged_ticks') for x in reversed(ledger) if x['event']=='finished'),None))
+    ledger_charge=next((x.get('charged_ticks') for x in reversed(ledger) if x['event']=='finished'),None)
+    charged=ledger_charge if ledger_charge is not None else result.get('charged_ticks')
     no_model_tasks=bool(ready) and not tasks and not attempts and not pid and not diagnostics and not replies and not consumed
     def final_count(key):return final.get(key,0 if no_model_tasks else None)
     budget=dict(starts=starts,max_starts=1,model_starts=model_starts,active_ticks=sum(phase_ticks.values()),observed_ticks=len(snaps),phase_ticks=phase_ticks,settings_charges=settings,charged_ticks=charged,charge_policy='owner final accounting' if result else 'supervisor conservative whole reservation; owner final missing',enumerated_attempts_and_settings=sum(phases.values())+sum(charges.values()),unconfirmed_tick_attempts=max(0,sum(phases.values())-len(snaps)),max_ticks=800,full_forward_attempts=len(attempts),max_forwards=24,pid_calls_total=len(pid)+cfg.get('preflight_pid_calls',0),max_pid_calls=24,training=final_count('training'),optimizer_steps=final_count('optimizer_steps'),model_controls=final_count('model_controls'),driving_budget_consumed=0)
@@ -182,6 +183,14 @@ def audit(root):
     success_source=('model_final counter; independently backed by output diagnostics when present' if 'successful_forwards' in final else 'No published model task and no forward/PID/diagnostic/completion evidence; model ready observed' if no_model_tasks else 'Unknown: model_final successful_forwards counter absent; attempts are not proof of success or failure')
     counts=dict(planned_targets=planned,collected=len(captures),submitted=len(tasks),not_submitted_after_collection=max(0,len(captures)-len(tasks)),unreached_targets=max(0,planned-len(captures)),forward_attempts=len(attempts),forward_success=successes,forward_failed=None if successes is None else max(0,len(attempts)-successes),forward_success_count_source=success_source,published=len(replies),necessary_output_pid_checks=len(passed_outputs),owner_complete_timely=len(passed_consumption),old_realtime_passed=old_pass,model_controls=final.get('model_controls'),pid_live=len(pid),pid_preflight=cfg.get('preflight_pid_calls',0),pid_total=budget['pid_calls_total'])
     counts.update(published_notifications=len(replies),owner_consumptions_recorded=len(consumed))
+    tick_requests=[q for q in reqs.values() if q['kind']=='tick']
+    tick_responses=[load(root/'io_responses'/('%06d.json'%q['sequence'])) for q in tick_requests]
+    tick_confirmed=[x for x in ops if x['operation']['kind']=='tick' and x['reply'].get('success') and x['owner_consumed_wall_s']<=x['operation']['deadline']]
+    budget.update(ledger_charge=ledger_charge,owner_enumerated_charge=result.get('charged_ticks'),
+                  conservative_reservation=charged is not None and charged>sum(phases.values())+sum(charges.values()),
+                  tick_submissions=len(tick_requests),tick_response_files=sum(bool(x) for x in tick_responses),
+                  tick_rpc_return_recorded=sum('rpc_return_wall_s' in x for x in tick_responses),
+                  tick_owner_confirmed=len(tick_confirmed))
     counts['model_controls']=budget['model_controls']
     initial_states=[s for s in snaps if s.get('phase')=='initialization']
     check('InitializationAdmission',len(initial_states)>=21 and all(s['speed_norm']<=.1 for s in initial_states[-21:]))
@@ -202,6 +211,11 @@ def audit(root):
       initialization=dict(ticks=len(init),maximum_operation_ms=max(((x['owner_consumed_wall_s']-x['operation']['started'])*1000 for x in init),default=None)),
       output=dict(native_speed_range_mps=[min(speeds),max(speeds)] if speeds else None,pid_target_speed_range_mps=[min(targets),max(targets)] if targets else None,full_throttle_count=sum(d['raw_pid']['throttle']==1 for d in diagnostics.values()),speed_horizon_exceeds_5mps_count=sum(max(d['native_speeds'])>5 for d in diagnostics.values()),memory_checked=memory_checked,params_assets_unchanged=unchanged,moving_transport_validation=False),
       isolation=dict(model_controls=budget['model_controls'],zero_count_evidence='No published model task, no forward/PID ledger, brake-only execution requests' if no_model_tasks else 'model final and execution requests',measurement_max_speed_mps=max((s['speed_norm'] for s in measured),default=None),initial_fall_separate=True,hold_physics_ticks=sum(s['command']['source']=='PlannedHoldBrake' for s in snaps),collisions=collision_count),termination=termination,cleanup=cleanup,budget=budget,S0_review_ready=passed,S0_driving_authorized=False,limitations=['Finite parked evidence only; no moving handoff reliability or real-time claim','Old failures preserved','No retries'])
+    out['shutdown_evidence']=dict(first_fault=fault,processes=(sup.get('shutdown') or {}).get('processes'),
+        missing_child_evidence=sup.get('missing_child_evidence'),finalization_errors=sup.get('finalization_errors'),
+        actor_settings_verified=clean,owner_final_present=bool(result),model_final_present=bool(final),
+        model_normal_exit=((sup.get('shutdown') or {}).get('processes',{}).get('model',{}).get('normal_exit')
+                           if 'shutdown' in sup else True if final and sup.get('model_exit_code')==0 else None))
     return out
 
 

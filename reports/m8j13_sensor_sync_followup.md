@@ -743,3 +743,43 @@ supervisor沿原有退出路径停止owner、模型及服务器组，记录3组�
 下一步应先对现有崩溃日志和服务器退出收尾路径做有界离线排查，再单独安排后续复验。当前没有S0准入审查资格。即使未来完整静止24组通过，也不覆盖移动路径运输、移动状态模型/PID输出、实际模型控制、移动交接可靠性或实时驾驶；先前四类移动故障只按原接口与期限引用。
 
 交付证据：[验收](m8j13_sources/logic_shadow_recheck/acceptance.json)、[事件汇总](m8j13_sources/logic_shadow_recheck/run_summary.json)、[源码/配置/日志哈希及验证](m8j13_sources/logic_shadow_recheck/verification.json)、[命令与环境](m8j13_sources/logic_shadow_recheck/commands.json)、[旧运行复算](m8j13_sources/logic_shadow_recheck/historical_reaudit.json)。公开仅代码、配置和汇总证据；原图、逐帧输入、预测和权重不公开。沿同一功能分支正常提交推送，main不更新，远程分支不删除。
+
+## 服务器崩溃证据排查与有界收尾修复（2026-11-07，离线）
+
+**本轮只完成离线证据核对和无服务器修复。CARLA启动、模型加载、完整前向、真实PID、模型控制、训练全部0；J13-A仍Partial，无S0准入。** 基线为 `96b2bfbddb677366950923c779c20ca4a3811382`，同一公开功能分支工作区最初干净、远程一致。未改旧配置、模型/权重/PID/物理/图像，也未升级环境、清缓存或做性能试验。
+
+### 崩溃事实与证据缺口
+
+最近运行的真实冻结源码仍为54b7574。模型就绪（加载4.363秒）后CARLA启动，setup16.134秒，settings内部观察4帧并保守计30；初始STOP完整交接7.385ms。两次初始化Tick各7.302/67.423ms，均有完整STOP反馈，速度是落地运动，不是静止通过。第三次Tick已提交，无返回Snapshot、owner确认或最终账本。server.log明确Signal11；无法判断该Tick是否已在服务端推进。没有模型任务/前向/PID/消费，也没有0.5秒计划交接样本。
+
+按启动脚本的`runuser ubuntu`和实际账号home检索了用户Epic Saved、用户local/share、0.9.16安装Saved、/var/crash、systemd coredump目录，以及内核日志。已知历史CrashContext的PID799952、0.9.15路径、Low和2000端口与当前0.9.16/Epic/2300不符，**排除其Vulkan调用栈作为本轮根因**。历史资料被描述为10月19日，但该XML没有可独立核验的绝对日期；文件mtime没有被当作运行归属证据。
+
+**未找到匹配本轮的CrashContext、Diagnostics、minidump或core。** 当前core_pattern指向apport管道，但检查时容器内对应handler不存在；这只能解释“目前取证能力有缺口”，不能证明历史core生成失败的具体原因。dmesg可读，含6条旧NVRM/Xid记录，但没有可对应本run PID/窗口的记录；kernel journal为空，coredumpctl未安装，cgroup当前oom/oom_kill为0。内核最后记录数值时间早于run，不能以“没有匹配日志”排除GPU/驱动/OOM问题。本轮没有安装取证工具或修改core配置。
+
+没有可靠monotonic↔墙钟锚点；原UE日志字面时间、文件mtime和monotonic事件分开保存。公开[相对时间线](m8j13_sources/server_exit_audit/timeline.json)以模型启动额度预留为零点。模型就绪发布时刻、引擎PID、包装退出码、stop信号和子进程退出时刻未记录，留空；不从mtime反推，也不把包装退出状态视作引擎信号。已知代码顺序是发现ServerExited后很快进入terminate，但具体信号时刻未保存。
+
+目前可确认的原因只有“引擎SIGSEGV导致服务器退出”；**没有证据足以进一步选定渲染、驱动、GPU联合负载或模型原因**。材质warning、render fence设置及旧Vulkan栈均不是本轮因果证据。旧第10组hold交接约196ms RPC/200ms整体迟缓也仍Unknown。
+
+### 确定的软件缺陷与修复
+
+1. supervisor原finally立即terminate(owner/model)，不给子进程保存终账的机会；改为原子停止通知、并行有界宽限、到期TERM/KILL。owner资源15秒、模型30秒不叠加续期；进程强制回收沿用8秒额度但共用t0+38秒最终截止。
+2. owner.pump原先每次看到ServerExited都抛异常，使latch/reconcile/cleanup可能再次被打断；改为首次锁存、保持锁定及未知状态，后续pump仍可服务最终记录。新普通任务/RPC被拒绝，死服务器不再接受Tick/制动/settings请求。
+3. 原顺序清理一个异常可跳过其他进程与最终摘要；改为逐步骤独立记录错误、继续处理其他自有组，尝试原子supervisor终账与预算结束记录。共用旧`terminate`未改，其他运行器不会被替换。
+4. 模型最终digest/记忆异常原先可能阻止model_final；改为worker分别记录摘要错误和自身真实计数。挂起进程不能落盘时，supervisor只保存最后已知状态、来源及缺失原因，不造子进程result/model_final、不把未知计数填0。
+5. 首故障跨owner/watchdog/supervisor通过独占原子文件保留，包含在途操作和最后确认Snapshot。迟到返回不解除锁定、不续期、不恢复Tick。报告分开提交/RPC返回/owner确认、可枚举计费/保守预留、正常/强制退出与资源验证。
+
+本次生产收尾函数通过受控时钟、假RPC/进程及实际轻量替身子进程验证。替身不导入CARLA或模型、无真实PID；合成测试不等于真实崩溃收尾已验收。完整24组正常结束的报告、旧入口200ms、已有运行期期限与静止交接条件继续回归。相关193项无服务器回归在HS和匹配客户端环境分别通过，其中17项为本轮缺陷新增测试、176项为相关旧测试重跑（不与历史成绩相加）；最终进程清理判定补严后15项收尾测试再通过。详细测试及新旧复算见下方交付文件。
+
+旧目录逐文件哈希与排查前完全一致；原800/800保守扣账未改。最近run仍3次尝试/2次确认/可枚举33、0目标、进程端口清空但逐Actor/settings/model正常退出和终止保持未验证。旧run仍9次前向/检查/消费、旧实时0/9、第10组hold超时、终止保持未验证；不拼接两次结果。
+
+### 下一次最小初始化诊断方案（待另行授权，本轮不执行）
+
+先做**无模型初始化取证单次运行**：最多1次CARLA启动、180计费Tick；settings启动/恢复各30、初始化最多60尝试（2秒整体/30秒总、≥50ms间隔、末21连续确认≤0.1）、固定静止退出观察最多21，其余39仅失败/清理余量。场景仍Town03/原车型/ClearNoon/原六摄704×396/Epic/sensor_tick/0.05秒；独立STOP，模型加载/前向/PID/模型控制全部0。不采24目标，不调参数、不追加运行。服务器启动150秒，owner初始化30秒，结束观察最多10秒，资源15秒，强制收尾共用8秒；全生命周期上限240秒，所有子期限取更早者。
+
+这次要区分的是：不驻留模型时，同一初始化链路是否能完成，以及异常时新收尾能否保存终账和准确缺项。**它不能单独证明“模型导致崩溃”或排除随机故障。** 最优先取得缺失的同run引擎PID/进程树和匹配崩溃栈，而非重复寻找一个成功窗口。运行前确认实际ubuntu HOME/XDG目录，记录包装与引擎PID、/proc启动标识、二进制hash、命令、端口、UTC/monotonic成对锚点及boot ID；归档引擎原stdout/日志和该窗口新产生的CrashContext/Diagnostics/dump清单，记录包装退出码与引擎信号的不同来源。不改变渲染或core系统配置。若现有构建无法输出匹配栈，先明确取证缺项，不以无栈成功替代原因结论。
+
+成功须是初始化准入、无未知推进/交接、退出观察/资源/进程记录齐全；任一Signal11、期限失败、身份冲突、未知推进或清理缺项立即终态结束，不重启。单次成功只证明该配置该次初始化及收尾成立，不能证明500ms计划交接、24模型目标、实时性或移动驾驶。
+
+如果需要研究模型驻留是否相关，另行申请**第二个独立对照**：最多1次CARLA、1次冻结模型加载、180Tick，前向/PID0，固定同样配置和取证，加载上限120秒、全生命周期360秒；不与第一例合并预算、不因失败追加。同条件各一例仍只能提供有限对照线索，不能做稳定性或因果保证。此次仅提交方案，未授权执行。
+
+交付：[证据摘要](m8j13_sources/server_exit_audit/evidence_summary.json)、[时间线](m8j13_sources/server_exit_audit/timeline.json)、[旧9次复算](m8j13_sources/server_exit_audit/old_nine_reaudit.json)、[零目标复算](m8j13_sources/server_exit_audit/latest_zero_reaudit.json)、[测试](m8j13_sources/server_exit_audit/tests.json)。本轮新增详细审计目录与旧目录分离，公开不包含原始图像、载荷、预测、逐帧控制或权重。J13-A继续Partial，不放行S0。

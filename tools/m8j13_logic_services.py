@@ -10,6 +10,7 @@ from pathlib import Path
 import time
 import traceback
 from tools.m8j13_common import atomic,append,write,config
+from tools.m8j13_logic_shutdown import first_fault,last_snapshot
 from simulator.m8j13_parked_handoff import enabled as parked_handoff_enabled,verify_io_proof,uncertainty
 from simulator.m8j13_logic_shadow import require_parked_execution,PROTOCOL
 from simulator.m8j13_logic_faults import CameraSuppression,receive_camera,collect_input,synthetic_reply,scenario,validate_manual_request
@@ -17,6 +18,14 @@ from simulator.m8j13_logic_runtime import STOP,TargetCapture,supervision_reason,
 
 
 def load(path):return json.loads(path.read_text()) if path.exists() else None
+
+
+class ServerAwareDeadline(OperationDeadline):
+    def __init__(self,operation,clock,root):
+        super().__init__(operation,clock);self.root=root
+    def remaining(self):
+        if (self.root/'server_exited.json').exists():raise RuntimeError('ServerExited_NoFurtherRPC')
+        return super().remaining()
 
 
 def retain_handoff_uncertainty(root,request,error):
@@ -66,9 +75,12 @@ def io_service(root,cfg):
         request=next((p for p in requests if p.name not in seen),None)
         if request is None:time.sleep(.005);continue
         seen.add(request.name);r=load(request);start=time.monotonic();reply=dict(sequence=r['sequence'],kind=r['kind'],call_start_wall_s=start,io_received_wall_s=start,operation=r['operation'],owner_submitted_wall_s=r['owner_submitted_wall_s'])
-        budget=OperationDeadline(r['operation'],time.monotonic)
+        budget=ServerAwareDeadline(r['operation'],time.monotonic,root)
         try:
+            if (root/'server_exited.json').exists():raise RuntimeError('ServerExited_NoFurtherRPC')
             budget.remaining();kind=r['kind'];args=r.get('args',{})
+            if (root/'shutdown_request.json').exists() and kind!='cleanup' and args.get('command',{}).get('source')!='FaultBrake':
+                raise RuntimeError('TerminalNoOrdinaryOperation')
             if owner is not None:owner.budget=budget
             if kind=='setup':
                 owner=DeadlineOwner(root,cfg,budget);owner.setup()
@@ -209,6 +221,12 @@ def test_worker(root,cfg):
 
 
 def watchdog(root,cfg):
+    if (root/'server_exited.json').exists():
+        state=load(root/'owner_state.json') or {}
+        fault=first_fault(root,'ServerExited','watchdog',state,last_snapshot(root))
+        atomic(root/'watchdog_fault.json',fault)
+        atomic(root/'fault_brake.json',dict(reason=fault['reason'],status='CommandNotDelivered_ServerExited',server_processed=False,physics_confirmed=False,handoff_uncertain=bool(state.get('operation'))))
+        return
     import carla
     c=config();client=carla.Client('127.0.0.1',c['port']);client.set_timeout(.2)
     versions=[client.get_client_version(),client.get_server_version()]
@@ -218,10 +236,15 @@ def watchdog(root,cfg):
     while not (root/'logic_watchdog_stop').exists():
         state=load(root/'owner_state.json');now=time.monotonic()
         if not state:time.sleep(.02);continue
-        reason=supervision_reason(state,now,(root/'EMERGENCY_STOP').exists())
+        dead=(root/'server_exited.json').exists()
+        reason='ServerExited' if dead else supervision_reason(state,now,(root/'EMERGENCY_STOP').exists())
         if reason and latched is None:
-            latched=dict(reason=reason,wall_s=now,phase=state['phase'],task=state.get('task'),owner_wall_s=state['owner_wall_s'],epoch=state['epoch']+1,active_target=state.get('active_target'),failed_operation=state.get('failed_operation') or (load(root/'io_handoff_uncertain.json') or {}).get('operation'))
+            latched=first_fault(root,reason,'watchdog',state,last_snapshot(root),now)
+            reason=latched['reason']
             atomic(root/'watchdog_fault.json',latched)
+            if dead:
+                atomic(root/'fault_brake.json',dict(reason=reason,status='CommandNotDelivered_ServerExited',server_processed=False,physics_confirmed=False,submission_wall_s=None,return_wall_s=now,handoff_uncertain=bool(state.get('handoff_uncertain') or state.get('operation'))))
+                continue
             # No cross-RPC lock. Wait only for an already submitted normal batch's
             # bounded processing response; never assume a timeout cancels it.
             operation=state.get('operation');uncertain,failed_operation=uncertainty(state,load(root/'io_handoff_uncertain.json'))
@@ -237,6 +260,7 @@ def watchdog(root,cfg):
             result['operation']=dict(sequence='fault:'+str(latched['epoch']),kind='fault_control',started=result['submission_wall_s'],deadline=result['submission_wall_s']+.2)
             safety_budget=OperationDeadline(result['operation'],time.monotonic)
             try:
+                if (root/'server_exited.json').exists():raise RuntimeError('ServerExited_NoFaultRPC')
                 # One bounded safety attempt even if ordinary ordering is unknown;
                 # no physical continuation is admitted in that case.
                 result.update(batch_control(client,state['ego_id'],STOP,safety_budget))

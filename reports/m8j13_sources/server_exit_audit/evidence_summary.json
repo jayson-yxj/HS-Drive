@@ -1,0 +1,73 @@
+{
+  "status": "OfflineEvidenceReview_UnknownCrashCause",
+  "baseline": "96b2bfbddb677366950923c779c20ca4a3811382",
+  "historical_run_commit": "54b75740ce25b5c265693f62fcce30c193239092",
+  "run_id": "logic_shadow_recheck_20261107",
+  "confirmed": [
+    "Server log explicitly reports Signal11/SIGSEGV",
+    "Initialization third tick submitted, two snapshots confirmed",
+    "No model task/forward/PID/consumption",
+    "Immediate supervisor termination and repeated owner ServerExited exceptions can prevent child finals"
+  ],
+  "candidate_causes": [],
+  "cause_limit": "No matched stack/core or engine PID; no evidence discriminates engine, render, driver or load causes",
+  "historical_old_crash": {
+    "process_id": 799952,
+    "binary_directory": "CARLA_0.9.15",
+    "quality": "Low",
+    "rpc_port": 2000,
+    "version": "UE4 4.26.2",
+    "disposition": "Excluded: wrong binary/config; October19 attribution from historical context, embedded timestamp absent; mtime not identity"
+  },
+  "search_scope": [
+    "Actual ubuntu account home resolved at inspection",
+    "~/.config/Epic/CarlaUE4/Saved",
+    "~/.local/share/CarlaUE4/Saved",
+    "0.9.16 installation Saved",
+    "/var/crash",
+    "/var/lib/systemd/coredump",
+    "readable dmesg and kernel journal",
+    "core_pattern/apport availability"
+  ],
+  "kernel": {
+    "dmesg_readable": true,
+    "nvrm_xid_records": 6,
+    "matching_pid_or_window_proven": false,
+    "last_kernel_numeric_timestamp": 16840686.643599,
+    "journal": "No journal files",
+    "cgroup_memory_events": "oom0/oom_kill0 current snapshot; no historical causal proof",
+    "core_pattern": "apport pipe; handler absent at inspection",
+    "coredumpctl": "NotInstalled"
+  },
+  "historical_directory_read_only_verified": true,
+  "historical_manifest_sha256": "ac74b14ae43c6d86aa46ef0653ed3ff26c6b39007452933e60aeac61d5331fa7",
+  "raw_hashes": {
+    "server.log": "660860b02ff1b4c2ae83166bf857a3e5461ec03f4a4df15ca0189504d3351176",
+    "server_exited.json": "b8edde68a225b141f1faee6f46beebbc615469232b3388ef43dedb318a054db3",
+    "owner_state.json": "c23877024461736a1b76d9c070f2e8837a7b2f901c331340bddddf07e593b3fc",
+    "supervisor.json": "af7d54c86006fddfc6001249ac0e2fa3d6c406cbef8c8d675065de6e23969da7",
+    "model_ready.json": "4f7005d2493c0b0e13d4b1def0cbaeb2a7bd4336cce1ee0eacf8a645edc9e2c4",
+    "tick_requests.jsonl": "84340cf8844e63998b861ae7f77bff51d3c7421d2d9d78dbfff8a64af7a4e045",
+    "io_consumption.jsonl": "e70d19c34d9331730612ffa205be7a525a4948850ccdc4b5ede45a1b28cfef07"
+  },
+  "budget": {
+    "new_carla_starts": 0,
+    "new_model_loads": 0,
+    "new_forwards": 0,
+    "new_real_pid": 0,
+    "new_model_controls": 0,
+    "new_training": 0,
+    "old_reservation_preserved": 800
+  },
+  "bounded_dump_search": {
+    "scopes": [
+      "0.9.16 package depth3",
+      "tmp depth2",
+      "launch home depth2"
+    ],
+    "directory_cap": 1000,
+    "visited": 349,
+    "candidate_count": 1,
+    "candidate_disposition": "Only click/core.py source matched broad filename filter; not a dump"
+  }
+}

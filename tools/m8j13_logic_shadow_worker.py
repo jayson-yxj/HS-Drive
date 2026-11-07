@@ -13,6 +13,7 @@ from tools.m8j12_replay import memory,plain,finite
 from tools.m8j13_preprocess import OfficialPreprocessor
 from tools.m8j13_logic_shadow_diagnostics import transported_pid
 from tools.m8j13_common import config,atomic,write,append
+from tools.m8j13_logic_shutdown import final_model_record
 from datasets.m8j12_contract import CAMERAS,assert_observation,official_camera_contract,planning_to_hs,DryRunController
 from simulator.m8j13_logic_shadow_budget import validate_shadow_budget
 from simulator.m8j13_safety import validate_trajectory
@@ -25,6 +26,7 @@ def main():
     ledger=root/'forward_attempts.jsonl';pid_ledger=root/'pid_attempts.jsonl'
     try:
         validate_shadow_budget(cfg)
+        atomic(root/'model_progress.json',dict(stage='loading',attempts=0,successful_forwards=0,pid_calls=0,wall_s=time.monotonic()))
         if cfg['shadow_protocol']!=PROTOCOL:raise ValueError('ExplicitLogicalShadowOnly')
         loading=time.monotonic();torch.manual_seed(c['seed']);np.random.seed(c['seed'])
         torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cudnn.allow_tf32=False;torch.backends.cudnn.benchmark=False
@@ -40,6 +42,7 @@ def main():
             path=next((p for p in requests if p.name not in seen),None)
             if path is None:time.sleep(.002);continue
             prediction=None;control=None;transport=None;trajectory=None;times={}
+            if (root/'model_stop').exists():break
             received=time.monotonic();packet=json.loads(path.read_text());seen.add(path.name)
             if set(packet)!={'task','row'}:raise ValueError('ShadowTaskPayloadKeys')
             t=packet['task'];row=packet['row'];times=dict(worker_received=received)
@@ -59,11 +62,14 @@ def main():
             if previous is None and (before['cached'] or before['history_timestamp'] is not None):raise ValueError('MemoryNotReset')
             if before['history_timestamp'] is not None and any(x>=row['timestamp_s'] for x in before['history_timestamp']):raise ValueError('FutureMemory')
             if attempts>=24:raise ValueError('ForwardBudgetExhausted')
+            if (root/'model_stop').exists():break
             task_valid(t,time.monotonic(),t['frozen']);attempts+=1
             append(ledger,dict(attempt=attempts,sequence=t['sequence'],frame=t['frame'],timestamp=row['timestamp_s'],wall_s=time.monotonic()))
+            atomic(root/'model_progress.json',dict(stage='forward_in_flight',attempts=attempts,successful_forwards=success,pid_calls=pid_calls,task_sequence=t['sequence'],wall_s=time.monotonic()))
             torch.cuda.reset_peak_memory_stats();times['forward_start']=time.monotonic()
             with torch.no_grad():prediction=model(**batch)[0]['img_bbox']
             torch.cuda.synchronize();times['forward_done']=time.monotonic();success+=1
+            if (root/'model_stop').exists():break
             validation_start=times['forward_done'];validation_deadline=min(validation_start+.1,t['deadline_wall_s'],t['input_wall_s']+4.,t['run_deadline'])
             if not finite(prediction):raise ValueError('NonfiniteNativeOutput')
             trajectory,meta=planning_to_hs(prediction,row['timestamp_s']);times['hs_done']=time.monotonic()
@@ -99,8 +105,6 @@ def main():
             atomic(root/'failed_diagnostic.json',dict(error=error,times=locals().get('times'),task=locals().get('t'),control=plain(locals().get('control')),transport=locals().get('transport'),memory=None if model is None else memory(model)))
         except Exception as archive_error:atomic(root/'archive_error.json',dict(error=repr(archive_error)))
     finally:
-        unchanged=None
-        if model is not None and baseline is not None:unchanged=state_digest(model)==baseline
-        atomic(root/'model_final.json',dict(attempts=attempts,successful_forwards=success,completed=completed,pid_calls=pid_calls,fixed_state_unchanged=unchanged,model_controls=0,training=0,optimizer_steps=0,final_memory=None if model is None else memory(model)))
+        final_model_record(root,dict(attempts=attempts,successful_forwards=success,completed=completed,pid_calls=pid_calls),model,baseline,state_digest,memory)
 
 if __name__=='__main__':main()
