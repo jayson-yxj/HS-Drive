@@ -143,3 +143,125 @@ def test_failed_runtime_status_alone_does_not_establish_pass(tmp_path):
     r=audit(root)
     assert r['status']=='Partial' and r['counts']['owner_complete_timely']==9
     assert r['counts']['unreached_targets']==15 and not r['S0_review_ready']
+
+
+def test_fault_brake_late_success_cannot_admit_terminal_hold(tmp_path):
+    root=synthetic_run(tmp_path)
+    brake=json.loads((root/'fault_brake.json').read_text())
+    brake['return_wall_s']=brake['submission_wall_s']+.3
+    dump(root/'fault_brake.json',brake)
+    rows=[json.loads(x) for x in (root/'snapshots.jsonl').read_text().splitlines()]
+    for s in rows:
+        if s['phase']=='fault_stop':
+            s['input_wall_s']+=.4;s['tick_end_wall_s']+=.4
+    stream(root/'snapshots.jsonl',rows)
+    r=audit(root)
+    assert r['status']=='Partial' and not r['termination']['terminal_hold_verified']
+
+
+def test_terminal_hold_requires_consecutive_observed_ticks(tmp_path):
+    root=synthetic_run(tmp_path)
+    rows=[json.loads(x) for x in (root/'snapshots.jsonl').read_text().splitlines()]
+    terminal=[s for s in rows if s['phase']=='fault_stop']
+    stream(root/'snapshots.jsonl',[s for s in rows if s['phase']!='fault_stop']+[terminal[0],terminal[-1]])
+    r=audit(root)
+    assert r['status']=='Partial' and not r['termination']['terminal_hold_verified']
+
+
+def test_missing_stationary_feedback_cannot_pass_vacuous_all(tmp_path):
+    root=synthetic_run(tmp_path)
+    rows=[json.loads(x) for x in (root/'snapshots.jsonl').read_text().splitlines()]
+    stream(root/'snapshots.jsonl',[s for s in rows if s['phase']!='stationary'])
+    assert audit(root)['status']=='Partial'
+
+
+def test_one_missing_measurement_tick_prevents_complete_acceptance(tmp_path):
+    root=synthetic_run(tmp_path)
+    rows=[json.loads(x) for x in (root/'snapshots.jsonl').read_text().splitlines()]
+    rows.remove(next(s for s in rows if s['phase']=='stationary'))
+    stream(root/'snapshots.jsonl',rows)
+    result=audit(root)
+    assert result['status']=='Partial' and 'MeasurementSnapshotCoverage' in result['failed_checks']
+
+
+def test_rpc_timeline_after_owner_consumption_cannot_pass(tmp_path):
+    root=synthetic_run(tmp_path)
+    rows=[json.loads(x) for x in (root/'io_consumption.jsonl').read_text().splitlines()]
+    control=next(x for x in rows if x['operation']['kind']=='control')
+    control['reply']['rpc_start_wall_s']=control['operation']['deadline']+1
+    control['reply']['rpc_return_wall_s']=control['operation']['deadline']+2
+    stream(root/'io_consumption.jsonl',rows)
+    assert audit(root)['status']=='Partial'
+
+
+def test_missing_model_final_does_not_invent_forward_failure(tmp_path):
+    root=synthetic_run(tmp_path,n=1,hold=0,normal=False)
+    (root/'model_final.json').unlink()
+    r=audit(root)
+    assert r['counts']['forward_attempts']==1
+    assert r['counts']['forward_success'] is None and r['counts']['forward_failed'] is None
+    assert r['counts']['forward_success_count_source'].startswith('Unknown:')
+
+
+def test_zero_forward_count_names_actual_missing_final_evidence(tmp_path):
+    root=synthetic_run(tmp_path,n=0,hold=0,normal=False)
+    (root/'model_final.json').unlink()
+    r=audit(root)
+    assert r['counts']['forward_success']==r['counts']['forward_failed']==0
+    assert r['counts']['forward_success_count_source'].startswith('No published model task')
+
+
+def test_unconsumed_tick_retains_operation_identity(tmp_path):
+    root=synthetic_run(tmp_path)
+    rows=[json.loads(x) for x in (root/'io_consumption.jsonl').read_text().splitlines()]
+    last=rows.pop();assert last['operation']['kind']=='tick'
+    stream(root/'io_consumption.jsonl',rows)
+    r=audit(root);sequence=last['operation']['sequence']
+    assert r['status']=='Partial'
+    assert r['unmatched_records']['io_requests_without_owner_consumption']==[sequence]
+    failure=r['deadline']['failed_operations'][0]
+    assert failure['sequence']==sequence and failure['kind']=='tick'
+    assert failure['response_recorded'] and not failure['owner_consumed']
+    assert failure['whole_operation_ms'] is None
+    assert not r['termination']['terminal_hold_verified']
+
+
+def planned_return_fixture(root,late):
+    rows=[json.loads(x) for x in (root/'io_consumption.jsonl').read_text().splitlines()]
+    c=next(x for x in rows if x['operation']['kind']=='control');o=c['operation']
+    o.update(operation_limit_s=.5,deadline=o['started']+.5,phase_deadline=o['started']+.5)
+    c['reply']['operation']=copy.deepcopy(o)
+    q=json.loads((root/'io_requests'/f"{o['sequence']:06}.json").read_text());q['operation']=copy.deepcopy(o)
+    proof=dict(phase='FiniteExecution',phase_started=o['started'],phase_deadline=o['phase_deadline'])
+    q['args']['parked_handoff']=proof
+    dump(root/'io_requests'/f"{o['sequence']:06}.json",q)
+    stream(root/'io_consumption.jsonl',rows)
+    publication=c['owner_consumed_wall_s']-.00005
+    stream(root/'io_publications.jsonl',[dict(sequence=o['sequence'],publication_done_wall_s=publication)])
+    returned=o['started']+(.501 if late else .3)
+    stream(root/'planned_handoff_returns.jsonl',[dict(operation_sequence=o['sequence'],source=q['args']['command']['source'],owner_return_wall_s=returned,passed=True,phase_started=proof['phase_started'],phase_deadline=proof['phase_deadline'])])
+    return o,returned,publication
+
+
+def test_final_planned_return_after_deadline_rejects_timely_io(tmp_path):
+    root=synthetic_run(tmp_path);operation,returned,_=planned_return_fixture(root,late=True)
+    r=audit(root)
+    assert r['status']=='Partial' and r['handoffs']['failed']==1
+    failure=r['deadline']['failed_operations'][0]
+    assert failure['sequence']==operation['sequence'] and failure['final_owner_return_recorded']
+    assert failure['whole_operation_ms']==pytest.approx(501)
+    assert failure['owner_after_deadline_ms']==pytest.approx(1)
+    assert not r['termination']['terminal_hold_verified']
+
+
+def test_planned_handoff_exports_endpoints_and_final_return_duration(tmp_path):
+    root=synthetic_run(tmp_path);operation,returned,publication=planned_return_fixture(root,late=False)
+    r=audit(root)
+    assert r['status']=='Passed_FiniteParkedLogicalShadowOnly'
+    assert r['handoffs']['over_200_through_500ms']==1
+    record=r['handoffs']['records'][0]
+    assert record['whole_operation_ms']==pytest.approx(300)
+    assert record['timing_endpoints']['owner_return_wall_s']==returned
+    assert record['timing_endpoints']['publication_done_wall_s']==publication
+    assert record['timing_endpoints']['effective_deadline_wall_s']==operation['deadline']
+    assert r['handoffs']['endpoint_from_submit_ms']['owner_return_wall_s']['p50']==pytest.approx(300)

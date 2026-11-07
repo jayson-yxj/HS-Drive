@@ -149,3 +149,53 @@ def test_same_stage_reentry_keeps_first_start_and_absolute_deadline(tmp_path,mon
     r,c=setup_runtime(tmp_path,monkeypatch);c.sleep(.1)
     r.phase('ConfirmedFrozenWorld',101.)
     assert r.state['phase_started']==100. and r.state['phase_deadline']==100.5
+
+
+def test_owner_final_processing_cannot_return_late_success(tmp_path,monkeypatch):
+    r,c=setup_runtime(tmp_path,monkeypatch);delayed_response(r,c,monkeypatch,.3)
+    confirm=r.guard.confirm
+    def slow_confirm(*args):
+        confirm(*args);c.sleep(.21)
+    monkeypatch.setattr(r.guard,'confirm',slow_confirm)
+    with pytest.raises(TimeoutError,match='DeadlineAtReturn'):r.planned_issue('PlannedHoldBrake')
+    assert r.guard.uncertain and r.failed_operation['kind']=='control'
+    record=json.loads((tmp_path/'planned_handoff_returns.jsonl').read_text())
+    assert not record['passed'] and record['owner_return_wall_s']>100.5
+
+
+def test_watchdog_refreshes_owner_uncertainty_after_independent_brake(tmp_path,monkeypatch):
+    import sys
+    from types import SimpleNamespace as S
+    from tools import m8j13_logic_services as svc
+    from tools.m8j13_common import atomic
+    r,c=setup_runtime(tmp_path,monkeypatch)
+    r.state['fault']='FirstControlFault';r.pump()
+    client=S(set_timeout=lambda x:None,get_client_version=lambda:'0.9.16',get_server_version=lambda:'0.9.16')
+    monkeypatch.setitem(sys.modules,'carla',S(Client=lambda *a:client,libcarla=S(__file__='fake-client')))
+    def brake(client,actor,control,budget):
+        assert budget.operation['deadline']-budget.operation['started']==pytest.approx(.2)
+        state=json.loads((tmp_path/'owner_state.json').read_text())
+        state.update(handoff_uncertain=True,failed_operation=dict(sequence=10,kind='control'))
+        atomic(tmp_path/'owner_state.json',state);(tmp_path/'logic_watchdog_stop').touch()
+        return dict(server_processed=True)
+    monkeypatch.setattr(svc,'batch_control',brake);svc.watchdog(tmp_path,CFG)
+    result=json.loads((tmp_path/'fault_brake.json').read_text())
+    assert result['server_processed'] and result['handoff_uncertain'] and not result['ordinary_handoff_confirmed']
+    assert result['failed_operation']['sequence']==10
+    assert json.loads((tmp_path/'watchdog_fault.json').read_text())['reason']=='FirstControlFault'
+
+
+def test_persistent_io_failure_atomic_publication_preserves_first(tmp_path,monkeypatch):
+    from tools import m8j13_logic_services as svc
+    real_atomic=svc.atomic;published=[]
+    def observe_atomic(path,value):
+        assert not path.exists()
+        real_atomic(path,value)
+        published.append(svc.load(path))
+    monkeypatch.setattr(svc,'atomic',observe_atomic)
+    monkeypatch.setattr(svc,'write',lambda *a:pytest.fail('shared marker must be atomic'))
+    first=dict(operation=dict(sequence=10,kind='control'),args=dict(command=dict(source='PlannedHoldBrake',control=STOP)))
+    svc.retain_handoff_uncertainty(tmp_path,first,'OriginalFailure')
+    svc.retain_handoff_uncertainty(tmp_path,dict(first,operation=dict(sequence=11)),'LaterFailure')
+    assert len(published)==1 and published[0]['operation']['sequence']==10
+    assert published[0]['error']=='OriginalFailure' and not published[0]['remote_order_confirmed']

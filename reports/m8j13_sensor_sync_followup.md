@@ -697,3 +697,49 @@ owner、I/O及watchdog共享同一不可续期的操作身份和绝对monotonic�
 下一步先根据这次hold RPC具体分段审查交接可靠性和绝对期限处理，避免无证据放宽0.2秒；同时修正下一轮预检与联机PID额度安排。另行授权固定复验，补齐24目标和终止保持后再考虑S0准入审查。四类先前移动故障证据继续有效，但不能替代本轮未完成的真实模型接线整体验收。J13-A继续Partial，无影子整轮Passed、实时通过或驾驶安全结论。
 
 见[结果](m8j13_sources/logic_shadow/run_summary.json)、[分项验收](m8j13_sources/logic_shadow/acceptance.json)、[原始核验摘要](m8j13_sources/logic_shadow/verification.json)、[启动前检查](m8j13_sources/logic_shadow/preflight.json)。详细逐帧、时序、控制和原始预测留私有目录。
+
+## 静止交接期限与预算修订固定复验（2026-11-07，Partial）
+
+本轮固定24目标复验未进入测量：**模型加载一次后，CARLA在初始化第3次Tick期间发生Signal 11段错误退出；采集目标、完整前向、联机PID及owner模型消费均为0，终止保持未验证。** 唯一启动已使用，没有重试、补样本、追加启动或移动故障复跑。J13-A继续Partial，不具备S0准入审查条件。
+
+### 修订、冻结与证据边界
+
+核对基线 `a3670968c0bc101f29495f0ae8df0b034cdb95fa`，复用 `feat/sparsedrivev2-carla-closed-loop-public`。冻结运行源码为 **`54b75740ce25b5c265693f62fcce30c193239092`**，配置为 [m8j13_logic_shadow_recheck.json](../configs/m8j13_logic_shadow_recheck.json)，SHA256 `83024132568844cb27840b791d34fa2a703b13f3016558a6f8407e3067aa934f`。run_id为 `logic_shadow_recheck_20261107`，私有根目录 `/root/gpufree-data/hs-drive-private/m8j13-logic-shadow-recheck-20261107/logic_shadow_recheck_20261107`；旧目录、旧账本和旧配置不改。
+
+协议第14节新增显式静止例外：只有已确认完整STOP、速度模长≤0.1m/s、世界冻结、同身份且无在途/不确定交接/锁定时，PlannedHoldBrake与模型完成后的停车恢复可用0.5秒。ConfirmedFrozenWorld总阶段共用0.5秒，恢复交接受FiniteExecution原1秒及其他更早截止约束。初始/故障制动仍0.2秒，其余任务、采集、心跳、年龄期限不变。0.5秒是设计上限，没有服务器响应保证；本轮没有获得任何该例外的联机样本。
+
+PID预算预检在模型加载前核验24目标/24前向/24联机PID一致，复用旧真实PID预检证据，本轮额外真实PID预检和完整模型回放均0。交接不确定性独立持久记录，远端顺序未确认不能靠普通调用返回、队列清空或FaultBrake服务端确认解除。当前目标与上一完成任务分开，保留首故障/操作身份。
+
+**启动前相关163项无服务器测试在HS及匹配0.9.16客户端环境分别通过。** 启动后审阅又补严了最终owner处理截止、watchdog制动返回时共享不确定性复读、故障制动最终返回期限，以及跨进程不确定标记的原子发布；这些修改只做了无服务器验证，未用于已结束的实测，不追溯算作冻结版本的联机证据。报告器补齐真实事件推导、缺记录/零前向、未消费操作、连续终止保持、测量Snapshot完整性和各端点顺序核查。最终157项runtime/预算相关检查加19项报告检查，共**176项独立测试通过；匹配客户端环境重复同样176项通过**。数量不与历史测试相加。开发期间5项初始报告schema/证据测试、随后4项新增假阳性反例的失败均保留为开发发现，最终修复；未新增模型、真实PID或CARLA测试。
+
+### 唯一实测及停止原因
+
+模型一次加载成功，加载约4.363秒，FP32/eval/frozen、初始记忆为空、独立网络namespace已记录；模型未收到任务。CARLA客户端/服务器均0.9.16。setup约16.134秒成功，8个传感器与自车已创建，settings应用前后frame差4按启动30Tick保守计费。初始独立STOP交接完整操作约**7.385ms**、实际batch RPC约**0.519ms**，未超过旧200ms。
+
+初始化前两次Tick整体约7.302ms、67.423ms，有匹配STOP反馈；速度模长约0.49及0.98m/s来自落地，前向速度为0，不能算静止门禁或移动起步证据。第3次Tick（IO操作sequence5、预期frame36）已提交但无响应和owner消费。server.log明确出现 `Signal 11 caught.`、`CommonUnixCrashHandler: Signal=11`、`Segmentation fault (core dumped)`；supervisor记录首个终止原因 **ServerExited**。这不是已记录的模型前向失败，也不是本轮计划交接超时。第3次Tick远端推进状态未知，不能补造Snapshot或判定未执行。
+
+本轮只能确认CARLA进程崩溃，尚不能确定渲染、引擎、驱动或联合负载的因果关系；日志中render fence设置和材质警告不等于根因。此前第10组hold RPC约196ms/整体约200ms的迟缓根因仍未知，本次初始化崩溃不解释它。
+
+|本轮项目|结果与分母|
+|---|---|
+|固定目标/采集/前向/必要检查/owner完整及时消费|均0/24|
+|联机原PID诊断/真实PID预检|0/24、0|
+|两类0.5秒计划交接|均0次；≤200ms、200–500ms、失败计数均0，含义为未测试|
+|初始独立STOP交接|1次，约7.385ms，旧200ms内|
+|旧实时旁路/新逻辑样本|均0样本，不能判通过或计算成功率|
+|模型控制/训练/optimizer.step/原驾驶额度消耗|均0|
+|终止后真实1秒仿真保持|未执行、未验证|
+
+本轮无首帧或后续模型端到端样本，各P50/P95/最大值留空。不能把0样本写成延迟0或以旧9次补足。只有启动期两个Snapshot，不发布“正式测量始终静止”或“全程无碰撞”的完整结论。
+
+### 清理、账本和仍缺证据
+
+supervisor沿原有退出路径停止owner、模型及服务器组，记录3组均空，2300–2302均释放；运行后只读进程/端口检查一致。**没有 `result.json`、`model_final.json` 或 `cleanup_steps.json`**：逐监听停止、逐Actor销毁、settings恢复读回、模型正常退出及最终内存参数摘要均未确认。不能以进程消失替代逐资源验收，也不能宣称完成了真实制动或停车保持。原始目录保留这些缺口，不补写运行器终账。后续只读资产哈希与运行前相同，只证明磁盘资产未变，不替代模型最终内存校验。迟到Tick清理仍仅有无服务器证据。
+
+预算分开报告：**1/1模型加载、1/1 CARLA启动；3次显式Tick尝试，2次确认，1次未确认；可枚举3+30 settings=33。原supervisor在缺owner终账时已保守扣除整份800/800，账本原样保留，不改为33，不释放余量，不补跑。** 完整前向、PID、owner模型消费、模型控制、训练均0。零模型计数来自“已就绪但没有发布任务、没有前向/PID/通知/诊断记录及仅STOP执行请求”的交叉证据，不伪称来自缺失的model_final。
+
+旧运行重新按新报告器审计仍为：10次采集、9次前向/必要检查/owner消费；旧实时0/9、PID9联机+1预检=10；第10组hold失败、交接不明、终止保持未验证、137Tick扣账。旧失败和历史结论不追认、不覆盖。
+
+下一步应先对现有崩溃日志和服务器退出收尾路径做有界离线排查，再单独安排后续复验。当前没有S0准入审查资格。即使未来完整静止24组通过，也不覆盖移动路径运输、移动状态模型/PID输出、实际模型控制、移动交接可靠性或实时驾驶；先前四类移动故障只按原接口与期限引用。
+
+交付证据：[验收](m8j13_sources/logic_shadow_recheck/acceptance.json)、[事件汇总](m8j13_sources/logic_shadow_recheck/run_summary.json)、[源码/配置/日志哈希及验证](m8j13_sources/logic_shadow_recheck/verification.json)、[命令与环境](m8j13_sources/logic_shadow_recheck/commands.json)、[旧运行复算](m8j13_sources/logic_shadow_recheck/historical_reaudit.json)。公开仅代码、配置和汇总证据；原图、逐帧输入、预测和权重不公开。沿同一功能分支正常提交推送，main不更新，远程分支不删除。

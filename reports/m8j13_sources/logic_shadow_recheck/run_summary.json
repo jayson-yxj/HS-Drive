@@ -1,0 +1,338 @@
+{
+  "status": "Partial",
+  "protocol": "synchronous_logic_v1_parked_shadow",
+  "J13_A": "Partial",
+  "run_commit": "54b75740ce25b5c265693f62fcce30c193239092",
+  "config_sha256": "83024132568844cb27840b791d34fa2a703b13f3016558a6f8407e3067aa934f",
+  "run_id": "logic_shadow_recheck_20261107",
+  "counts": {
+    "planned_targets": 24,
+    "collected": 0,
+    "submitted": 0,
+    "not_submitted_after_collection": 0,
+    "unreached_targets": 24,
+    "forward_attempts": 0,
+    "forward_success": 0,
+    "forward_failed": 0,
+    "forward_success_count_source": "No published model task and no forward/PID/diagnostic/completion evidence; model ready observed",
+    "published": 0,
+    "necessary_output_pid_checks": 0,
+    "owner_complete_timely": 0,
+    "old_realtime_passed": 0,
+    "model_controls": 0,
+    "pid_live": 0,
+    "pid_preflight": 0,
+    "pid_total": 0,
+    "published_notifications": 0,
+    "owner_consumptions_recorded": 0
+  },
+  "audit_errors": [
+    "RequiredEvidence:result.json",
+    "RequiredEvidence:model_final.json",
+    "RequiredEvidence:cleanup_steps.json",
+    "Stationary",
+    "MeasurementSnapshotCoverage",
+    "InitializationAdmission",
+    "FixedHandoffCounts"
+  ],
+  "failed_checks": [
+    "RequiredEvidence:result.json",
+    "RequiredEvidence:model_final.json",
+    "RequiredEvidence:cleanup_steps.json",
+    "Stationary",
+    "MeasurementSnapshotCoverage",
+    "InitializationAdmission",
+    "FixedHandoffCounts"
+  ],
+  "evidence_errors": [
+    {
+      "file": "result.json",
+      "error": "MissingEvidence"
+    },
+    {
+      "file": "model_final.json",
+      "error": "MissingEvidence"
+    },
+    {
+      "file": "cleanup_steps.json",
+      "error": "MissingEvidence"
+    }
+  ],
+  "unmatched_records": {
+    "forward_attempts": [],
+    "io_requests_without_owner_consumption": [
+      5
+    ]
+  },
+  "handoff": {
+    "count": 1,
+    "failed": 0,
+    "over_200_through_500ms": 0
+  },
+  "deadline": {
+    "logic_complete_samples": 0,
+    "old_realtime_wall_expired": 0,
+    "sim_age_s": null,
+    "whole_run_acceptance": false,
+    "first_fault": "ServerExited",
+    "active_target": null,
+    "failed_operation": {
+      "sequence": 5,
+      "kind": "tick",
+      "started": 16841112.137693398,
+      "deadline": 16841114.137693398,
+      "operation_limit_s": 2.0,
+      "phase_deadline": 16841125.74298521,
+      "run_deadline": 16841335.611726634
+    },
+    "failed_operations": [
+      {
+        "sequence": 5,
+        "operation": {
+          "sequence": 5,
+          "kind": "tick",
+          "started": 16841112.137693398,
+          "deadline": 16841114.137693398,
+          "operation_limit_s": 2.0,
+          "phase_deadline": 16841125.74298521,
+          "run_deadline": 16841335.611726634
+        },
+        "kind": "tick",
+        "source": "InitialProtectionBrake",
+        "operation_limit_s": 2.0,
+        "effective_deadline_wall_s": 16841114.137693398,
+        "whole_operation_ms": null,
+        "io_queue_ms": null,
+        "rpc_ms": null,
+        "owner_after_deadline_ms": null,
+        "error": "OwnerConsumptionUnconfirmed",
+        "server_processing_confirmed": false,
+        "owner_consumed": false,
+        "final_owner_return_recorded": false,
+        "passed": false,
+        "response_recorded": false
+      }
+    ]
+  },
+  "handoffs": {
+    "count": 0,
+    "within_200ms": 0,
+    "over_200_through_500ms": 0,
+    "failed": 0,
+    "operation_ms": null,
+    "source_counts": {
+      "PlannedHoldBrake": 0,
+      "InitialProtectionBrake": 0
+    },
+    "endpoint_from_submit_ms": {},
+    "records": [],
+    "no_causal_claim_from_single_run": true
+  },
+  "timings": {
+    "six_camera_arrival_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    },
+    "six_camera_copy_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    },
+    "archive_before_submit_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    },
+    "freeze_confirmation_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    },
+    "submission_to_worker_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    },
+    "e2e_pid_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    },
+    "e2e_checks_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    },
+    "e2e_owner_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    },
+    "capture_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    },
+    "worker_read_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    },
+    "cpu_preprocess_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    },
+    "gpu_transfer_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    },
+    "forward_decode_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    },
+    "hs_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    },
+    "transport_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    },
+    "pid_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    },
+    "necessary_checks_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    },
+    "publish_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    },
+    "owner_after_publication_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    },
+    "task_to_consume_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    },
+    "validation_to_consume_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    },
+    "freeze_wait_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    },
+    "archive_ms": {
+      "first": null,
+      "following": null,
+      "all": null
+    }
+  },
+  "performance": {
+    "measurement_to_last_consume_wall_s": null,
+    "forward_frequency_over_same_window_hz": null,
+    "timely_completion_frequency_hz": null,
+    "measurement_tick_span_wall_s": null,
+    "measurement_physics_advance_s": 0.0,
+    "measurement_sim_to_wall_ratio": null,
+    "total_lifecycle_wall_s": 30.397243700921535,
+    "model_load_wall_s": 4.363474436104298,
+    "total_confirmed_freeze_wait_s": 0.0,
+    "gpu_peak_allocated": null,
+    "gpu_peak_reserved": null,
+    "small_sample": true
+  },
+  "initialization": {
+    "ticks": 2,
+    "maximum_operation_ms": 67.42289662361145
+  },
+  "output": {
+    "native_speed_range_mps": null,
+    "pid_target_speed_range_mps": null,
+    "full_throttle_count": 0,
+    "speed_horizon_exceeds_5mps_count": 0,
+    "memory_checked": 0,
+    "params_assets_unchanged": false,
+    "moving_transport_validation": false
+  },
+  "isolation": {
+    "model_controls": 0,
+    "zero_count_evidence": "No published model task, no forward/PID ledger, brake-only execution requests",
+    "measurement_max_speed_mps": null,
+    "initial_fall_separate": true,
+    "hold_physics_ticks": 0,
+    "collisions": 0
+  },
+  "termination": {
+    "normal": false,
+    "first_reason": "ServerExited",
+    "post_fault_ticks": 0,
+    "terminal_hold_sim_s": 0.0,
+    "terminal_hold_verified": false,
+    "fault_brake_server_processed": false,
+    "fault_brake_timely": false,
+    "ordinary_handoff_confirmed": false,
+    "handoff_uncertain": true,
+    "status": "HandoffUncertain"
+  },
+  "cleanup": {
+    "sensor_stops": 0,
+    "actor_destructions": 0,
+    "settings_restored": false,
+    "remaining_actors": null,
+    "subprocesses_and_ports": true,
+    "model_exited": false,
+    "shared_memory": "NotUsed",
+    "late_tick_rpc_cleanup": "NotTriggeredUnlessExplicitUnknownAdvance_PriorNoServerEvidence"
+  },
+  "budget": {
+    "starts": 1,
+    "max_starts": 1,
+    "model_starts": 1,
+    "active_ticks": 3,
+    "observed_ticks": 2,
+    "phase_ticks": {
+      "initialization": 3
+    },
+    "settings_charges": {
+      "settings_startup": 30
+    },
+    "charged_ticks": 800,
+    "charge_policy": "supervisor conservative whole reservation; owner final missing",
+    "enumerated_attempts_and_settings": 33,
+    "unconfirmed_tick_attempts": 1,
+    "max_ticks": 800,
+    "full_forward_attempts": 0,
+    "max_forwards": 24,
+    "pid_calls_total": 0,
+    "max_pid_calls": 24,
+    "training": 0,
+    "optimizer_steps": 0,
+    "model_controls": 0,
+    "driving_budget_consumed": 0
+  },
+  "S0_review_ready": false,
+  "S0_driving_authorized": false,
+  "limitations": [
+    "Finite parked evidence only; no moving handoff reliability or real-time claim",
+    "Old failures preserved",
+    "No retries"
+  ]
+}

@@ -19,6 +19,13 @@ from simulator.m8j13_logic_runtime import STOP,TargetCapture,supervision_reason,
 def load(path):return json.loads(path.read_text()) if path.exists() else None
 
 
+def retain_handoff_uncertainty(root,request,error):
+    """Single I/O writer publishes the first failure atomically for watchdog."""
+    path=root/'io_handoff_uncertain.json'
+    if not path.exists():
+        atomic(path,dict(operation=request['operation'],command=request['args']['command'],error=error,wall_s=time.monotonic(),remote_order_confirmed=False))
+
+
 def batch_control(client, ego_id, control, budget=None):
     import carla
     args=([carla.command.ApplyVehicleControl(ego_id,carla.VehicleControl(**control))],False)
@@ -169,8 +176,8 @@ def io_service(root,cfg):
         reply['call_end_wall_s']=time.monotonic()
         if reply['call_end_wall_s']>r['operation']['deadline']:
             reply['success']=False;reply.setdefault('error','OperationDeadlineAtPublication')
-        if r['kind']=='control' and not reply['success'] and not (root/'io_handoff_uncertain.json').exists():
-            write(root/'io_handoff_uncertain.json',dict(operation=r['operation'],command=r['args']['command'],error=reply.get('error'),wall_s=time.monotonic(),remote_order_confirmed=False))
+        if r['kind']=='control' and not reply['success']:
+            retain_handoff_uncertainty(root,r,reply.get('error'))
         reply['publication_started_wall_s']=time.monotonic()
         atomic(root/'io_responses'/request.name,reply)
         append(root/'io_publications.jsonl',dict(sequence=r['sequence'],publication_done_wall_s=time.monotonic()))
@@ -235,7 +242,16 @@ def watchdog(root,cfg):
                 result.update(batch_control(client,state['ego_id'],STOP,safety_budget))
                 result['status']='HandoffUncertain' if uncertain else 'ServerProcessed_PhysicsUnverified'
             except Exception as exc:result.update(status='ResponseUnverified',error=repr(exc),server_processed=False)
-            result['return_wall_s']=time.monotonic();atomic(root/'fault_brake.json',result)
+            # Owner may discover late consumption while this independent RPC runs.
+            # Refresh persistent ordering evidence; brake processing never clears it.
+            latest_uncertain,latest_failure=uncertainty(load(root/'owner_state.json') or {},load(root/'io_handoff_uncertain.json'))
+            uncertain=uncertain or latest_uncertain
+            result.update(handoff_uncertain=uncertain,ordinary_handoff_confirmed=not uncertain,failed_operation=failed_operation or latest_failure)
+            if uncertain and result.get('server_processed'):result['status']='HandoffUncertain'
+            result['return_wall_s']=time.monotonic()
+            if result['return_wall_s']>result['operation']['deadline']:
+                result.update(status='ResponseUnverified',error='FaultBrakeDeadlineAtReturn',server_processed=False)
+            atomic(root/'fault_brake.json',result)
         time.sleep(.02)
 
 

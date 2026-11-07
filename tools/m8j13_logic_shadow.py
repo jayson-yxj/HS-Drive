@@ -43,12 +43,17 @@ class ShadowRuntime(Runtime):
         try:
             r=self.call('control',dict(command=cmd,parked_handoff=proof),timeout=.5)
             self.guard.confirm(cmd,r.get('server_processed',False))
+            self.event('planned_handoff_confirmed',command_sequence=cmd['sequence'],source=source,operation_sequence=self.io_sequence,phase_started=proof['phase_started'],phase_deadline=proof['phase_deadline'])
+            returned=time.monotonic();operation=r['operation']
+            append(self.root/'planned_handoff_returns.jsonl',dict(operation_sequence=operation['sequence'],source=source,phase_started=proof['phase_started'],phase_deadline=proof['phase_deadline'],owner_return_wall_s=returned,passed=returned<=operation['deadline']))
+            if returned>operation['deadline']:
+                self.mark_handoff_uncertain(operation)
+                raise TimeoutError('PlannedHandoffDeadlineAtReturn')
         except BaseException:
             self.guard.uncertain=True
             if self.failed_operation is None:
                 self.failed_operation=dict(sequence=self.io_sequence,kind='control',source=source)
             self.pump();raise
-        self.event('planned_handoff_confirmed',command_sequence=cmd['sequence'],source=source,operation_sequence=self.io_sequence,phase_started=proof['phase_started'],phase_deadline=proof['phase_deadline'])
     def compute_shadow(self,capture):
         revision=parked_handoff_enabled(self.cfg)
         if revision:

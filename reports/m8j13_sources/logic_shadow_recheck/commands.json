@@ -1,0 +1,22 @@
+{
+  "run_command": "PYTHONPATH=/root/gpufree-data/hs-drive-private/m8j13-navigation-stop-20261101/python_deps:. /root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv-m6f-0916/bin/python -m tools.m8j13_logic_shadow --config configs/m8j13_logic_shadow_recheck.json",
+  "run_command_scope": "Already executed once at frozen run SHA; reproduction is not authorization to rerun",
+  "runtime_test_files": [
+    "tests/m8j13/test_parked_handoff.py",
+    "tests/m8j13/test_logic_deadlines.py",
+    "tests/m8j13/test_logic_faults.py",
+    "tests/m8j13/test_logic_runtime.py",
+    "tests/m8j13/test_logic_shadow.py",
+    "tests/m8j13/test_logic_shadow_budget.py"
+  ],
+  "report_test_files": [
+    "tests/m8j13/test_logic_shadow_report.py"
+  ],
+  "environments": [
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv-gpu/bin/python",
+    "/root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv-m6f-0916/bin/python"
+  ],
+  "test_invocation": "PYTHONPATH=<matching isolated dependencies> <python> -m pytest -q <listed test files>",
+  "audit": "PYTHONPATH=. /root/gpufree-data/hs-drive/HS-Drive_Server_Handoff_v1.0/.venv-gpu/bin/python -m tools.m8j13_logic_shadow_report --root /root/gpufree-data/hs-drive-private/m8j13-logic-shadow-recheck-20261107/logic_shadow_recheck_20261107 --out <new output file>",
+  "no_model_pid_or_carla_during_regression": true
+}

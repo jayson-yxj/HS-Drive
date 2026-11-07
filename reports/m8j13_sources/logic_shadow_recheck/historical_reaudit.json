@@ -1,0 +1,117 @@
+{
+  "status": "Partial",
+  "run_commit": "affa0d4c4f94b4dce59eda4ef4557e697d1c7469",
+  "run_id": "logic_shadow_20261107",
+  "counts": {
+    "planned_targets": 24,
+    "collected": 10,
+    "submitted": 9,
+    "not_submitted_after_collection": 1,
+    "unreached_targets": 14,
+    "forward_attempts": 9,
+    "forward_success": 9,
+    "forward_failed": 0,
+    "forward_success_count_source": "model_final counter; independently backed by output diagnostics when present",
+    "published": 9,
+    "necessary_output_pid_checks": 9,
+    "owner_complete_timely": 9,
+    "old_realtime_passed": 0,
+    "model_controls": 0,
+    "pid_live": 9,
+    "pid_preflight": 1,
+    "pid_total": 10,
+    "published_notifications": 9,
+    "owner_consumptions_recorded": 9
+  },
+  "audit_errors": [],
+  "deadline": {
+    "logic_complete_samples": 9,
+    "old_realtime_wall_expired": 9,
+    "sim_age_s": {
+      "n": 9,
+      "min": 0.10000000149011612,
+      "p50": 0.10000000149011612,
+      "p95": 0.10000000149011612,
+      "max": 0.10000000149011612
+    },
+    "whole_run_acceptance": false,
+    "first_fault": "IODeadline:control",
+    "active_target": null,
+    "failed_operation": {
+      "sequence": 136,
+      "kind": "control",
+      "started": 16838675.688763637,
+      "deadline": 16838675.88833116,
+      "operation_limit_s": 0.2,
+      "phase_deadline": 16838675.88833116,
+      "run_deadline": 16838890.926569596
+    },
+    "failed_operations": [
+      {
+        "sequence": 136,
+        "operation": {
+          "sequence": 136,
+          "kind": "control",
+          "started": 16838675.688763637,
+          "deadline": 16838675.88833116,
+          "operation_limit_s": 0.2,
+          "phase_deadline": 16838675.88833116,
+          "run_deadline": 16838890.926569596
+        },
+        "kind": "control",
+        "source": "PlannedHoldBrake",
+        "operation_limit_s": 0.2,
+        "effective_deadline_wall_s": 16838675.88833116,
+        "whole_operation_ms": 200.22396370768547,
+        "io_queue_ms": 2.5146156549453735,
+        "rpc_ms": 196.34663313627243,
+        "owner_after_deadline_ms": 0.6564408540725708,
+        "error": "RuntimeError('time-out of 196ms while waiting for the simulator, make sure the simulator is ready and connected to 127.0.0.1:2300')",
+        "server_processing_confirmed": false,
+        "owner_consumed": true,
+        "final_owner_return_recorded": false,
+        "passed": false
+      }
+    ]
+  },
+  "termination": {
+    "normal": false,
+    "first_reason": "IODeadline:control",
+    "post_fault_ticks": 0,
+    "terminal_hold_sim_s": 0.0,
+    "terminal_hold_verified": false,
+    "fault_brake_server_processed": true,
+    "fault_brake_timely": true,
+    "ordinary_handoff_confirmed": false,
+    "handoff_uncertain": true,
+    "status": "HandoffUncertain"
+  },
+  "budget": {
+    "starts": 1,
+    "max_starts": 1,
+    "model_starts": 1,
+    "active_ticks": 77,
+    "observed_ticks": 77,
+    "phase_ticks": {
+      "initialization": 38,
+      "stationary": 39
+    },
+    "settings_charges": {
+      "settings_startup": 30,
+      "settings_restore": 30
+    },
+    "charged_ticks": 137,
+    "charge_policy": "owner final accounting",
+    "enumerated_attempts_and_settings": 137,
+    "unconfirmed_tick_attempts": 0,
+    "max_ticks": 800,
+    "full_forward_attempts": 9,
+    "max_forwards": 24,
+    "pid_calls_total": 10,
+    "max_pid_calls": 24,
+    "training": 0,
+    "optimizer_steps": 0,
+    "model_controls": 0,
+    "driving_budget_consumed": 0
+  }
+}
