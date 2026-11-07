@@ -120,3 +120,34 @@ class CommandGuard:
         obs=cmd['observation']
         if obs and (next_sim>obs['sim_s']+.3+1e-6 or wall+.5>obs['input_wall_s']+4.):raise ValueError('OriginalCommandExpired')
         return cmd
+
+
+class OperationDeadline:
+    """One immutable absolute monotonic deadline, including queue and processing."""
+    def __init__(self, operation, clock):
+        self.operation=dict(operation);self.clock=clock
+    def remaining(self):
+        left=self.operation['deadline']-self.clock()
+        if not math.isfinite(left) or left<=0:raise TimeoutError('OperationDeadline:'+self.operation['kind'])
+        return left
+    def call(self, function, *args, client=None, timeout_argument=False, **kwargs):
+        left=self.remaining()
+        if client is not None:client.set_timeout(left)
+        if timeout_argument:kwargs['seconds']=self.remaining()
+        self.remaining()
+        value=function(*args,**kwargs)
+        self.remaining()
+        return value
+
+
+def operation_stamp(sequence, kind, now, limit, phase_deadline, run_deadline, extra_deadline=None):
+    deadlines=[now+limit,phase_deadline,run_deadline]
+    if extra_deadline is not None:deadlines.append(extra_deadline)
+    deadline=min(deadlines)
+    if deadline<=now:raise TimeoutError('OperationDeadlineBeforeSubmission:'+kind)
+    return dict(sequence=sequence,kind=kind,started=now,deadline=deadline,operation_limit_s=limit,
+                phase_deadline=phase_deadline,run_deadline=run_deadline)
+
+
+def initialization_due(last_actual_rpc_start, minimum_interval=.05):
+    return None if last_actual_rpc_start is None else last_actual_rpc_start+minimum_interval

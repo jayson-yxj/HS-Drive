@@ -1,0 +1,30 @@
+{
+  "base": "d71c892e5b49451a5b679b2fd3250065b09b61fd",
+  "tests_passed": 109,
+  "matching_client_runtime_tests": 45,
+  "previous_93_scope": "Relevant existing93 included; historical96 evidence retained",
+  "test_failures_retained": [
+    {
+      "run": "tests_first.log",
+      "passed": 105,
+      "failed": 1,
+      "reason": "Synthetic pacing test jumped clock0.8s without polling; corrected event simulation, production deadline unchanged"
+    }
+  ],
+  "fixed_configuration": "configs/m8j13_logic_init_recheck.json",
+  "config_sha256": "7966b14f518f1212f0ffa3027cfbbf3aa3bd18851898e628d25eac1d585a585d",
+  "unchanged_files": [
+    "configs/m8j13_protocol.json",
+    "configs/m8j13_logic_runtime_test.json",
+    "configs/m8j13_synchronous_logic_v1.draft.json",
+    "simulator/m8j13_logic_protocol.py",
+    "simulator/m8j13_controller.py",
+    "tools/m8j13_compatibility.py",
+    "tools/m8j13_watchdog.py",
+    "tools/m8j12_runtime.py"
+  ],
+  "carla_starts": 0,
+  "model_forwards": 0,
+  "model_controls": 0,
+  "training": 0
+}

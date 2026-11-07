@@ -10,15 +10,16 @@ from pathlib import Path
 import time
 import traceback
 from tools.m8j13_common import atomic,append,write,config
-from simulator.m8j13_logic_runtime import STOP,TargetCapture,supervision_reason,frozen_equal
+from simulator.m8j13_logic_runtime import STOP,TargetCapture,supervision_reason,frozen_equal,OperationDeadline
 
 
 def load(path):return json.loads(path.read_text()) if path.exists() else None
 
 
-def batch_control(client, ego_id, control):
+def batch_control(client, ego_id, control, budget=None):
     import carla
-    responses=client.apply_batch_sync([carla.command.ApplyVehicleControl(ego_id,carla.VehicleControl(**control))],False)
+    args=([carla.command.ApplyVehicleControl(ego_id,carla.VehicleControl(**control))],False)
+    responses=client.apply_batch_sync(*args) if budget is None else budget.call(client.apply_batch_sync,*args,client=client)
     if len(responses)!=1 or responses[0].has_error() or responses[0].actor_id!=ego_id:
         raise RuntimeError('BatchProcessingError:'+str([r.error for r in responses]))
     return dict(server_processed=True,physics_confirmed=False,due_tick_cue=False,actor_id=ego_id)
@@ -28,7 +29,8 @@ def io_service(root,cfg):
     import carla
     import numpy as np
     from types import SimpleNamespace
-    from tools.m8j13_compatibility import Owner,Inputs
+    from tools.m8j13_compatibility import Inputs
+    from tools.m8j13_logic_io import DeadlineOwner,measured_tick,cleanup_owner
     from simulator.m8j13_carla import measurement
     from simulator.m8j13_execution import control_record,feedback_matches
     from simulator.m8j13_navigation import load_planner,set_navigation_route
@@ -58,14 +60,16 @@ def io_service(root,cfg):
         requests=sorted((root/'io_requests').glob('*.json'))
         request=next((p for p in requests if p.name not in seen),None)
         if request is None:time.sleep(.005);continue
-        seen.add(request.name);r=load(request);start=time.monotonic();reply=dict(sequence=r['sequence'],kind=r['kind'],call_start_wall_s=start)
+        seen.add(request.name);r=load(request);start=time.monotonic();reply=dict(sequence=r['sequence'],kind=r['kind'],call_start_wall_s=start,io_received_wall_s=start,operation=r['operation'],owner_submitted_wall_s=r['owner_submitted_wall_s'])
+        budget=OperationDeadline(r['operation'],time.monotonic)
         try:
-            kind=r['kind'];args=r.get('args',{})
+            budget.remaining();kind=r['kind'];args=r.get('args',{})
+            if owner is not None:owner.budget=budget
             if kind=='setup':
-                owner=Owner.__new__(Owner);owner.__init__(root,cfg)
-                owner.client.set_timeout(.5);ego=owner.ego();inputs=Inputs(owner,ego,root)
+                owner=DeadlineOwner(root,cfg,budget);owner.setup()
+                ego=owner.ego();inputs=Inputs(owner,ego,root);budget.remaining()
                 target=TargetCapture(inputs.identity,{n:a.id for n,a in inputs.sensor_map.items()})
-                map_=owner.world.get_map();planner=load_planner(Path(owner.c['runtime_root'])/'official-source/leaderboard/team_code/planner.py',map_)
+                map_=owner.rpc(owner.world.get_map);planner=load_planner(Path(owner.c['runtime_root'])/'official-source/leaderboard/team_code/planner.py',map_)
                 gps=map_.transform_to_geolocation(owner.target)
                 set_navigation_route(planner,[({'lat':gps.latitude,'lon':gps.longitude,'alt':gps.altitude},SimpleNamespace(value=4))],coordinate_type='gps',client_version='0.9.16',carla_map=map_)
                 inputs.navigation=planner
@@ -77,9 +81,11 @@ def io_service(root,cfg):
             elif kind=='control':
                 cmd=args['command'];fault=load(root/'watchdog_fault.json')
                 if fault and cmd['source']!='FaultBrake':raise RuntimeError('FaultLockedBeforeRPC')
-                before=owner.world.get_snapshot().frame;owner.client.set_timeout(.2)
-                reply.update(batch_control(owner.client,ego.id,cmd['control']));owner.client.set_timeout(.5)
-                after=owner.world.get_snapshot().frame
+                before=owner.rpc(owner.world.get_snapshot).frame
+                reply['rpc_start_wall_s']=time.monotonic()
+                try:reply.update(batch_control(owner.client,ego.id,cmd['control'],budget))
+                finally:reply['rpc_return_wall_s']=time.monotonic()
+                after=owner.rpc(owner.world.get_snapshot).frame
                 if before!=after:raise RuntimeError('BatchUnexpectedWorldAdvance')
                 active=cmd;reply.update(command=cmd,frame_before=before,frame_after=after)
             elif kind=='tick':
@@ -90,15 +96,14 @@ def io_service(root,cfg):
                     try:drain()
                     except Exception as exc:append(root/'safety_input_faults.jsonl',dict(error=repr(exc),wall_s=time.monotonic()))
                 else:drain()
-                before=owner.world.get_snapshot().frame
+                before=owner.rpc(owner.world.get_snapshot).frame
                 if before!=owner.last:raise RuntimeError('UnexpectedWorldAdvance')
-                tick_start=time.monotonic();target.start_tick(before+1,tick_start)
+                budget.remaining();tick_start=time.monotonic();target.start_tick(before+1,tick_start)
                 # Count attempted ticks BEFORE the blocking call; never silently retry.
                 ticks+=1;owner.tick_count=ticks
                 append(root/'tick_requests.jsonl',dict(index=ticks,phase=args['phase'],expected_frame=before+1,wall_s=tick_start,command=cmd))
-                frame=owner.world.tick(.5);rpc_return=time.monotonic();snap=owner.world.get_snapshot()
-                if frame!=snap.frame or frame!=before+1:raise RuntimeError('CompetingTickOwner')
-                owner.last=frame;last=measurement(snap,ego);last.update(input_wall_s=tick_start,tick_end_wall_s=time.monotonic(),delta_s=snap.timestamp.delta_seconds,full_control=control_record(ego.get_control()),phase=args['phase'],command=cmd)
+                snap,last=measured_tick(owner,ego,budget,reply,before)
+                frame=snap.frame;owner.last=frame;last.update(input_wall_s=tick_start,tick_end_wall_s=time.monotonic(),delta_s=snap.timestamp.delta_seconds,phase=args['phase'],command=cmd)
                 if abs(last['delta_s']-.05)>1e-6:raise RuntimeError('FixedDeltaChanged')
                 inputs.snapshot(snap,last);target.confirm(last)
                 if cmd['source']=='FaultBrake':
@@ -108,14 +113,14 @@ def io_service(root,cfg):
                 matched=feedback_matches(cmd['control'],last['full_control']);last['feedback_matches']=matched
                 append(root/'snapshots.jsonl',last)
                 if not matched:raise RuntimeError('ControlFeedbackMismatch')
-                reply.update(snapshot=last,rpc_return_wall_s=rpc_return,explicit_ticks=ticks)
+                budget.remaining();reply.update(snapshot=last,explicit_ticks=ticks)
             elif kind=='collect':
-                until=target.start+.5
+                until=min(target.start+.5,budget.operation['deadline'])
                 while time.monotonic()<until:
-                    drain()
+                    budget.remaining();drain()
                     if len(target.groups)==6 and target.target in inputs.imu:break
                     time.sleep(.002)
-                current=measurement(owner.world.get_snapshot(),ego)
+                current=measurement(owner.rpc(owner.world.get_snapshot),ego)
                 if last is None or not frozen_equal(last,current):raise RuntimeError('UnexpectedWorldBeforeCollect')
                 target.validate(current,time.monotonic())
                 row,error=inputs.row(target.target,time.monotonic())
@@ -130,19 +135,22 @@ def io_service(root,cfg):
                 write(folder/'observation.json',row)
                 reply.update(observation=inputs.states[target.target],frozen=last,capture_complete_wall_s=completed,capture_wall_s=completed-target.start,stats=dict(target.stats))
             elif kind=='frozen':
-                drain();current=measurement(owner.world.get_snapshot(),ego)
+                drain();current=measurement(owner.rpc(owner.world.get_snapshot),ego)
                 if not frozen_equal(args['expected'],current):raise RuntimeError('FrozenWorldChanged')
                 reply['snapshot']=current
             elif kind=='cleanup':
                 if inputs is not None:inputs.close();target.close()
-                # Cleanup allowed only after all IO requests resolved; never a stop proof.
-                reply['cleanup']=owner.close() if owner is not None else {'status':'NoWorldOwned'}
+                reply['cleanup']=cleanup_owner(owner,budget,root,args.get('advance_unknown',False))
                 reply['explicit_ticks']=ticks
             else:raise ValueError('UnknownIOOperation')
-            reply['success']=True
+            budget.remaining();reply['success']=True
         except BaseException as exc:
             reply.update(success=False,error=repr(exc),traceback=traceback.format_exc(),explicit_ticks=ticks)
-        reply['call_end_wall_s']=time.monotonic();atomic(root/'io_responses'/request.name,reply)
+        reply['processing_complete_wall_s']=time.monotonic()
+        reply['call_end_wall_s']=time.monotonic()
+        if reply['call_end_wall_s']>r['operation']['deadline']:
+            reply['success']=False;reply.setdefault('error','OperationDeadlineAtPublication')
+        atomic(root/'io_responses'/request.name,reply)
         if r['kind']=='cleanup':break
 
 
@@ -192,10 +200,12 @@ def watchdog(root,cfg):
                     time.sleep(.002)
                 uncertain=not response or not response.get('success') or not response.get('server_processed')
             result=dict(reason=reason,source='FaultBrake',control=STOP,submission_wall_s=time.monotonic(),handoff_uncertain=uncertain)
+            result['operation']=dict(sequence='fault:'+str(latched['epoch']),kind='fault_control',started=result['submission_wall_s'],deadline=result['submission_wall_s']+.2)
+            safety_budget=OperationDeadline(result['operation'],time.monotonic)
             try:
                 # One bounded safety attempt even if ordinary ordering is unknown;
                 # no physical continuation is admitted in that case.
-                result.update(batch_control(client,state['ego_id'],STOP))
+                result.update(batch_control(client,state['ego_id'],STOP,safety_budget))
                 result['status']='HandoffUncertain' if uncertain else 'ServerProcessed_PhysicsUnverified'
             except Exception as exc:result.update(status='ResponseUnverified',error=repr(exc),server_processed=False)
             result['return_wall_s']=time.monotonic();atomic(root/'fault_brake.json',result)

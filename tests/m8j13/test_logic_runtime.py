@@ -147,7 +147,7 @@ def test_ledger_empty_and_no_second_start():
 
 
 def test_real_owner_orders_target_registration_before_target_tick(tmp_path):
-    r=Runtime(tmp_path,CFG);r.current=snapshot(12);r.observation=snapshot(10);events=[]
+    r=Runtime(tmp_path,CFG);r.current=snapshot(12);r.observation=snapshot(10);r.state['phase']='FiniteExecution';events=[]
     r.pump=lambda:None;r.phase=lambda name,deadline:events.append(('phase',name))
     r.register=lambda frame:(events.append(('register',frame)),setattr(r,'target',frame))
     def tick(phase):r.current=snapshot(r.current['frame']+1);events.append(('tick',r.current['frame']))
@@ -168,7 +168,7 @@ def test_initialization_failure_runs_cleanup_and_records_partial(tmp_path,monkey
     r.call=call;r.latch=lambda reason:setattr(r,'terminal',dict(reason=reason,wall_s=1.))
     r.run();result=json.loads((tmp_path/'result.json').read_text())
     assert result['status']=='Partial' and result['cleanup']['status']=='NoWorldOwned'
-    assert result['charged_ticks']==30 and result['model_controls']==0
+    assert result['charged_ticks']==0 and result['model_controls']==0  # Fake call never submits setup or cleanup.
 
 
 def test_runtime_no_model_pid_physics_override_and_watchdog_no_tick():
@@ -190,7 +190,7 @@ def test_actual_owner_poll_loop_stays_live_during_fake_io_delay(tmp_path):
         while not list((tmp_path/'io_requests').glob('*.json')):time.sleep(.001)
         p=next((tmp_path/'io_requests').glob('*.json'));q=json.loads(p.read_text());time.sleep(.08)
         from tools.m8j13_common import atomic
-        atomic(tmp_path/'io_responses'/p.name,dict(sequence=q['sequence'],success=True))
+        atomic(tmp_path/'io_responses'/p.name,dict(sequence=q['sequence'],operation=q['operation'],success=True))
     t=threading.Thread(target=fake_io);t.start()
     assert r.call('frozen',timeout=.2)['success'];t.join()
     assert len(r.owner_gaps)>10 and max(r.owner_gaps)<.3 and r.pending is None
