@@ -1,0 +1,40 @@
+{
+  "version": "0.9.16",
+  "sources": [
+    {
+      "path": "PythonAPI/carla/source/libcarla/Client.cpp",
+      "url": "https://github.com/carla-simulator/carla/blob/0.9.16/PythonAPI/carla/source/libcarla/Client.cpp",
+      "finding": "ApplyBatchCommandsSync, lines52-66; wrapper calls synchronous batch and constructs responses. Separate IO process avoids depending on GIL release."
+    },
+    {
+      "path": "LibCarla/source/carla/client/Client.h",
+      "url": "https://github.com/carla-simulator/carla/blob/0.9.16/LibCarla/source/carla/client/Client.h",
+      "finding": "ApplyBatchSync lines155-162 passes false to batch; only explicit do_tick_cue would tick. This test passes False."
+    },
+    {
+      "path": "LibCarla/source/carla/client/detail/Client.cpp",
+      "url": "https://github.com/carla-simulator/carla/blob/0.9.16/LibCarla/source/carla/client/detail/Client.cpp",
+      "finding": "ApplyBatchSync lines687-692 waits RawCall; ApplyBatch/ApplyControl async paths are not used."
+    },
+    {
+      "path": "Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Server/CarlaServer.cpp",
+      "url": "https://github.com/carla-simulator/carla/blob/0.9.16/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Server/CarlaServer.cpp",
+      "finding": "apply_batch lines2996,3022-3037 visits ApplyVehicleControl before returning command responses; only do_tick_cue would request advancement. apply_control_to_vehicle lines2012-2035 checks actor/type and calls actor method."
+    },
+    {
+      "path": "Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Actor/CarlaActor.cpp",
+      "url": "https://github.com/carla-simulator/carla/blob/0.9.16/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Actor/CarlaActor.cpp",
+      "finding": "ApplyControlToVehicle lines820-838 sets vehicle input then returns processing status."
+    },
+    {
+      "path": "Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Vehicle/CarlaWheeledVehicle.cpp",
+      "url": "https://github.com/carla-simulator/carla/blob/0.9.16/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Vehicle/CarlaWheeledVehicle.cpp",
+      "finding": "FlushVehicleControl lines308-317 processes stored input and updates LastAppliedControl. Batch response alone is not physical application feedback."
+    }
+  ],
+  "selection": "Single command apply_batch_sync([ApplyVehicleControl],False), check response count/actor/error; no other normal writer; no tick until processed then feedback at following snapshot",
+  "remote_order_limit": "Separate clients are not globally ordered. If old normal batch remains pending or times out, record HandoffUncertain and do not resume ticks. Safety sends one bounded attempt without local RPC lock. No cancellation assumption.",
+  "source_lookup": "Official version-tagged files via web. Direct local download timed out; no fake downloaded source hash.",
+  "wheel_behavior": "Verified matching Python3.10 wheel exposes apply_batch_sync commands/do_tick; live execution still pending",
+  "default_interfaces_unchanged": true
+}
