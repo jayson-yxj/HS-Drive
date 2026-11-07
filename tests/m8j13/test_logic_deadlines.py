@@ -100,7 +100,7 @@ def test_effective_deadline_is_earliest_phase_run_or_original_observation():
 def test_pacing_before_submission_and_slow_completion_does_not_catch_up(tmp_path,monkeypatch):
     r,c=configured(tmp_path,monkeypatch);r.last_init_rpc_start=c.now
     r.wait_initialization_pacing();assert c.now>=100.05 and r.pending is None and not r.counts
-    
+
     for _ in range(80):c.sleep(.01);r.pump()  # Actual owner polls while IO is slow.
     before=c.now;r.last_init_rpc_start=100.05
     r.wait_initialization_pacing();assert c.now==before
